@@ -1,0 +1,627 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1978-p1",
+    "problemId": "amc12-predecessor-1978-p1",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The expression is $(1-2/x)^2$, so $2/x=1$.",
+    "detailedSteps": [
+      "The original denominators require $x\\ne0$. Factor the left side as $(1-2/x)^2$.",
+      "A square is zero only when its base is zero. Hence $1-2/x=0$ and the requested quantity $2/x$ equals $1$."
+    ],
+    "keyIdeas": [
+      "Recognize a perfect square in a reciprocal variable."
+    ],
+    "commonMistakes": [
+      "The target is $2/x$, not $x$ or $x^2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A direct factorization is enough.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p2",
+    "problemId": "amc12-predecessor-1978-p2",
+    "finalAnswer": "$\\boxed{1}$ (choice C)",
+    "shortExplanation": "With radius $r>0$, the equation simplifies to $\\pi r^2=1$.",
+    "detailedSteps": [
+      "The circumference is $2\\pi r$ and the diameter is $2r$, so the relation is $4/(2\\pi r)=2r$.",
+      "Multiplying by $\\pi r$ yields $2=2\\pi r^2$. The area is therefore $1$."
+    ],
+    "keyIdeas": [
+      "Translate circumference and diameter into one radius."
+    ],
+    "commonMistakes": [
+      "Do not take the reciprocal of the radius in place of the circumference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area emerges before the radius needs to be found.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p3",
+    "problemId": "amc12-predecessor-1978-p3",
+    "finalAnswer": "$\\boxed{x^2-y^2}$ (choice D)",
+    "shortExplanation": "The factors become $x-y$ and $x+y$, whose product is a difference of squares.",
+    "detailedSteps": [
+      "Since $x=1/y$ and neither number is zero, $1/x=y$ and $1/y=x$.",
+      "Thus $(x-1/x)(y+1/y)=(x-y)(y+x)=x^2-y^2$."
+    ],
+    "keyIdeas": [
+      "Use the reciprocal condition before expanding."
+    ],
+    "commonMistakes": [
+      "Reversing the two squares changes the sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Substitution keeps the expansion short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p4",
+    "problemId": "amc12-predecessor-1978-p4",
+    "finalAnswer": "$\\boxed{2222}$ (choice B)",
+    "shortExplanation": "Each variable appears positively three times and negatively once.",
+    "detailedSteps": [
+      "The total coefficient of each of $a,b,c,d$ is $3-1=2$.",
+      "The sum is $2(a+b+c+d)=2(1+10+100+1000)=2222$."
+    ],
+    "keyIdeas": [
+      "Collect each variable across all four signed expressions."
+    ],
+    "commonMistakes": [
+      "Adding the unsigned terms ignores one negative occurrence of each variable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grouping coefficients is quicker than evaluating four long sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p5",
+    "problemId": "amc12-predecessor-1978-p5",
+    "finalAnswer": "$\\boxed{13}$ (choice C)",
+    "shortExplanation": "The first three payments are $20,15,12$, leaving $13$.",
+    "detailedSteps": [
+      "If a payment is $1/k$ of the other payments, then $p=(60-p)/k$, so $p=60/(k+1)$.",
+      "For $k=2,3,4$, the first three payments are $20,15,12$.",
+      "The remaining payment is $60-20-15-12=13$ dollars."
+    ],
+    "keyIdeas": [
+      "A fraction of all other payments is a fraction of the total."
+    ],
+    "commonMistakes": [
+      "One half of the other payments is one third of the total, not one half."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solve each payment against the total rather than introducing four unknowns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p6",
+    "problemId": "amc12-predecessor-1978-p6",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "The cases $y=0$ and $x=1/2$ each give two solutions.",
+    "detailedSteps": [
+      "The second equation is $y(1-2x)=0$. If $y=0$, the first gives $x=x^2$, hence $(0,0)$ and $(1,0)$.",
+      "If $x=1/2$, the first equation gives $y^2=1/4$, hence $(1/2,1/2)$ and $(1/2,-1/2)$.",
+      "These four ordered pairs are distinct, and the factorization exhausts all possible cases."
+    ],
+    "keyIdeas": [
+      "Split the factored second equation into all branches."
+    ],
+    "commonMistakes": [
+      "Dividing by $y$ would discard two valid solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both signs of the square root matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p7",
+    "problemId": "amc12-predecessor-1978-p7",
+    "finalAnswer": "$\\boxed{4\\sqrt3}$ (choice E)",
+    "shortExplanation": "The apothem is $6$, and equals $\\sqrt3/2$ times the side.",
+    "detailedSteps": [
+      "Joining the center to consecutive vertices creates equilateral triangles. For side $s$, the apothem is $s\\cos30^\\circ=s\\sqrt3/2$.",
+      "The two opposite supporting lines are $2$ apothems apart, so $s\\sqrt3=12$ and $s=4\\sqrt3$ inches."
+    ],
+    "keyIdeas": [
+      "Opposite sides are separated by twice the apothem."
+    ],
+    "commonMistakes": [
+      "The distance between opposite sides is different from the distance between opposite vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The regular hexagon decomposes into six equilateral triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p8",
+    "problemId": "amc12-predecessor-1978-p8",
+    "finalAnswer": "$\\boxed{\\frac43}$ (choice D)",
+    "shortExplanation": "The first common difference is $(y-x)/3$ and the second is $(y-x)/4$.",
+    "detailedSteps": [
+      "Two inserted means divide the interval from $x$ to $y$ into three equal differences, so $a_2-a_1=(y-x)/3$.",
+      "Three inserted means give $b_2-b_1=(y-x)/4$. Since $x\\ne y$, their ratio is $4/3$."
+    ],
+    "keyIdeas": [
+      "Count intervals, rather than inserted terms."
+    ],
+    "commonMistakes": [
+      "Two inserted means produce three intervals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero endpoint difference permits cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p9",
+    "problemId": "amc12-predecessor-1978-p9",
+    "finalAnswer": "$\\boxed{1-2x}$ (choice B)",
+    "shortExplanation": "For $x<0$, both the inner root and the outer absolute value have fixed signs.",
+    "detailedSteps": [
+      "Because $x-1<0$, $\\sqrt{(x-1)^2}=|x-1|=1-x$.",
+      "The expression inside the outer absolute value is $x-(1-x)=2x-1<0$. Therefore its absolute value is $1-2x$."
+    ],
+    "keyIdeas": [
+      "A square root of a square is an absolute value."
+    ],
+    "commonMistakes": [
+      "Dropping either of the two absolute-value sign decisions gives the wrong expression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the supplied sign condition at each stage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p10",
+    "problemId": "amc12-predecessor-1978-p10",
+    "finalAnswer": "$\\boxed{\\text{the ray from }P\\text{ through }B}$ (choice B)",
+    "shortExplanation": "Except at the center, the closest point of a circle lies in the direction of the point being tested.",
+    "detailedSteps": [
+      "Put the center at the origin and let the circle radius be $r$. For a circle point $X$, $|A-X|^2=|A|^2+r^2-2A\\cdot X$.",
+      "When $A\\ne P$, this is minimized uniquely at $X=rA/|A|$. Thus the prescribed $B$ is nearest exactly when $A$ lies on the ray from $P$ through $B$.",
+      "At $A=P$, all circle points are equally distant, so the endpoint $P$ is included. The ray continues beyond the circle because the same radial closest-point argument still applies."
+    ],
+    "keyIdeas": [
+      "The nearest circle point maximizes a dot product."
+    ],
+    "commonMistakes": [
+      "Restricting the answer to the segment $PB$ incorrectly excludes points outside the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center is a separate equality case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p11",
+    "problemId": "amc12-predecessor-1978-p11",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The line is $r/\\sqrt2$ from the origin; the circle radius is $\\sqrt r$.",
+    "detailedSteps": [
+      "The positive radius of $x^2+y^2=r$ is $\\sqrt r$. The distance from the origin to $x+y=r$ is $r/\\sqrt2$.",
+      "Tangency gives $r/\\sqrt2=\\sqrt r$. Squaring and dividing by $r>0$ yields $r=2$."
+    ],
+    "keyIdeas": [
+      "Distinguish the circle parameter from its radius."
+    ],
+    "commonMistakes": [
+      "The radius is $\\sqrt r$, not $r$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A point-to-line distance avoids solving two simultaneous equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p12",
+    "problemId": "amc12-predecessor-1978-p12",
+    "finalAnswer": "$\\boxed{10^\\circ}$ (choice E)",
+    "shortExplanation": "The equal segments force the angle at $E$ to be three times the angle at $A$.",
+    "detailedSteps": [
+      "Use the distinct-point condition in the linked published version and put $\\alpha=\\angle EAD$. Since $AB=BC$, triangle $ABC$ gives $\\angle ACB=\\alpha$ and $\\angle ABC=180^\\circ-2\\alpha$.",
+      "Because $A,B,D$ occur in that order, $\\angle CBD=2\\alpha$. From $BC=CD$, triangle $BCD$ gives $\\angle BDC=2\\alpha$ and $\\angle BCD=180^\\circ-4\\alpha$.",
+      "The rays $CA$ and $CE$ are opposite. Consequently $\\angle DCE=3\\alpha$. Since $CD=DE$, $\\angle CED=3\\alpha$, which is also $\\angle AED$.",
+      "The angles in triangle $ADE$ now give $\\alpha+140^\\circ+3\\alpha=180^\\circ$, so $\\alpha=10^\\circ$.",
+      "Edition note: the primary MAA collection explicitly records that the original statement omitted the distinct-point condition. If $B=D$ and $C=E$, the angle could instead be $20^\\circ$. This solution uses the clarified published condition, also present in the linked reprint."
+    ],
+    "keyIdeas": [
+      "Follow three consecutive isosceles triangles."
+    ],
+    "commonMistakes": [
+      "Coincident endpoints are excluded by the clarified source condition; ignoring that condition introduces another configuration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The primary published clarification and original omission are explicitly distinguished.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p13",
+    "problemId": "amc12-predecessor-1978-p13",
+    "finalAnswer": "$\\boxed{-2}$ (choice B)",
+    "shortExplanation": "The root relations force $b=d$, then $a=c=1$ and $b=d=-2$.",
+    "detailedSteps": [
+      "Vieta gives $c+d=-a$, $cd=b$, $a+b=-c$, and $ab=d$. The two sums imply $b=d$.",
+      "Since $b\\ne0$, $ab=d=b$ yields $a=1$. Likewise $cd=b=d$ and $d\\ne0$ give $c=1$.",
+      "Now $a+b=-c$ gives $b=-2$, so $d=-2$. Their sum is $1-2+1-2=-2$. These nonzero values satisfy all four original Vieta relations."
+    ],
+    "keyIdeas": [
+      "Combine the two Vieta sum and product relations."
+    ],
+    "commonMistakes": [
+      "The nonzero hypotheses justify the cancellations; dropping them would add cases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No quadratic formula is required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p14",
+    "problemId": "amc12-predecessor-1978-p14",
+    "finalAnswer": "$\\boxed{80_{n}}$ (choice C)",
+    "shortExplanation": "The numeral $18_n$ is $n+8$; substituting the root $n$ gives $b=8n$.",
+    "detailedSteps": [
+      "The coefficient $a$ is $n+8$. Substituting $x=n$ into the quadratic gives $n^2-(n+8)n+b=0$.",
+      "Thus $b=8n$, whose base-$n$ representation is $80$. The digit $8$ is legal because $n>8$."
+    ],
+    "keyIdeas": [
+      "Translate base notation into an ordinary integer."
+    ],
+    "commonMistakes": [
+      "Reading $18_n$ as decimal eighteen loses the dependence on the base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The result is a numeral in base $n$, not decimal eighty.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p15",
+    "problemId": "amc12-predecessor-1978-p15",
+    "finalAnswer": "$\\boxed{-\\frac43}$ (choice A)",
+    "shortExplanation": "The only permitted pair is $\\sin x=4/5$, $\\cos x=-3/5$.",
+    "detailedSteps": [
+      "Write $s=\\sin x$ and $c=\\cos x$. Squaring $s+c=1/5$ and using $s^2+c^2=1$ gives $sc=-12/25$.",
+      "The endpoint $x=0$ does not satisfy the sum, so $s>0$ on the permitted interval. Therefore $c<0$, and $s-c>0$.",
+      "Now $(s-c)^2=1-2sc=49/25$, so $s-c=7/5$. Combining this with $s+c=1/5$ yields $s=4/5,c=-3/5$ and $\\tan x=-4/3$."
+    ],
+    "keyIdeas": [
+      "Use the interval to choose the signs of sine and cosine."
+    ],
+    "commonMistakes": [
+      "Interchanging sine and cosine violates their signs on the specified interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The interval resolves an otherwise ambiguous algebraic pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p16",
+    "problemId": "amc12-predecessor-1978-p16",
+    "finalAnswer": "$\\boxed{N-2\\ \\text{(none of the listed expressions)}}$ (choice E)",
+    "shortExplanation": "One missing pair prevents two people from being universal handshakers.",
+    "detailedSteps": [
+      "The hypothesis guarantees a pair of people who have not shaken hands. Each of those two fails to have shaken hands with everyone, so at most $N-2$ people can have done so.",
+      "This bound is attained when every pair shakes hands except one pair. The other $N-2$ people have shaken hands with everyone. Since $N>3$, the value is none of the four listed expressions."
+    ],
+    "keyIdeas": [
+      "Every missing handshake has two endpoints."
+    ],
+    "commonMistakes": [
+      "A missing handshake cannot affect just one person."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate the symmetric relation into a graph.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p17",
+    "problemId": "amc12-predecessor-1978-p17",
+    "finalAnswer": "$\\boxed{k^2}$ (choice D)",
+    "shortExplanation": "Set $t=3/y$; the target has the given base and twice the given exponent.",
+    "detailedSteps": [
+      "For $y>0$, put $t=3/y>0$. Then $(9+y^2)/y^2=t^2+1$.",
+      "The given real power is $[f(t^2+1)]^{\\sqrt t}=k$. The target exponent is $\\sqrt{12/y}=\\sqrt{4t}=2\\sqrt t$.",
+      "Squaring that given real value doubles its exponent, so the target equals $k^2$. This uses only the values of $f$ at arguments greater than $1$."
+    ],
+    "keyIdeas": [
+      "Match the inner argument before comparing the exponents."
+    ],
+    "commonMistakes": [
+      "Matching the argument alone is insufficient; the exponent changes by a factor of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No formula for the entire function is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p18",
+    "problemId": "amc12-predecessor-1978-p18",
+    "finalAnswer": "$\\boxed{2501}$ (choice C)",
+    "shortExplanation": "The difference decreases with $n$; $2500$ fails and $2501$ succeeds.",
+    "detailedSteps": [
+      "For $n\\ge1$, $\\sqrt n-\\sqrt{n-1}=1/(\\sqrt n+\\sqrt{n-1})$, a decreasing function of the integer $n$.",
+      "At $n=2500$, $49.99^2=2499.0001>2499$, so $50-\\sqrt{2499}>0.01$.",
+      "At $n=2501$, $50.01^2=2501.0001>2501$, so $\\sqrt{2501}-50<0.01$. Thus the least admissible integer is $2501$."
+    ],
+    "keyIdeas": [
+      "Rationalize the decreasing difference and check neighboring integers."
+    ],
+    "commonMistakes": [
+      "An approximate equality at $2500$ does not meet the strict bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use exact decimal squares rather than rounded radicals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p19",
+    "problemId": "amc12-predecessor-1978-p19",
+    "finalAnswer": "$\\boxed{0.08}$ (choice C)",
+    "shortExplanation": "There are seven squares in the low-weight half and three in the high-weight half.",
+    "detailedSteps": [
+      "Fifty integers have weight $p$, and fifty have weight $3p$, so $200p=1$ and $p=1/200$.",
+      "The squares $1^2$ through $7^2$ have the lower weight, while $8^2,9^2,10^2$ have the higher weight.",
+      "The required probability is $7p+3(3p)=16/200=0.08$."
+    ],
+    "keyIdeas": [
+      "Normalize the two probability weights before counting squares."
+    ],
+    "commonMistakes": [
+      "The one hundred integers are not equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the count from the weight.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p20",
+    "problemId": "amc12-predecessor-1978-p20",
+    "finalAnswer": "$\\boxed{-1}$ (choice A)",
+    "shortExplanation": "The negative-product condition excludes $a=b=c$, leaving $a+b+c=0$.",
+    "detailedSteps": [
+      "Put $S=a+b+c$. The three equal ratios are $S/c-2$, $S/b-2$, and $S/a-2$.",
+      "If $S\\ne0$, equality and the nonzero denominators force $a=b=c$. The requested product would then be $8$, contradicting its negativity.",
+      "Therefore $S=0$. Then $a+b=-c$, $b+c=-a$, and $c+a=-b$, so the product divided by $abc$ is $-1$. For instance $(a,b,c)=(1,2,-3)$ is a valid nonzero witness."
+    ],
+    "keyIdeas": [
+      "A common ratio isolates the zero-sum and equal-number branches."
+    ],
+    "commonMistakes": [
+      "Dividing by $S$ would discard the branch selected by the sign condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign condition is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p21",
+    "problemId": "amc12-predecessor-1978-p21",
+    "finalAnswer": "$\\boxed{\\frac1{\\log_{60}x}}$ (choice A)",
+    "shortExplanation": "The sum is $(\\log3+\\log4+\\log5)/\\log x=\\log60/\\log x$.",
+    "detailedSteps": [
+      "For $x>0,x\\ne1$, change of base gives $1/\\log_bx=\\log b/\\log x$.",
+      "Thus the sum is $\\log(3\\cdot4\\cdot5)/\\log x=\\log60/\\log x=1/\\log_{60}x$. This remains valid when $0<x<1$, where the denominator is negative."
+    ],
+    "keyIdeas": [
+      "Convert all logarithms to one base."
+    ],
+    "commonMistakes": [
+      "A reciprocal logarithm changes the order of base and argument."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All denominators are nonzero by the original restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p22",
+    "problemId": "amc12-predecessor-1978-p22",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Two different claimed false-counts cannot both be true, and all four cannot be false.",
+    "detailedSteps": [
+      "The claims specify different numbers of false statements, so at most one is true.",
+      "If none were true, all four would be false; the claim that four are false would then be true, a contradiction.",
+      "Exactly one is true and three are false. The third claim is that true statement, which makes the assignment self-consistent."
+    ],
+    "keyIdeas": [
+      "Self-consistency allows precisely one of the four claims to be true."
+    ],
+    "commonMistakes": [
+      "Treating each claim independently ignores that they refer to the same card."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short contradiction replaces a long case table.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p23",
+    "problemId": "amc12-predecessor-1978-p23",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{2}}$ (choice C)",
+    "shortExplanation": "The height of $F$ is $s\\sqrt3/(1+\\sqrt3)$, where $s^2=1+\\sqrt3$.",
+    "detailedSteps": [
+      "Put $A=(0,0),B=(s,0),D=(0,s)$, where $s=\\sqrt{1+\\sqrt3}$. The interior equilateral vertex makes $AE$ the line $y=\\sqrt3x$, while $BD$ is $x+y=s$.",
+      "Their intersection has height $y_F=s\\sqrt3/(1+\\sqrt3)$. Therefore $[ABF]=sy_F/2=s^2\\sqrt3/[2(1+\\sqrt3)]=\\sqrt3/2$."
+    ],
+    "keyIdeas": [
+      "Intersect the equilateral ray with the square diagonal."
+    ],
+    "commonMistakes": [
+      "The source side length has a nested radical; squaring gives $1+\\sqrt3$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the intersection height is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p24",
+    "problemId": "amc12-predecessor-1978-p24",
+    "finalAnswer": "$\\boxed{r^2+r+1=0}$ (choice A)",
+    "shortExplanation": "Dividing their zero sum by the first nonzero term gives $1+r+r^2=0$.",
+    "detailedSteps": [
+      "Expanding $x(y-z)+y(z-x)+z(x-y)$ cancels every term, giving zero.",
+      "If the first progression term is $u\\ne0$, the next two are $ur$ and $ur^2$. Their sum is $u(1+r+r^2)=0$, hence $r^2+r+1=0$.",
+      "Domain note: the published condition says nonzero numbers, without specifying real numbers. The resulting ratios are the two nonreal cube roots of unity. No three nonzero real progression terms can satisfy these hypotheses; imposing a real-only restriction would make them inconsistent."
+    ],
+    "keyIdeas": [
+      "The three cyclic products have sum zero."
+    ],
+    "commonMistakes": [
+      "The products add to zero identically; they do not add to one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Retain the published number-domain wording rather than inventing a real-only assumption.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p25",
+    "problemId": "amc12-predecessor-1978-p25",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "After scaling by $a$, the region is a square with two opposite corners removed.",
+    "detailedSteps": [
+      "Scale to $a=1$. The first two bounds give the square $[1/2,2]\\times[1/2,2]$. The sum bound is automatic because $x+y\\ge1$ throughout this square.",
+      "The remaining inequalities are $|x-y|\\le1$. They cut off the corners $(2,1/2)$ and $(1/2,2)$.",
+      "The six boundary vertices are $(1/2,1/2),(3/2,1/2),(2,1),(2,2),(1,2),(1/2,3/2)$. Each intervening edge has positive length, so the boundary has six sides. Positive scaling does not change their count."
+    ],
+    "keyIdeas": [
+      "Two diagonal half-planes clip opposite corners of a square."
+    ],
+    "commonMistakes": [
+      "The sum inequality is redundant, so it does not create another side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A normalized coordinate sketch is enough; original diagrams remain external.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p26",
+    "problemId": "amc12-predecessor-1978-p26",
+    "finalAnswer": "$\\boxed{\\frac{24}{5}}$ (choice B)",
+    "shortExplanation": "The altitude to $AB$ is $24/5$, equal to the diameter of the minimizing circle and to $QR$.",
+    "detailedSteps": [
+      "The side lengths show the right angle is at $C$. Put $C=(0,0),A=(8,0),B=(0,6)$. Then $AB$ is $3x+4y=24$, and the distance from $C$ to this line is $24/5$.",
+      "For any radius-$\\rho$ circle through $C$ tangent to that line, its center $O$ satisfies $|CO|=\\rho$ and its distance from the line is $\\rho$. The triangle inequality for distances to the line gives $24/5\\le2\\rho$.",
+      "Equality is attained by taking $O$ halfway from $C$ to its perpendicular foot on $AB$: $O=(36/25,48/25)$ and $\\rho=12/5$. This proves the radius is globally minimal.",
+      "Its equation is $x^2+y^2-(72/25)x-(96/25)y=0$. On the two legs, the nonzero intersections are $Q=(72/25,0)$ and $R=(0,96/25)$, both on the specified segments.",
+      "Consequently $QR=\\sqrt{(72/25)^2+(96/25)^2}=24/5=4.8$."
+    ],
+    "keyIdeas": [
+      "The minimum-radius circle has a diameter perpendicular to the tangent line."
+    ],
+    "commonMistakes": [
+      "An arbitrary circle through $C$ tangent to $AB$ need not have the smallest radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove minimality before evaluating the required chord.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p27",
+    "problemId": "amc12-predecessor-1978-p27",
+    "finalAnswer": "$\\boxed{27720}$ (choice C)",
+    "shortExplanation": "The permitted integers are $1+kL$, with $L=\\operatorname{lcm}(2,3,\\ldots,11)$.",
+    "detailedSteps": [
+      "Each remainder condition is equivalent to $k\\mid(N-1)$ for every integer $k$ from $2$ through $11$. Thus $N-1$ is a multiple of their least common multiple.",
+      "The largest needed prime powers are $2^3,3^2,5,7,11$, so $L=8\\cdot9\\cdot5\\cdot7\\cdot11=27720$.",
+      "Since $N>1$, the two smallest permitted integers are $1+L$ and $1+2L$. Their difference is $L$."
+    ],
+    "keyIdeas": [
+      "All remainder conditions say the number minus one is a common multiple."
+    ],
+    "commonMistakes": [
+      "The value one itself is excluded by the lower bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the final difference separate from the first admissible integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p28",
+    "problemId": "amc12-predecessor-1978-p28",
+    "finalAnswer": "$\\boxed{120^\\circ}$ (choice E)",
+    "shortExplanation": "Every eighth difference vector is $1/16$ times the original, preserving the required angle.",
+    "detailedSteps": [
+      "Let $v_n=A_{n+1}-A_n$. The midpoint rule gives $v_{n+2}=-v_{n+1}-v_n/2$. Its characteristic roots are $(-1+i)/2$ and $(-1-i)/2$, each with eighth power $1/16$.",
+      "Therefore every vector coordinate satisfies $v_{n+8}=v_n/16$. Since $43=3+5\\cdot8$, both sides of the required angle are positive $1/16^5$ multiples of the sides of $\\angle A_4A_5A_3$.",
+      "Choose $A_1=(0,0),A_2=(1,0),A_3=(1/2,\\sqrt3/2)$. Then $A_4=(1/2,0)$ and $A_5=(3/4,\\sqrt3/4)$.",
+      "The vectors from $A_5$ to $A_4$ and $A_3$ are $(-1/4,-\\sqrt3/4)$ and $(-1/4,\\sqrt3/4)$. Their dot product is $-1/8$ and each length is $1/2$, so the cosine is $-1/2$ and the angle is $120^\\circ$."
+    ],
+    "keyIdeas": [
+      "The midpoint recurrence repeats its edge directions after eight steps."
+    ],
+    "commonMistakes": [
+      "The later triangles are not all equilateral; prove the direction recurrence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complex characteristic roots encode a real planar rotation and contraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p29",
+    "problemId": "amc12-predecessor-1978-p29",
+    "finalAnswer": "$\\boxed{50}$ (choice D)",
+    "shortExplanation": "The shoelace cross-product sum becomes five times its original value.",
+    "detailedSteps": [
+      "Write the cyclic original position vectors as $v_0,v_1,v_2,v_3$. The corresponding extended vertices are $w_i=2v_i-v_{i-1}$, with indices taken modulo four.",
+      "Opposite new edges are separated by the original diagonals: $w_0,w_1$ lie on one side of $AC$, and $w_2,w_3$ on the other; the other opposite pair is separated by $BD$. Thus the new polygon is simple, although it need not be convex.",
+      "Expansion gives $\\sum_i w_i\\times w_{i+1}=5\\sum_i v_i\\times v_{i+1}-2\\sum_i v_{i-1}\\times v_{i+1}$. For four vertices, the last sum cancels in opposite pairs: each diagonal cross product appears together with its negative.",
+      "The signed shoelace area is therefore five times the original signed area, with the same orientation. The ordinary area is $5\\cdot10=50$. The individual side lengths do not affect this identity."
+    ],
+    "keyIdeas": [
+      "Expand the signed area after the four equal extensions."
+    ],
+    "commonMistakes": [
+      "The new polygon can be concave; do not assume its convexity or use a sum of potentially overlapping exterior triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal cancellation is specific to four cyclic vertices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1978-p30",
+    "problemId": "amc12-predecessor-1978-p30",
+    "finalAnswer": "$\\boxed{3\\ \\text{(none of the listed values)}}$ (choice E)",
+    "shortExplanation": "The win proportion forces $n\\le3$; integrality rules out $n=1,2$.",
+    "detailedSteps": [
+      "There are $T=3n(3n-1)/2$ matches. With no ties, the ratio of wins gives $W=7T/12$ wins credited to women.",
+      "Women can win at most all $n(n-1)/2$ women-versus-women matches plus all $2n^2$ mixed matches. Hence $7(9n^2-3n)/24\\le(5n^2-n)/2$, which simplifies to $3n(n-3)\\le0$. Thus $n\\le3$.",
+      "For $n=1,2$, the totals $T=3,15$ make $7T/12$ nonintegral, impossible. For $n=3$, $T=36$ and $W=21$.",
+      "This is attained if the three women win all eighteen mixed matches. Their three internal matches contribute three more wins, while the six men have fifteen internal matches, giving the ratio $21:15=7:5$. Thus $n=3$, absent from the four numerical choices."
+    ],
+    "keyIdeas": [
+      "Bound the wins credited to women by all their possible matches."
+    ],
+    "commonMistakes": [
+      "Count internal women matches once, and include their unavoidable wins."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both necessity and existence are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

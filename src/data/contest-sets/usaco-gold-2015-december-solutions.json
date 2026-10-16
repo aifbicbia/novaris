@@ -1,0 +1,105 @@
+[
+  {
+    "finalAnswer": "Use Bessie’s largest half for the high-card rounds and smallest half for the low-card rounds. Add the maximum winning matchings of the two phases.",
+    "shortExplanation": "Swapping a smaller high-phase card with a larger low-phase card cannot hurt either round. After separating the hands, solve each phase greedily; reversing the card ranks turns low-card wins into the same high-card matching problem.",
+    "detailedSteps": [
+      "Recover Bessie’s hand as the complement of Elsie’s cards in $1,\\ldots,2N$. The first $N/2$ rounds require a larger card; the last $N/2$ require a smaller one.",
+      "Suppose a smaller Bessie card $a$ is assigned to the high phase and a larger card $b$ to the low phase. Swap their rounds: the high round receives a larger card and the low round a smaller card, so neither previously earned point can be lost. Repeatedly removing such inversions proves that some optimum reserves the largest half for high wins and the smallest half for low wins.",
+      "For the high phase, sort Bessie’s available cards and Elsie’s thresholds. Consider Bessie’s smallest remaining card $b$ and Elsie’s smallest unmatched threshold $e$. If $b\\le e$, it cannot win against any remaining threshold, so omit it from the winning matching.",
+      "If $b>e$, match them. This preserves an optimum: if either partner was unused, its old match can be replaced without losing a win. If both were separately matched, say $b$ to $e^{\\prime}$ and $b^{\\prime}$ to $e$, then $b^{\\prime}\\ge b>e^{\\prime}$; swapping to $b$ with $e$ and $b^{\\prime}$ with $e^{\\prime}$ retains both wins. If both were unused, the matching was not maximum. Induction proves the greedy count.",
+      "For low wins, transform every rank $x$ into $2N+1-x$. The inequality $b<e$ becomes a high-card inequality between transformed ranks. Apply the same proved matching routine to the reserved low cards and Elsie’s second-half cards.",
+      "Sorting inside a phase computes an offline matching; it does not change the actual round order. Each matched card is assigned to that threshold’s original round, and unused cards fill unused rounds. Thus the winning partial matchings extend to a complete legal game.",
+      "The phase split is safe, and the two phases now use disjoint cards, so add their optimal scores. Sorting takes $O(N\\log N)$ time and storage is $O(N)$. Read `cardgame.in` and write `cardgame.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint highWins(std::vector<int> b, std::vector<int> e) {\n    std::sort(b.begin(), b.end());\n    std::sort(e.begin(), e.end());\n    int matched = 0;\n    for (int card : b) {\n        if (matched < static_cast<int>(e.size()) && card > e[matched]) ++matched;\n    }\n    return matched;\n}\nint main() {\n    std::ifstream in(\"cardgame.in\");\n    std::ofstream out(\"cardgame.out\");\n    int n;\n    in >> n;\n    std::vector<int> e(n), b;\n    std::vector<bool> used(2 * n + 1, false);\n    for (int& card : e) { in >> card; used[card] = true; }\n    for (int card = 1; card <= 2 * n; ++card) if (!used[card]) b.push_back(card);\n    int half = n / 2;\n    std::vector<int> highB(b.begin() + half, b.end());\n    std::vector<int> highE(e.begin(), e.begin() + half);\n    std::vector<int> lowB, lowE;\n    for (int i = 0; i < half; ++i) lowB.push_back(2 * n + 1 - b[i]);\n    for (int i = half; i < n; ++i) lowE.push_back(2 * n + 1 - e[i]);\n    out << highWins(highB, highE) + highWins(lowB, lowE) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Monotonicity permits a safe exchange between phases.",
+      "Maximum winning matchings extend to full round assignments.",
+      "Order reversal converts low wins into high wins."
+    ],
+    "commonMistakes": [
+      "Using all large cards greedily without reserving a low-phase hand.",
+      "Changing the phase-switch round; this Gold task fixes it at N/2.",
+      "Confusing offline threshold sorting with changing Elsie’s chronological play.",
+      "Counting a tie as a win."
+    ],
+    "alternativeMethods": [
+      "For small decks, an assignment-mask dynamic program processes the actual rounds and tries every unused Bessie card. This checks the whole coupled game without assuming a phase split."
+    ],
+    "difficultyNotes": "There are two exchange arguments: one proves the allocation between phases, and another proves the matching inside a phase. Both are needed to justify the greedy implementation.",
+    "id": "solution-usaco-gold-2015-december-p1",
+    "problemId": "usaco-gold-2015-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Return the largest reachable fullness at or below T in either the before-water or after-water layer.",
+    "shortExplanation": "First find every fullness reachable by fruit alone. Halve every such amount to seed the after-water layer, then add fruit again. Separating the layers allows at most one water action and considers every possible drinking time.",
+    "detailedSteps": [
+      "Use initial empty fullness $0$, the standard interpretation when no other starting amount is supplied. Let `before[f]` mean that fullness $f$ is reachable without drinking water; set `before[0]` true.",
+      "Scan fullness upward. From a true `before[f]`, mark $f+A$ and $f+B$ when they are at most $T$. Both fruit amounts are positive, so all transitions go to a later index. Induction on fullness shows that one ascending scan finds exactly all no-water possibilities.",
+      "For every reachable pre-water amount $f$, mark `after[f/2]` using integer division. This represents drinking at that moment and implements rounding down. Seed all such moments, not only the largest reachable pre-water amount.",
+      "Scan `after` upward with the same fruit transitions. Water is never used again in this layer. Every legal one-water history splits into fruit before water, one halving action, and fruit after water; these two closures therefore capture it exactly.",
+      "Take the greatest true index in either layer. Keeping the before-water layer also covers choosing not to drink. Every marked state is legal and every permitted history is represented, so this maximum is optimal.",
+      "Time and space are $O(T)$. The two byte arrays use $2(T+1)$ bytes; intermediate fruit-index sums are at most $2T$ and fit ordinary integers. Preserve `feast.in` and `feast.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"feast.in\");\n    std::ofstream out(\"feast.out\");\n    int t, a, b;\n    in >> t >> a >> b;\n    std::vector<unsigned char> before(t + 1, 0), after(t + 1, 0);\n    before[0] = 1;\n    for (int f = 0; f <= t; ++f) {\n        if (!before[f]) continue;\n        if (f + a <= t) before[f + a] = 1;\n        if (f + b <= t) before[f + b] = 1;\n    }\n    for (int f = 0; f <= t; ++f) if (before[f]) after[f / 2] = 1;\n    for (int f = 0; f <= t; ++f) {\n        if (!after[f]) continue;\n        if (f + a <= t) after[f + a] = 1;\n        if (f + b <= t) after[f + b] = 1;\n    }\n    for (int f = t; f >= 0; --f) {\n        if (before[f] || after[f]) { out << f << '\\n'; break; }\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate reachability by whether the one-time action has been used.",
+      "Positive increments make each fruit closure an ascending dynamic program.",
+      "Seed the second layer from every reachable halved amount."
+    ],
+    "commonMistakes": [
+      "Drinking water more than once.",
+      "Rounding half-fullness upward.",
+      "Drinking only at the maximum no-water fullness.",
+      "Allowing fullness to exceed T temporarily.",
+      "Treating water as mandatory or failing to restart fruit transitions after drinking."
+    ],
+    "alternativeMethods": [
+      "For a small cap, breadth-first search over states (fullness, water-used) tries the two fruit actions and, when available, the water action. This is a direct check of the two-layer closure."
+    ],
+    "difficultyNotes": "The main proof is the decomposition around the single water event. The source supplies no different initial fullness; the solution uses the conventional empty starting state explicitly.",
+    "id": "solution-usaco-gold-2015-december-p2",
+    "problemId": "usaco-gold-2015-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Run breadth-first search on cell position plus odor or forced-slide direction. Return the first target distance, or -1 if no target state is reachable.",
+    "shortExplanation": "An ordinary cell needs an odor flag; a purple cell needs the direction in which sliding must continue, with odor already removed. Each transition crosses exactly one tile, so ordinary BFS counts all walking and sliding moves correctly.",
+    "detailedSteps": [
+      "Use six modes per cell: modes $0,1$ mean freely choosing a direction without or with orange odor, and modes $2,3,4,5$ record the four forced slide directions. A purple tile always removes odor, so it needs no additional odor bit.",
+      "From a free mode, try the four neighbors. Reject a red tile, a step outside the grid, or a blue tile when there is no odor. Orange sets odor; pink and permitted blue preserve it; entering purple removes odor and records the entry direction.",
+      "From a sliding mode, first test the forced next step. If it is legal, that is the only allowed transition. If it is blocked, Bessie stays on the current purple tile and may choose another legal direction. Stopping alone costs no move; a neighbor step still costs one.",
+      "Blue is blocked during a purple slide because odor has been removed. If the slide lands on orange, sliding ends and odor is acquired again. A slide can also end at a boundary or before a red or inaccessible blue tile.",
+      "Initialize the top-left pink cell with no odor and distance $0$. Every graph edge is one actual unit-tile move, including a forced slide step. The state includes everything that affects future moves, so every graph path is a legal history and every legal history has a corresponding graph path.",
+      "Breadth-first search processes these unit-cost histories in distance order. The first target state popped therefore has the minimum move count. If the queue empties first, return $-1$. The one-cell maze correctly returns zero.",
+      "Do not mark only the position visited: the same cell with a different odor or forced direction can have different legal exits. Visit each complete cell-mode state at most once.",
+      "There are at most $6NM$ states, with at most four outgoing transitions each. Time and space are $O(NM)$; flat state indices and distances fit ordinary integers at the source limits. Read `dream.in` and write `dream.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <vector>\nint main() {\n    std::ifstream in(\"dream.in\");\n    std::ofstream out(\"dream.out\");\n    int n, m;\n    in >> n >> m;\n    std::vector<int> tile(n * m);\n    for (int& t : tile) in >> t;\n    const int dr[4] = {-1, 0, 1, 0}, dc[4] = {0, 1, 0, -1};\n    std::vector<int> distance(6 * n * m, -1);\n    std::queue<int> q;\n    distance[0] = 0;\n    q.push(0);\n    auto step = [&](int cell, int mode, int d) {\n        int r = cell / m + dr[d], c = cell % m + dc[d];\n        if (r < 0 || r >= n || c < 0 || c >= m) return -1;\n        int next = r * m + c, t = tile[next];\n        bool smell = mode == 1;\n        if (t == 0 || (t == 3 && !smell)) return -1;\n        int nextMode = smell ? 1 : 0;\n        if (t == 2) nextMode = 1;\n        else if (t == 4) nextMode = d + 2;\n        return 6 * next + nextMode;\n    };\n    while (!q.empty()) {\n        int state = q.front();\n        q.pop();\n        int cell = state / 6, mode = state % 6;\n        if (cell == n * m - 1) { out << distance[state] << '\\n'; return 0; }\n        int forced = mode >= 2 ? step(cell, mode, mode - 2) : -1;\n        for (int d = 0; d < 4; ++d) {\n            if (forced != -1 && d != mode - 2) continue;\n            int next = step(cell, mode, d);\n            if (next != -1 && distance[next] == -1) {\n                distance[next] = distance[state] + 1;\n                q.push(next);\n            }\n        }\n    }\n    out << -1 << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The state must remember every feature that changes the next move.",
+      "Purple tiles erase odor and force a direction until continuation is blocked.",
+      "Count each sliding tile as a separate unit-cost transition.",
+      "BFS is valid because the expanded graph has uniform edge costs."
+    ],
+    "commonMistakes": [
+      "Using only a visited-cell flag.",
+      "Turning voluntarily in the middle of an unblocked purple slide.",
+      "Retaining orange odor through purple or allowing blue entry afterward.",
+      "Failing to allow a new direction when a slide is blocked.",
+      "Charging an entire multi-tile slide as one move.",
+      "Not reacquiring odor when a slide ends on orange."
+    ],
+    "alternativeMethods": [
+      "Use Dijkstra on resting states (position, odor). Simulate a whole forced slide as one macro-transition, charging its actual number of moved tiles. Its varying edge costs require Dijkstra rather than a simple FIFO search."
+    ],
+    "difficultyNotes": "The hardest part is modeling the blocked end of a slide. Writing the one-step rules before the search separates movement semantics from shortest-path mechanics.",
+    "id": "solution-usaco-gold-2015-december-p3",
+    "problemId": "usaco-gold-2015-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

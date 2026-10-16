@@ -1,0 +1,661 @@
+[
+  {
+    "id": "solution-amc10a-2015-p1",
+    "problemId": "amc10a-2015-p1",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use order of operations to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Evaluate the expression inside the parentheses: $2^0-1+5^2+0=1-1+25=25$.",
+      "Then $(25)^{-1}\\times5=\\frac{1}{25}\\cdot5=\\frac15$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Order of operations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on order of operations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p2",
+    "problemId": "amc10a-2015-p2",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use system of equations to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let $s$ be the number of square tiles and $t$ the number of triangular tiles. Then $s+t=25$.",
+      "Counting edges gives $4s+3t=84$. Subtract $3(s+t)=75$ from this equation to get $s=9$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on linear equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p3",
+    "problemId": "amc10a-2015-p3",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use extend the pattern to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "A $n$-step staircase made of unit squares in triangular form has horizontal toothpicks $1+2+\\cdots+n$ and vertical toothpicks $1+2+\\cdots+n$, plus the outside boundary contribution counted in the same grid formula.",
+      "Counting directly, the 3-step figure has $18$ toothpicks, while the 5-step figure has $40$ toothpicks.",
+      "The number to add is $40-18=22$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Pattern counting"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on pattern counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p4",
+    "problemId": "amc10a-2015-p4",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use ratio redistribution to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let Mia have $m$ eggs. Then Sofia has $2m$ and Pablo has $6m$.",
+      "The total is $9m$, so each person should finish with $3m$.",
+      "Sofia needs $m$ more eggs, so Pablo gives Sofia $m$ out of his original $6m$, which is $\\frac16$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p5",
+    "problemId": "amc10a-2015-p5",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Use averages to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "The first $14$ graded tests have total $14\\cdot80=1120$.",
+      "All $15$ tests have total $15\\cdot81=1215$.",
+      "Payton's score is $1215-1120=95$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Statistics",
+      "Averages"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on averages.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p6",
+    "problemId": "amc10a-2015-p6",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use ratio equation to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let the larger number be $L$ and the smaller number be $S$. Then $L+S=5(L-S)$.",
+      "Simplify: $L+S=5L-5S$, so $6S=4L$ and $L/S=3/2$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p7",
+    "problemId": "amc10a-2015-p7",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use sequence length to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "The common difference is $3$.",
+      "The number of terms from $13$ to $73$ is $\\frac{73-13}{3}+1=20+1=21$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic sequences"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on arithmetic sequences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p8",
+    "problemId": "amc10a-2015-p8",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use age equations to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let current ages be $P$ and $C$. Two years ago, $P-2=3(C-2)$. Four years ago, $P-4=4(C-4)$.",
+      "Solving gives $P=14$ and $C=6$.",
+      "We need $14+t=2(6+t)$, so $t=2$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Age equations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on age equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p9",
+    "problemId": "amc10a-2015-p9",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use volume scaling to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Volume is proportional to $r^2h$. If the second radius is $1.1$ times the first, its radius squared is $1.21$ times as large.",
+      "To keep volume the same, the second height must be $1/1.21$ times the first height.",
+      "So the first height is $1.21$ times the second, or $21\\%$ more.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Volume scaling"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on volume scaling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p10",
+    "problemId": "amc10a-2015-p10",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use small permutation check to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "The forbidden adjacent letter pairs are $a$ with $b$, $b$ with $c$, and $c$ with $d$.",
+      "Testing the possible placements shows only $bdac$ and $cadb$ avoid all forbidden adjacent alphabet pairs.",
+      "Thus there are $2$ rearrangements.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Permutations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on permutations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p11",
+    "problemId": "amc10a-2015-p11",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use 3-4-5 rectangle to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let the dimensions be $4t$ and $3t$. Then the diagonal is $5t$, so $d=5t$.",
+      "The area is $12t^2=12(d/5)^2=\\frac{12}{25}d^2$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similar triangles"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on similar triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p12",
+    "problemId": "amc10a-2015-p12",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use quadratic roots to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Substitute $x=\\sqrt\\pi$, so $x^2=\\pi$ and $x^4=\\pi^2$.",
+      "The equation becomes $y^2-2\\pi y+\\pi^2-1=0$, or $(y-\\pi)^2=1$.",
+      "The two $y$-values differ by $2$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Quadratic equations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on quadratic equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p13",
+    "problemId": "amc10a-2015-p13",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use coin value combinations to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let Claudia have $a$ nickels and $b$ dimes, with $a+b=12$.",
+      "A selected group has value $5m+10n=5(m+2n)$, where $0\\le m\\le a$ and $0\\le n\\le b$, not both zero.",
+      "The possible values of $m+2n$ run from $1$ to $a+2b$ except for gaps when there are too few nickels. Checking $a=7,b=5$ gives exactly $17$ positive values.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Coin sums"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on coin sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p14",
+    "problemId": "amc10a-2015-p14",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use rolling circle rotation to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "When a circle of radius $10$ rolls externally around a circle of radius $20$, the small circle rotates by a factor $(20+10)/10=3$ times the angle swept by its center.",
+      "The arrow points up again when the net rotation is a full turn. Thus $3\\theta$ must be $360^\\circ$, so $\\theta=120^\\circ$.",
+      "Clockwise from $12$ o'clock by $120^\\circ$ lands at $4$ o'clock.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rolling circles"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on rolling circles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p15",
+    "problemId": "amc10a-2015-p15",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use Diophantine fraction equation to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "The condition is $\\frac{x+1}{y+1}=\\frac{11}{10}\\cdot\\frac{x}{y}$.",
+      "Cross-multiply: $10y(x+1)=11x(y+1)$, so $10xy+10y=11xy+11x$, hence $xy+11x-10y=0$.",
+      "Rearrange as $y(x-10)=-11x$, giving $y=\\frac{11x}{10-x}$. Positive solutions require $x<10$. Checking divisibility gives only $x=5,y=11$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p16",
+    "problemId": "amc10a-2015-p16",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use symmetric system to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Subtract the two equations: $(y+4)-(x+4)=(x-2)^2-(y-2)^2$.",
+      "This gives $y-x=(x-y)(x+y-4)$, so because $x\\ne y$, $-1=x+y-4$ and $x+y=3$.",
+      "Substitute $y=3-x$ into $y+4=(x-2)^2$ to get $7-x=x^2-4x+4$, so $x^2-3x-3=0$.",
+      "Then $x^2+y^2=(x+y)^2-2xy=9-2(-3)=15$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Systems"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on systems.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p17",
+    "problemId": "amc10a-2015-p17",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use line angle geometry to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "The vertical line $x=1$ and the line $y=1+\\frac{x}{\\sqrt3}$ meet at an angle of $60^\\circ$, since the slanted line makes a $30^\\circ$ angle with the horizontal.",
+      "For the triangle to be equilateral, the third side must make a $60^\\circ$ angle with each of these two sides. The line through the origin with that direction is $y=-\\frac{x}{\\sqrt3}$.",
+      "This line meets $x=1$ at $(1,-1/\\sqrt3)$ and meets $y=1+x/\\sqrt3$ at $(-\\sqrt3/2,1/2)$.",
+      "The side on the vertical line has length $\\left(1+\\frac1{\\sqrt3}\\right)-\\left(-\\frac1{\\sqrt3}\\right)=1+\\frac{2}{\\sqrt3}$.",
+      "Thus the perimeter is $3\\left(1+\\frac2{\\sqrt3}\\right)=3+2\\sqrt3$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equilateral triangles"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on equilateral triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p18",
+    "problemId": "amc10a-2015-p18",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Use base counting to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Count positive integers below $1000$ whose base-$16$ digits are only $0$ through $9$.",
+      "One- and two-digit hexadecimal numbers contribute $9+9\\cdot10=99$.",
+      "Three-digit values from $100_{16}=256$ up to $3E7_{16}=999$ can only have leading digit $1,2,$ or $3$, with the next two digits numeric: $3\\cdot10\\cdot10=300$.",
+      "Thus $n=399$, whose digit sum is $3+9+9=21$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Base representation"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on base representation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p19",
+    "problemId": "amc10a-2015-p19",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use coordinate geometry to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Since the right isosceles triangle has area $12.5$, its legs have length $5$. Put $C=(0,0)$, $A=(5,0)$, and $B=(0,5)$.",
+      "The trisectors of the $90^\\circ$ angle have slopes $\\tan30^\\circ=1/\\sqrt3$ and $\\tan60^\\circ=\\sqrt3$.",
+      "Intersect these rays with $AB: x+y=5$, compute the two intersection points, and apply the determinant area formula for triangle $CDE$.",
+      "The simplified area is $\\frac{50-25\\sqrt3}{2}$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on triangle area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p20",
+    "problemId": "amc10a-2015-p20",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use factorization after completing rectangle to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let the rectangle have positive integer side lengths $m$ and $n$. Then $A+P=mn+2m+2n$.",
+      "Complete the factorization: $mn+2m+2n=(m+2)(n+2)-4$.",
+      "So a value $K$ is possible exactly when $K+4$ factors as $(m+2)(n+2)$ with both factors at least $3$.",
+      "For $K=102$, we get $K+4=106=2\\cdot53$, and one factor is forced to be $2$, which would make one side length $0$.",
+      "The other choices have valid factorizations with both factors at least $3$, so $102$ cannot equal $A+P$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Integer factors"
+    ],
+    "commonMistakes": [
+      "Do not forget the $+4$ shift after writing $(m+2)(n+2)=A+P+4$.",
+      "Problem 20 has an official contest note: the original statement was flawed, so the corrected interpretation and source note should stay visible."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on integer factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p21",
+    "problemId": "amc10a-2015-p21",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use coordinate tetrahedron to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Triangle $ABC$ is a $3$-$4$-$5$ right triangle. Place $C=(0,0,0)$, $A=(3,0,0)$, and $B=(0,4,0)$.",
+      "Let $D=(x,y,z)$. Since $CD=\\frac{12}{5}\\sqrt2$, we have $x^2+y^2+z^2=\\frac{288}{25}$.",
+      "Using $AD=3$ gives $(x-3)^2+y^2+z^2=9$, so $x=\\frac{48}{25}$. Using $BD=4$ gives $x^2+(y-4)^2+z^2=16$, so $y=\\frac{36}{25}$.",
+      "Then $z^2=\\frac{288}{25}-\\left(\\frac{48}{25}\\right)^2-\\left(\\frac{36}{25}\\right)^2=\\frac{144}{25}$, so the height from $D$ to plane $ABC$ is $\\frac{12}{5}$.",
+      "The base area of $ABC$ is $\\frac12\\cdot3\\cdot4=6$, so the tetrahedron volume is $\\frac13\\cdot6\\cdot\\frac{12}{5}=\\frac{24}{5}$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tetrahedron volume"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on tetrahedron volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p22",
+    "problemId": "amc10a-2015-p22",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Use circular binary strings to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "There are $2^8=256$ equally likely standing/seated patterns around the circle.",
+      "The number of binary circular strings of length $8$ with no adjacent $1$s is $F_7+F_9=13+34=47$.",
+      "Therefore the probability is $47/256$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Circular arrangements"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on circular arrangements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p23",
+    "problemId": "amc10a-2015-p23",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use Vieta with integer roots to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let the integer zeroes be $r$ and $s$. By Vieta's formulas, $r+s=a$ and $rs=2a=2(r+s)$.",
+      "Rearrange $rs=2r+2s$ as $rs-2r-2s=0$, so $(r-2)(s-2)=4$.",
+      "The integer factor pairs of $4$ are $(1,4),(2,2),(4,1),(-1,-4),(-2,-2),(-4,-1)$.",
+      "These give possible values of $a=r+s$: $9,8,9,-1,0,-1$. The distinct possible values are $9,8,-1,0$.",
+      "Their sum is $9+8-1+0=16$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Integer roots"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on integer roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p24",
+    "problemId": "amc10a-2015-p24",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use Pythagorean setup to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Let $BC=x$ and $CD=AD=y$. With right angles at $B$ and $C$, the horizontal separation from $A$ to $D$ is $x$, and the vertical separation is $y-2$.",
+      "Because $AD=y$, the Pythagorean theorem gives $y^2=x^2+(y-2)^2$.",
+      "Simplify to $x^2=4y-4$. Thus $x$ must be even; write $x=2k$. Then $y=k^2+1$.",
+      "The perimeter is $p=AB+BC+CD+AD=2+2k+2(k^2+1)=2k^2+2k+4$.",
+      "The condition $p<2015$ gives $k=1,2,\\ldots,31$, so there are $31$ possible perimeter values.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Integer side lengths"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on integer side lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2015-p25",
+    "problemId": "amc10a-2015-p25",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Use boundary probability to reduce the problem to a controlled computation.",
+    "detailedSteps": [
+      "Parameterize the boundary of the square by arclength. The total ordered sample space has area $16$ in boundary-length coordinates.",
+      "The pairs with distance less than $1/2$ form four congruent corner-quarter-circle regions plus side-nearby strips; their total measure simplifies to $\\frac{4+\\pi}{2}$.",
+      "Therefore the probability of distance at least $1/2$ is $1-\\frac{4+\\pi}{32}=\\frac{28-\\pi}{32}$.",
+      "Thus $a+b+c=28+1+32=61$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep the stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on geometric probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

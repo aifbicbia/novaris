@@ -1,0 +1,521 @@
+[
+  {
+    "id": "solution-amc12b-2021-spring-p1",
+    "problemId": "amc12b-2021-spring-p1",
+    "finalAnswer": "$\\boxed{19}$ (choice D)",
+    "shortExplanation": "The integers run from minus nine through nine.",
+    "detailedSteps": [
+      "Since $9<3\\pi<10$, the integers with $|x|<3\\pi$ are $-9,-8,\\ldots,0,\\ldots,8,9$. There are $2\\cdot9+1=19$."
+    ],
+    "keyIdeas": [
+      "Integer points in a symmetric interval"
+    ],
+    "commonMistakes": [
+      "Forgetting to count zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Absolute value makes the interval symmetric.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p2",
+    "problemId": "amc12b-2021-spring-p2",
+    "finalAnswer": "$\\boxed{32}$ (choice B)",
+    "shortExplanation": "Eleven pairs contain one shirt of each color.",
+    "detailedSteps": [
+      "The twenty-three blue-blue pairs use 46 blue shirts, leaving $57-46=11$ blue shirts. Each remaining blue shirt belongs to a mixed pair, using eleven yellow shirts.",
+      "The remaining $75-11=64$ yellow shirts form 32 yellow-yellow pairs. The counts $23+11+32=66$ verify the total."
+    ],
+    "keyIdeas": [
+      "Counting mixed pairs first"
+    ],
+    "commonMistakes": [
+      "Subtracting the blue-blue pair count from the student count instead of subtracting twice that count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every unused blue shirt forces a mixed pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p3",
+    "problemId": "amc12b-2021-spring-p3",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice A)",
+    "shortExplanation": "Work inward from the outermost equality.",
+    "detailedSteps": [
+      "Subtracting 2 leaves $1/(1+1/(2+2/(3+x)))=38/53$. Invert, then subtract 1, to get $1/(2+2/(3+x))=15/38$.",
+      "Invert again and subtract 2: $2/(3+x)=8/15$. Thus $3+x=15/4$ and $x=3/4$. Substitution checks every denominator is nonzero."
+    ],
+    "keyIdeas": [
+      "Undoing nested reciprocals"
+    ],
+    "commonMistakes": [
+      "Combining a nested reciprocal as though the numerator were distributed across its denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Invert only after isolating the reciprocal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p4",
+    "problemId": "amc12b-2021-spring-p4",
+    "finalAnswer": "$\\boxed{76}$ (choice C)",
+    "shortExplanation": "The two class means have weights three and four.",
+    "detailedSteps": [
+      "Use student counts 3 t and 4 t. The overall mean is $(84\\cdot3t+70\\cdot4t)/(7t)=(252+280)/7=76$."
+    ],
+    "keyIdeas": [
+      "A class-size weighted average"
+    ],
+    "commonMistakes": [
+      "Taking the unweighted average of 84 and 70."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio refers to students, not classes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p5",
+    "problemId": "amc12b-2021-spring-p5",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The original point is (2,9).",
+    "detailedSteps": [
+      "Rotation about (1,5) sends (a,b) to $(6-b,a+4)$. Reflection in $y=-x$ then sends it to $(-a-4,b-6)$.",
+      "Equating this with (-6,3) gives a=2 and b=9, so b-a=7."
+    ],
+    "keyIdeas": [
+      "Composing a rotation and a reflection"
+    ],
+    "commonMistakes": [
+      "Reflecting about y=x or rotating the point about the origin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate around the rotation center before rotating.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p6",
+    "problemId": "amc12b-2021-spring-p6",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice A)",
+    "shortExplanation": "The receiving base is four times as large.",
+    "detailedSteps": [
+      "The water volume is $(1/3)\\pi(12)^2(18)=864\\pi$. The cylinder base area is $\\pi(24)^2=576\\pi$.",
+      "The water height is $864/576=3/2$ centimeters."
+    ],
+    "keyIdeas": [
+      "Equal water volumes"
+    ],
+    "commonMistakes": [
+      "Using the full cone height with no one-third volume factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pouring preserves volume rather than height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p7",
+    "problemId": "amc12b-2021-spring-p7",
+    "finalAnswer": "$\\boxed{1:14}$ (choice C)",
+    "shortExplanation": "Every odd divisor contributes fourteen times its value to the even sum.",
+    "detailedSteps": [
+      "The actual source product is $34\\cdot34\\cdot63\\cdot270$, which has exactly three factors of 2. Write it as $N=8M$ with M odd.",
+      "Each odd divisor d of M yields the even divisors 2 d,4 d,8 d. Their sum is 14 d, so the even-divisor sum is fourteen times the odd-divisor sum. The required ratio is 1:14."
+    ],
+    "keyIdeas": [
+      "Separate the power of two in a divisor sum"
+    ],
+    "commonMistakes": [
+      "Reading the printed ordinary integers as exponent expressions or omitting an even power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the two-adic exponent affects this ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p8",
+    "problemId": "amc12b-2021-spring-p8",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The two equal chords lie at opposite distances from the center.",
+    "detailedSteps": [
+      "A chord of length 38 lies at distance t from the circle center, with $R^2-t^2=19^2$. The two distinct equal chords therefore have signed offsets -t and t.",
+      "The third equally spaced parallel line is at offset 3 t or -3 t and has chord 34, so $R^2-9t^2=17^2$. Subtracting gives $8t^2=72$, hence t=3.",
+      "The distance between adjacent lines is 2 t=6."
+    ],
+    "keyIdeas": [
+      "Symmetric equal chords"
+    ],
+    "commonMistakes": [
+      "Taking t as the spacing instead of half the spacing between equal chords."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal chord lengths force equal absolute center offsets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p9",
+    "problemId": "amc12b-2021-spring-p9",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "The variable logarithm cancels from the two products.",
+    "detailedSteps": [
+      "Write $t=\\log_2 5$. The first quotient equals $\\log_2 80\\,\\log_2 40=(t+4)(t+3)$, since $1/\\log_{40}2=\\log_2 40$.",
+      "The second equals $(t+5)(t+2)$. Subtracting yields $t^2+7t+12-(t^2+7t+10)=2$."
+    ],
+    "keyIdeas": [
+      "Changing every logarithm to one base"
+    ],
+    "commonMistakes": [
+      "Multiplying by the denominator logarithm instead of its reciprocal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal base-change identity turns quotients into products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p10",
+    "problemId": "amc12b-2021-spring-p10",
+    "finalAnswer": "$\\boxed{10}$ (choice E)",
+    "shortExplanation": "The shifted numbers are twenty-two and thirty-two.",
+    "detailedSteps": [
+      "The sum of integers 1 through 37 is $37\\cdot38/2=703$. Removing a and b gives $703-a-b=ab$, or $(a+1)(b+1)=704=2^6\\cdot11$.",
+      "Assume $a<b$. Both shifted factors lie from 2 to 38. The factor pairs of 704 with smaller entry at most $\\sqrt{704}$ are (1,704),(2,352),(4,176),(8,88),(11,64),(16,44),(22,32). Only (22,32) meets both bounds.",
+      "Thus a=21 and b=31, with difference 10. The remaining sum and product both equal 651."
+    ],
+    "keyIdeas": [
+      "A shifted product of selected integers"
+    ],
+    "commonMistakes": [
+      "Forgetting to add one to both numbers when completing the product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tight upper bound on both factors removes all but one pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p11",
+    "problemId": "amc12b-2021-spring-p11",
+    "finalAnswer": "$\\boxed{12\\sqrt2}$ (choice D)",
+    "shortExplanation": "Both trapezoid completions lie on the extension beyond P.",
+    "detailedSteps": [
+      "Put $A=(0,0)$ and $C=(15,0)$. The distance equations $AB=13$, $BC=14$ give $B=(33/5,56/5)$. Since PC=10, $P=(5,0)$, and $BP=\\sqrt{(8/5)^2+(56/5)^2}=8\\sqrt2$.",
+      "Write a point on BP as $T=P+t(B-P)$. To make ABCT a trapezoid, either $CT\\parallel AB$ or $AT\\parallel BC$. The corresponding two-dimensional cross products give respectively $t=-2$ and $t=-1/2$.",
+      "These produce $T=(9/5,-112/5)$ and $T=(21/5,-28/5)$, both yielding convex quadrilaterals in the stated order. Their separation along BP is $(2-1/2)BP=12\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "The two possible pairs of parallel sides"
+    ],
+    "commonMistakes": [
+      "Checking only one possible pair of opposite parallel sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A trapezoid can use either pair of opposite sides as its bases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p12",
+    "problemId": "amc12b-2021-spring-p12",
+    "finalAnswer": "$\\boxed{\\frac{184}{5}}$ (choice D)",
+    "shortExplanation": "The set contains ten integers, with extremes eight and eighty.",
+    "detailedSteps": [
+      "Let N be its size, l its least value and g its greatest. The middle N-2 values total 35(N-2). Removing g gives $l+35(N-2)=32(N-1)$, so $l=38-3N$.",
+      "Restoring g while l stays removed gives $g+35(N-2)=40(N-1)$, so $g=5N+30$. The difference g-l=72 then gives 8 N-8=72, hence N=10,l=8,g=80.",
+      "The full total is $35\\cdot8+8+80=368$, so its mean is $368/10=184/5=36.8$. A valid middle set is 31,32,33,34,35,36,37,42, showing feasibility with distinct positive integers."
+    ],
+    "keyIdeas": [
+      "Removing and restoring extremes"
+    ],
+    "commonMistakes": [
+      "Returning the least value along with the greatest in the third operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle subset remains unchanged through all operations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p13",
+    "problemId": "amc12b-2021-spring-p13",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "Each of six successive sectors contains exactly one root.",
+    "detailedSteps": [
+      "Let $F(\\theta)=1-3\\sin\\theta+5\\cos3\\theta$. At $\\theta=k\\pi/3$ for k=0 through 6, the cosine term is $5(-1)^k$, while $1-3\\sin\\theta$ lies in [-2,4]. Hence the signs alternate positive and negative. The intermediate value theorem gives six roots in the six open sectors.",
+      "To bound the total, put $z=e^{i\\theta}$ and use $\\sin\\theta=(z-z^{-1})/(2i)$ and $\\cos3\\theta=(z^3+z^{-3})/2$. Multiplying F by $2z^3$ gives the nonzero polynomial $5z^6+3iz^4+2z^3-3iz^2+5$, of degree six.",
+      "Distinct angles in $(0,2\\pi]$ correspond to distinct unit-circle points z, so there can be at most six roots. The six already found therefore exhaust all solutions."
+    ],
+    "keyIdeas": [
+      "Six sign changes and a degree bound"
+    ],
+    "commonMistakes": [
+      "Counting only sign changes without excluding additional roots inside a sector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound from continuity becomes exact when paired with a polynomial degree bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p14",
+    "problemId": "amc12b-2021-spring-p14",
+    "finalAnswer": "$\\boxed{24\\sqrt5}$ (choice A)",
+    "shortExplanation": "The three slant lengths are seven, nine and eleven.",
+    "detailedSteps": [
+      "Write $MA=n$, $MC=n+2$, $MB=n+4$ with n positive odd, and let $DM=h$ be a positive integer. The rectangular base gives $MB^2=MA^2+MC^2-h^2$, hence $h^2=n^2+(n+2)^2-(n+4)^2=(n-2)^2-16$.",
+      "Therefore $(n-2-h)(n-2+h)=16$. Both factors are positive integers of the same parity: positivity follows from $h^2=(n-2)^2-16$ and n>6. Among factor pairs (1,16),(2,8),(4,4), only (2,8) gives positive h and integral n. It gives n=7 and h=3.",
+      "The base side squares are $DA^2=49-9=40$ and $DC^2=81-9=72$. Thus the pyramid volume is $\\tfrac13\\sqrt{40}\\sqrt{72}\\cdot3=24\\sqrt5$."
+    ],
+    "keyIdeas": [
+      "An integer height forces a factorization"
+    ],
+    "commonMistakes": [
+      "Using MB as an edge of the base instead of a slant diagonal from the apex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The consecutive odd lengths turn the height equation into a small integer factor problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p15",
+    "problemId": "amc12b-2021-spring-p15",
+    "finalAnswer": "$\\boxed{23}$ (choice D)",
+    "shortExplanation": "The area is square root eleven plus square root twelve.",
+    "detailedSteps": [
+      "Call the left and right interior points F and G, as in the actual eleven-segment layout. The triangles AEF and ABG are equilateral. Choose the vertical axis along the internal bisector of angle BAE. Since AB=AE=2, put $A=(0,0)$, $B=(-2\\sin\\alpha,-2\\cos\\alpha)$ and $E=(2\\sin\\alpha,-2\\cos\\alpha)$, where $0<\\alpha<90^\\circ$.",
+      "Because C and A are the two intersections of the radius-two circles centered at B and G, the rhombus relation is C=B+G. Similarly D=E+F. Equilateral rotation gives $G=(2\\cos(30^\\circ+\\alpha),-2\\sin(30^\\circ+\\alpha))$ and F its horizontal reflection.",
+      "The displayed left-to-right order C,D and CD=2 yield $3\\sin\\alpha-\\sqrt3\\cos\\alpha=1$. Thus $\\sin(\\alpha-30^\\circ)=1/(2\\sqrt3)$, with the geometrically admissible branch $30^\\circ<\\alpha<90^\\circ$. It follows that $\\sin\\alpha=(3+\\sqrt{33})/12$ and $\\cos\\alpha=(\\sqrt{33}-1)/(4\\sqrt3)$.",
+      "The vertical distance H from A to CD is $3\\cos\\alpha+\\sqrt3\\sin\\alpha=\\sqrt{11}$. Add triangle ABE to trapezoid BCDE: the area simplifies to $(2\\sin\\alpha+1)H-2\\cos\\alpha=\\sqrt{11}+2\\sqrt3$.",
+      "This is $\\sqrt{11}+\\sqrt{12}$, so m+n=23. The coordinates reconstruct all eleven original segments with length 2."
+    ],
+    "keyIdeas": [
+      "Two equilateral triangles fix an equilateral pentagon framework"
+    ],
+    "commonMistakes": [
+      "Treating the drawing as a regular pentagon or omitting the two unlabeled interior points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two internal equilateral triangles determine the geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p16",
+    "problemId": "amc12b-2021-spring-p16",
+    "finalAnswer": "$\\boxed{\\frac{1+a+b+c}{c}}$ (choice A)",
+    "shortExplanation": "The reciprocal-root polynomial is the reversed polynomial divided by c.",
+    "detailedSteps": [
+      "Since c>1, no root of f is zero. The polynomial $x^3f(1/x)=1+ax+bx^2+cx^3$ has exactly the reciprocal roots, including multiplicity.",
+      "Its leading coefficient is c, so $g(x)=(1+ax+bx^2+cx^3)/c$. Substituting x=1 gives $g(1)=(1+a+b+c)/c$."
+    ],
+    "keyIdeas": [
+      "Reversing a polynomial and normalizing its leading term"
+    ],
+    "commonMistakes": [
+      "Forgetting to divide by c to make the reciprocal-root polynomial monic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The constant term of the original becomes the leading coefficient after reversal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p17",
+    "problemId": "amc12b-2021-spring-p17",
+    "finalAnswer": "$\\boxed{2+\\sqrt2}$ (choice B)",
+    "shortExplanation": "Only the larger root is compatible with the longer lower base.",
+    "detailedSteps": [
+      "Let the short base have length l, the long base length L, and the height be H. If the interior point is distance y from AB, the bottom triangle gives $Ly/2=4$, while the top gives $l(H-y)/2=2$. Hence $y=8/L$ and $H-y=4/l$.",
+      "The four areas sum to 14, so $(L+l)H=28$. Setting $r=L/l$ yields $(r+1)(8/r+4)=28$, equivalent to $r^2-4r+2=0$.",
+      "The roots are $2\\pm\\sqrt2$. The source stipulates L>l, so $r=2+\\sqrt2$. The side triangles specify the point's horizontal location; they do not change this base-ratio equation."
+    ],
+    "keyIdeas": [
+      "Areas on parallel bases determine the ratio"
+    ],
+    "commonMistakes": [
+      "Accepting the root below one despite the explicit longer-base condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parallel bases share complementary perpendicular distances to the interior point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p18",
+    "problemId": "amc12b-2021-spring-p18",
+    "finalAnswer": "$\\boxed{-2}$ (choice A)",
+    "shortExplanation": "Both squares must vanish, fixing the real part and modulus.",
+    "detailedSteps": [
+      "Write $z=x+iy$ and $t=|z|^2=x^2+y^2$. Then $|z+2|^2=t+4x+4$ and $|z^2+1|^2=t^2+4x^2-2t+1$.",
+      "The original equality becomes $12t=t^2+4x^2+8x+40$, or $(t-6)^2+4(x+1)^2=0$. Thus t=6 and x=-1; the possible numbers are $z=-1\\pm i\\sqrt5$.",
+      "Since $z\\overline z=6$, we have $6/z=\\overline z$. Therefore $z+6/z=z+\\overline z=2x=-2$ for both possibilities."
+    ],
+    "keyIdeas": [
+      "A sum of two nonnegative squares"
+    ],
+    "commonMistakes": [
+      "Treating the modulus of z squared plus one as the square of the modulus plus one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completing squares removes the apparent freedom in the complex number.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p19",
+    "problemId": "amc12b-2021-spring-p19",
+    "finalAnswer": "$\\boxed{17}$ (choice B)",
+    "shortExplanation": "Eight and nine faces attain the smallest possible total.",
+    "detailedSteps": [
+      "Let the dice have m and n faces, with $6\\le m\\le n$. There are always six outcomes summing to 7. Since all ordered outcomes have the same denominator mn, the given ratio forces eight outcomes summing to 10.",
+      "At most m pairs can sum to 10, so m must be at least eight. If m=n=8, the valid first-die values are 2 through 8, only seven outcomes. Thus n must be at least nine, and m+n is at least 17.",
+      "For dice with eight and nine faces, the sum-10 outcomes use first-die values 1 through 8, giving eight. The sum-12 outcomes use first-die values 3 through 8, giving six, so its probability is $6/(8\\cdot9)=1/12$. This pair meets both requirements and attains 17."
+    ],
+    "keyIdeas": [
+      "The count for a sum of seven is fixed"
+    ],
+    "commonMistakes": [
+      "Comparing outcome counts across sums without using the same total number of ordered outcomes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound plus an explicit attainable pair is enough to establish the minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p20",
+    "problemId": "amc12b-2021-spring-p20",
+    "finalAnswer": "$\\boxed{-z}$ (choice A)",
+    "shortExplanation": "The quadratic relation makes the cube equal to one.",
+    "detailedSteps": [
+      "Modulo $z^2+z+1$, the identity $z^3-1=(z-1)(z^2+z+1)$ gives $z^3\\equiv1$. Since $2021\\equiv2\\pmod3$, $z^{2021}+1\\equiv z^2+1$.",
+      "The divisor relation also gives $z^2+1\\equiv-z$. This has degree below two, so it is the unique remainder."
+    ],
+    "keyIdeas": [
+      "Reduce exponents modulo three"
+    ],
+    "commonMistakes": [
+      "Returning the quadratic z squared plus one before completing the reduction to degree below two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Polynomial congruences reduce a large exponent without finding the quotient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p21",
+    "problemId": "amc12b-2021-spring-p21",
+    "finalAnswer": "$\\boxed{2\\le S<6}$ (choice D)",
+    "shortExplanation": "There are exactly two positive roots, one explicit and one between two and four.",
+    "detailedSteps": [
+      "The actual stacked exponents give $x^{2^{\\sqrt2}}=(\\sqrt2)^{2^x}$. Taking natural logarithms yields $\\ln x/2^x=\\ln2/2^{1+\\sqrt2}$. The right side is positive, so x>1.",
+      "Let $h(x)=\\ln x/2^x$. Its derivative has the sign of $1/x-(\\ln2)\\ln x$, whose derivative is $-1/x^2-(\\ln2)/x<0$. That sign expression is positive at x=1 and eventually negative, so h increases to a single maximum and then decreases to zero. Any positive level below its maximum is met exactly twice.",
+      "One root is $x=\\sqrt2$. Also $h(2)=\\ln2/4$ is greater than the required level because $1+\\sqrt2>2$, while $h(4)=\\ln2/8$ is smaller because $1+\\sqrt2<3$. Thus the other root lies strictly between 2 and 4; the level is indeed below the maximum.",
+      "The sum satisfies $2+\\sqrt2<S<4+\\sqrt2<6$. In particular, the listed statement $2\\le S<6$ is true."
+    ],
+    "keyIdeas": [
+      "Unimodality after taking logarithms"
+    ],
+    "commonMistakes": [
+      "Flattening either of the two stacked exponents, or locating roots numerically without proving there are no others."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The derivative classification supplies the exhaustive root count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p22",
+    "problemId": "amc12b-2021-spring-p22",
+    "finalAnswer": "$\\boxed{\\text{(6,2,1)}}$ (choice B)",
+    "shortExplanation": "Only the second listed configuration has zero combined game value.",
+    "detailedSteps": [
+      "For a wall of n bricks, let g(n) be the least nonnegative integer absent from all next-state values. Removing one brick in position i+1 leaves wall lengths i and n-i-1; removing two adjacent bricks leaves i and n-i-2. The next-state values are the XORs of those two wall values.",
+      "Starting with g(0)=0, exhaustive evaluation of these actual moves gives $g(1),\\ldots,g(6)=1,2,3,1,4,3$. Independent walls combine by XOR. A zero total is losing for the player to move: every move changes the value of one wall, and a nonzero total has a move to zero by the defining least-excluded-value property. More explicitly, for a nonzero combined XOR, choose a wall whose value has the highest nonzero bit of that XOR. Replacing its value by its XOR with the total produces a smaller value, which occurs among its legal moves by the least-excluded-value definition, and makes the total zero. From zero, every legal move changes one wall value and gives a nonzero total. Induction on the remaining number of bricks proves these win/loss claims.",
+      "The five listed configurations have combined values 3,0,3,1,2 respectively. Only (6,2,1) leaves Arjun a losing position, so Beth can guarantee the last brick, choice B.",
+      "The recurrence terminates because every move reduces the total brick count; a separate direct win/loss enumeration of all reachable split-wall states confirms all five outcomes."
+    ],
+    "keyIdeas": [
+      "An impartial game with splitting walls"
+    ],
+    "commonMistakes": [
+      "Treating a split wall as one intact wall or interpreting removal of two as removal from different walls."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The player taking the last brick wins, so the empty state is losing for its next player.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p23",
+    "problemId": "amc12b-2021-spring-p23",
+    "finalAnswer": "$\\boxed{55}$ (choice A)",
+    "shortExplanation": "Order the occupied bins first, then restore the six ball assignments.",
+    "detailedSteps": [
+      "Three distinct evenly spaced bins can be written uniquely as $i,i+d,i+2d$ with positive integers i,d. One specified assignment of the three labeled balls has probability $2^{-i}2^{-(i+d)}2^{-(i+2d)}=2^{-3i-3d}$.",
+      "All six assignments have the same probability and are disjoint. Summing over i and d gives $6(\\sum_{i=1}^{\\infty}2^{-3i})(\\sum_{d=1}^{\\infty}2^{-3d})=6(1/7)^2=6/49$.",
+      "The fraction is reduced, so p+q=6+49=55. Distinctness is enforced by d>0."
+    ],
+    "keyIdeas": [
+      "Two independent geometric-series indices"
+    ],
+    "commonMistakes": [
+      "Including zero spacing or failing to account for the six labeled-ball orders."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ordering bins gives a unique starting point and positive spacing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p24",
+    "problemId": "amc12b-2021-spring-p24",
+    "finalAnswer": "$\\boxed{81}$ (choice A)",
+    "shortExplanation": "The longer diagonal square is thirty-two plus eight root forty-one.",
+    "detailedSteps": [
+      "Let $a=AC$, $d=BD$, and let the acute angle between their lines be $\\theta$. The projection lengths give $a\\cos\\theta=6$ and $d\\cos\\theta=8$, so a=3d/4.",
+      "A parallelogram has area half the product of its diagonal lengths and the sine of their angle. Thus $ad\\sin\\theta=30$. Squaring and using $\\cos\\theta=8/d$ gives $\\tfrac9{16}d^4-36d^2=900$.",
+      "With $X=d^2$, this is $X^2-64X-1600=0$. The roots are $32\\pm8\\sqrt{41}$; only the positive one is a squared length. It also exceeds 64, as required by $\\cos\\theta<1$.",
+      "Thus m=32,n=8,p=41, and m+n+p=81. The integer 41 is prime, so the radicand has no prime-square divisor."
+    ],
+    "keyIdeas": [
+      "Mutual diagonal projections and the sine area"
+    ],
+    "commonMistakes": [
+      "Using the full diagonal product instead of half that product in the parallelogram area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reciprocal projections reveal the diagonal ratio before the area equation is used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-spring-p25",
+    "problemId": "amc12b-2021-spring-p25",
+    "finalAnswer": "$\\boxed{85}$ (choice E)",
+    "shortExplanation": "The exact interval is from two thirds through, but excluding, nineteen twenty-eighths.",
+    "detailedSteps": [
+      "At m=2/3, the number of allowed y values in column x is $\\lfloor2x/3\\rfloor$. Grouping x into ten consecutive triples gives $\\sum_{q=0}^9(6q+3)=300$. Any smaller slope loses at least one of the ten boundary lattice points.",
+      "The next larger slope y/x has $3y-2x\\ge1$. If x is 1 modulo 3, the smallest numerator is 1 and the largest such denominator is 28, giving increment 1/84 and slope 19/28.",
+      "If x is 2 modulo 3 the numerator is at least 2 and x at most 29, so its increment is at least 2/87, larger than 1/84. If x is 0 modulo 3 the numerator is at least 3, giving increment at least 1/30. Thus no slope occurs between 2/3 and 19/28.",
+      "The number remains 300 precisely on $[2/3,19/28)$. The interval length is 1/84, so a+b=85."
+    ],
+    "keyIdeas": [
+      "The next available rational slope"
+    ],
+    "commonMistakes": [
+      "Using a rounded decimal slope and missing simultaneous lattice points at 2/3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count jumps occur only at exact ratios of lattice coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

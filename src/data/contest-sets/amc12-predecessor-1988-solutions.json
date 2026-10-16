@@ -1,0 +1,632 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1988-p1",
+    "problemId": "amc12-predecessor-1988-p1",
+    "finalAnswer": "$\\boxed{5\\sqrt2}$ (choice D)",
+    "shortExplanation": "The two radicals are $2\\sqrt2$ and $3\\sqrt2$, giving $5\\sqrt2$.",
+    "detailedSteps": [
+      "Since $8=4\\cdot2$ and $18=9\\cdot2$, their square roots are $2\\sqrt2$ and $3\\sqrt2$.",
+      "The remaining radicals are equal, so their coefficients add: $(2+3)\\sqrt2=5\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Extract the perfect-square factors"
+    ],
+    "commonMistakes": [
+      "Adding the radicands before taking a square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only equal radical parts can be combined by adding coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p2",
+    "problemId": "amc12-predecessor-1988-p2",
+    "finalAnswer": "$\\boxed{\\frac{20}{3}}$ (choice D)",
+    "shortExplanation": "The similarity scale is $5/3$, so the requested side is $4(5/3)=20/3$.",
+    "detailedSteps": [
+      "The actual vertex correspondence pairs $AB$ with $XY$ and $BC$ with $YZ$. The scale from the first triangle to the second is therefore $XY/AB=5/3$.",
+      "Apply this same scale to the corresponding second side: $YZ=(5/3)BC=(5/3)4=20/3$."
+    ],
+    "keyIdeas": [
+      "Use the named corresponding sides"
+    ],
+    "commonMistakes": [
+      "Pairing sides by their apparent positions rather than the specified vertex correspondence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity provides one common scale for all corresponding lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p3",
+    "problemId": "amc12-predecessor-1988-p3",
+    "finalAnswer": "$\\boxed{36}$ (choice A)",
+    "shortExplanation": "The four strips have total area forty, with four unit-square overlaps, so the covered area is thirty-six.",
+    "detailedSteps": [
+      "Each strip has area $10\\cdot1=10$, giving a total of forty before overlap correction.",
+      "In the actual arrangement, each of the two horizontal strips crosses each of the two vertical strips. These four disjoint crossings each have area one; parallel strips do not overlap.",
+      "Each crossing was counted twice and should be counted once, so the union area is $40-4=36$."
+    ],
+    "keyIdeas": [
+      "Count each crossing once"
+    ],
+    "commonMistakes": [
+      "Subtracting every overlapping square twice instead of removing only its extra count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source diagram establishes the four crossings and excludes triple overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p4",
+    "problemId": "amc12-predecessor-1988-p4",
+    "finalAnswer": "$\\boxed{-\\frac23}$ (choice B)",
+    "shortExplanation": "The line is $y=2-(2/3)x$, whose slope is $-2/3$.",
+    "detailedSteps": [
+      "Multiply the equation by six to obtain $2x+3y=6$.",
+      "Solving for $y$ gives $y=2-(2/3)x$. The coefficient of $x$ is the slope, $-2/3$."
+    ],
+    "keyIdeas": [
+      "Isolate the vertical coordinate"
+    ],
+    "commonMistakes": [
+      "Reading an intercept denominator as the slope without solving for the vertical coordinate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Slope is the coefficient of the horizontal coordinate in slope-intercept form.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p5",
+    "problemId": "amc12-predecessor-1988-p5",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The constant term gives $b=3$, and then the linear coefficient is $c=b+2=5$.",
+    "detailedSteps": [
+      "Expanding the left side gives $x^2+(b+2)x+2b$. Its constant term must equal six, so $2b=6$ and $b=3$.",
+      "The coefficient of $x$ must also agree. Thus $c=b+2=5$, and substituting verifies the complete identity."
+    ],
+    "keyIdeas": [
+      "Match both constant and linear coefficients"
+    ],
+    "commonMistakes": [
+      "Comparing the linear coefficients before using the constant term to determine the other constant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An identity requires agreement of every coefficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p6",
+    "problemId": "amc12-predecessor-1988-p6",
+    "finalAnswer": "$\\boxed{\\text{rectangle}}$ (choice A)",
+    "shortExplanation": "Four equal quadrilateral angles are each ninety degrees; conversely, a rectangle is an equiangular parallelogram.",
+    "detailedSteps": [
+      "A quadrilateral has angle sum $360^\\circ$. If all four angles are equal, each is $90^\\circ$, so the given parallelogram is a rectangle.",
+      "Conversely, every rectangle has four right angles and is a parallelogram. This proves both directions of the required equivalence.",
+      "A rectangle with unequal side lengths shows that being a square, rhombus or regular polygon is not necessary."
+    ],
+    "keyIdeas": [
+      "Convert equal angles to right angles"
+    ],
+    "commonMistakes": [
+      "Checking only one direction of an if-and-only-if assertion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An equivalence requires necessity and sufficiency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p7",
+    "problemId": "amc12-predecessor-1988-p7",
+    "finalAnswer": "$\\boxed{\\text{about }4\\text{ minutes}}$ (choice D)",
+    "shortExplanation": "The transmission takes $60\\cdot512/120=256$ seconds, about four minutes.",
+    "detailedSteps": [
+      "The total number of chunks is $60\\cdot512=30720$. At 120 chunks per second, the time is $30720/120=256$ seconds.",
+      "Dividing by sixty gives $256/60\\approx4.27$ minutes. The appropriate estimate among the choices is four minutes."
+    ],
+    "keyIdeas": [
+      "Keep the transmission units consistent"
+    ],
+    "commonMistakes": [
+      "Confusing blocks with chunks or reporting a value in seconds as minutes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rate calculations need matching units before division.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p8",
+    "problemId": "amc12-predecessor-1988-p8",
+    "finalAnswer": "$\\boxed{\\frac38}$ (choice B)",
+    "shortExplanation": "The given ratios make $a:b:c=1:2:6$, so the requested ratio is $3/8$.",
+    "detailedSteps": [
+      "The source ratios are $b/a=2$ and $c/b=3$. Hence $b=2a$ and $c=6a$, with the original denominators nonzero.",
+      "Therefore $(a+b)/(b+c)=(a+2a)/(2a+6a)=3a/(8a)=3/8$."
+    ],
+    "keyIdeas": [
+      "Express all three quantities in one scale"
+    ],
+    "commonMistakes": [
+      "Reversing either source fraction when reading the displayed ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single scale makes a chained ratio easy to combine.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p9",
+    "problemId": "amc12-predecessor-1988-p9",
+    "finalAnswer": "$\\boxed{13}$ (choice C)",
+    "shortExplanation": "The largest required bounding-box side is $\\sqrt{164}$, between twelve and thirteen feet, so thirteen feet is sufficient and necessary among integers.",
+    "detailedSteps": [
+      "At orientation $\\theta$ between zero and a right angle, the table has horizontal and vertical extents $10\\cos\\theta+8\\sin\\theta$ and $10\\sin\\theta+8\\cos\\theta$. Translating it cannot reduce either extent.",
+      "A continuous change to the final perpendicular orientation must traverse a quarter-turn orientation interval. On such an interval, one extent reaches $\\sqrt{10^2+8^2}=\\sqrt{164}$: for example, the first reaches it at $\\tan\\theta=8/10$. A turn in the opposite direction encounters the symmetric maximum as well.",
+      "Cauchy–Schwarz bounds both extents by $\\sqrt{164}$ for every orientation. Thus a centered table can rotate continuously inside any square of side at least $\\sqrt{164}$. At each endpoint it can be translated from or to the prescribed corner position without leaving the room.",
+      "Since $12^2<164<13^2$, twelve feet cannot work, while thirteen feet admits that motion. The smallest integer is thirteen."
+    ],
+    "keyIdeas": [
+      "Bound the table throughout a continuous turn"
+    ],
+    "commonMistakes": [
+      "Testing only the initial and final positions and ignoring the larger intermediate extent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The argument needs both a necessary obstruction and an actual feasible motion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p10",
+    "problemId": "amc12-predecessor-1988-p10",
+    "finalAnswer": "$\\boxed{2.44}$ (choice D)",
+    "shortExplanation": "Every admissible value rounds to $2.44$ at the hundredths place, but the thousandths place is not stable.",
+    "detailedSteps": [
+      "The complete possible interval is $[2.43865-0.00312,\\,2.43865+0.00312]=[2.43553,2.44177]$.",
+      "This lies entirely between the hundredth-rounding thresholds $2.435$ and $2.445$. Thus every possible value rounds to $2.44$.",
+      "The two endpoints round differently at the thousandths place, so no more precise displayed candidate can be guaranteed. The most accurate justified choice is $2.44$."
+    ],
+    "keyIdeas": [
+      "Check the full uncertainty interval against rounding thresholds"
+    ],
+    "commonMistakes": [
+      "Rounding just the measured midpoint without checking both possible endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Guaranteed digits must be stable over the entire error interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p11",
+    "problemId": "amc12-predecessor-1988-p11",
+    "finalAnswer": "$\\boxed{\\text{city C}}$ (choice C)",
+    "shortExplanation": "The five growth fractions are $1/4,2/5,3/7,3/10,1/3$; the largest is city C’s $3/7$.",
+    "detailedSteps": [
+      "Read the actual original graph: the initial populations are $40,50,70,100,120$, and the final populations are $50,70,100,130,160$, in the same city order.",
+      "The relative increases are $10/40,20/50,30/70,30/100,40/120$, simplifying to $1/4,2/5,3/7,3/10,1/3$.",
+      "The largest is $3/7$, so city C has the greatest percentage increase."
+    ],
+    "keyIdeas": [
+      "Compare fractional growth against each initial population"
+    ],
+    "commonMistakes": [
+      "Comparing absolute increases rather than dividing each increase by its own initial population."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Percentage growth uses the earlier population as its denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p12",
+    "problemId": "amc12-predecessor-1988-p12",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Nine pairs produce units digit zero, while each other units digit occurs eight times.",
+    "detailedSteps": [
+      "Under the standard independent uniform random-draw model, replacing the first slip makes all $9^2=81$ ordered pairs equally likely.",
+      "For a fixed units digit, temporarily allow both entries to range over $0,1,\\ldots,9$. There are ten ordered pairs with that residue. Restricting both entries to $1,\\ldots,9$ removes one pair for residue zero, because $(0,0)$ is the only forbidden pair in that residue.",
+      "For a nonzero residue $d$, the two distinct forbidden pairs are $(0,d)$ and $(d,0)$. Thus zero occurs nine times and every other digit eight times. Zero is most likely."
+    ],
+    "keyIdeas": [
+      "Count the ordered draws by their units digit"
+    ],
+    "commonMistakes": [
+      "Forgetting that replacing the first slip allows the same integer to appear in both draws."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conventional random-draw model is stated explicitly; replacement determines the outcome space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p13",
+    "problemId": "amc12-predecessor-1988-p13",
+    "finalAnswer": "$\\boxed{\\frac3{10}}$ (choice E)",
+    "shortExplanation": "The relation gives $\\cos^2x=1/10$, so $\\sin x\\cos x=3/10$.",
+    "detailedSteps": [
+      "Substitute $\\sin x=3\\cos x$ into $\\sin^2x+\\cos^2x=1$. Then $10\\cos^2x=1$, so $\\cos^2x=1/10$.",
+      "The requested product is $3\\cos^2x=3/10$. Both possible common signs of sine and cosine give the same positive product."
+    ],
+    "keyIdeas": [
+      "Use the unit-circle identity before multiplying"
+    ],
+    "commonMistakes": [
+      "Choosing a sign for cosine unnecessarily and losing the sign relation between sine and cosine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product can be determined even when the individual signs are not.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p14",
+    "problemId": "amc12-predecessor-1988-p14",
+    "finalAnswer": "$\\boxed{-199}$ (choice A)",
+    "shortExplanation": "The ratio is $(-1)(3/1)(5/3)\\cdots(199/197)=-199$.",
+    "detailedSteps": [
+      "The two generalized binomial expressions have the same denominator $100!$, which cancels. Their ratio is $\\prod_{j=0}^{99}(-\\tfrac12-j)/(\\tfrac12-j)$.",
+      "The factor at $j=0$ is negative one. For $j\\ge1$, the factor becomes $(2j+1)/(2j-1)$.",
+      "The remaining factors telescope: $-1\\cdot(3/1)(5/3)\\cdots(199/197)=-199$. None of the canceled denominators is zero."
+    ],
+    "keyIdeas": [
+      "Cancel the factorial and telescope the odd factors"
+    ],
+    "commonMistakes": [
+      "Losing the first factor’s negative sign while simplifying all later positive factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The generalized definition permits noninteger upper arguments; the lower argument still determines the finite product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p15",
+    "problemId": "amc12-predecessor-1988-p15",
+    "finalAnswer": "$\\boxed{-2}$ (choice A)",
+    "shortExplanation": "The zero remainder conditions give $a=1$ and $b=-2$.",
+    "detailedSteps": [
+      "Modulo $x^2-x-1$, we have $x^2\\equiv x+1$ and $x^3\\equiv2x+1$. Thus $ax^3+bx^2+1$ has remainder $(2a+b)x+(a+b+1)$.",
+      "Divisibility requires $2a+b=0$ and $a+b+1=0$. These give $a=1$ and $b=-2$.",
+      "As a direct check, $x^3-2x^2+1=(x^2-x-1)(x-1)$. The requested coefficient is negative two."
+    ],
+    "keyIdeas": [
+      "Reduce the polynomial modulo the required divisor"
+    ],
+    "commonMistakes": [
+      "Setting only one of the two linear-remainder coefficients to zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A quadratic divisor leaves a remainder of degree at most one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p16",
+    "problemId": "amc12-predecessor-1988-p16",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice C)",
+    "shortExplanation": "The inner altitude is half the outer altitude, so the area ratio is $1/4$.",
+    "detailedSteps": [
+      "Let the outer altitude be $H$. In an equilateral triangle, the common center is $H/3$ from each side.",
+      "The inner corresponding side is $H/6$ closer to that center than the outer side, as shown in the actual nested orientation. Its distance from the center is $H/3-H/6=H/6$.",
+      "The inner altitude is three times that distance, namely $H/2$. The parallel-sided equilateral triangles are similar, so their area ratio is $(1/2)^2=1/4$."
+    ],
+    "keyIdeas": [
+      "Measure each corresponding side from the common center"
+    ],
+    "commonMistakes": [
+      "Taking the distance between the two sides as the inner triangle’s altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area scales as the square of the corresponding length ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p17",
+    "problemId": "amc12-predecessor-1988-p17",
+    "finalAnswer": "$\\boxed{\\frac{18}{5}}$ (choice C)",
+    "shortExplanation": "The valid branch has $x=32/5$ and $y=-14/5$, so $x+y=18/5$.",
+    "detailedSteps": [
+      "If $x\\le0$, the first equation reduces to $y=10$. The second then gives $x=12$, contradicting that sign. Thus $x>0$.",
+      "If $y\\ge0$, the second equation gives $x=12$; the first would then give $y=-14$, again a contradiction. Hence $y<0$.",
+      "On this valid sign region the equations become $2x+y=10$ and $x-2y=12$. Solving gives $x=32/5$, $y=-14/5$. Both signs are correct, and the sum is $18/5$."
+    ],
+    "keyIdeas": [
+      "Reject inconsistent absolute-value sign regions"
+    ],
+    "commonMistakes": [
+      "Solving a sign-region linear system without checking whether the resulting values have the assumed signs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sign consistency is part of solving an absolute-value equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p18",
+    "problemId": "amc12-predecessor-1988-p18",
+    "finalAnswer": "$\\boxed{16}$ (choice B)",
+    "shortExplanation": "Each of the four games has two possible winners, and distinct winner histories produce distinct final prize orders, giving sixteen.",
+    "detailedSteps": [
+      "The playoff contains exactly four games. At each game either of its two participants can win, so there are $2^4=16$ winner histories.",
+      "Different histories give different final orders: the fifth-place bowler identifies the first loser and therefore the first winner. The fourth-place bowler then identifies the next loser and winner, and so on.",
+      "Thus the prize order determines the entire history, making this count free of duplication. There are sixteen possible orders."
+    ],
+    "keyIdeas": [
+      "Count the four successive binary outcomes"
+    ],
+    "commonMistakes": [
+      "Counting all permutations of five bowlers even though the fixed elimination schedule restricts the possible orders."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sequential outcome count needs a reason why its final outcomes are distinct.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p19",
+    "problemId": "amc12-predecessor-1988-p19",
+    "finalAnswer": "$\\boxed{(ax+by)^2}$ (choice B)",
+    "shortExplanation": "The numerator factors as $(bx+ay)(ax+by)^2$, so the original quotient is $(ax+by)^2$ wherever defined.",
+    "detailedSteps": [
+      "Write $S=a^2x^2+b^2y^2$. The numerator is $bx(S+2a^2y^2)+ay(S+2b^2x^2)$.",
+      "The two extra terms add to $2abxy(ay+bx)$. Hence the whole numerator is $(bx+ay)(S+2abxy)=(bx+ay)(ax+by)^2$.",
+      "Cancel the original denominator $bx+ay$ to obtain $(ax+by)^2$. This cancellation describes the original expression only where $bx+ay\\ne0$; it does not assign a value at an undefined original input."
+    ],
+    "keyIdeas": [
+      "Collect a shared quadratic before factoring"
+    ],
+    "commonMistakes": [
+      "Replacing the two different parenthesized expressions by one common expression before accounting for their extra terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A canceled formula retains the original expression’s domain restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p20",
+    "problemId": "amc12-predecessor-1988-p20",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The width is $AG=2/\\sqrt5$. With area four, the reassembled rectangle has height $2\\sqrt5$ and aspect ratio five.",
+    "detailedSteps": [
+      "Use the linked publisher-book diagram, where $G$ is the actual perpendicular foot. Set $B=(0,0)$, $A=(0,2)$, $F=(1,2)$. Then $BF$ lies on $y=2x$ and the perpendicular through $A$ lies on $y=2-x/2$, giving $G=(4/5,8/5)$. Thus $AG^2=4/5$.",
+      "The top right triangle in the displayed reassembly is the original triangle $ABG$; its shorter perpendicular leg $AG=2/\\sqrt5$ is the rectangle’s width. The four pieces conserve the square’s area, four, so the height is $4/(2/\\sqrt5)=2\\sqrt5$.",
+      "A complete congruence check can be made in units of $1/\\sqrt5$. Set $X=(0,10)$, $W=(2,10)$, $R=(2,6)$, $L=(0,5)$, $S=(2,1)$, $Y=(0,0)$ and $Z=(2,0)$. The four displayed pieces are triangles $XWR,YZS,XLR$ and parallelogram $LRSY$. Their edge lengths and included angles match $ABG,AGF,ECD,BEDF$, respectively, and they partition the $2$ by $10$ rectangle.",
+      "The required height-to-base ratio is $(2\\sqrt5)/(2/\\sqrt5)=5$. The modern redraw’s displaced $G$ label is not used to infer the cut."
+    ],
+    "keyIdeas": [
+      "Use the perpendicular cut as the rectangle’s width"
+    ],
+    "commonMistakes": [
+      "Treating the displaced modern label as the perpendicular foot or assuming the rectangle’s long side is one original square edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original publisher figure and the complete reassembly determine which cut length is the rectangle’s width.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p21",
+    "problemId": "amc12-predecessor-1988-p21",
+    "finalAnswer": "$\\boxed{289}$ (choice E)",
+    "shortExplanation": "The real part is negative fifteen and the magnitude is seventeen, so its square is $289$.",
+    "detailedSteps": [
+      "The imaginary part gives $z=a+8i$ for a real number $a$. Writing $r=|z|\\ge0$, the real part of the equation gives $r=2-a$.",
+      "Also $r^2=a^2+64$. Substituting and squaring yields $(2-a)^2=a^2+64$, so $4-4a=64$ and $a=-15$.",
+      "Then $r=17$ is nonnegative and satisfies the unsquared equation. The requested value is $r^2=289$."
+    ],
+    "keyIdeas": [
+      "Separate the real equation from the magnitude equation"
+    ],
+    "commonMistakes": [
+      "Squaring without checking the resulting nonnegative magnitude in the original equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign of an absolute value remains a constraint after squaring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p22",
+    "problemId": "amc12-predecessor-1988-p22",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The bounds are $476<x^2<676$, admitting exactly $x=22,23,24,25$.",
+    "detailedSteps": [
+      "All three angles are acute exactly when each squared side is less than the sum of the other two squared sides. The meaningful bounds here are $24^2<10^2+x^2$ and $x^2<10^2+24^2$.",
+      "They reduce to $476<x^2<676$. The remaining inequality, $10^2<24^2+x^2$, is automatic.",
+      "Since $21^2<476<22^2$ and $26^2=676$, the positive integer candidates are $22,23,24,25$. They all satisfy the triangle inequalities as well, giving four choices."
+    ],
+    "keyIdeas": [
+      "Apply all strict acute-angle inequalities"
+    ],
+    "commonMistakes": [
+      "Including the endpoint twenty-six, which makes a right triangle rather than an acute triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Strict inequalities distinguish acute triangles from right triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p23",
+    "problemId": "amc12-predecessor-1988-p23",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "The two faces containing the edge forty-one force the opposite edge to be thirteen; that value also admits a nondegenerate tetrahedron.",
+    "detailedSteps": [
+      "Each face containing $AB=41$ needs its other two edges to sum to more than forty-one. If $CD$ is eighteen, twenty-seven or thirty-six, the four remaining lengths cannot be split into two disjoint pairs satisfying this requirement: every qualifying pair uses the same largest remaining length.",
+      "If $CD=7$, the only qualifying disjoint pairs are $(13,36)$ and $(18,27)$. One way of joining their ends gives a face with sides $36,27,7$, violating $27+7>36$; the other gives a face with sides $13,27,7$, violating $13+7>27$. Thus seven is impossible.",
+      "With $CD=13$, choose $AC=7$, $BC=36$, $AD=18$, $BD=27$. All four faces satisfy their triangle inequalities. To check actual spatial realization, place $A=(0,0,0)$ and $B=(41,0,0)$. The distance equations give $x_C=217/41$, $x_D=638/41$ and $y_C^2=35280/1681$.",
+      "Take $C=(x_C,y_C,0)$ with $y_C>0$. The condition $CD=13$ determines $y_D$ by $x_Cx_D+y_Cy_D=102$. The final squared height is $z_D^2=139964/2205>0$, so these distances produce a genuine nondegenerate tetrahedron. The opposite edge is therefore thirteen."
+    ],
+    "keyIdeas": [
+      "Pair the edges on each side of the longest edge"
+    ],
+    "commonMistakes": [
+      "Checking the two longest-edge faces alone, or assuming valid individual faces automatically produce a spatial tetrahedron."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Necessary triangle inequalities eliminate the other cases; a positive spatial construction verifies the surviving one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p24",
+    "problemId": "amc12-predecessor-1988-p24",
+    "finalAnswer": "$\\boxed{80}$ (choice C)",
+    "shortExplanation": "The leg length is ten, the shorter base four, and the height eight, giving area eighty.",
+    "detailedSteps": [
+      "Let each leg have length $\\ell$ and the shorter base have length $b$. The acute base angle has sine $4/5$ and cosine $3/5$, so $b=16-2(3\\ell/5)$ and the height is $4\\ell/5$.",
+      "A quadrilateral circumscribed around a circle has equal sums of opposite sides, because the two tangent lengths from each vertex are equal. Here this gives $16+b=2\\ell$.",
+      "Substituting the projection formula yields $32-6\\ell/5=2\\ell$, so $\\ell=10$, $b=4$ and the height is eight. The area is $\\tfrac12(16+4)8=80$.",
+      "These dimensions are attainable: the symmetric trapezoid with lower vertices $(0,0),(16,0)$ and upper vertices $(6,8),(10,8)$ has an incircle centered at $(8,4)$ with radius four, tangent to both bases and both legs."
+    ],
+    "keyIdeas": [
+      "Combine tangent-length equality with the base-angle projection"
+    ],
+    "commonMistakes": [
+      "Using the tangent-side sum as though it alone determined the height without the angle condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The incircle and the angle together determine the shape.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p25",
+    "problemId": "amc12-predecessor-1988-p25",
+    "finalAnswer": "$\\boxed{34}$ (choice E)",
+    "shortExplanation": "The group sizes are in the ratio $3:4:5$, giving overall mean $34$.",
+    "detailedSteps": [
+      "Let the three positive group sizes be $u,v,w$. The first pair mean gives $37u+23v=29(u+v)$, hence $v=4u/3$.",
+      "The second pair mean gives $37u+41w=(79/2)(u+w)$, hence $w=5u/3$. Thus the sizes are proportional to $3,4,5$. The remaining pair mean also checks: $(23\\cdot4+41\\cdot5)/9=33$.",
+      "The total mean is $(37\\cdot3+23\\cdot4+41\\cdot5)/(3+4+5)=408/12=34$. Disjointness makes these weighted totals add directly."
+    ],
+    "keyIdeas": [
+      "Recover the relative group sizes before averaging"
+    ],
+    "commonMistakes": [
+      "Averaging the three group means equally even though their populations differ."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairwise union averages determine the missing relative populations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p26",
+    "problemId": "amc12-predecessor-1988-p26",
+    "finalAnswer": "$\\boxed{\\frac{1+\\sqrt5}{2}}$ (choice D)",
+    "shortExplanation": "A common exponent gives $u^2+u=1$ for $u=(3/4)^t$, so the requested reciprocal is $(1+\\sqrt5)/2$.",
+    "detailedSteps": [
+      "Write the common logarithm value as $t$. Then $p=9^t$, $q=12^t$ and $p+q=16^t$.",
+      "Dividing the last relation by $16^t$ gives $(9/16)^t+(3/4)^t=1$. Set $u=(3/4)^t>0$; then $u^2+u=1$.",
+      "The only positive root is $u=(\\sqrt5-1)/2$. Therefore $q/p=(4/3)^t=1/u=(1+\\sqrt5)/2$. This positive root determines a real exponent and satisfies all three original logarithmic expressions."
+    ],
+    "keyIdeas": [
+      "Normalize the common logarithmic exponent"
+    ],
+    "commonMistakes": [
+      "Accepting the negative quadratic root even though the exponential substitution is positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The squared base ratio turns three different bases into one quadratic substitution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p27",
+    "problemId": "amc12-predecessor-1988-p27",
+    "finalAnswer": "$\\boxed{AB=9,\\ CD=4}$ (choice D)",
+    "shortExplanation": "The area is $(a+d)\\sqrt{ad}$ for $a=AB,d=CD$; only the listed pair $9,4$ gives an integer.",
+    "detailedSteps": [
+      "Put $B=(0,0)$, $C=(w,0)$, $A=(0,a)$ and $D=(w,d)$, with positive lengths. The circle center, as the midpoint of diameter $AD$, is $(w/2,(a+d)/2)$.",
+      "Tangency to $BC$ makes its radius $(a+d)/2$. Equating this with half the diameter gives $w^2+(a-d)^2=(a+d)^2$, so $w=2\\sqrt{ad}$.",
+      "The trapezoid area is $\\tfrac12(a+d)w=(a+d)\\sqrt{ad}$. The actual proposed products $ad$ are $3,10,21,36,55$. Only thirty-six is a square, and an integer multiple of the other irrational square roots cannot be an integer.",
+      "Thus $a=9,d=4$ is the unique listed case; its width is twelve and its area is $13\\cdot6=78$."
+    ],
+    "keyIdeas": [
+      "Use the circle midpoint and tangency to determine the width"
+    ],
+    "commonMistakes": [
+      "Using half the diameter as the horizontal width rather than as the circle’s radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric conditions supply the missing separation of the parallel sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p28",
+    "problemId": "amc12-predecessor-1988-p28",
+    "finalAnswer": "$\\boxed{\\text{not uniquely determined}}$ (choice D)",
+    "shortExplanation": "One solution is $p=2/5$, and a second lies between $3/5$ and one, so the given probability does not determine $p$ uniquely.",
+    "detailedSteps": [
+      "For five independent tosses, exactly three heads has probability $w(p)=\\binom53p^3(1-p)^2=10p^3(1-p)^2$. At $p=2/5$, this equals $144/625$.",
+      "The derivative is $w'(p)=10p^2(1-p)(3-5p)$. Thus $w$ increases strictly on $(0,3/5)$ and decreases strictly on $(3/5,1)$.",
+      "At the maximum, $w(3/5)=216/625>144/625$, while $w(1)=0$. Continuity and strict decrease therefore produce a second solution strictly between $3/5$ and one.",
+      "The two solutions disprove uniqueness. In particular, the solution $2/5$ also disproves the claim that $p$ must exceed $3/5$."
+    ],
+    "keyIdeas": [
+      "Use the two sides of the binomial probability maximum"
+    ],
+    "commonMistakes": [
+      "Finding one valid parameter and assuming that it is the only parameter producing the probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A probability equation may have two parameter values on opposite sides of its maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p29",
+    "problemId": "amc12-predecessor-1988-p29",
+    "finalAnswer": "$\\boxed{\\frac{y_3-y_1}{x_3-x_1}}$ (choice A)",
+    "shortExplanation": "The middle point has zero centered horizontal coordinate, so the least-squares slope is the outer points’ slope.",
+    "detailedSteps": [
+      "Shift the horizontal origin to $x_2$ and write the three coordinates as $-h,0,h$, where $h>0$. For a line $y=mx+b$, minimizing the squared vertical residuals first gives $b=(y_1+y_2+y_3)/3$.",
+      "The slope normal equation is $\\sum x_i(y_i-mx_i-b)=0$. Since $\\sum x_i=0$, it gives $m=h(y_3-y_1)/(2h^2)=(y_3-y_1)/(2h)$.",
+      "Here $2h=x_3-x_1$, so $m=(y_3-y_1)/(x_3-x_1)$. The residual sum is a strictly convex quadratic in $(m,b)$ because the three horizontal coordinates are not all equal, so this stationary line is the unique global best fit."
+    ],
+    "keyIdeas": [
+      "Center the equally spaced horizontal coordinates"
+    ],
+    "commonMistakes": [
+      "Averaging the two neighboring slopes without accounting for the shared middle ordinate’s cancellation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal horizontal spacing cancels the middle point’s contribution to the slope, although it still affects the intercept.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1988-p30",
+    "problemId": "amc12-predecessor-1988-p30",
+    "finalAnswer": "$\\boxed{\\text{infinitely many}}$ (choice E)",
+    "shortExplanation": "An infinite sequence of distinct positive starting points can each reach four, then zero, so infinitely many starts have only finitely many orbit values.",
+    "detailedSteps": [
+      "Let $u_0=4$ and define $u_{k+1}=2-\\sqrt{4-u_k}$. This branch satisfies $4u_{k+1}-u_{k+1}^2=u_k$, so one iteration of the original map sends each $u_{k+1}$ to $u_k$.",
+      "We have $u_1=2$. For $0<t\\le2$, the value $g(t)=2-\\sqrt{4-t}$ is positive. It also satisfies $g(t)<t$: both sides of $\\sqrt{4-t}>2-t$ are nonnegative, and squaring reduces it to $t(3-t)>0$.",
+      "Thus $u_1,u_2,\\ldots$ are all positive and strictly decreasing, hence distinct. Starting at $u_k$, the orbit reaches $u_{k-1},\\ldots,u_0=4$, then zero; zero remains fixed.",
+      "Each of these infinitely many different real starting points therefore produces only finitely many distinct orbit values. This suffices for the listed infinite-count alternative, without needing to classify every finite orbit."
+    ],
+    "keyIdeas": [
+      "Construct infinitely many finite orbits by taking inverse images"
+    ],
+    "commonMistakes": [
+      "Checking only fixed points and cycles while omitting starting points that eventually enter them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A general infinite construction proves the answer; a long finite search would not.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

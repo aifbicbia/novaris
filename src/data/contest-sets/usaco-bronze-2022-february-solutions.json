@@ -1,0 +1,97 @@
+[
+  {
+    "id": "solution-usaco-bronze-2022-february-p1",
+    "problemId": "usaco-bronze-2022-february-p1",
+    "finalAnswer": "Maximize the number $k$ of contiguous groups with equal sum, then output $N-k$. If every entry is zero, output zero immediately.",
+    "shortExplanation": "Adjacent merges preserve the order of the original entries. Their final values are sums of contiguous groups, so the best result keeps as many equal-sum groups as possible.",
+    "detailedSteps": [
+      "Any sequence of adjacent merges produces a partition into contiguous, nonempty groups. Conversely, merge within each group to realize any such partition. A partition into $k$ groups uses exactly $N-k$ merges, since each merge decreases the length by one.",
+      "Let $S$ be the sum of the entries. When $S=0$, all source entries are nonnegative and therefore all are zero already. No modification is needed. Otherwise, an equal group sum $q$ must be positive and satisfy $kq=S$. Thus only group counts $k\\le N$ that divide $S$ need a feasibility scan.",
+      "Try those group counts from largest to smallest. For a candidate, set $q=S/k$ and accumulate entries left to right. When the partial sum equals $q$, close that group and reset the accumulator. If the partial sum exceeds $q$, this candidate cannot work: before the last entry it was too small to close, and nonnegative entries cannot reduce an overshoot.",
+      "Closing a group at the earliest target sum is safe. Zeros which a different partition attaches to that group may instead start the next one without changing its sum. If zeros remain after the final positive-sum group, append them to that last group. Therefore a scan without an overshoot and with final accumulator zero gives exactly $S/q=k$ valid groups.",
+      "The first successful $k$ is the maximum feasible count, so $N-k$ is optimal. A single group always works. The code also skips any target smaller than the largest entry, since that entry could not belong to a group of that sum.",
+      "The outer loop checks $N$ group counts, but only divisors of $S$ trigger array scans. Time is $O(N+N d(S))$, where $d(S)$ is the number of positive divisors; storage is $O(N)$. The source bounds are $T\\le10$, $\\sum N\\le100000$ per input, and $S\\le1000000$ for each individual test case. This last sum limit is per case, rather than across all cases.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nint minimumMerges(const vector<int>& values) {\n    int n = static_cast<int>(values.size()), total = 0;\n    for (int value : values) total += value;\n    if (total == 0) return 0;\n    int largest = *max_element(values.begin(), values.end());\n    for (int groups = n; groups >= 1; --groups) {\n        if (total % groups != 0) continue;\n        int target = total / groups;\n        if (target < largest) continue;\n        int partial = 0;\n        bool possible = true;\n        for (int value : values) {\n            partial += value;\n            if (partial > target) { possible = false; break; }\n            if (partial == target) partial = 0;\n        }\n        if (possible && partial == 0) return n - groups;\n    }\n    return n - 1;\n}\nvoid solve(istream& in, ostream& out) {\n    int tests;\n    in >> tests;\n    while (tests--) {\n        int n;\n        in >> n;\n        vector<int> values(n);\n        for (int& value : values) in >> value;\n        out << minimumMerges(values) << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Adjacent merges correspond exactly to contiguous partitions.",
+      "Keeping more final groups means performing fewer merges.",
+      "Nonnegative entries make a target-sum scan decisive, including when zeros occur."
+    ],
+    "commonMistakes": [
+      "Sorting the entries, which changes which groups are contiguous.",
+      "Searching for equal individual values rather than equal sums of merged groups.",
+      "Dividing by a zero total, or merging an all-zero log unnecessarily.",
+      "Discarding trailing zeros after closing the final positive-sum group."
+    ],
+    "alternativeMethods": [
+      "For a candidate $q$, record all prefix sums. A partition exists precisely when every internal multiple $q,2q,\\ldots,S-q$ occurs as a prefix sum. Nonnegative entries put these distinct multiples in increasing position order, so they supply valid cuts. This gives a useful independent feasibility check."
+    ],
+    "difficultyNotes": "The partition interpretation reduces a sequence of edits to a small set of target sums. The zero-total case and the handling of zero entries deserve explicit attention.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-february-p2",
+    "problemId": "usaco-bronze-2022-february-p2",
+    "finalAnswer": "Count the desired-order cows whose initial position is larger than some later desired cow\u2019s initial position. These and only these cows require a leftward move.",
+    "shortExplanation": "A cow which starts to the right of a cow that should follow it must itself move left. Fixing the desired lineup from left to right moves each such cow once and leaves all others in place.",
+    "detailedSteps": [
+      "Let $p_i$ be the original position of the cow requested at desired position $i$. If a later desired cow $j>i$ has $p_j<p_i$, their initial relative order is wrong. Moving another cow does not reverse that pair, and moving cow $j$ left cannot put cow $i$ before it. Thus cow $i$ must be moved left at least once.",
+      "These forced cows are exactly the positions which are not suffix minima of $p_1,\\ldots,p_N$: some value to their right is smaller. This supplies a lower bound of one modification for each forced cow.",
+      "To attain that bound, fix desired positions from left to right. The unfixed cows keep their original relative order, because taking one desired cow out to put it at the next fixed position leaves the others in order. The next desired cow is already at the front of that unfixed suffix precisely when its original position is the smallest among the remaining cows.",
+      "Leave such a cow where it is. Otherwise, move that desired cow from its later current position to the front of the unfixed suffix, which is one legal move to the left. This constructs the target with one move for every forced cow and none for a suffix-minimum cow, attaining the lower bound.",
+      "Build a table of original positions, translate the desired lineup into those positions, and scan it right to left. Maintain the smallest position seen. Count a cow when its position is larger than that minimum, then update the minimum. The final desired cow is never counted.",
+      "Time is $O(N)$ and storage is $O(N)$ for $N\\le100000$. Both lineups contain exactly the identifiers $1,\\ldots,N$, so the inverse-position lookup is well defined. Only leftward moves are allowed; treating a rightward move as an equivalent operation changes the problem.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<int> position(n + 1), desired(n);\n    for (int i = 0; i < n; ++i) {\n        int cow;\n        in >> cow;\n        position[cow] = i;\n    }\n    for (int i = 0; i < n; ++i) {\n        int cow;\n        in >> cow;\n        desired[i] = position[cow];\n    }\n    int smallest = n, moves = 0;\n    for (int i = n - 1; i >= 0; --i) {\n        if (desired[i] > smallest) ++moves;\n        smallest = min(smallest, desired[i]);\n    }\n    out << moves << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The movement direction forces particular cows to move, rather than just counting displaced positions.",
+      "Suffix minima identify exactly the cows that can remain unmoved.",
+      "The left-to-right construction proves the lower bound is achievable."
+    ],
+    "commonMistakes": [
+      "Using a longest common subsequence formula that permits moving a cow to the right.",
+      "Counting every inversion separately, although one leftward move can fix several inversions.",
+      "Counting every cow whose numerical position changes; other cows can shift right without being selected.",
+      "Confusing desired positions with cow identifiers instead of using the original-position table."
+    ],
+    "alternativeMethods": [
+      "Simulate the left-to-right construction directly: locate each next desired cow and insert it at the fixed-prefix boundary. It makes the same number of moves, but a simple vector implementation takes quadratic time. The suffix-minimum scan computes that count without performing the edits."
+    ],
+    "difficultyNotes": "The essential point is the one-sided movement rule. A necessity argument for each forced cow, followed by a matching construction, gives the short linear algorithm.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-february-p3",
+    "problemId": "usaco-bronze-2022-february-p3",
+    "finalAnswer": "Print `YES` if the word\u2019s letters can be assigned to distinct blocks containing those letters; otherwise print `NO`. Check each requested word independently.",
+    "shortExplanation": "Try the orders of the four physical blocks. For a short word, use only the required prefix of an order; each chosen block supplies one letter.",
+    "detailedSteps": [
+      "A spelling assigns one distinct block to each word position, with that block containing the required letter on at least one face. Such an assignment is sufficient: orient each chosen block to its required face and arrange the blocks in word order. It is also necessary, because one physical block cannot occupy two positions.",
+      "Enumerate all $4!=24$ permutations of the block indices. For a word of length $L\\le4$, check whether the first $L$ blocks in an order contain the corresponding letters. Every assignment of $L$ distinct blocks extends to a full permutation by appending the unused blocks, so this enumeration covers every possible spelling.",
+      "If an order passes every letter check, it supplies a valid arrangement and the answer is `YES`. If all orders fail, no injective assignment exists and the answer is `NO`. Multiple occurrences of a letter on one block do not allow that block to be used twice.",
+      "Start the block order at `0,1,2,3` for each word and use `next_permutation`. Resetting the order is necessary because words are independent. Words shorter than four letters may leave blocks unused.",
+      "At most $N\\le10$ words of length $L\\le4$ are checked, with six faces per block. Time is $O(N\\cdot24\\cdot L\\cdot6)$ and working space is constant for the source-fixed four blocks. Print exactly one uppercase `YES` or `NO` line for every word.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <iostream>\n#include <string>\nusing namespace std;\nbool spellable(const array<string, 4>& blocks, const string& word) {\n    array<int, 4> order = {{0, 1, 2, 3}};\n    do {\n        bool possible = true;\n        for (int i = 0; i < static_cast<int>(word.size()); ++i)\n            if (blocks[order[i]].find(word[i]) == string::npos) possible = false;\n        if (possible) return true;\n    } while (next_permutation(order.begin(), order.end()));\n    return false;\n}\nvoid solve(istream& in, ostream& out) {\n    int words;\n    in >> words;\n    array<string, 4> blocks;\n    for (string& block : blocks) in >> block;\n    while (words--) {\n        string word;\n        in >> word;\n        out << (spellable(blocks, word) ? \"YES\" : \"NO\") << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A block is a physical resource that may be used once per word.",
+      "An assignment for a short word can be extended to an order of all four blocks.",
+      "Face multiplicity affects membership, but not the number of times a block can be used."
+    ],
+    "commonMistakes": [
+      "Pooling all 24 faces and ignoring which letters belong to the same block.",
+      "Using one block for two letters of a word.",
+      "Requiring every word to use all four blocks.",
+      "Failing to reset the permutation, or printing lowercase answers."
+    ],
+    "alternativeMethods": [
+      "Use a short backtracking search over word positions and a four-bit mask of already used blocks. Choose an unused block containing the next letter. This searches the same injective assignments without appending unused blocks."
+    ],
+    "difficultyNotes": "The small number of physical blocks makes complete enumeration practical. Correctly tracking block identity is more important than counting letters globally.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

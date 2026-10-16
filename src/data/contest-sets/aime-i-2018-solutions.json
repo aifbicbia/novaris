@@ -1,0 +1,355 @@
+[
+  {
+    "id": "solution-aime-i-2018-p1",
+    "problemId": "aime-i-2018-p1",
+    "finalAnswer": "$\\boxed{600}$",
+    "shortExplanation": "Count unordered nonnegative factor constants for each possible linear coefficient.",
+    "detailedSteps": [
+      "Because the polynomial is monic, an integer factorization can be written as $(x+r)(x+s)$ with integers $r,s$. The conditions $r+s=a>0$ and $rs=b\\ge0$ force both constants to be nonnegative. Order them so that $0\\le r\\le s$.",
+      "For fixed $a$, the possibilities are $r=0,1,\\ldots,\\lfloor a/2\\rfloor$, with $s=a-r$. Their products are distinct: $r(a-r)$ strictly increases over these integer choices. Thus there are $\\lfloor a/2\\rfloor+1$ different pairs $(a,b)$.",
+      "Pairing the values $a=2k-1$ and $a=2k$ gives $k+(k+1)=2k+1$ choices. Therefore $S=\\sum_{k=1}^{50}(2k+1)=2600$, whose remainder modulo $1000$ is $600$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Integral quadratic factors"
+    ],
+    "commonMistakes": [
+      "Swapping the two factors does not give a new coefficient pair.",
+      "The value b=0 is allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monicity and the sign conditions reduce an unbounded-looking coefficient search to a finite count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p2",
+    "problemId": "aime-i-2018-p2",
+    "finalAnswer": "$\\boxed{925}$",
+    "shortExplanation": "Translate the three representations into linear equations and then enforce the digit bounds.",
+    "detailedSteps": [
+      "Expanding the positional values gives $n=196a+14b+c=225a+15c+b=222a+37c$. Since $a,c$ occur in base six, $1\\le a\\le5$ and $0\\le c\\le5$. Also $0\\le b\\le13$.",
+      "Comparing the first expression with the other two gives $13b=29a+14c$ and $14b=26a+36c$. Multiply these equations by $14$ and $13$, respectively, and subtract. The result is $68a=272c$, so $a=4c$.",
+      "The digit bounds and $a>0$ now force $a=4,c=1$. The first equation gives $b=10$, which is a valid base-fourteen digit. Thus $n=196\\cdot4+14\\cdot10+1=925$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Digits in several bases"
+    ],
+    "commonMistakes": [
+      "A letter occurring in several bases must satisfy the most restrictive digit bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short elimination determines the digits uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p3",
+    "problemId": "aime-i-2018-p3",
+    "finalAnswer": "$\\boxed{157}$",
+    "shortExplanation": "For each possible red-card count, count the favorable color patterns with their correct sampling weights.",
+    "detailedSteps": [
+      "Treat the ten physical cards as distinct. There are $10\\cdot9\\cdot8\\cdot7\\cdot6=30240$ equally likely ordered draws of five cards. Write $(5)_r=5!/(5-r)!$. A fixed color pattern with $r$ reds has $(5)_r(5)_{5-r}$ realizations.",
+      "When $r=0$ or $r=5$, there is one favorable color pattern. For each of $r=1,2,3,4$, there are two: the red block can precede or follow the green block. The weights for $r=0,1,2,3,4,5$ are respectively $120,600,1200,1200,600,120$.",
+      "The favorable count is $120+120+2(600+1200+1200+600)=7440$. Hence the probability is $7440/30240=31/126$, and the required sum is $157$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Sampling cards without replacement"
+    ],
+    "commonMistakes": [
+      "Color strings are not equally likely when cards are drawn without replacement.",
+      "An all-red or all-green row has only one block order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting labeled-card draws avoids assuming independent colors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p4",
+    "problemId": "aime-i-2018-p4",
+    "finalAnswer": "$\\boxed{289}$",
+    "shortExplanation": "Use the apex angle to relate the two equal sides of the smaller triangle.",
+    "detailedSteps": [
+      "Put $x=AD=DE=EC$, so $AE=10-x$. The cosine rule in the large triangle gives $\\cos A=(10^2+10^2-12^2)/(2\\cdot10^2)=7/25$.",
+      "Applying the cosine rule to $\\triangle ADE$ gives $$x^2=x^2+(10-x)^2-\\frac{14}{25}x(10-x).$$ Thus $(10-x)(10-x-14x/25)=0$.",
+      "The strict interior condition gives $0<x<10$, so the factor $10-x$ cannot vanish. Solving the remaining linear equation yields $x=250/39$. This is in the required interval and is reduced, so the answer is $250+39=289$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "An isosceles triangle and the cosine rule"
+    ],
+    "commonMistakes": [
+      "The root x=10 would put E at A and violates the strict interior condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The problem reduces to a linear equation once the degenerate root is excluded.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p5",
+    "problemId": "aime-i-2018-p5",
+    "finalAnswer": "$\\boxed{189}$",
+    "shortExplanation": "Convert each logarithmic equality to a squared identity while retaining the positivity conditions.",
+    "detailedSteps": [
+      "The first equality, with $2x+y>0$, is equivalent to $(2x+y)^2=x^2+xy+7y^2$. Simplifying gives $3(x+2y)(x-y)=0$. The case $y=0$ would force $x=0$, which is outside the logarithm domain.",
+      "If $x=y$, the first domain requires $y>0$, and then $3x+y=4y>0$. If $x=-2y$, it requires $y<0$, and then $3x+y=-5y>0$. Thus the second left-hand logarithm is defined in both cases.",
+      "The second equality is equivalent to $(3x+y)^2=3x^2+4xy+Ky^2$. Dividing by $y^2$ gives $K=6(x/y)^2+2(x/y)+1$. The ratios $x/y=1,-2$ give $K=9,21$, respectively.",
+      "Both values occur, for example at $(x,y)=(1,1)$ and $(2,-1)$. The second right-hand arguments are positive because they equal the positive squares already obtained. The product is $9\\cdot21=189$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithm domains and factorization"
+    ],
+    "commonMistakes": [
+      "Exponentiating a logarithmic equation does not remove its original positive-argument requirements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization limits the ratio x/y to two possibilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p6",
+    "problemId": "aime-i-2018-p6",
+    "finalAnswer": "$\\boxed{440}$",
+    "shortExplanation": "Factor the imaginary part into a sine and a cosine, then count their distinct zeros.",
+    "detailedSteps": [
+      "Write $z=e^{i\\theta}$ with $0\\le\\theta<2\\pi$. The imaginary part must vanish, so $\\sin(720\\theta)-\\sin(120\\theta)=0$. The subtraction identity gives $2\\cos(420\\theta)\\sin(300\\theta)=0$.",
+      "The equation $\\sin(300\\theta)=0$ gives $600$ angles in the interval. The equation $\\cos(420\\theta)=0$ gives $840$ angles.",
+      "There is no overlap. If $\\theta=k\\pi/300$ also satisfied the cosine condition, then $7k/5=\\ell+1/2$ for some integer $\\ell$. This would imply $14k=10\\ell+5$, impossible by parity.",
+      "Therefore $N=600+840=1440$, and its remainder modulo $1000$ is $440$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Unit-circle roots and trigonometric identities"
+    ],
+    "commonMistakes": [
+      "Count angles on a half-open interval so that z=1 is not included twice.",
+      "The zero sets must be checked for overlap before their sizes are added."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring the imaginary part provides a complete description of the admissible unit complex numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p7",
+    "problemId": "aime-i-2018-p7",
+    "finalAnswer": "$\\boxed{52}$",
+    "shortExplanation": "Separate triangles within one base from triangles using both bases, and distinguish the possible apex locations.",
+    "detailedSteps": [
+      "In one regular hexagon, a vertex has two other vertices at distance $1$ and two at distance $\\sqrt3$. Choosing an equal-distance pair gives two isosceles apex choices per vertex, hence $12$ apex counts. The two equilateral triangles are counted three times each, so there are $12-2\\cdot2=8$ distinct isosceles triangles per base, or $16$ altogether.",
+      "Now suppose the triangle has two vertices on one base and one vertex on the other. If the isolated vertex is the apex, the squared distances to the opposite base are $4,5,5,7,7,8$. There are exactly two equal-distance pairs for each of the twelve possible isolated vertices, giving $24$ triangles.",
+      "If the apex is on the base containing two selected vertices, its same-base side is at most $2$, while its cross-base side is at least $2$. Equality requires a diameter of the hexagon and a vertical edge. Choose the base containing the diameter in two ways, the diameter in three ways, and its vertical endpoint in two ways. This gives $12$ more triangles.",
+      "No triangle using both bases is equilateral: equal cross-base sides could not both have length $2$, while every same-base side is at most $2$. Thus the cases do not overlap, and the total is $16+24+12=52$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Isosceles triangles in a prism"
+    ],
+    "commonMistakes": [
+      "Equilateral triangles are counted at each of their three vertices when counting by apex.",
+      "A cross-base isosceles triangle can have its apex on either base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Comparing same-base and cross-base distance ranges isolates the exceptional right isosceles triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p8",
+    "problemId": "aime-i-2018-p8",
+    "finalAnswer": "$\\boxed{147}$",
+    "shortExplanation": "Bound the diameter by the narrowest pair of parallel sides, then exhibit a center attaining that bound.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $B=(6,0)$ and turn counterclockwise by $60^\\circ$ at each vertex. This gives $C=(10,4\\sqrt3)$, $D=(5,9\\sqrt3)$, and $E=(-7,9\\sqrt3)$. If $EF=e$ and $FA=f$, closure gives $f-e=14$ and $e+f=18$, so $e=2,f=16$, and $F=(-8,8\\sqrt3)$.",
+      "The lines $FA$ and $CD$ have equations $\\sqrt3x+y=0$ and $\\sqrt3x+y=14\\sqrt3$. Their separation is $7\\sqrt3$, so any contained circle has diameter at most $7\\sqrt3$.",
+      "To prove attainability, take center $O=(2,5\\sqrt3)$ and radius $7\\sqrt3/2$. The inward distances from $O$ to sides $AB,BC,CD,DE,EF,FA$ are, respectively, $5\\sqrt3,9\\sqrt3/2,7\\sqrt3/2,4\\sqrt3,13\\sqrt3/2,7\\sqrt3/2$. Every distance is at least the chosen radius.",
+      "The hexagon is convex, so lying within all six supporting half-planes places the entire circle inside it. Thus the largest diameter is $7\\sqrt3$, and $d^2=147$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Largest circle in a convex polygon"
+    ],
+    "commonMistakes": [
+      "A bound from two parallel sides is not sufficient without showing that the other four sides also admit the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit center provides a direct feasibility check for the maximal radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p9",
+    "problemId": "aime-i-2018-p9",
+    "finalAnswer": "$\\boxed{210}$",
+    "shortExplanation": "Count choices of one pair of each sum, then correct the sets admitting more than one such choice.",
+    "detailedSteps": [
+      "There are seven distinct pairs summing to $16$ and eight summing to $24$. Of their $7\\cdot8=56$ pair selections, exactly ten share an element: that element can be any integer from $4$ through $15$ except $8$ and $12$, which would repeat an element within a pair. Therefore $46$ selections already have four distinct elements.",
+      "For each of the ten overlapping selections, its three-element union can be extended by any of the other $17$ elements. This gives $170$ additional counts. Every desired four-element set is now counted once for each choice of a sum-$16$ pair and a sum-$24$ pair within it.",
+      "Pairs of the same sum are disjoint. A four-element set cannot have two pairs of each sum, since its total would then be both $32$ and $48$. Thus the only overcounts have three pairs arranged as an alternating path, and each such set is counted twice.",
+      "If the middle pair sums to $16$, write it as $\\{a,16-a\\}$ with $1\\le a\\le7$. Extending both endpoints with sum-$24$ pairs requires $a=5,6,7$: the apparent case $a=4$ would use the invalid pair $\\{12,12\\}$. This gives three sets. If the middle pair sums to $24$, write it as $\\{a,24-a\\}$ with $4\\le a\\le11$; extensions by sum-$16$ pairs are possible exactly for $a=9,10,11$, giving three more.",
+      "Subtracting one extra count for each of these six sets leaves $46+170-6=210$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Overlapping prescribed-sum pairs"
+    ],
+    "commonMistakes": [
+      "The two summing pairs may share an element.",
+      "A pair must contain distinct elements; a repeated value such as 12+12 is invalid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tracking the two sum types as edges makes the overcount structure explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p10",
+    "problemId": "aime-i-2018-p10",
+    "finalAnswer": "$\\boxed{4}$",
+    "shortExplanation": "Track the two circle layers and the spoke index after each step.",
+    "detailedSteps": [
+      "Index the spokes by $i\\in\\{0,1,2,3,4\\}$ counterclockwise, starting with the spoke containing $A$. Let $u_n(i)$ and $v_n(i)$ count paths ending on the inner and outer circles, respectively, after $n$ steps. Initially $u_0(0)=1$ and all other counts are zero.",
+      "All indices are taken modulo five. Each inner vertex receives paths from the previous inner vertex or its paired outer vertex, while each outer vertex receives paths from the next outer vertex or its paired inner vertex. Hence $$u_{n+1}(i)=u_n(i-1)+v_n(i),\\qquad v_{n+1}(i)=v_n(i+1)+u_n(i).$$",
+      "Applying these two recurrences gives the return counts $u_n(0)$ for $n=0,\\ldots,7$ as $1,0,1,0,3,1,10,7$. For $n=8,\\ldots,15$ they are $35,36,127,165,474,715,1807,3004$.",
+      "The recurrence counts each path once according to its final edge, so $n=3004$. Its remainder modulo $1000$ is $4$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Directed walks and dynamic programming"
+    ],
+    "commonMistakes": [
+      "The two circles have opposite allowed directions.",
+      "Spoke moves change the circle but preserve the spoke index."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A ten-state recurrence keeps track of every allowed path without imposing independence assumptions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p11",
+    "problemId": "aime-i-2018-p11",
+    "finalAnswer": "$\\boxed{195}$",
+    "shortExplanation": "The last two base digits impose a congruence modulo the square of the base.",
+    "detailedSteps": [
+      "The requested digits are equivalent to $3^n\\equiv1\\pmod{143^2}$. Since $143^2=11^2\\cdot13^2$, this is equivalent to simultaneous congruences modulo $121$ and $169$.",
+      "Modulo $121$, the powers $3,9,27,81$ are not $1$, while $3^5=243\\equiv1$. Thus the order is exactly $5$, and this congruence requires $5\\mid n$.",
+      "Modulo $13$, the order is $3$, so write $n=3k$. The binomial theorem gives $3^{3k}=(1+26)^k\\equiv1+26k\\pmod{169}$. This equals $1$ precisely when $13\\mid k$, so the order modulo $169$ is $39$.",
+      "The least positive exponent satisfying both conditions is $\\operatorname{lcm}(5,39)=195$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Multiplicative orders modulo prime squares"
+    ],
+    "commonMistakes": [
+      "Two trailing digits require modulus 143 squared, not modulus 143.",
+      "The order modulo a prime does not always multiply by that prime when the modulus is squared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two prime-square factors behave differently, making an explicit order calculation essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p12",
+    "problemId": "aime-i-2018-p12",
+    "finalAnswer": "$\\boxed{683}$",
+    "shortExplanation": "Pair the residue-one and residue-two elements and track the three possible sum residues.",
+    "detailedSteps": [
+      "The six multiples of three do not affect the sum residue. Their inclusion choices multiply numerator and denominator by $2^6$, so ignore them. Pair the six residue-one elements with the six residue-two elements in any fixed way.",
+      "Each pair has four membership choices. Taking neither or both gives residue zero; taking just one gives residue one or two. Thus its residue counts are $(2,1,1)$. After $k$ pairs, let the counts be $(a_k,b_k,b_k)$, equal in the last two positions by symmetry.",
+      "Adding another pair gives $a_{k+1}=2a_k+2b_k$ and $b_{k+1}=a_k+3b_k$. Hence $a_{k+1}-b_{k+1}=a_k-b_k=1$, starting from $(a_0,b_0)=(1,0)$. Also $a_k+2b_k=4^k$. Therefore $a_6=(4^6+2)/3=1366$.",
+      "The probability is $1366/4096=683/2048$. The requested numerator is $683$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Subset sums modulo three"
+    ],
+    "commonMistakes": [
+      "The empty subset is included and has sum zero.",
+      "Only the reduced numerator is requested."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A one-unit difference between the residue counts remains invariant under each pair addition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p13",
+    "problemId": "aime-i-2018-p13",
+    "finalAnswer": "$\\boxed{126}$",
+    "shortExplanation": "Express the two incenters in coordinates; the area simplifies to a constant times the moving cevian length.",
+    "detailedSteps": [
+      "Use $B=(0,0)$, $C=(32,0)$, and $A=(12,h)$, where $h=6\\sqrt{21}$. These coordinates give $AB=30$ and $AC=34$. Write $X=(t,0)$ with $0<t<32$, and put $\\ell=AX=\\sqrt{t^2-24t+900}$.",
+      "An incenter is the average of the vertex vectors weighted by the opposite side lengths. Thus $$I_1=\\left(\\frac{42t}{30+t+\\ell},\\frac{ht}{30+t+\\ell}\\right),$$ and $$I_2=\\left(\\frac{384+22t+32\\ell}{66-t+\\ell},\\frac{h(32-t)}{66-t+\\ell}\\right).$$",
+      "Taking the determinant of $I_1-A$ and $I_2-A$ gives $$2[AI_1I_2]=\\frac{4h\\ell(t+240+8\\ell)}{(30+t+\\ell)(66-t+\\ell)}.$$ Using $\\ell^2=t^2-24t+900$, the denominator simplifies to $12(t+240+8\\ell)$. The positive common factor cancels, so $[AI_1I_2]=h\\ell/6=\\sqrt{21}\\,\\ell$.",
+      "The shortest segment from $A$ to the line $BC$ is perpendicular to it, so $\\ell\\ge h$, with equality at $t=12$. This point lies strictly inside $BC$, making the minimum attainable. Its value is $\\sqrt{21}\\cdot6\\sqrt{21}=126$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Incenters and a moving point"
+    ],
+    "commonMistakes": [
+      "The incenter weights are the lengths of the opposite sides, not the adjacent sides.",
+      "The minimizing perpendicular foot must lie in the allowed segment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cancellation reveals that only the cevian length matters, despite the changing incenters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p14",
+    "problemId": "aime-i-2018-p14",
+    "finalAnswer": "$\\boxed{351}$",
+    "shortExplanation": "Remove the destination from the cycle and count surviving paths on the resulting six-vertex chain.",
+    "detailedSteps": [
+      "Before the first visit to $E$, the frog stays on the path whose vertices, in order, are $P_3,P_2,P_1,S,P_5,P_4$. Index them $0$ through $5$. Let $f_n(i)$ count paths of $n$ jumps that have not yet reached $E$ and end at vertex $i$. Initially $f_0(3)=1$ and the other counts vanish.",
+      "With values outside $0\\le i\\le5$ interpreted as zero, the recurrence is $f_{n+1}(i)=f_n(i-1)+f_n(i+1)$. A path first reaches $E$ on jump $n+1$ exactly when it was at one of the two endpoints after jump $n$. Thus the number of new arrivals is $h_{n+1}=f_n(0)+f_n(5)$.",
+      "The arrival counts for lengths one through six are $0,0,1,1,3,4$. For lengths seven through twelve they are $9,14,28,47,89,155$. Their sum is $351$.",
+      "Once a path arrives, it is removed from the recurrence, so it is counted exactly once and is never extended by fictitious jumps at $E$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "First arrival in an absorbing walk"
+    ],
+    "commonMistakes": [
+      "Count first arrivals only, since the frog stops at E.",
+      "No more than twelve jumps means summing over all allowed arrival times."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absorbing boundary keeps stopping behavior explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2018-p15",
+    "problemId": "aime-i-2018-p15",
+    "finalAnswer": "$\\boxed{59}$",
+    "shortExplanation": "Combine the three diagonal products with a symmetric formula relating side lengths, area, and circumradius.",
+    "detailedSteps": [
+      "Let the four side lengths be $a,b,c,d$, and define $X=ab+cd$, $Y=ac+bd$, and $Z=ad+bc$. The three cyclic orders, up to rotation and reflection, realize these three values as diagonal products by Ptolemy's theorem. Since a quadrilateral has area one-half its diagonal product times the sine of their angle, the given sines imply that $\\{X,Y,Z\\}=\\{3K,10K/3,7K/3\\}$.",
+      "For completeness, consider cyclic order $a,b,c,d$ and the diagonal $e$ between the endpoints of the adjacent sides $a,b$. If the intervening angle is $\\beta$, the opposite angle is $\\pi-\\beta$. Applying the cosine rule on both sides of $e$ and eliminating $\\cos\\beta$ gives $$e^2=\\frac{cd(a^2+b^2)+ab(c^2+d^2)}{ab+cd}=\\frac{YZ}{X}.$$",
+      "The two triangles along this diagonal have total area $K=X\\sin\\beta/2$. Also $e=2R\\sin\\beta$ by the extended sine rule. Therefore $K=eX/(4R)$, and squaring yields $16R^2K^2=XYZ$.",
+      "Here $R=1$, so $16K^2=(3K)(10K/3)(7K/3)=(70/3)K^3$. The convex quadrilateral has positive area, hence $K=24/35$. The fraction is reduced, and the answer is $24+35=59$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Cyclic quadrilateral area and circumradius"
+    ],
+    "commonMistakes": [
+      "The three diagonal products correspond to different cyclic orders of the same four sides.",
+      "Use the sine of the diagonal angle; replacing it with a side angle requires justification."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Deriving the circumradius identity makes the argument independent of a memorized quadrilateral formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

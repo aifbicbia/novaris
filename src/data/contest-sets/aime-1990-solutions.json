@@ -1,0 +1,320 @@
+[
+  {
+    "id": "solution-aime-1990-p1",
+    "problemId": "aime-1990-p1",
+    "finalAnswer": "$\\boxed{528}$",
+    "shortExplanation": "Up to 528 there are 500 allowed integers, and 528 is itself allowed.",
+    "detailedSteps": [
+      "The excluded positive integers up to N are squares or cubes. Their intersection consists of sixth powers. Thus the allowed count is $N-\\lfloor\\sqrt N\\rfloor-\\lfloor\\sqrt[3]N\\rfloor+\\lfloor\\sqrt[6]N\\rfloor$.",
+      "At $N=528$, the three power counts are 22,8,2, giving $528-22-8+2=500$. At 527 the same three counts apply and the allowed count is 499.",
+      "Neither 528 nor 527 is a square or cube. In particular the 500th allowed integer is 528."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion for squares and cubes"
+    ],
+    "commonMistakes": [
+      "Subtracting sixth powers twice without adding them back."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Verify both the count and the candidate\u2019s membership.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p2",
+    "problemId": "aime-1990-p2",
+    "finalAnswer": "$\\boxed{828}$",
+    "shortExplanation": "The two positive square roots are $\\sqrt{43}+3$ and $\\sqrt{43}-3$.",
+    "detailedSteps": [
+      "Because $43+9=52$ and $2\\cdot3\\sqrt{43}=6\\sqrt{43}$, one has $52\\pm6\\sqrt{43}=(\\sqrt{43}\\pm3)^2$. Both square roots are positive since 43 exceeds 9.",
+      "The requested expression is $(\\sqrt{43}+3)^3-(\\sqrt{43}-3)^3$. The odd-in 3 terms survive, giving $18\\cdot43+54=828$."
+    ],
+    "keyIdeas": [
+      "Denesting conjugate radicals before cubing"
+    ],
+    "commonMistakes": [
+      "Replacing the positive square root by the wrong signed conjugate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Denest first; then exploit cancellation in a difference of cubes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p3",
+    "problemId": "aime-1990-p3",
+    "finalAnswer": "$\\boxed{117}$",
+    "shortExplanation": "Finite positive r requires s below 118, and s 117 gives an integral r.",
+    "detailedSteps": [
+      "The regular polygon interior-angle formula gives $1-2/r=(59/58)(1-2/s)$. Rearranging yields $r=116s/(118-s)$.",
+      "Since r is positive and finite, the denominator must be positive, so the integer s is at most 117.",
+      "For $s=117$, this formula gives $r=13572$, an integer exceeding s. Both polygons exist and satisfy the exact ratio, attaining the maximum 117."
+    ],
+    "keyIdeas": [
+      "An integer bound from polygon angle ratios"
+    ],
+    "commonMistakes": [
+      "Allowing a zero denominator as an infinitely sided polygon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A denominator sign gives a sharp bound without enumerating polygon pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p4",
+    "problemId": "aime-1990-p4",
+    "finalAnswer": "$\\boxed{013}$",
+    "shortExplanation": "The common substitution gives u 39, and the positive quadratic root is 13.",
+    "detailedSteps": [
+      "Put $u=x^2-10x$. Combining the three fractions requires $u\\ne29,45,69$ and gives $(2u-74)(u-69)-2(u-29)(u-45)=0$.",
+      "The quadratic terms cancel, leaving $-64u+2496=0$, so $u=39$. It avoids all excluded denominators.",
+      "Now $x^2-10x=39$ factors as $(x-13)(x+3)=0$. The positive solution is 13, and substitution into the original fractions gives $1/10-1/6+1/15=0$."
+    ],
+    "keyIdeas": [
+      "A shared quadratic substitution in a rational equation"
+    ],
+    "commonMistakes": [
+      "Keeping roots introduced by clearing a zero denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common quadratic expression reduces the rational equation to a linear one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p5",
+    "problemId": "aime-1990-p5",
+    "finalAnswer": "$\\boxed{432}$",
+    "shortExplanation": "The minimum integer is $2^4 3^4 5^2=32400$, giving quotient 432.",
+    "detailedSteps": [
+      "For prime exponents e, the divisor count is the product of e+1. Since it equals 75, every e is even. Divisibility by 75 requires primes 3 and 5 to occur, so at least two primes appear.",
+      "The multiplicative partitions of 75 with at least two factors greater than 1 are $3\\cdot25$, $5\\cdot15$, and $3\\cdot5\\cdot5$. Thus the exponent patterns are(24,2),(14,4), and(4,4,2).",
+      "For the two-prime patterns only 3 and 5 occur; placing the larger exponent on 3 minimizes the integer. These minima are $3^{24}5^2$ and $3^{14}5^4$, both larger than 32400.",
+      "For the three-prime pattern, the extra prime is optimally 2, and descending exponents on increasing primes minimize the product. This gives $2^4 3^4 5^2=32400$. Its divisor count is 5 times 5 times 3, and it is a multiple of 75.",
+      "The requested quotient is $32400/75=432$."
+    ],
+    "keyIdeas": [
+      "Minimizing an integer with an odd divisor count"
+    ],
+    "commonMistakes": [
+      "Choosing the smallest divisor-count pattern without enforcing divisibility by both 3 and 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An odd divisor count makes the number a square and leaves very few exponent patterns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p6",
+    "problemId": "aime-1990-p6",
+    "finalAnswer": "$\\boxed{840}$",
+    "shortExplanation": "The September population is 1050 and the May population is 840.",
+    "detailedSteps": [
+      "Under the given survival assumption,45 of the 60 tagged May fish remain in September. The representative sample gives tagged fraction 3/70, so the September population is $45/(3/70)=1050$.",
+      "Only 60 percent of the September population were present in May, giving 630 surviving May fish. These are 75 percent of the May population.",
+      "Therefore the May population is $630/(3/4)=840$."
+    ],
+    "keyIdeas": [
+      "A corrected mark-and-recapture estimate"
+    ],
+    "commonMistakes": [
+      "Applying the 25 percent loss to the entire September population instead of the original May population."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the two dates and their percentage denominators separate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p7",
+    "problemId": "aime-1990-p7",
+    "finalAnswer": "$\\boxed{089}$",
+    "shortExplanation": "The sum of unit directions is parallel to(2,-11), giving a 11,c 78.",
+    "detailedSteps": [
+      "The vectors from P to Q and R are(-7,-24) and(9,-12), of lengths 25 and 15. Their unit-vector sum is $(8/25,-44/25)$, parallel to(2,-11).",
+      "The internal angle bisector has that direction, so a normal vector is(11,2). Its equation through P(-8,5) is $11x+2y+78=0$.",
+      "In the required normalization, $a=11$ and $c=78$, and their sum is 89."
+    ],
+    "keyIdeas": [
+      "The direction of an internal angle bisector"
+    ],
+    "commonMistakes": [
+      "Adding the unnormalized side vectors, which need not give the angle bisector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the two ray directions before averaging them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p8",
+    "problemId": "aime-1990-p8",
+    "finalAnswer": "$\\boxed{560}$",
+    "shortExplanation": "Choose an eight-step word with column multiplicities 3,3,2.",
+    "detailedSteps": [
+      "Within each column the target order is forced from bottom to top. A legal full order is therefore determined uniquely by its sequence of chosen columns.",
+      "The eight-step column sequence uses the first column three times, the second three times and the third twice. Its multinomial count is $8!/(3!3!2!)=560$."
+    ],
+    "keyIdeas": [
+      "Interleaving three internally ordered target columns"
+    ],
+    "commonMistakes": [
+      "Multiplying by permutations inside each column even though they are forbidden."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The internal orders are fixed; only their interleaving is variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p9",
+    "problemId": "aime-1990-p9",
+    "finalAnswer": "$\\boxed{073}$",
+    "shortExplanation": "There are 144 permitted sequences out of 1024, giving 9/64 and sum 73.",
+    "detailedSteps": [
+      "Let $N_m$ count the length-m strings with no consecutive heads. A valid string ends either in T after any valid length-(m-1) string, or in TH after any valid length-(m-2) string.",
+      "Thus $N_m=N_{m-1}+N_{m-2}$, with $N_0=1$ and $N_1=2$. The values through $N_{10}$ are 1,2,3,5,8,13,21,34,55,89,144.",
+      "The fair-coin probability is $144/2^{10}=9/64$. The requested numerator-denominator sum is 9+64=73."
+    ],
+    "keyIdeas": [
+      "A Fibonacci recurrence for avoiding adjacent heads"
+    ],
+    "commonMistakes": [
+      "Treating successive nonadjacency events as independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A last-symbol split yields the recurrence without overcounting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p10",
+    "problemId": "aime-1990-p10",
+    "finalAnswer": "$\\boxed{144}$",
+    "shortExplanation": "The products give every 144 th root of unity.",
+    "detailedSteps": [
+      "Write the phases of z and w as j/18 and k/48. Their product has phase $(8j+3k)/144$, so every product is a 144 th root.",
+      "The possible products form a multiplicative subgroup. It contains the primitive 144 th root: choose $j=2$ and $k=43$, giving $8j+3k=145\\equiv1\\pmod{144}$.",
+      "A subgroup containing a primitive 144 th root contains all its 144 powers. Therefore the number of distinct products is 144."
+    ],
+    "keyIdeas": [
+      "The subgroup generated by two sets of roots of unity"
+    ],
+    "commonMistakes": [
+      "Reporting 18 times 48 rather than accounting for duplicate products."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One primitive generator proves every allowed root actually occurs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p11",
+    "problemId": "aime-1990-p11",
+    "finalAnswer": "$\\boxed{023}$",
+    "shortExplanation": "At n 23 the product 5 through 24 is 23 factorial; no larger n can work.",
+    "detailedSteps": [
+      "For n at least 4, a product of n-3 consecutive positive integers increases strictly with its first term. If it starts at 4, it is $4\\cdot5\\cdots n=n!/6$, below n!. Every smaller starting term also gives a smaller product.",
+      "If it starts at 5, it is $5\\cdot6\\cdots(n+1)=n!(n+1)/24$. For every n greater than 23 this already exceeds n!, and every larger starting term is larger still.",
+      "Thus for n greater than 23 no integer starting point works. At n 23, starting at 5 gives $5\\cdot6\\cdots24=24!/24=23!$, with exactly 20=n-3 factors. The largest n is 23."
+    ],
+    "keyIdeas": [
+      "Bounding a product of consecutive integers by its starting value"
+    ],
+    "commonMistakes": [
+      "Finding a working example without proving that every larger n is impossible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Neighboring starting points bracket the target once the number of factors is fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p12",
+    "problemId": "aime-1990-p12",
+    "finalAnswer": "$\\boxed{720}$",
+    "shortExplanation": "The sum is $288+144\\sqrt2+144\\sqrt3+144\\sqrt6$, whose coefficients total 720.",
+    "detailedSteps": [
+      "For cyclic separation $k=1$ through 6, the chord length is $24\\sin(k\\pi/12)$. There are 12 chords of each separation 1 through 5, and 6 diameters of separation 6.",
+      "The first five lengths are $6(\\sqrt6-\\sqrt2)$,12,$12\\sqrt2$,$12\\sqrt3$,$6(\\sqrt6+\\sqrt2)$. Their sum is $12+12\\sqrt2+12\\sqrt3+12\\sqrt6$.",
+      "Multiply this by 12 and add the six length 24 diameters to get $288+144\\sqrt2+144\\sqrt3+144\\sqrt6$. Thus a+b+c+d=720."
+    ],
+    "keyIdeas": [
+      "Summing chords by cyclic separation"
+    ],
+    "commonMistakes": [
+      "Counting each diameter twice or counting ordered vertex pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Chord lengths depend only on the smaller cyclic separation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p13",
+    "problemId": "aime-1990-p13",
+    "finalAnswer": "$\\boxed{184}$",
+    "shortExplanation": "Exactly 184 of the 4000 multiplications by 9 leave the digit count unchanged.",
+    "detailedSteps": [
+      "For k at least 1, multiplying $9^{k-1}$ by 9 either preserves its digit count or increases it by 1. If the digit count is preserved, the result lies between 9 times its decade\u2019s lower bound and the next power of 10, so it begins with 9.",
+      "Conversely, if $9^k$ begins with 9, dividing it by 9 leaves a number in the same decade, so the previous power has the same digit count. This proves the equivalence.",
+      "From $9^0=1$ to $9^{4000}$ the digit count rises from 1 to 3817, for 3816 increases among 4000 steps. The remaining 4000-3816=184 steps preserve the count and give exactly the powers beginning with 9.",
+      "The initial power 1 does not begin with 9. The given leading digit of the final power is consistent but is not needed for this count."
+    ],
+    "keyIdeas": [
+      "Digit-count changes identify powers beginning with nine"
+    ],
+    "commonMistakes": [
+      "Counting the powers rather than the transitions and adding an extra initial term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relate a leading-digit event to a telescoping change in a simpler statistic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p14",
+    "problemId": "aime-1990-p14",
+    "finalAnswer": "$\\boxed{594}$",
+    "shortExplanation": "The base area is $18\\sqrt{133}$ and the apex height is $99/\\sqrt{133}$, giving volume 594.",
+    "detailedSteps": [
+      "After A and B are joined to a single base vertex T, the base triangle TCD has sides $13\\sqrt3,13\\sqrt3,12\\sqrt3$. The three edges from apex P to the base vertices are all half the rectangle diagonal, with squared length 939/4.",
+      "Place $C=(-6\\sqrt3,0,0)$, $D=(6\\sqrt3,0,0)$ and $T=(0,\\sqrt{399},0)$. The base altitude is $\\sqrt{(13\\sqrt3)^2-(6\\sqrt3)^2}=\\sqrt{399}$, and its area is $18\\sqrt{133}$.",
+      "Equal distances from P to C and D force its first coordinate to 0. Write $P=(0,t,h)$. Equality of the distances to C and T gives $108+t^2=(t-\\sqrt{399})^2$, hence $t=291/(2\\sqrt{399})$.",
+      "From $PC^2=939/4$, obtain $h^2=939/4-108-291^2/(4\\cdot399)=9801/133$. Thus the positive height is $99/\\sqrt{133}$.",
+      "The volume is $\\frac13(18\\sqrt{133})(99/\\sqrt{133})=594$."
+    ],
+    "keyIdeas": [
+      "Reconstructing a folded tetrahedron from its edge lengths"
+    ],
+    "commonMistakes": [
+      "Taking a half-diagonal as the perpendicular height instead of a slanted apex edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The folding identifies equal apex edges, which determine the apex\u2019s projection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1990-p15",
+    "problemId": "aime-1990-p15",
+    "finalAnswer": "$\\boxed{020}$",
+    "shortExplanation": "The weighted power sums satisfy a recurrence with coefficients-14 and-38, yielding 20.",
+    "detailedSteps": [
+      "Let $s_m=ax^m+by^m$, $u=x+y$ and $v=xy$. Since both x and y satisfy $t^2-ut+v=0$, one has $s_{m+2}=u s_{m+1}-v s_m$.",
+      "The given sums give $16=7u-3v$ and $42=16u-7v$. Multiply the first equation by 7 and the second by 3, then subtract: $u=-14$. Substitution gives $v=-38$.",
+      "Therefore $s_5=(-14)(42)-(-38)(16)=20$. The calculation never requires finding the individual weights a and b."
+    ],
+    "keyIdeas": [
+      "A second-order recurrence for two weighted powers"
+    ],
+    "commonMistakes": [
+      "Assuming the four given equations must be solved separately for all four variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two fixed bases always yield a recurrence of order at most two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

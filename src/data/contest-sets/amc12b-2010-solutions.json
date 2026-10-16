@@ -1,0 +1,522 @@
+[
+  {
+    "id": "solution-amc12b-2010-p1",
+    "problemId": "amc12b-2010-p1",
+    "finalAnswer": "$\\boxed{25}$ (choice C)",
+    "shortExplanation": "The meetings occupy one quarter of the workday.",
+    "detailedSteps": [
+      "The two meetings total $45+90=135$ minutes, and the workday is $9\\cdot60=540$ minutes. The percentage is $100(135/540)=25$."
+    ],
+    "keyIdeas": [
+      "Meeting time as a fraction of a workday"
+    ],
+    "commonMistakes": [
+      "Comparing minutes with hours before converting units."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use one time unit throughout.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p2",
+    "problemId": "amc12b-2010-p2",
+    "finalAnswer": "$\\boxed{22}$ (choice A)",
+    "shortExplanation": "Subtract the shared corner once.",
+    "detailedSteps": [
+      "The vertical rectangle has area $8\\cdot2=16$ and the horizontal one $5\\cdot2=10$. Their common two-by-two corner was counted twice, so the L area is $16+10-4=22$."
+    ],
+    "keyIdeas": [
+      "The two rectangles in an L"
+    ],
+    "commonMistakes": [
+      "Adding the two full rectangles without subtracting their overlap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All four given lengths matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p3",
+    "problemId": "amc12b-2010-p3",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The price is a positive divisor of sixteen.",
+    "detailedSteps": [
+      "The price x divides both 48 and 64, hence divides their greatest common divisor 16. Its possible positive values are $1,2,4,8,16$, five choices."
+    ],
+    "keyIdeas": [
+      "Common integer ticket prices"
+    ],
+    "commonMistakes": [
+      "Allowing zero or a price that divides only one purchase total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The group sizes are unspecified integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p4",
+    "problemId": "amc12b-2010-p4",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The first day can be Monday, Thursday or Friday.",
+    "detailedSteps": [
+      "Four complete weeks give four occurrences of every weekday. The remaining three consecutive days must include either both Monday and Wednesday or neither.",
+      "The first case starts on Monday. The second starts on Thursday or Friday. These three starts are the only possibilities."
+    ],
+    "keyIdeas": [
+      "The three extra weekdays in a month"
+    ],
+    "commonMistakes": [
+      "Assuming a thirty-one-day month gives five of just one weekday."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the three-day remainder changes the counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p5",
+    "problemId": "amc12b-2010-p5",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Equality of the two evaluations forces e=c.",
+    "detailedSteps": [
+      "Correct expansion gives $a-b+c-d-e$; ignoring parentheses gives $a-b-c-d+e$. Equality means $2c=2e$, so the supplied $c=3$ gives $e=3$."
+    ],
+    "keyIdeas": [
+      "An accidentally correct evaluation"
+    ],
+    "commonMistakes": [
+      "Changing the operation signs incorrectly while removing nested parentheses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare expressions before substituting all numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p6",
+    "problemId": "amc12b-2010-p6",
+    "finalAnswer": "$\\boxed{60}$ (choice D)",
+    "shortExplanation": "The switch percentage ranges from twenty to eighty.",
+    "detailedSteps": [
+      "Let u be the percentage changing from No to Yes and v from Yes to No. Then $u-v=20$, and the total changing is $u+v=20+2v$.",
+      "The smallest v is zero, giving 20. The original No group limits $u\\le50$, so $v\\le30$. This maximum is attainable by changing all original No students and thirty percent of the entire class from Yes to No.",
+      "The largest total is 80, and the difference between extremes is $80-20=60$."
+    ],
+    "keyIdeas": [
+      "The range of possible opinion switches"
+    ],
+    "commonMistakes": [
+      "Reporting the maximum switch percentage instead of the difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The final proportions constrain the two opposite flows.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p7",
+    "problemId": "amc12b-2010-p7",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "Rain takes twenty-four of the forty minutes.",
+    "detailedSteps": [
+      "Let t be rainy minutes. The distance equation is $30(40-t)/60+20t/60=16$. Simplifying gives $1200-10t=960$, so $t=24$."
+    ],
+    "keyIdeas": [
+      "Two scooter speeds"
+    ],
+    "commonMistakes": [
+      "Using the arithmetic mean of the two speeds without weighting their times."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum of the durations is fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p8",
+    "problemId": "amc12b-2010-p8",
+    "finalAnswer": "$\\boxed{23}$ (choice B)",
+    "shortExplanation": "The number of schools is an odd integer between twenty-two and twenty-four.",
+    "detailedSteps": [
+      "With s schools there are 3s participants. Since one distinct score is the median, 3s is odd and Andrea ranks $(3s+1)/2$ from the top.",
+      "Carla\u2019s rank 64 requires $3s\\ge64$, while Andrea outranks Beth at 37, so $(3s+1)/2<37$. Thus $22\\le s\\le24$, and oddness forces $s=23$."
+    ],
+    "keyIdeas": [
+      "A median team member and two lower ranks"
+    ],
+    "commonMistakes": [
+      "Using Beth\u2019s rank as the median rank."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All scores are distinct, so the median is a unique participant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p9",
+    "problemId": "amc12b-2010-p9",
+    "finalAnswer": "$\\boxed{7}$ (choice E)",
+    "shortExplanation": "The least possible number is one million.",
+    "detailedSteps": [
+      "For each exponent e in n, the cube condition on $n^2$ requires $3\\mid e$, while the square condition on $n^3$ requires $2\\mid e$. Thus every exponent is a multiple of 6.",
+      "Divisibility by $20=2^2\\cdot5$ requires both primes 2 and 5, whose least allowed exponents are 6. Hence $n=2^6 5^6=10^6$, a seven-digit integer."
+    ],
+    "keyIdeas": [
+      "Prime exponents forced by two perfect powers"
+    ],
+    "commonMistakes": [
+      "Checking just one of the two perfect-power conditions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The least number uses no unnecessary prime factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p10",
+    "problemId": "amc12b-2010-p10",
+    "finalAnswer": "$\\boxed{\\frac{50}{101}}$ (choice B)",
+    "shortExplanation": "The sum equation is 4950+x=10000x.",
+    "detailedSteps": [
+      "There are one hundred numbers, and the fixed ninety-nine total $99\\cdot100/2=4950$. Therefore $(4950+x)/100=100x$.",
+      "This gives $x=4950/9999=50/101$."
+    ],
+    "keyIdeas": [
+      "An average with its own unknown"
+    ],
+    "commonMistakes": [
+      "Forgetting to include x in the sum or in the number of terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the fixed sum from the single variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p11",
+    "problemId": "amc12b-2010-p11",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice E)",
+    "shortExplanation": "The inner digit must be zero or seven.",
+    "detailedSteps": [
+      "A four-digit palindrome is $1001a+110b$, with $1\\le a\\le9$ and $0\\le b\\le9$. Since 1001 is divisible by 7 and 110 is coprime to 7, divisibility requires $b\\equiv0\\pmod7$.",
+      "The two possible inner digits yield eighteen palindromes out of ninety, a probability of 1/5."
+    ],
+    "keyIdeas": [
+      "Four-digit palindromes modulo seven"
+    ],
+    "commonMistakes": [
+      "Treating the ninety palindromes as equally spaced multiples of seven."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The leading digit is nonzero; the inner one can be zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p12",
+    "problemId": "amc12b-2010-p12",
+    "finalAnswer": "$\\boxed{256}$ (choice D)",
+    "shortExplanation": "Every summand equals log base two of x.",
+    "detailedSteps": [
+      "The actual first term is $\\log_{\\sqrt2}\\sqrt x=(\\tfrac12\\log x)/(\\tfrac12\\log2)=\\log_2x$. Each of the remaining terms likewise equals $\\log_2x$, because the exponent on x matches the exponent on 2 in the base.",
+      "Thus $5\\log_2x=40$, giving $x=2^8=256$."
+    ],
+    "keyIdeas": [
+      "Changing five logarithms to one base"
+    ],
+    "commonMistakes": [
+      "Losing the radicals in the first logarithm when reading the source."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm domain requires x positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p13",
+    "problemId": "amc12b-2010-p13",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The triangle angles are thirty, sixty and ninety degrees.",
+    "detailedSteps": [
+      "Both terms are at most one, so their sum 2 forces each to equal one. Since $0<A+B<\\pi$, $\\sin(A+B)=1$ gives $A+B=\\pi/2$.",
+      "This also restricts $2A-B$ to $(-\\pi/2,\\pi)$, where cosine equals one only at zero. Hence $2A=B$, giving $A=\\pi/6$, $B=\\pi/3$, $C=\\pi/2$.",
+      "AB is the hypotenuse of length 4, so its side opposite A is $BC=4\\sin A=2$."
+    ],
+    "keyIdeas": [
+      "Two bounded trigonometric terms attain their maxima"
+    ],
+    "commonMistakes": [
+      "Keeping periodic angle solutions outside the triangle constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equality case in an upper bound determines the angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p14",
+    "problemId": "amc12b-2010-p14",
+    "finalAnswer": "$\\boxed{671}$ (choice B)",
+    "shortExplanation": "The total is at most three M minus one.",
+    "detailedSteps": [
+      "All four adjacent sums are at most M. In particular, $(a+b)+(c+d)\\le2M$, and $d+e\\le M$ with $d\\ge1$ gives $e\\le M-1$.",
+      "Thus $2010\\le3M-1$, so integer M is at least 671. The positive tuple $(669,1,669,1,670)$ has total 2010 and adjacent sums $670,670,670,671$, attaining the bound."
+    ],
+    "keyIdeas": [
+      "A minimum bound on neighboring sums"
+    ],
+    "commonMistakes": [
+      "Relaxing the positive-integer condition to allow a zero middle entry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sharp bound needs a positive witness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p15",
+    "problemId": "amc12b-2010-p15",
+    "finalAnswer": "$\\boxed{225}$ (choice D)",
+    "shortExplanation": "The three mutually exclusive pair cases contribute ninety-five, ninety-five and thirty-five.",
+    "detailedSteps": [
+      "Put $U=i^x$, $V=(1+i)^y$ and $W=z$. Equal U and V require $y=0$ by their moduli, then $x\\equiv0\\pmod4$. There are five such x values and nineteen choices $z\\ne1$, giving 95.",
+      "Equal U and W require $z=1$ and $x\\equiv0\\pmod4$, with $y\\ne0$ to avoid three-way equality. This contributes another $5\\cdot19=95$.",
+      "Equal V and W require V to be nonnegative real. Thus $y\\equiv0\\pmod8$, and the z bound leaves $(y,z)=(0,1)$ or $(8,16)$; y=16 would give 256. The former allows fifteen x values with $U\\ne1$, and the latter all twenty x values.",
+      "The total is $95+95+15+20=225$. Exactly two distinct values means precisely one of these pairs is equal, so the cases do not overlap."
+    ],
+    "keyIdeas": [
+      "Exactly one pair of equal complex values"
+    ],
+    "commonMistakes": [
+      "Including triples for which all three values equal one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A modulus comparison immediately restricts the first equality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p16",
+    "problemId": "amc12b-2010-p16",
+    "finalAnswer": "$\\boxed{\\frac{13}{27}}$ (choice E)",
+    "shortExplanation": "Thirteen of the twenty-seven residue triples work.",
+    "detailedSteps": [
+      "The expression factors as $a(b(c+1)+1)$. A multiple-of-three a always works, with probability 1/3.",
+      "For the other a residues, we need $b(c+1)\\equiv2\\pmod3$. Of the nine equally likely b,c residue pairs, precisely $(1,1)$ and $(2,0)$ work.",
+      "The probability is $1/3+(2/3)(2/9)=13/27$. Each residue occurs exactly 670 times in the given sampling set."
+    ],
+    "keyIdeas": [
+      "Three equally likely residue classes"
+    ],
+    "commonMistakes": [
+      "Treating the three additive terms as independent residue events."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor out a before conditioning.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p17",
+    "problemId": "amc12b-2010-p17",
+    "finalAnswer": "$\\boxed{42}$ (choice D)",
+    "shortExplanation": "A corner-removal recurrence counts forty-two arrays.",
+    "detailedSteps": [
+      "After placing the smallest k digits, the occupied cells have nonincreasing row lengths $\\lambda=(\\lambda_1,\\lambda_2,\\lambda_3)$ with each at most 3. Conversely, every chain of these shapes gives exactly one increasing array.",
+      "Let f(lambda) count fillings of a shape. Its largest entry must occupy a removable outer corner, so $f(\\lambda)=\\sum f(\\lambda\\text{ with one outer corner removed})$, with $f(0,0,0)=1$.",
+      "Repeated corner removal gives $f(2,2,2)=5$, $f(3,2,1)=16$, and hence $f(3,2,2)=5+16=21$. Transposing gives $f(3,3,1)=21$.",
+      "Finally $f(3,3,3)=f(3,3,2)=f(3,2,2)+f(3,3,1)=42$."
+    ],
+    "keyIdeas": [
+      "Increasing arrays as successive corner additions"
+    ],
+    "commonMistakes": [
+      "Choosing each row independently while ignoring column restrictions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positions of the largest entries give a complete finite recursion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p18",
+    "problemId": "amc12b-2010-p18",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice C)",
+    "shortExplanation": "Two triangular regions of angle space are favorable.",
+    "detailedSteps": [
+      "By rotation, fix the first jump along the positive real axis. Let the other directions be independent uniform $\\theta,\\phi\\in[0,2\\pi)$. The squared final distance is $3+2(\\cos\\theta+\\cos\\phi+\\cos(\\theta-\\phi))$.",
+      "The distance condition is equivalent to $\\cos(\\theta/2)\\cos(\\phi/2)\\cos((\\theta-\\phi)/2)\\le0$, using $1+\\cos\\theta+\\cos\\phi+\\cos(\\theta-\\phi)=4\\cos(\\theta/2)\\cos(\\phi/2)\\cos((\\theta-\\phi)/2)$.",
+      "When the angles are on the same side of pi, the product is positive except at boundaries. If $0\\le\\theta\\le\\pi\\le\\phi\\le2\\pi$, the condition is $\\phi-\\theta\\le\\pi$, giving a triangle of area $\\pi^2/2$. Exchanging the angles gives an equal disjoint triangle.",
+      "The favorable area is $\\pi^2$ out of $(2\\pi)^2$, so the probability is 1/4. Boundaries have probability zero."
+    ],
+    "keyIdeas": [
+      "Three random unit directions"
+    ],
+    "commonMistakes": [
+      "Assuming the final displacement direction determines its length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rotational symmetry removes one direction variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p19",
+    "problemId": "amc12b-2010-p19",
+    "finalAnswer": "$\\boxed{34}$ (choice E)",
+    "shortExplanation": "The only score sequences are five-ten-twenty-forty and five-fourteen-twenty-three-thirty-two.",
+    "detailedSteps": [
+      "Write the increasing geometric ratio as $p/q>1$ in lowest terms. Integer quarterly scores must be $kq^3,kq^2p,kqp^2,kp^3$ for a positive integer k.",
+      "The total is $k(p+q)(p^2+q^2)\\le100$. This leaves only $(p,q)=(2,1),(3,1),(4,1),(3,2)$; q at least 3 or p at least 5 already exceeds the bound.",
+      "The arithmetic team starts at $kq^3$ and increases by an integer d, giving total $4kq^3+6d$. The one-point margin requires $6d=k(p^3+p^2q+pq^2-3q^3)-1$.",
+      "For the four ratio pairs, the coefficient is respectively $11,36,81,33$. The total bound permits k at most $6,2,1,1$. Divisibility by 6 leaves only $k=5$ in the first case, with d=9.",
+      "The first-half total is $5+10+5+14=34$. The complete totals 75 and 74 satisfy the bound and margin."
+    ],
+    "keyIdeas": [
+      "Integer geometric and arithmetic quarterly scores"
+    ],
+    "commonMistakes": [
+      "Assuming the geometric ratio is an integer without excluding fractional ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integer terms force the cube of the denominator into the first term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p20",
+    "problemId": "amc12b-2010-p20",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The fourth term is one, and the eighth is one plus cosine.",
+    "detailedSteps": [
+      "Put $s=\\sin x$ and $c=\\cos x$. The defined tangent requires $c\\ne0$, and the geometric condition requires $c^2=s(s/c)$, so $s^2=c^3$.",
+      "Together with $s^2+c^2=1$, this gives $c^3+c^2=1$, so c is positive and $s\\ne0$. The fourth term is $s(c/s)^3=c^3/s^2=1$.",
+      "Two more ratio multiplications give the sixth term $c^2/s^2=1/c$, and the eighth term $1/c^2$. Dividing $c^2+c^3=1$ by $c^2$ shows $1/c^2=1+c$. Thus n=8."
+    ],
+    "keyIdeas": [
+      "Three trigonometric terms in geometric progression"
+    ],
+    "commonMistakes": [
+      "Discarding the possibility of negative sine while canceling its powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Even-numbered terms eliminate the sine sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p21",
+    "problemId": "amc12b-2010-p21",
+    "finalAnswer": "$\\boxed{315}$ (choice B)",
+    "shortExplanation": "A necessary divisibility bound of three hundred fifteen has an explicit polynomial witness.",
+    "detailedSteps": [
+      "Since $P(x)-a$ vanishes at $1,3,5,7$, monic division gives $P(x)-a=F(x)R(x)$, where $F=(x-1)(x-3)(x-5)(x-7)$ and R has integer coefficients.",
+      "At the even arguments $2,4,6,8$, F equals $-15,9,-15,105$. Since $F(x)R(x)=-2a$, each odd number $15,9,105$ divides a. Thus $315=\\operatorname{lcm}(15,9,105)$ divides a.",
+      "For a=315, define $R(x)=42-56(x-2)+28(x-2)(x-4)-8(x-2)(x-4)(x-6)$. Its values at the four even arguments are $42,-70,42,-6$, respectively.",
+      "Then $P(x)=315+F(x)R(x)$ has integer coefficients and all eight prescribed values. Therefore the lower bound is attained and the minimum is 315."
+    ],
+    "keyIdeas": [
+      "An integer-coefficient alternating interpolation"
+    ],
+    "commonMistakes": [
+      "Assuming arbitrary integer values automatically have an integer-coefficient interpolating polynomial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monic factors preserve integrality during polynomial division.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p22",
+    "problemId": "amc12b-2010-p22",
+    "finalAnswer": "$\\boxed{\\sqrt{\\frac{425}{2}}}$ (choice D)",
+    "shortExplanation": "The maximum squared diagonal is half of four hundred twenty-five.",
+    "detailedSteps": [
+      "Put $a=AB,b=BC,c=CD,d=DA$, so $ad=bc$. The opposite angles A,C are supplementary. Equating their cosine-rule expressions for BD gives $BD^2=(a^2+b^2+c^2+d^2)/2$.",
+      "For four sorted distinct side lengths $u<v<w<t$, equal products of disjoint pairs are possible only as $ut=vw$. Enumerating factor pairs with every entry between 1 and 14 gives the following upper bounds for the squared-side sum, grouped by largest entry: $t=6:65$, $8:125$, $9:130$, $10:205$, $12:325$, $14:425$. No other largest entry admits four distinct factor-pair entries.",
+      "This finite bound includes even tuples that might fail a quadrilateral inequality, so it remains a valid upper bound. It is attained by assigning $a=6,d=14,b=7,c=12$, with equal products 84.",
+      "The resulting diagonal has square $425/2$. Both triangles with sides $(6,14,BD)$ and $(7,12,BD)$ satisfy strict triangle inequalities, and their diagonal-opposite angles have cosines $13/112$ and $-13/112$, so they join into a cyclic quadrilateral.",
+      "The largest possible BD is therefore $\\sqrt{425/2}$."
+    ],
+    "keyIdeas": [
+      "A product constraint on a cyclic quadrilateral"
+    ],
+    "commonMistakes": [
+      "Maximizing a sum of side squares without enforcing the equal-product condition or checking attainment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The supplementary-angle relation eliminates the angle from the diagonal formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p23",
+    "problemId": "amc12b-2010-p23",
+    "finalAnswer": "$\\boxed{-100}$ (choice A)",
+    "shortExplanation": "The separate minimum values are minus thirty-six and minus sixty-four.",
+    "detailedSteps": [
+      "Write $P(x)=(x-u)^2+p$ and $Q(x)=(x-v)^2+q$. The composition P(Q(x)) is symmetric about v, so the four roots force $v=-19$; likewise the roots of Q(P(x)) force $u=-54$.",
+      "Relative to v, the first root distances are 2 and 4. Therefore $(4+q+54)^2+p=(16+q+54)^2+p=0$. Subtraction gives $q+54=-10$, hence $q=-64$ and $p=-36$.",
+      "These yield $P(x)=(x+54)^2-36$ and $Q(x)=(x+19)^2-64$. Their reverse composition is $((x+54)^2-17)^2-64$, with exactly the supplied roots at distances 3 and 5.",
+      "The minimum sum is $p+q=-100$."
+    ],
+    "keyIdeas": [
+      "The symmetry centers of two composed quadratics"
+    ],
+    "commonMistakes": [
+      "Using the outer polynomial vertex as the symmetry center of a composition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A monic even quartic reveals the inner quadratic center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p24",
+    "problemId": "amc12b-2010-p24",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The three interval endpoints have sum three after shifting the poles.",
+    "detailedSteps": [
+      "Put $t=x-2010$ and $f(t)=1/(t+1)+1/t+1/(t-1)$. On each gap between its poles, f is strictly decreasing, because its derivative is the negative sum of three squared reciprocals.",
+      "For t below -1, f is negative and cannot work. On $(-1,0)$ and $(0,1)$, f decreases from positive infinity to negative infinity, while on $(1,\\infty)$ it decreases from positive infinity to zero. Thus each of these intervals has one root r of f=1 and a favorable subinterval from its left pole through that root.",
+      "The endpoint equation is $t^3-3t^2-t+1=0$. Its three roots $r_1,r_2,r_3$ lie in the three gaps just described, so their sum is 3 by Vieta.",
+      "The total lengths are $(r_1+1)+r_2+(r_3-1)=3$. The common coordinate shift does not change lengths."
+    ],
+    "keyIdeas": [
+      "The total lengths determined by Vieta"
+    ],
+    "commonMistakes": [
+      "Combining rational inequalities without keeping track of denominator signs at the poles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity establishes the complete interval structure before Vieta is used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2010-p25",
+    "problemId": "amc12b-2010-p25",
+    "finalAnswer": "$\\boxed{77}$ (choice D)",
+    "shortExplanation": "The exponent of sixty-seven is seventy-seven and is the limiting one.",
+    "detailedSteps": [
+      "Since $2010=2\\cdot3\\cdot5\\cdot67$, the answer is the minimum of the four corresponding prime valuations in the product.",
+      "The prime 2 is selected only for $n=2^j$, with $1\\le j\\le12$, so its valuation is $1+\\cdots+12=78$. For prime 3, all $n=2^a3^b$ contribute b; summing over $b=1,\\ldots,7$ gives $11+20+24+28+25+18+14=140$.",
+      "For prime 5, the subfamily $n=2^a5^b$ already contributes $11+16+18+16+5=66$. The distinct subfamilies $n=3\\cdot5\\cdot2^a$ and $n=3\\cdot25\\cdot2^a$ contribute an additional 9 and 14. Thus its valuation is at least 89, enough to exceed the possible minimum.",
+      "To count 67 factors, write $n=67m$ with $1\\le m\\le79$. It is the largest prime factor except when $m=71,73,79$, leaving 76 contributions. The sole multiple of $67^2$ in range is $4489$, which contributes one extra 67 factor; no third power is in range.",
+      "Thus the 67 valuation is $76+1=77$, smaller than the other three, and the largest exponent is 77."
+    ],
+    "keyIdeas": [
+      "Valuations after selecting the largest prime factor"
+    ],
+    "commonMistakes": [
+      "Summing every prime valuation of each n instead of keeping only its largest prime factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A valuation counts repeated prime factors, not just distinct multiples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

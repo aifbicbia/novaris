@@ -1,0 +1,98 @@
+[
+  {
+    "id": "solution-usaco-bronze-2021-december-p1",
+    "problemId": "usaco-bronze-2021-december-p1",
+    "finalAnswer": "For each cow, let $L$ and $R$ be the lengths of the adjacent opposite-breed runs. Add $(L+1)(R+1)-1-[L>0]-[R>0]$ to a 64-bit answer.",
+    "shortExplanation": "Count photos by their unique lonely cow. A photo can extend into either adjacent opposite-breed run, but its total length must be at least three.",
+    "detailedSteps": [
+      "For cow $i$, stop any left extension before the preceding cow of the same breed, and any right extension before the next cow of the same breed. Let the available opposite-breed run lengths be $L$ and $R$. There are $(L+1)(R+1)$ choices of left and right extension lengths.",
+      "The choice with no extension has length one and must be removed. A one-cow extension on the left or right has length two and must also be removed when that side exists. All other choices have length at least three and contain exactly one cow of this breed. This gives $(L+1)(R+1)-1-[L>0]-[R>0]$, where a bracket is one when its condition holds and zero otherwise.",
+      "Every lonely photo has a unique lonely cow. Both breeds cannot each occur exactly once in a photo of length at least three. Therefore the per-cow counts are disjoint and cover every photo being discarded.",
+      "Compute the left lengths in a forward scan using the last seen position of each breed. Compute the right lengths while scanning backward using the next seen positions. Boundary positions `-1` and `N` correctly stop extensions at the lineup ends.",
+      "The scans take $O(N)$ time and the stored left lengths take $O(N)$ space. The actual source bound is $N\\le500000$. The total number of intervals is at most $N(N+1)/2\\le125000250000$, so both the multiplication and accumulated answer need `long long`. The `1LL` in the code widens the product before it is evaluated.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    string cows;\n    in >> n >> cows;\n    vector<int> left(n);\n    int previous[2] = {-1, -1};\n    for (int i = 0; i < n; ++i) {\n        int breed = cows[i] == 'G' ? 0 : 1;\n        left[i] = i - previous[breed] - 1;\n        previous[breed] = i;\n    }\n    int next[2] = {n, n};\n    long long answer = 0;\n    for (int i = n - 1; i >= 0; --i) {\n        int breed = cows[i] == 'G' ? 0 : 1;\n        int right = next[breed] - i - 1;\n        answer += 1LL * (left[i] + 1) * (right + 1) - 1;\n        if (left[i] > 0) --answer;\n        if (right > 0) --answer;\n        next[breed] = i;\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Use the unique singleton-breed cow to partition the photos being counted.",
+      "Nearest same-breed cows determine exactly how far a singleton photo may extend.",
+      "Remove length-one and length-two choices before summing."
+    ],
+    "commonMistakes": [
+      "Counting a mixed photo of length two, even though the source only considers length at least three.",
+      "Counting the same photo separately for both breeds; this can only happen at length two and is excluded.",
+      "Multiplying run lengths in 32-bit arithmetic and converting only after the product has overflowed.",
+      "Missing a lonely cow at either lineup boundary."
+    ],
+    "alternativeMethods": [
+      "A direct scan of every interval, counting its two breeds, provides a useful small-input check. It takes quadratic time with incremental counts and is unsuitable for the full source limit."
+    ],
+    "difficultyNotes": "The counting proof avoids checking every interval. Correct boundary lengths and widening the product are the main implementation details.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-december-p2",
+    "problemId": "usaco-bronze-2021-december-p2",
+    "finalAnswer": "Write $d_i=p_i-t_i$ and pad the sequence with $d_0=d_{N+1}=0$. The minimum is $\\frac12\\sum_{i=1}^{N+1}|d_i-d_{i-1}|$.",
+    "shortExplanation": "Each unit interval command changes exactly two endpoints of the required temperature-difference profile. Half its total endpoint variation is a lower bound, and pairing positive and negative endpoint units constructs a solution attaining it.",
+    "detailedSteps": [
+      "Let $d_i$ be the temperature change required at stall $i$. With zero padding at both ends, define $e_i=d_i-d_{i-1}$ for $1\\le i\\le N+1$. Reconstructing the endpoint differences reconstructs every required stall change.",
+      "A unit increase on stalls $l$ through $r$ contributes $+1$ at endpoint $l$ and $-1$ at endpoint $r+1$. A decrease contributes the reverse. Each command therefore has endpoint absolute sum two. The triangle inequality gives the lower bound $\\sum |e_i|/2$ commands.",
+      "The endpoint differences sum to zero, so their positive units and negative units have equal total mass. Pair one positive unit with one negative unit repeatedly. If the positive endpoint is earlier, raise the interval between them; if the negative endpoint is earlier, lower it. Each interval ends just before the later endpoint, and is nonempty because opposite signs cannot occupy the same endpoint.",
+      "These commands realize every desired endpoint unit, hence the entire target profile, in exactly $\\sum |e_i|/2$ operations. The construction attains the lower bound and proves optimality. It also explains why the numerator is even.",
+      "Read the preferred temperatures, then scan the current temperatures while maintaining the preceding required change, initially zero. Add $|d_i-d_{i-1}|$ at every stall and finally $|d_N|$ for the padded ending endpoint. Divide the accumulated variation by two.",
+      "Time is $O(N)$ and storage is $O(N)$. Use `long long` for differences, absolute values and the sum. The original prints numeric limits in numbered scoring groups: cases 2\u20135 have $N\\le100$, cases 6\u20138 have $N\\le1000$, and cases 9\u201310 have $N\\le100000$; temperature limits are 100 for cases 1\u20136 and 9, and 10000 for cases 7\u20138 and 10. It does not state one uniform global numeric bound in the input description. The algorithm handles all stated groups in one linear scan.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <cstdlib>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<long long> preferred(n);\n    for (int i = 0; i < n; ++i) in >> preferred[i];\n    long long previous = 0, variation = 0;\n    for (int i = 0; i < n; ++i) {\n        long long current;\n        in >> current;\n        long long difference = preferred[i] - current;\n        variation += llabs(difference - previous);\n        previous = difference;\n    }\n    variation += llabs(previous);\n    out << variation / 2 << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "An interval adjustment affects only two endpoints in a difference array.",
+      "The absolute endpoint variation supplies a lower bound for any command sequence.",
+      "Matching opposite endpoint units realizes that bound, including both heating and cooling."
+    ],
+    "commonMistakes": [
+      "Summing the absolute temperature changes at individual stalls, which misses the savings from adjusting an interval together.",
+      "Forgetting either zero-padded endpoint and undercounting an adjustment that reaches a barn boundary.",
+      "Using a same-direction adjustment across opposite-sign demands without accounting for their endpoint costs.",
+      "Assuming intermediate temperature overshoot is forbidden; the source places no such restriction on commands."
+    ],
+    "alternativeMethods": [
+      "Decompose positive and negative required changes into horizontal layers, starting a new interval whenever a layer rises above the preceding height. This gives the same minimum; the endpoint proof provides a compact expression covering both signs."
+    ],
+    "difficultyNotes": "The implementation is short once both the lower bound and the matching construction are proved. Retaining the zero endpoints is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-december-p3",
+    "problemId": "usaco-bronze-2021-december-p3",
+    "finalAnswer": "Count paths by cell, exact direction-change count, and last move direction. Seed the first right and down moves with zero changes; sum destination states using at most the allowed number of changes.",
+    "shortExplanation": "Right and down moves advance through the grid without cycles. Recording the last direction tells whether the next move consumes one of the allowed changes.",
+    "detailedSteps": [
+      "For each sub-test case, let $W(r,c,k,d)$ count paths that reach empty cell $(r,c)$ after at least one move, with exactly $k$ direction changes and last direction $d$. Every sub-test case starts with a freshly zeroed table.",
+      "If the cell immediately to the right of the start is empty, seed its right-direction state with one path and zero changes. Do the same for the cell immediately below the start. The first move chooses a direction and does not count as changing it.",
+      "From each nonzero state, try a right step and a down step. Require an in-bounds empty destination cell. Increase the change count by one exactly when the new direction differs from the preceding direction, and keep the transition only when the resulting count is at most $K$.",
+      "For correctness, induct on row-plus-column. The code\u2019s row-major traversal also visits each cell after both possible predecessors. Every longer legal path has a unique preceding state and last move, so it contributes through exactly one transition. Conversely, each retained transition extends a legal path and respects haybales and the change limit. The seeded one-step paths start this induction, proving that every state has its stated meaning.",
+      "Sum both last-direction states at the bottom-right corner over $0\\le k\\le K$. Different monotone move words produce different visited-cell sets: every row-plus-column diagonal contributes one cell. This matches the source\u2019s definition of distinct paths. A blocked first move contributes no seed, and blocking both first moves yields zero.",
+      "Per sub-test case, time is $O(N^2K)$. The concrete implementation uses the source-bounded $50\\times50\\times4\\times2$ table of `long long`, about 160000 bytes; the conceptual state storage is $O(N^2K)$. A packet has $T\\le50$, with $2\\le N\\le50$ and $1\\le K\\le3$. Read every sub-test case and print all $T$ answers in order.",
+      "Even without haybales, the number of complete paths using at most three changes is $2[1+(N-2)+(N-2)^2]\\le4706$: two one-change paths, $2(N-2)$ two-change paths, and $2(N-2)^2$ three-change paths from splitting each move direction into positive runs. Obstacles only remove paths. Each input packet still requires one output line for every described farm.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\nlong long countPaths(const vector<string>& grid, int limit) {\n    int n = static_cast<int>(grid.size());\n    long long ways[50][50][4][2] = {};\n    if (grid[0][1] == '.') ways[0][1][0][0] = 1;\n    if (grid[1][0] == '.') ways[1][0][0][1] = 1;\n    const int dr[2] = {0, 1};\n    const int dc[2] = {1, 0};\n    for (int r = 0; r < n; ++r) {\n        for (int c = 0; c < n; ++c) {\n            for (int turns = 0; turns <= limit; ++turns) {\n                for (int last = 0; last < 2; ++last) {\n                    long long value = ways[r][c][turns][last];\n                    if (value == 0) continue;\n                    for (int direction = 0; direction < 2; ++direction) {\n                        int nr = r + dr[direction], nc = c + dc[direction];\n                        int newTurns = turns + (direction != last);\n                        if (nr < n && nc < n && grid[nr][nc] == '.' && newTurns <= limit)\n                            ways[nr][nc][newTurns][direction] += value;\n                    }\n                }\n            }\n        }\n    }\n    long long answer = 0;\n    for (int turns = 0; turns <= limit; ++turns)\n        for (int last = 0; last < 2; ++last)\n            answer += ways[n - 1][n - 1][turns][last];\n    return answer;\n}\nvoid solve(istream& in, ostream& out) {\n    int tests;\n    in >> tests;\n    while (tests--) {\n        int n, limit;\n        in >> n >> limit;\n        vector<string> grid(n);\n        for (int r = 0; r < n; ++r) in >> grid[r];\n        out << countPaths(grid, limit) << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The last direction is necessary to decide whether the next step adds a change.",
+      "The first move has zero direction changes.",
+      "Monotone moves make the state transitions acyclic and preserve the source\u2019s path distinction."
+    ],
+    "commonMistakes": [
+      "Counting the first move as a direction change.",
+      "Checking exactly the maximum number of changes instead of at most that number.",
+      "Entering a haybale, including through an unguarded initial seed.",
+      "Keeping counts from a previous sub-test case, or printing only one answer for a multi-case input packet."
+    ],
+    "alternativeMethods": [
+      "For small grids, enumerate every monotone move word and directly check its visited cells and direction changes. This supplies an independent oracle, but the number of unrestricted words grows too quickly for the full grid limit."
+    ],
+    "difficultyNotes": "The state definition and initial seeds settle the turn-counting details. The bounded change count keeps the grid dynamic program small.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

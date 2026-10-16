@@ -1,0 +1,572 @@
+[
+  {
+    "id": "solution-amc10b-2022-p1",
+    "problemId": "amc10b-2022-p1",
+    "finalAnswer": "$\\boxed{-2}$ (choice A)",
+    "shortExplanation": "Evaluate the innermost operation before moving outward.",
+    "detailedSteps": [
+      "The first parenthesization gives $|1-|2-3||=|1-1|=0$.",
+      "The second gives $||1-2|-3|=|1-3|=2$. Their difference is $0-2=-2$, choice A."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Nested absolute values"
+    ],
+    "commonMistakes": [
+      "Absolute difference is not associative; the two parenthesizations need separate evaluation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The only subtlety is the placement of the nested absolute-value bars.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p2",
+    "problemId": "amc10b-2022-p2",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "shortExplanation": "Find the perpendicular height from a $3$-$4$-$5$ triangle.",
+    "detailedSteps": [
+      "The rhombus has side $AD=AP+PD=3+2=5$, so $AB=5$.",
+      "Right triangle $APB$ has hypotenuse $5$ and leg $3$, giving $BP=\\sqrt{25-9}=4$.",
+      "The area is base times height: $AD\\cdot BP=5\\cdot4=20$, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rhombus area"
+    ],
+    "commonMistakes": [
+      "The side length is not the perpendicular height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram supplies a side length indirectly; separating the side from the perpendicular height unlocks the area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p3",
+    "problemId": "amc10b-2022-p3",
+    "finalAnswer": "$\\boxed{450}$ (choice D)",
+    "shortExplanation": "Pair numbers by switching the final digit between an even digit and the following odd digit.",
+    "detailedSteps": [
+      "Pair units digits as $(0,1),(2,3),(4,5),(6,7),(8,9)$. Keep the hundreds and tens digits fixed.",
+      "Each pair contains one number with an odd number of even digits and one with an even number. This is a pairing of all $900$ three-digit integers, so exactly $900/2=450$ qualify, choice D."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Parity pairing"
+    ],
+    "commonMistakes": [
+      "Zero is an even digit, even though it cannot be the hundreds digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parity-changing pairing avoids a long case split over how many digits are even.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p4",
+    "problemId": "amc10b-2022-p4",
+    "finalAnswer": "$\\boxed{\\text{4:58:15 p.m.}}$ (choice A)",
+    "shortExplanation": "Count the gaps between hiccups rather than the hiccups themselves.",
+    "detailedSteps": [
+      "The first hiccup is at the starting time, so the $700$th follows $699$ gaps.",
+      "The elapsed time is $699\\cdot5=3495$ seconds, or $58$ minutes $15$ seconds. The time is 4:58:15 p.m., choice A."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Elapsed-time intervals"
+    ],
+    "commonMistakes": [
+      "Multiplying 700 by 5 includes one extra gap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first event occurs immediately, so the number of waiting intervals is one less than the event count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p5",
+    "problemId": "amc10b-2022-p5",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "Square the positive expression and factor each denominator term.",
+    "detailedSteps": [
+      "Call the expression $R$. All factors are positive, and $(1-1/p^2)=(1-1/p)(1+1/p)$.",
+      "Thus $R^2=\\prod_{p\\in\\{3,5,7\\}}\\frac{1+1/p}{1-1/p}=\\frac42\\cdot\\frac64\\cdot\\frac86=4$.",
+      "Take the positive square root: $R=2$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "The radical covers the entire product in the denominator.",
+      "Take the positive root because the original factors are all positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring the positive expression exposes cancellation through the difference-of-squares identity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p6",
+    "problemId": "amc10b-2022-p6",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Factor every term in the pattern, rather than testing the ten large numbers individually.",
+    "detailedSteps": [
+      "The term with $n$ ones on either side of its central $2$ is the product $R_{n+1}(10^n+1)$, where $R_{n+1}=1+10+\\cdots+10^n$.",
+      "The two shifted copies of $R_{n+1}$ overlap only at the central digit, producing that $2$. Both factors exceed 1 for every $n\\ge1$.",
+      "Consequently all ten listed terms are composite, and the number of primes is $0$, choice A."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Decimal factorization"
+    ],
+    "commonMistakes": [
+      "A decimal pattern can be factored even when individual terms are too large for trial division."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The useful observation is a factorization of the whole decimal pattern, which proves compositeness uniformly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p7",
+    "problemId": "amc10b-2022-p7",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "Use the product of the roots and exclude repeated-root pairs.",
+    "detailedSteps": [
+      "If the roots are $u,v$, then $uv=36$ and $k=-(u+v)$. The distinct positive pairs are $(1,36),(2,18),(3,12),(4,9)$. The pair $(6,6)$ is excluded.",
+      "Their sums are $37,20,15,13$, giving four negative values of $k$. Negating both roots gives four corresponding positive values.",
+      "There are therefore $8$ values of $k$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Integer roots and factor pairs"
+    ],
+    "commonMistakes": [
+      "Negative roots must be counted too.",
+      "Two equal roots do not satisfy the distinctness condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root product restricts the possibilities to factor pairs, but both signs and the distinct-root condition matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p8",
+    "problemId": "amc10b-2022-p8",
+    "finalAnswer": "$\\boxed{42}$ (choice B)",
+    "shortExplanation": "Each block has one or two multiples; count the total excess beyond one per block.",
+    "detailedSteps": [
+      "A block of ten consecutive integers contains at least one multiple of 7, and at most two, since three multiples span at least 14.",
+      "There are $\\lfloor1000/7\\rfloor=142$ multiples in the full range. If $t$ blocks contain two, the total is $100+t=142$.",
+      "Thus $t=42$, choice B."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Counting multiples in blocks"
+    ],
+    "commonMistakes": [
+      "Counting multiples is different from counting blocks; each two-multiple block adds only one beyond the baseline."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every block contributes a baseline multiple, so the total excess directly counts the desired blocks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p9",
+    "problemId": "amc10b-2022-p9",
+    "finalAnswer": "$\\boxed{2023}$ (choice D)",
+    "shortExplanation": "Write each term as a difference of reciprocal factorials.",
+    "detailedSteps": [
+      "For $k\\ge1$, $\\frac{k}{(k+1)!}=\\frac1{k!}-\\frac1{(k+1)!}$.",
+      "Summing from $k=1$ to $2021$ cancels all interior terms and leaves $1-1/2022!$.",
+      "Thus $a=1$, $b=2022$, and $a+b=2023$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Telescoping factorial sum"
+    ],
+    "commonMistakes": [
+      "The last denominator is 2022!, although the last numerator is 2021."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing consecutive reciprocal factorials turns a very long sum into two endpoint terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p10",
+    "problemId": "amc10b-2022-p10",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "shortExplanation": "The mode lies above the median, so its two occurrences must be the last two numbers.",
+    "detailedSteps": [
+      "Write the sorted list as $a,b,m,M,M$, where $M=m+2$ is the unique mode. A value above the median can occur at most twice, so it must occur exactly twice.",
+      "The first two values are distinct positive integers; otherwise their repeated value would tie the mode. Hence $a+b\\ge1+2=3$.",
+      "The mean is $m-2$. Equating totals gives $a+b+m+2(m+2)=5(m-2)$, or $2m=a+b+14\\ge17$. Therefore the integer $m\\ge9$ and $M\\ge11$.",
+      "The list $(1,3,9,11,11)$ has mean 7, median 9, and unique mode 11. It attains the bound, so the least mode is $11$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Mode median and mean"
+    ],
+    "commonMistakes": [
+      "A unique mode must occur more often than every other value; two equal low entries could create a tie.",
+      "A lower bound must be accompanied by an attaining example."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique mode forces the sorted-list structure; an example is then needed to establish the lower bound is attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p11",
+    "problemId": "amc10b-2022-p11",
+    "finalAnswer": "$\\boxed{\\text{B}}$ (choice B)",
+    "shortExplanation": "The assertion excludes any school having both properties simultaneously.",
+    "detailedSteps": [
+      "Let $L$ mean a school is larger than Euclid HS and let $T$ mean it sold more shirts. The original assertion is $\\neg(L\\land T)$ for every school.",
+      "Because $L\\land T$ and $T\\land L$ are the same condition, this is equivalent to saying no school that sold more shirts is larger than Euclid HS: choice B.",
+      "Equality matters: the assertion allows a larger school to sell exactly as many shirts. Statements using strictly fewer sales can be stronger than the original."
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Equivalent statements"
+    ],
+    "commonMistakes": [
+      "Changing not more into fewer incorrectly excludes equal sales."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logical difficulty lies in preserving strict comparisons and the possibility of equal sales.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p12",
+    "problemId": "amc10b-2022-p12",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Count the probability of never seeing a total of 7.",
+    "detailedSteps": [
+      "Exactly 6 of 36 ordered dice outcomes sum to 7, so a single failure has probability $5/6$. After $n$ independent rolls, the probability of at least one success is $1-(5/6)^n$.",
+      "For $n=3$, $(5/6)^3=125/216>1/2$; for $n=4$, $(5/6)^4=625/1296<1/2$.",
+      "The failure probability decreases with $n$, so the first success probability above $1/2$ occurs at $n=4$, choice C."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Complementary probability"
+    ],
+    "commonMistakes": [
+      "At least once includes multiple successes; adding individual success probabilities double counts them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement is simple to multiply; the required answer is the first integer that crosses the probability threshold.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p13",
+    "problemId": "amc10b-2022-p13",
+    "finalAnswer": "$\\boxed{16}$ (choice E)",
+    "shortExplanation": "Center the two primes around their average to simplify the cube difference.",
+    "detailedSteps": [
+      "Write the primes as $t-1,t+1$. Their cube difference is $(t+1)^3-(t-1)^3=6t^2+2=31106$.",
+      "Thus $t^2=5184=72^2$, giving primes 71 and 73.",
+      "The integers 74 through 78 are composite: the even ones are even, 75 is divisible by 3, and 77 is $7\\cdot11$. The next prime is 79; trial division by 2, 3, 5, 7 confirms primality.",
+      "The digit sum is $7+9=16$, choice E."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime differences"
+    ],
+    "commonMistakes": [
+      "The requested prime is the next one after both given primes, not one of the pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centering the prime pair eliminates the quadratic term from the cube difference, after which only a short primality check remains.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p14",
+    "problemId": "amc10b-2022-p14",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "Pair potential elements whose sum is the largest chosen element.",
+    "detailedSteps": [
+      "Let $m$ be the largest element of a nonempty admissible set. The numbers below $m$ form pairs $(1,m-1),(2,m-2),\\ldots$. At most one member of each pair can be chosen, because their sum is already in the set.",
+      "If $m$ is even, its midpoint $m/2$ is forbidden as well: it added to itself equals $m$. Therefore $|S|\\le1+\\lfloor(m-1)/2\\rfloor=\\lceil m/2\\rceil\\le13$.",
+      "The set $\\{13,14,\\ldots,25\\}$ has 13 elements, and every sum of two of its elements is at least 26. Thus 13 is attainable, choice B."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Sum-free sets"
+    ],
+    "commonMistakes": [
+      "The two summands are allowed to be equal, so choosing $m/2$ when $m$ is chosen is forbidden."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing around the largest chosen element proves an upper bound without enumerating subsets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p15",
+    "problemId": "amc10b-2022-p15",
+    "finalAnswer": "$\\boxed{400}$ (choice D)",
+    "shortExplanation": "Write the ratio in terms of the first term and compare two values of $n$.",
+    "detailedSteps": [
+      "If the first term is $a$, then $S_n=n(a+n-1)$ and $S_{3n}/S_n=3(a+3n-1)/(a+n-1)$.",
+      "Independence of $n$ forces the expressions for $n=1$ and $n=2$ to agree: $(a+2)/a=(a+5)/(a+1)$. Cross multiplying gives $a=1$.",
+      "Now $S_n=n^2$ and $S_{20}=400$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic-sequence sums"
+    ],
+    "commonMistakes": [
+      "The ratio being constant for every $n$ is stronger than having a particular value at one $n$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Comparing the ratio at two small indices determines the first term, and substitution confirms the condition for every index.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p16",
+    "problemId": "amc10b-2022-p16",
+    "finalAnswer": "$\\boxed{\\frac{125}{8}}$ (choice D)",
+    "shortExplanation": "Use the side 5 and height 4 to locate the square, then subtract the portion above the rectangle.",
+    "detailedSteps": [
+      "Place the rectangle at $[0,8]\\times[0,4]$. Let the square vertices in order be $A=(u,4)$ on the top, $B$ on the bottom, $C$ on the right, and $D$ outside above, following the source figure.",
+      "Side $AB$ has length 5 and drops 4, so it moves 3 to the right: $B=(u+3,0)$. Rotating this side vector by $90^\\circ$ gives $\\overrightarrow{BC}=(4,3)$, so $C=(u+7,3)$. As $C$ lies on $x=8$, we get $u=1$ and $D=(5,7)$.",
+      "Line $DC$ meets $y=4$ at $E=(29/4,4)$. The excluded triangle $ADE$ has base $AE=25/4$ and height 3, hence area $75/8$.",
+      "The overlap is $25-75/8=125/8=15\\tfrac58$, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Overlapping square and rectangle"
+    ],
+    "commonMistakes": [
+      "The overlap is a quadrilateral, so taking half the square misses the small portion beyond triangle $ABC$.",
+      "The source figure specifies which three rectangle sides contain the square vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square must first be located from the source diagram; subtracting its triangular cap then gives the overlap exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p17",
+    "problemId": "amc10b-2022-p17",
+    "finalAnswer": "$\\boxed{2^{607}-1}$ (choice C)",
+    "shortExplanation": "Test residues modulo the only primes below 10: 2,3,5,7.",
+    "detailedSteps": [
+      "The number in choice C is odd. Modulo 3, its residue is $2-1=1$. Modulo 5, $607\\equiv3\\pmod4$, so its residue is $2^3-1\\equiv2$. Modulo 7, $607\\equiv1\\pmod3$, so its residue is $2-1=1$. None is zero.",
+      "For completeness, choice A is divisible by 3, choice B by 5, and choice D by 3. For choice E, reducing exponents modulo 4 gives $2^{607}+3^{607}\\equiv8+27\\equiv0\\pmod5$.",
+      "Thus only choice C, $2^{607}-1$, avoids every prime below 10."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Small-prime modular tests"
+    ],
+    "commonMistakes": [
+      "Not being divisible by a small prime does not mean the large number itself is prime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Short modular cycles replace impractical arithmetic with numbers containing hundreds of digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p18",
+    "problemId": "amc10b-2022-p18",
+    "finalAnswer": "$\\boxed{338}$ (choice B)",
+    "shortExplanation": "Count nonsingular binary matrices first, classifying the plane spanned by the first two rows.",
+    "detailedSteps": [
+      "There are $2^9=512$ coefficient matrices. A nonzero solution exists exactly when the three rows are linearly dependent over the real numbers.",
+      "For independence, the first row is one of 7 nonzero binary vectors and the second is one of the other 6. Distinct nonzero binary vectors cannot be scalar multiples, so there are 42 ordered independent row pairs.",
+      "For the three unordered pairs drawn from $\\{(1,1,0),(1,0,1),(0,1,1)\\}$, the span contains exactly 3 binary vectors: zero and the chosen pair. These give 6 ordered pairs, each allowing $8-3=5$ choices for the third row.",
+      "For each of the remaining 36 pairs, their supports are disjoint or one contains the other. The span contains exactly 4 binary vectors: zero, the pair, and respectively their sum or their difference. Thus each allows $8-4=4$ third rows. To see there are no further points, inspect the coordinates on the disjoint or nested support blocks; each block coefficient must be 0 or 1.",
+      "The number of nonsingular matrices is $6\\cdot5+36\\cdot4=174$. The required dependent count is $512-174=338$, choice B."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Binary matrices and rank"
+    ],
+    "commonMistakes": [
+      "The rank is over the real numbers, not modulo 2.",
+      "Row order matters, so unordered row pairs need a factor of 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main step is distinguishing the two possible sizes of the binary points in a real plane; arithmetic modulo 2 would count a different problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p19",
+    "problemId": "amc10b-2022-p19",
+    "finalAnswer": "$\\boxed{22}$ (choice C)",
+    "shortExplanation": "Split by whether the center starts filled, then count configurations by the number of corner cells.",
+    "detailedSteps": [
+      "Call the eight cells surrounding the center the ring; it contains 4 corners and 4 side-midpoints. The surrounding 5-by-5 border starts empty but must also be checked for births.",
+      "If the center starts filled, it needs 2 or 3 filled ring cells. To make each filled ring cell die, it must have no filled ring neighbor: otherwise, together with the center, it has 2 or 3 neighbors and survives. With 2 ring cells, only a pair of opposite corners avoids an additional birth elsewhere, giving 2 configurations. With 3 mutually nonadjacent ring cells, a side-midpoint between two corners is born, so none works.",
+      "If the center starts empty, exactly 3 ring cells are filled. Classify by how many of these are corners. Three corners work in $\\binom43=4$ ways. With two opposite corners, any of the 4 side-midpoints works, giving $2\\cdot4=8$. With two adjacent corners, only the opposite side-midpoint works, giving 4.",
+      "With one corner, the other two filled cells must be the two side-midpoints farthest from that corner, giving 4 configurations. With no corners, any three side-midpoints include a filled cell having two filled neighbors, so an unwanted survivor remains. In the preceding cases, the other side choices similarly create an unwanted survivor or a new filled cell.",
+      "These configurations leave every other cell, including the border, empty. The total is $2+4+8+4+4=22$, choice C. Rotations and reflections are counted separately as required."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Cellular-automaton casework"
+    ],
+    "commonMistakes": [
+      "Cells on the initially empty outer border may become filled and must be tested.",
+      "The update is simultaneous; do not use newly updated cells while computing other cells."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both survivors and newly born cells matter, including births on the initially empty outer border.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p20",
+    "problemId": "amc10b-2022-p20",
+    "finalAnswer": "$\\boxed{113^\\circ}$ (choice D)",
+    "shortExplanation": "Use coordinates for the rhombus and a dot product to recover the angle at the perpendicular foot.",
+    "detailedSteps": [
+      "Scale the side length to 1 and set $E=(0,0)$, $C=(1/2,0)$, $D=(-1/2,0)$. Write $c=\\cos46^\\circ$, $s=\\sin46^\\circ$; then $A=(c-1/2,s)$ and $B=(c+1/2,s)$.",
+      "Because $F$ is the perpendicular projection of $A$ onto $EB$, $F=\\frac{A\\cdot B}{B\\cdot B}B=\\frac3{5+4c}B$. Put $K=5+4c$. The relevant vectors are $\\overrightarrow{FB}=\\frac{2+4c}{K}(c+1/2,s)$ and $\\overrightarrow{FC}=\\frac1K(1-c,-3s)$.",
+      "Their lengths are $BF=(1+2c)/\\sqrt K$ and $CF=\\sqrt{2(1-c)/K}$. Their dot product is $-(1+2c)(1-c)/K$. Hence $\\cos\\angle BFC=-\\sqrt{(1-c)/2}=-\\sin23^\\circ$.",
+      "The angle between two vectors lies in $[0,180^\\circ]$, so $\\angle BFC=90^\\circ+23^\\circ=113^\\circ$, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rhombus and perpendicular projection"
+    ],
+    "commonMistakes": [
+      "The requested angle uses the rays from $F$ toward $B$ and $C$; reversing either vector changes it to the supplementary angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The projection formula organizes the geometry, while a half-angle identity converts the resulting cosine into the requested obtuse angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p21",
+    "problemId": "amc10b-2022-p21",
+    "finalAnswer": "$\\boxed{23}$ (choice E)",
+    "shortExplanation": "Reduce a general cubic modulo both quadratics and solve for its coefficients.",
+    "detailedSteps": [
+      "Write $P(x)=ax^3+bx^2+cx+d$. Modulo $x^2+x+1$, we have $x^2=-x-1$ and $x^3=1$, so the remainder is $(c-b)x+(a-b+d)$.",
+      "Modulo $x^2+1$, use $x^2=-1$ and $x^3=-x$ to get remainder $(c-a)x+(d-b)$. Thus $c-b=1$, $a-b+d=2$, $c-a=2$, and $d-b=1$.",
+      "The unique solution is $(a,b,c,d)=(1,2,3,3)$. In particular $a\\ne0$, so no polynomial of degree at most 2 can work; this cubic has least degree.",
+      "The requested sum is $1^2+2^2+3^2+3^2=23$, choice E."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Polynomial remainders"
+    ],
+    "commonMistakes": [
+      "The same polynomial must satisfy both remainder conditions; solving them separately is insufficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two remainder conditions must be imposed simultaneously, and the nonzero cubic coefficient establishes minimal degree.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p22",
+    "problemId": "amc10b-2022-p22",
+    "finalAnswer": "$\\boxed{136\\pi}$ (choice E)",
+    "shortExplanation": "First classify tangency to the concentric circles, then count intersections of center loci for the third circle.",
+    "detailedSteps": [
+      "Let $r$ be the unknown radius and $d$ its center's distance from the origin. Tangency to the concentric circles of radii 2 and 8 forces either $d=r+2=8-r$, giving $(r,d)=(3,5)$, or $d=r-2=8-r$, giving $(r,d)=(5,3)$. All other internal/external sign choices are impossible.",
+      "The third fixed circle has center $(5,0)$ and radius $\\sqrt3$. For radius 3, the unknown center lies on the circle of radius 5 about the origin and at distance $3+\\sqrt3$ or $3-\\sqrt3$ from $(5,0)$. Each value lies strictly between 0 and 10, so each yields two intersection points: 4 circles of radius 3.",
+      "For radius 5, the center lies on radius 3 about the origin and at distance $5+\\sqrt3$ or $5-\\sqrt3$ from $(5,0)$. Both distances lie strictly between $|5-3|=2$ and $5+3=8$, giving another 4 centers.",
+      "The total area is $4\\pi(3^2)+4\\pi(5^2)=136\\pi$, choice E."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle tangency cases"
+    ],
+    "commonMistakes": [
+      "Tangency may be internal or external.",
+      "Each valid distance condition usually has two reflected centers; count both.",
+      "Concentric tangency alone fixes the radius but not the center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both internal and external tangencies must be classified before counting reflected intersections of the center loci.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p23",
+    "problemId": "amc10b-2022-p23",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "Condition on whether the ant takes two or three steps; the step count depends only on the independent times.",
+    "detailedSteps": [
+      "The first time is less than 1, so at least two steps occur. Two steps occur exactly when $t_1+t_2>1$, which has probability 1/2 by the two equal triangles of the unit square. Otherwise the ant takes the third and final step.",
+      "The position increments are independent of these time decisions. For two independent uniform increments, the chance their sum exceeds 1 is 1/2.",
+      "For three increments, the region where their sum is at most 1 is a tetrahedron of volume 1/6 inside the unit cube, so the chance of exceeding 1 is 5/6.",
+      "The total probability is $\\tfrac12\\cdot\\tfrac12+\\tfrac12\\cdot\\tfrac56=\\tfrac23$, choice C."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Stopping times and independent increments"
+    ],
+    "commonMistakes": [
+      "The ant stops at the end of the step during which time exceeds 1, not partway through that step.",
+      "Time and position are generated independently, which permits conditioning on the step count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The random stopping time depends only on elapsed times, allowing the independent position increments to be handled conditionally.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p24",
+    "problemId": "amc10b-2022-p24",
+    "finalAnswer": "$\\boxed{50}$ (choice B)",
+    "shortExplanation": "Use the equal endpoint values to sharpen the inner difference, then exhibit a function attaining the bound.",
+    "detailedSteps": [
+      "Let $t=f(300)=f(900)$. The Lipschitz condition gives $|f(400)-t|\\le50$ and $|f(800)-t|\\le50$. Therefore $|f(800)-f(400)|\\le100$.",
+      "Applying the same condition to these two function values gives $f(f(800))-f(f(400))\\le\\tfrac12|f(800)-f(400)|\\le50$.",
+      "To attain 50, define a continuous piecewise-linear function through the points $(-50,-25),(50,25),(300,0),(400,-50),(800,50),(900,0)$ and extend it constantly outside this interval.",
+      "The segment slopes are $1/2,-1/10,-1/2,1/4,-1/2$, all of absolute value at most 1/2. Thus the function is globally 1/2-Lipschitz, satisfies the endpoint equality, and gives $f(f(800))-f(f(400))=f(50)-f(-50)=25-(-25)=50$. The answer is B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Lipschitz bounds and construction"
+    ],
+    "commonMistakes": [
+      "The unrestricted inner Lipschitz bound gives 200; the equal endpoint values improve it to 100.",
+      "A bound alone does not show that a function achieves it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal endpoint values sharpen the upper bound, but a globally admissible attaining function is also essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2022-p25",
+    "problemId": "amc10b-2022-p25",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "Find a repeating binary pattern for the inverse of 7 modulo powers of 2.",
+    "detailedSteps": [
+      "Because 7 is odd, its inverse modulo $2^n$ is unique. For every positive integer $m$, define $T_m=1+6(1+8+\\cdots+8^{m-1})=(6\\cdot8^m+1)/7$. Then $7T_m\\equiv1\\pmod{2^{3m}}$.",
+      "The expression $1+\\sum_{j=0}^{m-1}(2^{3j+1}+2^{3j+2})$ shows its binary digits directly: $x_0=1$, and for $k\\ge1$ the digit is 0 when $k\\equiv0\\pmod3$ and 1 otherwise. Choosing large enough $m$ determines any requested finite block.",
+      "The indices 2019,2020,2021,2022 have residues 0,1,2,0 modulo 3. Therefore the four digits are 0,1,1,0 and the requested sum is $0+2+4+0=6$, choice A."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Binary modular inverse"
+    ],
+    "commonMistakes": [
+      "The expansion is written from low powers of 2 upward; reversing the pattern changes the answer.",
+      "The digit $x_0$ is exceptional and should be treated separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inverse has a repeating binary pattern; the main care is matching the requested indices to the correct low-to-high bit order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

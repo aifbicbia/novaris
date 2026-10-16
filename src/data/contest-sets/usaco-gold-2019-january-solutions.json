@@ -1,0 +1,107 @@
+[
+  {
+    "finalAnswer": "Let $E_c$ count valid lines ending in rhyme class $c$, and let $f_a$ count occurrences of rhyme letter $a$. The required count is $$\\boxed{\\prod_{a:f_a>0}\\left(\\sum_c E_c^{f_a}\\right)\\pmod{1{,}000{,}000{,}007}}.$$ A syllable dynamic program computes each $E_c$.",
+    "shortExplanation": "First count ordered lines of the required syllable length, separating them by their final rhyme class. For each repeated rhyme letter, choose a common class and independently choose every line carrying that letter. Different letters can choose the same class, so their contributions multiply without an exclusivity constraint.",
+    "detailedSteps": [
+      "**Count ordered word sequences by syllables.** Define $D[t]$ as the number of sequences totaling exactly $t$ syllables, and initialize $D[0]=1$ for an empty prefix. Partition by the last word: $$D[t]=\\sum_{i:s_i\\le t}D[t-s_i].$$ Each word has positive length, so the smaller totals are already known. The sum runs over word identities, including different words with identical lengths and classes; a word can be used repeatedly.",
+      "**Separate complete lines by their last rhyme class.** For each word $i$, place it after any prefix with $K-s_i$ syllables. Thus $$E_c=\\sum_{i:c_i=c}D[K-s_i].$$ Every nonempty line has a unique final word, so this partitions complete lines without omissions or double counting. Unreachable syllable totals simply contribute zero.",
+      "**Handle one rhyme letter.** Suppose letter $a$ appears in $f_a$ named line positions. If their common final class is $c$, each position has $E_c$ possible lines and the group has $E_c^{f_a}$ choices. Summing over $c$ counts all possibilities for that letter. These cases are disjoint because every chosen complete line identifies its final class.",
+      "**Combine independent letter groups.** The source allows different rhyme letters to end in the same class. Therefore each letter group can be chosen independently, and its sum multiplies the sums for other used letters. Do not impose an injective assignment of letters to classes. Ignore letters with $f_a=0$; they add no restriction.",
+      "**Apply the modulus throughout.** Reduce each dynamic-program addition, class count, power and product modulo $P=1{,}000{,}000{,}007$. Binary exponentiation evaluates each $E_c^{f_a}$ efficiently. Reductions preserve the final count; two residues multiply to less than $P^2<2^{63}$, so signed 64-bit arithmetic safely holds each intermediate product.",
+      "**Check complexity and boundaries.** Computing all $D[t]$ costs $O(NK)$, and the letter factors cost $O(26N\\log M)$. Reading the $M$ supplied rhyme letters costs another $O(M)$, so the full running time is $O(NK+M+26N\\log M)$. Auxiliary space is $O(N+K)$ plus 26 frequencies; read each letter directly into its frequency. If no line has exactly $K$ syllables, every factor for a used letter is zero. Counting ordered sequences is essential: reversing two different words may produce a different line.",
+      "**Original C++17 implementation.** Historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nconst long long MOD=1000000007;\nlong long power(long long x,int e){long long y=1;while(e){if(e&1)y=y*x%MOD;x=x*x%MOD;e/=2;}return y;}\nvoid solve(){int n,m,k;cin>>n>>m>>k;vector<int>s(n),cl(n);for(int i=0;i<n;i++){cin>>s[i]>>cl[i];--cl[i];}array<int,26>f{};for(int i=0;i<m;i++){char x;cin>>x;++f[x-'A'];}vector<long long>dp(k+1),end(n);dp[0]=1;for(int t=1;t<=k;t++)for(int i=0;i<n;i++)if(s[i]<=t)dp[t]=(dp[t]+dp[t-s[i]])%MOD;for(int i=0;i<n;i++)end[cl[i]]=(end[cl[i]]+dp[k-s[i]])%MOD;long long answer=1;for(int z:f)if(z){long long factor=0;for(long long x:end)factor=(factor+power(x,z))%MOD;answer=answer*factor%MOD;}cout<<answer<<'\\n';}\nint main(){ifstream in(\"poetry.in\");ofstream out;auto inputBuffer=cin.rdbuf();auto outputBuffer=cout.rdbuf();if(in){out.open(\"poetry.out\");cin.rdbuf(in.rdbuf());cout.rdbuf(out.rdbuf());}solve();cout.flush();cin.rdbuf(inputBuffer);cout.rdbuf(outputBuffer);return 0;}\n```"
+    ],
+    "keyIdeas": [
+      "Partition an ordered line by its last word, then partition it again by its final rhyme class.",
+      "Equal rhyme letters couple line endings; different letters impose independent constraints.",
+      "Keep word identities and repeated uses even when two input rows share syllables and class.",
+      "Binary exponentiation handles many repeated line positions without expanding complete poems."
+    ],
+    "commonMistakes": [
+      "Forcing different letters to choose different rhyme classes, although the source permits sharing.",
+      "Counting unordered combinations of words or limiting each word to one occurrence.",
+      "Using the count of all lines instead of a separate count for each final rhyme class.",
+      "Multiplying powers before reducing modulo the prime or using a 32-bit product.",
+      "Treating an absent rhyme letter as an additional class-assignment choice."
+    ],
+    "alternativeMethods": [
+      "For a tiny instance, enumerate word-index sequences of exactly K syllables, then enumerate ordered poems and directly check the final classes at equal-letter positions. This provides a literal independent check, but grows exponentially.",
+      "A generating function for ordered word sequences gives the same syllable recurrence. The dynamic program evaluates its coefficients without requiring symbolic expansion."
+    ],
+    "difficultyNotes": "The main challenge is separating the choices that are independent from those tied by the rhyme scheme. The last-word partition explains the dynamic program, and the explicit permission for different letters to share a class determines the final product.",
+    "id": "solution-usaco-gold-2019-january-p1",
+    "problemId": "usaco-gold-2019-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "The minimum number of moves is $q$, the number of cows before the longest strictly increasing suffix. Maintain that suffix in a Fenwick tree and output the complete legal optimal sequence $$k_i=(q-i-1)+\\#\\{\\text{current sorted-tail values below }p_i\\},\\qquad 0\\le i<q.$$ Print the count and the requested second line of moves.",
+    "shortExplanation": "Only the front cow can move, so the untouched original cows remain a suffix in their original order. That suffix must already be increasing. Move each preceding cow once and insert it at its sorted position after the remaining prefix; this reaches the lower bound and supplies an actual sorting certificate.",
+    "detailedSteps": [
+      "**Find the suffix already in order.** Using zero-based indices, scan left while $p_{j-1}<p_j$. Let $q$ be the first index of the resulting increasing suffix. Cows at indices $q,\\ldots,N-1$ will form the initial sorted tail. If the whole permutation is increasing, $q=0$.",
+      "**Prove that fewer than q moves cannot suffice.** The distinct original cows that have ever moved form an initial prefix: a new original cow cannot reach the front until every earlier unmoved original cow has been removed at least once. The untouched original suffix retains its relative order. At the end that suffix must be increasing, so at least $q$ distinct original cows must have moved. Repeating a move cannot evade this lower bound.",
+      "**Maintain a concrete invariant.** Before processing original prefix cow $p_i$, the line consists of the remaining unprocessed prefix followed by an increasing tail. Behind the front cow are $q-i-1$ other unprocessed cows. Let $b$ count values in the current tail smaller than $p_i$. Moving the front cow $k_i=q-i-1+b$ places passes those remaining prefix cows and exactly the $b$ smaller tail cows. It inserts $p_i$ in its sorted position and preserves the invariant.",
+      "**Verify that every instruction is legal.** Before the last prefix move, $q-i-1\\ge1$, so the move is positive. For the last move when $q>0$, maximality of the increasing suffix gives $p_{q-1}>p_q$, hence the tail contains at least one smaller value and again $k_i\\ge1$. The cow passes at most all $N-1$ other cows. After exactly $q$ moves the whole line is increasing, attaining the lower bound.",
+      "**Use a Fenwick tree for the tail values.** Because the input is a permutation of $1,\\ldots,N$, insert every initial suffix value into the tree. The prefix query through $p_i-1$ gives $b$. After printing its instruction, insert $p_i$. Process the original prefix in its original order; there is no need to physically modify the full array during the algorithm.",
+      "**Output the complete certificate.** The first line contains $q$ and the second contains all $q$ instructions in order. When $q=0$, the second line is empty. Any legal optimal instruction sequence is accepted; correctness is a property of its moves, not equality with one reference sequence. The method takes $O(N\\log N)$ time and $O(N)$ space; all ranks and counts fit 32-bit integers for the printed domain.",
+      "**Original C++17 implementation.** Historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nstruct Fenwick{vector<int>f;explicit Fenwick(int n):f(n+1){}void add(int x){for(;x<(int)f.size();x+=x&-x)++f[x];}int sum(int x){int r=0;for(;x;x-=x&-x)r+=f[x];return r;}};\nvoid solve(){int n;cin>>n;vector<int>p(n);for(int&x:p)cin>>x;int q=n-1;while(q>0&&p[q-1]<p[q])--q;Fenwick f(n);for(int i=q;i<n;i++)f.add(p[i]);cout<<q<<'\\n';for(int i=0;i<q;i++){if(i)cout<<' ';cout<<q-i-1+f.sum(p[i]-1);f.add(p[i]);}cout<<'\\n';}\nint main(){ifstream in(\"sleepy.in\");ofstream out;auto inputBuffer=cin.rdbuf();auto outputBuffer=cout.rdbuf();if(in){out.open(\"sleepy.out\");cin.rdbuf(in.rdbuf());cout.rdbuf(out.rdbuf());}solve();cout.flush();cin.rdbuf(inputBuffer);cout.rdbuf(outputBuffer);return 0;}\n```"
+    ],
+    "keyIdeas": [
+      "Front-only moves make the untouched original cows a suffix whose relative order is fixed.",
+      "A lower bound becomes optimal when every cow outside that increasing suffix moves exactly once.",
+      "The move length includes both the remaining prefix and the insertion rank within the sorted tail.",
+      "A Fenwick tree counts smaller tail values without explicitly simulating a long list."
+    ],
+    "commonMistakes": [
+      "Printing only the minimum count and omitting the required sequence of instructions.",
+      "Using only the tail rank and forgetting the remaining unprocessed prefix.",
+      "Counting values less than or equal to the current cow without checking the permutation indexing.",
+      "Finding a longest increasing subsequence anywhere in the line rather than the increasing suffix.",
+      "Rejecting a different legal optimal certificate merely because its text differs from an example."
+    ],
+    "alternativeMethods": [
+      "A balanced order-statistic tree can maintain the tail ranks instead of a Fenwick tree. The values already lie in 1 through N, so a Fenwick tree is simpler.",
+      "For a small independent check, reverse the allowed moves and run breadth-first search from the sorted permutation. This determines the true minimum without the suffix formula. Physically execute the returned instructions to verify their legality and final order."
+    ],
+    "difficultyNotes": "Recognizing the increasing suffix gives the count, but a complete solution also needs an optimality proof and a valid full certificate. The remaining-prefix offset and the proof that the last move is positive are easy to overlook.",
+    "id": "solution-usaco-gold-2019-january-p2",
+    "problemId": "usaco-gold-2019-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Build the lexicographically chosen shortest-route tree to the barn. If $F(u)$ is the number of cows whose usual route passes through field $u$, the maximum decrease is $$\\boxed{\\max_{u\\ne1}F(u)\\max(0,d(u)-T)}.$$ Distances and the final product use signed 64-bit integers.",
+    "shortExplanation": "The shortcut helps only cows that encounter its endpoint on their original usual route. Those cows all replace the same remaining distance to the barn by T. Shortest distances determine those routes, the lexicographic rule determines their parents, and one reverse-distance pass counts the cows using each field.",
+    "detailedSteps": [
+      "**Compute ordinary travel times.** Run Dijkstra from barn field 1 using the positive undirected trail times. Let $d(u)$ be the ordinary minimum time from $u$ to the barn. The original connectivity guarantee makes every distance finite. Ignore stale heap entries, and keep distances in 64-bit integers.",
+      "**Resolve the original route ties exactly.** A shortest route from $u$ first enters a neighbor $v$ satisfying $d(v)+w(u,v)=d(u)$. Choose the smallest-index such neighbor. It is the first field where competing routes can differ, so the source lexicographic rule forces that choice. Applying the same rule recursively resolves the remainder of the route. Positive weights give $d(v)<d(u)$, preventing parent cycles and producing a tree rooted at the barn.",
+      "**Count cows whose fixed route uses each field.** Initialize $F(u)=c_u$. Process fields in decreasing order of $d$, and add the accumulated count at each nonbarn field to its parent. Every routing descendant has greater distance than its ancestor, so all descendant cows have arrived in the count before it is passed onward. The result is exactly the number of cows whose usual route encounters each field.",
+      "**Evaluate one shortcut endpoint.** If the shortcut ends at $u$, a cow meeting $u$ would ordinarily spend another $d(u)$ time reaching the barn. It uses the shortcut only when $T<d(u)$, saving $d(u)-T$; otherwise it saves zero. There are $F(u)$ such cows. Cows whose usual route never visits $u$ receive no benefit, even if a newly planned route could reach the shortcut faster: the source explicitly retains their usual route.",
+      "**Maximize the actual decrease.** Evaluate $F(u)\\max(0,d(u)-T)$ at every nonbarn field and take the maximum. Equality $d(u)=T$ gives zero benefit, and negative improvements are discarded. Cows already at the barn need no travel. In the degenerate single-field input there is no improved trip and the reduction is zero.",
+      "**Check the full numerical domain.** A positive shortest path can be chosen simple, giving $d(u)\\le(N-1)25{,}000$. The total cow count is at most $10{,}000N$. Their product can exceed 32-bit range but remains below $2^{63}$ throughout the printed bounds. Use 64-bit counts before multiplying. A heap and the descending sort take $O((N+M)\\log(N+M)+N\\log N)$ time and $O(N+M)$ space. Parallel positive trails are handled without inventing a distinct-edge condition.",
+      "**Original C++17 implementation.** Historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <iostream>\n#include <limits>\n#include <numeric>\n#include <queue>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(){int n,m,t;cin>>n>>m>>t;vector<long long>flow(n);for(auto&x:flow)cin>>x;vector<vector<pair<int,int>>>g(n);for(int j=0;j<m;j++){int a,b,w;cin>>a>>b>>w;--a;--b;g[a].push_back({b,w});g[b].push_back({a,w});}const long long INF=numeric_limits<long long>::max()/4;vector<long long>d(n,INF);d[0]=0;priority_queue<pair<long long,int>,vector<pair<long long,int>>,greater<pair<long long,int>>>pq;pq.push({0,0});while(!pq.empty()){auto [z,u]=pq.top();pq.pop();if(z!=d[u])continue;for(auto [v,w]:g[u])if(z+w<d[v]){d[v]=z+w;pq.push({d[v],v});}}vector<int>parent(n,-1),order(n);iota(order.begin(),order.end(),0);for(int u=1;u<n;u++)for(auto[v,w]:g[u])if(d[v]+w==d[u]&&(parent[u]<0||v<parent[u]))parent[u]=v;sort(order.begin(),order.end(),[&](int a,int b){return d[a]>d[b];});long long answer=0;for(int u:order){if(u!=0){answer=max(answer,flow[u]*max(0LL,d[u]-t));flow[parent[u]]+=flow[u];}}cout<<answer<<'\\n';}\nint main(){ifstream in(\"shortcut.in\");ofstream out;auto inputBuffer=cin.rdbuf();auto outputBuffer=cout.rdbuf();if(in){out.open(\"shortcut.out\");cin.rdbuf(in.rdbuf());cout.rdbuf(out.rdbuf());}solve();cout.flush();cin.rdbuf(inputBuffer);cout.rdbuf(outputBuffer);return 0;}\n```"
+    ],
+    "keyIdeas": [
+      "Shortest distances and the printed lexicographic rule jointly determine the original routes.",
+      "Positive trail times turn chosen shortest-route parents into an acyclic tree.",
+      "A routing-subtree count measures which cows actually encounter each possible endpoint.",
+      "The optimization changes the remaining trip at one encountered field; it does not globally reroute all cows."
+    ],
+    "commonMistakes": [
+      "Recomputing shortest paths after adding the shortcut and letting all cows seek it, contradicting the source route rule.",
+      "Choosing any shortest-path parent without applying the smallest-field lexicographic tie-break.",
+      "Multiplying by only the cows initially at the endpoint and forgetting cows passing through it.",
+      "Accumulating cows toward the barn before all routing descendants have contributed.",
+      "Allowing a negative saving or overflowing a 32-bit travel-time product."
+    ],
+    "alternativeMethods": [
+      "After constructing the routing tree, an iterative postorder traversal can accumulate subtree counts instead of sorting by distance. Avoid deep recursive calls on a path with ten thousand fields.",
+      "For a tiny independent check, enumerate all simple routes to the barn and choose the minimum by total distance followed by the complete field sequence. Follow each individual cow’s chosen route and directly evaluate every endpoint. This checks both the lexicographic rule and the fixed-route condition without Dijkstra or subtree sums."
+    ],
+    "difficultyNotes": "A shortest-path computation alone does not solve the task. The essential modeling step is preserving the original lexicographic routes when evaluating the shortcut. Once those routes form a tree, the endpoint benefit follows from an exact cow count and a common remaining travel time.",
+    "id": "solution-usaco-gold-2019-january-p3",
+    "problemId": "usaco-gold-2019-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

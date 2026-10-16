@@ -1,0 +1,317 @@
+[
+  {
+    "id": "solution-aime-ii-2018-p1",
+    "problemId": "aime-ii-2018-p1",
+    "finalAnswer": "$\\boxed{800}$",
+    "shortExplanation": "Use the speed ratios to relate the distance Paul runs before returning to B.",
+    "detailedSteps": [
+      "Let AB=x, so BC=1800-x. Paul is four times Eve, so he covers 4/5 of BC before meeting Eve and another 4/5 on his return.",
+      "At the simultaneous arrival at B, Paul has run 2x (twice Ina's distance), hence 8(1800-x)/5=2x and x=800."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Rates and time"
+    ],
+    "commonMistakes": [
+      "Confusing Paul's meeting point with B."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p2",
+    "problemId": "aime-ii-2018-p2",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "Compute the short modular sequence and exploit its period ten.",
+    "detailedSteps": [
+      "Starting from (2,5,8), reduction modulo 11 gives the repeating block 2,5,8,5,2,4,0,7,7,6.",
+      "The block has period 10; indices 2018,2020,2022 reduce to 8,0,2, so the product is 7*2*8=112."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular recurrence"
+    ],
+    "commonMistakes": [
+      "Assuming the initial three terms are already one full period."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p3",
+    "problemId": "aime-ii-2018-p3",
+    "finalAnswer": "$\\boxed{371}$",
+    "shortExplanation": "Write the base-b numerals as 3b+6 and 2b+7, then test the possible odd cubes.",
+    "detailedSteps": [
+      "If 36_b is a square and 27_b a cube, write 3b+6=j^2 and 2b+7=k^3.",
+      "The admissible odd cubes k^3<2007 are 1,27,125,343,729,1331; checking b=(k^3-7)/2 leaves b=10 and 361, whose square tests pass. Their sum is 371."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Perfect powers in bases"
+    ],
+    "commonMistakes": [
+      "Forgetting the base-b digit bounds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p4",
+    "problemId": "aime-ii-2018-p4",
+    "finalAnswer": "$\\boxed{023}$",
+    "shortExplanation": "Place the equiangular octagon in its enclosing square and decompose the six triangular regions.",
+    "detailedSteps": [
+      "The equiangular octagon is inscribed in a square formed by the alternating unit sides. In the resulting trapezoids, the diagonal intersections divide the six triangular pieces into four copies of area 2/3 and two copies of area 1/12.",
+      "Thus K=4(2/3)+2(1/12)=17/6, so a+b=23."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Self-intersecting octagon area"
+    ],
+    "commonMistakes": [
+      "Using signed winding area instead of the six enclosed triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p5",
+    "problemId": "aime-ii-2018-p5",
+    "finalAnswer": "$\\boxed{074}$",
+    "shortExplanation": "Multiply the three complex equations, take a square root, and divide back to recover the sum.",
+    "detailedSteps": [
+      "Multiplying gives (xyz)^2=(80-320i)(60)(96+24i)=240^2(5+3i)^2.",
+      "Choose either square root and divide by xy,yz,zx; the three coordinates are (20+12i),(10-10i),(3+3i) up to a common sign. Thus x+y+z=±(7+5i), and a^2+b^2=74."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex numbers"
+    ],
+    "commonMistakes": [
+      "Choosing incompatible signs when taking the square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p6",
+    "problemId": "aime-ii-2018-p6",
+    "finalAnswer": "$\\boxed{037}$",
+    "shortExplanation": "Factor the quartic; its two fixed real roots leave a quadratic whose discriminant controls the parameter.",
+    "detailedSteps": [
+      "The quartic factors as (x-1)(x+2)[x^2+(2a-1)x+1].",
+      "All roots are real exactly when (2a-1)^2-4>=0, i.e. a<=1/2 or a>=3/2. Over [-20,18], the probability is 18/19, giving 37."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Real-rooted quartics"
+    ],
+    "commonMistakes": [
+      "Including a repeated quadratic root as two distinct roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p7",
+    "problemId": "aime-ii-2018-p7",
+    "finalAnswer": "$\\boxed{020}$",
+    "shortExplanation": "Similarity makes the k-th parallel segment length proportional to the square root of k/2450.",
+    "detailedSteps": [
+      "The k-th parallel cut bounds a similar top triangle, so its length is 5*sqrt(3k/2450)=sqrt(3k/2)/7.",
+      "This is rational precisely when k=6j^2. Since 6j^2<=2450, j=1,...,20, giving 20 segments."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similar triangles and rational lengths"
+    ],
+    "commonMistakes": [
+      "Rationality of sqrt(k) requires a square condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p8",
+    "problemId": "aime-ii-2018-p8",
+    "finalAnswer": "$\\boxed{556}$",
+    "shortExplanation": "Count horizontal and vertical jump multisets and then interleave each pair.",
+    "detailedSteps": [
+      "A horizontal displacement of 4 is one of rrrr, rrR, or RR, and similarly upward.",
+      "For each pair, count multinomial interleavings; the seven cases contribute 70,6,15,105,30,180,150, totaling 556."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Grid walks"
+    ],
+    "commonMistakes": [
+      "Treating the jump directions as unordered after interleaving."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p9",
+    "problemId": "aime-ii-2018-p9",
+    "finalAnswer": "$\\boxed{184}$",
+    "shortExplanation": "The centroid polygon is a dilation of the midpoint polygon about J.",
+    "detailedSteps": [
+      "The seven triangle centroids lie 2/3 of the way from J to the corresponding side midpoint.",
+      "The midpoint heptagon has area 414; dilation by 2/3 scales area by 4/9, so the centroid polygon has area 414*4/9=184."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Centroids and affine area"
+    ],
+    "commonMistakes": [
+      "Area scales by the square of the dilation ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p10",
+    "problemId": "aime-ii-2018-p10",
+    "finalAnswer": "$\\boxed{756}$",
+    "shortExplanation": "Classify functions by fixed points and points mapping directly to them.",
+    "detailedSteps": [
+      "For a function with i fixed points and j additional elements mapping to fixed points, choose these sets and map the remaining 5-i-j points into the j feeders.",
+      "Summing C(5,i)C(5-i,j)i^j j^(5-i-j) over i+j<=5 gives 756."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Functional digraphs"
+    ],
+    "commonMistakes": [
+      "Allowing a non-fixed cycle in f."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p11",
+    "problemId": "aime-ii-2018-p11",
+    "finalAnswer": "$\\boxed{461}$",
+    "shortExplanation": "Use the least prefix that is a permutation of its index set and a factorial recurrence.",
+    "detailedSteps": [
+      "Let c_n be permutations whose first stable prefix has length n. Every permutation of n decomposes uniquely as a c_k prefix followed by (n-k)! completions.",
+      "The recurrence yields c1=1,c2=1,c3=3,c4=13,c5=71 and c6=720-(120+24+18+26+71)=461."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Permutation prefixes"
+    ],
+    "commonMistakes": [
+      "Counting a stable prefix that is not the least one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p12",
+    "problemId": "aime-ii-2018-p12",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "Equal opposite area sums force one pair of diagonal segments to be equal.",
+    "detailedSteps": [
+      "Let a=AP,b=BP,c=CP,d=DP and theta=angle CPD. Equal area sums give (a-c)(d-b)=0; take a=c.",
+      "Cosine rule with AB=10, BC=14, CD=10, AD=2sqrt65 gives a^2+b^2=148, a^2+d^2=180, and d/b=5/3. The resulting area is 112."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Quadrilateral area"
+    ],
+    "commonMistakes": [
+      "The equal-area condition gives two possible diagonal-segment equalities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p13",
+    "problemId": "aime-ii-2018-p13",
+    "finalAnswer": "$\\boxed{647}$",
+    "shortExplanation": "Write state equations for the partial match 1-2-3 and solve the parity probability.",
+    "detailedSteps": [
+      "Let p be the probability of an odd stopping time, with conditional states after an initial 1 and 1-2. First-step conditioning gives p=b/6+5(1-p)/6, b=(1-b)/6+c/6+4p/6, c=b/6+1/6+4(1-p)/6.",
+      "Solving yields p=216/431, so the requested numerator plus denominator is 647."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Pattern waiting time"
+    ],
+    "commonMistakes": [
+      "The parity state equations must stop at the first 1-2-3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p14",
+    "problemId": "aime-ii-2018-p14",
+    "finalAnswer": "$\\boxed{227}$",
+    "shortExplanation": "Equal tangent lengths plus the sine rule determine the second point on AC.",
+    "detailedSteps": [
+      "Use equal tangent lengths from P and Q and the sine rule in triangles APY and ABX to obtain 2=AZ/3+AZ/7, hence AZ=21/5.",
+      "Applying the same identity at Q gives 2=(21/5)(1/AQ+1/8), so AQ=168/59 and the answer is 227."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Incircle tangency"
+    ],
+    "commonMistakes": [
+      "Dropping tangent-length equalities in the second triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2018-p15",
+    "problemId": "aime-ii-2018-p15",
+    "finalAnswer": "$\\boxed{185}$",
+    "shortExplanation": "Count integer sequences with step sizes between 1 and 3, allowing at most one downward step.",
+    "detailedSteps": [
+      "A sequence cannot decrease twice: two decreases of at least one would violate the upper Lipschitz bound from f(0)=0 to f(6)=12.",
+      "Count nondecreasing step multisets of total 12 (141), then the 20 sequences with one endpoint decrease, and the 24 interior-decrease sequences. The total is 185."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Lipschitz integer paths"
+    ],
+    "commonMistakes": [
+      "Allowing more than one downward step."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent derivation written for Novaris from the linked original statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

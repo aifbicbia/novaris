@@ -1,0 +1,632 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1982-p1",
+    "problemId": "amc12-predecessor-1982-p1",
+    "finalAnswer": "$\\boxed{2x-2}$ (choice E)",
+    "shortExplanation": "The identity $x^3-2=x(x^2-2)+(2x-2)$ gives remainder $2x-2$.",
+    "detailedSteps": [
+      "Subtract $x(x^2-2)=x^3-2x$ from the dividend. The difference is $2x-2$.",
+      "This remainder has degree one, less than the divisor’s degree two, so polynomial division is complete."
+    ],
+    "keyIdeas": [
+      "Keep the remainder below the divisor’s degree"
+    ],
+    "commonMistakes": [
+      "Treating the constant remainder theorem as sufficient for a quadratic divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisor’s degree determines the possible remainder degree.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p2",
+    "problemId": "amc12-predecessor-1982-p2",
+    "finalAnswer": "$\\boxed{2x+\\frac12}$ (choice A)",
+    "shortExplanation": "Taking one fourth of $8x+2$ gives $2x+1/2$.",
+    "detailedSteps": [
+      "First multiply the original number by eight, giving $8x$. Increasing this result by two gives $8x+2$.",
+      "One fourth of the entire result is $(8x+2)/4=2x+1/2$."
+    ],
+    "keyIdeas": [
+      "Translate the verbal operations in order"
+    ],
+    "commonMistakes": [
+      "Adding two after taking the quarter, which reverses the specified order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A phrase referring to the result applies to the entire preceding expression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p3",
+    "problemId": "amc12-predecessor-1982-p3",
+    "finalAnswer": "$\\boxed{256}$ (choice C)",
+    "shortExplanation": "At $x=2$, both $x^x$ expressions equal four, so the result is $4^4=256$.",
+    "detailedSteps": [
+      "The actual expression is $(x^x)^{(x^x)}$. Substituting two gives $(2^2)^{(2^2)}$.",
+      "Both the base and exponent become four. Thus the value is $4^4=256$."
+    ],
+    "keyIdeas": [
+      "Evaluate the parenthesized base and exponent separately"
+    ],
+    "commonMistakes": [
+      "Reading the parenthesized expression as an unparenthesized power tower."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exponent grouping changes the expression substantially.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p4",
+    "problemId": "amc12-predecessor-1982-p4",
+    "finalAnswer": "$\\boxed{2+\\frac4\\pi}$ (choice E)",
+    "shortExplanation": "The equation $(\\pi+2)r=\\pi r^2/2$ gives $r=2+4/\\pi$.",
+    "detailedSteps": [
+      "For radius $r>0$, the semicircular region’s boundary contains an arc of length $\\pi r$ and a diameter of length $2r$. Its numerical perimeter is $(\\pi+2)r$.",
+      "The numerical area is $\\pi r^2/2$. Equating and dividing by the positive radius gives $\\pi+2=\\pi r/2$.",
+      "Therefore $r=2(\\pi+2)/\\pi=2+4/\\pi$ centimeters. This is the unique positive radius satisfying the equation."
+    ],
+    "keyIdeas": [
+      "Include the diameter in the semicircle boundary"
+    ],
+    "commonMistakes": [
+      "Counting only the curved arc when calculating the perimeter of the region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated equality compares numerical values measured in the specified units.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p5",
+    "problemId": "amc12-predecessor-1982-p5",
+    "finalAnswer": "$\\boxed{\\frac{ac}{a+b}}$ (choice C)",
+    "shortExplanation": "The smaller number is $x=ac/(a+b)$.",
+    "detailedSteps": [
+      "Write $x=ka$ and $y=kb$ for a positive common multiplier $k$. Their sum gives $k(a+b)=c$, hence $k=c/(a+b)$.",
+      "Since $a<b$, the smaller number is $x=ka=ac/(a+b)$. Both positivity and the original ratio are preserved."
+    ],
+    "keyIdeas": [
+      "Use a common scale for the given ratio"
+    ],
+    "commonMistakes": [
+      "Dividing by one ratio term instead of the sum of both terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A total fixes the scale of a ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p6",
+    "problemId": "amc12-predecessor-1982-p6",
+    "finalAnswer": "$\\boxed{130^\\circ}$ (choice D)",
+    "shortExplanation": "The polygon has seventeen sides and total angle $2700^\\circ$, leaving $130^\\circ$.",
+    "detailedSteps": [
+      "If there are $n$ sides and the remaining angle is $\\alpha$, then $2570+\\alpha=180(n-2)$. Convexity requires $0<\\alpha<180$.",
+      "Thus $2570<180(n-2)<2750$. The only multiple of 180 in this interval is 2700, corresponding to $n=17$.",
+      "The missing angle is $2700-2570=130^\\circ$."
+    ],
+    "keyIdeas": [
+      "Use the strict interior-angle bounds of a convex polygon"
+    ],
+    "commonMistakes": [
+      "Choosing a multiple of 180 without checking that the remaining angle is a proper convex interior angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle bound determines the integer number of sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p7",
+    "problemId": "amc12-predecessor-1982-p7",
+    "finalAnswer": "$\\boxed{\\text{the distributive claim}}$ (choice B)",
+    "shortExplanation": "The distributive claim fails: $1\\ast(0+0)=1$, while $(1\\ast0)+(1\\ast0)=2$.",
+    "detailedSteps": [
+      "The operation expands to $x\\ast y=xy+x+y$. Therefore $x\\ast(y+z)=xy+xz+x+y+z$, whereas $(x\\ast y)+(x\\ast z)=xy+xz+2x+y+z$.",
+      "They differ by $x$, so they are not equal for all inputs. The explicit choice $x=1,y=z=0$ is a counterexample.",
+      "Commutativity and the identity $x\\ast0=x$ follow directly. Also $(x-1)\\ast(x+1)=x(x+2)-1=(x\\ast x)-1$.",
+      "Finally, $1+(x\\ast y)=(x+1)(y+1)$ turns the operation into ordinary multiplication after adding one. Hence both associative groupings equal $(x+1)(y+1)(z+1)-1$. Only choice B is false."
+    ],
+    "keyIdeas": [
+      "Expand the custom operation before testing its laws"
+    ],
+    "commonMistakes": [
+      "Assuming a custom operation inherits every law of ordinary multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shifted multiplication law preserves associativity but changes distributivity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p8",
+    "problemId": "amc12-predecessor-1982-p8",
+    "finalAnswer": "$\\boxed{7}$ (choice B)",
+    "shortExplanation": "The progression condition reduces to $(n-7)(n-2)=0$; only seven satisfies $n>3$.",
+    "detailedSteps": [
+      "For three terms in arithmetic progression, twice the middle equals the sum of the other two. Thus $2\\binom n2=\\binom n1+\\binom n3$.",
+      "Substitute the factorial expressions and divide by positive $n$: $n-1=1+(n-1)(n-2)/6$.",
+      "Clearing the denominator gives $n^2-9n+14=(n-7)(n-2)=0$. The original condition $n>3$ leaves $n=7$. Indeed the three terms are $7,21,35$."
+    ],
+    "keyIdeas": [
+      "Translate the progression into a binomial equation"
+    ],
+    "commonMistakes": [
+      "Retaining the algebraic root two despite the specified binomial domain."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A progression involving binomial coefficients becomes a low-degree polynomial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p9",
+    "problemId": "amc12-predecessor-1982-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The right region has area $(9-k)^2/18$; setting it to two gives $k=3$.",
+    "detailedSteps": [
+      "The whole triangle has horizontal base eight and height one, hence area four. The target area on either side is two.",
+      "For a vertical cut $x=k$ with $1\\le k\\le9$, the right region is a triangle with vertices $(k,1),(9,1),(k,k/9)$. Its area is $(9-k)(1-k/9)/2=(9-k)^2/18$.",
+      "Setting this to two gives $9-k=6$, using the nonnegative base length, so $k=3$. For cuts left of $x=1$, the left area is at most $4/9$, so they cannot bisect the triangle."
+    ],
+    "keyIdeas": [
+      "Measure the triangle on the right of the dividing line"
+    ],
+    "commonMistakes": [
+      "Taking the midpoint of the horizontal coordinate range as an area bisector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similar slice triangles make area quadratic in the remaining width.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p10",
+    "problemId": "amc12-predecessor-1982-p10",
+    "finalAnswer": "$\\boxed{30}$ (choice A)",
+    "shortExplanation": "The bisectors give $BM=MO$ and $CN=NO$, so the smaller perimeter is $AB+AC=30$.",
+    "detailedSteps": [
+      "Use the primary publisher diagram linked here: $O$ is the intersection of the two bisectors and lies on $MN$. The modern redraw places its label away from that intersection.",
+      "Because $MO$ is parallel to $BC$ and $BO$ bisects the angle at $B$, triangle $BMO$ has equal angles at $B$ and $O$. Hence $BM=MO$. The corresponding argument in triangle $CNO$ gives $CN=NO$.",
+      "Therefore $AM+AN+MN=(AB-BM)+(AC-CN)+(MO+NO)=AB+AC=12+18=30$. The actual interior positions make $MN=MO+NO$."
+    ],
+    "keyIdeas": [
+      "Use the two small isosceles triangles at the angle bisectors"
+    ],
+    "commonMistakes": [
+      "Using the misplaced modern O label instead of the publisher’s bisector-intersection incidence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel slice converts the two bisector relations into exact perimeter cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p11",
+    "problemId": "amc12-predecessor-1982-p11",
+    "finalAnswer": "$\\boxed{840}$ (choice C)",
+    "shortExplanation": "There are fifteen endpoint pairs and $8\\cdot7$ middle choices, giving $840$.",
+    "detailedSteps": [
+      "The leading digit ranges from one through nine; the last digit may be zero. Pairs with last digit two greater number seven, while pairs with last digit two smaller number eight. Thus there are fifteen ordered endpoint pairs.",
+      "The remaining two positions must use distinct digits different from both endpoints. They have eight and seven choices in order.",
+      "The total is $15\\cdot8\\cdot7=840$. The endpoint condition already ensures the endpoints differ, and the counting covers all four-digit integers."
+    ],
+    "keyIdeas": [
+      "Choose the endpoint digits before the two middle digits"
+    ],
+    "commonMistakes": [
+      "Treating the leading and trailing digit ranges as identical, or forgetting that middle digits may be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choose the constrained positions first and fill the unrestricted positions afterward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p12",
+    "problemId": "amc12-predecessor-1982-p12",
+    "finalAnswer": "$\\boxed{-17}$ (choice A)",
+    "shortExplanation": "The odd terms cancel in $f(7)+f(-7)=-10$, giving $f(7)=-17$.",
+    "detailedSteps": [
+      "Every nonconstant term has odd degree, so its values at opposite inputs sum to zero. The two constant terms sum to $-10$.",
+      "Thus $f(7)+f(-7)=-10$. Substituting the given $f(-7)=7$ gives $f(7)=-10-7=-17$. The coefficients need not be determined individually."
+    ],
+    "keyIdeas": [
+      "Pair the opposite inputs of the odd polynomial part"
+    ],
+    "commonMistakes": [
+      "Assuming the entire function is odd despite its constant term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite inputs can eliminate several unknown coefficients simultaneously.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p13",
+    "problemId": "amc12-predecessor-1982-p13",
+    "finalAnswer": "$\\boxed{\\log_b a}$ (choice D)",
+    "shortExplanation": "With $t=\\log_b a$, we get $a^p=b^{tp}=b^{\\log_b t}=t$.",
+    "detailedSteps": [
+      "Set $t=\\log_b a$. Since $a>1$ and $b>1$, we have $t>0$, so the outer logarithm is defined. Also $a=b^t$.",
+      "The given exponent is $p=(\\log_b t)/t$. Therefore $a^p=(b^t)^p=b^{\\log_b t}=t=\\log_b a$. This remains valid when $t=1$, for which $p=0$."
+    ],
+    "keyIdeas": [
+      "Name the positive inner logarithm"
+    ],
+    "commonMistakes": [
+      "Confusing the inner logarithm’s positivity with a requirement that it exceed one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An inner logarithm often serves as the natural substitution for a nested exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p14",
+    "problemId": "amc12-predecessor-1982-p14",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "The tangent angle has sine $1/5$, making the middle center nine units from the line; the chord length is $24$.",
+    "detailedSteps": [
+      "Place the common diameter line horizontally with $A$ at zero. The three radius-fifteen circle centers are at coordinates fifteen, forty-five and seventy-five.",
+      "The tangent from $A$ to the last circle makes an angle $\\theta$ with this line. Its right triangle gives $\\sin\\theta=15/75=1/5$.",
+      "The middle center’s perpendicular distance from that same tangent is $45\\sin\\theta=9$. A perpendicular from a circle center bisects a chord, so $EF=2\\sqrt{15^2-9^2}=24$. Either reflected tangent has the same chord length."
+    ],
+    "keyIdeas": [
+      "Transfer the tangent angle to the middle center’s distance"
+    ],
+    "commonMistakes": [
+      "Using the distance from the first center when finding the chord of the middle circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared line through collinear centers scales their perpendicular distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p15",
+    "problemId": "amc12-predecessor-1982-p15",
+    "finalAnswer": "$\\boxed{15<x+y<16}$ (choice D)",
+    "shortExplanation": "The equations force $\\lfloor x\\rfloor=4$ and $y=11$, so $15<x+y<16$.",
+    "detailedSteps": [
+      "Let $n=\\lfloor x\\rfloor$. The integer-shift property gives $\\lfloor x-2\\rfloor=n-2$. Equating the two values of $y$ gives $2n+3=3(n-2)+5=3n-1$.",
+      "Hence $n=4$ and $y=11$. Because $x$ is not an integer, $4<x<5$, and adding eleven gives $15<x+y<16$."
+    ],
+    "keyIdeas": [
+      "Shift the floor by the integer two"
+    ],
+    "commonMistakes": [
+      "Treating floor(x−2) as an unrelated unknown instead of shifting its floor by two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integer shift commutes with the floor function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p16",
+    "problemId": "amc12-predecessor-1982-p16",
+    "finalAnswer": "$\\boxed{72}$ (choice B)",
+    "shortExplanation": "The outside contributes $48$ square meters and the hole interiors contribute $24$, totaling $72$.",
+    "detailedSteps": [
+      "Each of the six outer faces has area nine with a unit-square opening removed. Thus the outside surface area is $6(9-1)=48$.",
+      "There are three perpendicular unit-square tunnels. Each tunnel originally has four wall strips of length three and width one. Where the other tunnels cross its central unit cube, the central unit length of each strip is absent.",
+      "Therefore each tunnel contributes $4(3-1)=8$ square meters of interior wall. These surviving surfaces are distinct, so the inside total is $3\\cdot8=24$ and the full area is $48+24=72$."
+    ],
+    "keyIdeas": [
+      "Count outer faces and the surviving tunnel walls separately"
+    ],
+    "commonMistakes": [
+      "Counting walls inside the common tunnel intersection even though there is no wood there."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Intersecting holes remove some proposed inner walls rather than adding them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p17",
+    "problemId": "amc12-predecessor-1982-p17",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The quadratic in $t=3^x$ has roots $3$ and $1/9$, yielding two real inputs.",
+    "detailedSteps": [
+      "Put $t=3^x>0$. The equation becomes $9t^2-27t-t+3=0$, or $9t^2-28t+3=0$.",
+      "It factors as $(t-3)(9t-1)=0$. Both roots are positive, so the one-to-one exponential function yields $x=1$ and $x=-2$.",
+      "Both satisfy the original equation, and the quadratic has no other roots. Thus there are exactly two real solutions."
+    ],
+    "keyIdeas": [
+      "Replace the exponential by a positive variable"
+    ],
+    "commonMistakes": [
+      "Treating 3^(2x+2) as a linear expression in 3^x or rejecting the small positive root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive range of an exponential filters algebraic substitution roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p18",
+    "problemId": "amc12-predecessor-1982-p18",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt6}{4}}$ (choice D)",
+    "shortExplanation": "The angle data give edge ratios $HG:HF:HC=1:1/\\sqrt3:1$, and the dot product yields $\\sqrt6/4$.",
+    "detailedSteps": [
+      "Use $H=(0,0,0)$, $G=(0,a,0)$, $F=(b,0,0)$, and let the vertical edge length be $c>0$. Then $D=(0,a,c)$ and $B=(b,0,c)$, following the actual labeled rectangular solid.",
+      "The angle $DHG=45^\\circ$ gives $c/a=1$. The angle $FHB=60^\\circ$ gives $c/b=\\sqrt3$. Thus $a=c$ and $b=c/\\sqrt3$.",
+      "The vectors $HD=(0,c,c)$ and $HB=(c/\\sqrt3,0,c)$ have dot product $c^2$ and lengths $c\\sqrt2$ and $2c/\\sqrt3$. Consequently $\\cos\\angle BHD=c^2/((c\\sqrt2)(2c/\\sqrt3))=\\sqrt6/4$."
+    ],
+    "keyIdeas": [
+      "Express both diagonals with perpendicular box-edge vectors"
+    ],
+    "commonMistakes": [
+      "Combining the two pictured angles as though all three diagonals lie in one plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Box diagonals in different faces are most transparent as three-dimensional vectors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p19",
+    "problemId": "amc12-predecessor-1982-p19",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The function ranges from zero to two, so the sum of its extreme values is two.",
+    "detailedSteps": [
+      "For $2\\le x\\le3$, the expression simplifies to $2x-4$, increasing from zero to two. For $3\\le x\\le4$, it is $8-2x$, decreasing from two to zero.",
+      "For $4\\le x\\le8$, all three absolute values simplify to give zero. These intervals cover the original domain.",
+      "The minimum zero and maximum two are attained. Their sum is two."
+    ],
+    "keyIdeas": [
+      "Split at every absolute-value sign change"
+    ],
+    "commonMistakes": [
+      "Missing the sign change at three in the last absolute-value term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Piecewise-linear extrema occur at interval endpoints or constant branches.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p20",
+    "problemId": "amc12-predecessor-1982-p20",
+    "finalAnswer": "$\\boxed{\\text{infinitely many}}$ (choice D)",
+    "shortExplanation": "For every positive integer $k$, the pair $x=k^2+1$, $y=k(k^2+1)$ satisfies the equation.",
+    "detailedSteps": [
+      "Rearrange to $y^2=x^2(x-1)$. The ratio $y/x$ is positive and has square $x-1$, a nonnegative integer. A rational number whose square is an integer must itself be an integer.",
+      "Writing $y/x=k\\ge1$ gives $x=k^2+1$ and $y=k(k^2+1)$. Direct substitution gives $x^2+y^2=x^2(1+k^2)=x^3$.",
+      "Different positive integers $k$ give strictly increasing $x$, so these are infinitely many distinct positive integer pairs."
+    ],
+    "keyIdeas": [
+      "Construct an unbounded family of positive integer solutions"
+    ],
+    "commonMistakes": [
+      "Concluding finiteness from a bounded numerical search when the variable has no stated upper bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit unbounded parameter proves infinitude without enumerating all solutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p21",
+    "problemId": "amc12-predecessor-1982-p21",
+    "finalAnswer": "$\\boxed{\\frac{s\\sqrt6}{2}}$ (choice E)",
+    "shortExplanation": "Perpendicular medians give $AC=s\\sqrt2$, so $BN=s\\sqrt6/2$.",
+    "detailedSteps": [
+      "Put $C=(0,0)$, $B=(0,-s)$ and $A=(t,0)$ with $t>0$. Then $M=(t/2,-s/2)$ and $N=(t/2,0)$ are the specified midpoints.",
+      "The direction vectors of $CM$ and $BN$ are $(t/2,-s/2)$ and $(t/2,s)$. Their zero dot product gives $t^2/4-s^2/2=0$, hence $t^2=2s^2$.",
+      "Therefore $BN^2=t^2/4+s^2=3s^2/2$, giving $BN=s\\sqrt6/2$."
+    ],
+    "keyIdeas": [
+      "Use the actual median midpoints in perpendicular coordinates"
+    ],
+    "commonMistakes": [
+      "Confusing a midpoint with the common intersection of the medians."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The dot product relates two median lengths to the original perpendicular sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p22",
+    "problemId": "amc12-predecessor-1982-p22",
+    "finalAnswer": "$\\boxed{h}$ (choice E)",
+    "shortExplanation": "The width is $a(\\cos45^\\circ+\\cos75^\\circ)=a\\sin75^\\circ=h$.",
+    "detailedSteps": [
+      "The foot stays at the same point between the walls. Its two distances to the walls are $a\\cos45^\\circ$ and $a\\cos75^\\circ$, so their sum is the alley width.",
+      "Using the exact values, $\\cos45^\\circ+\\cos75^\\circ=(\\sqrt6+\\sqrt2)/4=\\sin75^\\circ$.",
+      "Thus $w=a\\sin75^\\circ$. The latter is exactly the height $h$ reached on the wall at the seventy-five-degree position."
+    ],
+    "keyIdeas": [
+      "Add the two horizontal projections from the fixed foot"
+    ],
+    "commonMistakes": [
+      "Adding the two vertical heights instead of the two horizontal distances from the same foot."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exact special-angle values can identify a geometric length already named in the problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p23",
+    "problemId": "amc12-predecessor-1982-p23",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice A)",
+    "shortExplanation": "The consecutive sides must be $4,5,6$, so the smallest angle has cosine $3/4$.",
+    "detailedSteps": [
+      "Write the sides as $n,n+1,n+2$, and let $\\alpha$ be opposite $n$. The largest angle is $2\\alpha$. The sine law gives $(n+2)/n=\\sin2\\alpha/\\sin\\alpha=2\\cos\\alpha$.",
+      "The cosine law independently gives $\\cos\\alpha=((n+1)^2+(n+2)^2-n^2)/(2(n+1)(n+2))$. Equating the two expressions simplifies to $n^2-3n-4=(n-4)(n+1)=0$.",
+      "The positive side length is $n=4$, and the sides $4,5,6$ satisfy the strict triangle inequality. Substituting gives $\\cos\\alpha=(4+2)/(2\\cdot4)=3/4$. The largest-angle cosine is $1/8=2(3/4)^2-1$, consistent with the required double angle."
+    ],
+    "keyIdeas": [
+      "Combine the sine and cosine laws for the smallest angle"
+    ],
+    "commonMistakes": [
+      "Doubling a side length when an angle, rather than a side, is doubled."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two laws express the same angle using complementary information.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p24",
+    "problemId": "amc12-predecessor-1982-p24",
+    "finalAnswer": "$\\boxed{2\\sqrt{22}}$ (choice A)",
+    "shortExplanation": "The bottom intersection distances have sum twenty and product seventy-eight, giving gap $2\\sqrt{22}$.",
+    "detailedSteps": [
+      "Use the primary publisher diagram linked here to identify $H,J$ on $AB$. The equilateral side length is $AG+GF+FC=2+13+1=16$. Power of point $A$ gives $AH\\cdot AJ=AG\\cdot AF=2\\cdot15=30$.",
+      "Put $AH=t$ and $AJ=t+7$. The equation $t(t+7)=30$ has positive solution three, so $AH=3$, $AJ=10$, $BH=13$ and $BJ=6$. Thus the power of $B$ is seventy-eight.",
+      "Let $u=BD$ and $v=BE$ with $u<v$. Then $uv=78$. The power of $C$ gives $(16-u)(16-v)=CF\\cdot CG=1\\cdot14=14$. Expanding yields $u+v=20$.",
+      "Consequently $(v-u)^2=(u+v)^2-4uv=400-312=88$, so $DE=v-u=2\\sqrt{22}$. The values $u=10-\\sqrt{22}$ and $v=10+\\sqrt{22}$ both lie strictly between zero and sixteen, and the six points realize one circle."
+    ],
+    "keyIdeas": [
+      "Apply the three vertex powers to the same circle"
+    ],
+    "commonMistakes": [
+      "Interchanging the crowded modern H/J labels or omitting an outer secant segment in a power product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using all three powers determines a chord without first finding the circle center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p25",
+    "problemId": "amc12-predecessor-1982-p25",
+    "finalAnswer": "$\\boxed{\\frac{21}{32}}$ (choice D)",
+    "shortExplanation": "Reaching the right edge after zero through three southward steps gives probability $21/32$.",
+    "detailedSteps": [
+      "The actual map has three columns and four rows. Write $A=(0,0)$, $B=(3,4)$ and $C=(3,3)$, counting steps east and south.",
+      "The route passes through $C$ precisely when it first reaches the right boundary before reaching the bottom boundary. Its third eastward step must occur after $j=0,1,2$ or $3$ southward steps.",
+      "Before that final eastward step there are two eastward and $j$ southward moves in any order, giving $\\binom{2+j}{2}$ possibilities, each of probability $2^{-(3+j)}$. All these choices occur before either boundary forces a direction.",
+      "The disjoint probabilities sum to $1/8+3/16+6/32+10/64=21/32$. Once the right boundary is reached, the forced southward moves necessarily visit $C$."
+    ],
+    "keyIdeas": [
+      "Count when the third eastward step first reaches the right edge"
+    ],
+    "commonMistakes": [
+      "Assigning equal probabilities to complete paths of different numbers of genuine coin-flip decisions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the last random decision before boundary moves become forced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p26",
+    "problemId": "amc12-predecessor-1982-p26",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The residue is $24+c$ modulo sixty-four; the only square residue from twenty-four through thirty-one is twenty-five, so $c=1$.",
+    "detailedSteps": [
+      "The last two octal digits $3c$ contribute $3\\cdot8+c=24+c$ modulo $8^2=64$, with $0\\le c\\le7$.",
+      "The square residues modulo sixty-four are $0,1,4,9,16,17,25,33,36,41,49,57$. Their only member between twenty-four and thirty-one is twenty-five. Hence $24+c=25$, giving $c=1$.",
+      "This is feasible with the full required representation: $27^2=729=1331_8$, whose leading digit is nonzero and whose third digit is three."
+    ],
+    "keyIdeas": [
+      "Use the final two octal digits modulo sixty-four"
+    ],
+    "commonMistakes": [
+      "Checking only square residues modulo eight, which loses the specified preceding octal digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A known penultimate digit calls for a modulus equal to the square of the base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p27",
+    "problemId": "amc12-predecessor-1982-p27",
+    "finalAnswer": "$\\boxed{-a+bi}$ (choice C)",
+    "shortExplanation": "The polynomial obeys $P(-\\overline z)=\\overline{P(z)}$, so $-a+bi$ must also be a root.",
+    "detailedSteps": [
+      "For real coefficients $c_j$, conjugating the polynomial value changes $i$ to $-i$ in the odd-degree terms and conjugates $z$.",
+      "Replacing $z$ by $-\\overline z$ makes the even powers unchanged and the odd powers negative. Thus $P(-\\overline z)=\\overline{P(z)}$ term by term.",
+      "If $P(z)=0$, the right side is zero, so $-\\overline z=-a+bi$ is also a root. This works even when some coefficients vanish or the root is real."
+    ],
+    "keyIdeas": [
+      "Conjugate the imaginary odd coefficients together with the root"
+    ],
+    "commonMistakes": [
+      "Applying the usual real-coefficient conjugate-root rule despite the imaginary odd coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coefficient pattern determines which transformation of a root is preserved.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p28",
+    "problemId": "amc12-predecessor-1982-p28",
+    "finalAnswer": "$\\boxed{7}$ (choice B)",
+    "shortExplanation": "The original set ends at sixty-nine, and the erased number is seven.",
+    "detailedSteps": [
+      "Let the original set be $1,2,\\ldots,N$ and the erased integer be $k$. Its remaining mean is $(N(N+1)/2-k)/(N-1)=602/17$.",
+      "Erasing the largest value gives mean $N/2$, and erasing one gives mean $(N+2)/2$. Therefore $N/2\\le602/17\\le(N+2)/2$, which permits only $N=69$ or $70$.",
+      "The mean $602/17$ is reduced. Because the numerator of the original mean fraction is an integer, seventeen must divide $N-1$. Only $N=69$ meets this condition.",
+      "The original sum is $69\\cdot70/2=2415$, and the remaining sum is $68\\cdot602/17=2408$. Thus $k=2415-2408=7$, which lies in the original set."
+    ],
+    "keyIdeas": [
+      "Bound the original endpoint before using the mean’s denominator"
+    ],
+    "commonMistakes": [
+      "Guessing the original endpoint from twice the mean without accounting for the erased value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A reduced fractional mean constrains the number of remaining integer terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p29",
+    "problemId": "amc12-predecessor-1982-p29",
+    "finalAnswer": "$\\boxed{\\frac1{32}}$ (choice A)",
+    "shortExplanation": "The minimum is attained at $(1/4,1/4,1/2)$ and equals $1/32$.",
+    "detailedSteps": [
+      "The expression and constraints are symmetric, so order the values as $x\\le y\\le z\\le2x$. Their sum implies $1/5\\le x\\le1/3$.",
+      "For fixed $x$, use $y=1-x-z$. On $z\\ge(1-x)/2$, the product $yz=z(1-x-z)$ decreases as $z$ increases. The largest permitted $z$ is $\\min(2x,1-2x)$; both resulting endpoints satisfy all ratio and order constraints.",
+      "For $1/5\\le x\\le1/4$, the boundary product is $2x^2(1-3x)$. Its derivative is $2x(2-9x)$, positive then negative, so any interior critical point is a maximum. The minimum is at an endpoint: $4/125$ or $1/32$.",
+      "For $1/4\\le x\\le1/3$, the boundary product is $x^2(1-2x)$, whose derivative $2x(1-3x)$ is nonnegative. Its minimum is therefore $1/32$ at $x=1/4$.",
+      "Since $1/32<4/125$, the global minimum is $1/32$. The attaining triple $(1/4,1/4,1/2)$ has sum one and largest-to-smallest ratio exactly two."
+    ],
+    "keyIdeas": [
+      "Minimize the product on the boundary of the ordered feasible region"
+    ],
+    "commonMistakes": [
+      "Using the equal-value triple, which maximizes the product rather than minimizing it under these constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Fixing the smallest variable reduces the three-variable constraint to two short boundary cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1982-p30",
+    "problemId": "amc12-predecessor-1982-p30",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "The two powers sum to an integer ending in zero minus a positive fraction below one, so its integer part ends in nine.",
+    "detailedSteps": [
+      "Put $\\alpha=15+\\sqrt{220}$ and $\\beta=15-\\sqrt{220}$. They satisfy $\\alpha+\\beta=30$ and $\\alpha\\beta=5$. Also $0<\\beta<1/5$, since $(74/5)^2<220<225$.",
+      "The traces $S_n=\\alpha^n+\\beta^n$ are integers: $S_0=2$, $S_1=30$, and $S_n=30S_{n-1}-5S_{n-2}$. Both $S_1$ and $S_2=890$ end in zero, and the recurrence shows every subsequent trace does too.",
+      "The requested real number is $\\alpha^{19}+\\alpha^{82}=S_{19}+S_{82}-(\\beta^{19}+\\beta^{82})$. Its subtracted correction is positive and less than $2/5^{19}<1$.",
+      "Therefore the integer part is $S_{19}+S_{82}-1$. The trace sum ends in zero, so subtracting one gives units digit nine. The strict positive correction is essential."
+    ],
+    "keyIdeas": [
+      "Use integer conjugate traces and a strictly small correction"
+    ],
+    "commonMistakes": [
+      "Rounding the real number to its nearby integer instead of taking its actual units digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small algebraic conjugate determines on which side of a nearby integer a large power lies.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

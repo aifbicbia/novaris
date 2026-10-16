@@ -1,0 +1,90 @@
+[
+  {
+    "id": "solution-usaco-bronze-2014-us-open-p1",
+    "problemId": "usaco-bronze-2014-us-open-p1",
+    "finalAnswer": "Write the number of interesting integers in the inclusive mileage interval to odometer.out.",
+    "shortExplanation": "Construct every decimal pattern with one exceptional digit and all other digits equal. Count the patterns with no leading zero whose values lie between the two endpoints.",
+    "detailedSteps": [
+      "Both endpoints are included, and leading zeros are not digits. An interesting number has exactly one digit different from all the others. An all-equal number is not interesting.",
+      "Since $100\\le X\\le Y\\le10^{16}$, the decimal length is $3\\le L\\le17$. Choose the repeated digit $d$, a different digit $e$, and the one position holding $e$. Reject any construction whose first digit is zero.",
+      "Every constructed spelling has exactly the required digit counts. Conversely, every interesting number determines these choices uniquely: with $L\\ge3$, the repeated digit occurs at least twice and the exceptional digit only once. Therefore no set or duplicate correction is needed.",
+      "Build the chosen spelling as a 64-bit integer and count it precisely when $X\\le v\\le Y$. The largest generated value is $10^{17}-1<2^{63}-1$, so even candidates outside the requested interval are constructed safely.",
+      "There are at most $90\\sum_{L=3}^{17}L=13500$ raw patterns. Constructing them takes $O(90\\sum L^2)$ digit operations and constant extra space, independent of the number of miles in the interval.",
+      "Read X and Y from odometer.in and write one integer line to odometer.out. The upper endpoint can have 17 digits: do not stop at length 16.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <iostream>\n\nvoid solve(std::istream &in, std::ostream &out) {\n    long long x, y; in >> x >> y;\n    int answer = 0;\n    for (int length = 3; length <= 17; ++length) {\n        for (int repeated = 0; repeated <= 9; ++repeated) {\n            for (int exceptional = 0; exceptional <= 9; ++exceptional) {\n                if (exceptional == repeated) continue;\n                for (int position = 0; position < length; ++position) {\n                    const int leading = position == 0 ? exceptional : repeated;\n                    if (leading == 0) continue;\n                    long long number = 0;\n                    for (int j = 0; j < length; ++j) {\n                        number = number * 10 + (j == position ? exceptional : repeated);\n                    }\n                    if (x <= number && number <= y) ++answer;\n                }\n            }\n        }\n    }\n    out << answer << '\\n';\n}\n\nint main() {\n    std::ifstream in(\"odometer.in\");\n    std::ofstream out(\"odometer.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Generate valid digit multiplicities instead of scanning the mileage range.",
+      "The majority digit is unique for every allowed decimal length."
+    ],
+    "commonMistakes": [
+      "Counting all-equal numbers as interesting.",
+      "Counting different tuples for the same number without using the length-at-least-three uniqueness proof.",
+      "Excluding an endpoint or ignoring the possible 17-digit upper value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The large numeric interval makes direct enumeration impossible, but its interesting numbers have a small, uniquely described digit pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2014-us-open-p2",
+    "problemId": "usaco-bronze-2014-us-open-p2",
+    "finalAnswer": "Write the greatest coordinate width of a fair photo to fairphoto.out.",
+    "shortExplanation": "Sort the cows by position. Combine the widest one-breed runs with equal-breed intervals found from repeated prefix balances.",
+    "detailedSteps": [
+      "Sort the distinct cow positions. Every nonempty photo contains a consecutive block of sorted cows. Its size is the difference between the last and first coordinates, not the number of cows.",
+      "A fair photo either contains one breed only or has equal counts of G and H. For each ending cow, maintain the start of its maximal same-breed run. That start gives the widest one-breed photo ending there, including a single cow of width zero.",
+      "For balanced photos, give G weight $+1$ and H weight $-1$. Let $P_k$ be the sum of the first $k$ cows, with $P_0=0$. The block from index $i$ through $j$ has equal breed counts exactly when $P_i=P_{j+1}$.",
+      "For each ending index $j$, look up the earliest boundary index $i$ having the new prefix value. Its starting coordinate is the smallest available, so $x_j-x_i$ is the largest balanced width ending at $j$. Retain only the first occurrence of each prefix value.",
+      "Check a stored boundary before recording a newly seen one. Boundary zero is initialized before processing any cow. A newly stored boundary j+1 belongs after the current cow and is used only by later endpoints.",
+      "Every tested interval is fair. Every possible fair interval is either covered by its widest same-breed run candidate or no wider than the earliest equal-prefix candidate at its endpoint. Taking the maximum is therefore globally optimal.",
+      "Prefix values lie in $[-N,N]$, so a vector of $2N+1$ entries suffices. Sorting takes $O(N\\log N)$ time, the sweep takes $O(N)$, and storage is $O(N)$. Coordinate differences are at most $10^9$; the code uses 64-bit values for them.",
+      "Read N and its unsorted position/breed rows from fairphoto.in. Write one maximum coordinate-width integer to fairphoto.out. A one-breed photo is allowed, even when it has more than one cow.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <utility>\n#include <vector>\n\nvoid solve(std::istream &in, std::ostream &out) {\n    int n; in >> n;\n    std::vector<std::pair<long long, char> > cows(n);\n    for (int i = 0; i < n; ++i) in >> cows[i].first >> cows[i].second;\n    std::sort(cows.begin(), cows.end());\n    std::vector<int> earliest(2 * n + 1, -1);\n    earliest[n] = 0;\n    int balance = 0, runStart = 0;\n    long long answer = 0;\n    for (int i = 0; i < n; ++i) {\n        if (i > 0 && cows[i].second != cows[i - 1].second) runStart = i;\n        answer = std::max(answer, cows[i].first - cows[runStart].first);\n        balance += cows[i].second == 'G' ? 1 : -1;\n        const int first = earliest[balance + n];\n        if (first != -1) answer = std::max(answer, cows[i].first - cows[first].first);\n        else earliest[balance + n] = i + 1;\n    }\n    out << answer << '\\n';\n}\n\nint main() {\n    std::ifstream in(\"fairphoto.in\");\n    std::ofstream out(\"fairphoto.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Equal prefix balances characterize a balanced contiguous block.",
+      "An earliest boundary maximizes coordinate width for a fixed ending cow.",
+      "Include maximal one-breed runs as a separate valid case."
+    ],
+    "commonMistakes": [
+      "Maximizing cow count rather than coordinate width.",
+      "Forgetting that a photo containing only one breed is allowed.",
+      "Using the latest equal prefix boundary instead of the earliest."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main work is covering both types of fair photo and storing prefix boundary indices correctly. Uneven coordinate gaps make width differ from cow count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2014-us-open-p3",
+    "problemId": "usaco-bronze-2014-us-open-p3",
+    "finalAnswer": "Write the maximum possible number of J signs, or -1 if no valid arrangement exists, to decorate.out.",
+    "shortExplanation": "Color each connected component with two opposite signs. Reject a parity conflict; otherwise put J on the larger color class in each component.",
+    "detailedSteps": [
+      "Every bidirectional path requires its endpoints to have different letters. Traverse every connected component, assigning an arbitrary initial color to its root and the opposite color to every newly reached neighbor.",
+      "If an edge joins two vertices already assigned the same color, its required opposite letters contradict the colors forced by paths from the root. No arrangement exists, so write -1. If no conflict occurs, every edge has been checked and the colors form a valid arrangement.",
+      "Within a connected component, fixing its root sign forces every other sign along a connecting path. Thus the only choices exchange the two color classes. Use J for the larger class to maximize its contribution.",
+      "Different components have no paths between them, so their maximizing choices are independent and their counts add. An isolated pasture contributes one J. Repeated paths merely repeat the same endpoint constraint and are handled directly.",
+      "Building the adjacency lists and running iterative breadth-first search takes $O(N+M)$ time and memory. The J count is at most $N\\le50000$. An iterative queue also handles a maximum-length path without recursive stack depth.",
+      "Read N, M and all M paths from decorate.in. Write the maximum J count or -1 to decorate.out. The source requires at least one path and forbids a path from a vertex to itself.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <queue>\n#include <vector>\n\nvoid solve(std::istream &in, std::ostream &out) {\n    int n, m; in >> n >> m;\n    std::vector<std::vector<int> > edges(n);\n    for (int i = 0; i < m; ++i) {\n        int a, b; in >> a >> b; --a; --b;\n        edges[a].push_back(b); edges[b].push_back(a);\n    }\n    std::vector<int> color(n, -1);\n    int answer = 0;\n    for (int root = 0; root < n; ++root) {\n        if (color[root] != -1) continue;\n        std::queue<int> q;\n        q.push(root); color[root] = 0;\n        int count[2] = {1, 0};\n        while (!q.empty()) {\n            const int u = q.front(); q.pop();\n            for (std::size_t i = 0; i < edges[u].size(); ++i) {\n                const int v = edges[u][i];\n                if (color[v] == -1) {\n                    color[v] = 1 - color[u];\n                    ++count[color[v]]; q.push(v);\n                } else if (color[v] == color[u]) {\n                    out << -1 << '\\n'; return;\n                }\n            }\n        }\n        answer += std::max(count[0], count[1]);\n    }\n    out << answer << '\\n';\n}\n\nint main() {\n    std::ifstream in(\"decorate.in\");\n    std::ofstream out(\"decorate.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "An edge requires opposite colors.",
+      "A connected component permits only an exchange of its two color classes.",
+      "Disconnected components can choose their signs independently."
+    ],
+    "commonMistakes": [
+      "Stopping after the first connected component.",
+      "Assuming all components should use the same globally chosen color for J.",
+      "Accepting an odd cycle or failing to count isolated vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two-color feasibility and independent component choices give both the impossibility test and the maximum J count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

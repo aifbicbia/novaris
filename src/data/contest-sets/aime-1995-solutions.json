@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-1995-p1",
+    "problemId": "aime-1995-p1",
+    "finalAnswer": "$\\boxed{255}$",
+    "shortExplanation": "The union area is $1279/1024$, giving 255.",
+    "detailedSteps": [
+      "Rotate the picture so the squares have horizontal and vertical sides. Each new square is centered at the outward corner of the preceding square, has half its side length, and overlaps that preceding square in one quarter of its own area.",
+      "No nonadjacent squares overlap. If a square has upper coordinate $u$ and side length $\\ell$, the next square ends at $u+\\ell/4$, while the following square begins at $u+\\ell/8>u$. The outward-corner rule continues this separation.",
+      "The union area is therefore $1+\\frac34(\\frac14+\\frac1{16}+\\frac1{64}+\\frac1{256})=1279/1024$. The numerator is odd, so the fraction is reduced; $1279-1024=255$."
+    ],
+    "keyIdeas": [
+      "A chain of squares with quarter-area overlaps"
+    ],
+    "commonMistakes": [
+      "Adding all five areas without subtracting the adjacent overlaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source figure fixes the successive outward corners.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p2",
+    "problemId": "aime-1995-p2",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The two logarithmic roots sum to 2, so the product of the positive roots is $1995^2$.",
+    "detailedSteps": [
+      "For a positive root, put $t=\\log_{1995}x$, so $x=1995^t$. Taking logarithms base 1995 in the source equation gives $1/2+t^2=2t$.",
+      "The two distinct real solutions are $t=1\\pm1/\\sqrt2$. The substitution is a bijection between real t and positive x, so these give all positive roots.",
+      "Their product is $1995^{(1+1/\\sqrt2)+(1-1/\\sqrt2)}=1995^2=3980025$. Its last three digits are 025."
+    ],
+    "keyIdeas": [
+      "Taking logarithms turns the equation into a quadratic"
+    ],
+    "commonMistakes": [
+      "Reading the source radical as applying to x rather than only 1995."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product can be found without evaluating either individual root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p3",
+    "problemId": "aime-1995-p3",
+    "finalAnswer": "$\\boxed{067}$",
+    "shortExplanation": "The probability is $3/64$, giving 67.",
+    "detailedSteps": [
+      "The target cannot be reached before step four or at an odd step. There are $\\binom42=6$ four-step paths to it, all using two right and two up moves.",
+      "There are 120 six-step paths ending at the target: sixty with three right, one left, and two up moves, and sixty with two right, three up, and one down move. Their counts are $6!/(3!1!2!)=60$ each.",
+      "Of those 120 paths, twenty-four already reached the target at step four and then took one of four two-step returns. Thus 96 have their first arrival at step six.",
+      "The probability of arrival by step six is $6/4^4+96/4^6=192/4096=3/64$. Hence $m+n=67$."
+    ],
+    "keyIdeas": [
+      "First arrival at step four or six"
+    ],
+    "commonMistakes": [
+      "Adding the probabilities of being at the target at steps four and six without removing their overlap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First-hit events are disjoint and avoid repeated-visit double counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p4",
+    "problemId": "aime-1995-p4",
+    "finalAnswer": "$\\boxed{224}$",
+    "shortExplanation": "The outer center is five units from the tangent, giving chord square 224.",
+    "detailedSteps": [
+      "The small-circle centers are six and three units from the large-circle center, and nine from each other. Equality in the triangle inequality forces them to be on opposite sides of that center on one diameter.",
+      "Put those centers at $(-6,0)$ and $(3,0)$. Write an upper common external tangent as $n_xx+n_yy=h$ with unit normal n and with both centers on its lower side.",
+      "The distance conditions are $h+6n_x=3$ and $h-3n_x=6$. Subtracting yields $n_x=-1/3$, then $h=5$. The lower tangent gives the same distance.",
+      "A chord at distance 5 from the center of a radius 9 circle has length squared $4(9^2-5^2)=224$."
+    ],
+    "keyIdeas": [
+      "A common tangent between collinear circle centers"
+    ],
+    "commonMistakes": [
+      "Using a common internal tangent or assuming the chord passes through the outer center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equality of center distances establishes the collinear configuration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p5",
+    "problemId": "aime-1995-p5",
+    "finalAnswer": "$\\boxed{051}$",
+    "shortExplanation": "The quadratic factors have conjugate products and sums, giving $b=26+25=51$.",
+    "detailedSteps": [
+      "Nonreal roots of a real polynomial occur in conjugate pairs. The two roots whose product is $13+i$ cannot be conjugates, because a conjugate product is real. They therefore select one root from each conjugate pair; the remaining two roots are their conjugates.",
+      "The selected pair consequently has sum $3-4i$, while the other pair has product $13-i$. The monic polynomial factors as $[x^2-(3-4i)x+(13+i)][x^2-(3+4i)x+(13-i)]$.",
+      "The coefficient of $x^2$ is $(13+i)+(13-i)+(3-4i)(3+4i)=26+25=51$."
+    ],
+    "keyIdeas": [
+      "Conjugate quadratic factors"
+    ],
+    "commonMistakes": [
+      "Pairing the given nonreal product with a conjugate pair of roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reality of the coefficients identifies the complementary pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p6",
+    "problemId": "aime-1995-p6",
+    "finalAnswer": "$\\boxed{589}$",
+    "shortExplanation": "There are 1228 divisors of $n^2$ below $n$; 639 already divide $n$.",
+    "detailedSteps": [
+      "The prime factorization of $n^2$ has exponents 62 and 38, so it has $63\\cdot39=2457$ divisors. Pair d with $n^2/d$; the sole fixed divisor is n. Exactly $(2457-1)/2=1228$ divisors are smaller than n.",
+      "The number n itself has $32\\cdot20=640$ divisors. All divide $n^2$, and all except n are smaller than n, so 639 must be removed.",
+      "The requested count is $1228-639=589$."
+    ],
+    "keyIdeas": [
+      "Divisor pairing around a square root"
+    ],
+    "commonMistakes": [
+      "Removing all 640 divisors of n even though n is not strictly smaller than itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing divisors avoids comparing their numerical sizes one by one in the proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p7",
+    "problemId": "aime-1995-p7",
+    "finalAnswer": "$\\boxed{027}$",
+    "shortExplanation": "The second product is $13/4-\\sqrt{10}$, giving 27.",
+    "detailedSteps": [
+      "Put $u=\\sin t+\\cos t$. Since $\\sin^2t+\\cos^2t=1$, the first product is $(u+1)^2/2=5/4$. Thus $u=-1\\pm\\sqrt{10}/2$.",
+      "The minus branch is less than $-\\sqrt2$ and is impossible for a sine-cosine sum. Hence $u=-1+\\sqrt{10}/2$.",
+      "The other product is $(u-1)^2/2=(\\sqrt{10}/2-2)^2/2=13/4-\\sqrt{10}$. Therefore $k+m+n=10+13+4=27$."
+    ],
+    "keyIdeas": [
+      "The sine-cosine sum selects a single radical branch"
+    ],
+    "commonMistakes": [
+      "Keeping both quadratic branches despite the range of the sine-cosine sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unit-circle identity turns both products into squares of one variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p8",
+    "problemId": "aime-1995-p8",
+    "finalAnswer": "$\\boxed{085}$",
+    "shortExplanation": "For each y, the possible x are $y+cy(y+1)$ with positive integer c.",
+    "detailedSteps": [
+      "Write $x=ay$ and $x+1=b(y+1)$ for integers a,b. Since $y<x$, $a>b\\ge2$. Put $c=a-b\\ge1$; subtracting the equations gives $b=cy+1$ and $a=c(y+1)+1$.",
+      "Thus $x=y+cy(y+1)$. Conversely every positive y,c in this formula satisfies both divisibility conditions and $x>y$, so no possibilities are lost.",
+      "The minimum for a fixed y has c=1 and $x=(y+1)^2-1$. Consequently y runs from 1 through 9, and each contributes $\\lfloor(100-y)/(y(y+1))\\rfloor$ choices.",
+      "These nine counts are $49,16,8,4,3,2,1,1,1$, summing to 85."
+    ],
+    "keyIdeas": [
+      "Consecutive divisibility gives a quadratic spacing"
+    ],
+    "commonMistakes": [
+      "Treating the two divisibility conditions as independent choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the quotient equations exposes the common positive parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p9",
+    "problemId": "aime-1995-p9",
+    "finalAnswer": "$\\boxed{616}$",
+    "shortExplanation": "The half-base is $11/2$, giving perimeter $11+\\sqrt{605}$.",
+    "detailedSteps": [
+      "Let $BM=CM=u$ and let $\\theta$ be half angle $BAC$. Because $DM=11-10=1$, the half angle BDC is $\\arctan u$, whereas $\\tan\\theta=u/11$. The given relation makes it $3\\theta$.",
+      "The triple-angle formula gives $u=(3u/11-u^3/1331)/(1-3u^2/121)$. The denominator cannot vanish, since angle BDC is less than 180 degrees and so its half angle is less than 90 degrees.",
+      "For u positive, simplifying gives $u^2=121/4$, hence $u=11/2$. This value satisfies $3\\arctan(1/2)=\\arctan(11/2)<\\pi/2$, verifying the actual angle relation rather than only its tangent.",
+      "The base is 11 and each equal side is $11\\sqrt5/2$. The perimeter is $11+11\\sqrt5=11+\\sqrt{605}$, giving $a+b=616$."
+    ],
+    "keyIdeas": [
+      "A triple-angle equation for an isosceles triangle"
+    ],
+    "commonMistakes": [
+      "Using AD rather than DM in the tangent for the angle at D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry reduces both angles to right-triangle half angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p10",
+    "problemId": "aime-1995-p10",
+    "finalAnswer": "$\\boxed{215}$",
+    "shortExplanation": "The number 215 fails, and every larger number has a composite representative to subtract.",
+    "detailedSteps": [
+      "To represent N, choose a positive composite c congruent to N modulo 42 with $c<N$. Then $N=42k+c$ for a positive integer k.",
+      "For residue classes divisible by 2,3,or 7, the least positive representative r is already composite except for $r=2,3,7$. These exceptions have composite representatives 44,45,49 respectively. All these representatives are at most 49.",
+      "The residues coprime to 42 are $1,5,11,13,17,19,23,25,29,31,37,41$. In that order, composite representatives are $85,215,95,55,143,145,65,25,155,115,121,125$, all at most 215. Each is visibly a product of two integers greater than one.",
+      "Therefore for every $N>215$, its class has a composite representative c at most 215, and $N-c$ is a positive multiple of 42. Such N is representable.",
+      "For 215 itself, subtracting the possible positive multiples of 42 leaves $173,131,89,47,5$. All are prime, so 215 is not representable. It is therefore the largest exception."
+    ],
+    "keyIdeas": [
+      "Composite representatives in every residue class"
+    ],
+    "commonMistakes": [
+      "Allowing zero as the coefficient of 42 or treating 1 as composite."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite collection of residue witnesses proves an upper bound for all larger integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p11",
+    "problemId": "aime-1995-p11",
+    "finalAnswer": "$\\boxed{040}$",
+    "shortExplanation": "The condition is $ac=1995^2$ with $a<1995<c$, yielding 40 choices.",
+    "detailedSteps": [
+      "The similar proper subprism has scale factor $\\lambda<1$, since its volume is smaller. If the cut shortens a or b, the unchanged edge c would exceed every edge of a copy scaled by $\\lambda$, impossible. Thus the cut must shorten c to a positive length d.",
+      "The shortest edge in the similar subprism is $\\lambda a<a$, so d must be the shortest, with $d<a$. In sorted order, $(d,a,b)=(\\lambda a,\\lambda b,\\lambda c)$. Hence $a/b=b/c=\\lambda<1$, or $ac=b^2$, with strict $a<b<c$.",
+      "Conversely, if $ac=b^2$ and $a<b<c$, cut the c edge at $d=a^2/b$. This has $0<d<c$ and the resulting edges $(d,a,b)$ form the required scaled copy. Both pieces have positive volume.",
+      "Now $b=1995=3\\cdot5\\cdot7\\cdot19$. The integer a must be a divisor of $b^2$, smaller than b, and each determines c uniquely. There are $3^4=81$ divisors; pairing a with $b^2/a$ leaves the sole middle divisor b, so forty are smaller."
+    ],
+    "keyIdeas": [
+      "Similar subprisms require a geometric progression of edges"
+    ],
+    "commonMistakes": [
+      "Assuming the cut length must be integral or including the scale-one middle divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sorting the edge lengths makes the similarity permutation forced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p12",
+    "problemId": "aime-1995-p12",
+    "finalAnswer": "$\\boxed{005}$",
+    "shortExplanation": "The cosine is $-3+\\sqrt8$, giving 005.",
+    "detailedSteps": [
+      "Put the square base vertices at $(\\pm a,\\pm a,0)$ and the apex at $(0,0,h)$. Equal apex-edge lengths force the apex projection to be the square center. The cosine of angle AOB is $h^2/(2a^2+h^2)=1/\\sqrt2$, so $h^2=2a^2(\\sqrt2+1)$.",
+      "Outward normals to two adjacent lateral faces can be taken proportional to $(0,h,a)$ and $(h,0,a)$. Their normalized dot product is $a^2/(h^2+a^2)$.",
+      "The interior dihedral angle is supplementary to the angle between these outward normals. Thus $\\cos\\theta=-a^2/(h^2+a^2)=-1/(3+2\\sqrt2)=-3+2\\sqrt2=-3+\\sqrt8$.",
+      "Therefore $m+n=-3+8=5$."
+    ],
+    "keyIdeas": [
+      "Adjacent face normals give an interior dihedral angle"
+    ],
+    "commonMistakes": [
+      "Using the angle between outward normals as the interior dihedral angle without taking its supplement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requested radical form also distinguishes the interior angle convention.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p13",
+    "problemId": "aime-1995-p13",
+    "finalAnswer": "$\\boxed{400}$",
+    "shortExplanation": "The complete groups 1 through 6 contribute 370, and the last group contributes 30.",
+    "detailedSteps": [
+      "The condition $f(k)=j$ is $(j-1/2)^4<k<(j+1/2)^4$. Neither endpoint is integral, since an odd fourth power divided by 16 has fractional part $1/16$.",
+      "The upper group endpoints for j=1 through 6 are $5,39,150,410,915,1785$. The group sizes are $5,34,111,260,505,870$, equal to $4j^3+j$.",
+      "Each full group therefore contributes $(4j^3+j)/j=4j^2+1$. The first six contribute $4(1^2+\\cdots+6^2)+6=4(91)+6=370$.",
+      "The remaining 210 indices 1786 through 1995 all have nearest fourth root 7, and contribute $210/7=30$. The sum is 400."
+    ],
+    "keyIdeas": [
+      "Grouping by the nearest fourth root"
+    ],
+    "commonMistakes": [
+      "Rounding the fourth power thresholds before determining the exact integer group endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The grouping counts divide cleanly by their assigned root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p14",
+    "problemId": "aime-1995-p14",
+    "finalAnswer": "$\\boxed{378}$",
+    "shortExplanation": "The required region is a sector minus a difference of two triangles, with area $294\\pi-81\\sqrt3$.",
+    "detailedSteps": [
+      "Put the circle center at the origin and the chord intersection at $P=(18,0)$. Each chord midpoint is distance $\\sqrt{42^2-39^2}=9\\sqrt3$ from the origin. The two different chord lines through P are symmetric about OP, with directions making angles 60 and 120 degrees to the x-axis.",
+      "For one line use direction $(1/2,\\sqrt3/2)$. Its midpoint is $(27/2,-9\\sqrt3/2)$; adding and subtracting 39 times the direction gives endpoints $(33,15\\sqrt3)$ and $(-6,-24\\sqrt3)$. The other endpoints are their reflections in the x-axis.",
+      "Each chord is split at P into lengths 30 and 48. A region bordered by unequal segments has upper endpoints $U=(33,15\\sqrt3)$ and $V=(-6,24\\sqrt3)$, or their lower reflections. Since $U\\cdot V=882$ and both have squared norm 1764, the central angle UOV is 60 degrees.",
+      "The upper region equals sector OUV minus triangle OUV plus triangle PUV. Their areas are $294\\pi$, $441\\sqrt3$, and $360\\sqrt3$ respectively, by determinants.",
+      "Thus the area is $294\\pi-81\\sqrt3$. Reflection makes the other unequal-segment region congruent. With 3 squarefree, $m+n+d=294+81+3=378$."
+    ],
+    "keyIdeas": [
+      "Symmetric chords with a sixty-degree arc"
+    ],
+    "commonMistakes": [
+      "Selecting one of the regions bounded by two equal chord segments, or using the smaller angle between supporting lines as the wrong arc."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal chord lengths force symmetry about the center-intersection line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1995-p15",
+    "problemId": "aime-1995-p15",
+    "finalAnswer": "$\\boxed{037}$",
+    "shortExplanation": "The winning probability is $3/34$, giving 037.",
+    "detailedSteps": [
+      "Let $h_k$ be the probability of eventually reaching five heads first when the current run has k heads, for $1\\le k\\le5$, and let $t$ be that probability when the current run is one tail. Then $h_5=1$ and $t=h_1/2$, because another tail loses immediately.",
+      "For $1\\le k\\le4$, the next flip gives $h_k=(h_{k+1}+t)/2$. Unwinding four times gives $h_1=1/16+(15/16)t$.",
+      "Substituting $t=h_1/2$ yields $h_1=2/17$ and $t=1/17$. From the initial empty run, the first flip gives $p=(h_1+t)/2=3/34$.",
+      "The fraction is reduced, so $m+n=37$. The race ends almost surely: every block of five flips has a fixed positive chance to contain one of the target runs, and the probability of avoiding both forever is zero."
+    ],
+    "keyIdeas": [
+      "States recording the current terminal run"
+    ],
+    "commonMistakes": [
+      "Resetting to an empty run after a tail even though that tail can begin the losing pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the trailing run matters, so the infinite experiment has finitely many states.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

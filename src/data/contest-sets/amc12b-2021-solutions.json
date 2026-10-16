@@ -1,0 +1,524 @@
+[
+  {
+    "id": "solution-amc12b-2021-p1",
+    "problemId": "amc12b-2021-p1",
+    "finalAnswer": "$\\boxed{11110}$ (choice E)",
+    "shortExplanation": "Every column totals ten.",
+    "detailedSteps": [
+      "Each digit 1,2,3,4 appears once in each decimal position. Thus the sum is $(1+2+3+4)(1000+100+10+1)=10\\cdot1111=11110$."
+    ],
+    "keyIdeas": [
+      "A constant column sum"
+    ],
+    "commonMistakes": [
+      "Losing a carry when adding the four numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rotating the digits balances all four positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p2",
+    "problemId": "amc12b-2021-p2",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The shaded area is ten minus four.",
+    "detailedSteps": [
+      "The actual diagram has common base endpoints (1,0),(5,0), of length 4. The outer apex is (3,5), and the unshaded triangular notch has apex (3,2).",
+      "The shaded area is $\\tfrac12\\cdot4\\cdot5-\\tfrac12\\cdot4\\cdot2=6$."
+    ],
+    "keyIdeas": [
+      "Subtract two triangles sharing a base"
+    ],
+    "commonMistakes": [
+      "Counting the entire large triangle without removing the notch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal bases let the heights be subtracted directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p3",
+    "problemId": "amc12b-2021-p3",
+    "finalAnswer": "$\\boxed{60}$ (choice C)",
+    "shortExplanation": "The initial gap can be six or ten.",
+    "detailedSteps": [
+      "The Minneapolis-minus-St. Louis difference changes from N to $N-5-3=N-8$. Its final absolute value is 2.",
+      "Thus $N-8=2$ or $N-8=-2$, giving N=10 or N=6. Both are positive initial warmer gaps, and their product is 60."
+    ],
+    "keyIdeas": [
+      "A signed temperature difference"
+    ],
+    "commonMistakes": [
+      "Keeping only the case where Minneapolis remains warmer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A final difference does not specify which city is warmer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p4",
+    "problemId": "amc12b-2021-p4",
+    "finalAnswer": "$\\boxed{4^{3032}}$ (choice E)",
+    "shortExplanation": "The resulting binary exponent is 6064.",
+    "detailedSteps": [
+      "We have $8^{2022}/4=2^{6066-2}=2^{6064}=4^{3032}$."
+    ],
+    "keyIdeas": [
+      "Convert to powers of two"
+    ],
+    "commonMistakes": [
+      "Subtracting four from the original exponent rather than dividing the number by four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common base avoids handling huge integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p5",
+    "problemId": "amc12b-2021-p5",
+    "finalAnswer": "$\\boxed{11}$ (choice C)",
+    "shortExplanation": "Eleven distinct integer sums occur.",
+    "detailedSteps": [
+      "Write a special fraction as $(15-b)/b=15/b-1$, where $1\\le b\\le14$. For an unordered denominator pair b,d, an integer sum occurs exactly when $bd$ divides $15(b+d)$.",
+      "Checking b from 1 through 14 and d from b through 14 gives the following denominator pairs and sums: (1,1):28; (1,3):18; (1,5):16; (2,2):13; (2,6):8; (2,10):7; (3,3):8; (3,5):6; (4,12):3; (5,5):4; (6,6):3; (6,10):2; (10,10):1.",
+      "These are all thirteen successful unordered pairs. The repeated sums 8 and 3 leave eleven distinct integer values. The finite divisibility test permits equal fractions, as required."
+    ],
+    "keyIdeas": [
+      "A finite exact fraction search"
+    ],
+    "commonMistakes": [
+      "Counting denominator pairs without checking whether their sums are integers, or forbidding equal fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator range is small enough for a complete transparent search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p6",
+    "problemId": "amc12b-2021-p6",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The largest prime factor is 127.",
+    "detailedSteps": [
+      "$16383=128^2-1=(128-1)(128+1)=127\\cdot129=127\\cdot3\\cdot43$.",
+      "The factors 43 and 127 are prime: neither is divisible by any prime at most its square root. The largest is 127, whose digit sum is $1+2+7=10$."
+    ],
+    "keyIdeas": [
+      "Factor a difference of squares"
+    ],
+    "commonMistakes": [
+      "Taking the digit sum of 16383 instead of its largest prime divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The neighboring power of two suggests a difference of squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p7",
+    "problemId": "amc12b-2021-p7",
+    "finalAnswer": "$\\boxed{x=z,\\ y=x+1}$ (choice D)",
+    "shortExplanation": "Two equal values and a third one unit away give one.",
+    "detailedSteps": [
+      "The expression equals $\\tfrac12[(x-y)^2+(y-z)^2+(z-x)^2]$. Under choice D, set x=z=t and y=t+1; the three squared differences are 1,1,0, so the result is 1 for every integer t.",
+      "The other alternatives do not guarantee this: A permits (2,0,0), giving 4; B and C give three consecutive integers, giving 3; E permits (2,0,-1), giving 7. Thus only D is sufficient."
+    ],
+    "keyIdeas": [
+      "Rewrite as squared differences"
+    ],
+    "commonMistakes": [
+      "Showing one example for a condition instead of proving it always works."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The expression depends only on differences, not absolute values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p8",
+    "problemId": "amc12b-2021-p8",
+    "finalAnswer": "$\\boxed{150}$ (choice D)",
+    "shortExplanation": "The area condition forces the vertex-angle sine to be one half.",
+    "detailedSteps": [
+      "Let the equal sides have length s, the vertex angle be $\\theta$, the base b and height h. The condition is $s^2=2bh$.",
+      "The area is both $bh/2$ and $s^2\\sin\\theta/2$, so $bh=s^2\\sin\\theta$. Substitution gives $\\sin\\theta=1/2$.",
+      "The angle lies between 90 and 180 degrees because the isosceles triangle is obtuse. Therefore $\\theta=150^\\circ$."
+    ],
+    "keyIdeas": [
+      "The sine of the obtuse vertex angle"
+    ],
+    "commonMistakes": [
+      "Choosing the acute solution of the sine equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "In an obtuse isosceles triangle, the obtuse angle must be the vertex angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p9",
+    "problemId": "amc12b-2021-p9",
+    "finalAnswer": "$\\boxed{12\\pi}$ (choice B)",
+    "shortExplanation": "The circle center lies one inradius below the side AC.",
+    "detailedSteps": [
+      "Put $A=(-3,0)$, $C=(3,0)$ and $B=(0,3\\sqrt3)$. The incenter is $O=(0,\\sqrt3)$. A circle through A and C has center $K=(0,k)$.",
+      "Equating squared distances to A and O gives $9+k^2=(\\sqrt3-k)^2$, hence $k=-\\sqrt3$. Its squared radius is $9+3=12$, so its area is $12\\pi$."
+    ],
+    "keyIdeas": [
+      "A circumcenter on the symmetry axis"
+    ],
+    "commonMistakes": [
+      "Using the equilateral triangle's circumcircle rather than the circle through its incenter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common perpendicular bisector of AC locates the circle center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p10",
+    "problemId": "amc12b-2021-p10",
+    "finalAnswer": "$\\boxed{380}$ (choice E)",
+    "shortExplanation": "There are four valid third-vertex angles.",
+    "detailedSteps": [
+      "The squared distance between unit-circle points at angles u and v is $2-2\\cos(u-v)$. If the fixed chord AB equals the chord from the 40-degree point to the third vertex, then $t-40\\equiv\\pm20\\pmod{360}$; after excluding the repeated 60-degree point, t=20.",
+      "If AB equals the chord from the 60-degree point to the third vertex, t=80 after excluding the repeated 40-degree point.",
+      "If the two chords to the third vertex are equal, $\\cos(t-40)=\\cos(t-60)$. The nontrivial cosine branch gives $2t\\equiv100\\pmod{360}$, so t=50 or 230. These four values all form nondegenerate triangles.",
+      "The required sum is $20+80+50+230=380$."
+    ],
+    "keyIdeas": [
+      "Classify which pair of chords is equal"
+    ],
+    "commonMistakes": [
+      "Including a fixed vertex again, which would not form a triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Any isosceles triangle has at least one of the three possible pairs of equal sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p11",
+    "problemId": "amc12b-2021-p11",
+    "finalAnswer": "$\\boxed{\\frac{59}{64}}$ (choice C)",
+    "shortExplanation": "The failure probability is five sixty-fourths.",
+    "detailedSteps": [
+      "A die face is odd with probability 1/2, has exactly one factor of two (face 2 or 6) with probability 1/3, and has two factors of two (face 4) with probability 1/6.",
+      "A product fails divisibility by four precisely when all six faces are odd, or exactly one face has one factor of two and all others are odd. The failure probability is $(1/2)^6+6(1/3)(1/2)^5=5/64$.",
+      "The required probability is $1-5/64=59/64$."
+    ],
+    "keyIdeas": [
+      "Count insufficient powers of two"
+    ],
+    "commonMistakes": [
+      "Requiring a face four, although two faces with a single factor of two also suffice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product needs two factors of two, wherever they arise.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p12",
+    "problemId": "amc12b-2021-p12",
+    "finalAnswer": "$\\boxed{\\frac1{192}}$ (choice B)",
+    "shortExplanation": "Only the final power-of-two divisor term survives after subtraction.",
+    "detailedSteps": [
+      "The numbers are $768=3\\cdot2^8$ and $384=3\\cdot2^7$. Each divisor is uniquely $2^j$ or $3\\cdot2^j$. Hence the divisor sums are $4(2^9-1)$ and $4(2^8-1)$ respectively.",
+      "So $f(768)-f(384)=4\\cdot511/768-4\\cdot255/384=(2044-2040)/768=1/192$."
+    ],
+    "keyIdeas": [
+      "Divisor sums of two consecutive powers of two"
+    ],
+    "commonMistakes": [
+      "Subtracting divisor sums before adjusting for their different denominators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd factor three contributes the same multiplicative factor to both divisor sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p13",
+    "problemId": "amc12b-2021-p13",
+    "finalAnswer": "$\\boxed{1}$ (choice E)",
+    "shortExplanation": "The numerator permutes the denominator factors with two sign changes.",
+    "detailedSteps": [
+      "Since $11c=2\\pi$, the numerator indices 3,6,9,12,15 reduce modulo 11 to 3,6,9,1,4.",
+      "Also $\\sin6c=-\\sin5c$ and $\\sin9c=-\\sin2c$. Thus the numerator is $\\sin3c(-\\sin5c)(-\\sin2c)\\sin c\\sin4c$, precisely the denominator with two canceling minus signs.",
+      "None of the denominator factors vanishes, because no integer from 1 to 5 gives an angle that is a multiple of pi. The ratio is therefore 1."
+    ],
+    "keyIdeas": [
+      "Reduce sine angles modulo a full turn"
+    ],
+    "commonMistakes": [
+      "Dropping one of the two negative sine factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Odd moduli pair a sine at index j with the negative sine at index 11-j.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p14",
+    "problemId": "amc12b-2021-p14",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "A concrete construction attains the fundamental theorem of algebra lower bound.",
+    "detailedSteps": [
+      "The polynomial $R-PQ$ has degree six, since PQ has degree five while R has degree six. Thus the fundamental theorem of algebra guarantees at least one complex root. Counting distinct roots allows all six roots to coincide.",
+      "For example, choose $P(z)=1+z^2$, $Q(z)=2+z^3$ and $R(z)=P(z)Q(z)+(z-1)^6$. They have the required degrees and constant terms 1,2,3.",
+      "The equation becomes $(z-1)^6=0$, with exactly one distinct solution. Therefore the minimum N is 1."
+    ],
+    "keyIdeas": [
+      "A degree-six difference can have a single repeated root"
+    ],
+    "commonMistakes": [
+      "Counting roots with multiplicity when the question explicitly asks for distinct complex numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound must be paired with a construction satisfying every coefficient condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p15",
+    "problemId": "amc12b-2021-p15",
+    "finalAnswer": "$\\boxed{147}$ (choice E)",
+    "shortExplanation": "Alternating outer tips and inner corners determine the union area.",
+    "detailedSteps": [
+      "The twelve square corners appear every 30 degrees at distance $3\\sqrt2$ from the common center. Between neighboring tips, the two exposed square edges meet at an inward corner at distance $2\\sqrt3$ from the center.",
+      "For example, take the unrotated tip (3,3) and the clockwise-30-degree tip $(3(\\sqrt3+1)/2,3(\\sqrt3-1)/2)$. Their intervening exposed edges meet at $ (3,\\sqrt3) $. Rotating this boundary pair through multiples of 30 degrees describes all 24 polygon vertices.",
+      "Each consecutive radius pair subtends 15 degrees. The union area is $24\\cdot\\tfrac12(3\\sqrt2)(2\\sqrt3)\\sin15^\\circ=108-36\\sqrt3$.",
+      "The radicand 3 is squarefree, so a+b+c=108+36+3=147."
+    ],
+    "keyIdeas": [
+      "A twenty-four-vertex rotational boundary"
+    ],
+    "commonMistakes": [
+      "Taking the convex hull of the sheets and filling the twelve inward notches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The repeated rotation makes twelve congruent boundary sections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p16",
+    "problemId": "amc12b-2021-p16",
+    "finalAnswer": "$\\boxed{438}$ (choice B)",
+    "shortExplanation": "Only two unordered triples meet both original conditions.",
+    "detailedSteps": [
+      "The common gcd of a,b,c divides their sum 23. It cannot be 23 because three positive multiples of 23 could not sum to 23, so it is 1. Consequently the three pairwise gcds are pairwise coprime: a prime dividing two of them would divide all three original numbers.",
+      "Three pairwise coprime positive integers summing to 9 have unordered values (1,1,7) or (1,3,5). To check exhaustiveness, sort them p<=q<=r. If p>=2, the smallest mutually coprime triple is (2,3,5), whose sum is 10. If p=1, the pairs totaling 8 are (1,7),(2,6),(3,5),(4,4), of which only (1,7),(3,5) are coprime.",
+      "For gcd pattern (1,1,7), the two numbers divisible by 7 can only be (7,7) or (7,14), since their sum is below 23. The first gives the third number 9 and is valid; the second gives 2 and produces an extra gcd of 2, so it fails.",
+      "For pattern (1,3,5), the common vertex of the pairs having gcds 3 and 5 is divisible by 15. The remaining two numbers are positive multiples of 3 and 5. Their sum is at least $15+3+5=23$, so equality forces exactly (3,5,15).",
+      "The squared sums for (7,7,9) and (3,5,15) are 179 and 259. They are distinct, and their sum is 438."
+    ],
+    "keyIdeas": [
+      "The pairwise greatest common divisors are mutually coprime"
+    ],
+    "commonMistakes": [
+      "Adding all permutations rather than adding each distinct squared sum once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A prime total forces a particularly rigid pairwise-gcd structure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p17",
+    "problemId": "amc12b-2021-p17",
+    "finalAnswer": "$\\boxed{\\frac{13}{108}}$ (choice A)",
+    "shortExplanation": "There are 936 permitted five-step histories.",
+    "detailedSteps": [
+      "The only grid vertices at distance at most one from the origin are the origin and its six immediate neighbors. Every neighbor is adjacent to the center and to two neighbors on the surrounding hexagon; its other three outgoing moves leave the permitted set.",
+      "Let C_k and R_k count permitted k-step histories ending at the center or anywhere on the ring. Then $C_{k+1}=R_k$ and $R_{k+1}=6C_k+2R_k$, starting from (C_0,R_0)=(1,0).",
+      "The successive pairs are (0,6),(6,12),(12,60),(60,192),(192,744). Thus there are $192+744=936$ favorable histories among $6^5=7776$ equally likely histories.",
+      "The probability is $936/7776=13/108$. Every intermediate position was restricted, as required by the word never."
+    ],
+    "keyIdeas": [
+      "Track allowed walks at the center and its six neighbors"
+    ],
+    "commonMistakes": [
+      "Counting only the final distance while allowing an earlier excursion beyond one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry reduces seven allowed vertices to two count states.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p18",
+    "problemId": "amc12b-2021-p18",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "The error exponent doubles at every step.",
+    "detailedSteps": [
+      "Let $v_k=1-2u_k$. Substituting the recurrence gives $v_{k+1}=1-4u_k+4u_k^2=v_k^2$. Since $v_0=1/2$, we have $v_k=2^{-2^k}$.",
+      "Therefore $u_k=(1-2^{-2^k})/2$, with limit L=1/2 and error $|u_k-L|=2^{-(2^k+1)}$.",
+      "The requested inequality is equivalent to $2^k+1\\ge1000$. Since $2^9+1=513$ and $2^{10}+1=1025$, the least k is 10."
+    ],
+    "keyIdeas": [
+      "A change of variable turns the recurrence into squaring"
+    ],
+    "commonMistakes": [
+      "Confusing the iteration number with the exponentially growing error exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The transformed sequence squares its previous error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p19",
+    "problemId": "amc12b-2021-p19",
+    "finalAnswer": "$\\boxed{68}$ (choice E)",
+    "shortExplanation": "The six polygon pairs contribute ten, ten, ten, twelve, twelve, fourteen.",
+    "detailedSteps": [
+      "For n<m, each vertex of the regular n-gon lies outside the regular m-gon, because the only points of the latter on the circle are its own distinct vertices. The midpoint of any n-gon side is at radius $r\\cos(\\pi/n)<r\\cos(\\pi/m)$ and hence inside the m-gon’s incircle.",
+      "Thus every side of the smaller polygon enters and leaves the larger convex polygon exactly once, producing 2n side crossings. No crossing is a vertex, and the stipulated lack of triple intersections makes all such points distinct.",
+      "The six pairs give $2(5+5+5+6+6+7)=68$ intersection points."
+    ],
+    "keyIdeas": [
+      "Every smaller side crosses the larger polygon twice"
+    ],
+    "commonMistakes": [
+      "Assuming arbitrary inscribed polygons have the same crossing count without using their regularity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint lies inside the larger polygon even though its endpoints lie outside.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p20",
+    "problemId": "amc12b-2021-p20",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "Averaging fixed colorings over 24 rotations gives seven.",
+    "detailedSteps": [
+      "Choose the four white cube positions among eight corner positions, giving 70 labeled constructions. Burnside’s counting principle averages the number unchanged by each of the 24 orientation-preserving cube rotations.",
+      "The identity fixes 70. The six quarter-turns about face axes have two four-cycles and fix 2 colorings each. The three face-axis half-turns have four two-cycles and fix 6 each.",
+      "The eight third-turns about body diagonals have two fixed vertices and two three-cycles; choosing one fixed vertex and one three-cycle gives 4 fixed colorings each. The six half-turns about opposite edge midpoints have four two-cycles and fix 6 each.",
+      "The orbit count is $(70+6\\cdot2+3\\cdot6+8\\cdot4+6\\cdot6)/24=168/24=7$. Reflections and exchanging the two colors are not additional identifications."
+    ],
+    "keyIdeas": [
+      "Rotation orbits of four marked cube vertices"
+    ],
+    "commonMistakes": [
+      "Dividing 70 by 24 without accounting for constructions with rotational symmetry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cube rotations have five distinct position-cycle types.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p21",
+    "problemId": "amc12b-2021-p21",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Every zero of the imaginary part has a nonzero real part.",
+    "detailedSteps": [
+      "The imaginary part is $\\sin x-\\sin2x+\\sin3x=\\sin2x(2\\cos x-1)$. Thus a complex zero must have $x=0,\\pi/2,\\pi,3\\pi/2$, or $x=\\pi/3,5\\pi/3$ in the stated interval.",
+      "The real part is $1+\\cos x-\\cos2x+\\cos3x$. At the first four candidates its values are respectively 2,2,-2,2; at each of the last two it is 1.",
+      "None is zero, so P has no zero in the interval. The count is 0."
+    ],
+    "keyIdeas": [
+      "The imaginary part leaves only six candidates"
+    ],
+    "commonMistakes": [
+      "Solving only the imaginary-part equation and treating its roots as complex zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complex number vanishes only when both its real and imaginary parts vanish.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p22",
+    "problemId": "amc12b-2021-p22",
+    "finalAnswer": "$\\boxed{\\frac{35}{12}}$ (choice C)",
+    "shortExplanation": "The centers have rational coordinates in the right-triangle frame.",
+    "detailedSteps": [
+      "Put $C=(0,0)$, $A=(8,0)$ and $B=(0,6)$. Tangency to BC at B puts $O=(u,6)$ with squared radius $u^2$. Since A lies on that circle, $(8-u)^2+36=u^2$, giving $u=25/4$.",
+      "Tangency to AC at A puts $P=(8,v)$ with squared radius $v^2$. Since B lies on the second circle, $64+(6-v)^2=v^2$, giving $v=25/3$.",
+      "Thus the coordinate differences have magnitudes 7/4 and 7/3, and $OP=\\sqrt{49/16+49/9}=35/12$."
+    ],
+    "keyIdeas": [
+      "Tangency places each center on a perpendicular line"
+    ],
+    "commonMistakes": [
+      "Putting a circle center along the tangent line instead of its perpendicular radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each tangency supplies one coordinate before the point-on-circle condition supplies the other.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p23",
+    "problemId": "amc12b-2021-p23",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice A)",
+    "shortExplanation": "Each of the twenty-nine possible adjacent pairs has the same inclusion probability.",
+    "detailedSteps": [
+      "For j=1 through 29, let I_j indicate whether both j and j+1 occur in the chosen five-element subset. The requested count is $\\sum I_j$, even when two pairs share an integer.",
+      "The probability for a particular pair is $\\binom{28}{3}/\\binom{30}{5}=(5\\cdot4)/(30\\cdot29)$. Linearity of expectation gives $29\\cdot20/(30\\cdot29)=2/3$."
+    ],
+    "keyIdeas": [
+      "Linearity of expectation over adjacent pairs"
+    ],
+    "commonMistakes": [
+      "Assuming overlapping pair indicators must be independent to add their expectations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Expectation adds without requiring independence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p24",
+    "problemId": "amc12b-2021-p24",
+    "finalAnswer": "$\\boxed{30}$ (choice C)",
+    "shortExplanation": "The second intersection on AB is twenty units from A.",
+    "detailedSteps": [
+      "The angle-bisector theorem gives $BD=24\\cdot11/31=264/31$ and $DC=480/31$. Applying Stewart's theorem with these proportions gives $AD^2=AB\\cdot AC-BD\\cdot DC=220-BD\\cdot DC$.",
+      "D is inside the original circumcircle, and the ray AD meets it again at E beyond D. The intersecting-chords identity gives $AD\\cdot DE=BD\\cdot DC$. Consequently $AD\\cdot AE=AD^2+AD\\cdot DE=220$.",
+      "For the circle through B,E,D, the two secants from A are ADE and ABF. Their directed powers give $AB\\cdot AF=AD\\cdot AE=220$. Thus F lies on the positive AB ray and AF=20; in particular it is distinct from B, whose distance is 11.",
+      "The original law of cosines gives $\\cos\\angle BAC=(11^2+20^2-24^2)/(2\\cdot11\\cdot20)=-1/8$. Since AC=AF=20 and the rays AB,AF agree, $CF^2=20^2+20^2-2\\cdot20\\cdot20(-1/8)=900$. Hence CF=30."
+    ],
+    "keyIdeas": [
+      "Two circles and directed powers from the angle-bisector vertex"
+    ],
+    "commonMistakes": [
+      "Using unsigned secant products without confirming which ray contains F, or assuming D lies on the second circle's opposite secant branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle-bisector identity makes the first secant power equal the product of the two adjacent sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2021-p25",
+    "problemId": "amc12b-2021-p25",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Only the next numbers fourteen and ninety-eight have the required divisor sum.",
+    "detailedSteps": [
+      "For each divisor d from 2 to 10, the remainder normally increases by one; if d divides n+1, it instead changes by 1-d. Thus $R(n+1)-R(n)=9-\\sum_{2\\le d\\le10,\\ d\\mid n+1}d$. Equality requires this divisor sum to be 9.",
+      "Write m=n+1, so $11\\le m\\le100$. If m is odd, divisibility by 9 already contributes 3+9>9. Among the remaining possible divisors 3,5,7, no subset sums to 9, so m must be even.",
+      "For even m, divisibility by 3 contributes at least 2+3+6=11, and by 5 contributes at least 2+5+10=17. Both are excluded. Divisibility by 8 contributes at least 2+4+8=14 and is excluded. Only 2,4,7 remain; a sum of 9 requires precisely 2 and 7, with 4 absent.",
+      "The multiples of 14 in the interval are 14,28,42,56,70,84,98. The middle five are divisible by 4,3 or 5, while 14 and 98 have only 2 and 7 among the indicated divisors. They correspond to n=13 and 97, giving two solutions."
+    ],
+    "keyIdeas": [
+      "A remainder increment detects divisors of the next number"
+    ],
+    "commonMistakes": [
+      "Checking divisors of n instead of n+1, where each remainder wraps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The discontinuities in remainder sequences occur exactly at multiples of their divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

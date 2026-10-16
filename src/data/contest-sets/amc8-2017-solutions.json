@@ -1,0 +1,786 @@
+[
+  {
+    "id": "solution-amc8-2017-p1",
+    "problemId": "amc8-2017-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(10)}$",
+    "shortExplanation": "**Idea:** Evaluate each expression using multiplication before addition.",
+    "detailedSteps": [
+      "Compute each answer choice carefully:",
+      "[\n2+0+1+7=10\n]",
+      "[\n2\\times0+1+7=0+1+7=8\n]",
+      "[\n2+0\\times1+7=2+0+7=9\n]",
+      "[\n2+0+1\\times7=2+0+7=9\n]",
+      "The largest value is $10$.",
+      "Final Answer: ($\\boxed{\\text{A }(10)}$)"
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Multiplication before addition"
+    ],
+    "commonMistakes": [
+      "Do not evaluate strictly from left to right when multiplication appears.",
+      "Remember that multiplying by $0$ can make an entire product $0$."
+    ],
+    "alternativeMethods": [
+      "Since only choice A adds all four numbers, it is already a strong candidate; checking the other choices confirms it."
+    ],
+    "difficultyNotes": "A direct order-of-operations warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p2",
+    "problemId": "amc8-2017-p2",
+    "finalAnswer": "$\\boxed{\\text{E }(120)}$",
+    "shortExplanation": "**Idea:** Brenda's $36$ votes represent $30\\%$ of all votes.",
+    "detailedSteps": [
+      "From the pie chart, Brenda received $30\\%$ of the votes.",
+      "Let the total number of votes be $T$. Then",
+      "[\n0.30T=36.\n]",
+      "Solving gives",
+      "[\nT=\\frac{36}{0.30}=120.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(120)}$)"
+    ],
+    "keyIdeas": [
+      "Percent of a whole",
+      "Pie chart interpretation"
+    ],
+    "commonMistakes": [
+      "Do not use Alicia's $45\\%$ or Colby's $25\\%$ when the problem gives Brenda's votes.",
+      "Convert $30\\%$ to $0.30$ or $\\frac{3}{10}$ before solving."
+    ],
+    "alternativeMethods": [
+      "Because $30\\%=\\frac{3}{10}$, $36$ votes is $\\frac{3}{10}$ of the total, so the total is $36\\cdot\\frac{10}{3}=120$."
+    ],
+    "difficultyNotes": "A one-step percent problem once the chart is read correctly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p3",
+    "problemId": "amc8-2017-p3",
+    "finalAnswer": "$\\boxed{\\text{C }(8)}$",
+    "shortExplanation": "**Idea:** Simplify the nested radical from the inside out.",
+    "detailedSteps": [
+      "Start with the innermost radical:",
+      "[\n\\sqrt4=2.\n]",
+      "Then",
+      "[\n\\sqrt{8\\sqrt4}=\\sqrt{8\\cdot2}=\\sqrt{16}=4.\n]",
+      "Finally,",
+      "[\n\\sqrt{16\\sqrt{8\\sqrt4}}=\\sqrt{16\\cdot4}=\\sqrt{64}=8.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Nested radicals",
+      "Inside-out simplification"
+    ],
+    "commonMistakes": [
+      "Do not take the square root of $16$ first while ignoring the factor beside it.",
+      "Keep each radical grouped until the expression inside it is simplified."
+    ],
+    "alternativeMethods": [
+      "You can rewrite each step as powers of $2$, but inside-out arithmetic is faster here."
+    ],
+    "difficultyNotes": "Requires careful grouping but only basic square roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p4",
+    "problemId": "amc8-2017-p4",
+    "finalAnswer": "$\\boxed{\\text{D }(2400)}$",
+    "shortExplanation": "**Idea:** Estimate $0.000315$ as $3.15\\times10^{-4}$ and $7{,}928{,}564$ as about $8\\times10^6$.",
+    "detailedSteps": [
+      "Use a quick estimate:",
+      "[\n0.000315\\approx 3.15\\times10^{-4},\\qquad 7{,}928{,}564\\approx 8\\times10^6.\n]",
+      "Then",
+      "[\n(3.15\\times10^{-4})(8\\times10^6)=25.2\\times10^2=2520.\n]",
+      "The closest listed value to $2520$ is $2400$.",
+      "Final Answer: ($\\boxed{\\text{D }(2400)}$)"
+    ],
+    "keyIdeas": [
+      "Scientific notation",
+      "Estimation"
+    ],
+    "commonMistakes": [
+      "Track powers of $10$ carefully; the answer is in the thousands, not hundreds.",
+      "Do not try to multiply all digits exactly when the question asks for the closest value."
+    ],
+    "alternativeMethods": [
+      "Compute $7{,}928{,}564\\cdot315$ first and then divide by $1{,}000{,}000$, but estimation is cleaner."
+    ],
+    "difficultyNotes": "The main skill is preserving magnitude while estimating.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p5",
+    "problemId": "amc8-2017-p5",
+    "finalAnswer": "$\\boxed{\\text{B }(1120)}$",
+    "shortExplanation": "**Idea:** Compute $8!$ in the numerator and the arithmetic sum in the denominator.",
+    "detailedSteps": [
+      "The numerator is",
+      "[\n1\\cdot2\\cdot3\\cdot4\\cdot5\\cdot6\\cdot7\\cdot8=8!=40320.\n]",
+      "The denominator is",
+      "[\n1+2+3+4+5+6+7+8=36.\n]",
+      "Therefore",
+      "[\n\\frac{40320}{36}=1120.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(1120)}$)"
+    ],
+    "keyIdeas": [
+      "Factorials",
+      "Arithmetic series",
+      "Division"
+    ],
+    "commonMistakes": [
+      "Do not add the numerator terms; it is a product.",
+      "Check the denominator sum before dividing."
+    ],
+    "alternativeMethods": [
+      "Cancel early: $\\frac{1\\cdot2\\cdot3\\cdot4\\cdot5\\cdot6\\cdot7\\cdot8}{36}=\\frac{8!}{4\\cdot9}$, then simplify."
+    ],
+    "difficultyNotes": "A computation problem with a large numerator but simple structure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p6",
+    "problemId": "amc8-2017-p6",
+    "finalAnswer": "$\\boxed{\\text{D }(72)}$",
+    "shortExplanation": "**Idea:** The ratio parts add to $10$, and triangle angles add to $180^\\circ$.",
+    "detailedSteps": [
+      "The ratio $3:3:4$ has",
+      "[\n3+3+4=10\n]",
+      "equal parts. Since a triangle has $180^\\circ$, one part is",
+      "[\n\\frac{180^\\circ}{10}=18^\\circ.\n]",
+      "The largest angle corresponds to $4$ parts:",
+      "[\n4\\cdot18^\\circ=72^\\circ.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(72)}$)"
+    ],
+    "keyIdeas": [
+      "Triangle angle sum",
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Do not treat $4$ as $4^\\circ$; it is a ratio part.",
+      "Use all three ratio parts when finding the value of one part."
+    ],
+    "alternativeMethods": [
+      "Let the angles be $3x,3x,4x$. Then $10x=180$, so $x=18$."
+    ],
+    "difficultyNotes": "A standard ratio-angle problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p7",
+    "problemId": "amc8-2017-p7",
+    "finalAnswer": "$\\boxed{\\text{A }(11)}$",
+    "shortExplanation": "**Idea:** A number whose first three digits repeat has the form $1001n$.",
+    "detailedSteps": [
+      "Let the repeated three-digit block be $n$. Then the six-digit number is",
+      "[\nZ=1000n+n=1001n.\n]",
+      "Factor $1001$:",
+      "[\n1001=7\\cdot11\\cdot13.\n]",
+      "So every such $Z$ is divisible by $11$.",
+      "Final Answer: ($\\boxed{\\text{A }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Divisibility",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "Do not test only the example $247247$; the factor must work for every repeated-block number.",
+      "The repeated block contributes $1000n+n$, not just $2n$."
+    ],
+    "alternativeMethods": [
+      "Use the divisibility test for $11$: alternating digit sums match for a repeated three-digit block."
+    ],
+    "difficultyNotes": "A place-value observation turns the problem into factoring $1001$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p8",
+    "problemId": "amc8-2017-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(8)}$",
+    "shortExplanation": "**Idea:** The number cannot be prime if it is even and divisible by $7$ unless it is impossible as a two-digit number.",
+    "detailedSteps": [
+      "A two-digit number that is even and divisible by $7$ must be an even multiple of $7$:",
+      "[\n14,28,42,56,70,84,98.\n]",
+      "To have exactly three true properties, it should be even, divisible by $7$, and contain a $9$, but not be prime.",
+      "Among the even multiples of $7$, only $98$ has a digit $9$.",
+      "The number $98$ is even, divisible by $7$, has a digit $9$, and is not prime.",
+      "Its units digit is $8$.",
+      "Final Answer: ($\\boxed{\\text{D }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Logical conditions",
+      "Divisibility by 7",
+      "Two-digit numbers"
+    ],
+    "commonMistakes": [
+      "Do not require all four statements to be true; exactly three are true.",
+      "A two-digit even number greater than $2$ is not prime."
+    ],
+    "alternativeMethods": [
+      "List two-digit numbers containing $9$ and check which also satisfy exactly two of the other three conditions."
+    ],
+    "difficultyNotes": "A small case check with a logic constraint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p9",
+    "problemId": "amc8-2017-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(4)}$",
+    "shortExplanation": "**Idea:** The total must be a multiple of $12$, and yellow marbles are what remain.",
+    "detailedSteps": [
+      "If the total number of marbles is $N$, then $N$ must be divisible by both $3$ and $4$, so $N$ is a multiple of $12$.",
+      "The number of yellow marbles is",
+      "[\nN-\\frac{N}{3}-\\frac{N}{4}-6=\\frac{5N}{12}-6.\n]",
+      "Because the color counts must be whole numbers, try positive multiples of $12$ that are large enough to include the $6$ green marbles.",
+      "For $N=12$, the yellow count is negative. For $N=24$,",
+      "[\n\\frac{5\\cdot24}{12}-6=10-6=4.\n]",
+      "Thus the smallest possible number of yellow marbles is $4$.",
+      "Final Answer: ($\\boxed{\\text{D }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Fractions of a total",
+      "Common multiples",
+      "Remainder count"
+    ],
+    "commonMistakes": [
+      "The total number of marbles used in the color description need not make $100$ relevant beyond being an upper bound.",
+      "The blue and red counts must both be integers."
+    ],
+    "alternativeMethods": [
+      "List possible totals $12,24,36,\\dots$ and compute blue, red, green, then yellow."
+    ],
+    "difficultyNotes": "Requires noticing the divisibility condition on the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p10",
+    "problemId": "amc8-2017-p10",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{3}{10}\\right)}$",
+    "shortExplanation": "**Idea:** If $4$ is the largest selected card, the other two cards must come from $1,2,3$.",
+    "detailedSteps": [
+      "There are",
+      "[\n\\binom{5}{3}=10\n]",
+      "sets of three selected cards.",
+      "For $4$ to be the largest card, the selection must include $4$ and choose the other two cards from $\\{1,2,3\\}$.",
+      "The number of favorable selections is",
+      "[\n\\binom{3}{2}=3.\n]",
+      "So the probability is",
+      "[\n\\frac{3}{10}.\n]",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac{3}{10}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Largest selected value",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Do not include card $5$; if $5$ is selected, then $4$ is not the largest.",
+      "The order of selection does not matter for the event, so combinations are efficient."
+    ],
+    "alternativeMethods": [
+      "By symmetry, among the five cards, each card is equally likely to be the largest of the selected three only after accounting for valid smaller choices; direct counting is safest."
+    ],
+    "difficultyNotes": "A clean combinations count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p11",
+    "problemId": "amc8-2017-p11",
+    "finalAnswer": "$\\boxed{\\text{C }(361)}$",
+    "shortExplanation": "**Idea:** In an $n\\times n$ tiled square, the two diagonals cover $2n-1$ tiles when $n$ is odd.",
+    "detailedSteps": [
+      "Let the floor be an $n\\times n$ grid of square tiles.",
+      "One diagonal contains $n$ tiles, and the other diagonal contains $n$ tiles.",
+      "Because the total on both diagonals is odd, the two diagonals share the center tile, so the total is",
+      "[\n2n-1=37.\n]",
+      "Then",
+      "[\n2n=38,\\qquad n=19.\n]",
+      "The whole floor has",
+      "[\n19^2=361\n]",
+      "tiles.",
+      "Final Answer: ($\\boxed{\\text{C }(361)}$)"
+    ],
+    "keyIdeas": [
+      "Square grid",
+      "Diagonals",
+      "Avoiding double-counting"
+    ],
+    "commonMistakes": [
+      "Do not count the center tile twice.",
+      "The answer asks for all floor tiles, not just diagonal tiles."
+    ],
+    "alternativeMethods": [
+      "Work backward from the answer choices: only $361=19^2$ gives $2\\cdot19-1=37$."
+    ],
+    "difficultyNotes": "The key detail is the shared center tile.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p12",
+    "problemId": "amc8-2017-p12",
+    "finalAnswer": "$\\boxed{\\text{D }(\\text{between }60\\text{ and }79)}$",
+    "shortExplanation": "**Idea:** The number is $1$ more than a common multiple of $4$, $5$, and $6$.",
+    "detailedSteps": [
+      "If a number leaves remainder $1$ when divided by $4$, $5$, and $6$, then one less than the number is divisible by all three.",
+      "The least common multiple is",
+      "[\n\\operatorname{lcm}(4,5,6)=60.\n]",
+      "So the smallest positive integer greater than $1$ is",
+      "[\n60+1=61.\n]",
+      "The number $61$ lies between $60$ and $79$.",
+      "Final Answer: ($\\boxed{\\text{D }(\\text{between }60\\text{ and }79)}$)"
+    ],
+    "keyIdeas": [
+      "Remainders",
+      "Least common multiple"
+    ],
+    "commonMistakes": [
+      "Do not answer $60$; the remainder must be $1$, so the number is $60+1$.",
+      "The problem asks for a range, not the exact number."
+    ],
+    "alternativeMethods": [
+      "Test the ranges by checking numbers of the form $4k+1$ that are also $1$ mod $5$ and $6$."
+    ],
+    "difficultyNotes": "A standard LCM plus remainder problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p13",
+    "problemId": "amc8-2017-p13",
+    "finalAnswer": "$\\boxed{\\text{B }(1)}$",
+    "shortExplanation": "**Idea:** Across all chess games, total wins equal total losses.",
+    "detailedSteps": [
+      "Peter and Emma together have",
+      "[\n4+3=7\n]",
+      "wins and",
+      "[\n2+3=5\n]",
+      "losses.",
+      "Kyler lost $3$ games, so total losses are",
+      "[\n5+3=8.\n]",
+      "Total wins must equal total losses, so total wins are $8$.",
+      "Kyler's wins are",
+      "[\n8-7=1.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(1)}$)"
+    ],
+    "keyIdeas": [
+      "Win-loss balance",
+      "Counting games"
+    ],
+    "commonMistakes": [
+      "Do not assume everyone played the same number of games.",
+      "Each game contributes exactly one win and one loss."
+    ],
+    "alternativeMethods": [
+      "Let Kyler have $x$ wins. Then $7+x=5+3$, so $x=1$."
+    ],
+    "difficultyNotes": "A short invariant: total wins equal total losses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p14",
+    "problemId": "amc8-2017-p14",
+    "finalAnswer": "$\\boxed{\\text{C }(93)}$",
+    "shortExplanation": "**Idea:** Chloe's overall average determines the shared-work percentage.",
+    "detailedSteps": [
+      "Each student solved half the assignment alone and half together.",
+      "Let the percentage correct on the shared half be $x$. Chloe's overall percentage gives",
+      "[\n\\frac{80+x}{2}=88.\n]",
+      "Thus",
+      "[\n80+x=176,\\qquad x=96.\n]",
+      "Zoe's overall percentage is the average of her alone percentage and the shared percentage:",
+      "[\n\\frac{90+96}{2}=93.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(93)}$)"
+    ],
+    "keyIdeas": [
+      "Averages",
+      "Percentages",
+      "Shared work"
+    ],
+    "commonMistakes": [
+      "The together portion has the same percentage for both Chloe and Zoe.",
+      "Because the halves are equal size, an ordinary average of the two percentages is valid."
+    ],
+    "alternativeMethods": [
+      "Use total problems $100$ as a model: Chloe gets $40$ alone and $48$ together correct, so the together half is $96\\%$."
+    ],
+    "difficultyNotes": "A two-step average problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p15",
+    "problemId": "amc8-2017-p15",
+    "finalAnswer": "$\\boxed{\\text{D }(24)}$",
+    "shortExplanation": "**Idea:** Count choices from the center outward: A to M, then C, then 8.",
+    "detailedSteps": [
+      "From the center A, there are $4$ adjacent M's.",
+      "From each M, there are $3$ adjacent C's that continue a valid path outward.",
+      "From each such C, there are $2$ adjacent 8's.",
+      "Therefore the number of paths is",
+      "[\n4\\cdot3\\cdot2=24.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(24)}$)"
+    ],
+    "keyIdeas": [
+      "Multiplication principle",
+      "Grid adjacency",
+      "Path counting"
+    ],
+    "commonMistakes": [
+      "Do not allow diagonal moves.",
+      "Count paths, not just final 8 locations."
+    ],
+    "alternativeMethods": [
+      "By symmetry, count paths in one direction from A and multiply by $4$."
+    ],
+    "difficultyNotes": "A compact multiplication-principle count with symmetry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p16",
+    "problemId": "amc8-2017-p16",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac{12}{5}\\right)}$",
+    "shortExplanation": "**Idea:** Equal perimeters determine $BD$, then area scales with the base on $BC$.",
+    "detailedSteps": [
+      "Let $CD=x$. Since $BC=5$, we have $BD=5-x$.",
+      "The equal perimeters condition gives",
+      "[\nAB+BD+AD=AC+CD+AD.\n]",
+      "Cancel $AD$:",
+      "[\n4+(5-x)=3+x.\n]",
+      "So",
+      "[\n9-x=3+x,\\qquad x=3,\\qquad BD=2.\n]",
+      "Triangle $ABC$ is a $3$-$4$-$5$ right triangle, so its area is",
+      "[\n\\frac12\\cdot3\\cdot4=6.\n]",
+      "Triangles $ABD$ and $ABC$ share the same altitude to line $BC$, so areas scale with their bases:",
+      "[\n[ABD]=\\frac{BD}{BC}[ABC]=\\frac25\\cdot6=\\frac{12}{5}.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac{12}{5}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Equal perimeters",
+      "Area scaling",
+      "3-4-5 triangle"
+    ],
+    "commonMistakes": [
+      "Do not try to find the length $AD$; it cancels from the perimeter equation.",
+      "Use $BD/BC$, not $CD/BC$, because the desired triangle is $ABD$."
+    ],
+    "alternativeMethods": [
+      "Place $B=(0,0)$, $C=(5,0)$, $A=(0,4)$, then $D=(2,0)$ and compute the area directly."
+    ],
+    "difficultyNotes": "Combines a simple perimeter equation with an area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p17",
+    "problemId": "amc8-2017-p17",
+    "finalAnswer": "$\\boxed{\\text{C }(45)}$",
+    "shortExplanation": "**Idea:** Write two expressions for the number of coins using the number of chests.",
+    "detailedSteps": [
+      "Let $c$ be the number of treasure chests and $g$ the number of gold coins.",
+      "Putting $9$ coins in each usable chest leaves $2$ chests empty, so",
+      "[\ng=9(c-2).\n]",
+      "Putting $6$ coins in every chest leaves $3$ coins over, so",
+      "[\ng=6c+3.\n]",
+      "Set the expressions equal:",
+      "[\n9(c-2)=6c+3.\n]",
+      "Then",
+      "[\n9c-18=6c+3,\\qquad 3c=21,\\qquad c=7.\n]",
+      "Thus",
+      "[\ng=6\\cdot7+3=45.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(45)}$)"
+    ],
+    "keyIdeas": [
+      "Linear equations",
+      "Remainders",
+      "Modeling"
+    ],
+    "commonMistakes": [
+      "The first condition uses $c-2$ filled chests, not $c$ chests.",
+      "The second condition leaves coins over, not chests empty."
+    ],
+    "alternativeMethods": [
+      "Test the answer choices: only $45$ can be written as $9\\cdot5$ and as $6\\cdot7+3$."
+    ],
+    "difficultyNotes": "A straightforward two-condition equation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p18",
+    "problemId": "amc8-2017-p18",
+    "finalAnswer": "$\\boxed{\\text{B }(24)}$",
+    "shortExplanation": "**Idea:** Subtract the small right triangle from the larger $5$-$12$-$13$ triangle.",
+    "detailedSteps": [
+      "Since $\\angle BCD$ is right and $BC=4$, $CD=3$, triangle $BCD$ has area",
+      "[\n\\frac12\\cdot4\\cdot3=6.\n]",
+      "Also",
+      "[\nBD=\\sqrt{4^2+3^2}=5.\n]",
+      "Triangle $ABD$ has side lengths $5$, $12$, and $13$, so it is a right triangle with area",
+      "[\n\\frac12\\cdot5\\cdot12=30.\n]",
+      "Because the quadrilateral is nonconvex, the shaded quadrilateral area is the large triangle area minus the small triangle area:",
+      "[\n30-6=24.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(24)}$)"
+    ],
+    "keyIdeas": [
+      "Pythagorean triples",
+      "Composite area",
+      "Nonconvex shape"
+    ],
+    "commonMistakes": [
+      "For a nonconvex quadrilateral, the smaller triangle is subtracted, not added.",
+      "Recognize both $3$-$4$-$5$ and $5$-$12$-$13$ right triangles."
+    ],
+    "alternativeMethods": [
+      "Use coordinates for $B,C,D$, locate $A$ from the $5$-$12$-$13$ triangle, then apply the shoelace formula."
+    ],
+    "difficultyNotes": "The nonconvex geometry is the main trap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p19",
+    "problemId": "amc8-2017-p19",
+    "finalAnswer": "$\\boxed{\\text{D }(26)}$",
+    "shortExplanation": "**Idea:** Factor out $98!$ and count powers of $5$.",
+    "detailedSteps": [
+      "Factor the sum:",
+      "[\n98!+99!+100! = 98!\\left(1+99+100\\cdot99\\right).\n]",
+      "The expression in parentheses is",
+      "[\n1+99+9900=10000=10^4=2^4\\cdot5^4.\n]",
+      "Now count powers of $5$ in $98!$:",
+      "[\nv_5(98!)=\\left\\lfloor\\frac{98}{5}\\right\\rfloor+\\left\\lfloor\\frac{98}{25}\\right\\rfloor=19+3=22.\n]",
+      "So the total exponent of $5$ is",
+      "[\n22+4=26.\n]",
+      "That means $5^n$ is a factor for $n=1,2,\\dots,26$, and the answer choice records the largest possible exponent.",
+      "Final Answer: ($\\boxed{\\text{D }(26)}$)"
+    ],
+    "keyIdeas": [
+      "Factorials",
+      "Prime exponent count",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "Do not count powers of $5$ in the three factorials separately and add them; factor the whole sum first.",
+      "Remember the extra factor $10000$ contributes $5^4$."
+    ],
+    "alternativeMethods": [
+      "After factoring $98!$, compute the bracket exactly before using $v_5$."
+    ],
+    "difficultyNotes": "A strong factorization problem for AMC 8.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p20",
+    "problemId": "amc8-2017-p20",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac{56}{225}\\right)}$",
+    "shortExplanation": "**Idea:** Count odd four-digit numbers with no repeated digits.",
+    "detailedSteps": [
+      "There are $9000$ integers from $1000$ to $9999$.",
+      "For the number to be odd, its units digit has $5$ choices:",
+      "[\n1,3,5,7,9.\n]",
+      "After choosing the units digit, the thousands digit has $8$ choices: $1$ through $9$ except the chosen units digit.",
+      "The hundreds digit then has $8$ choices, including $0$ but excluding the two used digits.",
+      "The tens digit has $7$ choices.",
+      "So the number of favorable integers is",
+      "[\n5\\cdot8\\cdot8\\cdot7=2240.\n]",
+      "The probability is",
+      "[\n\\frac{2240}{9000}=\\frac{56}{225}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac{56}{225}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Digit counting",
+      "Distinct digits",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The thousands digit cannot be $0$.",
+      "Choose the units digit first to guarantee the number is odd."
+    ],
+    "alternativeMethods": [
+      "You can split into cases for the first digit first, but the oddness condition makes units-first counting simpler."
+    ],
+    "difficultyNotes": "A multi-step counting problem with a leading-zero restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p21",
+    "problemId": "amc8-2017-p21",
+    "finalAnswer": "$\\boxed{\\text{A }(0)}$",
+    "shortExplanation": "**Idea:** Since $a+b+c=0$ and none are zero, the signs cannot all match.",
+    "detailedSteps": [
+      "Because $a+b+c=0$ and $a,b,c$ are nonzero, either two numbers are positive and one is negative, or two are negative and one is positive.",
+      "If two are positive and one is negative, then",
+      "[\n\\frac{a}{|a|}+\\frac{b}{|b|}+\\frac{c}{|c|}=1+1-1=1.\n]",
+      "The product $abc$ is negative, so",
+      "[\n\\frac{abc}{|abc|}=-1.\n]",
+      "The total is $1-1=0$.",
+      "If two are negative and one is positive, the sign sum is $-1$ and the product sign is $+1$, again giving $0$.",
+      "Final Answer: ($\\boxed{\\text{A }(0)}$)"
+    ],
+    "keyIdeas": [
+      "Signs",
+      "Absolute value",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "Do not assume all three variables can have the same sign; their sum is $0$.",
+      "The term $\\frac{x}{|x|}$ is the sign of $x$, not the value of $x$."
+    ],
+    "alternativeMethods": [
+      "Test examples such as $(1,1,-2)$ and $(-1,-1,2)$; both give $0$, and these represent all possible sign patterns."
+    ],
+    "difficultyNotes": "A sign-pattern problem, not a magnitude problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p22",
+    "problemId": "amc8-2017-p22",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac{10}{3}\\right)}$",
+    "shortExplanation": "**Idea:** Place the triangle on coordinates and use the distance from the semicircle center to the hypotenuse.",
+    "detailedSteps": [
+      "Place $C=(12,0)$, $A=(0,0)$, and $B=(12,5)$. Then the hypotenuse $\\overline{AB}$ has equation",
+      "[\n5x-12y=0.\n]",
+      "Let the semicircle have radius $r$. Its center lies on $\\overline{AC}$ at $(12-r,0)$ because the right end is tangent to $\\overline{BC}$.",
+      "Tangency to $\\overline{AB}$ means the distance from $(12-r,0)$ to the line $5x-12y=0$ equals $r$:",
+      "[\n\\frac{|5(12-r)-12\\cdot0|}{\\sqrt{5^2+12^2}}=r.\n]",
+      "Since $\\sqrt{25+144}=13$,",
+      "[\n\\frac{60-5r}{13}=r.\n]",
+      "Thus",
+      "[\n60-5r=13r,\\qquad 18r=60,\\qquad r=\\frac{10}{3}.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac{10}{3}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Distance to a line",
+      "Tangency"
+    ],
+    "commonMistakes": [
+      "The radius is perpendicular to the hypotenuse at the tangency point, not necessarily vertical.",
+      "Use the center $(12-r,0)$, not $(r,0)$, with this coordinate setup."
+    ],
+    "alternativeMethods": [
+      "A similar-triangles solution can derive the same equation from the $5$-$12$-$13$ triangle."
+    ],
+    "difficultyNotes": "One of the harder geometry problems in the set.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p23",
+    "problemId": "amc8-2017-p23",
+    "finalAnswer": "$\\boxed{\\text{C }(25)}$",
+    "shortExplanation": "**Idea:** The four one-hour distances are integer speeds that decrease by $5$.",
+    "detailedSteps": [
+      "Let the first day's pace be $x$ minutes per mile. Then the four paces are",
+      "[\nx,\\ x+5,\\ x+10,\\ x+15.\n]",
+      "Because each trip lasts $60$ minutes and each distance is an integer number of miles, all four of these paces must divide $60$.",
+      "The positive divisors of $60$ that form a four-term arithmetic sequence with common difference $5$ are",
+      "[\n5,\\ 10,\\ 15,\\ 20.\n]",
+      "The corresponding daily mileages are",
+      "[\n\\frac{60}{5}=12,\\quad \\frac{60}{10}=6,\\quad \\frac{60}{15}=4,\\quad \\frac{60}{20}=3.\n]",
+      "So the total is",
+      "[\n12+6+4+3=25.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(25)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Divisors of 60",
+      "Minutes per mile"
+    ],
+    "commonMistakes": [
+      "Read the rate unit carefully: the official statement uses minutes per mile, not miles per hour.",
+      "Each daily distance must be an integer number of miles."
+    ],
+    "alternativeMethods": [
+      "List divisors of $60$ and find four in arithmetic progression with common difference $5$."
+    ],
+    "difficultyNotes": "The trap is the unit: minutes per mile rather than miles per hour.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p24",
+    "problemId": "amc8-2017-p24",
+    "finalAnswer": "$\\boxed{\\text{D }(146)}$",
+    "shortExplanation": "**Idea:** Count days with at least one call using inclusion-exclusion, then subtract from $365$.",
+    "detailedSteps": [
+      "The year $2017$ has $365$ days.",
+      "Days with calls from Andy, Betty, and Carlos occur every $3$, $4$, and $5$ days respectively. Count days with at least one call:",
+      "[\n\\left\\lfloor\\frac{365}{3}\\right\\rfloor+\\left\\lfloor\\frac{365}{4}\\right\\rfloor+\\left\\lfloor\\frac{365}{5}\\right\\rfloor\n=121+91+73.\n]",
+      "Subtract double-counted days:",
+      "[\n\\left\\lfloor\\frac{365}{12}\\right\\rfloor+\\left\\lfloor\\frac{365}{15}\\right\\rfloor+\\left\\lfloor\\frac{365}{20}\\right\\rfloor\n=30+24+18.\n]",
+      "Add back triple-counted days:",
+      "[\n\\left\\lfloor\\frac{365}{60}\\right\\rfloor=6.\n]",
+      "So days with at least one call equal",
+      "[\n121+91+73-30-24-18+6=219.\n]",
+      "Days with no calls equal",
+      "[\n365-219=146.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(146)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Least common multiples",
+      "Calendar counting"
+    ],
+    "commonMistakes": [
+      "Do not count December 31, 2016 as part of the next year.",
+      "Subtract overlaps and then add back triple overlaps."
+    ],
+    "alternativeMethods": [
+      "Use a $60$-day cycle. Each full cycle has $36$ call days, and then count the remaining $5$ days."
+    ],
+    "difficultyNotes": "A classic inclusion-exclusion counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2017-p25",
+    "problemId": "amc8-2017-p25",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(4\\sqrt3-\\frac{4\\pi}{3}\\right)}$",
+    "shortExplanation": "**Idea:** Start with two equilateral triangles and subtract two circular segments.",
+    "detailedSteps": [
+      "Since $US=UT=2$ and $\\angle TUS=60^\\circ$, triangle $UST$ is equilateral with side $2$. Its area is",
+      "[\n\\frac{\\sqrt3}{4}\\cdot2^2=\\sqrt3.\n]",
+      "The figure can be viewed as two such equilateral-triangle areas minus two matching circular segments.",
+      "A $60^\\circ$ sector of radius $2$ has area",
+      "[\n\\frac{60}{360}\\pi(2^2)=\\frac{2\\pi}{3}.\n]",
+      "One circular segment is sector area minus equilateral triangle area:",
+      "[\n\\frac{2\\pi}{3}-\\sqrt3.\n]",
+      "Using two triangles and subtracting two such segments gives",
+      "[\n2\\sqrt3-2\\left(\\frac{2\\pi}{3}-\\sqrt3\\right)\n=4\\sqrt3-\\frac{4\\pi}{3}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(4\\sqrt3-\\frac{4\\pi}{3}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Equilateral triangle area",
+      "Sector area",
+      "Circular segments"
+    ],
+    "commonMistakes": [
+      "The arcs are one-sixth of a circle, so the sector angle is $60^\\circ$.",
+      "Subtract circular segments, not whole sectors."
+    ],
+    "alternativeMethods": [
+      "Decompose the shaded region into symmetric left and right halves and compute one half."
+    ],
+    "difficultyNotes": "The hardest part is choosing a clean area decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "solution-usaco-bronze-2022-january-p1",
+    "problemId": "usaco-bronze-2022-january-p1",
+    "finalAnswer": "Count the exact matches first. Among the unmatched cells, the yellow count is $\\sum_{b=A}^{Z}\\min(a_b,g_b)$, where $a_b$ and $g_b$ are the remaining answer and guess counts of breed $b$.",
+    "shortExplanation": "Reserve the green cells, then match the remaining occurrences of each breed one for one. A repeated guess cannot use an answer occurrence twice.",
+    "detailedSteps": [
+      "Compare the nine corresponding positions. Each equal pair contributes one green cell. Leave those positions out of both remaining frequency tables.",
+      "For a breed $b$, suppose $a_b$ answer occurrences and $g_b$ guess occurrences remain. A yellow match consumes one from each group, so there can be at most $\\min(a_b,g_b)$ yellow cells of that breed.",
+      "That bound is attainable: pair any remaining occurrences of the same breed until one group runs out. Different breeds use disjoint occurrences, so their maximum matching counts can be added.",
+      "Removing greens before counting yellows prevents double use of a correct-position occurrence. The first output line is the green count; the second is the sum of the remaining breed matches.",
+      "There are exactly nine cells and 26 breeds. The implementation uses two fixed arrays of length 26 and scans the grid once, so both time and auxiliary space are constant for this problem.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    string answer[3], guess[3];\n    for (int r = 0; r < 3; ++r) in >> answer[r];\n    for (int r = 0; r < 3; ++r) in >> guess[r];\n    int green = 0, a[26] = {}, g[26] = {};\n    for (int r = 0; r < 3; ++r) {\n        for (int c = 0; c < 3; ++c) {\n            if (answer[r][c] == guess[r][c]) ++green;\n            else {\n                ++a[answer[r][c] - 'A'];\n                ++g[guess[r][c] - 'A'];\n            }\n        }\n    }\n    int yellow = 0;\n    for (int b = 0; b < 26; ++b) yellow += min(a[b], g[b]);\n    out << green << '\\n' << yellow << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Exact-position matches have priority.",
+      "Remaining occurrences form a one-to-one matching for each breed.",
+      "Frequency tables handle repeated breeds without assigning individual yellow positions."
+    ],
+    "commonMistakes": [
+      "Counting every remaining guess whose breed occurs anywhere in the answer, even when that breed has already been used up.",
+      "Including a green answer occurrence in the yellow pool.",
+      "Printing the two counts in the wrong order."
+    ],
+    "alternativeMethods": [
+      "Count every breed in both full grids and add $\\min(A_b,G_b)$. This includes all matching occurrences, both green and yellow; subtract the already counted greens to obtain the yellow count. Removing greens first makes the priority rule more explicit."
+    ],
+    "difficultyNotes": "An introductory frequency-counting problem. Repeated breeds and the priority of green matches are the essential details.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-january-p2",
+    "problemId": "usaco-bronze-2022-january-p2",
+    "finalAnswer": "Print `yes` exactly when some four-faced die with labels from 1 through 10 completes a strict winning cycle with the two supplied dice; otherwise print `no`.",
+    "shortExplanation": "Compare dice using their 16 equally likely face pairs, ignoring ties. Enumerate the possible third die and check the two missing edges of the winning cycle.",
+    "detailedSteps": [
+      "For dice $X$ and $Y$, let $w$ count face pairs where $X>Y$, and let $l$ count those where $X<Y$. Ties cause another roll. If $w+l>0$, the eventual win probability of $X$ is $w/(w+l)$, so $X$ strictly beats $Y$ exactly when $w>l$. Use the integer comparison $w-l$; no floating-point computation is needed.",
+      "If $w=l$ for the supplied dice $A,B$, neither strictly beats the other. This includes the case in which every outcome ties. A non-transitive set requires a strict edge between each pair, so this test case must return `no`.",
+      "If $A$ beats $B$, a cycle must have $B$ beating $C$ and $C$ beating $A$. If $B$ beats $A$, the required remaining edges are $A$ beating $C$ and $C$ beating $B$. Test the orientation determined by the supplied pair.",
+      "Enumerate $1\\le c_1\\le c_2\\le c_3\\le c_4\\le10$. Repeated labels are allowed. Sorting the faces does not change a die\u2019s probabilities, so this search contains an equivalent representative of every legal die, including all unsorted arrangements.",
+      "Return `yes` as soon as both required comparisons are strict wins. Such a candidate proves existence. If every representative fails, no allowed arrangement can complete the cycle, proving the `no` answer.",
+      "There are $\\binom{13}{4}=715$ sorted candidates, and each comparison examines 16 face pairs. For a packet of $T\\le10$ cases, time is $O(T\\cdot715\\cdot16)$ and auxiliary space is constant. Read every case and print exactly one lowercase answer line per case.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <array>\n#include <iostream>\nusing namespace std;\nint comparison(const array<int, 4>& x, const array<int, 4>& y) {\n    int balance = 0;\n    for (int a : x)\n        for (int b : y) balance += (a > b) - (a < b);\n    return balance;\n}\nbool possible(const array<int, 4>& a, const array<int, 4>& b) {\n    int orientation = comparison(a, b);\n    if (orientation == 0) return false;\n    for (int w = 1; w <= 10; ++w)\n        for (int x = w; x <= 10; ++x)\n            for (int y = x; y <= 10; ++y)\n                for (int z = y; z <= 10; ++z) {\n                    array<int, 4> c = {{w, x, y, z}};\n                    if (comparison(b, c) * orientation > 0 &&\n                        comparison(c, a) * orientation > 0) return true;\n                }\n    return false;\n}\nvoid solve(istream& in, ostream& out) {\n    int tests;\n    in >> tests;\n    while (tests--) {\n        array<int, 4> a, b;\n        for (int& v : a) in >> v;\n        for (int& v : b) in >> v;\n        out << (possible(a, b) ? \"yes\" : \"no\") << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Rerolling ties preserves the relative probability of the two decisive outcomes.",
+      "A strict comparison uses wins minus losses, rather than the number of wins alone.",
+      "Sorting candidate faces reduces the exhaustive search without losing any distributions."
+    ],
+    "commonMistakes": [
+      "Treating tied outcomes as wins, or comparing wins against eight without removing ties.",
+      "Allowing an equal-probability pair to participate in a strict cycle.",
+      "Requiring four distinct labels, even though repeated faces are allowed.",
+      "Using only one cycle orientation or forgetting a later test case in the input packet."
+    ],
+    "alternativeMethods": [
+      "Enumerate all 10,000 ordered four-face candidates instead. It is also exhaustive and small enough for these bounds; the sorted search removes equivalent face permutations."
+    ],
+    "difficultyNotes": "The search is small. The main reasoning is the strict win comparison after ties are rerolled, together with checking the correct cycle orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-january-p3",
+    "problemId": "usaco-bronze-2022-january-p3",
+    "finalAnswer": "Let $s_0=0$ and $s_i=h_i-s_{i-1}$. If $N$ is odd, test the forced target $H=s_N$; if $N$ is even, require $s_N=0$ and choose $H=\\min_{i\\text{ odd}}s_i$. Reject any infeasible target; otherwise output $\\sum_i h_i-NH$ bags.",
+    "shortExplanation": "A proposed common hunger level determines every adjacent pair\u2019s feeding count from left to right. Alternating sums reveal the feasible target, and the largest feasible target minimizes the total corn consumed.",
+    "detailedSteps": [
+      "Let $x_i$ be the number of feedings of cows $i,i+1$, with $x_0=x_N=0$. To finish at a common nonnegative hunger $H$, cow $i$ needs $x_{i-1}+x_i=h_i-H$. The left boundary therefore forces $x_i=h_i-H-x_{i-1}$.",
+      "Define $s_0=0$ and $s_i=h_i-s_{i-1}$. Induction gives $x_i=s_i-H$ for odd $i$, and $x_i=s_i$ for even $i$. Every actual edge count must be a nonnegative integer.",
+      "For odd $N$, the right boundary $x_N=0$ forces $H=s_N$. This target works exactly when $H\\ge0$, every even-indexed $s_i\\ge0$, and every odd-indexed $s_i\\ge H$. There is no other target to try.",
+      "For even $N$, the right boundary instead requires $s_N=0$. All even-indexed sums must be nonnegative, and the allowed targets satisfy $0\\le H\\le\\min_{i\\text{ odd}}s_i$. A negative upper bound is impossible. Otherwise choose that upper bound, the largest feasible target.",
+      "These conditions are sufficient. The resulting edge counts are nonnegative integers. Execute each edge\u2019s required feedings in any order. Each cow\u2019s partial consumption is at most its final consumption $h_i-H$, so it never falls below $H\\ge0$. This constructs a valid schedule without overfeeding.",
+      "Exactly $\\sum_i h_i-NH$ bags are consumed. Increasing $H$ decreases this number, so the largest feasible even-length target is optimal. For an odd length, the feasible target is unique. Also, summing the cow equations gives $\\sum_i h_i-NH=2\\sum_{i=1}^{N-1}x_i$: one pair feeding uses two bags, not one.",
+      "Maintain the alternating sum, the minimum odd-indexed sum, the total hunger and a flag for negative even-indexed sums while reading the array. The final boundary and target checks decide between the bag count and `-1`. For one cow, no feeding is needed; the same rule returns zero.",
+      "Time is $O(N)$ per case and $O(\\sum N)$ over the packet, with $O(1)$ auxiliary space. The source has $T\\le100$, $\\sum N\\le100000$ and $0\\le h_i\\le10^9$. Totals and the multiplication $NH$ can reach $10^{14}$, so use `long long` throughout and read all $T$ answer cases.",
+      "Original C++11 reference implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <limits>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int tests;\n    in >> tests;\n    while (tests--) {\n        int n;\n        in >> n;\n        long long alternating = 0, total = 0;\n        long long oddMinimum = numeric_limits<long long>::max();\n        bool valid = true;\n        for (int i = 1; i <= n; ++i) {\n            long long hunger;\n            in >> hunger;\n            total += hunger;\n            alternating = hunger - alternating;\n            if (i % 2 == 1) oddMinimum = min(oddMinimum, alternating);\n            else if (alternating < 0) valid = false;\n        }\n        long long target;\n        if (n % 2 == 1) {\n            target = alternating;\n            if (target < 0 || oddMinimum < target) valid = false;\n        } else {\n            target = oddMinimum;\n            if (alternating != 0 || target < 0) valid = false;\n        }\n        out << (valid ? total - 1LL * n * target : -1LL) << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Assign a variable to each adjacent edge instead of simulating individual bags.",
+      "The left boundary uniquely determines edge counts for a proposed target.",
+      "Odd and even line lengths impose different right-boundary conditions.",
+      "Minimizing bags is equivalent to maximizing the feasible common hunger."
+    ],
+    "commonMistakes": [
+      "Counting pair feedings rather than the two bags consumed by each feeding.",
+      "Checking only the final alternating sum and overlooking a negative internal edge count.",
+      "Trying to increase hunger, use nonadjacent cows, or allow a negative final level.",
+      "Choosing an arbitrary feasible target for an even-length line instead of the largest one.",
+      "Using 32-bit arithmetic for a large hunger total or printing only the first test case."
+    ],
+    "alternativeMethods": [
+      "For a fixed $H$, scan left to right and repeatedly use the direct recurrence $x_i=h_i-H-x_{i-1}$. This is a convenient feasibility check. The alternating-sum form solves all target constraints explicitly and avoids a target search.",
+      "For very small hunger values, search all legal adjacent-pair feedings and find the shortest route to any equal state. This supplies an independent check, but the state space is unsuitable for the full bounds."
+    ],
+    "difficultyNotes": "The harder step is proving both feasibility and optimality for the two parities. Once the edge equations are established, the implementation is a linear scan with constant memory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

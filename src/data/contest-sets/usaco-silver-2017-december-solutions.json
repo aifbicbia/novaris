@@ -1,0 +1,100 @@
+[
+  {
+    "finalAnswer": "Compute each surviving suffix\u2019s sum and minimum. For every $1\\le K\\le N-2$, compare the exact grade $(S[K]-m[K])/(N-K-1)$ by cross multiplication. Print every maximizing $K$ in increasing order, one per line. Time and space are $O(N)$.",
+    "shortExplanation": "Eating the first $K$ questions leaves a suffix. Discarding exactly one lowest score subtracts the suffix minimum and decreases its length by one. Suffix sums and minima make every candidate grade available in constant time; exact comparisons retain all ties.",
+    "detailedSteps": [
+      "**Express the grade precisely.** With zero-based score storage, removing the first $K$ questions leaves indices $K$ through $N-1$. Let $S[K]$ be their sum and $m[K]$ their minimum. The grade is\n\n$$q(K)=\\frac{S[K]-m[K]}{N-K-1}.$$\n\nSubtract only one minimum even when several remaining scores tie for it. The allowed range ends at $N-2$, so the denominator is always positive.",
+      "**Build suffix information.** Traverse the scores backward using $S[i]=a_i+S[i+1]$ and $m[i]=\\min(a_i,m[i+1])$. Each recurrence includes the next score in an already correct suffix, proving the resulting sum and minimum by induction. Sentinel values initialize the empty suffix but no empty suffix is evaluated as a grade.",
+      "**Compare without rounding.** For positive denominators, $a/b>c/d$ exactly when $ad>cb$, and equality is exactly $ad=cb$. Compare each grade with the stored best using these integer products. Floating-point tolerances can misclassify a close comparison or overlook a mathematically equal average.",
+      "**Retain the complete best set.** Start with a value below every nonnegative valid grade. A strict improvement replaces the best fraction and clears the old answer list; an exact tie appends the current $K$. After each iteration, the list contains all maximizers among the candidates seen so far. Since $K$ is visited increasingly, the final list is already sorted.",
+      "**Respect the source bounds and output.** Consider $K=1,\\ldots,N-2$; neither zero nor $N-1$ is an allowed choice. Scores are integers from zero to $10000$, and $N\\le100000$. A suffix sum is at most $10^9$ and comparison products are below $10^{14}$, so `long long` is sufficient. Read `homework.in` and write every optimal $K$ on its own line in `homework.out`; the number of rows can be as large as $N-2$.",
+      "**Complexity.** Input, the suffix pass and the candidate pass are linear. Writing at most $N-2$ answers is also linear. The score, suffix and answer arrays use $O(N)$ space.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"homework.in\");\n    std::ofstream out(\"homework.out\");\n    int n;\n    in >> n;\n    std::vector<int> score(n), minimum(n + 1, 10001);\n    std::vector<long long> sum(n + 1, 0);\n    for (int &value : score) in >> value;\n    for (int i = n - 1; i >= 0; --i) {\n        sum[i] = sum[i + 1] + score[i];\n        minimum[i] = std::min(minimum[i + 1], score[i]);\n    }\n    long long bestNumerator = -1, bestDenominator = 1;\n    std::vector<int> answers;\n    for (int k = 1; k <= n - 2; ++k) {\n        const long long numerator = sum[k] - minimum[k];\n        const long long denominator = n - k - 1;\n        const long long left = numerator * bestDenominator;\n        const long long right = bestNumerator * denominator;\n        if (left > right) {\n            bestNumerator = numerator;\n            bestDenominator = denominator;\n            answers.clear();\n            answers.push_back(k);\n        } else if (left == right) answers.push_back(k);\n    }\n    for (int k : answers) out << k << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The remaining questions form a suffix whose minimum is removed exactly once.",
+      "Use exact rational comparisons to preserve every optimal tie.",
+      "The output is the complete sorted set of best prefix lengths, not the best average."
+    ],
+    "commonMistakes": [
+      "Dividing by $N-K$ instead of $N-K-1$.",
+      "Removing all copies of a tied minimum.",
+      "Admitting $K=0$ or an empty final average.",
+      "Printing only one optimal $K$ or a rounded numerical grade."
+    ],
+    "alternativeMethods": [
+      "On small inputs, explicitly copy the suffix for each $K$, remove one occurrence of its minimum, and compare the resulting averages with exact fractions. This $O(N^2)$ method is a useful independent oracle without suffix recurrences."
+    ],
+    "difficultyNotes": "Intermediate suffix reasoning. Exact fractions, the one-score removal rule and all tied output rows are the essential details.",
+    "id": "solution-usaco-silver-2017-december-p1",
+    "problemId": "usaco-silver-2017-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort the measurements by day. Maintain each logged cow\u2019s milk and an ordered frequency map that includes a fixed marker for the unchanged herd at $G$. Count a display change when the updated cow\u2019s leader status toggles, or when she leads both before and after but is not the unique leader in both states. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "The display depends on identities, not just the maximum milk value. Only one cow changes in a record. Her leader status and the old/new leader counts determine whether the entire leader set changes; the source\u2019s unchanged cows at $G$ must remain represented.",
+    "detailedSteps": [
+      "**Include the actual baseline herd.** Initialize every cow ID appearing in the log to $G$, including cows whose first measurement occurs later. The source also guarantees a nonempty unchanged herd at $G$. Represent this whole fixed group by one marker. Replacing that group by a marker preserves equality of photo sets: the entire group is either present or absent together. This is a set-equality proxy, not a claim that only one unmeasured cow exists.",
+      "**Maintain the exact production state.** Sort records by day. Store each logged identity\u2019s production and, in a balanced ordered map, the number of represented identities at each production value. Include the marker permanently at $G$. The largest key is the current maximum, and its frequency is the proxy leader count. Before an update, save whether the updated cow is a leader and that count.",
+      "**Apply one signed measurement.** Remove the cow\u2019s old value from its frequency, deleting the value key only if its count reaches zero. Add the stated signed change to her production and insert the new value. All other identities stay fixed; the baseline marker cannot disappear. Read the new maximum, the cow\u2019s new leader flag and the new leader count.",
+      "**Handle changed or absent leader membership.** If the cow\u2019s leader flag toggles, her own identity enters or leaves the display, so count a change. If she is not a leader in either state, an unchanged other maximizer determines the same photo set before and after. A nonleader\u2019s change cannot remove that maximizer and cannot create a higher maximum while still leaving her a nonleader.",
+      "**Handle a cow who leads in both states.** Her nonzero change moves the leading value. If it rises, previous co-leaders are left behind, so the photo set is unchanged only when she was already the unique leader. If it falls but she remains a leader, she must previously have been unique; otherwise an unchanged old co-leader would now outrank her. Any new co-leaders then join the display. Thus the same identity set survives exactly when this cow is the unique leader both before and after. When she is unique in the proxy set, the baseline marker is absent, so she is also the actual unique leader.",
+      "**Prove the chronological invariant.** The maps start with the correct $G$ values and fixed group. Each record updates exactly one identity and its frequency, so induction gives the true represented productions and maximum. The preceding cases characterize exact leader-set equality. Unique recorded days make the count of changing records precisely the count of changing days; a numerical maximum change by itself is not a photo change.",
+      "**Bounds and files.** The genuine Silver source has up to $100000$ measurements, days up to $10^6$, numeric cow IDs up to $10^9$, and production between zero and $10^9$. Use 64-bit production and signed-change storage. Sorting and balanced-map updates take $O(N\\log N)$ time with $O(N)$ records and state. Read `measurement.in` and write one display-change count to `measurement.out`. The fixed three-cow model from another division does not apply here.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <map>\n#include <vector>\nstruct Record {\n    int day, cow;\n    long long change;\n};\nint main() {\n    std::ifstream in(\"measurement.in\");\n    std::ofstream out(\"measurement.out\");\n    int n;\n    long long baseline;\n    in >> n >> baseline;\n    std::vector<Record> records(n);\n    std::map<int, long long> milk;\n    for (auto &record : records) {\n        in >> record.day >> record.cow >> record.change;\n        milk.emplace(record.cow, baseline);\n    }\n    std::sort(records.begin(), records.end(), [](const Record &a, const Record &b) {\n        return a.day < b.day;\n    });\n    // One fixed marker represents the nonempty unchanged herd at baseline.\n    // It preserves display-set equality, not the actual number of these cows.\n    std::map<long long, int> frequency;\n    frequency[baseline] = static_cast<int>(milk.size()) + 1;\n    int answer = 0;\n    for (const auto &record : records) {\n        const long long oldValue = milk[record.cow];\n        const long long oldMaximum = frequency.rbegin()->first;\n        const bool oldLeader = oldValue == oldMaximum;\n        const int oldLeaderCount = frequency.rbegin()->second;\n        if (--frequency[oldValue] == 0) frequency.erase(oldValue);\n        const long long newValue = oldValue + record.change;\n        milk[record.cow] = newValue;\n        ++frequency[newValue];\n        const bool newLeader = newValue == frequency.rbegin()->first;\n        const int newLeaderCount = frequency.rbegin()->second;\n        if (oldLeader != newLeader ||\n            (oldLeader && newLeader && (oldLeaderCount != 1 || newLeaderCount != 1)))\n            ++answer;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Keep the source\u2019s unchanged baseline group in the displayed identity model.",
+      "Only the updated cow changes value, so leader flags and unique-leader cases suffice.",
+      "Compare photo identities, including ties, rather than only maximum values or counts."
+    ],
+    "commonMistakes": [
+      "Omitting cows outside the log and allowing the effective maximum to fall below $G$.",
+      "Reusing a fixed Bessie/Elsie/Mildred simulation for this Silver problem.",
+      "Counting every numerical maximum change despite the same unique leader.",
+      "Comparing only leader counts and missing an identity entering or leaving.",
+      "Processing the disorganized log without sorting by day."
+    ],
+    "alternativeMethods": [
+      "On small logs, reconstruct every mentioned cow\u2019s absolute production from all preceding records at each recorded day, include several explicit unchanged outsider identities at $G$, and compare the entire maximizing photo sets. This gives an independent oracle without the frequency or leader-flag shortcut."
+    ],
+    "difficultyNotes": "Advanced identity-set simulation. The unchanged herd and the proof of the unique-leader criterion matter more than the ordered-map operations.",
+    "id": "solution-usaco-silver-2017-december-p2",
+    "problemId": "usaco-silver-2017-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Count vertices on directed cycles of the source-to-destination functional graph. Queue every zero-indegree vertex and repeatedly remove it and its outgoing edge. The vertices left are exactly the positions occupied after any number of shuffles. Time and space are $O(N)$.",
+    "shortExplanation": "Each cycle remains occupied because every cycle position has a cycle predecessor. Noncycle positions eventually lose all incoming cows. Repeatedly peeling zero-indegree positions removes precisely the noncycle part, including trees whose cows collide on the way to a cycle.",
+    "detailedSteps": [
+      "**Model the actual Silver shuffle.** Position $i$ has one outgoing edge to $a_i$. Destinations need not be distinct, so the graph is not necessarily a permutation and several cows can collide. The task asks which positions stay occupied forever, rather than recovering cow IDs after a fixed number of shuffles.",
+      "**Show cycles remain occupied.** Initially every position has a cow. Each position on a directed cycle has a predecessor on that cycle. If the whole cycle is occupied before a shuffle, these predecessors supply cows to every cycle position afterward. Induction proves that cycle positions are occupied at every step.",
+      "**Show every noncycle position eventually empties.** A cow occupying a position after $t$ steps supplies a directed predecessor walk of length $t$. A cycle cannot lead to an outside vertex because its unique outgoing edges stay on the cycle. A length-$N$ walk in an $N$-vertex graph repeats a vertex and therefore enters a cycle. Consequently, after $N$ steps no cow can remain at a noncycle position. The always-occupied positions are exactly cycle vertices.",
+      "**Peel positions with no incoming edges.** Count each vertex\u2019s indegree and queue every zero. Remove a queued vertex, decrease the remaining count, and remove its outgoing edge by decreasing the destination\u2019s indegree. Queue that destination when its indegree reaches zero. A cycle vertex keeps its cycle predecessor and can never be peeled.",
+      "**Prove the remaining graph consists of cycles.** An outgoing destination cannot have been removed earlier while its source\u2019s incoming contribution still existed. Thus all remaining vertices retain one outgoing edge inside the remaining graph. At termination each has indegree at least one; total indegree equals the number of remaining outgoing edges, so every indegree is exactly one. A finite graph with one incoming and one outgoing edge per vertex is a disjoint union of cycles. Hence the remaining count includes all and only persistent positions.",
+      "**Bounds, complexity and files.** Each vertex is queued at most once and each outgoing edge is processed once, giving $O(N)$ time and space. An iterative queue handles $N=100000$ without a deep recursive tail. Convert the input\u2019s one-based destinations carefully. A nonempty finite functional graph always has a cycle, so the answer lies between one and $N$. Read `shuffle.in` and write one persistent-position count to `shuffle.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <vector>\nint main() {\n    std::ifstream in(\"shuffle.in\");\n    std::ofstream out(\"shuffle.out\");\n    int n;\n    in >> n;\n    std::vector<int> destination(n), indegree(n, 0);\n    for (int &position : destination) {\n        in >> position;\n        --position;\n        ++indegree[position];\n    }\n    std::queue<int> empty;\n    for (int i = 0; i < n; ++i)\n        if (indegree[i] == 0) empty.push(i);\n    int remaining = n;\n    while (!empty.empty()) {\n        const int position = empty.front();\n        empty.pop();\n        --remaining;\n        const int next = destination[position];\n        if (--indegree[next] == 0) empty.push(next);\n    }\n    out << remaining << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The one-outgoing-edge graph permits collisions and contains cycles with incoming trees.",
+      "Cycle positions are occupied forever; finite acyclic predecessors eventually vanish.",
+      "Zero-indegree peeling isolates exactly the cycle vertices."
+    ],
+    "commonMistakes": [
+      "Assuming the destinations are distinct and all positions form a permutation.",
+      "Undoing exactly three shuffles using a different division\u2019s model.",
+      "Counting only self-loops and missing longer cycles.",
+      "Recursing through a potentially $100000$-vertex tail."
+    ],
+    "alternativeMethods": [
+      "For small inputs, move every labeled cow through $N$ simultaneous shuffles and intersect the occupied-position sets over the history. Another independent check computes positive-length reachability and counts vertices that can reach themselves; do not initialize zero-length self reachability, which would incorrectly include every vertex."
+    ],
+    "difficultyNotes": "Intermediate functional-graph reasoning. The distinction from a permutation and the proof that only cycle vertices persist are the central ideas.",
+    "id": "solution-usaco-silver-2017-december-p3",
+    "problemId": "usaco-silver-2017-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

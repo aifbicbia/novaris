@@ -1,0 +1,550 @@
+[
+  {
+    "id": "solution-amc10b-2018-p1",
+    "problemId": "amc10b-2018-p1",
+    "finalAnswer": "$\\boxed{90}$ (choice **A**)",
+    "shortExplanation": "Count the pieces along each side and multiply.",
+    "detailedSteps": [
+      "Along the two sides, the cut produces $20/2=10$ pieces and $18/2=9$ pieces.",
+      "Every row contains ten pieces, and there are nine rows, giving $10\\cdot9=90$ pieces."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Rectangular arrays"
+    ],
+    "commonMistakes": [
+      "Dividing the total area by a side length would mix square inches with inches. Divide by the area of one piece, or count rows and columns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rectangular grid can be counted by rows and columns without drawing every cut.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p2",
+    "problemId": "amc10b-2018-p2",
+    "finalAnswer": "$\\boxed{67}$ (choice **D**)",
+    "shortExplanation": "Account for the distance covered during each half-hour.",
+    "detailedSteps": [
+      "The whole trip takes $3/2$ hours, so its average speed is $96/(3/2)=64$ miles per hour.",
+      "Because the three intervals have equal duration, their average speeds satisfy $(60+65+v)/3=64$. Thus $v=192-125=67$ miles per hour."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Distance and average speed"
+    ],
+    "commonMistakes": [
+      "The arithmetic mean of speeds is valid here because the time intervals are equal; it is generally invalid for equal distances."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal time intervals allow the distance equation to simplify to an arithmetic mean of the segment speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p3",
+    "problemId": "amc10b-2018-p3",
+    "finalAnswer": "$\\boxed{3}$ (choice **B**)",
+    "shortExplanation": "The only meaningful choice is which digit is paired with 1.",
+    "detailedSteps": [
+      "Reversing either product or interchanging the two products does not change the expression.",
+      "Pairing $1$ with $2$, $3$, or $4$ gives respectively $2+12=14$, $3+8=11$, and $4+6=10$. These three values are distinct and exhaust all pairings."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Pair partitions"
+    ],
+    "commonMistakes": [
+      "There are 24 arrangements of the digits, but many arrangements produce the same pair of products."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Group arrangements by the pair containing one fixed digit, rather than evaluating every permutation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p4",
+    "problemId": "amc10b-2018-p4",
+    "finalAnswer": "$\\boxed{22}$ (choice **B**)",
+    "shortExplanation": "Recover the volume from the three different face areas.",
+    "detailedSteps": [
+      "Let the edge lengths be $x,y,z$. After relabeling, $xy=24$, $xz=48$, and $yz=72$.",
+      "Multiplication gives $(xyz)^2=24\\cdot48\\cdot72=288^2$, so the positive volume is $xyz=288$.",
+      "Dividing the volume by each face area gives edge lengths $12$, $6$, and $4$. Their sum is $22$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rectangular box dimensions"
+    ],
+    "commonMistakes": [
+      "The six faces come in equal opposite pairs; they give three independent products, not six different dimensions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiplying the three pairwise face areas reveals the volume even before any individual edge is known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p5",
+    "problemId": "amc10b-2018-p5",
+    "finalAnswer": "$\\boxed{240}$ (choice **D**)",
+    "shortExplanation": "Remove the subsets that contain only composite numbers.",
+    "detailedSteps": [
+      "The eight-element set has $2^8=256$ subsets. Its four nonprime elements are $4,6,8,9$.",
+      "Exactly $2^4=16$ subsets use only those four elements. The required count is $256-16=240$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Complementary counting"
+    ],
+    "commonMistakes": [
+      "The empty set belongs to the excluded collection. It must not be added back."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary family has a particularly simple description, making subtraction shorter than casework by subset size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p6",
+    "problemId": "amc10b-2018-p6",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice **D**)",
+    "shortExplanation": "Three draws occur exactly when the first two values total at most four.",
+    "detailedSteps": [
+      "Any three distinct positive chips total at least $1+2+3=6$, so a third draw always ends the process.",
+      "The process reaches that draw precisely when the first two values are $(1,2)$, $(2,1)$, $(1,3)$, or $(3,1)$.",
+      "Use a complete random ordering of all five chips as the sample space. Each ordered pair in its first two positions has probability $1/(5\\cdot4)$, even if the actual process would stop earlier. Thus the probability is $4/20=1/5$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Stopping after sampling without replacement"
+    ],
+    "commonMistakes": [
+      "Conditioning on the process already reaching the second draw changes the sample space and gives the wrong denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Model a complete random ordering first; the stopping rule can then be tested on its initial entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p7",
+    "problemId": "amc10b-2018-p7",
+    "finalAnswer": "$\\boxed{19}$ (choice **D**)",
+    "shortExplanation": "The large radius scales by the number of small semicircles.",
+    "detailedSteps": [
+      "Write the small radius as $r$. The large diameter spans $N$ small diameters, so the large radius is $Nr$.",
+      "The total small area is $A=N\\pi r^2/2$, while the remaining area is $B=(N^2-N)\\pi r^2/2$. Hence $B/A=N-1$.",
+      "The specified ratio makes $B/A=18$, so $N=19$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area and similarity"
+    ],
+    "commonMistakes": [
+      "Lengths scale by $N$, but areas scale by $N^2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep track of how both the individual shapes and their number contribute to the area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p8",
+    "problemId": "amc10b-2018-p8",
+    "finalAnswer": "$\\boxed{12}$ (choice **C**)",
+    "shortExplanation": "Count the horizontal edges by levels, then use symmetry.",
+    "detailedSteps": [
+      "For an $n$-step staircase, the horizontal levels contain $n,n,n-1,n-2,\\ldots,1$ toothpicks. Their total is $n+n(n+1)/2$.",
+      "The vertical total is the same. Thus the whole staircase uses $n(n+3)$ toothpicks.",
+      "The equation $n(n+3)=180$ factors as $(n-12)(n+15)=0$. The positive solution is $n=12$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Counting edges in a staircase"
+    ],
+    "commonMistakes": [
+      "Shared edges between adjacent unit squares are single toothpicks, not two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting edges by horizontal levels handles shared edges automatically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p9",
+    "problemId": "amc10b-2018-p9",
+    "finalAnswer": "$\\boxed{39}$ (choice **D**)",
+    "shortExplanation": "Complement every die value to seven.",
+    "detailedSteps": [
+      "Replace each result $d$ by $7-d$. This is a bijection on the equally likely outcomes of the seven dice.",
+      "A total of $10$ becomes a total of $7\\cdot7-10=39$. The bijection shows that these totals occur equally often.",
+      "The other listed totals are different from $39$; direct coefficient counting also confirms that none has the same frequency as $10$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Symmetry of dice sums"
+    ],
+    "commonMistakes": [
+      "The center of symmetry is $49/2$, because seven dice contribute seven complements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bijection can compare two probabilities without calculating either one from scratch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p10",
+    "problemId": "amc10b-2018-p10",
+    "finalAnswer": "$\\boxed{2}$ (choice **E**)",
+    "shortExplanation": "Use coordinates to compute the base area and perpendicular height.",
+    "detailedSteps": [
+      "Choose $A=(0,0,0)$, $B=(3,0,0)$, $C=(3,1,0)$, and $E=(0,0,2)$. Then $H=(0,1,2)$ and the midpoint of $FG$ is $M=(3,1/2,2)$.",
+      "The rectangle $BCHE$ has perpendicular side lengths $1$ and $\\sqrt{3^2+2^2}=\\sqrt{13}$. Its plane is $2x+3z=6$.",
+      "The distance from $M$ to that plane is $|2(3)+3(2)-6|/\\sqrt{13}=6/\\sqrt{13}$. The volume is therefore $(1/3)\\sqrt{13}\\cdot6/\\sqrt{13}=2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Volume of an oblique-base pyramid"
+    ],
+    "commonMistakes": [
+      "The box height is not the perpendicular height of this pyramid, whose base is slanted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main geometric decision is identifying the perpendicular height to the slanted base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p11",
+    "problemId": "amc10b-2018-p11",
+    "finalAnswer": "$\\boxed{p^2+26}$ (choice **C**)",
+    "shortExplanation": "The candidate with 26 is composite for every possible prime.",
+    "detailedSteps": [
+      "If $p$ is a prime other than $3$, then $p^2\\equiv1\\pmod3$. Therefore $p^2+26\\equiv0\\pmod3$, and the value exceeds $3$.",
+      "The exceptional prime $p=3$ gives $p^2+26=35$, which is also composite.",
+      "For comparison, the other expressions can be prime: $5^2+16=41$, $7^2+24=73$, $5^2+46=71$, and $19^2+96=457$. Thus the required expression is $p^2+26$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Primality and residues"
+    ],
+    "commonMistakes": [
+      "A modular argument must handle the prime equal to the modulus separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence obstruction proves impossibility for nearly all primes; the exceptional prime must still be checked.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p12",
+    "problemId": "amc10b-2018-p12",
+    "finalAnswer": "$\\boxed{50}$ (choice **C**)",
+    "shortExplanation": "The centroid follows a circle with one-third the original radius.",
+    "detailedSteps": [
+      "Put the midpoint of $AB$ at the origin, so the endpoint vectors satisfy $A+B=0$. The centroid vector is $G=(A+B+C)/3=C/3$.",
+      "The original circle has radius $12$, so the centroid locus has radius $4$. The two excluded positions do not change its enclosed area.",
+      "That area is $16\\pi\\approx50.265$, which rounds to $50$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Centroid loci"
+    ],
+    "commonMistakes": [
+      "The centroid scales distances by one-third, so it scales areas by one-ninth."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An affine description of the centroid makes the locus a scaled copy of the original circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p13",
+    "problemId": "amc10b-2018-p13",
+    "finalAnswer": "$\\boxed{505}$ (choice **C**)",
+    "shortExplanation": "The powers of ten repeat every four exponents modulo 101.",
+    "detailedSteps": [
+      "The terms have the form $10^k+1$ for $k=2,3,\\ldots,2019$. Since $10^2\\equiv-1\\pmod{101}$, successive powers repeat with residues $1,10,-1,-10$.",
+      "Thus $10^k+1$ is divisible by $101$ exactly when $k\\equiv2\\pmod4$. The qualifying exponents are $2,6,10,\\ldots,2018$.",
+      "There are $(2018-2)/4+1=505$ such exponents."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Periodicity modulo 101"
+    ],
+    "commonMistakes": [
+      "The first term uses exponent 2, so the 2018th term uses exponent 2019."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Find a short power cycle before counting the allowed exponents, and check both endpoints of the exponent range.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p14",
+    "problemId": "amc10b-2018-p14",
+    "finalAnswer": "$\\boxed{225}$ (choice **D**)",
+    "shortExplanation": "Every value other than the mode can occur at most nine times.",
+    "detailedSteps": [
+      "If there are $d$ distinct values, the list can contain at most $10+9(d-1)=9d+1$ entries.",
+      "Hence $2018\\le9d+1$, giving $d\\ge\\lceil2017/9\\rceil=225$.",
+      "This bound is attainable: use one value ten times, 223 other values nine times each, and one last value once. The total is $10+223\\cdot9+1=2018$, with a unique mode."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Frequency bounds and a unique mode"
+    ],
+    "commonMistakes": [
+      "Allowing another value to occur ten times would destroy uniqueness of the mode."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "For a minimum count of distinct values, first maximize how many entries each allowed value can contribute.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p15",
+    "problemId": "amc10b-2018-p15",
+    "finalAnswer": "$\\boxed{2(w+h)^2}$ (choice **A**)",
+    "shortExplanation": "Follow the straight path from the paper center to one corner as it folds over the box.",
+    "detailedSteps": [
+      "That path crosses the midpoint of a base side. After folding, its three portions run from the bottom center to the edge, up the side, and from the top edge to the top center.",
+      "Their lengths are $w/2$, $h$, and $w/2$, so the center-to-corner distance in the sheet is $w+h$.",
+      "For a square sheet of side length $s$, its center-to-corner distance is $s/\\sqrt2$. Consequently $s=\\sqrt2(w+h)$, and the area is $s^2=2(w+h)^2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Unfolding a wrapping-paper net"
+    ],
+    "commonMistakes": [
+      "The box is rotated relative to the paper: the relevant sheet distance is half a diagonal, not half a side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The folding path determines a paper diagonal, so distinguishing sides from diagonals is the key spatial step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p16",
+    "problemId": "amc10b-2018-p16",
+    "finalAnswer": "$\\boxed{4}$ (choice **E**)",
+    "shortExplanation": "Every integer has the same residue as its cube modulo six.",
+    "detailedSteps": [
+      "The difference $a^3-a=(a-1)a(a+1)$ is a product of three consecutive integers, so it is divisible by both $2$ and $3$.",
+      "Therefore the requested sum of cubes is congruent to the given sum, $2018^{2018}$, modulo $6$.",
+      "As $2018\\equiv2\\pmod6$ and the positive even powers of $2$ are congruent to $4$ modulo $6$, the remainder is $4$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Cubes modulo six"
+    ],
+    "commonMistakes": [
+      "The increasing-sequence condition is unnecessary once the congruence is recognized; individual terms need not be recovered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence applying to every individual term can replace all the sequence-specific information.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p17",
+    "problemId": "amc10b-2018-p17",
+    "finalAnswer": "$\\boxed{7}$ (choice **B**)",
+    "shortExplanation": "Use the equal corner cuts to reduce the octagon to one side-length equation.",
+    "detailedSteps": [
+      "Let the octagon side be $s$, and let $AP=BQ=x$. The horizontal side $AB$ gives $2x+s=8$. The equal slanted sides at the two lower corners have vertical legs of the same length, say $y$.",
+      "The two vertical octagon sides have length $s$, so the remaining upper corner cuts have equal vertical legs $6-y-s$. Their slanted sides are equal, hence their horizontal legs are equal. The upper horizontal side then forces each horizontal leg to be $x$. Pythagoras gives the upper vertical legs the same value $y$; thus $2y+s=6$.",
+      "Now $x=(8-s)/2$, $y=(6-s)/2$, and $x^2+y^2=s^2$. Substitution yields $s^2+14s-50=0$, whose positive root is $s=-7+3\\sqrt{11}$.",
+      "The requested sum of coefficients is $-7+3+11=7$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "An equilateral octagon in a rectangle"
+    ],
+    "commonMistakes": [
+      "Symmetry must follow from the equal-length conditions; it should not be assumed solely from an imagined drawing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal corner cuts must be justified before the diagram can be reduced to a single side-length equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p18",
+    "problemId": "amc10b-2018-p18",
+    "finalAnswer": "$\\boxed{96}$ (choice **D**)",
+    "shortExplanation": "First pair the six seats into allowable sibling positions.",
+    "detailedSteps": [
+      "Within a row, the only allowable sibling pair uses its two end seats. If one sibling pair used those seats, the opposite middle seat could only pair with one of the already occupied end seats, since its own two neighbors and the seat directly ahead are forbidden. Therefore every sibling pair must occupy different rows.",
+      "Pairing top seats with bottom seats is then a permutation of the three columns with no fixed column. There are exactly two such permutations: the two three-cycles.",
+      "For either seat pairing, assign the three families in $3!$ ways and choose which sibling occupies the top seat in $2^3$ ways. The count is $2\\cdot3!\\cdot2^3=96$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Seating constraints and matchings"
+    ],
+    "commonMistakes": [
+      "Siblings may sit in different rows and different columns. Excluding every cross-row pair is stronger than the given rule."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the geometry of permitted seat pairs from the labeling of the siblings occupying those pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p19",
+    "problemId": "amc10b-2018-p19",
+    "finalAnswer": "$\\boxed{11}$ (choice **E**)",
+    "shortExplanation": "Convert each age-multiple birthday into a divisor of a fixed age difference.",
+    "detailedSteps": [
+      "Let $d$ be Chloe’s age minus Zoe’s age. When Zoe is $z$ years old, Chloe’s age is $z+d$, a multiple of $z$ exactly when $z$ divides $d$. Thus $d$ has nine positive divisors.",
+      "Joey is one year older, so his age at such a future birthday is $z+d+1$. The stated two-digit age implies $d<99$. An integer with nine divisors has the form $p^8$ or $p^2q^2$ for distinct primes. Under $99$, the only possibility is $d=2^2\\cdot3^2=36$.",
+      "Joey’s age is $z+37$, so it is a multiple of $z$ exactly when $z$ divides $37$. After today’s $z=1$, the next possibility is $z=37$, giving Joey’s age $74$. The digit sum is $7+4=11$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Age differences and divisor counts"
+    ],
+    "commonMistakes": [
+      "It is the age difference that must be divisible by Zoe’s age, not Chloe’s present age."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The age difference stays fixed over time, converting several birthday conditions into divisors of one integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p20",
+    "problemId": "amc10b-2018-p20",
+    "finalAnswer": "$\\boxed{2017}$ (choice **B**)",
+    "shortExplanation": "Subtract the linear growth to reveal a six-term cycle.",
+    "detailedSteps": [
+      "Set $g(n)=f(n)-n-1$. Substituting into the recurrence gives $g(n)=g(n-1)-g(n-2)$, with $g(1)=-1$ and $g(2)=-2$.",
+      "The values are $-1,-2,-1,1,2,1$, after which the same initial pair returns. The recurrence therefore makes this block repeat every six terms.",
+      "Since $2018\\equiv2\\pmod6$, we have $g(2018)=-2$. Hence $f(2018)=2018+1-2=2017$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "A recurrence with a periodic correction"
+    ],
+    "commonMistakes": [
+      "The original function is not periodic; only its deviation from a linear function repeats."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing a simple growth term is often enough to expose a small periodic remainder in a recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p21",
+    "problemId": "amc10b-2018-p21",
+    "finalAnswer": "$\\boxed{340}$ (choice **C**)",
+    "shortExplanation": "Use the four-digit bound to exclude every candidate between 323 and 340.",
+    "detailedSteps": [
+      "Because $n$ is even and divisible by $323=17\\cdot19$, it must be divisible by $646$. If another divisor $d$ satisfies $324\\le d\\le339$, neither $17$ nor $19$ divides $d$.",
+      "Consequently $\\gcd(646,d)\\le2$, and $n\\ge\\operatorname{lcm}(646,d)\\ge323\\cdot324=104652$, contradicting that $n$ has four digits.",
+      "For $d=340$, however, $\\operatorname{lcm}(646,340)=6460$. This is an even four-digit number divisible by both $323$ and $340$, and the exclusion just proved leaves no divisor between them. The minimum is $340$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Least common multiples and neighboring divisors"
+    ],
+    "commonMistakes": [
+      "Two numbers being possible divisors separately is insufficient; their least common multiple must fit inside the allowed size of n."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four-digit bound turns the neighboring-divisor condition into a finite list of plausible multiples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p22",
+    "problemId": "amc10b-2018-p22",
+    "finalAnswer": "$\\boxed{0.29}$ (choice **C**)",
+    "shortExplanation": "Locate the valid outcomes between a diagonal and a quarter-circle.",
+    "detailedSteps": [
+      "The possible pairs $(x,y)$ fill the unit square uniformly. A nondegenerate triangle requires $x+y>1$.",
+      "Since $1$ is its longest side, the triangle is obtuse exactly when $x^2+y^2<1$. The favorable region is inside the quarter unit disk and above the line $x+y=1$.",
+      "The triangle below that line lies entirely in the quarter-disk. Thus the desired probability is $\\pi/4-1/2\\approx0.285398$, closest to $0.29$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Geometric probability for obtuse triangles"
+    ],
+    "commonMistakes": [
+      "The probability is over all pairs in the square; conditioning on already forming a triangle would double it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Describe the geometric event before integrating or computing areas; the boundary curves determine the probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p23",
+    "problemId": "amc10b-2018-p23",
+    "finalAnswer": "$\\boxed{2}$ (choice **B**)",
+    "shortExplanation": "Express the equation in terms of the gcd and lcm before enumerating cases.",
+    "detailedSteps": [
+      "Put $g=\\gcd(a,b)$ and $\\ell=\\operatorname{lcm}(a,b)$. Since $ab=g\\ell$, the equation becomes $(g-20)\\ell=12g-63$. The original equation also shows that $g$ divides $63$.",
+      "The possible values $g=1,3,7,9,21,63$ yield respectively $\\ell=51/19,27/17,-21/13,-45/11,189,693/43$. Only $g=21$, $\\ell=189$ gives a positive integer lcm.",
+      "Write $a=21u$ and $b=21v$. Then $\\gcd(u,v)=1$ and $uv=189/21=9$. The only coprime ordered factor pairs are $(1,9)$ and $(9,1)$, so the solutions are $(21,189)$ and $(189,21)$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "GCD and LCM factorization"
+    ],
+    "commonMistakes": [
+      "The factor pair (3,3) has product 9 but would give a larger gcd, so it is inadmissible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separating common prime factors from the two numbers makes the remaining casework finite.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p24",
+    "problemId": "amc10b-2018-p24",
+    "finalAnswer": "$\\boxed{\\frac{15\\sqrt3}{32}}$ (choice **C**)",
+    "shortExplanation": "Subtract three congruent corner pieces from the smaller triangle.",
+    "detailedSteps": [
+      "Use coordinates $A=(1,0)$, $C=(-1/2,\\sqrt3/2)$, and $E=(-1/2,-\\sqrt3/2)$. The midpoint triangle has vertices $X=(3/4,\\sqrt3/4)$, $Y=(-3/4,\\sqrt3/4)$, and $Z=(0,-\\sqrt3/2)$. Its side is $3/2$, so its area is $9\\sqrt3/16$.",
+      "At $Y$, the boundary $CE$, namely $x=-1/2$, cuts the two adjacent sides at $(-1/2,\\sqrt3/4)$ and $(-1/2,0)$. The removed triangle has vertical base $\\sqrt3/4$ and perpendicular height $1/4$, hence area $\\sqrt3/32$.",
+      "Rotation through $120^\\circ$ gives the other two equal corner pieces. The intersection area is $9\\sqrt3/16-3(\\sqrt3/32)=15\\sqrt3/32$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Intersection of equilateral triangles"
+    ],
+    "commonMistakes": [
+      "The intersection is not a regular hexagon; compute its area from the actual boundaries rather than assuming equal sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A subtraction argument is efficient only after the three removed pieces have been located and their congruence justified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2018-p25",
+    "problemId": "amc10b-2018-p25",
+    "finalAnswer": "$\\boxed{199}$ (choice **C**)",
+    "shortExplanation": "Count the integer levels of a strictly increasing function on the only possible interval.",
+    "detailedSteps": [
+      "Rearrange the equation as $x^2=10000(x-\\lfloor x\\rfloor)$. Since the fractional part is in $[0,1)$, every solution lies in $(-100,100)$.",
+      "Define $h(x)=x-x^2/10000$. On that interval it is strictly increasing: for $x<y$, $h(y)-h(x)=(y-x)(1-(x+y)/10000)>0$. Its endpoint limits are $-101$ and $99$.",
+      "Each integer $k$ strictly between $-101$ and $99$ occurs exactly once as $h(x)$. Conversely, at such a point $x-k=x^2/10000\\in[0,1)$, so $k=\\lfloor x\\rfloor$ and the original equation holds.",
+      "There are $99-(-101)-1=199$ integer levels, hence $199$ real solutions."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Counting roots with a floor function"
+    ],
+    "commonMistakes": [
+      "Both endpoints are excluded: a fractional part can equal zero but cannot equal one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A monotone change of variable replaces many separate floor-function intervals with one count of integer levels.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "finalAnswer": "The painted length is $(b-a)+(d-c)-\\max\\{0,\\min(b,d)-\\max(a,c)\\}$.",
+    "shortExplanation": "Add the two interval lengths, then subtract the length painted by both. If the intervals are disjoint or only touch, their overlap has length zero.",
+    "detailedSteps": [
+      "The two lengths are $b-a$ and $d-c$. These are lengths on a number line; counting their integer endpoints would give the wrong quantity.",
+      "The common portion starts at $\\max(a,c)$ and ends at $\\min(b,d)$. Its length is $\\max\\{0,\\min(b,d)-\\max(a,c)\\}$, including the disjoint and touching cases.",
+      "Adding the lengths counts each singly painted portion once and each common portion twice. Subtracting the common length therefore counts every painted portion exactly once. This proves the formula for partial overlap and containment as well.",
+      "The computation takes $O(1)$ time and space. Read the endpoints from `paint.in` and write the integer length to `paint.out`.",
+      "Original C++17 implementation, preserving the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nint main() {\n    std::ifstream in(\"paint.in\");\n    std::ofstream out(\"paint.out\");\n    int a, b, c, d;\n    in >> a >> b >> c >> d;\n    int overlap = std::max(0, std::min(b, d) - std::max(a, c));\n    out << (b - a) + (d - c) - overlap << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion for interval lengths.",
+      "Clamp the intersection length at zero."
+    ],
+    "commonMistakes": [
+      "Counting endpoints instead of continuous length.",
+      "Subtracting a negative overlap for disjoint intervals.",
+      "Taking the whole span between the extreme endpoints when there is an unpainted gap."
+    ],
+    "alternativeMethods": [
+      "With integer endpoints, mark each unit cell covered by either interval and count the marked cells. This gives a literal check of the formula."
+    ],
+    "difficultyNotes": "A short interval problem. Drawing disjoint, touching and nested examples helps make the zero-overlap rule precise.",
+    "id": "solution-usaco-bronze-2015-december-p1",
+    "problemId": "usaco-bronze-2015-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Return $\\max\\{0,\\max_{0\\le i<100}(\\mathrm{speed}[i]-\\mathrm{limit}[i])\\}$, in miles per hour.",
+    "shortExplanation": "Expand each description into one value for every mile of the same road. Compare driving speed and speed limit at the same mile, and keep the largest positive difference.",
+    "detailedSteps": [
+      "Segment lengths are positive integers and sum to $100$ for each description, so all boundaries lie at integer mile markers. On every unit cell $[i,i+1)$, both speed values are constant.",
+      "Fill `limit[0..99]` consecutively from the road segments. Reset the position to zero, then fill `speed[0..99]` independently from the journey segments. The two segmentations need not have matching boundaries.",
+      "For each mile, compute the signed difference `speed[i] - limit[i]`. Initialize the answer to zero and retain the greatest difference. Going below the limit is not a violation.",
+      "These unit cells cover every positive-length part of the journey. Thus every actual excess occurs in the scan, and every scanned excess occurs on a real portion of road. The maximum is exactly the requested worst violation.",
+      "Time is $O(N+M+100)$ and space is $O(100)$. Use the original `speeding.in` and `speeding.out` files; the answer is a speed difference, not a distance or a travel time.",
+      "Original C++17 implementation, preserving the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\nint main() {\n    std::ifstream in(\"speeding.in\");\n    std::ofstream out(\"speeding.out\");\n    int n, m;\n    in >> n >> m;\n    std::array<int, 100> limit{}, speed{};\n    int pos = 0;\n    for (int i = 0; i < n; ++i) {\n        int len, value;\n        in >> len >> value;\n        for (int k = 0; k < len; ++k) limit[pos++] = value;\n    }\n    pos = 0;\n    for (int i = 0; i < m; ++i) {\n        int len, value;\n        in >> len >> value;\n        for (int k = 0; k < len; ++k) speed[pos++] = value;\n    }\n    int answer = 0;\n    for (int i = 0; i < 100; ++i) answer = std::max(answer, speed[i] - limit[i]);\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Align the descriptions by distance along the road.",
+      "Integer segment lengths permit exact unit-mile expansion.",
+      "Take a maximum of signed excesses with a zero baseline."
+    ],
+    "commonMistakes": [
+      "Comparing the first road segment only with the first journey segment, and so on.",
+      "Using absolute differences, which would count driving too slowly as speeding.",
+      "Adding violations or computing total travel time.",
+      "Forgetting to reset the array-fill position for the second description."
+    ],
+    "alternativeMethods": [
+      "A two-pointer scan can intersect the current road and journey segments. Compare their speeds on the overlap, subtract its length from both remaining lengths, and advance whichever segment ends. This takes O(N+M) time without per-mile arrays."
+    ],
+    "difficultyNotes": "The main issue is alignment, rather than arithmetic. The source states a maximum tractor speed and positive segment lengths, but does not separately print a strictly positive lower bound for driving speed; this code also handles zero speed.",
+    "id": "solution-usaco-bronze-2015-december-p2",
+    "problemId": "usaco-bronze-2015-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Among milk types compatible with every recorded illness, return the largest number of distinct people who drank that type.",
+    "shortExplanation": "A possible bad milk must have been drunk by each recorded patient strictly before that patient became sick. For each possible type, count all its consumers, including people who may only become sick later. The largest such count is the minimum safe stock of medicine.",
+    "detailedSteps": [
+      "Build `earliest[p][m]`, the first time person $p$ drank milk $m$. Initialize it to $101$, beyond the valid recorded times, and take the minimum over repeated drinks.",
+      "Consider one candidate bad type $m$. For every recorded illness $(p,t)$, require $\\mathrm{earliest}[p][m]<t$. A drink at the illness time or afterward cannot explain that illness.",
+      "This condition is necessary because exactly one type is bad and every recorded illness must follow consuming it. It is also sufficient: the recorded patients have earlier exposures, and other consumers can become sick later. The statement imposes no common incubation time or deadline that would reject such a world.",
+      "An unrecorded illness is not evidence that a person is safe. Count every person who ever drank a feasible type, even if their consumption was late or they are absent from the illness list. Count each person once, regardless of how many times they drank it.",
+      "Let $C_m$ be that distinct-consumer count. Stocking $\\max C_m$ over feasible types is sufficient for every compatible bad-milk identity. It is necessary because an identity attaining that maximum is compatible with the observations and can make all its consumers sick.",
+      "Do not add counts across candidate types: the source says exactly one type is bad. Its observations describe an actual contaminated-milk scenario, so the reasoning is over compatible identities; an inconsistent synthetic transcript is not a valid alternate source scenario.",
+      "Processing the drinks, checking candidates and counting consumers takes $O(D+NM+MS)$ time and $O(NM+S)$ space. The output is at most $N$. Preserve the original `badmilk.in` and `badmilk.out` interface.",
+      "Original C++17 implementation, preserving the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"badmilk.in\");\n    std::ofstream out(\"badmilk.out\");\n    int n, m, d, s;\n    in >> n >> m >> d >> s;\n    const int never = 101;\n    std::vector<std::vector<int>> earliest(n + 1, std::vector<int>(m + 1, never));\n    for (int i = 0; i < d; ++i) {\n        int p, milk, time;\n        in >> p >> milk >> time;\n        earliest[p][milk] = std::min(earliest[p][milk], time);\n    }\n    std::vector<std::pair<int, int>> sick(s);\n    for (auto& observation : sick) in >> observation.first >> observation.second;\n    int answer = 0;\n    for (int milk = 1; milk <= m; ++milk) {\n        bool possible = true;\n        for (const auto& observation : sick) {\n            if (earliest[observation.first][milk] >= observation.second) possible = false;\n        }\n        if (!possible) continue;\n        int consumers = 0;\n        for (int p = 1; p <= n; ++p) if (earliest[p][milk] != never) ++consumers;\n        answer = std::max(answer, consumers);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Enumerate the unknown identity rather than guessing it.",
+      "Strictly earlier consumption is the complete recorded-illness test.",
+      "Worst-case planning means a maximum over compatible worlds.",
+      "Distinguish people from drinking events."
+    ],
+    "commonMistakes": [
+      "Allowing consumption at the exact illness time.",
+      "Using the latest drink instead of the earliest one.",
+      "Counting only recorded patients, although other consumers may become sick later.",
+      "Counting duplicate drinks as extra medicine doses.",
+      "Summing consumers of all feasible types even though only one type is contaminated."
+    ],
+    "alternativeMethods": [
+      "For each candidate, scan the original drinking records to find an earlier exposure for each recorded patient, then collect its consumers in a set. This uses less preprocessing but repeats more work; it also independently checks the earliest-time matrix."
+    ],
+    "difficultyNotes": "The challenging step is proving that the candidate test is sufficient, not just necessary. No common incubation delay is specified, and missing illness records cannot eliminate a milk. Use a sentinel greater than 100 so that a real drink at time 100 is still counted.",
+    "id": "solution-usaco-bronze-2015-december-p3",
+    "problemId": "usaco-bronze-2015-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

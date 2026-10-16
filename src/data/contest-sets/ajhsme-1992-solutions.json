@@ -1,0 +1,541 @@
+[
+  {
+    "id": "solution-ajhsme-1992-p1",
+    "problemId": "ajhsme-1992-p1",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Both numerator and denominator equal $5$, so the quotient is $1$.",
+    "detailedSteps": [
+      "The numerator groups into five differences of one: $(10-9)+(8-7)+(6-5)+(4-3)+(2-1)=5$.",
+      "The denominator is $(1-2)+(3-4)+(5-6)+(7-8)+9=-4+9=5$.",
+      "The quotient is $5/5=1$."
+    ],
+    "keyIdeas": [
+      "Alternating sums",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The final unpaired term in the denominator is positive nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing alternating terms keeps every sign visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p2",
+    "problemId": "ajhsme-1992-p2",
+    "finalAnswer": "$\\boxed{1\\frac15}$ (choice D)",
+    "shortExplanation": "The mixed number $1+1/5=6/5$ differs from $5/4$; the other four choices equal $5/4$.",
+    "detailedSteps": [
+      "The fractions $10/8$ and $1+1/4$ equal $5/4$. The mixed numbers $1+3/12$ and $1+10/40$ also have fractional part $1/4$.",
+      "Only $1+1/5$ has a different fractional part."
+    ],
+    "keyIdeas": [
+      "Equivalent mixed numbers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The question asks which expression is not equivalent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Mixed numbers are a whole number plus a fraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p3",
+    "problemId": "ajhsme-1992-p3",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "Subtract the smallest element from the largest: $12-(-16)=28$.",
+    "detailedSteps": [
+      "A difference increases when its first term increases or its second term decreases.",
+      "The two extreme elements are $12$ and $-16$, giving $28$."
+    ],
+    "keyIdeas": [
+      "Maximum difference",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Subtracting a negative number adds its magnitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extreme values maximize an ordered difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p4",
+    "problemId": "ajhsme-1992-p4",
+    "finalAnswer": "$\\boxed{80\\%}$ (choice E)",
+    "shortExplanation": "There are $28$ singles out of $35$ hits, a fraction of $4/5$ or $80\\%$.",
+    "detailedSteps": [
+      "The nonsingles total $1+1+5=7$.",
+      "The singles total $35-7=28$, so their percentage is $28/35\\cdot100\\%=80\\%$."
+    ],
+    "keyIdeas": [
+      "Percent of a category",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "A double is still one hit when counting the total number of hits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count singles before converting to a percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p5",
+    "problemId": "ajhsme-1992-p5",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The remaining area is $6-\\pi/4\\approx5.215$, closest to $5$.",
+    "detailedSteps": [
+      "The rectangle has area $2\\cdot3=6$.",
+      "The circle has radius $1/2$, so its area is $\\pi(1/2)^2=\\pi/4$.",
+      "Subtract to obtain approximately $5.215$ square units."
+    ],
+    "keyIdeas": [
+      "Rectangle minus circle area",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The given circle measure is the diameter, not the radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract a disk using half the diameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p6",
+    "problemId": "ajhsme-1992-p6",
+    "finalAnswer": "$\\boxed{1}$ (choice D)",
+    "shortExplanation": "The two operation values are $0$ and $1$, whose sum is $1$.",
+    "detailedSteps": [
+      "For the first triangle of numbers, substitute into top plus lower-left minus lower-right: $1+3-4=0$.",
+      "For the second, the same rule gives $2+5-6=1$. Add to obtain $1$."
+    ],
+    "keyIdeas": [
+      "Evaluating a defined operation",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The picture defines an arithmetic rule; the location of each entry determines its role."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Substitute according to the displayed positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p7",
+    "problemId": "ajhsme-1992-p7",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The only possibilities are $899,989,998$, and only $998$ is even.",
+    "detailedSteps": [
+      "Three nines have sum $27$. A sum of $26$ therefore requires exactly one of the digits to be eight and the other two to be nine.",
+      "Evenness forces the eight to occupy the units place, leaving one number."
+    ],
+    "keyIdeas": [
+      "Digit sum near the maximum",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Check parity at the units place rather than at any digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The deficit from 27 gives all candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p8",
+    "problemId": "ajhsme-1992-p8",
+    "finalAnswer": "$\\boxed{1000}$ (choice C)",
+    "shortExplanation": "The full purchase cost is $150$ dollars; earning $100$ profit requires $250$ revenue, or $1000$ sales.",
+    "detailedSteps": [
+      "The owner pays $1500(0.10)=150$ dollars for the entire stock.",
+      "If $n$ pencils are sold, the profit relative to that full outlay is $0.25n-150$.",
+      "Set this equal to $100$: $n=250/0.25=1000$."
+    ],
+    "keyIdeas": [
+      "Revenue less full inventory cost",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Using a fifteen-cent margin per sold pencil ignores the upfront cost of the unsold inventory in this question."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed cost is the purchase of all 1500 pencils.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p9",
+    "problemId": "ajhsme-1992-p9",
+    "finalAnswer": "$\\boxed{160}$ (choice B)",
+    "shortExplanation": "The graph has twice as many females as males, so males are one third of the population.",
+    "detailedSteps": [
+      "Let the male population be $m$. The female population is $2m$.",
+      "The total is $3m=480$, giving $m=160$."
+    ],
+    "keyIdeas": [
+      "Ratio from an unscaled bar graph",
+      "Data"
+    ],
+    "commonMistakes": [
+      "A missing vertical scale does not prevent reading the ratio of bar heights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relative heights retain meaning without an absolute scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p10",
+    "problemId": "ajhsme-1992-p10",
+    "finalAnswer": "$\\boxed{20}$ (choice B)",
+    "shortExplanation": "Ten of the sixteen small triangles are shaded, giving $10/16$ of the full area $32$, or $20$.",
+    "detailedSteps": [
+      "The large right triangle has area $8\\cdot8/2=32$. Its sixteen congruent pieces each have area $2$.",
+      "Counting the shaded pieces row by row gives $1+2+3+4=10$.",
+      "The shaded area is therefore $10(2)=20$."
+    ],
+    "keyIdeas": [
+      "Area by congruent small triangles",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The drawing contains sixteen congruent triangles, not sixteen squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal-area pieces let a visual count determine the shaded area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p11",
+    "problemId": "ajhsme-1992-p11",
+    "finalAnswer": "$\\boxed{24\\%}$ (choice B)",
+    "shortExplanation": "The blue frequency is $60$ out of $250$, giving $24\\%$.",
+    "detailedSteps": [
+      "The total frequency is $50+60+40+60+40=250$.",
+      "The fraction for blue is $60/250$, or $24\\%$."
+    ],
+    "keyIdeas": [
+      "Frequency as a percentage",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The denominator is the sum of all bar heights, not the number of colors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert frequency into a fraction of the entire survey.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p12",
+    "problemId": "ajhsme-1992-p12",
+    "finalAnswer": "$\\boxed{24000}$ (choice C)",
+    "shortExplanation": "The road use totals $4(30000)=120000$ tire-miles, divided among five tires to give $24000$ each.",
+    "detailedSteps": [
+      "Four tires are in use for every mile the car travels.",
+      "The combined tire mileage is therefore $120000$. Equal use among the five tires gives $120000/5=24000$."
+    ],
+    "keyIdeas": [
+      "Equal distribution of total tire mileage",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The spare participates in the rotations even though only four tires are used at once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Total tire-miles are four times vehicle-miles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p13",
+    "problemId": "ajhsme-1992-p13",
+    "finalAnswer": "$\\boxed{171}$ (choice B)",
+    "shortExplanation": "The three highest scores are $91,94,94$, leaving $450-279=171$ for the other two.",
+    "detailedSteps": [
+      "The sorted middle score is $91$. Because $94$ is the mode, it must occur at least twice; both occurrences must lie above the middle score.",
+      "Thus the three highest scores are $91,94,94$. The mean gives a total of $5(90)=450$.",
+      "The two smallest scores sum to $450-91-94-94=171$."
+    ],
+    "keyIdeas": [
+      "Mean, median and repeated maximum",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The median constrains where the repeated mode can appear in the sorted list."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The mode lies above the median and must occupy both upper slots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p14",
+    "problemId": "ajhsme-1992-p14",
+    "finalAnswer": "$\\boxed{24}$ (choice D)",
+    "shortExplanation": "Four gallons fill one sixth of the tank, so the capacity is $24$ gallons.",
+    "detailedSteps": [
+      "The added fraction is $1/2-1/3=1/6$.",
+      "If the capacity is $V$, then $V/6=4$, giving $V=24$."
+    ],
+    "keyIdeas": [
+      "Capacity from a change in fraction",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Use the difference of the fill fractions, not either fraction separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A known added volume determines total capacity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p15",
+    "problemId": "ajhsme-1992-p15",
+    "finalAnswer": "$\\boxed{\\text{C}}$ (choice C)",
+    "shortExplanation": "The nine-letter block repeats, and $1992\\equiv3\\pmod9$, selecting C.",
+    "detailedSteps": [
+      "The repeated block is ABCDEDCBA, of length nine. Its ending A is followed by the next block's starting A.",
+      "Since $1992=9(221)+3$, the required letter is the third letter of the block, C."
+    ],
+    "keyIdeas": [
+      "Position in a repeated letter block",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The two adjacent A letters at block boundaries are both part of the sequence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The repeat includes both endpoint A letters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p16",
+    "problemId": "ajhsme-1992-p16",
+    "finalAnswer": "$\\boxed{\\text{cylinder B}}$ (choice B)",
+    "shortExplanation": "Cylinder B keeps radius $10$ and doubles the height from $5$ to $10$, doubling the volume.",
+    "detailedSteps": [
+      "The initial volume is $\\pi(10)^2(5)=500\\pi$.",
+      "The choices A, B, C, D have volumes $2000\\pi,1000\\pi,500\\pi,4000\\pi$, respectively.",
+      "Only B has twice the initial volume."
+    ],
+    "keyIdeas": [
+      "Cylinder volume scaling",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Doubling a radius quadruples the cross-sectional area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Volume is linear in height and quadratic in radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p17",
+    "problemId": "ajhsme-1992-p17",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The third side must exceed $10-6.5=3.5$, so the smallest integer possibility is $4$.",
+    "detailedSteps": [
+      "The triangle inequalities require $|10-6.5|<s<10+6.5$, or $3.5<s<16.5$.",
+      "The smallest integer in this interval is $4$."
+    ],
+    "keyIdeas": [
+      "Strict triangle inequality",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Equality would give a degenerate triangle and is not allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The third side lies in an open interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p18",
+    "problemId": "ajhsme-1992-p18",
+    "finalAnswer": "$\\boxed{45}$ (choice A)",
+    "shortExplanation": "The trip covers $180$ miles in four hours, averaging $45$ miles per hour.",
+    "detailedSteps": [
+      "The total distance is $80+100=180$ miles.",
+      "The total time includes the stop: $1.5+0.5+2=4$ hours.",
+      "Average speed is $180/4=45$ miles per hour."
+    ],
+    "keyIdeas": [
+      "Average speed including a stop",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Do not omit the time spent stopped when averaging the whole trip."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Average over the entire elapsed trip time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p19",
+    "problemId": "ajhsme-1992-p19",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "Twenty of the twenty-one gaps require at least $100$ miles, leaving at most $18$ miles for the remaining gap.",
+    "detailedSteps": [
+      "The number of gaps from exit five to exit twenty-six is $26-5=21$.",
+      "Make all other twenty gaps as small as allowed, at five miles each.",
+      "The largest possible selected gap is $118-20(5)=18$ miles, achieved by those choices."
+    ],
+    "keyIdeas": [
+      "Maximizing one interval under lower bounds",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Count gaps between exits, not the exits themselves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use twenty-one intervals and minimize all but one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p20",
+    "problemId": "ajhsme-1992-p20",
+    "finalAnswer": "$\\boxed{\\text{pattern D}}$ (choice D)",
+    "shortExplanation": "In D, the topmost square and the rightmost square fold onto the same cube face.",
+    "detailedSteps": [
+      "Use the square where the vertical three-square strip meets the horizontal three-square strip as the base.",
+      "Following either strip through two right-angle folds brings its far-end square onto the face opposite the base. Thus the topmost and far-right squares occupy the same face.",
+      "This overlap prevents D from forming a cube. Folding the other patterns gives six distinct face directions; the saved checks reproduce those directions."
+    ],
+    "keyIdeas": [
+      "Overlapping faces in a cube net",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Six connected squares do not automatically form a cube net; two can land on the same face."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track face directions through folds to detect overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p21",
+    "problemId": "ajhsme-1992-p21",
+    "finalAnswer": "$\\boxed{\\text{February}}$ (choice B)",
+    "shortExplanation": "February's difference is $2/3$ of the smaller total, exceeding the corresponding ratios in every other month.",
+    "detailedSteps": [
+      "In common graph units, the two totals are $(7,9),(5,3),(9,6),(9,12),(8,10)$ from January through May.",
+      "Divide the absolute difference by the smaller total to obtain $2/7,2/3,3/6,3/9,2/8$.",
+      "The largest ratio is $2/3$, occurring in February."
+    ],
+    "keyIdeas": [
+      "Comparing relative differences",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The largest absolute difference need not be the largest percentage difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the smaller total as the percentage base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p22",
+    "problemId": "ajhsme-1992-p22",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "Each tile can add at most two boundary units, so the maximum new perimeter is $18$, and it is achievable.",
+    "detailedSteps": [
+      "A new unit square contributes four edges but removes two boundary edges for each shared side. Sharing at least one side therefore increases perimeter by at most $4-2=2$.",
+      "Two added tiles can increase the original $14$ by at most four. Place one above the top row and another below the bottom row, each meeting just one original tile and not each other, to achieve $18$.",
+      "Tile-union perimeters are even, since they equal four times the tile count minus twice the shared-edge count. This excludes the odd options; $20$ exceeds the bound."
+    ],
+    "keyIdeas": [
+      "Perimeter changes when attaching tiles",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "A shared edge is removed from both tiles' separate perimeters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A perimeter upper bound and a construction establish the candidate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p23",
+    "problemId": "ajhsme-1992-p23",
+    "finalAnswer": "$\\boxed{\\frac{17}{36}}$ (choice B)",
+    "shortExplanation": "The favorable counts for first die $1$ through $6$ are $0,1,3,4,4,5$, totaling $17$.",
+    "detailedSteps": [
+      "For a fixed first roll $a$, count rolls $b$ from one through six satisfying $ab>10$.",
+      "The respective counts are $0,1,3,4,4,5$, so there are $17$ favorable ordered outcomes.",
+      "All $36$ ordered outcomes are equally likely, giving probability $17/36$."
+    ],
+    "keyIdeas": [
+      "Counting a product threshold on two dice",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Products equal to ten are excluded by the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ordered dice outcomes have equal probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p24",
+    "problemId": "ajhsme-1992-p24",
+    "finalAnswer": "$\\boxed{7.7}$ (choice A)",
+    "shortExplanation": "The area is $36-9\\pi\\approx7.726$, closest to $7.7$.",
+    "detailedSteps": [
+      "Tangency places neighboring centers six units apart, so the center square has area $6^2=36$.",
+      "Inside the square are four quarter-circles of radius three, with total area $9\\pi$.",
+      "The remaining region has area $36-9\\pi$, approximately $7.726$."
+    ],
+    "keyIdeas": [
+      "Square minus four quarter-circles",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Only one quarter of each circle lies inside the center square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circle centers determine the square side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1992-p25",
+    "problemId": "ajhsme-1992-p25",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "After $n$ pourings the remaining fraction is $1/(n+1)$, which reaches $1/10$ at $n=9$.",
+    "detailedSteps": [
+      "The retained fractions on successive pours are $1/2,2/3,3/4,\\ldots,n/(n+1)$.",
+      "Their product cancels to $1/(n+1)$.",
+      "Solving $1/(n+1)=1/10$ gives $n=9$."
+    ],
+    "keyIdeas": [
+      "Telescoping retained fractions",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Each pouring removes a fraction of the remainder, not of the original amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiplying retained fractions produces cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

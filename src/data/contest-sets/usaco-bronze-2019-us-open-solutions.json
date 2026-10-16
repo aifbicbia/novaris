@@ -1,0 +1,94 @@
+[
+  {
+    "finalAnswer": "Run BFS from the barn through every non-rock cell. If the lake has distance $d$, output $d-1$.",
+    "shortExplanation": "A path with $d$ edges has $d-1$ internal cells. Placing cows on those internal cells supplies a brigade, so the minimum cow count comes from a shortest grid path.",
+    "detailedSteps": [
+      "**Build the movement graph.** Each cell except the rock is a vertex. Join cells that share an edge; diagonal moves are unavailable. Include both the barn and the lake as endpoints, rather than treating them as cow positions.",
+      "**Establish a lower bound.** Any successful arrangement connects the lake to the barn through occupied cells. Remove loops from a connecting walk to get a simple path. If its length is $d$, its $d-1$ internal vertices all require cows. Therefore no arrangement can beat the shortest path length minus one.",
+      "**Attain that bound.** Choose a shortest path and place one cow on every internal vertex. Consecutive cows share an edge; the first can collect water and the last can throw it onto the barn. This uses exactly $d-1$ cows.",
+      "**Find the shortest distance by BFS.** Mark the barn at distance zero, then visit its unvisited non-rock neighbors in queue order. BFS processes distance layers in increasing order, so the first distance assigned to the lake is minimal. Subtract one only when producing the answer.",
+      "**Check the domain and cost.** The endpoints are not adjacent in the original source. With a single blocked cell in the $10\\times10$ grid, a connecting path always exists. BFS uses $O(HW)$ time and space for grid dimensions $H,W$, which are both ten here.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nint main(){\n ifstream in(\"buckets.in\");ofstream out(\"buckets.out\");\n vector<string> grid(10);for(auto& row:grid)in>>row;\n int distance[10][10];for(auto& row:distance)for(int& d:row)d=-1;\n queue<pair<int,int>> q;\n for(int r=0;r<10;r++)for(int c=0;c<10;c++)if(grid[r][c]=='B'){distance[r][c]=0;q.push({r,c});}\n const int dr[4]={-1,1,0,0},dc[4]={0,0,-1,1};\n while(!q.empty()){\n  auto [r,c]=q.front();q.pop();\n  if(grid[r][c]=='L'){out<<distance[r][c]-1<<'\\n';return 0;}\n  for(int k=0;k<4;k++){\n   int rr=r+dr[k],cc=c+dc[k];\n   if(rr>=0&&rr<10&&cc>=0&&cc<10&&grid[rr][cc]!='R'&&distance[rr][cc]==-1){\n    distance[rr][cc]=distance[r][c]+1;q.push({rr,cc});\n   }\n  }\n }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Shortest paths convert an arrangement problem into a graph problem.",
+      "Internal vertices, rather than edges or endpoints, count the cows.",
+      "A lower bound and a matching placement establish optimality."
+    ],
+    "commonMistakes": [
+      "Returning the number of edges without subtracting one.",
+      "Placing a cow on the barn, lake or rock.",
+      "Allowing diagonal adjacency or repeatedly adding an already visited cell."
+    ],
+    "alternativeMethods": [
+      "For this particular one-rock grid, start with the Manhattan distance. Add two only when the endpoints and rock lie on one row or column and the rock is strictly between the endpoints. A neighboring parallel row or column supplies a matching detour, including at the grid boundary. Finally subtract one. BFS generalizes more easily if obstacles are added."
+    ],
+    "difficultyNotes": "Introductory graph modeling. The main issue is distinguishing path length from the number of internal cow positions.",
+    "id": "solution-usaco-bronze-2019-us-open-p1",
+    "problemId": "usaco-bronze-2019-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For every starting station, compute its reachable vertices. Output the smallest station reached from all $N$ starts, or $-1$ if none exists.",
+    "shortExplanation": "Count how many starting stations can reach each destination by following conveyor directions. A count of $N$ is exactly the required condition.",
+    "detailedSteps": [
+      "**Preserve each direction.** Store a directed adjacency list. A belt from $a$ to $b$ allows that move only; the original walkway being undirected does not make the installed belt reversible.",
+      "**Traverse from every start.** For each station $s$, run BFS or DFS and count each visited destination once. Include $s$ itself: it already occupies its own station and needs no belt to reach itself.",
+      "**Prove the test.** Let $c(v)$ count starts whose traversal visits $v$. Each traversal finds exactly the vertices reachable by directed paths, including paths through intermediate stations. Consequently, $c(v)=N$ if and only if every station can reach $v$.",
+      "**Choose the required ID.** Scan destinations in ascending numerical order and return the first with count $N$. If no such destination occurs, return $-1$. This directly implements the minimum-ID requirement rather than selecting the first station encountered in a graph traversal.",
+      "**Handle the smallest input and complexity.** For $N=1$, the sole station is reached by its own traversal, so the result is one. With $E=N-1$ belts, all traversals take $O(N(N+E))=O(N^2)$ time. The adjacency list, queue, visited array and destination counts use $O(N+E)=O(N)$ space.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <vector>\nusing namespace std;\nint main(){\n ifstream in(\"factory.in\");ofstream out(\"factory.out\");int n;in>>n;\n vector<vector<int>> graph(n);for(int k=0;k<n-1;k++){int a,b;in>>a>>b;graph[a-1].push_back(b-1);}\n vector<int> counts(n,0);\n for(int start=0;start<n;start++){\n  vector<bool> seen(n,false);queue<int> q;q.push(start);seen[start]=true;\n  while(!q.empty()){\n   int v=q.front();q.pop();counts[v]++;\n   for(int w:graph[v])if(!seen[w]){seen[w]=true;q.push(w);}\n  }\n }\n for(int v=0;v<n;v++)if(counts[v]==n){out<<v+1<<'\\n';return 0;}\n out<<-1<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Universal reachability can be tested by collecting results from every source.",
+      "Traversal includes the starting vertex and intermediate vertices.",
+      "The numerical scan enforces the minimum-ID rule."
+    ],
+    "commonMistakes": [
+      "Testing only direct incoming belts instead of complete paths.",
+      "Reversing the required direction and finding a station that can reach everyone.",
+      "Forgetting self-reachability when there is only one station."
+    ],
+    "alternativeMethods": [
+      "The original connected collection of $N-1$ walkways is a tree. After orientation, every maximal directed path ends at a sink. If there is exactly one zero-outdegree station, every start reaches it. If there are multiple sinks, none can reach another and no universal destination exists. Thus counting sinks solves this particular source instance in $O(N)$ time. The traversal method also works without the tree restriction."
+    ],
+    "difficultyNotes": "Intermediate reachability reasoning. The implementation is small, but the two opposite universal-reachability questions must be kept distinct.",
+    "id": "solution-usaco-bronze-2019-us-open-p2",
+    "problemId": "usaco-bronze-2019-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Output `yes` exactly when every pair of trait carrier sets is disjoint or nested; otherwise output `no`.",
+    "shortExplanation": "A trait arising once belongs to the leaves below one edge. Such leaf groups cannot partly overlap. Conversely, disjoint or nested carrier groups can be assembled by valid evolutionary splits and unary changes.",
+    "detailedSteps": [
+      "**Record trait carriers.** For a trait $f$, let $C_f$ contain precisely the populations with that trait. Store each group in a bit mask: bit $i$ is set when population $i$ has the trait. Empty trait rows require no special rejection.",
+      "**Prove necessity.** In a proper tree, a trait originates on one edge and is inherited by all leaves below it. For two edges, one lies below the other or their descendant groups are separate. Their carrier sets are therefore nested or disjoint. A nonempty intersection together with populations exclusive to both traits is impossible.",
+      "**Test that obstruction.** For masks $x,y$, reject if all three expressions $x\\mathbin{\\&}y$, $x\\mathbin{\\&}\\neg y$, and $y\\mathbin{\\&}\\neg x$ are nonzero. They represent the shared group and the two exclusive groups. Equal masks are allowed: several traits may arise successively along one lineage.",
+      "**Prove sufficiency by constructing a history.** Suppose all carrier sets are disjoint or nested. For a current population group $S$, first introduce every remaining trait with carrier set exactly $S$ in a chain of unary changes. Its maximal proper carrier subsets are pairwise disjoint. Split those subsets off one at a time, introducing a new trait on the separated subset branch and leaving the other branch unchanged. Recurse inside each separated group.",
+      "**Finish the construction without illegal empty branches.** Populations outside those proper subsets have exactly the inherited traits, so at most one can remain: the original source excludes identical complete trait sets. Such a population becomes a leaf. If no population remains outside the children, keep the last child on the existing branch and introduce its trait by a unary change. Every binary split then has two nonempty sides; each trait originates exactly once; every final leaf has exactly its required set. This also handles an empty-feature population at the root.",
+      "**Implement the pair checks safely.** There are at most $T\\le NK\\le625$ distinct traits and at most 25 populations. An unsigned 32-bit mask safely holds every carrier group; intersecting a complement with another carrier mask discards irrelevant high bits. The C++ ordered map builds masks in $O(NK\\log T)$ string-key operations, and the pair checks take $O(T^2)$ fixed-width operations. Its stored masks use $O(T)$ space. Trait strings have bounded length 20. Write the exact lowercase token `yes` or `no`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <cstdint>\n#include <fstream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\nint main(){\n ifstream in(\"evolution.in\");ofstream out(\"evolution.out\");int n;in>>n;\n map<string,uint32_t> carrier;\n for(int i=0;i<n;i++){\n  int k;in>>k;for(int j=0;j<k;j++){string f;in>>f;carrier[f]|=(uint32_t{1}<<i);}\n }\n vector<uint32_t> masks;for(const auto& item:carrier)masks.push_back(item.second);\n for(size_t i=0;i<masks.size();i++)for(size_t j=i+1;j<masks.size();j++){\n  uint32_t x=masks[i],y=masks[j];\n  if((x&y)!=0 && (x&~y)!=0 && (y&~x)!=0){out<<\"no\\n\";return 0;}\n }\n out<<\"yes\\n\";\n}\n```"
+    ],
+    "keyIdeas": [
+      "A single origin makes each trait group a descendant clade.",
+      "Laminar groups are disjoint or nested, including equal groups.",
+      "A constructive sufficiency proof checks the actual allowed split and unary rules."
+    ],
+    "commonMistakes": [
+      "Rejecting equal carrier sets even though successive traits can share a lineage.",
+      "Assuming an empty feature row is invalid despite the printed $K=0$ allowance.",
+      "Checking only shared populations while ignoring both exclusive groups.",
+      "Giving only a necessary-condition argument and omitting a realizable history."
+    ],
+    "alternativeMethods": [
+      "Build the hierarchy of distinct carrier sets instead of comparing bit masks. Equal sets can be grouped into unary trait chains, and each set is attached to its smallest strict superset. Check that siblings are disjoint and construct the remaining zero-new-trait leaf as described above. This makes the sufficiency construction explicit, but requires more bookkeeping than the pair test."
+    ],
+    "difficultyNotes": "Advanced proof-oriented modeling. Necessity is short; the harder part is showing that every accepted family really admits the permitted evolutionary history, including equal carrier groups and empty-feature leaves.",
+    "id": "solution-usaco-bronze-2019-us-open-p3",
+    "problemId": "usaco-bronze-2019-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

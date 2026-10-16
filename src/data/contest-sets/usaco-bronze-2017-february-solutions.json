@@ -1,0 +1,95 @@
+[
+  {
+    "finalAnswer": "Remember the most recently observed side of each cow. Count a crossing whenever that cow is seen again on the other side. Time is $O(N)$ and auxiliary space is $O(10)$.",
+    "shortExplanation": "The relevant consecutive observations are consecutive for the same cow, even when other cows appear between them. An initial sighting establishes a side; only a later change confirms a crossing.",
+    "detailedSteps": [
+      "**Distinguish unseen from either side.** Keep an array indexed by the ten cow IDs. Initialize every entry to $-1$, a sentinel outside the two possible side values. Start the crossing count at zero.",
+      "**Process the log in its given order.** On an observation $(c,s)$, inspect the stored side for cow $c$. If it is known and differs from $s$, add one confirmed crossing. Then assign $s$ as that cow\u2019s most recent side, whether or not a change occurred.",
+      "**Maintain the correct invariant.** After any prefix of the log, each known array entry equals the side in that cow\u2019s last observation in the prefix. Entries of cows not yet seen remain unknown. The update preserves this invariant for the next observation.",
+      "**Count each confirmed crossing exactly once.** A cow\u2019s new sighting follows her previous sighting in her own subsequence. By the invariant, comparing their sides tests exactly the definition of a confirmed crossing. Count it at the later sighting. Other cows\u2019 intervening records do not alter this cow\u2019s stored side, and the first sighting has no earlier partner.",
+      "**Check bounds and files.** With at most $100$ observations, the count is at most $N-1$. Each record takes constant work, so time is $O(N)$ and the ten stored sides use constant space. Read `crossroad.in` and write the single integer count to `crossroad.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\nint main() {\n    std::ifstream in(\"crossroad.in\");\n    std::ofstream out(\"crossroad.out\");\n    std::array<int, 11> last;\n    last.fill(-1);\n    int n;\n    in >> n;\n    int answer = 0;\n    for (int observation = 0; observation < n; ++observation) {\n        int cow, side;\n        in >> cow >> side;\n        if (last[cow] != -1 && last[cow] != side) ++answer;\n        last[cow] = side;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Maintain a separate last observation for each identity.",
+      "Use an explicit unseen sentinel instead of assuming an initial side.",
+      "A confirmed change is evidence from two observations, not a guess about unobserved movement."
+    ],
+    "commonMistakes": [
+      "Comparing adjacent input lines that describe different cows.",
+      "Counting a first appearance as a crossing because an array was initialized to side zero.",
+      "Trying to infer additional crossings that the observation log cannot confirm."
+    ],
+    "alternativeMethods": [
+      "Collect each cow\u2019s observed sides in order, then count changes between adjacent entries of each collected sequence. This gives the same answer but stores the log rather than only its last relevant values."
+    ],
+    "difficultyNotes": "Introductory state tracking. The important detail is interpreting consecutive sightings within each cow\u2019s history rather than within the entire mixed log.",
+    "id": "solution-usaco-bronze-2017-february-p1",
+    "problemId": "usaco-bronze-2017-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each unordered pair of cows, count it exactly when one endpoint of the second cow lies strictly between the first cow\u2019s endpoints and the other does not. There are $\\binom{26}{2}=325$ candidate pairs; time is $O(52+26^2)$ and space is $O(26)$.",
+    "shortExplanation": "Two paths are forced to cross precisely when their endpoints alternate around the circular boundary. Store both positions of every letter and test the exclusive-or of the two inside-arc conditions.",
+    "detailedSteps": [
+      "**Record both occurrences.** Scan the entire source-format string of $52$ characters. For each of the $26$ letters, store its first index $L_a$ and its second index $R_a$, so $L_a<R_a$. Every letter appears twice and all endpoint positions are distinct.",
+      "**Identify the alternating order.** The endpoints of cow $a$ divide the circle into two open arcs. A second cow\u2019s endpoints lie on opposite arcs precisely when exactly one of its two indices lies in $(L_a,R_a)$. The resulting cyclic order alternates the two cow names.",
+      "**Explain why this means a forced crossing.** A path connecting cow $a$\u2019s boundary endpoints separates the interior into regions next to the two boundary arcs. Endpoints on opposite arcs cannot be joined through the field without crossing that path. If both endpoints of cow $b$ lie on the same arc, straight chords can connect the two pairs without intersection, so a crossing is not forced. Entry and exit labels do not change this argument.",
+      "**Test one pair once.** For cow $b$, let $u=(L_a<L_b<R_a)$ and $v=(L_a<R_b<R_a)$. Count the pair if and only if $u\\ne v$. Enumerate $a<b$, so a pair is neither double-counted nor compared with itself. Strict inequalities are valid because the boundary points are distinct.",
+      "**Read the count rather than a drawing.** All source-format inputs contain exactly $26$ pairs, giving $325$ pair tests and an answer between zero and $325$. The scan and pair loop use $O(52+26^2)$ time with $O(26)$ stored endpoints. Read `circlecross.in` and print the one integer to `circlecross.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <string>\nint main() {\n    std::ifstream in(\"circlecross.in\");\n    std::ofstream out(\"circlecross.out\");\n    std::string word;\n    in >> word;\n    std::array<int, 26> first, second;\n    first.fill(-1);\n    for (int index = 0; index < static_cast<int>(word.size()); ++index) {\n        const int cow = word[index] - 'A';\n        if (first[cow] == -1) first[cow] = index;\n        else second[cow] = index;\n    }\n    int answer = 0;\n    for (int a = 0; a < 26; ++a) {\n        for (int b = a + 1; b < 26; ++b) {\n            const bool firstInside = first[a] < first[b] && first[b] < second[a];\n            const bool secondInside = first[a] < second[b] && second[b] < second[a];\n            if (firstInside != secondInside) ++answer;\n        }\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A circular crossing question can be decided from cyclic endpoint order.",
+      "Exactly one endpoint inside an arc is an XOR condition.",
+      "Enumerate unordered pairs to avoid double counting."
+    ],
+    "commonMistakes": [
+      "Counting nested endpoint intervals as crossings.",
+      "Counting a pair twice by checking both orders of the cow names.",
+      "Treating the arbitrary start of the circular scan as a physical barrier.",
+      "Using a variable-length or reduced alphabet input in place of the printed 52-character format."
+    ],
+    "alternativeMethods": [
+      "For each cow, scan strictly between its two occurrences and count how often every other letter appears. A different cow crosses it exactly when that count is one. Summing over all cows counts every crossing twice, so divide the total by two."
+    ],
+    "difficultyNotes": "Intermediate interpretation of a geometric condition. The pair test is small; the essential proof is why alternating boundary endpoints characterize forced crossing independently of where the circular scan starts.",
+    "id": "solution-usaco-bronze-2017-february-p2",
+    "problemId": "usaco-bronze-2017-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort cows by arrival time and update $T\\leftarrow\\max(T,a)+p$ for each arrival $a$ and questioning duration $p$. The final $T$ is the earliest possible completion time. Time is $O(N\\log N)$ and storage is $O(N)$.",
+    "shortExplanation": "A cow can begin only after she arrives and the gate becomes free. Arrival order gives an optimal schedule, and the recurrence begins each cow at the earliest feasible time in that order.",
+    "detailedSteps": [
+      "**Put arrivals in chronological order.** Read all cows and sort their $(a,p)$ pairs by arrival time. Input lines need not be sorted. For equal arrival times, any order is permitted for the final completion time; the reference uses the usual pair ordering.",
+      "**Update the gate\u2019s finish time.** Start with $T=0$. A cow arriving at $a$ can begin at $\\max(T,a)$: if the gate is still busy she waits, and if it is free before her arrival it stays idle until then. Add her questioning time $p$ to get the new $T$.",
+      "**Justify arrival order by exchange.** Suppose a feasible schedule processes two adjacent cows $B$ then $A$ despite $a_A\\le a_B$. If $B$ begins at time $t$, both cows have arrived by $t$. Process $A$ at $t$ and then $B$ at $t+p_A$. Both starts are feasible, and the block finishes at $t+p_A+p_B$, no later than before the swap because any previous gap between them is removed. Later cows need not finish later. Repeating this exchange removes all arrival-order inversions without increasing the final finish time.",
+      "**Justify the recurrence for that order.** For any fixed order, the next cow cannot start before her arrival or before the previous cow finishes. The recurrence starts exactly at that lower bound. By induction on the sorted prefix, it finishes every prefix as early as possible in that order. The exchange argument shows that an optimal arrival-sorted order exists, so our final completion is globally optimal.",
+      "**Handle long durations safely.** The printed bounds give at most $100$ cows with positive arrivals and durations at most $10^6$. Every completion is at most the largest arrival plus the sum of durations, which is at most $101000000$. The reference uses `long long` for arrival, duration and the running time. Read `cowqueue.in` and write the single completion time to `cowqueue.out`.",
+      "**Complexity.** Sorting costs $O(N\\log N)$, and the chronological pass costs $O(N)$. The stored input uses $O(N)$ space. The optimum includes questioning durations and idle periods; it is not the sum of waiting times.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"cowqueue.in\");\n    std::ofstream out(\"cowqueue.out\");\n    int n;\n    in >> n;\n    std::vector<std::pair<long long, long long>> cows(n);\n    for (auto &cow : cows) in >> cow.first >> cow.second;\n    std::sort(cows.begin(), cows.end());\n    long long finish = 0;\n    for (const auto &cow : cows) finish = std::max(finish, cow.first) + cow.second;\n    out << finish << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate release time from server availability.",
+      "Use an adjacent exchange to establish the existence of an optimal sorted order.",
+      "For a fixed order, the earliest-start recurrence minimizes every prefix completion time."
+    ],
+    "commonMistakes": [
+      "Processing the original input order without sorting arrivals.",
+      "Adding only durations while ignoring an idle gate before the next arrival.",
+      "Adding arrival times to the running finish instead of taking a maximum.",
+      "Returning a waiting-time sum instead of the final completion time."
+    ],
+    "alternativeMethods": [
+      "For tiny inputs, enumerate all job orders and simulate the earliest feasible start in each order. This gives an exact optimum check, but its factorial running time is unnecessary for the source maximum; the exchange proof reduces the search to arrival order."
+    ],
+    "difficultyNotes": "Intermediate scheduling proof with a short implementation. The key reasoning explains why earliest feasible processing in arrival order is optimal, rather than relying only on the sample\u2019s queue behavior.",
+    "id": "solution-usaco-bronze-2017-february-p3",
+    "problemId": "usaco-bronze-2017-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,328 @@
+[
+  {
+    "id": "solution-aime-ii-2021-p1",
+    "problemId": "aime-ii-2021-p1",
+    "finalAnswer": "$\\boxed{550}$",
+    "shortExplanation": "The mean is 550.",
+    "detailedSteps": [
+      "A three-digit palindrome is $101a+10b$, where $a\\in\\{1,\\ldots,9\\}$ and $b\\in\\{0,\\ldots,9\\}$. All ninety digit choices occur once.",
+      "The average leading digit is five and the average middle digit is $9/2$. Therefore the mean is $101(5)+10(9/2)=550$."
+    ],
+    "keyIdeas": [
+      "Average the independent palindrome digits"
+    ],
+    "commonMistakes": [
+      "Allowing a zero leading digit and introducing two-digit numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit choices are independent, so their averages may be taken separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p2",
+    "problemId": "aime-ii-2021-p2",
+    "finalAnswer": "$\\boxed{336}$",
+    "shortExplanation": "The length $AF$ is $336$.",
+    "detailedSteps": [
+      "Let $AF=t$. The smaller triangle AEF is equilateral, so its height is $\\sqrt3t/2$. The remaining height from BC to the parallel line is $BD=\\sqrt3(840-t)/2$, and $DE=(840-t)/2$.",
+      "The condition that F lies between E and G makes $\\angle AFG=120^\\circ$. In an isosceles triangle this must be the unique vertex angle; a base angle of 120 degrees would force two such angles. Thus $AF=FG=t$.",
+      "The areas are $[AFG]=\\sqrt3t^2/4$ and $[BED]=\\sqrt3(840-t)^2/8$. Their ratio is $2t^2/(840-t)^2=8/9$. Since $0<t<840$, taking the positive root gives $t/(840-t)=2/3$, hence $t=336$."
+    ],
+    "keyIdeas": [
+      "Use the forced obtuse vertex of the isosceles triangle"
+    ],
+    "commonMistakes": [
+      "Choosing the wrong pair of equal sides or ignoring the source ordering E, F, G."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The 120-degree angle determines which sides may be equal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p3",
+    "problemId": "aime-ii-2021-p3",
+    "finalAnswer": "$\\boxed{080}$",
+    "shortExplanation": "There are eighty qualifying permutations.",
+    "detailedSteps": [
+      "Work modulo three and fix the position occupied by the number three. Read the other four numbers in cyclic order after that position as $a,b,c,d$. Exactly two of the five triple products avoid three, and their sum is $abc+bcd=bc(a+d)$.",
+      "The factors $b$ and $c$ are nonzero modulo three, so divisibility is equivalent to $a+d\\equiv0\\pmod3$. Among the remaining numbers there are two with residue one and two with residue two. Choose $a$ in four ways, $d$ with the opposite residue in two ways, and arrange the interior pair in two ways.",
+      "For each of the five positions of three there are $4\\cdot2\\cdot2=16$ assignments. Their total is $5\\cdot16=80$. Cyclic rotations still represent different permutations of the five labeled positions."
+    ],
+    "keyIdeas": [
+      "Discard the cyclic products containing three"
+    ],
+    "commonMistakes": [
+      "Dividing by five after fixing the cyclic position of three, despite the ordered-position question."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the two products not containing the zero residue matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p4",
+    "problemId": "aime-ii-2021-p4",
+    "finalAnswer": "$\\boxed{330}$",
+    "shortExplanation": "The shared root has $m=10$ and $n=320$.",
+    "detailedSteps": [
+      "Real coefficients force the conjugate root $m-i\\sqrt n$ to accompany $m+i\\sqrt n$. Thus the first cubic has roots $-20,m+i\\sqrt n,m-i\\sqrt n$. Its missing quadratic term gives $-20+2m=0$, hence $m=10$.",
+      "The second cubic has roots $-21,m+i\\sqrt n,m-i\\sqrt n$. Its missing linear term says that the sum of pairwise products is zero: $m^2+n-42m=0$. Therefore $n=420-100=320$.",
+      "The resulting cubics are $x^3+20x+8400$ and $x^3+x^2+8820$. They satisfy the required real roots and shared nonreal pair, so $m+n=330$."
+    ],
+    "keyIdeas": [
+      "Use the conjugate pair in both real cubics"
+    ],
+    "commonMistakes": [
+      "Forgetting the conjugate root or applying the missing coefficient to the wrong symmetric root sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absent coefficients provide the two needed root-sum identities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p5",
+    "problemId": "aime-ii-2021-p5",
+    "finalAnswer": "$\\boxed{736}$",
+    "shortExplanation": "The unique-congruence interval is $[4\\sqrt{21},20)$.",
+    "detailedSteps": [
+      "If $\\theta$ is the angle between the fixed sides four and ten, the area is $s=20\\sin\\theta$. For $0<s<20$, there are two included angles, an acute $\\alpha$ and its obtuse supplement. Their third side squares are $116-80\\cos\\alpha$ and $116+80\\cos\\alpha$, so the triangles are not congruent.",
+      "The supplementary-angle triangle is always obtuse. In the acute-angle triangle, the only possible obtuse angle is opposite the side of length ten. It is obtuse precisely when $100>16+(116-80\\cos\\alpha)$, or $\\cos\\alpha>2/5$.",
+      "Thus both noncongruent triangles are obtuse when $s<20\\sqrt{1-4/25}=4\\sqrt{21}$. At equality the acute-included-angle triangle is right and is excluded; above it only the supplementary-angle triangle is obtuse.",
+      "At $s=20$ the included angle is right, so no obtuse triangle exists. The requested interval is therefore $[4\\sqrt{21},20)$, giving $a^2+b^2=336+400=736$."
+    ],
+    "keyIdeas": [
+      "Distinguish the two included-angle triangles"
+    ],
+    "commonMistakes": [
+      "Assuming an acute included angle makes the entire triangle acute or including a right triangle in the obtuse family."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal areas can come from supplementary included angles with different third sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p6",
+    "problemId": "aime-ii-2021-p6",
+    "finalAnswer": "$\\boxed{454}$",
+    "shortExplanation": "The condition is equivalent to one set containing the other.",
+    "detailedSteps": [
+      "Let $r=|A\\cap B|$, $u=|A\\setminus B|$ and $v=|B\\setminus A|$. The equality becomes $(r+u)(r+v)=r(r+u+v)$, which simplifies to $uv=0$.",
+      "Thus either $A\\subseteq B$ or $B\\subseteq A$. For $A\\subseteq B$, each of the five elements has three possibilities: in neither set, in B alone, or in both. This gives $3^5$ ordered pairs, and the reverse containment gives another $3^5$.",
+      "The overlap consists of $A=B$, with $2^5$ choices. The total is $2\\cdot3^5-2^5=454$. Empty sets are allowed and are included."
+    ],
+    "keyIdeas": [
+      "Translate the cardinality identity into containment"
+    ],
+    "commonMistakes": [
+      "Treating A and B as unordered or excluding empty sets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two exclusive portions cannot both be nonempty.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p7",
+    "problemId": "aime-ii-2021-p7",
+    "finalAnswer": "$\\boxed{145}$",
+    "shortExplanation": "The sum of squares is $141/4$.",
+    "detailedSteps": [
+      "Put $u=ab$. Since $a+b=-3$, the second source equation gives $u-3c=-4$, so $u=3c-4$. Write $v=abc=uc$. The third equation is $v+d(ab+bc+ca)=v-4d=14$, while the fourth is $vd=30$.",
+      "Eliminating $d$ gives $v(v-14)=120$, hence $v=20$ or $v=-6$. If $v=-6$, then $3c^2-4c+6=0$ has negative discriminant, contradicting real $c$. Thus $v=20$ and $d=3/2$.",
+      "The equation $3c^2-4c-20=0$ gives $c=10/3$ or $c=-2$. The first makes $ab=6$, incompatible with real $a,b$ of sum minus three, since their discriminant would be $9-24<0$. Therefore $c=-2$, $ab=-10$ and $a,b$ are two and minus five in either order.",
+      "The sum is $4+25+4+9/4=141/4$, so $m+n=145$. Substitution checks all four original equations."
+    ],
+    "keyIdeas": [
+      "Exploit the specific first three-variable symmetric sum"
+    ],
+    "commonMistakes": [
+      "Replacing the second equation by the fully symmetric four-variable pair sum or retaining branches with nonreal variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The partially symmetric source equations must be used exactly as stated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p8",
+    "problemId": "aime-ii-2021-p8",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "The probability is $17/32$.",
+    "detailedSteps": [
+      "Represent a cube vertex by three bits, with the vertical bit determining the face. A move flips one coordinate. Repeating the previous coordinate would return immediately, so successive move axes must differ. There are $3\\cdot2^7=384$ equally likely eight-move histories.",
+      "Let $H_0,H_1,V_0,V_1$ count histories whose last axis is horizontal or vertical, with an even or odd number of vertical moves. From a horizontal move there is one allowed horizontal continuation and one vertical continuation; from a vertical move there are two horizontal continuations.",
+      "Thus the next counts are $H_0+2V_0$, $H_1+2V_1$, $H_1$ and $H_0$, respectively. The initial vector is $(2,0,0,1)$. Iterating to eight moves gives $(118,138,62,66)$.",
+      "The top face requires odd vertical parity, so the probability is $(138+66)/384=17/32$. The reduced numerator and denominator sum to 49."
+    ],
+    "keyIdeas": [
+      "Track the last move axis and top-face parity"
+    ],
+    "commonMistakes": [
+      "Allowing an immediate backtrack or assuming the two faces are equally likely after this finite number of moves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last axis controls legality, while vertical parity controls the face.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p9",
+    "problemId": "aime-ii-2021-p9",
+    "finalAnswer": "$\\boxed{295}$",
+    "shortExplanation": "There are 295 ordered pairs.",
+    "detailedSteps": [
+      "Suppose an odd prime $p$ divides both expressions. The multiplicative order of two modulo $p$ divides $2m$ but does not divide $m$, because $2^m\\equiv-1\\pmod p$. Its exponent of two is therefore exactly one greater than that in $m$. Since the order also divides $n$, a necessary condition is $v_2(n)>v_2(m)$.",
+      "Conversely, under this condition let $g=\\gcd(m,n)$. Then $m/g$ is odd and $n/g$ is even. The integer $2^g+1>1$ divides both $2^m+1$ and $2^n-1$, proving sufficiency.",
+      "For $m$ of exponent zero, one, two and three, there are respectively $15,8,4,2$ possible $m$ values. The corresponding $n$ counts with larger exponent are $15,7,3,1$. Larger exponents contribute none. The total is $15\\cdot15+8\\cdot7+4\\cdot3+2\\cdot1=295$."
+    ],
+    "keyIdeas": [
+      "Compare the powers of two in the two exponents"
+    ],
+    "commonMistakes": [
+      "Counting unordered pairs or comparing only whether the exponents are even or odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minus-one residue forces one additional factor of two in the common order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p10",
+    "problemId": "aime-ii-2021-p10",
+    "finalAnswer": "$\\boxed{335}$",
+    "shortExplanation": "The requested distance is $312/23$.",
+    "detailedSteps": [
+      "All three spheres lie on the same side of each common tangent plane. Otherwise a plane would separate one sphere from the other two. Each separated pair would have normal center separation equal to its radius sum, so external tangency would force equal projections onto the plane. All three centers would then be collinear normally, making the two same-side spheres have center distance equal to their radius difference, impossible for external tangency.",
+      "Let $\\alpha$ be half the wedge angle formed by the two supporting planes. A sphere of radius $r$ has its center on the common bisector at distance $r\\csc\\alpha$ from the intersection line. The two radius-thirty-six centers consequently have identical transverse coordinates and differ by 72 along that line.",
+      "The radius-thirteen center is equally distant 49 from both large centers, so its longitudinal coordinate is their midpoint. Its transverse displacement from either is $23\\csc\\alpha$, giving $49^2=36^2+23^2\\csc^2\\alpha$. Hence $\\csc^2\\alpha=1105/529$ and $\\cot\\alpha=24/23$.",
+      "The contact point on either plane is at distance $13\\cot\\alpha=312/23$ from the intersection line, by the perpendicular cross-section right triangle. The fraction is reduced, giving $m+n=335$. The computed sine and cosine also construct three real centers with all stated tangencies."
+    ],
+    "keyIdeas": [
+      "Take a perpendicular cross-section through the tangent-plane wedge"
+    ],
+    "commonMistakes": [
+      "Using center-to-line distance instead of contact-point-to-line distance or assuming the planes are perpendicular."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal large radii make their transverse coordinates coincide.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p11",
+    "problemId": "aime-ii-2021-p11",
+    "finalAnswer": "$\\boxed{258}$",
+    "shortExplanation": "The possible greatest elements are 37, 50, 79 and 92.",
+    "detailedSteps": [
+      "A candidate set is four consecutive two-digit integers containing different multiples of six and seven. Enumerating its lower endpoint from 10 through 96 gives 26 candidate sets. A student initially knows the set exactly when their own number belongs to only one candidate.",
+      "The initial lower endpoints are 11, 12, 18, 21, 27, 28, 33, 34, 35; 46, 47, 48, 53, 54, 60, 63, 69, 70; and 75, 76, 77, 88, 89, 90, 95, 96. The distinct-multiple condition excludes a sole shared multiple such as 42.",
+      "The unanimous initial no rules out every candidate containing a number that appears in only one original candidate. Checking membership leaves exactly $\\{34,35,36,37\\}$, $\\{47,48,49,50\\}$, $\\{76,77,78,79\\}$ and $\\{89,90,91,92\\}$. Each number in each of these sets originally occurred in at least two candidates, so all four first replies are consistent.",
+      "The four surviving sets are disjoint. Once the students know everyone initially said no, each can identify their unique remaining set from their own number. Thus all four qualify, and the requested sum is $37+50+79+92=258$."
+    ],
+    "keyIdeas": [
+      "Remove sets containing a number that initially identifies the set"
+    ],
+    "commonMistakes": [
+      "Filtering candidates using only one student’s ignorance or treating the two divisibility witnesses as the same number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared information changes which candidate sets remain possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p12",
+    "problemId": "aime-ii-2021-p12",
+    "finalAnswer": "$\\boxed{047}$",
+    "shortExplanation": "The acute diagonal angle has tangent $40/7$.",
+    "detailedSteps": [
+      "Let the diagonal vectors be $\\mathbf u=\\overrightarrow{AC}$ and $\\mathbf v=\\overrightarrow{BD}$. Their cross-product magnitude is twice the quadrilateral area, so $|\\mathbf u\\times\\mathbf v|=60$.",
+      "The diagonal dot product is $(AD^2+BC^2-AB^2-CD^2)/2=(49+36-25-81)/2=-21/2$. This identity follows by expanding the four side squares; it does not require a cyclic quadrilateral.",
+      "For the acute angle between the diagonal lines, $\\tan\\theta=|u\\times v|/|u\\cdot v|=60/(21/2)=40/7$. The fraction is reduced, so $m+n=47$."
+    ],
+    "keyIdeas": [
+      "Use the cross and dot products of the diagonals"
+    ],
+    "commonMistakes": [
+      "Using the obtuse vector angle without taking the dot-product absolute value or assuming cyclicity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area gives the diagonal sine term, while the side squares give the cosine term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p13",
+    "problemId": "aime-ii-2021-p13",
+    "finalAnswer": "$\\boxed{797}$",
+    "shortExplanation": "The least solution is 797.",
+    "detailedSteps": [
+      "The integers one and two fail directly. For $n\\ge3$, reduction modulo eight gives $5^n-n\\equiv0$. An even $n$ would require $n\\equiv1\\pmod8$, impossible. Thus $n$ is odd and $n\\equiv5\\pmod8$. Write $n=5+8k$ with $k\\ge0$.",
+      "Modulo 125, the power of five vanishes, leaving $2^n\\equiv n$. First work modulo 25 and put $k=5s+t$, $0\\le t\\le4$. The residue of $2^{5+8k}$ depends only on $t$, because $2^{40}\\equiv1\\pmod{25}$.",
+      "The differences $2^{5+8t}-5-8t$ modulo five are $2,4,1,3,0$ for $t$ from zero through four. Only $t=4$ is possible. Then $2^{37}\\equiv22\\pmod{25}$ and $n=37+40s$, so $15s\\equiv10\\pmod{25}$, giving $s\\equiv4\\pmod5$. Therefore $k=24+25q$ and $n=197+200q$.",
+      "Modulo 125, $2^{197}\\equiv47$ and $2^{200}\\equiv1$. Hence $47\\equiv197+200q\\equiv72+75q$, or $3q\\equiv4\\pmod5$. Thus $q\\equiv3\\pmod5$ and $n\\equiv797\\pmod{1000}$.",
+      "These congruences are sufficient modulo both eight and 125, hence modulo 1000. The least positive possibility is 797; the excluded smaller cases one and two also fail."
+    ],
+    "keyIdeas": [
+      "Combine the modulo-eight restriction with the odd-prime-power period"
+    ],
+    "commonMistakes": [
+      "Discarding the small exponents before checking them or relying on only one prime-power modulus."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two coprime moduli impose a single residue class.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p14",
+    "problemId": "aime-ii-2021-p14",
+    "finalAnswer": "$\\boxed{592}$",
+    "shortExplanation": "The A-angle is $585/7$ degrees.",
+    "detailedSteps": [
+      "Write the B- and C-angles as $\\beta$ and $\\gamma$, with $\\beta>\\gamma$. Normalize the circumcircle to radius one with $O=(0,0)$ and $A=(1,0)$. Then $B=(\\cos2\\gamma,\\sin2\\gamma)$ and $C=(\\cos2\\beta,-\\sin2\\beta)$. Put $s=\\beta+\\gamma$, $\\delta=\\beta-\\gamma$ and $k=2\\cos s$. Acuteness gives $s>90^\\circ$, hence $k<0$, while $0<\\delta<90^\\circ$.",
+      "Let $\\mathbf n=(\\cos\\delta,-\\sin\\delta)$. Since $B+C=k\\mathbf n$, the centroid is $G=((1,0)+k\\mathbf n)/3$. The line through G perpendicular to OG has equation $p\\cdot G=|G|^2$. The tangent at $A$ is $x=1$.",
+      "Solving these equations gives $X=(1,q)$ with $q=(2+k\\cos\\delta-k^2)/(3k\\sin\\delta)$. The common chord line BC has equation $p\\cdot\\mathbf n=k/2$.",
+      "Let $R_{-\\delta}$ denote clockwise rotation by $\\delta$. The point $Y=(k/2)R_{-\\delta}X$ satisfies the BC equation because $(R_{-\\delta}X)\\cdot\\mathbf n=1$. It also satisfies the centroid-line equation: its x-coordinate is $(2+4k\\cos\\delta-k^2)/6$, and adding $k$ times its chord-normal coordinate gives $(1+2k\\cos\\delta+k^2)/3$. This equals three times $|G|^2$. Thus it is the specified intersection $Y$.",
+      "Because $k/2$ is negative, OY is obtained from OX by a clockwise rotation $\\delta$ followed by reversal. Therefore the ordinary angle $\\angle XOY=180^\\circ-\\delta$. If $\\beta=13t$, $\\gamma=2t$ and this angle is $17t$, then $17t=180^\\circ-11t$, yielding $t=45^\\circ/7$.",
+      "The A-angle is $180^\\circ-15t=585^\\circ/7$. All three resulting triangle angles are acute, and the coordinate construction verifies the actual tangent and perpendicular intersections. The fraction is reduced, giving $m+n=592$."
+    ],
+    "keyIdeas": [
+      "Relate the centroid perpendicular line to a rotation about the circumcenter"
+    ],
+    "commonMistakes": [
+      "Ignoring the negative scale factor and using δ itself as the XOY angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The centroid vector combines the A-direction with the midpoint direction of the opposite chord.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2021-p15",
+    "problemId": "aime-ii-2021-p15",
+    "finalAnswer": "$\\boxed{258}$",
+    "shortExplanation": "The least integer is 258, with $f(n)=48$ and $g(n)=84$.",
+    "detailedSteps": [
+      "Let $u=\\lceil\\sqrt n\\rceil$. The first recursion reaches $u^2$ after $u^2-n$ unit steps, so $f(n)=u^2-n+u$. The second recursion preserves parity; if $v$ is the smallest integer at least $u$ with $v\\equiv n\\pmod2$, then $g(n)=v^2-n+v$. Thus $v$ is $u$ or $u+1$.",
+      "If $v=u$ the ratio is one. Therefore the required ratio forces $v=u+1$, and $g(n)=f(n)+2u+2$. The equation $7f(n)=4g(n)$ gives $3f(n)=8(u+1)$, so $u\\equiv2\\pmod3$ and $n=(3u^2-5u-8)/3$.",
+      "The square-ceiling condition requires $(u-1)^2<n<u^2$. Substituting the formula gives $n-(u-1)^2=(u-11)/3$, hence $u>11$; the upper bound holds automatically for positive $u$.",
+      "The formula gives even $n$, since $u^2+u$ is even and $8(u+1)/3$ is an even integer. The parity condition $v=u+1$ therefore requires odd $u$. Combining this with $u\\equiv2\\pmod3$ gives $u\\equiv5\\pmod6$. The least such $u$ greater than eleven is 17, giving $n=258$.",
+      "Indeed the first recursion reaches 289 and gives $31+17=48$, while the parity-preserving recursion reaches 324 and gives $66+18=84$. Their ratio is $4/7$. The formula for $n$ increases for $u>11$, so this is the least positive solution."
+    ],
+    "keyIdeas": [
+      "Locate the next square of the required parity"
+    ],
+    "commonMistakes": [
+      "Using the next square of either parity for the two-step recursion or admitting the previous-square endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two stopping squares differ by one in their square roots when the ratios can differ.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

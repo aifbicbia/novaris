@@ -1,0 +1,320 @@
+[
+  {
+    "id": "solution-aime-i-2003-p1",
+    "problemId": "aime-i-2003-p1",
+    "finalAnswer": "$\\boxed{839}$",
+    "shortExplanation": "The maximal $n$ is $719$, with $k=120$.",
+    "detailedSteps": [
+      "The left side is $720!/6$. For $n=719$ it is $120(719!)$, so this $n$ works with $k=120$.",
+      "For every $n\\ge720$, the ratio $(720!/6)/n!$ is positive and at most one-sixth. It cannot be the required positive integer k. Thus the largest n is 719, and $n+k=719+120=839$."
+    ],
+    "keyIdeas": [
+      "Compare adjacent factorial divisors"
+    ],
+    "commonMistakes": [
+      "Reading the nested factorial as a power, or allowing a nonintegral k."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The next factorial already exceeds the given positive integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p2",
+    "problemId": "aime-i-2003-p2",
+    "finalAnswer": "$\\boxed{301}$",
+    "shortExplanation": "The green fraction is $101/200$.",
+    "detailedSteps": [
+      "The green annuli have outer radii $2j$ and inner radii $2j-1$, for $j=1,2,\\ldots,50$. Each has area $\\pi[(2j)^2-(2j-1)^2]=\\pi(4j-1)$.",
+      "Their total area is $\\pi[4(50\\cdot51/2)-50]=5050\\pi$. The entire radius 100 disk has area $10000\\pi$, so the reduced fraction is $101/200$ and $m+n=301$."
+    ],
+    "keyIdeas": [
+      "Add the alternate annular areas"
+    ],
+    "commonMistakes": [
+      "Adding radial widths instead of areas, or starting with the wrong colored ring."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal ring widths give unequal areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p3",
+    "problemId": "aime-i-2003-p3",
+    "finalAnswer": "$\\boxed{484}$",
+    "shortExplanation": "The sum of all twenty-eight maxima is 484.",
+    "detailedSteps": [
+      "Arrange the source entries as $1,2,3,5,8,13,21,34$. An entry in position j is the larger member in exactly j minus one pairs, one with each earlier entry.",
+      "The sum is $2+2(3)+3(5)+4(8)+5(13)+6(21)+7(34)=484$. This includes each pair once."
+    ],
+    "keyIdeas": [
+      "Each larger entry determines its pair maximum"
+    ],
+    "commonMistakes": [
+      "Counting ordered pairs twice or including pairs of an entry with itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sorting turns the pair count into a weighted sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p4",
+    "problemId": "aime-i-2003-p4",
+    "finalAnswer": "$\\boxed{012}$",
+    "shortExplanation": "The squared sine-plus-cosine sum is $6/5$.",
+    "detailedSteps": [
+      "The logarithms require both sine and cosine to be positive. Combining the first equation gives $\\sin x\\cos x=10^{-1}=1/10$. Therefore $(\\sin x+\\cos x)^2=1+2(1/10)=6/5$.",
+      "The second equation gives $\\log_{10}(\\sin x+\\cos x)=\\tfrac12(\\log_{10}n-1)$, so that same squared sum is $n/10$. Hence $n=12$.",
+      "The product 1/10 is attainable by positive sine and cosine: their squared values are the two positive roots of $u(1-u)=1/100$, which sum to one. Thus the logarithm domain introduces no extraneous solution."
+    ],
+    "keyIdeas": [
+      "The log product determines the squared sum"
+    ],
+    "commonMistakes": [
+      "Replacing a logarithm of a sum by a sum of logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring the sum uses the identity sine squared plus cosine squared equals one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p5",
+    "problemId": "aime-i-2003-p5",
+    "finalAnswer": "$\\boxed{505}$",
+    "shortExplanation": "The enlarged region has volume $154+40\\pi/3$.",
+    "detailedSteps": [
+      "Each point within distance one of the box has a unique nearest point of this convex box. According as that point is in the interior, a face, an edge, or a vertex, the region splits into the box, six face prisms, twelve quarter-cylinder pieces, and eight spherical octants. Their shared boundaries have zero volume.",
+      "The box volume is $3\\cdot4\\cdot5=60$. The face prisms contribute $2(3\\cdot4+3\\cdot5+4\\cdot5)=94$. The total length of all twelve edges is $4(3+4+5)=48$, so the quarter cylinders contribute $12\\pi$.",
+      "The eight vertex octants together form a unit sphere and contribute $4\\pi/3$. Thus the total is $154+40\\pi/3=(462+40\\pi)/3$. The coefficients 40 and 3 are relatively prime, as required, giving $m+n+p=462+40+3=505$."
+    ],
+    "keyIdeas": [
+      "Partition the Euclidean offset by the nearest box feature"
+    ],
+    "commonMistakes": [
+      "Using a larger rectangular box, whose corner points can be farther than one from the original."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nearest-feature partition accounts for the rounded edges and corners exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p6",
+    "problemId": "aime-i-2003-p6",
+    "finalAnswer": "$\\boxed{348}$",
+    "shortExplanation": "The total area is $12+12\\sqrt2+4\\sqrt3$.",
+    "detailedSteps": [
+      "For unit-cube vertices, squared distances are 1,2,3, according to how many binary coordinates differ. For any three vertices, the sum of their three pair distances squared is even: each coordinate contributes either zero or two. The only nondegenerate profiles are $(1,1,2)$, $(1,2,3)$, and $(2,2,2)$. A profile with two squared sides 3 is impossible because a vertex has only one opposite.",
+      "The first profile consists of the face triangles: each of six square faces has four vertex triples, giving 24, each of area one-half. The equilateral profile consists of triples in either of the two parity classes of four vertices, giving $2\\binom43=8$, each of area $\\sqrt3/2$.",
+      "There are $\\binom83=56$ triples altogether, so the remaining 24 have squared sides 1,2,3 and are right triangles of area $\\sqrt2/2$. The total is $12+12\\sqrt2+4\\sqrt3=12+\\sqrt{288}+\\sqrt{48}$.",
+      "Thus the requested integers are $m=12,n=288,p=48$, and their sum is 348."
+    ],
+    "keyIdeas": [
+      "Classify cube-vertex triangles by their three squared sides"
+    ],
+    "commonMistakes": [
+      "Treating the two radical coefficients as n and p instead of putting them inside the square roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Binary coordinate distances make the geometric classification exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p7",
+    "problemId": "aime-i-2003-p7",
+    "finalAnswer": "$\\boxed{380}$",
+    "shortExplanation": "The distinct possible perimeters are $220,96,64$.",
+    "detailedSteps": [
+      "Put A at $(0,0)$, B at $(9,0)$ and C at $(30,0)$. Because D is on the perpendicular bisector of AC but off its line, write $D=(15,h)$ with h nonzero. If $AD=L$ and $BD=J$ are integers, then $L^2-J^2=225-36=189$.",
+      "Thus $(L-J)(L+J)=189$. The positive factor pairs with first factor smaller are $(1,189),(3,63),(7,27),(9,21)$; both factors are odd as required. They give $(L,J)=(95,94),(33,30),(17,10),(15,6)$.",
+      "The last pair forces $h=0$ and is excluded. Each of the other three has $h^2=L^2-225>0$, so each gives a valid D. In the requested triangle ACD, the sides are $L,L,30$, so its distinct perimeters are $220,96,64$.",
+      "Reflecting D across AC changes no perimeter. The complete factor list therefore gives $s=220+96+64=380$."
+    ],
+    "keyIdeas": [
+      "Factor the difference of the two integral side squares"
+    ],
+    "commonMistakes": [
+      "Using the segment length in the wrong named triangle, or retaining the collinear D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positive height removes the degenerate factor pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p8",
+    "problemId": "aime-i-2003-p8",
+    "finalAnswer": "$\\boxed{129}$",
+    "shortExplanation": "The four terms are $18,27,36,48$.",
+    "detailedSteps": [
+      "Write the four increasing integers as $a,a+d,a+2d,a+30$. The arithmetic condition gives positive integer $d$ and $2d<30$, so $d\\in\\{1,2,\\ldots,14\\}$.",
+      "The geometric condition is $(a+2d)^2=(a+d)(a+30)$, equivalent to $a(30-3d)=d(4d-30)$. For positive $a$, the only possible $d$ are $8$ and $9$; $d=10$ makes the left coefficient zero while the right side is positive, and the remaining d give opposite signs.",
+      "For $d=8$ the formula gives $a=8/3$, which is not an integer. For $d=9$ it gives $a=18$. The last three terms $27,36,48$ have common ratio $4/3$, and the first and last differ by 30. The sum is 129."
+    ],
+    "keyIdeas": [
+      "The overlapping progressions give one integer parameter equation"
+    ],
+    "commonMistakes": [
+      "Requiring the geometric ratio to be an integer or overlooking the increasing condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference between the extreme terms bounds the finite search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p9",
+    "problemId": "aime-i-2003-p9",
+    "finalAnswer": "$\\boxed{615}$",
+    "shortExplanation": "There are 615 qualifying four-digit numbers.",
+    "detailedSteps": [
+      "Let $s$ be the sum of the first two digits. For $1\\le s\\le9$, there are s choices for those digits because the first is nonzero, and s plus one choices for the last two digits. For $10\\le s\\le18$, both sides have 19 minus s choices.",
+      "Thus the count is $\\sum_{s=1}^{9}s(s+1)+\\sum_{k=1}^{9}k^2=2\\sum_{k=1}^{9}k^2+\\sum_{k=1}^{9}k=2(285)+45=615$."
+    ],
+    "keyIdeas": [
+      "Count two-digit digit sums on each side"
+    ],
+    "commonMistakes": [
+      "Allowing the leading digit to be zero, which changes the low-sum counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the leading-digit restriction distinguishes the two halves.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p10",
+    "problemId": "aime-i-2003-p10",
+    "finalAnswer": "$\\boxed{083}$",
+    "shortExplanation": "Triangle BCM is isosceles with BM equal to BC.",
+    "detailedSteps": [
+      "Scale AC and BC to one. In triangle ACM the given angles at A and C are 7\u00b0 and 23\u00b0, so its angle at M is 150\u00b0. The sine law gives $CM=\\sin7^\\circ/\\sin150^\\circ=2\\sin7^\\circ$.",
+      "The interior placement of M gives $\\angle BCM=106^\\circ-23^\\circ=83^\\circ$. The cosine law in triangle BCM now gives $BM^2=1+4\\sin^27^\\circ-4\\sin7^\\circ\\cos83^\\circ=1$, since $\\cos83^\\circ=\\sin7^\\circ$.",
+      "Thus BM equals BC, and the opposite angles at C and M in triangle BCM are equal. The requested angle BMC is 83\u00b0."
+    ],
+    "keyIdeas": [
+      "The small triangle determines BM by the cosine law"
+    ],
+    "commonMistakes": [
+      "Using the exterior branch of an angle or guessing isosceles relations from an unscaled sketch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary angles 7\u00b0 and 83\u00b0 cancel the cosine-law correction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p11",
+    "problemId": "aime-i-2003-p11",
+    "finalAnswer": "$\\boxed{092}$",
+    "shortExplanation": "The excluded angular length is arctan 2 degrees.",
+    "detailedSteps": [
+      "For an angle x strictly between 0\u00b0 and 90\u00b0, divide all three proposed positive side lengths by $\\cos^2x$. They become $t^2,1,t$, where $t=\\tan x>0$. The inequality $t<t^2+1$ is automatic; the other two hold precisely when $\\alpha<t<\\phi$, with $\\alpha=(\\sqrt5-1)/2$ and $\\phi=(\\sqrt5+1)/2=1/\\alpha$.",
+      "The two excluded angle intervals have equal length $\\arctan\\alpha$, because $\\arctan\\phi=90^\\circ-\\arctan\\alpha$. Endpoint equalities have zero probability in the continuous distribution.",
+      "Using $\\alpha^2+\\alpha=1$, the tangent of $2\\arctan\\alpha$ is $2\\alpha/(1-\\alpha^2)=2$. This doubled angle lies between 0\u00b0 and 90\u00b0, so it equals the source\u2019s d, the degree measure of arctan 2.",
+      "The nontriangle probability is d/90. Therefore $m=2,n=90$ and $m+n=92$."
+    ],
+    "keyIdeas": [
+      "Triangle inequalities become a tangent interval"
+    ],
+    "commonMistakes": [
+      "Counting only one excluded end interval, or treating a degenerate triangle as nonzero probability mass."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal endpoints give equal angular tails.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p12",
+    "problemId": "aime-i-2003-p12",
+    "finalAnswer": "$\\boxed{777}$",
+    "shortExplanation": "The cosine is $7/9$.",
+    "detailedSteps": [
+      "Let the equal angles at A and C be \u03b1 and set AD=x, BC=y. Apply the cosine law to BD in triangles BAD and BCD: $BD^2=180^2+x^2-360x\\cos\\alpha=180^2+y^2-360y\\cos\\alpha$.",
+      "Factoring gives $(x-y)(x+y-360\\cos\\alpha)=0$. The source explicitly excludes x equal to y, and x plus y is 280. Thus $\\cos\\alpha=280/360=7/9$.",
+      "Therefore $\\lfloor1000\\cos\\alpha\\rfloor=\\lfloor7000/9\\rfloor=777$."
+    ],
+    "keyIdeas": [
+      "Equal opposite angles cancel through the common diagonal"
+    ],
+    "commonMistakes": [
+      "Dividing by x minus y without using the unequal-side condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both cosine-law expressions use the same diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p13",
+    "problemId": "aime-i-2003-p13",
+    "finalAnswer": "$\\boxed{155}$",
+    "shortExplanation": "There are 1155 qualifying integers through 2003.",
+    "detailedSteps": [
+      "All positive integers through 2047 have binary lengths 1 through 11. For length \u2113 the leading digit is one; if the remaining \u2113 minus one places contain j ones, more ones than zeros means $1+j>\\ell-1-j$, or $j\\ge\\lfloor\\ell/2\\rfloor$.",
+      "The resulting counts for lengths 1 through 11 are $1,1,3,4,11,16,42,64,163,256,638$, found by summing $\\binom{\\ell-1}{j}$ over that range. Their total is 1199.",
+      "The forty-four integers 2004 through 2047 each have eleven binary digits and the leading five digits all equal to one. Their remaining six digits encode 20 through 63, so at least one of those digits is one. Each therefore has at least six ones and qualifies.",
+      "The requested count through 2003 is $N=1199-44=1155$. Its remainder modulo 1000 is 155."
+    ],
+    "keyIdeas": [
+      "Count qualifying binary strings by their lengths"
+    ],
+    "commonMistakes": [
+      "Using a non-strict ones-versus-zeros condition or padding shorter integers with leading zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting up to the next power of two simplifies the binary enumeration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p14",
+    "problemId": "aime-i-2003-p14",
+    "finalAnswer": "$\\boxed{127}$",
+    "shortExplanation": "The first possible denominator is 127.",
+    "detailedSteps": [
+      "If the decimal expansion contains 251, shift the digits so that this block starts immediately after the decimal point. The new fractional part is r/n for an integer $0<r<n$, and $251/1000\\le r/n<252/1000$. This necessary condition applies to a block at any position.",
+      "The lower endpoint exceeds one-fourth, so $4r-n$ is a positive integer. Hence $r/n\\ge1/4+1/(4n)$. For this to be less than 252/1000 requires n greater than 125.",
+      "For $n=126$, the positive integer $4r-126$ must be even and at least two, giving $r/n\\ge1/4+2/(4\\cdot126)>252/1000$. Thus 126 also fails.",
+      "For $n=127$ choose $r=32$. The exact inequalities $251/1000\\le32/127<252/1000$ hold, so 32/127 starts with the digits 251. It lies in $(0,1)$ and is reduced. Thus the minimum denominator is 127."
+    ],
+    "keyIdeas": [
+      "A three-digit block forces a rational interval"
+    ],
+    "commonMistakes": [
+      "Searching only the first three digits without proving that later occurrences obey the same denominator bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiplying the interval relative to one-fourth gives a sharp integer obstruction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2003-p15",
+    "problemId": "aime-i-2003-p15",
+    "finalAnswer": "$\\boxed{289}$",
+    "shortExplanation": "The ratio $DE/EF$ is $49/240$.",
+    "detailedSteps": [
+      "Put B at the origin and BD along the positive x-axis. If half the angle at B has cosine c and sine s, the given lengths give $A=(360c,360s)$ and $C=(507c,-507s)$, with c,s positive.",
+      "The angle-bisector theorem gives AD:DC equal to 360:507. Thus $D=(2\\cdot360\\cdot507\\,c/867,0)$. The midpoint of AC is $M=(867c/2,-147s/2)$. The perpendicular through D to BD is vertical.",
+      "The lines BC and BM have respective slopes $-s/c$ and $-(147/867)s/c$. At the common x-coordinate of D, their intersection points F and E therefore have signed y-coordinates in ratio $147/867=49/289$. Both are negative, and E lies between D and F.",
+      "Thus $DE/DF=49/289$ and $DE/EF=49/(289-49)=49/240$. The fraction is reduced, so $m+n=49+240=289$.",
+      "The points are on the stated segments: F is a fraction 240/289 of the way from B to C, and E is a fraction 81120/83521 of the way from B to M, both strictly between zero and one. The given third side 780 makes a nondegenerate triangle, so the coordinate construction applies."
+    ],
+    "keyIdeas": [
+      "Use the angle bisector as the coordinate axis"
+    ],
+    "commonMistakes": [
+      "Using DE/DF when the question asks for DE/EF, or reversing the angle-bisector side division."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "At a fixed x-coordinate, distances from the bisector axis scale with the line slopes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

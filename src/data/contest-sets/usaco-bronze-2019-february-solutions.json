@@ -1,0 +1,103 @@
+[
+  {
+    "finalAnswer": "After sorting positions, print 0, 1, or 2 for the minimum as determined by consecutive positions or a gap of two, then print the larger adjacent gap minus one for the maximum.",
+    "shortExplanation": "A one-move finish must place an endpoint cow in the single hole between two cows separated by two. For the maximum, the first move leaves a span no greater than the larger gap; subsequent legal moves reduce that span at least one at a time. Both bounds have legal constructions.",
+    "detailedSteps": [
+      "Sort $x<y<z$ and define adjacent gaps $a=y-x$ and $b=z-y$. If $a=b=1$, the cows are already consecutive, so both answers are zero.",
+      "A nonterminal configuration finishes in one move exactly when $a=2$ or $b=2$. The two unmoved cows must become the final endpoints, separated by two, and the moved endpoint must enter their one empty interior position. Thus this condition is both necessary and sufficient for a one-move finish.",
+      "Otherwise two moves suffice. If $a\\ge3$, move $z$ to $x+2$, then move the now-rightmost original $y$ to $x+1$. Both destinations are empty and interior, and the final positions are $x,x+1,x+2$. If $a=1$ and $b\\ge3$, use the reflected construction near $z$. These cases cover the remaining configurations, proving minimum two.",
+      "Let $G=\\max(a,b)$. After the first legal move the new outer span is either $a$ or $b$, at most $G$. Every later move strictly reduces the integer span, while the consecutive final span is two. Therefore a nonterminal sequence has at most $1+(G-2)=G-1$ moves.",
+      "To attain that maximum when $b=G\\ge2$, move $x$ to $y+1$. The two leftmost cows are now adjacent. Repeatedly move the leftmost cow just past its adjacent neighbor, advancing this pair toward $z$ until it occupies $z-2,z-1$. Each move is legal, reduces the span by one, and reaches consecutive positions after exactly $G-1$ total moves. Reflect when the larger gap is $a$; $G=1$ was already terminal.",
+      "Print the minimum and maximum on separate lines. Sorting three values and evaluating the cases use O(1) time and space. The original C++ uses 64-bit coordinates and differences for the full one-billion coordinate limit.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\nusing namespace std;\nint main() {\n    ifstream in(\"herding.in\");\n    ofstream out(\"herding.out\");\n    array<long long, 3> positions;\n    for (long long &position : positions) in >> position;\n    sort(positions.begin(), positions.end());\n    long long a = positions[1] - positions[0], b = positions[2] - positions[1];\n    int minimum = 2;\n    if (a == 1 && b == 1) minimum = 0;\n    else if (a == 2 || b == 2) minimum = 1;\n    out << minimum << '\\n' << max(a, b) - 1 << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Check whether the unchanged pair can be the final endpoints.",
+      "Prove a two-step construction under the strict interior-move rule.",
+      "Use shrinking span for the upper bound and an adjacent-pair orbit for attainment."
+    ],
+    "commonMistakes": [
+      "Moving the middle cow, which is not an allowed endpoint.",
+      "Moving an endpoint to a location that is still an endpoint afterward.",
+      "Using the whole initial span minus two for the maximum without accounting for the first move.",
+      "Applying the one-move rule to an already consecutive configuration."
+    ],
+    "alternativeMethods": [
+      "For small coordinates, build the directed graph of all legal endpoint moves. Every edge strictly decreases the span, so minimum and maximum distances to a consecutive state can be computed on this acyclic state graph. This checks both formulas without simulating a billion positions."
+    ],
+    "difficultyNotes": "Intermediate extremal reasoning. Both answers require legal attaining histories, not just numerical bounds.",
+    "id": "solution-usaco-bronze-2019-february-p1",
+    "problemId": "usaco-bronze-2019-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Process pastures in numerical order and output the smallest available grass digit at each pasture, concatenated into one N-digit string.",
+    "shortExplanation": "Already colored neighbors forbid at most three of the four grass types. Every proper prefix can therefore be extended, so taking the smallest permitted digit cannot create a later failure and gives the smallest complete string.",
+    "detailedSteps": [
+      "Represent each cow by an undirected edge between her two favorite pastures. Its endpoints must receive different grass types. A pasture is favored by at most three cows, so its incident constraints can forbid at most three colors.",
+      "Visit pastures 1 through N. Mark the colors of already colored neighbors as forbidden, then choose the smallest remaining digit from 1 through 4. Colors of unprocessed neighbors are still zero and do not forbid any real grass type.",
+      "Inductively, the assigned prefix is proper. At any later pasture, at most three colors are forbidden, so at least one of four colors remains. Thus every proper prefix extends to a full valid assignment; a smaller legal prefix digit never needs to be abandoned because of the future.",
+      "For global optimality, compare any different valid output with the greedy output at their first differing pasture. All earlier digits match. The other output must also avoid the earlier neighbors' colors, so its digit cannot be smaller than the greedy choice. Since it differs, it is larger, proving that the greedy string is lexicographically minimum.",
+      "All outputs have the same N-digit length and use digits 1 through 4, so lexicographic and numerical order agree. Print the digits directly as a string, without spaces or conversion to a machine integer; N can be 100.",
+      "Adjacency construction and the coloring pass take O(N+M) time and O(N+M) storage. Several cows may impose the same pasture-pair constraint; repeated edges are handled naturally, while the incidence limit still counts those cows.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"revegetate.in\");\n    ofstream out(\"revegetate.out\");\n    int n, m;\n    in >> n >> m;\n    vector<vector<int>> neighbors(n);\n    for (int i = 0; i < m; ++i) {\n        int a, b;\n        in >> a >> b;\n        --a; --b;\n        neighbors[a].push_back(b);\n        neighbors[b].push_back(a);\n    }\n    vector<int> colors(n, 0);\n    for (int pasture = 0; pasture < n; ++pasture) {\n        bool forbidden[5] = {};\n        for (int other : neighbors[pasture]) forbidden[colors[other]] = true;\n        for (int color = 1; color <= 4; ++color) {\n            if (!forbidden[color]) { colors[pasture] = color; break; }\n        }\n        out << colors[pasture];\n    }\n    out << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Four colors and maximum degree three guarantee extension of every proper prefix.",
+      "A first-differing-digit comparison proves global lexicographic optimality.",
+      "Preserve a long digit-string output rather than a bounded integer."
+    ],
+    "commonMistakes": [
+      "Coloring pastures in cow-input order instead of pasture-number order.",
+      "Printing any valid coloring without minimizing its digit string.",
+      "Using only three grass types, which can fail on four mutually adjacent pastures.",
+      "Converting a 100-digit result to int or long long.",
+      "Confusing the output with the different same-title Silver task."
+    ],
+    "alternativeMethods": [
+      "For small graphs, enumerate complete strings in lexicographic order over digits 1 through 4 and test every edge on each full candidate. The first valid string is an independent global oracle, though exponential search is unnecessary at the full source limit."
+    ],
+    "difficultyNotes": "Intermediate graph coloring. The source degree limit is what makes local smallest-digit choices globally safe.",
+    "id": "solution-usaco-bronze-2019-february-p2",
+    "problemId": "usaco-bronze-2019-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Run exact nonnegative interval propagation forward for the final flow and backward for the initial flow; output the initial pair first and final pair second.",
+    "shortExplanation": "On-ramps add an interval of flow, off-ramps subtract one while preventing negative traffic, and a main-highway sensor intersects the possible interval. Reverse the ramp operations to obtain all possible initial flows consistent with every reading.",
+    "detailedSteps": [
+      "Use a current feasible interval $[L,U]$. An on-ramp with range $[\\ell,h]$ produces $[L+\\ell,U+h]$. An off-ramp produces $[\\max(0,L-h),U-\\ell]$: exiting traffic cannot exceed the available flow. If $U<\\ell$, the interval is empty, not a fabricated zero-flow state; the source guarantees a complete valid solution.",
+      "A segment marked none measures the main highway directly, so intersect with its sensor range: $[\\max(L,\\ell),\\min(U,h)]$. A ramp sensor instead measures only entering or leaving traffic, so its range must not be intersected directly with main-highway flow.",
+      "These updates are exact images of the permitted physical relations. As the starting flow and ramp amount vary through their intervals, the possible results form a complete interval with the displayed attained endpoints, subject to nonnegativity. A none sensor applies precisely its allowed-value restriction. Induction over all segments therefore gives the tight final range consistent with every reading.",
+      "For the initial range, process the segments in reverse. Reverse an on-ramp by subtracting with the same nonnegative clipping rule, reverse an off-ramp by adding, and intersect at a none segment. These are exact preimages of the original relations, so reverse induction yields all feasible initial flows.",
+      "A finite initial broad range is justified by the source: at least one none sensor bounds a main-highway flow by $1000$, and each of at most $N$ ramps changes flow by at most $1000$. Consequently $[0,1000(N+1)]$ contains every whole-feasible initial and final flow. Starting each scan with that range loses no complete trajectory and avoids an arbitrary infinity sentinel.",
+      "The lower and upper extrema are attained by feasible trajectories, though the initial and final extrema need not occur in the same trajectory. That is appropriate for the two separately requested tight ranges. Nonempty intervals throughout both scans follow from the source's guaranteed complete feasibility.",
+      "Store the segments and scan twice: $O(N)$ time and $O(N)$ auxiliary space. Intermediate broad computational intervals can grow before a later sensor filters them, but remain below $201000$ at the source limit, so integer arithmetic is safe. Print two ordered nonnegative endpoints per line: before mile 1 first, after the last mile second.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nstruct Segment { string kind; int low, high; };\npair<int, int> sweep(const vector<Segment> &segments, bool reverse) {\n    int n = static_cast<int>(segments.size());\n    int low = 0, high = 1000 * (n + 1);\n    for (int step = 0; step < n; ++step) {\n        int index = reverse ? n - 1 - step : step;\n        const Segment &segment = segments[index];\n        if (segment.kind == \"none\") {\n            low = max(low, segment.low);\n            high = min(high, segment.high);\n        } else {\n            bool adds = (segment.kind == \"on\") != reverse;\n            if (adds) {\n                low += segment.low;\n                high += segment.high;\n            } else {\n                low = max(0, low - segment.high);\n                high -= segment.low;\n            }\n        }\n    }\n    return {low, high};\n}\nint main() {\n    ifstream in(\"traffic.in\");\n    ofstream out(\"traffic.out\");\n    int n;\n    in >> n;\n    vector<Segment> segments(n);\n    for (Segment &segment : segments) in >> segment.kind >> segment.low >> segment.high;\n    auto before = sweep(segments, true), after = sweep(segments, false);\n    out << before.first << ' ' << before.second << '\\n';\n    out << after.first << ' ' << after.second << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Distinguish sensors on ramps from direct main-road measurements.",
+      "Compute exact images and preimages of flow intervals.",
+      "Use nonnegative flow and an actual none sensor to justify clipping and finite bounds.",
+      "Prove tightness and attainability, not just consistency of a containing interval."
+    ],
+    "commonMistakes": [
+      "Using forward ramp signs while traversing backward.",
+      "Allowing a negative main-highway traffic flow.",
+      "Clipping a negative upper endpoint to zero and incorrectly creating a feasible state.",
+      "Treating an on-ramp or off-ramp reading as a direct main-highway measurement.",
+      "Reversing the initial and final output rows."
+    ],
+    "alternativeMethods": [
+      "Introduce a flow variable at every segment boundary and express all readings as global difference inequalities, including nonnegativity and a zero-reference vertex. Shortest paths in the constraint graph and its reversal give tight maximum and minimum endpoint values. This provides an independent Bellman\u2013Ford check of the interval scans.",
+      "For small flow ranges, enumerate each possible initial flow and all allowed ramp amounts, filtering direct highway measurements and rejecting exits larger than available flow. Collect the surviving initial and final values to verify tight endpoints."
+    ],
+    "difficultyNotes": "Advanced interval reasoning. The central obligations are exact projection, nonnegative flows, and consistency with the complete sequence of sensors.",
+    "id": "solution-usaco-bronze-2019-february-p3",
+    "problemId": "usaco-bronze-2019-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,544 @@
+[
+  {
+    "id": "solution-amc10b-2017-p1",
+    "problemId": "amc10b-2017-p1",
+    "finalAnswer": "$\\boxed{12}$ (choice **B**)",
+    "shortExplanation": "Reverse the possible final numbers before undoing the arithmetic.",
+    "detailedSteps": [
+      "The number before the reversal must be one of $17,27,37,47,57$. Subtracting $11$ gives $6,16,26,36,46$.",
+      "Only $6$ and $36$ are multiples of $3$, giving original numbers $2$ and $12$. The two-digit requirement leaves $12$. Indeed $3(12)+11=47$, which reverses to $74$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Reversing digits"
+    ],
+    "commonMistakes": [
+      "An integer result after dividing by three is not enough: the original number must also have two digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two-digit condition matters only after the reversed possibilities have been converted back to candidate inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p2",
+    "problemId": "amc10b-2017-p2",
+    "finalAnswer": "$\\boxed{7\\text{ minutes }5\\text{ seconds}}$ (choice **C**)",
+    "shortExplanation": "Compute the time for each segment of one lap.",
+    "detailedSteps": [
+      "The two segment times are $100/4=25$ seconds and $300/5=60$ seconds. Thus one lap takes $85$ seconds.",
+      "Five laps take $5(85)=425$ seconds, or $7$ minutes $5$ seconds."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Distance divided by speed"
+    ],
+    "commonMistakes": [
+      "The two speeds do not apply for equal times, so their arithmetic mean is not the average speed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep every intermediate time in seconds; convert to minutes only after adding all five laps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p3",
+    "problemId": "amc10b-2017-p3",
+    "finalAnswer": "$\\boxed{y+z}$ (choice **E**)",
+    "shortExplanation": "Combine the lower bounds for y and z.",
+    "detailedSteps": [
+      "Since $y>-1$ and $z>1$, adding the strict inequalities gives $y+z>0$.",
+      "The other expressions are not forced positive. For example, $x=1/10$, $y=-1/4$, and $z=3/2$ satisfy all the bounds, while $y+x^2$, $y+xz$, $y+y^2$, and $y+2y^2$ are all negative."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Strict bounds"
+    ],
+    "commonMistakes": [
+      "A term that contains a square can still be negative after another term is added."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A universal claim needs a bound valid throughout the interval. A single carefully chosen example can disprove each competing claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p4",
+    "problemId": "amc10b-2017-p4",
+    "finalAnswer": "$\\boxed{2}$ (choice **D**)",
+    "shortExplanation": "The given ratio forces the two variables to be equal.",
+    "detailedSteps": [
+      "Multiplication by the nonzero denominator gives $3x+y=-2x+6y$, hence $5x=5y$ and $x=y$.",
+      "Because this common value is nonzero, the requested ratio becomes $(x+3x)/(3x-x)=4x/(2x)=2$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Simplifying a rational constraint"
+    ],
+    "commonMistakes": [
+      "Do not equate numerator and denominator separately; first cross-multiply the entire equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rational condition may hide a simple linear relation between its variables, eliminating the need to solve for either variable individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p5",
+    "problemId": "amc10b-2017-p5",
+    "finalAnswer": "$\\boxed{40}$ (choice **D**)",
+    "shortExplanation": "Express both counts in terms of the original cherry count.",
+    "detailedSteps": [
+      "Let the original cherry count be $c$, so the blueberry count is $2c$. After the subtraction, the condition becomes $2c-10=3(c-10)$.",
+      "Solving gives $c=20$, so the original blueberry count was $2c=40$. The remaining counts $30$ and $10$ have the required ratio."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Changing ratios"
+    ],
+    "commonMistakes": [
+      "Subtracting the same number from both quantities does not preserve their ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Writing one original count in terms of the other avoids introducing an unnecessary second unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p6",
+    "problemId": "amc10b-2017-p6",
+    "finalAnswer": "$\\boxed{4}$ (choice **B**)",
+    "shortExplanation": "Use volume for the upper bound, then exhibit a packing that reaches it.",
+    "detailedSteps": [
+      "The box has volume $18$, and each block has volume $4$. Thus at most $\\lfloor18/4\\rfloor=4$ blocks can fit.",
+      "Use the length-two dimension of the box as the common depth of every block. In the perpendicular $3\\times3$ cross-section, four $2\\times1$ rectangles fit around the unused center square: across the left two cells of the top row, down the top two cells of the right column, across the right two cells of the bottom row, and up the bottom two cells of the left column.",
+      "Extending these disjoint rectangles through depth two gives four blocks, proving that the upper bound is attained."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Packing bounds and constructions"
+    ],
+    "commonMistakes": [
+      "A volume bound alone does not prove that the proposed number of blocks can actually be packed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A packing maximum has two parts: an impossibility bound and a configuration that attains it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p7",
+    "problemId": "amc10b-2017-p7",
+    "finalAnswer": "$\\boxed{2.8}$ (choice **C**)",
+    "shortExplanation": "The distance cycled equals the distance walked.",
+    "detailedSteps": [
+      "Let each of the two distances be $d$ kilometers. The total time in hours gives $d/17+d/5=44/60$.",
+      "Hence $d(22/85)=11/15$, so $d=17/6\\approx2.833$. The walking distance rounds to $2.8$ kilometers."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Equal-distance travel"
+    ],
+    "commonMistakes": [
+      "Equal distances do not mean equal travel times; the walking portion takes much longer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal-distance condition determines which quantities can share a variable; it does not justify averaging the two speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p8",
+    "problemId": "amc10b-2017-p8",
+    "finalAnswer": "$\\boxed{(-4,9)}$ (choice **C**)",
+    "shortExplanation": "The altitude from the apex also bisects the opposite side.",
+    "detailedSteps": [
+      "The right triangles $ADB$ and $ADC$ share leg $AD$ and have equal hypotenuses $AB=AC$. Therefore $BD=DC$, making $D$ the midpoint of $BC$.",
+      "The midpoint equation gives $C=2D-B=2(-1,3)-(2,-3)=(-4,9)$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Altitude in an isosceles triangle"
+    ],
+    "commonMistakes": [
+      "The reflection is across the altitude line; reflecting coordinates independently across the coordinate axes would describe a different point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing the median property of the isosceles altitude removes the need to intersect line and circle equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p9",
+    "problemId": "amc10b-2017-p9",
+    "finalAnswer": "$\\boxed{\\frac7{27}}$ (choice **D**)",
+    "shortExplanation": "Count outcomes with exactly two or exactly three correct responses.",
+    "detailedSteps": [
+      "There are $3^3=27$ equally likely answer patterns. For exactly two correct answers, choose the incorrect question in $3$ ways and its wrong response in $2$ ways, giving $6$ patterns.",
+      "There is one all-correct pattern. The winning probability is $(6+1)/27=7/27$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Binomial counting"
+    ],
+    "commonMistakes": [
+      "Exactly two correct answers is only part of the winning event; the all-correct pattern must be included."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equally likely objects are complete response patterns. Grouping them by the number of wrong responses keeps the count small.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p10",
+    "problemId": "amc10b-2017-p10",
+    "finalAnswer": "$\\boxed{13}$ (choice **E**)",
+    "shortExplanation": "Use the intersection point together with perpendicular normal vectors.",
+    "detailedSteps": [
+      "Substitution of $(1,-5)$ gives $c=a+10$ and $c=5b-2$, hence $a=5b-12$.",
+      "The line normals are $(a,-2)$ and $(2,b)$. Perpendicular lines have perpendicular normals, so their dot product is $2a-2b=0$, or $a=b$.",
+      "Combining the relations yields $b=3$, $a=3$, and $c=13$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Perpendicular lines"
+    ],
+    "commonMistakes": [
+      "Perpendicularity concerns both coefficient pairs; matching individual coefficients without using their dot product loses the sign condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The point condition determines two coefficient relations; perpendicularity supplies the last one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p11",
+    "problemId": "amc10b-2017-p11",
+    "finalAnswer": "$\\boxed{25\\%}$ (choice **D**)",
+    "shortExplanation": "Restrict the denominator to the students who say they dislike dancing.",
+    "detailedSteps": [
+      "Imagine 100 students. Of the 60 who like dancing, $60(0.20)=12$ say they dislike it. Of the 40 who dislike it, $40(0.90)=36$ say they dislike it.",
+      "Thus $12+36=48$ students make that statement, and $12$ of them actually like dancing. The requested fraction is $12/48=1/4=25\\%$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Conditional proportions"
+    ],
+    "commonMistakes": [
+      "The 12 students must be divided by the 48 making the specified statement, not by all 100 students."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small population table makes the distinction between an actual preference and a reported preference explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p12",
+    "problemId": "amc10b-2017-p12",
+    "finalAnswer": "$\\boxed{20\\%}$ (choice **A**)",
+    "shortExplanation": "Divide the fuel-price factor by the efficiency factor.",
+    "detailedSteps": [
+      "For a fixed distance, the new car uses $1/1.5=2/3$ as many liters. Each liter costs $1.2=6/5$ times as much.",
+      "The new trip cost is therefore $(2/3)(6/5)=4/5$ of the old cost. The saving is $1-4/5=1/5=20\\%$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Cost per distance"
+    ],
+    "commonMistakes": [
+      "The percentage changes act on different quantities, so subtracting 20% from 50% is invalid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choose a fixed travel distance so that efficiency can be translated into liters purchased.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p13",
+    "problemId": "amc10b-2017-p13",
+    "finalAnswer": "$\\boxed{3}$ (choice **C**)",
+    "shortExplanation": "Count the enrollments beyond each student’s first class.",
+    "detailedSteps": [
+      "The total number of enrollments is $10+13+9=32$, which is $12$ more than the number of students.",
+      "Let $t$ students take three classes. The other $9-t$ students taking at least two classes take exactly two. Their extra enrollments total $(9-t)+2t=9+t$.",
+      "Thus $9+t=12$, giving $t=3$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Double-counting class enrollments"
+    ],
+    "commonMistakes": [
+      "A student in all three classes contributes two extra enrollments, not three, after the first enrollment has been assigned."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting excess enrollments uses the overlap information without reconstructing every region of a Venn diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p14",
+    "problemId": "amc10b-2017-p14",
+    "finalAnswer": "$\\boxed{\\frac45}$ (choice **D**)",
+    "shortExplanation": "Every nonzero residue modulo five has fourth power one.",
+    "detailedSteps": [
+      "For residues $1,2,3,4$, direct calculation gives $r^4\\equiv1\\pmod5$, and hence $r^{16}\\equiv1\\pmod5$. A multiple of five instead has sixteenth power congruent to zero.",
+      "Exactly $2020/5=404$ of the possible integers are multiples of five. Therefore the probability is $(2020-404)/2020=4/5$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Powers modulo five"
+    ],
+    "commonMistakes": [
+      "Fermat’s congruence applies only to numbers relatively prime to five; multiples of five must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent looks large, but only its divisibility by the short residue cycle matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p15",
+    "problemId": "amc10b-2017-p15",
+    "finalAnswer": "$\\boxed{\\frac{54}{25}}$ (choice **E**)",
+    "shortExplanation": "Find the horizontal distance of the projection point from AD.",
+    "detailedSteps": [
+      "Set $A=(0,0)$, $B=(3,0)$, $C=(3,4)$, and $D=(0,4)$. Write the projection point as $E=t(3,4)$.",
+      "The perpendicularity condition $(B-E)\\cdot(3,4)=0$ gives $9-25t=0$, so $E=(27/25,36/25)$.",
+      "Using $AD=4$ as the base, the altitude from $E$ is its horizontal coordinate $27/25$. Thus $[AED]=\\tfrac12(4)(27/25)=54/25$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Orthogonal projection and area"
+    ],
+    "commonMistakes": [
+      "The altitude for base AD is horizontal; the length BE is perpendicular to a different line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Projection gives the coordinate needed for the final altitude directly; the full length of the projection segment is unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p16",
+    "problemId": "amc10b-2017-p16",
+    "finalAnswer": "$\\boxed{469}$ (choice **A**)",
+    "shortExplanation": "Count the positive integers that contain no zero.",
+    "detailedSteps": [
+      "Among the one-, two-, and three-digit numbers, the counts with no zero are $9$, $9^2$, and $9^3$. Their sum is $819$.",
+      "From 1000 through 1999, the first digit is fixed and each remaining digit has nine nonzero choices, giving another $9^3=729$. Every number from 2000 through 2017 contains a zero.",
+      "Consequently $2017-(819+729)=469$ of the numbers contain at least one zero."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Complementary digit counting"
+    ],
+    "commonMistakes": [
+      "Leading zeros are not written digits. Counting all numbers as four-digit strings would incorrectly include them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Break the range where its leading digits change. This avoids a complicated count of overlapping zero positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p17",
+    "problemId": "amc10b-2017-p17",
+    "finalAnswer": "$\\boxed{1524}$ (choice **B**)",
+    "shortExplanation": "A set of distinct digits determines its increasing or decreasing order.",
+    "detailedSteps": [
+      "An increasing positive numeral cannot contain zero, so its digits are a nonempty subset of $\\{1,\\ldots,9\\}$. This gives $2^9-1=511$ numbers.",
+      "A decreasing positive numeral may use zero. Every subset of $\\{0,\\ldots,9\\}$ except the empty set and $\\{0\\}$ gives exactly one such numeral, for $2^{10}-2=1022$ numbers.",
+      "The nine one-digit positive numbers occur in both counts, and no longer numeral can be both strictly increasing and strictly decreasing. The total is $511+1022-9=1524$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Digit subsets and inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Zero may occur at the end of a decreasing numeral, but it cannot lead an increasing positive numeral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Strict ordering makes every digit subset determine a unique numeral; the overlap consists only of one-digit numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p18",
+    "problemId": "amc10b-2017-p18",
+    "finalAnswer": "$\\boxed{12}$ (choice **D**)",
+    "shortExplanation": "Fix the unique green disk and account for its remaining reflection symmetry.",
+    "detailedSteps": [
+      "The figure has two distinct kinds of position: three corner disks and three disks at side midpoints. Symmetries never exchange these kinds. Within either kind, rotation lets us fix the green disk at one chosen position.",
+      "Once green is fixed, the remaining symmetry is a single reflection. It exchanges two pairs of the remaining disks and fixes the fifth. There are $\\binom52=10$ choices for the two red disks; the other three are blue.",
+      "Exactly two red choices are unchanged by reflection: either exchanged pair can be the red pair. The other eight choices form four pairs of equivalent colorings. Thus each green-position kind gives $2+8/2=6$ colorings, for $6+6=12$ altogether."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Colorings under triangular symmetry"
+    ],
+    "commonMistakes": [
+      "Dividing all labeled colorings by six is invalid because some colorings have reflection symmetry and therefore smaller orbits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique green disk reduces the symmetry problem to two position types, each with one remaining reflection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p19",
+    "problemId": "amc10b-2017-p19",
+    "finalAnswer": "$\\boxed{37:1}$ (choice **E**)",
+    "shortExplanation": "Express the extended vertices in a basis formed by two original sides.",
+    "detailedSteps": [
+      "Take $A$ as the origin and write $B=u$, $C=v$. The extension conditions give $B^{\\prime}=4u$, $C^{\\prime}=4v-3u$, and $A^{\\prime}=-3v$.",
+      "Two sides of the new triangle, starting at $A^{\\prime}$, are $4u+3v$ and $-3u+7v$. Their determinant is $(4\\cdot7-3(-3))\\det(u,v)=37\\det(u,v)$.",
+      "Both triangle areas are half the corresponding absolute determinant, so their ratio is $37:1$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Determinants and area ratios"
+    ],
+    "commonMistakes": [
+      "An extension three times the side length makes the full directed displacement four times that side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Directed-vector coordinates preserve area ratios, so the computation does not require the original triangle to be drawn at a convenient angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p20",
+    "problemId": "amc10b-2017-p20",
+    "finalAnswer": "$\\boxed{\\frac1{19}}$ (choice **B**)",
+    "shortExplanation": "Only the exponent of two determines whether a divisor is odd.",
+    "detailedSteps": [
+      "The exponent of two in $21!$ is $\\lfloor21/2\\rfloor+\\lfloor21/4\\rfloor+\\lfloor21/8\\rfloor+\\lfloor21/16\\rfloor=10+5+2+1=18$.",
+      "In a uniformly chosen divisor, the exponent of two can be any of $0,1,\\ldots,18$. Each choice pairs with exactly the same number of choices for the other prime exponents.",
+      "A divisor is odd precisely when the exponent of two is zero, so the probability is $1/19$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime exponents in divisors"
+    ],
+    "commonMistakes": [
+      "The 21 integers multiplied in the factorial do not correspond to 21 equally likely exponents of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform selection among divisors becomes uniform independent selection of the allowed prime exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p21",
+    "problemId": "amc10b-2017-p21",
+    "finalAnswer": "$\\boxed{\\frac{17}{6}}$ (choice **D**)",
+    "shortExplanation": "The median to the hypotenuse produces two isosceles triangles.",
+    "detailedSteps": [
+      "The sides $6,8,10$ make $\\angle A$ a right angle. The midpoint of the hypotenuse is equidistant from all three vertices, so $AD=BD=CD=5$.",
+      "The median divides the original area $\\tfrac12(6)(8)=24$ into two equal areas of $12$. The subtriangles have semiperimeters $(5+5+6)/2=8$ and $(5+5+8)/2=9$.",
+      "Using $\\Delta=rs$, their inradii are $12/8=3/2$ and $12/9=4/3$. Their sum is $17/6$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Inradius from area and semiperimeter"
+    ],
+    "commonMistakes": [
+      "The median bisects area, but it does not make the two subtriangles congruent or give them equal inradii."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two equal subareas are easier to obtain from the median than from separate applications of Heron’s formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p22",
+    "problemId": "amc10b-2017-p22",
+    "finalAnswer": "$\\boxed{\\frac{140}{37}}$ (choice **D**)",
+    "shortExplanation": "Solve for the second intersection, then use AB as a horizontal base.",
+    "detailedSteps": [
+      "Choose $A=(0,0)$, $B=(4,0)$, $D=(7,0)$, and $E=(7,5)$. Reflecting below the axis would give the same area. The circle equation is $(x-2)^2+y^2=4$, and line $AE$ is $y=5x/7$.",
+      "Substitution gives $x^2+(25/49)x^2-4x=0$. Besides $A$, the intersection has $x=98/37$ and $y=70/37$.",
+      "Therefore $[ABC]=\\tfrac12(4)(70/37)=140/37$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "A line intersecting a circle"
+    ],
+    "commonMistakes": [
+      "The line has one already-known intersection at A; select the other root when finding C."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Placing the known intersection at the origin makes one algebraic root immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p23",
+    "problemId": "amc10b-2017-p23",
+    "finalAnswer": "$\\boxed{9}$ (choice **C**)",
+    "shortExplanation": "Use the last digit modulo five and the digit sum modulo nine.",
+    "detailedSteps": [
+      "The concatenated number ends in $44$, so it is congruent to $4$ modulo $5$.",
+      "Modulo $9$, each block contributes the same residue as the integer in that block, because $10\\equiv1\\pmod9$. Thus the number is congruent to $1+2+\\cdots+44=990\\equiv0\\pmod9$.",
+      "The multiples of nine from $0$ to $44$ are $0,9,18,27,36$. Only $9$ is congruent to $4$ modulo five, so the remainder modulo $45$ is $9$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Combining congruences"
+    ],
+    "commonMistakes": [
+      "The value 990 is congruent to the digit sum modulo nine; it need not equal the literal digit sum of the concatenation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Working modulo coprime factors avoids carrying out arithmetic on the entire concatenated integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p24",
+    "problemId": "amc10b-2017-p24",
+    "finalAnswer": "$\\boxed{108}$ (choice **C**)",
+    "shortExplanation": "Use coordinates centered on the hyperbola’s axis and the triangle’s circumcircle.",
+    "detailedSteps": [
+      "The hyperbola vertices are $(1,1)$ and $(-1,-1)$. Central reflection preserves both the curve and area, so assume the centroid is $(1,1)$. Use the orthonormal coordinates $u=(x+y)/\\sqrt2$ and $v=(x-y)/\\sqrt2$. The curve becomes $u^2-v^2=2$, and the centroid is $(\\sqrt2,0)$.",
+      "For an equilateral triangle, the centroid is also the circumcenter. If its circumradius is $R>0$, write the three vertices as $u_j=\\sqrt2+R\\cos\\theta_j$, $v_j=R\\sin\\theta_j$, where $\\theta_j=\\theta+2\\pi j/3$ for $j=0,1,2$. Substitution into the hyperbola equation gives $2\\sqrt2 R\\cos\\theta_j+R^2\\cos(2\\theta_j)=0$.",
+      "Since $3\\theta_j$ differs from $3\\theta$ by a multiple of $2\\pi$, we have $\\cos(2\\theta_j)=\\cos(3\\theta)\\cos\\theta_j+\\sin(3\\theta)\\sin\\theta_j$. The three equations therefore say that a fixed vector with components $2\\sqrt2 R+R^2\\cos(3\\theta)$ and $R^2\\sin(3\\theta)$ is perpendicular to three directions separated by $120^\\circ$. Two of these directions are linearly independent, so both components vanish.",
+      "It follows that $\\sin(3\\theta)=0$ and $R\\cos(3\\theta)=-2\\sqrt2$. Positivity of $R$ forces $\\cos(3\\theta)=-1$ and $R=2\\sqrt2$. The area is $3\\sqrt3 R^2/4=6\\sqrt3$, whose square is $108$.",
+      "Existence can also be checked directly: the points $(-1,-1)$, $(2+\\sqrt3,2-\\sqrt3)$, and $(2-\\sqrt3,2+\\sqrt3)$ lie on the hyperbola, have centroid $(1,1)$, and have equal pairwise squared distances $24$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equilateral triangles on a hyperbola"
+    ],
+    "commonMistakes": [
+      "The centroid is a vertex of the hyperbola, not necessarily a vertex of the triangle. It must be treated as the triangle’s center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All three equally spaced vertices must satisfy the same conic equation; imposing those conditions together determines the circumradius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2017-p25",
+    "problemId": "amc10b-2017-p25",
+    "finalAnswer": "$\\boxed{100}$ (choice **E**)",
+    "shortExplanation": "The sixth and seventh averages force the first six scores to total 570.",
+    "detailedSteps": [
+      "Subtract $95$ from every score and call the resulting distinct integers $t_1,\\ldots,t_7$. They belong to $\\{-4,-3,\\ldots,5\\}$, and $t_7=0$. Let $S=t_1+\\cdots+t_6$.",
+      "The sixth average makes $S$ divisible by $6$, while the seventh average makes the same $S$ divisible by $7$. Thus $42$ divides $S$. The six distinct nonzero shifted scores have sum between $-4-3-2-1+1+2=-7$ and $-1+1+2+3+4+5=14$. The only possible multiple of $42$ is $S=0$.",
+      "The first five shifted scores have sum $-t_6$, which is divisible by $5$ because their average is integral. Among the allowed shifted scores, the only multiples of five are $0$ and $5$. Distinctness excludes $0$, already used by the seventh score. Hence $t_6=5$, and the sixth score is $100$.",
+      "The conditions are attainable: the scores $91,93,92,96,98,100,95$ have successive averages $91,92,92,93,94,95,95$, all integers."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Integer averages and divisibility"
+    ],
+    "commonMistakes": [
+      "The scores are distinct, so the seventh score cannot reappear on the sixth test. This removes the otherwise possible shifted value zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last two integer averages are much more restrictive than the earlier ones, so start at the end of the score sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

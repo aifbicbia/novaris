@@ -1,0 +1,147 @@
+[
+  {
+    "id": "solution-usajmo-2010-p1",
+    "problemId": "usajmo-2010-p1",
+    "finalAnswer": "$\\boxed{4489}$.",
+    "shortExplanation": "Integers can be paired in a permitted position exactly when they have the same squarefree part. This splits the permutation into independent blocks. A factor of $67$ first appears when the square-number block contains $67$ elements.",
+    "detailedSteps": [
+      "Every positive integer has a unique representation $d t^2$, where $d$ is squarefree. Thus $ka_k$ is a square if and only if $k$ and $a_k$ have the same squarefree part.",
+      "For a fixed squarefree $d$, there are $c_d=\\lfloor\\sqrt{n/d}\\rfloor$ integers of that form up to $n$. Any permutation of those $c_d$ integers is allowed, independently of the other blocks. Consequently $$P(n)=\\prod_{\\substack{d\\le n\\\\d\\text{ squarefree}}}c_d!.$$",
+      "Factor $2010=2\\cdot3\\cdot5\\cdot67$. If $n<67^2$, every block has at most $\\lfloor\\sqrt n\\rfloor\\le66$ elements. None of its factorials has a factor of $67$, so their product cannot be divisible by $2010$.",
+      "At $n=67^2=4489$, the block with squarefree part $1$ contains exactly the $67$ squares $1^2,\\ldots,67^2$. Its contribution $67!$ already contains all prime factors of $2010$, so $2010\\mid P(4489)$. Together with the lower bound, this proves minimality."
+    ],
+    "keyIdeas": [
+      "Squarefree parts identify exactly which positions can exchange values.",
+      "A prime enters a product of factorials only when at least one factorial reaches that prime."
+    ],
+    "commonMistakes": [
+      "Counting only the square-number block ignores other valid permutations; it suffices for the upper bound, but the lower bound requires controlling every block.",
+      "A very large number need not be divisible by the specified modulus."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day I, Problem 1. The count is easiest after identifying the independent squarefree blocks; computing the enormous value of $P(4489)$ is unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usajmo-2010-p2",
+    "problemId": "usajmo-2010-p2",
+    "finalAnswer": "$\\boxed{x_i=2i\\quad(1\\le i\\le n-1)}$.",
+    "shortExplanation": "Adjoin $0$ and work modulo $2n$. The complementary-pair condition supplies negatives, and the sum condition supplies addition. The resulting subgroup has exactly $n$ elements, so it consists of the even residues.",
+    "detailedSteps": [
+      "Let $S=\\{x_1,\\ldots,x_{n-1}\\}$. Positivity and $x_i+x_{n-i}=2n$ show that $S\\subset\\{1,\\ldots,2n-1\\}$ and that $2n-a\\in S$ whenever $a\\in S$. Define $H=\\{0\\}\\cup S$ modulo $2n$.",
+      "If $a,b\\in S$ and $a+b<2n$, the stated sum condition gives $a+b\\in S$. If $a+b=2n$, their sum is $0$ modulo $2n$. If $a+b>2n$, then $$0<(2n-a)+(2n-b)=4n-a-b<2n.$$ This value belongs to $S$, so its complement $a+b-2n$ belongs to $S$ as well. Thus $H$ is closed under addition and negatives.",
+      "Here is an elementary description of this subgroup. Let $d$ be its smallest positive representative. Repeatedly subtracting $d$ from any representative leaves a remainder in $H$ between $0$ and $d-1$, so the remainder must be $0$. The same argument applied to $2n$ shows that $d\\mid2n$. Conversely all multiples of $d$ belong to $H$ by repeated addition. Hence $|H|=2n/d$.",
+      "Since $H$ has $n$ elements, $2n/d=n$ and $d=2$. The increasing sequence is therefore $x_i=2i$. To check existence, these values satisfy $x_i+x_{n-i}=2n$, and any sum below $2n$ is $2(i+j)=x_{i+j}$. This also covers $i=j$ and $n=2$."
+    ],
+    "keyIdeas": [
+      "Use complementary pairs to turn truncated addition into addition modulo a fixed integer.",
+      "A finite cyclic subgroup is determined by its smallest positive representative."
+    ],
+    "commonMistakes": [
+      "Closure for sums below $2n$ alone does not justify a subgroup: sums above $2n$ must also be addressed.",
+      "The indices in the sum condition may be equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day I, Problem 2. The essential step is converting the source conditions into a closed set of residues. The subgroup argument above is proved directly, so no group theory theorem needs to be assumed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usajmo-2010-p3",
+    "problemId": "usajmo-2010-p3",
+    "finalAnswer": "$\\boxed{\\text{acute angle}(PQ,RS)=\\tfrac12\\angle XOZ}$.",
+    "shortExplanation": "The right angles at $X$ and $Z$ make the two projection diagonals reflected copies of the chords from those vertices to $Y$. In their line directions, the contribution from $Y$ cancels, leaving half the central angle from $X$ to $Z$.",
+    "detailedSteps": [
+      "After a similarity and, if necessary, a reflection, take the circle to be the unit circle with $A=(-1,0)$ and $B=(1,0)$ on its upper semicircle. Write the central arguments of $X,Y,Z$ as $\\alpha,\\beta,\\gamma$. The convex order in the source gives $$\\pi>\\alpha>\\beta>\\gamma>0.$$",
+      "By Thales, $AX\\perp BX$. Decompose the vector $Y-X$ along these perpendicular lines. Its component along $XB$ is $Q-X$, and its component along $XA$ is $P-X$. Therefore $Q-P$ is obtained by reflecting $Y-X$ across $XB$. Likewise $S-R$ is the reflection of $Y-Z$ across $ZB$. The diagonals are nonzero because $Y$ differs from both $X$ and $Z$.",
+      "All following line directions are understood modulo $\\pi$. A chord between central arguments $u,v$ has direction $(u+v)/2-\\pi/2$ modulo $\\pi$. In particular, $XB$ has direction $\\alpha/2-\\pi/2$, while $XY$ has direction $(\\alpha+\\beta)/2-\\pi/2$. Reflection across a line of direction $\\theta$ sends direction $\\phi$ to $2\\theta-\\phi$, so $$\\operatorname{dir}(PQ)=\\frac{\\alpha-\\beta}{2}-\\frac\\pi2\\pmod\\pi.$$",
+      "Applying the same calculation at $Z$ gives $$\\operatorname{dir}(RS)=\\frac{\\gamma-\\beta}{2}-\\frac\\pi2\\pmod\\pi.$$ The difference is $(\\alpha-\\gamma)/2$, which lies strictly between $0$ and $\\pi/2$. It is the acute angle of the two lines. The central angle $\\angle XOZ$ is $\\alpha-\\gamma$, completing the proof."
+    ],
+    "keyIdeas": [
+      "Orthogonal projections onto perpendicular lines form a reflected diagonal.",
+      "Directed line angles make the shared dependence on the middle point cancel."
+    ],
+    "commonMistakes": [
+      "Treating a line direction as an oriented ray can introduce an unwanted supplement.",
+      "The perpendicular feet are defined on lines; the proof must not require them to lie on the corresponding segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day I, Problem 3. The original source prints no diagram. The proof keeps the semicircle order explicit so the computed angle is the acute angle required, rather than merely an equality modulo a straight angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usajmo-2010-p4",
+    "problemId": "usajmo-2010-p4",
+    "finalAnswer": "Existence holds for every $n\\ge0$; the construction below uses the odd values $\\boxed{m\\in\\{35,3,51\\}}$ according to $n\\bmod3$.",
+    "shortExplanation": "Three integer triangles have square-root areas with powers of $2$ equal to $0,1,2$. Scaling their horizontal coordinates by $4$ multiplies their areas by $4^3$, increasing that power by $3$. These constructions cover every nonnegative exponent.",
+    "detailedSteps": [
+      "For three distinct abscissae $a<b<c$, the coordinate determinant gives the area on $y=x^2$ as $$\\frac{(b-a)(c-a)(c-b)}2.$$ In particular, the vertices with abscissae $0,1,c$ have area $c(c-1)/2$.",
+      "Take the following three base choices: $$\\begin{array}{c|c|c|c}r&c_r&\\text{area}&m_r\\\\\\hline0&50&35^2&35\\\\1&9&6^2=(2\\cdot3)^2&3\\\\2&289&204^2=(4\\cdot51)^2&51\\end{array}$$ Each $m_r$ is odd.",
+      "Write $n=3q+r$, with $q\\ge0$ and $r\\in\\{0,1,2\\}$, and put $T=4^q$. Use the three vertices $$(0,0),\\quad(T,T^2),\\quad(c_rT,c_r^2T^2).$$ They are distinct integer points on the specified parabola.",
+      "Every abscissa difference is multiplied by $T$, so the area is multiplied by $T^3=2^{6q}$. Its value is therefore $$2^{6q}(2^rm_r)^2=(2^{3q+r}m_r)^2=(2^nm_r)^2.$$ This is the required area, with $m=m_r$ odd."
+    ],
+    "keyIdeas": [
+      "The area determinant on a parabola is a product of three abscissa differences.",
+      "Use one base example in each residue class, then a scaling operation that advances the exponent by three."
+    ],
+    "commonMistakes": [
+      "Scaling both coordinates by the same factor would generally move the points off the specified parabola.",
+      "A construction for some exponents does not establish all exponents; the three residue classes must all be covered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day II, Problem 4. The assertion asks for existence, so an explicit family is enough. The odd number need not be the smallest possible one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usajmo-2010-p5",
+    "problemId": "usajmo-2010-p5",
+    "finalAnswer": "Use $\\boxed{1006}$ cyclic shifts on the first $1006$ positions, leaving the remaining positions fixed.",
+    "shortExplanation": "A permutation must send at least one of the first $1006$ positions to a value among the first $1006$, since the complementary set has only $1004$ values. One of the cyclic shifts agrees at that position.",
+    "detailedSteps": [
+      "Let $R=\\{1,\\ldots,1006\\}$. For each $t\\in\\{0,\\ldots,1005\\}$ define $$\\sigma_t(i)=\\begin{cases}1+((i-1+t)\\bmod1006),&1\\le i\\le1006,\\\\i,&1007\\le i\\le2010.\\end{cases}$$ Each $\\sigma_t$ permutes $R$, fixes its complement, and is therefore a permutation of all $2010$ values. The $1006$ permutations are distinct.",
+      "Now let $\\pi$ be any permutation. The $1006$ values $\\pi(i)$ for $i\\in R$ are distinct. They cannot all lie in the $1004$-element complement of $R$, so there is an $i\\in R$ with $\\pi(i)\\in R$.",
+      "Choose the unique shift $t\\equiv\\pi(i)-i\\pmod{1006}$ with $0\\le t\\le1005$. Then $\\sigma_t(i)=\\pi(i)$. The two permutations intersect at position $i$, exactly as defined in the source. Thus this family meets every permutation."
+    ],
+    "keyIdeas": [
+      "A subset larger than half the positions must have an image back inside itself.",
+      "Cyclic shifts realize every possible value at every position of the chosen block."
+    ],
+    "commonMistakes": [
+      "Cyclically shifting all 2010 positions only 1006 times does not give this pigeonhole argument.",
+      "Intersection means equal values in the same position, rather than merely using common values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day II, Problem 5. The family is deliberately built on a block larger than half the total size. The question asks for a sufficient family; this proof makes no unsupported optimality claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usajmo-2010-p6",
+    "problemId": "usajmo-2010-p6",
+    "finalAnswer": "**No: the six stated lengths cannot all be integers.**",
+    "shortExplanation": "Integral lengths force the hypotenuse, and hence the inradius, to be rational. The two incenter distances then make both acute half-angle sines rational. Since those half-angles sum to $45^\\circ$, this would force $\\sqrt2$ to be rational.",
+    "detailedSteps": [
+      "Suppose all six lengths are integers. Write $AB=c$, $AC=b$, $BC=a$ and $AD=d$. The positive numbers $b,c$ are integers and $a^2=b^2+c^2$. The two internal angle bisectors meet at the incenter $I$, which lies between $B$ and $D$. Therefore $BD=BI+ID$ is an integer. The right triangle $ABD$ gives $d^2=BD^2-c^2$, a rational number.",
+      "The angle-bisector theorem gives $$d=\\frac{bc}{a+c}=\\frac{c(a-c)}b.$$ Squaring and using $a^2=b^2+c^2$ yields $$d^2=\\frac{c^2}{b^2}(b^2+2c^2-2ac).$$ All quantities here except possibly $a$ are rational, and $b,c>0$, so $a$ must also be rational.",
+      "The inradius is $r=(b+c-a)/2$, hence positive and rational. Dropping perpendiculars from $I$ to the legs produces right triangles with $$u=\\sin\\frac B2=\\frac r{BI},\\qquad v=\\sin\\frac C2=\\frac r{CI}.$$ Both $u$ and $v$ are positive rational numbers.",
+      "Put $\\alpha=B/2$ and $\\beta=C/2$. Since $B+C=\\pi/2$, we have $\\alpha+\\beta=\\pi/4$. Thus $$\\sqrt2\\,v=\\cos\\alpha-\\sin\\alpha,\\qquad\\cos\\alpha=u+\\sqrt2\\,v.$$",
+      "Using $\\cos^2\\alpha+\\sin^2\\alpha=1$ gives $$1=2u^2+2v^2+2\\sqrt2\\,uv.$$ Since $uv>0$, this would express $\\sqrt2=(1-2u^2-2v^2)/(2uv)$ as a rational number, a contradiction. The assumed integer configuration is impossible."
+    ],
+    "keyIdeas": [
+      "Derive rationality of the hypotenuse instead of assuming it.",
+      "The incenter converts lengths into half-angle sines.",
+      "A positive irrational coefficient cannot disappear in the half-angle identity."
+    ],
+    "commonMistakes": [
+      "Integer legs do not by themselves imply an integer or rational hypotenuse.",
+      "A numerical search for integer examples cannot prove impossibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Day II, Problem 6. The argument already reaches a contradiction without using the assumed integrality of $IE$. This strengthens the obstruction and does not omit a required case; all configurations satisfying the source would satisfy the smaller set of assumptions used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

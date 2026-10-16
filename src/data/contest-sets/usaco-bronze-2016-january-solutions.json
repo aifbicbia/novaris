@@ -1,0 +1,99 @@
+[
+  {
+    "finalAnswer": "Print the final-minus-initial populations of the three upper suffixes: $\\Delta S+\\Delta G+\\Delta P$, then $\\Delta G+\\Delta P$, then $\\Delta P$. These count crossings into Silver, Gold and Platinum respectively.",
+    "shortExplanation": "Look at everyone at or above a division boundary. Nobody already above that boundary moves below it. Every increase in that group therefore corresponds to one promotion across the boundary, including promotions by newly registered Bronze participants.",
+    "detailedSteps": [
+      "Let $\\Delta S$, $\\Delta G$ and $\\Delta P$ be the changes in the three higher division populations. For the Gold-to-Platinum boundary, the only way to increase the Platinum population is to cross into it, so the answer is $\\Delta P$.",
+      "For the Silver-to-Gold boundary, combine Gold and Platinum. Moving from Gold to Platinum stays inside this combined group and does not affect its population. Its increase, $\\Delta G+\\Delta P$, is exactly the number crossing from Silver.",
+      "For the Bronze-to-Silver boundary, combine all three higher divisions. Promotions within that group do not change its total. The increase $\\Delta S+\\Delta G+\\Delta P$ counts every entry from Bronze, including a participant who continues upward during the same contest.",
+      "Compute the three quantities from top to bottom with a running sum, then print them in the required bottom-to-top order. Read both Bronze counts as well, even though they are not needed in these suffix calculations. New registrations can change the total population, so comparing Bronze totals alone would lose necessary information.",
+      "The upper-group argument proves every output: existing members cannot leave the group downward, and all new members must cross its lower boundary. For valid source populations each crossing count is nonnegative. The largest upper suffix can increase by $3\\times10^6$; the reference uses 64-bit integers.",
+      "There are always four divisions. Reading the data, forming three running sums and writing three lines take O(1) time and O(1) auxiliary space. This version uses the historical promote.in and promote.out files.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\nint main() {\n    std::ifstream in(\"promote.in\");\n    std::ofstream out(\"promote.out\");\n    std::array<long long, 4> before{}, after{};\n    for (int i = 0; i < 4; ++i) in >> before[i] >> after[i];\n    std::array<long long, 3> answer{};\n    long long crossing = 0;\n    for (int i = 3; i >= 1; --i) {\n        crossing += after[i] - before[i];\n        answer[i - 1] = crossing;\n    }\n    for (long long value : answer) out << value << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Count movement across a boundary rather than changes in one division.",
+      "Internal movement cancels when neighboring divisions are combined.",
+      "A participant promoted several levels crosses several distinct boundaries."
+    ],
+    "commonMistakes": [
+      "Using the Silver population change alone, which misses people who entered Silver and later left it for Gold.",
+      "Assuming the total number of participants is fixed even though newcomers begin in Bronze.",
+      "Printing the running sums in the reverse order."
+    ],
+    "alternativeMethods": [
+      "Use the local balance equations. If $b,s,g$ are the numbers promoted across the three boundaries, then $\\Delta P=g$, $\\Delta G=s-g$ and $\\Delta S=b-s$. Solving these equations from the top gives the same three answers."
+    ],
+    "difficultyNotes": "Introductory accounting: the essential observation is that a higher-division group has only one entry boundary. The coding is short once this invariant is identified.",
+    "id": "solution-usaco-bronze-2016-january-p1",
+    "problemId": "usaco-bronze-2016-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Try every starting bale, simulate its time-ordered chain reaction, and print the largest explosion count. The reference runs in $O(N^3)$ time and $O(N)$ auxiliary space.",
+    "shortExplanation": "An explosion only affects the next time layer. A queue records when each newly reached bale will explode; processing the queue in that order prevents an already-triggered bale from being given an artificial later, larger blast.",
+    "detailedSteps": [
+      "Fix one launch bale. Mark it scheduled and place an event with radius 1 in a queue. The set of scheduled bales includes both those already exploded and those waiting for their specified next time step.",
+      "Pop a queued bale at coordinate $x$ with radius $r$. Scan all positions $y$. If a bale is not yet scheduled and $|y-x|\\le r$, mark it immediately and append its event with radius $r+1$. Count that newly scheduled bale once.",
+      "Queue radii are nondecreasing: an event appends only events for the following layer. Consequently a first discovery is an earliest possible triggering time. Marking at discovery prevents two explosions in the same layer from adding the same bale twice.",
+      "Induct over the explosion layers. The first queued event is the specified initial blast. If one layer agrees with the source process, its scans discover precisely the untouched bales reached by that layer, and schedule precisely the next simultaneous layer. Thus the final scheduled set is the source chain reaction. Each bale appears in the queue at most once, so the simulation terminates.",
+      "Repeat for every bale as the launch point and keep the largest count. The source permits landing on an existing bale; every such choice is tried, so the maximum is attained rather than estimated.",
+      "For one launch there are at most $N$ queue events, each scanning $N$ positions: $O(N^2)$ time. Trying $N$ launches gives $O(N^3)$ time and $O(N)$ extra space. With $N\\le100$, at most one million target scans suffice. Coordinates are at most $10^9$ and are stored in 64-bit integers. Input order does not matter, and sorting is unnecessary.",
+      "The C++17 reference reads angry.in and writes angry.out. The queue radius starts at 1; an empty next layer ends the reaction rather than allowing a stationary bale to build up a larger radius.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <queue>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"angry.in\");\n    std::ofstream out(\"angry.out\");\n    int n;\n    in >> n;\n    std::vector<long long> position(n);\n    for (long long &value : position) in >> value;\n    int best = 0;\n    for (int start = 0; start < n; ++start) {\n        std::vector<bool> scheduled(n, false);\n        std::queue<std::pair<int, int>> events;\n        scheduled[start] = true;\n        events.push({start, 1});\n        int count = 1;\n        while (!events.empty()) {\n            auto [here, radius] = events.front();\n            events.pop();\n            for (int next = 0; next < n; ++next) {\n                if (!scheduled[next] && std::llabs(position[next] - position[here]) <= radius) {\n                    scheduled[next] = true;\n                    events.push({next, radius + 1});\n                    ++count;\n                }\n            }\n        }\n        best = std::max(best, count);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Breadth-first order preserves the explosion time.",
+      "Schedule a bale only at its first discovery.",
+      "The small Bronze limit permits an exact simulation for every starting position."
+    ],
+    "commonMistakes": [
+      "Growing the radius repeatedly after a chain reaction has stopped.",
+      "Allowing a bale to explode again when reached by a later blast.",
+      "Using depth-first discovery without checking earliest time, which can assign the wrong blast radius.",
+      "Confusing this Bronze task with the same-name Silver or Gold problems."
+    ],
+    "alternativeMethods": [
+      "Maintain a whole frontier for each time step. Build the next frontier from all current explosions, then update the touched set simultaneously. This literal simulation gives the same result and the same cubic overall time bound; it is also an independent way to test the queue implementation."
+    ],
+    "difficultyNotes": "Intermediate simulation. Distances are simple; the main challenge is faithfully preserving simultaneous time layers and the one-explosion rule.",
+    "id": "solution-usaco-bronze-2016-january-p2",
+    "problemId": "usaco-bronze-2016-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print the smallest time gap between consecutive visits to any cell, or $-1$ if there are no revisits. Use one-unit simulation and a most-recent-visit map.",
+    "shortExplanation": "Every return to a cell limits the regrowth time by the elapsed time since its latest mowing. The tightest of those limits is both necessary and sufficient. Record the starting cell at time zero and inspect every step, not just instruction endpoints.",
+    "detailedSteps": [
+      "Begin at $(0,0)$ and store its mowing time as $0$. Let $t$ count individual moves. Expand each direction-and-length statement into unit steps, updating the cell coordinates and incrementing $t$ after each step.",
+      "If the new cell last appeared at time $s$, its grass is available again at $s+x$. The source allows arriving at exactly that time, so the requirement is $t\\ge s+x$, or $x\\le t-s$. Reduce the running answer to this gap, then store $t$ as the new latest visit time.",
+      "For each cell with visit times $t_0<t_1<\\cdots$, all necessary bounds are $x\\le t_i-t_{i-1}$. The map supplies precisely $t_{i-1}$ at each return, so every required bound is collected.",
+      "Taking the minimum is necessary because exceeding any recorded gap would mean returning before that cell regrows. It is sufficient because a value no larger than every recorded gap guarantees regrowth before every repeated visit. If no gap was ever recorded, no cell repeats and the specified result is -1.",
+      "Do not omit intermediate cells or the initial cell. Either can supply the tightest constraint. Replacing a cell\u2019s timestamp after every arrival is also essential; later returns are measured from the most recent mowing, not the first one.",
+      "If the route has $L$ unit moves, there are at most $L+1$ visited cells. The original bounds give $L\\le1000$, coordinates in $[-1000,1000]$ and visit times at most $1000$. A deterministic ordered map gives $O(L\\log(L+1)+N)$ time and $O(L)$ space. Every finite result is at most 1000, so 1001 is a safe unset sentinel in this implementation.",
+      "The reference keeps the historical mowing.in and mowing.out interface. It stores timestamps by the complete coordinate pair, so different cells are never confused.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <map>\n#include <utility>\nint main() {\n    std::ifstream in(\"mowing.in\");\n    std::ofstream out(\"mowing.out\");\n    int n;\n    in >> n;\n    int x = 0, y = 0, clock = 0, answer = 1001;\n    std::map<std::pair<int, int>, int> previous;\n    previous[{0, 0}] = 0;\n    for (int i = 0; i < n; ++i) {\n        char direction;\n        int steps;\n        in >> direction >> steps;\n        const int dx = (direction == 'E') - (direction == 'W');\n        const int dy = (direction == 'N') - (direction == 'S');\n        for (int step = 0; step < steps; ++step) {\n            x += dx;\n            y += dy;\n            ++clock;\n            const std::pair<int, int> cell{x, y};\n            auto found = previous.find(cell);\n            if (found != previous.end()) answer = std::min(answer, clock - found->second);\n            previous[cell] = clock;\n        }\n    }\n    out << (answer == 1001 ? -1 : answer) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The limiting condition is a consecutive revisit gap.",
+      "Regrowth at the boundary time permits equality.",
+      "Unit-step expansion preserves intermediate-cell constraints."
+    ],
+    "commonMistakes": [
+      "Starting the visit map empty and missing a later return to the initial cell.",
+      "Recording only the final cell of each direction statement.",
+      "Keeping a cell\u2019s first timestamp forever instead of updating its latest mowing.",
+      "Subtracting one from a gap even though the grass reappears at the stated boundary time."
+    ],
+    "alternativeMethods": [
+      "Store the entire time-ordered cell trace, compare all equal-cell pairs, and take the smallest time difference. A nonconsecutive difference is a sum of positive consecutive gaps, so it cannot give a stricter bound than the consecutive visits. This quadratic method is a useful literal checker at the source\u2019s small maximum route length."
+    ],
+    "difficultyNotes": "Intermediate bookkeeping. Correct modeling of unit time, the origin and equality at regrowth matters more than the choice of container.",
+    "id": "solution-usaco-bronze-2016-january-p3",
+    "problemId": "usaco-bronze-2016-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

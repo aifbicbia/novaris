@@ -1,0 +1,580 @@
+[
+  {
+    "id": "solution-fma-2011-p1",
+    "problemId": "fma-2011-p1",
+    "finalAnswer": "$\\boxed{28.5\\,\\mathrm{km}\\ \\text{approximately}}$ (choice A)",
+    "shortExplanation": "The average includes the twenty-minute stop. Solving for the riding time gives a distance of about $28.5\\,\\mathrm{km}$.",
+    "detailedSteps": [
+      "Let $t$ be the time spent riding, in hours. The distance is $d=22.0t\\,\\mathrm{km}$, while the total elapsed time is $t+1/3$ hours.",
+      "The average-speed condition is $17.5=22.0t/(t+1/3)$. Thus $(22.0-17.5)t=17.5/3$ and $t=35/27\\,\\mathrm h$.",
+      "Therefore $d=22.0(35/27)=28.52\\,\\mathrm{km}$, closest to $28.5\\,\\mathrm{km}$."
+    ],
+    "keyIdeas": [
+      "Include the stationary interval in the elapsed time."
+    ],
+    "commonMistakes": [
+      "Using the stopping time as the entire journey time, or averaging the moving and stationary speeds without their durations."
+    ],
+    "alternativeMethods": [
+      "Write $d/17.5-d/22.0=1/3$ hours and solve directly for $d$."
+    ],
+    "difficultyNotes": "The stated riding speed is constant apart from the single stop.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p2",
+    "problemId": "fma-2011-p2",
+    "finalAnswer": "$\\boxed{|\\bar a_{\\rm I}|=|\\bar a_{\\rm II}|=|\\bar a_{\\rm III}|}$ (choice E)",
+    "shortExplanation": "All three endpoint velocity changes have magnitude $2\\,\\mathrm{m/s}$ over ten seconds, so their average-acceleration magnitudes are equal.",
+    "detailedSteps": [
+      "Average acceleration is $\\bar a=[v(10)-v(0)]/(10\\,\\mathrm s)$.",
+      "The first graph changes from $0$ to $-2\\,\\mathrm{m/s}$; the second changes from $2$ to $0\\,\\mathrm{m/s}$; the third changes from $0$ to $2\\,\\mathrm{m/s}$.",
+      "Their signed average accelerations are $-0.2$, $-0.2$ and $+0.2\\,\\mathrm{m/s^2}$. Each magnitude is $0.2\\,\\mathrm{m/s^2}$."
+    ],
+    "keyIdeas": [
+      "Use the endpoints for an average over the whole interval."
+    ],
+    "commonMistakes": [
+      "Comparing the steepest individual graph segments instead of the ten-second average."
+    ],
+    "alternativeMethods": [
+      "Integrate each piecewise acceleration over the interval; dividing its net velocity change by the common elapsed time gives the same result."
+    ],
+    "difficultyNotes": "The question asks for magnitudes, so the positive change in the third graph has the same rank as the negative changes in the first two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p3",
+    "problemId": "fma-2011-p3",
+    "finalAnswer": "$\\boxed{v_{\\max,\\rm I}>v_{\\max,\\rm II}=v_{\\max,\\rm III}}$ (choice D)",
+    "shortExplanation": "The first object reaches $4\\,\\mathrm{m/s}$, whereas the other two reach only $2\\,\\mathrm{m/s}$.",
+    "detailedSteps": [
+      "Inspect the largest magnitude of velocity over the full ten seconds, rather than only the final value.",
+      "Object I reaches $+4\\,\\mathrm{m/s}$. Its later negative velocity reaches magnitude only $2\\,\\mathrm{m/s}$.",
+      "Objects II and III each attain $2\\,\\mathrm{m/s}$. Therefore I ranks above the equal values for II and III."
+    ],
+    "keyIdeas": [
+      "Read the largest absolute ordinate of each velocity plot."
+    ],
+    "commonMistakes": [
+      "Treating the largest negative velocity as automatically the largest magnitude."
+    ],
+    "alternativeMethods": [
+      "Compare the maximum positive and maximum negative magnitudes separately for each object, then keep the larger one."
+    ],
+    "difficultyNotes": "A maximum velocity magnitude is a speed; signs do not determine the rank.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p4",
+    "problemId": "fma-2011-p4",
+    "finalAnswer": "$\\boxed{d_{\\rm II}>d_{\\rm I}>d_{\\rm III}}$ (choice B)",
+    "shortExplanation": "The areas under the speed graphs are $19$, $18$ and $14\\,\\mathrm m$ for II, I and III respectively.",
+    "detailedSteps": [
+      "Distance is $\\int_0^{10}|v(t)|\\,dt$, so the portion below the velocity axis contributes positively.",
+      "For I, the two positive triangles contribute $8+8=16\\,\\mathrm m$, and the final negative-velocity triangle adds $2\\,\\mathrm m$, giving $18\\,\\mathrm m$.",
+      "For II, the nine-second rectangle contributes $18\\,\\mathrm m$ and the final triangle contributes $1\\,\\mathrm m$, giving $19\\,\\mathrm m$.",
+      "For III, the initial triangle contributes $6\\,\\mathrm m$ and the later rectangle contributes $8\\,\\mathrm m$, giving $14\\,\\mathrm m$. Thus II is greatest, followed by I and III."
+    ],
+    "keyIdeas": [
+      "Add geometric areas using speed rather than signed velocity."
+    ],
+    "commonMistakes": [
+      "Subtracting the last triangle of object I and thereby finding displacement instead of distance."
+    ],
+    "alternativeMethods": [
+      "Split every graph at its breakpoints and at any zero crossing, then integrate the absolute value on each segment."
+    ],
+    "difficultyNotes": "The second object's downward ramp starts at nine seconds; the third object's plateau starts at six seconds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p5",
+    "problemId": "fma-2011-p5",
+    "finalAnswer": "$\\boxed{0.006\\,\\mathrm{m/s^2}\\ \\text{approximately}}$ (choice B)",
+    "shortExplanation": "Using an orbital radius of $1.5\\times10^{11}\\,\\mathrm m$ and a one-year period gives about $0.006\\,\\mathrm{m/s^2}$.",
+    "detailedSteps": [
+      "Uniform circular motion has acceleration $a=4\\pi^2r/T^2$.",
+      "Convert the stated radius to $r=1.5\\times10^{11}\\,\\mathrm m$ and use $T\\approx365.25(86400)=3.156\\times10^7\\,\\mathrm s$.",
+      "Then $a\\approx4\\pi^2(1.5\\times10^{11})/(3.156\\times10^7)^2=5.95\\times10^{-3}\\,\\mathrm{m/s^2}$, closest to $0.006\\,\\mathrm{m/s^2}$."
+    ],
+    "keyIdeas": [
+      "Use the orbital period and convert kilometres into metres."
+    ],
+    "commonMistakes": [
+      "Setting acceleration to zero because speed is constant, while ignoring the changing direction of velocity."
+    ],
+    "alternativeMethods": [
+      "First calculate $v=2\\pi r/T$ and then use $a=v^2/r$."
+    ],
+    "difficultyNotes": "This uses the source's circular-orbit approximation and an ordinary one-year period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p6",
+    "problemId": "fma-2011-p6",
+    "finalAnswer": "$\\boxed{v_c/4}$ (choice E)",
+    "shortExplanation": "The moving child's momentum is shared by a total mass four times as large, giving a final speed $v_c/4$.",
+    "detailedSteps": [
+      "Let the moving child have mass $m$. The initially stationary child has mass $3m$.",
+      "Neglect external horizontal impulse during the collision. Momentum conservation gives $mv_c=(m+3m)v_f$.",
+      "Hence $v_f=v_c/4$, in the initial direction of motion."
+    ],
+    "keyIdeas": [
+      "Include both masses in the moving pair after they hold together."
+    ],
+    "commonMistakes": [
+      "Dividing by the other child's mass alone instead of by the total mass."
+    ],
+    "alternativeMethods": [
+      "The center of mass moves at $mv_c/(4m)$ and retains that velocity through the internal collision."
+    ],
+    "difficultyNotes": "This is a completely inelastic collision; kinetic energy need not be conserved.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p7",
+    "problemId": "fma-2011-p7",
+    "finalAnswer": "$\\boxed{K_f/K_i=2}$ (choice B)",
+    "shortExplanation": "Without external torque, angular momentum stays fixed. Doubling angular speed at fixed angular momentum doubles rotational kinetic energy.",
+    "detailedSteps": [
+      "Conservation of angular momentum gives $I_i\\omega_0=I_f(2\\omega_0)$, so $I_f=I_i/2$.",
+      "The initial energy is $K_i=\\tfrac12I_i\\omega_0^2$. The final energy is $K_f=\\tfrac12(I_i/2)(2\\omega_0)^2$.",
+      "Thus $K_f=2K_i$. The skater's internal work supplies the increased energy."
+    ],
+    "keyIdeas": [
+      "Conserve angular momentum rather than kinetic energy."
+    ],
+    "commonMistakes": [
+      "Squaring the speed change while assuming the moment of inertia remains constant."
+    ],
+    "alternativeMethods": [
+      "Use $K=L\\omega/2$; with $L$ fixed, the energy ratio equals the angular-speed ratio."
+    ],
+    "difficultyNotes": "External torque is negligible during the arm motion, as specified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p8",
+    "problemId": "fma-2011-p8",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice D)",
+    "shortExplanation": "The floating block requires only three fifths of the maximum buoyancy. Two fifths of its volume remains above the water.",
+    "detailedSteps": [
+      "Full submersion gives buoyancy $50\\,\\mathrm N=\\rho_wgV$.",
+      "While floating, buoyancy equals the block's weight: $30\\,\\mathrm N=\\rho_wgV_{\\rm sub}$.",
+      "Therefore $V_{\\rm sub}/V=30/50=3/5$, and the fraction above the surface is $1-3/5=2/5$."
+    ],
+    "keyIdeas": [
+      "Compare the floating buoyancy with the fully submerged buoyancy."
+    ],
+    "commonMistakes": [
+      "Reporting the submerged fraction as the above-water fraction."
+    ],
+    "alternativeMethods": [
+      "The density ratio is three fifths, so a freely floating rigid block displaces that fraction of its own volume."
+    ],
+    "difficultyNotes": "Use a rigid block and neglect surface tension. For a block of constant cross section, the same fraction applies to its height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p9",
+    "problemId": "fma-2011-p9",
+    "finalAnswer": "$\\boxed{2.3\\,\\mathrm m}$ (choice C)",
+    "shortExplanation": "The opposing end pulls produce an internal tension of $3\\,\\mathrm N$, giving a $0.3\\,\\mathrm m$ extension and a total length of $2.3\\,\\mathrm m$.",
+    "detailedSteps": [
+      "Cut the spring mentally at any cross section. Either half must balance the $3\\,\\mathrm N$ pull at its own end, so the internal spring tension is $3\\,\\mathrm N$.",
+      "Hooke's law gives extension $\\Delta\\ell=F/k=3.0/10=0.30\\,\\mathrm m$.",
+      "Adding the natural length gives $\\ell=2.0+0.30=2.3\\,\\mathrm m$."
+    ],
+    "keyIdeas": [
+      "The tension equals either balanced end pull, rather than their sum."
+    ],
+    "commonMistakes": [
+      "Adding the two opposite forces and using $6\\,\\mathrm N$ as the spring tension."
+    ],
+    "alternativeMethods": [
+      "Hold one end fixed and apply the same force at the other; the balanced spring extension is identical."
+    ],
+    "difficultyNotes": "Use a light ideal spring in quasistatic equilibrium within its linear range.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p10",
+    "problemId": "fma-2011-p10",
+    "finalAnswer": "$\\boxed{\\text{increase the swing amplitude}}$ (choice C)",
+    "shortExplanation": "A larger finite swing amplitude increases the exact pendulum period. The other listed changes either shorten it or leave it unchanged.",
+    "detailedSteps": [
+      "The exact period is $T=4\\sqrt{L/g}\\,K(\\sin(\\theta_0/2))$, where $K$ is the complete elliptic integral and $\\theta_0$ is the swing amplitude.",
+      "For $0<\\theta_0<\\pi$, increasing amplitude increases the elliptic-integral factor. The familiar small-angle period is only its limiting approximation.",
+      "Shortening $L$ decreases the period; changing mass has no effect. Upward elevator acceleration increases effective gravity and decreases the period, while constant elevator velocity leaves effective gravity unchanged."
+    ],
+    "keyIdeas": [
+      "Distinguish the exact finite-amplitude pendulum from its small-angle approximation."
+    ],
+    "commonMistakes": [
+      "Using amplitude independence from linearized motion as an exact statement for every swing."
+    ],
+    "alternativeMethods": [
+      "The small-amplitude expansion is $T\\approx2\\pi\\sqrt{L/g}(1+\\theta_0^2/16+\\cdots)$, which already shows the increase."
+    ],
+    "difficultyNotes": "Use a simple point-mass pendulum without friction. An arbitrarily small amplitude increase has a small but positive finite-amplitude effect.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p11",
+    "problemId": "fma-2011-p11",
+    "finalAnswer": "$\\boxed{\\text{graph C}}$ (choice C)",
+    "shortExplanation": "The water level rises at the same steady rate before and after sinking, but falls during the rapid sinking transition because the cup stops displacing water according to its full weight.",
+    "detailedSteps": [
+      "Let the tub's cross-sectional area be $A$, the pouring rate be $Q$, and the cup's metal mass and volume be $m_c$ and $V_c$. While floating, the cup must displace $m_c/\\rho_w+Qt$, so the level rises at rate $Q/A$.",
+      "Once the open cup is filled and fully submerged, the poured water belongs to the total water volume, while only the metal itself excludes water. The level contribution is then $(Qt+V_c)/A$.",
+      "At the sinking transition, the change is $(V_c-m_c/\\rho_w)/A<0$ for a metal cup that sinks. The filling rate afterward is again $Q/A$.",
+      "The plot must therefore have an abrupt downward change and equal positive slopes on either side, as in graph C."
+    ],
+    "keyIdeas": [
+      "Account separately for the poured water and the material volume of the submerged cup."
+    ],
+    "commonMistakes": [
+      "Treating the cup's whole outer volume as excluded water after its open interior fills."
+    ],
+    "alternativeMethods": [
+      "Compare the pre-sink displaced volume set by buoyancy with the post-sink displaced metal volume at the same poured-water amount."
+    ],
+    "difficultyNotes": "Use an open cup without trapped air, no overflow, a constant tub area and a sinking transition short compared with the filling time. The vertical step represents that ideal rapid transition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p12",
+    "problemId": "fma-2011-p12",
+    "finalAnswer": "$\\boxed{F}$ (choice C)",
+    "shortExplanation": "Each rod balances the same pairwise gravitational attraction as in the two-ball arrangement, so each compression is $F$.",
+    "detailedSteps": [
+      "The identical rods establish the same center-to-center separation for each identical pair of balls. Each pair attraction therefore has the same magnitude as in the two-ball system.",
+      "At a triangle vertex, two gravitational forces act along the two adjacent sides. The two rods push outward along those same side directions.",
+      "Setting each outward rod compression equal to $F$ balances both components. The resultant of the two attractions has magnitude $\\sqrt3F$, but that is not the force in either individual rod."
+    ],
+    "keyIdeas": [
+      "Balance forces along the matching pairwise interaction directions."
+    ],
+    "commonMistakes": [
+      "Assigning the combined gravitational resultant to each rod separately."
+    ],
+    "alternativeMethods": [
+      "Resolve forces along a symmetry axis through a vertex; both the gravitational and rod resultants carry the same geometric factor."
+    ],
+    "difficultyNotes": "Neglect rod masses and use identical spherical balls with equal separations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p13",
+    "problemId": "fma-2011-p13",
+    "finalAnswer": "$\\boxed{60^\\circ}$ (choice D)",
+    "shortExplanation": "The rolling direction changes when the thread line passes through the ground contact. With inner radius half the outer radius, the boundary angle is sixty degrees.",
+    "detailedSteps": [
+      "Let $R=2\\,\\mathrm{cm}$ be the rolling radius and $r=1\\,\\mathrm{cm}$ the winding radius. Take rightward acceleration as positive, and use the wound-thread branch shown in the source.",
+      "Translation gives $Ma=-T\\cos\\theta+f$. Rotation and no slip give $-Ia/R=-Tr+Rf$.",
+      "Eliminating friction yields $a=TR(r-R\\cos\\theta)/(I+MR^2)$. Therefore rightward acceleration requires $\\cos\\theta<r/R=1/2$.",
+      "At $\\theta=60^\\circ$ the acceleration vanishes, and smaller angles roll left. Thus the largest angle that does not roll right is $60^\\circ$."
+    ],
+    "keyIdeas": [
+      "Combine the thread torque with the rolling constraint."
+    ],
+    "commonMistakes": [
+      "Deciding the direction from the horizontal pull alone, or assuming friction always points opposite the center's velocity."
+    ],
+    "alternativeMethods": [
+      "Take moments about the ground contact: the thread moment changes sign when $R\\cos\\theta=r$."
+    ],
+    "difficultyNotes": "The apparatus retains contact and has sufficient static friction for no slip. The boundary is independent of its positive total mass and moment of inertia.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p14",
+    "problemId": "fma-2011-p14",
+    "finalAnswer": "$\\boxed{\\text{diagram D}}$ (choice D)",
+    "shortExplanation": "Equal impact-time spacing requires heights proportional to consecutive squares. Diagram D has the required square-height sequence.",
+    "detailedSteps": [
+      "For release from rest, a weight at height $h$ arrives after $t=\\sqrt{2h/g}$.",
+      "A regular sequence of arrival times proportional to $0,1,2,3,4$ therefore requires heights proportional to $0,1,4,9,16$.",
+      "Reading upward from the floor, diagram D follows that pattern. The other diagrams do not produce equal spacing after taking the square root of their heights."
+    ],
+    "keyIdeas": [
+      "Apply the square-root relation between drop height and fall time."
+    ],
+    "commonMistakes": [
+      "Selecting equally spaced heights, which produce increasingly short time differences."
+    ],
+    "alternativeMethods": [
+      "Consecutive square heights have successive upward separations in the ratio one, three, five and seven; inspect those gaps instead."
+    ],
+    "difficultyNotes": "Neglect drag and string mass, release all weights from rest, and treat the strings as slack once a lower weight lands. The weight initially at floor level need not count as a falling impact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p15",
+    "problemId": "fma-2011-p15",
+    "finalAnswer": "$\\boxed{140\\,\\mathrm{N/m}\\ \\text{approximately}}$ (choice D)",
+    "shortExplanation": "Taking the stated displacement as the oscillation amplitude, energy conservation gives a spring constant of about $140\\,\\mathrm{N/m}$.",
+    "detailedSteps": [
+      "Use the intended amplitude $A=2.0\\,\\mathrm{cm}=0.020\\,\\mathrm m$ and mass $m=100\\,\\mathrm g=0.100\\,\\mathrm{kg}$.",
+      "At equilibrium the speed is maximal, so $\\tfrac12kA^2=\\tfrac12mv_{\\max}^2$.",
+      "Thus $k=mv_{\\max}^2/A^2=(0.100)(0.75)^2/(0.020)^2=140.6\\,\\mathrm{N/m}$, closest to $140\\,\\mathrm{N/m}$."
+    ],
+    "keyIdeas": [
+      "Measure spring energy from the displaced equilibrium."
+    ],
+    "commonMistakes": [
+      "Leaving centimetres or grams unconverted, or adding gravitational energy again after shifting to equilibrium."
+    ],
+    "alternativeMethods": [
+      "Use $v_{\\max}=\\omega A$ and $k=m\\omega^2$."
+    ],
+    "difficultyNotes": "The stated displacement is treated as the amplitude, as for a displacement and release from rest. An unspecified additional initial velocity would require more information.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p16",
+    "problemId": "fma-2011-p16",
+    "finalAnswer": "$\\boxed{\\frac{Mg}{\\mu_s}}$ (choice E)",
+    "shortExplanation": "The railing's static friction must support the full load. Its limiting value is the friction coefficient times the applied normal force, giving a minimum force $Mg/\\mu_s$.",
+    "detailedSteps": [
+      "The loaded lower rope carries tension $Mg$, while the loose upper segment carries no supporting tension.",
+      "The book is frictionless, so it supplies normal force but no tangential support. The available upward friction at the railing is at most $\\mu_sN$.",
+      "Preventing slip requires $\\mu_sN\\ge Mg$. The minimum normal force Jonathan must apply is therefore $N_{\\min}=Mg/\\mu_s$."
+    ],
+    "keyIdeas": [
+      "Balance the tension difference with the available rail friction."
+    ],
+    "commonMistakes": [
+      "Using kinetic friction for a rope that is still stationary, or adding a second friction contribution from the frictionless book."
+    ],
+    "alternativeMethods": [
+      "Draw a free-body diagram of the short rope segment clamped between the book and railing."
+    ],
+    "difficultyNotes": "The rope and book are massless, and the requested force is the minimum static-support threshold.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p17",
+    "problemId": "fma-2011-p17",
+    "finalAnswer": "$\\boxed{\\sqrt{2gh\\left(1-\\frac{\\mu_k}{\\mu_s}\\right)}}$ (choice D)",
+    "shortExplanation": "The unchanged normal force now provides weaker kinetic friction. The load accelerates downward at $g(1-\\mu_k/\\mu_s)$, giving the stated square-root speed.",
+    "detailedSteps": [
+      "The original limiting normal force is $N=Mg/\\mu_s$. Once sliding begins, the upward friction is $\\mu_kN=(\\mu_k/\\mu_s)Mg$.",
+      "The downward acceleration is therefore $a=g(1-\\mu_k/\\mu_s)$.",
+      "In the limit of the barely perceptible jump, neglect the extra launch and impact speed. Falling from the defined height $h$ gives $v=\\sqrt{2ah}=\\sqrt{2gh(1-\\mu_k/\\mu_s)}$."
+    ],
+    "keyIdeas": [
+      "Keep the applied normal force fixed while changing the friction law."
+    ],
+    "commonMistakes": [
+      "Placing the acceleration reduction outside the square root rather than inside the speed-squared relation."
+    ],
+    "alternativeMethods": [
+      "Work-energy gives $\\tfrac12Mv^2=Mgh-\\mu_kNh$, with the same result."
+    ],
+    "difficultyNotes": "The source defines the initial height with lowercase h and prints uppercase H in the options; both denote that same fall height here. The result uses the small-jump limit and ideal constant kinetic friction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p18",
+    "problemId": "fma-2011-p18",
+    "finalAnswer": "$\\boxed{0.18\\,\\mathrm m\\ \\text{approximately}}$ (choice A)",
+    "shortExplanation": "Friction removes energy on both the descent and the ascent. The resulting maximum rise is about $0.18\\,\\mathrm m$.",
+    "detailedSteps": [
+      "Take the block initially at rest. Down the first ramp, friction removes $\\mu_kmgh_1\\cot\\theta$, leaving bottom kinetic energy $mgh_1(1-\\mu_k\\cot\\theta)$.",
+      "Up the second ramp, reaching height $h_2$ costs $mgh_2$ in potential energy and $\\mu_kmgh_2\\cot\\theta$ in frictional work.",
+      "Hence $h_2=h_1(1-\\mu_k\\cot\\theta)/(1+\\mu_k\\cot\\theta)$. With $h_1=1.0\\,\\mathrm m$, $\\mu_k=0.40$ and $\\theta=30^\\circ$, $h_2=0.1815\\,\\mathrm m$, closest to $0.18\\,\\mathrm m$."
+    ],
+    "keyIdeas": [
+      "Apply the same kinetic-friction loss on each ramp."
+    ],
+    "commonMistakes": [
+      "Including friction only during the ascent, or using vertical height as the frictional path length."
+    ],
+    "alternativeMethods": [
+      "Calculate the bottom speed from the downhill acceleration, then use the uphill deceleration to find its stopping distance."
+    ],
+    "difficultyNotes": "Use the intended initial-rest model and a smooth, energy-preserving connection between ramps apart from the listed friction. Here the downhill gravitational component exceeds kinetic friction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p19",
+    "problemId": "fma-2011-p19",
+    "finalAnswer": "$\\boxed{1.57\\,\\mathrm s}$ (choice C)",
+    "shortExplanation": "Both Cartesian coordinates oscillate with angular frequency $2\\,\\mathrm{rad/s}$. They first vanish together again after half a period, at $1.57\\,\\mathrm s$.",
+    "detailedSteps": [
+      "The force is $\\mathbf F=-k\\mathbf r$ with $k=8.00\\,\\mathrm{N/m}$ and $m=2.00\\,\\mathrm{kg}$, so $\\omega=\\sqrt{k/m}=2.00\\,\\mathrm{rad/s}$.",
+      "Starting at the origin, the motion is $x=(3/\\omega)\\sin\\omega t$ and $y=(4/\\omega)\\sin\\omega t$. The two coordinates have the same phase.",
+      "The first nonzero common return occurs at $\\omega t=\\pi$, giving $t=\\pi/2=1.5708\\,\\mathrm s$."
+    ],
+    "keyIdeas": [
+      "An origin-to-origin return can occur before the complete phase-space period."
+    ],
+    "commonMistakes": [
+      "Using the full period, or treating the two coordinates as oscillators with different frequencies."
+    ],
+    "alternativeMethods": [
+      "The trajectory lies along the initial velocity direction, reducing the problem to a one-dimensional oscillator along that line."
+    ],
+    "difficultyNotes": "The given restoring force is isotropic and acts throughout the motion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p20",
+    "problemId": "fma-2011-p20",
+    "finalAnswer": "$\\boxed{2.50\\,\\mathrm m}$ (choice B)",
+    "shortExplanation": "The initial speed is $5\\,\\mathrm{m/s}$. Dividing by the angular frequency gives a maximum distance of $2.50\\,\\mathrm m$.",
+    "detailedSteps": [
+      "The speed at the origin is $v_0=\\sqrt{3^2+4^2}=5.00\\,\\mathrm{m/s}$.",
+      "The isotropic restoring potential is $U=\\tfrac12kr^2$. At the farthest point the velocity is zero, so $\\tfrac12mv_0^2=\\tfrac12kr_{\\max}^2$.",
+      "Therefore $r_{\\max}=v_0\\sqrt{m/k}=v_0/\\omega=5/2=2.50\\,\\mathrm m$."
+    ],
+    "keyIdeas": [
+      "Combine the Cartesian velocities before finding the radial amplitude."
+    ],
+    "commonMistakes": [
+      "Adding the separate coordinate amplitudes instead of taking their Euclidean norm."
+    ],
+    "alternativeMethods": [
+      "The component amplitudes are $1.5$ and $2.0\\,\\mathrm m$, so the radial amplitude is $\\sqrt{1.5^2+2.0^2}=2.5\\,\\mathrm m$."
+    ],
+    "difficultyNotes": "The origin is the equilibrium point and the initial potential energy is zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p21",
+    "problemId": "fma-2011-p21",
+    "finalAnswer": "$\\boxed{n=\\frac{2V_m\\sigma}{3RT}}$ (choice A)",
+    "shortExplanation": "The thin spherical wall's pressure limit is proportional to thickness divided by radius. At fixed metal volume, its pressure-volume product is $2V_m\\sigma/3$, giving the gas capacity.",
+    "detailedSteps": [
+      "Let the wall thickness be $t\\ll r$. Cutting the sphere into hemispheres gives pressure force $p\\pi r^2$ balanced by tensile force $2\\pi rt\\sigma$, so $p=2\\sigma t/r$.",
+      "To leading order in thickness, $V_m=4\\pi r^2t$ and the gas volume is $V=4\\pi r^3/3$.",
+      "Their product is $pV=(2/3)\\sigma V_m$, independent of radius. The ideal-gas law then gives $n=pV/(RT)=2V_m\\sigma/(3RT)$."
+    ],
+    "keyIdeas": [
+      "Use a hemisphere force balance and eliminate wall thickness with fixed metal volume."
+    ],
+    "commonMistakes": [
+      "Applying the cylindrical hoop-stress relation to a sphere, or keeping gas volume fixed when changing the vessel radius."
+    ],
+    "alternativeMethods": [
+      "Dimensional analysis requires the combination $V_m\\sigma/(RT)$ to have units of moles; the spherical wall balance supplies the factor $2/3$."
+    ],
+    "difficultyNotes": "Use a uniform thin wall, negligible deformation and external pressure small compared with the near-burst pressure. The formula is the leading thin-wall, high-pressure idealization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p22",
+    "problemId": "fma-2011-p22",
+    "finalAnswer": "$\\boxed{\\text{between II and III}}$ (choice D)",
+    "shortExplanation": "Power is torque times angular speed. It is still increasing at the torque peak, so its maximum occurs later, before the strong torque drop near III.",
+    "detailedSteps": [
+      "At rotation rate $n$ in RPM, $P=\\tau(n)(2\\pi n/60)$. The relevant graph is therefore the product $n\\tau(n)$.",
+      "At the torque maximum II, $\\tau'(n)=0$ while $\\tau>0$. Thus $d[n\\tau]/dn=\\tau+n\\tau'>0$: power has not yet reached its maximum.",
+      "The torque drops enough near III that the endpoint product is lower than at II. Before II, both torque and rotation rate increase. The maximum product therefore lies between II and III."
+    ],
+    "keyIdeas": [
+      "Maximize torque times RPM rather than torque alone."
+    ],
+    "commonMistakes": [
+      "Selecting II simply because its torque is greatest."
+    ],
+    "alternativeMethods": [
+      "Sketch or compare the areas of rectangles with width equal to RPM and height equal to torque; the largest product falls beyond the torque peak."
+    ],
+    "difficultyNotes": "The source curve gives a qualitative location, rather than a precise maximizing RPM; the engine cannot operate outside the shown interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p23",
+    "problemId": "fma-2011-p23",
+    "finalAnswer": "$\\boxed{\\text{an elliptical arc approximated locally by a parabola}}$ (choice E)",
+    "shortExplanation": "The exact bound trajectory outside a spherical planet is an elliptical arc. The ordinary projectile parabola is its local approximation when the flight is short compared with the planet's radius.",
+    "detailedSteps": [
+      "Outside a uniform spherical planet, the gravitational field is exactly the same central inverse-square field as that of a point mass at its center.",
+      "A bound, nonradial orbit in this field is an ellipse. Striking the surface ends the flight but does not change the gravitational trajectory before impact.",
+      "Elementary projectile motion replaces the changing central field with an approximately uniform, parallel gravitational acceleration. For a sufficiently short, low flight, the elliptical arc is consequently very close to a parabola."
+    ],
+    "keyIdeas": [
+      "Distinguish an exact central-force orbit from a local constant-gravity approximation."
+    ],
+    "commonMistakes": [
+      "Assuming the spherical-planet point-mass field fails near the outside surface, or that eventual ground contact invalidates the preceding orbital arc."
+    ],
+    "alternativeMethods": [
+      "Expand the central gravitational acceleration over a small displacement compared with the planetary radius; its leading constant term produces the projectile parabola."
+    ],
+    "difficultyNotes": "The parabolic approximation requires short flight length and small altitude compared with the planetary radius. A very high bound flight would require the full orbital description; an exactly radial launch is the degenerate limiting case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p24",
+    "problemId": "fma-2011-p24",
+    "finalAnswer": "$\\boxed{\\text{width has little leading effect; larger radius increases power}}$ (choice A)",
+    "shortExplanation": "The total friction force is set by weight and coefficient. In a thin ring it acts at approximately radius $R$, so power is approximately $\\mu W\\omega R$.",
+    "detailedSteps": [
+      "A normal-force element $dN$ at radius $r$ contributes friction torque $d\\tau=\\mu r\\,dN$. The total normal load is the fixed weight $W$.",
+      "All radii lie between $R$ and $R+\\delta$, so $\\mu WR\\le\\tau\\le\\mu W(R+\\delta)$. With $\\delta\\ll R$, the leading torque is $\\tau\\approx\\mu WR$.",
+      "At fixed angular rate, $P=\\omega\\tau$. A width increase that stays within the thin-ring regime has only a small relative effect of order $\\delta/R$, while increasing $R$ increases the required power."
+    ],
+    "keyIdeas": [
+      "Separate total normal load from the frictional lever arm."
+    ],
+    "commonMistakes": [
+      "Assuming a larger contact area necessarily lowers Coulomb friction at the same total load."
+    ],
+    "alternativeMethods": [
+      "For uniform pressure, the exact effective radius is $\\tfrac23[(R+\\delta)^3-R^3]/[(R+\\delta)^2-R^2]\\approx R+\\delta/2$, confirming the same leading conclusion."
+    ],
+    "difficultyNotes": "The width effect is small, rather than exactly zero. Keep the bearing thin and use a friction coefficient independent of local pressure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2011-p25",
+    "problemId": "fma-2011-p25",
+    "finalAnswer": "$\\boxed{\\mu_k=\\frac12\\tan\\theta}$ (choice C)",
+    "shortExplanation": "The thin hollow cylinder accelerates at half the frictionless downhill acceleration. Matching the sliding block's acceleration gives $\\mu_k=\\tan\\theta/2$.",
+    "detailedSteps": [
+      "For the thin-walled cylinder, $I=mR^2$. Rolling without slip gives $a_c=g\\sin\\theta/[1+I/(mR^2)]=g\\sin\\theta/2$.",
+      "The block's sliding acceleration is $a_b=g(\\sin\\theta-\\mu_k\\cos\\theta)$.",
+      "Both start at rest and traverse the same ramp distance, so equal arrival times require $a_b=a_c$. This gives $\\mu_k\\cos\\theta=\\sin\\theta/2$, or $\\mu_k=\\tan\\theta/2$."
+    ],
+    "keyIdeas": [
+      "Equal constant-acceleration travel times imply equal accelerations here."
+    ],
+    "commonMistakes": [
+      "Using a solid-cylinder moment of inertia, or applying kinetic friction to the rolling cylinder."
+    ],
+    "alternativeMethods": [
+      "Compute each bottom speed from the same distance and its energy balance; equal times from rest require equal speeds and give the same coefficient."
+    ],
+    "difficultyNotes": "Use $0<\\theta<90^\\circ$, a thin-walled rolling cylinder with sufficient static friction, and a block with constant kinetic friction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

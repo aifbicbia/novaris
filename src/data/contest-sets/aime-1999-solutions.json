@@ -1,0 +1,326 @@
+[
+  {
+    "id": "solution-aime-1999-p1",
+    "problemId": "aime-1999-p1",
+    "finalAnswer": "$\\boxed{029}$",
+    "shortExplanation": "The common difference is divisible by six, and $(5,11,17,23,29)$ attains the lower bound.",
+    "detailedSteps": [
+      "Let the first term be p and the positive integer common difference be d. If d is odd, at least two of the five terms are even, which is impossible because only 2 is an even prime. Thus d is even, and the first term cannot be 2 because all five terms would then be even.",
+      "If d is not divisible by 3, at least one term is divisible by 3. That term would have to be 3; since the terms are increasing odd primes, it must be the first. But the fourth term $3+3d$ would then also be divisible by 3 and greater than 3, a contradiction.",
+      "Therefore $6\\mid d$. The first term cannot be 3, as every term would then be divisible by 3, so $p\\ge5$ and the fifth term is at least $5+4(6)=29$. The progression $5,11,17,23,29$ consists entirely of primes, so 29 is attained."
+    ],
+    "keyIdeas": [
+      "Congruence restrictions on five primes in arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Allowing an odd common difference simply because the first term could be 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Five terms force a repeated obstruction modulo three unless the difference is divisible by three.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p2",
+    "problemId": "aime-1999-p2",
+    "finalAnswer": "$\\boxed{118}$",
+    "shortExplanation": "The center is $(19,99)$, giving slope $99/19$.",
+    "detailedSteps": [
+      "The midpoint of either diagonal is $O=(19,99)$. A line through O divides the parallelogram into congruent polygons by a 180-degree rotation about O.",
+      "Any congruent division must have equal areas. For a fixed line direction, the parallel line through O has equal areas; shifting it in either direction strictly transfers a positive-area strip from one side to the other whenever the line cuts the interior. Therefore no parallel line away from O can have equal areas.",
+      "Thus the required line through the origin must also pass through O. Its slope is $99/19$, already reduced, giving $m+n=118$."
+    ],
+    "keyIdeas": [
+      "A centrally symmetric polygon is bisected through its center"
+    ],
+    "commonMistakes": [
+      "Assuming a line parallel to a side through the origin will necessarily bisect the region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Central symmetry proves congruence, while strip monotonicity proves the center is necessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p3",
+    "problemId": "aime-1999-p3",
+    "finalAnswer": "$\\boxed{038}$",
+    "shortExplanation": "The qualifying integers are 1,9,10,18.",
+    "detailedSteps": [
+      "Write $n^2-19n+99=k^2$ with k nonnegative. Multiplying by 4 and completing the square gives $(2k)^2-(2n-19)^2=35$.",
+      "Thus $u=2k-(2n-19)$ and $v=2k+(2n-19)$ are positive odd integers with $uv=35$. They are positive because $2k>|2n-19|$. The unordered factor pairs are $(1,35)$ and $(5,7)$.",
+      "Allowing both orders gives $2n-19=(v-u)/2=\\pm17,\\pm1$, hence $n=1,18,9,10$. They give squares 81,81,9,9 respectively. Their sum is 38."
+    ],
+    "keyIdeas": [
+      "Completing the square produces finitely many factor pairs"
+    ],
+    "commonMistakes": [
+      "Losing the smaller n solutions when taking only one order of each factor pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive constant bounds the factor choices and proves completeness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p4",
+    "problemId": "aime-1999-p4",
+    "finalAnswer": "$\\boxed{185}$",
+    "shortExplanation": "Its area is $2(43/99)=86/99$.",
+    "detailedSteps": [
+      "The source figure\u2019s octagon is the intersection of the two unit squares. Both squares and their intersection are invariant under a 90-degree rotation about their common center O. Thus the four sides belonging to either one square are equal within their own group.",
+      "Reflection in an axis halfway between corresponding symmetry axes of the two squares interchanges the squares. It therefore preserves their intersection and exchanges those two groups of boundary sides. All eight sides are consequently equal to $AB=43/99$.",
+      "Each side lies on a side-line of a unit square centered at O, so its perpendicular distance from O is 1/2. Joining O to successive octagon vertices partitions the octagon into eight triangles, each with area $\\frac12(43/99)(1/2)$.",
+      "The total area is $2(43/99)=86/99$, already reduced. Therefore $m+n=185$."
+    ],
+    "keyIdeas": [
+      "The intersection octagon has equal sides and fixed apothem"
+    ],
+    "commonMistakes": [
+      "Assuming equal angles merely because the octagon has equal sides; the area uses only the side lengths and common center distance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reflection exchanging the squares establishes equality of the alternating boundary sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p5",
+    "problemId": "aime-1999-p5",
+    "finalAnswer": "$\\boxed{223}$",
+    "shortExplanation": "The possible values are 2 and $9k-2$ for positive integers k.",
+    "detailedSteps": [
+      "In adding 2 to x, let k be the number of decimal carries. Before carrying, the digit sum increases by 2; each carry replaces ten units in one position by one in the next and reduces the digit sum by 9. Thus $S(x+2)-S(x)=2-9k$.",
+      "The case $k=0$ gives value 2 and is attainable, for example with $x=1$. For every $k\\ge1$, taking $x=10^k-1$ produces exactly k carries and gives $T(x)=9k-2$. These values are all distinct and none equals 2.",
+      "The bound is $9k-2\\le1999$, or $k\\le222$. Including the no-carry value, there are $222+1=223$ possible values."
+    ],
+    "keyIdeas": [
+      "Digit-sum changes record the number of carries"
+    ],
+    "commonMistakes": [
+      "Counting inputs x rather than distinct attainable values of T."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Carries change digit sum by a fixed amount independent of their position.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p6",
+    "problemId": "aime-1999-p6",
+    "finalAnswer": "$\\boxed{314}$",
+    "shortExplanation": "The transformed region is an annular sector of area $100\\pi$.",
+    "detailedSteps": [
+      "In the original coordinates, the quadrilateral is bounded by the rays $y=x/3,y=3x$ and the lines $x+y=1200,x+y=2400$. The supplied vertices are the four intersections.",
+      "Under $u=\\sqrt x,v=\\sqrt y$, the two lines become circles $u^2+v^2=1200,2400$. The rays become $v=u/\\sqrt3$ and $v=\\sqrt3u$, with polar angles 30 and 60 degrees.",
+      "The map is a continuous bijection of the first quadrant with continuous inverse $(u,v)\\mapsto(u^2,v^2)$, so the enclosed image is precisely the annular sector between those bounds. Its area is $\\frac12(2400-1200)(\\pi/6)=100\\pi$.",
+      "The bounds $3.14<\\pi<3.15$ put this strictly between 314 and 315, so its greatest integer is 314."
+    ],
+    "keyIdeas": [
+      "Square-root coordinates turn lines into circles and rays"
+    ],
+    "commonMistakes": [
+      "Joining the transformed vertices with straight segments instead of mapping the entire boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The transformation changes the cross-boundaries into concentric circular arcs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p7",
+    "problemId": "aime-1999-p7",
+    "finalAnswer": "$\\boxed{650}$",
+    "shortExplanation": "Exactly 350 labels receive a number of advances not divisible by four.",
+    "detailedSteps": [
+      "A switch with label $2^x3^y5^z$ advances once for every processed label divisible by it. There are $(10-x)(10-y)(10-z)$ such labels, including itself once. After four advances it returns to A, so the desired product must be divisible by 4.",
+      "The three factors independently take all values 1 through 10. A product fails this divisibility precisely when its total exponent of two is zero or one.",
+      "For exponent zero, all factors are odd, giving $5^3=125$. For exponent one, exactly one factor is among 2,6,10 and the others are odd, giving $3(3)(5^2)=225$.",
+      "The remaining $1000-125-225=650$ switches finish at A. The processing order is immaterial because these advances simply add modulo 4."
+    ],
+    "keyIdeas": [
+      "A product\u2019s power of two determines the final switch position"
+    ],
+    "commonMistakes": [
+      "Counting the switch\u2019s own processing twice or counting divisors rather than multiples for its total advances."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four-position cycle turns the count into a divisibility question modulo four.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p8",
+    "problemId": "aime-1999-p8",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The three area fractions sum to $1/36+1/4+1/9=7/18$.",
+    "detailedSteps": [
+      "Within $x+y+z=1$, the region $x\\ge a,y\\ge b$ is a translated, uniformly scaled copy of T, with linear scale $1-a-b$, as long as this is nonnegative. Its area fraction is therefore $(1-a-b)^2$.",
+      "The pairs of source thresholds give scales $1-1/2-1/3=1/6$, $1-1/3-1/6=1/2$, and $1-1/6-1/2=1/3$. Their area fractions are $1/36,1/4,1/9$.",
+      "All three inequalities can hold simultaneously only at $(1/2,1/3,1/6)$, because the thresholds already sum to one. This point and the shared boundaries have zero area. Hence the exactly-two region has the sum of the three pairwise areas, $7/18$.",
+      "The fraction is reduced, giving $m+n=25$."
+    ],
+    "keyIdeas": [
+      "Three pairwise threshold regions in a simplex"
+    ],
+    "commonMistakes": [
+      "Subtracting a positive-area triple overlap even though the thresholds sum exactly to one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform scaling in the simplex squares the residual coordinate sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p9",
+    "problemId": "aime-1999-p9",
+    "finalAnswer": "$\\boxed{259}$",
+    "shortExplanation": "The condition gives $a=1/2$, so $b^2=255/4$.",
+    "detailedSteps": [
+      "Put $c=a+bi$. The two relevant distances for a nonzero point z are $|cz-z|=|c-1||z|$ and $|cz|=|c||z|$. Equality for every point is equivalent to $|c-1|=|c|$.",
+      "Squaring gives $(a-1)^2+b^2=a^2+b^2$, hence $a=1/2$. The prescribed modulus 8 then gives $b^2=64-1/4=255/4$.",
+      "The positive square root for b and positive a satisfy the source restrictions, and $255/4$ is reduced. Thus $m+n=259$."
+    ],
+    "keyIdeas": [
+      "Equal image distances force a real part of one half"
+    ],
+    "commonMistakes": [
+      "Equating the image\u2019s distance to the original point with the original point\u2019s distance to the origin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complex multiplication factors out the input modulus from both distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p10",
+    "problemId": "aime-1999-p10",
+    "finalAnswer": "$\\boxed{489}$",
+    "shortExplanation": "The probability is $\\binom{10}{3}(42)/\\binom{45}{4}=16/473$.",
+    "detailedSteps": [
+      "There are $\\binom{10}{2}=45$ possible segments. Choose a triangle\u2019s three vertices in $\\binom{10}{3}=120$ ways, then choose the fourth segment from the 42 not already in that triangle.",
+      "Two distinct triangles require at least five distinct segments: if they share an edge their union has five, and with less overlap it has six. Thus a four-segment selection cannot contain two triangles, so the count 120 times 42 has no double counting.",
+      "All $\\binom{45}{4}$ four-segment selections are equally likely. Their favorable fraction is $5040/148995=16/473$. Therefore $m+n=489$."
+    ],
+    "keyIdeas": [
+      "A four-edge selection contains at most one triangle"
+    ],
+    "commonMistakes": [
+      "Counting geometric crossing triangles whose corners are not among the supplied ten points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four-edge limit eliminates overlap between distinct triangle events.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p11",
+    "problemId": "aime-1999-p11",
+    "finalAnswer": "$\\boxed{177}$",
+    "shortExplanation": "The sum is $\\cot2.5^\\circ=\\tan87.5^\\circ$.",
+    "detailedSteps": [
+      "Use $2\\sin2.5^\\circ\\sin5k^\\circ=\\cos(5k-2.5)^\\circ-\\cos(5k+2.5)^\\circ$. Summing for k 1 through 35 cancels the interior cosine terms.",
+      "The result is $2\\sin2.5^\\circ\\sum_{k=1}^{35}\\sin5k^\\circ=\\cos2.5^\\circ-\\cos177.5^\\circ=2\\cos2.5^\\circ$. Thus the sum is $\\cot2.5^\\circ=\\tan87.5^\\circ$.",
+      "Tangent is one-to-one between zero and 90 degrees, so the positive source angle is uniquely $m/n=87.5=175/2$. Hence $m+n=177$."
+    ],
+    "keyIdeas": [
+      "A telescoping sine sum becomes a cotangent"
+    ],
+    "commonMistakes": [
+      "Measuring the source angles in radians or choosing a tangent-equivalent angle outside the prescribed interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The half-step product-to-sum identity cancels consecutive terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p12",
+    "problemId": "aime-1999-p12",
+    "finalAnswer": "$\\boxed{345}$",
+    "shortExplanation": "The third tangent length is $245/2$, yielding perimeter 345.",
+    "detailedSteps": [
+      "Let z be the common tangent length from C to the incircle. The other two tangent lengths are 23 from A and 27 from B. Thus the three side lengths are $50,23+z,27+z$, and the semiperimeter is $s=50+z$.",
+      "Heron\u2019s formula gives $\\Delta^2=s(23)(27)z$, while the incircle area decomposition gives $\\Delta=21s$. Cancelling the positive s yields $441(50+z)=621z$.",
+      "So $z=22050/180=245/2$, and the perimeter is $2s=2(50+245/2)=345$. The three positive tangent lengths give strict triangle inequalities, so this value defines a valid triangle with the required inradius."
+    ],
+    "keyIdeas": [
+      "Heron\u2019s formula with the three tangent lengths"
+    ],
+    "commonMistakes": [
+      "Treating AP and PB as the two remaining whole side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tangent lengths are exactly the three factors in Heron\u2019s formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p13",
+    "problemId": "aime-1999-p13",
+    "finalAnswer": "$\\boxed{742}$",
+    "shortExplanation": "The favorable outcomes number 40!, and the reduced denominator is $2^{742}$.",
+    "detailedSteps": [
+      "The forty distinct win totals must be 0 through 39. The team with 39 wins defeats all others. Remove it; the remaining teams\u2019 win totals stay 0 through 38 because each lost to the removed team. Repeating shows that every game is determined by a unique strict ranking of all forty teams.",
+      "Conversely each of the 40! rankings gives an outcome in which a higher-ranked team defeats every lower-ranked team, with forty distinct scores. These are exactly the favorable outcomes.",
+      "Using the standard independent fair-game model, there are $\\binom{40}{2}=780$ games, so the probability is $40!/2^{780}$. The exponent of two dividing 40! is $\\lfloor40/2\\rfloor+\\lfloor40/4\\rfloor+\\lfloor40/8\\rfloor+\\lfloor40/16\\rfloor+\\lfloor40/32\\rfloor=20+10+5+2+1=38$.",
+      "After reduction the denominator is $2^{780-38}=2^{742}$, so $\\log_2 n=742$."
+    ],
+    "keyIdeas": [
+      "Distinct tournament scores force a unique total ranking"
+    ],
+    "commonMistakes": [
+      "Assuming the forty score totals are independent random variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing the undefeated team proves transitivity by induction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p14",
+    "problemId": "aime-1999-p14",
+    "finalAnswer": "$\\boxed{463}$",
+    "shortExplanation": "The common angle has tangent $168/295$.",
+    "detailedSteps": [
+      "Let the common angle be omega, and write $X=\\cot A,Y=\\cot B,Z=\\cot C$, and $u=\\cot\\omega$. Since P is interior, $0<\\omega<\\min(A,B,C)$. The three concurrent rays give trig Ceva: $\\sin(A-\\omega)\\sin(B-\\omega)\\sin(C-\\omega)=\\sin^3\\omega$. This follows by applying the sine rule to the paired small triangles on each side and multiplying their side-division ratios.",
+      "Dividing by the positive sine factors gives $(u-X)(u-Y)(u-Z)=1/(\\sin A\\sin B\\sin C)$. From $A+B+C=180^\\circ$, the sine and cosine addition formulas give $XY+YZ+ZX=1$ and $1/(\\sin A\\sin B\\sin C)=X+Y+Z-XYZ$.",
+      "Put $S=X+Y+Z$. Expanding and cancelling the product XYZ yields $u^3-Su^2+u-S=0$, or $(u^2+1)(u-S)=0$. Since u is real, $u=S$.",
+      "The triangle\u2019s semiperimeter is 21 and its area is $\\sqrt{21(8)(7)(6)}=84$. By the cosine rule and $2\\Delta=bc\\sin A$, $\\cot A=(b^2+c^2-a^2)/(4\\Delta)$. Adding cyclically gives $S=(13^2+14^2+15^2)/(4\\cdot84)=295/168$.",
+      "Thus $\\tan\\omega=168/295$, reduced, and $m+n=463$. The positive angle selected is smaller than each triangle angle, so the algebra is compatible with the given interior configuration."
+    ],
+    "keyIdeas": [
+      "Trig Ceva derives the equal-angle cotangent"
+    ],
+    "commonMistakes": [
+      "Quoting the Brocard-angle formula without establishing how the supplied three equal angles lead to it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Trig Ceva and the angle-sum identities reduce the cubic to one real linear factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1999-p15",
+    "problemId": "aime-1999-p15",
+    "finalAnswer": "$\\boxed{408}$",
+    "shortExplanation": "The midpoint base has area 102 and the apex height is 12.",
+    "detailedSteps": [
+      "Call the original vertices $A=(0,0),B=(34,0),C=(16,24)$. The midpoint triangle can remain in the horizontal plane with $F=(17,0,0),E=(8,12,0),D=(25,12,0)$. Its area is one fourth of $34(24)/2=408$, hence 102.",
+      "Folding the three corner triangles makes A,B,C coincide at the pyramid apex V. Their preserved distances to the adjacent midpoints give $VF=17$, $VE=4\\sqrt{13}$ and $VD=15$: these are halves of the original side lengths 34,$8\\sqrt{13}$,30. Each distance is supplied consistently by the two corner faces meeting at that edge.",
+      "Write $V=(X,Y,H)$. Subtracting the E and D squared-distance equations gives $-34X+561=225-208=17$, so $X=16$. Subtracting the E equation from the F equation gives $-18X+24Y+81=289-208=81$, so $Y=12$.",
+      "The E equation then gives $H^2=208-(16-8)^2=144$, so the nondegenerate pyramid has height 12. The three face triangles are congruent to the original corner triangles; their common apex coordinates satisfy all hinge-endpoint distances, verifying the folded assembly.",
+      "The volume is $\\frac13(102)(12)=408$. Choosing the opposite sign of H reflects the assembly and leaves its volume unchanged."
+    ],
+    "keyIdeas": [
+      "Folded apex distances determine the pyramid height"
+    ],
+    "commonMistakes": [
+      "Using the original triangle area as the pyramid\u2019s base area rather than the midpoint triangle area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting sphere equations finds the apex\u2019s projection before solving for its height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

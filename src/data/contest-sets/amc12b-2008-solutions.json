@@ -1,0 +1,518 @@
+[
+  {
+    "id": "solution-amc12b-2008-p1",
+    "problemId": "amc12b-2008-p1",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The total ranges from ten through fifteen.",
+    "detailedSteps": [
+      "If k of the five baskets are worth three points, the total is $3k+2(5-k)=10+k$. The six integers $k=0,1,\\ldots,5$ give six different totals."
+    ],
+    "keyIdeas": [
+      "Two basketball scoring values"
+    ],
+    "commonMistakes": [
+      "Excluding the cases where all baskets have the same value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the number of three-point baskets matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p2",
+    "problemId": "amc12b-2008-p2",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The reversed diagonal sums are 50 and 54.",
+    "detailedSteps": [
+      "The reversed second row is $11,10,9,8$, and the reversed fourth row is $25,24,23,22$.",
+      "The two diagonals then total $1+10+17+22=50$ and $4+9+16+25=54$. Their positive difference is 4."
+    ],
+    "keyIdeas": [
+      "Reversing calendar rows"
+    ],
+    "commonMistakes": [
+      "Reversing columns or forgetting the fourth row reversal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the full grid from the source image.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p3",
+    "problemId": "amc12b-2008-p3",
+    "finalAnswer": "$\\boxed{400000}$ (choice C)",
+    "shortExplanation": "Pay the other twenty players the required minimum.",
+    "detailedSteps": [
+      "The other players require at least $20\\cdot15000=300000$ dollars. The remaining budget is $700000-300000=400000$.",
+      "Paying one player this amount and the others the minimum attains the bound."
+    ],
+    "keyIdeas": [
+      "A salary budget maximum"
+    ],
+    "commonMistakes": [
+      "Subtracting twenty-one minimum salaries from the maximum player budget."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum needs both a bound and an attainable allocation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p4",
+    "problemId": "amc12b-2008-p4",
+    "finalAnswer": "$\\boxed{\\frac7{24}}$ (choice D)",
+    "shortExplanation": "The desired central angle is 105 degrees.",
+    "detailedSteps": [
+      "The source places C and D on the same side of diameter AB. Thus the smaller angle COD is $180^\\circ-30^\\circ-45^\\circ=105^\\circ$.",
+      "Sector area is proportional to central angle, so the ratio is $105/360=7/24$."
+    ],
+    "keyIdeas": [
+      "A sector within one semicircle"
+    ],
+    "commonMistakes": [
+      "Adding the two given angles as the desired angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same-side condition chooses the correct sector.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p5",
+    "problemId": "amc12b-2008-p5",
+    "finalAnswer": "$\\boxed{9}$ (choice C)",
+    "shortExplanation": "The rose count is an even integer from zero to sixteen.",
+    "detailedSteps": [
+      "Let r and c be the nonnegative numbers of roses and carnations. Then $3r+2c=50$, so r is even and $0\\le r\\le16$.",
+      "The nine choices $r=0,2,\\ldots,16$ give integer nonnegative c and exhaust the bouquets."
+    ],
+    "keyIdeas": [
+      "An exact flower budget"
+    ],
+    "commonMistakes": [
+      "Requiring both flower types when the problem allows a single type."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use parity before counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p6",
+    "problemId": "amc12b-2008-p6",
+    "finalAnswer": "$\\boxed{2500}$ (choice A)",
+    "shortExplanation": "Forty-four rollovers represent 4.4 million steps.",
+    "detailedSteps": [
+      "Each rollover completes 100000 steps. The total is $44\\cdot100000+50000=4450000$.",
+      "Dividing by 1800 gives approximately 2472.22 miles, closest to 2500."
+    ],
+    "keyIdeas": [
+      "A rolling step counter"
+    ],
+    "commonMistakes": [
+      "Using 99999 as the length of a complete counter cycle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The transition to zero is the hundred-thousandth step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p7",
+    "problemId": "amc12b-2008-p7",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The two inputs to the operation are equal.",
+    "detailedSteps": [
+      "Because $(x-y)^2=(y-x)^2$, their difference is zero. Applying the defined operation squares this zero, giving 0."
+    ],
+    "keyIdeas": [
+      "An operation on equal squares"
+    ],
+    "commonMistakes": [
+      "Squaring x and y separately before applying the operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal inputs make this operation vanish.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p8",
+    "problemId": "amc12b-2008-p8",
+    "finalAnswer": "$\\boxed{\\frac1{10}}$ (choice C)",
+    "shortExplanation": "The points lie at four fifths and nine tenths of the segment.",
+    "detailedSteps": [
+      "Normalize $AD=1$. From $AB=4BD$, we obtain $AB=4/5$. From $AC=9CD$, we obtain $AC=9/10$.",
+      "Since $9/10>4/5$, the length BC is $9/10-4/5=1/10$."
+    ],
+    "keyIdeas": [
+      "Two internal division points"
+    ],
+    "commonMistakes": [
+      "Using the ratios as fractions of AD without including both pieces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the whole segment before comparing positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p9",
+    "problemId": "amc12b-2008-p9",
+    "finalAnswer": "$\\boxed{\\sqrt{10}}$ (choice A)",
+    "shortExplanation": "A radius-five circle admits coordinates $A=(4,3),B=(4,-3),C=(5,0)$.",
+    "detailedSteps": [
+      "Place the circle center at the origin and the chord vertically. Its midpoint is three units from each endpoint, so its distance from the center is $\\sqrt{5^2-3^2}=4$.",
+      "The minor-arc midpoint is $(5,0)$, while one endpoint is $(4,3)$. Thus $AC=\\sqrt{1^2+3^2}=\\sqrt{10}$."
+    ],
+    "keyIdeas": [
+      "A chord to a minor-arc midpoint"
+    ],
+    "commonMistakes": [
+      "Choosing the midpoint of the major arc instead."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minor arc determines which radius direction to use.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p10",
+    "problemId": "amc12b-2008-p10",
+    "finalAnswer": "$\\boxed{900}$ (choice B)",
+    "shortExplanation": "The rate equation leaves one ninetieth of the total equal to ten.",
+    "detailedSteps": [
+      "For N bricks, the separate rates are $N/9$ and $N/10$ bricks per hour. The actual combined rate is $N/9+N/10-10=N/5$.",
+      "Thus $N(19/90-18/90)=10$, giving $N=900$."
+    ],
+    "keyIdeas": [
+      "A fixed loss in combined work"
+    ],
+    "commonMistakes": [
+      "Subtracting ten bricks from the total instead of ten per hour."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the loss in the same units as the rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p11",
+    "problemId": "amc12b-2008-p11",
+    "finalAnswer": "$\\boxed{4000}$ (choice A)",
+    "shortExplanation": "One eighth of the volume means one half of the height.",
+    "detailedSteps": [
+      "The exposed top is a cone similar to the whole mountain. If its height fraction is t, its volume fraction is $t^3=1/8$, so $t=1/2$.",
+      "The exposed height is 4000 feet, leaving ocean depth $8000-4000=4000$ feet."
+    ],
+    "keyIdeas": [
+      "Subcone volume and depth"
+    ],
+    "commonMistakes": [
+      "Using the volume fraction directly as the height fraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Volume scales cubically under similarity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p12",
+    "problemId": "amc12b-2008-p12",
+    "finalAnswer": "$\\boxed{4015}$ (choice B)",
+    "shortExplanation": "The first n terms sum to n squared.",
+    "detailedSteps": [
+      "If the mean of the first n terms is n, their sum is $S_n=n^2$. Therefore $a_n=S_n-S_{n-1}=n^2-(n-1)^2=2n-1$.",
+      "At $n=2008$, the term is 4015."
+    ],
+    "keyIdeas": [
+      "Recovering terms from prefix means"
+    ],
+    "commonMistakes": [
+      "Confusing the requested term with the mean or total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adjacent prefix sums isolate one term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p13",
+    "problemId": "amc12b-2008-p13",
+    "finalAnswer": "$\\boxed{\\frac{12-5\\sqrt3}{36}}$ (choice B)",
+    "shortExplanation": "The strip area is $1/3$, and its part inside the triangle is $5\\sqrt3/36$.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(1,0),D=(0,1)$ and $E=(1/2,\\sqrt3/2)$. Distance from AD is x, so the relevant strip is $1/3\\le x\\le2/3$.",
+      "The triangle height at x is $\\sqrt3\\min(x,1-x)$. By symmetry its strip area is $2\\sqrt3\\int_{1/3}^{1/2}x\\,dx=5\\sqrt3/36$.",
+      "The square strip area is 1/3, so the area outside the triangle is $(12-5\\sqrt3)/36$."
+    ],
+    "keyIdeas": [
+      "A vertical strip outside an equilateral triangle"
+    ],
+    "commonMistakes": [
+      "Subtracting the entire equilateral triangle instead of only its strip portion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integral here is simply the area of two trapezoids.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p14",
+    "problemId": "amc12b-2008-p14",
+    "finalAnswer": "$\\boxed{\\pi}$ (choice C)",
+    "shortExplanation": "The circumference identity gives $\\log b/\\log a=\\pi$.",
+    "detailedSteps": [
+      "The requested real logarithm requires $a>0,a\\ne1,b>0$, and a positive radius forces $a>1$. Hence $\\log_{10}(a^2)=2\\log_{10}a$.",
+      "Using circumference equals $2\\pi$ times radius gives $4\\log_{10}b=4\\pi\\log_{10}a$. The change-of-base ratio is therefore $\\log_a b=\\pi$."
+    ],
+    "keyIdeas": [
+      "Logarithms as radius and circumference"
+    ],
+    "commonMistakes": [
+      "Dropping one of the powers inside the logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometry identity fixes a logarithm ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p15",
+    "problemId": "amc12b-2008-p15",
+    "finalAnswer": "$\\boxed{1}$ (choice C)",
+    "shortExplanation": "Four corner gaps are triangles with unit sides and angle thirty degrees.",
+    "detailedSteps": [
+      "At each original square corner, the square occupies 90 degrees and four constructed equilateral triangles occupy $4\\cdot60=240$ degrees. The remaining outward gap has angle 30 degrees.",
+      "Its two bounding segments each have length 1. The convex hull joins their far endpoints, filling a triangle of area $(1/2)\\sin30^\\circ=1/4$.",
+      "The other boundary pieces between these four gaps are straight convex sides: the three outer vertices along each side construction are collinear. Thus these four triangles are exactly the region added by the convex hull.",
+      "The total added area is $4\\cdot1/4=1$."
+    ],
+    "keyIdeas": [
+      "Convex gaps in an equilateral construction"
+    ],
+    "commonMistakes": [
+      "Counting overlaps between the square and triangles despite the stated disjoint interiors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The local angle count identifies the four missing convex wedges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p16",
+    "problemId": "amc12b-2008-p16",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The factor equation is (a-4)(b-4)=8.",
+    "detailedSteps": [
+      "The painted area is $(a-2)(b-2)$ and equals half the floor area. Expanding $2(a-2)(b-2)=ab$ gives $(a-4)(b-4)=8$.",
+      "A genuine painted rectangle has $a,b>2$. The positive ordered factor pairs with $b>a$ are $(1,8)$ and $(2,4)$, giving $(a,b)=(5,12),(6,8)$.",
+      "Negative factor pairs cannot have both dimensions greater than 2; no zero factor works. Hence there are two possibilities."
+    ],
+    "keyIdeas": [
+      "A rectangular border occupying half the area"
+    ],
+    "commonMistakes": [
+      "Using the full border width only once rather than on both ends of each dimension."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring turns the area condition into a divisor problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p17",
+    "problemId": "amc12b-2008-p17",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "The third point has y-coordinate 2008 squared minus one.",
+    "detailedSteps": [
+      "The equal-height distinct endpoints are $A=(-u,u^2),B=(u,u^2)$ with $u>0$. A right angle at either endpoint would require C to share its x-coordinate, making it the same parabola point; thus the right angle is at C.",
+      "For $C=(v,v^2)$, perpendicularity gives $(v+u)(v-u)+(v^2-u^2)^2=0$. Thus $(v^2-u^2)(1+v^2-u^2)=0$. The first factor zero is degenerate, so $v^2=u^2-1$.",
+      "The base is 2u and the altitude to it is 1, so the area is u. Therefore $u=2008$ and $y_C=2008^2-1=4032063$.",
+      "The digit sum is $4+0+3+2+0+6+3=18$."
+    ],
+    "keyIdeas": [
+      "A right triangle on a parabola"
+    ],
+    "commonMistakes": [
+      "Allowing a right angle at an endpoint without checking that C would coincide with it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right-angle factorization fixes the vertical height difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p18",
+    "problemId": "amc12b-2008-p18",
+    "finalAnswer": "$\\boxed{784}$ (choice E)",
+    "shortExplanation": "The altitude lengths to the two opposite base edges are 15 and 13.",
+    "detailedSteps": [
+      "The square base has side 14. From the face areas, the distances from E to lines AB and CD are $2(105)/14=15$ and $2(91)/14=13$.",
+      "Let h be the perpendicular pyramid height, and t the signed coordinate of its projection measured from AB toward CD. Then $h^2+t^2=225$ and $h^2+(14-t)^2=169$.",
+      "Subtracting gives $196-28t=-56$, so $t=9$ and $h^2=144$. Thus $h=12$.",
+      "The volume is $(1/3)196(12)=784$. The unconstrained projection coordinate parallel to AB has no effect on these equations."
+    ],
+    "keyIdeas": [
+      "Opposite face areas determine a pyramid height"
+    ],
+    "commonMistakes": [
+      "Assuming the apex is directly above the center of the square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use signed projection coordinates to avoid an unsupported symmetry assumption.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p19",
+    "problemId": "amc12b-2008-p19",
+    "finalAnswer": "$\\boxed{\\sqrt2}$ (choice B)",
+    "shortExplanation": "The coefficient alpha alone has modulus at least sqrt(2).",
+    "detailedSteps": [
+      "Write $\\alpha=u+iv$ and $\\gamma=p+iq$. The imaginary parts of f(1) and f(i) give $1+v+q=0$ and $-1+u+q=0$.",
+      "Thus $u=1-q,v=-1-q$, so $|\\alpha|=\\sqrt{2+2q^2}\\ge\\sqrt2$. Since $|\\gamma|\\ge0$, this is a lower bound for the sum.",
+      "Choose $q=p=0$, giving $\\alpha=1-i,\\gamma=0$. Then $f(1)=5$ and $f(i)=-3$, both real, and the modulus sum is exactly $\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Two real values of a complex polynomial"
+    ],
+    "commonMistakes": [
+      "Forgetting the contribution of multiplying alpha by i."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sharp lower bound plus a valid witness solves the optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p20",
+    "problemId": "amc12b-2008-p20",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The distinct meeting times are 200,240,260,280,320 seconds.",
+    "detailedSteps": [
+      "Take the initial walker position as 0 and truck position as 200. Cycle k begins at time 50k: the truck travels for 20 seconds, then stops for 30.",
+      "During its moving interval the truck-minus-walker gap is $200-50k+5t$, where $0\\le t\\le20$. During the stopped interval the gap begins at $300-50k$ and decreases at 5 feet per second.",
+      "Checking these linear pieces gives distinct meeting times $200,240,260,280,320$. The departure meeting at 200 and arrival meeting at 320 each belong to two adjacent pieces and are counted once.",
+      "After cycle 6 the gap is negative throughout every future moving and stopped interval, since even each arrival gap is $300-50k<0$ for $k>6$. Thus there are exactly five meetings."
+    ],
+    "keyIdeas": [
+      "Meetings during repeated drive-stop cycles"
+    ],
+    "commonMistakes": [
+      "Counting a meeting at a stop boundary twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A periodic motion model needs both travelling and stopped phases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p21",
+    "problemId": "amc12b-2008-p21",
+    "finalAnswer": "$\\boxed{\\frac{4\\sqrt3-3}{4}}$ (choice E)",
+    "shortExplanation": "The center separation requires |x-y| at most sqrt(3).",
+    "detailedSteps": [
+      "The centers are $(x,0)$ and $(y,1)$, with x and y independent uniform choices in [0,2]. Their distance squared is $(x-y)^2+1$.",
+      "Two unit circles intersect exactly when this is at most 4, hence $|x-y|\\le\\sqrt3$. In the 2-by-2 parameter square, the excluded regions are two right corner triangles with legs $2-\\sqrt3$.",
+      "The probability is $1-(2-\\sqrt3)^2/4=(4\\sqrt3-3)/4$. Tangencies have probability zero."
+    ],
+    "keyIdeas": [
+      "Circle intersection as a parameter-square region"
+    ],
+    "commonMistakes": [
+      "Using a random-point disk model instead of the specified two line segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sample space is a square of parameter pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p22",
+    "problemId": "amc12b-2008-p22",
+    "finalAnswer": "$\\boxed{\\frac{17}{28}}$ (choice E)",
+    "shortExplanation": "Count the complement in which all four empty spaces are separated.",
+    "detailedSteps": [
+      "The twelve sequential uniform parking choices make the four empty positions a uniform four-element subset of sixteen slots. There are $\\binom{16}{4}$ possible empty sets.",
+      "For a set $i_1<i_2<i_3<i_4$ with no adjacent positions, subtract $0,1,2,3$ from its entries. This is a bijection to arbitrary four-element subsets of thirteen positions, giving $\\binom{13}{4}$ failures.",
+      "The success probability is $1-\\binom{13}{4}/\\binom{16}{4}=1-715/1820=17/28$."
+    ],
+    "keyIdeas": [
+      "At least one adjacent pair of empty spaces"
+    ],
+    "commonMistakes": [
+      "Treating the remaining empty spaces as independent choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A compression bijection counts separated slots exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p23",
+    "problemId": "amc12b-2008-p23",
+    "finalAnswer": "$\\boxed{11}$ (choice A)",
+    "shortExplanation": "Summing the two prime exponents gives n(n+1) squared over two.",
+    "detailedSteps": [
+      "The divisors of $10^n=2^n5^n$ are $2^a5^b$ for $0\\le a,b\\le n$. Their logarithms are $a\\log_{10}2+b\\log_{10}5$.",
+      "Each exponent value occurs n+1 times, so the sum is $(n+1)n(n+1)(\\log_{10}2+\\log_{10}5)/2=n(n+1)^2/2$.",
+      "This strictly increasing positive-integer expression equals 792 at $n=11$, since $11\\cdot12^2/2=792$."
+    ],
+    "keyIdeas": [
+      "A sum of divisor logarithms"
+    ],
+    "commonMistakes": [
+      "Using only divisors that are powers of ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two prime factors produce a full square grid of divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p24",
+    "problemId": "amc12b-2008-p24",
+    "finalAnswer": "$\\boxed{17}$ (choice C)",
+    "shortExplanation": "The x-coordinate of A_n is n(n+1)/3.",
+    "detailedSteps": [
+      "The source curve is $y=\\sqrt{x}$; its radical is essential. Let consecutive base coordinates be u and v. The third vertex has $x=(u+v)/2$ and height $(\\sqrt3/2)|v-u|$. Therefore $3(v-u)^2=2(u+v)$.",
+      "With $u=0$, the distinct next base point is $v=2/3$. Inductively, if $u=(n-1)n/3$, the two roots for v are $n(n+1)/3$ and $(n-2)(n-1)/3$. The latter is the previously used base point and is forbidden by distinctness.",
+      "Thus $A_n=(n(n+1)/3,0)$, and the corresponding third vertex is $(n^2/3,n/\\sqrt3)$, so all required third points are distinct too.",
+      "The threshold is $n(n+1)\\ge300$. It fails at 16 and holds at 17, making 17 the least index."
+    ],
+    "keyIdeas": [
+      "An equilateral chain meeting a square-root curve"
+    ],
+    "commonMistakes": [
+      "Solving from extracted text that omits the original radical, or choosing the already visited branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The distinctness condition determines the forward continuation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2008-p25",
+    "problemId": "amc12b-2008-p25",
+    "finalAnswer": "$\\boxed{30\\sqrt3}$ (choice B)",
+    "shortExplanation": "The two removed triangles have total area three times the trapezoid height.",
+    "detailedSteps": [
+      "Place $D=(0,0),C=(19,0),A=(u,h),B=(u+11,h)$. The leg equations are $u^2+h^2=49$ and $(8-u)^2+h^2=25$. Hence $u=11/2$ and $h=5\\sqrt3/2$.",
+      "An intersection of the internal bisectors at A and D is equidistant from both parallel bases and from AD, so P lies at height h/2 and distance h/2 from AD. Similarly Q has height h/2 and distance h/2 from BC.",
+      "The corresponding coordinates are $P=(25/4,h/2)$ and $Q=(61/4,h/2)$. They lie inside the trapezoid, and their separate side triangles do not overlap. Thus hexagon ABQCDP is the trapezoid with triangles ADP and BCQ removed.",
+      "The trapezoid area is $15h$. The removed areas are $(1/2)7(h/2)$ and $(1/2)5(h/2)$, totaling 3h. The hexagon area is $12h=30\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Angle-bisector cuts from a trapezoid"
+    ],
+    "commonMistakes": [
+      "Adding the bisector triangles instead of removing the inward indentations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the point positions justifies the area decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

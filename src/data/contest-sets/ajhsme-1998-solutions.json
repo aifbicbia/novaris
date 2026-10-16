@@ -1,0 +1,548 @@
+[
+  {
+    "id": "solution-ajhsme-1998-p1",
+    "problemId": "ajhsme-1998-p1",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice B)",
+    "shortExplanation": "After substitution, $6/8$ is the least of the five values.",
+    "detailedSteps": [
+      "The options evaluate to $6/7$, $3/4$, $1$, $7/6$, and $4/3$. Only the first two are less than $1$.",
+      "For positive fractions with numerator $6$, the larger denominator gives the smaller value. Thus $6/8=3/4$ is least."
+    ],
+    "keyIdeas": [
+      "Comparing fractions",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Substitute into the entire denominator $x+1$, rather than adding $1$ after division."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Substitution reduces the question to ordering five positive fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p2",
+    "problemId": "ajhsme-1998-p2",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "shortExplanation": "The given operation subtracts the two diagonal products, giving $6-4=2$.",
+    "detailedSteps": [
+      "Use $a=3$, $b=4$, $c=1$, and $d=2$ in the definition.",
+      "The result is $ad-bc=3\\cdot2-4\\cdot1=2$."
+    ],
+    "keyIdeas": [
+      "Defined operations",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The order of the two products matters: reversing them changes the sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the positions of all four entries in the defined operation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p3",
+    "problemId": "ajhsme-1998-p3",
+    "finalAnswer": "$\\boxed{\\frac{25}{16}}$ (choice B)",
+    "shortExplanation": "The numerator is $5/4$; dividing by $4/5$ gives $25/16$.",
+    "detailedSteps": [
+      "First add the two eighths: $3/8+7/8=10/8=5/4$.",
+      "Now multiply by the reciprocal of the denominator: $(5/4)/(4/5)=(5/4)(5/4)=25/16$."
+    ],
+    "keyIdeas": [
+      "Complex fractions",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The denominator divides the whole numerator sum, not just its final term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Carry out the numerator addition before inverting the divisor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p4",
+    "problemId": "ajhsme-1998-p4",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The three smallest regions, their right-hand union, and the whole outline give five triangles.",
+    "detailedSteps": [
+      "Name the outer corners $L,T,R$, the point on the base $M$, and the point on $TR$ by $N$.",
+      "The triangles are $LTM$, $TMN$, $MNR$, $TMR$, and $LTR$.",
+      "Every triangular boundary must use three of these five marked vertices; inspection of the drawn segments gives no other non-collinear triple with all sides present. The count is $5$."
+    ],
+    "keyIdeas": [
+      "Triangles in a diagram",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Count the whole outer triangle and the composite triangle $TMR$, as well as the smallest regions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Explicit vertex labels make the composite triangles auditable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p5",
+    "problemId": "ajhsme-1998-p5",
+    "finalAnswer": "$\\boxed{9.123\\overline4}$ (choice B)",
+    "shortExplanation": "Choice B remains $9.123444\\ldots$, which is larger at the first differing decimal place.",
+    "detailedSteps": [
+      "All five choices start with the digits $9.1234$. At the next place the candidates A and B have $4$, while C, D, E have $3$, $2$, $1$.",
+      "Choice A is $9.12344000\\ldots$ but B is $9.12344444\\ldots$. The next digit therefore makes B strictly larger."
+    ],
+    "keyIdeas": [
+      "Repeating decimals",
+      "Number Sense"
+    ],
+    "commonMistakes": [
+      "A bar applies only to the digits beneath it; a terminating decimal continues with zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first unequal decimal place determines the ordering.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p6",
+    "problemId": "ajhsme-1998-p6",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "A unit right triangle added above the central rectangle balances the equal triangle missing below it.",
+    "detailedSteps": [
+      "The main rectangular region is $3$ units wide and $2$ units tall, with area $6$.",
+      "The upper protrusion and lower notch are congruent right triangles with unit legs, each of area $1/2$.",
+      "The required area is $6+1/2-1/2=6$."
+    ],
+    "keyIdeas": [
+      "Lattice polygon area",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Count areas between lattice points; the number of visible dots is not an area."
+    ],
+    "alternativeMethods": [
+      "Apply the shoelace formula to the boundary vertices $(0,0),(1,0),(2,1),(2,0),(3,0),(3,2),(2,2),(2,3),(1,2),(0,2)$."
+    ],
+    "difficultyNotes": "A cut-and-paste argument avoids a long polygon calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p7",
+    "problemId": "ajhsme-1998-p7",
+    "finalAnswer": "$\\boxed{1998^2}$ (choice D)",
+    "shortExplanation": "Pair each decimal with a power of ten to obtain two identical factors of $1998$.",
+    "detailedSteps": [
+      "Regroup the four factors as $(100\\cdot19.98)(1000\\cdot1.998)$.",
+      "Both parentheses equal $1998$, so their product is $1998^2$."
+    ],
+    "keyIdeas": [
+      "Scaling decimal products",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Keep all five factors of ten contributed by $100$ and $1000$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Regrouping powers of ten eliminates decimal multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p8",
+    "problemId": "ajhsme-1998-p8",
+    "finalAnswer": "$\\boxed{185}$ (choice C)",
+    "shortExplanation": "Evaporation removes $15$ gallons, leaving $185$.",
+    "detailedSteps": [
+      "The loss over $30$ days is $(0.5)(30)=15$ gallons.",
+      "Subtract from the initial amount: $200-15=185$ gallons."
+    ],
+    "keyIdeas": [
+      "Constant rates",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The loss is a fixed number of gallons per day, not a percentage of the remaining water."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A constant daily rate gives a linear loss.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p9",
+    "problemId": "ajhsme-1998-p9",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Keeping $80\\%$ and then half of the reduced price leaves $40\\%$ of the original price.",
+    "detailedSteps": [
+      "The first sale price is $10(1-0.20)=8$ dollars.",
+      "The second reduction leaves $8/2=4$ dollars."
+    ],
+    "keyIdeas": [
+      "Successive discounts",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The second discount is based on the reduced price, so it cannot be subtracted as half of the original price."
+    ],
+    "alternativeMethods": [
+      "Multiply the retention factors directly: $10(4/5)(1/2)=4$."
+    ],
+    "difficultyNotes": "Use successive retention factors instead of adding discount rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p10",
+    "problemId": "ajhsme-1998-p10",
+    "finalAnswer": "$\\boxed{7}$ (choice E)",
+    "shortExplanation": "The valid assignment is $W/X=3/1$ and $Y/Z=4/2$, so $W+Y=7$.",
+    "detailedSteps": [
+      "Since $Y/Z>0$, the fraction $W/X$ must exceed $1$. Its possibilities are $2/1,3/1,4/1,3/2,4/2,4/3$.",
+      "For each choice, form the two fractions possible from the unused digits and test whether one is $W/X-1$. Only $3/1-4/2=1$ succeeds.",
+      "Therefore $W=3$ and $Y=4$, with sum $7$."
+    ],
+    "keyIdeas": [
+      "Distinct-digit fraction equation",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "All four digits must be used exactly once; fractions cannot reuse a denominator digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short complete case split uses the distinctness condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p11",
+    "problemId": "ajhsme-1998-p11",
+    "finalAnswer": "$\\boxed{12}$ (choice C)",
+    "shortExplanation": "There are six boys and three girls; Harriet has six brothers and two sisters.",
+    "detailedSteps": [
+      "Include Harry himself when counting the boys: there are $5+1=6$. The family has $3$ girls.",
+      "Harriet is one of those girls, so $S=3-1=2$ and $B=6$. Thus $SB=12$."
+    ],
+    "keyIdeas": [
+      "Sibling counts",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Harriet does not count herself as her own sister."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Switching from one sibling to another changes who is excluded.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p12",
+    "problemId": "ajhsme-1998-p12",
+    "finalAnswer": "$\\boxed{45}$ (choice A)",
+    "shortExplanation": "Each summand simplifies to one less than its leading integer, giving the sum from $1$ to $9$.",
+    "detailedSteps": [
+      "For each $n$, distribute to obtain $n(1-1/n)=n-1$.",
+      "The sum becomes $1+2+\\cdots+9=9(1+9)/2=45$."
+    ],
+    "keyIdeas": [
+      "Finite sums",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "There are nine summands, because the index starts at $2$ and ends at $10$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplify a general summand before adding the nine terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p13",
+    "problemId": "ajhsme-1998-p13",
+    "finalAnswer": "$\\boxed{\\frac18}$ (choice C)",
+    "shortExplanation": "The shaded square has diagonal half as long as the large square side, giving area ratio $1/8$.",
+    "detailedSteps": [
+      "Let the outer side be $s$. In the drawn-to-scale dissection, the shaded square has its top vertex at the outer center and its bottom vertex at the midpoint of the bottom edge; its vertical diagonal is $s/2$.",
+      "A square with diagonal $d$ has area $d^2/2$. Thus the shaded area is $(s/2)^2/2=s^2/8$.",
+      "Dividing by the outer area $s^2$ gives $1/8$."
+    ],
+    "keyIdeas": [
+      "Square diagonal and area",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The marked vertical length is a diagonal of the small square, not one of its sides."
+    ],
+    "alternativeMethods": [
+      "Extending the quarter-side grid gives $16$ equal small cells; the shaded square occupies four half-cells, for $2/16=1/8$."
+    ],
+    "difficultyNotes": "The source explicitly permits scale information for this dissection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p14",
+    "problemId": "ajhsme-1998-p14",
+    "finalAnswer": "$\\boxed{40}$ (choice E)",
+    "shortExplanation": "The intersection contains $12$ students and is $30\\%$ of the Math Club.",
+    "detailedSteps": [
+      "The number in both clubs is $0.80(15)=12$.",
+      "If the Math Club has $m$ members, then $0.30m=12$. Solving gives $m=40$."
+    ],
+    "keyIdeas": [
+      "Club overlap",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The two percentages have different denominator groups."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the common membership before solving for the larger group.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p15",
+    "problemId": "ajhsme-1998-p15",
+    "finalAnswer": "$\\boxed{2000}$ (choice D)",
+    "shortExplanation": "Two tripling intervals put the population near $1800$, closest to $2000$.",
+    "detailedSteps": [
+      "The year $2048$ is exactly $50$ years after $1998$, giving two tripling intervals.",
+      "The population then is $200\\cdot3^2=1800$. Since $2050$ is nearby, the listed estimate $2000$ is the appropriate choice."
+    ],
+    "keyIdeas": [
+      "Population estimates",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "This is an estimate near a growth benchmark, not a request to treat tripling as adding $200$ people."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A nearby doubling-period benchmark is not needed; use the stated tripling period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p16",
+    "problemId": "ajhsme-1998-p16",
+    "finalAnswer": "$\\boxed{2075}$ (choice B)",
+    "shortExplanation": "Three triplings give $5400$ people in $2073$, close to the target and to the choice $2075$.",
+    "detailedSteps": [
+      "The successive benchmark populations are $600,1800,5400,16200$.",
+      "The target $6000$ is near $5400$, reached after $3(25)=75$ years. The benchmark year is $1998+75=2073$, so select $2075$."
+    ],
+    "keyIdeas": [
+      "Population estimates",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Report the calendar year, rather than the number of elapsed years."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish a calendar year from elapsed time in a growth estimate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p17",
+    "problemId": "ajhsme-1998-p17",
+    "finalAnswer": "$\\boxed{100}$ (choice C)",
+    "shortExplanation": "The area supports $16600$ people, close to the four-tripling population of $16200$.",
+    "detailedSteps": [
+      "The capacity is $24900/1.5=16600$ people.",
+      "Four triplings produce $200\\cdot3^4=16200$, close to that capacity.",
+      "Four periods of $25$ years amount to about $100$ years."
+    ],
+    "keyIdeas": [
+      "Carrying-capacity estimate",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The question asks for years after $1998$, not the calendar year $2098$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the land allowance to a population capacity before estimating time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p18",
+    "problemId": "ajhsme-1998-p18",
+    "finalAnswer": "$\\boxed{\\text{diagram B}}$ (choice B)",
+    "shortExplanation": "Undoing the folds reflects the puncture across the vertical and horizontal midlines, producing diagram B.",
+    "detailedSteps": [
+      "In the folded picture, the puncture is close to the left folded edge and close to the top outer edge.",
+      "Undo the left-to-right fold: the two top punctures lie close to the vertical centerline on opposite sides.",
+      "Undo the bottom-to-top fold: two matching punctures appear near the bottom edge, again close to the vertical centerline. This is diagram B."
+    ],
+    "keyIdeas": [
+      "Unfolding reflections",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "A puncture near an outer edge stays near an outer edge; it does not move toward the horizontal fold."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positions relative to folds and outer edges determine the reflected pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p19",
+    "problemId": "ajhsme-1998-p19",
+    "finalAnswer": "$\\boxed{\\frac49}$ (choice A)",
+    "shortExplanation": "The sums $17,18,19$ beat the products $15,18,30$ in four of nine equally likely pairings.",
+    "detailedSteps": [
+      "Tamika has the three unordered pairs giving sums $17,18,19$, each with probability $1/3$. Carlos similarly has products $15,18,30$.",
+      "Every sum beats $15$, contributing three wins. Only $19$ beats $18$, adding one. No sum beats $30$.",
+      "There are $3\\cdot3=9$ equally likely joint outcomes, so the probability is $4/9$."
+    ],
+    "keyIdeas": [
+      "Comparing pair outcomes",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Equality at $18$ is not a win because the comparison is strictly greater."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Enumerate the two three-element outcome sets before comparing them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p20",
+    "problemId": "ajhsme-1998-p20",
+    "finalAnswer": "$\\boxed{24}$ (choice D)",
+    "shortExplanation": "Two diagonal folds leave one quarter of the original area, so the original side is $6$.",
+    "detailedSteps": [
+      "The first fold along a diagonal halves the square area. The second fold bisects the resulting right isosceles triangle, halving its area again.",
+      "The original square area was therefore $4\\cdot9=36$, giving side $6$.",
+      "The original perimeter is $4\\cdot6=24$."
+    ],
+    "keyIdeas": [
+      "Folded square area",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Area scales by a factor of four through unfolding, whereas side length scales by a factor of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track folded area separately from the original side length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p21",
+    "problemId": "ajhsme-1998-p21",
+    "finalAnswer": "$\\boxed{52}$ (choice B)",
+    "shortExplanation": "Exactly $2\\cdot2\\cdot3=12$ cubes avoid the side walls and bottom, so $52$ touch the box.",
+    "detailedSteps": [
+      "There are $4^3=64$ small cubes in total.",
+      "To avoid all four side walls, a cube must be in one of the central $2\\times2$ positions horizontally. To avoid the bottom, it may occupy any of the upper three layers.",
+      "The complement contains $2\\cdot2\\cdot3=12$ cubes. Hence $64-12=52$ touch a side or the bottom."
+    ],
+    "keyIdeas": [
+      "Boundary cubes in an open box",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The top is not listed as a wall, so top-layer central cubes belong to the complement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complement counting handles the overlap among different walls automatically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p22",
+    "problemId": "ajhsme-1998-p22",
+    "finalAnswer": "$\\boxed{27}$ (choice D)",
+    "shortExplanation": "Beginning at term 4, the cycle is $22,11,6,54,27$; term 98 is its fifth entry.",
+    "detailedSteps": [
+      "Apply the rules to get $98,49,44,22,11,6,54,27,22,\\ldots$.",
+      "The value $22$ at term $9$ repeats term $4$, and the deterministic rules now repeat with period $5$.",
+      "Terms $8,13,18,\\ldots$ equal $27$. Since $98-8=90$ is divisible by $5$, term $98$ is $27$."
+    ],
+    "keyIdeas": [
+      "Eventually periodic recurrence",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Account for the initial three terms before reducing the index modulo the cycle length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The initial nonrepeating terms create the index offset.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p23",
+    "problemId": "ajhsme-1998-p23",
+    "finalAnswer": "$\\boxed{\\frac7{16}}$ (choice C)",
+    "shortExplanation": "The eighth triangular grid contains $64$ unit triangles, of which $28$ downward-pointing ones are shaded.",
+    "detailedSteps": [
+      "The examples show the $n$th large triangle subdivided into $n^2$ congruent small triangles.",
+      "The shaded downward triangles occur in rows of $1,2,\\ldots,n-1$. For $n=8$, their number is $1+\\cdots+7=28$.",
+      "The shaded fraction is $28/64=7/16$."
+    ],
+    "keyIdeas": [
+      "Triangular grid pattern",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Compare areas using all $n^2$ small triangles, not just the number along an edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The number of shaded triangles follows a triangular-number pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p24",
+    "problemId": "ajhsme-1998-p24",
+    "finalAnswer": "$\\boxed{120}$ (choice E)",
+    "shortExplanation": "The shaded positions are triangular numbers; column 8 appears for the first time at position $120$.",
+    "detailedSteps": [
+      "The shaded indices are $T_n=n(n+1)/2$, since each gap increases by one.",
+      "For $n=1$ through $15$, the column numbers are $1,3,6,2,7,5,4,4,5,7,2,6,3,1,8$. A multiple of $8$ is in column $8$.",
+      "All columns are first represented at $T_{15}=15\\cdot16/2=120$."
+    ],
+    "keyIdeas": [
+      "Triangular numbers modulo eight",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Use one-based column numbering; remainder zero represents column $8$, not a missing column."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First appearances of residues matter; a repeated column adds no coverage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1998-p25",
+    "problemId": "ajhsme-1998-p25",
+    "finalAnswer": "$\\boxed{252}$ (choice D)",
+    "shortExplanation": "Toy has $144$ before her turn and gives away the other friends' total, so the conserved total is $252$.",
+    "detailedSteps": [
+      "Let the total money be $S$; transfers do not change it. Toy starts with $36$, which becomes $72$ after Ami's turn and $144$ after Jan's turn.",
+      "The other two friends then hold $S-144$. Doubling each requires Toy to give away exactly that amount.",
+      "Toy ends with $144-(S-144)=288-S=36$. Therefore $S=252$."
+    ],
+    "keyIdeas": [
+      "Conservation under transfers",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The giver loses money while the other two balances double; not all three balances double at a turn."
+    ],
+    "alternativeMethods": [
+      "Working backward, the other two friends held $(S-36)/2$ before Toy's turn. Thus her pre-turn balance was $S-(S-36)/2=(S+36)/2=144$, again yielding $S=252$."
+    ],
+    "difficultyNotes": "Conservation lets one follow only Toy's balance instead of three unknown balances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

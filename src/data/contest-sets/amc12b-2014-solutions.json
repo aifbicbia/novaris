@@ -1,0 +1,515 @@
+[
+  {
+    "id": "solution-amc12b-2014-p1",
+    "problemId": "amc12b-2014-p1",
+    "finalAnswer": "$\\boxed{37}$ (choice C)",
+    "shortExplanation": "There are seven pennies and six nickels.",
+    "detailedSteps": [
+      "The penny count is one more than the nickel count, and their sum is 13. Thus the counts are 7 and 6, worth $7+5\\cdot6=37$ cents."
+    ],
+    "keyIdeas": [
+      "A one-coin count difference"
+    ],
+    "commonMistakes": [
+      "Adding an extra nickel to the value of the original collection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the extra coin only to infer the existing counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p2",
+    "problemId": "amc12b-2014-p2",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "Eighteen complete pairs use the entire budget.",
+    "detailedSteps": [
+      "Normalize the ordinary price to one. A discounted pair costs $1+2/3=5/3$. The budget 30 buys $30/(5/3)=18$ pairs, or 36 balloons.",
+      "A thirty-seventh balloon costs another full unit, so it is not affordable."
+    ],
+    "keyIdeas": [
+      "The price of a discounted pair"
+    ],
+    "commonMistakes": [
+      "Treating one third off as one third of the price."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sale works in pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p3",
+    "problemId": "amc12b-2014-p3",
+    "finalAnswer": "$\\boxed{\\frac{300}{7}}$ (choice E)",
+    "shortExplanation": "The twenty paved miles form seven fifteenths of the trip.",
+    "detailedSteps": [
+      "The pavement fraction is $1-1/3-1/5=7/15$. The total distance is therefore $20/(7/15)=300/7$ miles."
+    ],
+    "keyIdeas": [
+      "The middle part of a trip"
+    ],
+    "commonMistakes": [
+      "Taking the dirt-road fifth from only the remaining distance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both named fractional portions refer to the entire trip.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p4",
+    "problemId": "amc12b-2014-p4",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice B)",
+    "shortExplanation": "Six muffin prices equal ten banana prices.",
+    "detailedSteps": [
+      "With muffin price m and banana price b, $2m+16b=2(4m+3b)$. Thus $6m=10b$, giving $m/b=5/3$."
+    ],
+    "keyIdeas": [
+      "Comparing two purchases"
+    ],
+    "commonMistakes": [
+      "Doubling only one item count in the first purchase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate the total-price comparison before simplifying.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p5",
+    "problemId": "amc12b-2014-p5",
+    "finalAnswer": "$\\boxed{26}$ (choice A)",
+    "shortExplanation": "The pane width is four inches and its height ten.",
+    "detailedSteps": [
+      "The actual layout has four columns and two rows. If a pane width is w, its height is $5w/2$. The outer width is $4w+5\\cdot2$, and the outer height is $2(5w/2)+3\\cdot2$.",
+      "Equating these gives $4w+10=5w+6$, hence w=4. The square side is $4\\cdot4+10=26$ inches."
+    ],
+    "keyIdeas": [
+      "Counting the window border strips"
+    ],
+    "commonMistakes": [
+      "Counting the internal borders while omitting the two outer borders."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The numbers of horizontal and vertical border strips differ.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p6",
+    "problemId": "amc12b-2014-p6",
+    "finalAnswer": "$\\boxed{40}$ (choice D)",
+    "shortExplanation": "The regular drink contains sixteen ounces.",
+    "detailedSteps": [
+      "Let the regular size be r. Ann\u2019s size is $3r/2$. Her leftover after drinking three fourths is $3r/8$, so she transfers $r/8+2$ to Ed.",
+      "Equal total consumption requires Ed\u2019s $r+r/8+2$ to equal half the combined amount, $5r/4$. Thus $r/8=2$ and r=16.",
+      "Together they drink $r+3r/2=40$ ounces. The transfer is 4 ounces, within Ann\u2019s 6-ounce remainder."
+    ],
+    "keyIdeas": [
+      "A transfer between unequal drinks"
+    ],
+    "commonMistakes": [
+      "Comparing only the amounts remaining after the transfer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The transfer changes who drinks the liquid, not the combined volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p7",
+    "problemId": "amc12b-2014-p7",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The denominator is a proper positive divisor of thirty.",
+    "detailedSteps": [
+      "Positivity requires $1\\le n<30$. Put d=30-n. Then $n/(30-n)=30/d-1$ is an integer exactly when d divides 30.",
+      "The possible d values are $1,2,3,5,6,10,15$; d=30 would give n=0 and is excluded. Thus there are seven."
+    ],
+    "keyIdeas": [
+      "A divisor hidden in a rational expression"
+    ],
+    "commonMistakes": [
+      "Counting a negative denominator or the zero numerator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rewrite the quotient around its denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p8",
+    "problemId": "amc12b-2014-p8",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The last result digit can be any digit from three through nine.",
+    "detailedSteps": [
+      "Let the carries from the units, tens and hundreds columns be u,v,w. The units equation is $A+B=D+10u$, while the hundreds equation is $A+B+v=D+10w$. Hence $v=10(w-u)$, forcing v=0 and w=u.",
+      "The tens equation is $C+D+u=D+10v$, so C+u=0. Thus C=0, u=w=0. The thousands column likewise has zero carry, and all columns reduce to A+B=D.",
+      "The leading digits A,B are distinct and positive. Their least possible sum is 3, and D is a single digit at most 9. Each D from 3 through 9 is attained by A=1,B=D-1, with all four digits distinct. There are seven values."
+    ],
+    "keyIdeas": [
+      "Column carries force a zero digit"
+    ],
+    "commonMistakes": [
+      "Allowing a leading zero or overlooking the repeated hundreds-column sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare the two columns that contain the same digit sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p9",
+    "problemId": "amc12b-2014-p9",
+    "finalAnswer": "$\\boxed{36}$ (choice B)",
+    "shortExplanation": "The diagonal has length five.",
+    "detailedSteps": [
+      "Right triangle ABC has AC=5 and area 6. Triangle ACD has sides 5,12,13, so it too is right and has area 30.",
+      "Convexity places the two triangles on opposite sides of AC. Their areas add to $6+30=36$."
+    ],
+    "keyIdeas": [
+      "A diagonal splits two right triangles"
+    ],
+    "commonMistakes": [
+      "Subtracting the second area despite the convex quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two familiar Pythagorean triples share a side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p10",
+    "problemId": "amc12b-2014-p10",
+    "finalAnswer": "$\\boxed{37}$ (choice D)",
+    "shortExplanation": "The digits must be one, zero and six.",
+    "detailedSteps": [
+      "The original MAA booklet says the final reading is cba; the LIVE reprint has an undefined-letter typo. Reversal gives distance $99(c-a)$, a positive multiple of 55. Thus c-a is a positive multiple of 5 and, being at most 8, equals 5.",
+      "Now $a+b+c=2a+b+5\\le7$, with a at least one. Hence a=1,b=0,c=6. The readings are 106 and 601, a difference 495=55 times 9. Therefore $a^2+b^2+c^2=37$."
+    ],
+    "keyIdeas": [
+      "A reversed odometer and an integer travel time"
+    ],
+    "commonMistakes": [
+      "Silently using the erroneous undefined digit in the reprint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Divisibility determines the reversed digit gap before the sum bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p11",
+    "problemId": "amc12b-2014-p11",
+    "finalAnswer": "$\\boxed{35}$ (choice E)",
+    "shortExplanation": "Three copies of eight give the sharp largest entry.",
+    "detailedSteps": [
+      "Sort the eleven values and call the largest M. Their total is 110. Exactly five entries precede the median 9, so the number k of eights is at most 5. A unique mode requires k at least 2; every other value occurs at most k-1 times.",
+      "For k=2, the smallest possible first five are 1,2,3,8,8, while the five entries from the median through the tenth are at least 9,10,11,12,13. Their total is at least 77, so M is at most 33.",
+      "For k=3, the analogous lower-bound blocks are 1,1,8,8,8 and 9,9,10,10,11, totaling 75, so M is at most 35. For k=4 they total at least $33+47=80$, and for k=5 at least $40+46=86$, giving smaller upper bounds 30 and 24.",
+      "The list $1,1,8,8,8,9,9,10,10,11,35$ has mean 10, median 9 and unique mode 8. Thus 35 is attained and maximal."
+    ],
+    "keyIdeas": [
+      "Minimizing all entries except the maximum"
+    ],
+    "commonMistakes": [
+      "Minimizing the entries without respecting the unique-mode multiplicity limits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The frequency of the mode organizes the extremal cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p12",
+    "problemId": "amc12b-2014-p12",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "Thirteen congruence classes reduce to nine similarity classes.",
+    "detailedSteps": [
+      "List ordered side triples with $1\\le a\\le b\\le c\\le4$ and a+b>c. The thirteen triples are $(1,1,1),(1,2,2),(1,3,3),(1,4,4),(2,2,2),(2,2,3),(2,3,3),(2,3,4),(2,4,4),(3,3,3),(3,3,4),(3,4,4),(4,4,4)$.",
+      "Divide each triple by its common gcd. All four equilateral triples form one class, and (2,4,4) shares the (1,2,2) class. The remaining eight nonequilateral primitive triples are distinct, giving nine classes total.",
+      "Choosing one representative of each class attains the bound."
+    ],
+    "keyIdeas": [
+      "Primitive integer side ratios"
+    ],
+    "commonMistakes": [
+      "Removing only congruent duplicates while retaining scaled copies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integer triple has a unique primitive side ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p13",
+    "problemId": "amc12b-2014-p13",
+    "finalAnswer": "$\\boxed{\\frac{3+\\sqrt5}{2}}$ (choice C)",
+    "shortExplanation": "The two extremal degeneracies meet at one ratio.",
+    "detailedSteps": [
+      "Because b is the largest of 1,a,b, failure of a positive-area triangle means $b\\ge a+1$. In the reciprocal triple the largest side is 1, so the other failure means $1/a+1/b\\le1$, or $a\\ge b/(b-1)$.",
+      "An admissible a exists only if $b/(b-1)\\le b-1$. This is $b^2-3b+1\\ge0$, and b>1 selects $b\\ge(3+\\sqrt5)/2$.",
+      "At that bound, choose $a=b-1=(1+\\sqrt5)/2$. Both triangles are degenerate, and 1<a<b, so the minimum is attained."
+    ],
+    "keyIdeas": [
+      "Two simultaneous failures of triangle inequalities"
+    ],
+    "commonMistakes": [
+      "Using strict inequalities and incorrectly excluding the permitted degenerate boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Failure of positive area includes equality in the triangle inequality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p14",
+    "problemId": "amc12b-2014-p14",
+    "finalAnswer": "$\\boxed{20\\sqrt2}$ (choice D)",
+    "shortExplanation": "Each of the four space diagonals has length five root two.",
+    "detailedSteps": [
+      "For positive side lengths a,b,c, the edge sum gives $a+b+c=12$, and surface area gives $ab+bc+ca=47$.",
+      "Thus $a^2+b^2+c^2=12^2-2\\cdot47=50$. Each interior diagonal has length $\\sqrt{50}=5\\sqrt2$, and there are four, so their sum is $20\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "A diagonal from two symmetric sums"
+    ],
+    "commonMistakes": [
+      "Counting the twelve face diagonals instead of the four interior diagonals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetric data directly determines the squared space diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p15",
+    "problemId": "amc12b-2014-p15",
+    "finalAnswer": "$\\boxed{2^{16}}$ (choice C)",
+    "shortExplanation": "Only the even factors contribute powers of two.",
+    "detailedSteps": [
+      "Exponentiating gives $e^p=\\prod_{k=1}^6 k^k$. The factors 2 squared, 4 to the fourth and 6 to the sixth contribute exponents $2+8+6=16$ of prime 2.",
+      "The other factors are odd, so the largest power is $2^{16}$."
+    ],
+    "keyIdeas": [
+      "A logarithm sum becomes an integer product"
+    ],
+    "commonMistakes": [
+      "Using only the powers k while ignoring each factor\u2019s own two-adic valuation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exponentiation converts the logarithm sum into a product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p16",
+    "problemId": "amc12b-2014-p16",
+    "finalAnswer": "$\\boxed{14k}$ (choice E)",
+    "shortExplanation": "The odd terms cancel in both symmetric sums.",
+    "detailedSteps": [
+      "Write $P(x)=ax^3+bx^2+cx+k$. Then $P(1)+P(-1)=2b+2k=5k$, so $b=3k/2$.",
+      "Hence $P(2)+P(-2)=8b+2k=14k$."
+    ],
+    "keyIdeas": [
+      "The even part of a cubic"
+    ],
+    "commonMistakes": [
+      "Trying to determine the unconstrained odd coefficients individually."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the even coefficients affect the requested quantity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p17",
+    "problemId": "amc12b-2014-p17",
+    "finalAnswer": "$\\boxed{80}$ (choice E)",
+    "shortExplanation": "The two bounding slopes have sum eighty.",
+    "detailedSteps": [
+      "The line is $y=m(x-20)+14$. Intersection with the parabola requires $x^2-mx+20m-14=0$.",
+      "It has no real solution exactly when $m^2-80m+56<0$. The roots r,s of this discriminant quadratic are distinct and their sum is 80 by Vieta."
+    ],
+    "keyIdeas": [
+      "Tangent slopes bound nonintersection"
+    ],
+    "commonMistakes": [
+      "Treating a tangent as a line with no intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tangency is the zero-discriminant boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p18",
+    "problemId": "amc12b-2014-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "Two orders omit a complementary pair of sums.",
+    "detailedSteps": [
+      "Fix 1 in the first position to remove rotation, and require the second entry to be smaller than the last to remove reflection. This leaves $4!/2=12$ orders.",
+      "For each order, form all sums of lengths 1 through 5 starting at each of its five positions, wrapping around. Exact evaluation gives only two failing orders: $(1,2,5,3,4)$ misses 6 and 9, while $(1,3,2,4,5)$ misses 7 and 8.",
+      "The other ten orders yield every value 1 through 15. This finite test is exhaustive because every rotation/reflection class has exactly one selected representative."
+    ],
+    "keyIdeas": [
+      "Checking the twelve circular orders"
+    ],
+    "commonMistakes": [
+      "Forbidding a consecutive block from wrapping around the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complements explain why missing sums occur in pairs totaling fifteen.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p19",
+    "problemId": "amc12b-2014-p19",
+    "finalAnswer": "$\\boxed{\\frac{3+\\sqrt5}{2}}$ (choice E)",
+    "shortExplanation": "The sphere radius squared is the product of the two base radii.",
+    "detailedSteps": [
+      "Let the base radii be R>r and the sphere radius be rho. The height is 2rho. The axial trapezoid is tangent to a circle, so its slant side length is R+r.",
+      "Pythagoras gives $(R+r)^2=(R-r)^2+4\\rho^2$, hence $\\rho^2=Rr$. The frustum volume is $(2\\pi\\rho/3)(R^2+Rr+r^2)$, and twice the sphere volume is $8\\pi\\rho^3/3$.",
+      "Equating gives $R^2-3Rr+r^2=0$. The ratio R/r exceeds one, so it is $(3+\\sqrt5)/2$."
+    ],
+    "keyIdeas": [
+      "A tangential frustum cross-section"
+    ],
+    "commonMistakes": [
+      "Using the volume of the untruncated cone or choosing the reciprocal base ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inscribed sphere controls both the height and the tangential relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p20",
+    "problemId": "amc12b-2014-p20",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "Only the central integer gives equality instead of strict inequality.",
+    "detailedSteps": [
+      "The logarithms require $40<x<60$, leaving nineteen integers. Their sum is less than 2 exactly when $(x-40)(60-x)<100$.",
+      "The product is $100-(x-50)^2$. Every allowed integer except x=50 satisfies the strict inequality, giving eighteen."
+    ],
+    "keyIdeas": [
+      "The domain of two logarithms"
+    ],
+    "commonMistakes": [
+      "Admitting values outside the logarithm domain or counting the equality case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The quadratic reaches its maximum at the interval midpoint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p21",
+    "problemId": "amc12b-2014-p21",
+    "finalAnswer": "$\\boxed{2-\\sqrt3}$ (choice C)",
+    "shortExplanation": "The nonzero tilt selects the smaller quadratic root.",
+    "detailedSteps": [
+      "Use $B=(0,0),A=(1,0),C=(0,1),D=(1,1)$ and put t=BE. The tilted rectangle has long-side vector $(u,v)$ of length 1 and short-side vector $t(-v,u)$, with u,v positive as in the figure.",
+      "Writing $J=(1-u,0)$ makes G lie on AD. The requirement that K lies on EF gives $u+tv=1-t$, and H lying on CD gives $tu+v=1$. Thus $u=(1-2t)/(1-t^2)$ and $v=(1-t+t^2)/(1-t^2)$.",
+      "Enforcing $u^2+v^2=1$ gives $(1-2t)(t^2-4t+1)=0$. The root t=1/2 makes u=0, causing K=E, J=A, G=D and H=F, contrary to the distinct interior placements in the original figure. The root $2+\\sqrt3$ exceeds the square width.",
+      "Hence $t=2-\\sqrt3$. Its positive u,v reconstruct the four distinct tilted corners on their required segments and a rectangle congruent to EBCF."
+    ],
+    "keyIdeas": [
+      "Two congruent rectangles in a square"
+    ],
+    "commonMistakes": [
+      "Keeping the zero-tilt boundary arrangement despite the original distinct corner placements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram\u2019s interior placement resolves an algebraic boundary root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p22",
+    "problemId": "amc12b-2014-p22",
+    "finalAnswer": "$\\boxed{\\frac{63}{146}}$ (choice C)",
+    "shortExplanation": "The increments are reciprocal binomial coefficients.",
+    "detailedSteps": [
+      "Let pN be the probability of reaching pad 10 before 0 from pad N, so p0=0,p10=1. First-step conditioning gives $10p_N=Np_{N-1}+(10-N)p_{N+1}$.",
+      "For $d_N=p_N-p_{N-1}$, this becomes $(10-N)d_{N+1}=Nd_N$. Thus $d_N=d_1/\\binom9{N-1}$ for N=1 through 10.",
+      "Summing increments gives $1=d_1\\sum_{j=0}^9 1/\\binom9j$. The exact sum is $146/63$, so $p_1=d_1=63/146$.",
+      "Absorption occurs with probability one: from every interior state there is a path of at most nine jumps to an endpoint with positive probability, and the finite minimum of these probabilities is positive. The boundary-value solution therefore equals the actual escape probability."
+    ],
+    "keyIdeas": [
+      "Successive differences of hitting probabilities"
+    ],
+    "commonMistakes": [
+      "Applying the ordinary constant-bias gambler\u2019s-ruin formula to a state-dependent walk."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Differences turn the second-order relation into a first-order product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p23",
+    "problemId": "amc12b-2014-p23",
+    "finalAnswer": "$\\boxed{1024}$ (choice C)",
+    "shortExplanation": "Pairing adjacent terms collapses the entire sum.",
+    "detailedSteps": [
+      "Because 2014 is congruent to -3 modulo prime 2017, and k! is invertible for k at most 62, $\\binom{2014}{k}\\equiv(-1)^k(k+1)(k+2)/2\\pmod{2017}$.",
+      "Pair terms k=2j and 2j+1 for j=0 through 30. Each pair contributes $-(2j+2)$, totaling -992. The final k=62 term contributes $63\\cdot64/2=2016$.",
+      "The sum is therefore congruent to $2016-992=1024$, already the required remainder."
+    ],
+    "keyIdeas": [
+      "Alternating binomial coefficients modulo a prime"
+    ],
+    "commonMistakes": [
+      "Replacing the upper binomial index by a negative number without accounting for the alternating sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small lower indices make factorial denominators invertible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p24",
+    "problemId": "amc12b-2014-p24",
+    "finalAnswer": "$\\boxed{391}$ (choice D)",
+    "shortExplanation": "Three diagonals have length twelve.",
+    "detailedSteps": [
+      "Equal consecutive chords correspond to equal central arcs here: unequal choices would be complementary arcs totaling a full circle, leaving no room for the other positive arcs. Thus the repeated arc lengths imply $AC=BD=CE=x$. Put AD=y and BE=z.",
+      "Ptolemy in ABCD and BCDE gives $x^2=9+10y=100+3z$. In ACDE and ABCE it gives $xy=10x+42$ and $xz=3x+140$.",
+      "Substituting $y=10+42/x$ yields $x^3-109x-420=0$, which factors as $(x-12)(x+5)(x+7)$. Since x is positive, x=12. Then $y=27/2$ and $z=44/3$.",
+      "The diagonal sum is $3x+y+z=385/6$. Its numerator and denominator are coprime, so $m+n=385+6=391$."
+    ],
+    "keyIdeas": [
+      "Ptolemy across a repeated-arc pentagon"
+    ],
+    "commonMistakes": [
+      "Assuming all five diagonals are equal despite two distinct side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Repeated side arcs identify the three equal diagonals before algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2014-p25",
+    "problemId": "amc12b-2014-p25",
+    "finalAnswer": "$\\boxed{1080\\pi}$ (choice D)",
+    "shortExplanation": "Only four positive divisor-based solutions survive the parity condition.",
+    "detailedSteps": [
+      "Using $\\cos4x=2\\cos^22x-1$, the original equation reduces to $\\cos(2x)\\cos(2014\\pi^2/x)=1$. Each cosine lies in [-1,1], so both must be +1 or both -1.",
+      "There are positive integers k,l of the same parity with $2x=k\\pi$ and $2014\\pi^2/x=l\\pi$. Hence $kl=4028$. They cannot both be odd, so write k=2d,l=2e with $de=1007=19\\cdot53$.",
+      "Thus $x=d\\pi$ for the four divisors $d=1,19,53,1007$. Each indeed makes both cosines one. Their sum is $(1+19+53+1007)\\pi=1080\\pi$."
+    ],
+    "keyIdeas": [
+      "A product of two bounded cosines"
+    ],
+    "commonMistakes": [
+      "Keeping mixed-parity cosine signs or seeking unrestricted periodic families after the reciprocal constraint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product attaining the extreme bound forces both individual cosines to their extrema.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

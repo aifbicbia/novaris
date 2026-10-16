@@ -1,0 +1,762 @@
+[
+  {
+    "id": "solution-amc8-2019-p1",
+    "problemId": "amc8-2019-p1",
+    "finalAnswer": "$\\boxed{\\text{D }(9)}$",
+    "shortExplanation": "**Idea:** Buy the maximum number of sandwiches first, then spend the leftover dollars on drinks.",
+    "detailedSteps": [
+      "Six sandwiches cost",
+      "[\n6\\cdot 4.50=27.\n]",
+      "That leaves",
+      "[\n30-27=3\n]",
+      "dollars, which buys $3$ drinks. So the total number of items is",
+      "[\n6+3=9.\n]",
+      "Final Answer: (\\boxed{\\text{D }(9)})"
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Remainders",
+      "Unit cost"
+    ],
+    "commonMistakes": [
+      "Do not divide $30$ by the combined price of one sandwich and one drink; the instructions say to buy as many sandwiches as possible first."
+    ],
+    "alternativeMethods": [
+      "Use integer division: $30=6\\cdot 4.50+3$, then the remainder buys $3$ drinks."
+    ],
+    "difficultyNotes": "Direct arithmetic with a small remainder.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p2",
+    "problemId": "amc8-2019-p2",
+    "finalAnswer": "$\\boxed{\\text{E }(150)}$",
+    "shortExplanation": "**Idea:** Use the shared rectangle dimensions to find the long side, then compute the large rectangle area.",
+    "detailedSteps": [
+      "Let the shorter side of each small rectangle be $5$ and the longer side be $x$.",
+      "From the layout, the height of the large rectangle is made of two short sides, so it is $10$. The long side of the small rectangle must match this height, hence",
+      "[\nx=10.\n]",
+      "The large rectangle has width $x+5=15$ and height $10$, so its area is",
+      "[\n15\\cdot10=150.\n]",
+      "Final Answer: (\\boxed{\\text{E }(150)})"
+    ],
+    "keyIdeas": [
+      "Rectangles",
+      "Area",
+      "Side lengths"
+    ],
+    "commonMistakes": [
+      "The diagram is easy to misread; identify which sides are forced equal before multiplying areas."
+    ],
+    "alternativeMethods": [
+      "Let the unknown long side be $x$ and equate the two ways of measuring the outside rectangle. The relation gives $x=10$."
+    ],
+    "difficultyNotes": "A diagram-reading area problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p3",
+    "problemId": "amc8-2019-p3",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Compare fractions by cross multiplication instead of estimating decimals.",
+    "detailedSteps": [
+      "Compare $\\frac{19}{15}$ and $\\frac{17}{13}$:",
+      "[\n19\\cdot13=247,\\qquad 17\\cdot15=255,\n]",
+      "so",
+      "[\n\\frac{19}{15}<\\frac{17}{13}.\n]",
+      "Compare $\\frac{17}{13}$ and $\\frac{15}{11}$:",
+      "[\n17\\cdot11=187,\\qquad 15\\cdot13=195,\n]",
+      "so",
+      "[\n\\frac{17}{13}<\\frac{15}{11}.\n]",
+      "Therefore",
+      "[\n\\frac{19}{15}<\\frac{17}{13}<\\frac{15}{11}.\n]",
+      "Final Answer: (\\boxed{\\text{E}})"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Cross multiplication",
+      "Ordering"
+    ],
+    "commonMistakes": [
+      "Do not compare only the denominators; the numerators change too."
+    ],
+    "alternativeMethods": [
+      "Subtract $1$ from each fraction: compare $\\frac4{11}$, $\\frac4{15}$, and $\\frac4{13}$."
+    ],
+    "difficultyNotes": "Fraction comparison with close values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p4",
+    "problemId": "amc8-2019-p4",
+    "finalAnswer": "$\\boxed{\\text{D }(120)}$",
+    "shortExplanation": "**Idea:** A diagonal of a rhombus bisects the rhombus into two congruent triangles.",
+    "detailedSteps": [
+      "The perimeter is $52$, so each side of the rhombus is",
+      "[\n52\\div4=13.\n]",
+      "Diagonal $AC=24$ splits the rhombus into two congruent triangles with side lengths $13,13,24$. Half of the diagonal is $12$, so the height to $AC$ is",
+      "[\n\\sqrt{13^2-12^2}=\\sqrt{169-144}=5.\n]",
+      "One triangle has area",
+      "[\n\\frac12\\cdot24\\cdot5=60.\n]",
+      "The rhombus has two such triangles, so the area is",
+      "[\n2\\cdot60=120.\n]",
+      "Final Answer: (\\boxed{\\text{D }(120)})"
+    ],
+    "keyIdeas": [
+      "Rhombus",
+      "Pythagorean theorem",
+      "Area"
+    ],
+    "commonMistakes": [
+      "Do not stop at $60$; that is the area of only one of the two congruent triangles."
+    ],
+    "alternativeMethods": [
+      "Use the rhombus area formula $\\frac{d_1d_2}{2}$ after finding the other diagonal $10$."
+    ],
+    "difficultyNotes": "Pythagorean theorem inside a rhombus.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p5",
+    "problemId": "amc8-2019-p5",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Match the story to slopes: constant movement gives a line, and a nap gives a horizontal segment.",
+    "detailedSteps": [
+      "The hare starts fast, so its graph begins with a steep positive slope.",
+      "During the nap, the hare's distance does not change, so the graph has a horizontal segment.",
+      "After waking up, the hare runs again at the same speed as before, so the final rising segment has the same slope as the first rising segment.",
+      "The tortoise moves at a constant slower speed and wins, so its line is less steep but reaches the finish first.",
+      "The only graph with all these features is choice $B$.",
+      "Final Answer: (\\boxed{\\text{B}})"
+    ],
+    "keyIdeas": [
+      "Graphs",
+      "Speed",
+      "Race interpretation"
+    ],
+    "commonMistakes": [
+      "A horizontal segment means stopped, not slow movement."
+    ],
+    "alternativeMethods": [
+      "Eliminate graphs where the hare never stops, changes speed after the nap, or still wins."
+    ],
+    "difficultyNotes": "Qualitative graph interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p6",
+    "problemId": "amc8-2019-p6",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{2}{5}\\right)}$",
+    "shortExplanation": "**Idea:** Count the grid points that lie on the four symmetry lines through the center.",
+    "detailedSteps": [
+      "A square has four symmetry lines through its center: the horizontal middle line, vertical middle line, and the two diagonals.",
+      "In a $9\\times9$ grid, each such line contains $9$ grid points, including the center $P$.",
+      "Counting the four lines gives $4\\cdot9=36$, but $P$ is counted four times. The number of other points on these lines is",
+      "[\n36-4=32.\n]",
+      "There are $80$ possible choices for $Q$, so the probability is",
+      "[\n\\frac{32}{80}=\\frac25.\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac25\\right)})"
+    ],
+    "keyIdeas": [
+      "Symmetry",
+      "Probability",
+      "Lattice points"
+    ],
+    "commonMistakes": [
+      "Remember that $P$ itself is not an allowed choice for $Q$."
+    ],
+    "alternativeMethods": [
+      "Count $8$ non-center points on each of the four symmetry lines: $4\\cdot8=32$."
+    ],
+    "difficultyNotes": "Counting favorable lattice points.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p7",
+    "problemId": "amc8-2019-p7",
+    "finalAnswer": "$\\boxed{\\text{A }(48)}$",
+    "shortExplanation": "**Idea:** Convert the desired average into a required total score.",
+    "detailedSteps": [
+      "To average $81$ on five tests, Shauna needs total score",
+      "[\n5\\cdot81=405.\n]",
+      "Her first three scores sum to",
+      "[\n76+94+87=257.\n]",
+      "So the last two tests must sum to",
+      "[\n405-257=148.\n]",
+      "To make one of the two remaining scores as low as possible, make the other as high as possible, namely $100$. The lowest possible score is",
+      "[\n148-100=48.\n]",
+      "Final Answer: (\\boxed{\\text{A }(48)})"
+    ],
+    "keyIdeas": [
+      "Averages",
+      "Bounds",
+      "Total score"
+    ],
+    "commonMistakes": [
+      "Do not split the remaining $148$ evenly; the question asks for the lowest possible one score."
+    ],
+    "alternativeMethods": [
+      "Use a deficit from perfect scores: two remaining tests can total at most $200$, and one can absorb as many points as possible."
+    ],
+    "difficultyNotes": "Average plus extremal bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p8",
+    "problemId": "amc8-2019-p8",
+    "finalAnswer": "$\\boxed{\\text{E }(54)}$",
+    "shortExplanation": "**Idea:** Track the fraction remaining after each giveaway.",
+    "detailedSteps": [
+      "After giving away $20\\%$, Gilda has $80\\%$ left.",
+      "After giving away $10\\%$ of what remains, she keeps $90\\%$ of that amount.",
+      "After giving away $25\\%$ of what then remains, she keeps $75\\%$ of that amount.",
+      "Thus the fraction of the original bag left is",
+      "[\n0.80\\cdot0.90\\cdot0.75=0.54.\n]",
+      "So she has $54\\%$ of the original bag.",
+      "Final Answer: (\\boxed{\\text{E }(54)})"
+    ],
+    "keyIdeas": [
+      "Percentages",
+      "Successive changes",
+      "Remaining amount"
+    ],
+    "commonMistakes": [
+      "Do not add the percentages $20+10+25$; the later percentages are taken from smaller remaining amounts."
+    ],
+    "alternativeMethods": [
+      "Start with $100$ marbles: $100\\to80\\to72\\to54$."
+    ],
+    "difficultyNotes": "Successive percent changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p9",
+    "problemId": "amc8-2019-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(1:2)}$",
+    "shortExplanation": "**Idea:** Cylinder volume is proportional to $r^2h$.",
+    "detailedSteps": [
+      "Alex's can has diameter $6$, so its radius is $3$ and height is $12$. Its volume is proportional to",
+      "[\n3^2\\cdot12=108.\n]",
+      "Felicia's can has diameter $12$, so its radius is $6$ and height is $6$. Its volume is proportional to",
+      "[\n6^2\\cdot6=216.\n]",
+      "Therefore the ratio is",
+      "[\n108:216=1:2.\n]",
+      "Final Answer: (\\boxed{\\text{B }(1:2)})"
+    ],
+    "keyIdeas": [
+      "Volume",
+      "Cylinders",
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Do not compare diameter times height only; volume depends on the square of the radius."
+    ],
+    "alternativeMethods": [
+      "Use $V=pi r^2h$ and cancel the common factor $pi$."
+    ],
+    "difficultyNotes": "A quick ratio problem with cylinder volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p10",
+    "problemId": "amc8-2019-p10",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Replace the Wednesday value and recompute the mean and median changes.",
+    "detailedSteps": [
+      "The corrected Wednesday value is $21$, which is $5$ more than the original Wednesday value shown in the chart.",
+      "Since there are $5$ weekdays, increasing the total by $5$ increases the mean by",
+      "[\n\\frac55=1.\n]",
+      "For the median, order the five daily values. Replacing the Wednesday value by $21$ raises the middle value by $1$.",
+      "Thus both the mean and median increase by $1$.",
+      "Final Answer: (\\boxed{\\text{B}})"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Median",
+      "Data correction"
+    ],
+    "commonMistakes": [
+      "Do not say the mean increases by $5$; the total increases by $5$, but the mean divides by $5$ days."
+    ],
+    "alternativeMethods": [
+      "Compute the old and new ordered lists directly from the chart."
+    ],
+    "difficultyNotes": "Mean uses totals; median uses ordered middle values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p11",
+    "problemId": "amc8-2019-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(39)}$",
+    "shortExplanation": "**Idea:** Use inclusion-exclusion to find the overlap, then subtract it from the math total.",
+    "detailedSteps": [
+      "Let $x$ be the number of students taking both classes. Since every student is in at least one of the two groups,",
+      "[\n70+54-x=93.\n]",
+      "So",
+      "[\nx=70+54-93=31.\n]",
+      "Students taking only mathematics are the math students minus the overlap:",
+      "[\n70-31=39.\n]",
+      "Final Answer: (\\boxed{\\text{D }(39)})"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Sets",
+      "Venn diagrams"
+    ],
+    "commonMistakes": [
+      "The overlap is not the answer; the question asks for only mathematics."
+    ],
+    "alternativeMethods": [
+      "Draw a two-circle Venn diagram and put the overlap in the middle first."
+    ],
+    "difficultyNotes": "Standard two-set inclusion-exclusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p12",
+    "problemId": "amc8-2019-p12",
+    "finalAnswer": "$\\boxed{\\text{A }(\\text{red})}$",
+    "shortExplanation": "**Idea:** Use the three cube views to list which colors touch aqua; the remaining color is opposite aqua.",
+    "detailedSteps": [
+      "A face has exactly four adjacent faces and one opposite face.",
+      "From the views, the aqua face is adjacent to white, green, brown, and purple.",
+      "The only color not adjacent to aqua is red. Therefore red must be opposite aqua.",
+      "Final Answer: (\\boxed{\\text{A }(\\text{red})})"
+    ],
+    "keyIdeas": [
+      "Cubes",
+      "Opposite faces",
+      "Spatial visualization"
+    ],
+    "commonMistakes": [
+      "Do not assume colors appearing in the same view are opposite; faces visible together meet around a corner, so they are adjacent."
+    ],
+    "alternativeMethods": [
+      "Imagine rotating the cube so that aqua stays fixed; the four colors around it are its side neighbors."
+    ],
+    "difficultyNotes": "Spatial reasoning with opposite cube faces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p13",
+    "problemId": "amc8-2019-p13",
+    "finalAnswer": "$\\boxed{\\text{A }(2)}$",
+    "shortExplanation": "**Idea:** Build the smallest possible sum from distinct two-digit palindromes.",
+    "detailedSteps": [
+      "The two-digit palindromes are",
+      "[\n11,22,33,44,55,66,77,88,99.\n]",
+      "The smallest sum of three distinct such palindromes is",
+      "[\n11+22+33=66,\n]",
+      "which is not three-digit. The next smallest sums come from replacing one term. We need the least three-digit non-palindrome.",
+      "The smallest three-digit sum is",
+      "[\n11+22+77=110.\n]",
+      "This is not a palindrome, and its digit sum is",
+      "[\n1+1+0=2.\n]",
+      "Final Answer: (\\boxed{\\text{A }(2)})"
+    ],
+    "keyIdeas": [
+      "Palindromes",
+      "Digit sums",
+      "Constructive search"
+    ],
+    "commonMistakes": [
+      "Do not allow repeated palindromes; the problem requires three distinct two-digit palindromes."
+    ],
+    "alternativeMethods": [
+      "Factor each two-digit palindrome as $11k$ and look for the least sum $11(a+b+c)$ that is at least $100$."
+    ],
+    "difficultyNotes": "Small constructive search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p14",
+    "problemId": "amc8-2019-p14",
+    "finalAnswer": "$\\boxed{\\text{C }(\\text{Wednesday})}$",
+    "shortExplanation": "**Idea:** A 10-day jump moves ahead by 3 weekdays modulo 7.",
+    "detailedSteps": [
+      "Redeeming every $10$ days means the weekday advances by",
+      "[\n10\\equiv3\\pmod7.\n]",
+      "The six redemption days are therefore",
+      "[\nd,\\ d+3,\\ d+6,\\ d+9,\\ d+12,\\ d+15\\pmod7.\n]",
+      "These are six consecutive steps in the cycle created by adding $3$ modulo $7$. Since no redemption day is Sunday, the missing day in this six-day list must be Sunday.",
+      "Counting one $3$-day step after Sunday gives Wednesday as the first possible redemption day:",
+      "[\n\\text{Wednesday},\\ \\text{Saturday},\\ \\text{Tuesday},\\ \\text{Friday},\\ \\text{Monday},\\ \\text{Thursday}.\n]",
+      "No Sunday appears, so the first coupon is redeemed on Wednesday.",
+      "Final Answer: (\\boxed{\\text{C }(\\text{Wednesday})})"
+    ],
+    "keyIdeas": [
+      "Modular arithmetic",
+      "Calendar cycles",
+      "Remainders"
+    ],
+    "commonMistakes": [
+      "Do not count by 10 weekdays; the coupon is redeemed every 10 calendar days, so the weekday changes by 3 modulo 7."
+    ],
+    "alternativeMethods": [
+      "Try each answer choice and jump ahead by 3 weekdays five times; only Wednesday avoids Sunday."
+    ],
+    "difficultyNotes": "Calendar modular arithmetic with a 10-day step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p15",
+    "problemId": "amc8-2019-p15",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac{7}{25}\\right)}$",
+    "shortExplanation": "**Idea:** First find how many people wear both caps and sunglasses.",
+    "detailedSteps": [
+      "Among the $35$ people wearing caps, the probability of also wearing sunglasses is $\\frac25$. So the number wearing both is",
+      "[\n\\frac25\\cdot35=14.\n]",
+      "Now choose from the $50$ people wearing sunglasses. The probability that the selected person also wears a cap is",
+      "[\n\\frac{14}{50}=\\frac7{25}.\n]",
+      "Final Answer: (\\boxed{\\text{B }\\left(\\frac7{25}\\right)})"
+    ],
+    "keyIdeas": [
+      "Conditional probability",
+      "Counting",
+      "Two-way tables"
+    ],
+    "commonMistakes": [
+      "Conditional probabilities are not symmetric; $P(Smid C)$ is not automatically $P(Cmid S)$."
+    ],
+    "alternativeMethods": [
+      "Make a two-way table with columns cap/no cap and rows sunglasses/no sunglasses."
+    ],
+    "difficultyNotes": "Conditional probability by counting the overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p16",
+    "problemId": "amc8-2019-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(110)}$",
+    "shortExplanation": "**Idea:** Use time, not just distance, because average speed is total distance divided by total time.",
+    "detailedSteps": [
+      "The first $15$ miles at $30$ mph take",
+      "[\n\\frac{15}{30}=\\frac12\n]",
+      "hour. Let $x$ be the additional miles driven at $55$ mph. The total average should be $50$ mph:",
+      "[\n\\frac{15+x}{\\frac12+\\frac{x}{55}}=50.\n]",
+      "Solve:",
+      "[\n15+x=25+\\frac{50x}{55}=25+\\frac{10x}{11}.\n]",
+      "Thus",
+      "[\nx-\\frac{10x}{11}=10\\quad\\Rightarrow\\quad \\frac{x}{11}=10\\quad\\Rightarrow\\quad x=110.\n]",
+      "Final Answer: (\\boxed{\\text{D }(110)})"
+    ],
+    "keyIdeas": [
+      "Average speed",
+      "Distance-rate-time",
+      "Weighted averages"
+    ],
+    "commonMistakes": [
+      "Do not average $30$ and $55$ directly; the distances and times are not equal."
+    ],
+    "alternativeMethods": [
+      "Use a weighted-average speed equation based on time."
+    ],
+    "difficultyNotes": "Average speed algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p17",
+    "problemId": "amc8-2019-p17",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac{50}{99}\\right)}$",
+    "shortExplanation": "**Idea:** Split the product into two telescoping products.",
+    "detailedSteps": [
+      "Rewrite the product as",
+      "[\n\\prod_{k=1}^{98}\\frac{k(k+2)}{(k+1)^2}\n=\\left(\\prod_{k=1}^{98}\\frac{k}{k+1}\\right)\\left(\\prod_{k=1}^{98}\\frac{k+2}{k+1}\\right).\n]",
+      "The first product telescopes to $\\frac1{99}$. The second telescopes to",
+      "[\n\\frac3{2}\\cdot\\frac4{3}\\cdots\\frac{100}{99}=\\frac{100}{2}=50.\n]",
+      "Therefore the product is",
+      "[\n\\frac1{99}\\cdot50=\\frac{50}{99}.\n]",
+      "Final Answer: (\\boxed{\\text{B }\\left(\\frac{50}{99}\\right)})"
+    ],
+    "keyIdeas": [
+      "Telescoping",
+      "Products",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Do not cancel only the middle term of each fraction; cancellation happens across the whole product."
+    ],
+    "alternativeMethods": [
+      "Write out the first few and last few factors to see what survives."
+    ],
+    "difficultyNotes": "Classic telescoping product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p18",
+    "problemId": "amc8-2019-p18",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{5}{9}\\right)}$",
+    "shortExplanation": "**Idea:** A sum is even when both dice show the same parity.",
+    "detailedSteps": [
+      "Each die has four odd faces, $1,3,5,7$, and two even faces, $2,8$.",
+      "An even sum occurs in two cases: odd plus odd, or even plus even.",
+      "The probability is",
+      "[\n\\left(\\frac46\\right)^2+\\left(\\frac26\\right)^2\n=\\frac{16}{36}+\\frac{4}{36}\n=\\frac{20}{36}\n=\\frac59.\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac59\\right)})"
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Probability",
+      "Dice"
+    ],
+    "commonMistakes": [
+      "Do not assume the die has three odd and three even faces; the given labels have four odd faces and two even faces."
+    ],
+    "alternativeMethods": [
+      "Count favorable ordered pairs directly: $4\\cdot4+2\\cdot2=20$ out of $36$."
+    ],
+    "difficultyNotes": "Parity probability with nonstandard dice labels.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p19",
+    "problemId": "amc8-2019-p19",
+    "finalAnswer": "$\\boxed{\\text{C }(24)}$",
+    "shortExplanation": "**Idea:** Maximize the top three teams by having them take as many points as possible from the bottom three.",
+    "detailedSteps": [
+      "There are $6$ teams, and each pair plays twice. A team plays $10$ games total, so the absolute maximum for a team is $30$ points.",
+      "The top three teams play the bottom three teams $3\\cdot3\\cdot2=18$ games. If the top teams win all of these, they collect",
+      "[\n18\\cdot3=54\n]",
+      "points total from those games.",
+      "Among the top three teams themselves, there are $3$ pairs and $2$ games per pair, so $6$ games. Each such game gives at most $3$ total points, adding at most",
+      "[\n6\\cdot3=18\n]",
+      "points to the top-three total. Therefore the top three can have at most",
+      "[\n54+18=72\n]",
+      "points total. If they tie, each has at most",
+      "[\n72\\div3=24.\n]",
+      "This is achievable by arranging results among the top three so they split points evenly and beat the bottom three.",
+      "Final Answer: (\\boxed{\\text{C }(24)})"
+    ],
+    "keyIdeas": [
+      "Tournament scoring",
+      "Extremal counting",
+      "Cases"
+    ],
+    "commonMistakes": [
+      "Do not give all three top teams $30$ points; they must play each other, so they cannot all win every game."
+    ],
+    "alternativeMethods": [
+      "Think of total points available to the top group rather than individual schedules first."
+    ],
+    "difficultyNotes": "Extremal tournament scoring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p20",
+    "problemId": "amc8-2019-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(4)}$",
+    "shortExplanation": "**Idea:** Treat the outer square equation as two equations.",
+    "detailedSteps": [
+      "If",
+      "[\n(x^2-5)^2=16,\n]",
+      "then",
+      "[\nx^2-5=4\\quad\\text{or}\\quad x^2-5=-4.\n]",
+      "These give",
+      "[\nx^2=9\\quad\\text{or}\\quad x^2=1.\n]",
+      "So",
+      "[\nx=\\pm3,\\ \\pm1.\n]",
+      "There are $4$ real solutions.",
+      "Final Answer: (\\boxed{\\text{D }(4)})"
+    ],
+    "keyIdeas": [
+      "Quadratic equations",
+      "Absolute value structure",
+      "Real solutions"
+    ],
+    "commonMistakes": [
+      "Do not take only the positive square root; $x^2=9$ has two real solutions."
+    ],
+    "alternativeMethods": [
+      "Let $u=x^2-5$, solve $u^2=16$, then substitute back."
+    ],
+    "difficultyNotes": "Nested square equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p21",
+    "problemId": "amc8-2019-p21",
+    "finalAnswer": "$\\boxed{\\text{E }(16)}$",
+    "shortExplanation": "**Idea:** Find the three line intersections, then use base and height.",
+    "detailedSteps": [
+      "The lines $y=1+x$ and $y=1-x$ intersect at",
+      "[\n1+x=1-x\\quad\\Rightarrow\\quad x=0,\n]",
+      "so the lower vertex is $(0,1)$.",
+      "The line $y=5$ intersects $y=1+x$ at $x=4$, giving $(4,5)$, and intersects $y=1-x$ at $x=-4$, giving $(-4,5)$.",
+      "The top base has length",
+      "[\n4-(-4)=8,\n]",
+      "and the height is",
+      "[\n5-1=4.\n]",
+      "Thus the area is",
+      "[\n\\frac12\\cdot8\\cdot4=16.\n]",
+      "Final Answer: (\\boxed{\\text{E }(16)})"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Line intersections",
+      "Area"
+    ],
+    "commonMistakes": [
+      "Do not use the slanted side lengths as the base; the horizontal segment at $y=5$ is easiest."
+    ],
+    "alternativeMethods": [
+      "Sketch the three lines and count grid distances."
+    ],
+    "difficultyNotes": "Coordinate geometry with simple intersections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p22",
+    "problemId": "amc8-2019-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(40)}$",
+    "shortExplanation": "**Idea:** Use a multiplicative factor for increasing and then decreasing by the same percent.",
+    "detailedSteps": [
+      "Let the percent be $p$, written as decimal $r=\\frac{p}{100}$. Starting from original price $1$, the final price is",
+      "[\n(1+r)(1-r)=1-r^2.\n]",
+      "This equals $0.84$, so",
+      "[\n1-r^2=0.84\\quad\\Rightarrow\\quad r^2=0.16.\n]",
+      "Thus",
+      "[\nr=0.40.\n]",
+      "The percent is $40\\%$.",
+      "Final Answer: (\\boxed{\\text{E }(40)})"
+    ],
+    "keyIdeas": [
+      "Percent change",
+      "Algebra",
+      "Multiplicative factors"
+    ],
+    "commonMistakes": [
+      "An increase of $16\\%$ followed by a decrease of $16\\%$ does not lose $16\\%$ total; the changes multiply."
+    ],
+    "alternativeMethods": [
+      "Start with price $100$. After increasing and decreasing by $p\\%$, solve $100(1+r)(1-r)=84$."
+    ],
+    "difficultyNotes": "Multiplicative percent changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p23",
+    "problemId": "amc8-2019-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(11)}$",
+    "shortExplanation": "**Idea:** Let the total score be $T$ and use the seven-player bound to force $T$.",
+    "detailedSteps": [
+      "Let the total team score be $T$. Alice and Brittany scored",
+      "[\n\\frac14T+\\frac27T=\\frac{7T+8T}{28}=\\frac{15T}{28}.\n]",
+      "Chelsea scored $15$, and the other seven players scored $x$ total. Then",
+      "[\nT=\\frac{15T}{28}+15+x.\n]",
+      "So",
+      "[\n\\frac{13T}{28}=15+x.\n]",
+      "Each of the other seven players scored fewer than $3$ points, so each scored $0$, $1$, or $2$, and",
+      "[\n0\\le x\\le14.\n]",
+      "Also $T$ must make $\\frac14T$ and $\\frac27T$ integers, so $T$ is a multiple of $28$. Try $T=56$:",
+      "[\n\\frac{13\\cdot56}{28}=26=15+x,\n]",
+      "so",
+      "[\nx=11.\n]",
+      "This fits the bound.",
+      "Final Answer: (\\boxed{\\text{B }(11)})"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Integer constraints",
+      "Totals"
+    ],
+    "commonMistakes": [
+      "Do not assume the seven remaining players all scored the same number."
+    ],
+    "alternativeMethods": [
+      "Since $T$ is a multiple of $28$, test possible totals using the bound $15\\le 15+x\\le29$."
+    ],
+    "difficultyNotes": "Integer constraints from fractional totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p24",
+    "problemId": "amc8-2019-p24",
+    "finalAnswer": "$\\boxed{\\text{B }(30)}$",
+    "shortExplanation": "**Idea:** Use coordinates or mass points to convert the ratios into an area ratio.",
+    "detailedSteps": [
+      "Place coordinates so that $A=(0,0)$, $C=(3,0)$, and $B=(0,h)$. Then $D=(1,0)$ because $AD:DC=1:2$.",
+      "Point $E$ is the midpoint of $BD$, so",
+      "[\nE=\\left(\\frac12,\\frac h2\\right).\n]",
+      "Line $AE$ has slope $h$, so its equation is $y=hx$. Line $BC$ goes through $(0,h)$ and $(3,0)$, so",
+      "[\ny=h-\\frac h3x.\n]",
+      "At their intersection $F$,",
+      "[\nhx=h-\\frac h3x\\quad\\Rightarrow\\quad x=\\frac34.\n]",
+      "Then",
+      "[\ny=\\frac{3h}{4}.\n]",
+      "Area ratios do not depend on $h$. Computing the area of triangle $EBF$ relative to triangle $ABC$ gives",
+      "[\n[EBF]=\\frac1{12}[ABC].\n]",
+      "Since $[ABC]=360$,",
+      "[\n[EBF]=\\frac{360}{12}=30.\n]",
+      "Final Answer: (\\boxed{\\text{B }(30)})"
+    ],
+    "keyIdeas": [
+      "Area ratios",
+      "Ceva-style mass points",
+      "Triangles"
+    ],
+    "commonMistakes": [
+      "Do not assume $F$ is the midpoint of $BC$; it is determined by the intersection of $AE$ and $BC$."
+    ],
+    "alternativeMethods": [
+      "Use mass points: $AD:DC=1:2$ and $E$ midpoint of $BD$ lead to the same $1:12$ area ratio."
+    ],
+    "difficultyNotes": "Advanced area-ratio geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2019-p25",
+    "problemId": "amc8-2019-p25",
+    "finalAnswer": "$\\boxed{\\text{C }(190)}$",
+    "shortExplanation": "**Idea:** Give everyone two apples first, then count nonnegative distributions of the remaining apples.",
+    "detailedSteps": [
+      "Give Alice, Becky, and Chris $2$ apples each. This uses",
+      "[\n3\\cdot2=6\n]",
+      "apples and leaves",
+      "[\n24-6=18\n]",
+      "apples to distribute freely among the three people.",
+      "So we count nonnegative integer solutions to",
+      "[\na+b+c=18.\n]",
+      "By stars and bars, the number of solutions is",
+      "[\n\\binom{18+3-1}{3-1}=\\binom{20}{2}=190.\n]",
+      "Final Answer: (\\boxed{\\text{C }(190)})"
+    ],
+    "keyIdeas": [
+      "Stars and bars",
+      "Nonnegative integer solutions",
+      "Counting distributions"
+    ],
+    "commonMistakes": [
+      "Do not forget Alice is also one of the three people who must have at least two apples."
+    ],
+    "alternativeMethods": [
+      "Sum $19+18+\\cdots+1=190$ by choosing Alice's extra apples first."
+    ],
+    "difficultyNotes": "Stars and bars after satisfying minimums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "finalAnswer": "Count the intersections of $[2,N]$ with $[45,49]$, $[445,499]$, $[4445,4999]$, and the corresponding longer threshold intervals.",
+    "shortExplanation": "Repeated rounding can propagate a carry from a lower digit. The exact carry threshold at each decimal scale gives a short disjoint interval of disagreements.",
+    "detailedSteps": [
+      "Let $q=10^p$. Direct rounding is $q\\lfloor(x+q/2)/q\\rfloor$. Chaining the first $p$ rounds instead gives $q\\lfloor(x+H_p)/q\\rfloor$, where $H_p=5(1+10+\\cdots+10^{p-1})=5(q-1)/9$.",
+      "To verify that composition, suppose the previous result is $10^{p-1}\\lfloor(x+H_{p-1})/10^{p-1}\\rfloor$. Its next round uses $\\lfloor(\\lfloor u\\rfloor+5)/10\\rfloor=\\lfloor(u+5)/10\\rfloor$, adding $5\\cdot10^{p-1}$ to the offset. This proves the formula by induction.",
+      "For the smallest power $q\\ge x$, each final result is either 0 or $q$. Chaining reaches $q$ at $L_p=q-H_p=(4q+5)/9$; direct rounding reaches it at $q/2$. Therefore they differ exactly on the integer interval $[L_p,q/2-1]$.",
+      "At $p=1$ this interval is empty. At every larger scale, $L_p>q/10$, so every integer in the interval has this same smallest covering power. The intervals do not overlap, and exact powers of 10 cause no disagreement.",
+      "Generate $q=10,100,\\ldots,10^9$ and $L=5,45,445,\\ldots$, updating $L\\leftarrow10L-5$. Add $\\max(0,\\min(N,q/2-1)-L+1)$ at each scale. This uses $O(\\log N_{\\max})$ time per query and $O(1)$ space. Use 64-bit arithmetic for the power-update intermediate.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int t;if(!(cin>>t))return 0;\n    while(t--){\n        long long n,answer=0;cin>>n;\n        for(long long power=10,low=5;power<=1000000000LL;power*=10,low=10*low-5){\n            answer+=max(0LL,min(n,power/2-1)-low+1);\n        }\n        cout<<answer<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Replace composed rounds by one accumulated offset.",
+      "Count disjoint integer intervals without enumerating every input value."
+    ],
+    "commonMistakes": [
+      "Use the smallest covering power for each integer, rather than one common power for the entire query.",
+      "The upper endpoint is one below the direct rounding threshold.",
+      "A value needing only one rounding stage cannot disagree."
+    ],
+    "alternativeMethods": [
+      "For small bounds, literally perform the digit rounding operations for every integer and accumulate prefix counts. This is a separate testing oracle, but does not scale to one billion."
+    ],
+    "difficultyNotes": "The interval formula needs a composition proof and a check that its integers lie in the correct decimal range. Floating-point rounding is unnecessary.",
+    "id": "solution-usaco-bronze-2024-december-p1",
+    "problemId": "usaco-bronze-2024-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Maintain three families of axial line counters. A line contributes one placement exactly when its last remaining unit cell is removed.",
+    "shortExplanation": "A legal brick spans an entire coordinate axis. Each carve affects one line in each orientation, so only three counters can become complete.",
+    "detailedSteps": [
+      "The lattice-vertex condition also restricts rotations. Each length-one edge is an integer vector of Euclidean length 1, hence a signed coordinate unit vector. The two perpendicular short edges occupy different axes; the long edge must follow the remaining axis.",
+      "That long edge has length $N$ and stays inside $[0,N]^3$, so it spans the whole axis. There are $N^2$ placements for each of three orientations. Since $N\\ge2$, these orientations are distinct; reversing an edge does not create a different placement.",
+      "Store an $x$-line counter indexed by $(y,z)$, a $y$-line counter indexed by $(x,z)$, and a $z$-line counter indexed by $(x,y)$. A removal increments exactly these three counters.",
+      "A counter reaching $N$ means that every cell on its line has been carved, so its brick overlaps no remaining cheese. Increase the answer only when the counter first reaches $N$. The source guarantees no repeated removal, and removal cannot invalidate a completed line.",
+      "The three zero-initialized arrays use $O(N^2)$ space. Initialization and all updates take $O(N^2+Q)$ time, with $O(1)$ work per update. Counters and the answer are bounded by $N$ and $3N^2$, respectively; the stated limits fit signed 32-bit integers.",
+      "An original C++17 implementation follows. It flattens each pair of fixed coordinates into a line index.\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n,q;if(!(cin>>n>>q))return 0;\n    vector<int> along_x(n*n,0),along_y(n*n,0),along_z(n*n,0);\n    int answer=0;\n    while(q--){\n        int x,y,z;cin>>x>>y>>z;\n        if(++along_x[y*n+z]==n)++answer;\n        if(++along_y[x*n+z]==n)++answer;\n        if(++along_z[x*n+y]==n)++answer;\n        cout<<answer<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Use integer unit-edge vectors to rule out extra tilted placements.",
+      "Track completed lines rather than the full three-dimensional cube."
+    ],
+    "commonMistakes": [
+      "Do not count different orientations of the same geometric placement twice.",
+      "Use the two coordinates perpendicular to the line as its index.",
+      "Include array initialization in the time bound.",
+      "The source forbids repeated removals and falling cheese; do not add either behavior."
+    ],
+    "alternativeMethods": [
+      "A small-case checker can store every removed cell and re-enumerate all candidate lines after each update. Its cubic state is unsuitable for the maximum cube size."
+    ],
+    "difficultyNotes": "The counter update is simple. Completeness depends on proving why the apparently unrestricted rotations still produce only axial bricks. The original sample figure remains at its official source.",
+    "id": "solution-usaco-bronze-2024-december-p2",
+    "problemId": "usaco-bronze-2024-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Count all valid three-letter types, then enumerate each single-character edit and update only the at-most-three windows it affects. Print every attainable type in lexicographic order.",
+    "shortExplanation": "A one-character change affects only nearby length-three substrings. Keep the other counts fixed and restore the baseline after every trial.",
+    "detailedSteps": [
+      "Index a valid type $abb$ by the pair $(a,b)$ with $a\\ne b$. Count all length-three starting positions, including overlapping windows. Mark every type whose original count is at least $F$, because zero edits are allowed.",
+      "For an edit at index $i$, only window starts in $[i-2,i]\\cap[0,N-3]$ can change. Subtract the old contributions of those windows once, leaving every unaffected window in the counters.",
+      "Try each of the 26 lowercase replacements. Add the resulting nearby windows to the counters, and mark any of their types whose complete updated count reaches the threshold. Subtract those trial contributions again before trying the next letter.",
+      "Restore the original character and its old window contributions before advancing to the next position. Each trial therefore represents exactly one permissible edit; deltas from different edited strings never accumulate.",
+      "A type initially below $F$ can become eligible only by gaining a new occurrence, so it must appear in one of the affected new windows. Checking those types is complete; initially eligible unchanged types were already marked.",
+      "Each trial inspects at most three windows. Total time is $O(26N+26^2)$ and memory is $O(N+26^2)$ for the string and fixed-size arrays. Traverse pairs in alphabetic order, skip $a=b$, and print the marked types. There are at most $26\\cdot25=650$ results.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <string>\n#include <array>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n,f;if(!(cin>>n>>f))return 0;string s;cin>>s;\n    array<int,676> counts{};array<bool,676> good{};\n    auto pattern=[&](int start){\n        return s[start]!=s[start+1]&&s[start+1]==s[start+2]\n            ?(s[start]-'a')*26+s[start+1]-'a':-1;\n    };\n    for(int start=0;start+2<n;++start){int key=pattern(start);if(key>=0)++counts[key];}\n    for(int key=0;key<676;++key)good[key]=counts[key]>=f;\n    for(int pos=0;pos<n;++pos){\n        int left=max(0,pos-2),right=min(pos,n-3);char old=s[pos];\n        vector<int> old_keys;\n        for(int start=left;start<=right;++start){\n            int key=pattern(start);old_keys.push_back(key);if(key>=0)--counts[key];\n        }\n        for(char c='a';c<='z';++c){\n            s[pos]=c;vector<int> new_keys;\n            for(int start=left;start<=right;++start){\n                int key=pattern(start);new_keys.push_back(key);if(key>=0)++counts[key];\n            }\n            for(int key:new_keys)if(key>=0&&counts[key]>=f)good[key]=true;\n            for(int key:new_keys)if(key>=0)--counts[key];\n        }\n        s[pos]=old;\n        for(int key:old_keys)if(key>=0)++counts[key];\n    }\n    vector<string> result;\n    for(int a=0;a<26;++a)for(int b=0;b<26;++b)if(a!=b&&good[a*26+b]){\n        string moo;moo+=char('a'+a);moo+=char('a'+b);moo+=char('a'+b);result.push_back(moo);\n    }\n    cout<<result.size()<<'\\n';for(const auto &moo:result)cout<<moo<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Only windows containing the edited index can change.",
+      "Keep trial strings independent by restoring all counts.",
+      "A newly eligible type must gain an affected occurrence."
+    ],
+    "commonMistakes": [
+      "Up to one error includes no error.",
+      "Do not combine occurrences attainable under different edits.",
+      "Subtract old windows as well as adding new ones.",
+      "Repeated windows are occurrences, not just distinct strings."
+    ],
+    "alternativeMethods": [
+      "For short strings, construct every zero-or-one-edit string and scan it completely. This independently checks the local-update algorithm but takes quadratic work in the string length."
+    ],
+    "difficultyNotes": "Most mistakes occur in count restoration or the zero-edit case. The alphabet is fixed, and a threshold larger than the number of occurrences may legitimately produce an empty result.",
+    "id": "solution-usaco-bronze-2024-december-p3",
+    "problemId": "usaco-bronze-2024-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,558 @@
+[
+  {
+    "id": "solution-amc12a-2021-spring-p1",
+    "problemId": "amc12a-2021-spring-p1",
+    "finalAnswer": "$\\boxed{50}$ (choice B)",
+    "shortExplanation": "Evaluate the power with the summed exponent separately from the sum of powers.",
+    "detailedSteps": [
+      "The exponent of the first power is 6, so that term is 64.",
+      "The three powers in parentheses are 2,4 and 8. Subtracting their sum gives $64-14=50$."
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Powers"
+    ],
+    "commonMistakes": [
+      "Using $2^a+2^b=2^{a+b}$, which is not an exponent law."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compute the powers before subtracting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p2",
+    "problemId": "amc12a-2021-spring-p2",
+    "finalAnswer": "$\\boxed{ab=0\\ \\text{and}\\ a+b\\ge0}$ (choice D)",
+    "shortExplanation": "Equality requires both the squared identity and a nonnegative right side.",
+    "detailedSteps": [
+      "The square root is nonnegative, so $a+b\\ge0$ is necessary.",
+      "Squaring the proposed equality gives $a^2+b^2=a^2+2ab+b^2$, hence $ab=0$.",
+      "Conversely, if $ab=0$, then $a^2+b^2=(a+b)^2$. The square root equals $|a+b|$, which is $a+b$ exactly when $a+b\\ge0$. Thus both conditions are necessary and sufficient."
+    ],
+    "keyIdeas": [
+      "Principal square root",
+      "Necessity and sufficiency"
+    ],
+    "commonMistakes": [
+      "Forgetting the sign condition introduced by squaring."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign condition is as important as the squared equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p3",
+    "problemId": "amc12a-2021-spring-p3",
+    "finalAnswer": "$\\boxed{14238}$ (choice D)",
+    "shortExplanation": "The two numbers are in the ratio ten to one.",
+    "detailedSteps": [
+      "Let the smaller number be $n$. The larger is divisible by 10, so deleting its final zero changes $10n$ into $n$.",
+      "The sum gives $11n=17402$, hence $n=1582$. The difference is $10n-n=9(1582)=14238$."
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Treating deletion of a zero as subtraction of 10."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Deleting a terminal zero is a place-value operation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p4",
+    "problemId": "amc12a-2021-spring-p4",
+    "finalAnswer": "$\\boxed{\\text{Happy snakes are not purple}}$ (choice D)",
+    "shortExplanation": "Purple snakes cannot add, whereas every happy snake can add.",
+    "detailedSteps": [
+      "A purple snake cannot subtract. By the third condition, it therefore cannot add.",
+      "A happy snake can add by the first condition. A snake cannot both have and lack that ability, so no happy snake is purple."
+    ],
+    "keyIdeas": [
+      "Implication",
+      "Contradiction"
+    ],
+    "commonMistakes": [
+      "Reversing a one-way implication about snakes that can add."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Follow the implications without reversing them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p5",
+    "problemId": "amc12a-2021-spring-p5",
+    "finalAnswer": "$\\boxed{75}$ (choice E)",
+    "shortExplanation": "Express the repeating and terminating decimal parts using their different denominators.",
+    "detailedSteps": [
+      "Let $k$ be the two-digit integer represented by ab. The repeating decimal is $1+k/99$, while the mistaken decimal is $1+k/100$.",
+      "The difference between the products is $66k(1/99-1/100)=k/150$. Setting this equal to $1/2$ gives $k=75$."
+    ],
+    "keyIdeas": [
+      "Repeating decimals",
+      "Rational arithmetic"
+    ],
+    "commonMistakes": [
+      "Treating the repeating block as a fraction with denominator 100."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominators 99 and 100 capture the distinction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p6",
+    "problemId": "amc12a-2021-spring-p6",
+    "finalAnswer": "$\\boxed{12}$ (choice C)",
+    "shortExplanation": "The number of red cards stays fixed while the deck gains four cards.",
+    "detailedSteps": [
+      "If the original deck has n cards, its red count is $n/3$.",
+      "The new probability says $(n/3)/(n+4)=1/4$, or $4n=3n+12$. Thus $n=12$, with 4 red cards initially."
+    ],
+    "keyIdeas": [
+      "Probability ratios",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Adding four cards to the red-card numerator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the number of red cards fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p7",
+    "problemId": "amc12a-2021-spring-p7",
+    "finalAnswer": "$\\boxed{1}$ (choice D)",
+    "shortExplanation": "Expansion cancels the mixed linear terms and exposes a lower bound.",
+    "detailedSteps": [
+      "The expression expands to $x^2y^2-2xy+1+x^2+2xy+y^2=x^2y^2+x^2+y^2+1$.",
+      "The three squared terms are nonnegative, so the value is at least 1. At $x=y=0$ all three vanish, proving that 1 is the minimum."
+    ],
+    "keyIdeas": [
+      "Nonnegative squares",
+      "Attainment"
+    ],
+    "commonMistakes": [
+      "Assuming the two original squared terms can both vanish."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Expansion reveals an attainable lower bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p8",
+    "problemId": "amc12a-2021-spring-p8",
+    "finalAnswer": "$\\boxed{(E,O,E)}$ (choice C)",
+    "shortExplanation": "Track the recurrence modulo 2 until its three-term state repeats.",
+    "detailedSteps": [
+      "The parities for indices 0 through 9 are $0,0,1,1,1,0,1,0,0,1$. The triple at indices 7,8,9 repeats the initial triple.",
+      "Because each next term is determined by the previous three, the entire parity sequence repeats every 7 terms.",
+      "The residues of 2021,2022,2023 modulo 7 are 5,6,0. Their parities are 0,1,0, giving $(E,O,E)$."
+    ],
+    "keyIdeas": [
+      "Modular recurrence",
+      "State periodicity"
+    ],
+    "commonMistakes": [
+      "Claiming a period from a single repeated term instead of a repeated state."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A repeated three-term state proves the period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p9",
+    "problemId": "amc12a-2021-spring-p9",
+    "finalAnswer": "$\\boxed{3^{128}-2^{128}}$ (choice C)",
+    "shortExplanation": "Insert the factor $3-2=1$ and repeatedly combine it with the next sum.",
+    "detailedSteps": [
+      "The identity $(u-v)(u+v)=u^2-v^2$ first gives $(3-2)(3+2)=3^2-2^2$.",
+      "Multiplying successively by the sums with exponents 2,4,8,16,32 and 64 doubles the exponent each time.",
+      "Since the inserted factor was 1, the original product is $3^{128}-2^{128}$."
+    ],
+    "keyIdeas": [
+      "Difference of squares",
+      "Telescoping products"
+    ],
+    "commonMistakes": [
+      "Adding the two bases before applying the exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The initial factor of 1 makes the telescoping possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p10",
+    "problemId": "amc12a-2021-spring-p10",
+    "finalAnswer": "$\\boxed{4:1}$ (choice E)",
+    "shortExplanation": "Both liquid heights change by the same multiplicative factor, so their rises retain the initial height ratio.",
+    "detailedSteps": [
+      "Write the initial liquid heights as $h_n$ and $h_w$. Equality of volume gives $3^2h_n=6^2h_w$, hence $h_n=4h_w$.",
+      "In any fixed cone the volume below height h is proportional to $h^3$. Both equal initial volumes increase by the same submerged marble volume, so the ratio of new volume to old is the same for both.",
+      "Consequently both heights are multiplied by the same factor $\\lambda>1$. Their rises have ratio $(\\lambda-1)h_n:(\\lambda-1)h_w=4:1$."
+    ],
+    "keyIdeas": [
+      "Similarity",
+      "Volume displacement"
+    ],
+    "commonMistakes": [
+      "Using a constant cross-sectional area for the finite rise."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use similarity for the entire finite displacement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p11",
+    "problemId": "amc12a-2021-spring-p11",
+    "finalAnswer": "$\\boxed{10\\sqrt2}$ (choice C)",
+    "shortExplanation": "Reflect the destination across the mirrors in reverse order and measure one straight segment.",
+    "detailedSteps": [
+      "Reflect $(7,5)$ first across the x-axis to $(7,-5)$, then across the y-axis to $(-7,-5)$.",
+      "The straight segment from $(3,5)$ to $(-7,-5)$ has length $\\sqrt{10^2+10^2}=10\\sqrt2$. It crosses the y-axis before the x-axis, at unfolded points $(0,2)$ and $(-2,0)$, so it realizes the required bounce order.",
+      "Reflections preserve length; folding the segment back gives the desired beam path."
+    ],
+    "keyIdeas": [
+      "Reflection principle",
+      "Distance formula"
+    ],
+    "commonMistakes": [
+      "Reflecting the endpoint in the same order as the physical bounces rather than reverse order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check the order of the two mirror crossings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p12",
+    "problemId": "amc12a-2021-spring-p12",
+    "finalAnswer": "$\\boxed{-88}$ (choice A)",
+    "shortExplanation": "The root sum and product force the multiset of roots.",
+    "detailedSteps": [
+      "Vieta gives six positive integer roots with sum 10 and product 16. Each root is a power of 2; the exponents sum to 4.",
+      "The partitions of 4 yield possible root multisets with sums 21,14,12,11,10. The only sum 10 comes from exponents $1,1,1,1,0,0$, so the roots are $2,2,2,2,1,1$.",
+      "The coefficient B is minus the sum of triple products. Triples with one, two or three copies of 2 contribute $\\binom41\\cdot2=8$, $\\binom42\\binom21\\cdot4=48$, and $\\binom43\\cdot8=32$. Therefore $B=-(8+48+32)=-88$."
+    ],
+    "keyIdeas": [
+      "Vieta formulas",
+      "Integer factorization"
+    ],
+    "commonMistakes": [
+      "Using the pair-product coefficient instead of the triple-product coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root sum eliminates all but one exponent partition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p13",
+    "problemId": "amc12a-2021-spring-p13",
+    "finalAnswer": "$\\boxed{-\\sqrt3+i}$ (choice B)",
+    "shortExplanation": "All choices have modulus 2, so compare the cosines of five times their arguments.",
+    "detailedSteps": [
+      "The arguments in the listed order are $\\pi,5\\pi/6,3\\pi/4,2\\pi/3,\\pi/2$. Each fifth power has modulus 32.",
+      "Their real parts are respectively $-32,16\\sqrt3,16\\sqrt2,-16,0$.",
+      "The largest is $16\\sqrt3$, attained by $z=-\\sqrt3+i$, choice B."
+    ],
+    "keyIdeas": [
+      "De Moivre formula",
+      "Angle reduction"
+    ],
+    "commonMistakes": [
+      "Comparing the original real parts instead of those of the fifth powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Modulus and argument separate the computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p14",
+    "problemId": "amc12a-2021-spring-p14",
+    "finalAnswer": "$\\boxed{21000}$ (choice E)",
+    "shortExplanation": "Cancel each base exponent before summing.",
+    "detailedSteps": [
+      "For the first sum, $\\log_{5^k}(3^{k^2})=k\\log_5 3$. The sum is therefore $210\\log_5 3$.",
+      "For the second sum, $\\log_{9^k}(25^k)=\\log_9 25=\\log_3 5$, independent of k. It contributes $100\\log_3 5$.",
+      "The two logarithms are reciprocals, so the product is $210\\cdot100=21000$."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Arithmetic series"
+    ],
+    "commonMistakes": [
+      "Ignoring the k in the logarithm base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplify each logarithm before summing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p15",
+    "problemId": "amc12a-2021-spring-p15",
+    "finalAnswer": "$\\boxed{95}$ (choice D)",
+    "shortExplanation": "Replace selected basses with unselected basses to turn the difference condition into a subset-size condition.",
+    "detailedSteps": [
+      "If t tenors and b basses are selected, form a new subset consisting of those t tenors and the $8-b$ unselected basses. This is a bijection on all subsets of the 14 singers.",
+      "The size of the new subset is $t+8-b$, divisible by 4 exactly when $t-b$ is. Thus the number satisfying the congruence, including the empty original group, is $\\binom{14}0+\\binom{14}4+\\binom{14}8+\\binom{14}{12}=1+1001+3003+91=4096$.",
+      "Exclude the empty original group to get $N=4095$, whose remainder modulo 100 is 95."
+    ],
+    "keyIdeas": [
+      "Bijection",
+      "Binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Subtracting the empty transformed subset rather than excluding precisely the empty original group."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bijection makes the difference congruence a size congruence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p16",
+    "problemId": "amc12a-2021-spring-p16",
+    "finalAnswer": "$\\boxed{142}$ (choice C)",
+    "shortExplanation": "Find which constant-value block contains both central positions.",
+    "detailedSteps": [
+      "The list length is $1+2+\\cdots+200=20100$. The middle positions are 10050 and 10051.",
+      "The entries through 141 occupy $141\\cdot142/2=10011$ positions; those through 142 occupy $142\\cdot143/2=10153$.",
+      "Both middle positions lie in the block of 142s, so the median is 142."
+    ],
+    "keyIdeas": [
+      "Cumulative counts",
+      "Median"
+    ],
+    "commonMistakes": [
+      "Averaging the smallest and largest listed values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Locate both central positions in the cumulative counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p17",
+    "problemId": "amc12a-2021-spring-p17",
+    "finalAnswer": "$\\boxed{194}$ (choice D)",
+    "shortExplanation": "The equal sides force a simple coordinate ratio, making the diagonal intersection one third of the way from D to B.",
+    "detailedSteps": [
+      "Put $D=(0,0)$, $B=(d,0)$ and $A=(0,h)$, with $d,h>0$. This incorporates $AD\\perp BD$. Parallelism allows $C=(td,-th)$ for $t>0$.",
+      "Equality $BC=CD$ gives $d^2(t-1)^2+t^2h^2=t^2(d^2+h^2)$, hence $t=1/2$. Since $CD=43$, we obtain $\\sqrt{d^2+h^2}=86$.",
+      "Line AC meets BD at $O=(d/3,0)$, while $P=(d/2,0)$. Therefore $OP=d/6=11$ and $d=66$.",
+      "It follows that $AD=h=\\sqrt{86^2-66^2}=\\sqrt{3040}=4\\sqrt{190}$. Since 190 is squarefree, $m+n=4+190=194$."
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Parallel sides",
+      "Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "Assuming the diagonal intersection is the midpoint of BD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choose coordinates adapted to the perpendicular diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p18",
+    "problemId": "amc12a-2021-spring-p18",
+    "finalAnswer": "$\\boxed{\\frac{25}{11}}$ (choice E)",
+    "shortExplanation": "Products become sums and quotients become differences under f.",
+    "detailedSteps": [
+      "From the product rule, $f(1)=0$ and $f(a/b)=f(a)-f(b)$. Repeated prime factors contribute repeatedly.",
+      "The five listed arguments therefore give $17-5(2)=7$, $11-4(2)=3$, $7-2(3)=1$, $7-2-3=2$, and $2(5)-11=-1$.",
+      "Only the final number, $25/11$, has negative f-value."
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Homomorphism rule"
+    ],
+    "commonMistakes": [
+      "Assuming f is negative exactly for fractions less than 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor numerator and denominator before applying the rule.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p19",
+    "problemId": "amc12a-2021-spring-p19",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Rewrite both sides as sines whose arguments lie in an interval where sine is one-to-one.",
+    "detailedSteps": [
+      "For $0\\le x\\le\\pi$, let $u=(\\pi/2)\\cos x\\in[-\\pi/2,\\pi/2]$ and $w=(\\pi/2)(1-\\sin x)\\in[0,\\pi/2]$. The equation is $\\sin u=\\sin w$.",
+      "Sine is strictly increasing on $[-\\pi/2,\\pi/2]$, so $u=w$, equivalent to $\\sin x+\\cos x=1$.",
+      "This implies $\\cos x\\ge0$, restricting x to $[0,\\pi/2]$. Squaring then gives $1+2\\sin x\\cos x=1$, so one factor is zero. Both endpoints 0 and $\\pi/2$ satisfy the original equation. There are 2 solutions."
+    ],
+    "keyIdeas": [
+      "Inverse trigonometric reasoning",
+      "Domain control"
+    ],
+    "commonMistakes": [
+      "Introducing extra sine branches even though both arguments lie in an injective interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Restrict the sine arguments before invoking injectivity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p20",
+    "problemId": "amc12a-2021-spring-p20",
+    "finalAnswer": "$\\boxed{\\frac{40}{3}}$ (choice B)",
+    "shortExplanation": "Use the defining focus-directrix equality to eliminate the coordinate along the axis.",
+    "detailedSteps": [
+      "Place the vertex at $(0,0)$ and focus at $(p,0)$, with $p>0$. The parabola is $y^2=4px$ and its directrix is $x=-p$.",
+      "At A, the focus distance equals the directrix distance $x+p=20$, so $x=20-p$. The vertex distance condition gives $441=x^2+y^2=x^2+4px$.",
+      "Substitution yields $441=(20-p)(20+3p)$, or $3p^2-40p+41=0$. Its two roots are $(20\\pm\\sqrt{277})/3$, both positive and less than 20, so each gives a real point on the parabola.",
+      "The required sum of possible focus distances is the root sum $40/3$."
+    ],
+    "keyIdeas": [
+      "Focus-directrix definition",
+      "Vieta formulas"
+    ],
+    "commonMistakes": [
+      "Discarding one positive root without checking whether it gives a valid point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both algebraic roots must satisfy the geometric conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p21",
+    "problemId": "amc12a-2021-spring-p21",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "Fit a conic using the conjugate pairs, then compare its squared semiaxes.",
+    "detailedSteps": [
+      "The five points are $(1,0),(-1,\\pm\\sqrt3),(-2,\\pm\\sqrt2)$. For a general conic $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$, subtracting the equations within each conjugate pair gives $-B+E=0$ and $-2B+E=0$, so $B=E=0$.",
+      "Substituting the three distinct coordinate pairs into the remaining equation determines the conic, up to scaling, as $5x^2+6y^2+9x-14=0$.",
+      "Completing the square gives $5(x+9/10)^2+6y^2=361/20$. Thus the horizontal axis is the major axis, with $b^2/a^2=5/6$.",
+      "The squared eccentricity is $1-b^2/a^2=1/6$, so $m+n=1+6=7$."
+    ],
+    "keyIdeas": [
+      "Complex roots",
+      "Conic coefficients",
+      "Eccentricity"
+    ],
+    "commonMistakes": [
+      "Taking the ratio of semiaxes as the eccentricity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conjugate pairs eliminate the mixed and linear y terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p22",
+    "problemId": "amc12a-2021-spring-p22",
+    "finalAnswer": "$\\boxed{\\frac1{32}}$ (choice D)",
+    "shortExplanation": "The roots-of-unity identity gives a cubic satisfied by all three cosines.",
+    "detailedSteps": [
+      "For $\\theta=2\\pi k/7$ with $k=1,2,3$, the seventh-root sum gives $1+2(\\cos\\theta+\\cos2\\theta+\\cos3\\theta)=0$.",
+      "Writing $x=\\cos\\theta$ and using the double- and triple-angle formulas turns this into $8x^3+4x^2-4x-1=0$. The three cosine values are distinct, so they are exactly its roots.",
+      "The monic polynomial is $x^3+\\tfrac12x^2-\\tfrac12x-\\tfrac18$. Therefore $abc=(1/2)(-1/2)(-1/8)=1/32$."
+    ],
+    "keyIdeas": [
+      "Roots of unity",
+      "Trigonometric polynomial",
+      "Vieta formulas"
+    ],
+    "commonMistakes": [
+      "Forgetting to make the cubic monic before reading its coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the trigonometric cubic to be monic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p23",
+    "problemId": "amc12a-2021-spring-p23",
+    "finalAnswer": "$\\boxed{\\frac{25}{32}}$ (choice D)",
+    "shortExplanation": "Track only the surviving probability at the center and at the four edge-middle cells.",
+    "detailedSteps": [
+      "Let $C_j,S_j$ be the probabilities of surviving j hops and being at the center or an edge-middle cell. A center move always reaches an edge-middle cell. From such a cell, one of four directions goes to the center, one wraps to another edge-middle cell, and two go to corners.",
+      "Thus $C_{j+1}=S_j/4$ and $S_{j+1}=C_j+S_j/4$, starting with $(C_0,S_0)=(1,0)$.",
+      "The next states are $(0,1)$, $(1/4,1/4)$, $(1/16,5/16)$, and $(5/64,9/64)$.",
+      "The probability of avoiding all corners for four hops is $14/64=7/32$. Its complement is $25/32$."
+    ],
+    "keyIdeas": [
+      "Absorbing Markov chain",
+      "State aggregation"
+    ],
+    "commonMistakes": [
+      "Counting only paths that are at a corner on the fourth hop rather than those that hit one earlier."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Earlier corner visits count, so use an absorbing event.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p24",
+    "problemId": "amc12a-2021-spring-p24",
+    "finalAnswer": "$\\boxed{122}$ (choice D)",
+    "shortExplanation": "Find the small circle radius from an inscribed angle, then use the common chord to determine the triangle altitude.",
+    "detailedSteps": [
+      "Let O be the semicircle center and K the circle center. Since P,Q,R lie on the circle, the extended sine rule gives its radius $r=QR/(2\\sin60^\\circ)=3$. Choose $O=(0,0)$, diameter on the x-axis, and $P=(p,0)$; then $K=(p,3)$.",
+      "The half-chord length is $3\\sqrt3/2$. Its distances from O and K are $\\sqrt{7^2-27/4}=13/2$ and $\\sqrt{3^2-27/4}=3/2$. As the common chord is perpendicular to the line of centers, $OK$ is either their sum 8 or their difference 5.",
+      "Because P is on the diameter segment, $|p|\\le7$, so $OK=\\sqrt{p^2+9}\\le\\sqrt{58}<8$. Hence $OK=5$ and $|p|=4$. Reflecting if necessary, use $p=4$.",
+      "The two circle equations are $x^2+y^2=49$ and $(x-4)^2+(y-3)^2=9$. Subtraction gives the chord line $8x+6y=65$. Its distance from $P=(4,0)$ is $(65-32)/10=33/10$.",
+      "The triangle area is $\\tfrac12(3\\sqrt3)(33/10)=99\\sqrt3/20$. Therefore $a+b+c=99+3+20=122$."
+    ],
+    "keyIdeas": [
+      "Extended sine rule",
+      "Common chord",
+      "Point-line distance"
+    ],
+    "commonMistakes": [
+      "Using a center-to-chord distance as the triangle altitude from P."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Resolve both possible center distances before finding the altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-spring-p25",
+    "problemId": "amc12a-2021-spring-p25",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "Optimize each prime-power factor independently using successive ratios.",
+    "detailedSteps": [
+      "For $n=\\prod p^{e_p}$, the quantity factors as $f(n)=\\prod (e_p+1)/p^{e_p/3}$. For a fixed prime p, increasing the exponent from e to e+1 multiplies its factor by $\\frac{e+2}{e+1}p^{-1/3}$. This ratio strictly decreases with e.",
+      "The factor increases precisely when $((e+2)/(e+1))^3>p$. For p 2 the increasing steps end at exponent 3, since $(4/3)^3>2>(5/4)^3$. For p 3 they end at exponent 2, since $(3/2)^3>3>(4/3)^3$.",
+      "For p 5 and p 7 the unique best exponent is 1: $2^3>p>(3/2)^3$. Every prime at least 11 has its best exponent 0, because even the first ratio is below 1.",
+      "The unique global maximizer is therefore $N=2^3\\cdot3^2\\cdot5\\cdot7=2520$. All comparisons are strict, establishing uniqueness, and the digit sum is $2+5+2+0=9$."
+    ],
+    "keyIdeas": [
+      "Divisor function",
+      "Prime factorization",
+      "Successive ratios"
+    ],
+    "commonMistakes": [
+      "Searching only a finite range of integers without proving no larger integer can improve the value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Decreasing successive ratios prove a global, unique maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

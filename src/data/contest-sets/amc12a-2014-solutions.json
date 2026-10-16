@@ -1,0 +1,515 @@
+[
+  {
+    "id": "solution-amc12a-2014-p1",
+    "problemId": "amc12a-2014-p1",
+    "finalAnswer": "$\\boxed{\\frac{25}{2}}$ (choice C)",
+    "shortExplanation": "The fraction sum is four fifths.",
+    "detailedSteps": [
+      "The parenthesized sum is $1/2+1/5+1/10=4/5$. Raising it to power $-1$ gives $5/4$, so the requested product is $10(5/4)=25/2$."
+    ],
+    "keyIdeas": [
+      "A reciprocal after adding fractions"
+    ],
+    "commonMistakes": [
+      "Distributing the reciprocal across a sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent applies to the entire parenthesis.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p2",
+    "problemId": "amc12a-2014-p2",
+    "finalAnswer": "$\\boxed{38.50}$ (choice B)",
+    "shortExplanation": "Eleven adult-equivalent tickets cost thirty-eight dollars and fifty cents.",
+    "detailedSteps": [
+      "If an adult ticket costs p dollars, the first purchase costs $5p+4(p/2)=7p=24.50$. Thus $p=3.50$.",
+      "The new purchase has adult-equivalent count $8+6/2=11$, costing $11(3.50)=38.50$ dollars."
+    ],
+    "keyIdeas": [
+      "Adult-equivalent ticket counts"
+    ],
+    "commonMistakes": [
+      "Applying the child discount to the whole purchase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Half-price child tickets can be combined in pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p3",
+    "problemId": "amc12a-2014-p3",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Only three house sequences work.",
+    "detailedSteps": [
+      "Use O,R,B,Y for the four colors. With O before R and B before Y, the six possible sequences are ORBY, OBRY, OBYR, BORY, BOYR and BYOR.",
+      "The sequences ORBY, OBYR and BYOR put B immediately before Y and are excluded. The remaining OBRY, BORY and BOYR give three possibilities."
+    ],
+    "keyIdeas": [
+      "Two order constraints with a separation restriction"
+    ],
+    "commonMistakes": [
+      "Using only the two before-after constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First fix relative order, then enforce nonadjacency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p4",
+    "problemId": "amc12a-2014-p4",
+    "finalAnswer": "$\\boxed{\\frac{bde}{ac}}$ (choice A)",
+    "shortExplanation": "The rate per cow-day is b over ac.",
+    "detailedSteps": [
+      "The original production uses ac cow-days, so the yield per cow-day is $b/(ac)$. With d cows for e days, multiply by de to get $bde/(ac)$."
+    ],
+    "keyIdeas": [
+      "Scaling milk by cows and days"
+    ],
+    "commonMistakes": [
+      "Scaling by the reciprocal of one of the required factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both the herd size and time scale production directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p5",
+    "problemId": "amc12a-2014-p5",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The mean is eighty-seven and the median is ninety.",
+    "detailedSteps": [
+      "The remaining fraction of students is $1-.10-.35-.30=.25$. The mean is $.10(70)+.35(80)+.30(90)+.25(100)=87$.",
+      "Only forty-five percent score below ninety, and seventy-five percent score at most ninety. Thus the middle score, including both middle scores if the count is even, is ninety. The difference is $90-87=3$."
+    ],
+    "keyIdeas": [
+      "A weighted score mean and its median"
+    ],
+    "commonMistakes": [
+      "Averaging the four possible scores with equal weights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cumulative percentages locate the median.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p6",
+    "problemId": "amc12a-2014-p6",
+    "finalAnswer": "$\\boxed{99}$ (choice D)",
+    "shortExplanation": "The digits are seven and two.",
+    "detailedSteps": [
+      "Let a be the larger digit and b the smaller one. The positive difference of the two reversed numbers is $9(a-b)$, while their digit sum is $a+b$. Hence $9(a-b)=5(a+b)$, or $2a=7b$.",
+      "The digit bounds force $a=7,b=2$: write $a=7t,b=2t$ and use $1\\le a\\le9$. The two numbers are seventy-two and twenty-seven, whose sum is ninety-nine."
+    ],
+    "keyIdeas": [
+      "A digit reversal forces a fixed digit pair"
+    ],
+    "commonMistakes": [
+      "Treating the place-value difference as only a-b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same sum results in either reversal order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p7",
+    "problemId": "amc12a-2014-p7",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The exponent of three decreases by one sixth per term.",
+    "detailedSteps": [
+      "The first three terms are $3^{1/2},3^{1/3},3^{1/6}$. Their successive ratios are both $3^{-1/6}$.",
+      "The fourth term is $3^{1/6}3^{-1/6}=3^0=1$."
+    ],
+    "keyIdeas": [
+      "A geometric progression of root exponents"
+    ],
+    "commonMistakes": [
+      "Reading the small root indices as multipliers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inspect each radical index before rewriting as a power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p8",
+    "problemId": "amc12a-2014-p8",
+    "finalAnswer": "$\\boxed{219.95}$ (choice C)",
+    "shortExplanation": "The first coupon wins precisely between two hundred and two hundred twenty-five dollars among these prices.",
+    "detailedSteps": [
+      "All listed choices satisfy the eligibility cutoffs. At price p the three reductions are $.10p$, $20$ and $.18(p-100)$.",
+      "The first exceeds the second exactly when $p>200$. It exceeds the third exactly when $.10p>.18p-18$, or $p<225$. Only $219.95$ lies in both strict ranges."
+    ],
+    "keyIdeas": [
+      "Comparing the actual coupon reductions"
+    ],
+    "commonMistakes": [
+      "Applying eighteen percent to the full listed price."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The third discount applies only to the amount above its threshold.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p9",
+    "problemId": "amc12a-2014-p9",
+    "finalAnswer": "$\\boxed{a+4}$ (choice B)",
+    "shortExplanation": "Each five-term mean is its middle integer.",
+    "detailedSteps": [
+      "The first average is $b=a+2$. The next group starts with b, so its average is $b+2=a+4$."
+    ],
+    "keyIdeas": [
+      "Shifting the mean of consecutive integers"
+    ],
+    "commonMistakes": [
+      "Using the starting value as the mean."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A symmetric consecutive list is centered on its middle term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p10",
+    "problemId": "amc12a-2014-p10",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "Each isosceles altitude is square root three over six.",
+    "detailedSteps": [
+      "The equilateral area is $\\sqrt3/4$. If h is the common isosceles altitude, their area sum is $3(h/2)=\\sqrt3/4$, so $h=\\sqrt3/6$.",
+      "The equal side is the hypotenuse with legs $1/2$ and h, so its square is $1/4+3/36=1/3$. Its length is $\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "Equal triangle areas determine an altitude"
+    ],
+    "commonMistakes": [
+      "Assuming an isosceles triangle has the same altitude as the original equilateral triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated sum of areas does not require disjoint triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p11",
+    "problemId": "amc12a-2014-p11",
+    "finalAnswer": "$\\boxed{210}$ (choice C)",
+    "shortExplanation": "The remaining distance is one hundred seventy-five miles.",
+    "detailedSteps": [
+      "Let d be the distance still to drive after the first hour. Changing from thirty-five to fifty miles per hour saves $d/35-d/50$ hours.",
+      "The arrival changes from one hour late to half an hour early, a saving of $3/2$ hours. Thus $d(1/35-1/50)=3/2$, giving $d=175$. Including the first thirty-five miles gives $210$."
+    ],
+    "keyIdeas": [
+      "A time saving on the remaining drive"
+    ],
+    "commonMistakes": [
+      "Using only the thirty-minute early arrival as the saving."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first hour is common to both schedules.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p12",
+    "problemId": "amc12a-2014-p12",
+    "finalAnswer": "$\\boxed{2+\\sqrt3}$ (choice D)",
+    "shortExplanation": "The smaller central angle belongs to the larger circle.",
+    "detailedSteps": [
+      "A chord of length L subtending angle theta has $L=2r\\sin(\\theta/2)$. Therefore the radius ratio is $\\sin30^\\circ/\\sin15^\\circ$.",
+      "The area ratio is its square: $[\\tfrac12/((\\sqrt6-\\sqrt2)/4)]^2=2+\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "A shared chord compares two radii"
+    ],
+    "commonMistakes": [
+      "Using the ratio of arc angles as the ratio of areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Square the radius ratio to obtain an area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p13",
+    "problemId": "amc12a-2014-p13",
+    "finalAnswer": "$\\boxed{2220}$ (choice B)",
+    "shortExplanation": "Separate all-single, one-double and two-double assignments.",
+    "detailedSteps": [
+      "The allowed occupancy patterns are $(1,1,1,1,1)$, $(2,1,1,1,0)$ and $(2,2,1,0,0)$. Rooms and friends are distinct.",
+      "The first gives $5!=120$. For one double, choose its room and the empty room in $5\\cdot4$ ways, choose its friend pair in $\\binom52$ ways, and assign the others in $3!$ ways, giving $1200$.",
+      "For two doubles, choose their rooms in $\\binom52$ ways and the single room in three ways. Assign guests to the two now identified double rooms in $\\binom52\\binom32=30$ ways; the last friend goes to the single room. This gives $900$.",
+      "The total is $120+1200+900=2220$."
+    ],
+    "keyIdeas": [
+      "Three possible room occupancy patterns"
+    ],
+    "commonMistakes": [
+      "Dividing again by two for two double rooms after their identities already distinguish them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Empty rooms are allowed; there are only three occupancy types.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p14",
+    "problemId": "amc12a-2014-p14",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Every triple has the form minus four t, minus t, two t.",
+    "detailedSteps": [
+      "Write the increasing arithmetic progression as $a=b-d,c=b+d$, with positive integer d. The geometric order a,c,b requires $ab=c^2$, so $b(b-d)=(b+d)^2$.",
+      "This gives $d(3b+d)=0$, hence $b=-d/3$. Integrality forces $d=3t$ with positive integer t, and $(a,b,c)=(-4t,-t,2t)$.",
+      "Its geometric ratio in the order a,c,b is $-1/2$. The least c is obtained at t one and is two."
+    ],
+    "keyIdeas": [
+      "Combining arithmetic and geometric progressions"
+    ],
+    "commonMistakes": [
+      "Assuming a geometric progression must have positive common ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The specified geometric order differs from the increasing order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p15",
+    "problemId": "amc12a-2014-p15",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "The total of all nine hundred palindromes is forty-nine million five hundred thousand.",
+    "detailedSteps": [
+      "A palindrome has value $10001a+1010b+100c$. Each nonzero a occurs one hundred times; each digit b or c occurs ninety times.",
+      "The total is $10001(100)(45)+1010(90)(45)+100(90)(45)=49500000$. Its digit sum is $4+9+5=18$."
+    ],
+    "keyIdeas": [
+      "Summing each digit position separately"
+    ],
+    "commonMistakes": [
+      "Summing the digits of individual palindromes instead of the digits of their total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Carry operations happen after the entire numeric sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p16",
+    "problemId": "amc12a-2014-p16",
+    "finalAnswer": "$\\boxed{991}$ (choice D)",
+    "shortExplanation": "For at least two digits, the digit sum is k plus nine.",
+    "detailedSteps": [
+      "For $k\\ge2$, multiplying the repeated-eight number by eight produces a seven, then k minus two ones, then zero and four. This follows from the rightmost product sixty-four and repeated carry six: $8\\cdot8+6=70$, then $8\\cdot8+7=71$.",
+      "Thus its digit sum is $7+(k-2)+0+4=k+9$. Equating this to one thousand gives $k=991$. The exceptional one-digit product sixty-four has digit sum ten and cannot qualify."
+    ],
+    "keyIdeas": [
+      "The repeated-eight product has a stable carry pattern"
+    ],
+    "commonMistakes": [
+      "Treating every product digit as an independent sixty-four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Carries stabilize after the two rightmost columns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p17",
+    "problemId": "amc12a-2014-p17",
+    "finalAnswer": "$\\boxed{2+2\\sqrt7}$ (choice A)",
+    "shortExplanation": "The large sphere center is midway between the two corner layers.",
+    "detailedSteps": [
+      "The large radius-two sphere fits the four-unit width and depth only with horizontal center $(2,2)$. The eight small centers are the box corner offsets: horizontal coordinates one or three, and height one or h minus one.",
+      "If z is the large center height, tangency to the lower four gives $2+(z-1)^2=9$. Containment gives $z\\ge2$, so $z=1+\\sqrt7$. Tangency to the upper four similarly gives $h-1-z=\\sqrt7$.",
+      "Therefore $h=2+2\\sqrt7$. The displayed configuration is consistent: small spheres on the same layer have separation at least two, and the two layers are farther apart."
+    ],
+    "keyIdeas": [
+      "Corner sphere centers give a vertical tangency equation"
+    ],
+    "commonMistakes": [
+      "Putting the small centers on the actual box corners rather than one radius inward."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The horizontal separation squared is two, not four.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p18",
+    "problemId": "amc12a-2014-p18",
+    "finalAnswer": "$\\boxed{271}$ (choice C)",
+    "shortExplanation": "The domain is the open interval from one over two hundred fifty-six to one over sixteen.",
+    "detailedSteps": [
+      "For the outer logarithm to exist, $\\log_4 U>0$, where $U=\\log_{1/4}V$. Hence $U>1$. Because its base is below one, this is equivalent to $0<V<1/4$.",
+      "Here $V=\\log_{16}W$ and $W=\\log_{1/16}x$. Thus $1<W<2$, and reversing the inequality for base one sixteenth gives $1/256<x<1/16$.",
+      "All intermediate inputs are positive on this interval. Its length is $1/16-1/256=15/256$, already reduced, so $m+n=15+256=271$."
+    ],
+    "keyIdeas": [
+      "Reverse the domain inequalities through alternating logarithm bases"
+    ],
+    "commonMistakes": [
+      "Keeping the inequality direction when a logarithm has base below one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reverse the nested restrictions from the outside in.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p19",
+    "problemId": "amc12a-2014-p19",
+    "finalAnswer": "$\\boxed{78}$ (choice E)",
+    "shortExplanation": "There are thirty-nine roots of each sign, with no coefficient collisions.",
+    "detailedSteps": [
+      "For an integer root t, zero is impossible and $k=-5t-12/t$. If t is positive, its coefficient has magnitude $5t+12/t$.",
+      "Every t from one through thirty-nine works: t one has magnitude seventeen, and for $2\\le t\\le39$, the function $5t+12/t$ is increasing because its derivative is $5-12/t^2>0$. Its maximum is therefore $195+12/39<200$. For $t\\ge40$, already $5t\\ge200$, so none works.",
+      "Distinct positive integers u,v could give the same k only if $(u-v)(5-12/(uv))=0$. The unequal case would require $uv=12/5$, impossible for integers. Negative roots give the thirty-nine opposite-sign coefficients, distinct from the first group.",
+      "Therefore the number of distinct rational coefficients is $2\\cdot39=78$."
+    ],
+    "keyIdeas": [
+      "Every nonzero integer root determines its rational coefficient"
+    ],
+    "commonMistakes": [
+      "Requiring the coefficient k itself to be an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count coefficients after proving different roots cannot produce the same one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p20",
+    "problemId": "amc12a-2014-p20",
+    "finalAnswer": "$\\boxed{14}$ (choice D)",
+    "shortExplanation": "The reflected endpoints are fourteen units apart.",
+    "detailedSteps": [
+      "Reflect B across AC to B prime, and C across AB to C prime. For E on AC and D on AB, $BE+ED+DC=B\\!\\prime E+ED+DC\\!\\prime\\ge B\\!\\prime C\\!\\prime$.",
+      "The angle between rays AB prime and AC prime is one hundred twenty degrees, with lengths ten and six. The cosine rule gives $B\\!\\prime C\\!\\prime^2=100+36-120\\cos120^\\circ=196$. The lower bound is fourteen.",
+      "The line B prime C prime crosses AC first and AB second. Its intersection distances are $AE=60\\sin120^\\circ/(10\\sin40^\\circ+6\\sin80^\\circ)$ and $AD=60\\sin120^\\circ/(10\\sin80^\\circ+6\\sin40^\\circ)$, both positive and respectively below six and ten. Thus the intersections lie on the actual segments, and equality is attained."
+    ],
+    "keyIdeas": [
+      "Two reflections straighten a shortest broken path"
+    ],
+    "commonMistakes": [
+      "Using the reflection lower bound without verifying the intersections lie on both required segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Unfold both reflections in the same broken-path order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p21",
+    "problemId": "amc12a-2014-p21",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The logarithms of consecutive ratios sum to one.",
+    "detailedSteps": [
+      "Write $x=k+t$ with integer $1\\le k\\le2013$ and $0\\le t<1$. The inequality becomes $k(2014^t-1)\\le1$, so $0\\le t\\le\\log_{2014}((k+1)/k)$.",
+      "These upper bounds are strictly below one, so they describe exactly one interval in each unit strip. Their total length is $\\sum_{k=1}^{2013}\\log_{2014}((k+1)/k)=\\log_{2014}2014=1$."
+    ],
+    "keyIdeas": [
+      "Interval lengths telescope after taking logarithms"
+    ],
+    "commonMistakes": [
+      "Counting the isolated integer starting points as intervals of extra length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Endpoint inclusion has no effect on interval length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p22",
+    "problemId": "amc12a-2014-p22",
+    "finalAnswer": "$\\boxed{279}$ (choice B)",
+    "shortExplanation": "The binary exponent jumps are two or three.",
+    "detailedSteps": [
+      "Let $L_n=\\lfloor n\\log_2 5\\rfloor$. Since $2<\\log_2 5<3$, each difference $L_{n+1}-L_n$ is two or three. Apart from n zero, no power of five is a power of two.",
+      "For a fixed $n\\ge0$, the required m satisfies $L_n+1\\le m\\le L_{n+1}-2$. Thus there is exactly one m for a three-step jump and none for a two-step jump. Negative n cannot work because its upper power of five is at most one.",
+      "The given comparison makes $L_{867}=2013$. Over n zero through eight hundred sixty-six, the number of three-step jumps is $2013-2(867)=279$.",
+      "These are all allowed m: even the last possible jump would give $m=L_{867}-2=2011\\le2012$, while n at least eight hundred sixty-seven forces $m\\ge2014$. Therefore all two hundred seventy-nine pairs qualify."
+    ],
+    "keyIdeas": [
+      "Count the three-step jumps between consecutive powers of five"
+    ],
+    "commonMistakes": [
+      "Using non-strict inequalities at powers or forgetting the gap of two in the binary exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The supplied large-power comparison replaces a numerical logarithm estimate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p23",
+    "problemId": "amc12a-2014-p23",
+    "finalAnswer": "$\\boxed{883}$ (choice B)",
+    "shortExplanation": "The repetend contains every two-digit block except ninety-eight.",
+    "detailedSteps": [
+      "Use base one hundred for long division of $1/9801$. Since $100=1+99$, the successive remainders are $1+99j$ for j zero through ninety-eight, then return to one after ninety-nine steps.",
+      "The corresponding quotient blocks are $00,01,02,\\ldots,97,99$. For the last block the numerator is $970300=99(9801)+1$; this explains why ninety-eight is skipped.",
+      "The block period is ninety-nine. The decimal period is one hundred ninety-eight: modulo eleven a power of ten equals one only for an even exponent, and $100^j\\equiv1+99j\\pmod{9801}$ returns to one first at j ninety-nine.",
+      "All one hundred two-digit blocks from zero-zero through ninety-nine have digit sum $2(10)(0+1+\\cdots+9)=900$. Removing the skipped block ninety-eight subtracts seventeen, leaving $883$."
+    ],
+    "keyIdeas": [
+      "Long division in two-digit blocks"
+    ],
+    "commonMistakes": [
+      "Assuming the denominator is ninety-nine instead of its square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Leading zero digits are part of the repeating period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p24",
+    "problemId": "amc12a-2014-p24",
+    "finalAnswer": "$\\boxed{301}$ (choice C)",
+    "shortExplanation": "The final zero preimage has one hundred one possible intermediate values.",
+    "detailedSteps": [
+      "For $g(y)=|y|-1$, the preimages of zero after n iterations are $-n,-n+2,\\ldots,n-2,n$. This follows inductively from solving $g(y)=t$: each nonnegative t gives $y=\\pm(t+1)$, the target $t=-1$ gives $y=0$, and lower t has no preimage.",
+      "For n one hundred there are one hundred one even intermediate values y from minus one hundred to one hundred. The initial map is $f_0(x)=x+200$ for $x\\le-100$, $-x$ for $-100\\le x\\le100$, and $x-200$ for $x\\ge100$.",
+      "Each y has the three candidate preimages $y-200,-y,y+200$. All lie in their corresponding branches. Only the shared endpoint roots at y minus one hundred and y one hundred coincide between two branches.",
+      "The count is therefore $3(101)-2=301$."
+    ],
+    "keyIdeas": [
+      "Repeated absolute-value preimages and a three-branch starting map"
+    ],
+    "commonMistakes": [
+      "Counting a branch junction twice or treating every negative target as having two absolute-value preimages."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the intermediate values first, then invert the piecewise initial map.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2014-p25",
+    "problemId": "amc12a-2014-p25",
+    "finalAnswer": "$\\boxed{40}$ (choice B)",
+    "shortExplanation": "The qualifying lattice points are indexed by forty odd integers.",
+    "detailedSteps": [
+      "Both given points are distance five from the focus. Write a directrix in unit-normal form $n\\cdot X=d$. Their equal distances imply $d(n\\cdot(4,3))=0$. A genuine parabola has its focus off the directrix, so d is nonzero and n is perpendicular to $(4,3)$. The two possible directrices are $-3x+4y=25$ and $-3x+4y=-25$.",
+      "Put $u=4x+3y$ and $v=-3x+4y$. For the first directrix, the equation is $u^2+v^2=(v-25)^2$, giving $u^2=625-50v$. For integer coordinates, $u^2\\equiv25\\pmod{50}$, so $u=5t$ with t odd and $v=(25-t^2)/2$.",
+      "The inverse coordinates are $x=(4u-3v)/25$ and $y=(3u+4v)/25$. Their integrality modulo five forces t to be a multiple of five. Write $t=5s$, where s is odd. Then $u=25s$, $x=(3s^2+8s-3)/2$ and $y=-2s^2+3s+2$, all integers.",
+      "The bound is $|25s|\\le1000$, or $|s|\\le40$. There are forty odd integers in this interval, each giving a different point. The other directrix reflects the configuration through the origin and preserves the bound and count, so the directrix choice does not change the answer."
+    ],
+    "keyIdeas": [
+      "Rotate the focus-directrix equation into integer linear coordinates"
+    ],
+    "commonMistakes": [
+      "Assuming the two supplied points determine an oriented directrix uniquely, or counting t values before enforcing x and y integrality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer linear coordinates encode both the distance equation and the lattice restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

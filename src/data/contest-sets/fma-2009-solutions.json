@@ -1,0 +1,590 @@
+[
+  {
+    "id": "solution-fma-2009-p1",
+    "problemId": "fma-2009-p1",
+    "finalAnswer": "Best listed response: $\\boxed{2.1\\times10^4\\,\\mathrm{Pa}}$ (choice B); the full contact-impulse pressure is $2.871\\times10^4\\,\\mathrm{Pa}$.",
+    "shortExplanation": "The impulse estimate is about $21.2\\,\\mathrm{kPa}$. Including the apple's weight gives $28.7\\,\\mathrm{kPa}$; B is the closest listed value in either calculation.",
+    "detailedSteps": [
+      "The impact speed follows from the fall: $v=\\sqrt{2gh}=\\sqrt{2(10)(0.40)}=2.828\\,\\mathrm{m/s}$.",
+      "Convert the contact area: $4\\,\\mathrm{cm^2}=4\\times10^{-4}\\,\\mathrm{m^2}$. Taking upward as positive, the contact impulse obeys $(\\overline N-mg)\\Delta t=mv$.",
+      "The full average contact pressure is $\\overline N/A=[0.30(2.828)/0.10+3.0]/(4\\times10^{-4})=2.871\\times10^4\\,\\mathrm{Pa}$.",
+      "The usual impact estimate neglects weight during the collision and gives $mv/(A\\Delta t)=2.121\\times10^4\\,\\mathrm{Pa}$. The printed $2.1\\times10^4\\,\\mathrm{Pa}$ is the best listed response, and remains nearest when weight is retained."
+    ],
+    "keyIdeas": [
+      "Contact force and net force differ by the weight during the stopping interval."
+    ],
+    "commonMistakes": [
+      "Using the square-centimeter area as a square-meter area changes the result by a factor of $10^4$; treating the printed value as the exact gravity-inclusive pressure also overstates the approximation."
+    ],
+    "alternativeMethods": [
+      "Compute the average net deceleration $v/\\Delta t$ and then use $\\overline N=m(v/\\Delta t+g)$ before dividing by area."
+    ],
+    "difficultyNotes": "The supplied area is treated as a constant or effective average contact area. The printed answer uses an impact approximation; the full impulse result is preserved explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p2",
+    "problemId": "fma-2009-p2",
+    "finalAnswer": "$\\boxed{\\text{rest at the original position}}$ (choice D)",
+    "shortExplanation": "Equal masses exchange velocities at each elastic collision. Three collisions return the middle block to its original position with zero velocity.",
+    "detailedSteps": [
+      "Put the middle block at $x=0$, the left block at $-a$ and the right block at $b$, with $0<a<b$. Their velocities are $v,0,-v$.",
+      "At $t=a/v$, the left and middle blocks collide at zero. The left block stops and the middle block takes velocity $v$.",
+      "The middle and right blocks meet at $t=(a+b)/(2v)$ and $x=(b-a)/2$. They exchange velocities, so the middle block now travels left at $-v$.",
+      "The middle block reaches the stationary left block at $x=0$ at $t=b/v$. After that exchange, the middle block stops while the outer blocks move away. The answer is D."
+    ],
+    "keyIdeas": [
+      "For equal masses, an instantaneous elastic collision exchanges the two velocities."
+    ],
+    "commonMistakes": [
+      "Stopping the analysis after the second collision leaves the middle block moving and misses its later return."
+    ],
+    "alternativeMethods": [
+      "An event sequence with ordered positions gives the final velocity ordering $-v,0,v$; the final exchange occurs exactly at the middle block's starting position."
+    ],
+    "difficultyNotes": "The initial distance inequality makes the collisions sequential. The frictionless, instantaneous collision assumptions are essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p3",
+    "problemId": "fma-2009-p3",
+    "finalAnswer": "$\\boxed{\\text{rest to the right of the original position}}$ (choice E)",
+    "shortExplanation": "The first merged pair moves right at $v/2$. When it captures the third block, the total momentum is zero and the middle block has shifted right.",
+    "detailedSteps": [
+      "Use the same positions $-a,0,b$, where $b>a$, and initial velocities $v,0,-v$.",
+      "The first collision produces a mass $2m$ moving at $v/2$. At that time the right block remains a distance $b-a$ to its right.",
+      "The closing speed is $v/2+v=3v/2$. The merged pair travels $(v/2)(b-a)/(3v/2)=(b-a)/3>0$ before the next collision.",
+      "After all three stick together, their initial total momentum $mv-mv=0$ makes the final velocity zero. Their stopping location lies to the right, giving E."
+    ],
+    "keyIdeas": [
+      "Conserve momentum separately at each merging event; the intermediate speed determines the stopping location."
+    ],
+    "commonMistakes": [
+      "Zero total initial momentum fixes the final velocity but does not fix the final location."
+    ],
+    "alternativeMethods": [
+      "The final encounter coordinate follows by solving $x=(v/2)t$ and $x=(b-a)-vt$ after the first collision."
+    ],
+    "difficultyNotes": "All blocks have the same mass and move along one horizontal line. Kinetic energy is lost at both collisions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p4",
+    "problemId": "fma-2009-p4",
+    "finalAnswer": "$\\boxed{4800\\,\\mathrm{N}}$ (choice A)",
+    "shortExplanation": "The seat must support the weight and provide the upward acceleration, so its force is $m(g+5g)=4800\\,\\mathrm{N}$.",
+    "detailedSteps": [
+      "Let $N$ be the upward seat force on the person. The downward weight is $mg$.",
+      "Newton's second law gives $N-mg=m(5g)$, hence $N=6mg$.",
+      "With $m=80\\,\\mathrm{kg}$ and $g=10\\,\\mathrm{m/s^2}$, $N=4800\\,\\mathrm{N}$. The person's force on the spacecraft is equally large and downward, giving A."
+    ],
+    "keyIdeas": [
+      "The acceleration is produced by the net force, while the seat force also supports the weight."
+    ],
+    "commonMistakes": [
+      "Using $5mg$ computes the net force rather than the contact force."
+    ],
+    "alternativeMethods": [
+      "In the accelerating spacecraft, the effective downward acceleration is $g+5g$, so the apparent weight is $6mg$."
+    ],
+    "difficultyNotes": "Use the stated near-surface gravity and the contest convention $g=10\\,\\mathrm{N/kg}$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p5",
+    "problemId": "fma-2009-p5",
+    "finalAnswer": "$\\boxed{L_A>L_B>L_C}$ (choice A)",
+    "shortExplanation": "The ellipse's angular momentum lies between those of the circles tangent at its closest and farthest distances.",
+    "detailedSteps": [
+      "Let the inner and outer circle radii be $r_p$ and $r_a$, with $r_a>r_p$. For a circular orbit, the squared specific angular momentum is $h^2=\\mu r$, where $\\mu=GM$.",
+      "For the ellipse, angular momentum at the two apsides gives $v_p=h/r_p$ and $v_a=h/r_a$.",
+      "Equating the apsis energies yields $h_B^2=2\\mu r_pr_a/(r_p+r_a)$.",
+      "Because $r_a>r_p$, $\\mu r_a>h_B^2>\\mu r_p$. The satellites have equal masses, so $L_A>L_B>L_C$, choice A."
+    ],
+    "keyIdeas": [
+      "Angular momentum depends on the entire orbit and remains constant along each orbit."
+    ],
+    "commonMistakes": [
+      "Comparing only the satellites' instantaneous distances ignores their tangential speeds."
+    ],
+    "alternativeMethods": [
+      "Use the ellipse's semilatus rectum $p=2r_pr_a/(r_p+r_a)$ and $h^2=\\mu p$; $p$ lies strictly between the two circular radii."
+    ],
+    "difficultyNotes": "The figure supplies an ellipse tangent to the inner and outer circles. Treat the satellites as test masses in the same central gravitational field.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p6",
+    "problemId": "fma-2009-p6",
+    "finalAnswer": "$\\boxed{\\text{independent of }\\alpha}$ (choice C)",
+    "shortExplanation": "At a fixed reachable height, energy conservation determines the speed without the launch angle.",
+    "detailedSteps": [
+      "At launch the kinetic energy is $mv_0^2/2$.",
+      "At height $h$, energy conservation gives $mv^2/2+mgh=mv_0^2/2$.",
+      "Thus $v=\\sqrt{v_0^2-2gh}$ for every launch angle that reaches that height. The speed is independent of $\\alpha$, choice C."
+    ],
+    "keyIdeas": [
+      "A change in gravitational potential determines the change in speed magnitude."
+    ],
+    "commonMistakes": [
+      "The horizontal component depends on angle, but the full speed at a fixed height does not."
+    ],
+    "alternativeMethods": [
+      "Combine $v_x=v_0\\cos\\alpha$ with $v_y^2=v_0^2\\sin^2\\alpha-2gh$; their squared sum removes the angle."
+    ],
+    "difficultyNotes": "Only angles reaching $h$ belong to the comparison, as the source states. Upward and downward passages have the same speed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p7",
+    "problemId": "fma-2009-p7",
+    "finalAnswer": "$\\boxed{2.5\\,\\mathrm{m/s^2}}$ (choice B)",
+    "shortExplanation": "The constant-acceleration displacement equation gives $a=(15^2-10^2)/(2\\cdot25)=2.5\\,\\mathrm{m/s^2}$.",
+    "detailedSteps": [
+      "The bird moves along a straight line with constant acceleration, so $v_f^2-v_i^2=2as$.",
+      "Substitute $v_i=10\\,\\mathrm{m/s}$, $v_f=15\\,\\mathrm{m/s}$ and $s=25\\,\\mathrm{m}$.",
+      "Then $a=(225-100)/50=2.5\\,\\mathrm{m/s^2}$, choice B."
+    ],
+    "keyIdeas": [
+      "A constant acceleration connects the squared speeds with displacement."
+    ],
+    "commonMistakes": [
+      "Dividing the speed change by distance has the wrong units for acceleration."
+    ],
+    "alternativeMethods": [
+      "The mean speed is $12.5\\,\\mathrm{m/s}$, so the interval is $2\\,\\mathrm{s}$ and $a=(15-10)/2$."
+    ],
+    "difficultyNotes": "Uniformly increasing speed on a straight path makes the acceleration magnitude constant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p8",
+    "problemId": "fma-2009-p8",
+    "finalAnswer": "$\\boxed{-2\\,\\mathrm{rad/s^2}}$ (choice D)",
+    "shortExplanation": "Angular acceleration is the slope of the angular-velocity graph, which is constantly $-2\\,\\mathrm{rad/s^2}$.",
+    "detailedSteps": [
+      "The graph runs from $\\omega=4\\,\\mathrm{rad/s}$ at zero to $-2\\,\\mathrm{rad/s}$ at $3\\,\\mathrm{s}$.",
+      "Its slope is $\\alpha=\\Delta\\omega/\\Delta t=(-2-4)/3=-2\\,\\mathrm{rad/s^2}$.",
+      "The same slope applies at $t=2\\,\\mathrm{s}$, even though the angular velocity is zero there. Choose D."
+    ],
+    "keyIdeas": [
+      "Zero velocity and zero acceleration are different conditions."
+    ],
+    "commonMistakes": [
+      "Reading the ordinate at $t=2$ gives angular velocity, not angular acceleration."
+    ],
+    "alternativeMethods": [
+      "Use the first two seconds: $(0-4)/2=-2\\,\\mathrm{rad/s^2}$."
+    ],
+    "difficultyNotes": "The source curve is a straight line across the zero crossing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p9",
+    "problemId": "fma-2009-p9",
+    "finalAnswer": "$\\boxed{3\\,\\mathrm{rad}}$ (choice E)",
+    "shortExplanation": "The positive angular-velocity area is $4\\,\\mathrm{rad}$ and the negative area is $-1\\,\\mathrm{rad}$, leaving $3\\,\\mathrm{rad}$ net.",
+    "detailedSteps": [
+      "Net angular displacement is $\\int_0^3\\omega(t)\\,dt$.",
+      "From zero to $2\\,\\mathrm{s}$ the triangular area is $(2)(4)/2=4\\,\\mathrm{rad}$.",
+      "From $2$ to $3\\,\\mathrm{s}$ the area is negative: $-(1)(2)/2=-1\\,\\mathrm{rad}$.",
+      "The net result is $4-1=3\\,\\mathrm{rad}$, choice E."
+    ],
+    "keyIdeas": [
+      "Net rotation uses signed area, including rotation in the opposite direction."
+    ],
+    "commonMistakes": [
+      "Adding the two area magnitudes gives total angular travel, which is $5\\,\\mathrm{rad}$ rather than the requested net angle."
+    ],
+    "alternativeMethods": [
+      "Integrate the line $\\omega(t)=4-2t$ to obtain $4t-t^2$, then evaluate at $3\\,\\mathrm{s}$."
+    ],
+    "difficultyNotes": "The word net determines the sign convention for the graph areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p10",
+    "problemId": "fma-2009-p10",
+    "finalAnswer": "$\\boxed{28\\,\\mathrm{m}}$ (choice C)",
+    "shortExplanation": "Both apples have the same acceleration, so their separation grows at the constant relative speed $14\\,\\mathrm{m/s}$.",
+    "detailedSteps": [
+      "Take upward as positive and put the release point at zero. The positions are $y_+=7t-gt^2/2$ and $y_-=-7t-gt^2/2$.",
+      "Subtracting eliminates the common gravity term: $y_+-y_-=14t$.",
+      "At $t=2\\,\\mathrm{s}$ their separation is $28\\,\\mathrm{m}$, choice C."
+    ],
+    "keyIdeas": [
+      "Equal accelerations cancel in relative motion."
+    ],
+    "commonMistakes": [
+      "Counting the gravity displacement twice incorrectly changes the separation."
+    ],
+    "alternativeMethods": [
+      "Their initial relative velocity is $7-(-7)=14\\,\\mathrm{m/s}$ and their relative acceleration is zero."
+    ],
+    "difficultyNotes": "The source explicitly keeps both apples above the ground during the interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p11",
+    "problemId": "fma-2009-p11",
+    "finalAnswer": "$\\boxed{36\\,\\mathrm{J}}$ (choice A)",
+    "shortExplanation": "Integrate the signed acceleration-position area and multiply by the mass: $W=2.25(16)=36\\,\\mathrm{J}$.",
+    "detailedSteps": [
+      "For net force $F=ma$, the work is $W=m\\int a(x)\\,dx$.",
+      "The positive areas are $4$, $8$ and $8\\,\\mathrm{m^2/s^2}$ over the successive intervals ending at $x=8\\,\\mathrm{m}$.",
+      "The two negative triangular areas from $8$ to $12\\,\\mathrm{m}$ are $-2$ each. The net area is $4+8+8-2-2=16\\,\\mathrm{m^2/s^2}$.",
+      "Multiplying by $2.25\\,\\mathrm{kg}$ gives $36\\,\\mathrm{J}$, choice A."
+    ],
+    "keyIdeas": [
+      "The horizontal axis is position, so this area relates to work rather than impulse."
+    ],
+    "commonMistakes": [
+      "Treating the graph as acceleration versus time or ignoring its negative section gives the wrong quantity."
+    ],
+    "alternativeMethods": [
+      "Multiply each graph ordinate by the mass to form a force-position graph and add the same signed geometrical areas."
+    ],
+    "difficultyNotes": "The original ordinate is labeled acceleration in $\\mathrm{m/s/s}$, which is equivalent to $\\mathrm{m/s^2}$. The horizontal axis is position, so its signed area times the mass gives net-force work over the full shown interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p12",
+    "problemId": "fma-2009-p12",
+    "finalAnswer": "$\\boxed{5\\times10^4\\,\\mathrm{J}}$ (choice C)",
+    "shortExplanation": "The total mechanical work includes raising both people: $(100+75)(10)(30)=52500\\,\\mathrm{J}$, approximately $5\\times10^4\\,\\mathrm{J}$.",
+    "detailedSteps": [
+      "Raising Batman increases gravitational potential energy by $Mgh=100(10)(30)=30000\\,\\mathrm{J}$.",
+      "Raising Robin requires another $mgh=75(10)(30)=22500\\,\\mathrm{J}$.",
+      "Their combined increase is $52500\\,\\mathrm{J}$, whose closest approximate response is C."
+    ],
+    "keyIdeas": [
+      "Total work counts both stages of the stated action."
+    ],
+    "commonMistakes": [
+      "Using only the partner's mass omits the initial climb; using only the climber's mass omits the lift."
+    ],
+    "alternativeMethods": [
+      "Compute the final gravitational potential of the combined mass $175\\,\\mathrm{kg}$ relative to ground level."
+    ],
+    "difficultyNotes": "Use the ideal mechanical-work estimate with negligible changes in final kinetic energy and neglected losses. Metabolic energy is outside this estimate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p13",
+    "problemId": "fma-2009-p13",
+    "finalAnswer": "$\\boxed{\\text{Lucy}}$ (choice B)",
+    "shortExplanation": "The pivot lies slightly to Lucy's side of Henry. Lucy's torque balances the combined torques of Henry and Mary, so hers is largest.",
+    "detailedSteps": [
+      "Place Lucy, Henry and Mary at $0$, $d$ and $2d$, with $d=2.74\\,\\mathrm{m}$. For a lightweight balanced board, the pivot is at $x_p=d(63.7+2\\cdot24.3)/(33.1+63.7+24.3)\\approx2.541\\,\\mathrm{m}$.",
+      "Since $x_p<d$, Lucy lies on one side of the pivot while both Henry and Mary lie on the other.",
+      "Balance gives $|\\tau_{\\rm Lucy}|=|\\tau_{\\rm Henry}|+|\\tau_{\\rm Mary}|$. Both terms are positive, so Lucy exceeds either one individually.",
+      "Numerically the magnitudes are about $841$, $127$ and $714\\,\\mathrm{N\\,m}$, respectively. Choose B."
+    ],
+    "keyIdeas": [
+      "Torque depends on weight and distance from the actual pivot, not mass alone."
+    ],
+    "commonMistakes": [
+      "Henry is heaviest but is close to the balancing pivot, so he does not exert the largest torque."
+    ],
+    "alternativeMethods": [
+      "Relative to Henry's position, the imbalance between Lucy and Mary shifts the pivot toward Lucy; then the one-versus-two torque balance identifies the largest contribution."
+    ],
+    "difficultyNotes": "The board's mass is neglected as specified. The three forces share the same geometrical projection factor if the balanced board is inclined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p14",
+    "problemId": "fma-2009-p14",
+    "finalAnswer": "$\\boxed{\\text{none of the listed quantities}}$ (choice E)",
+    "shortExplanation": "The long interval includes an inelastic collision and subsequent swinging under external force and torque. None of the listed quantities stays conserved throughout.",
+    "detailedSteps": [
+      "The chosen system contains the bullet and block, with the rope and gravity acting externally.",
+      "Embedding the bullet dissipates kinetic energy, so mechanical energy is not conserved across the impact.",
+      "During the swing, rope tension and gravity change the total linear momentum; the tension also has a horizontal component, so horizontal momentum is not conserved over the full interval.",
+      "About the peg, tension produces no torque, but gravity generally gives $\\tau=-(M+m)gL\\sin\\theta$. The angular momentum therefore changes during the swing. Choose E."
+    ],
+    "keyIdeas": [
+      "A conservation statement must apply to the entire specified time interval and system boundary."
+    ],
+    "commonMistakes": [
+      "The short-impact approximation for momentum does not extend to the subsequent ten-second swing."
+    ],
+    "alternativeMethods": [
+      "Inspect $d\\mathbf p/dt=\\mathbf F_{\\rm external}$ and $dL_{\\rm peg}/dt=\\tau_{\\rm gravity}$, then account separately for collision energy loss."
+    ],
+    "difficultyNotes": "The source deliberately specifies a long interval around impact. Accidental equality of endpoint values would not make a quantity conserved throughout that interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p15",
+    "problemId": "fma-2009-p15",
+    "finalAnswer": "$\\boxed{0.509}$ (choice C)",
+    "shortExplanation": "The upward pull reduces the normal force to $170\\,\\mathrm{N}$, so $\\mu_k=100\\cos30^\\circ/170\\approx0.509$.",
+    "detailedSteps": [
+      "Constant speed on the level floor means both vertical and horizontal acceleration vanish.",
+      "Vertical balance gives $N=mg-P\\sin30^\\circ=22(10)-100(1/2)=170\\,\\mathrm{N}$.",
+      "Horizontal balance gives $\\mu_kN=P\\cos30^\\circ$. Therefore $\\mu_k=86.60/170\\approx0.509$, choice C."
+    ],
+    "keyIdeas": [
+      "An angled pull changes the contact normal force as well as the horizontal driving force."
+    ],
+    "commonMistakes": [
+      "Taking $N=mg$ neglects the upward component of the handle force."
+    ],
+    "alternativeMethods": [
+      "Write $\\mu_k=P\\cos\\alpha/(mg-P\\sin\\alpha)$ and substitute the source values."
+    ],
+    "difficultyNotes": "The positive computed normal force confirms that the suitcase remains in contact. Use the source's $g=10$ convention.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p16",
+    "problemId": "fma-2009-p16",
+    "finalAnswer": "$\\boxed{\\sqrt{\\frac{2k}{m}}}$ (choice B)",
+    "shortExplanation": "Both masses move, so the spring's relative coordinate has reduced mass $m/2$ and angular frequency $\\sqrt{2k/m}$.",
+    "detailedSteps": [
+      "Let $q=x_2-x_1-\\ell_0$ be the spring extension. Its force on mass 1 is $kq$ and on mass 2 is $-kq$.",
+      "Subtract the equations $m\\ddot x_1=kq$ and $m\\ddot x_2=-kq$ to obtain $\\ddot q=-2kq/m$.",
+      "Compare with $\\ddot q+\\omega^2q=0$: $\\omega=\\sqrt{2k/m}$, choice B."
+    ],
+    "keyIdeas": [
+      "Relative motion of two free masses differs from one mass against a fixed spring endpoint."
+    ],
+    "commonMistakes": [
+      "Using $\\sqrt{k/m}$ treats the other endpoint as fixed; using total mass $2m$ ignores their opposite motions."
+    ],
+    "alternativeMethods": [
+      "The relative oscillator has reduced mass $\\mu=m/2$, so $\\omega=\\sqrt{k/\\mu}$."
+    ],
+    "difficultyNotes": "The ideal spring is treated as massless. The center of mass may translate uniformly; that zero-frequency mode is separate from internal oscillation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p17",
+    "problemId": "fma-2009-p17",
+    "finalAnswer": "$\\boxed{\\text{the spring constant}}$ (choice D)",
+    "shortExplanation": "Mass and time standards determine a spring constant, whose units are $\\mathrm{kg/s^2}$. Every other listed quantity needs a length standard.",
+    "detailedSteps": [
+      "The calibrated mass supplies the mass unit, and the known tuning-fork frequency supplies the time unit.",
+      "The dimensions of the alternatives are $[g]=LT^{-2}$, $[c]=LT^{-1}$, $[\\rho]=ML^{-3}$, $[k]=MT^{-2}$ and $[p]=ML^{-1}T^{-2}$.",
+      "Only $k$ has no length exponent. Measure a known mass's oscillation period and infer $k=4\\pi^2m/T^2$.",
+      "Without a calibrated length or a known dimensional constant, the remaining quantities cannot be assigned SI numerical values. Choose D."
+    ],
+    "keyIdeas": [
+      "An unknown length scale prevents measurements of quantities carrying a nonzero length exponent."
+    ],
+    "commonMistakes": [
+      "Assuming a remembered numerical value of the speed of light violates the stated lack of known constants."
+    ],
+    "alternativeMethods": [
+      "Rescale every uncalibrated laboratory length by the same factor. Mass and time observations stay fixed, while all listed quantities except $k$ change their numerical scale."
+    ],
+    "difficultyNotes": "Apply the historical problem's stated information limits. A linear spring experiment must account for any equipment or spring inertia using the mass standard.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p18",
+    "problemId": "fma-2009-p18",
+    "finalAnswer": "$\\boxed{\\pi\\sqrt{\\frac{L}{g}}\\left(1+\\frac1{\\sqrt3}\\right)}$ (choice E)",
+    "shortExplanation": "A complete return uses half a period at length $L$ and half a period at length $L/3$.",
+    "detailedSteps": [
+      "The peg is $2L/3$ below the fixed pivot, leaving the short swinging length $\\ell=L/3$.",
+      "The long side accounts for the outward and return quarter-cycles, totaling $T_L/2$. The short side similarly contributes $T_\\ell/2$.",
+      "For small angles, $T_s=2\\pi\\sqrt{s/g}$, so the return time is $\\pi\\sqrt{L/g}+\\pi\\sqrt{L/(3g)}$.",
+      "Factor out $\\pi\\sqrt{L/g}$ to obtain $\\pi\\sqrt{L/g}(1+1/\\sqrt3)$, choice E."
+    ],
+    "keyIdeas": [
+      "The two sides have different effective lengths and their half-periods add."
+    ],
+    "commonMistakes": [
+      "Using $2L/3$ as the short radius measures the pivot-to-peg distance rather than peg-to-mass distance."
+    ],
+    "alternativeMethods": [
+      "Split the cycle into four quarter-periods: long, short, short, long; this gives the same sum."
+    ],
+    "difficultyNotes": "This is the small-angle answer appropriate to the stated $5^\\circ$ release. Energy gives a short-side amplitude near $8.7^\\circ$; finite-angle periods are slightly longer. The executable check records that correction rather than claiming exact equality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p19",
+    "problemId": "fma-2009-p19",
+    "finalAnswer": "$\\boxed{20\\,\\mathrm{m}}$ (choice B)",
+    "shortExplanation": "At the maximum-range angle of $45^\\circ$, the apex height is one quarter of the range: $80/4=20\\,\\mathrm{m}$.",
+    "detailedSteps": [
+      "For fixed launch speed and equal launch/landing heights, $R=v_0^2\\sin2\\theta/g$.",
+      "Maximum range occurs at $\\theta=45^\\circ$, giving $v_0^2/g=80\\,\\mathrm{m}$.",
+      "The apex height is $H=v_0^2\\sin^245^\\circ/(2g)=v_0^2/(4g)=20\\,\\mathrm{m}$. Choose B."
+    ],
+    "keyIdeas": [
+      "Optimize range before evaluating the vertical height."
+    ],
+    "commonMistakes": [
+      "The maximum-range trajectory does not use the entire initial kinetic energy for vertical motion."
+    ],
+    "alternativeMethods": [
+      "Use $H/R=\\tan\\theta/4$ for a projectile returning to its starting height, then set $\\theta=45^\\circ$."
+    ],
+    "difficultyNotes": "Use the ideal fixed-speed, level-ground projectile model with the explicitly neglected air resistance.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p20",
+    "problemId": "fma-2009-p20",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{13}}8v_0}$ (choice C)",
+    "shortExplanation": "The final east and north components are $3v_0/8$ and $v_0/4$. Their vector magnitude is $\\sqrt{13}\\,v_0/8$.",
+    "detailedSteps": [
+      "The initial northward momentum is $mv_0$, while the initial eastward momentum is $(3m)(v_0/2)=3mv_0/2$.",
+      "After sticking, the mass is $4m$. Therefore $v_N=v_0/4$ and $v_E=3v_0/8$.",
+      "The speed is $\\sqrt{v_N^2+v_E^2}=v_0\\sqrt{4/64+9/64}=\\sqrt{13}\\,v_0/8$, choice C."
+    ],
+    "keyIdeas": [
+      "Momentum is conserved component by component before the final speed is computed."
+    ],
+    "commonMistakes": [
+      "Adding the two momentum magnitudes as scalars or conserving kinetic energy gives an incorrect speed."
+    ],
+    "alternativeMethods": [
+      "The initial momentum vector has magnitude $mv_0\\sqrt{1+(3/2)^2}$; divide it by the combined mass $4m$."
+    ],
+    "difficultyNotes": "Gravity is ignored as stated, and the collision is completely inelastic. The radical covers 13, with the factor 8 outside it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p21",
+    "problemId": "fma-2009-p21",
+    "finalAnswer": "$\\boxed{-\\frac{3GM^2}{d}}$ (choice D)",
+    "shortExplanation": "There is one gravitational pair, so its mutual potential energy is $-G(3M)M/d$.",
+    "detailedSteps": [
+      "For two separated masses, take the gravitational potential-energy zero at infinite separation.",
+      "The pair energy is $U=-Gm_1m_2/d$.",
+      "Substitute $m_1=3M$ and $m_2=M$ to obtain $U=-3GM^2/d$, choice D."
+    ],
+    "keyIdeas": [
+      "Count the interaction pair once and use separation, not either barycentric radius."
+    ],
+    "commonMistakes": [
+      "A denominator $d^2$ belongs to gravitational force; summing the same pair energy for each star doubles it."
+    ],
+    "alternativeMethods": [
+      "Integrate the attractive inverse-square force from infinite separation to $d$ to obtain the same negative potential."
+    ],
+    "difficultyNotes": "Use the mutual orbital potential of separated spherical or pointlike stars. Their internal self-energies are not included.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p22",
+    "problemId": "fma-2009-p22",
+    "finalAnswer": "$\\boxed{\\pi\\sqrt{\\frac{d^3}{GM}}}$ (choice A)",
+    "shortExplanation": "The heavy star orbits at radius $d/4$. Its centripetal equation gives $\\omega^2=4GM/d^3$ and the common period $\\pi\\sqrt{d^3/(GM)}$.",
+    "detailedSteps": [
+      "The center-of-mass condition gives $3M r_H=M r_L$ and $r_H+r_L=d$, hence $r_H=d/4$ and $r_L=3d/4$.",
+      "For the heavy star, $3M\\omega^2(d/4)=3GM^2/d^2$.",
+      "Thus $\\omega^2=4GM/d^3$ and $T=2\\pi/\\omega=\\pi\\sqrt{d^3/(GM)}$, choice A."
+    ],
+    "keyIdeas": [
+      "Both stars move about the barycenter and share one angular frequency."
+    ],
+    "commonMistakes": [
+      "Treating the lighter star as fixed or assigning the heavy star radius $d$ misses the two-body geometry."
+    ],
+    "alternativeMethods": [
+      "The relative circular orbit has gravitational parameter $G(3M+M)=4GM$ and radius $d$, giving $T=2\\pi\\sqrt{d^3/(4GM)}$."
+    ],
+    "difficultyNotes": "The figure is interpreted as the circular, fixed-separation binary model. For an arbitrary ellipse, the instantaneous separation alone would not specify the period; its relative semimajor axis would be required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p23",
+    "problemId": "fma-2009-p23",
+    "finalAnswer": "$\\boxed{\\frac{3T}{8}}$ (choice D)",
+    "shortExplanation": "The spring first absorbs energy, then delivers it. Its first positive power maximum occurs at $3T/8$.",
+    "detailedSteps": [
+      "Starting at the natural length with nonzero velocity, write $x=A\\sin\\omega t$ and $v=A\\omega\\cos\\omega t$.",
+      "Instantaneous power delivered by the spring is $P=Fv=-kxv=-(kA^2\\omega/2)\\sin2\\omega t$.",
+      "At $T/8$ this power is most negative. The first positive maximum requires $\\sin2\\omega t=-1$, giving $2\\omega t=3\\pi/2$.",
+      "With $\\omega=2\\pi/T$, the required time is $t=3T/8$, choice D."
+    ],
+    "keyIdeas": [
+      "Power delivered to the mass is signed, rather than the magnitude of the energy-transfer rate."
+    ],
+    "commonMistakes": [
+      "The earliest maximum of $|P|$ is $T/8$, but that is a negative minimum of $P$."
+    ],
+    "alternativeMethods": [
+      "Differentiate $K=(mA^2\\omega^2/2)\\cos^2\\omega t$; its derivative has the same signed double-frequency form."
+    ],
+    "difficultyNotes": "Use the ideal one-dimensional oscillator with no extra force shifting the equilibrium. The initial velocity must be nonzero for a nontrivial oscillation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p24",
+    "problemId": "fma-2009-p24",
+    "finalAnswer": "$\\boxed{\\mu_s>\\frac ba}$ (choice C)",
+    "shortExplanation": "Tipping occurs at $\\tan\\theta=b/a$, while slipping begins at $\\tan\\theta=\\mu_s$. Tipping first requires $\\mu_s>b/a$.",
+    "detailedSteps": [
+      "The uniform block's center of mass is halfway along its base length $b$ and halfway up its height $a$.",
+      "At the downhill edge, the gravitational torque vanishes when $b\\cos\\theta-a\\sin\\theta=0$. Thus $\\tan\\theta_{\\rm tip}=b/a$.",
+      "Static friction can hold the block only while $Mg\\sin\\theta\\leq\\mu_s Mg\\cos\\theta$, giving $\\tan\\theta_{\\rm slip}=\\mu_s$.",
+      "For tipping without slipping, $\\theta_{\\rm tip}<\\theta_{\\rm slip}$, so $\\mu_s>b/a$, choice C."
+    ],
+    "keyIdeas": [
+      "Compare two separate thresholds as the incline angle increases."
+    ],
+    "commonMistakes": [
+      "Swapping height and base length reverses the tipping ratio. Equality makes both thresholds coincide and does not guarantee tipping without slip."
+    ],
+    "alternativeMethods": [
+      "Project the center-of-mass vertical line onto the base. It reaches the downhill edge after a downslope shift $(a/2)\\tan\\theta=b/2$."
+    ],
+    "difficultyNotes": "Treat the angle change as quasistatic and the block as a rigid uniform rectangle. The strict inequality excludes simultaneous onset.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2009-p25",
+    "problemId": "fma-2009-p25",
+    "finalAnswer": "$\\boxed{\\omega_1r_1^3=\\omega_2r_2^3}$ (choice D)",
+    "shortExplanation": "Both discs receive the same contact impulse, but their torque impulses carry different radius factors. Simultaneous stopping requires $I_1\\omega_1/r_1=I_2\\omega_2/r_2$.",
+    "detailedSteps": [
+      "Equal material and thickness give $m_i\\propto r_i^2$. A uniform disc has $I_i=m_ir_i^2/2$, so $I_i\\propto r_i^4$.",
+      "Let $J=\\int F\\,dt$ be the magnitude of the common tangential contact impulse. Its angular impulse about each fixed axis is $r_iJ$.",
+      "Stopping each disc requires $I_i\\omega_i=r_iJ$. Eliminating $J$ gives $I_1\\omega_1/r_1=I_2\\omega_2/r_2$.",
+      "Insert $I_i\\propto r_i^4$ to obtain $\\omega_1r_1^3=\\omega_2r_2^3$, choice D."
+    ],
+    "keyIdeas": [
+      "A shared friction impulse does not produce equal angular impulses about different axes."
+    ],
+    "commonMistakes": [
+      "Conserving the sum of the discs' spin angular momenta ignores the constraints at their fixed axes and the different torque arms."
+    ],
+    "alternativeMethods": [
+      "For a constant friction force, each stopping time is $t_i=I_i\\omega_i/(Fr_i)$. Equating the two times gives the same cubic-radius relation."
+    ],
+    "difficultyNotes": "Use the angular-speed magnitudes and the frictional slowing configuration stated in the source. The fixed vertical supports supply positional constraints; their associated effects are excluded as directed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

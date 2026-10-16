@@ -1,0 +1,331 @@
+[
+  {
+    "id": "solution-aime-ii-2025-p1",
+    "problemId": "aime-ii-2025-p1",
+    "finalAnswer": "$\\boxed{468}$",
+    "shortExplanation": "The base is $39$ and the altitude is $24$, giving area $468$.",
+    "detailedSteps": [
+      "Place the collinear points on the horizontal axis, with $A$ at zero and $F$ at seventy-three. The given intervals put $C$ at twenty-six, $D$ at forty, $B$ at eighteen, and $E$ at fifty-seven. Thus $BE=39$.",
+      "Write $G=(x,y)$. Its two distances give $(x-26)^2+y^2=1600$ and $(x-40)^2+y^2=900$. Subtracting gives $28x-924=700$, so $x=58$.",
+      "Consequently $y^2=1600-32^2=576$ and the altitude to the common line is $|y|=24$. Therefore $[BGE]=(1/2)(39)(24)=468$. The projection may lie beyond $E$; the base-height area formula still applies."
+    ],
+    "keyIdeas": [
+      "Subtract squared distances to find the altitude"
+    ],
+    "commonMistakes": [
+      "Assuming that the perpendicular projection of $G$ must lie between the endpoints of the chosen base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The order of the six points fixes the coordinates before the distance subtraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p2",
+    "problemId": "aime-ii-2025-p2",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "The admissible integers are $1$, $11$ and $37$, whose sum is $49$.",
+    "detailedSteps": [
+      "Put $d=n+2$, so $d\\ge3$ and $n\\equiv-2\\pmod d$. Then $n+3\\equiv1$ and $n^2+9\\equiv13\\pmod d$. The source product is therefore congruent to $39$ modulo $d$.",
+      "Thus its divisibility by $d$ is equivalent to $d\\mid39$. The positive divisors at least three are $3,13,39$, giving $n=d-2=1,11,37$. Their sum is $49$."
+    ],
+    "keyIdeas": [
+      "Reduce the product modulo the varying divisor"
+    ],
+    "commonMistakes": [
+      "Retaining the divisor one, which would give a nonpositive value of $n$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A substitution turns a variable divisibility condition into a fixed divisor list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p3",
+    "problemId": "aime-ii-2025-p3",
+    "finalAnswer": "$\\boxed{082}$",
+    "shortExplanation": "There are $82$ colorings.",
+    "detailedSteps": [
+      "First color the four unit segments inside the large square. Each small square then has two fixed shared sides and two exterior sides. If $c$ of its shared sides are red, the exterior sides have $\\binom{2}{2-c}$ possibilities.",
+      "For zero or four red shared sides, the product of these four weights is one. With one red shared side, two squares each have one red shared side and the other two have none, so the weight is four. There are four such assignments; by color symmetry, the three-red case contributes the same amount.",
+      "For two red shared sides, the four adjacent pairs each give shared-red counts $2,1,1,0$, and hence weight four. The two opposite pairs give one red shared side in every square, and hence weight sixteen.",
+      "The total is $1+4\\cdot4+(4\\cdot4+2\\cdot16)+4\\cdot4+1=82$. Each exterior side belongs to just one square, so multiplying the four local weights does not introduce an additional compatibility condition."
+    ],
+    "keyIdeas": [
+      "Choose the shared sides before the exterior sides"
+    ],
+    "commonMistakes": [
+      "Counting the choices for the four small squares independently and forgetting that their shared sides have one common color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Once the shared edges are fixed, the remaining choices become independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p4",
+    "problemId": "aime-ii-2025-p4",
+    "finalAnswer": "$\\boxed{106}$",
+    "shortExplanation": "The product is $93/13$, so the requested sum is $106$.",
+    "detailedSteps": [
+      "Changing bases in the factor with index $k$ gives $\\dfrac{k^2-1}{k^2-4}\\dfrac{\\log(k+1)}{\\log k}$. All logarithm arguments and bases are positive and the bases exceed one.",
+      "The rational factors telescope as $\\prod_{k=4}^{63}\\dfrac{(k-1)(k+1)}{(k-2)(k+2)}=\\dfrac{62}{2}\\dfrac5{65}=\\dfrac{31}{13}$. The logarithmic factors telescope to $\\log64/\\log4=3$.",
+      "Thus the product is $93/13$, already reduced, and $93+13=106$."
+    ],
+    "keyIdeas": [
+      "Telescope the rational factors and the logarithm bases"
+    ],
+    "commonMistakes": [
+      "Reversing the change-of-base ratio or stopping the telescoping product at the wrong endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent factors and the base factors telescope separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p5",
+    "problemId": "aime-ii-2025-p5",
+    "finalAnswer": "$\\boxed{336}$",
+    "shortExplanation": "The three relevant minor arcs are $72^\\circ$, $24^\\circ$ and $72^\\circ$, giving $336$.",
+    "detailedSteps": [
+      "The circle through the three side midpoints is the nine-point circle, which also passes through the three altitude feet. Hence $G,H,J$ are the altitude feet on $BC,AC,AB$, respectively. The source diagram specifies the cyclic order $G,D,E,H,J,F$.",
+      "Since $FD\\parallel AC$ and $FE\\parallel BC$, the inscribed angle $DFE$ is $36^\\circ$. It intercepts the minor arc $DE$, so that arc measures $72^\\circ$. Similarly, $DG$ lies toward $B$ along $BC$, giving $\\angle FDG=36^\\circ$ and minor arc $FG=72^\\circ$.",
+      "In the right triangle $ABH$, the midpoint $F$ of the hypotenuse is equidistant from $A$ and $H$. Thus $AF=FH$. The base angles of $AFH$ are both $84^\\circ$, leaving $\\angle AFH=12^\\circ$. Since $J$ lies on the ray $FA$, this equals $\\angle HFJ$, so minor arc $HJ=24^\\circ$.",
+      "The requested weighted sum is $72+2(24)+3(72)=336$. The specified order identifies the intercepted minor arcs and prevents replacing them by their complements."
+    ],
+    "keyIdeas": [
+      "Use altitude feet on the nine-point circle"
+    ],
+    "commonMistakes": [
+      "Using a central-angle formula directly for an inscribed angle, or measuring the complementary arc instead of the displayed minor arc."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint and altitude-foot structure links the small inscribed angles to the original triangle angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p6",
+    "problemId": "aime-ii-2025-p6",
+    "finalAnswer": "$\\boxed{293}$",
+    "shortExplanation": "The rectangle has area $288/5$, giving $293$.",
+    "detailedSteps": [
+      "Choose coordinates $A=(0,0)$, $B=(6,0)$ and $C=(-24,0)$. Internal tangency puts the larger circle center at $(-9,0)$. Since $AD$ is perpendicular to $BC$, its upper intersection with that circle is $D=(0,12)$. Reflection across $BC$ would give the same area.",
+      "An inscribed rectangle has center $A$. Let its positive half-width and half-height be $u,v$, so $u^2+v^2=36$. The stated proximity conditions label the upper-left and upper-right vertices $G=(-u,v)$ and $F=(u,v)$, while $H=(-u,-v)$.",
+      "The two triangle areas are $[DGF]=u(12-v)$ and $[CHG]=v(24-u)$. Since $u,v\\le6$, these are the actual positive perpendicular heights. Equality cancels the common term $uv$, leaving $12u=24v$, or $u=2v$.",
+      "Now $5v^2=36$, and the rectangle area is $4uv=8v^2=288/5$. The fraction is reduced, so $288+5=293$."
+    ],
+    "keyIdeas": [
+      "Cancel the common rectangle-corner term in the equal areas"
+    ],
+    "commonMistakes": [
+      "Taking the circle center-to-center distance as the height above the rectangle side, instead of subtracting its half-height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinate symmetry makes the equal-area equation linear in the two half-dimensions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p7",
+    "problemId": "aime-ii-2025-p7",
+    "finalAnswer": "$\\boxed{237}$",
+    "shortExplanation": "Under the uniform-subset model, the probability is $109/128$, giving $237$.",
+    "detailedSteps": [
+      "Factor $2025=3^4 5^2$. Its fifteen divisors have the form $3^a5^b$ with $0\\le a\\le4$ and $0\\le b\\le2$. We use the standard interpretation of a randomly selected subset: all $2^{15}$ subsets are equally likely.",
+      "The least common multiple is $2025$ exactly when the subset includes a divisor with $a=4$ and a divisor with $b=2$. There are three divisors of the first kind and five of the second kind, with one divisor in both groups.",
+      "Inclusion-exclusion gives $2^{15}-2^{12}-2^{10}+2^8$ favorable subsets: subtract subsets avoiding each group and add back those avoiding both. The empty subset is excluded automatically because it avoids both groups.",
+      "The probability reduces to $109/128$, so the requested sum is $237$. The printed statement does not spell out a selection distribution; the numerical answer uses this customary uniform model."
+    ],
+    "keyIdeas": [
+      "Require a divisor with each maximal prime exponent"
+    ],
+    "commonMistakes": [
+      "Subtracting the empty subset again after inclusion-exclusion, or using a sampling model in which subset sizes are equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The least common multiple condition asks for two maximal exponents, which is suited to inclusion-exclusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p8",
+    "problemId": "aime-ii-2025-p8",
+    "finalAnswer": "$\\boxed{610}$",
+    "shortExplanation": "Greedy succeeds for $610$ amounts.",
+    "detailedSteps": [
+      "Write $N=25q+r$ with $0\\le r<25$. Once the number of quarters is fixed, using as many dimes as possible minimizes the remaining dime-and-penny count: replacing one dime by ten pennies adds nine coins.",
+      "Compare greedy with an alternative using $j$ fewer quarters. Removing two quarters increases the remainder by fifty cents, which requires five more dimes, so the net coin-count increase is three. Removing one quarter changes the coin count by six when $r\\bmod10\\le4$, and by negative three when $r\\bmod10\\ge5$.",
+      "Therefore even $j=2h$ gives an increase $3h$, while odd $j=2h+1$ gives the one-quarter change plus $3h$. If $q=0$, greedy is optimal. If $q\\ge1$, greedy fails exactly when $r$ belongs to $5,6,7,8,9,15,16,17,18,19$. This comparison covers every admissible quarter count.",
+      "For each $q=1,\\ldots,39$, all twenty-five remainders occur between one and one thousand, and ten are failures. The partial block with $q=0$ and the endpoint $N=1000$ are successes. Thus there are $390$ failures and $1000-390=610$ successes."
+    ],
+    "keyIdeas": [
+      "Compare every alternative number of quarters"
+    ],
+    "commonMistakes": [
+      "Finding one greedy failure without proving which other remainders or quarter counts can improve the coin count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fifty-cent exchange controls every even change in the quarter count; one further quarter controls the odd changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p9",
+    "problemId": "aime-ii-2025-p9",
+    "finalAnswer": "$\\boxed{149}$",
+    "shortExplanation": "There are $139$ zeros and $10$ tangencies, giving $149$.",
+    "detailedSteps": [
+      "A zero requires $\\sin(5x)=j/7$ for an integer $j$ from negative seven through seven. Set $t=5x$, so the source open interval becomes $0<t<10\\pi$, containing five complete sine periods.",
+      "Each of the twelve nonzero levels strictly between negative one and one has ten preimages. The zero level has only nine, namely $t=\\pi,2\\pi,\\ldots,9\\pi$, because both endpoints are excluded. Each extreme level, negative one or one, has five preimages. Hence $n=120+9+10=139$.",
+      "The derivative is $35\\pi\\cos(7\\pi\\sin(5x))\\cos(5x)$. At a zero the first cosine is $(-1)^j$, so the derivative vanishes exactly when the inner sine is at an extreme. These ten zeros are tangencies: near such a turning point the inner sine departs from its extreme quadratically, and the outer sine has a nonzero derivative at the corresponding multiple of $\\pi$.",
+      "Thus $t=10$ in the problem’s notation, and $n+t=139+10=149$."
+    ],
+    "keyIdeas": [
+      "Count each inner-sine level and identify the turning levels"
+    ],
+    "commonMistakes": [
+      "Counting the excluded endpoints as zeros, or counting two preimages per period at a sine maximum or minimum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the extreme levels and the zero level before multiplying by the number of periods.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p10",
+    "problemId": "aime-ii-2025-p10",
+    "finalAnswer": "$\\boxed{907}$",
+    "shortExplanation": "There are $2907$ admissible chair-subsets, giving remainder $907$.",
+    "detailedSteps": [
+      "The condition forbids three consecutive occupied chairs. Thus each occupied run has length one or two. If there are $r$ runs covering eight occupied chairs, exactly $8-r$ runs have length two, and $4\\le r\\le8$. Their ordered lengths can be chosen in $\\binom r{8-r}$ ways.",
+      "There are eight empty chairs. Reserve one empty chair in each of the $r-1$ internal gaps between runs. The remaining $9-r$ empty chairs are distributed freely among the $r+1$ gaps, including the two ends. Stars and bars gives $\\binom9r$ possibilities.",
+      "Summing gives $N=\\sum_{r=4}^8\\binom r{8-r}\\binom9r=126+1260+1260+252+9=2907$. The eight people are not ordered in this calculation because the problem asks for chair-subsets. The remainder modulo one thousand is $907$."
+    ],
+    "keyIdeas": [
+      "Describe occupied runs and distribute the empty chairs"
+    ],
+    "commonMistakes": [
+      "Multiplying by permutations of the eight people when only the selected subset of chairs is being counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The forbidden local pattern becomes a short list of possible occupied-run lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p11",
+    "problemId": "aime-ii-2025-p11",
+    "finalAnswer": "$\\boxed{113}$",
+    "shortExplanation": "There are $113$ matchings with a common segment length.",
+    "detailedSteps": [
+      "Label the vertices by the residues modulo twenty-four. A chord length corresponds uniquely to a step $d$ from one through twelve. For $d<12$, the allowed graph joins each label to the two labels differing from it by $d$.",
+      "This graph consists of $g=\\gcd(24,d)$ disjoint cycles, each of length $24/g$. An odd cycle has no perfect matching. An even cycle has exactly two: after the first vertex chooses one of its two neighbors, every subsequent edge is forced in alternation. Different cycles choose independently, giving $2^g$ matchings.",
+      "For $d=1,\\ldots,11$, the counts are $2,4,8,16,2,64,2,0,8,4,2$. The diameter case $d=12$ consists of twelve isolated edges and contributes one matching. Their sum is $113$.",
+      "Different steps have different chord lengths, so a matching cannot be counted in two cases. Segment crossings are permitted; the source only requires one endpoint incidence per vertex."
+    ],
+    "keyIdeas": [
+      "Count perfect matchings for each fixed chord length"
+    ],
+    "commonMistakes": [
+      "Imposing a noncrossing condition that is not present, or treating the diameter graph as an ordinary two-neighbor cycle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal chord length decomposes the matching problem into independent cyclic components.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p12",
+    "problemId": "aime-ii-2025-p12",
+    "finalAnswer": "$\\boxed{019}$",
+    "shortExplanation": "The radial sum is $(9\\sqrt5-1)/4$, giving $19$.",
+    "detailedSteps": [
+      "Let $r_i=A_1A_i$ for $i=2,\\ldots,11$. The common angle has cosine $12/13$, so its positive sine is $5/13$. The area condition gives $(1/2)r_i r_{i+1}(5/13)=1$, or $r_i r_{i+1}=26/5$.",
+      "These products force the ten radial lengths to alternate between two positive values $a,b$. Since there are ten such lengths, the requested first-and-last sum is $s=a+b$. The cosine law gives each of the nine other polygon sides length $\\sqrt{a^2+b^2-(24/13)ab}=\\sqrt{s^2-20}$.",
+      "The perimeter therefore yields $s+9\\sqrt{s^2-20}=20$. Squaring after isolating the nonnegative square root gives $4s^2+2s-101=0$. Its positive root is $s=(9\\sqrt5-1)/4$, and this root satisfies the original unsquared equation.",
+      "The argument uses unsigned triangle areas and ordinary side lengths, so it does not assume convexity. The conditions are also realizable: use alternating radii $a,b$ with product $26/5$ and increasing polar angles spaced by $\\arccos(12/13)$. The nine angle steps total between $180^\\circ$ and $360^\\circ$, making the origin a reflex vertex while the separate angular wedges prevent self-intersections.",
+      "Here $m=9$, $n=5$, $p=1$, $q=4$. The radical is squarefree and the common coefficient gcd is one, giving $m+n+p+q=19$."
+    ],
+    "keyIdeas": [
+      "Use equal radial products and the perimeter equation"
+    ],
+    "commonMistakes": [
+      "Applying a convex fan-area identity to the whole polygon, or accepting a root introduced by squaring without checking the perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal triangle areas with a fixed included angle force an alternating radial sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p13",
+    "problemId": "aime-ii-2025-p13",
+    "finalAnswer": "$\\boxed{248}$",
+    "shortExplanation": "The reduced numerator-plus-denominator has remainder $248$.",
+    "detailedSteps": [
+      "Write $x_k=a_k/b_k$ in lowest positive terms. Before reduction, the next pair is $(a_k^2-a_kb_k+b_k^2,3a_kb_k)$. A prime dividing $a_kb_k$ cannot divide the numerator, since reduction modulo either coprime factor leaves the square of the other.",
+      "Initially $(a_1,b_1)=(25,11)$: both are nonzero modulo three and their sum is divisible by three. Under these conditions, $a_k^2-a_kb_k+b_k^2=(a_k+b_k)^2-3a_kb_k$ is divisible by three exactly once. Thus the only cancellation is a factor of three, and the reduced next pair is $a_{k+1}=(a_k^2-a_kb_k+b_k^2)/3$, $b_{k+1}=a_kb_k$.",
+      "The next two entries remain nonzero modulo three: the second is $a_kb_k$, and the first is congruent to its negative. Their sum is $(a_k+b_k)^2/3$, still divisible by three. This proves that the same reduction rule remains valid at every step.",
+      "Consequently $S_k=a_k+b_k$ satisfies $S_{k+1}=S_k^2/3$ with $S_1=36$. Induction gives $S_k=3\\cdot12^{2^{k-1}}$. For $k=2025$, the sum is zero modulo eight. Modulo one hundred twenty-five, Euler’s theorem permits reducing the exponent modulo one hundred: $2^{2024}\\equiv16\\pmod{100}$ and $12^{16}\\equiv41\\pmod{125}$.",
+      "Thus $S_{2025}\\equiv123\\pmod{125}$ and $S_{2025}\\equiv0\\pmod8$. The unique combined remainder modulo one thousand is $248$."
+    ],
+    "keyIdeas": [
+      "Prove every cancellation before iterating the modular sum"
+    ],
+    "commonMistakes": [
+      "Iterating the unreduced numerator and denominator modulo one thousand without proving the cancellation factor at every step."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A stable divisibility invariant makes the enormous fraction reducible through a small recurrence for its numerator-plus-denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p14",
+    "problemId": "aime-ii-2025-p14",
+    "finalAnswer": "$\\boxed{104}$",
+    "shortExplanation": "The quadrilateral area is $104\\sqrt3$, so $n=104$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(b,0)$ and $C=(0,c)$, where $b,c>0$ and $b^2+c^2=38^2$. Since $AK=BK=14$, the point $K$ has horizontal coordinate $b/2$. Likewise $AL=CL=14$ forces the vertical coordinate of $L$ to be $c/2$.",
+      "Write $K=14(\\cos\\alpha,\\sin\\alpha)$ and $L=14(\\cos\\beta,\\sin\\beta)$ with both angles in $(0,90^\\circ)$. Then $b=28\\cos\\alpha$ and $c=28\\sin\\beta$. Each leg is less than twenty-eight, so each is also greater than $\\sqrt{38^2-28^2}=\\sqrt{660}$. These inequalities give $\\alpha<30^\\circ$ and $\\beta>60^\\circ$.",
+      "The three equal lengths $AK=AL=KL=14$ make $AKL$ equilateral. Therefore $\\beta-\\alpha=60^\\circ$. Put $T=2\\alpha+60^\\circ$. The hypotenuse condition becomes $784[1+(\\sqrt3/2)\\sin T]=1444$, giving $\\sin T=55\\sqrt3/98$.",
+      "The triangle area is $[ABC]=196\\sin T+98\\sqrt3$. The two corner triangles have combined area $[ABK]+[ALC]=98[\\sin(2\\alpha)+\\sin(2\\alpha+120^\\circ)]=98\\sin T$, while $[AKL]=49\\sqrt3$. Subtracting these three triangles leaves $[BKLC]=98\\sin T+49\\sqrt3=104\\sqrt3$.",
+      "The interior conditions place $K$ on the lower-angle ray and $L$ on the upper-angle ray, so these triangles partition the region outside the stated quadrilateral. Both possible values of $T$ with the displayed sine give the same area; no angular branch changes the answer."
+    ],
+    "keyIdeas": [
+      "Use the equilateral central triangle and subtract three areas"
+    ],
+    "commonMistakes": [
+      "Selecting only one inverse-sine branch or subtracting the wrong corner triangle from the large right triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area depends on a sine fixed by the hypotenuse, even though the individual leg lengths can have two orientations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2025-p15",
+    "problemId": "aime-ii-2025-p15",
+    "finalAnswer": "$\\boxed{240}$",
+    "shortExplanation": "The three parameters are $8$, $32$ and $200$, whose sum is $240$.",
+    "detailedSteps": [
+      "Let $P(x)=(x-18)(x-72)(x-98)(x-k)$. If the global minimum value is $M$ at two distinct positive points $u,v$, then $P(x)-Mx$ is nonnegative on the positive axis and vanishes at both points. Each root has even multiplicity. Since this polynomial is monic of degree four, it must equal $(x-u)^2(x-v)^2$.",
+      "Put $S=u+v$ and $T=uv$. Comparing the cubic, quadratic and constant coefficients gives $2S=188+k$, $S^2+2T=10116+188k$, and $T^2=127008k$. Since $u,v>0$, we have $T=252\\sqrt{2k}$.",
+      "With $y=\\sqrt{2k}>0$, elimination yields $y^4-752y^2+8064y-20480=0$. This factors as $(y-4)(y-8)(y-20)(y+32)=0$. Thus the only positive candidates are $y=4,8,20$, giving $k=8,32,200$.",
+      "To prove sufficiency, use $S=(188+k)/2$, $T=252y$ and $M=2ST-127008-10116k$. For each candidate the same coefficient identities give $f(x)-M=(x^2-Sx+T)^2/x$. The discriminants $S^2-4T$ are respectively $5572,4036,17476$, all positive. With $S,T>0$, the quadratic has exactly two distinct positive roots.",
+      "The square divided by positive $x$ is nonnegative and vanishes exactly at those two roots. Hence each candidate really has exactly two global minimizing points, and the necessary factorization excludes every other positive parameter. The requested sum is $8+32+200=240$."
+    ],
+    "keyIdeas": [
+      "Turn two global minima into a squared quadratic"
+    ],
+    "commonMistakes": [
+      "Finding two equal local minima without proving they are global, or retaining the negative value of the square-root substitution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two distinct global minima exhaust the double-root budget of a quartic and force a rigid coefficient system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

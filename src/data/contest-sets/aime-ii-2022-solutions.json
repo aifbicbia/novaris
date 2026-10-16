@@ -1,0 +1,328 @@
+[
+  {
+    "id": "solution-aime-ii-2022-p1",
+    "problemId": "aime-ii-2022-p1",
+    "finalAnswer": "$\\boxed{154}$",
+    "shortExplanation": "The smallest final adult count is $154$.",
+    "detailedSteps": [
+      "The initial crowd has size $12k$ and contains $5k$ adults, for a positive integer $k$. Write the final crowd as $25l$, with $11l$ adults. The bus gives $12k+50=25l$.",
+      "Reducing modulo twenty-five forces $k=25t$ for a positive integer $t$, then $l=12t+2$. The bus contains $11l-5k=7t+22$ adults. This must be between zero and fifty.",
+      "The least possible $t$ is one, which is feasible: the original crowd contains $125$ adults and the bus contains $29$ adults among its fifty passengers. The final adult total is $11(14)=154$. Increasing $t$ increases this total."
+    ],
+    "keyIdeas": [
+      "Respect both crowd integrality conditions"
+    ],
+    "commonMistakes": [
+      "Ignoring that each crowd size and each adult count must be an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two reduced fractions impose a congruence before the bus composition is considered.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p2",
+    "problemId": "aime-ii-2022-p2",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "Carl wins with probability $29/96$.",
+    "detailedSteps": [
+      "Carl faces Azar in the semifinal with probability $1/3$. In that case Carl must beat Azar and then the winner from the other pair, with probability $(1/3)(3/4)=1/4$.",
+      "With probability $2/3$, Carl and Azar are in separate semifinals. Carl advances with probability $3/4$. Independently, his final opponent is Azar with probability $3/4$, or the other player with probability $1/4$. His conditional tournament-winning probability is $(3/4)[(3/4)(1/3)+(1/4)(3/4)]=21/64$.",
+      "Thus the overall probability is $(1/3)(1/4)+(2/3)(21/64)=1/12+7/32=29/96$. No Jon-versus-Sergey probability is needed: Carl has the same stated win probability against either. The reduced numerator and denominator sum to $125$."
+    ],
+    "keyIdeas": [
+      "Condition on whether the two stronger players meet first"
+    ],
+    "commonMistakes": [
+      "Treating a possible final opponent as independent of the semifinal winner without conditioning on the bracket."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bracket cases isolate every match probability that affects Carl.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p3",
+    "problemId": "aime-ii-2022-p3",
+    "finalAnswer": "$\\boxed{021}$",
+    "shortExplanation": "The sphere radius is $17/4$.",
+    "detailedSteps": [
+      "The pyramid height is $h=3(54)/6^2=9/2$. Put the base corners at $(\\pm3,\\pm3,0)$ and the apex at $(0,0,9/2)$. Equal distances to all four base corners force the sphere center onto the vertical axis, say $(0,0,t)$.",
+      "Equating the squared distances to a base corner and the apex gives $18+t^2=(9/2-t)^2$, hence $t=1/4$. The radius is the positive apex distance $9/2-1/4=17/4$. Its reduced numerator and denominator sum to $21$."
+    ],
+    "keyIdeas": [
+      "Locate the sphere center on the pyramid axis"
+    ],
+    "commonMistakes": [
+      "Using the pyramid height as the sphere radius or placing the sphere center at the base center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The base symmetry determines the center direction; one distance equality determines its position.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p4",
+    "problemId": "aime-ii-2022-p4",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "The common value is $\\log_{10}(11/101)$.",
+    "detailedSteps": [
+      "Put $u=\\log_{10}(2x)$, $A=\\log_{10}11$ and $B=\\log_{10}101$. The source base exclusions say $u\\ne0,-1$. Change of base turns the equation into $(u+A)/(u+1)=(u+B)/u$.",
+      "Cross-multiplication gives $(A-B-1)u=B$, so $u=B/(A-B-1)$. The denominator is nonzero because $11<1010$. This determines a positive $x=10^u/2$. The resulting $u$ is not zero; it is not minus one because that would force $A=1$, whereas $11\\ne10$.",
+      "The common value is $(u+B)/u=1+B/u=A-B=\\log_{10}(11/101)$. The fraction is reduced, and $11+101=112$."
+    ],
+    "keyIdeas": [
+      "Use the common logarithm to eliminate the unknown"
+    ],
+    "commonMistakes": [
+      "Multiplying by a logarithm denominator without retaining the excluded bases one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One shared logarithm variable makes the cross-product equation linear.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p5",
+    "problemId": "aime-ii-2022-p5",
+    "finalAnswer": "$\\boxed{072}$",
+    "shortExplanation": "There are $72$ triangles.",
+    "detailedSteps": [
+      "Write a triangle\u2019s increasing labels as $a<b<c$, and let $p=b-a$ and $q=c-b$. All three sides are drawn exactly when $p,q,p+q$ are prime.",
+      "Two odd prime gaps would have an even sum exceeding two, so one gap must be two. The other gap is an odd prime whose value plus two is also prime. Since the largest label difference is nineteen, these other gaps are $3,5,11,17$.",
+      "The corresponding total spans are $5,7,13,19$, permitting $15,13,7,1$ initial labels. Each has two distinct gap orders, $(2,q)$ and $(q,2)$. The triangle count is $2(15+13+7+1)=72$. Three distinct points on a circle are never collinear, so every such label triple is a triangle."
+    ],
+    "keyIdeas": [
+      "Classify the two consecutive prime gaps"
+    ],
+    "commonMistakes": [
+      "Checking only the two successive label differences and overlooking the third side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity forces one of the gaps to be the only even prime.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p6",
+    "problemId": "aime-ii-2022-p6",
+    "finalAnswer": "$\\boxed{841}$",
+    "shortExplanation": "The sharp gap is $41/800$.",
+    "detailedSteps": [
+      "The zero sum and unit absolute sum imply that the positive terms total $1/2$, while the absolute values of the negative terms also total $1/2$.",
+      "If $x_{16}<0$, the first sixteen terms each have absolute value at least $-x_{16}$, so $16(-x_{16})\\le1/2$. If it is nonnegative, the same lower bound is automatic. Thus $x_{16}\\ge-1/32$. Similarly, if $x_{76}>0$, all twenty-five terms from position seventy-six through one hundred are at least it, giving $x_{76}\\le1/50$; this upper bound is automatic when it is nonpositive.",
+      "Therefore $x_{76}-x_{16}\\le1/50+1/32=41/800$. Equality is attained by sixteen terms equal to $-1/32$, fifty-nine zeros, and twenty-five terms equal to $1/50$. This ordered tuple has the required two sums. The reduced numerator and denominator sum to $841$."
+    ],
+    "keyIdeas": [
+      "Allocate the full negative and positive masses"
+    ],
+    "commonMistakes": [
+      "Counting twenty-four rather than twenty-five terms at or after position seventy-six."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The zero sum splits the absolute-value budget evenly between the two tails.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p7",
+    "problemId": "aime-ii-2022-p7",
+    "finalAnswer": "$\\boxed{192}$",
+    "shortExplanation": "The tangent triangle has area $192$.",
+    "detailedSteps": [
+      "Put the radius-six center at $(0,0)$ and the radius-twenty-four center at $(30,0)$. The tangent at their mutual contact is the vertical line $x=6$. The other two common tangent lines meet at the external homothety point $H$.",
+      "The distances from $H$ to the centers have ratio $1:4$. The point lies to the left of the small circle, giving $H=(-10,0)$; its distances to the centers are ten and forty. The right tangent triangle at the small center has opposite length six and hypotenuse ten, so the tangent slopes are $\\pm3/4$.",
+      "The lines $y=\\pm(3/4)(x+10)$ meet $x=6$ at heights $\\pm12$. Thus the base is twenty-four and the perpendicular height from $H$ is sixteen. The triangular area is $(1/2)(24)(16)=192$."
+    ],
+    "keyIdeas": [
+      "Find the common external homothety point"
+    ],
+    "commonMistakes": [
+      "Using the center-to-center distance as the height of the tangent triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer tangent intersection is fixed by the radius ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p8",
+    "problemId": "aime-ii-2022-p8",
+    "finalAnswer": "$\\boxed{080}$",
+    "shortExplanation": "There are $80$ uniquely determined integers.",
+    "detailedSteps": [
+      "For a given floor triple, every compatible integer lies in the intersection of three integer intervals: $[4\\lfloor n/4\\rfloor,4\\lfloor n/4\\rfloor+3]$, and the analogous intervals of lengths five and six. This is one interval containing $n$.",
+      "The lower endpoint equals $n$ exactly when at least one of $4,5,6$ divides $n$. The upper endpoint equals $n$ exactly when at least one of these numbers divides $n+1$. Both conditions are required for a singleton. The positivity restriction causes no extra singleton near zero: the triple $(0,0,0)$ still permits one, two and three.",
+      "The two conditions depend only on $n$ modulo sixty. The qualifying representatives from one through sixty are $4,5,15,24,35,44,54,55$. This list can be obtained by pairing a divisor of $n$ with a divisor of $n+1$; two even divisors cannot occur together, leaving only pairs involving five.",
+      "There are ten complete sixty-integer periods up to six hundred, so the count is $10\\cdot8=80$. The upper bound of six hundred is used only to count candidates; uniqueness was tested among all positive integers."
+    ],
+    "keyIdeas": [
+      "Require floor changes immediately before and after $n$"
+    ],
+    "commonMistakes": [
+      "Discarding compatible integers above six hundred when checking whether a candidate is unique."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A singleton interval requires a floor breakpoint on each side of the candidate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p9",
+    "problemId": "aime-ii-2022-p9",
+    "finalAnswer": "$\\boxed{244}$",
+    "shortExplanation": "The number of bounded regions is $244$.",
+    "detailedSteps": [
+      "Each choice of two points on each line creates exactly one interior crossing: join the endpoints in opposite orders. Thus the number of crossings is $I=\\binom72\\binom52=210$. The source excludes triple interior intersections, so these crossings are distinct.",
+      "Keep the finite segments on the two parallel lines between their extreme marked points; rays outside these intervals cannot enclose a bounded region. The resulting connected finite graph has $V=7+5+I=222$ vertices.",
+      "The thirty-five connecting segments are each split once for every crossing they meet. Each crossing contributes two extra segment edges, giving $35+2I$ such edges. The two base lines add $(7-1)+(5-1)=10$ edges. Hence $E=35+420+10=465$.",
+      "Euler\u2019s formula gives $E-V+1=465-222+1=244$ bounded faces. As a check, the same expression gives $3\\cdot2+\\binom32\\binom22-1=8$ for the illustrated example."
+    ],
+    "keyIdeas": [
+      "Count crossings and apply the connected planar graph formula"
+    ],
+    "commonMistakes": [
+      "Counting one extra edge per crossing instead of splitting both crossing segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The no-triple condition makes the crossing count usable directly in Euler\u2019s formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p10",
+    "problemId": "aime-ii-2022-p10",
+    "finalAnswer": "$\\boxed{004}$",
+    "shortExplanation": "The complete sum is $2552004$.",
+    "detailedSteps": [
+      "The nested binomial $\\binom{\\binom n2}{2}$ counts unordered pairs of distinct edges on $n$ vertices. If the edges share a vertex, choose three vertices and one of the three possible edge pairs. If they are disjoint, choose four vertices and one of their three perfect matchings.",
+      "Therefore $\\binom{\\binom n2}{2}=3\\binom n3+3\\binom n4$. Summing from three through forty and applying the hockey-stick identity gives $3\\binom{41}{4}+3\\binom{41}{5}=3\\binom{42}{5}=2552004$.",
+      "The remainder modulo one thousand is $4$, recorded in AIME format as $004$."
+    ],
+    "keyIdeas": [
+      "Count pairs of edges by the number of used vertices"
+    ],
+    "commonMistakes": [
+      "Reading the outer binomial as division by two instead of choosing two inner pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two edges use either three or four vertices, producing two simple binomial sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p11",
+    "problemId": "aime-ii-2022-p11",
+    "finalAnswer": "$\\boxed{180}$",
+    "shortExplanation": "The quadrilateral area is $6\\sqrt5$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$ and $D=(7,0)$, with $B,C$ above the base, and let $e=(1,0)$. Let $u$ and $v$ be the unit vectors from $A$ toward $B$ and from $D$ toward $C$. Then $B=2u$ and $C=7e+3v$. The shared internal bisector point $M$ satisfies $M=t(e+u)$ and $M=7e+s(-e+v)$ for positive $t,s$.",
+      "Since $M$ is the midpoint, $2M=2u+7e+3v$. Substitute $u=M/t-e$ and $v=(M-7e)/s+e$. Because $M$ is not on the base, comparison of the independent directions $M,e$ gives $2-2/t-3/s=0$ and $8-21/s=0$. Thus $s=21/8$ and $t=7/3$.",
+      "Write $M=(X,Y)$ with $Y>0$. The unit-vector equalities give $X^2+Y^2=(14/3)X$ and $(X-7)^2+Y^2=(21/4)(7-X)$. Subtraction yields $X=3$, then $Y^2=5$.",
+      "Hence $B=(4/7,6\\sqrt5/7)$ and $C=(38/7,8\\sqrt5/7)$. Their midpoint is $(3,\\sqrt5)$, their two stated side lengths are two and three, and the angles at $A,D$ are acute because their base-direction dot products are positive. These coordinates form a convex quadrilateral and realize both internal bisectors.",
+      "The shoelace cross-product total for $A,B,C,D$ has absolute value $12\\sqrt5$, so the area is $6\\sqrt5$. Its square is $180$."
+    ],
+    "keyIdeas": [
+      "Express the midpoint in both internal bisector directions"
+    ],
+    "commonMistakes": [
+      "Treating the bisector point as an arbitrary intersection while forgetting it must also be the midpoint of $BC$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint relation makes the two bisector scale parameters linear before the distance calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p12",
+    "problemId": "aime-ii-2022-p12",
+    "finalAnswer": "$\\boxed{023}$",
+    "shortExplanation": "The least possible sum is $23$.",
+    "detailedSteps": [
+      "The first equation describes an ellipse with foci $F_-=(-4,0)$ and $F_+=(4,0)$; its focal-distance sum at $P=(x,y)$ is $2a$. The second has vertical foci $G_-=(20,10)$ and $G_+=(20,12)$, and focal-distance sum $2b$. The strict bounds on $a,b$ ensure both ellipses are nondegenerate.",
+      "Pair the distances as $PF_-+PG_-\\ge F_-G_-=\\sqrt{24^2+10^2}=26$ and $PF_++PG_+\\ge F_+G_+=\\sqrt{16^2+12^2}=20$. Adding gives $2(a+b)\\ge46$, so $a+b\\ge23$.",
+      "The two connecting segments meet at $P=(14,15/2)$, three-quarters of the way from $F_-$ to $G_-$ and five-eighths of the way from $F_+$ to $G_+$. Thus both triangle inequalities attain equality simultaneously.",
+      "The respective four distances are $39/2,25/2,13/2,15/2$, giving $a=16$ and $b=7$. These satisfy the strict bounds and both original equations, so the lower bound is attained and the least sum is $23$."
+    ],
+    "keyIdeas": [
+      "Pair the two ellipses\u2019 focal distances"
+    ],
+    "commonMistakes": [
+      "Pairing the foci in the other order, which produces a weaker bound with no simultaneous equality at the required point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two intersecting focus-to-focus segments make the focal-distance bound sharp.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p13",
+    "problemId": "aime-ii-2022-p13",
+    "finalAnswer": "$\\boxed{220}$",
+    "shortExplanation": "The coefficient is $220$.",
+    "detailedSteps": [
+      "Since $2022<2310$, the numerator $(1-x^{2310})^6$ contributes only its constant term to the desired coefficient. The four denominator factors have overall positive sign and expand for $|x|<1$ as geometric series. Hence the coefficient counts nonnegative integer solutions of $105u+70v+42w+30t=2022$.",
+      "Parity forces $u=2p$. Dividing by two and reducing modulo five gives $w=5q+1$. After substituting and dividing by five, the equation is $21p+7v+21q+3t=198$. Modulo seven this forces $t=7r+3$.",
+      "The remaining relation is $3p+v+3q+3r=27$. Thus every solution corresponds bijectively to $p,q,r\\ge0$ with $p+q+r\\le9$, and $v=27-3(p+q+r)$. Conversely these formulas produce nonnegative original exponents satisfying the required equation.",
+      "Introduce a fourth nonnegative slack variable so the four variables sum to nine. Stars and bars gives $\\binom{12}{3}=220$. The given equality on an interval identifies the polynomial\u2019s expansion, so this coefficient calculation applies to $P$."
+    ],
+    "keyIdeas": [
+      "Count the low-degree geometric-series coefficient"
+    ],
+    "commonMistakes": [
+      "Using the numerator\u2019s higher terms even though their degrees already exceed the requested degree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The low requested degree removes the numerator and successive congruences simplify the lattice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p14",
+    "problemId": "aime-ii-2022-p14",
+    "finalAnswer": "$\\boxed{188}$",
+    "shortExplanation": "The three smallest denominations are $11$, $88$ and $89$.",
+    "detailedSteps": [
+      "To make one cent, the least denomination must be $a=1$. For $2\\le b<c\\le1000$, write $x,y,z$ for the positive counts of the three denominations. Gap-free coverage forces $x\\ge b-1$ and $x+by\\ge c-1$; otherwise the next denomination cannot fill the first missing amount. Once these hold, all amounts through $x+by+cz$ are obtainable.",
+      "Let $Y=\\lfloor(c-1)/b\\rfloor$, $q_0=b-1+Y$ and $S_0=b-1+bY$. For a fixed lower-denomination count $q=x+y$, the largest coverage is $bq-(b-1)^2$, obtained with $x=b-1$. Hence reaching $c-1$ requires $q\\ge q_0$. If $q=q_0+j$, total coverage with $z$ large stamps is at most $S_0+bj+cz\\le S_0+c(j+z)$.",
+      "Therefore every valid collection has at least $q_0+\\max(1,\\lceil(1000-S_0)/c\\rceil)$ stamps. This count is attained with $x=b-1$, $y=Y$ and the displayed number of $c$-cent stamps, proving the exact formula for $f(1,b,c)$.",
+      "If $c\\le10$, ninety-seven stamps cannot reach one thousand cents. At $c=11$, take $b=7$: the formula uses six ones, one seven and ninety eleven-cent stamps, and gives $f=97$. Thus eleven is the first possible denomination.",
+      "For $12\\le c\\le87$, if $b=c-1$, the formula gives $f=c-3+\\lceil1003/c\\rceil$. If $b\\le c-2$, then $q_0\\le c-2$ and $S_0\\ge c-1$, giving $f\\le c-3+\\lceil1001/c\\rceil\\le c-3+\\lceil1003/c\\rceil$. The bound $q_0\\le c-2$ follows from $b(c-b)>c-1$ for $2\\le b\\le c-2$ in this range.",
+      "The real function $c-3+1003/c$ is convex, so on the interval from twelve to eighty-seven it is at most the larger endpoint value, which is less than ninety-six. Taking its ceiling shows $f\\le96$ throughout this interval. No intermediate denomination can therefore have minimum count ninety-seven.",
+      "For $c=88$ and $c=89$, choose $b=87$. In both cases the exact formula uses eighty-six ones, one eighty-seven and ten large stamps, totaling ninety-seven and covering at least one thousand. Thus the three least possible values are $11,88,89$, whose sum is $188$."
+    ],
+    "keyIdeas": [
+      "Prove the optimal contiguous-coverage stamp formula"
+    ],
+    "commonMistakes": [
+      "Finding a ninety-seven-stamp collection without proving that a smaller collection is impossible for the same denominations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sorted-denomination gap condition yields a global minimum formula, and a convex bound excludes an entire interval of candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2022-p15",
+    "problemId": "aime-ii-2022-p15",
+    "finalAnswer": "$\\boxed{140}$",
+    "shortExplanation": "The two parts have areas $28$ and $112$.",
+    "detailedSteps": [
+      "Let the tangent-circle radii be $u,v>0$, so $u+v=15$, and put $q=uv$. The convex hexagon is split by $O_1O_2$ into the upper cyclic quadrilateral $O_1BAO_2$ with consecutive sides $u,2,v,15$, and the lower cyclic quadrilateral $O_1CDO_2$ with sides $u,16,v,15$. Both have the same circumcircle $\\Omega$.",
+      "Brahmagupta\u2019s formula gives squared areas $K_1^2=14(16-u)(16-v)=14(q+16)$ and $K_2^2=56(23-u)(23-v)=56(q+184)$. Convexity ensures their interiors are disjoint and their areas add.",
+      "For a cyclic quadrilateral with sides $a,b,c,d$ and area $K$, its circumradius satisfies $R^2=(ab+cd)(ac+bd)(ad+bc)/(16K^2)$. One derivation uses the common diagonal: supplementary opposite angles give diagonal square $(ac+bd)(ad+bc)/(ab+cd)$ by the cosine law, while $2K=(ab+cd)\\sin\\theta$ and the sine rule gives the stated radius.",
+      "Applying this to the two parts yields $R^2=(q+30)(6750+169q)/[224(q+16)]$ and $R^2=(q+240)(54000+q)/[896(q+184)]$. Equating and expanding, then factoring, gives $(q-40)(225q^2+48136q+486000)=0$. Since $q>0$, the second factor is positive; hence $q=40$.",
+      "Thus $K_1=\\sqrt{14\\cdot56}=28$ and $K_2=\\sqrt{56\\cdot224}=112$, giving total area $140$. The geometry exists: radii $(15\\pm\\sqrt{65})/2$, centers $(0,0),(15,0)$ and circle center $(15/2,-35/8)$ with radius squared $4825/64$ reconstruct the two intersection pairs. They give the actual lengths $AB=2$, $CD=16$ and the stated convex order, as checked in the coordinate audit."
+    ],
+    "keyIdeas": [
+      "Use the same circumradius for the two cyclic quadrilaterals"
+    ],
+    "commonMistakes": [
+      "Adding areas of nonconvex cyclic quadrilaterals or treating their circumradii as unrelated."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common circumcircle links two simple area formulas and determines the radius product uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

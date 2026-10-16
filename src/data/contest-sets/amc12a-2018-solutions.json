@@ -1,0 +1,556 @@
+[
+  {
+    "id": "solution-amc12a-2018-p1",
+    "problemId": "amc12a-2018-p1",
+    "finalAnswer": "$\\boxed{50}$ (choice D)",
+    "shortExplanation": "The red count stays fixed, so the new percentage determines the new total.",
+    "detailedSteps": [
+      "There are $36$ red balls. For these to make up $72\\%$ of the remaining balls, the remaining total must be $36/0.72=50$.",
+      "Therefore $100-50=50$ blue balls are removed. This is feasible because there were initially $64$ blue balls."
+    ],
+    "keyIdeas": [
+      "Percentages",
+      "Fixed quantities"
+    ],
+    "commonMistakes": [
+      "Removing 36 percent of the blue balls does not double the red percentage."
+    ],
+    "difficultyNotes": "Changing a proportion.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p2",
+    "problemId": "amc12a-2018-p2",
+    "finalAnswer": "$\\boxed{50}$ (choice C)",
+    "shortExplanation": "Bound the value per pound, then exhibit a load attaining the integer bound.",
+    "detailedSteps": [
+      "The three values per pound are $14/5$, $11/4$, and $2$. Each is at most $14/5$, so every allowed load is worth at most $18\\cdot14/5=50.4$ dollars.",
+      "The value is an integer, so it cannot exceed $50$. Two five-pound rocks and two four-pound rocks weigh $18$ pounds and are worth $28+22=50$ dollars."
+    ],
+    "keyIdeas": [
+      "Upper bounds",
+      "Integer optimization",
+      "Attainability"
+    ],
+    "commonMistakes": [
+      "Greedily taking three five-pound rocks leaves a less valuable final load."
+    ],
+    "difficultyNotes": "Integer packing.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p3",
+    "problemId": "amc12a-2018-p3",
+    "finalAnswer": "$\\boxed{24}$ (choice E)",
+    "shortExplanation": "Separate the choice of periods from the order of the courses.",
+    "detailedSteps": [
+      "If the occupied periods are $p_1<p_2<p_3$, nonadjacency means $p_{j+1}\\ge p_j+2$. The shifted values $p_1,p_2-1,p_3-2$ form an ordinary three-element subset of $\\{1,2,3,4\\}$.",
+      "There are $\\binom43=4$ period choices, and $3!=6$ ways to assign the three named courses. The total is $24$."
+    ],
+    "keyIdeas": [
+      "Gap removal",
+      "Permutations"
+    ],
+    "commonMistakes": [
+      "The courses are distinct even after their periods are selected."
+    ],
+    "difficultyNotes": "Nonconsecutive positions.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p4",
+    "problemId": "amc12a-2018-p4",
+    "finalAnswer": "$\\boxed{(5,6)}$ (choice D)",
+    "shortExplanation": "Negate each statement separately and intersect the resulting constraints.",
+    "detailedSteps": [
+      "The first false statement gives $d<6$. The second gives $d>5$. The third gives $d>4$, which adds no restriction once $d>5$.",
+      "The exact interval is $(5,6)$. Both endpoints are excluded."
+    ],
+    "keyIdeas": [
+      "Logical negation",
+      "Intervals"
+    ],
+    "commonMistakes": [
+      "The negation of at most five is strictly greater than five."
+    ],
+    "difficultyNotes": "Negating inequalities.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p5",
+    "problemId": "amc12a-2018-p5",
+    "finalAnswer": "$\\boxed{10}$ (choice E)",
+    "shortExplanation": "The factored first polynomial leaves only two candidates for the common root.",
+    "detailedSteps": [
+      "The first polynomial factors as $(x-1)(x-2)$. A shared root is therefore $1$ or $2$.",
+      "Substitution into $x^2-5x+k$ gives $k=4$ or $k=6$. These are distinct possible values, with sum $10$."
+    ],
+    "keyIdeas": [
+      "Factoring",
+      "Substitution"
+    ],
+    "commonMistakes": [
+      "The question asks for the sum of the possible parameters, not the common roots."
+    ],
+    "difficultyNotes": "A common polynomial root.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p6",
+    "problemId": "amc12a-2018-p6",
+    "finalAnswer": "$\\boxed{21}$ (choice B)",
+    "shortExplanation": "Use the given ordering to identify the two middle entries.",
+    "detailedSteps": [
+      "The displayed list is increasing: the assumption places $m+10$ before $n+1$, and it also implies $n>2$, so $n+2<2n$. Its median is $(m+10+n+1)/2=n$, giving $n=m+11$.",
+      "The sum is $3m+4n+17$. The mean condition gives $3m+17=2n$. Substitution yields $m=5$ and $n=16$, so $m+n=21$."
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Median",
+      "Simultaneous equations"
+    ],
+    "commonMistakes": [
+      "Using the middle displayed entries requires checking that the entire list is ordered."
+    ],
+    "difficultyNotes": "Mean and median constraints.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p7",
+    "problemId": "amc12a-2018-p7",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "Require both prime exponents to remain nonnegative.",
+    "detailedSteps": [
+      "Factor $4000=2^5 5^3$. The expression becomes $2^{n+5}5^{3-n}$.",
+      "It is an integer exactly when $n+5\\ge0$ and $3-n\\ge0$, since powers of distinct primes cannot cancel. Thus $-5\\le n\\le3$, giving $9$ integers."
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Negative exponents"
+    ],
+    "commonMistakes": [
+      "Negative values of n are allowed and contribute five solutions."
+    ],
+    "difficultyNotes": "Prime valuations.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p8",
+    "problemId": "amc12a-2018-p8",
+    "finalAnswer": "$\\boxed{24}$ (choice E)",
+    "shortExplanation": "Measure the upper triangle in units of the small triangle base.",
+    "detailedSteps": [
+      "The seven smallest triangles are congruent because they are similar and have the same area. Let their horizontal base length be $b$.",
+      "The diagram partitions $DE$ into four such bases. Thus triangle $ADE$ is similar to a unit-area small triangle with length scale $4$, and its area is $4^2=16$.",
+      "The requested trapezoid is the remainder of triangle $ABC$, so its area is $40-16=24$."
+    ],
+    "keyIdeas": [
+      "Similarity",
+      "Squared scale factors"
+    ],
+    "commonMistakes": [
+      "There are four small bases along DE, even though there are seven small triangles in the band."
+    ],
+    "difficultyNotes": "Area scaling in similar triangles.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p9",
+    "problemId": "amc12a-2018-p9",
+    "finalAnswer": "$\\boxed{0\\le y\\le\\pi}$ (choice E)",
+    "shortExplanation": "Use the nonnegative sines on the stated interval.",
+    "detailedSteps": [
+      "For $x,y\\in[0,\\pi]$, both $\\sin x$ and $\\sin y$ are nonnegative, while each cosine is at most $1$.",
+      "Hence $\\sin(x+y)=\\sin x\\cos y+\\cos x\\sin y\\le\\sin x+\\sin y$. This proves the inequality for every allowed $y$, so the full interval works."
+    ],
+    "keyIdeas": [
+      "Angle addition",
+      "Sign-aware inequalities"
+    ],
+    "commonMistakes": [
+      "Multiplication by a sine preserves these inequalities only because the sine is nonnegative."
+    ],
+    "difficultyNotes": "Bounding an angle addition formula.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p10",
+    "problemId": "amc12a-2018-p10",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "Break the line into intervals where the signs of x and y are fixed.",
+    "detailedSteps": [
+      "From the linear equation, $x=3-3y$. For $y\\le0$, $|x|-|y|=3-2y\\ge3$, so there are no solutions.",
+      "For $0\\le y\\le1$, the absolute-value condition is $|3-4y|=1$, giving $y=1/2$ or $1$. For $y\\ge1$, it is $|2y-3|=1$, giving $y=1$ or $2$.",
+      "The distinct pairs are $(3/2,1/2)$, $(0,1)$, and $(-3,2)$. There are $3$."
+    ],
+    "keyIdeas": [
+      "Piecewise equations",
+      "Boundary deduplication"
+    ],
+    "commonMistakes": [
+      "The solution y=1 lies in two sign intervals and must be counted only once."
+    ],
+    "difficultyNotes": "Nested absolute values.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p11",
+    "problemId": "amc12a-2018-p11",
+    "finalAnswer": "$\\boxed{\\frac{15}{8}}$ (choice D)",
+    "shortExplanation": "The crease consists of points equidistant from A and B.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $C=(4,0)$, and $B=(4,3)$. Equating squared distances to $A$ and $B$ gives the crease line $8x+6y=25$.",
+      "Inside the triangle, the line runs from the midpoint $(2,3/2)$ of $AB$ to $(25/8,0)$ on $AC$.",
+      "Its length is $\\sqrt{(9/8)^2+(3/2)^2}=15/8$."
+    ],
+    "keyIdeas": [
+      "Perpendicular bisectors",
+      "Coordinate distance"
+    ],
+    "commonMistakes": [
+      "The crease is only the segment inside the paper triangle."
+    ],
+    "difficultyNotes": "Folding along a perpendicular bisector.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p12",
+    "problemId": "amc12a-2018-p12",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Exclude smaller minima by grouping the remaining candidates into divisibility chains.",
+    "detailedSteps": [
+      "A set containing $1$ can have no other element. If it contains $2$, the only other possible elements are $3,5,7,9,11$; because $3$ divides $9$, at most four of those can be chosen, giving at most five elements.",
+      "If it contains $3$, omit $1,6,9,12$. Among the remaining candidates, each of the chains $\\{2,4,8\\}$ and $\\{5,10\\}$ contributes at most one element, and $7,11$ contribute at most two more. Again, including $3$ gives at most five.",
+      "The set $\\{4,5,6,7,9,11\\}$ has six elements and no divisibility pair. Thus the least possible element is $4$."
+    ],
+    "keyIdeas": [
+      "Divisibility chains",
+      "Extremal construction"
+    ],
+    "commonMistakes": [
+      "An example with minimum four needs a separate proof that minima one, two, and three are impossible."
+    ],
+    "difficultyNotes": "A divisibility antichain.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p13",
+    "problemId": "amc12a-2018-p13",
+    "finalAnswer": "$\\boxed{3281}$ (choice D)",
+    "shortExplanation": "Count digit strings, then pair positive and negative values.",
+    "detailedSteps": [
+      "All $3^8$ digit strings produce different integers. Indeed, if two differed first at their highest differing position $k$, that contribution has magnitude at least $3^k$, while all lower differences together have magnitude at most $2(1+3+\\cdots+3^{k-1})=3^k-1$.",
+      "Changing every digit sign pairs each nonzero value with its negative. Exactly one string gives zero. Therefore the number of nonnegative values is $(3^8+1)/2=3281$."
+    ],
+    "keyIdeas": [
+      "Positional representation",
+      "Uniqueness",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "Counting strings without proving uniqueness could overcount represented integers."
+    ],
+    "difficultyNotes": "Balanced ternary uniqueness.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p14",
+    "problemId": "amc12a-2018-p14",
+    "finalAnswer": "$\\boxed{31}$ (choice D)",
+    "shortExplanation": "Change bases and cancel the common logarithmic factor.",
+    "detailedSteps": [
+      "The equation becomes $2\\log2/\\log(3x)=3\\log2/\\log(2x)$. Since the excluded bases make both denominators nonzero, it is equivalent to $2\\log(2x)=3\\log(3x)$.",
+      "Thus $\\log(4x^2)=\\log(27x^3)$ and $x=4/27$. This value is positive and avoids both excluded values.",
+      "The numerator and denominator are relatively prime, so their sum is $4+27=31$."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Logarithm laws",
+      "Domain checking"
+    ],
+    "commonMistakes": [
+      "The subscripts are 3x and 2x, not powers of x."
+    ],
+    "difficultyNotes": "Logarithms with variable bases.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p15",
+    "problemId": "amc12a-2018-p15",
+    "finalAnswer": "$\\boxed{1022}$ (choice B)",
+    "shortExplanation": "A symmetric coloring is constant on each orbit of cells.",
+    "detailedSteps": [
+      "Index cell centers by $(i,j)$ with $i,j\\in\\{-3,-2,\\ldots,3\\}$. The specified symmetries change signs and interchange the coordinates.",
+      "Each orbit is uniquely described by $0\\le a\\le b\\le3$, where $a,b$ are the sorted absolute coordinates. There are $4+3+2+1=10$ orbits.",
+      "Coloring each orbit independently gives $2^{10}$ colorings. Remove the two monochromatic colorings, leaving $1022$."
+    ],
+    "keyIdeas": [
+      "Group orbits",
+      "Independent choices"
+    ],
+    "commonMistakes": [
+      "An orbit on a diagonal or axis is smaller than a generic orbit, so dividing $49$ by $8$ fails."
+    ],
+    "difficultyNotes": "Symmetry orbits of grid cells.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p16",
+    "problemId": "amc12a-2018-p16",
+    "finalAnswer": "$\\boxed{a>\\frac12}$ (choice E)",
+    "shortExplanation": "Replace x squared by a variable whose sign is known.",
+    "detailedSteps": [
+      "Put $t=x^2\\ge0$ and substitute $y=t-a$ into the circle equation. This gives $t+(t-a)^2=a^2$, or $t(t+1-2a)=0$.",
+      "The root $t=0$ always gives one point, $(0,-a)$. The other root gives two additional points exactly when $2a-1>0$. At equality it duplicates the first point; when negative it gives none.",
+      "There are exactly three distinct intersections precisely for $a>1/2$."
+    ],
+    "keyIdeas": [
+      "Substitution",
+      "Nonnegative variables",
+      "Distinct roots"
+    ],
+    "commonMistakes": [
+      "A double root at x=0 is still a single point."
+    ],
+    "difficultyNotes": "Intersections via a nonnegative variable.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p17",
+    "problemId": "amc12a-2018-p17",
+    "finalAnswer": "$\\boxed{\\frac{145}{147}}$ (choice D)",
+    "shortExplanation": "The square corner nearest the hypotenuse determines its size.",
+    "detailedSteps": [
+      "Place the right-angle vertex at the origin, with other vertices $(4,0)$ and $(0,3)$. The hypotenuse is $3x+4y=12$. If the square side is $s$, its nearest corner to that line is $(s,s)$.",
+      "The perpendicular distance is $(12-7s)/5=2$, so $s=2/7$. The perpendicular foot lies on the hypotenuse segment.",
+      "The field area is $6$, and the square area is $4/49$. The planted fraction is $1-(4/49)/6=145/147$."
+    ],
+    "keyIdeas": [
+      "Point-to-line distance",
+      "Area ratios"
+    ],
+    "commonMistakes": [
+      "The given gap is measured perpendicular to the hypotenuse, not parallel to either leg."
+    ],
+    "difficultyNotes": "Distance from a square to a line.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p18",
+    "problemId": "amc12a-2018-p18",
+    "finalAnswer": "$\\boxed{75}$ (choice D)",
+    "shortExplanation": "Find the large bisected triangle area, then subtract its quarter-scale copy.",
+    "detailedSteps": [
+      "The angle bisector theorem gives $BG:GC=AB:AC=5:1$. Triangles $ABG$ and $ACG$ share their altitude to $BC$, so $[ABG]=\\frac56\\cdot120=100$.",
+      "Since $DE$ is a midsegment, $F$ is the midpoint of $AG$. Thus triangle $ADF$ is similar to $ABG$ with length ratio $1/2$ and area $25$.",
+      "The quadrilateral $FDBG$ has area $100-25=75$."
+    ],
+    "keyIdeas": [
+      "Angle bisector theorem",
+      "Midsegments",
+      "Similar triangle areas"
+    ],
+    "commonMistakes": [
+      "An area ratio is the square of the corresponding length ratio."
+    ],
+    "difficultyNotes": "Angle bisector and midsegment.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p19",
+    "problemId": "amc12a-2018-p19",
+    "finalAnswer": "$\\boxed{19}$ (choice C)",
+    "shortExplanation": "Unique prime factorization separates the three exponents.",
+    "detailedSteps": [
+      "Every allowed integer has a unique form $2^a3^b5^c$ with $a,b,c\\ge0$. All summands are positive, so multiplying the convergent geometric series counts each reciprocal exactly once.",
+      "The sum is $\\frac1{1-1/2}\\cdot\\frac1{1-1/3}\\cdot\\frac1{1-1/5}=\\frac{15}{4}$.",
+      "The requested numerator-plus-denominator is $15+4=19$."
+    ],
+    "keyIdeas": [
+      "Unique factorization",
+      "Geometric series"
+    ],
+    "commonMistakes": [
+      "The integer $1$ belongs to the set and contributes the constant term."
+    ],
+    "difficultyNotes": "A product of geometric series.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p20",
+    "problemId": "amc12a-2018-p20",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "Use the circle through the two axis intercepts and the origin.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(3,0)$, $C=(0,3)$, and $M=(3/2,3/2)$. Write $E=(e,0)$ and $I=(0,i)$, with $i>e>0$.",
+      "The circle through $A,E,I$ has equation $x^2+y^2-ex-iy=0$. Substituting $M$ gives $e+i=3$.",
+      "The triangle area is $[EMI]=(\\frac32(e+i)-ei)/2=2$, so $ei=1/2$. Thus $e,i$ are the roots of $t^2-3t+1/2=0$.",
+      "Taking the larger root for $i$ gives $CI=3-i=(3-\\sqrt7)/2$. Therefore $a+b+c=3+7+2=12$."
+    ],
+    "keyIdeas": [
+      "Circle equations",
+      "Area determinants",
+      "Vieta formulas"
+    ],
+    "commonMistakes": [
+      "The condition AI>AE selects the larger of the two roots."
+    ],
+    "difficultyNotes": "A cyclic quadrilateral in coordinates.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p21",
+    "problemId": "amc12a-2018-p21",
+    "finalAnswer": "$\\boxed{x^{17}+2018x^{11}+1}$ (choice B)",
+    "shortExplanation": "Compare the increasing positive-power functions obtained by negating $x$.",
+    "detailedSteps": [
+      "Each of the four odd-power polynomials is strictly increasing and has exactly one root in $(-1,0)$. Put $t=-x$, so its equation becomes $t^m+2018t^n=1$ with $0<t<1$.",
+      "On this interval, smaller exponents give larger powers. Therefore the expression with $(m,n)=(17,11)$ is larger than each of the other three expressions at every $t$. It reaches $1$ at the smallest $t$, hence gives the greatest root $x$.",
+      "For the linear option, $t_0=2018/2019$. Bernoulli's inequality gives $2018t_0^{11}\\ge2018(1-11/2019)>1$. Thus the chosen polynomial reaches $1$ before $t_0$, so its root also exceeds the linear root."
+    ],
+    "keyIdeas": [
+      "Monotonicity",
+      "Root comparison",
+      "Bernoulli inequality"
+    ],
+    "commonMistakes": [
+      "The greatest negative root corresponds to the smallest positive $t$."
+    ],
+    "difficultyNotes": "Comparing negative polynomial roots.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p22",
+    "problemId": "amc12a-2018-p22",
+    "finalAnswer": "$\\boxed{20}$ (choice A)",
+    "shortExplanation": "Compute one square root from each equation and use the diagonals of the parallelogram.",
+    "detailedSteps": [
+      "The first pair of roots is $\\pm(\\sqrt{10}+i\\sqrt6)$, and the second is $\\pm(\\sqrt3+i)$; squaring verifies both pairs.",
+      "The opposite pairs form diagonals. If their half-diagonal vectors are $u=(\\sqrt{10},\\sqrt6)$ and $v=(\\sqrt3,1)$, the area is $2|\\det(u,v)|$.",
+      "This equals $2(\\sqrt{18}-\\sqrt{10})=6\\sqrt2-2\\sqrt{10}$. Hence $p+q+r+s=6+2+2+10=20$."
+    ],
+    "keyIdeas": [
+      "Complex square roots",
+      "Determinants",
+      "Parallelogram diagonals"
+    ],
+    "commonMistakes": [
+      "Twice the half-diagonal determinant, not four times it, is the parallelogram area."
+    ],
+    "difficultyNotes": "Area from complex diagonals.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p23",
+    "problemId": "amc12a-2018-p23",
+    "finalAnswer": "$\\boxed{80}$ (choice E)",
+    "shortExplanation": "The midpoint displacement is half the sum of two unit side vectors.",
+    "detailedSteps": [
+      "Place $P=(0,0)$, $A=(10,0)$, and the triangle above the horizontal axis. The unit vectors from $P$ to $U$ and from $A$ to $G$ have directions $36^\\circ$ and $180^\\circ-56^\\circ=124^\\circ$.",
+      "Thus $\\overrightarrow{MN}=\\frac12[(\\cos36^\\circ,\\sin36^\\circ)+(\\cos124^\\circ,\\sin124^\\circ)]$.",
+      "The angle-sum identities turn this into $\\cos44^\\circ(\\cos80^\\circ,\\sin80^\\circ)$. Since the scalar is positive, the acute angle with $PA$ is $80^\\circ$."
+    ],
+    "keyIdeas": [
+      "Midpoint vectors",
+      "Sum-to-product identities"
+    ],
+    "commonMistakes": [
+      "The direction along AG is124 degrees from the positive horizontal axis."
+    ],
+    "difficultyNotes": "The direction between two midpoints.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p24",
+    "problemId": "amc12a-2018-p24",
+    "finalAnswer": "$\\boxed{\\frac{13}{24}}$ (choice B)",
+    "shortExplanation": "Express the two ways Carol can be the middle choice.",
+    "detailedSteps": [
+      "For $1/2\\le c\\le2/3$, Bob's distribution satisfies $F_B(c)=6c-3$. Carol wins with probability $c(1-F_B(c))+(1-c)F_B(c)$, since Alice and Bob must be on opposite sides of $c$.",
+      "This simplifies to $-12c^2+13c-3$, a concave quadratic with vertex $c=13/24$. That value lies in the allowed middle interval and gives probability $25/48$.",
+      "For $c\\le1/2$ the winning probability is $c$, at most $1/2$. For $c\\ge2/3$ it is $1-c$, at most $1/3$. Therefore the global maximum occurs at $13/24$."
+    ],
+    "keyIdeas": [
+      "Cumulative probabilities",
+      "Quadratic optimization",
+      "Piecewise analysis"
+    ],
+    "commonMistakes": [
+      "Counting only one ordering of Alice and Bob omits one of the two disjoint winning cases."
+    ],
+    "difficultyNotes": "Optimizing the chance of being the median.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2018-p25",
+    "problemId": "amc12a-2018-p25",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "Use the repunit as a variable and exploit the two distinct values of $n$.",
+    "detailedSteps": [
+      "Put $R=(10^n-1)/9$. Then $A_n=aR$, $B_n=bR$, and $C_n=cR(9R+2)$. Dividing the required equation by $R>0$ gives $(9c-a^2)R+(2c-b)=0$.",
+      "Two distinct values of $n$ give two distinct values of $R$, so both coefficients must vanish: $a^2=9c$ and $b=2c$.",
+      "The digit $a$ is a positive multiple of $3$. If $a=3$, then $(b,c)=(2,1)$ and the sum is $6$. If $a=6$, then $(b,c)=(8,4)$ and the sum is $18$. If $a=9$, then $b$ would be $18$, which is not a digit.",
+      "The maximum is $18$. The digits $(6,8,4)$ satisfy the identity for every positive $n$, so they meet the two-value requirement."
+    ],
+    "keyIdeas": [
+      "Repunits",
+      "Polynomial identities",
+      "Digit constraints"
+    ],
+    "commonMistakes": [
+      "Checking only $n=1$ does not force an identity and admits extraneous digit triples."
+    ],
+    "difficultyNotes": "Repeated digits and a linear identity.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

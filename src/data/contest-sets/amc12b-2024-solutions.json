@@ -1,0 +1,590 @@
+[
+  {
+    "id": "solution-amc12b-2024-p1",
+    "problemId": "amc12b-2024-p1",
+    "finalAnswer": "$\\boxed{2022}$ (choice B)",
+    "shortExplanation": "Count the people on either side, then include the shared person once.",
+    "detailedSteps": [
+      "There are $1012$ people to the left of the designated person and $1009$ to the right. These two groups are disjoint.",
+      "The total is $1012+1+1009=2022$, which is choice B."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Overlapping counts"
+    ],
+    "commonMistakes": [
+      "Adding the two position numbers directly counts the designated person twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is overlapping counts; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p2",
+    "problemId": "amc12b-2024-p2",
+    "finalAnswer": "$\\boxed{0}$ (choice B)",
+    "shortExplanation": "Factor out the shared $7!$ and compare the remaining products.",
+    "detailedSteps": [
+      "Write the difference as $7!(10\\cdot9\\cdot8-6!)$.",
+      "Both $10\\cdot9\\cdot8$ and $6!$ equal $720$, so the difference is $0$, choice B."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Factorial identities"
+    ],
+    "commonMistakes": [
+      "$10!-7!\\cdot6!$ is not $(10-7)!(10-6)!$; factorials do not distribute over subtraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is factorial identities; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p3",
+    "problemId": "amc12b-2024-p3",
+    "finalAnswer": "$\\boxed{21}$ (choice E)",
+    "shortExplanation": "Find the allowed interval, then count both endpoints and zero.",
+    "detailedSteps": [
+      "Dividing by $2$ gives $|x|\\le 7\\pi/2$. Since $10<7\\pi/2<11$, the integer values are $-10,-9,\\ldots,9,10$.",
+      "There are $10-(-10)+1=21$ values, choice E."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Integer inequalities"
+    ],
+    "commonMistakes": [
+      "Counting ten positive and ten negative values omits $0$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is integer inequalities; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p4",
+    "problemId": "amc12b-2024-p4",
+    "finalAnswer": "$\\boxed{\\text{bin D}}$ (choice D)",
+    "shortExplanation": "Locate the deposit step using cumulative triangular numbers, then reduce the step modulo $5$.",
+    "detailedSteps": [
+      "After step $k$, the number of deposited balls is $T_k=k(k+1)/2$.",
+      "$T_{63}=2016<2024\\le2080=T_{64}$, so ball $2024$ is in step $64$.",
+      "Steps $1,2,3,4,5$ use A, B, C, D, E in order. Because $64\\equiv4\\pmod5$, the bin is D, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Triangular numbers"
+    ],
+    "commonMistakes": [
+      "The bin depends on the step number, not on the ball number modulo $5$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is triangular numbers; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p5",
+    "problemId": "amc12b-2024-p5",
+    "finalAnswer": "$\\boxed{15}$ (choice B)",
+    "shortExplanation": "For any fixed number of sign changes, changing the largest terms decreases the sum most.",
+    "detailedSteps": [
+      "The original sum of the first $50$ positive odd integers is $50^2=2500$. Flipping a term $t$ decreases the total by $2t$.",
+      "The sum of the largest $k$ terms is $k(100-k)$. The new sum can be negative exactly when this selected sum exceeds $1250$.",
+      "For $k=14$, the maximum is $14\\cdot86=1204$, which is insufficient. For $k=15$, it is $15\\cdot85=1275$, producing $2500-2(1275)=-50$. Thus the least number is $15$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Extremal sums"
+    ],
+    "commonMistakes": [
+      "A sign flip changes $+t$ into $-t$, decreasing the sum by $2t$, not by $t$.",
+      "The required result is strictly negative, so equality with $1250$ would not suffice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is extremal sums; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p6",
+    "problemId": "amc12b-2024-p6",
+    "finalAnswer": "$\\boxed{20}$ (choice B)",
+    "shortExplanation": "A number has $d$ base-$5$ digits precisely when it lies from $5^{d-1}$ up to, but excluding, $5^d$.",
+    "detailedSteps": [
+      "For $N=5\\cdot10^{13}$, the supplied logarithm estimate gives $\\log_5N=(13+\\log_{10}5)/\\log_{10}5\\approx13.7/0.7\\approx19.57$.",
+      "Thus $d=\\lfloor\\log_5N\\rfloor+1=20$, choice B.",
+      "An exact check avoids any rounding concern: $5^{19}=19{,}073{,}486{,}328{,}125<N=50{,}000{,}000{,}000{,}000<95{,}367{,}431{,}640{,}625=5^{20}$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Base representation"
+    ],
+    "commonMistakes": [
+      "The digit count is one more than the exponent of the largest power that fits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is base representation; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p7",
+    "problemId": "amc12b-2024-p7",
+    "finalAnswer": "$\\boxed{15}$ (choice C)",
+    "shortExplanation": "Use equal areas to relate two coordinates and use a dot product for the right angle.",
+    "detailedSteps": [
+      "Choose coordinates $W=(0,0)$, $X=(4,0)$, $Y=(4,8)$, and $Z=(0,8)$. Write $M=(4,m)$ and $A=(a,8)$. A rotation or reflection of the source figure does not change the calculation.",
+      "The equal areas are $[WXM]=2m$ and $[WAZ]=4a$, so $a=m/2$.",
+      "The perpendicular vectors $\\overrightarrow{WM}=(4,m)$ and $\\overrightarrow{MA}=(a-4,8-m)$ satisfy $4(a-4)+m(8-m)=0$. Substituting $a=m/2$ gives $(m-2)(m-8)=0$.",
+      "The value $m=8$ makes $M=A=Y$, so there is no right angle or nondegenerate triangle. Therefore $m=2$ and $a=1$.",
+      "The determinant area is $[WMA]=\\tfrac12|4\\cdot8-2\\cdot1|=15$, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinates and perpendicularity"
+    ],
+    "commonMistakes": [
+      "The algebraic root $m=8$ is degenerate and must be rejected.",
+      "Equal areas do not imply the two small triangles are congruent."
+    ],
+    "alternativeMethods": [
+      "With the valid coordinates, subtract the three corner areas from the rectangle: $32-4-4-9=15$."
+    ],
+    "difficultyNotes": "The key step is coordinates and perpendicularity; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p8",
+    "problemId": "amc12b-2024-p8",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "Express both logarithms using $t=\\ln x$; the compound fraction becomes a single logarithm.",
+    "detailedSteps": [
+      "The original expression is defined for $x>0$ with $x\\ne1$. Setting $t=\\ln x$ gives $\\log_2x=t/\\ln2$ and $\\log_3x=t/\\ln3$.",
+      "The quotient of their product by their sum simplifies to $t/(\\ln2+\\ln3)=\\ln x/\\ln6=\\log_6x$.",
+      "Therefore $\\log_6x=2$, so $x=36$, choice C. This value satisfies the original domain restrictions."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Change of logarithm base"
+    ],
+    "commonMistakes": [
+      "One cannot simply add logarithms of different bases without first changing base.",
+      "Cancelling $t$ requires excluding $x=1$, where the original denominator vanishes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is change of logarithm base; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p9",
+    "problemId": "amc12b-2024-p9",
+    "finalAnswer": "$\\boxed{71}$ (choice B)",
+    "shortExplanation": "Compare the area of the annulus with the area of the diamond, checking containment first.",
+    "detailedSteps": [
+      "The target inequality is equivalent to $18\\le x^2+y^2\\le32$, so its area is $\\pi(32-18)=14\\pi$.",
+      "Every point of the outer disk satisfies $|x|+|y|\\le\\sqrt{2}\\sqrt{x^2+y^2}\\le8$. Thus the whole annulus lies inside the dartboard.",
+      "The diamond has diagonals of length $16$ and $16$, hence area $128$. The probability is $14\\pi/128=7\\pi/64$. Therefore $m+n=7+64=71$, choice B."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "Using the annulus area without proving it fits inside the board can give a wrong geometric probability.",
+      "The radii are square roots of $18$ and $32$; the area uses their squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is geometric probability; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p10",
+    "problemId": "amc12b-2024-p10",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The range fixes one or both added extreme values. The integral median and mean then reduce the real-valued choices to finitely many linear cases.",
+    "detailedSteps": [
+      "The six fixed values sum to $24.8$, so an integer mean $q$ requires $x+y+z=9q-24.8$. The range condition forces all nine values into $[0,8]$, so it suffices to check integers $1\\le q\\le8$.",
+      "The median is the fifth value. At most four values can be at most $2$, while five fixed values are less than $7$. Hence an integral median is one of $3,4,5,6$. Since none is a fixed value, it must equal one of $x,y,z$.",
+      "If the largest value remains $7$, then $x=0$ and $z\\le7$. A median of $3$ forces $z=3$, making the total $27.8+y$ with $0\\le y\\le3$, which contains no multiple of $9$. A median of $4$ gives a total between $28.8$ and $35.8$, again with no multiple of $9$. A median of $6$ is impossible because five values are already below $6$. For median $5$, we need $y=5$ and $5\\le z\\le7$; the total $29.8+z$ is a multiple of $9$ only at $z=6.2$. Thus this case gives $(0,5,6.2)$.",
+      "If the smallest value remains $1$, then $z=8$ and $x\\ge1$. A median of $3$ is impossible because only four values can be at most $3$. For median $4$ or $5$, one has $y=4$ or $y=5$; the totals lie respectively in $[37.8,40.8]$ or $[38.8,42.8]$, containing no multiple of $9$. For median $6$, we need $x=6$ and $6\\le y\\le8$; the total $38.8+y$ is a multiple of $9$ only at $y=6.2$. Thus this case gives $(6,6.2,8)$.",
+      "In the remaining case, the added values supply both extremes: $0<x<1$, $z=x+7$, and the median must be $y=m$. The sum condition gives $2x=9q-31.8-m$. For $m=3,4,5,6$ and $0<2x<2$, the only possibility is $q=4,m=4,x=0.1$. It gives $(0.1,4,7.1)$, with mean and median both $4$.",
+      "These three disjoint cases give exactly $3$ ordered triples, choice C. For the endpoint cases above, each proposed median fixes one added value and the sum fixes the other; sorting the resulting list verifies the fifth position."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Mean and median casework"
+    ],
+    "commonMistakes": [
+      "$x,y,z$ are real numbers, so restricting them to integers loses the $(0.1,4,7.1)$ case.",
+      "The median is the fifth of all nine numbers, not necessarily $y$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main difficulty is complete case coverage with real, rather than integer, added values. The endpoint cases and the case with both new extremes must all be considered.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p11",
+    "problemId": "amc12b-2024-p11",
+    "finalAnswer": "$\\boxed{\\frac{91}{180}}$ (choice E)",
+    "shortExplanation": "Pair complementary angles, leaving the $45^\\circ$ and $90^\\circ$ terms unpaired.",
+    "detailedSteps": [
+      "For $1\\le n\\le44$, $\\sin^2(n^\\circ)+\\sin^2((90-n)^\\circ)=1$. These are $44$ pairs.",
+      "The remaining terms are $\\sin^2(45^\\circ)=1/2$ and $\\sin^2(90^\\circ)=1$. The sum is therefore $44+1/2+1=91/2$.",
+      "Dividing by $90$ gives the mean $91/180$, choice E."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complementary trigonometric angles"
+    ],
+    "commonMistakes": [
+      "The list begins at $1^\\circ$, not $0^\\circ$; assuming perfect pairing into $45$ pairs would give the incorrect mean $1/2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is complementary trigonometric angles; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p12",
+    "problemId": "amc12b-2024-p12",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice D)",
+    "shortExplanation": "Decompose the quadrilateral along the diagonal from the origin to $z^2$. Successive vectors differ by multiplication by $z$.",
+    "detailedSteps": [
+      "Write $z=2(\\cos\\theta+i\\sin\\theta)$. The hypotheses imply $0<\\theta<60^\\circ$, so the rays to $z,z^2,z^3$ occur in that order and span less than $180^\\circ$. The two triangles along the diagonal have positive areas that add.",
+      "Triangle $0,z,z^2$ has sides from the origin of lengths $2$ and $4$ with included angle $\\theta$, so its area is $4\\sin\\theta$. Triangle $0,z^2,z^3$ similarly has area $\\tfrac12\\cdot4\\cdot8\\sin\\theta=16\\sin\\theta$.",
+      "The total is $20\\sin\\theta=15$, while $\\operatorname{Im}z=2\\sin\\theta$. Therefore $\\operatorname{Im}z=15/10=3/2$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex coordinates and area"
+    ],
+    "commonMistakes": [
+      "The powers $z,z^2,z^3$ have different lengths $2,4,8$; treating them as points on one circle gives the wrong area."
+    ],
+    "alternativeMethods": [
+      "For complex points $u,v$, their determinant is $\\operatorname{Im}(\\overline{u}v)$. Shoelace gives area $\\tfrac12\\operatorname{Im}(\\overline z z^2+\\overline{z^2}z^3)=\\tfrac12(4+16)\\operatorname{Im}z=10\\operatorname{Im}z$."
+    ],
+    "difficultyNotes": "The key step is complex coordinates and area; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p13",
+    "problemId": "amc12b-2024-p13",
+    "finalAnswer": "$\\boxed{-34}$ (choice C)",
+    "shortExplanation": "Add the equations and minimize the resulting quadratic directly.",
+    "detailedSteps": [
+      "Adding gives $h+k=2x^2+2y^2-16x-4y$.",
+      "Completing squares yields $h+k=2(x-4)^2+2(y-1)^2-34\\ge-34$.",
+      "Equality occurs at $(x,y)=(4,1)$, so it is attainable. The minimum is $-34$, choice C."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Completing the square"
+    ],
+    "commonMistakes": [
+      "Minimizing the two original expressions separately is invalid because their minimizing points need not coincide."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is completing the square; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p14",
+    "problemId": "amc12b-2024-p14",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "Separate multiples of $5$ from units modulo $125$.",
+    "detailedSteps": [
+      "If $5\\mid n$, then $125\\mid n^{100}$, giving remainder $0$.",
+      "Otherwise $\\gcd(n,125)=1$. Euler's theorem applies with $\\varphi(125)=125-25=100$, so $n^{100}\\equiv1\\pmod{125}$.",
+      "Both residues occur, for example at $n=0$ and $n=1$. There are exactly $2$ possible remainders, choice B."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular exponentiation"
+    ],
+    "commonMistakes": [
+      "Euler's theorem requires coprimality, so multiples of $5$ must be handled separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is modular exponentiation; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p15",
+    "problemId": "amc12b-2024-p15",
+    "finalAnswer": "$\\boxed{\\log_2\\!\\left(\\frac3{\\sqrt7}\\right)}$ (choice B)",
+    "shortExplanation": "The vertical coordinates simplify to $1,2,3$, making the determinant short.",
+    "detailedSteps": [
+      "The points are $A=(0,1)$, $B=(\\log_2 3,2)$, and $C=(\\log_2 7,3)$. Thus $\\overrightarrow{AB}=(\\log_2 3,1)$ and $\\overrightarrow{AC}=(\\log_2 7,2)$.",
+      "The area is $\\tfrac12|2\\log_2 3-\\log_2 7|$. Because $9>7$, the quantity inside the absolute value is positive.",
+      "The area simplifies to $\\log_2 3-\\tfrac12\\log_2 7=\\log_2(3/\\sqrt7)$, choice B."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Determinant area"
+    ],
+    "commonMistakes": [
+      "Determinants give twice the triangle area.",
+      "The expression is $\\log_2(3/\\sqrt7)$, not $\\log_2(\\sqrt3/7)$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is determinant area; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p16",
+    "problemId": "amc12b-2024-p16",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "Count assignments by filling role slots, then retain only the power of $3$.",
+    "detailedSteps": [
+      "Temporarily label the four committees. Each has slots for a chair, a secretary, and two ordinary members. Filling all slots gives $16!$ arrangements, but the ordinary pair in each committee is unordered, so divide by $2^4$.",
+      "The committees themselves are indistinguishable; divide by $4!$. Hence the number is $N=16!/(2^4\\cdot4!)$.",
+      "The exponent of $3$ in $16!$ is $\\lfloor16/3\\rfloor+\\lfloor16/9\\rfloor=5+1=6$. The denominator contributes one factor of $3$, so $v_3(N)=6-1=5$, choice A."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Prime valuation in a count"
+    ],
+    "commonMistakes": [
+      "The chair and secretary are distinct roles; they must not be divided out as an unordered pair.",
+      "Failing to divide by $4!$ treats the committees as labeled."
+    ],
+    "alternativeMethods": [
+      "First partition into committees in $16!/((4!)^4 4!)$ ways, then choose each chair and secretary in $4\\cdot3$ ways. Multiplying by $12^4$ gives the same count."
+    ],
+    "difficultyNotes": "The key step is prime valuation in a count; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p17",
+    "problemId": "amc12b-2024-p17",
+    "finalAnswer": "$\\boxed{\\frac1{105}}$ (choice C)",
+    "shortExplanation": "Integer roots must divide $6$. Enumerate their unordered triples, then apply the coefficient restrictions.",
+    "detailedSteps": [
+      "There are $21\\cdot20=420$ equally likely ordered coefficient pairs $(a,b)$ because the two choices are made without replacement.",
+      "If the distinct integer roots are $u,v,w$, Vieta gives $uvw=-6$, $a=-(u+v+w)$, and $b=uv+uw+vw$. The only distinct-root triples with product $-6$ are $(-3,-2,-1)$, $(-3,1,2)$, $(-2,1,3)$, $(-1,1,6)$, and $(-1,2,3)$.",
+      "The corresponding coefficient pairs are $(6,11)$, $(0,-7)$, $(-2,-5)$, $(-6,-1)$, and $(-4,1)$. The first is invalid because $11>10$; the other four lie in range and have $a\\ne b$.",
+      "Thus the probability is $4/420=1/105$, choice C."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Integer roots and Vieta"
+    ],
+    "commonMistakes": [
+      "The roots multiply to $-6$, not $6$.",
+      "Permuting a root triple does not produce a new polynomial.",
+      "Checking only the roots and forgetting the bounds on $a,b$ incorrectly includes $(6,11)$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is integer roots and vieta; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p18",
+    "problemId": "amc12b-2024-p18",
+    "finalAnswer": "$\\boxed{319}$ (choice B)",
+    "shortExplanation": "Use the doubling identity to replace each quotient by a sum of neighboring Fibonacci numbers.",
+    "detailedSteps": [
+      "Set $F_0=0$. The addition identity $F_{m+n}=F_mF_{n+1}+F_{m-1}F_n$ follows by induction on $n$: both sides have the same initial values and obey the Fibonacci recurrence.",
+      "Taking $m=n=k$ gives $F_{2k}/F_k=F_{k-1}+F_{k+1}$. Therefore the desired sum is $\\sum_{j=0}^{9}F_j+\\sum_{j=2}^{11}F_j$.",
+      "The telescoping identity $F_j=F_{j+2}-F_{j+1}$ gives $\\sum_{j=0}^{9}F_j=F_{11}-1=88$ and $\\sum_{j=2}^{11}F_j=F_{13}-2=231$.",
+      "The total is $88+231=319$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Fibonacci addition identity"
+    ],
+    "commonMistakes": [
+      "The denominator of $F_{2k}/F_k$ is $F_k$, not $F_{2k-1}$.",
+      "When summing the two shifted sequences, their ranges differ."
+    ],
+    "alternativeMethods": [
+      "The ten quotients are $1,3,4,7,11,18,29,47,76,123$; direct addition also gives $319$."
+    ],
+    "difficultyNotes": "The key step is fibonacci addition identity; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p19",
+    "problemId": "amc12b-2024-p19",
+    "finalAnswer": "$\\boxed{\\frac{5\\sqrt3}{11}}$ (choice B)",
+    "shortExplanation": "Split the outer hexagon into six triangles with a common center, then solve the trigonometric area equation.",
+    "detailedSteps": [
+      "The circumradius of the equilateral triangle is $R=14/\\sqrt3$. The six consecutive central angles alternate between $\\theta$ and $120^\\circ-\\theta$, as shown by the vertex order in the source figure.",
+      "The hexagon area is $\\tfrac32R^2(\\sin\\theta+\\sin(120^\\circ-\\theta))=49(3\\sin\\theta+\\sqrt3\\cos\\theta)$. Equating it to $91\\sqrt3$ gives $\\sqrt3\\sin\\theta+\\cos\\theta=13/7$.",
+      "The left side is $2\\cos(60^\\circ-\\theta)$, so $\\cos(60^\\circ-\\theta)=13/14$. Since $0<60^\\circ-\\theta<60^\\circ$, its sine is $\\sqrt{1-(13/14)^2}=3\\sqrt3/14$.",
+      "Angle subtraction now gives $\\sin\\theta=5\\sqrt3/14$ and $\\cos\\theta=11/14$. Thus $\\tan\\theta=5\\sqrt3/11$, choice B."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rotation and trigonometry"
+    ],
+    "commonMistakes": [
+      "The region is the outer hexagon $ADBECF$, not the overlapping region of the two triangles.",
+      "The interval for $\\theta$ determines the sign of the square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is rotation and trigonometry; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p20",
+    "problemId": "amc12b-2024-p20",
+    "finalAnswer": "$\\boxed{911}$ (choice C)",
+    "shortExplanation": "Express the median in terms of the included angle; the same angle controls the area.",
+    "detailedSteps": [
+      "Let $\\alpha=\\angle BAC$ and let the position vectors of $B,C$ from $A$ have lengths $40,42$. The midpoint vector is their average, so $x^2=(40^2+42^2+2\\cdot40\\cdot42\\cos\\alpha)/4=841+840\\cos\\alpha$.",
+      "A nondegenerate triangle has $0<\\alpha<180^\\circ$, so $1<x<41$. Thus the domain endpoints are $p=1$ and $q=41$.",
+      "The area is $f(x)=\\tfrac12\\cdot40\\cdot42\\sin\\alpha=840\\sin\\alpha$. Its maximum is $r=840$, attained at $\\alpha=90^\\circ$. There $x^2=841$, so $s=29$.",
+      "Therefore $p+q+r+s=1+41+840+29=911$, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Median length and maximal area"
+    ],
+    "commonMistakes": [
+      "The domain endpoints correspond to degenerate triangles and are excluded.",
+      "The maximum area occurs at a right angle, not necessarily at the midpoint of the interval of median lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is median length and maximal area; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p21",
+    "problemId": "amc12b-2024-p21",
+    "finalAnswer": "$\\boxed{154}$ (choice C)",
+    "shortExplanation": "Use tangents of the two known smallest angles, then take the complementary angle.",
+    "detailedSteps": [
+      "Let the first two smallest angles be $\\alpha,\\beta$. Their tangents are $3/4$ and $5/12$.",
+      "The addition formula gives $\\tan(\\alpha+\\beta)=\\frac{3/4+5/12}{1-(3/4)(5/12)}=56/33$. The third smallest angle is $\\gamma=90^\\circ-(\\alpha+\\beta)$, hence $\\tan\\gamma=33/56$.",
+      "The primitive leg ratio is $33:56$, and $33^2+56^2=65^2$. Because $\\gcd(33,56)=1$, the primitive triple is $(33,56,65)$. Its perimeter is $154$, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Angle addition in right triangles"
+    ],
+    "commonMistakes": [
+      "The specified angles are the smaller acute angles, so use smaller leg divided by larger leg.",
+      "A similar multiple of the resulting triple is not primitive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is angle addition in right triangles; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p22",
+    "problemId": "amc12b-2024-p22",
+    "finalAnswer": "$\\boxed{15}$ (choice C)",
+    "shortExplanation": "Translate the angle condition into $b^2=a(a+c)$, then check only the small possibilities needed for a minimum.",
+    "detailedSteps": [
+      "Let $a,b,c$ be opposite $A,B,C$. The sine rule and $B=2A$ give $b=2a\\cos A$. Applying the cosine rule at $B$ gives $b^2=a^2+c^2-2ac\\cos2A=(a+c)^2-cb^2/a$, hence $b^2=a(a+c)$.",
+      "Since $0<A<60^\\circ$, the relation $b/a=2\\cos A$ yields $a<b<2a$. The triangle inequality $a+c>b$ also implies the perimeter $P>2b$.",
+      "If $P\\le15$, then $b\\le7$. Also $b/2<a<b$ and $a$ must divide $b^2$. For $b=2,3,4,5,6,7$, the only allowed divisor is $a=4$ when $b=6$; for $b=1$ there is no positive $a<b$. This gives $c=b^2/a-a=5$ and $P=15$.",
+      "The sides $(a,b,c)=(4,6,5)$ form a triangle. The cosine rule gives $\\cos A=3/4$ and $\\cos B=1/8=2(3/4)^2-1$, so $B=2A$. Therefore the attainable minimum is $15$, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Integer sides and doubled angles"
+    ],
+    "commonMistakes": [
+      "The side opposite the doubled angle is not twice the other side; the sine rule introduces $\\cos A$.",
+      "Finding one example does not prove minimality. The divisor argument excludes every smaller perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key difficulty is deriving a necessary arithmetic condition and then proving the candidate is the smallest, rather than merely exhibiting a triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p23",
+    "problemId": "amc12b-2024-p23",
+    "finalAnswer": "$\\boxed{\\frac{1+\\sqrt2}{2}}$ (choice B)",
+    "shortExplanation": "Use the regular octagon circumradius and the dot product between the two lateral edges.",
+    "detailedSteps": [
+      "Let $O$ be the base center and $h=VO$. With base circumradius $R$, a unit side gives $1=2R\\sin22.5^\\circ$, so $R^2=1/(2-\\sqrt2)=(2+\\sqrt2)/2$.",
+      "Vertices $A$ and $D$ are separated by three octagon edges, so $\\angle AOD=135^\\circ$. Since the pyramid is right, its apex lies vertically above $O$.",
+      "The dot product of $\\overrightarrow{VA}$ and $\\overrightarrow{VD}$ is $R^2\\cos135^\\circ+h^2$. Perpendicularity sets this to $0$, giving $h^2=R^2/\\sqrt2=(1+\\sqrt2)/2$, choice B."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Vectors in a right pyramid"
+    ],
+    "commonMistakes": [
+      "$A$ and $D$ subtend $135^\\circ$ at the center, not $90^\\circ$.",
+      "The requested quantity is the square of the height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is vectors in a right pyramid; the remaining calculation is short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p24",
+    "problemId": "amc12b-2024-p24",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Express the inradius using reciprocal altitudes, and impose the triangle inequality on the reciprocal side ratios.",
+    "detailedSteps": [
+      "Let the area be $\\Delta$ and the inradius be $r$. The side lengths are $2\\Delta/a,2\\Delta/b,2\\Delta/c$, so $\\Delta=rs$ gives $1/r=1/a+1/b+1/c$. The longest side corresponds to $a$, and the strict triangle inequality becomes $1/a<1/b+1/c$, or $a>2r$.",
+      "As $a\\le b\\le c$, we also have $1/r\\le3/a$, so $a\\le3r$. Since every altitude is at most $9$, we have $1/r\\ge1/3$, hence the integer $r$ is $1,2$, or $3$.",
+      "For $r=1$, the bounds $2<a\\le3$ force $a=3$. Then $1/b+1/c=2/3$ with $b,c\\ge3$ forces $b=c=3$.",
+      "For $r=2$, $a$ is $5$ or $6$. If $a=6$, equality in $1/b+1/c\\le2/6$ gives $b=c=6$. If $a=5$, then $1/b+1/c=3/10$ and $5\\le b\\le6$. The choices $b=5,6$ give respectively $c=10$ and $c=15/2$, neither allowed.",
+      "For $r=3$, each reciprocal altitude is at least $1/9$, and their sum is $1/3$, forcing $a=b=c=9$.",
+      "All three equal-altitude triples are realized by equilateral triangles, whose altitude is three times the inradius. Thus exactly $(3,3,3)$, $(6,6,6)$, and $(9,9,9)$ work: $3$ triples, choice B."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Altitudes and inradius"
+    ],
+    "commonMistakes": [
+      "The side lengths are proportional to reciprocal altitudes, not to the altitudes.",
+      "An integer value of $abc/(ab+bc+ca)$ alone is insufficient; the reciprocal side lengths must satisfy a strict triangle inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reduction to reciprocal altitudes makes the integrality condition manageable. The triangle inequality supplies the essential lower bound a>2r.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2024-p25",
+    "problemId": "amc12b-2024-p25",
+    "finalAnswer": "$\\boxed{243}$ (choice A)",
+    "shortExplanation": "Condition on the four paint-category counts. Independence is a rank-one condition on a $2\\times2$ table.",
+    "detailedSteps": [
+      "Let $a,b,c,d$ count red-striped, red-dotted, blue-striped, and blue-dotted balls. Each of the $4^6$ labeled painting outcomes is equally likely. For a fixed painting, independence means $a/6=((a+b)/6)((a+c)/6)$, equivalently $ad=bc$.",
+      "First count paintings where color or pattern is constant. Constant color gives $2\\cdot2^6=128$ outcomes; constant pattern gives another $128$. Their intersection consists of the $4$ monochromatic single-pattern outcomes. This contributes $252$.",
+      "For the remaining paintings, let $R=a+b$ and $S=a+c$. Both lie in $1,\\ldots,5$, and $a=RS/6$ must be an integer. The only margin pairs are $(R,S)=(2,3),(3,2),(3,4),(4,3)$.",
+      "For each margin pair, the four category counts are a permutation of $(1,1,2,2)$, so it contributes $6!/(1!1!2!2!)=180$ outcomes. The nonconstant cases contribute $4\\cdot180=720$.",
+      "The probability is $(252+720)/4^6=972/4096=243/1024$. The requested numerator is $243$, choice A."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Independence and contingency counts"
+    ],
+    "commonMistakes": [
+      "Different category-count tables are not equally likely; each must be weighted by its multinomial count.",
+      "A constant event is independent of every event, so the constant-color and constant-pattern cases must be included.",
+      "The question asks whether independence holds after the painting is fixed, not whether the two initial coin flips are independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "There are two levels of randomness. The main task is testing independence for the completed urn and then counting how often that test succeeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

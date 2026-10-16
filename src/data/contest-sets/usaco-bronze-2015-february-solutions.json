@@ -1,0 +1,86 @@
+[
+  {
+    "id": "solution-usaco-bronze-2015-february-p1",
+    "problemId": "usaco-bronze-2015-february-p1",
+    "finalAnswer": "The remaining word after all leftmost pattern deletions.",
+    "shortExplanation": "Build a clean output prefix one character at a time. Whenever its final characters equal the forbidden pattern, remove that suffix.",
+    "detailedSteps": [
+      "Keep the unread characters in their original order and an output prefix containing no occurrence of the pattern.",
+      "Append the next character. An occurrence introduced by this append must end at that character, so compare only the final $m$ positions.",
+      "If the suffix matches, remove it. This is the leftmost occurrence in the current full word: an earlier start would have an earlier end and would already have appeared in the clean prefix.",
+      "After the deletion, the output is a prefix of the previously clean output. It is clean again, so one suffix removal suffices for this appended character.",
+      "Every deletion therefore follows the required order. When all characters are read, the clean output is exactly the final censored word.",
+      "Each append compares at most $m$ characters. Time is $O(Nm)$, at most $10^8$ character-comparison opportunities under the original bounds; memory is $O(N+m)$.",
+      "Historical file I/O: read `censor.in` and write the resulting word to `censor.out`.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    string text, pattern;\n    in >> text >> pattern;\n    string result;\n    result.reserve(text.size());\n    for (char ch : text) {\n        result.push_back(ch);\n        if (result.size() >= pattern.size() &&\n            result.compare(result.size() - pattern.size(), pattern.size(), pattern) == 0) {\n            result.resize(result.size() - pattern.size());\n        }\n    }\n    out << result << '\\n';\n}\nint main() {\n    ifstream in(\"censor.in\");\n    ofstream out(\"censor.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A clean prefix makes any newly found match a suffix.",
+      "Equal-length occurrences are ordered by their ending positions as well as their starting positions."
+    ],
+    "commonMistakes": [
+      "Removing a later occurrence can change the result; always preserve the leftmost deletion order.",
+      "A removal can expose a new match at the join, so checking only occurrences in the original word misses cases.",
+      "Repeatedly shifting the entire million-character word can be too slow."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main issue is preserving the repeated leftmost rule, including matches exposed by deletions. With a pattern of at most 100 characters, direct suffix comparison fits the source bounds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2015-february-p2",
+    "problemId": "usaco-bronze-2015-february-p2",
+    "finalAnswer": "Number of indexed COW subsequences.",
+    "shortExplanation": "Scan left to right and count partial subsequences. A C starts a new partial word, an O extends every earlier C, and a W completes every earlier CO.",
+    "detailedSteps": [
+      "Maintain three 64-bit counts: $c$ for earlier C letters, $co$ for earlier CO subsequences, and $cow$ for complete COW subsequences.",
+      "For a C, increase $c$ by one. For an O, add $c$ to $co$. For a W, add $co$ to $cow$.",
+      "Every newly counted subsequence ends at the character just read. Its earlier indices were already counted, so their order is correct and each indexed sequence is counted exactly once.",
+      "Different subsequences may share positions, as allowed. The three mutually exclusive character branches do not reuse the same position twice inside one subsequence.",
+      "At the end, return $cow$. The scan takes $O(N)$ time and uses $O(1)$ counters beyond the input word.",
+      "Use 64-bit integers for every count. There are at most $\\binom{N}{3}$ indexed triples, and at $N=100000$ this is $166661666700000$; even an intermediate CO count can exceed 32 bits.",
+      "Historical file I/O: read `cow.in` and write the count to `cow.out`.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    string text;\n    if (n > 0) in >> text;\n    long long singles = 0, pairs = 0, triples = 0;\n    for (char ch : text) {\n        if (ch == 'C') ++singles;\n        else if (ch == 'O') pairs += singles;\n        else if (ch == 'W') triples += pairs;\n    }\n    out << triples << '\\n';\n}\nint main() {\n    ifstream in(\"cow.in\");\n    ofstream out(\"cow.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Extend already counted partial subsequences when their next letter arrives.",
+      "Counting indexed choices naturally permits different occurrences to share letters."
+    ],
+    "commonMistakes": [
+      "Searching only for contiguous COW strings ignores allowed skipped letters.",
+      "Using a 32-bit pair counter can overflow before the final triple count is computed.",
+      "Updating partial counts in an order that lets one character fill two positions breaks the index ordering."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prefix-count invariant is short, but all intermediate counts need 64-bit arithmetic, not only the printed answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2015-february-p3",
+    "problemId": "usaco-bronze-2015-february-p3",
+    "finalAnswer": "Number of valid paths through the colored grid.",
+    "shortExplanation": "Count paths ending at each cell. Sum the counts from earlier rows and earlier columns whose cells have the opposite color.",
+    "detailedSteps": [
+      "Let $f[r][c]$ count paths ending at cell $(r,c)$. Set $f[0][0]=1$ for the starting path prefix.",
+      "For every other cell, inspect all predecessors $(i,j)$ with $i<r$, $j<c$, and a different color. Add $f[i][j]$ for each of them.",
+      "The last jump of every valid path has one unique predecessor. The sum includes precisely the allowed jumps, so it counts every complete path once.",
+      "Evaluate cells in row-major order. Every valid predecessor is in an earlier row, so its count is ready. Other cells in the first row or first column stay zero.",
+      "The answer is $f[R-1][C-1]$. Time is $O(R^2C^2)$ and space is $O(RC)$; the maximum grid has only 11025 predecessor pairs to inspect.",
+      "No modulus is specified. Ignoring colors gives at most $\\binom{R+C-4}{R-2}\\le\\binom{26}{13}=10400600$ paths, so all sums are exact with the integer type used here.",
+      "Historical file I/O: read `hopscotch.in` and write the count to `hopscotch.out`.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int rows, columns; in >> rows >> columns;\n    vector<string> color(rows);\n    for (string& line : color) in >> line;\n    vector<vector<long long> > ways(rows, vector<long long>(columns, 0));\n    ways[0][0] = 1;\n    for (int r = 0; r < rows; ++r) {\n        for (int c = 0; c < columns; ++c) {\n            if (r == 0 && c == 0) continue;\n            for (int previousRow = 0; previousRow < r; ++previousRow) {\n                for (int previousColumn = 0; previousColumn < c; ++previousColumn) {\n                    if (color[previousRow][previousColumn] != color[r][c]) {\n                        ways[r][c] += ways[previousRow][previousColumn];\n                    }\n                }\n            }\n        }\n    }\n    out << ways[rows - 1][columns - 1] << '\\n';\n}\nint main() {\n    ifstream in(\"hopscotch.in\");\n    ofstream out(\"hopscotch.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Strictly increasing rows make the grid dependencies acyclic.",
+      "Split paths by their unique final predecessor."
+    ],
+    "commonMistakes": [
+      "Both coordinates must increase strictly; a jump in the same row or column is invalid.",
+      "Forward movement does not make a same-color jump valid.",
+      "Leaving the start count at zero makes every later count zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The direct path recurrence is enough for a 15 by 15 grid. The important details are the two strict inequalities, the color change, and the initial start count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

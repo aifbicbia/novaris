@@ -1,0 +1,521 @@
+[
+  {
+    "id": "solution-amc10b-2021-spring-p1",
+    "problemId": "amc10b-2021-spring-p1",
+    "finalAnswer": "$\\boxed{19}$ (choice D)",
+    "shortExplanation": "The integers run from minus nine through nine.",
+    "detailedSteps": [
+      "Since $9<3\\pi<10$, the integers with $|x|<3\\pi$ are $-9,-8,\\ldots,0,\\ldots,8,9$. There are $2\\cdot9+1=19$."
+    ],
+    "keyIdeas": [
+      "Integer points in a symmetric interval"
+    ],
+    "commonMistakes": [
+      "Forgetting to count zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Absolute value makes the interval symmetric.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p2",
+    "problemId": "amc10b-2021-spring-p2",
+    "finalAnswer": "$\\boxed{4\\sqrt3}$ (choice D)",
+    "shortExplanation": "The negative first base changes sign.",
+    "detailedSteps": [
+      "The expression is $|3-2\\sqrt3|+|3+2\\sqrt3|$. Since $2\\sqrt3>3$, it becomes $(2\\sqrt3-3)+(3+2\\sqrt3)=4\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Square roots preserve absolute values"
+    ],
+    "commonMistakes": [
+      "Replacing the square root of a square by its signed base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The principal square root is nonnegative.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p3",
+    "problemId": "amc10b-2021-spring-p3",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The junior-to-senior ratio is two to five.",
+    "detailedSteps": [
+      "If the numbers of juniors and seniors are J and S, the equal team counts give $J/4=S/10$, so $J:S=2:5$.",
+      "The seven ratio units total 28 students, giving $J=8$. Both classes contribute two team members."
+    ],
+    "keyIdeas": [
+      "Equal team counts from different percentages"
+    ],
+    "commonMistakes": [
+      "Comparing the class counts directly with the percentages rather than the selected team counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The smaller class contributes the larger percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p4",
+    "problemId": "amc10b-2021-spring-p4",
+    "finalAnswer": "$\\boxed{32}$ (choice B)",
+    "shortExplanation": "Eleven pairs contain one shirt of each color.",
+    "detailedSteps": [
+      "The twenty-three blue-blue pairs use 46 blue shirts, leaving $57-46=11$ blue shirts. Each remaining blue shirt belongs to a mixed pair, using eleven yellow shirts.",
+      "The remaining $75-11=64$ yellow shirts form 32 yellow-yellow pairs. The counts $23+11+32=66$ verify the total."
+    ],
+    "keyIdeas": [
+      "Counting mixed pairs first"
+    ],
+    "commonMistakes": [
+      "Subtracting the blue-blue pair count from the student count instead of subtracting twice that count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every unused blue shirt forces a mixed pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p5",
+    "problemId": "amc10b-2021-spring-p5",
+    "finalAnswer": "$\\boxed{22}$ (choice B)",
+    "shortExplanation": "The four ages are three, eight, five and six.",
+    "detailedSteps": [
+      "The only one-digit positive factor pair for 30 is (5,6). The one-digit pairs for 24 are (3,8) and (4,6).",
+      "The second would repeat six, so the first is required. The age sum is $3+8+5+6=22$."
+    ],
+    "keyIdeas": [
+      "Distinct one-digit factor pairs"
+    ],
+    "commonMistakes": [
+      "Allowing two cousins to have the same age."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinctness chooses between the two factorizations of 24.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p6",
+    "problemId": "amc10b-2021-spring-p6",
+    "finalAnswer": "$\\boxed{76}$ (choice C)",
+    "shortExplanation": "The two class means have weights three and four.",
+    "detailedSteps": [
+      "Use student counts 3 t and 4 t. The overall mean is $(84\\cdot3t+70\\cdot4t)/(7t)=(252+280)/7=76$."
+    ],
+    "keyIdeas": [
+      "A class-size weighted average"
+    ],
+    "commonMistakes": [
+      "Taking the unweighted average of 84 and 70."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio refers to students, not classes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p7",
+    "problemId": "amc10b-2021-spring-p7",
+    "finalAnswer": "$\\boxed{65\\pi}$ (choice D)",
+    "shortExplanation": "A singleton radius-seven disk and the opposite nested disks attain the maximum.",
+    "detailedSteps": [
+      "Disks tangent to the same line at the same point on the same side are nested. On either side, the area inside exactly one disk is the largest disk area minus the second-largest disk area, or the whole disk area if there is only one.",
+      "If all disks are on one side, the coefficient of pi is $49-25=24$. For a one-versus-three split, choosing the singleton radius 1,3,5,7 gives coefficients 25,33,65,65 respectively.",
+      "For a two-versus-two split, the three pairings give coefficients $48+16=64$, $40+24=64$, and $24+8=32$. These exhaust all splits, so the maximum is $65\\pi$."
+    ],
+    "keyIdeas": [
+      "Nested tangent disks on each side"
+    ],
+    "commonMistakes": [
+      "Adding all four disk areas despite the nesting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite-side disks share only the common tangent point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p8",
+    "problemId": "amc10b-2021-spring-p8",
+    "finalAnswer": "$\\boxed{367}$ (choice A)",
+    "shortExplanation": "The second row has minimum 157 and maximum 210.",
+    "detailedSteps": [
+      "Use the center as (0,0), with x rightward and y upward. The original diagram starts east, then south, then west, then north, with successive lengths $1,1,2,2,3,3,\\ldots$.",
+      "The inner radius-six ring ends at (6,6) with 169. Its top edge y=6 contains 157 through 169. The outer ring contributes 170 at (7,6) and 210 at (-7,6).",
+      "This is exactly the second row of the fifteen-row grid. The least and greatest entries are 157 and 210, whose sum is 367."
+    ],
+    "keyIdeas": [
+      "Tracking the actual clockwise spiral"
+    ],
+    "commonMistakes": [
+      "Reversing clockwise to counterclockwise or omitting the two outer-ring squares in the row."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inner top edge is not the entire second row.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p9",
+    "problemId": "amc10b-2021-spring-p9",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The original point is (2,9).",
+    "detailedSteps": [
+      "Rotation about (1,5) sends (a,b) to $(6-b,a+4)$. Reflection in $y=-x$ then sends it to $(-a-4,b-6)$.",
+      "Equating this with (-6,3) gives a=2 and b=9, so b-a=7."
+    ],
+    "keyIdeas": [
+      "Composing a rotation and a reflection"
+    ],
+    "commonMistakes": [
+      "Reflecting about y=x or rotating the point about the origin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate around the rotation center before rotating.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p10",
+    "problemId": "amc10b-2021-spring-p10",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice A)",
+    "shortExplanation": "The receiving base is four times as large.",
+    "detailedSteps": [
+      "The water volume is $(1/3)\\pi(12)^2(18)=864\\pi$. The cylinder base area is $\\pi(24)^2=576\\pi$.",
+      "The water height is $864/576=3/2$ centimeters."
+    ],
+    "keyIdeas": [
+      "Equal water volumes"
+    ],
+    "commonMistakes": [
+      "Using the full cone height with no one-third volume factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pouring preserves volume rather than height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p11",
+    "problemId": "amc10b-2021-spring-p11",
+    "finalAnswer": "$\\boxed{60}$ (choice D)",
+    "shortExplanation": "The extremal grid is five by twelve.",
+    "detailedSteps": [
+      "Let m and n be the numbers of rows and columns. Both must exceed two, since otherwise there are no interior pieces but there are boundary pieces.",
+      "The equality is $(m-2)(n-2)=2m+2n-4$, equivalent to $(m-4)(n-4)=8$. Negative factor pairs cannot give both m,n at least three.",
+      "The positive factor pairs are (1,8),(2,4),(4,2),(8,1). They give grids 5 by 12 or 6 by 8, with totals 60 or 48. Thus 60 is maximal and attainable."
+    ],
+    "keyIdeas": [
+      "Matching interior and boundary rectangles"
+    ],
+    "commonMistakes": [
+      "Counting corners twice in the perimeter-piece count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every cut crossing the whole pan creates a rectangular grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p12",
+    "problemId": "amc10b-2021-spring-p12",
+    "finalAnswer": "$\\boxed{1:14}$ (choice C)",
+    "shortExplanation": "Every odd divisor contributes fourteen times its value to the even sum.",
+    "detailedSteps": [
+      "The actual source product is $34\\cdot34\\cdot63\\cdot270$, which has exactly three factors of 2. Write it as $N=8M$ with M odd.",
+      "Each odd divisor d of M yields the even divisors 2 d,4 d,8 d. Their sum is 14 d, so the even-divisor sum is fourteen times the odd-divisor sum. The required ratio is 1:14."
+    ],
+    "keyIdeas": [
+      "Separate the power of two in a divisor sum"
+    ],
+    "commonMistakes": [
+      "Reading the printed ordinary integers as exponent expressions or omitting an even power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the two-adic exponent affects this ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p13",
+    "problemId": "amc10b-2021-spring-p13",
+    "finalAnswer": "$\\boxed{11}$ (choice B)",
+    "shortExplanation": "The digit is two and the base is nine.",
+    "detailedSteps": [
+      "The first equation is $3n^2+2n+d=263$. The second is $3n^2+2n+4=6^3+6^2+6d+1=253+6d$.",
+      "Subtraction gives $14=7d$, so d=2. Then $3n^2+2n=261$, with positive integer solution n=9. The digits are valid in both stated bases, and n+d=11."
+    ],
+    "keyIdeas": [
+      "Comparing two numeral equations"
+    ],
+    "commonMistakes": [
+      "Using decimal place values for the base-six numeral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Eliminate the shared quadratic expression first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p14",
+    "problemId": "amc10b-2021-spring-p14",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The two equal chords lie at opposite distances from the center.",
+    "detailedSteps": [
+      "A chord of length 38 lies at distance t from the circle center, with $R^2-t^2=19^2$. The two distinct equal chords therefore have signed offsets -t and t.",
+      "The third equally spaced parallel line is at offset 3 t or -3 t and has chord 34, so $R^2-9t^2=17^2$. Subtracting gives $8t^2=72$, hence t=3.",
+      "The distance between adjacent lines is 2 t=6."
+    ],
+    "keyIdeas": [
+      "Symmetric equal chords"
+    ],
+    "commonMistakes": [
+      "Taking t as the spacing instead of half the spacing between equal chords."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal chord lengths force equal absolute center offsets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p15",
+    "problemId": "amc10b-2021-spring-p15",
+    "finalAnswer": "$\\boxed{0}$ (choice B)",
+    "shortExplanation": "The fourth power of x squared collapses the expression.",
+    "detailedSteps": [
+      "Squaring $x+1/x=\\sqrt5$ gives $x^2+x^{-2}=3$. Thus t=x squared satisfies $t^2-3t+1=0$.",
+      "Then $t^4=(3t-1)^2=21t-8$, while $7t^2=21t-7$. Hence $t^4-7t^2+1=0$.",
+      "The requested expression is $x^3(t^4-7t^2+1)$ and therefore equals 0 for both original real roots."
+    ],
+    "keyIdeas": [
+      "Reducing a higher power by a quadratic identity"
+    ],
+    "commonMistakes": [
+      "Selecting only one original quadratic root without checking the other."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reduce powers before trying to evaluate x numerically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p16",
+    "problemId": "amc10b-2021-spring-p16",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Six increasing digit subsets have the required digit sum.",
+    "detailedSteps": [
+      "A positive uphill multiple of five must end in 5; it cannot end in 0 because all preceding digits would need to be smaller. Its preceding digits are an increasing subset of 1,2,3,4.",
+      "Divisibility by 3 requires that subset’s digit sum to be 1 modulo 3. The qualifying subsets are $(1),(4),(1,3),(3,4),(1,2,4),(1,2,3,4)$.",
+      "They give 15,45,135,345,1245,12345, exactly six numbers."
+    ],
+    "keyIdeas": [
+      "Increasing digits end at five"
+    ],
+    "commonMistakes": [
+      "Including a zero before a positive digit or allowing repeated digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ending at five makes the finite digit search much smaller.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p17",
+    "problemId": "amc10b-2021-spring-p17",
+    "finalAnswer": "$\\boxed{\\text{Ravon received card 4}}$ (choice C)",
+    "shortExplanation": "Ravon’s cards must be four and seven.",
+    "detailedSteps": [
+      "Oscar’s score 4 forces cards 1 and 3. With those used, Aditi’s score 7 forces cards 2 and 5.",
+      "Ravon’s score 11 can now use only 4 and 7: each other pair summing 11 uses one of the four unavailable cards. The remaining cards 6,8,9,10 give Tyrone 6 and 10, Kim 8 and 9.",
+      "Thus the true listed statement is that Ravon was given card 4, choice C."
+    ],
+    "keyIdeas": [
+      "Forced disjoint card pairs"
+    ],
+    "commonMistakes": [
+      "Allowing the same numbered card in two players’ hands."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The smallest scores force the initial pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p18",
+    "problemId": "amc10b-2021-spring-p18",
+    "finalAnswer": "$\\boxed{\\frac1{20}}$ (choice C)",
+    "shortExplanation": "Repeated old even faces can be ignored.",
+    "detailedSteps": [
+      "After k distinct even faces have been seen, a new even face has probability (3-k)/6 and an odd face has probability 3/6. Repeated previously seen even faces merely return to the same state.",
+      "The probability that the next new outcome is a new even face is therefore $(3-k)/(6-k)$. For k=0,1,2 the product is $(3/6)(2/5)(1/4)=1/20$.",
+      "Once all three even faces have appeared, success has occurred; indefinitely repeated even faces have probability zero."
+    ],
+    "keyIdeas": [
+      "Wait for a new even face before an odd face"
+    ],
+    "commonMistakes": [
+      "Requiring the three even faces to appear on three consecutive rolls with no repeats."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ignore repeats only after conditioning on the unchanged state.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p19",
+    "problemId": "amc10b-2021-spring-p19",
+    "finalAnswer": "$\\boxed{\\frac{184}{5}}$ (choice D)",
+    "shortExplanation": "The set contains ten integers, with extremes eight and eighty.",
+    "detailedSteps": [
+      "Let N be its size, l its least value and g its greatest. The middle N-2 values total 35(N-2). Removing g gives $l+35(N-2)=32(N-1)$, so $l=38-3N$.",
+      "Restoring g while l stays removed gives $g+35(N-2)=40(N-1)$, so $g=5N+30$. The difference g-l=72 then gives 8 N-8=72, hence N=10,l=8,g=80.",
+      "The full total is $35\\cdot8+8+80=368$, so its mean is $368/10=184/5=36.8$. A valid middle set is 31,32,33,34,35,36,37,42, showing feasibility with distinct positive integers."
+    ],
+    "keyIdeas": [
+      "Removing and restoring extremes"
+    ],
+    "commonMistakes": [
+      "Returning the least value along with the greatest in the third operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle subset remains unchanged through all operations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p20",
+    "problemId": "amc10b-2021-spring-p20",
+    "finalAnswer": "$\\boxed{23}$ (choice D)",
+    "shortExplanation": "The area is square root eleven plus square root twelve.",
+    "detailedSteps": [
+      "Call the left and right interior points F and G, as in the actual eleven-segment layout. The triangles AEF and ABG are equilateral. Choose the vertical axis along the internal bisector of angle BAE. Since AB=AE=2, put $A=(0,0)$, $B=(-2\\sin\\alpha,-2\\cos\\alpha)$ and $E=(2\\sin\\alpha,-2\\cos\\alpha)$, where $0<\\alpha<90^\\circ$.",
+      "Because C and A are the two intersections of the radius-two circles centered at B and G, the rhombus relation is C=B+G. Similarly D=E+F. Equilateral rotation gives $G=(2\\cos(30^\\circ+\\alpha),-2\\sin(30^\\circ+\\alpha))$ and F its horizontal reflection.",
+      "The displayed left-to-right order C,D and CD=2 yield $3\\sin\\alpha-\\sqrt3\\cos\\alpha=1$. Thus $\\sin(\\alpha-30^\\circ)=1/(2\\sqrt3)$, with the geometrically admissible branch $30^\\circ<\\alpha<90^\\circ$. It follows that $\\sin\\alpha=(3+\\sqrt{33})/12$ and $\\cos\\alpha=(\\sqrt{33}-1)/(4\\sqrt3)$.",
+      "The vertical distance H from A to CD is $3\\cos\\alpha+\\sqrt3\\sin\\alpha=\\sqrt{11}$. Add triangle ABE to trapezoid BCDE: the area simplifies to $(2\\sin\\alpha+1)H-2\\cos\\alpha=\\sqrt{11}+2\\sqrt3$.",
+      "This is $\\sqrt{11}+\\sqrt{12}$, so m+n=23. The coordinates reconstruct all eleven original segments with length 2."
+    ],
+    "keyIdeas": [
+      "Two equilateral triangles fix an equilateral pentagon framework"
+    ],
+    "commonMistakes": [
+      "Treating the drawing as a regular pentagon or omitting the two unlabeled interior points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two internal equilateral triangles determine the geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p21",
+    "problemId": "amc10b-2021-spring-p21",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The folded right triangle has legs one half and two thirds.",
+    "detailedSteps": [
+      "Use $A=(0,0),B=(0,1),C=(1,1),D=(1,0)$, so $C\\prime=(2/3,0)$. The fold is the perpendicular bisector of C and C prime: $x/3+y=7/9$.",
+      "Reflection across this line sends B to $B\\prime=(-2/15,3/5)$. The reflected edge runs from this point to C prime and crosses AB at $E=(0,1/2)$.",
+      "Thus $AE=1/2$, $AC\\prime=2/3$, and $EC\\prime=\\sqrt{1/4+4/9}=5/6$. Their sum is 2."
+    ],
+    "keyIdeas": [
+      "Reflect the actual square across its fold"
+    ],
+    "commonMistakes": [
+      "Using C prime D as the leg from A or guessing the fold angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fold is a reflection in the perpendicular bisector of a point and its image.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p22",
+    "problemId": "amc10b-2021-spring-p22",
+    "finalAnswer": "$\\boxed{471}$ (choice D)",
+    "shortExplanation": "Inclusion-exclusion gives probability seventy-one over four hundred.",
+    "detailedSteps": [
+      "Fix Ang’s arrangement by relabeling the boxes. Ben and Jasmin then each independently choose one of 5! permutations, giving $ (5!)^2 $ equally likely pairs.",
+      "For any specified k boxes to have three matching colors, both later permutations must fix those k positions. The number of pairs is $((5-k)!)^2$.",
+      "Inclusion-exclusion gives the favorable count $5(4!)^2-10(3!)^2+10(2!)^2-5(1!)^2+(0!)^2=2556$.",
+      "The probability is $2556/14400=71/400$, in lowest terms. Hence m+n=471."
+    ],
+    "keyIdeas": [
+      "Three matching permutations"
+    ],
+    "commonMistakes": [
+      "Treating the five box-matching events as independent despite each person using every color once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relabeling Ang’s boxes removes one random permutation without changing the event.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p23",
+    "problemId": "amc10b-2021-spring-p23",
+    "finalAnswer": "$\\boxed{68}$ (choice C)",
+    "shortExplanation": "The expanded diamond and four clipped corner regions have disjoint areas.",
+    "detailedSteps": [
+      "The coin radius is 1/2, so its center is uniform in the inset square $[1/2,15/2]^2$, of area 49. Covering any black region means the center lies within distance 1/2 of it.",
+      "The central diamond has area 8 and perimeter $8\\sqrt2$. Its radius-one-half expansion is fully inside the inset square and has area $8+4\\sqrt2+\\pi/4$, obtained from four side strips and four quarter-circle sectors.",
+      "At each corner, write the black triangle as $x+y\\le2$ with x,y nonnegative. Within the allowable center square, its expanded portion is the right triangle $x,y\\ge1/2$, $x+y\\le2+\\sqrt2/2$. Its area is $\\tfrac12(1+\\sqrt2/2)^2=3/4+\\sqrt2/2$.",
+      "The four corner regions and expanded diamond do not overlap: in a corner diagonal coordinate, the corner sum is at most $2+\\sqrt2/2$, while the nearer central side begins at $6-\\sqrt2/2$. Their total area is $11+6\\sqrt2+\\pi/4$.",
+      "Dividing by 49 gives $(44+24\\sqrt2+\\pi)/196$. Thus a+b=44+24=68. Tangency boundaries have area zero and do not change the probability."
+    ],
+    "keyIdeas": [
+      "Allowed coin centers near black regions"
+    ],
+    "commonMistakes": [
+      "Using the original square area 64 as the sample area for the coin center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The probability depends on center locations and expanded black sets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p24",
+    "problemId": "amc10b-2021-spring-p24",
+    "finalAnswer": "$\\boxed{\\text{(6,2,1)}}$ (choice B)",
+    "shortExplanation": "Only the second listed configuration has zero combined game value.",
+    "detailedSteps": [
+      "For a wall of n bricks, let g(n) be the least nonnegative integer absent from all next-state values. Removing one brick in position i+1 leaves wall lengths i and n-i-1; removing two adjacent bricks leaves i and n-i-2. The next-state values are the XORs of those two wall values.",
+      "Starting with g(0)=0, exhaustive evaluation of these actual moves gives $g(1),\\ldots,g(6)=1,2,3,1,4,3$. Independent walls combine by XOR. A zero total is losing for the player to move: every move changes the value of one wall, and a nonzero total has a move to zero by the defining least-excluded-value property. More explicitly, for a nonzero combined XOR, choose a wall whose value has the highest nonzero bit of that XOR. Replacing its value by its XOR with the total produces a smaller value, which occurs among its legal moves by the least-excluded-value definition, and makes the total zero. From zero, every legal move changes one wall value and gives a nonzero total. Induction on the remaining number of bricks proves these win/loss claims.",
+      "The five listed configurations have combined values 3,0,3,1,2 respectively. Only (6,2,1) leaves Arjun a losing position, so Beth can guarantee the last brick, choice B.",
+      "The recurrence terminates because every move reduces the total brick count; a separate direct win/loss enumeration of all reachable split-wall states confirms all five outcomes."
+    ],
+    "keyIdeas": [
+      "An impartial game with splitting walls"
+    ],
+    "commonMistakes": [
+      "Treating a split wall as one intact wall or interpreting removal of two as removal from different walls."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The player taking the last brick wins, so the empty state is losing for its next player.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-spring-p25",
+    "problemId": "amc10b-2021-spring-p25",
+    "finalAnswer": "$\\boxed{85}$ (choice E)",
+    "shortExplanation": "The exact interval is from two thirds through, but excluding, nineteen twenty-eighths.",
+    "detailedSteps": [
+      "At m=2/3, the number of allowed y values in column x is $\\lfloor2x/3\\rfloor$. Grouping x into ten consecutive triples gives $\\sum_{q=0}^9(6q+3)=300$. Any smaller slope loses at least one of the ten boundary lattice points.",
+      "The next larger slope y/x has $3y-2x\\ge1$. If x is 1 modulo 3, the smallest numerator is 1 and the largest such denominator is 28, giving increment 1/84 and slope 19/28.",
+      "If x is 2 modulo 3 the numerator is at least 2 and x at most 29, so its increment is at least 2/87, larger than 1/84. If x is 0 modulo 3 the numerator is at least 3, giving increment at least 1/30. Thus no slope occurs between 2/3 and 19/28.",
+      "The number remains 300 precisely on $[2/3,19/28)$. The interval length is 1/84, so a+b=85."
+    ],
+    "keyIdeas": [
+      "The next available rational slope"
+    ],
+    "commonMistakes": [
+      "Using a rounded decimal slope and missing simultaneous lattice points at 2/3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count jumps occur only at exact ratios of lattice coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

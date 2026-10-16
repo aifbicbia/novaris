@@ -1,0 +1,728 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1972-p1",
+    "problemId": "amc12-predecessor-1972-p1",
+    "finalAnswer": "$\\boxed{\\text{I, II and III}}$ (choice D)",
+    "shortExplanation": "The first three triples satisfy the Pythagorean equation; the fourth does not.",
+    "detailedSteps": [
+      "For I, $3^2+4^2=25=5^2$. For II, $4^2+(15/2)^2=289/4=(17/2)^2$.",
+      "For III, $7^2+24^2=625=25^2$. For IV, $(7/2)^2+(9/2)^2=130/4$, whereas $(11/2)^2=121/4$. Thus IV is not right."
+    ],
+    "keyIdeas": [
+      "Test the square of the largest side against the other two squares."
+    ],
+    "commonMistakes": [
+      "Check every triple, including the halves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The largest side is the candidate hypotenuse.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p2",
+    "problemId": "amc12-predecessor-1972-p2",
+    "finalAnswer": "$\\boxed{15\\%}$ (choice B)",
+    "shortExplanation": "The same selling price equals $C(1+x/100)$ and $0.92C(1+(x+10)/100)$.",
+    "detailedSteps": [
+      "Let the original cost be $C>0$. The fixed selling price is $C(1+x/100)$. After the reduction, the cost is $0.92C$ and the markup on that cost is $(x+10)\\%$.",
+      "Canceling $C$ gives $100+x=0.92(110+x)$. Hence $0.08x=1.2$, so $x=15$."
+    ],
+    "keyIdeas": [
+      "Keep the selling price fixed while changing the cost base."
+    ],
+    "commonMistakes": [
+      "A profit percentage based on cost uses the new cost in the second case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed selling price links the two profit calculations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p3",
+    "problemId": "amc12-predecessor-1972-p3",
+    "finalAnswer": "$\\boxed{-1}$ (choice B)",
+    "shortExplanation": "The supplied complex number satisfies $x^2-x=-1$.",
+    "detailedSteps": [
+      "Squaring gives $x^2=(-1-i\\sqrt3)/2$. Subtracting $x=(1-i\\sqrt3)/2$ cancels the imaginary part and leaves $-1$.",
+      "Therefore $1/(x^2-x)=-1$."
+    ],
+    "keyIdeas": [
+      "Simplify the complex square before taking a reciprocal."
+    ],
+    "commonMistakes": [
+      "The square of the imaginary term is negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cancellation is simpler than rationalizing a general quotient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p4",
+    "problemId": "amc12-predecessor-1972-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The members $1,2$ are required, while $3,4,5$ each have two independent possibilities.",
+    "detailedSteps": [
+      "Every eligible set contains $1$ and $2$. Each of the remaining three members may be included or omitted.",
+      "Thus the count is $2^3=8$. Both the smallest and largest sets are allowed because the inclusions are non-strict."
+    ],
+    "keyIdeas": [
+      "Separate mandatory members from optional members."
+    ],
+    "commonMistakes": [
+      "Do not exclude either endpoint set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Three independent binary choices determine the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p5",
+    "problemId": "amc12-predecessor-1972-p5",
+    "finalAnswer": "$\\boxed{3^{1/3},\\ 2^{1/2}}$ (choice A)",
+    "shortExplanation": "Taking the seventy-second power ranks the four quantities without approximating roots.",
+    "detailedSteps": [
+      "The four seventy-second powers are $2^{36},3^{24},8^9=2^{27},9^8=3^{16}$.",
+      "We have $3^{24}>2^{36}$ because $3^2=9>8=2^3$. Also $2^{36}>2^{27}$, and $2^{36}>3^{16}$ because $2^9=512>81=3^4$.",
+      "So the greatest is $3^{1/3}$ and the next greatest is $2^{1/2}$."
+    ],
+    "keyIdeas": [
+      "A common positive power preserves the order of positive numbers."
+    ],
+    "commonMistakes": [
+      "Compare the roots themselves through a common exponent, not their bases alone."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positive powers avoid decimal rounding.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p6",
+    "problemId": "amc12-predecessor-1972-p6",
+    "finalAnswer": "$\\boxed{1\\text{ or }5}$ (choice C)",
+    "shortExplanation": "Putting $t=3^x$ gives $(t-1)(t-9)=0$, hence $x=0$ or $2$.",
+    "detailedSteps": [
+      "With the ordinary real-variable interpretation, $t=3^x>0$ and $t^2-10t+9=0$. Its two roots are $1$ and $9$.",
+      "Thus $x=0$ or $x=2$, and the corresponding values of $x^2+1$ are $1$ and $5$. Both satisfy the original equation."
+    ],
+    "keyIdeas": [
+      "Turn the real exponential equation into a quadratic in a positive variable."
+    ],
+    "commonMistakes": [
+      "Keep both positive roots of the transformed quadratic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity of the real exponential gives a unique x for each t.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p7",
+    "problemId": "amc12-predecessor-1972-p7",
+    "finalAnswer": "$\\boxed{4:1}$ (choice E)",
+    "shortExplanation": "The requested ratio is $x^2:y^2$, and $x:y=2:1$.",
+    "detailedSteps": [
+      "From $yz:zx=1:2$, cancellation of the nonzero $z$ gives $y:x=1:2$.",
+      "Because $x/(yz)=x^2/(xyz)$ and $y/(zx)=y^2/(xyz)$, the requested ratio is $x^2:y^2=4:1$."
+    ],
+    "keyIdeas": [
+      "Cancel the common product in the compound ratio."
+    ],
+    "commonMistakes": [
+      "The question asks for two quotients, not simply x:y."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same nonzero factor cancels from both ratio entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p8",
+    "problemId": "amc12-predecessor-1972-p8",
+    "finalAnswer": "$\\boxed{x(y-1)=0}$ (choice D)",
+    "shortExplanation": "Squaring yields $x\\log y=0$, so either $x=0$ or $y=1$.",
+    "detailedSteps": [
+      "Write $\\ell=\\log y$, which is real. Squaring $|x-\\ell|=x+\\ell$ gives $(x-\\ell)^2=(x+\\ell)^2$, hence $4x\\ell=0$.",
+      "If $x=0$, then $x(y-1)=0$. If $\\ell=0$, then $y=1$ and the same product is zero. This proves the necessary conclusion D.",
+      "The original equality additionally requires a nonnegative right side. Its full branches are $x=0,\\ell\\ge0$ or $\\ell=0,x\\ge0$. We are proving a necessary conclusion, not claiming that the product equation alone is equivalent."
+    ],
+    "keyIdeas": [
+      "Use a necessary consequence of an absolute-value equality."
+    ],
+    "commonMistakes": [
+      "Squaring can lose the sign restriction on the original right side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish a follows-from claim from an if-and-only-if claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p9",
+    "problemId": "amc12-predecessor-1972-p9",
+    "finalAnswer": "$\\boxed{150}$ (choice A)",
+    "shortExplanation": "If a box contains $S$ sheets and $E$ envelopes, then $S-E=50$ and $S=3(E-50)$.",
+    "detailedSteps": [
+      "Ann sends $E$ one-sheet letters, leaving $S-E=50$ sheets. Sue sends $E-50$ three-sheet letters, using $S=3(E-50)$ sheets.",
+      "Substitute $S=E+50$: $E+50=3E-150$, so $E=100$ and $S=150$."
+    ],
+    "keyIdeas": [
+      "Translate the two uses of identical boxes into two equations."
+    ],
+    "commonMistakes": [
+      "The two people start with identical boxes but send different numbers of letters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use envelopes to count letters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p10",
+    "problemId": "amc12-predecessor-1972-p10",
+    "finalAnswer": "$\\boxed{[-5,1]\\cup[3,9]}$ (choice D)",
+    "shortExplanation": "The distance from $2$ lies between $1$ and $7$.",
+    "detailedSteps": [
+      "The positive branch is $1\\le x-2\\le7$, giving $3\\le x\\le9$. The negative branch is $-7\\le x-2\\le-1$, giving $-5\\le x\\le1$.",
+      "The inequalities are inclusive, so all four endpoints belong to the solution set."
+    ],
+    "keyIdeas": [
+      "Express an absolute-value bound as two distance intervals."
+    ],
+    "commonMistakes": [
+      "The lower bound removes the open interval between1 and3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Interpret absolute value as distance on the number line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p11",
+    "problemId": "amc12-predecessor-1972-p11",
+    "finalAnswer": "$\\boxed{4\\text{ only}}$ (choice A)",
+    "shortExplanation": "The algebraic candidates are $y=-7,4$, but only $4$ permits a real $x$.",
+    "detailedSteps": [
+      "The second equation gives $x^2=3y-12$. Substituting into the first gives $y^2+3y-28=(y+7)(y-4)=0$.",
+      "At $y=-7$, we would have $x^2=-33$, impossible over the reals. At $y=4$, we have $x=0$, which satisfies both equations."
+    ],
+    "keyIdeas": [
+      "Eliminate a square and then restore the real-value restriction."
+    ],
+    "commonMistakes": [
+      "An eliminated equation can produce candidates that violate x²≥0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Verify every candidate in the original system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p12",
+    "problemId": "amc12-predecessor-1972-p12",
+    "finalAnswer": "$\\boxed{864\\ \\text{feet}}$ (choice B)",
+    "shortExplanation": "For an edge of $s$ feet, the numerical equality is $s^3=6(12s)^2$.",
+    "detailedSteps": [
+      "The volume in cubic feet is $s^3$. Each edge is $12s$ inches, so the surface area in square inches is $6(12s)^2=864s^2$.",
+      "Since $s>0$, division by $s^2$ gives $s=864$ feet."
+    ],
+    "keyIdeas": [
+      "Convert the edge length before computing a surface area in a different unit."
+    ],
+    "commonMistakes": [
+      "The two numerical quantities use different units."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert linear units before squaring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p13",
+    "problemId": "amc12-predecessor-1972-p13",
+    "finalAnswer": "$\\boxed{5:19}$ (choice C)",
+    "shortExplanation": "The midpoint of $AE$ has horizontal coordinate $5/2$, so the requested line segments have ratio $(5/2):(12-5/2)$.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(12,0),C=(12,12),D=(0,12)$. Then $E=(5,12)$ and the midpoint is $M=(5/2,6)$.",
+      "Points $P$ and $Q$ have horizontal coordinates $0$ and $12$. Along their common straight line, segment lengths are proportional to horizontal displacements. Hence $PM/MQ=(5/2)/(19/2)=5/19$.",
+      "The perpendicular bisector equation is $y=169/24-5x/12$, giving $P=(0,169/24)$ and $Q=(12,49/24)$, both on the actual sides as drawn."
+    ],
+    "keyIdeas": [
+      "Use horizontal displacements along the same straight line."
+    ],
+    "commonMistakes": [
+      "Compare the two portions of PQ, not the two portions of AE."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coordinates of P/Q are a consistency check; their horizontal positions suffice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p14",
+    "problemId": "amc12-predecessor-1972-p14",
+    "finalAnswer": "$\\boxed{4\\sqrt2}$ (choice B)",
+    "shortExplanation": "The desired side is $8\\sin30^\\circ/\\sin45^\\circ=4\\sqrt2$.",
+    "detailedSteps": [
+      "If the desired side is $a$, the sine rule gives $a/\\sin30^\\circ=8/\\sin45^\\circ$.",
+      "Therefore $a=8(1/2)/(\\sqrt2/2)=4\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Use the sine rule with the correct opposite sides."
+    ],
+    "commonMistakes": [
+      "Match each side with its opposite angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The third angle is not needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p15",
+    "problemId": "amc12-predecessor-1972-p15",
+    "finalAnswer": "$\\boxed{900}$ (choice C)",
+    "shortExplanation": "The wall size $W$ satisfies $W/5=W/9+W/10-10$.",
+    "detailedSteps": [
+      "The separate hourly rates are $W/9$ and $W/10$ bricks. Working together, the rate is their sum minus $10$.",
+      "The five-hour completion means $W/5=19W/90-10$. Thus $W/90=10$ and $W=900$. The rates are then $100+90-10=180$ bricks per hour, completing the wall in five hours."
+    ],
+    "keyIdeas": [
+      "Subtract the hourly loss from the sum of the separate work rates."
+    ],
+    "commonMistakes": [
+      "The ten-brick loss is per hour, not a one-time loss."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use a common unit for all rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p16",
+    "problemId": "amc12-predecessor-1972-p16",
+    "finalAnswer": "$\\boxed{\\frac{45}{4}}$ (choice B)",
+    "shortExplanation": "The positive insertions are $9/2$ and $27/4$, with sum $45/4$.",
+    "detailedSteps": [
+      "Let the insertions be $a,b$. The geometric triple $3,a,b$ gives $a^2=3b$, while the arithmetic triple $a,b,9$ gives $2b=a+9$.",
+      "Combining them yields $2a^2-3a-27=(2a-9)(a+3)=0$. Positivity excludes $a=-3$, leaving $a=9/2$.",
+      "Then $b=a^2/3=27/4$, and $a+b=45/4=11\\tfrac14$."
+    ],
+    "keyIdeas": [
+      "Apply the geometric and arithmetic conditions to the two overlapping triples."
+    ],
+    "commonMistakes": [
+      "The two progression conditions apply to different overlapping triples."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity removes the second branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p17",
+    "problemId": "amc12-predecessor-1972-p17",
+    "finalAnswer": "$\\boxed{\\frac{2}{x+1}}$ (choice E)",
+    "shortExplanation": "For the primary published condition $x\\ge1$, two end intervals each have length $1/(x+1)$.",
+    "detailedSteps": [
+      "Edition note: the linked primary publication explicitly says $x\\ge1$. The LIVE reprint omits that restriction. This solution uses the primary condition; without it, the displayed formula is not valid for all real $x$.",
+      "Normalize the string length to one and let $T$ be its uniformly chosen cut position. On the left half, the condition is $1-T\\ge xT$, or $T\\le1/(x+1)$. On the right half, it is $T\\ge x/(x+1)$.",
+      "For $x\\ge1$, these two end intervals have disjoint interiors and total length $2/(x+1)$. At $x=1$, they cover the full interval, so the formula correctly gives one.",
+      "For comparison, an unrestricted $x\\le1$ would make the event certain. At $x=1/2$, the expression $2/(x+1)$ equals $4/3$, which cannot be a probability. This is why the actual published restriction matters."
+    ],
+    "keyIdeas": [
+      "Describe the favorable cut positions on a unit interval."
+    ],
+    "commonMistakes": [
+      "Do not silently add x≥1 to the unrestricted LIVE wording; use the explicitly restricted primary edition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform cut position turns probability into interval length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p18",
+    "problemId": "amc12-predecessor-1972-p18",
+    "finalAnswer": "$\\boxed{\\frac{11}{3}}$ (choice A)",
+    "shortExplanation": "The two diagonal portions have ratio $AE:EC=AB:DC=2:1$.",
+    "detailedSteps": [
+      "Triangles $AEB$ and $CED$ have equal vertical angles and matching angles from $AB\\parallel DC$, so they are similar.",
+      "Thus $AE/EC=AB/DC=2$. Since $AE+EC=11$, we have $3EC=11$ and $EC=11/3$."
+    ],
+    "keyIdeas": [
+      "Use similar triangles formed by intersecting diagonals and parallel bases."
+    ],
+    "commonMistakes": [
+      "The longer base corresponds to the longer portion of the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel bases determine the scale factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p19",
+    "problemId": "amc12-predecessor-1972-p19",
+    "finalAnswer": "$\\boxed{2^{n+1}-n-2}$ (choice D)",
+    "shortExplanation": "The $k$th term is $2^k-1$, so the requested sum is $2^{n+1}-2-n$.",
+    "detailedSteps": [
+      "The $k$th displayed term is $1+2+\\cdots+2^{k-1}=2^k-1$.",
+      "Summing from $k=1$ to $n$ gives $(2+4+\\cdots+2^n)-n=2^{n+1}-2-n$."
+    ],
+    "keyIdeas": [
+      "Sum the internal geometric progression before summing the sequence."
+    ],
+    "commonMistakes": [
+      "The sum contains n separate subtracted ones."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the geometric sum from the linear correction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p20",
+    "problemId": "amc12-predecessor-1972-p20",
+    "finalAnswer": "$\\boxed{\\frac{2ab}{a^2+b^2}}$ (choice E)",
+    "shortExplanation": "The two legs may be taken as $2ab$ and $a^2-b^2$, with hypotenuse $a^2+b^2$.",
+    "detailedSteps": [
+      "Because $a>b>0$ and the angle is acute, both legs are positive. Their squared sum is $(2ab)^2+(a^2-b^2)^2=(a^2+b^2)^2$.",
+      "The opposite leg divided by the hypotenuse therefore gives $\\sin x=2ab/(a^2+b^2)$."
+    ],
+    "keyIdeas": [
+      "Build a positive right triangle from the specified tangent."
+    ],
+    "commonMistakes": [
+      "The acute-angle condition selects the positive sine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A triangle is easier than manipulating a tangent quotient twice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p21",
+    "problemId": "amc12-predecessor-1972-p21",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "The six requested angles sum to $360^\\circ$, hence $90n=360$ and $n=4$.",
+    "detailedSteps": [
+      "Use the actual crossed figure. Label its intersections $U=AC\\cap BF$, $V=AC\\cap BD$, $W=CE\\cap BD$, $T=CE\\cap AD$, and $S=BF\\cap AD$. The central pentagon $UVWTS$ has interior-angle sum $540^\\circ$.",
+      "Let $u,v,w,t,s$ denote the supplements of those pentagon angles. Then $u+v+w+t+s=5\\cdot180^\\circ-540^\\circ=360^\\circ$. These are the small angles at the crossings in the four outer triangles $AUS,BUV,CVW,DWT$ and in the lower quadrilateral $FSTE$; vertical angles give the matching occurrences.",
+      "Add the angle sums of those four triangles and that quadrilateral. Their total is $4\\cdot180^\\circ+360^\\circ=1080^\\circ$. Each crossing angle occurs twice; every requested angle at $A,B,C,D,E,F$ occurs once.",
+      "The requested sum is therefore $1080^\\circ-2\\cdot360^\\circ=360^\\circ=90^\\circ\\cdot4$."
+    ],
+    "keyIdeas": [
+      "Count the crossing angles using the central pentagon."
+    ],
+    "commonMistakes": [
+      "The crossed six-sided walk is not an ordinary simple hexagon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Resolve crossings into ordinary triangles and a quadrilateral.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p22",
+    "problemId": "amc12-predecessor-1972-p22",
+    "finalAnswer": "$\\boxed{b^2-3a^2}$ (choice E)",
+    "shortExplanation": "The third root is $-2a$, and the sum of pair products is $b^2-3a^2$.",
+    "detailedSteps": [
+      "The sum of the three roots is zero because the $x^2$ coefficient is absent. Thus the third root is $-(a+bi)-(a-bi)=-2a$.",
+      "The pair-product sum is $q=(a+bi)(a-bi)-2a((a+bi)+(a-bi))=a^2+b^2-4a^2=b^2-3a^2$."
+    ],
+    "keyIdeas": [
+      "Use the missing quadratic coefficient to determine the third root."
+    ],
+    "commonMistakes": [
+      "The pair-product sum, not its negative, is the linear coefficient of a monic cubic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Vieta avoids expanding three complete factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p23",
+    "problemId": "amc12-predecessor-1972-p23",
+    "finalAnswer": "$\\boxed{\\frac{5\\sqrt{17}}{16}}$ (choice D)",
+    "shortExplanation": "The optimal center is $(0,13/16)$ and the squared radius is $425/256$.",
+    "detailedSteps": [
+      "Put the two lower unit squares in $[-1,1]\\times[0,1]$ and the upper one in $[-1/2,1/2]\\times[1,2]$. A center $(u,v)$ and radius $r$ must contain both bottom corners $(\\pm1,0)$ and both top corners $(\\pm1/2,2)$.",
+      "The greater distance to each symmetric pair is at least its average squared distance. Hence $r^2\\ge1+v^2$ and $r^2\\ge1/4+(2-v)^2$, even after discarding the nonnegative $u^2$.",
+      "The two bounds meet at $v=13/16$, with value $425/256$. For $v\\le13/16$, the top-pair bound is at least that value; for $v\\ge13/16$, the bottom-pair bound is at least that value. This covers all possible centers, so $r^2\\ge425/256$ globally.",
+      "The center $(0,13/16)$ attains both bounds. The remaining square vertices have squared distances no greater than $1+(3/16)^2$ or $1/4+(3/16)^2$, both below $425/256$. A disk is convex, so containing every vertex contains each entire square.",
+      "Thus the minimum is attained with $r=\\sqrt{425}/16=5\\sqrt{17}/16$."
+    ],
+    "keyIdeas": [
+      "Prove a global radius bound from two symmetric pairs of extreme vertices."
+    ],
+    "commonMistakes": [
+      "A symmetric-looking circle is only a candidate until a global lower bound and containment are proved."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two extreme pairs identify the optimal vertical center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p24",
+    "problemId": "amc12-predecessor-1972-p24",
+    "finalAnswer": "$\\boxed{15\\ \\text{miles}}$ (choice B)",
+    "shortExplanation": "The speed is $2$ mph, the original time is $7.5$ hours, and the distance is $15$ miles.",
+    "detailedSteps": [
+      "Let speed and time be $v,t>0$. The faster condition gives $vt=(v+1/2)(4t/5)$, so $v=2$.",
+      "The slower condition is $2t=(3/2)(t+5/2)$. Therefore $t=15/2$ hours and $vt=15$ miles."
+    ],
+    "keyIdeas": [
+      "Use the faster trip to determine speed before using the slower trip to determine time."
+    ],
+    "commonMistakes": [
+      "A fractional change in time differs from a fractional change in speed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The distance is the same in all three trips.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p25",
+    "problemId": "amc12-predecessor-1972-p25",
+    "finalAnswer": "$\\boxed{65}$ (choice C)",
+    "shortExplanation": "The common diagonal is $65$, and both opposite angles are right angles.",
+    "detailedSteps": [
+      "Name the consecutive sides $AB=25,BC=39,CD=52,DA=60$. Let $A$ be the angle between sides $25,60$ and put $c=\\cos A$.",
+      "Because the quadrilateral is cyclic, the opposite angle $C$ has cosine $-c$. The shared diagonal $BD$ satisfies $BD^2=25^2+60^2-2\\cdot25\\cdot60c=4225-3000c$ and $BD^2=39^2+52^2+2\\cdot39\\cdot52c=4225+4056c$.",
+      "Equality gives $7056c=0$, hence $A=C=90^\\circ$ and $BD=65$. A chord subtending a right inscribed angle is a diameter.",
+      "The two right triangles with legs $25,60$ and $39,52$ share that hypotenuse, so the condition is attainable."
+    ],
+    "keyIdeas": [
+      "Combine the cosine rule with supplementary opposite angles in a cyclic quadrilateral."
+    ],
+    "commonMistakes": [
+      "Recognizing two Pythagorean triples is not enough; prove that the cyclic condition forces the right angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal diagonal expressions force the desired geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p26",
+    "problemId": "amc12-predecessor-1972-p26",
+    "finalAnswer": "$\\boxed{2x+1}$ (choice E)",
+    "shortExplanation": "The equal chords $MC=MB$ imply $AB=AC+2AP$, so $PB=AC+AP=2x+1$.",
+    "detailedSteps": [
+      "Let $a=AP$, $d=AB$, and $\\beta=\\angle MAB$. Because $MP\\perp AB$ and $P$ lies on the chord as drawn, $AM\\cos\\beta=a$.",
+      "The midpoint condition makes arc $CM$ through $A$ equal to arc $MB$, so $MC=MB$. Angle $MAB$ intercepts arc $MB$, while angle $CAM$ intercepts the complementary arc $CM$ not containing $A$. Therefore $\\angle CAM=180^\\circ-\\beta$.",
+      "The cosine rules in $AMB$ and $AMC$ now give $MB^2=AM^2+d^2-2ad$ and $MC^2=AM^2+x^2+2ax$. Equality yields $(d+x)(d-x-2a)=0$.",
+      "All chord lengths are positive, so $d=x+2a$. Thus $PB=d-a=x+a=x+(x+1)=2x+1$."
+    ],
+    "keyIdeas": [
+      "Use equal arc-midpoint chords and two cosine rules."
+    ],
+    "commonMistakes": [
+      "The two angles at A are supplementary; treating them as equal reverses the sign in the cosine rule."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal arc lengths provide both equal chords and the needed angle relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p27",
+    "problemId": "amc12-predecessor-1972-p27",
+    "finalAnswer": "$\\boxed{\\frac89}$ (choice D)",
+    "shortExplanation": "The product $AB\\cdot AC$ is $144$, so $64=(144/2)\\sin A$.",
+    "detailedSteps": [
+      "The geometric mean condition gives $\\sqrt{AB\\cdot AC}=12$, hence $AB\\cdot AC=144$.",
+      "The triangle area is $\\tfrac12 AB\\cdot AC\\sin A=72\\sin A$. Thus $\\sin A=64/72=8/9$."
+    ],
+    "keyIdeas": [
+      "Combine the geometric mean with the included-angle area formula."
+    ],
+    "commonMistakes": [
+      "Square the geometric mean before substituting the side product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No individual side length is required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p28",
+    "problemId": "amc12-predecessor-1972-p28",
+    "finalAnswer": "$\\boxed{32}$ (choice E)",
+    "shortExplanation": "Each quadrant contains eight fully covered cells, giving $32$ in total.",
+    "detailedSteps": [
+      "Scale the checkerboard to width $8$ and center it at the origin. Its coincident disk has radius $4$. A cell in the first quadrant with farthest corner $(i,j)$ is contained exactly when $i^2+j^2\\le16$, where $i,j\\in\\{1,2,3,4\\}$.",
+      "For $i=1,2,3,4$, the allowed counts are respectively $3,3,2,0$. Thus each quadrant contributes eight cells, and all four contribute $32$.",
+      "The criterion tests the whole cell: every corner lies in the convex disk, and their convex hull is the complete square."
+    ],
+    "keyIdeas": [
+      "Test the farthest corner of each square against the disk."
+    ],
+    "commonMistakes": [
+      "Counting cells whose centers lie in the disk does not guarantee complete coverage."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the diagram; its absolute scale does not affect the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p29",
+    "problemId": "amc12-predecessor-1972-p29",
+    "finalAnswer": "$\\boxed{3f(x)}$ (choice C)",
+    "shortExplanation": "The transformed positive ratio is the cube of $(1+x)/(1-x)$.",
+    "detailedSteps": [
+      "Put $t=(3x+x^3)/(1+3x^2)$. For $-1<x<1$, the identities $1+t=(1+x)^3/(1+3x^2)$ and $1-t=(1-x)^3/(1+3x^2)$ show $-1<t<1$. Thus $f(t)$ is defined throughout the given domain.",
+      "Dividing those identities gives $(1+t)/(1-t)=((1+x)/(1-x))^3$. All arguments are positive.",
+      "Therefore $f(t)=\\log(((1+x)/(1-x))^3)=3\\log((1+x)/(1-x))=3f(x)$."
+    ],
+    "keyIdeas": [
+      "Factor the two transformed logarithm arguments and verify the domain."
+    ],
+    "commonMistakes": [
+      "Check that the transformed input stays within the stated domain before applying f."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cubes explain the coefficient three.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p30",
+    "problemId": "amc12-predecessor-1972-p30",
+    "finalAnswer": "$\\boxed{3\\sec^2\\theta\\csc\\theta}$ (choice A)",
+    "shortExplanation": "The vertical extent is $3/(\\sin\\theta\\cos\\theta)$, and the crease has vertical component $L\\cos\\theta$.",
+    "detailedSteps": [
+      "Use the linked primary diagram, where $\\theta$ is the angle between the crease and the right vertical side. In the LIVE drawing it is placed between the crease and the reflected right edge; reflection makes these two angles equal. It is not the complementary angle to the horizontal.",
+      "Place the original lower right corner at $C=(6,0)$ and its folded image at $K=(0,h)$. Let the upper crease endpoint be $R=(6,H)$ and the lower endpoint $P=(p,0)$. Since $CK$ is perpendicular to the crease, whose angle to the horizontal is $90^\\circ-\\theta$, we have $h=6\\tan\\theta$.",
+      "A point on a fold crease is equidistant from the original point and its image. At $R$, this gives $H^2=36+(H-h)^2$, hence $H=(36+h^2)/(2h)=3/(\\sin\\theta\\cos\\theta)$.",
+      "The vertical component of the crease is $H=L\\cos\\theta$. Therefore $L=3/(\\sin\\theta\\cos^2\\theta)=3\\sec^2\\theta\\csc\\theta$."
+    ],
+    "keyIdeas": [
+      "A fold crease is the perpendicular bisector of a corner and its image."
+    ],
+    "commonMistakes": [
+      "The marked theta is an angle to the vertical; substituting the complementary angle changes the formula."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equidistance and perpendicularity encode the fold without guessing lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p31",
+    "problemId": "amc12-predecessor-1972-p31",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "Since $2^{12}\\equiv1\\pmod{13}$ and $1000\\equiv4\\pmod{12}$, the remainder is $2^4\\equiv3$.",
+    "detailedSteps": [
+      "We have $2^6=64\\equiv-1\\pmod{13}$, so $2^{12}\\equiv1$. Write $1000=12\\cdot83+4$.",
+      "Then $2^{1000}\\equiv2^4=16\\equiv3\\pmod{13}$."
+    ],
+    "keyIdeas": [
+      "Reduce the exponent using a verified modular period."
+    ],
+    "commonMistakes": [
+      "Reduce the exponent modulo the period, not modulo13 itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Verify the period before using it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p32",
+    "problemId": "amc12-predecessor-1972-p32",
+    "finalAnswer": "$\\boxed{\\sqrt{65}}$ (choice B)",
+    "shortExplanation": "The endpoints can be placed at $(-2,0),(6,0),(0,4),(0,-3)$, with center $(2,1/2)$.",
+    "detailedSteps": [
+      "Intersecting-chord power gives $AE\\cdot EB=CE\\cdot ED$, so $2\\cdot6=3CE$ and $CE=4$.",
+      "Put $E=(0,0)$ with the chords on the axes. The midpoint of $AB$ is $(2,0)$, so its perpendicular bisector is $x=2$. The midpoint of $CD$ is $(0,1/2)$, so its perpendicular bisector is $y=1/2$.",
+      "The center is $(2,1/2)$, and the radius squared, using $A=(-2,0)$, is $4^2+(1/2)^2=65/4$. Thus the diameter is $\\sqrt{65}$."
+    ],
+    "keyIdeas": [
+      "Find the fourth chord segment, then intersect two perpendicular bisectors."
+    ],
+    "commonMistakes": [
+      "The crossing point E is not generally the center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The perpendicular chords make the bisectors coordinate-aligned.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p33",
+    "problemId": "amc12-predecessor-1972-p33",
+    "finalAnswer": "$\\boxed{10.5}$ (choice C)",
+    "shortExplanation": "The minimum is $189/(1+8+9)=10.5$.",
+    "detailedSteps": [
+      "Write the number as $N=100a+10b+c$, with distinct nonzero digits. The claim $N/(a+b+c)\\ge21/2$ is equivalent to $179a-b-19c\\ge0$.",
+      "If $a\\ge2$, then $179a-b-19c\\ge358-9-171>0$. If $a=1$, distinctness gives $b+19c\\le8+19\\cdot9=179$: its largest value uses $c=9,b=8$.",
+      "Thus the bound holds for all permitted digits. Equality is attained at $a,b,c=1,8,9$, giving $189/18=10.5$."
+    ],
+    "keyIdeas": [
+      "Prove a sharp digit bound and identify its attaining number."
+    ],
+    "commonMistakes": [
+      "The denominator also changes with the digits, so minimizing the numerator alone is insufficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A linear inequality turns the quotient minimization into a digit comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p34",
+    "problemId": "amc12-predecessor-1972-p34",
+    "finalAnswer": "$\\boxed{42}$ (choice A)",
+    "shortExplanation": "The positive age ratio is $d:t:h=1:5:4$, and coprimality makes these the actual ages.",
+    "detailedSteps": [
+      "Let the positive integer ages be $d,t,h$. From $3d+t=2h$, put $u=t/d>0$ and $h/d=(3+u)/2$.",
+      "The cube equation gives $4(3+u^3)=(3+u)^3$, or $3(u-5)(u+1)^2=0$. Since $u>0$, only $u=5$ is allowed.",
+      "Thus $t=5d$ and $h=4d$. Their relative primality forces $d=1$, giving $d,t,h=1,5,4$. The requested sum is $1^2+5^2+4^2=42$."
+    ],
+    "keyIdeas": [
+      "Eliminate one age, factor the resulting ratio equation, and use coprimality."
+    ],
+    "commonMistakes": [
+      "The negative ratio root is excluded by positive ages; coprimality determines the remaining scale."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use a ratio to avoid expanding three independent cubes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1972-p35",
+    "problemId": "amc12-predecessor-1972-p35",
+    "finalAnswer": "$\\boxed{\\frac{40\\pi}{3}}$ (choice D)",
+    "shortExplanation": "The labeled triangle returns after three circuits; P moves through $1200^\\circ$ on circles of radius two.",
+    "detailedSteps": [
+      "Edition note: the linked primary published version explicitly requires $P,A,B$ all to return to their own starting positions. The LIVE phrase about the triangle returning is ambiguous for an unlabeled shape. The primary footnote records a wording change; no outside worked explanation is used here.",
+      "Initially $A=(0,0),B=(2,0),P=(1,\\sqrt3)$ inside the four-inch square. A clockwise $120^\\circ$ turn about $B$ puts $P$ at the lower right corner and $A$ at $(3,\\sqrt3)$. A subsequent clockwise $30^\\circ$ turn about $P$ puts $A$ at the right-side midpoint $(4,2)$.",
+      "The same geometry repeats along each side: a $120^\\circ$ turn about a side midpoint, followed by a $30^\\circ$ turn about the next corner. Thus one circuit has eight turns, alternating those angles. The pivots follow the repeated order $B,P,A$.",
+      "After eight turns the triangle occupies the same three geometric locations with its labels cyclically permuted; after sixteen they are still permuted. After twenty-four turns all three labels return. No earlier labeled return is possible: between circuits the triangle is on a different side or corner, and within a turn its contact geometry has not returned to the initial placement.",
+      "There are twelve $120^\\circ$ turns and twelve $30^\\circ$ turns. Each vertex is the pivot for four of each kind, so $P$ moves on eight of each kind and is stationary on the other turns.",
+      "Whenever $P$ moves, its distance from the pivot is the side length two. Its moving angle totals $8\\cdot120^\\circ+8\\cdot30^\\circ=1200^\\circ=20\\pi/3$ radians. The path length is therefore $2\\cdot20\\pi/3=40\\pi/3$."
+    ],
+    "keyIdeas": [
+      "Distinguish an unlabeled shape return from a return of all three labeled vertices."
+    ],
+    "commonMistakes": [
+      "One circuit restores the unlabeled outline, but not the original position of each vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The short corner turns must be counted as well as the long side turns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "finalAnswer": "Run shortest paths to the barn, then a multi-source shortest-path pass seeded by distance-to-barn minus one haybale\u2019s yumminess. A cow qualifies when its adjusted distance is at most its ordinary distance.",
+    "shortExplanation": "For a chosen haybale, the shortest legal meal route travels to that haybale and then to the barn. Subtract its yumminess from this route length and compare with the cow\u2019s ordinary shortest trip. One multi-source pass minimizes this adjusted cost over all possible single meals.",
+    "detailedSteps": [
+      "Let $d(v)$ be the shortest travel time from pasture $v$ to the barn. Compute it with Dijkstra from the barn, using the original positive undirected trails. The source guarantees that every cow can reach the barn, so all these distances are finite.",
+      "If a cow at $i$ chooses a haybale at $h$ with yumminess $y$, any meal route has length at least $\\operatorname{dist}(i,h)+d(h)$. Concatenating shortest walks to $h$ and from $h$ to the barn attains that length. Repeated vertices are allowed: the original example explicitly permits reaching the barn, leaving to eat, and returning. Passing another haybale does not require eating it.",
+      "The chosen meal is worthwhile exactly when $$\\operatorname{dist}(i,h)+d(h)-y\\le d(i).$$ Define $f(i)$ as the minimum expression on the left over the actual individual haybales. The answer for cow $i$ is $1$ if $f(i)\\le d(i)$ and $0$ otherwise. This inequality includes equality and deducts only one haybale\u2019s yumminess.",
+      "Seed each haybale pasture h with label d(h)-y. If several haybales occupy the same pasture, retain the smallest label, which corresponds to the greatest yumminess there. Insert all seeds before processing the heap. Propagate labels outward over the original trails; undirectedness makes the distance from h to i equal to the distance from i to h.",
+      "Some initial labels are negative, but the ordinary trail weights remain positive. To justify Dijkstra rigorously, conceptually add the same constant $C=10^9$ to every seed. All shifted seeds are nonnegative, so they can be viewed as nonnegative edges from a new source. Standard Dijkstra computes $C+f(i)$. Subtracting a common constant preserves every queue ordering and relaxation comparison, so the implementation can use the original unshifted seed labels directly. This does not authorize Dijkstra on an arbitrary graph with negative edges.",
+      "No reward is deducted during propagation. The only deduction is in the initial seed, so a path cannot accumulate benefits from several meals. Ignore stale heap entries, and relax every original positive edge. Once the pass finishes, compare adjusted and ordinary distances and print exactly N-1 binary lines in the original pasture order, omitting the barn.",
+      "A binary heap gives $O((N+M+K)\\log(N+M+K))$ time and $O(N+M+K)$ space for the two passes, graph, foods and heap entries. A shortest ordinary route can be chosen simple and has length at most $(N-1)10^4$; adjusted labels can be negative. Signed 64-bit distances and a safely large sentinel cover the complete printed domain. Cycles and multiple haybales are supported; no tree or distinct-hay-pasture assumption is added.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <limits>\n#include <queue>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"dining.in\");std::ofstream out(\"dining.out\");int n,m,k;in >> n >> m >> k;\n    std::vector<std::vector<std::pair<int,int>>> graph(n);\n    for(int i=0;i<m;++i){int u,v,w;in >> u >> v >> w;--u;--v;graph[u].push_back({v,w});graph[v].push_back({u,w});}\n    std::vector<std::pair<int,long long>> food(k);for(auto& p:food){in >> p.first >> p.second;--p.first;}\n    constexpr long long inf=std::numeric_limits<long long>::max()/4;\n    auto shortest=[&](std::vector<long long> distance){\n        using Entry=std::pair<long long,int>;std::priority_queue<Entry,std::vector<Entry>,std::greater<Entry>> heap;\n        for(int u=0;u<n;++u) if(distance[u]<inf) heap.push({distance[u],u});\n        while(!heap.empty()){auto [cost,u]=heap.top();heap.pop();if(cost!=distance[u]) continue;for(auto [v,w]:graph[u]) if(cost+w<distance[v]){distance[v]=cost+w;heap.push({distance[v],v});}}\n        return distance;\n    };\n    std::vector<long long> initial(n,inf);initial[n-1]=0;auto base=shortest(initial);std::fill(initial.begin(),initial.end(),inf);\n    for(auto [u,yum]:food) initial[u]=std::min(initial[u],base[u]-yum);\n    auto adjusted=shortest(initial);for(int u=0;u<n-1;++u) out << (adjusted[u]<=base[u]?1:0) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Turn an allowed detour into a comparison of ordinary and reward-adjusted route lengths.",
+      "All possible single meals become initial sources of one shortest-path pass.",
+      "Negative initial labels are justified by a common nonnegative shift, not by assuming negative-edge Dijkstra is valid.",
+      "A legal trip may revisit the barn before its final return."
+    ],
+    "commonMistakes": [
+      "Stopping a route at its first arrival at the barn despite the original example\u2019s permitted return trip.",
+      "Subtracting several yumminess values along one route.",
+      "Assuming all haybales lie in different pastures or keeping the first one instead of the best one.",
+      "Rejecting equality in the additional-time test.",
+      "Printing a result for the barn or treating the graph as a tree."
+    ],
+    "alternativeMethods": [
+      "For a small graph, compute all-pairs distances with Floyd\u2013Warshall and directly test every individual haybale\u2019s detour against its yumminess. This independently checks the route criterion without a multi-source heap.",
+      "Actually add a new source with shifted nonnegative edges to haybale pastures, then subtract the common shift after Dijkstra. It is equivalent to the seeded implementation but stores extra edges."
+    ],
+    "difficultyNotes": "The two-distance idea is compact, but a complete solution must justify physically attainable meal walks and the potentially negative seeds. The source\u2019s single-meal rule, repeated haybale locations and barn-return example are essential conditions.",
+    "id": "solution-usaco-gold-2018-december-p1",
+    "problemId": "usaco-gold-2018-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Use inclusion-exclusion over the 31 nonempty subsets of each cow\u2019s five flavors to count compatible unordered pairs, then subtract that count from N(N-1)/2.",
+    "shortExplanation": "For any flavor subset S, pairs of cows containing S are easy to count. Alternating these counts by subset size makes a pair with any positive number of shared flavors contribute exactly once; a pair with none contributes zero.",
+    "detailedSteps": [
+      "Sort the five distinct flavor IDs for each physical cow. Generate its 31 nonempty flavor subsets in this sorted order. Canonical subset keys must depend on the selected flavors, not on their order in the original input or on the cow\u2019s identity.",
+      "The implementation stores a subset in a five-integer array, placing selected sorted IDs first and padding the remaining entries with zero. Original flavor IDs are strictly positive, so padding cannot collide with a real flavor or make different subset sizes identical. Every cow contributes one copy of each of its nonempty subsets.",
+      "Sort all generated keys and group equal ones. Let $c_S$ be the number of cows whose lists contain subset $S$. Then $\\binom{c_S}{2}$ is the number of unordered cow pairs that share every flavor in $S$. Distinct cows with identical favorite lists are still distinct members of this count.",
+      "For a pair sharing exactly $r$ flavors, inclusion-exclusion contributes $$\\sum_{t=1}^{r}(-1)^{t+1}\\binom rt=1-(1-1)^r.$$ This is one when $r>0$; a pair with $r=0$ appears in no nonempty subset group and contributes zero. Consequently $$\\text{compatible}=\\sum_{S\\ne\\varnothing}(-1)^{|S|+1}\\binom{c_S}{2}$$ counts each compatible pair exactly once, even when it shares all five flavors.",
+      "There are $\\binom N2$ total unordered pairs, so print $\\binom N2-\\text{compatible}$. Odd subset sizes add and even sizes subtract. Count pairs of physical cows, excluding self-pairs and avoiding the factor of two from ordered pairs.",
+      "Use signed 64-bit arithmetic before multiplication and throughout the alternating sum. The final maximum pair count fits a signed 32-bit integer, but $N(N-1)$ before division and inclusion-exclusion intermediate totals can exceed that range. A conservative absolute bound on the signed contributions is $31\\binom N2$, well within signed 64-bit.",
+      "There are exactly $31N$ generated keys, each of fixed size five. Deterministic sorting and grouping take $O(31N\\log(31N))$ time and $O(31N)$ space. At the printed maximum this is 1.55 million fixed-size keys. No whole flavor universe or quadratic cow-pair table is allocated.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"cowpatibility.in\");std::ofstream out(\"cowpatibility.out\");int n;in >> n;\n    std::vector<std::array<int,5>> subsets;subsets.reserve(static_cast<std::size_t>(31)*n);\n    for(int cow=0;cow<n;++cow){std::array<int,5> favorites;for(int& value:favorites) in >> value;std::sort(favorites.begin(),favorites.end());\n        for(int mask=1;mask<32;++mask){std::array<int,5> key{};int length=0;for(int i=0;i<5;++i) if(mask&(1<<i)) key[length++]=favorites[i];subsets.push_back(key);}}\n    std::sort(subsets.begin(),subsets.end());long long compatible=0;\n    for(std::size_t begin=0;begin<subsets.size();){std::size_t end=begin+1;while(end<subsets.size() && subsets[end]==subsets[begin]) ++end;long long amount=static_cast<long long>(end-begin);int length=0;for(int value:subsets[begin]) if(value!=0) ++length;long long pairs=amount*(amount-1)/2;compatible+=(length%2?pairs:-pairs);begin=end;}\n    out << static_cast<long long>(n)*(n-1)/2-compatible << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A constant five-flavor list permits all nonempty subsets.",
+      "Canonical keys identify a flavor subset across differently ordered input rows.",
+      "The binomial alternating identity counts every positive intersection once.",
+      "Use unordered physical cow pairs and wide intermediate arithmetic."
+    ],
+    "commonMistakes": [
+      "Counting only single-flavor matches and overcounting pairs that share several flavors.",
+      "Including the empty subset in the compatible-pair sum.",
+      "Treating two cows with identical lists as one cow.",
+      "Using zero as a real flavor or failing to sort selected IDs before constructing keys.",
+      "Doing N(N-1) or alternating group counts in 32-bit arithmetic."
+    ],
+    "alternativeMethods": [
+      "Process cows one at a time with a dictionary of subset frequencies from previous cows. Apply the same alternating sum to those frequencies, then insert the current cow\u2019s subsets. This counts each compatible pair when its later cow arrives.",
+      "For a small input, inspect every unordered pair and directly test whether its two five-flavor sets are disjoint. This literal check uses no inclusion-exclusion."
+    ],
+    "difficultyNotes": "The main proof is the per-pair contribution identity, which explains why five simultaneous matches still count only once. Positive distinct flavor IDs justify the padded-key representation, and wide intermediate arithmetic matters even when the final answer fits a narrower type.",
+    "id": "solution-usaco-gold-2018-december-p2",
+    "problemId": "usaco-gold-2018-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Use prefix DP. For each last team of length L up to min(K,i), try best[i-L] + L times that team\u2019s maximum skill. Maintain the maximum while extending the team backward.",
+    "shortExplanation": "The last team of any complete prefix partition is a consecutive suffix. Its contribution depends only on its length and maximum skill, so the best preceding prefix can be combined with each possible last team independently.",
+    "detailedSteps": [
+      "Although the wording forbids overlapping teams, it does not require every cow to be assigned initially. Any unassigned cow can be placed in a singleton team without changing her skill. Thus every feasible collection can be completed into a consecutive partition of the whole row without loss; optimizing complete partitions is valid.",
+      "Let $B[i]$ be the greatest total boosted skill obtainable for the first $i$ cows, and set $B[0]=0$. If the last team has length $L$, it contains exactly positions $i-L$ through $i-1$ in zero-based indexing and contributes $L$ times their largest skill.",
+      "Try every $1\\le L\\le\\min(K,i)$: $$B[i]=\\max_L\\left(B[i-L]+L\\max_{i-L\\le j<i}s_j\\right).$$ The source does not impose $K\\le N$, so the prefix length, rather than an invented input restriction, caps the candidate team size.",
+      "For correctness, every partition has one last team. Its earlier teams form a legal prefix partition worth at most B[i-L], giving an upper bound by one recurrence candidate. Conversely, append the candidate suffix team to an optimal partition of that shorter prefix. The teams are consecutive, disjoint and within the size limit, so the candidate value is attainable. Induction over i proves the recurrence exactly.",
+      "Enumerate L in increasing order while keeping a running maximum. Each extension adds the next cow on the left and updates that maximum once. This avoids recomputing a suffix maximum from scratch for every candidate. Preserve the original row order; sorting cows would change the allowed teams.",
+      "After filling all prefixes, print B[N]. Teams may be smaller than K, including singletons, so no divisibility or exact-team-size condition is needed. Equal skills and K=1 are handled by the same recurrence.",
+      "Time is $O(N\\min(N,K))$ and space is $O(N)$ for the input and DP arrays. The maximum total is at most $N\\cdot10^5\\le10^9$ under the actual bounds. Signed 64-bit arithmetic is convenient for the products and additions, while this bound should not be misrepresented as requiring an overflowing 32-bit final answer.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"teamwork.in\");std::ofstream out(\"teamwork.out\");int n,k;in >> n >> k;\n    std::vector<long long> skill(n),best(n+1,0);for(auto& x:skill) in >> x;\n    for(int end=1;end<=n;++end){long long largest=0;for(int length=1;length<=k && length<=end;++length){largest=std::max(largest,skill[end-length]);best[end]=std::max(best[end],best[end-length]+length*largest);}}\n    out << best[n] << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Singleton completion justifies a full-partition DP even when assignment is optional.",
+      "Separate an optimal partition by its final consecutive team.",
+      "A backward running maximum makes each suffix candidate constant work.",
+      "Cap lengths by both K and the available prefix, without assuming K<=N."
+    ],
+    "commonMistakes": [
+      "Sorting the skill array or allowing nonconsecutive team members.",
+      "Requiring every team to have exactly K cows.",
+      "Forgetting the multiplicative team length when computing its contribution.",
+      "Rescanning each candidate block and accidentally adding another factor of K.",
+      "Rejecting a valid input merely because K is larger than N."
+    ],
+    "alternativeMethods": [
+      "For a tiny row, enumerate every possible between-cow boundary pattern, discard teams longer than K and directly sum each team\u2019s size times its maximum. This is a literal partition oracle independent of prefix optimization.",
+      "Top-down memoization of the same prefix states expresses the recurrence, but an iterative implementation avoids recursion depth concerns and makes the full complexity clear."
+    ],
+    "difficultyNotes": "The DP recurrence is straightforward once its last-team decomposition is identified. Its full justification includes singleton completion, attainability of each transition and the running-maximum optimization at the maximum N and K.",
+    "id": "solution-usaco-gold-2018-december-p3",
+    "problemId": "usaco-gold-2018-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

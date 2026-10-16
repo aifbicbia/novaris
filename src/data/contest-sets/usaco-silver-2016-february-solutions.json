@@ -1,0 +1,106 @@
+[
+  {
+    "finalAnswer": "Enumerate all cuts of the circle. For each feasible cut, assign waiting cows in order of arrival and minimize the total squared clockwise distance.",
+    "shortExplanation": "Unroll the barn at a chosen room. Add the cows entering each room to a queue and settle the oldest waiting cow there. Reject a cut when a room has no available cow. The convex cost makes this queue optimal at a fixed cut; a separate circular argument proves that some optimal assignment has an uncrossed cut.",
+    "detailedSteps": [
+      "Number rooms $0,\\ldots,n-1$. Each cow starts at its own entrance and walks clockwise. A full extra tour only increases energy, so an optimum uses distances in $0,\\ldots,n-1$.",
+      "Try every starting room as a cut. Scan its $n$ rooms clockwise with offsets $0,\\ldots,n-1$. At offset $j$, append every newly entering cow to a queue, recording arrival offset $j$.",
+      "Assign the oldest queued cow to the current room and add $(j-\\mathrm{arrival})^2$. If the queue is empty, this cut cannot fill that room without crossing the cut; reject it. An accepted scan uses exactly the $n$ cows to fill the $n$ rooms.",
+      "For a fixed uncrossed cut, oldest-first is optimal. If origins $a\\le b$ are assigned in reverse order to destinations $u\\le v$, with both cows already available at $u$, exchanging them reduces or preserves energy by $2(b-a)(v-u)$. Repeating this exchange fixes each oldest pending cow in turn.",
+      "Feasibility alone does not prove that restricting to an uncrossed cut is globally optimal. To establish that fact, lift each shortest clockwise route from origin $q$ to destination $z=j$ when $j\\ge q$, or $z=j+n$ when $j<q$. Call the latter physical destination wrapped.",
+      "In an optimum the wrapped destinations form an initial prefix. Otherwise choose a nonwrapped destination $a$ below a wrapped destination $b$. Their cow origins satisfy $u\\le a<b<v<n$. Swapping destinations changes the distances from $a-u,\\ b+n-v$ to $b-u,\\ a+n-v$. With $h=b-a>0$, the energy change is $-2h(n-v+u)<0$, contradicting optimality. Thus the wrapped prefix is $0,\\ldots,s-1$.",
+      "The lifted destinations are therefore the consecutive integers $s,\\ldots,s+n-1$. Sort the expanded list of cow origins as $x_0\\le\\cdots\\le x_{n-1}$ and pair them with these destinations in order. The same squared-cost exchange, or the rearrangement inequality, shows this minimizes energy. The pairing remains legal: a legal old bijection with $x\\le z<x+n$ implies these same inequalities between the sorted order statistics.",
+      "Let $s_0=\\max_i(x_i-i)$. Legality requires $s\\ge s_0$. Lowering $s$ to $s_0$ weakly decreases every nonnegative distance $s+i-x_i$, while keeping every distance strictly below $n$. Hence some optimum uses this smallest shift.",
+      "Choose an index $i$ attaining that maximum and set $r=x_i=s_0+i$. Its cow travels zero distance. For $j<i$, both origin and lifted destination lie below $r$. For $j\\ge i$, origins are at least $r$ and lifted destinations are less than $r+n$. Thus no cow crosses the edge immediately before room $r$. This proves that an optimal uncrossed cut really exists.",
+      "Our enumeration includes that cut, and oldest-first minimizes its energy. Every accepted scan is also a legal circular assignment, so the minimum across scans is exactly the global optimum.",
+      "Each of $n$ cuts processes at most $n$ rooms and cows, giving $O(n^2)$ time and $O(n)$ auxiliary space. Use 64-bit accumulation for squared distances. Read `cbarn.in` and write `cbarn.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <deque>\n#include <fstream>\n#include <limits>\n#include <vector>\nint main() {\n    std::ifstream in(\"cbarn.in\");\n    std::ofstream out(\"cbarn.out\");\n    int n;\n    in >> n;\n    std::vector<int> count(n);\n    for (int& c : count) in >> c;\n    long long best = std::numeric_limits<long long>::max();\n    for (int start = 0; start < n; ++start) {\n        std::deque<int> waiting;\n        long long energy = 0;\n        bool valid = true;\n        for (int offset = 0; offset < n; ++offset) {\n            for (int j = 0; j < count[(start + offset) % n]; ++j) waiting.push_back(offset);\n            if (waiting.empty()) { valid = false; break; }\n            long long distance = offset - waiting.front();\n            waiting.pop_front();\n            energy += distance * distance;\n        }\n        if (valid) best = std::min(best, energy);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A convex squared-distance exchange proves oldest-first matching.",
+      "The circular optimum needs an uncrossed-cut argument.",
+      "Lift wrapped destinations to consecutive coordinates.",
+      "Enumerating cuts is affordable at this source limit."
+    ],
+    "commonMistakes": [
+      "Minimizing total distance instead of squared energy.",
+      "Sending cows counterclockwise.",
+      "Assuming every arbitrary starting room has enough cows for all its prefixes.",
+      "Treating the variant as choosing one entrance for all cows.",
+      "Claiming a locally optimal queue is globally optimal without proving the existence of an uncrossed cut."
+    ],
+    "alternativeMethods": [
+      "For a small barn, expand the cow origins and assign them to all destination rooms using a subset dynamic program. The cost of assigning origin q to room j is ((j-q) mod n) squared. This checks the unrestricted circular optimum without a cut or FIFO assumption."
+    ],
+    "difficultyNotes": "The subtle part is global optimality on a circle. The lifting argument supplies the missing justification for the simpler queue implementation.",
+    "id": "solution-usaco-silver-2016-february-p1",
+    "problemId": "usaco-silver-2016-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate horizontal gaps and sweep whole equal-x groups across the vertical fence, minimizing the largest quadrant count.",
+    "shortExplanation": "Fence positions matter only when they pass an occupied coordinate. Try every horizontal partition, then sweep the vertical partitions while maintaining four counts. Move an entire shared-x group before evaluating the next fence.",
+    "detailedSteps": [
+      "All cow coordinates are positive odd integers. Valid representative horizontal fences are $b=0$ and $b=y_i+1$ after each distinct occupied row. These are even and represent every possible above/below partition.",
+      "Sort the cows by $x$ once. For a fixed $b$, begin with all cows to the right of a vertical fence before the minimum $x$, split into those below and above $b$. The left counts start at zero.",
+      "Move each complete equal-$x$ group from right to left, updating its below or above count. Only then evaluate the largest of the four counts; the corresponding fence $a=x+1$ is even and valid.",
+      "Although cow locations are distinct, several cows can share an $x$ or $y$ coordinate. Evaluating halfway through an equal-$x$ group would invent a fence that separates cows in the same column.",
+      "Every gap before or after an occupied column is evaluated, and every horizontal partition is enumerated. The maintained counts are the actual quadrant populations, so the least recorded maximum is precisely the optimal balance.",
+      "Time is $O(N^2+N\\log N)$ and space is $O(N)$. Preserve the Silver input format, whose first line contains only $N$, and use `balancing.in` and `balancing.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"balancing.in\");\n    std::ofstream out(\"balancing.out\");\n    int n;\n    in >> n;\n    std::vector<std::pair<int, int>> cows(n);\n    std::vector<int> horizontal{0};\n    for (auto& cow : cows) {\n        in >> cow.first >> cow.second;\n        horizontal.push_back(cow.second + 1);\n    }\n    std::sort(cows.begin(), cows.end());\n    std::sort(horizontal.begin(), horizontal.end());\n    horizontal.erase(std::unique(horizontal.begin(), horizontal.end()), horizontal.end());\n    int answer = n;\n    for (int b : horizontal) {\n        int leftLow = 0, leftHigh = 0, rightLow = 0, rightHigh = 0;\n        for (const auto& cow : cows) {\n            if (cow.second < b) ++rightLow;\n            else ++rightHigh;\n        }\n        answer = std::min(answer, std::max(rightLow, rightHigh));\n        for (int i = 0; i < n;) {\n            int j = i;\n            while (j < n && cows[j].first == cows[i].first) {\n                if (cows[j].second < b) { ++leftLow; --rightLow; }\n                else { ++leftHigh; --rightHigh; }\n                ++j;\n            }\n            answer = std::min(answer, std::max({leftLow, leftHigh, rightLow, rightHigh}));\n            i = j;\n        }\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Only coordinate gaps change the partition.",
+      "Odd cow coordinates admit even fence representatives.",
+      "Sweep complete tied-coordinate groups."
+    ],
+    "commonMistakes": [
+      "Assuming distinct locations imply distinct x coordinates.",
+      "Placing a fence through an occupied coordinate.",
+      "Evaluating a vertical cut halfway through a shared column.",
+      "Optimizing only one horizontal median rather than all horizontal partitions."
+    ],
+    "alternativeMethods": [
+      "On a small coordinate grid, enumerate every even fence pair and count its four quadrants directly. On larger small instances, directly recount every candidate gap pair instead of maintaining a sweep."
+    ],
+    "difficultyNotes": "The sweep improves repeated counting, but handling coordinate ties correctly is essential. Empty exterior quadrants are valid and are included.",
+    "id": "solution-usaco-silver-2016-february-p2",
+    "problemId": "usaco-silver-2016-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Breadth-first search the two pail amounts using at most K operations, and minimize the absolute difference between their combined milk and M.",
+    "shortExplanation": "A state records the exact amount in each pail. Filling, emptying and the two maximal pours give six one-operation transitions. The first visit to a state uses the fewest operations and leaves the greatest remaining budget.",
+    "detailedSteps": [
+      "Start at $(0,0)$, since both pails are explicitly empty. A state $(a,b)$ satisfies $0\\le a\\le X$ and $0\\le b\\le Y$.",
+      "The fill and empty actions give $(X,b)$, $(a,Y)$, $(0,b)$ and $(a,0)$. For pouring into the second pail, transfer $t=\\min(a,Y-b)$ to reach $(a-t,b+t)$; the reverse pour transfers $u=\\min(b,X-a)$ to reach $(a+u,b-u)$.",
+      "Each transition counts as one operation and stops a pour only when the donor is empty or the recipient full. It cannot stop at an arbitrary intermediate target.",
+      "Run BFS and retain the earliest operation count of each state. A later visit to the same amounts cannot help: it has identical successors and no more remaining operations. Stop expanding states at depth $K$.",
+      "At every reached state, including the initial state, evaluate $|M-a-b|$. Every state reachable within the budget is represented or dominated by its earlier occurrence, and no state beyond the budget is enqueued. The minimum error is therefore optimal.",
+      "There are $(X+1)(Y+1)$ states with six transitions each, so time and space are $O(XY)$. The budget is an upper bound; using fewer operations is allowed. Read `pails.in` and write `pails.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <queue>\n#include <vector>\nint main() {\n    std::ifstream in(\"pails.in\");\n    std::ofstream out(\"pails.out\");\n    int x, y, k, target;\n    in >> x >> y >> k >> target;\n    int width = y + 1;\n    std::vector<int> distance((x + 1) * width, -1);\n    std::queue<int> q;\n    distance[0] = 0;\n    q.push(0);\n    int answer = target;\n    auto add = [&](int a, int b, int d) {\n        int state = a * width + b;\n        if (distance[state] == -1) { distance[state] = d; q.push(state); }\n    };\n    while (!q.empty()) {\n        int state = q.front();\n        q.pop();\n        int a = state / width, b = state % width;\n        answer = std::min(answer, std::abs(target - a - b));\n        if (distance[state] == k) continue;\n        int next = distance[state] + 1;\n        add(x, b, next);\n        add(a, y, next);\n        add(0, b, next);\n        add(a, 0, next);\n        int toY = std::min(a, y - b), toX = std::min(b, x - a);\n        add(a - toY, b + toY, next);\n        add(a + toX, b - toX, next);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Exact amounts, rather than only their sum, determine future pours.",
+      "Every maximal pour is one state transition.",
+      "An earliest visit dominates later visits under a maximum operation budget."
+    ],
+    "commonMistakes": [
+      "Requiring exactly K operations rather than at most K.",
+      "Using a gcd argument without checking the operation limit.",
+      "Stopping a pour before the donor empties or the recipient fills.",
+      "Ignoring the zero-operation possibility.",
+      "Marking only the combined total instead of both pail amounts."
+    ],
+    "alternativeMethods": [
+      "Explore explicit operation-depth layers and simulate pours one unit at a time. Keep the best error across all layers up to K; this independently checks the compact maximal-transfer formulas and BFS pruning."
+    ],
+    "difficultyNotes": "The small state space permits an exact search. The main modeling issues are maximal pours and the at-most budget, both of which are illustrated in the original sample explanation.",
+    "id": "solution-usaco-silver-2016-february-p3",
+    "problemId": "usaco-silver-2016-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

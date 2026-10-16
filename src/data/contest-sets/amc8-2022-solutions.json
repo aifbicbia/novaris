@@ -1,0 +1,689 @@
+[
+  {
+    "id": "solution-amc8-2022-p1",
+    "problemId": "amc8-2022-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(13)}$",
+    "shortExplanation": "**Idea:** Count the filled area by grid squares.",
+    "detailedSteps": [
+      "Pair the partial triangular pieces along the slanted sides of the logo.",
+      "Each pair makes one full square, and the remaining full squares can be counted directly.",
+      "The total area is $13$ square inches.",
+      "Final Answer: (\\boxed{\\text{A }(13)})"
+    ],
+    "keyIdeas": [
+      "Area on a grid",
+      "Combining partial squares"
+    ],
+    "commonMistakes": [
+      "Do not count the entire bounding box."
+    ],
+    "alternativeMethods": [
+      "Subtract the unshaded grid regions from the surrounding rectangle."
+    ],
+    "difficultyNotes": "Introductory visual area counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p2",
+    "problemId": "amc8-2022-p2",
+    "finalAnswer": "$\\boxed{\\text{D }(100)}$",
+    "shortExplanation": "**Idea:** Evaluate the operations from inside to outside.",
+    "detailedSteps": [
+      "First compute",
+      "[\n5\\diamond3=5^2-3^2=25-9=16\n]",
+      "Then apply the star operation:",
+      "[\n16\\star6=(16-6)^2=100\n]",
+      "Final Answer: (\\boxed{\\text{D }(100)})"
+    ],
+    "keyIdeas": [
+      "Defined operations",
+      "Substitution"
+    ],
+    "commonMistakes": [
+      "Do not replace $\\diamond$ and $\\star$ with ordinary multiplication."
+    ],
+    "alternativeMethods": [
+      "Use $a^2-b^2=(a-b)(a+b)$ for the first step."
+    ],
+    "difficultyNotes": "Introductory symbolic calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p3",
+    "problemId": "amc8-2022-p3",
+    "finalAnswer": "$\\boxed{\\text{E }(4)}$",
+    "shortExplanation": "**Idea:** List the increasing factor triples of $100$.",
+    "detailedSteps": [
+      "Since $100=2^2\\cdot5^2$, organize the triples in increasing order.",
+      "The valid triples are",
+      "[\n(1,2,50),\\ (1,4,25),\\ (1,5,20),\\ (2,5,10)\n]",
+      "There are $4$ choices.",
+      "Final Answer: (\\boxed{\\text{E }(4)})"
+    ],
+    "keyIdeas": [
+      "Factorization",
+      "Organized listing"
+    ],
+    "commonMistakes": [
+      "Do not include triples such as $(1,10,10)$ because the inequalities must be strict."
+    ],
+    "alternativeMethods": [
+      "Choose the smallest factor first, then factor the remaining quotient."
+    ],
+    "difficultyNotes": "Introductory number theory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p4",
+    "problemId": "amc8-2022-p4",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Two reflections across intersecting lines create a rotation.",
+    "detailedSteps": [
+      "Reflecting across $q$ and then across $p$ is equivalent to rotating by twice the angle between the two reflection lines.",
+      "The lines are perpendicular diagonals in the diagram, so the final orientation matches choice $E$.",
+      "Trace the top of the M through the two reflections to confirm the orientation.",
+      "Final Answer: (\\boxed{\\text{E}})"
+    ],
+    "keyIdeas": [
+      "Reflections",
+      "Rotations"
+    ],
+    "commonMistakes": [
+      "Do not stop after the first reflection."
+    ],
+    "alternativeMethods": [
+      "Track one corner of the letter rather than redrawing the whole M."
+    ],
+    "difficultyNotes": "Intermediate transformation geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p5",
+    "problemId": "amc8-2022-p5",
+    "finalAnswer": "$\\boxed{\\text{C }(3)}$",
+    "shortExplanation": "**Idea:** Find today's ages and subtract.",
+    "detailedSteps": [
+      "Bella is now",
+      "[\n6+5=11\n]",
+      "The kitten is now $5$ years old.",
+      "Anna is therefore",
+      "[\n30-11-5=14\n]",
+      "Anna is older than Bella by",
+      "[\n14-11=3\n]",
+      "Final Answer: (\\boxed{\\text{C }(3)})"
+    ],
+    "keyIdeas": [
+      "Ages",
+      "Subtraction"
+    ],
+    "commonMistakes": [
+      "Do not leave the kitten at age $0$; it aged five years too."
+    ],
+    "alternativeMethods": [
+      "Set up $A+11+5=30$."
+    ],
+    "difficultyNotes": "Introductory arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p6",
+    "problemId": "amc8-2022-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(6)}$",
+    "shortExplanation": "**Idea:** Use the average of equally spaced endpoints.",
+    "detailedSteps": [
+      "Let the smallest number be $x$. Then the largest is $4x$.",
+      "The middle of three equally spaced numbers is the average of the endpoints:",
+      "[\n15=\\frac{x+4x}{2}\n]",
+      "Thus $30=5x$, so $x=6$.",
+      "Final Answer: (\\boxed{\\text{C }(6)})"
+    ],
+    "keyIdeas": [
+      "Equally spaced numbers",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Do not make $15$ the smallest number."
+    ],
+    "alternativeMethods": [
+      "Write the numbers as $x,x+d,x+2d$ and use $x+2d=4x$."
+    ],
+    "difficultyNotes": "Introductory algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p7",
+    "problemId": "amc8-2022-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(10)}$",
+    "shortExplanation": "**Idea:** Convert the file size to kilobits, then divide by the speed.",
+    "detailedSteps": [
+      "The song has",
+      "[\n4.2\\cdot8000=33600\n]",
+      "kilobits.",
+      "At $56$ kilobits per second, the time is",
+      "[\n33600\\div56=600\\text{ seconds}=10\\text{ minutes}\n]",
+      "Final Answer: (\\boxed{\\text{B }(10)})"
+    ],
+    "keyIdeas": [
+      "Unit conversion",
+      "Rates"
+    ],
+    "commonMistakes": [
+      "Do not forget the final seconds-to-minutes conversion."
+    ],
+    "alternativeMethods": [
+      "Check by multiplying $56\\cdot600=33600$."
+    ],
+    "difficultyNotes": "Introductory rate problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p8",
+    "problemId": "amc8-2022-p8",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(1/231\\right)}$",
+    "shortExplanation": "**Idea:** Cancel the long numerator and denominator products.",
+    "detailedSteps": [
+      "Rewrite the product as",
+      "[\n\\frac{1\\cdot2\\cdot3\\cdots20}{3\\cdot4\\cdot5\\cdots22}\n]",
+      "The factors $3$ through $20$ cancel.",
+      "The remaining fraction is",
+      "[\n\\frac{1\\cdot2}{21\\cdot22}=\\frac{2}{462}=\\frac{1}{231}\n]",
+      "Final Answer: (\\boxed{\\text{B }\\left(\\frac{1}{231}\\right)})"
+    ],
+    "keyIdeas": [
+      "Cancellation",
+      "Telescoping product"
+    ],
+    "commonMistakes": [
+      "Do not cancel the factors $21$ and $22$."
+    ],
+    "alternativeMethods": [
+      "Write the numerator and denominator as lists before simplifying."
+    ],
+    "difficultyNotes": "Intermediate algebraic product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p9",
+    "problemId": "amc8-2022-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(86)}$",
+    "shortExplanation": "**Idea:** Track the temperature difference from the room temperature.",
+    "detailedSteps": [
+      "The initial difference between the water and the room is\n\n[\n212-68=144\n]",
+      "Every $5$ minutes this difference is halved. After $15$ minutes there have been $3$ halvings:",
+      "[\n144\\to72\\to36\\to18\n]",
+      "So the water is $18^\\circ\\text{F}$ warmer than the room:",
+      "[\n68+18=86\n]",
+      "Final Answer: (\\boxed{\\text{B }(86)})"
+    ],
+    "keyIdeas": [
+      "Repeated halving",
+      "Temperature difference"
+    ],
+    "commonMistakes": [
+      "Do not halve the water temperature itself; halve the difference from room temperature."
+    ],
+    "alternativeMethods": [
+      "Use $68+(212-68)(1/2)^3=86$."
+    ],
+    "difficultyNotes": "Introductory exponential-decay style calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p10",
+    "problemId": "amc8-2022-p10",
+    "finalAnswer": "$\\boxed{\\text{E}}$ (choice E)",
+    "shortExplanation": "Track the car through the outward drive, the three-hour stop, and the faster return. The graph reaches 90 miles, stays level, and returns to zero at 2:30 p.m.",
+    "detailedSteps": [
+      "The outward drive lasts $10-8=2$ hours, so the trail is $45\\cdot2=90$ miles from home. The first segment rises from zero at 8:00 a.m. to 90 miles at 10:00 a.m.",
+      "During the hike, the car remains parked. Its distance from home stays at 90 miles for three hours, until 1:00 p.m.",
+      "The drive back takes $90/60=3/2$ hours. Thus the last segment falls to zero at 2:30 p.m. Its slope is steeper in magnitude than the outward segment because the return speed is greater.",
+      "Graph E has all three features: the 90-mile plateau, the stop from 10:00 a.m. to 1:00 p.m., and arrival home at 2:30 p.m."
+    ],
+    "keyIdeas": [
+      "Distance-time graphs",
+      "Speed, distance, and time",
+      "Slope as a rate"
+    ],
+    "commonMistakes": [
+      "The vertical coordinate is the car’s distance from home, so it remains constant while Ling hikes.",
+      "A faster return trip takes less time; it should not have the same duration as the outward drive."
+    ],
+    "alternativeMethods": [
+      "Let $t$ be hours after 8:00 a.m. The distance in miles is $d(t)=\\begin{cases}45t,&0\\le t\\le2,\\\\90,&2\\le t\\le5,\\\\90-60(t-5),&5\\le t\\le13/2.\\end{cases}$ Its vertices reproduce graph E."
+    ],
+    "difficultyNotes": "The calculation is short; the key distinction is between the traveler’s activity and the parked car’s distance from home.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p11",
+    "problemId": "amc8-2022-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(44)}$",
+    "shortExplanation": "**Idea:** Each bite increases the number of pieces by one.",
+    "detailedSteps": [
+      "A whole piece of pasta starts as $1$ piece.",
+      "To end with $10$ pieces, Henry must make\n\n[\n10-1=9\n]\n\nbites.",
+      "Each bite removes $3$ inches, so he eats\n\n[\n9\\cdot3=27\n]\n\ninches of pasta.",
+      "Since $17$ inches remain, the original length was\n\n[\n27+17=44\n]",
+      "Final Answer: (\\boxed{\\text{D }(44)})"
+    ],
+    "keyIdeas": [
+      "Invariants",
+      "Counting pieces"
+    ],
+    "commonMistakes": [
+      "Do not multiply $10$ pieces by $3$; bites, not final pieces, remove length."
+    ],
+    "alternativeMethods": [
+      "Each middle bite increases the number of pieces by one, so $10$ final pieces means $9$ bites."
+    ],
+    "difficultyNotes": "Introductory counting with a small invariant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p12",
+    "problemId": "amc8-2022-p12",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(1/8\\right)}$",
+    "shortExplanation": "**Idea:** List the possible square two-digit numbers.",
+    "detailedSteps": [
+      "There are $4\\cdot4=16$ equally likely spinner outcomes.",
+      "The possible two-digit numbers have tens digit $5,6,7,8$ and units digit $1,2,3,4$.",
+      "The perfect squares among them are",
+      "[\n64\\quad\\text{and}\\quad81\n]",
+      "So the probability is",
+      "[\n\\frac{2}{16}=\\frac18\n]",
+      "Final Answer: (\\boxed{\\text{B }\\left(\\frac18\\right)})"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Perfect squares"
+    ],
+    "commonMistakes": [
+      "Do not include $49$ or $100$; their digits cannot be formed by the spinners."
+    ],
+    "alternativeMethods": [
+      "Write all possible square numbers from $51$ to $84$ and check their digits."
+    ],
+    "difficultyNotes": "Introductory probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p13",
+    "problemId": "amc8-2022-p13",
+    "finalAnswer": "$\\boxed{\\text{D }(9)}$",
+    "shortExplanation": "**Idea:** Translate the sentence into an equation.",
+    "detailedSteps": [
+      "Let the smaller integer be $y$ and the larger integer be $2y+k$, where $k$ fills the blank.",
+      "Their sum is $28$, so",
+      "[\ny+(2y+k)=28\\quad\\Rightarrow\\quad k=28-3y\n]",
+      "For $k$ to be positive, $y$ can be $1,2,\\ldots,9$.",
+      "These give $9$ positive values of $k$.",
+      "Final Answer: (\\boxed{\\text{D }(9)})"
+    ],
+    "keyIdeas": [
+      "Linear equations",
+      "Positive integer constraints"
+    ],
+    "commonMistakes": [
+      "Do not count $k=0$; the blank must be a positive integer."
+    ],
+    "alternativeMethods": [
+      "List $k=25,22,19,\\ldots,1$."
+    ],
+    "difficultyNotes": "Intermediate integer equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p14",
+    "problemId": "amc8-2022-p14",
+    "finalAnswer": "$\\boxed{\\text{D }(24)}$",
+    "shortExplanation": "**Idea:** Place the non-E letters first, then use the gaps.",
+    "detailedSteps": [
+      "There are $5$ copies of E and four other letters: B, K, P, R.",
+      "Arrange the four non-E letters in",
+      "[\n4!=24\n]",
+      "ways.",
+      "These four letters create exactly $5$ gaps around and between them, and the five E letters must occupy all five gaps to avoid adjacency.",
+      "Thus there are $24$ valid arrangements.",
+      "Final Answer: (\\boxed{\\text{D }(24)})"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Gap method"
+    ],
+    "commonMistakes": [
+      "Do not count the E letters as distinct."
+    ],
+    "alternativeMethods": [
+      "First force the E letters into separated positions, then permute B, K, P, R."
+    ],
+    "difficultyNotes": "Intermediate combinatorics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p15",
+    "problemId": "amc8-2022-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(3)}$",
+    "shortExplanation": "**Idea:** Price per ounce is the slope from the origin.",
+    "detailedSteps": [
+      "For each plotted point, price per ounce equals",
+      "[\n\\frac{\\text{price}}{\\text{ounces}}\n]",
+      "So we want the point with the smallest ratio $y/x$, or the shallowest ray from the origin.",
+      "From the scatter plot, the lowest ratio occurs at weight $3$ ounces.",
+      "Final Answer: (\\boxed{\\text{C }(3)})"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Scatter plot interpretation"
+    ],
+    "commonMistakes": [
+      "Do not choose the lowest price alone; compare price per ounce."
+    ],
+    "alternativeMethods": [
+      "Draw rays from the origin to compare ratios visually."
+    ],
+    "difficultyNotes": "Intermediate data interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p16",
+    "problemId": "amc8-2022-p16",
+    "finalAnswer": "$\\boxed{\\text{B }(25)}$",
+    "shortExplanation": "**Idea:** Convert averages to sums.",
+    "detailedSteps": [
+      "Let the four numbers be $a,b,c,d$.",
+      "The pair sums are",
+      "[\na+b=42,\\qquad b+c=52,\\qquad c+d=60\n]",
+      "Then",
+      "[\na+d=(a+b)+(c+d)-(b+c)=42+60-52=50\n]",
+      "The average of the first and last is",
+      "[\n\\frac{a+d}{2}=25\n]",
+      "Final Answer: (\\boxed{\\text{B }(25)})"
+    ],
+    "keyIdeas": [
+      "Pair sums",
+      "Averages"
+    ],
+    "commonMistakes": [
+      "Do not try to find all four numbers; only $a+d$ is needed."
+    ],
+    "alternativeMethods": [
+      "Subtract the middle pair sum from the two outer pair sums combined."
+    ],
+    "difficultyNotes": "Intermediate algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p17",
+    "problemId": "amc8-2022-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(2)}$",
+    "shortExplanation": "**Idea:** Only the first few double factorials affect the units digit.",
+    "detailedSteps": [
+      "Compute units digits:",
+      "[\n2!!=2,\\quad4!!=8,\\quad6!!=48,\\quad8!!=384\n]",
+      "Their units digits sum to",
+      "[\n2+8+8+4=22\n]",
+      "For $10!!$ and every later even double factorial, the product includes both $2$ and $10$, so the units digit is $0$.",
+      "Thus the total units digit is $2$.",
+      "Final Answer: (\\boxed{\\text{B }(2)})"
+    ],
+    "keyIdeas": [
+      "Units digits",
+      "Double factorial"
+    ],
+    "commonMistakes": [
+      "Do not stop at $6!!$; $8!!$ still contributes a units digit of $4$."
+    ],
+    "alternativeMethods": [
+      "Once a factor of $10$ appears, every later term has units digit $0$."
+    ],
+    "difficultyNotes": "Intermediate number theory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p18",
+    "problemId": "amc8-2022-p18",
+    "finalAnswer": "$\\boxed{\\text{C }(40)}$",
+    "shortExplanation": "**Idea:** The midpoint quadrilateral has half the area of the rectangle.",
+    "detailedSteps": [
+      "The four given midpoints form a parallelogram.",
+      "Using the horizontal segment from $(-3,0)$ to $(2,0)$ as base, the base length is $5$ and the height is $4$.",
+      "So the midpoint parallelogram has area",
+      "[\n5\\cdot4=20\n]",
+      "For any rectangle, the quadrilateral formed by side midpoints has half the area of the rectangle.",
+      "Therefore the rectangle area is",
+      "[\n2\\cdot20=40\n]",
+      "Final Answer: (\\boxed{\\text{C }(40)})"
+    ],
+    "keyIdeas": [
+      "Midpoints",
+      "Area scaling"
+    ],
+    "commonMistakes": [
+      "Do not report the midpoint parallelogram area as the rectangle area."
+    ],
+    "alternativeMethods": [
+      "Recover the rectangle vertices by extending perpendicular directions from the midpoints."
+    ],
+    "difficultyNotes": "Intermediate geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p19",
+    "problemId": "amc8-2022-p19",
+    "finalAnswer": "$\\boxed{\\text{C }(4)}$",
+    "shortExplanation": "**Idea:** Move enough $80$s so the two middle scores are at least $85$.",
+    "detailedSteps": [
+      "Before regrading, the scores below $85$ include $2+2+4+5=13$ scores.",
+      "For $20$ scores, the median is the average of the $10$th and $11$th scores.",
+      "If only $3$ of the five $80$s are raised to $85$, then two $80$s remain, so the middle still includes an $80$.",
+      "If $4$ of the $80$s are raised, only $9$ scores are below $85$, so the $10$th and $11$th scores are both at least $85$.",
+      "Thus the minimum number is $4$.",
+      "Final Answer: (\\boxed{\\text{C }(4)})"
+    ],
+    "keyIdeas": [
+      "Median",
+      "Dot plots"
+    ],
+    "commonMistakes": [
+      "Do not use the mean; the problem asks about the median."
+    ],
+    "alternativeMethods": [
+      "Count how many scores remain below $85$ after each possible number of boosts."
+    ],
+    "difficultyNotes": "Intermediate data problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p20",
+    "problemId": "amc8-2022-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(8)}$",
+    "shortExplanation": "**Idea:** Use the completed third column to find the common sum.",
+    "detailedSteps": [
+      "The third column sums to",
+      "[\n5+(-1)+8=12\n]",
+      "So every row and column must sum to $12$.",
+      "From the rows and columns,",
+      "[\na+b=13,\\quad x+c=4,\\quad a+x=14,\\quad b+c=3\n]",
+      "Solving in terms of $x$ gives",
+      "[\na=14-x,\\quad b=x-1,\\quad c=4-x\n]",
+      "Since $x$ is larger than $a,b,c$, in particular $x>14-x$, so $x>7$.",
+      "The smallest integer value is $x=8$.",
+      "Final Answer: (\\boxed{\\text{D }(8)})"
+    ],
+    "keyIdeas": [
+      "Magic grid",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "Do not assume all missing numbers are positive; the problem only says they are integers."
+    ],
+    "alternativeMethods": [
+      "Use the fixed column first to avoid extra variables."
+    ],
+    "difficultyNotes": "Advanced algebraic reasoning.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p21",
+    "problemId": "amc8-2022-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(9)}$",
+    "shortExplanation": "**Idea:** Use overall percentage and half-by-half inequalities.",
+    "detailedSteps": [
+      "Steph scored",
+      "[\n15+10=25\n]",
+      "baskets out of $30$ attempts, so Candace also scored $25$ baskets overall.",
+      "Let Candace score $x$ in the first half and $y$ in the second half. Then",
+      "[\nx+y=25\n]",
+      "Steph had $75\\%$ in the first half, so Candace must have $x<9$, hence $x\\le8$. In the second half Steph was perfect, so $y\\le17$.",
+      "The only way to total $25$ with these maximums is $x=8$ and $y=17$.",
+      "Thus the difference is",
+      "[\ny-x=17-8=9\n]",
+      "Final Answer: (\\boxed{\\text{C }(9)})"
+    ],
+    "keyIdeas": [
+      "Percentages",
+      "Integer constraints"
+    ],
+    "commonMistakes": [
+      "Do not compare only total baskets; the half-by-half percentages are essential."
+    ],
+    "alternativeMethods": [
+      "Maximize each half under Steph's percentage constraints."
+    ],
+    "difficultyNotes": "Advanced percentage problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p22",
+    "problemId": "amc8-2022-p22",
+    "finalAnswer": "$\\boxed{\\text{A }(17)}$",
+    "shortExplanation": "**Idea:** Track where the bus is whenever Zia reaches a stop.",
+    "detailedSteps": [
+      "Zia reaches stops after $5,10,15,\\ldots$ minutes.",
+      "The bus starts $3$ stops behind and uses $3$ minutes per stop-to-stop cycle: $2$ minutes driving and $1$ minute waiting.",
+      "At $5$ and $10$ minutes, the bus has not yet reached the previous stop for Zia, so she keeps walking.",
+      "At $15$ minutes, the bus is at the previous stop and leaves toward Zia's stop. It takes $2$ more minutes to reach her.",
+      "So Zia boards at",
+      "[\n15+2=17\n]",
+      "minutes.",
+      "Final Answer: (\\boxed{\\text{A }(17)})"
+    ],
+    "keyIdeas": [
+      "Relative motion",
+      "Case tracking"
+    ],
+    "commonMistakes": [
+      "Do not forget the bus waits at each stop."
+    ],
+    "alternativeMethods": [
+      "Make a time table for bus position at minutes $0,3,6,9,12,15$."
+    ],
+    "difficultyNotes": "Advanced logic and timing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p23",
+    "problemId": "amc8-2022-p23",
+    "finalAnswer": "$\\boxed{\\text{D }(84)}$",
+    "shortExplanation": "**Idea:** Count all grids with a triangle line and a circle line.",
+    "detailedSteps": [
+      "There are $2^9=512$ total grids.",
+      "Use the $8$ possible winning lines: $3$ rows, $3$ columns, and $2$ diagonals.",
+      "A careful inclusion-exclusion count over these $8$ lines gives $282$ grids with at least one triangle line. By symmetry, the same number have at least one circle line.",
+      "The same line-count table gives $32$ grids with no monochromatic line at all. Therefore the number with both colors having a line is",
+      "[\n512-198-198-32=84\n]",
+      "Final Answer: (\\boxed{\\text{D }(84)})"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "Do not choose a triangle line and a circle line independently; many grids get counted more than once."
+    ],
+    "alternativeMethods": [
+      "Equivalently, enumerate the $2^9$ grids by center square and use symmetry between triangles and circles."
+    ],
+    "difficultyNotes": "Advanced combinatorics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p24",
+    "problemId": "amc8-2022-p24",
+    "finalAnswer": "$\\boxed{\\text{C }(192)}$",
+    "shortExplanation": "**Idea:** Read the folded net as a triangular prism.",
+    "detailedSteps": [
+      "After folding, $AB$ lies on $BC$, $AH$ lies on $CI$, and $EF$ lies on $FG$. Thus $BJ=CI=8$ and $FG=BC=8$.",
+      "Also $HJ$ becomes an edge parallel to $FG$, so $HJ=8$. Since $GH=14$, we get",
+      "[\nJG=14-8=6\n]",
+      "The triangular base $\\triangle BJG$ has area",
+      "[\n\\frac{8\\cdot6}{2}=24\n]",
+      "The prism height is $FG=8$, so the volume is",
+      "[\n24\\cdot8=192\n]",
+      "Final Answer: (\\boxed{\\text{C }(192)})"
+    ],
+    "keyIdeas": [
+      "Net of a solid",
+      "Prism volume"
+    ],
+    "commonMistakes": [
+      "Do not multiply all labeled lengths directly; first identify the triangular base after folding."
+    ],
+    "alternativeMethods": [
+      "Sketch the folded prism and label the matching edges $BJ$, $JG$, and $FG$."
+    ],
+    "difficultyNotes": "Advanced spatial geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2022-p25",
+    "problemId": "amc8-2022-p25",
+    "finalAnswer": "$\\boxed{\\text{E }\\left(7/27\\right)}$",
+    "shortExplanation": "**Idea:** Use a recurrence for being back at the starting leaf.",
+    "detailedSteps": [
+      "Let $p_n$ be the probability that the cricket is on its starting leaf after $n$ hops.",
+      "If it is at the starting leaf, the next hop leaves it, so it contributes $0$. If it is not at the starting leaf, exactly one of the $3$ possible hops returns to the start. Thus",
+      "[\np_{n+1}=\\frac{1-p_n}{3}\n]",
+      "Starting with $p_0=1$, we get",
+      "[\np_1=0,\\quad p_2=\\frac13,\\quad p_3=\\frac29,\\quad p_4=\\frac{7}{27}\n]",
+      "Final Answer: (\\boxed{\\text{E }\\left(\\frac{7}{27}\\right)})"
+    ],
+    "keyIdeas": [
+      "Recurrence",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Do not multiply by $(1/3)^4$; there are many return paths."
+    ],
+    "alternativeMethods": [
+      "Count paths: after four hops, $21$ of the $81$ equally likely paths return, giving $21/81=7/27$."
+    ],
+    "difficultyNotes": "Advanced probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

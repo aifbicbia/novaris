@@ -1,0 +1,321 @@
+[
+  {
+    "id": "solution-aime-ii-2000-p1",
+    "problemId": "aime-ii-2000-p1",
+    "finalAnswer": "$\\boxed{007}$",
+    "shortExplanation": "The expression is $1/6$.",
+    "detailedSteps": [
+      "Changing to natural logarithms, the expression is $[2\\log4+3\\log5]/\\log(2000^6)$. Its numerator is $\\log(4^2 5^3)=\\log2000$, and its denominator is $6\\log2000$.",
+      "Thus the reduced value is 1/6, giving $m+n=7$."
+    ],
+    "keyIdeas": [
+      "Reciprocal logarithms combine into one logarithm"
+    ],
+    "commonMistakes": [
+      "Applying the coefficient to the logarithm\u2019s argument rather than its exponent when combining terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A change of base gives a common denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p2",
+    "problemId": "aime-ii-2000-p2",
+    "finalAnswer": "$\\boxed{098}$",
+    "shortExplanation": "There are 49 points with positive x and 49 with negative x.",
+    "detailedSteps": [
+      "Factor the equation as $(x-y)(x+y)=2000^2$. The two factors have the same parity. They cannot both be odd because their product is even, so put $x-y=2u,x+y=2v$. Then $uv=1000000=2^6 5^6$.",
+      "For x positive, u and v are both positive and each positive divisor u determines v uniquely. There are $(6+1)(6+1)=49$ choices, giving integer points $x=u+v,y=v-u$. This includes the $y=0$ point once.",
+      "Negative factors give exactly the 49 reflected points with x negative. Opposite factor signs are impossible, and $x=0$ cannot meet the equation. Thus the full count is 98."
+    ],
+    "keyIdeas": [
+      "Same-parity factors reconstruct every lattice point"
+    ],
+    "commonMistakes": [
+      "Counting only the first quadrant or multiplying the $y=0$ points by four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring with the same-parity condition captures every possible coordinate sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p3",
+    "problemId": "aime-ii-2000-p3",
+    "finalAnswer": "$\\boxed{758}$",
+    "shortExplanation": "The remaining deck has 55 matching pairs among 703 unordered card pairs.",
+    "detailedSteps": [
+      "Whatever number was removed, its remaining multiplicity is two; each of the other nine numbers still has multiplicity four. Hence the number of matching pairs is $\\binom22+9\\binom42=1+54=55$.",
+      "There are 38 cards left and $\\binom{38}{2}=703$ equally likely pairs. The probability $55/703$ is reduced, giving $m+n=758$."
+    ],
+    "keyIdeas": [
+      "Matching pairs after a matching removal"
+    ],
+    "commonMistakes": [
+      "Leaving all ten numbers with four cards after the first pair is removed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first pair\u2019s actual rank does not affect the resulting multiplicity pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p4",
+    "problemId": "aime-ii-2000-p4",
+    "finalAnswer": "$\\boxed{180}$",
+    "shortExplanation": "The smallest odd part with six divisors is 45, and the power of two is four.",
+    "detailedSteps": [
+      "Write the number as $2^a u$ with u odd. Its odd divisors number $\\tau(u)=6$, and its even divisors number $a\\tau(u)=12$. Therefore $a=2$ and the number is $4u$.",
+      "The exponent patterns for six divisors are one prime to the fifth power or two distinct primes with exponents two and one. The smallest odd prime-power case is $3^5=243$. In the two-prime case, assigning the larger exponent to the smaller prime gives $3^2 5=45$, smaller than $3(5^2)=75$; larger primes increase the product.",
+      "Thus the minimum is $4(45)=180$. It has six odd divisors and twelve even divisors as required."
+    ],
+    "keyIdeas": [
+      "Odd and even divisor counts determine the power of two"
+    ],
+    "commonMistakes": [
+      "Using the total divisor count to determine the power of two without separating odd divisors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio of the even and odd counts gives the exponent of two directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p5",
+    "problemId": "aime-ii-2000-p5",
+    "finalAnswer": "$\\boxed{376}$",
+    "shortExplanation": "There are 376320 arrangements, whose first three nonzero digits are 376.",
+    "detailedSteps": [
+      "First choose and order five of the eight distinguishable rings, in $8\\cdot7\\cdot6\\cdot5\\cdot4=6720$ ways. This orders the rings finger by finger, with a fixed order of the four fingers.",
+      "Choose nonnegative counts on the four fingers summing to five. There are $\\binom{5+4-1}{4-1}=56$ choices. Each count vector cuts the ordered ring list into four consecutive lists, preserving the order on each finger; empty lists are permitted.",
+      "This is a bijection, so $n=6720(56)=376320$. The leftmost three nonzero digits are 376."
+    ],
+    "keyIdeas": [
+      "Ordered rings split into four finger lists"
+    ],
+    "commonMistakes": [
+      "Treating fingers as interchangeable or forgetting the order of several rings on one finger."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Bars among an ordered list determine the finger assignments without losing ring order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p6",
+    "problemId": "aime-ii-2000-p6",
+    "finalAnswer": "$\\boxed{181}$",
+    "shortExplanation": "The base lengths are 75 and 175, and the cut has squared length 18125.",
+    "detailedSteps": [
+      "Let the smaller base be a, so the larger is $a+100$. The midpoint segment has length $a+50$. The two regions have equal heights and respective area factors $2a+50$ and $2a+150$. Their ratio 2:3 gives $3(2a+50)=2(2a+150)$, hence $a=75$ and the other base 175.",
+      "Parallel cross-section length varies linearly with height. Consequently the area between the smaller base and a cut of length x is proportional to $x^2-a^2$: integrating the linear width, or using trapezoid area and proportional heights, gives this difference of squares.",
+      "An equal-area cut therefore satisfies $x^2-a^2=(175^2-a^2)/2$, so $x^2=(75^2+175^2)/2=18125$. The requested floor is $\\lfloor18125/100\\rfloor=181$."
+    ],
+    "keyIdeas": [
+      "The equal-area cut averages the squared base lengths"
+    ],
+    "commonMistakes": [
+      "Assuming the midpoint segment is also the equal-area segment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parallel slice lengths grow linearly, so accumulated area grows quadratically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p7",
+    "problemId": "aime-ii-2000-p7",
+    "finalAnswer": "$\\boxed{137}$",
+    "shortExplanation": "The numerator parameter is 13796, giving 137 after division by 100.",
+    "detailedSteps": [
+      "Multiplying the source identity by 19! gives $\\sum_{k=2}^{9}\\binom{19}{k}=19N$. Since 19 is odd, symmetry pairs k 0 through 9 with k 19 through 10, so $\\sum_{k=0}^{9}\\binom{19}{k}=2^{18}$.",
+      "Removing the k 0 and k 1 terms gives $19N=2^{18}-1-19=262124$, hence $N=13796$.",
+      "The number $N/100=137.96$ is not an integer, so the greatest integer strictly less than it is 137."
+    ],
+    "keyIdeas": [
+      "The lower half of an odd binomial row"
+    ],
+    "commonMistakes": [
+      "Using an even-row midpoint coefficient or missing the factor 19 on the right after multiplying by 19 factorial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry of an odd binomial row has no unpaired middle term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p8",
+    "problemId": "aime-ii-2000-p8",
+    "finalAnswer": "$\\boxed{110}$",
+    "shortExplanation": "The longer base is ten times the shorter, and the height squared is 110.",
+    "detailedSteps": [
+      "Place $B=(0,0),C=(0,h),A=(-a,0),D=(-d,h)$, with $a=\\sqrt{11}$, d positive, and h positive. The two diagonals have vectors $(a,h)$ and $(-d,h)$, so their perpendicularity gives $h^2=ad$.",
+      "The remaining leg satisfies $AD^2=(a-d)^2+h^2=a^2-ad+d^2=1001$. Put $t=d/a>0$. Since $a^2=11$, this becomes $t^2-t+1=91$, or $(t-10)(t+9)=0$.",
+      "Positivity selects $t=10$, yielding $BC^2=h^2=ad=10a^2=110$. The coordinates verify a nondegenerate right trapezoid with the required perpendicular diagonals."
+    ],
+    "keyIdeas": [
+      "Perpendicular diagonals relate the bases and height"
+    ],
+    "commonMistakes": [
+      "Reading either source square-root side length as the corresponding whole integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal dot product eliminates the height from the leg equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p9",
+    "problemId": "aime-ii-2000-p9",
+    "finalAnswer": "$\\boxed{000}$",
+    "shortExplanation": "The power sum is $-1$, whose least strictly larger integer is zero.",
+    "detailedSteps": [
+      "Multiplying the relation by z gives $z^2-2(\\cos3^\\circ)z+1=0$. Its two roots are $\\cos3^\\circ\\pm i\\sin3^\\circ=e^{\\pm i\\pi/60}$, neither zero.",
+      "For either root, $z^{2000}+z^{-2000}=2\\cos6000^\\circ=2\\cos240^\\circ=-1$.",
+      "The source asks for the least integer strictly greater than this value, which is 0."
+    ],
+    "keyIdeas": [
+      "The two unit-circle roots have the same power sum"
+    ],
+    "commonMistakes": [
+      "Taking a ceiling that includes $-1$ despite the strict greater-than condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal roots exchange places, leaving their power sum unchanged.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p10",
+    "problemId": "aime-ii-2000-p10",
+    "finalAnswer": "$\\boxed{647}$",
+    "shortExplanation": "The squared radius is the triple-product sum divided by the tangent-length sum: $647$.",
+    "detailedSteps": [
+      "Let r be the radius and let the tangent lengths at A,B,C,D be $a=19,b=26,c=37,d=23$. Equal tangents from each vertex give these same lengths on its other incident side. A right triangle from the center to a tangency point gives $\\tan(A/2)=r/a$, and similarly at the other vertices.",
+      "The four half-angles sum to 180 degrees. Thus the product $(a+ir)(b+ir)(c+ir)(d+ir)$ has argument 180 degrees and imaginary part zero. Its imaginary part is $r(abc+abd+acd+bcd)-r^3(a+b+c+d)$.",
+      "Since r is positive, $r^2=(abc+abd+acd+bcd)/(a+b+c+d)=67935/105=647$.",
+      "This value is consistent with the geometry: each half-angle $\\arctan(r/a)$ is between $0^\\circ$ and $90^\\circ$. The zero imaginary part makes their total a positive multiple of 180 degrees, and their sum is strictly less than 360 degrees, so it is 180 degrees. The corresponding tangent-line construction closes as a convex circumscribed quadrilateral with the stated contact lengths."
+    ],
+    "keyIdeas": [
+      "The four half-angles determine the incircle radius"
+    ],
+    "commonMistakes": [
+      "Using the four given contact lengths as full sides of a cyclic quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complex product records the half-angle sum while expanding to a simple radius equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p11",
+    "problemId": "aime-ii-2000-p11",
+    "finalAnswer": "$\\boxed{131}$",
+    "shortExplanation": "The eight possible slopes have absolute-value sum $119/12$.",
+    "detailedSteps": [
+      "The given leg AD has vector $w=(1,7)$ and squared length 50. Let the other leg, from B to C, have integer vector $w^{\\prime}$. Isoscelesness gives $|w^{\\prime}|^2=50$. Since the bases are parallel, $w^{\\prime}-w$ is parallel to AB. It is nonzero because only the bases may be parallel, excluding a parallelogram.",
+      "The integer vectors of squared length 50 are $(\\pm1,\\pm7),(\\pm7,\\pm1),(\\pm5,\\pm5)$. Exclude w itself; exclude $(-1,-7)$ because the base direction would be parallel to the legs and the figure degenerate; exclude $(-1,7)$ and $(1,-7)$ because they give horizontal or vertical bases.",
+      "For the remaining eight vectors, the slope $(w^{\\prime}_y-7)/(w^{\\prime}_x-1)$ is respectively $-1,-4/3,3/4,1,-1/2,-3,1/3,2$. These are distinct and their absolute values sum to $119/12$.",
+      "Every candidate is attainable. Put $v=w^{\\prime}-w$, choose $B=A+v$ and $C=D+2v$, and retain the given A,D. Then AB and DC have respective vectors v and 2 v, BC has vector w-prime, and the two legs have equal length. The nonzero cross product of v,w makes this a convex nondegenerate trapezoid; neither pair of legs is parallel, and no side is horizontal or vertical. All coordinates are integers.",
+      "Therefore these are exactly the allowed slopes, and $m+n=119+12=131$."
+    ],
+    "keyIdeas": [
+      "Possible reflected lattice legs determine all base slopes"
+    ],
+    "commonMistakes": [
+      "Listing candidate slopes without constructing integer-coordinate trapezoids or allowing the degenerate opposite leg."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference of the two equal-length lattice legs is the base direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p12",
+    "problemId": "aime-ii-2000-p12",
+    "finalAnswer": "$\\boxed{118}$",
+    "shortExplanation": "The distance is $15\\sqrt{95}/8$.",
+    "detailedSteps": [
+      "The 13-14-15 triangle has semiperimeter 21 and area $\\Delta=\\sqrt{21(8)(7)(6)}=84$. Its circumradius is $R=13\\cdot14\\cdot15/(4\\Delta)=65/8$.",
+      "The sphere\u2019s intersection with the triangle\u2019s plane is the circle through A,B,C. Its center is the perpendicular projection of O onto that plane, hence the triangle\u2019s circumcenter. If h is the plane distance, then $h^2+R^2=20^2$.",
+      "Therefore $h=\\sqrt{400-(65/8)^2}=\\sqrt{21375}/8=15\\sqrt{95}/8$. The triangle is acute, since its largest squared side 225 is less than $169+196$. Its circumcenter lies inside the triangle, so this perpendicular distance to the plane is also the distance to the triangle itself.",
+      "The number 95 is squarefree and 15,8 are coprime, giving $m+n+k=15+95+8=118$."
+    ],
+    "keyIdeas": [
+      "The triangle\u2019s circumcircle is a sphere section"
+    ],
+    "commonMistakes": [
+      "Assuming the distance to a triangle always equals the distance to its supporting plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Acuteness verifies that the nearest point in the plane belongs to the triangular region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p13",
+    "problemId": "aime-ii-2000-p13",
+    "finalAnswer": "$\\boxed{200}$",
+    "shortExplanation": "The required root is $(-1+\\sqrt{161})/40$.",
+    "detailedSteps": [
+      "Direct multiplication factors the source polynomial as $(20x^2+x-2)(100x^4+10x^2+1)$. The quartic factor is strictly positive for every real x because all its terms are nonnegative and its constant is one.",
+      "Therefore the only real roots are those of $20x^2+x-2=0$, namely $(-1\\pm\\sqrt{161})/40$. They are distinct.",
+      "The root with a positive radical coefficient, as in the prescribed form with r positive, is $(-1+\\sqrt{161})/40$. Its numerator integer and denominator are coprime, so $m=-1,n=161,r=40$ and $m+n+r=200$."
+    ],
+    "keyIdeas": [
+      "A positive quartic isolates the two quadratic roots"
+    ],
+    "commonMistakes": [
+      "Including real roots of the quartic despite its strict positivity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring separates a sign-definite factor from the complete real-root equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p14",
+    "problemId": "aime-ii-2000-p14",
+    "finalAnswer": "$\\boxed{495}$",
+    "shortExplanation": "The factorial digits consist of one at position 16 and sixty-two sixteen-digit blocks, each contributing 8.",
+    "detailedSteps": [
+      "Regroup the alternating factorial sum as $16!+\\sum_{k=1}^{62}[(32k+16)!-(32k)!]$. This pairs each negative factorial with the following positive one, ending with $2000!-1984!$.",
+      "The telescoping identity $(i+1)!-i!=i\\,i!$ gives $b!-a!=\\sum_{i=a}^{b-1}i\\,i!$. Hence each pair produces factorial digits $f_i=i$ for $32k\\le i\\le32k+15$. All other digits are zero except $f_{16}=1$.",
+      "These blocks are disjoint and avoid position 16. Each digit already satisfies $0\\le f_i\\le i$, and the top nonzero position is 1999, so this is the unique valid factorial-base expansion with no further carries.",
+      "Each block starts at an even index and has sixteen entries. Its alternating contribution is $-32k+(32k+1)-\\cdots-(32k+14)+(32k+15)=8$. The extra digit at the even position 16 contributes $-1$.",
+      "The requested sum is $62(8)-1=495$."
+    ],
+    "keyIdeas": [
+      "Borrowing factorials produces disjoint maximal-digit blocks"
+    ],
+    "commonMistakes": [
+      "Adding signed coefficients as if negative factorial coefficients were already valid base digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorial difference telescopes into legal maximal digits without overlaps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2000-p15",
+    "problemId": "aime-ii-2000-p15",
+    "finalAnswer": "$\\boxed{001}$",
+    "shortExplanation": "The entire sum is $1/\\sin1^\\circ$, so the least n is 1.",
+    "detailedSteps": [
+      "For every term, $1/[\\sin k^\\circ\\sin(k+1)^\\circ]=[\\cot k^\\circ-\\cot(k+1)^\\circ]/\\sin1^\\circ$. Thus the numerator of the full sum is $\\cot45^\\circ-\\cot46^\\circ+\\cot47^\\circ-\\cdots+\\cot133^\\circ-\\cot134^\\circ$.",
+      "Among the angles 46 through 134, the reflection $j\\mapsto180-j$ preserves parity and hence preserves each coefficient sign. But the two cotangents are negatives, so these reflected pairs cancel. The only unpaired angle in that interval is 90 degrees, whose cotangent is zero.",
+      "The surviving term is $\\cot45^\\circ=1$, giving sum $1/\\sin1^\\circ$. The required equality therefore holds for $n=1$. Since 1 is the smallest positive integer, it is the requested minimum."
+    ],
+    "keyIdeas": [
+      "Cotangent differences cancel by reflection about ninety degrees"
+    ],
+    "commonMistakes": [
+      "Treating the alternating-degree cotangent sum as a consecutive telescoping sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity preservation under supplementary-angle reflection cancels the alternating coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

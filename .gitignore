@@ -1,0 +1,44 @@
+# Dependencies, generated output and local tooling
+node_modules/
+.next/
+out/
+build/
+coverage/
+.vercel/
+.netlify/
+.turbo/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+
+# Environment values; only the blank documented example is versioned
+.env*
+!.env.example
+.npmrc
+.yarnrc.yml
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+
+# Local/private research and release working directories
+docs/reports/v1-private-audit/
+src/data/import-staging/
+src/data/verification/
+scripts/import-builders/
+release/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.pdf

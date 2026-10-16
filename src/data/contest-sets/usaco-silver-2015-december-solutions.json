@@ -1,0 +1,96 @@
+[
+  {
+    "finalAnswer": "Compute the closure of rooms whose lights can be turned on from reachable rooms. Return the number of lit rooms, including lit rooms that cannot be visited.",
+    "shortExplanation": "Keep separate flags for being lit and being reachable. Visiting a new room activates its switches; lighting a new room may make it reachable from an old path. Process both events until no new room can be reached or illuminated.",
+    "detailedSteps": [
+      "Turning a light off cannot help maximize illumination or open a path. Retain every light once it has been switched on and skip any action that would turn it off. This keeps at least the lights of the original walk, so every move of that walk remains available. An optimum can therefore use only actions that add lights.",
+      "Maintain `lit` and `reached` separately. A reached room has a path from the starting room through lit rooms. Since lights never go off, the cow can return to any reached room when needed. Initially both flags are true only at $(1,1)$; put that room in a queue and start the lit count at $1$.",
+      "When a reached room is removed from the queue, inspect all its switches. If a target is still dark, mark it lit and increase the answer. Count it immediately even if it is not reachable. If that newly lit target has a reached orthogonal neighbor, mark it reached and enqueue it.",
+      "Also inspect every orthogonal neighbor of the processed room. If such a neighbor was lit earlier but is not reached yet, it now has a valid path and must be enqueued. These two checks cover both orders: a room may become lit after its neighbor is reached, or its connecting neighbor may become reached after it was lit.",
+      "Every mark is attainable: a switch is used from a reachable room, and a reachability mark extends a lit path by one edge. At termination, every switch of every reachable room has been processed and every lit neighbor of that set is reached. Induction over any legal on-only walk shows that all rooms it could visit or illuminate lie in this closed set. Thus the computed lit count is both attainable and an upper bound.",
+      "Each room is enqueued at most once, each switch is inspected once, and each newly lit room needs only four adjacency checks. Including initialization, time is $O(N^2+M)$ and memory is $O(N^2+M)$. Duplicate switches do not increase the count of an already lit room. The total is at most $N^2\\le10{,}000$.",
+      "Historical file interface: read `lightson.in` and write `lightson.out`. The implementation preserves these filenames and converts the source coordinates to zero-based indices. It does not use standard-input substitution.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream input(\"lightson.in\");\n    ofstream output(\"lightson.out\");\n    int n, m;\n    if (!(input >> n >> m)) return 0;\n    vector<vector<int>> switches(n * n);\n    for (int i = 0; i < m; ++i) {\n        int x, y, a, b;\n        input >> x >> y >> a >> b;\n        switches[(x - 1) * n + y - 1].push_back((a - 1) * n + b - 1);\n    }\n    vector<char> lit(n * n), reached(n * n);\n    queue<int> work;\n    lit[0] = reached[0] = true;\n    work.push(0);\n    int answer = 1;\n    auto neighbors = [&](int v) {\n        vector<int> result;\n        int x = v / n, y = v % n;\n        if (x > 0) result.push_back(v - n);\n        if (x + 1 < n) result.push_back(v + n);\n        if (y > 0) result.push_back(v - 1);\n        if (y + 1 < n) result.push_back(v + 1);\n        return result;\n    };\n    while (!work.empty()) {\n        int v = work.front();\n        work.pop();\n        for (int target : switches[v]) {\n            if (!lit[target]) {\n                lit[target] = true;\n                ++answer;\n                for (int u : neighbors(target)) {\n                    if (reached[u] && !reached[target]) {\n                        reached[target] = true;\n                        work.push(target);\n                    }\n                }\n            }\n        }\n        for (int u : neighbors(v)) {\n            if (lit[u] && !reached[u]) {\n                reached[u] = true;\n                work.push(u);\n            }\n        }\n    }\n    output << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A monotone optimal strategy never needs to switch lights off.",
+      "Illumination and physical reachability are different states.",
+      "React to both newly lit rooms and newly reachable rooms.",
+      "A closed reachable set proves completeness, not just local feasibility."
+    ],
+    "commonMistakes": [
+      "Counting only visited rooms, although a remote room may be illuminated without being reached.",
+      "Checking a newly lit room once and forgetting that a connecting path can appear later.",
+      "Using a switch from a lit but unreachable room.",
+      "Counting duplicate switches as additional newly illuminated rooms."
+    ],
+    "alternativeMethods": [
+      "A slower fixed-point algorithm repeatedly recomputes the connected lit component of the start, then activates every switch in that component. Stop when no light changes. This computes the same least closure; the event queue avoids repeatedly scanning rooms and switches."
+    ],
+    "difficultyNotes": "Intermediate. The key is the interaction between lighting and reachability. A switch changes a remote light, while movement still follows adjacent lit rooms. The historical named-file interface is part of the reference implementation.",
+    "id": "solution-usaco-silver-2015-december-p1",
+    "problemId": "usaco-silver-2015-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Find the maximum winning matching by scanning card ranks $1,\\ldots,2N$. Match each Bessie card to an available smaller Elsie card when possible; the number of matches is the maximum score.",
+    "shortExplanation": "Elsie’s known play order lets each Bessie card be assigned to any chosen round. Process ranks increasingly, keep the count of unmatched Elsie cards already seen, and use a Bessie card whenever that count is positive.",
+    "detailedSteps": [
+      "Mark Elsie’s listed cards; the other ranks in $1,\\ldots,2N$ form Bessie’s hand. Because the entire round order is known, choosing cards for rounds is choosing a bijection between the two hands. We may sort the opponent cards for analyzing a winning matching without changing the real order in which rounds occur.",
+      "Consider the smallest remaining Bessie card $b$ and the smallest unmatched Elsie card $e$. If $b\\le e$, it cannot beat any remaining Elsie card, so it cannot contribute to a winning matching. If $b>e$, greedily match them.",
+      "To justify a winning pair, take an optimum matching. If $b$ beats another $e^{\\prime}$ and $e$ is beaten by another $b^{\\prime}$, swap these two pairs. Since $b^{\\prime}\\ge b>e^{\\prime}$ and $b>e$, both wins remain. If only one endpoint was matched, redirect that edge to $(b,e)$ without losing a win. If neither was matched, the edge can be added. Thus an optimum can always include the greedy pair; remove it and continue by induction.",
+      "Every winning pairing is a matching, giving the upper bound. Conversely extend the chosen winning matching by assigning the remaining Bessie cards to the remaining rounds arbitrarily. This produces at least the matched wins, so the maximum score is exactly the matching size.",
+      "The deck’s rank range is dense, so sorting is unnecessary. Scan $1$ through $2N$. An Elsie card increases `pending`. A Bessie card decreases `pending` and adds a win if `pending` is positive; otherwise it has no smaller available opponent. Every future Bessie rank is larger than all pending cards, so their identities are not needed for computing the score.",
+      "The scan takes $O(N)$ time and its hand-membership array takes $O(N)$ space. All ranks and the score fit ordinary integers at $N\\le50{,}000$. The strict winning comparison is built into scanning distinct physical ranks in order.",
+      "Historical file interface: read `highcard.in` and write `highcard.out`. The code computes the score; it does not reorder the actual rounds or reuse a played card.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream input(\"highcard.in\");\n    ofstream output(\"highcard.out\");\n    int n;\n    if (!(input >> n)) return 0;\n    vector<char> elsie(2 * n + 1);\n    for (int i = 0; i < n; ++i) {\n        int rank;\n        input >> rank;\n        elsie[rank] = true;\n    }\n    int pending = 0, wins = 0;\n    for (int rank = 1; rank <= 2 * n; ++rank) {\n        if (elsie[rank]) ++pending;\n        else if (pending > 0) {\n            --pending;\n            ++wins;\n        }\n    }\n    output << wins << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Turn known-round play into a maximum winning matching.",
+      "Use an exchange argument to preserve an optimum after each greedy pair.",
+      "Exploit the complete rank range to scan rather than sort."
+    ],
+    "commonMistakes": [
+      "Spending a large card unnecessarily when a smaller card can secure a win.",
+      "Treating the given round order as a restriction on offline assignment, despite knowing it in advance.",
+      "Reusing a card, or forgetting that Bessie’s hand is the complement of Elsie’s."
+    ],
+    "alternativeMethods": [
+      "Sort Elsie’s cards and construct Bessie’s sorted complement. Use two pointers: discard a Bessie card that cannot beat the smallest remaining opponent, otherwise match and advance both. This has the same exchange proof, with $O(N\\log N)$ time from sorting."
+    ],
+    "difficultyNotes": "Intermediate. The optimization concerns which cards beat which opponents; the known chronological order can then realize that assignment. The linear version also uses the special dense deck of unique ranks.",
+    "id": "solution-usaco-silver-2015-december-p2",
+    "problemId": "usaco-silver-2015-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each query $(a,b)$, output $P_1(b)-P_1(a-1)$, $P_2(b)-P_2(a-1)$ and $P_3(b)-P_3(a-1)$, where $P_t(i)$ counts breed $t$ in the first $i$ positions.",
+    "shortExplanation": "Build one prefix count for each breed. Subtract the prefix before the interval from the prefix through its last position, keeping the output order 1, 2, 3.",
+    "detailedSteps": [
+      "Start with $P_t(0)=0$ for all three breeds. At position $i$, copy the previous three counts and add one to the current cow’s breed. This inductively makes $P_t(i)$ the exact count in positions $1$ through $i$.",
+      "The prefix through $b$ consists of the prefix through $a-1$ and the inclusive interval $a,\\ldots,b$. Subtracting gives the requested three breed counts, including a singleton query or an interval starting at position $1$. Their sum must be $b-a+1$.",
+      "Preprocessing takes $O(N)$ time, each query takes $O(1)$ time, and the total is $O(N+Q)$ with $O(N)$ memory. Counts are at most $N\\le100{,}000$, so `int` is sufficient.",
+      "Historical file interface: read `bcount.in` and write `bcount.out`. Query endpoints use the numbered cow positions; the zero prefix handles the first-position boundary.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <array>\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream input(\"bcount.in\");\n    ofstream output(\"bcount.out\");\n    int n, q;\n    if (!(input >> n >> q)) return 0;\n    vector<array<int, 3>> prefix(n + 1);\n    prefix[0] = {0, 0, 0};\n    for (int i = 1; i <= n; ++i) {\n        int breed;\n        input >> breed;\n        prefix[i] = prefix[i - 1];\n        ++prefix[i][breed - 1];\n    }\n    for (int i = 0; i < q; ++i) {\n        int a, b;\n        input >> a >> b;\n        for (int breed = 0; breed < 3; ++breed) {\n            if (breed) output << ' ';\n            output << prefix[b][breed] - prefix[a - 1][breed];\n        }\n        output << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Prefix counts turn an inclusive interval into a subtraction.",
+      "Keep a zero prefix to handle intervals beginning at the first cow."
+    ],
+    "commonMistakes": [
+      "Subtracting the prefix through a instead of through a−1.",
+      "Mixing the three breed columns or omitting zero counts.",
+      "Scanning each large queried interval separately."
+    ],
+    "alternativeMethods": [
+      "Counting each queried slice directly is a simple independent oracle for small inputs. It can take $O(NQ)$ time and is too slow for the full limits."
+    ],
+    "difficultyNotes": "Introductory. Three prefix columns and careful inclusive indexing are enough. The historical reference uses the original input and output filenames.",
+    "id": "solution-usaco-silver-2015-december-p3",
+    "problemId": "usaco-silver-2015-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

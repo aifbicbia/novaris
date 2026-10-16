@@ -1,0 +1,581 @@
+[
+  {
+    "shortExplanation": "Evaluate each parenthesized operation before subtracting the two results.",
+    "detailedSteps": [
+      "The inner value $2\\diamond3$ is $1$, so $1\\diamond(2\\diamond3)=|1-1|=0$.",
+      "On the other side, $1\\diamond2=1$, and then $(1\\diamond2)\\diamond3=|1-3|=2$. The difference is $0-2=-2$."
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Absolute value"
+    ],
+    "commonMistakes": [
+      "This operation is not associative; changing the parentheses can change the result."
+    ],
+    "difficultyNotes": "The notation is unfamiliar, but each operation is just one absolute difference.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p1",
+    "problemId": "amc12b-2022-p1",
+    "finalAnswer": "$\\boxed{-2}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the common side length as the hypotenuse of the right triangle.",
+    "detailedSteps": [
+      "The full base is $AD=AP+PD=3+2=5$. Since the figure is a rhombus, $AB=5$ as well.",
+      "Right triangle $APB$ gives $BP=\\sqrt{5^2-3^2}=4$. Therefore the rhombus area is $AD\\cdot BP=5\\cdot4=20$."
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Base and height"
+    ],
+    "commonMistakes": [
+      "The length 3 is only part of the base, not the side length of the rhombus."
+    ],
+    "difficultyNotes": "The right-angle mark supplies the altitude even though the picture is not to scale.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p2",
+    "problemId": "amc12b-2022-p2",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Write each number as a repunit shifted left and added to itself.",
+    "detailedSteps": [
+      "Let $R_{k+1}=1+10+\\cdots+10^k$. The number with $k$ ones on each side of its central digit is $(10^k+1)R_{k+1}$: the two copies overlap only at the central place, producing the digit $2$.",
+      "For every $k\\ge1$, both factors exceed $1$. Thus all ten terms are composite, and the requested number of primes is $0$."
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Factorization",
+      "Composite numbers"
+    ],
+    "commonMistakes": [
+      "Testing only small prime divisors does not prove that every term is composite; an explicit factorization does."
+    ],
+    "difficultyNotes": "The same structural factorization covers all ten terms, including the largest ones.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p3",
+    "problemId": "amc12b-2022-p3",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Pair the roots by their product and exclude repeated roots.",
+    "detailedSteps": [
+      "If the roots are distinct integers $r,s$, Vieta gives $rs=36$ and $k=-(r+s)$. The positive unordered distinct pairs are $(1,36),(2,18),(3,12),(4,9)$; $(6,6)$ is excluded.",
+      "Negating both members gives four negative pairs. Their sums, together with the positive sums, are $\\pm37,\\pm20,\\pm15,\\pm13$, all distinct. Hence there are $8$ possible values of $k$."
+    ],
+    "keyIdeas": [
+      "Vieta’s formulas",
+      "Divisor pairs"
+    ],
+    "commonMistakes": [
+      "Swapping the roots does not create a new coefficient.",
+      "The pair $(6,6)$ and its negative have a repeated root."
+    ],
+    "difficultyNotes": "The sign of the product restricts the roots to have the same sign.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p4",
+    "problemId": "amc12b-2022-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Translate to the rotation center, rotate the vector, and translate back.",
+    "detailedSteps": [
+      "The displacement from $(3,1)$ to the given point is $(-4,-3)$. A counterclockwise rotation of $270^\\circ$ is a clockwise quarter-turn, taking $(u,v)$ to $(v,-u)$.",
+      "The new displacement is $(-3,4)$. Adding the center back gives $(3,1)+(-3,4)=(0,5)$."
+    ],
+    "keyIdeas": [
+      "Coordinate transformations",
+      "Rotations"
+    ],
+    "commonMistakes": [
+      "Applying the rotation directly to the original coordinates would rotate about the origin instead."
+    ],
+    "difficultyNotes": "The translation is essential because the specified center is not the origin.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p5",
+    "problemId": "amc12b-2022-p5",
+    "finalAnswer": "$\\boxed{(0,5)}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Count one multiple in every block, then count the excess multiples.",
+    "detailedSteps": [
+      "Any ten consecutive integers contain at least one multiple of $7$ and at most two: three such multiples would span at least $14$, while the first and last integers in a block differ by only $9$.",
+      "There are $\\lfloor1000/7\\rfloor=142$ multiples in all $100$ blocks. Giving each block one uses $100$ multiples; the remaining $42$ belong to the blocks with a second multiple. The answer is $42$."
+    ],
+    "keyIdeas": [
+      "Counting multiples",
+      "Floor functions",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "A block cannot contain three multiples, so every excess multiple identifies exactly one desired block."
+    ],
+    "difficultyNotes": "The total count makes the individual residue pattern unnecessary.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p6",
+    "problemId": "amc12b-2022-p6",
+    "finalAnswer": "$\\boxed{42}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the order of the five entries to locate the repeated mode.",
+    "detailedSteps": [
+      "Write the median as $m$ and the mode as $M=m+2$. Since $M$ lies above the median and must occur at least twice, the sorted list has the form $a,b,m,M,M$. The first three entries are distinct; otherwise another value would tie for the mode.",
+      "The mean is $m-2$, so $a+b+m+2(m+2)=5(m-2)$, giving $a+b=2m-14$. Distinct positive integers satisfy $a+b\\ge3$, so $m\\ge9$ and $M\\ge11$.",
+      "The list $1,3,9,11,11$ has mean $7$, median $9$, and unique mode $11$. It attains the bound, so the least mode is $11$."
+    ],
+    "keyIdeas": [
+      "Order statistics",
+      "Linear equations",
+      "Attainable bounds"
+    ],
+    "commonMistakes": [
+      "A candidate lower bound must be accompanied by a list that actually has a unique mode."
+    ],
+    "difficultyNotes": "The position of a mode above the median forces its frequency and placement.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p7",
+    "problemId": "amc12b-2022-p7",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Complete the square in the squared vertical coordinate, then factor a difference of squares.",
+    "detailedSteps": [
+      "Rearrange the equation as $(y^2-1)^2-x^4=0$. It factors into $(y^2-1-x^2)(y^2-1+x^2)=0$.",
+      "A real point therefore lies on $y^2-x^2=1$ or on $x^2+y^2=1$. These are a hyperbola and the unit circle, respectively. Their union is the graph, choice D."
+    ],
+    "keyIdeas": [
+      "Difference of squares",
+      "Conic sections"
+    ],
+    "commonMistakes": [
+      "Taking only the positive square root would omit one whole factor of the curve."
+    ],
+    "difficultyNotes": "A quartic implicit equation can describe a union of familiar conics.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p8",
+    "problemId": "amc12b-2022-p8",
+    "finalAnswer": "$\\boxed{\\text{a circle and a hyperbola}}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Determine the specified term first, then maximize the common difference.",
+    "detailedSteps": [
+      "Let $t=a_7$. The relation $2^t=2^{27}t$ implies that $t$ is a positive integral power of $2$, say $t=2^k$. Substitution gives $2^k-k=27$.",
+      "For $k\\ge1$, the difference between consecutive values of $2^k-k$ is $2^k-1>0$. Since $k=5$ works, it is the only possibility; $k=0$ also fails. Thus $a_7=32$.",
+      "If the positive integer common difference is $d$, then $a_0=32-7d\\ge1$, so $d\\le4$. Also $a_2=32-5d$, minimized at $d=4$. This gives $a_0=4$ and $a_2=12$."
+    ],
+    "keyIdeas": [
+      "Powers of two",
+      "Monotonicity",
+      "Arithmetic sequences"
+    ],
+    "commonMistakes": [
+      "The sequence is indexed from zero, so the distance from $a_0$ to $a_7$ is seven common differences."
+    ],
+    "difficultyNotes": "Integrality reduces the exponential equation to a monotone sequence of powers of two.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p9",
+    "problemId": "amc12b-2022-p9",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Apply the cosine rule to one side of the inner quadrilateral and use symmetry.",
+    "detailedSteps": [
+      "In triangle $BCG$, the adjacent lengths are $BC=2$ and $BG=1$. The angle $CBG$ is the hexagon’s interior angle, $120^\\circ$, so $CG^2=2^2+1^2-2\\cdot2\\cdot1\\cos120^\\circ=7$.",
+      "Reflection across the line through the opposite vertices $C,F$ exchanges $G,H$, while a half-turn exchanges $G,H$ and $C,F$. Thus all four sides of $GCHF$ have the same length $\\sqrt7$. The perimeter is $4\\sqrt7$."
+    ],
+    "keyIdeas": [
+      "Law of cosines",
+      "Regular polygon symmetry"
+    ],
+    "commonMistakes": [
+      "The relevant angle at B is 120 degrees, not the 60-degree central angle."
+    ],
+    "difficultyNotes": "One midpoint-to-vertex calculation determines the entire perimeter.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p10",
+    "problemId": "amc12b-2022-p10",
+    "finalAnswer": "$\\boxed{4\\sqrt7}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Recognize the two conjugate terms as nonreal cube roots of one.",
+    "detailedSteps": [
+      "The complex numbers $(-1\\pm i\\sqrt3)/2$ have modulus $1$ and arguments $\\pm120^\\circ$. Each has cube $1$.",
+      "Since $2022=3\\cdot674$, both powers equal $1$. Their sum is therefore $2$."
+    ],
+    "keyIdeas": [
+      "Complex numbers",
+      "Roots of unity",
+      "Periodic powers"
+    ],
+    "commonMistakes": [
+      "The exponent applies to the full complex fraction."
+    ],
+    "difficultyNotes": "The exponent is large, but only its remainder modulo three matters.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p11",
+    "problemId": "amc12b-2022-p11",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Start with at least one high roll and subtract the cases with no other qualifying roll.",
+    "detailedSteps": [
+      "The probability of at least one roll greater than $4$ is $1-(4/6)^4=65/81$.",
+      "Within this event, the second requirement fails exactly when there is one roll in $\\{5,6\\}$ and all three others are in $\\{1,2\\}$. Choosing its position gives probability $4(2/6)(2/6)^3=4/81$.",
+      "The desired probability is $65/81-4/81=61/81$."
+    ],
+    "keyIdeas": [
+      "Complementary probability",
+      "Ordered outcomes"
+    ],
+    "commonMistakes": [
+      "The two threshold requirements are not independent; multiplying their separate probabilities is invalid."
+    ],
+    "difficultyNotes": "Subtracting the narrowly defined failure case avoids several overlapping cases.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p12",
+    "problemId": "amc12b-2022-p12",
+    "finalAnswer": "$\\boxed{\\frac{61}{81}}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the 3–4–5 side of the square, then subtract the triangle above the rectangle.",
+    "detailedSteps": [
+      "Place the rectangle at $0\\le x\\le8$, $0\\le y\\le4$. In the orientation shown, a side of the square joins the bottom to the top, so its horizontal displacement is $3$ and its vertical displacement is $4$.",
+      "A perpendicular side has displacement $(-4,3)$. As its other endpoint lies on the left side, the four square vertices are $(4,0),(7,4),(3,7),(0,3)$. All its points lie between the two vertical sides of the rectangle and above its bottom.",
+      "The only excluded part is the triangle above $y=4$. The edge from $(0,3)$ to $(3,7)$ meets that line at $(3/4,4)$, so the triangle has base $7-3/4=25/4$ and height $3$.",
+      "Its area is $75/8$. The overlap area is $25-75/8=125/8=15\\tfrac58$, choice D."
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Pythagorean theorem",
+      "Area subtraction"
+    ],
+    "commonMistakes": [
+      "The area outside the rectangle is not half the square; the top cut is not a diagonal."
+    ],
+    "difficultyNotes": "The picture fixes which side spans the rectangle height; the remaining coordinates follow from perpendicularity.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p13",
+    "problemId": "amc12b-2022-p13",
+    "finalAnswer": "$\\boxed{\\frac{125}{8}}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Find the three intercepts and use the two acute angles with the vertical axis.",
+    "detailedSteps": [
+      "The factorization $x^2+2x-15=(x+5)(x-3)$ gives the intercepts $A=(-5,0)$, $C=(3,0)$, and $B=(0,-15)$.",
+      "The rays from B lie on opposite sides of the upward vertical. If their angles with it are $u$ and $v$, then $\\tan u=5/15=1/3$ and $\\tan v=3/15=1/5$.",
+      "Therefore $\\tan\\angle ABC=\\tan(u+v)=\\frac{1/3+1/5}{1-(1/3)(1/5)}=4/7$."
+    ],
+    "keyIdeas": [
+      "Intercepts",
+      "Tangent addition formula"
+    ],
+    "commonMistakes": [
+      "The angle at B is the sum of the deviations from the vertical, not their difference."
+    ],
+    "difficultyNotes": "Working with the vertical avoids steep slopes and keeps the tangent fractions small.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p14",
+    "problemId": "amc12b-2022-p14",
+    "finalAnswer": "$\\boxed{\\frac47}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Eliminate four options and verify the remaining one against all four relevant primes.",
+    "detailedSteps": [
+      "The relevant primes are $2,3,5,7$. Option A, $2^{606}-1$, is divisible by $3$. Option B, $2^{606}+1$, is divisible by $5$ because $606\\equiv2\\pmod4$.",
+      "Option D, $2^{607}+1$, is divisible by $3$. Option E, $2^{607}+3^{607}$, is divisible by $5$ because the exponent is odd and $3\\equiv-2\\pmod5$.",
+      "For option C, $2^{607}-1$, the residues modulo $2,3,5,7$ are respectively $1,1,2,1$. The last follows from $607\\equiv1\\pmod3$ and $2^3\\equiv1\\pmod7$. None is zero, so option C qualifies."
+    ],
+    "keyIdeas": [
+      "Modular arithmetic",
+      "Periodic powers"
+    ],
+    "commonMistakes": [
+      "Showing that the other choices have small prime factors does not alone verify the remaining choice; check all four primes."
+    ],
+    "difficultyNotes": "The problem asks for absence of small prime divisors, not a proof that the large number is prime.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p15",
+    "problemId": "amc12b-2022-p15",
+    "finalAnswer": "$\\boxed{2^{607}-1}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the first equation to express the logarithm of a logarithm in terms of the target variable.",
+    "detailedSteps": [
+      "Put $u=\\log_2x$ and $v=\\log_2y$. The first equation gives $uy=64$, so $u>0$ and $\\log_2u=6-v$. This also makes the next logarithm legitimate.",
+      "The second equation becomes $u^v=2^7$. Taking base-two logarithms gives $v\\log_2u=7$, hence $v(6-v)=7$.",
+      "Thus $(v-3)^2=2$, so $v=3\\pm\\sqrt2$. Both values are attainable: take $y=2^v$, $u=2^{6-v}$, and $x=2^u$. These positive values satisfy both original equations.",
+      "The greater value of $\\log_2y$ is $3+\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Logarithmic substitution",
+      "Quadratic equations",
+      "Domain restrictions"
+    ],
+    "commonMistakes": [
+      "The positivity of x alone does not imply that log base two of x is positive; the first equation supplies that fact."
+    ],
+    "difficultyNotes": "A logarithm of a logarithm is safe here only after checking its argument.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p16",
+    "problemId": "amc12b-2022-p16",
+    "finalAnswer": "$\\boxed{3+\\sqrt2}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Sort the row and column sums and show that the sorted matrix is forced.",
+    "detailedSteps": [
+      "Because all four row sums are distinct, there is a unique permutation placing them in order $1,2,3,4$. The same is true for the columns. First count matrices with both sums in that order.",
+      "Row 4 and column 4 consist entirely of ones. Row 1 must have its only one in column 4, and column 1 must have its only one in row 4. The remaining $2\\times2$ block has row sums $1,2$ and column sums $1,2$, forcing it to be $\\begin{pmatrix}0&1\\\\1&1\\end{pmatrix}$.",
+      "Thus the unique sorted matrix has entry $1$ exactly when its row index plus column index is at least $5$. Its independent row and column permutations give $(4!)^2=576$ different arrays.",
+      "No two permutation choices give the same array, because the distinct row and column sums recover both permutations."
+    ],
+    "keyIdeas": [
+      "Matrix margins",
+      "Permutation symmetry",
+      "Forced entries"
+    ],
+    "commonMistakes": [
+      "Multiplying by $(4!)^2$ requires checking that no repeated margin creates a symmetry; all margins are distinct here."
+    ],
+    "difficultyNotes": "The extreme row and column sums force the matrix inward from its boundary.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p17",
+    "problemId": "amc12b-2022-p17",
+    "finalAnswer": "$\\boxed{576}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Separate whether the center is initially filled, then classify its possible neighbors.",
+    "detailedSteps": [
+      "Call the four diagonal neighbors corners and the four side neighbors side cells. Every initially filled cell is in this central 3-by-3 region; the whole 5-by-5 board must be checked after the simultaneous update.",
+      "If the center starts empty, exactly three of its eight neighbors must be filled. With only three filled cells in all, each noncentral filled cell must have at most one filled neighbor, and no other empty cell may see all three.",
+      "Classify these triples by their number of corners. Three corners give $4$ valid triples. Two opposite corners permit any of the four side cells, giving $2\\cdot4=8$; two adjacent corners permit only the opposite side cell, giving $4$ more. With one corner, the only valid choice is the two side cells farthest from it, giving $4$. Three side cells always leave one of them with two filled neighbors, so give none. The empty-center total is $4+8+4+4=20$.",
+      "For the two-corner cases, a side cell between the corners would create a surviving cell or an unwanted birth; for the one-corner case, either nearer side cell causes one of those same failures. The listed successful triples leave the center as the only empty cell with three neighbors, including on the outer border.",
+      "If the center starts filled and has exactly two filled neighbors, those two must be nonadjacent or they would survive. Checking the nonadjacent pair types shows that only the two pairs of opposite corners avoid an additional birth. This gives $2$ configurations.",
+      "If the center has three filled neighbors, those neighbors must be pairwise nonadjacent; otherwise one of them has two or three filled neighbors including the center and survives. Any such triple contains two corners on one side, and their intervening side cell is empty with exactly three filled neighbors, so an extra cell is born. This case gives none.",
+      "The total is $20+2=22$. Rotations and reflections are already counted as separate placements in these counts."
+    ],
+    "keyIdeas": [
+      "Case analysis",
+      "Local update rules",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "Updates are simultaneous, so a cell dying in this step still contributes to its neighbors’ counts.",
+      "Births on the initially empty outer border must also be excluded."
+    ],
+    "difficultyNotes": "The center condition leaves only small triples to classify, but checking unintended survivors and births is essential.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p18",
+    "problemId": "amc12b-2022-p18",
+    "finalAnswer": "$\\boxed{22}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Place the known equilateral triangle on a unit base and reconstruct the third vertex.",
+    "detailedSteps": [
+      "Scale and orient so $A=(0,0)$, $E=(1,0)$, and $G=(1/2,\\sqrt3/2)$. The reflected orientation gives the same angle. Since E is the midpoint of AC, $C=(2,0)$.",
+      "The intersection of the medians is the centroid, so $A+B+C=3G$ in vector coordinates. Consequently $B=(-1/2,3\\sqrt3/2)$.",
+      "At C, the vectors to A and B are $(-2,0)$ and $(-5/2,3\\sqrt3/2)$. Their dot product is $5$, and their lengths are $2$ and $\\sqrt{13}$. Thus $\\cos C=5/(2\\sqrt{13})=5\\sqrt{13}/26$.",
+      "The integers are $m=5,n=26,p=13$, so their sum is $44$."
+    ],
+    "keyIdeas": [
+      "Centroid coordinates",
+      "Dot products",
+      "Equilateral triangles"
+    ],
+    "commonMistakes": [
+      "The centroid divides each median in a two-to-one ratio; it is not the median midpoint."
+    ],
+    "difficultyNotes": "The median conditions determine the whole triangle from the small equilateral one.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p19",
+    "problemId": "amc12b-2022-p19",
+    "finalAnswer": "$\\boxed{44}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Find a cubic satisfying the two remainder conditions and prove that a smaller degree is impossible.",
+    "detailedSteps": [
+      "Write $P(x)=ax^3+bx^2+cx+d$. Modulo $x^2+x+1$, use $x^2=-x-1$ and $x^3=1$ to obtain $(c-b)x+(a-b+d)$. Thus $c-b=1$ and $a-b+d=2$.",
+      "Modulo $x^2+1$, the remainder is $(c-a)x+(d-b)$, so $c-a=2$ and $d-b=1$. Solving the four equations gives $(a,b,c,d)=(1,2,3,3)$.",
+      "The two divisors are coprime: a common divisor would divide their difference $x$ but not $x^2+1$. Any two admissible polynomials therefore differ by a multiple of their degree-four product. In particular, at most one has degree below four.",
+      "The cubic found has nonzero leading coefficient, so no polynomial of smaller degree can satisfy the conditions. The requested sum is $1^2+2^2+3^2+3^2=23$."
+    ],
+    "keyIdeas": [
+      "Polynomial division",
+      "Coprime factors",
+      "Linear systems"
+    ],
+    "commonMistakes": [
+      "Finding a cubic is not enough without establishing uniqueness and minimal degree."
+    ],
+    "difficultyNotes": "The two remainder calculations turn a polynomial congruence problem into four linear equations.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p20",
+    "problemId": "amc12b-2022-p20",
+    "finalAnswer": "$\\boxed{23}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "First classify tangency to the two concentric circles, then locate centers satisfying the third tangency.",
+    "detailedSteps": [
+      "Let an unknown circle have radius $r$ and center at distance $d$ from the origin. Tangency to the radius-2 circle requires $d=r+2$ or $d=|r-2|$; tangency to the radius-8 circle requires $d=r+8$ or $d=|r-8|$.",
+      "Equating these possibilities yields exactly $(r,d)=(3,5)$ and $(5,3)$. In the first case the unknown circle lies in the annulus; in the second it contains the inner circle while remaining inside the outer one.",
+      "The third given circle has center $(5,0)$ and radius $\\sqrt3$. For either $r$, tangency requires center distance $e=r+\\sqrt3$ or $e=r-\\sqrt3$. Thus its center is at the intersection of a circle of radius $d$ about the origin and one of radius $e$ about $(5,0)$.",
+      "When $(r,d)=(3,5)$, both $3\\pm\\sqrt3$ lie strictly between $0$ and $10$. When $(r,d)=(5,3)$, both $5\\pm\\sqrt3$ lie strictly between $2$ and $8$. These are exactly the strict circle-intersection bounds, so each of the four choices has two distinct intersections.",
+      "There are four circles of each radius, and their areas sum to $4\\pi(3^2+5^2)=136\\pi$."
+    ],
+    "keyIdeas": [
+      "Internal and external tangency",
+      "Circle intersections",
+      "Exhaustive geometry cases"
+    ],
+    "commonMistakes": [
+      "Tangency may be internal or external; restricting to external tangency omits an entire radius family.",
+      "The intersection bounds must be strict to justify two centers for each choice."
+    ],
+    "difficultyNotes": "The concentric pair restricts the radius to two values before the third circle is considered.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p21",
+    "problemId": "amc12b-2022-p21",
+    "finalAnswer": "$\\boxed{136\\pi}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Condition on the number of steps, which depends only on the time variables.",
+    "detailedSteps": [
+      "The first duration is less than one, so Amelia cannot stop after just one step. The probability that the first two durations sum to more than one is $1/2$, the area above a diagonal in the unit square. Thus the stopping step is 2 or 3 with probability $1/2$ each.",
+      "The increments are independent of all duration variables, so conditional on two steps the probability of moving more than one is also $1/2$. Conditional on three steps, the failure region $x_1+x_2+x_3\\le1$ is a unit-coordinate tetrahedron of volume $1/6$, giving success probability $5/6$.",
+      "The law of total probability gives $(1/2)(1/2)+(1/2)(5/6)=2/3$. Boundaries where a sum is exactly one have probability zero."
+    ],
+    "keyIdeas": [
+      "Geometric probability",
+      "Conditioning",
+      "Independence"
+    ],
+    "commonMistakes": [
+      "The stopping rule depends on elapsed time, not on distance traveled.",
+      "Even if the third duration does not cross the threshold, the three-step cap still stops the process."
+    ],
+    "difficultyNotes": "Independence lets the random stopping time and the distance calculation be handled separately.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p22",
+    "problemId": "amc12b-2022-p22",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Construct the inverse modulo powers with three-bit blocks and use uniqueness.",
+    "detailedSteps": [
+      "For a positive integer $m$, define $T_m=1+6(1+8+\\cdots+8^{m-1})$. Then $7T_m=1+6\\cdot8^m$, so $7T_m\\equiv1\\pmod{2^{3m}}$. Also $0\\le T_m<2^{3m}$.",
+      "Because 7 is odd, multiplication by 7 is invertible modulo every power of 2. Thus the low $3m$ binary digits of the required sequence are exactly those of $T_m$.",
+      "In $T_m$, each base-eight block is 6 except the lowest block, which is 7. Consequently $x_0=x_1=x_2=1$, and for $k\\ge3$ the repeating binary pattern has $x_k=0$ if $k\\equiv0\\pmod3$ and $x_k=1$ otherwise.",
+      "The four requested digits are therefore $0,1,1,0$. Their weighted sum is $0+2+4+0=6$."
+    ],
+    "keyIdeas": [
+      "Modular inverses",
+      "Binary expansions",
+      "Geometric series"
+    ],
+    "commonMistakes": [
+      "The lowest three-bit block is 7, not 6; the repeating pattern begins after that block.",
+      "The digit indices refer to powers of two starting with index zero."
+    ],
+    "difficultyNotes": "A three-bit grouping matches the modulus factor $8-1=7$.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p23",
+    "problemId": "amc12b-2022-p23",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Compute the sum from a single vertex with a cosine identity, then remove double counting.",
+    "detailedSteps": [
+      "Fix one vertex. The six chord lengths are $\\ell_k=|1-e^{2\\pi i k/7}|$, $1\\le k\\le6$. Writing $\\theta_k=2\\pi k/7$, we have $\\ell_k^2=2-2\\cos\\theta_k$ and $\\ell_k^4=6-8\\cos\\theta_k+2\\cos(2\\theta_k)$.",
+      "The sums of all seventh roots of unity and of their squares are zero. Removing the root 1 and taking real parts gives $\\sum_{k=1}^6\\cos\\theta_k=\\sum_{k=1}^6\\cos(2\\theta_k)=-1$.",
+      "The sum from the fixed vertex is therefore $36+8-2=42$. Summing over all seven vertices counts each edge or diagonal twice, so the required total is $7\\cdot42/2=147$."
+    ],
+    "keyIdeas": [
+      "Roots of unity",
+      "Chord lengths",
+      "Trigonometric identities",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "There are 21 unordered segments; summing from every vertex counts each one at both endpoints."
+    ],
+    "difficultyNotes": "The fourth-power identity uses only the first two frequency sums, both canceled by regular-polygon symmetry.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p24",
+    "problemId": "amc12b-2022-p24",
+    "finalAnswer": "$\\boxed{147}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Reconstruct the actual overlapping arrangement and compute a quarter of its outer boundary.",
+    "detailedSteps": [
+      "Center the square at the origin with vertices $(\\pm1/2,\\pm1/2)$. In the source figure, the upper hexagon uses the square’s bottom edge, so its upper side has endpoints $(\\pm1/2,a)$, where $a=\\sqrt3-1/2$. The other three hexagons are its quarter-turn rotations. This placement includes the central square.",
+      "In the first quadrant, the upper hexagon’s upper-right sloping edge has equation $y=-\\sqrt3x+(3\\sqrt3-1)/2$. The right hexagon has the reflected edge obtained by exchanging x and y. Their intersection is $(b,b)$, where $b=(3\\sqrt3-1)/(2(1+\\sqrt3))=5/2-\\sqrt3$.",
+      "The intersection lies on both finite sloping edges: $1/2<b<1$ and $1/2<b<a$. The first-quadrant outer boundary passes through $(0,a),(1/2,a),(b,b),(a,1/2),(a,0)$. Together with the origin, these enclose one quarter of the required 12-sided polygon.",
+      "The coordinate area formula gives this quarter-area as $a/2+b(a-1/2)$. Substituting $a=\\sqrt3-1/2$ and $b=5/2-\\sqrt3$ gives $4\\sqrt3-23/4$.",
+      "The full area is $16\\sqrt3-23$. Thus $(m,n,p)=(16,3,-23)$, and $m+n+p=-4$."
+    ],
+    "keyIdeas": [
+      "Regular hexagon geometry",
+      "Polygon intersections",
+      "Shoelace area",
+      "Rotational symmetry"
+    ],
+    "commonMistakes": [
+      "The hexagons overlap substantially in the given figure; adding four full areas gives the wrong outer area.",
+      "The constant term p can be negative even though the resulting area is positive."
+    ],
+    "difficultyNotes": "The critical step is reading which square edge belongs to each oriented hexagon and locating the concave boundary intersections.",
+    "alternativeMethods": [],
+    "id": "solution-amc12b-2022-p25",
+    "problemId": "amc12b-2022-p25",
+    "finalAnswer": "$\\boxed{-4}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

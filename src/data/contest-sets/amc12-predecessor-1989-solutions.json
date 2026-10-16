@@ -1,0 +1,615 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1989-p1",
+    "problemId": "amc12-predecessor-1989-p1",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "The two terms are $-1$ and $1$, so their sum is $0$.",
+    "detailedSteps": [
+      "The exponent on the first base is $5^2=25$, an odd integer. Thus $(-1)^{5^2}=-1$.",
+      "The second base is one, so $1^{2^5}=1$. Adding gives $-1+1=0$."
+    ],
+    "keyIdeas": [
+      "Read nested exponents from the top down"
+    ],
+    "commonMistakes": [
+      "Reading the exponent tower as a product of exponents or dropping the parentheses around the negative base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity settles the negative-base power without expanding it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p2",
+    "problemId": "amc12-predecessor-1989-p2",
+    "finalAnswer": "$\\boxed{\\frac5{12}}$ (choice D)",
+    "shortExplanation": "The radicand is $25/144$, whose positive square root is $5/12$.",
+    "detailedSteps": [
+      "Use the common denominator $144$: $1/9+1/16=(16+9)/144=25/144$.",
+      "The square-root symbol denotes the nonnegative root, so the value is $\\sqrt{25}/\\sqrt{144}=5/12$."
+    ],
+    "keyIdeas": [
+      "Combine fractions before taking the root"
+    ],
+    "commonMistakes": [
+      "Taking square roots term by term across addition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common denominator exposes a perfect-square numerator and denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p3",
+    "problemId": "amc12-predecessor-1989-p3",
+    "finalAnswer": "$\\boxed{81}$ (choice D)",
+    "shortExplanation": "The square has side $9$ and area $81$.",
+    "detailedSteps": [
+      "Let the original side be $s$ and the three rectangle widths be $w_1,w_2,w_3$. Each rectangle has the same height $s$ and perimeter $2(s+w_i)=24$. Hence the widths are equal.",
+      "The widths add to $s$, so each is $s/3$. Therefore $2(s+s/3)=24$, giving $s=9$ and area $s^2=81$."
+    ],
+    "keyIdeas": [
+      "Equal perimeters force equal strip widths"
+    ],
+    "commonMistakes": [
+      "Adding the three rectangle areas before determining their common height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared height turns equality of perimeters into equality of widths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p4",
+    "problemId": "amc12-predecessor-1989-p4",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The point $F$ is four units beyond $C$, so $CF=4$.",
+    "detailedSteps": [
+      "Place $D=(0,0)$ and $C=(10,0)$. The equal legs and parallel four-unit top base leave a horizontal offset of $(10-4)/2=3$ on each side. The height is $\\sqrt{5^2-3^2}=4$, so $A=(3,4)$ and $B=(7,4)$.",
+      "Since $B$ is the midpoint of $DE$, we obtain $E=2B-D=(14,8)$. The actual right angle at $F$, with $D,C,F$ collinear, gives $F=(14,0)$. Therefore $CF=14-10=4$."
+    ],
+    "keyIdeas": [
+      "Use the trapezoid offsets and the midpoint coordinates"
+    ],
+    "commonMistakes": [
+      "Using the top-base length as a trapezoid leg or forgetting that the midpoint doubles both coordinates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram fixes which side of the lower base contains the extension.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p5",
+    "problemId": "amc12-predecessor-1989-p5",
+    "finalAnswer": "$\\boxed{430}$ (choice E)",
+    "shortExplanation": "There are $210$ horizontal and $220$ vertical toothpicks, totaling $430$.",
+    "detailedSteps": [
+      "A grid twenty cells high has twenty-one horizontal grid lines. Each contains ten toothpicks, giving $21\\cdot10=210$.",
+      "The eleven vertical grid lines each contain twenty toothpicks, giving $11\\cdot20=220$. The two directions have no toothpick in common, so the total is $210+220=430$."
+    ],
+    "keyIdeas": [
+      "Count horizontal and vertical edges separately"
+    ],
+    "commonMistakes": [
+      "Counting one set of four toothpicks for every cell and duplicating all shared edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grid-line counts are one larger than cell counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p6",
+    "problemId": "amc12-predecessor-1989-p6",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The area is $18/(ab)$, so $ab=3$.",
+    "detailedSteps": [
+      "The positive intercepts are $(6/a,0)$ and $(0,6/b)$. They are the two perpendicular legs of the triangle in the source.",
+      "Thus $6=(1/2)(6/a)(6/b)=18/(ab)$. Multiplying by the positive product $ab$ gives $ab=3$."
+    ],
+    "keyIdeas": [
+      "Multiply the two intercepts in the area formula"
+    ],
+    "commonMistakes": [
+      "Using the intercepts as coefficients, or omitting the one-half in the triangle area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the product of the coefficients is determined, and that is exactly what is requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p7",
+    "problemId": "amc12-predecessor-1989-p7",
+    "finalAnswer": "$\\boxed{30^\\circ}$ (choice C)",
+    "shortExplanation": "The equal lengths $HM=CM$ make $\\angle MHC=\\angle HCM=30^\\circ$.",
+    "detailedSteps": [
+      "Because $AH$ is perpendicular to $BC$, triangle $AHC$ is right at $H$. Since $BM$ is a median, $M$ is the midpoint of $AC$, its hypotenuse.",
+      "The hypotenuse midpoint is the circumcenter of a right triangle, so $HM=AM=CM$. Triangle $HMC$ is therefore isosceles. Its angle at $C$ is the original $30^\\circ$ angle, giving $\\angle MHC=30^\\circ$."
+    ],
+    "keyIdeas": [
+      "The hypotenuse midpoint is equidistant from the right triangle vertices"
+    ],
+    "commonMistakes": [
+      "Assuming that the median from B also bisects an angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The altitude and the unrelated median meet through the smaller right triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p8",
+    "problemId": "amc12-predecessor-1989-p8",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "The valid parameters are $k(k+1)$ for $k=1,\\ldots,9$, giving nine.",
+    "detailedSteps": [
+      "An integer factorization of the monic quadratic has the form $(x-k)(x+k+1)$ after labeling its positive root $k$. Its constant term is $-k(k+1)$, so $n=k(k+1)$. Conversely every such product supplies an integer factorization.",
+      "For positive $n$, take $k\\ge1$. The products increase strictly; $9\\cdot10=90\\le100$, while $10\\cdot11=110>100$. Thus exactly nine values work."
+    ],
+    "keyIdeas": [
+      "Translate integer factors into consecutive integers"
+    ],
+    "commonMistakes": [
+      "Counting both root labels as different values of n."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factor coefficient sum fixes the difference between the two root magnitudes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p9",
+    "problemId": "amc12-predecessor-1989-p9",
+    "finalAnswer": "$\\boxed{300}$ (choice B)",
+    "shortExplanation": "The count is $\\binom{25}{2}=300$.",
+    "detailedSteps": [
+      "The surname fixes the last initial as Z. The first two must be two different letters among A through Y.",
+      "Once those letters are chosen, their increasing alphabetical order is forced. Therefore the count is $\\binom{25}{2}=25\\cdot24/2=300$."
+    ],
+    "keyIdeas": [
+      "Choose the two earlier letters without ordering them"
+    ],
+    "commonMistakes": [
+      "Multiplying by two for orders when only the alphabetical order is admissible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Selecting a set and then using its unique increasing order avoids an unnecessary permutation factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p10",
+    "problemId": "amc12-predecessor-1989-p10",
+    "finalAnswer": "$\\boxed{16}$ (choice C)",
+    "shortExplanation": "The sequence repeats every three transitions, so $u_{16}=a$.",
+    "detailedSteps": [
+      "For $f(t)=-1/(t+1)$, direct composition gives $f^2(t)=-(t+1)/t$ and $f^3(t)=t$. Starting from positive $a$, the three consecutive values lie respectively in $(0,\\infty)$, $(-1,0)$ and $(-\\infty,-1)$. Thus every denominator is nonzero and the iteration is defined indefinitely.",
+      "The positive starting value occurs exactly when $n\\equiv1\\pmod3$. Of the five listed indices, only sixteen has that residue, so $u_{16}=a$."
+    ],
+    "keyIdeas": [
+      "Compose the fractional transformation three times"
+    ],
+    "commonMistakes": [
+      "Counting the initial term as the first transition or cancelling without checking the poles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign intervals both prove the iteration is valid and rule out earlier repetition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p11",
+    "problemId": "amc12-predecessor-1989-p11",
+    "finalAnswer": "$\\boxed{2367}$ (choice A)",
+    "shortExplanation": "The maximum is attained at $(a,b,c,d)=(2367,1184,395,99)$.",
+    "detailedSteps": [
+      "Integer strictness gives $d\\le99$, then $c\\le4d-1\\le395$, $b\\le3c-1\\le1184$, and $a\\le2b-1\\le2367$.",
+      "Choosing all four displayed bounds simultaneously satisfies every original strict inequality. Hence the upper bound is attained and the maximum is $2367$."
+    ],
+    "keyIdeas": [
+      "Subtract one at every strict integer bound"
+    ],
+    "commonMistakes": [
+      "Replacing a strict inequality by equality at one of the integer steps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive multipliers let the largest values propagate backwards through the chain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p12",
+    "problemId": "amc12-predecessor-1989-p12",
+    "finalAnswer": "$\\boxed{200}$ (choice C)",
+    "shortExplanation": "The closest listed count is $200$. Endpoint placement cannot change that choice.",
+    "detailedSteps": [
+      "The two directions approach at $120$ miles per hour. In five minutes the driver sweeps ten miles relative to the equally spaced westbound cars. Twenty encounters therefore correspond to roughly one car per half-mile, or two per mile.",
+      "To account for the unknown phase, let the spacing be $g$. Twenty cars in a ten-mile interval imply $19g\\le10\\le21g$, with possible endpoint equalities depending on the counting convention. Thus the density estimate $100/g$ lies between $190$ and $210$.",
+      "The number actually in a fixed one-hundred-mile interval differs from this length-over-spacing ratio by at most one. It consequently lies between $189$ and $211$. Every integer in this range is closest to the listed choice $200$. The question asks for the closest choice, not an exact phase-independent count."
+    ],
+    "keyIdeas": [
+      "Use relative speed and retain the counting error bound"
+    ],
+    "commonMistakes": [
+      "Using sixty rather than one hundred twenty as the closing speed, or claiming that the encounter count fixes the spacing exactly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The approximate wording allows a rigorous answer without assigning unstated endpoint positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p13",
+    "problemId": "amc12-predecessor-1989-p13",
+    "finalAnswer": "$\\boxed{\\frac1{\\sin\\alpha}}$ (choice B)",
+    "shortExplanation": "The overlap has height one and base $1/\\sin\\alpha$, so its area is $1/\\sin\\alpha$.",
+    "detailedSteps": [
+      "The overlap is a parallelogram. Choose its horizontal sides as the bases; their perpendicular separation is the width one of the horizontal strip.",
+      "If a horizontal base has length $b$, its perpendicular projection across the tilted strip is $b\\sin\\alpha=1$. Hence $b=1/\\sin\\alpha$, and multiplying by the height gives the stated area."
+    ],
+    "keyIdeas": [
+      "Project the strip width onto the parallelogram base"
+    ],
+    "commonMistakes": [
+      "Treating the oblique edge length as the perpendicular width."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sine of the supplementary interior angle is the same, so the displayed obtuse angle causes no sign change.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p14",
+    "problemId": "amc12-predecessor-1989-p14",
+    "finalAnswer": "$\\boxed{\\csc 10}$ (choice B)",
+    "shortExplanation": "The identity $\\cot(2t)+\\tan t=\\csc(2t)$ gives $\\csc10$.",
+    "detailedSteps": [
+      "Put $t=5$ in the angle convention of the source. Since $\\sin(2t)=2\\sin t\\cos t$, we have $\\tan t=2\\sin^2t/\\sin(2t)$.",
+      "Consequently $\\cot(2t)+\\tan t=[\\cos(2t)+2\\sin^2t]/\\sin(2t)=1/\\sin(2t)$, using $\\cos(2t)=1-2\\sin^2t$. The result is $\\csc10$. This identity works with either consistent radian or degree units."
+    ],
+    "keyIdeas": [
+      "Combine cotangent and tangent with a double angle"
+    ],
+    "commonMistakes": [
+      "Adding the cotangent and tangent arguments instead of the actual fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common denominator lets the numerator collapse to one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p15",
+    "problemId": "amc12-predecessor-1989-p15",
+    "finalAnswer": "$\\boxed{19:8}$ (choice E)",
+    "shortExplanation": "The depicted interior point has $AD=19/3$ and $DC=8/3$, giving $19:8$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $C=(9,0)$, and write $B=(x,y)$. Subtracting $x^2+y^2=25$ from $(x-9)^2+y^2=49$ gives $-18x+81=24$, so $x=19/6$.",
+      "The equal lengths $BA=BD$ mean that A and D are the two intersections of the horizontal base with the circle centered at B. For the distinct interior D shown in the original diagram, its horizontal coordinate is twice that of B: $AD=2x=19/3$.",
+      "Then $DC=9-19/3=8/3$, and $AD:DC=19:8$. The depicted interior-point condition identifies the second chord endpoint rather than relabeling A as D."
+    ],
+    "keyIdeas": [
+      "Equal distances give symmetric chord endpoints"
+    ],
+    "commonMistakes": [
+      "Using the angle-bisector theorem when BD is specified by a length rather than by an angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual diagram distinguishes the two endpoints of the equal-distance circle intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p16",
+    "problemId": "amc12-predecessor-1989-p16",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The primitive step is $(15,88)$, producing four points including the endpoints.",
+    "detailedSteps": [
+      "The total displacement is $(45,264)$, whose coordinate gcd is three. Dividing gives the primitive integer direction $(15,88)$.",
+      "The lattice points are the starting point plus zero, one, two or three such steps: $(3,17),(18,105),(33,193),(48,281)$. Since the direction is primitive, no intermediate fractional step has both coordinates integral. The total is four."
+    ],
+    "keyIdeas": [
+      "Divide the displacement into primitive lattice steps"
+    ],
+    "commonMistakes": [
+      "Returning the gcd alone and forgetting that both endpoints are included."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gcd counts unit lattice intervals, while the requested count is intervals plus one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p17",
+    "problemId": "amc12-predecessor-1989-p17",
+    "finalAnswer": "$\\boxed{663}$ (choice D)",
+    "shortExplanation": "Exactly $d=1,\\ldots,663$ are impossible.",
+    "detailedSteps": [
+      "Let the square side be $s$, so the triangle side is $s+d$. The perimeter difference gives $3(s+d)-4s=1989$, or $s=3d-1989$.",
+      "The positive square perimeter is equivalent to $s>0$, hence $d>663$. Every positive integer above this bound yields valid positive sides by the formula. The excluded positive integers are precisely one through six hundred sixty-three, so there are $663$."
+    ],
+    "keyIdeas": [
+      "Enforce the positive side after eliminating the triangle"
+    ],
+    "commonMistakes": [
+      "Allowing a zero-side square at the boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only positivity restricts d; the side lengths themselves need not be integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p18",
+    "problemId": "amc12-predecessor-1989-p18",
+    "finalAnswer": "$\\boxed{\\mathbb{Q}}$ (choice B)",
+    "shortExplanation": "The expression simplifies to $2x$, so it is rational exactly when $x$ is rational.",
+    "detailedSteps": [
+      "Write $q=\\sqrt{x^2+1}$. For every real x, $q>|x|$, so $x+q$ is positive and nonzero. Also $(q+x)(q-x)=1$, giving $1/(x+q)=q-x$.",
+      "The source expression is therefore $x+q-(q-x)=2x$. Multiplication or division by the nonzero rational number two preserves rationality, so the desired set is $\\mathbb{Q}$."
+    ],
+    "keyIdeas": [
+      "Rationalize the reciprocal with its conjugate"
+    ],
+    "commonMistakes": [
+      "Requiring the square root itself to be rational, even though its terms cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rational expression can result from cancellation of irrational parts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p19",
+    "problemId": "amc12-predecessor-1989-p19",
+    "finalAnswer": "$\\boxed{\\frac9{\\pi^2}(\\sqrt3+3)}$ (choice E)",
+    "shortExplanation": "The radius is $6/\\pi$ and the three central angles are $90^\\circ,120^\\circ,150^\\circ$, yielding $9(\\sqrt3+3)/\\pi^2$.",
+    "detailedSteps": [
+      "The circumference is $3+4+5=12$, so $r=6/\\pi$. The three arcs are respectively one-fourth, one-third and five-twelfths of the circle, giving the stated central angles.",
+      "All three angles are less than $180^\\circ$, so the circle center lies inside the triangle. The three center-to-side triangles partition it, with total area $(r^2/2)(\\sin90^\\circ+\\sin120^\\circ+\\sin150^\\circ)$.",
+      "Substitution gives $(18/\\pi^2)(1+\\sqrt3/2+1/2)=9(\\sqrt3+3)/\\pi^2$."
+    ],
+    "keyIdeas": [
+      "Convert arc lengths to central angles before summing areas"
+    ],
+    "commonMistakes": [
+      "Using an arc length as the corresponding straight side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Arc proportions fix both the radius and all the central-angle sines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p20",
+    "problemId": "amc12-predecessor-1989-p20",
+    "finalAnswer": "$\\boxed{\\frac{241}{2500}}$ (choice B)",
+    "shortExplanation": "The favorable interval has length $241/100$ inside a conditional interval of length $25$, giving $241/2500$.",
+    "detailedSteps": [
+      "The conditioning event is $12\\le\\sqrt{x}<13$, or $144\\le x<169$. This interval lies inside the original uniform interval, so conditioning leaves a uniform distribution on it.",
+      "The target event is $120\\le\\sqrt{100x}<121$, or $144\\le x<14641/100$. Its length is $241/100$, while the conditional interval has length $25$.",
+      "The probability is their length ratio $(241/100)/25=241/2500$. Single endpoints have probability zero and do not change the result."
+    ],
+    "keyIdeas": [
+      "Condition on the exact square-root interval"
+    ],
+    "commonMistakes": [
+      "Dividing by the original one-hundred-unit interval after a condition has narrowed the sample space."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A uniform continuous distribution turns the conditional probability into one interval-length ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p21",
+    "problemId": "amc12-predecessor-1989-p21",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The central blue square occupies two percent of the flag.",
+    "detailedSteps": [
+      "Scale the flag to a unit square. Write its two equal diagonal bands as $|x-y|\\le t$ and $|x+y-1|\\le t$, with $0<t<1/2$ as in the original figure.",
+      "Each of the four white regions is a triangle with base $1-2t$ along a flag side and height $(1-2t)/2$. Their combined area is $(1-2t)^2$. Since the cross occupies $0.36$, the white area is $0.64$, so $1-2t=0.8$ and $t=0.1$.",
+      "The overlapping blue region is a square rotated forty-five degrees, with two perpendicular diagonals each of length $2t$. Its area is $(1/2)(2t)^2=2t^2=0.02$, or two percent."
+    ],
+    "keyIdeas": [
+      "Compute the complement of the diagonal cross"
+    ],
+    "commonMistakes": [
+      "Replacing the pictured diagonal cross by an axis-aligned plus sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four congruent white triangles determine the width before the blue center is measured.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p22",
+    "problemId": "amc12-predecessor-1989-p22",
+    "finalAnswer": "$\\boxed{29}$ (choice A)",
+    "shortExplanation": "Summing the six possible attribute-pair counts gives $29$.",
+    "detailedSteps": [
+      "Relative to the fixed block, the numbers of alternative values for material, size, color and shape are $1,2,3,3$. Exactly two attributes must change and the others must stay fixed.",
+      "For each chosen pair, multiply its two alternative counts. The six mutually exclusive cases give $1\\cdot2+1\\cdot3+1\\cdot3+2\\cdot3+2\\cdot3+3\\cdot3=29$."
+    ],
+    "keyIdeas": [
+      "Choose exactly two changed attributes"
+    ],
+    "commonMistakes": [
+      "Including the original value among the alternatives for a changed attribute."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The pair of changed coordinates identifies a unique counting case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p23",
+    "problemId": "amc12-predecessor-1989-p23",
+    "finalAnswer": "$\\boxed{(44,35)}$ (choice D)",
+    "shortExplanation": "At minute $1989$ the point is $(44,35)$.",
+    "detailedSteps": [
+      "The arrow pattern reaches $(k,0)$ at minute $k^2$ for odd k and $(0,k)$ at minute $k^2$ for even k. Indeed, after such an axis point the next two legs each have length k, and the following one-unit axis step reaches the next square time: $k^2+2k+1=(k+1)^2$.",
+      "Because $44^2=1936<1989<45^2=2025$, start at $(0,44)$. The actual arrows next travel forty-four units right to $(44,44)$, then downward.",
+      "There are $1989-1936=53$ moves after that square time. Forty-four complete the horizontal leg and the remaining nine decrease y to thirty-five. Thus the required point is $(44,35)$."
+    ],
+    "keyIdeas": [
+      "Locate the last square-time turning point"
+    ],
+    "commonMistakes": [
+      "Taking another step up immediately after the even square time instead of following its rightward arrow."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum of two equal leg lengths and one axis step explains the perfect-square timestamps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p24",
+    "problemId": "amc12-predecessor-1989-p24",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "There are eight distinct ordered pairs.",
+    "detailedSteps": [
+      "With zero females the pair is $(f,m)=(0,5)$. With one female, her two neighbors count toward f and every person has a male neighbor, giving $(2,5)$.",
+      "With two females, they are either adjacent or nonadjacent around the five-cycle. Adjacent females give $(4,5)$: four people have a female neighbor and all five have a male neighbor. Nonadjacent females give $(3,4)$: their unique common neighbor has two female neighbors, while each female herself has only male neighbors.",
+      "Interchanging the genders swaps the entries and covers the cases with three, four and five females. The complete set is $(0,5),(2,5),(4,5),(3,4),(5,4),(4,3),(5,2),(5,0)$, eight different pairs."
+    ],
+    "keyIdeas": [
+      "Classify by the number of females and then use symmetry"
+    ],
+    "commonMistakes": [
+      "Counting seat arrangements instead of the distinct ordered pairs that those arrangements produce."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "For two members of one gender, adjacency is the only additional circular configuration to classify.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p25",
+    "problemId": "amc12-predecessor-1989-p25",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "Every integer score from fifteen through twenty-seven occurs, giving thirteen.",
+    "detailedSteps": [
+      "The two team scores sum to $1+\\cdots+10=55$. Therefore a winning integer score is at most twenty-seven. The smallest five-rank sum is $1+2+3+4+5=15$, so there can be at most thirteen distinct scores.",
+      "To construct score $15+r$ for any $0\\le r\\le12$, write $r=5q+t$ with $0\\le t<5$. Add q to the first $5-t$ entries of $(1,2,3,4,5)$ and add $q+1$ to its last t entries.",
+      "The resulting ranks remain strictly increasing, lie between one and ten and have sum $15+5q+t=15+r$. The other five ranks form the other team and have a larger score. Thus all thirteen scores are attained."
+    ],
+    "keyIdeas": [
+      "Bound the winning sum and construct every intervening value"
+    ],
+    "commonMistakes": [
+      "Counting assignments of runners or five-rank subsets when only different score values are requested."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Attainability must accompany the interval bounds; an interval alone does not prove every score is possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p26",
+    "problemId": "amc12-predecessor-1989-p26",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice C)",
+    "shortExplanation": "The octahedron occupies one-sixth of the cube.",
+    "detailedSteps": [
+      "Use a cube of side one centered at the origin. Its face centers are the six axis points at distance $1/2$ from the origin.",
+      "In each of the eight coordinate octants, the octahedron is a tetrahedron with three mutually perpendicular edge lengths $1/2$ from the origin. Its volume is $(1/6)(1/2)^3=1/48$.",
+      "Adding the eight tetrahedra gives volume $8/48=1/6$. The cube volume is one, so this is also the requested ratio."
+    ],
+    "keyIdeas": [
+      "Partition the octahedron into eight coordinate tetrahedra"
+    ],
+    "commonMistakes": [
+      "Treating the distance between opposite face centers as an octahedron edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The regular solid has a simple coordinate decomposition that avoids memorized volume formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p27",
+    "problemId": "amc12-predecessor-1989-p27",
+    "finalAnswer": "$\\boxed{17\\text{ or }18}$ (choice D)",
+    "shortExplanation": "The complete possibilities are $n=17$ and $n=18$.",
+    "detailedSteps": [
+      "Put $s=x+y$. Since all three variables are positive, $2\\le s\\le M=\\lfloor(n-1)/2\\rfloor$. Each fixed s has $s-1$ positive ordered pairs $(x,y)$ and uniquely determines $z=n-2s$.",
+      "The total is $\\sum_{s=2}^M(s-1)=M(M-1)/2$. Setting this equal to twenty-eight gives $M=8$, the only nonnegative integer solution.",
+      "Thus $\\lfloor(n-1)/2\\rfloor=8$, equivalent to $17\\le n<19$. The positive integers are exactly seventeen and eighteen."
+    ],
+    "keyIdeas": [
+      "Group the solutions by the sum of the two doubled variables"
+    ],
+    "commonMistakes": [
+      "Allowing z to be zero at the upper boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grouping by x+y removes one variable and retains the distinction between ordered pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p28",
+    "problemId": "amc12-predecessor-1989-p28",
+    "finalAnswer": "$\\boxed{3\\pi}$ (choice D)",
+    "shortExplanation": "The four angular roots sum to $3\\pi$.",
+    "detailedSteps": [
+      "The quadratic in $t=\\tan x$ has two positive roots, $u=(9-\\sqrt{77})/2$ and $v=(9+\\sqrt{77})/2$, whose product is one. Let $\\alpha=\\arctan u$ and $\\beta=\\arctan v$ in the first quadrant.",
+      "Positive reciprocal tangents imply $\\alpha+\\beta=\\pi/2$. All roots in $(0,2\\pi)$ are $\\alpha,\\beta,\\alpha+\\pi,\\beta+\\pi$; positivity of the tangent excludes the other quadrants.",
+      "Their sum is $2(\\alpha+\\beta)+2\\pi=3\\pi$. Neither endpoint is a root."
+    ],
+    "keyIdeas": [
+      "Positive reciprocal tangent roots have complementary acute angles"
+    ],
+    "commonMistakes": [
+      "Summing just the two acute roots and missing the tangent period."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product of the tangent roots supplies the angular relation without solving each angle explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p29",
+    "problemId": "amc12-predecessor-1989-p29",
+    "finalAnswer": "$\\boxed{-2^{49}}$ (choice B)",
+    "shortExplanation": "The sum is the real part of $(1+i)^{99}$, equal to $-2^{49}$.",
+    "detailedSteps": [
+      "In the binomial expansion of $(1+i)^{99}$, the even powers satisfy $i^{2k}=(-1)^k$. The odd powers are purely imaginary. Thus the entire requested fifty-term sum is $\\operatorname{Re}((1+i)^{99})$.",
+      "Since $1+i=\\sqrt2(\\cos(\\pi/4)+i\\sin(\\pi/4))$, this real part is $2^{99/2}\\cos(99\\pi/4)$. Reducing the angle modulo $2\\pi$ leaves $3\\pi/4$, whose cosine is $-\\sqrt2/2$.",
+      "Therefore the value is $-2^{49}$. The last even exponent is ninety-eight, so the real-part expansion includes exactly the original fifty terms."
+    ],
+    "keyIdeas": [
+      "Extract the even binomial terms as a real part"
+    ],
+    "commonMistakes": [
+      "Using the imaginary part or reducing the angle modulo pi and losing the sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complex numbers package a long alternating coefficient sum into one power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1989-p30",
+    "problemId": "amc12-predecessor-1989-p30",
+    "finalAnswer": "$\\boxed{9}$ (choice A)",
+    "shortExplanation": "The exact mean is $91/10=9.1$, closest to the listed value nine.",
+    "detailedSteps": [
+      "There are nineteen neighboring pairs of positions. For any fixed pair, the probability of opposite genders is $(7/20)(13/19)+(13/20)(7/19)=91/190$. This uses distinct people in a uniformly averaged order, as stated in the source.",
+      "Let each pair contribute one if its genders differ and zero otherwise. Linearity of expectation gives $\\mathbb E[S]=19\\cdot91/190=91/10$. The indicators need not be independent.",
+      "Among the listed integers, nine is closest to $9.1$. Equivalently, every gender pattern has the same $7!13!$ labeled-person realizations, so averaging all fixed-count gender patterns gives the same result."
+    ],
+    "keyIdeas": [
+      "Use one indicator for each adjacent place"
+    ],
+    "commonMistakes": [
+      "Averaging only the minimum and maximum possible S values, or assuming all S values are equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Linearity of expectation avoids tracking the full distribution of dependent neighboring pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

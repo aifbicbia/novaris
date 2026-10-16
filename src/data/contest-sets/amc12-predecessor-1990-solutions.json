@@ -1,0 +1,636 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1990-p1",
+    "problemId": "amc12-predecessor-1990-p1",
+    "finalAnswer": "$\\boxed{\\pm8}$ (choice E)",
+    "shortExplanation": "The equation becomes $x^2=64$, so both $x=8$ and $x=-8$ work.",
+    "detailedSteps": [
+      "The left side is $(x/4)/2=x/8$, while the right side is $4/(x/2)=8/x$. The original denominator requires $x\\ne0$.",
+      "Multiplying by $8x$ gives $x^2=64$. Both roots are nonzero and satisfy the original fractions, so the solution set is $x=\\pm8$."
+    ],
+    "keyIdeas": [
+      "Simplify the nested fractions before multiplying"
+    ],
+    "commonMistakes": [
+      "Reading a stacked fraction without preserving which expression is its denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplifying the fraction structure prevents an unnecessary sign or scale error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p2",
+    "problemId": "amc12-predecessor-1990-p2",
+    "finalAnswer": "$\\boxed{\\sqrt2}$ (choice E)",
+    "shortExplanation": "The positive real value is $4^{1/4}=\\sqrt2$.",
+    "detailedSteps": [
+      "A negative exponent inverts the positive base: $(1/4)^{-1/4}=4^{1/4}$.",
+      "Since $4=2^2$, the result is $2^{2/4}=\\sqrt2$. A fractional power of a positive base denotes the positive real value here."
+    ],
+    "keyIdeas": [
+      "Use a negative exponent as a reciprocal power"
+    ],
+    "commonMistakes": [
+      "Applying the negative sign to the value instead of inverting the base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reciprocal and root rules resolve this expression directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p3",
+    "problemId": "amc12-predecessor-1990-p3",
+    "finalAnswer": "$\\boxed{105^\\circ}$ (choice C)",
+    "shortExplanation": "The angle progression has common difference $10^\\circ$ and largest term $105^\\circ$.",
+    "detailedSteps": [
+      "In increasing order the angles are $75^\\circ,75^\\circ+d,75^\\circ+2d,75^\\circ+3d$. Their sum is $360^\\circ$.",
+      "Thus $300^\\circ+6d=360^\\circ$, giving $d=10^\\circ$ and largest angle $75^\\circ+30^\\circ=105^\\circ$. The two consecutive pairs along the trapezoid legs have supplementary angles, as required."
+    ],
+    "keyIdeas": [
+      "Use the four-angle sum of a quadrilateral"
+    ],
+    "commonMistakes": [
+      "Using three terms in the progression or assigning the common difference to the largest angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle sum determines the result before any side lengths are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p4",
+    "problemId": "amc12-predecessor-1990-p4",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "Triangle similarity gives $FD=2$, already one of the listed integers.",
+    "detailedSteps": [
+      "Because $ED$ is parallel to $AB$, and $E,F,B$ and $D,F,A$ are respectively collinear, triangles $EDF$ and $BAF$ are similar.",
+      "Therefore $DF/FA=ED/AB=4/16=1/4$. The point $F$ lies between $D$ and $A$, as also confirmed by this positive internal ratio.",
+      "The parallelogram gives $AD=BC=10$, so $DF+FA=10$. Dividing this length in the ratio $1:4$ yields $DF=2$."
+    ],
+    "keyIdeas": [
+      "Compare the two triangles formed by the extended base"
+    ],
+    "commonMistakes": [
+      "Comparing the four-unit extension with the entire twenty-unit extended base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The supplied angle determines the drawing but cancels from the useful length ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p5",
+    "problemId": "amc12-predecessor-1990-p5",
+    "finalAnswer": "$\\boxed{\\sqrt{6\\sqrt[3]{5}}}$ (choice B)",
+    "shortExplanation": "The second expression is largest because its sixth power is $1080$.",
+    "detailedSteps": [
+      "All five displayed candidates are positive. Raising each to the sixth power therefore preserves their order and removes both square and cube roots.",
+      "In their original order, the sixth powers are $30$, $6^3\\cdot5=1080$, $5^3\\cdot6=750$, $5^2\\cdot6=150$, and $6^2\\cdot5=180$.",
+      "The largest comparison value is $1080$, corresponding to $\\sqrt{6\\sqrt[3]{5}}$. The radical scopes are those in the actual source, including the first candidate with both factors inside its cube root."
+    ],
+    "keyIdeas": [
+      "Compare positive radicals through their sixth powers"
+    ],
+    "commonMistakes": [
+      "Moving a factor across a radical without raising it to the matching power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common multiple of the root indices reduces the comparison to integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p6",
+    "problemId": "amc12-predecessor-1990-p6",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "There is one separating line and two other lines, for a total of three.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $B=(5,0)$. Write a line as $ux+vy=2$ with $u^2+v^2=1$. This represents every unoriented line two units from $A$: reversing both sides of a line equation lets its constant be positive.",
+      "The distance from $B$ is $|5u-2|=3$. Hence $u=1$ or $u=-1/5$.",
+      "For $u=1$, the unit-normal condition forces $v=0$, producing the single line $x=2$. For $u=-1/5$, it gives $v=\\pm\\sqrt{24}/5$, two different oblique lines.",
+      "Every case satisfies both original distances, and the signed equation exhausts the possibilities. Thus there are exactly three lines."
+    ],
+    "keyIdeas": [
+      "Solve all signed distance cases for a unit-normal line"
+    ],
+    "commonMistakes": [
+      "Counting only the two external common tangents and missing the line between the two distance circles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Signed distances handle tangency and duplicate unoriented equations without a diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p7",
+    "problemId": "amc12-predecessor-1990-p7",
+    "finalAnswer": "$\\boxed{2\\sqrt2}$ (choice A)",
+    "shortExplanation": "The only possible side multiset is $\\{2,3,3\\}$, whose area is $2\\sqrt2$.",
+    "detailedSteps": [
+      "Order the integral sides as $a\\le b\\le c$. The strict triangle inequality and perimeter eight imply $c<4$, so $c\\le3$.",
+      "If $c\\le2$, the perimeter would be at most six. Thus $c=3$, and $a+b=5$ with $a\\le b\\le3$ forces $(a,b)=(2,3)$.",
+      "The semiperimeter is four. Heron gives area $\\sqrt{4(4-2)(4-3)(4-3)}=\\sqrt8=2\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Classify the integer sides before applying Heron"
+    ],
+    "commonMistakes": [
+      "Allowing a degenerate side triple whose largest side equals half the perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The short perimeter makes the classification unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p8",
+    "problemId": "amc12-predecessor-1990-p8",
+    "finalAnswer": "$\\boxed{\\text{infinitely many}}$ (choice E)",
+    "shortExplanation": "Every real number in $[2,3]$ is a solution, so there are infinitely many.",
+    "detailedSteps": [
+      "For $2\\le x\\le3$, the left side is $(x-2)+(3-x)=1$.",
+      "For $x<2$, it is $5-2x>1$; for $x>3$, it is $2x-5>1$. Thus the complete solution set is the interval $[2,3]$.",
+      "An interval of positive length contains infinitely many real numbers, so the listed choice saying more than three applies."
+    ],
+    "keyIdeas": [
+      "Recognize the constant distance sum between two endpoints"
+    ],
+    "commonMistakes": [
+      "Testing only the two endpoints and treating an equation as necessarily having finitely many roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Absolute-value distance sums can remain constant on a full interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p9",
+    "problemId": "amc12-predecessor-1990-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Three black edges are necessary and sufficient.",
+    "detailedSteps": [
+      "Each cube edge belongs to exactly two faces. Two black edges could therefore cover at most four of the six faces, so at least three are needed.",
+      "For sufficiency, label the cube vertices by coordinates from $\\{0,1\\}$. Choose the edges joining $(0,0,0)$ to $(0,0,1)$, $(0,1,0)$ to $(1,1,0)$, and $(1,0,1)$ to $(1,1,1)$.",
+      "Their incident face pairs are respectively $x=0,y=0$; $y=1,z=0$; and $x=1,z=1$. Together they cover all six different faces. Color those three edges black and all others red."
+    ],
+    "keyIdeas": [
+      "Cover the six cube faces with edges"
+    ],
+    "commonMistakes": [
+      "Using three edges at one vertex, which cover only three faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The lower bound counts face incidences; the explicit matching construction attains it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p10",
+    "problemId": "amc12-predecessor-1990-p10",
+    "finalAnswer": "$\\boxed{331}$ (choice D)",
+    "shortExplanation": "The maximum is $3(11^2)-3(11)+1=331$ unit cubes.",
+    "detailedSteps": [
+      "A point outside a convex cube can face at most one member of each pair of opposite faces. Hence at most three exterior faces can be visible, and any visible unit cube must touch one of them.",
+      "A viewpoint beyond the cube in all three coordinate directions sees the three adjacent positive-coordinate faces. Each contains $11^2$ unit cubes, each pair shares an edge of eleven cubes, and all three share one corner cube.",
+      "Inclusion-exclusion gives $3\\cdot121-3\\cdot11+1=331$. Every cube in this union exposes a face to that viewpoint, so the upper bound is attained."
+    ],
+    "keyIdeas": [
+      "Count the union of three visible face layers"
+    ],
+    "commonMistakes": [
+      "Counting the same edge or corner cube once for every visible face."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Visibility reduces to a union of surface layers, with overlaps that must be removed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p11",
+    "problemId": "amc12-predecessor-1990-p11",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The eligible integers are the seven positive squares below fifty.",
+    "detailedSteps": [
+      "Each positive divisor $d$ pairs with $n/d$. A pair has two distinct members unless $d^2=n$.",
+      "Thus the divisor count is odd exactly when $n$ is a perfect square. Below fifty these are $1^2,2^2,\\ldots,7^2$, giving seven integers."
+    ],
+    "keyIdeas": [
+      "Pair divisors around the square root"
+    ],
+    "commonMistakes": [
+      "Counting primes rather than squares, or including the next square beyond the strict bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unpaired square-root divisor characterizes the parity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p12",
+    "problemId": "amc12-predecessor-1990-p12",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt2}{2}}$ (choice D)",
+    "shortExplanation": "The positive parameter must satisfy $2a=\\sqrt2$, so $a=\\sqrt2/2$.",
+    "detailedSteps": [
+      "The first function value is $f(\\sqrt2)=2a-\\sqrt2$. Substituting it into the second function gives $f(f(\\sqrt2))=a(2a-\\sqrt2)^2-\\sqrt2$.",
+      "The required equality makes $a(2a-\\sqrt2)^2=0$. Since $a>0$, the square must vanish. Therefore $a=\\sqrt2/2$, which also verifies the original nested equality."
+    ],
+    "keyIdeas": [
+      "Use positivity to eliminate the zero coefficient branch"
+    ],
+    "commonMistakes": [
+      "Retaining the forbidden value $a=0$ after factoring the equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity condition removes the only extra algebraic factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p13",
+    "problemId": "amc12-predecessor-1990-p13",
+    "finalAnswer": "$\\boxed{201}$ (choice E)",
+    "shortExplanation": "The first threshold-crossing iteration prints $X=201$.",
+    "detailedSteps": [
+      "After $k$ iterations of instructions two through four, $X=3+2k$. The accumulated values are $5,7,\\ldots,2k+3$.",
+      "Their sum is $S=k(5+2k+3)/2=k(k+4)$. This increases for nonnegative integer $k$.",
+      "At $k=98$, the sum is $9996<10000$; at $k=99$, it is $10197\\ge10000$. The program therefore stops at the latter iteration and prints $3+2(99)=201$."
+    ],
+    "keyIdeas": [
+      "Track the increment before the first accumulation"
+    ],
+    "commonMistakes": [
+      "Adding the initial three before following the instruction that first increases $X$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two consecutive values around the threshold prove exactly when the loop stops.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p14",
+    "problemId": "amc12-predecessor-1990-p14",
+    "finalAnswer": "$\\boxed{\\frac{3\\pi}{7}}$ (choice A)",
+    "shortExplanation": "The apex angle is $x=3\\pi/7$.",
+    "detailedSteps": [
+      "Because the triangle is acute, $0<x<\\pi/2$. The minor arc from $B$ to $C$ not containing $A$ has central angle $2x$. The angle between its two tangents is consequently $\\pi-2x$.",
+      "The two equal base angles are each $(\\pi-x)/2$. The given relation makes $(\\pi-x)/2=2(\\pi-2x)$.",
+      "Solving yields $7x=3\\pi$, or $x=3\\pi/7$. It lies in the required acute range; its base angles and tangent angle also satisfy the source relation."
+    ],
+    "keyIdeas": [
+      "Relate the tangent angle to the intercepted minor arc"
+    ],
+    "commonMistakes": [
+      "Using the central angle itself as the angle between the tangents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The acute condition identifies the correct intercepted arc and tangent-angle branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p15",
+    "problemId": "amc12-predecessor-1990-p15",
+    "finalAnswer": "$\\boxed{89}$ (choice C)",
+    "shortExplanation": "The total is $269$, so the largest number is $269-180=89$.",
+    "detailedSteps": [
+      "Let the sum of all four numbers be $T$. Each original number occurs in three of the four displayed triple sums, so $3T=180+197+208+222=807$. Hence $T=269$.",
+      "Each triple sum omits one number. Subtracting the four sums from $T$ gives the multiset $89,72,61,47$. These are whole numbers and reproduce all four sums.",
+      "The largest is eighty-nine, obtained by subtracting the smallest omitted-number sum."
+    ],
+    "keyIdeas": [
+      "Recover the total from the four triple sums"
+    ],
+    "commonMistakes": [
+      "Treating the four triple sums as unrelated equations without counting each number three times."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Summing the observations determines the unknown total immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p16",
+    "problemId": "amc12-predecessor-1990-p16",
+    "finalAnswer": "$\\boxed{234}$ (choice C)",
+    "shortExplanation": "There are $78$ man–man and $156$ man–woman handshakes, totaling $234$.",
+    "detailedSteps": [
+      "Every pair of different men shakes hands, giving $\\binom{13}{2}=78$.",
+      "Each of the thirteen men shakes hands with twelve women, excluding his own spouse. These $13\\cdot12=156$ pairs each contain just one man, so they have not been counted twice.",
+      "No pair of women shakes hands. Thus the total is $78+156=234$."
+    ],
+    "keyIdeas": [
+      "Separate the two permitted handshake types"
+    ],
+    "commonMistakes": [
+      "Dividing the man–woman count by two, or including the thirteen spouse pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate gender pair types have different duplication rules.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p17",
+    "problemId": "amc12-predecessor-1990-p17",
+    "finalAnswer": "$\\boxed{204}$ (choice C)",
+    "shortExplanation": "There are $84$ increasing and $120$ decreasing numbers, totaling $204$.",
+    "detailedSteps": [
+      "An increasing three-digit number uses three different nonzero digits, because a zero would have to come first. Choosing any three of the nine nonzero digits fixes their increasing order, giving $\\binom93=84$.",
+      "A decreasing number may use zero, which would then be its last digit. Any three of the ten digits give one decreasing three-digit number, so there are $\\binom{10}{3}=120$.",
+      "The two cases are disjoint, since three different digits cannot be both increasing and decreasing. The total is $84+120=204$."
+    ],
+    "keyIdeas": [
+      "Handle zero differently in the two monotone orders"
+    ],
+    "commonMistakes": [
+      "Giving both directions the same count without checking the leading-zero condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A unique ordering of a selected digit set replaces a permutation calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p18",
+    "problemId": "amc12-predecessor-1990-p18",
+    "finalAnswer": "$\\boxed{\\frac3{16}}$ (choice C)",
+    "shortExplanation": "Exactly three of the sixteen equally likely residue pairs give units digit eight.",
+    "detailedSteps": [
+      "The units digits of powers of three repeat as $3,9,7,1$, and those of powers of seven as $7,9,3,1$, each with period four.",
+      "Each residue class occurs twenty-five times in the specified exponent set. The two full-set choices therefore produce sixteen equally likely pairs of residues.",
+      "The successful units-digit pairs are $(7,1)$, $(1,7)$ and $(9,9)$, where the first entry comes from the power of three. Their sums have units digit eight, and no other pair does. The probability is $3/16$."
+    ],
+    "keyIdeas": [
+      "Count pairs of exponent residues modulo four"
+    ],
+    "commonMistakes": [
+      "Using a ten-term cycle simply because the target is a units digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exact repetitions of a short cycle make the residue pairs uniformly weighted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p19",
+    "problemId": "amc12-predecessor-1990-p19",
+    "finalAnswer": "$\\boxed{86}$ (choice B)",
+    "shortExplanation": "The fraction is nonreduced exactly when $N\\equiv19\\pmod{23}$, giving $86$ cases.",
+    "detailedSteps": [
+      "The identity $N^2+7=(N+4)(N-4)+23$ gives $\\gcd(N^2+7,N+4)=\\gcd(23,N+4)$.",
+      "Since twenty-three is prime, the gcd exceeds one exactly when $N+4$ is divisible by twenty-three. Thus $N=23k-4$.",
+      "The original interval allows $k=1,\\ldots,86$: the first value is nineteen, the last is $1974$, and the next is $1997>1990$. Neither endpoint of the stated interval changes this count."
+    ],
+    "keyIdeas": [
+      "Reduce the numerator modulo the denominator"
+    ],
+    "commonMistakes": [
+      "Counting a congruence class for the numerator without checking the denominator gcd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A constant Euclidean remainder makes the entire fraction family easy to classify.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p20",
+    "problemId": "amc12-predecessor-1990-p20",
+    "finalAnswer": "$\\boxed{\\frac{21}{5}}$ (choice C)",
+    "shortExplanation": "The perpendicular height is $BF=21/5=4.2$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $C=(10,0)$, since $AE+EC=3+7=10$. The actual lower vertex is $D=(3,-5)$; write the upper vertex as $B=(u,v)$.",
+      "The right angle at $A$ gives $(u,v)\\cdot(3,-5)=0$, or $3u-5v=0$. The right angle at $C$ gives $(u-10,v)\\cdot(-7,-5)=0$, or $7u+5v=70$.",
+      "Adding yields $10u=70$, so $u=7$ and $v=21/5$. The foot on $AC$ is $(7,0)$, and the required positive height is $BF=21/5$."
+    ],
+    "keyIdeas": [
+      "Use both right-angle dot products"
+    ],
+    "commonMistakes": [
+      "Treating the two right triangles as sharing the same altitude when their right angles are at different vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perpendicularity supplies two linear equations instead of a longer trigonometric construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p21",
+    "problemId": "amc12-predecessor-1990-p21",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{\\cos2\\theta}}{6\\sin\\theta}}$ (choice E)",
+    "shortExplanation": "The volume is $\\sqrt{\\cos2\\theta}/(6\\sin\\theta)$.",
+    "detailedSteps": [
+      "Equal distances from the four square vertices place the apex on the line through the square center perpendicular to its plane. Write the common slant-edge length as $L$ and the positive height as $h$.",
+      "In the isosceles triangle $APB$, the unit base bisected at its midpoint gives $1/2=L\\sin\\theta$, so $L=1/(2\\sin\\theta)$.",
+      "The square center is at distance $1/\\sqrt2$ from each vertex. Hence $h^2=L^2-1/2=(1-2\\sin^2\\theta)/(4\\sin^2\\theta)=\\cos2\\theta/(4\\sin^2\\theta)$.",
+      "The nondegenerate pyramid has $0<\\theta<\\pi/4$, so this height is real and positive. Its unit base gives volume $h/3=\\sqrt{\\cos2\\theta}/(6\\sin\\theta)$."
+    ],
+    "keyIdeas": [
+      "Find the slant edge before the vertical height"
+    ],
+    "commonMistakes": [
+      "Using the slant-edge length as the vertical height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two right triangles distinguish the slant length from the height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p22",
+    "problemId": "amc12-predecessor-1990-p22",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The selected roots are $\\sqrt3+i$ and $\\sqrt3-i$, whose product is four.",
+    "detailedSteps": [
+      "The sixth roots of $-64$ have modulus two and arguments $\\pi/6+k\\pi/3$ for $k=0,\\ldots,5$.",
+      "Only the arguments $\\pi/6$ and $11\\pi/6$ have positive cosine. The roots on the imaginary axis have real part zero and must be excluded.",
+      "The selected conjugate roots are $\\sqrt3\\pm i$, and their product is $3+1=4$."
+    ],
+    "keyIdeas": [
+      "Select the two roots with strictly positive real part"
+    ],
+    "commonMistakes": [
+      "Including a purely imaginary root because its real part is not negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A conjugate pair gives a real product immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p23",
+    "problemId": "amc12-predecessor-1990-p23",
+    "finalAnswer": "$\\boxed{13\\sqrt3}$ (choice B)",
+    "shortExplanation": "The two numbers are $24\\sqrt3$ and $2\\sqrt3$ in either order, giving mean $13\\sqrt3$.",
+    "detailedSteps": [
+      "The logarithms require $x,y\\ne1$. Put $t=\\log_yx$; the reciprocal change-of-base identity gives $\\log_xy=1/t$.",
+      "The equation $t+1/t=10/3$ becomes $3t^2-10t+3=0$, whose roots are $3$ and $1/3$. Thus either $x=y^3$ or $y=x^3$.",
+      "In the first case the product gives $y^4=144$, so positive $y=\\sqrt{12}=2\\sqrt3$ and $x=24\\sqrt3$. The other case swaps them.",
+      "Both original logarithms are defined for these values. Their common arithmetic mean is $(24\\sqrt3+2\\sqrt3)/2=13\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Solve for the ratio of the two logarithms"
+    ],
+    "commonMistakes": [
+      "Solving only one logarithm-ratio branch or confusing an arithmetic mean with the given geometric product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal logarithms determine a power relation, after which positivity fixes the fourth root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p24",
+    "problemId": "amc12-predecessor-1990-p24",
+    "finalAnswer": "$\\boxed{84}$ (choice D)",
+    "shortExplanation": "The girls at the two schools have relative counts $3:4$, giving combined mean $84$.",
+    "detailedSteps": [
+      "Let the boys counts be $b_A,b_B$. The combined boys mean gives $71b_A+81b_B=79(b_A+b_B)$, so $b_B=4b_A$.",
+      "For Adams, $71b_A+76g_A=74(b_A+g_A)$ implies $g_A=3b_A/2$. For Baker, $81b_B+90g_B=84(b_B+g_B)$ gives $g_B=b_B/2=2b_A$.",
+      "Thus $g_A:g_B=3:4$. The combined girls mean is $(3\\cdot76+4\\cdot90)/7=588/7=84$."
+    ],
+    "keyIdeas": [
+      "Recover the group sizes from weighted means"
+    ],
+    "commonMistakes": [
+      "Averaging the two girls means equally without determining the school populations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Differences from each combined mean encode the weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p25",
+    "problemId": "amc12-predecessor-1990-p25",
+    "finalAnswer": "$\\boxed{\\frac{2\\sqrt3-3}{2}}$ (choice B)",
+    "shortExplanation": "The radius is $(2\\sqrt3-3)/2$.",
+    "detailedSteps": [
+      "A sphere tangent to three mutually adjacent cube faces has center coordinates each equal to $r$ or $1-r$. Its distance from the central sphere center is $\\sqrt3(1/2-r)$.",
+      "External tangency to the congruent central sphere requires $\\sqrt3(1/2-r)=2r$, so $r=\\sqrt3/[2(2+\\sqrt3)]$.",
+      "Rationalizing gives $r=(2\\sqrt3-3)/2$. This is positive and less than $1/4$, so the central sphere fits and adjacent outer spheres, whose centers are separated by at least $1-2r$, do not overlap.",
+      "The eight corner centers together with the cube center therefore satisfy the complete stated packing."
+    ],
+    "keyIdeas": [
+      "Use the center-to-corner-sphere distance"
+    ],
+    "commonMistakes": [
+      "Using the full cube diagonal instead of the displacement from its center to an inset corner center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The local tangency equation gives a radius; the packing inequalities confirm it is geometrically feasible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p26",
+    "problemId": "amc12-predecessor-1990-p26",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The person who announces six originally chose one.",
+    "detailedSteps": [
+      "Label the original numbers $x_1,\\ldots,x_{10}$ in the clockwise order of the announced means. At position $j$, the actual equation is $x_{j-1}+x_{j+1}=2j$, with indices taken cyclically.",
+      "The five equations for the even-indexed unknowns are $x_4+x_6=10$, $x_2+x_4=6$, $x_{10}+x_2=2$, $x_8+x_{10}=18$, and $x_6+x_8=14$.",
+      "Take these equations with alternating signs starting and ending positive. Every variable except $x_6$ cancels, giving $2x_6=10-6+2-18+14=2$. Hence $x_6=1$.",
+      "The complete original numbers can be $6,-3,-2,9,10,1,2,13,14,5$, which reproduce all ten printed averages. No positivity restriction was imposed on the original choices."
+    ],
+    "keyIdeas": [
+      "Follow the five-equation cycle of even-indexed unknowns"
+    ],
+    "commonMistakes": [
+      "Treating the displayed averages as the original numbers or imposing an unstated positivity condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An odd-length cycle within each parity class makes the relevant unknown uniquely recoverable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p27",
+    "problemId": "amc12-predecessor-1990-p27",
+    "finalAnswer": "$\\boxed{5,12,13}$ (choice C)",
+    "shortExplanation": "The altitude triple $5,12,13$ is impossible.",
+    "detailedSteps": [
+      "If a triangle has area $K$ and side lengths $a,b,c$, its altitudes satisfy $h_a=2K/a$, $h_b=2K/b$, and $h_c=2K/c$. Thus the sides are proportional to the reciprocal altitudes.",
+      "For the displayed triple in choice C, the largest reciprocal is $1/5$. But $1/12+1/13=25/156<1/5$, because $125<156$. The corresponding side lengths violate the strict triangle inequality.",
+      "The other listed triples satisfy the strict reciprocal inequalities. This test is also sufficient: construct a triangle with reciprocal side lengths and scale it so that its altitude scale factor is one. Thus choice C is the impossible triple."
+    ],
+    "keyIdeas": [
+      "Test the triangle inequalities for reciprocal altitudes"
+    ],
+    "commonMistakes": [
+      "Applying the triangle inequalities directly to the altitudes as though they were the side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common twice-area factor turns an altitude feasibility question into ordinary side feasibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p28",
+    "problemId": "amc12-predecessor-1990-p28",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "The two tangency segments are $58.5$ and $71.5$, so their difference is thirteen.",
+    "detailedSteps": [
+      "Let the tangent lengths from the four consecutive vertices be $u,v,w,z$. Equal tangents from a vertex give $u+v=70$, $v+w=90$, $w+z=130$, and $z+u=110$.",
+      "With incircle radius $r$, each vertex tangent length is $r\\cot(\\alpha/2)$ for its interior angle $\\alpha$. Opposite angles of the cyclic quadrilateral are supplementary, so the corresponding half-angle cotangents have product one. Hence $uw=vz=r^2$.",
+      "Express the other lengths in terms of $u$: $v=70-u$, $w=20+u$, and $z=110-u$. The product equality becomes $u(u+20)=(70-u)(110-u)$.",
+      "After cancelling $u^2$, this gives $200u=7700$, so $u=38.5$, $w=58.5$, and $z=71.5$. They are positive and satisfy every original side sum.",
+      "The side of length $130$ joins the vertices with tangent lengths $w,z$. Thus $|x-y|=|58.5-71.5|=13$."
+    ],
+    "keyIdeas": [
+      "Combine equal tangents with supplementary opposite angles"
+    ],
+    "commonMistakes": [
+      "Using equal tangent lengths alone, which leave a free parameter until the cyclic condition is applied."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inscribed and circumscribed circles contribute different constraints; both are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p29",
+    "problemId": "amc12-predecessor-1990-p29",
+    "finalAnswer": "$\\boxed{76}$ (choice D)",
+    "shortExplanation": "The largest permitted subset has seventy-six members.",
+    "detailedSteps": [
+      "Every positive integer has a unique representation $3^km$ with $3\\nmid m$. Partition the original interval into chains $m,3m,9m,\\ldots$ ending at the largest term at most one hundred.",
+      "The forbidden relation occurs exactly between consecutive terms in one chain. A chain of length $L$ permits at most $\\lceil L/2\\rceil$ choices: pair consecutive positions, with one leftover when $L$ is odd. Selecting alternate positions attains the bound.",
+      "The base ranges give forty-five chains of length one, fourteen of length two, six of length three, one of length four, and one of length five. For example, the longer chains have bases from four through eleven not divisible by three, then base two, then base one.",
+      "Because different chains have no forbidden relation between them, the total maximum is $45+14+6\\cdot2+1\\cdot2+1\\cdot3=76$. Taking alternating terms from each chain realizes all these independent bounds simultaneously."
+    ],
+    "keyIdeas": [
+      "Partition the numbers into independent multiplication chains"
+    ],
+    "commonMistakes": [
+      "Selecting only numbers not divisible by three and overlooking additional compatible higher powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Disjoint path components reduce the global optimization to short exact local counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1990-p30",
+    "problemId": "amc12-predecessor-1990-p30",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "The units digits repeat with period six, and the requested index gives nine.",
+    "detailedSteps": [
+      "The two conjugates have sum six and product one, so each satisfies $t^2-6t+1=0$. Multiplying by powers and adding gives $R_{n+2}=6R_{n+1}-R_n$.",
+      "The initial values are $R_0=1$ and $R_1=3$. Thus the recurrence also proves by induction that every $R_n$ is an integer.",
+      "Modulo ten, the values from index zero through index seven are $1,3,7,9,7,3,1,3$. The consecutive pair at indices six and seven repeats the initial pair, so the recurrence proves a period of six for all later units digits.",
+      "Since $12345\\equiv3\\pmod6$, the requested units digit is the index-three value, nine."
+    ],
+    "keyIdeas": [
+      "Use the integer recurrence modulo ten"
+    ],
+    "commonMistakes": [
+      "Approximating the large irrational powers numerically or assuming a period without checking that the recurrence state repeats."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A recurrence retains only the information needed for the units digit and avoids huge real powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

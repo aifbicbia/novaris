@@ -1,0 +1,569 @@
+[
+  {
+    "id": "solution-amc10b-2025-p1",
+    "problemId": "amc10b-2025-p1",
+    "finalAnswer": "$\\boxed{17}$ (choice **B**)",
+    "shortExplanation": "Count complete portions and check that one more portion would exceed the available mass.",
+    "detailedSteps": [
+      "Dividing gives $350/20=17.5$. Only complete mugs count, so the number is $\\lfloor17.5\\rfloor=17$.",
+      "These mugs use $17\\cdot20=340$ grams. The remaining $10$ grams are insufficient for an eighteenth mug."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Floor functions"
+    ],
+    "commonMistakes": [
+      "Rounding to the nearest whole number would claim a mug that cannot be brewed with the available beans."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A capacity question calls for rounding down, even when the quotient ends in one half.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p2",
+    "problemId": "amc10b-2025-p2",
+    "finalAnswer": "$\\boxed{9115}$ (choice **D**)",
+    "shortExplanation": "Square residues repeat every ten inputs; sum complete blocks and then the five remaining terms.",
+    "detailedSteps": [
+      "The last digits for inputs $1$ through $10$ are $1,4,9,6,5,6,9,4,1,0$, with sum $45$. Adding $10$ to an input does not change its square modulo $10$.",
+      "Since $2025=202\\cdot10+5$, there are $202$ complete blocks followed by $1,4,9,6,5$.",
+      "The required sum is $202\\cdot45+(1+4+9+6+5)=9090+25=9115$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Periodic last digits"
+    ],
+    "commonMistakes": [
+      "The final five terms do not form half of a block with half of its sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the repeating block from the incomplete ending.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p3",
+    "problemId": "amc10b-2025-p3",
+    "finalAnswer": "$\\boxed{16}$ (choice **D**)",
+    "shortExplanation": "After the second row, each row sum doubles because the edge correction cancels exactly.",
+    "detailedSteps": [
+      "Let $S_r$ be the sum in row $r$. The second row gives $S_2=11$.",
+      "For $r\\ge2$, the interior entries of the next row sum to $2S_r-10-1$: the two edge entries of row $r$ each occur only once. Restoring the new edges gives $S_{r+1}=2S_r$.",
+      "Therefore $S_{11}=11\\cdot2^9=5632$, whose digits sum to $5+6+3+2=16$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Pascal-type row sums"
+    ],
+    "commonMistakes": [
+      "Starting the doubling recurrence at the first row gives the wrong result: row 1 has only one entry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The recurrence starts at row 2, after the two unequal boundary values are present.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p4",
+    "problemId": "amc10b-2025-p4",
+    "finalAnswer": "$\\boxed{7}$ (choice **A**)",
+    "shortExplanation": "Translate both numerals to ordinary place-value expressions, then use the digit bounds.",
+    "detailedSteps": [
+      "The equality of values is $7a+b=9b+a$, so $3a=4b$. Thus $a=4t$ and $b=3t$ for a positive integer $t$.",
+      "Both digits occur in the base-seven numeral, so each is at most $6$. This forces $t=1$, giving $(a,b)=(4,3)$ and $a+b=7$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Place value in different bases"
+    ],
+    "commonMistakes": [
+      "Allowing a base-seven digit to be 7 or larger introduces impossible numerals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The linear equation alone has many solutions; the digit restrictions select the valid one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p5",
+    "problemId": "amc10b-2025-p5",
+    "finalAnswer": "$\\boxed{40}$ (choice **C**)",
+    "shortExplanation": "The obtuse inscribed angle intercepts the major arc, so the smaller central angle is its complement to a full turn.",
+    "detailedSteps": [
+      "The arc $AC$ that does not contain $B$ has measure $2\\cdot130^\\circ=260^\\circ$. Hence the minor arc $AC$, and therefore the smaller angle $AOC$, measures $360^\\circ-260^\\circ=100^\\circ$.",
+      "Because $OA=OC$, triangle $AOC$ is isosceles. Its two base angles equal $(180^\\circ-100^\\circ)/2=40^\\circ$. In particular, $\\angle CAO=40^\\circ$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Inscribed and central angles"
+    ],
+    "commonMistakes": [
+      "Using 260 degrees as the interior angle of triangle AOC confuses a reflex central angle with the smaller central angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side lengths are compatible with the configuration but are unnecessary for this angle calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p6",
+    "problemId": "amc10b-2025-p6",
+    "finalAnswer": "$\\boxed{20}$ (choice **C**)",
+    "shortExplanation": "Express each portion of the lower region as a trapezoid and solve the resulting quadratic.",
+    "detailedSteps": [
+      "The lower region has vertical side lengths $1$ and $5/3$, separated by width $2$. Its area is $\\frac12(1+5/3)\\cdot2=8/3$.",
+      "To the left of $x=a$, the vertical side lengths are $1$ and $1+a/3$. That area is $\\frac a2(2+a/3)=a+a^2/6$.",
+      "Setting this equal to half the total gives $a+a^2/6=4/3$, or $(a+3)^2=17$. The root in $[0,2]$ is $a=\\sqrt{17}-3$. Thus $s+t=17+3=20$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area bisection"
+    ],
+    "commonMistakes": [
+      "Halving the horizontal width does not halve the area, because the upper boundary slopes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area formula produces two algebraic roots; only one cut lies inside the square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p7",
+    "problemId": "amc10b-2025-p7",
+    "finalAnswer": "$\\boxed{\\frac{25}{7}}$ (choice **C**)",
+    "shortExplanation": "Compute the western route using the 8–15–17 triangle, then equate the two route lengths.",
+    "detailedSteps": [
+      "The western route has length $\\sqrt{8^2+15^2}+(x+8)=17+x+8=x+25$.",
+      "The eastern route has length $\\sqrt{(x+9)^2+15^2}+9$. Equality therefore gives $\\sqrt{(x+9)^2+225}=x+16$.",
+      "Squaring yields $x^2+18x+306=x^2+32x+256$, so $14x=50$ and $x=25/7=3\\frac47$. Both sides of the unsquared equation are positive, and this is choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equal path lengths"
+    ],
+    "commonMistakes": [
+      "The eastern gate is x+9 meters from the locked gate, not 9 meters from it.",
+      "The displayed options are mixed numbers; the correct option is three and four sevenths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the diagonal and the distance along the fence separate until both route lengths are formed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p8",
+    "problemId": "amc10b-2025-p8",
+    "finalAnswer": "$\\boxed{11}$ (choice **C**)",
+    "shortExplanation": "Convert the total to cents and use divisibility by both four and nine.",
+    "detailedSteps": [
+      "If each shirt has a price in whole cents, the total number of cents, $10001A+1110B$, is divisible by $36$.",
+      "Divisibility by $9$ gives $2A+3B\\equiv0\\pmod9$, so $A$ is a multiple of $3$. Divisibility by $4$ gives $A+2B\\equiv0\\pmod4$, so $A$ is even. Since $A$ is a nonzero digit, $A=6$.",
+      "Now $12+3B\\equiv0\\pmod9$ implies $B\\equiv2\\pmod3$, while $6+2B\\equiv0\\pmod4$ makes $B$ odd. The only digit satisfying both is $B=5$. Thus $A+B=11$.",
+      "As a check, the total is $65556$ cents, and $65556/36=1821$ cents per shirt."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility and decimal digits"
+    ],
+    "commonMistakes": [
+      "Testing divisibility on the dollar amount without converting to cents mixes decimal notation with integer divisibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The intended monetary model uses a common unit price in whole cents; the two divisibility tests leave a unique pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p9",
+    "problemId": "amc10b-2025-p9",
+    "finalAnswer": "$\\boxed{11}$ (choice **C**)",
+    "shortExplanation": "Group the triples by their coordinate sum; each inequality then becomes a lower bound on one coordinate.",
+    "detailedSteps": [
+      "Put $S=x+y+z$. The first inequality gives $S\\ge2$, and the other three give $x,y,z\\ge(S-2)/2$. Adding these bounds gives $S\\le6$.",
+      "If $S=2$, the coordinates are nonnegative and sum to $2$, giving $\\binom42=6$ triples. If $S=3$, each coordinate is at least $1$, leaving only $(1,1,1)$.",
+      "If $S=4$, each coordinate is at least $1$, so the triples are the three permutations of $(2,1,1)$. If $S=5$, each coordinate is at least $2$, which is impossible. If $S=6$, only $(2,2,2)$ works.",
+      "The total is $6+1+3+0+1=11$. Each listed triple satisfies the original inequalities."
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Integer solutions of inequalities"
+    ],
+    "commonMistakes": [
+      "Coordinates are integers, so a lower bound of one half forces a coordinate to be at least one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum bound makes the case split finite and avoids guessing coordinate ranges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p10",
+    "problemId": "amc10b-2025-p10",
+    "finalAnswer": "$\\boxed{2}$ (choice **A**)",
+    "shortExplanation": "Factor before testing integrality, but retain the zeros of the original denominator.",
+    "detailedSteps": [
+      "The factorizations are $f(n)=(n+1)(n-2)(n-4)$ and $g(n)=(n+1)(n-3)(n-4)$. The original quotient is undefined at $n=-1,3,4$.",
+      "For every remaining integer, $f(n)/g(n)=(n-2)/(n-3)=1+1/(n-3)$. This is an integer only when $n-3=1$ or $n-3=-1$.",
+      "These possibilities give $n=4$ and $n=2$. The first is excluded by the original denominator, whereas $n=2$ gives a quotient of zero. The requested sum is therefore $2$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Rational expressions and excluded values"
+    ],
+    "commonMistakes": [
+      "Canceling a common factor does not make the original quotient defined where that factor was zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The removable discontinuity at n=4 is the main trap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p11",
+    "problemId": "amc10b-2025-p11",
+    "finalAnswer": "$\\boxed{\\frac{3}{16}}$ (choice **B**)",
+    "shortExplanation": "Fix Monday’s one-to-one matching, choose the two students who keep their tutors, and derange the other four.",
+    "detailedSteps": [
+      "Label each tutor by the student they met on Monday. Tuesday’s one-to-one assignment is then one of $6!$ equally likely permutations.",
+      "Choose the two fixed students in $\\binom62=15$ ways. None of the other four may keep a tutor. The number of such derangements is $4!-\\binom413!+\\binom422!-\\binom431!+\\binom440!=9$.",
+      "The probability is $\\binom62\\cdot9/6!=135/720=3/16$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Fixed points and derangements"
+    ],
+    "commonMistakes": [
+      "After choosing the two fixed students, allowing an arbitrary permutation of the other four counts assignments with additional fixed students.",
+      "The intended simultaneous matching assigns distinct tutors to the six students; an independent-with-replacement model is a different experiment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Interpret the daily assignment as the one-to-one matching used by the published answer keys.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p12",
+    "problemId": "amc10b-2025-p12",
+    "finalAnswer": "$\\boxed{H=R<T}$ (choice **C**)",
+    "shortExplanation": "Set the common disk radius to one and compute the three enclosing polygon areas.",
+    "detailedSteps": [
+      "Scale each diagram so its disks have radius $1$. In the triangle, the two lower centers are $2$ apart, and each is $\\sqrt3$ horizontally from the nearest vertex. Hence the triangle side is $2+2\\sqrt3$, its area is $6+4\\sqrt3$, and $T=3\\pi/(6+4\\sqrt3)$.",
+      "In the rhombus, a center on the bisector of a $60^\\circ$ vertex is distance $2$ from that vertex. The long diagonal is therefore $2+2+2=6$. The other diagonal is $6/\\sqrt3=2\\sqrt3$, giving area $6\\sqrt3$ and $R=2\\pi/(6\\sqrt3)=\\pi/(3\\sqrt3)$.",
+      "In the hexagon, the six centers form a regular hexagon of side $2$, so each is distance $2$ from its center. Each outer side is one more unit away. The enclosing hexagon has apothem $3$, area $18\\sqrt3$, and $H=6\\pi/(18\\sqrt3)=\\pi/(3\\sqrt3)$.",
+      "Thus $H=R$. Comparing the remaining ratios, $T>R$ is equivalent to $9\\sqrt3>6+4\\sqrt3$, or $5\\sqrt3>6$, which holds since $75>36$. Therefore $H=R<T$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangent disks and area ratios"
+    ],
+    "commonMistakes": [
+      "The hexagon has six disks around an empty center; inserting an additional central disk changes the question.",
+      "The rhombus contains two disks, whereas the triangle contains three, so polygon areas alone are not enough."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the disk arrangement carefully and compute each ratio at a common radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p13",
+    "problemId": "amc10b-2025-p13",
+    "finalAnswer": "$\\boxed{\\frac{3}{7}}$ (choice **A**)",
+    "shortExplanation": "Choose coordinates adapted to the two legs and compare distances along the same altitude.",
+    "detailedSteps": [
+      "Put the right-angle vertex at $O=(0,0)$ and the other vertices at $A=(1,0)$ and $B=(0,\\sqrt3)$. The shortest side is $OA$. The hypotenuse has equation $y=\\sqrt3(1-x)$, and the altitude from $O$ has equation $y=x/\\sqrt3$.",
+      "The altitude meets the hypotenuse at $H=(3/4,\\sqrt3/4)$. The median from $B$ to $(1/2,0)$ has equation $y=\\sqrt3(1-2x)$, so its intersection with the altitude is $K=(3/7,\\sqrt3/7)$.",
+      "Because $O,K,H$ are collinear, $OK/OH=(3/7)/(3/4)=4/7$. Therefore $KH/OH=1-4/7=3/7$. This is the shorter segment’s ratio to the whole altitude."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Altitude and median intersections"
+    ],
+    "commonMistakes": [
+      "The portion from the right-angle vertex to the median is the longer portion, so its ratio 4/7 is not the requested value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates avoid introducing several similar triangles, but the final ratio must refer to the shorter segment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p14",
+    "problemId": "amc10b-2025-p14",
+    "finalAnswer": "$\\boxed{\\frac{9}{28}}$ (choice **C**)",
+    "shortExplanation": "The tallest three athletes are all captains exactly when they receive three different colors.",
+    "detailedSteps": [
+      "We may reveal the wristbands of the tallest athletes first, since their relative positions in the random draw do not affect the distribution.",
+      "The tallest athlete may receive any color. Of the eight remaining wristbands, six have a different color, so the second tallest has a different color with probability $6/8$.",
+      "If those two colors differ, three of the seven remaining wristbands have the third color. Thus the probability is $(6/8)(3/7)=9/28$. When this happens, each of the three is tallest in their own group."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Sampling without replacement"
+    ],
+    "commonMistakes": [
+      "The color probabilities change after a wristband is removed; multiplying independent one-third probabilities is inappropriate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reduce the event to the three relevant draws instead of assigning all nine athletes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p15",
+    "problemId": "amc10b-2025-p15",
+    "finalAnswer": "$\\boxed{107}$ (choice **D**)",
+    "shortExplanation": "Factor the cubic and subtract two terms whose indices differ by two.",
+    "detailedSteps": [
+      "The denominator factors as $k(k+2)(k+4)$, and $\\frac1{k(k+2)(k+4)}=\\frac14\\left(\\frac1{k(k+2)}-\\frac1{(k+2)(k+4)}\\right)$.",
+      "Summing through $k=N$ cancels all but two initial terms and two ending terms: $$S_N=\\frac14\\left(\\frac13+\\frac18-\\frac1{(N+1)(N+3)}-\\frac1{(N+2)(N+4)}\\right).$$",
+      "The ending terms tend to zero. The infinite sum is $\\frac14(\\frac13+\\frac18)=11/96$, already in lowest terms. Hence $a+b=11+96=107$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Telescoping series"
+    ],
+    "commonMistakes": [
+      "The index shift is two, so both initial terms survive; keeping only the k=1 term misses part of the sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Write the finite partial sum first so the cancellation and the limiting step are explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p16",
+    "problemId": "amc10b-2025-p16",
+    "finalAnswer": "$\\boxed{24}$ (choice **D**)",
+    "shortExplanation": "Separate red-sector placements into opposite pairs and nonopposite nonadjacent pairs.",
+    "detailedSteps": [
+      "The six sectors have different sizes, so their positions are distinguishable. Number them cyclically. The two red sectors cannot be neighbors.",
+      "There are three opposite red pairs. For each pair, the other sectors form two adjacent pairs. Each pair must contain one green and one blue, in either order, giving $2\\cdot2=4$ completions per red pair.",
+      "There are six other nonadjacent red pairs, each separated by one sector along the shorter arc. The remaining sectors consist of one isolated sector and a chain of three. The chain must be green-blue-green or blue-green-blue; the isolated sector then supplies the color occurring once in that chain. This gives two completions per pair.",
+      "Therefore the number of colorings is $3\\cdot4+6\\cdot2=24$."
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Circular adjacency with fixed positions"
+    ],
+    "commonMistakes": [
+      "Do not identify rotations: the differently sized sectors mark distinct positions.",
+      "The first and last numbered sectors are neighbors on the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classifying the red pair exposes the adjacency constraints on the other two colors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p17",
+    "problemId": "amc10b-2025-p17",
+    "finalAnswer": "$\\boxed{1014}$ (choice **B**)",
+    "shortExplanation": "Convert the known averages into prefix sums, then subtract consecutive sums to recover each later term.",
+    "detailedSteps": [
+      "For $k\\ge3$, the mean of the first $k$ terms is $2025-(k-3)=2028-k$. Thus their sum is $S_k=k(2028-k)$.",
+      "For $k\\ge4$, subtraction gives $x_k=S_k-S_{k-1}=2029-2k$. Positivity requires $2029-2n\\ge1$, hence $n\\le1014$.",
+      "This bound is attainable. Start with $2026,2025,2024$, whose mean is $2025$, then use $x_k=2029-2k$ for $4\\le k\\le1014$. The next term is $2021$, and the sequence continues strictly downward by two to $1$. Its prefix sums have the required form."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Prefix averages and sequences"
+    ],
+    "commonMistakes": [
+      "A drop of one in the running average does not mean a drop of one between consecutive terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound is not enough: the construction verifies that the first three terms can connect to the forced tail.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p18",
+    "problemId": "amc10b-2025-p18",
+    "finalAnswer": "$\\boxed{5}$ (choice **D**)",
+    "shortExplanation": "Group the terms according to their integer square roots and treat the last perfect square separately.",
+    "detailedSteps": [
+      "For each $1\\le k\\le44$, the value $\\lfloor\\sqrt n\\rfloor=k$ occurs from $n=k^2$ through $n=(k+1)^2-1$, a total of $2k+1$ times.",
+      "The final input is $2025=45^2$, contributing one additional $45$. Thus the sum is $\\sum_{k=1}^{44}k(2k+1)+45$.",
+      "Using the formulas for sums of squares and sums of integers gives $$2\\cdot\\frac{44\\cdot45\\cdot89}{6}+\\frac{44\\cdot45}{2}+45=59775.$$ Its ones digit is $5$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Floor sums between squares"
+    ],
+    "commonMistakes": [
+      "The block for square root 45 has only one term here, not 91 terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inclusive endpoints determine the block size; the last block is incomplete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p19",
+    "problemId": "amc10b-2025-p19",
+    "finalAnswer": "$\\boxed{95}$ (choice **D**)",
+    "shortExplanation": "Extend the sloping sides to a common apex so the three horizontal levels belong to similar square pyramids.",
+    "detailedSteps": [
+      "The midline cross-section has side length $(1+3)/2=2$. After extending the sides to an apex, the bottom, middle, and top cross-sections have linear scales $1:2:3$.",
+      "The corresponding pyramid volumes therefore have ratio $1^3:2^3:3^3=1:8:27$. The water already added occupies a difference of $8-1=7$ volume units; the remaining space occupies $27-8=19$ units.",
+      "Time is proportional to volume at a constant flow rate, so the remaining time is $35\\cdot19/7=95$ minutes."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similar pyramids and volume ratios"
+    ],
+    "commonMistakes": [
+      "Half the height is not half the volume because the horizontal sections become wider as the water rises."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract similar pyramid volumes rather than comparing the two frusta by height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p20",
+    "problemId": "amc10b-2025-p20",
+    "finalAnswer": "$\\boxed{3}$ (choice **A**)",
+    "shortExplanation": "Find the semicircle radius from adjacent centers, then use the square formed by all four centers.",
+    "detailedSteps": [
+      "Let $r$ be a semicircle radius. For the orientation in the figure, two adjacent centers can be written as $(r,0)$ and $(1,r)$. Their distance is $2r$, so $(1-r)^2+r^2=4r^2$.",
+      "This becomes $2r^2+2r-1=0$, whose positive root is $r=(\\sqrt3-1)/2$.",
+      "The four semicircle centers form a square with side $2r$ and the same center as the original square. Its circumradius is $\\sqrt2\\,r$. External tangency therefore gives the small circle radius as $(\\sqrt2-1)r$.",
+      "The small circle diameter is $2(\\sqrt2-1)r=(\\sqrt3-1)(\\sqrt2-1)$. Taking $(a,b,c,d)=(3,-1,2,-1)$ gives $a+b+c+d=3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangency and center distances"
+    ],
+    "commonMistakes": [
+      "The distance between the small circle center and a semicircle center is the sum of their radii.",
+      "The requested expression is the diameter, so doubling the small radius is necessary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetry becomes useful after the radius is determined from one adjacent pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p21",
+    "problemId": "amc10b-2025-p21",
+    "finalAnswer": "$\\boxed{12}$ (choice **C**)",
+    "shortExplanation": "Every valid coloring contains a six-square color cycle. Normalize that cycle and classify the remaining row.",
+    "detailedSteps": [
+      "Write the required color succession as $A\\to B\\to C\\to A$. From each square, choose a neighboring square of its successor color. Repeatedly following these choices must eventually create a directed cycle.",
+      "A simple directed cycle has length divisible by $3$. The grid graph is bipartite, so its length is even; with only nine vertices, it must have length $6$. Every six-cycle in this grid is the perimeter of a $2\\times3$ or $3\\times2$ rectangle of square centers.",
+      "Rotate or reflect so such a cycle occupies the first two rows and has the form $$\\begin{matrix}A&B&C\\\\C&B&A\\\\X&Y&Z\\end{matrix}.$$ Here $A$ may be any of the three actual colors, and $B,C$ follow it in the required order.",
+      "The last row has only four possibilities: $(X,Y,Z)=(A,B,C),(B,A,C),(B,B,C),(C,A,C)$. To see this, if $X=A$, it needs $Y=B$, which then needs $Z=C$. If $X=B$, it already has its required $C$ above it; $Y=A$ or $Y=B$ forces $Z=C$, while $Y=C$ would force $Z=A$ and leave that last square without a $B$ neighbor. Finally, $X=C$ forces $Y=A$ and then $Z=C$.",
+      "These representatives are distinct under the allowed symmetries. In the last three patterns, the displayed rectangle is the only six-cycle following the color succession. A symmetry between two normalized patterns would have to preserve it; the only nonidentity possibility is a left-right reflection, which reverses the top-row order and is not normalized. In the first pattern there are two such cycles, in the upper and lower rectangles; switching between them leaves the same normalized pattern. This pattern is distinguished from the others by its two cycles.",
+      "There are therefore four patterns for each of the three choices of $A$, giving $4\\cdot3=12$ colorings. Color names are not identified by a rotation or reflection."
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Color cycles and symmetry"
+    ],
+    "commonMistakes": [
+      "Dividing the number of labeled colorings by eight fails because some colorings have reflection symmetry.",
+      "Renaming red, blue, and yellow is not one of the equivalences in the question."
+    ],
+    "alternativeMethods": [
+      "An exhaustive check of all $3^9=19683$ assignments gives $84$ valid labeled colorings. Among the eight square symmetries, the fixed-coloring counts are $84,0,0,0,6,0,6,0$ (identity, three rotations, and four reflections). Their average is $(84+6+6)/8=12$, in agreement with the classification."
+    ],
+    "difficultyNotes": "The directed-cycle argument proves the classification is exhaustive, while the final symmetry check prevents double counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p22",
+    "problemId": "amc10b-2025-p22",
+    "finalAnswer": "$\\boxed{\\frac{3}{14}}$ (choice **A**)",
+    "shortExplanation": "Measure each digit’s deficit from nine; only two deficit units need to be distributed.",
+    "detailedSteps": [
+      "Seven nines have digit sum $63$, so the required numbers are obtained by distributing a total deficit of $2$ among seven positions. No upper digit bound or leading-zero restriction is reached. There are $\\binom86=28$ possibilities.",
+      "Let $u$ be the total deficit in the four odd positions and $v$ the total deficit in the three even positions. Then $u+v=2$. The alternating digit sum is $(36-u)-(27-v)=9-u+v=7+2v$.",
+      "For $v=0,1,2$, these alternating sums are $7,9,11$. Divisibility by $11$ therefore requires $v=2$, meaning both deficit units lie in the three even positions.",
+      "The number of such distributions is $\\binom42=6$, so the conditional probability is $6/28=3/14$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Digit deficits and divisibility by eleven"
+    ],
+    "commonMistakes": [
+      "The conditioning makes only the 28 numbers with digit sum 61 relevant; use that sample space rather than all seven-digit numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Working near the maximal digit sum makes stars and bars applicable without digit-cap corrections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p23",
+    "problemId": "amc10b-2025-p23",
+    "finalAnswer": "$\\boxed{11}$ (choice **C**)",
+    "shortExplanation": "Write both entries in the same cell and reduce equality to a coprime ratio.",
+    "detailedSteps": [
+      "Use zero-based row and column indices $0\\le r\\le140$ and $0\\le c\\le90$. The horizontal entry is $91r+c+1$, while the vertical entry is $141c+r+1$.",
+      "Equality requires $90r=140c$, or $9r=14c$. Because $9$ and $14$ are coprime, $(r,c)=(14t,9t)$ for an integer $t$.",
+      "The bounds give $0\\le t\\le10$. Thus $t=0,1,\\ldots,10$ yields $11$ matching cells."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Lattice points and linear equations"
+    ],
+    "commonMistakes": [
+      "The endpoint t=0 corresponds to the top-left cell and must be counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Zero-based indexing cancels the common offset and makes the integer bounds transparent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p24",
+    "problemId": "amc10b-2025-p24",
+    "finalAnswer": "$\\boxed{\\frac{1}{97}}$ (choice **E**)",
+    "shortExplanation": "Use the eventual success probability at each position and solve the resulting short recurrence.",
+    "detailedSteps": [
+      "Let $p_j$ be the probability of eventually reaching $4$ when starting at position $j$. Then $p_4=1$ and $p_0=p_1/2$. Disappearance contributes zero to success.",
+      "For $j=1,2,3$, conditioning on the next hop gives $p_j=(p_{j-1}+p_{j+1})/4$, or $p_{j+1}=4p_j-p_{j-1}$.",
+      "Starting with $p_1=2p_0$, the recurrence gives $p_2=7p_0$, $p_3=26p_0$, and $p_4=97p_0$. Since $p_4=1$, the required probability is $p_0=1/97$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Absorbing random walks"
+    ],
+    "commonMistakes": [
+      "Counting only four consecutive rightward hops omits successful paths that backtrack.",
+      "The transition from zero has probability one half, unlike a rightward step from positions one through three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "State probabilities automatically include every possible number of backtracks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2025-p25",
+    "problemId": "amc10b-2025-p25",
+    "finalAnswer": "$\\boxed{B}$ (choice **B**)",
+    "shortExplanation": "Unfold the reflected squares into the plane, find the first grid vertex on the straight ray, and fold its coordinates back.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $B=(4,0)$, $C=(4,4)$, and $D=(0,4)$. Then $P=(0,8/5)$ and $Q=(10/3,4)$, so the ray has slope $(4-8/5)/(10/3)=18/25$.",
+      "Instead of reflecting the ray, reflect the square across each wall. The unfolded path is the straight line $y=8/5+(18/25)x$. A vertex of the reflected grid has coordinates $(4m,4n)$, where $m,n$ are integers.",
+      "Substitution gives $25n=10+18m$. Modulo $25$, this requires $18m\\equiv15\\pmod{25}$. Since $18\\cdot7\\equiv1\\pmod{25}$, we get $m\\equiv5\\pmod{25}$. The first positive possibility is $m=5$, yielding $n=4$.",
+      "Thus the first unfolded grid vertex is $(20,16)$. Folding back into a square of side $4$, an odd horizontal index gives $x=4$ and an even vertical index gives $y=0$. The path therefore terminates at $B$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Unfolding reflections and congruences"
+    ],
+    "commonMistakes": [
+      "A rational slope alone does not identify the endpoint; the starting offset must be included in the congruence.",
+      "Fold both coordinates back using parity rather than reading the unfolded vertex as a vertex of the original square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The least positive solution proves that this vertex is reached before any other corner.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

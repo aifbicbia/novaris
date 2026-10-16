@@ -1,0 +1,320 @@
+[
+  {
+    "id": "solution-aime-ii-2009-p1",
+    "problemId": "aime-ii-2009-p1",
+    "finalAnswer": "$\\boxed{114}$",
+    "shortExplanation": "Each stripe uses $92$ ounces, leaving $38$ ounces of each color.",
+    "detailedSteps": [
+      "Let $x$ be the amount used for each equal stripe and $L$ the remaining amount of each original color. The blue stripe gives $L=130-x$. The total initial paint is $130+164+188=482$ ounces, and the four stripes use $4x$ ounces.",
+      "Thus $482-4x=3L=3(130-x)$, which gives $x=92$ and $L=38$. This is feasible: the pink stripe uses $164-92-38=34$ ounces of red and $188-92-38=58$ ounces of white, totaling $92$. The total paint left is $3\\cdot38=114$ ounces."
+    ],
+    "keyIdeas": [
+      "Balance the four stripe volumes"
+    ],
+    "commonMistakes": [
+      "Assuming that the pink mixture contains equal amounts of red and white."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conservation of total paint eliminates the unknown mixture proportions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p2",
+    "problemId": "aime-ii-2009-p2",
+    "finalAnswer": "$\\boxed{469}$",
+    "shortExplanation": "The three terms become $343$, $121$ and $5$.",
+    "detailedSteps": [
+      "For the first term, $a^{(\\log_3 7)^2}=(a^{\\log_3 7})^{\\log_3 7}=27^{\\log_3 7}=7^3=343$. The last equality uses $27=3^3$.",
+      "Similarly, $b^{(\\log_7 11)^2}=49^{\\log_7 11}=11^2=121$. The square root in the third given value matters: $c^{(\\log_{11}25)^2}=(\\sqrt{11})^{\\log_{11}25}=25^{1/2}=5$. Therefore the sum is $343+121+5=469$."
+    ],
+    "keyIdeas": [
+      "Apply one additional logarithmic exponent"
+    ],
+    "commonMistakes": [
+      "Reading the third given value as eleven instead of its square root, or placing the squared logarithm outside the exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The known powers can be reused without explicitly solving for the variables.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p3",
+    "problemId": "aime-ii-2009-p3",
+    "finalAnswer": "$\\boxed{141}$",
+    "shortExplanation": "The unknown side is $100\\sqrt2$.",
+    "detailedSteps": [
+      "Set $A=(0,0)$, $B=(100,0)$, $D=(0,h)$ and $C=(100,h)$. The midpoint is $E=(0,h/2)$. Direction vectors for the two perpendicular lines are $(100,h)$ and $(-100,h/2)$.",
+      "Their dot product is zero, so $-10000+h^2/2=0$ and $h^2=20000$. Since $141^2=19881<20000<20164=142^2$, the greatest integer less than the positive length $h$ is $141$."
+    ],
+    "keyIdeas": [
+      "Use perpendicular vectors in the rectangle"
+    ],
+    "commonMistakes": [
+      "Using the full rectangle height in the vector to the midpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A dot product avoids calculating either line angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p4",
+    "problemId": "aime-ii-2009-p4",
+    "finalAnswer": "$\\boxed{089}$",
+    "shortExplanation": "There can be $41$ children, with the winner eating $89$ grapes.",
+    "detailedSteps": [
+      "If there are $j$ children, the arithmetic progression sums to $j(n+1-j)=2009$. Hence $j$ divides $2009=7^2\\cdot41$ and $n=j-1+2009/j$.",
+      "The last child eats $n+2-2j=2009/j-j+1$, which must be nonnegative. Thus $j^2-j\\le2009$, giving $j\\le45$. The only divisors of $2009$ in this range are $1,7,41$.",
+      "These give winner totals $2009,293,89$, respectively. The last case is valid: its $41$ counts decrease from $89$ to $9$ by twos and sum to $2009$. Therefore the smallest possible winner total is $89$."
+    ],
+    "keyIdeas": [
+      "Factor the total by the number of participants"
+    ],
+    "commonMistakes": [
+      "Accepting a divisor count that would give a negative grape total to the last child."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonnegative last term makes the divisor search complete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p5",
+    "problemId": "aime-ii-2009-p5",
+    "finalAnswer": "$\\boxed{032}$",
+    "shortExplanation": "The radius is $27/5$, so the requested sum is $32$.",
+    "detailedSteps": [
+      "Place the center of the radius-ten circle at the origin, with the triangle vertex for the radius-three circle at $(0,10)$. The three smaller circle centers are then $(0,7)$, $(-4\\sqrt3,-4)$ and $(4\\sqrt3,-4)$: internal tangency places each center on its vertex radius, at distance $10$ minus its own radius.",
+      "Let the sought circle have radius $r>0$ and center $(x,y)$. Equal distances to the two radius-two centers force $x=0$. External tangency gives $|y-7|=r+3$ and $48+(y+4)^2=(r+2)^2$.",
+      "The first equation has two branches. If $y=10+r$, the second becomes $240+24r=0$, impossible for a positive radius. The other branch is $y=4-r$, which gives $48+(8-r)^2=(r+2)^2$, or $108=20r$.",
+      "Thus $r=27/5$ and $y=-7/5$. These values satisfy all three actual distance equations; they also place the circle inside the outer circle because $|y|+r=34/5<10$. The fraction is reduced, so $m+n=27+5=32$."
+    ],
+    "keyIdeas": [
+      "Solve both axial circle-tangency branches"
+    ],
+    "commonMistakes": [
+      "Forgetting the constant four on the right when expanding the radius-two tangency equation, or assuming the upper branch is possible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal-radius circles force an axis before any quadratic calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p6",
+    "problemId": "aime-ii-2009-p6",
+    "finalAnswer": "$\\boxed{750}$",
+    "shortExplanation": "The count is $2002-252=1750$.",
+    "detailedSteps": [
+      "There are $\\binom{14}{5}=2002$ five-element subsets in total. For a subset $x_1<\\cdots<x_5$ with no consecutive elements, define $y_i=x_i-(i-1)$. Then $1\\le y_1<\\cdots<y_5\\le10$.",
+      "This transformation is a bijection with the five-element subsets of $\\{1,\\ldots,10\\}$, since reversing it restores a gap of at least two. Therefore $\\binom{10}{5}=252$ subsets have no consecutive elements. The desired count is $1750$, with remainder $750$ modulo $1000$."
+    ],
+    "keyIdeas": [
+      "Count the complement with a gap-removing bijection"
+    ],
+    "commonMistakes": [
+      "Counting each adjacent pair separately and overcounting subsets with several adjacent pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement avoids overlapping adjacency events.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p7",
+    "problemId": "aime-ii-2009-p7",
+    "finalAnswer": "$\\boxed{401}$",
+    "shortExplanation": "The reduced denominator is $2^{4010}$, with odd factor one.",
+    "detailedSteps": [
+      "Put $t_i=(2i-1)!!/(2i)!!=\\binom{2i}{i}/4^i$, with $t_0=1$. Since $t_i/t_{i-1}=(2i-1)/(2i)$, the identity $(2i+1)t_i-(2i-1)t_{i-1}=t_i$ holds. Summing it yields $\\sum_{i=1}^{N}t_i=(2N+1)t_N-1$.",
+      "Thus, before reduction, the sum for $N=2009$ has denominator $4^N=2^{4018}$ and numerator $(2N+1)\\binom{2N}{N}-4^N$. The odd factor $2N+1$ contributes no factor of two.",
+      "Counting even factors in a factorial gives $v_2(n!)=\\sum_{j\\ge1}\\lfloor n/2^j\\rfloor=n-s_2(n)$, where $s_2(n)$ is the number of ones in the binary expansion. Consequently $v_2\\!\\left(\\binom{2N}{N}\\right)=s_2(N)$, because doubling does not change that digit count.",
+      "Here $2009=2^{10}+2^9+2^8+2^7+2^6+2^4+2^3+1$, so $s_2(N)=8$. Subtracting $2^{4018}$ from a number with valuation eight leaves valuation eight. Exactly $2^8$ cancels, and the reduced denominator is $2^{4010}$. Thus $a=4010$, $b=1$ and $ab/10=401$."
+    ],
+    "keyIdeas": [
+      "Telescope the double-factorial ratios and reduce the power of two"
+    ],
+    "commonMistakes": [
+      "Using the unreduced denominator of the final summand, or overlooking cancellation in the complete sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Telescoping makes the denominator tractable; the binary digit count determines the exact cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p8",
+    "problemId": "aime-ii-2009-p8",
+    "finalAnswer": "$\\boxed{041}$",
+    "shortExplanation": "The probability is $8/33$.",
+    "detailedSteps": [
+      "Let $p=1/6$ and $q=5/6$. Each stopping time equals $k\\ge1$ with probability $pq^{k-1}$. Independence gives $P(D=L)=\\sum_{k\\ge1}p^2q^{2k-2}=p^2/(1-q^2)=1/11$.",
+      "Likewise $P(D=L+1)=\\sum_{k\\ge1}p^2q^{2k-1}=q/11=5/66$. The reverse neighboring event has the same probability, and these three events are disjoint.",
+      "The required probability is $1/11+2(5/66)=8/33$. The numerator and denominator are relatively prime, so their sum is $41$."
+    ],
+    "keyIdeas": [
+      "Sum equal and neighboring geometric stopping times"
+    ],
+    "commonMistakes": [
+      "Including only one direction of the one-roll difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each event is a geometric series, and their disjointness permits direct addition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p9",
+    "problemId": "aime-ii-2009-p9",
+    "finalAnswer": "$\\boxed{000}$",
+    "shortExplanation": "The two counts differ by exactly $1000$.",
+    "detailedSteps": [
+      "Subtract one from each positive variable. For total $2009$, the new equation is $4x+3y+2z=2000$, with nonnegative variables. Parity forces $y=2t$, leaving $2x+3t+z=1000$. For total $2000$, the analogous shifted total is $1991$, so $y=2t+1$ and $2x+3t+z=994$.",
+      "For a nonnegative total $q$, the number of solutions of $2x+3t+z=q$ is $F(q)=\\sum_{t=0}^{\\lfloor q/3\\rfloor}(\\lfloor(q-3t)/2\\rfloor+1)$. Each choice of $t$ permits the displayed number of $x$ values, and then determines $z$.",
+      "For $q=1000$, pair $t=2j$ with $t=2j+1$, for $0\\le j\\le166$. The two contributions sum to $1000-6j$, giving $F(1000)=167\\cdot1000-6(166\\cdot167/2)=83834$.",
+      "For $q=994$, the same pairing uses $0\\le j\\le165$ and gives $F(994)=166\\cdot994-6(165\\cdot166/2)=82834$. Hence $m-n=1000$, whose remainder modulo $1000$ is $0$."
+    ],
+    "keyIdeas": [
+      "Convert both positive lattices to paired floor sums"
+    ],
+    "commonMistakes": [
+      "Allowing zero in the original variables, or dropping an admissible endpoint from a floor-sum range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parity change converts the nine-unit original difference into a six-unit difference in the simpler lattice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p10",
+    "problemId": "aime-ii-2009-p10",
+    "finalAnswer": "$\\boxed{096}$",
+    "shortExplanation": "The distance is $60\\sqrt{13}/23$.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $B=(5,0)$ and $C=(5,12)$, which realize the stated five-twelve-thirteen triangle. At $A$, the internal equal-angle direction is the sum of the unit directions to $B$ and $C$: $(1,0)+(5/13,12/13)=(18/13,12/13)$. Its line therefore consists of points $(3s,2s)$.",
+      "At $C$, reflection of the direction $CA=(-5,-12)$ across the vertical direction $CB$ gives $(5,-12)$. The two rays making the required angle with $CB$ are the original ray toward $A$ and this reflected ray. The first intersects the equal-angle line only at $A$, where the observation toward $D$ would be undefined, so it is excluded.",
+      "On the reflected ray, write $D=(5+5t,12-12t)$ with $t\\ge0$. Equating this with $(3s,2s)$ gives $s=60/23$ and $t=13/23$, both positive. Thus this intersection uses the actual internal ray at $A$; the opposite equal-angle ray gives no additional intersection.",
+      "Therefore $AD=s\\sqrt{13}=60\\sqrt{13}/23$. In the LIVE source notation, $p=60$, $q=23$ and $r=13$, so the requested sum is $96$. The alternative reprint interchanges the denominator and radicand letter names; the numerical distance and their sum are unchanged."
+    ],
+    "keyIdeas": [
+      "Intersect the angle-bisector ray with a reflected ray"
+    ],
+    "commonMistakes": [
+      "Treating both equal-angle conditions as internal triangle bisectors, or retaining the coincident point D=A where one observation is undefined."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The condition at C reflects a ray; it does not place D on the usual internal angle bisector.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p11",
+    "problemId": "aime-ii-2009-p11",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The only products are $68$ and $57$.",
+    "detailedSteps": [
+      "The inequality is equivalent to $m/n<k<mn$. If $n=1$ there are no solutions, so $n\\ge2$. Since $mn$ is an integer, the number of allowable positive integers is $mn-1-\\lfloor m/n\\rfloor$. The required count therefore gives $mn-\\lfloor m/n\\rfloor=51$.",
+      "The left side is at least $m(n-1/n)$. Using $m\\ge n$ gives $n^2-1\\le51$, so $2\\le n\\le7$. It also gives $m\\le51/(n-1/n)\\le34$. These bounds make the remaining integer search exhaustive.",
+      "For an explicit arithmetic check, write $m=qn+r$ with $q\\ge1$ and $0\\le r<n$. The equation becomes $q(n^2-1)+rn=51$. For $n=2$, the only possibility is $(q,r)=(17,0)$, giving $m=34$. For $n=3$, it is $(q,r)=(6,1)$, giving $m=19$. Testing the allowed remainders for $n=4,5,6,7$ gives none.",
+      "The corresponding products are $34\\cdot2=68$ and $19\\cdot3=57$. Both strict intervals contain exactly fifty integers, and their product sum is $125$."
+    ],
+    "keyIdeas": [
+      "Count integers in a strict logarithmic interval"
+    ],
+    "commonMistakes": [
+      "Including an integer endpoint in the strict interval, particularly when m/n is integral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The count bounds both variables before a small exact remainder search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p12",
+    "problemId": "aime-ii-2009-p12",
+    "finalAnswer": "$\\boxed{803}$",
+    "shortExplanation": "The sharp maximum is $803$ pairs.",
+    "detailedSteps": [
+      "The $2k$ used integers are distinct and positive, so their sum is at least $1+\\cdots+2k=k(2k+1)$. The $k$ pair sums are distinct integers at most $2009$, so their total is at most $2009+(2009-1)+\\cdots+(2009-k+1)=2009k-k(k-1)/2$.",
+      "For $k>0$, combining these bounds gives $5k\\le4017$, and hence $k\\le803$. This upper bound uses both kinds of distinctness.",
+      "To attain it, use the integers $1$ through $1606$, splitting them into lower values $i\\in\\{1,\\ldots,803\\}$ and upper values. For $1\\le i\\le402$, pair $i$ with $1204+i$; for $403\\le i\\le803$, pair $i$ with $401+i$. The upper partners cover $1205$ through $1606$ in the first block and $804$ through $1204$ in the second, each exactly once.",
+      "The first block has the even sums $1206,1208,\\ldots,2008$; the second has the odd sums $1207,1209,\\ldots,2007$. Together they are precisely the $803$ distinct integers from $1206$ through $2008$, all below $2009$. Thus $803$ pairs satisfy every condition, proving the maximum."
+    ],
+    "keyIdeas": [
+      "Match a total-sum bound with an explicit pairing"
+    ],
+    "commonMistakes": [
+      "Proving only a bound without exhibiting disjoint pairs that attain it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A cyclic shift between two equal blocks produces consecutive distinct sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p13",
+    "problemId": "aime-ii-2009-p13",
+    "finalAnswer": "$\\boxed{672}$",
+    "shortExplanation": "The product is $28672$.",
+    "detailedSteps": [
+      "At the $i$th subdivision point, the chord lengths from the two diameter endpoints are $4\\sin(i\\pi/14)$ and $4\\cos(i\\pi/14)$. Their product is $8\\sin(i\\pi/7)$, for $1\\le i\\le6$. Hence the full product is $8^6\\prod_{i=1}^{6}\\sin(i\\pi/7)$.",
+      "Let $\\zeta=e^{2\\pi i/7}$. Evaluating $(x^7-1)/(x-1)=\\prod_{i=1}^{6}(x-\\zeta^i)$ at $x=1$ gives $\\prod_{i=1}^{6}(1-\\zeta^i)=7$. Taking absolute values and using $|1-e^{2i\\theta}|=2\\sin\\theta$ for these positive angles yields $\\prod_{i=1}^{6}\\sin(i\\pi/7)=7/2^6$.",
+      "Therefore $n=8^6\\cdot7/64=28672$, and its remainder modulo $1000$ is $672$."
+    ],
+    "keyIdeas": [
+      "Pair complementary chords and use seventh roots of unity"
+    ],
+    "commonMistakes": [
+      "Using a radius-two chord formula with a factor of two instead of four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing the endpoint chords converts half-angles to the standard sine product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p14",
+    "problemId": "aime-ii-2009-p14",
+    "finalAnswer": "$\\boxed{983}$",
+    "shortExplanation": "The exact tenth term is $24576/25$.",
+    "detailedSteps": [
+      "Put $x_n=a_n/2^n$. Dividing the original recurrence by $2^{n+1}$ gives $x_{n+1}=(4/5)x_n+(3/5)\\sqrt{1-x_n^2}$, with the nonnegative square root. Starting at zero gives $x_1=3/5$ and $x_2=24/25$.",
+      "At $x_2=24/25$, the root is $7/25$, so the next value is $117/125$. At that value, the root is $44/125$, so the next value returns to $24/25$. Thus these two values alternate from index two onward; their radicands and root signs are explicitly valid.",
+      "Since ten is even, $a_{10}=2^{10}(24/25)=24576/25=983+1/25$. Its floor is $983$."
+    ],
+    "keyIdeas": [
+      "Normalize the recurrence and verify its two-cycle"
+    ],
+    "commonMistakes": [
+      "Continuing a sine-angle addition across a negative cosine without accounting for the nonnegative square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalization reveals a stable two-cycle without making a global angle-branch assumption.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2009-p15",
+    "problemId": "aime-ii-2009-p15",
+    "finalAnswer": "$\\boxed{014}$",
+    "shortExplanation": "The largest gap is $7-4\\sqrt3$.",
+    "detailedSteps": [
+      "Place $M=(0,0)$, $N=(1,0)$ and $A=(1/2,1/2)$. The upper point $B$ satisfies $x_B^2+y_B^2=x_B$, and $MB^2=9/25$, giving $B=(9/25,12/25)$. Every non-endpoint point on the lower semicircle can be written as $C=(t^2/(1+t^2),-t/(1+t^2))$ for a unique $t>0$.",
+      "Intersect a line from an upper point $P=(u,v)$ to $C$ with the horizontal diameter. Its abscissa is $(u(-y_C)+vx_C)/(v-y_C)$. For $A$ this simplifies to $t/(t+1)$; for $B$ it simplifies to $t(9+12t)/(12+25t+12t^2)=3t/(3t+4)$, since the denominator factors as $(3t+4)(4t+3)$.",
+      "The first intercept is farther right, and their distance is $d=t/[(t+1)(3t+4)]=1/(3t+7+4/t)$. The positive-variable inequality $3t+4/t\\ge2\\sqrt{12}=4\\sqrt3$ gives $d\\le1/(7+4\\sqrt3)$.",
+      "Equality occurs at $t=2/\\sqrt3$, an allowed lower-semicircle point. The endpoints give a zero gap, so they cannot improve the attained maximum. Rationalizing gives $d_{\\max}=7-4\\sqrt3$. Thus $r+s+t=7+4+3=14$, with squarefree radicand three."
+    ],
+    "keyIdeas": [
+      "Parameterize the moving semicircle and optimize the intercept gap"
+    ],
+    "commonMistakes": [
+      "Optimizing a signed intercept difference without first identifying its sign, or checking only a finite sample of the moving point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rational semicircle parameter turns the geometric maximum into a one-variable positive sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

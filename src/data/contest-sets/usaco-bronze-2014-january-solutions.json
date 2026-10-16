@@ -1,0 +1,90 @@
+[
+  {
+    "id": "solution-usaco-bronze-2014-january-p1",
+    "problemId": "usaco-bronze-2014-january-p1",
+    "finalAnswer": "Write the minimum total squared adjustment cost to skidesign.out.",
+    "shortExplanation": "Try every possible interval of permitted final heights. For one interval, independently move each hill to its closest permitted height and add the squared costs.",
+    "detailedSteps": [
+      "An optimal final configuration can be clipped to the original height range without increasing any squared cost or its overall range. It therefore fits some interval $[l,l+17]$ with integer $0\\le l\\le83$. If its minimum is above 83, the interval $[83,100]$ still contains it.",
+      "For a fixed interval, hill $h$ is changed to $\\min(\\max(h,l),l+17)$. This is the closest permitted integer, so it minimizes that hill's squared adjustment independently of the other hills.",
+      "Add every hill's cost and take the minimum over all 84 intervals. Each computed arrangement is feasible, and every optimal arrangement lies in a tested interval, proving both attainability and global optimality.",
+      "An existing range of exactly 17 is permitted and costs zero. The algorithm uses $O(84N)$ time and $O(N)$ space. Even the conservative total bound $1000\\cdot100^2=10^7$ fits a signed 32-bit integer.",
+      "Use the historical files skidesign.in and skidesign.out. Read the hill count first, followed by that many elevations; output one integer line.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nvoid solve(istream &in, ostream &out) {\n    int n; in >> n;\n    vector<int> h(n);\n    for (int &x : h) in >> x;\n    int best = 10000000;\n    for (int low = 0; low <= 83; ++low) {\n        int cost = 0;\n        for (int x : h) {\n            int change = x < low ? low - x : x > low + 17 ? x - low - 17 : 0;\n            cost += change * change;\n        }\n        best = min(best, cost);\n    }\n    out << best << '\\n';\n}\nint main() {\n    ifstream in(\"skidesign.in\");\n    ofstream out(\"skidesign.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Every optimal configuration lies in one tested interval.",
+      "Nearest-point projection minimizes each independent squared cost."
+    ],
+    "commonMistakes": [
+      "Charging an adjustment when the existing range is exactly 17.",
+      "Changing only the tallest or only the shortest hills."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main proof is that testing all intervals is complete and each fixed interval has an independent best adjustment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2014-january-p2",
+    "problemId": "usaco-bronze-2014-january-p2",
+    "finalAnswer": "Write the journey time rounded to the nearest second, with exact halves upward, to slowdown.out.",
+    "shortExplanation": "Process the next time or distance event, update the journey exactly, and count every slowdown. Exact rational arithmetic preserves event ordering and the required half-up rounding.",
+    "detailedSteps": [
+      "After $r-1$ events, the speed is $1/r$. Keep the exact current time $t$, distance $d$, and inverse speed $r$, and sort time thresholds and distance thresholds separately.",
+      "The next time threshold $\\tau$ is reached after $\\tau-t$ seconds. The next distance threshold $\\delta$ is reached after $r(\\delta-d)$ seconds. The smaller arrival is the next physical event; advance with the current speed and increase $r$ once for that event.",
+      "Keep every duplicate event. If time and distance events tie, processing either first leaves the other at zero elapsed time, so all simultaneous slowdowns are counted without moving the cow twice. Sorting handles originally unordered thresholds.",
+      "To avoid a precision assumption at ties or half seconds, represent $t=U/Q$ and $d=V/Q$ with exact nonnegative integer numerators and positive denominator. The Big type in the code supplies addition, nonnegative subtraction, comparison and multiplication by a small integer using base $10^9$ digits.",
+      "For the next events, compute $a=\\tau Q-U$ and $b=\\delta Q-V$. Compare $a$ with $rb$ exactly. A time event updates $V\\leftarrow rV+a$, $Q\\leftarrow rQ$, then $U\\leftarrow\\tau Q$. A distance event updates $U\\leftarrow U+rb$ and $V\\leftarrow\\delta Q$, leaving $Q$ unchanged. These are exact versions of the physical time and distance updates.",
+      "Once all events have occurred, the exact final numerator is $F=U+r(1000Q-V)$. For each positive integer $m$, half-up rounding gives a result at least $m$ precisely when $2F\\ge(2m-1)Q$. Binary search this predicate to obtain the rounded answer, including an exact half.",
+      "The source guarantees all events occur before the finish. Throughout the race the speed is at least $1/(N+1)$, so finishing takes at most $1000(N+1)$ seconds; this bounds the rounding search and every integer time threshold. Distance thresholds lie before 1000. Zero-coordinate events are supported.",
+      "Exact arithmetic has a real cost: $Q$ divides a product of a subsequence of $1,\\ldots,N$, so it is at most $N!$ and needs $O(N\\log N)$ bits. The implementation uses $O(N^2\\log N)$ integer-digit work and $O(N\\log N)$ bits of arithmetic storage, plus the event arrays. The actual maximum-bound packets were run; this is not a unit-cost floating-point complexity claim.",
+      "All small multiplication factors are below 20,002,002. A base-$10^9$ digit product plus carry is below $2.001\\cdot10^{16}$, so uint64_t safely holds it. Nonnegative subtraction follows from the next-event invariant; comparison uses normalized leading digits.",
+      "Use slowdown.in and slowdown.out. The first input line is the event count, followed by its T/D lines; write one rounded integer line. The code uses no floating-point arithmetic or arbitrary epsilon.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <algorithm>\n#include <cstdint>\nusing namespace std;\n// Nonnegative exact integers in base 10^9. No floating-point approximation.\nstruct Big {\n    static const uint32_t BASE = 1000000000;\n    vector<uint32_t> d;\n    Big(uint64_t x = 0) {\n        do { d.push_back((uint32_t)(x % BASE)); x /= BASE; } while (x);\n    }\n    void trim() { while (d.size() > 1 && d.back() == 0) d.pop_back(); }\n    Big times(uint32_t x) const {\n        Big r; r.d.resize(d.size()); uint64_t carry = 0;\n        for (size_t j = 0; j < d.size(); ++j) {\n            uint64_t value = (uint64_t)d[j] * x + carry;\n            r.d[j] = (uint32_t)(value % BASE); carry = value / BASE;\n        }\n        if (carry) r.d.push_back((uint32_t)carry);\n        r.trim(); return r;\n    }\n    Big plus(const Big &b) const {\n        Big r; r.d.resize(max(d.size(), b.d.size())); uint64_t carry = 0;\n        for (size_t j = 0; j < r.d.size(); ++j) {\n            uint64_t value = carry + (j < d.size() ? d[j] : 0) + (j < b.d.size() ? b.d[j] : 0);\n            r.d[j] = (uint32_t)(value % BASE); carry = value / BASE;\n        }\n        if (carry) r.d.push_back((uint32_t)carry);\n        return r;\n    }\n    Big minus(const Big &b) const {\n        Big r; r.d.resize(d.size()); int64_t borrow = 0;\n        for (size_t j = 0; j < d.size(); ++j) {\n            int64_t value = (int64_t)d[j] - (j < b.d.size() ? b.d[j] : 0) - borrow;\n            borrow = value < 0; if (borrow) value += BASE;\n            r.d[j] = (uint32_t)value;\n        }\n        r.trim(); return r;\n    }\n    bool operator<(const Big &b) const {\n        if (d.size() != b.d.size()) return d.size() < b.d.size();\n        for (size_t j = d.size(); j-- > 0;) if (d[j] != b.d[j]) return d[j] < b.d[j];\n        return false;\n    }\n};\nvoid solve(istream &in, ostream &out) {\n    int n; in >> n;\n    vector<uint32_t> times, distances;\n    for (int j = 0; j < n; ++j) {\n        char kind; uint32_t x; in >> kind >> x;\n        (kind == 'T' ? times : distances).push_back(x);\n    }\n    sort(times.begin(), times.end()); sort(distances.begin(), distances.end());\n    size_t ti = 0, di = 0; uint32_t inverseSpeed = 1;\n    Big denominator(1), elapsed(0), position(0);\n    while (ti < times.size() || di < distances.size()) {\n        bool useTime = di == distances.size();\n        Big timeGap, distanceGap;\n        if (ti < times.size()) timeGap = denominator.times(times[ti]).minus(elapsed);\n        if (di < distances.size()) distanceGap = denominator.times(distances[di]).minus(position);\n        if (ti < times.size() && di < distances.size()) useTime = !(distanceGap.times(inverseSpeed) < timeGap);\n        if (useTime) {\n            position = position.times(inverseSpeed).plus(timeGap);\n            denominator = denominator.times(inverseSpeed);\n            elapsed = denominator.times(times[ti++]);\n        } else {\n            elapsed = elapsed.plus(distanceGap.times(inverseSpeed));\n            position = denominator.times(distances[di++]);\n        }\n        ++inverseSpeed;\n    }\n    Big finalNumerator = elapsed.plus(denominator.times(1000).minus(position).times(inverseSpeed));\n    Big twiceFinal = finalNumerator.times(2);\n    uint32_t low = 0, high = 1000 * (n + 1) + 1;\n    while (low + 1 < high) {\n        uint32_t middle = low + (high - low) / 2;\n        if (!(twiceFinal < denominator.times(2 * middle - 1))) low = middle;\n        else high = middle;\n    }\n    out << low << '\\n';\n}\nint main() {\n    ifstream in(\"slowdown.in\");\n    ofstream out(\"slowdown.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compare physical arrival times with the current inverse speed.",
+      "Preserve duplicates and zero-time simultaneous events.",
+      "Exact integer fractions justify event ordering and half-up rounding."
+    ],
+    "commonMistakes": [
+      "Treating a distance event as a fixed time event.",
+      "Dropping duplicate events or counting a tie only once.",
+      "Using a floating epsilon without a precision argument for the final rounding."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The event simulation is simple once its invariant is clear; this implementation also proves precision for every stated input instead of assuming floating-point ties are harmless.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2014-january-p3",
+    "problemId": "usaco-bronze-2014-january-p3",
+    "finalAnswer": "Write the smallest attainable difference between the largest and smallest team totals to bteams.out.",
+    "shortExplanation": "Build the team containing the smallest unused cow, try every possible pair of teammates, and repeat. Compare all four-team partitions by their largest and smallest totals.",
+    "detailedSteps": [
+      "Treat the cows as distinct indexed items even when their skill values coincide. At each stage, select the smallest unused index and try every pair of other unused indices as its teammates.",
+      "In any valid partition, that selected cow belongs to exactly one triple. Its two actual teammates are one of the enumerated pairs. Removing the triple leaves the same smaller problem, so induction shows that every feasible partition is reached.",
+      "Every recursive branch uses three previously unused cows. At depth four, all twelve cows belong to exactly one team. Compute the four real sums and minimize their maximum minus their minimum; every tested value is attainable.",
+      "The smallest-index rule avoids repeated team-order permutations. The number of complete partitions is $\\binom{11}{2}\\binom{8}{2}\\binom{5}{2}=15400$, also $12!/(3!^4\\,4!)$. The recursion depth is only four.",
+      "Each team total is at most $3\\cdot10^6$, so its difference from another team total fits int. The fixed-size exhaustive search is practical for the original twelve cows; it is not intended as a polynomial method for an arbitrary larger number of cows.",
+      "Use bteams.in and bteams.out. Read exactly twelve skill values, with no leading count, and write one minimum-spread integer line.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint skill[12], best;\nvoid assignTeams(int mask, vector<int> &sums) {\n    if (sums.size() == 4) {\n        best = min(best, *max_element(sums.begin(), sums.end()) - *min_element(sums.begin(), sums.end()));\n        return;\n    }\n    int first = 0;\n    while (mask & (1 << first)) ++first;\n    for (int a = first + 1; a < 12; ++a) if (!(mask & (1 << a))) {\n        for (int b = a + 1; b < 12; ++b) if (!(mask & (1 << b))) {\n            sums.push_back(skill[first] + skill[a] + skill[b]);\n            assignTeams(mask | (1 << first) | (1 << a) | (1 << b), sums);\n            sums.pop_back();\n        }\n    }\n}\nvoid solve(istream &in, ostream &out) {\n    for (int &x : skill) in >> x;\n    best = 3000000;\n    vector<int> sums;\n    assignTeams(0, sums);\n    out << best << '\\n';\n}\nint main() {\n    ifstream in(\"bteams.in\");\n    ofstream out(\"bteams.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Enumerate the team containing the smallest unused cow.",
+      "Partition symmetry removes repeated team order, not valid groupings.",
+      "Measure sums of all four teams, rather than individual skill ranges."
+    ],
+    "commonMistakes": [
+      "Reading a leading cow count although the file contains twelve skills directly.",
+      "Grouping only neighboring sorted skills without proving that restriction.",
+      "Leaving a cow unused or assigning it to two teams."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed twelve-cow bound makes complete partition enumeration feasible. The challenge is eliminating team-order duplication while preserving every grouping.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

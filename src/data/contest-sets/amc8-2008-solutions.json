@@ -1,0 +1,641 @@
+[
+  {
+    "id": "solution-amc8-2008-p1",
+    "problemId": "amc8-2008-p1",
+    "finalAnswer": "$\\boxed{\\text{B }(14)}$",
+    "shortExplanation": "**Idea:** Food costs 12 dollars, and rides cost twice that amount.",
+    "detailedSteps": [
+      "Susan spent $12$ dollars on food.",
+      "She spent twice as much on rides, so rides cost $24$ dollars.",
+      "Total spent is $12+24=36$.",
+      "Money left: $50-36=14$.",
+      "Final Answer: ($\\boxed{\\text{B }(14)}$)"
+    ],
+    "keyIdeas": [
+      "Subtraction",
+      "Combining amounts"
+    ],
+    "commonMistakes": [
+      "Twice as much on rides means $24$, not another $12$."
+    ],
+    "alternativeMethods": [
+      "A direct arithmetic warmup."
+    ],
+    "difficultyNotes": "A direct arithmetic warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p2",
+    "problemId": "amc8-2008-p2",
+    "finalAnswer": "$\\boxed{\\text{A }(8671)}$",
+    "shortExplanation": "**Idea:** Match each letter in BEST OF LUCK to the digits 0 through 9 in order.",
+    "detailedSteps": [
+      "The phrase $\\text{BEST OF LUCK}$ has ten letters, so they match the digits $0,1,2,3,4,5,6,7,8,9$ in order.",
+      "Thus $B=0$, $E=1$, $S=2$, $T=3$, $O=4$, $F=5$, $L=6$, $U=7$, $C=8$, and $K=9$.",
+      "The code word $\\text{CLUE}$ therefore becomes $8671$.",
+      "Final Answer: ($\\boxed{\\text{A }(8671)}$)"
+    ],
+    "keyIdeas": [
+      "Code mapping",
+      "Ordered correspondence"
+    ],
+    "commonMistakes": [
+      "Do not use the ordinary alphabet order; use the order of letters in BEST OF LUCK."
+    ],
+    "alternativeMethods": [
+      "Write the phrase above the digits $0$ through $9$ and read off C, L, U, and E."
+    ],
+    "difficultyNotes": "Carefully reading the custom code is the main step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p3",
+    "problemId": "amc8-2008-p3",
+    "finalAnswer": "$\\boxed{\\text{A }(Sunday)}$",
+    "shortExplanation": "**Idea:** February 1 is $12$ days before February 13.",
+    "detailedSteps": [
+      "February 1 is $12$ days before February 13.",
+      "Since $12equiv5pmod7$, move back $5$ weekdays from Friday.",
+      "That lands on Sunday.",
+      "Final Answer: ($\\boxed{\\text{A }(Sunday)}$)"
+    ],
+    "keyIdeas": [
+      "Calendar arithmetic",
+      "Modulo 7"
+    ],
+    "commonMistakes": [
+      "Use 12 days earlier, not 13."
+    ],
+    "alternativeMethods": [
+      "Count backward by remainders modulo 7."
+    ],
+    "difficultyNotes": "Count backward by remainders modulo 7.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p4",
+    "problemId": "amc8-2008-p4",
+    "finalAnswer": "$\\boxed{\\text{C }(5)}$",
+    "shortExplanation": "**Idea:** Subtract the inner triangle from the outer triangle, then divide by three congruent trapezoids.",
+    "detailedSteps": [
+      "The outer triangle has area $16$ and the inner triangle has area $1$.",
+      "So the combined area of the three trapezoids is $16-1=15$.",
+      "Because the three trapezoids are congruent, each has area $15/3=5$.",
+      "Final Answer: ($\\boxed{\\text{C }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Area subtraction",
+      "Congruent parts"
+    ],
+    "commonMistakes": [
+      "Do not divide the entire outer area by $3$; the small inner triangle is not one of the trapezoids."
+    ],
+    "alternativeMethods": [
+      "View the three trapezoids together as the outer region surrounding the inner triangle."
+    ],
+    "difficultyNotes": "A direct area decomposition problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p5",
+    "problemId": "amc8-2008-p5",
+    "finalAnswer": "$\\boxed{\\text{E }(22)}$",
+    "shortExplanation": "**Idea:** Use the change in odometer reading over the total riding time.",
+    "detailedSteps": [
+      "The distance ridden is $1661-1441=220$ miles.",
+      "The total time is $4+6=10$ hours.",
+      "Average speed is $220/10=22$ miles per hour.",
+      "Final Answer: ($\\boxed{\\text{E }(22)}$)"
+    ],
+    "keyIdeas": [
+      "Average speed",
+      "Odometer difference"
+    ],
+    "commonMistakes": [
+      "Use the difference of odometer readings, not either reading alone."
+    ],
+    "alternativeMethods": [
+      "Average speed equals total distance divided by total time."
+    ],
+    "difficultyNotes": "A rate problem hidden inside palindrome wording.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p6",
+    "problemId": "amc8-2008-p6",
+    "finalAnswer": "$\\boxed{\\text{D }(3:5)}$",
+    "shortExplanation": "**Idea:** Using the side lengths in the figure, the gray regions have total area $6$ square units.",
+    "detailedSteps": [
+      "Using the side lengths in the figure, the gray regions have total area $6$ square units.",
+      "The white regions have total area $10$ square units.",
+      "The ratio is $6:10=3:5$.",
+      "Final Answer: ($\\boxed{\\text{D }(3:5)}$)"
+    ],
+    "keyIdeas": [
+      "Area ratio",
+      "Simplifying ratios"
+    ],
+    "commonMistakes": [
+      "Compare areas, not side lengths."
+    ],
+    "alternativeMethods": [
+      "Add like-colored square areas separately."
+    ],
+    "difficultyNotes": "Add like-colored square areas separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p7",
+    "problemId": "amc8-2008-p7",
+    "finalAnswer": "$\\boxed{\\text{E }(127)}$",
+    "shortExplanation": "**Idea:** From $\\frac35=\\frac{M}{45}$, multiply: $5M=135$, so $M=27$.",
+    "detailedSteps": [
+      "From $\\frac35=\\frac{M}{45}$, multiply: $5M=135$, so $M=27$.",
+      "From $\\frac35=\\frac{60}{N}$, multiply: $3N=300$, so $N=100$.",
+      "Thus $M+N=27+100=127$.",
+      "Final Answer: ($\\boxed{\\text{E }(127)}$)"
+    ],
+    "keyIdeas": [
+      "Proportions",
+      "Cross multiplication"
+    ],
+    "commonMistakes": [
+      "Solve for both variables before adding."
+    ],
+    "alternativeMethods": [
+      "Cross-multiply each equality."
+    ],
+    "difficultyNotes": "Cross-multiply each equality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p8",
+    "problemId": "amc8-2008-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(80)}$",
+    "shortExplanation": "**Idea:** From the chart, the four monthly values add to $320$.",
+    "detailedSteps": [
+      "From the chart, the four monthly values add to $320$.",
+      "The average over $4$ months is $320/4=80$.",
+      "Final Answer: ($\\boxed{\\text{D }(80)}$)"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Bar chart reading"
+    ],
+    "commonMistakes": [
+      "Use all four months."
+    ],
+    "alternativeMethods": [
+      "Add chart values, then divide by 4."
+    ],
+    "difficultyNotes": "Add chart values, then divide by 4.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p9",
+    "problemId": "amc8-2008-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(2\\%\\text{ gain})}$",
+    "shortExplanation": "**Idea:** Apply the percentage changes in order, because the second change acts on the reduced amount.",
+    "detailedSteps": [
+      "Tammy starts with $100$ dollars.",
+      "After a $15\\%$ loss, she has $100(0.85)=85$ dollars.",
+      "A $20\\%$ gain on $85$ dollars gives $85(1.20)=102$ dollars.",
+      "The investment increased from $100$ to $102$, a $2\\%$ gain.",
+      "Final Answer: ($\\boxed{\\text{D }(2\\%\\text{ gain})}$)"
+    ],
+    "keyIdeas": [
+      "Successive percentages",
+      "Percent change"
+    ],
+    "commonMistakes": [
+      "Do not combine $-15\\%$ and $+20\\%$ as a $5\\%$ gain; the base amount changes."
+    ],
+    "alternativeMethods": [
+      "Multiply the change factors: $0.85\\cdot1.20=1.02$."
+    ],
+    "difficultyNotes": "The order of percentage changes matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p10",
+    "problemId": "amc8-2008-p10",
+    "finalAnswer": "$\\boxed{\\text{D }(34)}$",
+    "shortExplanation": "**Idea:** The original total age is $8cdot30=240$.",
+    "detailedSteps": [
+      "The total age in Room A is $6cdot40=240$.",
+      "The total age in Room B is $4cdot25=100$.",
+      "The combined total age is $340$ for $10$ people.",
+      "The combined average is $340/10=34$.",
+      "Final Answer: ($\\boxed{\\text{D }(34)}$)"
+    ],
+    "keyIdeas": [
+      "Average",
+      "Changing totals"
+    ],
+    "commonMistakes": [
+      "Average the total ages, not the averages alone."
+    ],
+    "alternativeMethods": [
+      "Use total sum before and after."
+    ],
+    "difficultyNotes": "Use total sum before and after.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p11",
+    "problemId": "amc8-2008-p11",
+    "finalAnswer": "$\\boxed{\\text{A }(7)}$",
+    "shortExplanation": "**Idea:** By inclusion-exclusion, $20+26-\\text{both}=39$.",
+    "detailedSteps": [
+      "By inclusion-exclusion, $20+26-\\text{both}=39$.",
+      "So $46-\\text{both}=39$.",
+      "Thus $\\text{both}=7$.",
+      "Final Answer: ($\\boxed{\\text{A }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "The overlap is counted twice in $20+26$."
+    ],
+    "alternativeMethods": [
+      "Subtract the total from the sum of group counts."
+    ],
+    "difficultyNotes": "Subtract the total from the sum of group counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p12",
+    "problemId": "amc8-2008-p12",
+    "finalAnswer": "$\\boxed{\\text{C }(5)}$",
+    "shortExplanation": "**Idea:** The rebound heights are $2$, $\\frac43$, $\\frac89$, $\\frac{16}{27}$, and $\\frac{32}{81}$.",
+    "detailedSteps": [
+      "The rebound heights are $2$, $\\frac43$, $\\frac89$, $\\frac{16}{27}$, and $\\frac{32}{81}$.",
+      "$\\frac{16}{27}$ is still greater than $\\frac12$, but $\\frac{32}{81}$ is less than $\\frac12$.",
+      "So this first happens after $5$ rebounds.",
+      "Final Answer: ($\\boxed{\\text{C }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Geometric sequence",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Compare each rebound height with one half."
+    ],
+    "alternativeMethods": [
+      "Multiply by $\\frac23$ each time."
+    ],
+    "difficultyNotes": "Multiply by $\\frac23$ each time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p13",
+    "problemId": "amc8-2008-p13",
+    "finalAnswer": "$\\boxed{\\text{C }(187)}$",
+    "shortExplanation": "**Idea:** Adding the three pair sums counts each box twice.",
+    "detailedSteps": [
+      "Adding the three pair sums counts each box twice.",
+      "So twice the total is $122+125+127=374$.",
+      "The total is $374/2=187$.",
+      "Final Answer: ($\\boxed{\\text{C }(187)}$)"
+    ],
+    "keyIdeas": [
+      "Pair sums",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "Each box appears in exactly two pair sums."
+    ],
+    "alternativeMethods": [
+      "Double counting gives the cleanest equation."
+    ],
+    "difficultyNotes": "Double counting gives the cleanest equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p14",
+    "problemId": "amc8-2008-p14",
+    "finalAnswer": "$\\boxed{\\text{C }(4)}$",
+    "shortExplanation": "**Idea:** With $A$ fixed in the upper-left, the rest of the first row can be $BC$ or $CB$.",
+    "detailedSteps": [
+      "With $A$ fixed in the upper-left, the rest of the first row can be $BC$ or $CB$.",
+      "For each first-row choice, the first column has two possible orders for $B$ and $C$.",
+      "Once the first row and column are fixed, the remaining entries are forced.",
+      "So there are $2cdot2=4$ grids.",
+      "Final Answer: ($\\boxed{\\text{C }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Latin squares",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "After setting first row and column, do not keep treating cells as independent."
+    ],
+    "alternativeMethods": [
+      "Choose first row and first column."
+    ],
+    "difficultyNotes": "Choose first row and first column.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p15",
+    "problemId": "amc8-2008-p15",
+    "finalAnswer": "$\\boxed{\\text{B }(40)}$",
+    "shortExplanation": "**Idea:** Force the nine-game and ten-game totals to be divisible by 9 and 10.",
+    "detailedSteps": [
+      "The first eight scores sum to $7+4+3+6+8+3+1+5=37$.",
+      "Let the ninth score be $x<10$. The nine-game average is an integer, so $37+x$ must be divisible by $9$. Since $37\\equiv1\\pmod 9$, we need $x\\equiv8\\pmod 9$, so $x=8$.",
+      "The nine-game total is $45$. Let the tenth score be $y<10$. The ten-game average is an integer, so $45+y$ must be divisible by $10$. This gives $y=5$.",
+      "The product is $8\\cdot5=40$.",
+      "Final Answer: ($\\boxed{\\text{B }(40)}$)"
+    ],
+    "keyIdeas": [
+      "Divisibility",
+      "Averages",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "The ninth score must make the nine-game average an integer before considering the tenth game."
+    ],
+    "alternativeMethods": [
+      "List possible integer totals: the nine-game total must be $45$, and the ten-game total must be $50$."
+    ],
+    "difficultyNotes": "Averages become divisibility conditions on totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p16",
+    "problemId": "amc8-2008-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(7:30)}$",
+    "shortExplanation": "**Idea:** The volume is $7$ cubic units.",
+    "detailedSteps": [
+      "The volume is $7$ cubic units.",
+      "Separate cubes would have surface area $7cdot6=42$.",
+      "The center cube shares one face with each of the other $6$ cubes, so there are $6$ shared faces.",
+      "Each shared face removes $2$ exposed faces, so surface area is $42-12=30$.",
+      "The ratio is $7:30$.",
+      "Final Answer: ($\\boxed{\\text{D }(7:30)}$)"
+    ],
+    "keyIdeas": [
+      "Surface area",
+      "Shared faces"
+    ],
+    "commonMistakes": [
+      "Subtract two exposed faces for every glued face."
+    ],
+    "alternativeMethods": [
+      "Start from seven separate cubes."
+    ],
+    "difficultyNotes": "Start from seven separate cubes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p17",
+    "problemId": "amc8-2008-p17",
+    "finalAnswer": "$\\boxed{\\text{D }(132)}$",
+    "shortExplanation": "**Idea:** Let the side lengths be $a$ and $b$. Since $2(a+b)=50$, we have $a+b=25$.",
+    "detailedSteps": [
+      "Let the side lengths be $a$ and $b$. Since $2(a+b)=50$, we have $a+b=25$.",
+      "The least area with positive integer sides is $1cdot24=24$.",
+      "The greatest area occurs when the sides are as close as possible: $12cdot13=156$.",
+      "The difference is $156-24=132$.",
+      "Final Answer: ($\\boxed{\\text{D }(132)}$)"
+    ],
+    "keyIdeas": [
+      "Perimeter constraint",
+      "Area optimization"
+    ],
+    "commonMistakes": [
+      "Side lengths must be positive integers."
+    ],
+    "alternativeMethods": [
+      "For fixed sum, product is largest when numbers are close."
+    ],
+    "difficultyNotes": "For fixed sum, product is largest when numbers are close.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p18",
+    "problemId": "amc8-2008-p18",
+    "finalAnswer": "$\\boxed{\\text{E }(20pi+40)}$",
+    "shortExplanation": "**Idea:** The straight portions of the path add to $40$.",
+    "detailedSteps": [
+      "The straight portions of the path add to $40$.",
+      "The circular arcs together make half of a circle of radius $20$.",
+      "Half the circumference is $\\frac12(2picdot20)=20pi$.",
+      "Total path length is $40+20pi$.",
+      "Final Answer: ($\\boxed{\\text{E }(20pi+40)}$)"
+    ],
+    "keyIdeas": [
+      "Arc length",
+      "Composite paths"
+    ],
+    "commonMistakes": [
+      "Add straight lengths and arc lengths separately."
+    ],
+    "alternativeMethods": [
+      "Combine the arcs by total central angle."
+    ],
+    "difficultyNotes": "Combine the arcs by total central angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p19",
+    "problemId": "amc8-2008-p19",
+    "finalAnswer": "$\\boxed{\\text{B }(2/7)}$",
+    "shortExplanation": "**Idea:** There are $\\binom82=28$ ways to choose two points.",
+    "detailedSteps": [
+      "There are $\\binom82=28$ ways to choose two points.",
+      "Adjacent perimeter pairs one unit apart occur along the $8$ small side segments.",
+      "Thus the probability is $8/28=2/7$.",
+      "Final Answer: ($\\boxed{\\text{B }(2/7)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "Do not count ordered pairs."
+    ],
+    "alternativeMethods": [
+      "Count favorable adjacent pairs around the boundary."
+    ],
+    "difficultyNotes": "Count favorable adjacent pairs around the boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p20",
+    "problemId": "amc8-2008-p20",
+    "finalAnswer": "$\\boxed{\\text{B }(17)}$",
+    "shortExplanation": "**Idea:** Equal pass counts force a ratio between boys and girls.",
+    "detailedSteps": [
+      "Let $b$ be the number of boys and $g$ be the number of girls.",
+      "The same number of boys and girls passed, so $\\frac{2}{3}b=\\frac{3}{4}g$.",
+      "Multiplying by $12$ gives $8b=9g$, so $b:g=9:8$.",
+      "The smallest possible class has $9+8=17$ students.",
+      "Final Answer: ($\\boxed{\\text{B }(17)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Least integer solution"
+    ],
+    "commonMistakes": [
+      "The equal quantities are the numbers who passed, not the total numbers of boys and girls."
+    ],
+    "alternativeMethods": [
+      "Let the common number who passed be $k$. Then $b=\\frac{3}{2}k$ and $g=\\frac{4}{3}k$; the least integer choice gives $b=9$, $g=8$."
+    ],
+    "difficultyNotes": "Convert the equal pass counts into a whole-number ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p21",
+    "problemId": "amc8-2008-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(151)}$",
+    "shortExplanation": "**Idea:** The full cylinder volume is $pi r^2h=picdot4^2cdot6=96pi$.",
+    "detailedSteps": [
+      "The full cylinder volume is $pi r^2h=picdot4^2cdot6=96pi$.",
+      "The wedge is half the cylinder, so its volume is $48pi$.",
+      "Since $48piapprox150.8$, the nearest whole number is $151$.",
+      "Final Answer: ($\\boxed{\\text{C }(151)}$)"
+    ],
+    "keyIdeas": [
+      "Cylinder volume",
+      "Half volume"
+    ],
+    "commonMistakes": [
+      "Use radius 4, not diameter 8."
+    ],
+    "alternativeMethods": [
+      "Find the full cylinder first."
+    ],
+    "difficultyNotes": "Find the full cylinder first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p22",
+    "problemId": "amc8-2008-p22",
+    "finalAnswer": "$\\boxed{\\text{A }(12)}$",
+    "shortExplanation": "**Idea:** For $\\frac n3$ to be three-digit, $300le nle2997$.",
+    "detailedSteps": [
+      "For $\\frac n3$ to be three-digit, $300le nle2997$.",
+      "For $3n$ to be three-digit, $100le3nle999$, so $34le nle333$.",
+      "Together, $300le nle333$.",
+      "Also $n$ must be divisible by $3$. The multiples are $300,303,ldots,333$, giving $12$ values.",
+      "Final Answer: ($\\boxed{\\text{A }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Inequalities",
+      "Multiples"
+    ],
+    "commonMistakes": [
+      "Remember $n/3$ must be an integer."
+    ],
+    "alternativeMethods": [
+      "Intersect the two ranges first."
+    ],
+    "difficultyNotes": "Intersect the two ranges first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p23",
+    "problemId": "amc8-2008-p23",
+    "finalAnswer": "$\\boxed{\\text{C }(5/18)}$",
+    "shortExplanation": "**Idea:** Set the square side length to $3$. Use coordinates $E=(0,0)$, $A=(0,3)$, $B=(3,3)$, $C=(3,0)$, $F=(0,1)$, and $D=(1,0)$.",
+    "detailedSteps": [
+      "Set the square side length to $3$. Use coordinates $E=(0,0)$, $A=(0,3)$, $B=(3,3)$, $C=(3,0)$, $F=(0,1)$, and $D=(1,0)$.",
+      "Using the shoelace formula, the area of $\\triangle BFD$ is $\\frac52$.",
+      "The square area is $9$.",
+      "The fraction is $\\frac{5/2}{9}=\\frac5{18}$.",
+      "Final Answer: ($\\boxed{\\text{C }(5/18)}$)"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Shoelace area"
+    ],
+    "commonMistakes": [
+      "Use the square area as the denominator."
+    ],
+    "alternativeMethods": [
+      "Coordinates make the area computation clean."
+    ],
+    "difficultyNotes": "Coordinates make the area computation clean.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p24",
+    "problemId": "amc8-2008-p24",
+    "finalAnswer": "$\\boxed{\\text{C }(11/60)}$",
+    "shortExplanation": "**Idea:** A product is a square when the squarefree parts match.",
+    "detailedSteps": [
+      "A product is a square when the squarefree parts match.",
+      "For tiles $1$ through $10$, the counts by squarefree part matching die values are: squarefree $1$ has $3$ tiles and $2$ die faces; $2$ has $2$ tiles and $1$ die face; $3,5,6$ each contribute $1$ match.",
+      "Favorable outcomes: $3cdot2+2cdot1+1+1+1=11$.",
+      "There are $10cdot6=60$ total outcomes.",
+      "Probability is $11/60$.",
+      "Final Answer: ($\\boxed{\\text{C }(11/60)}$)"
+    ],
+    "keyIdeas": [
+      "Squarefree parts",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Do not require each factor to be a square by itself."
+    ],
+    "alternativeMethods": [
+      "Match parity of prime exponents."
+    ],
+    "difficultyNotes": "Match parity of prime exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2008-p25",
+    "problemId": "amc8-2008-p25",
+    "finalAnswer": "$\\boxed{\\text{A }(42)}$",
+    "shortExplanation": "**Idea:** The black regions have area $pi(10^2-8^2)+pi(6^2-4^2)+pi(2^2)$.",
+    "detailedSteps": [
+      "The black regions have area $pi(10^2-8^2)+pi(6^2-4^2)+pi(2^2)$.",
+      "This is $36pi+20pi+4pi=60pi$.",
+      "The largest circle area is $12^2pi=144pi$.",
+      "The fraction is $60/144=5/12\\approx41.7\\%$, which rounds to $42\\%$.",
+      "Final Answer: ($\\boxed{\\text{A }(42)}$)"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Annuli"
+    ],
+    "commonMistakes": [
+      "Subtract inner circle area from outer circle area for each ring."
+    ],
+    "alternativeMethods": [
+      "Add black rings and the center circle."
+    ],
+    "difficultyNotes": "Add black rings and the center circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

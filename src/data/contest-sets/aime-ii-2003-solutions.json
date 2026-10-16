@@ -1,0 +1,322 @@
+[
+  {
+    "id": "solution-aime-ii-2003-p1",
+    "problemId": "aime-ii-2003-p1",
+    "finalAnswer": "$\\boxed{336}$",
+    "shortExplanation": "The possible products are 156,96,84.",
+    "detailedSteps": [
+      "Write the three positive integers as $a,b,a+b$. The product equation is $ab(a+b)=6[2(a+b)]$. Since $a+b$ is positive, cancellation gives $ab=12$.",
+      "The unordered positive factor pairs are $(1,12),(2,6),(3,4)$. Their products of all three integers are 156,96,84 respectively, all distinct. Their sum is 336."
+    ],
+    "keyIdeas": [
+      "Cancel the integer that is the sum of the other two"
+    ],
+    "commonMistakes": [
+      "Counting the two orders of a factor pair as different product values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The specified sum relation removes a whole factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p2",
+    "problemId": "aime-ii-2003-p2",
+    "finalAnswer": "$\\boxed{120}$",
+    "shortExplanation": "The greatest number is 9876543120.",
+    "detailedSteps": [
+      "No repeated digits means there are at most ten digits. A valid ten-digit number exceeds every shorter positive integer. Its largest possible seven-digit prefix is 9876543.",
+      "The remaining digits are 2,1,0. In descending lexicographic order their first three permutations are 210,201,120. Divisibility by eight depends only on the last three digits; 210 and 201 fail, while 120 succeeds.",
+      "Thus 9876543120 is valid. Every number with a smaller seven-digit prefix is smaller, and the only larger suffixes with this prefix have been excluded. It is the global maximum, with remainder 120 modulo 1000."
+    ],
+    "keyIdeas": [
+      "Maximize the digit prefix before testing divisibility by eight"
+    ],
+    "commonMistakes": [
+      "Taking the descending digit string without checking its last three digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisibility rule leaves the largest feasible prefix intact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p3",
+    "problemId": "aime-ii-2003-p3",
+    "finalAnswer": "$\\boxed{192}$",
+    "shortExplanation": "There are 3 times 2 to the sixth power good words.",
+    "detailedSteps": [
+      "The first letter has three choices. After each letter, exactly one of the three letters is forbidden by the stated directed adjacency rule; the other two are allowed, including the repeated letter.",
+      "There are six subsequent positions, each with two choices independently of the earlier prefix. The number is $3\\cdot2^6=192$. No condition is imposed between the final and first letters."
+    ],
+    "keyIdeas": [
+      "Every permitted prefix has exactly two continuations"
+    ],
+    "commonMistakes": [
+      "Adding a cyclic wraparound condition or requiring all three letters to appear."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The constant number of continuations makes the product rule immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p4",
+    "problemId": "aime-ii-2003-p4",
+    "finalAnswer": "$\\boxed{028}$",
+    "shortExplanation": "The volume ratio is 1/27.",
+    "detailedSteps": [
+      "Let the four tetrahedron vertices be vectors $V_1,V_2,V_3,V_4$ and its centroid be G, their average. The center of the equilateral face opposite $V_i$ is $(4G-V_i)/3=G-(V_i-G)/3$.",
+      "Thus the face centers are the images of the vertices under a homothety about G of scale minus one-third. Every length is scaled by one-third, and the volume by the cube of that absolute factor, 1/27.",
+      "The ratio is already reduced, giving $m+n=1+27=28$."
+    ],
+    "keyIdeas": [
+      "Face centroids form a homothetic tetrahedron"
+    ],
+    "commonMistakes": [
+      "Using the squared length scale for a three-dimensional volume."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Regularity identifies each face center with its centroid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p5",
+    "problemId": "aime-ii-2003-p5",
+    "finalAnswer": "$\\boxed{216}$",
+    "shortExplanation": "The mean wedge height is six inches.",
+    "detailedSteps": [
+      "Take the cylinder axis as z and the perpendicular cut as $z=0$. Its intersection line with the tilted cut is tangent to the radius-six cross-sectional disk, since that line meets the log in just one point. Rotate the x-axis so this tangent line is $x=-6$.",
+      "The 45° angle makes the second plane $z=x+6$, after choosing the direction of z toward the wedge. Over the disk $x^2+y^2\\le36$, the height between the cuts is x plus 6, which is nonnegative.",
+      "The disk is symmetric about $x=0$, so the integral of x over it is zero. The wedge volume is therefore six times the disk area, $6(36\\pi)=216\\pi$. Hence $n=216$."
+    ],
+    "keyIdeas": [
+      "Integrate an affine wedge height over the disk"
+    ],
+    "commonMistakes": [
+      "Using a cone formula or placing the planes’ intersection through the disk center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A tangent intersection produces a height ranging from zero to twelve with mean six.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p6",
+    "problemId": "aime-ii-2003-p6",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "The overlap has two-thirds of either triangle’s area.",
+    "detailedSteps": [
+      "Heron’s formula for the 13-14-15 triangle gives semiperimeter 21 and area $\\sqrt{21\\cdot8\\cdot7\\cdot6}=84$.",
+      "To find the overlap fraction, use an affine transformation to the triangle with vertices $(0,0),(1,0),(0,1)$. It preserves area ratios, centroids, and the rotation through 180° about the centroid. This rotation maps $(x,y)$ to $(2/3-x,2/3-y)$.",
+      "The first triangle is defined by $x\\ge0,y\\ge0,x+y\\le1$, and the rotated one by $x\\le2/3,y\\le2/3,x+y\\ge1/3$. Their overlap removes three disjoint corner triangles from the first, each with one-third of its linear scale and thus one-ninth of its area.",
+      "The overlap fraction is $1-3/9=2/3$, so its area is 56. The union has area $84+84-56=112$."
+    ],
+    "keyIdeas": [
+      "An affine model gives the overlap fraction"
+    ],
+    "commonMistakes": [
+      "Adding the two triangle areas without subtracting the common hexagonal region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The overlap ratio is the same for every nondegenerate triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p7",
+    "problemId": "aime-ii-2003-p7",
+    "finalAnswer": "$\\boxed{400}$",
+    "shortExplanation": "The rhombus has side squared 500 and sine of its angle 4/5.",
+    "detailedSteps": [
+      "Let the rhombus side be s and its angle at A be θ, strictly between 0° and 180°. The diagonal BD is $2s\\sin(\\theta/2)$. By the extended sine law in ABD, its circumradius is $s/[2\\cos(\\theta/2)]=25/2$.",
+      "The other diagonal AC is $2s\\cos(\\theta/2)$, and the angle at D is 180° minus θ. The circumradius in ACD is $s/[2\\sin(\\theta/2)]=25$. Thus $\\cos(\\theta/2)=s/25$ and $\\sin(\\theta/2)=s/50$.",
+      "Squaring and adding yields $s^2(1/625+1/2500)=1$, so $s^2=500$. Consequently $\\sin\\theta=2(s/25)(s/50)=4/5$. The area is $s^2\\sin\\theta=500(4/5)=400$."
+    ],
+    "keyIdeas": [
+      "The two circumradii determine the half-angle sine and cosine"
+    ],
+    "commonMistakes": [
+      "Assigning both triangles the same diagonal or the same half-angle formula."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two diagonals use complementary half-angle functions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p8",
+    "problemId": "aime-ii-2003-p8",
+    "finalAnswer": "$\\boxed{348}$",
+    "shortExplanation": "The eighth term is 348.",
+    "detailedSteps": [
+      "At index j starting with zero, the product of two arithmetic terms is $(a+jd)(b+je)$, a quadratic in j. Therefore its second difference is constant.",
+      "The first differences are $1716-1440=276$ and $1848-1716=132$, giving second difference minus 144. The term at index j is $1440+276j-72j(j-1)$.",
+      "The eighth term has $j=7$ and is $1440+276(7)-72(7)(6)=348$. The source representation is attainable: $(90-12j)(16+6j)$ gives exactly this quadratic and the stated first terms."
+    ],
+    "keyIdeas": [
+      "Products of two arithmetic sequences have constant second differences"
+    ],
+    "commonMistakes": [
+      "Continuing with a constant first difference instead of a constant second difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Three terms determine the product quadratic uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p9",
+    "problemId": "aime-ii-2003-p9",
+    "finalAnswer": "$\\boxed{006}$",
+    "shortExplanation": "At every root z, P(z) equals z squared minus z plus one.",
+    "detailedSteps": [
+      "Polynomial division gives $P(x)=(x^2+1)Q(x)+x^2-x+1$. Thus for each of the four roots, $P(z)=z^2-z+1$.",
+      "Vieta’s formulas for $Q(x)=x^4-x^3-x^2-1$ give $\\sum z_i=1$ and $\\sum_{i<j}z_iz_j=-1$. Hence $\\sum z_i^2=1^2-2(-1)=3$.",
+      "Summing the reduced expression over the four roots gives $3-1+4=6$. These identities apply to complex roots as well."
+    ],
+    "keyIdeas": [
+      "Reduce the target polynomial modulo the root polynomial"
+    ],
+    "commonMistakes": [
+      "Trying to solve the quartic explicitly or neglecting the coefficient sign in Vieta’s formula."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The remainder keeps only the first two power sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p10",
+    "problemId": "aime-ii-2003-p10",
+    "finalAnswer": "$\\boxed{156}$",
+    "shortExplanation": "The maximal pair is 108 and 48.",
+    "detailedSteps": [
+      "Let the integers be a greater than b. Squaring the given root sum shows that $2\\sqrt{ab}$ is an integer. A rational square root of an integer is an integer, so ab is a square. Write $a=du^2,b=dv^2$, with common squarefree positive integer d and integers u greater than v at least one.",
+      "The root sum squared is $d(u+v)^2$. The nonsquare requirement means d greater than one. The difference equation is $d(u-v)(u+v)=60$, so d is a squarefree divisor of 60: 2,3,5,6,10,15,30.",
+      "Put $h=u-v$ and $k=u+v$. They must be positive integers of the same parity with $k>h$. For each listed d, factor $hk=60/d$. The only admissible pairs are $d=3$ with $(h,k)=(2,10)$, and $d=5$ with $(h,k)=(2,6)$. All other factor pairs have opposite parities or $k=h$.",
+      "These give $(a,b)=(108,48)$ with sum 156, or $(80,20)$ with sum 100. In the first case the root sum is $10\\sqrt3=\\sqrt{300}$, which satisfies the nonsquare condition. The maximum is 156."
+    ],
+    "keyIdeas": [
+      "A square product fixes a common squarefree part"
+    ],
+    "commonMistakes": [
+      "Allowing a perfect-square radicand, which would admit larger pairs with square integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing common square factors leaves only seven possible squarefree parts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p11",
+    "problemId": "aime-ii-2003-p11",
+    "finalAnswer": "$\\boxed{578}$",
+    "shortExplanation": "The area is $527\\sqrt{11}/40$.",
+    "detailedSteps": [
+      "Put $A=(0,0),B=(25,0)$, since the right triangle has hypotenuse 25. If C is above AB, its x-coordinate is $[7^2+25^2-24^2]/(2\\cdot25)=49/25$, and its altitude is $7\\cdot24/25=168/25$. The midpoint is $M=(25/2,0)$.",
+      "The equal distances AD and BD put D on the perpendicular bisector $x=25/2$. The same-side condition selects its positive height $\\sqrt{15^2-(25/2)^2}=5\\sqrt{11}/2$. Thus DM is vertical with that length.",
+      "The perpendicular distance from C to line DM is $25/2-49/25=527/50$. The area of CDM is therefore $\\tfrac12(5\\sqrt{11}/2)(527/50)=527\\sqrt{11}/40$.",
+      "The coefficients 527 and 40 are coprime, and 11 is squarefree. Hence $m+n+p=527+11+40=578$."
+    ],
+    "keyIdeas": [
+      "Use the altitude to AB and the midpoint’s coordinate"
+    ],
+    "commonMistakes": [
+      "Using C’s altitude to AB as the altitude to the vertical side DM."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint perpendicular bisector makes DM an especially convenient base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p12",
+    "problemId": "aime-ii-2003-p12",
+    "finalAnswer": "$\\boxed{134}$",
+    "shortExplanation": "A committee of 134 members is the first feasible size.",
+    "detailedSteps": [
+      "For committee size N and a candidate receiving v votes, the condition is $v-100v/N\\ge1$. It implies N greater than 100, v positive, and $v\\ge\\lceil N/(N-100)\\rceil$.",
+      "Summing the unrounded inequalities over all 27 candidates gives $N-100\\ge27$, so N at least 127. For 127 through 133, $N/(N-100)>4$, so each candidate needs at least five votes. This would require at least 135 votes and excludes every such N.",
+      "For $N=134$, give twenty-six candidates five votes each and the remaining candidate four, totaling 134. The smallest vote count satisfies $4-400/134=136/134\\ge1$, and a larger count increases this difference. All 27 conditions hold, proving the minimum 134."
+    ],
+    "keyIdeas": [
+      "Every candidate needs an integral vote minimum"
+    ],
+    "commonMistakes": [
+      "Rounding vote percentages or allowing a zero-vote candidate to satisfy the positive-gap condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The rounded per-candidate threshold is stronger than the total continuous bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p13",
+    "problemId": "aime-ii-2003-p13",
+    "finalAnswer": "$\\boxed{683}$",
+    "shortExplanation": "The tenth-move return probability is 171/512.",
+    "detailedSteps": [
+      "Let $p_n$ be the probability of being at the starting vertex after n moves. If there now, the next move leaves; if at either other vertex, the next move returns with probability one-half. Thus $p_{n+1}=(1-p_n)/2$, with $p_0=1$.",
+      "Subtracting the fixed value one-third gives $p_{n+1}-1/3=-\\tfrac12(p_n-1/3)$. Hence $p_n=1/3+(2/3)(-1/2)^n$.",
+      "At $n=10$ this is $1/3+1/1536=171/512$. The fraction is reduced, so $m+n=171+512=683$. Earlier visits are allowed by the source."
+    ],
+    "keyIdeas": [
+      "Track the return probability with a one-step recurrence"
+    ],
+    "commonMistakes": [
+      "Interpreting the question as a first return on the tenth move."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two nonstarting vertices have the same chance of returning.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p14",
+    "problemId": "aime-ii-2003-p14",
+    "finalAnswer": "$\\boxed{051}$",
+    "shortExplanation": "The valid hexagon has area 48√3.",
+    "detailedSteps": [
+      "Let consecutive side vectors AB,BC,CD be u,v,w. Convexity forces each parallel opposite side to point in the opposite direction, and equal lengths force the remaining vectors to be minus u,minus v,minus w. The vertices are consequently $0,u,u+v,u+v+w,v+w,w$. They have central symmetry pairing A with D, B with E, and C with F.",
+      "A has the unique minimum y-coordinate 0. Its partner D must have the maximum 10; thus E has y 8 because B has y 2, while C and F have y 4 and 6 in either order. Therefore $u_y=2$, and the two possibilities are $(w_y,v_y)=(4,4)$ or $(6,2)$.",
+      "Reflect horizontally if needed so the vertex order is counterclockwise. The 120° angle at A then means w is u rotated counterclockwise 120°. If $w_y=k$, this yields $u_x=2(k+1)/\\sqrt3$ and $w_x=-(k+4)/\\sqrt3$.",
+      "For $k=6$, u and v have the same y-coordinate and length but distinct directions, so $u=(14/\\sqrt3,2)$, $v=(-14/\\sqrt3,2)$, and $w=(-10/\\sqrt3,6)$. Their consecutive cross product $v\\mathbin\\times w=-64/\\sqrt3<0$ contradicts convex counterclockwise order.",
+      "For $k=4$, the same equal-length argument gives $u=(10/\\sqrt3,2)$, $v=(8/\\sqrt3,4)$, $w=(-8/\\sqrt3,4)$. These generate the required six distinct heights and a convex hexagon with equal side lengths; all consecutive turns have positive cross products.",
+      "The area of the centrally symmetric hexagon is $u\\mathbin\\times v+u\\mathbin\\times w+v\\mathbin\\times w$, either by its three parallelograms or by the shoelace formula on the six vertices. Here it is $(24+56+64)/\\sqrt3=48\\sqrt3$. Thus $m+n=48+3=51$."
+    ],
+    "keyIdeas": [
+      "Central symmetry limits the vertical coordinates to two cases"
+    ],
+    "commonMistakes": [
+      "Assuming every equilateral hexagon is regular, or retaining the nonconvex vertical-coordinate case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parallel equal opposite sides give central symmetry without requiring regularity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2003-p15",
+    "problemId": "aime-ii-2003-p15",
+    "finalAnswer": "$\\boxed{015}$",
+    "shortExplanation": "The sum of imaginary-part magnitudes is 8 plus 4√3.",
+    "detailedSteps": [
+      "Expanding the square of $S(x)=1+x+\\cdots+x^{23}$ gives coefficients 1,2,…,24,…,2,1. Therefore the stated polynomial is $P(x)=xS(x)^2$.",
+      "The distinct roots are zero and the twenty-three nontrivial 24th roots of unity $z_k=e^{2\\pi i k/24}$ for $k=1$ through 23. The latter are double roots, but each is counted once as the source requires. There is no root at one, since $S(1)=24$.",
+      "The imaginary part of $z_k^2$ is $\\sin(\\pi k/6)$. Over k 0 through 23, the absolute values have two periods of twelve; adding k 0 changes nothing. Within one period their sum is $2(1/2+\\sqrt3/2+1+\\sqrt3/2+1/2)=4+2\\sqrt3$.",
+      "The root zero also contributes zero. The full sum is $8+4\\sqrt3$, so $m=8,n=4,p=3$ and $m+n+p=15$."
+    ],
+    "keyIdeas": [
+      "Factor the triangular coefficient polynomial into a square"
+    ],
+    "commonMistakes": [
+      "Counting double roots twice or using the imaginary part of z instead of of z squared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A squared geometric sum explains both the root multiplicities and the simple angular pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

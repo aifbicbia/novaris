@@ -1,0 +1,699 @@
+[
+  {
+    "id": "solution-amc8-2010-p1",
+    "problemId": "amc8-2010-p1",
+    "finalAnswer": "$\\boxed{\\text{C }(28)}$",
+    "shortExplanation": "**Idea:** Add the three class counts.",
+    "detailedSteps": [
+      "The total number of students is\n[\n11+8+9=28.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(28)}$)"
+    ],
+    "keyIdeas": [
+      "Addition",
+      "Counting groups"
+    ],
+    "commonMistakes": [
+      "Include all three classes.",
+      "Do not confuse teacher count with student count."
+    ],
+    "alternativeMethods": [
+      "Add $11+9=20$, then add $8$ more."
+    ],
+    "difficultyNotes": "A direct addition warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p2",
+    "problemId": "amc8-2010-p2",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac{10}{3}\\right)}$",
+    "shortExplanation": "**Idea:** Substitute $a=5$ and $b=10$ into the defined operation.",
+    "detailedSteps": [
+      "By definition,\n[\n5@10=\\frac{5\\cdot10}{5+10}.\n]",
+      "Compute:\n[\n\\frac{50}{15}=\\frac{10}{3}.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac{10}{3}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Defined operations",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Use the given operation, not ordinary addition or multiplication.",
+      "Reduce the fraction $50/15$."
+    ],
+    "alternativeMethods": [
+      "Factor $5$ from numerator and denominator: $\\frac{5\\cdot10}{15}=\\frac{10}{3}$."
+    ],
+    "difficultyNotes": "A simple substitution into a custom operation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p3",
+    "problemId": "amc8-2010-p3",
+    "finalAnswer": "$\\boxed{\\text{C }(70)}$",
+    "shortExplanation": "**Idea:** Use percent increase from the lowest price to the highest price.",
+    "detailedSteps": [
+      "From the graph, the lowest price is $10$ and the highest price is $17$.",
+      "The increase is\n[\n17-10=7.\n]",
+      "As a percent of the lowest price:\n[\n\\frac{7}{10}=70\\%.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(70)}$)"
+    ],
+    "keyIdeas": [
+      "Percent increase",
+      "Graph reading"
+    ],
+    "commonMistakes": [
+      "The percent is measured relative to the lowest price.",
+      "Use highest minus lowest, not the average price."
+    ],
+    "alternativeMethods": [
+      "Since $17$ is $1.7$ times $10$, it is $70\\%$ more than $10$."
+    ],
+    "difficultyNotes": "A graph-reading percent problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p4",
+    "problemId": "amc8-2010-p4",
+    "finalAnswer": "$\\boxed{\\text{C }(7.5)}$",
+    "shortExplanation": "**Idea:** Find the three statistics and add them.",
+    "detailedSteps": [
+      "Sorted order:\n[\n0,\\ 0,\\ 1,\\ 2,\\ 3,\\ 3,\\ 3,\\ 4.\n]",
+      "The median is the average of the fourth and fifth values:\n[\n\\frac{2+3}{2}=2.5.\n]",
+      "The mode is $3$.",
+      "The mean is\n[\n\\frac{2+3+0+3+1+4+0+3}{8}=\\frac{16}{8}=2.\n]",
+      "Their sum is\n[\n2+2.5+3=7.5.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(7.5)}$)"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Median",
+      "Mode"
+    ],
+    "commonMistakes": [
+      "For eight values, the median is the average of the fourth and fifth.",
+      "The mode is the most frequent value."
+    ],
+    "alternativeMethods": [
+      "Compute the mean first from total $16$, then use the sorted list for median and mode."
+    ],
+    "difficultyNotes": "A compact statistics calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p5",
+    "problemId": "amc8-2010-p5",
+    "finalAnswer": "$\\boxed{\\text{B }(34)}$",
+    "shortExplanation": "**Idea:** Convert all heights to centimeters and compare reach with bulb height.",
+    "detailedSteps": [
+      "The ceiling is $2.4$ meters, or $240$ centimeters, above the floor.",
+      "The bulb is $10$ centimeters below the ceiling, so it is at height\n[\n240-10=230\n]",
+      "centimeters.",
+      "Alice can reach\n[\n150+46=196\n]",
+      "centimeters while standing on the floor.",
+      "The stool must add\n[\n230-196=34\n]",
+      "centimeters.",
+      "Final Answer: ($\\boxed{\\text{B }(34)}$)"
+    ],
+    "keyIdeas": [
+      "Unit conversion",
+      "Height difference"
+    ],
+    "commonMistakes": [
+      "Convert meters to centimeters.",
+      "The bulb is below the ceiling."
+    ],
+    "alternativeMethods": [
+      "Work from the bulb downward: $230-150-46=34$."
+    ],
+    "difficultyNotes": "A unit-consistency problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p6",
+    "problemId": "amc8-2010-p6",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Compare the symmetry counts for the listed figures.",
+    "detailedSteps": [
+      "An equilateral triangle has $3$ lines of symmetry.",
+      "A non-square rhombus has $2$, a non-square rectangle has $2$, and an isosceles trapezoid has $1$.",
+      "A square has $4$ lines of symmetry.",
+      "The greatest count is the square.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Lines of symmetry",
+      "Common shapes"
+    ],
+    "commonMistakes": [
+      "A non-square rectangle has only $2$ symmetry lines.",
+      "A square has both diagonal and midline symmetries."
+    ],
+    "alternativeMethods": [
+      "Draw the reflection axes for each shape and count them."
+    ],
+    "difficultyNotes": "A visual geometry fact problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p7",
+    "problemId": "amc8-2010-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(10)}$",
+    "shortExplanation": "**Idea:** Build the smallest coin set that covers every amount below $100$ cents.",
+    "detailedSteps": [
+      "To make any cents digit from $0$ through $4$, Freddie needs $4$ pennies.",
+      "To cover nickel changes, he needs one nickel.",
+      "To cover the tens digit up to $20$ before using quarters, he needs two dimes.",
+      "To reach all amounts up to $99$, he needs three quarters.",
+      "This set has\n[\n4+1+2+3=10\n]",
+      "coins and can make every amount below $100$ cents.",
+      "Final Answer: ($\\boxed{\\text{B }(10)}$)"
+    ],
+    "keyIdeas": [
+      "Coin systems",
+      "Coverage"
+    ],
+    "commonMistakes": [
+      "The same set of coins must be able to pay any amount less than a dollar.",
+      "Four pennies are necessary to make $4$ cents."
+    ],
+    "alternativeMethods": [
+      "The set $3$ quarters, $2$ dimes, $1$ nickel, and $4$ pennies works and is minimal by denomination needs."
+    ],
+    "difficultyNotes": "A coin coverage problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p8",
+    "problemId": "amc8-2010-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(15)}$",
+    "shortExplanation": "**Idea:** Use relative speed over a one-mile change in separation.",
+    "detailedSteps": [
+      "Emily first sees Emerson when he is $\\frac12$ mile ahead and last sees him when he is $\\frac12$ mile behind.",
+      "So Emily gains a total of\n[\n\\frac12+\\frac12=1\n]",
+      "mile on Emerson.",
+      "Her relative speed is\n[\n12-8=4\n]",
+      "miles per hour.",
+      "The time is\n[\n\\frac{1}{4}\\text{ hour}=15\\text{ minutes}.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(15)}$)"
+    ],
+    "keyIdeas": [
+      "Relative speed",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Use the change in separation from ahead to behind, total $1$ mile.",
+      "Convert one fourth of an hour to minutes."
+    ],
+    "alternativeMethods": [
+      "Think of Emerson standing still while Emily moves at $4$ mph relative to him."
+    ],
+    "difficultyNotes": "A relative-rate problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p9",
+    "problemId": "amc8-2010-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(84)}$",
+    "shortExplanation": "**Idea:** Compute total correct answers over all tests.",
+    "detailedSteps": [
+      "Ryan answered\n[\n0.80\\cdot25=20\n]",
+      "problems correctly on the first test.",
+      "On the second:\n[\n0.90\\cdot40=36.\n]",
+      "On the third:\n[\n0.70\\cdot10=7.\n]",
+      "Total correct:\n[\n20+36+7=63.\n]",
+      "Total problems:\n[\n25+40+10=75.\n]",
+      "Overall percent:\n[\n\\frac{63}{75}=0.84=84\\%.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(84)}$)"
+    ],
+    "keyIdeas": [
+      "Weighted averages",
+      "Percent correct"
+    ],
+    "commonMistakes": [
+      "Do not average $80,90,70$ directly because the tests have different lengths.",
+      "Use total correct over total problems."
+    ],
+    "alternativeMethods": [
+      "Convert each percent to a number of correct answers first."
+    ],
+    "difficultyNotes": "A weighted percentage problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p10",
+    "problemId": "amc8-2010-p10",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac23\\right)}$",
+    "shortExplanation": "**Idea:** Compare the total pepperoni area with the pizza area.",
+    "detailedSteps": [
+      "Six pepperoni circles fit across the $12$-inch diameter, so each pepperoni has diameter\n[\n\\frac{12}{6}=2\n]",
+      "inches and radius $1$ inch.",
+      "Each pepperoni area is $\\pi$, so $24$ pepperonis cover area\n[\n24\\pi.\n]",
+      "The pizza radius is $6$, so the pizza area is\n[\n36\\pi.\n]",
+      "The covered fraction is\n[\n\\frac{24\\pi}{36\\pi}=\\frac23.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac23\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Area ratio"
+    ],
+    "commonMistakes": [
+      "Six pepperonis across the diameter gives pepperoni diameter $2$, not radius $2$.",
+      "Use areas, not diameters."
+    ],
+    "alternativeMethods": [
+      "The radius ratio is $1:6$, so one pepperoni has $\\frac{1}{36}$ of the pizza area; $24$ of them cover $\\frac{24}{36}=\\frac23$."
+    ],
+    "difficultyNotes": "A circle-area fraction problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p11",
+    "problemId": "amc8-2010-p11",
+    "finalAnswer": "$\\boxed{\\text{B }(64)}$",
+    "shortExplanation": "**Idea:** The ratio difference represents $16$ feet.",
+    "detailedSteps": [
+      "Let the tree heights be $3x$ and $4x$.",
+      "Their difference is\n[\n4x-3x=x=16.\n]",
+      "The taller tree is\n[\n4x=4\\cdot16=64\n]",
+      "feet tall.",
+      "Final Answer: ($\\boxed{\\text{B }(64)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Scaling"
+    ],
+    "commonMistakes": [
+      "The difference between ratio parts is one part.",
+      "The taller tree corresponds to $4x$."
+    ],
+    "alternativeMethods": [
+      "A $3:4$ ratio means the taller is $\\frac43$ of the shorter; solve from the $16$ foot difference."
+    ],
+    "difficultyNotes": "A basic ratio-difference problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p12",
+    "problemId": "amc8-2010-p12",
+    "finalAnswer": "$\\boxed{\\text{D }(100)}$",
+    "shortExplanation": "**Idea:** Let $x$ be the number of red balls removed.",
+    "detailedSteps": [
+      "Initially there are\n[\n0.80\\cdot500=400\n]",
+      "red balls and $100$ blue balls.",
+      "After removing $x$ red balls, the red count is $400-x$ and the total is $500-x$.",
+      "We need\n[\n400-x=0.75(500-x).\n]",
+      "Solve:\n[\n400-x=375-0.75x,\n]",
+      "so\n[\n25=0.25x,\\qquad x=100.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(100)}$)"
+    ],
+    "keyIdeas": [
+      "Percent equations",
+      "Changing totals"
+    ],
+    "commonMistakes": [
+      "Removing red balls changes both the red count and the total count.",
+      "The blue count stays $100$."
+    ],
+    "alternativeMethods": [
+      "If red is $75\\%$, blue is $25\\%$. With $100$ blue balls, the final total must be $400$, leaving $300$ red balls."
+    ],
+    "difficultyNotes": "A percent problem where the denominator changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p13",
+    "problemId": "amc8-2010-p13",
+    "finalAnswer": "$\\boxed{\\text{E }(11)}$",
+    "shortExplanation": "**Idea:** Use consecutive side lengths and the perimeter condition.",
+    "detailedSteps": [
+      "Let the side lengths be\n[\nn,\\ n+1,\\ n+2.\n]",
+      "The perimeter is\n[\n3n+3.\n]",
+      "The shortest side is $30\\%$ of the perimeter:\n[\nn=0.30(3n+3).\n]",
+      "Using fractions,\n[\nn=\\frac{3}{10}(3n+3).\n]",
+      "So\n[\n10n=9n+9,\\qquad n=9.\n]",
+      "The longest side is\n[\nn+2=11.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Consecutive integers",
+      "Percent equation"
+    ],
+    "commonMistakes": [
+      "The shortest side is $n$, not $n+2$.",
+      "Use 30 percent = $\\frac{3}{10}$."
+    ],
+    "alternativeMethods": [
+      "Test choices backward: if the longest side is $11$, the sides are $9,10,11$, and $9$ is $30\\%$ of $30$."
+    ],
+    "difficultyNotes": "A consecutive-integer percent setup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p14",
+    "problemId": "amc8-2010-p14",
+    "finalAnswer": "$\\boxed{\\text{C }(77)}$",
+    "shortExplanation": "**Idea:** Prime-factorize $2010$ and add distinct prime factors.",
+    "detailedSteps": [
+      "Factor:\n[\n2010=201\\cdot10=(3\\cdot67)(2\\cdot5).\n]",
+      "Thus the prime factors are\n[\n2,\\ 3,\\ 5,\\ 67.\n]",
+      "Their sum is\n[\n2+3+5+67=77.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(77)}$)"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Distinct prime factors"
+    ],
+    "commonMistakes": [
+      "The problem asks for prime factors, not all factors.",
+      "Do not include composite factor $201$."
+    ],
+    "alternativeMethods": [
+      "Divide $2010$ by $10$ first, then factor $201$."
+    ],
+    "difficultyNotes": "A direct factorization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p15",
+    "problemId": "amc8-2010-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(42)}$",
+    "shortExplanation": "**Idea:** Find the total number of gumdrops from the green percentage.",
+    "detailedSteps": [
+      "The listed percentages except green add to\n[\n30+20+15+10=75\n]",
+      "percent, so green is $25\\%$ of the jar.",
+      "Since $30$ gumdrops are green, the total number of gumdrops is\n[\n\\frac{30}{0.25}=120.\n]",
+      "Initially brown gumdrops:\n[\n0.20\\cdot120=24.\n]",
+      "Blue gumdrops:\n[\n0.30\\cdot120=36.\n]",
+      "Half of the blue gumdrops, $18$, are replaced with brown gumdrops, so the new brown count is\n[\n24+18=42.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(42)}$)"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Category replacement"
+    ],
+    "commonMistakes": [
+      "Green is the remaining 25 percent, not 30 percent.",
+      "Replacing blue with brown increases brown by half the blue count."
+    ],
+    "alternativeMethods": [
+      "Use the green count to scale all percentages to actual counts."
+    ],
+    "difficultyNotes": "A percentage-to-count conversion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p16",
+    "problemId": "amc8-2010-p16",
+    "finalAnswer": "$\\boxed{\\text{B }(\\sqrt{\\pi})}$",
+    "shortExplanation": "**Idea:** Set the square area equal to the circle area.",
+    "detailedSteps": [
+      "Let the square side length be $s$ and the circle radius be $r$.",
+      "Equal areas mean\n[\ns^2=\\pi r^2.\n]",
+      "Taking square roots:\n[\ns=r\\sqrt{\\pi}.\n]",
+      "Therefore\n[\n\\frac{s}{r}=\\sqrt{\\pi}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(\\sqrt{\\pi})}$)"
+    ],
+    "keyIdeas": [
+      "Area formulas",
+      "Square roots"
+    ],
+    "commonMistakes": [
+      "The area of a circle is $pi r^2$.",
+      "The question asks for side length divided by radius."
+    ],
+    "alternativeMethods": [
+      "Set $r=1$; then the circle area is $\\pi$, so the square side is $\\sqrt{\\pi}$."
+    ],
+    "difficultyNotes": "A formula translation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p17",
+    "problemId": "amc8-2010-p17",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac23\\right)}$",
+    "shortExplanation": "**Idea:** Set the area below $PQ$ equal to half the octagon area.",
+    "detailedSteps": [
+      "The octagon consists of $10$ unit squares, so half its area is $5$.",
+      "The region below $\\overline{PQ}$ is a unit square plus a triangle with base $5$.",
+      "Let $QY=h$. Then the triangle height is $1+h$, so the below-line area is\n[\n1+\\frac12\\cdot5(1+h).\n]",
+      "Set this equal to $5$:\n[\n1+\\frac52(1+h)=5.\n]",
+      "Then\n[\n\\frac52(1+h)=4,\\qquad 1+h=\\frac85,\\qquad h=\\frac35.\n]",
+      "Since $XY=1$, we have\n[\nXQ=1-QY=1-\\frac35=\\frac25.\n]",
+      "Thus\n[\n\\frac{XQ}{QY}=\\frac{2/5}{3/5}=\\frac23.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac23\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Area bisection",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "Half the octagon area is $5$.",
+      "The triangle height includes the full unit below $Y$ plus $QY$."
+    ],
+    "alternativeMethods": [
+      "Use coordinates with $P=(0,0)$ and $Q=(5,\\frac85)$; then compare $XQ$ and $QY$."
+    ],
+    "difficultyNotes": "A diagram area problem with one unknown segment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p18",
+    "problemId": "amc8-2010-p18",
+    "finalAnswer": "$\\boxed{\\text{C }(6:\\pi)}$",
+    "shortExplanation": "**Idea:** The two semicircles combine into one circle.",
+    "detailedSteps": [
+      "Since $AD:AB=3:2$ and $AB=30$, we have\n[\nAD=45.\n]",
+      "The rectangle area is\n[\n30\\cdot45=1350.\n]",
+      "The two semicircles combine to form a circle with diameter $30$, so radius $15$.",
+      "Their combined area is\n[\n\\pi\\cdot15^2=225\\pi.\n]",
+      "The ratio is\n[\n1350:225\\pi=6:\\pi.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(6:\\pi)}$)"
+    ],
+    "keyIdeas": [
+      "Semicircles",
+      "Area ratio"
+    ],
+    "commonMistakes": [
+      "Two semicircles make one full circle.",
+      "The radius is half of $AB$."
+    ],
+    "alternativeMethods": [
+      "Use $AB=2x$, $AD=3x$, then substitute $x=15$."
+    ],
+    "difficultyNotes": "A rectangle-versus-circle area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p19",
+    "problemId": "amc8-2010-p19",
+    "finalAnswer": "$\\boxed{\\text{C }(64\\pi)}$",
+    "shortExplanation": "**Idea:** Use the tangent radius to find the inner radius.",
+    "detailedSteps": [
+      "The outer radius is\n[\nAC=10.\n]",
+      "Since $\\overline{AD}$ is tangent to the inner circle at $B$, radius $CB$ is perpendicular to chord $AD$.",
+      "The perpendicular from the center to a chord bisects the chord, so\n[\nAB=\\frac{16}{2}=8.\n]",
+      "In right triangle $ACB$,\n[\nCB^2=AC^2-AB^2=10^2-8^2=100-64=36.\n]",
+      "Thus the inner radius is $6$.",
+      "The area between the circles is\n[\n\\pi(10^2-6^2)=\\pi(100-36)=64\\pi.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(64\\pi)}$)"
+    ],
+    "keyIdeas": [
+      "Tangent radius",
+      "Chord bisection",
+      "Annulus area"
+    ],
+    "commonMistakes": [
+      "Use half the chord length in the right triangle.",
+      "Subtract inner circle area from outer circle area."
+    ],
+    "alternativeMethods": [
+      "Recognize the $6$-$8$-$10$ right triangle."
+    ],
+    "difficultyNotes": "A circle geometry problem built on a right triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p20",
+    "problemId": "amc8-2010-p20",
+    "finalAnswer": "$\\boxed{\\text{A }(3)}$",
+    "shortExplanation": "**Idea:** Use the smallest possible common total and inclusion-exclusion.",
+    "detailedSteps": [
+      "The total number of people must be divisible by both $5$ and $4$, so use the smallest possible total $20$.",
+      "Then\n[\n\\frac25\\cdot20=8\n]",
+      "people wear gloves, and\n[\n\\frac34\\cdot20=15\n]",
+      "people wear hats.",
+      "To minimize overlap, spread them as much as possible. The minimum overlap is\n[\n8+15-20=3.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(3)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Minimum overlap"
+    ],
+    "commonMistakes": [
+      "The total must make both fractions whole numbers.",
+      "If two groups total more than the room size, the excess must overlap."
+    ],
+    "alternativeMethods": [
+      "Use a Venn diagram with $20$ total people."
+    ],
+    "difficultyNotes": "A minimum-overlap set counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p21",
+    "problemId": "amc8-2010-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(240)}$",
+    "shortExplanation": "**Idea:** Work backward from the $62$ pages left.",
+    "detailedSteps": [
+      "Before the third day, let the remaining pages be $x$. After reading $\\frac13x+18$, Hui has\n[\n\\frac23x-18=62.\n]",
+      "So\n[\n\\frac23x=80,\\qquad x=120.\n]",
+      "Before the second day, let the remaining pages be $y$. Then\n[\n\\frac34y-15=120,\n]",
+      "so\n[\n\\frac34y=135,\\qquad y=180.\n]",
+      "Let the book have $N$ pages. After the first day:\n[\n\\frac45N-12=180.\n]",
+      "Thus\n[\n\\frac45N=192,\\qquad N=240.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(240)}$)"
+    ],
+    "keyIdeas": [
+      "Working backward",
+      "Fractional remainders"
+    ],
+    "commonMistakes": [
+      "Each day's fraction is of the pages remaining at that time.",
+      "Account for the extra pages after the fraction."
+    ],
+    "alternativeMethods": [
+      "Reverse each day by adding the extra pages back, then dividing by the remaining fraction."
+    ],
+    "difficultyNotes": "A multi-step reverse arithmetic problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p22",
+    "problemId": "amc8-2010-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(8)}$",
+    "shortExplanation": "**Idea:** The hundreds and units digits differ by $2$, so the subtraction is fixed.",
+    "detailedSteps": [
+      "Let the number be $100a+10b+c$, where\n[\na=c+2.\n]",
+      "The reversed number is $100c+10b+a$.",
+      "The difference is\n[\n(100a+10b+c)-(100c+10b+a)=99(a-c).\n]",
+      "Since $a-c=2$,\n[\n99(a-c)=198.\n]",
+      "The units digit is $8$.",
+      "Final Answer: ($\\boxed{\\text{E }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Digit reversal"
+    ],
+    "commonMistakes": [
+      "The tens digit cancels out.",
+      "Subtract reversed number from original number."
+    ],
+    "alternativeMethods": [
+      "Try an example such as $301-103=198$; the units digit is always the same."
+    ],
+    "difficultyNotes": "A place-value subtraction pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p23",
+    "problemId": "amc8-2010-p23",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac12\\right)}$",
+    "shortExplanation": "**Idea:** Compute the semicircle areas and compare with circle $O$.",
+    "detailedSteps": [
+      "Using the coordinates in the diagram, circle $O$ has radius $\\sqrt2$, so its area is\n[\n2\\pi.\n]",
+      "Each semicircle has diameter $2$, so each has radius $1$ and area\n[\n\\frac12\\pi.\n]",
+      "The combined area of the two semicircles is\n[\n\\pi.\n]",
+      "The ratio is\n[\n\\frac{\\pi}{2\\pi}=\\frac12.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac12\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Semicircle area",
+      "Coordinate distances"
+    ],
+    "commonMistakes": [
+      "Each named semicircle has diameter length $2$.",
+      "Circle $O$ has radius $sqrt2$ from the coordinate labels."
+    ],
+    "alternativeMethods": [
+      "Scale the picture: if the semicircle radius is $1$, the outer circle radius is $\\sqrt2$."
+    ],
+    "difficultyNotes": "A coordinate geometry area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p24",
+    "problemId": "amc8-2010-p24",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Estimate or compute the three powers.",
+    "detailedSteps": [
+      "First,\n[\n2^{24}=16,777,216<10^8.\n]",
+      "Also\n[\n5^{12}=244,140,625>10^8.\n]",
+      "Therefore\n[\n2^{24}<10^8<5^{12}.\n]",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Powers",
+      "Comparison"
+    ],
+    "commonMistakes": [
+      "Keep track of exponents carefully.",
+      "$5^{12}$ is larger than $10^8$ even though the base is smaller."
+    ],
+    "alternativeMethods": [
+      "Use $5^{12}=\\frac{10^{12}}{2^{12}}=\\frac{10^{12}}{4096}$, which is about $2.44\\cdot10^8$."
+    ],
+    "difficultyNotes": "A power comparison problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2010-p25",
+    "problemId": "amc8-2010-p25",
+    "finalAnswer": "$\\boxed{\\text{E }(24)}$",
+    "shortExplanation": "**Idea:** Use a recurrence based on the first step.",
+    "detailedSteps": [
+      "Let $f(n)$ be the number of ways to climb $n$ stairs using steps of $1$, $2$, or $3$.",
+      "The first step can be $1$, $2$, or $3$, so\n[\nf(n)=f(n-1)+f(n-2)+f(n-3).\n]",
+      "Start with\n[\nf(0)=1,\\quad f(1)=1,\\quad f(2)=2.\n]",
+      "Then\n[\nf(3)=4,\\quad f(4)=7,\\quad f(5)=13,\\quad f(6)=24.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(24)}$)"
+    ],
+    "keyIdeas": [
+      "Recurrence",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "The order of steps matters.",
+      "Include the empty way $f(0)=1$ for the recurrence."
+    ],
+    "alternativeMethods": [
+      "Count by cases: all ordered sums of $6$ using parts $1$, $2$, and $3$."
+    ],
+    "difficultyNotes": "A small stair-step recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

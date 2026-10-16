@@ -1,0 +1,580 @@
+[
+  {
+    "id": "solution-fma-2013-p1",
+    "problemId": "fma-2013-p1",
+    "finalAnswer": "$\\boxed{0.81\\,\\mathrm s}$ (choice E)",
+    "shortExplanation": "Equal car lengths give boundary times proportional to the square root of the car number. The tenth car itself passes in about $0.81\\,\\mathrm s$.",
+    "detailedSteps": [
+      "Use the intended equal-car-length model, with negligible coupling gaps. For length $\\ell$ and acceleration $a$, the boundary after car $n$ reaches the observer when $\\tfrac12at_n^2=n\\ell$.",
+      "The first boundary arrives at $t_1=5\\,\\mathrm s$, so $t_n=5\\sqrt n\\,\\mathrm s$.",
+      "The tenth car passes between boundaries nine and ten: $\\Delta t_{10}=5(\\sqrt{10}-\\sqrt9)=0.8114\\,\\mathrm s$."
+    ],
+    "keyIdeas": [
+      "Subtract consecutive car-boundary times."
+    ],
+    "commonMistakes": [
+      "Using the time from the start until the tenth car finishes as the time taken by that car alone."
+    ],
+    "alternativeMethods": [
+      "The distance interval is fixed while speed grows. Integrating $dt=dx/\\sqrt{2ax}$ across the tenth interval gives the same result."
+    ],
+    "difficultyNotes": "The equal lengths are the ordinary train idealization needed for this comparison; unequal cars or substantial gaps would require their dimensions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p2",
+    "problemId": "fma-2013-p2",
+    "finalAnswer": "$\\boxed{19\\,\\mathrm{m/s}\\ \\text{approximately}}$ (choice C)",
+    "shortExplanation": "The ball covers a total horizontal path of $30\\,\\mathrm m$. Combining that with the equal-height flight time gives a launch speed near $19\\,\\mathrm{m/s}$.",
+    "detailedSteps": [
+      "An ideal elastic reflection at a vertical wall reverses the horizontal velocity and leaves the vertical component unchanged. Unfold the reflected path into horizontal travel $20+10=30\\,\\mathrm m$.",
+      "For equal launch and catch heights, $T=2v\\sin30^\\circ/g=v/g$. The horizontal path is $v\\cos30^\\circ\\,T$.",
+      "Thus $30=v^2\\cos30^\\circ/g$. With $g=10\\,\\mathrm{m/s^2}$, $v=\\sqrt{300/\\cos30^\\circ}=18.61\\,\\mathrm{m/s}$, closest to $19\\,\\mathrm{m/s}$."
+    ],
+    "keyIdeas": [
+      "Unfold the wall reflection without changing vertical motion."
+    ],
+    "commonMistakes": [
+      "Using the separation between the people as the entire horizontal path."
+    ],
+    "alternativeMethods": [
+      "Replace the catcher with the reflected image across the wall; an ordinary projectile must reach that image at the original catch height."
+    ],
+    "difficultyNotes": "Neglect drag and use a perfectly elastic collision with a stationary vertical wall.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p3",
+    "problemId": "fma-2013-p3",
+    "finalAnswer": "$\\boxed{\\text{statement E is incorrect}}$ (choice E)",
+    "shortExplanation": "At a fixed speed limit, a larger range shortens the largest possible flight time. Statement E gives the opposite trend.",
+    "detailedSteps": [
+      "A same-height projectile covering distance $\\ell$ in time $t$ needs $v_x=\\ell/t$ and $v_y=gt/2$. Therefore $v^2=\\ell^2/t^2+g^2t^2/4\\le v_{\\max}^2$.",
+      "The limiting times satisfy $t_\\pm^2=2[v_{\\max}^2\\pm\\sqrt{v_{\\max}^4-g^2\\ell^2}]/g^2$. Reachability requires $v_{\\max}^2\\ge g\\ell$.",
+      "Raising the speed limit lowers $t_-$ and raises $t_+$. Raising $\\ell$ at a fixed reachable speed limit raises $t_-$ but lowers $t_+$. Thus the claim that the maximum time increases with distance is incorrect."
+    ],
+    "keyIdeas": [
+      "Express the required launch speed in terms of flight time and range."
+    ],
+    "commonMistakes": [
+      "Assuming that a longer range must allow a longer maximum time, without reserving speed for the horizontal component."
+    ],
+    "alternativeMethods": [
+      "At the limiting speed, the two allowable launch angles satisfy $\\sin2\\theta=g\\ell/v_{\\max}^2$. As range increases, the high-angle solution moves downward and its flight time decreases."
+    ],
+    "difficultyNotes": "The formulas apply to positive reachable range, equal endpoint heights, no drag and launch angles from zero to ninety degrees.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p4",
+    "problemId": "fma-2013-p4",
+    "finalAnswer": "$\\boxed{\\tan(\\theta/2)=2\\mu}$ (choice E)",
+    "shortExplanation": "For either leg, the inward ground friction is half the weight times the tangent of the half-angle. Equating it to the static-friction limit gives $\\tan(\\theta/2)=2\\mu$.",
+    "detailedSteps": [
+      "Let each leg have mass $m$ and length $L$, and let $\\phi=\\theta/2$ be its angle from vertical. Symmetry gives zero vertical hinge force and ground normal $mg$ on each leg.",
+      "Taking moments about the foot, the weight has horizontal lever arm $(L/2)\\sin\\phi$. The hinge's horizontal force $H$ has lever arm $L\\cos\\phi$, so $H=(mg/2)\\tan\\phi$.",
+      "Ground friction has magnitude $H$ and must obey $H\\le\\mu mg$. The limiting angle therefore satisfies $\\tan(\\theta/2)=2\\mu$."
+    ],
+    "keyIdeas": [
+      "Use the half-angle and the center of mass of a uniform leg."
+    ],
+    "commonMistakes": [
+      "Treating the full included angle as one leg's tilt, or placing the leg's weight at the hinge."
+    ],
+    "alternativeMethods": [
+      "Take moments about the hinge instead and use the upward normal and inward friction at the foot; the same bound follows."
+    ],
+    "difficultyNotes": "Use identical uniform legs, a frictionless hinge and ideal Coulomb static friction on level ground.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p5",
+    "problemId": "fma-2013-p5",
+    "finalAnswer": "$\\boxed{\\text{all times from }4\\text{ to }22\\,\\mathrm s}$ (choice C)",
+    "shortExplanation": "The reduced scale reading accelerates the elevator downward until four seconds. Its greatest downward speed then stays constant until braking begins at twenty-two seconds.",
+    "detailedSteps": [
+      "The stationary scale baseline is $80\\,\\mathrm{kg}$, so a reading below that value means downward acceleration, and a reading above it means upward acceleration.",
+      "Between two and four seconds the reading is $60\\,\\mathrm{kg}$, giving downward acceleration $g(1-60/80)=2.5\\,\\mathrm{m/s^2}$. Starting from rest, the downward speed reaches $5\\,\\mathrm{m/s}$.",
+      "From four to twenty-two seconds the reading returns to $80\\,\\mathrm{kg}$, so acceleration is zero and this speed persists. The later $100\\,\\mathrm{kg}$ reading reduces the downward speed."
+    ],
+    "keyIdeas": [
+      "A scale measures normal force and therefore acceleration, rather than velocity."
+    ],
+    "commonMistakes": [
+      "Identifying the smallest scale reading as the entire interval of maximum speed."
+    ],
+    "alternativeMethods": [
+      "Integrate the acceleration implied by each flat part of the scale graph to obtain the velocity history."
+    ],
+    "difficultyNotes": "Treat the graph's kilogram values as force calibrated by the local gravitational field, and use the stated stationary start.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p6",
+    "problemId": "fma-2013-p6",
+    "finalAnswer": "$\\boxed{100\\,\\mathrm m}$ (choice C)",
+    "shortExplanation": "The velocity graph consists of two triangular portions and a long constant-speed portion. Their areas add to $100\\,\\mathrm m$.",
+    "detailedSteps": [
+      "The scale graph gives a downward acceleration of $2.5\\,\\mathrm{m/s^2}$ for two seconds, so the cruising speed is $5\\,\\mathrm{m/s}$.",
+      "The acceleration interval contributes $\\tfrac12(2)(5)=5\\,\\mathrm m$. The eighteen-second cruise contributes $(18)(5)=90\\,\\mathrm m$.",
+      "The upward acceleration during the two-second braking interval reduces the speed to zero and contributes another $5\\,\\mathrm m$. The total descent is $5+90+5=100\\,\\mathrm m$."
+    ],
+    "keyIdeas": [
+      "Integrate velocity to obtain displacement."
+    ],
+    "commonMistakes": [
+      "Multiplying the maximum speed by the entire travel interval without allowing for starting and stopping."
+    ],
+    "alternativeMethods": [
+      "Integrate the piecewise constant accelerations twice with continuous position and velocity at each transition."
+    ],
+    "difficultyNotes": "The scale graph establishes rest before departure and after arrival; the ideal acceleration changes are treated as instantaneous.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p7",
+    "problemId": "fma-2013-p7",
+    "finalAnswer": "$\\boxed{K_{\\rm car}=10K_{\\rm truck}}$ (choice D)",
+    "shortExplanation": "At equal momentum, kinetic energy is inversely proportional to mass. The lighter car has ten times the truck's kinetic energy.",
+    "detailedSteps": [
+      "Write kinetic energy in terms of momentum: $K=p^2/(2m)$.",
+      "Both vehicles have the same $p$, while $m_{\\rm truck}=10m_{\\rm car}$.",
+      "Hence $K_{\\rm car}/K_{\\rm truck}=m_{\\rm truck}/m_{\\rm car}=10$."
+    ],
+    "keyIdeas": [
+      "Compare energies while holding momentum fixed."
+    ],
+    "commonMistakes": [
+      "Assuming the heavier object has greater kinetic energy without accounting for its lower speed."
+    ],
+    "alternativeMethods": [
+      "Equal momentum gives the car ten times the speed; inserting that into the ordinary kinetic-energy formula gives the same factor."
+    ],
+    "difficultyNotes": "Use nonrelativistic kinetic energy for the vehicles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p8",
+    "problemId": "fma-2013-p8",
+    "finalAnswer": "$\\boxed{Fx}$ (choice A)",
+    "shortExplanation": "The constant opposing force removes energy equal to force times stopping distance, so the initial kinetic energy is $Fx$.",
+    "detailedSteps": [
+      "The braking work is $-Fx$ because the force opposes the displacement.",
+      "Work-energy gives $0-K_i=-Fx$, so $K_i=Fx$.",
+      "For constant deceleration, the average speed is $v/2$, giving $x=vt/2$. Thus $Fvt$ is twice the initial energy and does not provide an additional correct expression."
+    ],
+    "keyIdeas": [
+      "Match force times distance with energy."
+    ],
+    "commonMistakes": [
+      "Using the initial speed throughout the stopping time when computing work."
+    ],
+    "alternativeMethods": [
+      "Use $F=mv/t$ and $x=vt/2$ to verify $Fx=mv^2/2$ directly."
+    ],
+    "difficultyNotes": "The braking force is a constant positive magnitude, and the final speed is zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p9",
+    "problemId": "fma-2013-p9",
+    "finalAnswer": "$\\boxed{\\frac{2Fx}{v}=Ft}$ (choice E)",
+    "shortExplanation": "The stopping impulse equals the initial momentum. The listed form $2Fx/v$ is equal to that impulse because the average speed is $v/2$.",
+    "detailedSteps": [
+      "The braking force changes the momentum from $p_i$ to zero, so its impulse magnitude is $p_i=Ft$.",
+      "Constant deceleration gives $x=vt/2$, or $t=2x/v$.",
+      "Therefore $p_i=2Fx/v$, which is the expression in choice E."
+    ],
+    "keyIdeas": [
+      "Use impulse and the average stopping speed."
+    ],
+    "commonMistakes": [
+      "Choosing twice the impulse, or confusing the work expression $Fx$ with momentum."
+    ],
+    "alternativeMethods": [
+      "From $K_i=Fx=mv^2/2$, divide twice the energy by $v$ to obtain $mv=2Fx/v$."
+    ],
+    "difficultyNotes": "The simplest momentum formula is $Ft$; the option uses an equivalent expression after eliminating time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p10",
+    "problemId": "fma-2013-p10",
+    "finalAnswer": "$\\boxed{\\text{compare rolling times down an incline}}$ (choice B)",
+    "shortExplanation": "The solid ball and thin hollow sphere have different moments of inertia, so their rolling times differ. The listed external gravity and flotation tests depend on quantities they share.",
+    "detailedSteps": [
+      "Rolling without slipping gives $a=g\\sin\\theta/[1+I/(mR^2)]$. The solid ball has $I/(mR^2)=2/5$, while the thin shell has $2/3$.",
+      "Consequently, the solid ball accelerates faster on the same incline and reaches the bottom sooner.",
+      "Outside a spherical object, its gravity and tidal field depend on its total mass. Uniform-field weight is also the same. Equal outer size and mass give the same ordinary flotation behavior."
+    ],
+    "keyIdeas": [
+      "Use a measurement sensitive to the internal mass distribution."
+    ],
+    "commonMistakes": [
+      "Assuming an external orbit reveals the interior distribution of a spherically symmetric mass."
+    ],
+    "alternativeMethods": [
+      "Compare the rotational kinetic energy needed at a given center speed; the shell requires more of the released gravitational energy to be rotational."
+    ],
+    "difficultyNotes": "Assume rigid spheres with the same outer radius and mass, rolling without slipping, and external gravitational probes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p11",
+    "problemId": "fma-2013-p11",
+    "finalAnswer": "$\\boxed{(M+m)g}$ (choice C)",
+    "shortExplanation": "The vertical reactions from the two sliding cubes add to only one cube's weight. The ground therefore supports $(M+m)g$.",
+    "detailedSteps": [
+      "On a fixed frictionless slope, each cube's normal reaction has magnitude $mg\\cos\\alpha$ or $mg\\cos\\beta$.",
+      "The cubes push the wedge downward by $mg\\cos^2\\alpha+mg\\cos^2\\beta$. The right-angle peak gives $\\alpha+\\beta=90^\\circ$, so this sum is $mg$.",
+      "Adding the wedge's own weight gives the ground normal $(M+m)g$. The opposing horizontal cube reactions also cancel for these complementary angles."
+    ],
+    "keyIdeas": [
+      "Resolve each slope normal into its vertical component."
+    ],
+    "commonMistakes": [
+      "Adding both full cube weights even though the cubes have downward acceleration."
+    ],
+    "alternativeMethods": [
+      "For the whole system, use the cubes' vertical accelerations and Newton's second law; their combined downward acceleration reduces the required support by one cube weight."
+    ],
+    "difficultyNotes": "The wedge remains fixed, both contacts are frictionless, and the two smaller masses are equal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p12",
+    "problemId": "fma-2013-p12",
+    "finalAnswer": "$\\boxed{\\frac34g\\sin\\theta}$ (choice B)",
+    "shortExplanation": "Both masses translate, while only the shell acquires rotational kinetic energy. The resulting acceleration is $3g\\sin\\theta/4$.",
+    "detailedSteps": [
+      "The total translating mass is $2M$. The frictionless fluid is not forced to rotate with the shell just after release, so the rotating inertia is only $I=2MR^2/3$.",
+      "If uphill static friction is $f$, translation gives $2Mg\\sin\\theta-f=2Ma$. Rolling torque gives $fR=I(a/R)$, so $f=2Ma/3$.",
+      "Combining them yields $2Mg\\sin\\theta=(8M/3)a$, or $a=3g\\sin\\theta/4$."
+    ],
+    "keyIdeas": [
+      "Distinguish translating mass from rotating inertia."
+    ],
+    "commonMistakes": [
+      "Treating the fluid as a rigid solid sphere that rotates with the shell."
+    ],
+    "alternativeMethods": [
+      "Over a small distance $s$, set $2Mgs\\sin\\theta=\\tfrac12(2M)v^2+\\tfrac12I(v/R)^2$ and use $v^2=2as$."
+    ],
+    "difficultyNotes": "Use a completely filled spherical shell, an ideal fluid with no shear coupling, no slipping at the incline, and the immediate post-release state.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p13",
+    "problemId": "fma-2013-p13",
+    "finalAnswer": "$\\boxed{v\\propto R\\ \\text{for matter rotating with Saturn}}$ (choice A)",
+    "shortExplanation": "Material rotating as one body shares a common angular speed, giving $v\\propto R$. Independent circular satellites instead obey $v^2\\propto1/R$.",
+    "detailedSteps": [
+      "For rigid rotation, $v=\\omega R$ with the same $\\omega$ for all layers. Speed is therefore proportional to distance from the rotation axis.",
+      "A small satellite dominated by Saturn's gravity obeys $v^2/R=GM/R^2$, giving $v^2=GM/R$.",
+      "The statement that associates the linear speed-radius relation with matter belonging to the rotating planet is the correct one."
+    ],
+    "keyIdeas": [
+      "Compare constant angular speed with Keplerian orbital speed."
+    ],
+    "commonMistakes": [
+      "Associating the inverse-radius speed-squared law with rigidly attached material."
+    ],
+    "alternativeMethods": [
+      "Measure each layer's period: rigid rotation has a common period, whereas independent circular satellite periods grow with radius."
+    ],
+    "difficultyNotes": "Use the central-planet approximation for the satellites and rigid co-rotation for material treated as part of the planet.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p14",
+    "problemId": "fma-2013-p14",
+    "finalAnswer": "$\\boxed{3.0\\,\\mathrm{m/s}}$ (choice B)",
+    "shortExplanation": "Relative velocity reverses in the elastic collision. This fixes the second cart's final speed, the first cart's mass, and a center-of-mass speed of $3.0\\,\\mathrm{m/s}$.",
+    "detailedSteps": [
+      "Elasticity gives $v_2-v_1=u_1-u_2=12\\,\\mathrm{m/s}$. With $v_1=-6\\,\\mathrm{m/s}$, the second cart has $v_2=6\\,\\mathrm{m/s}$.",
+      "Momentum conservation gives $12m=-6m+(4.0)(6)$, so $m=4/3\\,\\mathrm{kg}$.",
+      "Initially $V_{\\rm cm}=12m/(m+4.0)=3.0\\,\\mathrm{m/s}$. No external impulse changes this center-of-mass speed."
+    ],
+    "keyIdeas": [
+      "Use elastic relative-speed reversal before finding the unknown mass."
+    ],
+    "commonMistakes": [
+      "Substituting the first cart's final speed without its negative direction."
+    ],
+    "alternativeMethods": [
+      "In the center-of-mass frame the first cart's velocities are opposite, so $12-V_{\\rm cm}=-(-6-V_{\\rm cm})$, directly giving $V_{\\rm cm}=3$."
+    ],
+    "difficultyNotes": "The collision is one-dimensional and perfectly elastic, with negligible external impulse.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p15",
+    "problemId": "fma-2013-p15",
+    "finalAnswer": "$\\boxed{\\frac23\\ \\text{of the rod is above water}}$ (choice D)",
+    "shortExplanation": "Buoyancy acts at the middle of the submerged part, while weight acts at the middle of the whole rod. Balancing their moments leaves two thirds of the length above water.",
+    "detailedSteps": [
+      "Let $s$ be the submerged fraction of a rod of length $L$. Its buoyancy is $\\rho_wgAsL$ and acts a distance $L-sL/2$ from the supported upper end.",
+      "The weight is $(5/9)\\rho_wgAL$ and acts at distance $L/2$ from that end. Their common horizontal projection factor cancels from the moment balance.",
+      "Thus $s(1-s/2)=5/18$. The physical root is $s=1/3$; the other root exceeds the full length. The fraction above water is $1-s=2/3$."
+    ],
+    "keyIdeas": [
+      "Locate the center of buoyancy of the submerged section."
+    ],
+    "commonMistakes": [
+      "Using the middle of the whole rod as the buoyancy application point."
+    ],
+    "alternativeMethods": [
+      "Write $2s-s^2=5/9$, complete the square, and select the root between zero and one."
+    ],
+    "difficultyNotes": "Use a uniform rod, quasistatic equilibrium, negligible surface tension, an upper-end support and the nonvertical geometry shown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p16",
+    "problemId": "fma-2013-p16",
+    "finalAnswer": "$\\boxed{\\sqrt{\\frac{3\\pi}{32G\\rho_0}}}$ (choice D)",
+    "shortExplanation": "Every initially stationary shell in an ideal uniform dust cloud has the same free-fall time. The collapse time is $\\sqrt{3\\pi/(32G\\rho_0)}$, independent of the initial radius.",
+    "detailedSteps": [
+      "For a shell initially at radius $r_0$, the enclosed mass is $M_r=(4\\pi/3)\\rho_0r_0^3$. Before the first collapse, spherical symmetry and homologous motion keep that enclosed mass fixed.",
+      "Conservation of specific energy gives $|\\dot r|=\\sqrt{2GM_r(1/r-1/r_0)}$. Integrating the infall time with $r=r_0\\sin^2u$ gives $t=(\\pi/2)\\sqrt{r_0^3/(2GM_r)}$.",
+      "Substituting the enclosed mass cancels $r_0$: $t=\\sqrt{3\\pi/(32G\\rho_0)}\\approx0.5427/\\sqrt{G\\rho_0}$."
+    ],
+    "keyIdeas": [
+      "Use spherical shells and an energy integral for radial infall."
+    ],
+    "commonMistakes": [
+      "Using the final surface gravity as a constant acceleration throughout collapse."
+    ],
+    "alternativeMethods": [
+      "The dimensional time scale is $1/\\sqrt{G\\rho_0}$; the radial integral determines its dimensionless coefficient."
+    ],
+    "difficultyNotes": "This is the Newtonian cold-continuum idealization: initially zero angular momentum, exact spherical uniformity, no pressure, no early shell crossing and no relativistic or finite-particle corrections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p17",
+    "problemId": "fma-2013-p17",
+    "finalAnswer": "$\\boxed{\\text{tension; stable radial orientation}}$ (choice B)",
+    "shortExplanation": "The inner mass needs an outward rod force and the outer mass an inward one, so the rod is in tension. A slight tilt raises the gravitational orientation potential, making the radial orientation stable.",
+    "detailedSteps": [
+      "Let the center orbit radius be $R$, the rod half-length be $\\ell<R$, and $\\mu=GM_p$. The common angular rate obeys $\\Omega^2=\\mu[(R-\\ell)^{-2}+(R+\\ell)^{-2}]/(2R)$.",
+      "For an end mass $m$, the inner mass requires outward tension $T=\\mu m/(R-\\ell)^2-m\\Omega^2(R-\\ell)>0$. The same tension pulls the outer mass inward.",
+      "For a tilt $\\phi$, the two distances are $\\sqrt{R^2+\\ell^2\\pm2R\\ell\\cos\\phi}$. The centrifugal potential summed over both masses is independent of tilt at the stipulated fixed rotation rate.",
+      "The gravitational orientation potential has positive curvature $U''(0)=\\mu mR\\ell[(R-\\ell)^{-3}-(R+\\ell)^{-3}]$. Small tilts therefore produce a restoring torque: the radial equilibrium is stable."
+    ],
+    "keyIdeas": [
+      "Compare gravity at the two ends with their required circular accelerations."
+    ],
+    "commonMistakes": [
+      "Neglecting the rod length completely, or treating the outer and inner masses as independent circular satellites."
+    ],
+    "alternativeMethods": [
+      "In the short-rod limit, the tidal field stretches a radial separation and provides a restoring gravity-gradient torque for a tilt."
+    ],
+    "difficultyNotes": "Use a central spherical planet, equal point masses, a lightweight rod, and the source's perturbation at unchanged co-rotating angular rate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p18",
+    "problemId": "fma-2013-p18",
+    "finalAnswer": "$\\boxed{\\text{state E}}$ (choice E)",
+    "shortExplanation": "The original state has zero total momentum, a stationary center of mass at $(1,0)$, and angular momentum $2\\,\\mathrm{kg\\,m^2/s}$. Only state E preserves all three.",
+    "detailedSteps": [
+      "Each mass is $1\\,\\mathrm{kg}$. The two initial horizontal momenta cancel, so the center of mass stays at $(1,0)$.",
+      "About the origin, $L_z=\\sum_i(x_iv_{yi}-y_iv_{xi})=2\\,\\mathrm{kg\\,m^2/s}$ initially.",
+      "State A moves the center of mass; B has nonzero total momentum. C preserves momentum and center of mass but has angular momentum $\\sqrt2$ in the same units; D gives angular momentum $4$.",
+      "State E retains the original center of mass, zero total momentum and the original angular momentum. Internal potential energy may change, so kinetic energy alone is not an extra invariant to impose."
+    ],
+    "keyIdeas": [
+      "Check all conserved vector quantities, including the center-of-mass location."
+    ],
+    "commonMistakes": [
+      "Treating diagonal speed labels as each Cartesian component, or requiring kinetic energy to remain constant without a stated force model."
+    ],
+    "alternativeMethods": [
+      "Calculate angular momentum relative to the stationary center of mass; zero total momentum makes it equal to the angular momentum about the origin.",
+      "To show E is attainable, write the first particle relative to the fixed center as $\\mathbf q=r(\\cos\\theta,\\sin\\theta)$ with $r^2\\dot\\theta=1$. A central internal force can first keep $r=1$, then prescribe $r=1+at^2/2$ with $a=1/[4(\\sqrt2-1)]$. At $\\tau=2\\sqrt2(\\sqrt2-1)$ this gives $r=\\sqrt2$ and $\\dot r=1/\\sqrt2$. Choose the initial circular waiting time so the final angle is $\\pi/4$ modulo $2\\pi$; it is positive because the ramp angle is less than $\\tau<1.2$, whereas the required advance is $7\\pi/4$. The final velocity is then $(0,1)$, and the other particle is its opposite about the center. The radial acceleration can be supplied by equal and opposite central forces; no particular internal force law was imposed by the problem."
+    ],
+    "difficultyNotes": "Use the ordinary isolated point-particle interpretation with internal central forces and no external force or torque. The diagram velocities are magnitudes, including the diagonal arrows.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p19",
+    "problemId": "fma-2013-p19",
+    "finalAnswer": "$\\boxed{\\theta_g=0}$ (choice B)",
+    "shortExplanation": "Both the inward gravity component and the speed contribution to tension are largest at the bottom. The maximum occurs at zero angle from vertical.",
+    "detailedSteps": [
+      "Energy conservation from rest at $\\theta_0$ gives $v^2=2gL(\\cos\\theta-\\cos\\theta_0)$.",
+      "Radial force balance gives $T=mg\\cos\\theta+mv^2/L=mg(3\\cos\\theta-2\\cos\\theta_0)$.",
+      "Over the swing, $|\\theta|\\le\\theta_0<\\pi/2$. The largest cosine is at $\\theta=0$, so tension is greatest at the bottom."
+    ],
+    "keyIdeas": [
+      "Combine energy with radial acceleration."
+    ],
+    "commonMistakes": [
+      "Assuming the tension equals weight throughout the motion, or locating the maximum at the release point."
+    ],
+    "alternativeMethods": [
+      "Compare any swing point with the bottom: both the vertical component of weight along the rod and the speed are smaller away from the bottom."
+    ],
+    "difficultyNotes": "No small-angle approximation is needed; use a massless rod, point mass, constant gravity and negligible friction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p20",
+    "problemId": "fma-2013-p20",
+    "finalAnswer": "$\\boxed{mg(3-2\\cos\\theta_0)}$ (choice E)",
+    "shortExplanation": "At the bottom, the acquired speed adds a centripetal-force contribution to weight, giving $mg(3-2\\cos\\theta_0)$.",
+    "detailedSteps": [
+      "The mass drops through $L(1-\\cos\\theta_0)$ before reaching the bottom, so $v_b^2=2gL(1-\\cos\\theta_0)$.",
+      "At the bottom, $T_{\\mathrm{max}}-mg=mv_b^2/L$.",
+      "Therefore $T_{\\mathrm{max}}=mg+2mg(1-\\cos\\theta_0)=mg(3-2\\cos\\theta_0)$."
+    ],
+    "keyIdeas": [
+      "Use the bottom radial force balance after finding the speed from energy."
+    ],
+    "commonMistakes": [
+      "Using only the weight, or assuming the radial acceleration vanishes where the angle is zero."
+    ],
+    "alternativeMethods": [
+      "Substitute $\\theta=0$ into the exact tension function $mg(3\\cos\\theta-2\\cos\\theta_0)$."
+    ],
+    "difficultyNotes": "The result tends to $mg$ for vanishing amplitude and approaches $3mg$ as the release angle tends to ninety degrees from below.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p21",
+    "problemId": "fma-2013-p21",
+    "finalAnswer": "$\\boxed{T=2T_0}$ (choice A)",
+    "shortExplanation": "At a fixed angular amplitude, the entire pendulum motion scales in time with the square root of length. Quadrupling length exactly doubles the period.",
+    "detailedSteps": [
+      "The angular equation is $\\ddot\\theta+(g/L)\\sin\\theta=0$.",
+      "Introducing dimensionless time $u=t\\sqrt{g/L}$ removes $L$ from the equation. At the same initial angle, the dimensionless trajectory and dimensionless period are unchanged.",
+      "Consequently $T\\propto\\sqrt L$ even at finite amplitude. Replacing $L$ by $4L$ gives $T=2T_0$ exactly."
+    ],
+    "keyIdeas": [
+      "Separate the amplitude correction from the length scaling."
+    ],
+    "commonMistakes": [
+      "Assuming exact square-root length scaling requires a small-amplitude approximation."
+    ],
+    "alternativeMethods": [
+      "The finite-amplitude period is $4\\sqrt{L/g}\\,K(\\sin(\\theta_0/2))$. The elliptic-integral factor is common to both experiments and cancels."
+    ],
+    "difficultyNotes": "The two experiments must use the same angular amplitude and constant gravitational field. The stated amplitudes produce bounded periodic swings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p22",
+    "problemId": "fma-2013-p22",
+    "finalAnswer": "$\\boxed{2400\\,\\mathrm N\\ \\text{approximately}}$ (choice D)",
+    "shortExplanation": "The toe's ground force has about four times the lever arm of the Achilles tension about the ankle. The tendon tension is therefore about four times the student's weight.",
+    "detailedSteps": [
+      "The standing student's ground reaction is $mg=60\\times10=600\\,\\mathrm N$.",
+      "Reading the source's centimetre ruler gives approximate horizontal positions $7\\,\\mathrm{cm}$ for the tendon, $12\\,\\mathrm{cm}$ for the ankle, and $32\\,\\mathrm{cm}$ for the toe contact.",
+      "Take moments about the ankle, where the leg force contributes no moment. The balance is $T(12-7)=600(32-12)$, giving $T\\approx2400\\,\\mathrm N$."
+    ],
+    "keyIdeas": [
+      "Use horizontal moment arms for the vertical forces."
+    ],
+    "commonMistakes": [
+      "Equating tendon tension to body weight or using distances from the ruler origin instead of from the ankle."
+    ],
+    "alternativeMethods": [
+      "The toe and tendon moment arms are approximately in a four-to-one ratio, immediately giving four times the body weight."
+    ],
+    "difficultyNotes": "Treat the diagram as a simplified static lever with negligible foot mass and one toe contact. The ruler readings are estimates, matching the request for the closest value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p23",
+    "problemId": "fma-2013-p23",
+    "finalAnswer": "$\\boxed{\\frac{8mg}{H}}$ (choice E)",
+    "shortExplanation": "The maximum force and energy at the lowest point together give an extension of $H/2$ and spring constant $8mg/H$.",
+    "detailedSteps": [
+      "At maximum extension $h$, Hooke's law gives $kh=4mg$.",
+      "The jumper falls through the total distance $H$ and is momentarily at rest, so $mgH=\\tfrac12kh^2$. The elastic energy depends on extension, rather than on the cord's total length.",
+      "Combining the equations yields $h=H/2$, and hence $k=4mg/h=8mg/H$."
+    ],
+    "keyIdeas": [
+      "Use both the stated peak tension and the total fall energy."
+    ],
+    "commonMistakes": [
+      "Using the relaxed cord length as the spring extension, or treating the lowest point as static equilibrium."
+    ],
+    "alternativeMethods": [
+      "Eliminate extension from the energy equation using $h=4mg/k$ and solve directly for $k$."
+    ],
+    "difficultyNotes": "Use the intended release-from-rest model, which is not an explicit initial-speed datum in the printed question, together with a massless ideal Hookean cord, no air resistance or energy loss, and zero initial elastic energy. An initial downward launch speed would change the energy equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p24",
+    "problemId": "fma-2013-p24",
+    "finalAnswer": "$\\boxed{h=\\frac H2}$ (choice A)",
+    "shortExplanation": "The spring stores the gravitational energy from the entire fall. With peak tension equal to four times weight, its extension must be half the total fall distance.",
+    "detailedSteps": [
+      "The maximum-tension relation is $kh=4mg$. The energy at the lowest point satisfies $mgH=\\tfrac12kh^2$.",
+      "Substituting $kh=4mg$ gives $mgH=2mgh$, so $h=H/2$.",
+      "Since $H=L_0+h$, the relaxed length also equals $H/2$ in this specified case. The force at the turning point is upward overall; a zero instantaneous velocity does not mean zero acceleration."
+    ],
+    "keyIdeas": [
+      "Distinguish the total fall from the cord extension."
+    ],
+    "commonMistakes": [
+      "Setting the spring force equal to weight at the lowest turning point."
+    ],
+    "alternativeMethods": [
+      "Use the mean elastic force during stretching, $kh/2=2mg$, and equate its work $2mgh$ to the gravitational work $mgH$."
+    ],
+    "difficultyNotes": "Use the same intended release-from-rest, massless ideal Hookean-cord model as the companion problem; the printed question gives no separate launch-speed datum. This is the first maximum extension, rather than a static equilibrium.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2013-p25",
+    "problemId": "fma-2013-p25",
+    "finalAnswer": "$\\boxed{\\sqrt3\\,W}$ (choice D)",
+    "shortExplanation": "The initial constant-speed slide fixes the friction coefficient. A horizontal uphill push also increases the normal force, giving the required magnitude $\\sqrt3W$.",
+    "detailedSteps": [
+      "Steady sliding downward gives $W\\sin30^\\circ=\\mu_kW\\cos30^\\circ$, so $\\mu_k=1/\\sqrt3$.",
+      "A horizontal uphill push has slope component $P\\cos30^\\circ$ and adds $P\\sin30^\\circ$ to the normal force: $N=W\\cos30^\\circ+P\\sin30^\\circ$.",
+      "Steady upward motion requires $P\\cos30^\\circ=W\\sin30^\\circ+\\mu_kN$. Rearranging gives $P(\\cos30^\\circ-\\mu_k\\sin30^\\circ)=W$, so $P=\\sqrt3W$."
+    ],
+    "keyIdeas": [
+      "Include the push-induced change in normal force."
+    ],
+    "commonMistakes": [
+      "Keeping the normal force equal to $W\\cos30^\\circ$ after applying a horizontal push."
+    ],
+    "alternativeMethods": [
+      "Resolve all three forces into horizontal and vertical components after substituting the friction coefficient found from the downward slide."
+    ],
+    "difficultyNotes": "Use the same kinetic-friction coefficient in both directions, a maintained contact with the ramp and a horizontal push directed uphill.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

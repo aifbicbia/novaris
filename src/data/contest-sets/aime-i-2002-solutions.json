@@ -1,0 +1,331 @@
+[
+  {
+    "id": "solution-aime-i-2002-p1",
+    "problemId": "aime-i-2002-p1",
+    "finalAnswer": "$\\boxed{059}$",
+    "shortExplanation": "The probability is $7/52$.",
+    "detailedSteps": [
+      "For a three-letter palindrome, the first and last letters must match. There are $26^2$ choices out of $26^3$, giving probability 1/26. Similarly the three-digit part is palindromic with probability 1/10, including arrangements with leading zero.",
+      "The two parts are independent under the equally likely arrangements. The probability of at least one palindrome is $1/26+1/10-1/260=35/260=7/52$. Thus $m+n=59$."
+    ],
+    "keyIdeas": [
+      "Independent palindrome events combine by inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Adding the two palindrome probabilities without removing the arrangements with both palindromes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only equality of the two outer symbols matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p2",
+    "problemId": "aime-i-2002-p2",
+    "finalAnswer": "$\\boxed{154}$",
+    "shortExplanation": "The dimension ratio is $\\tfrac12(\\sqrt{147}-7)$.",
+    "detailedSteps": [
+      "Give each circle radius r. The diagram has seven circles in each outer row and six in the staggered middle row, so the rectangle’s width is 14 r.",
+      "Adjacent-row centers differ horizontally by r and are 2 r apart. Their vertical separation is $\\sqrt{(2r)^2-r^2}=\\sqrt3r$. The full height is $2r+2\\sqrt3r$, accounting for both center gaps and the two boundary radii.",
+      "The width is longer than the height. Their ratio is $14/(2+2\\sqrt3)=\\tfrac72(\\sqrt3-1)=\\tfrac12(\\sqrt{147}-7)$. Hence $p+q=147+7=154$."
+    ],
+    "keyIdeas": [
+      "Staggered tangent rows have equilateral center triangles"
+    ],
+    "commonMistakes": [
+      "Using a full diameter as the vertical separation of staggered rows."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual 7-6-7 arrangement fixes both dimensions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p3",
+    "problemId": "aime-i-2002-p3",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "There are 25 ordered present-age and waiting-time pairs.",
+    "detailedSteps": [
+      "Write Dick’s future age as $10a+b$ and Jane’s as $10b+a$. Both are two-digit numbers, and Dick is older, so $1\\le b<a\\le9$. Since Jane is currently 25 and n is positive, $10b+a>25$.",
+      "For $b=1$, the reversed age is at most 19, so none work. For $b=2$, a must be 6,7,8,9, giving four choices. For $b=3$ through $8$, all a from b plus one through 9 work, giving 6,5,4,3,2,1 choices.",
+      "The total is $4+6+5+4+3+2+1=25$. Each pair of digits uniquely gives $n=10b+a-25$ and $d=25+9(a-b)$, both positive with d greater than 25. Conversely these formulae satisfy the reversed future ages, so the count is exact."
+    ],
+    "keyIdeas": [
+      "Reversed future ages are indexed by their two digits"
+    ],
+    "commonMistakes": [
+      "Permitting  $n=0$ or reversing to a one-digit age."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The current age difference is nine times the digit difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p4",
+    "problemId": "aime-i-2002-p4",
+    "finalAnswer": "$\\boxed{840}$",
+    "shortExplanation": "The endpoints are $m=28$ and $n=812$.",
+    "detailedSteps": [
+      "Since $1/(k^2+k)=1/k-1/(k+1)$, the given sum telescopes to $1/m-1/n=1/29$. Positivity of 1/n requires $m<29$.",
+      "Rearrange as $(29-m)(n+29)=29^2=841$. The integer 29 minus m is between 1 and 28 and divides 841. The only such divisor is 1, so $m=28$ and $n=812$.",
+      "These endpoints satisfy m less than n and the exact sum, and $m+n=840$."
+    ],
+    "keyIdeas": [
+      "Telescoping followed by a divisor equation"
+    ],
+    "commonMistakes": [
+      "Including a_n in the source sum rather than ending at a_(n-1)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prime-square factorization makes the endpoint choice unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p5",
+    "problemId": "aime-i-2002-p5",
+    "finalAnswer": "$\\boxed{183}$",
+    "shortExplanation": "The pair count 198 overcounts each of three inscribed squares five times.",
+    "detailedSteps": [
+      "Any two distinct given vertices determine three squares: one in which the pair is a diagonal and two in which it is a side. There are $\\binom{12}{2}=66$ pairs, giving 198 incidences between a square and a pair of its given vertices.",
+      "A square with three vertices on the dodecagon’s circumcircle has that same circumcircle, because three noncollinear points uniquely determine a circle. Its fourth vertex is also on the circle, 90 degrees from its neighbors; since dodecagon vertices are 30 degrees apart, the fourth is another given vertex.",
+      "There are exactly three squares with all four vertices given: starting at angles 0,30,60 degrees and then advancing by 90 degrees. Every other counted square has exactly two given vertices and contributes one pair incidence; each of the three inscribed squares contributes six.",
+      "Replace those six incidences by one actual square for each case. The distinct-square count is $198-3(6-1)=183$."
+    ],
+    "keyIdeas": [
+      "Count square completions of pairs and correct the four-vertex squares"
+    ],
+    "commonMistakes": [
+      "Counting every pair completion as a different square even when a square has four dodecagon vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Three given vertices force the special four-vertex case, so there is no intermediate multiplicity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p6",
+    "problemId": "aime-i-2002-p6",
+    "finalAnswer": "$\\boxed{012}$",
+    "shortExplanation": "The product of all four coordinates is thirty to the twelfth power.",
+    "detailedSteps": [
+      "Put $u=\\log_{225}x$ and $v=\\log_{64}y$. Valid logarithms require x,y positive and neither equal to one, so u,v are nonzero. The two equations become $u+v=4$ and $1/u-1/v=1$.",
+      "Substitute $v=4-u$. Clearing the nonzero denominators gives $u^2-6u+4=0$, so $u=3\\pm\\sqrt5$ and $v=1\\mp\\sqrt5$. Both pairs have nonzero u,v and therefore yield valid solutions.",
+      "The two u values sum to six and the two v values sum to two. Hence $x_1x_2=225^6=15^{12}$ and $y_1y_2=64^2=2^{12}$. Their combined product is $30^{12}$, giving the requested logarithm 12."
+    ],
+    "keyIdeas": [
+      "Reciprocal logarithms become a quadratic with useful root sums"
+    ],
+    "commonMistakes": [
+      "Rejecting the solution with y between zero and one even though its logarithm base is valid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Vieta avoids multiplying large irrational powers individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p7",
+    "problemId": "aime-i-2002-p7",
+    "finalAnswer": "$\\boxed{428}$",
+    "shortExplanation": "The fractional part is three-sevenths plus a negligible positive remainder.",
+    "detailedSteps": [
+      "Factor the expression as $10^{2860}(1+10^{-2002})^{10/7}$. Its constant and linear terms are $10^{2860}+(10^{859})/7$.",
+      "The first term is an integer. Since ten has order six modulo seven and 859 is congruent to one modulo six, $10^{859}$ has remainder three modulo seven. The linear term’s fractional part is therefore $3/7=0.428571\\ldots$.",
+      "For $u=10^{-2002}>0$, the second derivative of $(1+u)^{10/7}$ is positive and decreases from 30/49. Taylor’s theorem gives $0<(1+u)^{10/7}-1-(10/7)u<(15/49)u^2$. After multiplying by $10^{2860}$, the remainder lies strictly between zero and $(15/49)10^{-1144}$.",
+      "This remainder is less than $429/1000-3/7=3/7000$. Thus the fractional part remains in the interval from 0.428 to 0.429, and its first three decimal digits are 428."
+    ],
+    "keyIdeas": [
+      "A remainder estimate fixes the first three fractional digits"
+    ],
+    "commonMistakes": [
+      "Treating the later binomial terms as zero without bounding their possible effect on a decimal carry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The very small second-order term cannot cross the next thousandth boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p8",
+    "problemId": "aime-i-2002-p8",
+    "finalAnswer": "$\\boxed{748}$",
+    "shortExplanation": "The first collision occurs at initial pairs (1,35) and (22,22).",
+    "detailedSteps": [
+      "Let the initial terms be a,b with $1\\le a\\le b$. Repeated Fibonacci addition gives $a_9=13a+21b$. Every such initial pair generates a positive nondecreasing sequence.",
+      "Two distinct initial pairs with the same ninth term differ by $(21t,-13t)$ for a nonzero integer t, because 13 and 21 are relatively prime. Orient the pair comparison so t is positive: the second pair is $(a+21t,b-13t)$.",
+      "Nondecreasingness of that second pair requires $b\\ge a+34t$. Therefore the common ninth term satisfies $13a+21b\\ge34a+714t\\ge748$.",
+      "The lower bound is attained at $a=1,b=35,t=1$, giving the second pair 22,22. Both have ninth term 748, so the least k is 748."
+    ],
+    "keyIdeas": [
+      "Two initial pairs with the same ninth term differ by a fixed lattice step"
+    ],
+    "commonMistakes": [
+      "Allowing a starting pair with the first term greater than the second."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coprimality fixes every possible collision step between initial pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p9",
+    "problemId": "aime-i-2002-p9",
+    "finalAnswer": "$\\boxed{757}$",
+    "shortExplanation": "Only triples (3,3,3) and (4,2,4) paint every picket exactly once.",
+    "detailedSteps": [
+      "The three paint progressions have eventual densities 1/h,1/t,1/u. Exact coverage without intersections therefore requires $1/h+1/t+1/u=1$. Harold cannot have $h=1$ or $h=2$ because he would also paint Tanya’s first picket or Ulysses’s first picket. Tanya cannot have $t=1$, and Ulysses cannot have $u=1$ because that progression would intersect the others. All three denominators are at least two.",
+      "Sort the denominators as a at most b at most c. Their reciprocal sum implies a at most three. If $a=3$, all three must be 3. If $a=2$, then $1/b+1/c=1/2$, or $(b-2)(c-2)=4$, giving the unordered types (2,3,6) and (2,4,4).",
+      "Two progressions with start residues differing by one are disjoint only if the gcd of their periods exceeds one; otherwise their residue equations have a common solution. Thus both $\\gcd(h,t)$ and $\\gcd(t,u)$ exceed one. No permutation of (2,3,6) satisfies both, since 2 and 3 would have to be the nonadjacent pair, but that puts $t=6$ and makes the h/u residue difference two divisible by their gcd one.",
+      "For type (2,4,4), h cannot be 2. The triple(4,4,2) overlaps because picket 5 lies in Harold’s and Ulysses’s progressions; the remaining triple(4,2,4) partitions the positive integers into residue 1 mod 4, even integers and residue 3 mod 4. Type(3,3,3) also partitions them into its three distinct residues.",
+      "The two paintable integers are 424 and 333. They are distinct, so their sum is 757."
+    ],
+    "keyIdeas": [
+      "Exact covering progressions have one of three denominator types"
+    ],
+    "commonMistakes": [
+      "Assuming h,t,u are digits or checking only density without excluding overlapping progressions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Density bounds the denominator types, while residue intersections decide their valid assignments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p10",
+    "problemId": "aime-i-2002-p10",
+    "finalAnswer": "$\\boxed{148}$",
+    "shortExplanation": "The exact quadrilateral area is $497160/3367$, nearest to 148.",
+    "detailedSteps": [
+      "The source lengths give $AB=12,AC=37$, so the right triangle has BC 35 and area 210. The angle-bisector theorem gives $BD/DC=12/37$, hence $[ADC]/[ABC]=37/49$.",
+      "Use affine coordinates $A=(0,0)$, $B=(1,0)$, $C=(0,1)$ solely for incidence and area ratios. Then $D=(37/49,12/49)$, $E=(1/4,0)$ and $F=(0,10/37)$. The diagram specifies G as the intersection of AD and EF.",
+      "Write $G=tD$. The line EF has equation $x/(1/4)+y/(10/37)=1$, giving $t=245/962$ and $G=(185/962,60/962)$. Its coordinates and t are positive and place G inside both source segments.",
+      "The area ratio $[AGF]/[ABC]$ is the determinant $G_xF_y=(185/962)(10/37)=25/481$. Thus the quadrilateral area is $210(37/49-25/481)=497160/3367$.",
+      "This value lies strictly between 147.5 and 148.5, so its nearest integer is 148."
+    ],
+    "keyIdeas": [
+      "The diagram intersection is located by an affine line equation"
+    ],
+    "commonMistakes": [
+      "Omitting the diagram’s definition of G or subtracting triangle AEG instead of AGF."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Affine coordinates preserve the required area ratios even though they alter lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p11",
+    "problemId": "aime-i-2002-p11",
+    "finalAnswer": "$\\boxed{230}$",
+    "shortExplanation": "The first later vertex occurs after twelve direction units, for length $12\\sqrt{218}$.",
+    "detailedSteps": [
+      "Choose $A=(0,0,0)$, $B=(12,0,0)$, $C=(12,12,0)$ and the adjacent face $x=12$. The distances from its boundary edges BG and BC put $P=(12,7,5)$.",
+      "Unfold each reflected cube into its mirror image. The reflected light path becomes the straight ray $t(12,7,5)$, and any cube vertex has all three unfolded coordinates divisible by 12. The first coordinate forces t to be an integer; the second then requires $12\\mid7t$, hence $12\\mid t$.",
+      "The least positive possibility is $t=12$, and the third coordinate is then 60, also divisible by 12. No earlier edge ambiguity occurs: any two boundary coordinates would likewise force $t=12$, using the coprime coordinate components.",
+      "The length is $12\\sqrt{12^2+7^2+5^2}=12\\sqrt{218}$. Since $218=2\\cdot109$ is squarefree, $m+n=12+218=230$."
+    ],
+    "keyIdeas": [
+      "Unfolding cube reflections gives a single lattice ray"
+    ],
+    "commonMistakes": [
+      "Stopping at the first face reflection or using the diagonal between the starting and ending vertices instead of the full reflected path."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unfolded vertex condition is a simultaneous divisibility problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p12",
+    "problemId": "aime-i-2002-p12",
+    "finalAnswer": "$\\boxed{275}$",
+    "shortExplanation": "The 2002nd iterate is $1+274i$.",
+    "detailedSteps": [
+      "Direct algebra gives $F^2(z)=i(z+1)/(z-1)$ and $F^3(z)=z$ wherever the iterates are defined. For the given starting point, $F(z_0)=[1/137+2i]/[1/137]=1+274i$.",
+      "The next iterate is $(1+275i)/(1+273i)=(75076+2i)/74530$. These three values all have positive real part, so none is the pole i. Direct substitution returns the third iterate to $z_0$, proving that the entire periodic orbit is defined.",
+      "Since 2002 is congruent to one modulo three, $z_{2002}=1+274i$. Hence $a+b=275$."
+    ],
+    "keyIdeas": [
+      "The fractional linear transformation has period three"
+    ],
+    "commonMistakes": [
+      "Using the formal period without checking that the particular orbit never hits the excluded pole."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A three-cycle reduces the long iteration to a single evaluation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p13",
+    "problemId": "aime-i-2002-p13",
+    "finalAnswer": "$\\boxed{063}$",
+    "shortExplanation": "The area of AFB is $8\\sqrt{55}$.",
+    "detailedSteps": [
+      "Put $A=(-12,0)$, $B=(12,0)$ and midpoint E at the origin. Write $C=(x,y)$ with y positive after reflection if necessary. The median $CE=27$ gives $x^2+y^2=729$. The midpoint D of BC is $((x+12)/2,y/2)$, and $AD=18$ gives $(x+36)^2+y^2=1296$.",
+      "Subtracting yields $x=-81/8$, and then $y=27\\sqrt{55}/8$. Since E lies on chord AB inside the circumcircle, its power is $-EA\\cdot EB=-144$. Along C,E,F this gives $EC\\cdot EF=144$, so $EF=16/3$ and F is on the opposite ray from C.",
+      "Therefore $F=-(16/81)C$, with vertical coordinate $-2\\sqrt{55}/3$. Using base $AB=24$, the area is $\\tfrac12(24)(2\\sqrt{55}/3)=8\\sqrt{55}$.",
+      "The number 55 is squarefree, giving $m+n=8+55=63$."
+    ],
+    "keyIdeas": [
+      "The median coordinates and midpoint power determine the second circle intersection"
+    ],
+    "commonMistakes": [
+      "Choosing F on the same ray from E as C despite E’s negative power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint E gives a known power even before the circumcircle is computed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p14",
+    "problemId": "aime-i-2002-p14",
+    "finalAnswer": "$\\boxed{030}$",
+    "shortExplanation": "A thirty-element set exists, and no larger size satisfies the divisor and capacity bounds.",
+    "detailedSteps": [
+      "Let S have N elements, total T, and put $d=N-1$. The property means $T-x\\equiv0\\pmod d$ for every x in S, so all elements share the same residue modulo d. Since 1 and 2002 are both present, $d\\mid2001=3\\cdot23\\cdot29$.",
+      "All elements lie between 1 and 2002 and are congruent to one modulo d. There are exactly $2001/d+1$ such possible integers. Having $N=d+1$ distinct elements requires $d\\le2001/d$, hence $d^2\\le2001$.",
+      "The divisors of 2001 below its square root are 1,3,23,29; the remaining divisors 69,87,667,2001 are too large. Thus d at most 29 and N at most 30.",
+      "For attainment, take the twenty-nine numbers $1+29k$ for $k=0$ through $28$, together with 2002. These are thirty distinct positive integers, all congruent to one modulo 29. Their total is congruent to 30, hence to one, so subtracting any member leaves a multiple of 29. Every required mean is an integer.",
+      "The maximum size is therefore 30."
+    ],
+    "keyIdeas": [
+      "All elements must share a residue modulo one less than the size"
+    ],
+    "commonMistakes": [
+      "Using only the divisor condition and ignoring how many distinct permitted numbers fit below 2002."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A modular constraint and a finite interval capacity bound together control the size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2002-p15",
+    "problemId": "aime-i-2002-p15",
+    "finalAnswer": "$\\boxed{163}$",
+    "shortExplanation": "The squared edge is $128-16\\sqrt{19}$.",
+    "detailedSteps": [
+      "Put $A=(-6,0,0)$, $B=(6,0,0)$, $C=(6,12,0)$, $D=(-6,12,0)$. Equal distances CE and DE force E’s first coordinate to be zero. Write $E=(0,y,z)$ and orient the solid so z is positive.",
+      "The nearest point in the square cannot lie on its $y=12$ boundary: if y were at least 12, the stated face distance 12 and CE 14 would imply $CE^2=6^2+12^2=180$, contradicting 196. If y were at most zero, the face-distance equation $y^2+z^2=144$ and $CE^2=36+(y-12)^2+z^2=196$ would imply $y=16/3>0$, another contradiction.",
+      "Thus the perpendicular projection is inside the square, giving $z=12$. The CE equation yields $(y-12)^2=16$, and the permitted interval 0 less than y less than 12 selects $y=8$. Hence $E=(0,8,12)$.",
+      "Because GF is parallel to AB and has length 6, put $G=(g,y_0,z_0)$ and $F=(g+6,y_0,z_0)$. Equal lengths AG and BF give $(g+6)^2=g^2$, so $g=-3$. Planarity of ADEG, whose plane is $z=2x+12$, gives $z_0=6$. Then $AG^2=3^2+y_0^2+6^2=64$, so $y_0=\\pm\\sqrt{19}$.",
+      "It follows that $EG^2=3^2+(8-y_0)^2+6^2=128-16y_0$. The source prescribes the form $p-q\\sqrt r$ with q positive. The positive-sign radical alternative cannot have that form: the irrational part belongs to the field generated by $\\sqrt{19}$ and its sign would require q negative. Thus $y_0=\\sqrt{19}$ and $EG^2=128-16\\sqrt{19}$.",
+      "Attainment does not require a convex polyhedron. Put $h=\\sqrt{19}$ and define a roof over the square by $H(x,y)=\\min\\{12-2|x|,36-3y,\\max(6y/h,6+6(y-h)/(8-h))\\}$. This continuous piecewise planar function is positive in the square’s interior and zero along its boundary. The solid $0\\le z\\le H(x,y)$ has exactly the six listed faces: its two front roof pieces meet along GF at  $y=h$, and the rear roof piece meets them at E with $y=8$. Its side faces ADEG and BCEF are concave simple polygons. Thus the displayed coordinates realize an ordinary closed polyhedron with no face crossings.",
+      "Since 19 is squarefree, $p+q+r=128+16+19=163$."
+    ],
+    "keyIdeas": [
+      "Planarity and distance to the actual square face determine the solid"
+    ],
+    "commonMistakes": [
+      "Treating the distance to the bounded square face as an unrestricted plane distance, or ignoring the sign in the prescribed radical form."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bounded-face distance eliminates the spurious apex location; the radical sign then fixes the trapezoid branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

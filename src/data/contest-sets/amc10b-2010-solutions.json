@@ -1,0 +1,513 @@
+[
+  {
+    "id": "solution-amc10b-2010-p1",
+    "problemId": "amc10b-2010-p1",
+    "finalAnswer": "$\\boxed{-297}$ (choice C)",
+    "shortExplanation": "The square terms cancel, leaving -300+3.",
+    "detailedSteps": [
+      "Expand the first product to $10000-300$ and the second parenthesis to $10000-3$. Subtracting yields $-300+3=-297$."
+    ],
+    "keyIdeas": [
+      "Distributing before subtraction"
+    ],
+    "commonMistakes": [
+      "Distributing the final minus sign incorrectly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference lies in whether the 3 is multiplied by 100.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p2",
+    "problemId": "amc10b-2010-p2",
+    "finalAnswer": "$\\boxed{25}$ (choice C)",
+    "shortExplanation": "The meetings use 135 of the 540 workday minutes.",
+    "detailedSteps": [
+      "The second meeting lasts $2\\cdot45=90$ minutes, so the combined time is 135 minutes. The workday is $9\\cdot60=540$ minutes.",
+      "The percentage is $100(135/540)=25$."
+    ],
+    "keyIdeas": [
+      "Meeting time as a fraction of the workday"
+    ],
+    "commonMistakes": [
+      "Comparing minutes to hours without converting units."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the same time unit in numerator and denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p3",
+    "problemId": "amc10b-2010-p3",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "Four socks can all differ, but five cannot.",
+    "detailedSteps": [
+      "With four colors, any five socks include two of one color by the pigeonhole principle. Four do not guarantee a pair, because one of each color can be selected.",
+      "Both facts show the minimum is 5."
+    ],
+    "keyIdeas": [
+      "A matching pair by the pigeonhole principle"
+    ],
+    "commonMistakes": [
+      "Giving a sufficient bound without checking it is minimal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A worst-case selection establishes necessity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p4",
+    "problemId": "amc10b-2010-p4",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The three operation values are 1,3,6.",
+    "detailedSteps": [
+      "The defining formula is $H(x)=(x+x^2)/2$. Hence $H(1)+H(2)+H(3)=(2+6+12)/2=10$."
+    ],
+    "keyIdeas": [
+      "The average of a value and its square"
+    ],
+    "commonMistakes": [
+      "Using x squared alone or averaging the three final inputs together."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Evaluate the unary operation separately on each argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p5",
+    "problemId": "amc10b-2010-p5",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Monday and Wednesday must both belong, or both not belong, to the three extra days.",
+    "detailedSteps": [
+      "A 31-day month has four complete weeks plus three consecutive surplus weekdays. Monday and Wednesday appear equally often exactly when both receive a surplus occurrence or neither does.",
+      "The possible first weekdays are Monday (surplus Monday-Tuesday-Wednesday), Thursday (Thursday-Friday-Saturday), and Friday (Friday-Saturday-Sunday). There are three."
+    ],
+    "keyIdeas": [
+      "Three surplus weekdays in a 31-day month"
+    ],
+    "commonMistakes": [
+      "Counting only the case when Monday and Wednesday each occur five times."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equality also holds when both weekdays occur only four times.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p6",
+    "problemId": "amc10b-2010-p6",
+    "finalAnswer": "$\\boxed{25}$ (choice B)",
+    "shortExplanation": "The inscribed angle is half the 50-degree central angle.",
+    "detailedSteps": [
+      "Because AB is a diameter and $\\angle COB=50^\\circ$, A lies outside the minor arc CB. Angle CAB intercepts that arc.",
+      "The inscribed-angle theorem gives $\\angle CAB=50^\\circ/2=25^\\circ$."
+    ],
+    "keyIdeas": [
+      "An inscribed angle intercepting a central arc"
+    ],
+    "commonMistakes": [
+      "Using the central angle itself as the inscribed angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify the common intercepted arc.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p7",
+    "problemId": "amc10b-2010-p7",
+    "finalAnswer": "$\\boxed{32}$ (choice D)",
+    "shortExplanation": "The triangle area is 48, so the rectangle length is 12.",
+    "detailedSteps": [
+      "The isosceles triangle altitude is $\\sqrt{10^2-6^2}=8$, giving area $12\\cdot8/2=48$.",
+      "The width-4 rectangle therefore has length $48/4=12$ and perimeter $2(12+4)=32$."
+    ],
+    "keyIdeas": [
+      "Equal areas between a triangle and rectangle"
+    ],
+    "commonMistakes": [
+      "Reporting the area or only the longer rectangle side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The isosceles altitude bisects the base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p8",
+    "problemId": "amc10b-2010-p8",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The positive price divides both 48 and 64.",
+    "detailedSteps": [
+      "The ticket price x must be a positive integer divisor of $\\gcd(48,64)=16$. Its possible values are $1,2,4,8,16$, a total of five."
+    ],
+    "keyIdeas": [
+      "Common divisors as ticket prices"
+    ],
+    "commonMistakes": [
+      "Including zero as a whole-number ticket price despite positive purchases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both groups buy integral numbers of tickets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p9",
+    "problemId": "amc10b-2010-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Only the signs of c and e change between the two evaluations.",
+    "detailedSteps": [
+      "The correct expression expands to $a-b+c-d-e$. Without parentheses, the written sequence becomes $a-b-c-d+e$.",
+      "Equality requires $c-e=-c+e$, hence $e=c=3$."
+    ],
+    "keyIdeas": [
+      "A coincidental equality after dropping parentheses"
+    ],
+    "commonMistakes": [
+      "Changing every sign after each minus without respecting the nesting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancel the terms unchanged by the parenthesis error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p10",
+    "problemId": "amc10b-2010-p10",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "Solve the distance equation in minutes.",
+    "detailedSteps": [
+      "Let t be the rainy minutes, leaving $40-t$ sunny minutes. The speeds are $1/3$ and $1/2$ mile per minute, respectively.",
+      "Thus $t/3+(40-t)/2=16$. Multiplying by 6 yields $2t+120-3t=96$, giving $t=24$."
+    ],
+    "keyIdeas": [
+      "Travel at two different speeds"
+    ],
+    "commonMistakes": [
+      "Using hours for speeds but minutes for the time variable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the two rates before forming the linear equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p11",
+    "problemId": "amc10b-2010-p11",
+    "finalAnswer": "$\\boxed{50}$ (choice A)",
+    "shortExplanation": "Coupon A is best from 200 through 250 dollars.",
+    "detailedSteps": [
+      "At listed price p, the savings are $0.15p$, 30, and $0.25(p-100)$. Coupon A matches or exceeds B when $p\\ge200$.",
+      "It matches or exceeds C when $0.15p\\ge0.25p-25$, or $p\\le250$. Thus $x=200$, $y=250$, and $y-x=50$."
+    ],
+    "keyIdeas": [
+      "A discount optimal on a closed price interval"
+    ],
+    "commonMistakes": [
+      "Applying coupon C to the entire listed price."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An optimality region is the intersection of two inequalities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p12",
+    "problemId": "amc10b-2010-p12",
+    "finalAnswer": "$\\boxed{60}$ (choice D)",
+    "shortExplanation": "The changed fraction ranges from 20 to 80 percent.",
+    "detailedSteps": [
+      "Let p percent change from No to Yes and q percent change from Yes to No. Then $p-q=20$ and $x=p+q=20+2q$.",
+      "The final No group has size 30 percent, so $0\\le q\\le30$. Both endpoints are achievable: only 20 percent switch to Yes at the minimum; all original No students change to Yes, while 30 percent of the class change from original Yes to No at the maximum.",
+      "Thus $x_{\\min}=20$, $x_{\\max}=80$, and their difference is 60."
+    ],
+    "keyIdeas": [
+      "Minimum and maximum changed responses"
+    ],
+    "commonMistakes": [
+      "Assuming every change must be from No to Yes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Net change and total change need not coincide.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p13",
+    "problemId": "amc10b-2010-p13",
+    "finalAnswer": "$\\boxed{92}$ (choice C)",
+    "shortExplanation": "The solutions are 12,20,60.",
+    "detailedSteps": [
+      "The right side is nonnegative, so $x\\ge0$. For $0\\le x\\le15$, the equation is $x=60-4x$, giving $x=12$.",
+      "For $15\\le x\\le30$, it is $x=4x-60$, giving $x=20$. For $x\\ge30$, the inner absolute value is $2x-60$, so the right side is the constant 60 and $x=60$.",
+      "Each value belongs to its interval and satisfies the original equation. Their sum is $12+20+60=92$."
+    ],
+    "keyIdeas": [
+      "Three intervals for a nested absolute value"
+    ],
+    "commonMistakes": [
+      "Accepting a root of a linear branch that lies outside that branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each absolute-value sign change introduces a new interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p14",
+    "problemId": "amc10b-2010-p14",
+    "finalAnswer": "$\\boxed{\\frac{50}{101}}$ (choice B)",
+    "shortExplanation": "There are 100 entries, including x.",
+    "detailedSteps": [
+      "The fixed entries sum to $99\\cdot100/2=4950$. Therefore $(4950+x)/100=100x$.",
+      "It follows that $9999x=4950$, or $x=50/101$."
+    ],
+    "keyIdeas": [
+      "An average involving its own unknown"
+    ],
+    "commonMistakes": [
+      "Dividing by 99 instead of including x as the hundredth entry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The average is 100x, not 100.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p15",
+    "problemId": "amc10b-2010-p15",
+    "finalAnswer": "$\\boxed{29}$ (choice C)",
+    "shortExplanation": "The total attempted count gives an upper bound of 29 correct answers.",
+    "detailedSteps": [
+      "Let c and w be correct and incorrect counts. The score condition is $4c-w=99$, so $w=4c-99$.",
+      "Because $c+w\\le50$, $5c-99\\le50$, giving $c\\le29.8$. Thus $c\\le29$. The choice $c=29,w=17$ leaves four blanks and realizes the score, so the maximum is 29."
+    ],
+    "keyIdeas": [
+      "A score constraint with unattempted questions"
+    ],
+    "commonMistakes": [
+      "Requiring all 50 questions to have been attempted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove that the maximum bound is actually attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p16",
+    "problemId": "amc10b-2010-p16",
+    "finalAnswer": "$\\boxed{\\frac{2\\pi}{9}-\\frac{\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "Each cap subtends 60 degrees at the center.",
+    "detailedSteps": [
+      "The circle radius is $r=\\sqrt3/3$, larger than the center-to-side distance $1/2$ but smaller than the center-to-corner distance $\\sqrt2/2$. Thus four disjoint caps lie outside the square.",
+      "A side cuts a cap whose half-angle satisfies $\\cos\\theta=(1/2)/r=\\sqrt3/2$, so $\\theta=30^\\circ$. The cap area is $\\pi r^2/6-\\tfrac12r^2\\sin60^\\circ=\\pi/18-\\sqrt3/12$.",
+      "Multiplying by four gives $2\\pi/9-\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "Four equal circular caps outside a square"
+    ],
+    "commonMistakes": [
+      "Subtracting the entire square area even though its corners lie outside the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check which object contains the side midpoint and which contains the corners.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p17",
+    "problemId": "amc10b-2010-p17",
+    "finalAnswer": "$\\boxed{23}$ (choice B)",
+    "shortExplanation": "The school count lies between 22 and 24 and must be odd, forcing 23.",
+    "detailedSteps": [
+      "If there are s schools, there are $3s$ students. With distinct scores and one median student, $3s$ is odd and Andrea has rank $(3s+1)/2$.",
+      "Carla at rank 64 requires $3s\\ge64$, so $s\\ge22$. Andrea outranks Beth at rank 37, requiring $(3s+1)/2<37$, hence $s\\le24$.",
+      "Since s is odd, the only possibility is $s=23$. Its median rank is 35, consistent with both teammate ranks."
+    ],
+    "keyIdeas": [
+      "A median rank above both teammates"
+    ],
+    "commonMistakes": [
+      "Placing the median below Beth even though Andrea has the highest team score."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinct scores make the rank inequalities strict.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p18",
+    "problemId": "amc10b-2010-p18",
+    "finalAnswer": "$\\boxed{\\frac{13}{27}}$ (choice E)",
+    "shortExplanation": "Condition on whether a is divisible by three.",
+    "detailedSteps": [
+      "The interval has 670 numbers of each residue modulo 3. If $a\\equiv0$, the expression $a(bc+b+1)$ is divisible by 3 automatically, contributing probability $1/3$.",
+      "For nonzero a, require $b(c+1)+1\\equiv0$. Among the nine pairs of residues for b,c, the successful pairs are $(1,1)$ and $(2,0)$.",
+      "The total is $1/3+(2/3)(2/9)=13/27$."
+    ],
+    "keyIdeas": [
+      "Uniform residues modulo three"
+    ],
+    "commonMistakes": [
+      "Treating the three summands as independently distributed residues."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor out a before analyzing the remaining residues.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p19",
+    "problemId": "amc10b-2010-p19",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "Two algebraic side lengths arise, but only 6 places O outside the triangle.",
+    "detailedSteps": [
+      "Let the side be s, put $M=(0,0)$ at the midpoint of BC, and put $A=(0,h)$ with $h=s\\sqrt3/2$. The circle center lies on AM extended, with coordinate $y_O=h\\pm4\\sqrt3$.",
+      "The radius condition is $s^2/4+y_O^2=156$. With the plus sign it becomes $s^2+12s-108=0$, whose positive root is 6. With the minus sign it becomes $s^2-12s-108=0$, whose positive root is 18.",
+      "For $s=18$, $y_O=5\\sqrt3$ lies strictly between 0 and $h=9\\sqrt3$, so O is inside the equilateral triangle and is excluded. For $s=6$, O lies beyond A, so the required side is 6."
+    ],
+    "keyIdeas": [
+      "Excluding an interior circumcenter placement"
+    ],
+    "commonMistakes": [
+      "Keeping the side 18 while ignoring the outside-triangle condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Geometric placement conditions select among algebraic roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p20",
+    "problemId": "amc10b-2010-p20",
+    "finalAnswer": "$\\boxed{81}$ (choice D)",
+    "shortExplanation": "The radii are H/3 and 3H, a ratio of nine.",
+    "detailedSteps": [
+      "Extend BC and FA to their intersection V. These lines form a $60^\\circ$ wedge. If the perpendicular distance from V to AB is H, regular-hexagon geometry puts DE at distance 3H from V.",
+      "Each circle center is on the wedge bisector. A center distance d from V gives radius $d\\sin30^\\circ=d/2$. For the first circle, external tangency above AB gives $d=H-r$, so $r=(H-r)/2$ and $r=H/3$.",
+      "For the second circle below DE, $d=3H+R$, so $R=(3H+R)/2$, giving $R=3H$. Hence $R/r=9$ and the area ratio is 81."
+    ],
+    "keyIdeas": [
+      "Circles in a 60-degree wedge"
+    ],
+    "commonMistakes": [
+      "Using the base-distance ratio three as the radius ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two circles lie on opposite exterior sides of the parallel hexagon edges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p21",
+    "problemId": "amc10b-2010-p21",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice E)",
+    "shortExplanation": "The middle digit must be 0 or 7.",
+    "detailedSteps": [
+      "A four-digit palindrome has value $1001a+110b$, where $a=1,\\ldots,9$ and $b=0,\\ldots,9$. Since $1001$ is divisible by 7 and $110\\equiv5\\pmod7$, divisibility requires $b\\equiv0\\pmod7$.",
+      "Two of the ten middle-digit choices, 0 and 7, work for every a. The probability is $2/10=1/5$."
+    ],
+    "keyIdeas": [
+      "A four-digit palindrome modulo seven"
+    ],
+    "commonMistakes": [
+      "Assuming the remainder is uniform just because the numbers are chosen at random."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A decimal place-value formula exposes the divisibility condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p22",
+    "problemId": "amc10b-2010-p22",
+    "finalAnswer": "$\\boxed{1932}$ (choice C)",
+    "shortExplanation": "Apply inclusion-exclusion to assignments with an empty required bag.",
+    "detailedSteps": [
+      "Every distinct candy has three bag choices, so there are $3^7$ assignments. Those with the red bag empty number $2^7$, and the same is true for the blue bag.",
+      "The one assignment putting everything in the white bag was removed twice and must be added back. Thus the count is $3^7-2\\cdot2^7+1=1932$."
+    ],
+    "keyIdeas": [
+      "Two required nonempty bags"
+    ],
+    "commonMistakes": [
+      "Treating the white bag as required to be nonempty."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the two specified bags enter the exclusion conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p23",
+    "problemId": "amc10b-2010-p23",
+    "finalAnswer": "$\\boxed{42}$ (choice D)",
+    "shortExplanation": "Encode entries by their rows and count the permitted prefix states.",
+    "detailedSteps": [
+      "Place 1 through 9 in increasing order, recording only which row receives each next entry. Each row must receive three entries. Column increase holds exactly when every prefix has row counts $a\\ge b\\ge c$: a lower row cannot have its kth entry until the row above has its kth entry.",
+      "Let $D(a,b,c)$ count valid prefixes. Starting with $D(0,0,0)=1$, use $D(a,b,c)=D(a-1,b,c)+D(a,b-1,c)+D(a,b,c-1)$, taking invalid states or negative indices as zero.",
+      "The relevant values are $D(3,2,0)=5$, $D(3,3,0)=5$, $D(2,2,1)=5$, $D(3,1,1)=6$. These yield $D(3,2,1)=5+6+5=16$ and $D(3,3,1)=16+5=21$. Also $D(2,2,2)=5$, so $D(3,2,2)=5+16=21$ and $D(3,3,2)=21+21=42$.",
+      "The final entry must go in the bottom row, so $D(3,3,3)=D(3,3,2)=42$. Each valid row word uniquely fills its three rows in increasing order."
+    ],
+    "keyIdeas": [
+      "Prefix counts for an increasing array"
+    ],
+    "commonMistakes": [
+      "Counting arbitrary row partitions without enforcing the column condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bijection to prefix counts makes the finite recurrence a complete counting proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p24",
+    "problemId": "amc10b-2010-p24",
+    "finalAnswer": "$\\boxed{34}$ (choice E)",
+    "shortExplanation": "Only quarterly scores 5,10,20,40 versus 5,14,23,32 satisfy all constraints.",
+    "detailedSteps": [
+      "Write the increasing geometric ratio as $p/q>1$ in lowest terms. Integral quarterly scores then have the form $Kq^3,Kpq^2,Kp^2q,Kp^3$ for a positive integer K. Their total is $K(p+q)(p^2+q^2)\\le100$.",
+      "This bound permits only $(p,q)=(2,1),(3,1),(4,1),(3,2)$: $p\\ge5$ already makes $p^3>100$, and for $q\\ge3$ the smallest reduced case $p=4,q=3$ totals 175.",
+      "The arithmetic scores start at the same $Kq^3$ and have positive integral difference d, so their total is $4Kq^3+6d$. The one-point margin requires $K[(p+q)(p^2+q^2)-4q^3]-1=6d$.",
+      "For (2,1), $K\\le6$ and $11K-1$ is divisible by 6 only when $K=5$, yielding $d=9$. For (3,1), the left side is $36K-1$, never divisible by 6. For (4,1) only K=1 is allowed, giving 80; for (3,2) only K=1 is allowed, giving 32. Neither is divisible by 6.",
+      "Thus the first-half total is $(5+10)+(5+14)=34$."
+    ],
+    "keyIdeas": [
+      "Integral geometric and arithmetic scoring sequences"
+    ],
+    "commonMistakes": [
+      "Assuming the geometric ratio is an integer without ruling out rational ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integrality and the score cap reduce the ratio to a short complete list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2010-p25",
+    "problemId": "amc10b-2010-p25",
+    "finalAnswer": "$\\boxed{315}$ (choice B)",
+    "shortExplanation": "Divisibility forces a multiple of 315, and an explicit polynomial attains 315.",
+    "detailedSteps": [
+      "The number a is an integer because $P(1)=a$. Define $F(x)=(x-1)(x-3)(x-5)(x-7)$. Repeated division by these monic linear factors shows $P(x)-a=F(x)Q(x)$ with Q having integer coefficients.",
+      "At even inputs 2,4,6,8, the F values are $-15,9,-15,105$. Each therefore divides $P(x)-a=-2a$. Their least common multiple is 315, so $315\\mid2a$. As 315 is odd, $315\\mid a$, giving $a\\ge315$.",
+      "To attain the bound, take $Q(x)=-8x^3+124x^2-576x+762$ and $P(x)=315+F(x)Q(x)$. Both have integer coefficients. At odd inputs the F factor vanishes, giving P=315.",
+      "At even inputs 2,4,6,8, the Q values are $42,-70,42,-6$. Multiplying by the corresponding F values gives -630 in every case, so P=-315. Thus the smallest a is 315."
+    ],
+    "keyIdeas": [
+      "An integer-coefficient polynomial with alternating values"
+    ],
+    "commonMistakes": [
+      "Proving a divisibility lower bound without constructing an integer-coefficient polynomial that attains it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monic factor division preserves integer coefficients, and a construction completes the minimum proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "solution-aime-i-2006-p1",
+    "problemId": "aime-i-2006-p1",
+    "finalAnswer": "$\\boxed{084}$",
+    "shortExplanation": "The remaining side is 31, and the perimeter is 84.",
+    "detailedSteps": [
+      "Triangle ABC is right at B, so $AC^2=18^2+21^2=765$. Since AC is perpendicular to CD, triangle ACD is right at C, and $AD^2=AC^2+CD^2=765+196=961$.",
+      "Thus $AD=31$, and the perimeter is $18+21+14+31=84$. The calculation uses only the two specified perpendicularities and does not require an extra angle assumption."
+    ],
+    "keyIdeas": [
+      "Apply the Pythagorean theorem to the two right triangles"
+    ],
+    "commonMistakes": [
+      "Treating AC as a side in the perimeter or using the wrong hypotenuse in triangle ACD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal connects the two right-triangle calculations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p2",
+    "problemId": "aime-i-2006-p2",
+    "finalAnswer": "$\\boxed{901}$",
+    "shortExplanation": "All 901 integers in the possible sum interval occur.",
+    "detailedSteps": [
+      "The total of 1 through 100 is 5050. Choose the ten omitted elements instead; their minimum sum is $1+\\cdots+10=55$ and maximum is $91+\\cdots+100=955$.",
+      "Every integer between these bounds is attained. Write the desired increase over 55 as $10q+r$ with $0\\le r<10$. Take the increasing elements $1+q,2+q,\\ldots,10+q$, and increase the largest $r$ of them by one.",
+      "These elements are still distinct. For $q\\le89$ they lie within 1 through 100, while the endpoint increase 900 has $q=90$ and $r=0$ and gives 91 through 100. Their sum is exactly 55 plus the specified increase.",
+      "Complementation therefore gives every possible S in one interval of $955-55+1=901$ integers."
+    ],
+    "keyIdeas": [
+      "Count all sums of the ten omitted elements"
+    ],
+    "commonMistakes": [
+      "Finding only the minimum and maximum without proving there are no gaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A balanced shift and a suffix increment construct every intermediate sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p3",
+    "problemId": "aime-i-2006-p3",
+    "finalAnswer": "$\\boxed{725}$",
+    "shortExplanation": "The least possible integer is 725.",
+    "detailedSteps": [
+      "Write the number as $N=d10^k+t$, where d is a nonzero digit, k is the number of remaining places and $0\\le t<10^k$. The deletion condition says $N=29t$, so $28t=d10^k$.",
+      "Since seven does not divide ten, seven must divide d, forcing $d=7$. Thus $t=10^k/4$, which is an integer only when $k\\ge2$.",
+      "The least possible k is 2, giving $t=25$ and $N=725$. Its leading-digit deletion really is 25, and $725/29=25$. Larger k give larger numbers."
+    ],
+    "keyIdeas": [
+      "Separate the leading digit from the remaining integer"
+    ],
+    "commonMistakes": [
+      "Requiring the remaining string to retain its leading zeroes as digits of an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factor seven restricts the leading digit before minimizing the length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p4",
+    "problemId": "aime-i-2006-p4",
+    "finalAnswer": "$\\boxed{124}$",
+    "shortExplanation": "There are 1124 trailing zeroes.",
+    "detailedSteps": [
+      "The exponent of two in each factorial is at least that of five, so the number of trailing zeroes is the total exponent of five. For each $1\\le j\\le100$, this exponent is $\\lfloor j/5\\rfloor+\\lfloor j/25\\rfloor$.",
+      "The first floor sum is $5(1+\\cdots+19)+20=970$. The second is $25(1+2+3)+4=154$. The extra endpoint terms account for $j=100$.",
+      "Thus $N=970+154=1124$, whose remainder modulo 1000 is 124."
+    ],
+    "keyIdeas": [
+      "Add the five-adic valuations of every factorial"
+    ],
+    "commonMistakes": [
+      "Using only the valuation of 100! instead of the product of all the factorials."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every factorial contributes its own count of factors five.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p5",
+    "problemId": "aime-i-2006-p5",
+    "finalAnswer": "$\\boxed{936}$",
+    "shortExplanation": "The coefficients are $13,4,18$.",
+    "detailedSteps": [
+      "Squaring the proposed positive expression gives $2a^2+3b^2+5c^2+2ab\\sqrt6+2ac\\sqrt{10}+2bc\\sqrt{15}$. The constant and three displayed radicals are linearly independent over the rationals, so matching gives $ab=52$, $ac=234$, $bc=72$.",
+      "Therefore $a^2=(ab)(ac)/(bc)=169$. Positivity selects $a=13$, then $b=4$ and $c=18$. Their constant term is $2(13^2)+3(4^2)+5(18^2)=2006$, so all coefficients agree.",
+      "The positive square root is thus the required expression, and $abc=13\\cdot4\\cdot18=936$."
+    ],
+    "keyIdeas": [
+      "Match the cross terms after squaring"
+    ],
+    "commonMistakes": [
+      "Matching the cross coefficients without the factor two, or forgetting to check the constant term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The products ab,ac,bc determine each positive coefficient uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p6",
+    "problemId": "aime-i-2006-p6",
+    "finalAnswer": "$\\boxed{360}$",
+    "shortExplanation": "The sum is 360.",
+    "detailedSteps": [
+      "The repeating decimal with block abc is $(100a+10b+c)/999$. There are $10\\cdot9\\cdot8=720$ distinct allowed blocks, including those beginning with zero, and their different numerators give different real numbers.",
+      "The digitwise complement $(9-a,9-b,9-c)$ also has distinct digits. Its numerator is 999 minus the original numerator, so the two real numbers sum to one. No block equals its own complement because no integer digit equals 4.5.",
+      "The 720 elements consequently form 360 disjoint pairs, giving total 360."
+    ],
+    "keyIdeas": [
+      "Pair each repeating block with its digitwise complement"
+    ],
+    "commonMistakes": [
+      "Excluding leading zeroes in a repeating decimal block or counting different blocks as the same real number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complementation pairs the entire set without evaluating individual fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p7",
+    "problemId": "aime-i-2006-p7",
+    "finalAnswer": "$\\boxed{408}$",
+    "shortExplanation": "The required ratio is 408.",
+    "detailedSteps": [
+      "Let the spacing of the parallel lines be h, and let the first line be at horizontal distance uh from the angle vertex. The figure shows A as the triangle before that first line; B, C and D occupy respectively the second-to-third, fourth-to-fifth and sixth-to-seventh line strips.",
+      "The separation of the two angle rays at distance z from their vertex has the form cz for a positive constant c. Therefore A has area $ch^2u^2/2$, while the three shaded strip areas are $ch^2(u+3/2)$, $ch^2(u+7/2)$ and $ch^2(u+11/2)$.",
+      "The source ratio gives $(u+7/2)/(u+3/2)=11/5$, so $u=1/6$. Hence $D/A=(2u+11)/u^2=408$."
+    ],
+    "keyIdeas": [
+      "Strip areas increase linearly with their distance from the vertex"
+    ],
+    "commonMistakes": [
+      "Taking the labeled strips to be consecutive or treating A as another equal-width trapezoid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The figure fixes which alternating strips receive the labels.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p8",
+    "problemId": "aime-i-2006-p8",
+    "finalAnswer": "$\\boxed{089}$",
+    "shortExplanation": "Every positive integer below 2\u221a2006 is possible.",
+    "detailedSteps": [
+      "In the supplied tiling, let the common side length of the four congruent outer rhombuses be s and their acute angle be \u03b8. The horizontal side of P and its slanted side are adjacent to the upper-left side of T; the reflected lower-left side gives the second direction of T.",
+      "Thus the diagonals of T have lengths $2s\\cos\\theta$ and $2s\\sin\\theta$. Each outer rhombus has area $s^2\\sin\\theta=\\sqrt{2006}$, and the central area is $K=2s^2\\sin\\theta\\cos\\theta=2\\sqrt{2006}\\cos\\theta$.",
+      "The actual nondegenerate tiling requires $0<\\theta<90^\\circ$, so $0<K<2\\sqrt{2006}$. Conversely, for every K in this interval, choose $\\theta=\\arccos(K/(2\\sqrt{2006}))$ and $s^2=\\sqrt{2006}/\\sin\\theta$; these give the displayed five-rhombus tiling with all pieces nondegenerate.",
+      "Since $89^2<4\\cdot2006<90^2$, the integer values are 1 through 89. The answer is 89."
+    ],
+    "keyIdeas": [
+      "Express the central rhombus area through the common angle"
+    ],
+    "commonMistakes": [
+      "Reading the outer area as 2006 instead of its square root or assuming the central rhombus is congruent to the outer ones."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The central diagonals resolve the two slanted directions in the actual diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p9",
+    "problemId": "aime-i-2006-p9",
+    "finalAnswer": "$\\boxed{046}$",
+    "shortExplanation": "There are 46 exponent pairs.",
+    "detailedSteps": [
+      "The first twelve geometric terms have product $a^{12}r^{66}$. The logarithm sum implies $a^{12}r^{66}=8^{2006}=2^{6018}$. Positive integer a and r therefore have no odd prime factors: write $a=2^u,r=2^v$ with nonnegative integer exponents.",
+      "Then $12u+66v=6018$, or $2u+11v=1003$. Hence $v$ is odd, nonnegative and at most 91. The possible values are $1,3,\\ldots,91$, giving 46; each determines a nonnegative integer u.",
+      "The values $a=1$ or $r=1$ are permitted by the positive-integer source condition, though $r=1$ yields no solution here. All 46 pairs satisfy the original product equation."
+    ],
+    "keyIdeas": [
+      "Convert the logarithm sum into a prime-power equation"
+    ],
+    "commonMistakes": [
+      "Restricting the bases to be greater than one or losing the exponent 66 in the geometric product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product that is a pure power of two forces both integer bases to be powers of two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p10",
+    "problemId": "aime-i-2006-p10",
+    "finalAnswer": "$\\boxed{065}$",
+    "shortExplanation": "The bisecting line is $6x=2y+5$.",
+    "detailedSteps": [
+      "The figure gives centers $(1/2,1/2),(3/2,1/2),(5/2,1/2)$ in the bottom row, the same x values at $y=3/2$ in the middle row, and $x=1/2,3/2$ at $y=5/2$ in the top row. Every radius is 1/2, and interiors are disjoint.",
+      "For lines of slope three, use the normal coordinate $v=3x-y$. The eight center coordinates are 1,4,7,0,3,6,\u22121,2. A radius-half disk projects to an interval of half-width $\\sqrt{10}/2$ in this coordinate.",
+      "At the line $v=5/2$, the disks centered at $-1,0$ lie entirely on one side, and those at 6,7 entirely on the other. The remaining centers 1,2,3,4 occur in pairs symmetric about 5/2. Equal disks at opposite signed distances from a line contribute complementary cut areas, so each such pair is bisected in total.",
+      "The line therefore divides the whole union equally. For this fixed slope, cumulative area is nondecreasing as v moves, and it strictly increases across this line because it intersects disk interiors. This proves the area-bisecting position is unique.",
+      "The equation $3x-y=5/2$ becomes $6x=2y+5$, with relatively prime positive coefficients. The requested sum is $6^2+2^2+5^2=65$."
+    ],
+    "keyIdeas": [
+      "Pair the four cut disks by their projected center coordinates"
+    ],
+    "commonMistakes": [
+      "Assuming the entire eight-disk arrangement is centrally symmetric; only the four cut disks need projected pairing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Whole disks balance separately while the four intersected disks form two complementary pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p11",
+    "problemId": "aime-i-2006-p11",
+    "finalAnswer": "$\\boxed{458}$",
+    "shortExplanation": "There are 1458 permitted towers.",
+    "detailedSteps": [
+      "Read a tower from bottom to top as a permutation. Its consecutive entries must satisfy next at most previous plus two. For two cubes both orders work, giving $T_2=2$.",
+      "For a valid tower on 1 through n with $n\\ge3$, remove cube 1. If it had a successor, that successor was 2 or 3; any predecessor was at least 2, so joining the neighbors still satisfies the inequality. After subtracting one from the remaining labels, the result is a valid tower on 1 through n minus one.",
+      "Conversely, cube 1 can be inserted into any valid tower on labels 2 through n exactly before cube 2, before cube 3, or at the top. Its predecessor, if present, always permits cube 1, and those are precisely the allowed successors. These three positions are distinct and invert deletion.",
+      "Thus $T_n=3T_{n-1}$ for $n\\ge3$, and $T_8=2\\cdot3^6=1458$. The remainder is 458."
+    ],
+    "keyIdeas": [
+      "Insert the smallest cube in one of three positions"
+    ],
+    "commonMistakes": [
+      "Imposing the two-unit bound in both directions or excluding some bottom cubes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Deletion of the smallest cube preserves validity and gives a constant insertion count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p12",
+    "problemId": "aime-i-2006-p12",
+    "finalAnswer": "$\\boxed{906}$",
+    "shortExplanation": "The six solutions sum to 906 degrees.",
+    "detailedSteps": [
+      "Let $A=\\cos3x$ and $B=\\cos5x$. The addition formula gives $A+B=2\\cos4x\\cos x$, so the equation is $A^3+B^3=(A+B)^3$. Its factorization is $3AB(A+B)=0$.",
+      "Therefore one of $\\cos3x,\\cos5x,\\cos4x,\\cos x$ is zero. In the strict interval $100<x<200$, the first gives 150; the second gives 126,162,198; the third gives 112.5,157.5; and the last gives no solution.",
+      "These six values are distinct, and the factorization proves they are exhaustive and all valid. Their sum is $150+126+162+198+112.5+157.5=906$."
+    ],
+    "keyIdeas": [
+      "Factor the difference between a sum of cubes and the cube of a sum"
+    ],
+    "commonMistakes": [
+      "Dividing by a cosine factor and thereby losing its zero solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right side is the cube of the cosine sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p13",
+    "problemId": "aime-i-2006-p13",
+    "finalAnswer": "$\\boxed{899}$",
+    "shortExplanation": "The sum is $S_n=(n+1)2^{n-1}$.",
+    "detailedSteps": [
+      "For $0\\le j\\le n-2$, exactly $2^{n-2-j}$ integers k between 1 and $2^{n-1}$ have exact two-adic valuation j. Each contributes $g(2k)=2^{j+1}$, so each of these n minus one groups contributes $2^{n-1}$.",
+      "The final integer $k=2^{n-1}$ contributes $2^n$. Thus $S_n=(n-1)2^{n-1}+2^n=(n+1)2^{n-1}$; the formula also holds for $n=1$ when the grouped range is empty.",
+      "If n is even, n plus one is odd and the power of two in S has odd exponent n minus one, so S cannot be a square. If n is odd, $2^{n-1}$ is a square, so S is a square exactly when n plus one is a square.",
+      "For odd n, that square has even root: $n=4t^2-1$. The greatest such n below 1000 uses $t=15$, giving 899; $t=16$ would give 1023."
+    ],
+    "keyIdeas": [
+      "Group terms by their exact power of two"
+    ],
+    "commonMistakes": [
+      "Including the endpoint k in a valuation group that only counts the numbers below it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint contributes one additional power-of-two term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p14",
+    "problemId": "aime-i-2006-p14",
+    "finalAnswer": "$\\boxed{183}$",
+    "shortExplanation": "The new height is $144/\\sqrt{1585}$.",
+    "detailedSteps": [
+      "The original equal pairwise leg angles make all three foot-to-foot distances equal. The top projects to the circumcenter of this equilateral foot triangle because all three legs have length 5. Its circumradius is $\\sqrt{5^2-4^2}=3$.",
+      "Place the original top at the origin and the feet at $v_1=(3,0,-4)$, $v_2=(-3/2,3\\sqrt3/2,-4)$ and $v_3=(-3/2,-3\\sqrt3/2,-4)$. These have length 5 and equal pairwise dot product 23/2, so they realize the source leg angles.",
+      "Breaking off the lower foot of the third leg replaces its endpoint by $w_3=(4/5)v_3=(-6/5,-6\\sqrt3/5,-16/5)$ while keeping the leg directions. Setting the tripod on the ground is a rigid rotation that makes the plane through $v_1,v_2,w_3$ horizontal; the height is the origin-to-plane distance.",
+      "A normal to that plane is $N=(12\\sqrt3,36,117\\sqrt3)$. Direct dot products give $N\\cdot v_1=N\\cdot v_2=N\\cdot w_3=-432\\sqrt3$, and $|N|^2=42795=27\\cdot1585$.",
+      "The height is therefore $h=432\\sqrt3/\\sqrt{27\\cdot1585}=144/\\sqrt{1585}$. The integer 1585 equals 5 times 317 and is squarefree, so $m=144$ and $n=1585$ are the required form.",
+      "Since $39<\\sqrt{1585}<40$, we have $183<144+\\sqrt{1585}<184$. The requested floor is 183."
+    ],
+    "keyIdeas": [
+      "Compute the distance from the tripod top to the new foot plane"
+    ],
+    "commonMistakes": [
+      "Keeping the old ground plane after one leg shortens or assuming the new feet remain an equilateral triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rigid rotation preserves the distance from the top to the plane of the three feet.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2006-p15",
+    "problemId": "aime-i-2006-p15",
+    "finalAnswer": "$\\boxed{027}$",
+    "shortExplanation": "The minimum possible absolute sum is 27.",
+    "detailedSteps": [
+      "Write $y_k=x_k/3$. The recurrence starts at $y_0=0$ and permits $y_k=\\pm(y_{k-1}+1)$, so every term is an integer with $y_k\\equiv k\\pmod2$. Squaring gives $y_k^2-y_{k-1}^2=2y_{k-1}+1$.",
+      "Summing through N and then including the final term yields $\\sum_{k=1}^N y_k=(y_N^2-N)/2+y_N=((y_N+1)^2-N-1)/2$. For $N=2006$, $y_N$ is even, so $y_N+1$ is odd.",
+      "The target 2007 lies between the consecutive odd squares $43^2=1849$ and $45^2=2025$. Their distances from it are 158 and 18, and every other odd square is further away. Therefore the absolute scaled sum is at least $18/2=9$, giving an absolute original sum at least 27.",
+      "For attainment, repeat the allowed two-step block $(-1,0)$ 981 times, using 1962 steps and sum $-981$. Then choose the positive steps 1,2,\u2026,44. The full 2006-step sequence has sum $-981+44\\cdot45/2=9$. Multiplying by three gives 27 and proves the bound is attained."
+    ],
+    "keyIdeas": [
+      "A telescoping square identity determines the sum from the final term"
+    ],
+    "commonMistakes": [
+      "Optimizing term signs independently even though each term controls the next magnitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The full sum depends only on a shifted square of the terminal value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

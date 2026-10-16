@@ -1,0 +1,632 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1981-p1",
+    "problemId": "amc12-predecessor-1981-p1",
+    "finalAnswer": "$\\boxed{16}$ (choice E)",
+    "shortExplanation": "The given root fixes $x+2=4$, so its square is $16$.",
+    "detailedSteps": [
+      "Squaring the given nonnegative square root gives $x+2=2^2=4$.",
+      "The requested quantity is $(x+2)^2=4^2=16$. The corresponding $x=2$ satisfies the original radical equation."
+    ],
+    "keyIdeas": [
+      "Square the given radical before evaluating the requested power."
+    ],
+    "commonMistakes": [
+      "The question asks for a square, not the value under the first square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the two successive powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p2",
+    "problemId": "amc12-predecessor-1981-p2",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "In triangle $EBC$, the legs are $1$ and the square side, and the hypotenuse is $2$.",
+    "detailedSteps": [
+      "Because $E$ lies on $AB$ and $AB\\perp BC$, triangle $EBC$ is right at $B$.",
+      "If the square side is $s$, then $1^2+s^2=2^2$, so $s^2=3$. This is the square area, and $s=\\sqrt3>1$ permits the stated point placement."
+    ],
+    "keyIdeas": [
+      "Use the right triangle formed by a point on a square side."
+    ],
+    "commonMistakes": [
+      "The diagonal of the square is not the segment $EC$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Find the area directly as the side squared.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p3",
+    "problemId": "amc12-predecessor-1981-p3",
+    "finalAnswer": "$\\boxed{\\frac{11}{6x}}$ (choice D)",
+    "shortExplanation": "The three numerators over $6x$ are $6,3,2$.",
+    "detailedSteps": [
+      "For $x\\ne0$, rewrite the terms as $6/(6x),3/(6x),2/(6x)$.",
+      "Their sum is $(6+3+2)/(6x)=11/(6x)$."
+    ],
+    "keyIdeas": [
+      "Use the common denominator without changing the power of x."
+    ],
+    "commonMistakes": [
+      "Adding denominators does not add fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only a common denominator is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p4",
+    "problemId": "amc12-predecessor-1981-p4",
+    "finalAnswer": "$\\boxed{32}$ (choice C)",
+    "shortExplanation": "Writing the smaller number as three quarters of the larger gives a difference of one quarter.",
+    "detailedSteps": [
+      "Let the larger number be $L$ and the smaller $S$. The relation $3L=4S$ gives $S=3L/4$.",
+      "Then $L-S=L/4=8$, so $L=32$ and $S=24$. Both original conditions hold."
+    ],
+    "keyIdeas": [
+      "Solve the relation and the difference together."
+    ],
+    "commonMistakes": [
+      "The ratio of larger to smaller is $4:3$, not $3:4$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference represents one ratio unit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p5",
+    "problemId": "amc12-predecessor-1981-p5",
+    "finalAnswer": "$\\boxed{100^\\circ}$ (choice C)",
+    "shortExplanation": "Triangle $BCD$ gives an angle of $40^\\circ$, which is a base angle of isosceles triangle $ADB$.",
+    "detailedSteps": [
+      "In triangle $BCD$, $\\angle BDC=180^\\circ-110^\\circ-30^\\circ=40^\\circ$.",
+      "The parallel bases give $\\angle ABD=\\angle BDC=40^\\circ$. Since $AD=BD$, the other base angle $\\angle DAB$ is also $40^\\circ$.",
+      "Thus $\\angle ADB=180^\\circ-40^\\circ-40^\\circ=100^\\circ$."
+    ],
+    "keyIdeas": [
+      "Transfer a diagonal angle across the parallel bases."
+    ],
+    "commonMistakes": [
+      "The equal sides belong to triangle $ADB$, not triangle $BCD$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First isolate the diagonal angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p6",
+    "problemId": "amc12-predecessor-1981-p6",
+    "finalAnswer": "$\\boxed{y^2+2y-1}$ (choice A)",
+    "shortExplanation": "Each ratio is one plus a reciprocal, so their denominators after subtraction must agree.",
+    "detailedSteps": [
+      "Put $t=y^2+2y-2$. The equation is $x/(x-1)=(t+1)/t$, with $x\\ne1$ and $t\\ne0$.",
+      "Subtracting one gives $1/(x-1)=1/t$, hence $x-1=t$. Therefore $x=y^2+2y-1$. The original denominator restrictions remain in force."
+    ],
+    "keyIdeas": [
+      "Subtract one from each of two closely related fractions."
+    ],
+    "commonMistakes": [
+      "Do not substitute a forbidden zero denominator after cross-multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The numerator exceeds each denominator by one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p7",
+    "problemId": "amc12-predecessor-1981-p7",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The common multiples are multiples of $60$, and only $60$ lies from $1$ to $100$.",
+    "detailedSteps": [
+      "The least common multiple is $\\operatorname{lcm}(2,3,4,5)=2^2\\cdot3\\cdot5=60$.",
+      "The positive multiples begin $60,120,\\ldots$. Thus exactly one of the first one hundred positive integers qualifies."
+    ],
+    "keyIdeas": [
+      "Combine divisibility conditions with a least common multiple."
+    ],
+    "commonMistakes": [
+      "Divisibility by four already includes divisibility by two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Do not multiply redundant factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p8",
+    "problemId": "amc12-predecessor-1981-p8",
+    "finalAnswer": "$\\boxed{\\frac1{x^2y^2z^2}}$ (choice A)",
+    "shortExplanation": "The two numerator sums cancel the two denominator sums, leaving two factors of $1/(xyz)$.",
+    "detailedSteps": [
+      "Write $S=x+y+z$, $T=xy+yz+zx$, and $U=xyz$. Then $x^{-1}+y^{-1}+z^{-1}=T/U$ and $(xy)^{-1}+(yz)^{-1}+(zx)^{-1}=S/U$.",
+      "The four-factor product is $(1/S)(T/U)(1/T)(S/U)=1/U^2=1/(x^2y^2z^2)$. Positivity ensures all the canceled denominators are nonzero."
+    ],
+    "keyIdeas": [
+      "Express each reciprocal sum using the elementary symmetric sums."
+    ],
+    "commonMistakes": [
+      "The product contains two reciprocal sums, so the final product is squared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Introduce symmetric sums to make the cancellations visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p9",
+    "problemId": "amc12-predecessor-1981-p9",
+    "finalAnswer": "$\\boxed{2a^2}$ (choice A)",
+    "shortExplanation": "The space diagonal is $s\\sqrt3$, giving $s^2=a^2/3$.",
+    "detailedSteps": [
+      "The actual figure shows a space diagonal joining opposite cube vertices. For side length $s$, its squared length is $s^2+s^2+s^2=3s^2=a^2$.",
+      "The six faces have total area $6s^2=6a^2/3=2a^2$."
+    ],
+    "keyIdeas": [
+      "The source diagonal passes through the cube interior."
+    ],
+    "commonMistakes": [
+      "A face diagonal would use only two squared side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish a face diagonal from a space diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p10",
+    "problemId": "amc12-predecessor-1981-p10",
+    "finalAnswer": "$\\boxed{\\frac{x}{a}-\\frac{b}{a}}$ (choice E)",
+    "shortExplanation": "Swapping $x$ and $y$ gives $x=ay+b$, then solve for $y$.",
+    "detailedSteps": [
+      "Under reflection across $y=x$, a point $(x,y)$ becomes $(y,x)$. Thus the reflected equation is $x=ay+b$.",
+      "Since $a\\ne0$, solve to obtain $y=x/a-b/a$."
+    ],
+    "keyIdeas": [
+      "Reflection across y=x exchanges the coordinates."
+    ],
+    "commonMistakes": [
+      "This reflection swaps coordinates; it does not negate a slope."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero slope permits solving for y.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p11",
+    "problemId": "amc12-predecessor-1981-p11",
+    "finalAnswer": "$\\boxed{81}$ (choice C)",
+    "shortExplanation": "The progression must be $3d,4d,5d$; among the choices only $81$ is a multiple of a permitted coefficient.",
+    "detailedSteps": [
+      "Write the three sides as $u-d,u,u+d$, where $d>0$. The largest is the hypotenuse, so $(u-d)^2+u^2=(u+d)^2$.",
+      "This simplifies to $u(u-4d)=0$. Since $u>0$, the sides are $3d,4d,5d$. Integer side lengths make their difference $d$ an integer.",
+      "Of the five listed numbers, only $81$ is divisible by $3$, $4$, or $5$. It is attained by the right triangle with sides $81,108,135$."
+    ],
+    "keyIdeas": [
+      "A positive right-triangle arithmetic progression is a multiple of 3,4,5."
+    ],
+    "commonMistakes": [
+      "Integral side lengths force an integral common difference, rather than an arbitrary scale."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classify the whole family before testing the choices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p12",
+    "problemId": "amc12-predecessor-1981-p12",
+    "finalAnswer": "$\\boxed{p>\\frac{100q}{100-q}}$ (choice E)",
+    "shortExplanation": "The final-to-original factor exceeds one exactly under the displayed inequality.",
+    "detailedSteps": [
+      "The final amount is $M(1+p/100)(1-q/100)$. Because $M>0$, it exceeds $M$ precisely when $(100+p)(100-q)>10000$.",
+      "Expansion gives $p(100-q)>100q$. The condition $q<100$ makes the coefficient positive, so division preserves the inequality and gives $p>100q/(100-q)$."
+    ],
+    "keyIdeas": [
+      "Multiply the successive percentage factors."
+    ],
+    "commonMistakes": [
+      "The decrease acts on the increased amount, so the two percentages cannot simply be subtracted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the positivity required for division.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p13",
+    "problemId": "amc12-predecessor-1981-p13",
+    "finalAnswer": "$\\boxed{22}$ (choice E)",
+    "shortExplanation": "The remaining proportion is $(9/10)^n$; the exact boundary occurs between $21$ and $22$.",
+    "detailedSteps": [
+      "After $n$ years, the retained proportion is $(9/10)^n$. Losing at least ninety percent means this is at most $1/10$.",
+      "Logarithms give $n\\ge\\log(1/10)/\\log(9/10)$, approximately $21.85$.",
+      "The exact neighboring checks are $10\\cdot9^{21}>10^{21}$ and $10\\cdot9^{22}\\le10^{22}$. Thus $21$ years fail and $22$ succeed, proving the least integer is $22$."
+    ],
+    "keyIdeas": [
+      "Repeated percentage loss multiplies the remaining value."
+    ],
+    "commonMistakes": [
+      "A ten-percent annual loss is a compound factor, not a constant subtraction from the initial value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exact checks avoid relying on the supplied rounded logarithm.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p14",
+    "problemId": "amc12-predecessor-1981-p14",
+    "finalAnswer": "$\\boxed{28}$ (choice A)",
+    "shortExplanation": "The six-term sum is $7(1+r^2+r^4)$, forcing $r^2=3$.",
+    "detailedSteps": [
+      "Let the common ratio be $r$. Each consecutive pair is $r^2$ times the previous pair, so $91=7(1+r^2+r^4)$.",
+      "Put $t=r^2\\ge0$. Then $t^2+t-12=(t-3)(t+4)=0$, hence $t=3$.",
+      "The first four terms sum to $7(1+r^2)=28$. Both ratios $r=\\sqrt3$ and $r=-\\sqrt3$ can satisfy the original pair sum, and both give this result."
+    ],
+    "keyIdeas": [
+      "Group the geometric series into consecutive two-term blocks."
+    ],
+    "commonMistakes": [
+      "Negative real ratios are allowed; their squares still select the same value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pair grouping avoids dividing by a potentially special geometric-series denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p15",
+    "problemId": "amc12-predecessor-1981-p15",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice B)",
+    "shortExplanation": "The logarithmic equation reduces to $\\log x=-\\log6$.",
+    "detailedSteps": [
+      "The positive bases allow taking logarithms. Multiplying by $\\log b>0$ gives $(\\log2)(\\log2+\\log x)=(\\log3)(\\log3+\\log x)$.",
+      "Rearrangement yields $(\\log2-\\log3)\\log x=(\\log3)^2-(\\log2)^2$.",
+      "Since $\\log2\\ne\\log3$, cancellation gives $\\log x=-(\\log2+\\log3)=-\\log6$, hence $x=1/6$. This positive value satisfies the original power relation for every $b>1$."
+    ],
+    "keyIdeas": [
+      "Take logarithms of the positive bases before canceling the base parameter."
+    ],
+    "commonMistakes": [
+      "The outside exponents are logarithms of two and three, not their numerical bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factor log b cancels from both sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p16",
+    "problemId": "amc12-predecessor-1981-p16",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The source numeral has twenty digits, so its leading pair $12_3$ becomes $5_9$.",
+    "detailedSteps": [
+      "Because $9=3^2$, split the base-three representation into two-digit groups from the right.",
+      "The actual source numeral has twenty digits, so no short leading group remains. Its first pair is $12_3=1\\cdot3+2=5$. Therefore the first base-nine digit is $5$."
+    ],
+    "keyIdeas": [
+      "Group base-three digits in pairs to obtain base-nine digits."
+    ],
+    "commonMistakes": [
+      "An odd number of base-three digits would leave a one-digit leading group; count the actual numeral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The long suffix is unnecessary once its length parity is verified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p17",
+    "problemId": "amc12-predecessor-1981-p17",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The two linear equations give $f(x)=2/x-x$, so equal values at opposite inputs require $x^2=2$.",
+    "detailedSteps": [
+      "For nonzero $x$, the given equation and its reciprocal version are $f(x)+2f(1/x)=3x$ and $2f(x)+f(1/x)=3/x$.",
+      "Solving them gives $f(x)=2/x-x$. This function is odd, so $f(x)=f(-x)$ holds exactly when $f(x)=0$.",
+      "Thus $2/x-x=0$, or $x^2=2$. The two nonzero numbers $\\sqrt2$ and $-\\sqrt2$ both work."
+    ],
+    "keyIdeas": [
+      "Evaluate the functional relation at reciprocal inputs."
+    ],
+    "commonMistakes": [
+      "Zero is excluded from the function domain and cannot be counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original identity determines f completely on its domain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p18",
+    "problemId": "amc12-predecessor-1981-p18",
+    "finalAnswer": "$\\boxed{63}$ (choice C)",
+    "shortExplanation": "There are thirty-one positive solutions, their negatives and zero.",
+    "detailedSteps": [
+      "The equation implies $|x|\\le100$, since $|\\sin x|\\le1$. Let $g(x)=\\sin x-x/100$. It is odd and vanishes at zero.",
+      "For positive $x$, only the intervals $(2k\\pi,(2k+1)\\pi)$ can contain roots. Since $31\\pi<100<32\\pi$, the possible indices are $k=0,1,\\ldots,15$.",
+      "On each such interval, $g\\prime\\prime(x)=-\\sin x<0$, so its derivative strictly decreases. For $k\\ge1$, both endpoints have negative g-values, while the midpoint has value $1-(2k+1/2)\\pi/100>0$. There is exactly one root on either side of the unique maximum, hence two per interval.",
+      "On the first interval, $g(0)=0$ and $g\\prime(0)=99/100>0$; strict concavity and $g(\\pi)<0$ give exactly one additional positive root.",
+      "There are $1+2\\cdot15=31$ positive roots. Odd symmetry gives thirty-one negative roots, and zero adds one, for $63$ in total."
+    ],
+    "keyIdeas": [
+      "Bound the domain, count concave positive humps and use symmetry."
+    ],
+    "commonMistakes": [
+      "Counting sine periods without checking the last positive hump can miss two solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A global count proves that roots outside the pictured region are impossible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p19",
+    "problemId": "amc12-predecessor-1981-p19",
+    "finalAnswer": "$\\boxed{\\frac52}$ (choice B)",
+    "shortExplanation": "The midpoint-to-foot vector has length half the difference of the two adjacent sides.",
+    "detailedSteps": [
+      "Put $A=(0,0)$ and the internal bisector on the horizontal axis. If $u=\\theta/2$, take $B=(14\\cos u,14\\sin u)$ and $C=(19\\cos u,-19\\sin u)$.",
+      "The perpendicular foot is $N=(14\\cos u,0)$, while the midpoint is $M=(33\\cos u/2,-5\\sin u/2)$.",
+      "Thus $M-N=(5\\cos u/2,-5\\sin u/2)$, whose length is $(5/2)\\sqrt{\\cos^2u+\\sin^2u}=5/2$."
+    ],
+    "keyIdeas": [
+      "Use coordinates along the angle bisector."
+    ],
+    "commonMistakes": [
+      "N is a perpendicular foot on the bisector, not its intersection with side BC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle cancels from the distance.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p20",
+    "problemId": "amc12-predecessor-1981-p20",
+    "finalAnswer": "$\\boxed{10}$ (choice B)",
+    "shortExplanation": "The terminal unfolded ray has angle $8(n+1)^\\circ<90^\\circ$, so at most ten intermediate reflections occur.",
+    "detailedSteps": [
+      "Reflect each successive wedge across the struck side. The equal-angle rule makes the unfolded path a straight segment, starting on ray number zero and crossing $n$ intermediate rays before ending perpendicularly on ray number $n+1$.",
+      "The angle between the initial ray and the terminal ray is $(n+1)8^\\circ$. Its perpendicular foot must lie on the positive terminal ray, so its projection distance is positive: $\\cos((n+1)8^\\circ)>0$. For this consecutive inward path, the swept angle is strictly less than $90^\\circ$.",
+      "Therefore $(n+1)8<90$, or $n\\le10$. The fact that a cosine becomes positive again after a full turn does not permit extra crossings: the straight inward segment has angular sweep less than ninety degrees before its perpendicular endpoint.",
+      "To attain the bound, choose eleven unfolded sectors, total angle $88^\\circ$, and join any point on the initial ray to its perpendicular projection on the terminal ray. The segment crosses all ten intermediate positive rays in order. Folding it back gives ten reflections followed by the perpendicular hit, after which the path retraces."
+    ],
+    "keyIdeas": [
+      "Unfold reflected segments into one straight line through successive wedges."
+    ],
+    "commonMistakes": [
+      "The perpendicular terminal hit is after the n reflections; it is not one of those n intermediate bounces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both the angle-sweep bound and an attaining unfolded path are required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p21",
+    "problemId": "amc12-predecessor-1981-p21",
+    "finalAnswer": "$\\boxed{60^\\circ}$ (choice D)",
+    "shortExplanation": "The condition becomes $c^2=a^2+b^2-ab$, so the opposite angle has cosine $1/2$.",
+    "detailedSteps": [
+      "Expand the product as $(a+b)^2-c^2=3ab$, giving $c^2=a^2+b^2-ab$.",
+      "By the law of cosines, $c^2=a^2+b^2-2ab\\cos C$. The positive side lengths allow cancellation, yielding $\\cos C=1/2$.",
+      "A triangle angle lies strictly between zero and $180^\\circ$, so $C=60^\\circ$."
+    ],
+    "keyIdeas": [
+      "Compare the factored relation with the law of cosines."
+    ],
+    "commonMistakes": [
+      "The factor two in the law of cosines is essential."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the angle domain to select the unique value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p22",
+    "problemId": "amc12-predecessor-1981-p22",
+    "finalAnswer": "$\\boxed{76}$ (choice D)",
+    "shortExplanation": "There are forty-eight axis lines, twenty-four face-diagonal lines and four space-diagonal lines.",
+    "detailedSteps": [
+      "Choose a primitive integer direction vector for a line containing lattice points. The scalar parameters of its lattice points differ by integers, since the vector coordinates have greatest common divisor one.",
+      "Four distinct grid points therefore span at least three steps. Each coordinate spans at most three units, forcing every direction component to be $-1,0,$ or $1$. Identify opposite direction vectors as the same line.",
+      "With one nonzero component, there are three axis directions and $4^2$ fixed-coordinate choices, giving $48$. With two nonzero components, there are three coordinate-plane choices and two diagonal slopes; each has four values of the fixed coordinate, giving $24$.",
+      "With all three components nonzero, the eight sign choices pair into four directions; each admits just the main body diagonal. Thus the total is $48+24+4=76$."
+    ],
+    "keyIdeas": [
+      "Classify primitive direction vectors in a four-by-four-by-four grid."
+    ],
+    "commonMistakes": [
+      "Counting opposite vectors separately counts each line twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coordinate-span argument rules out every larger primitive direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p23",
+    "problemId": "amc12-predecessor-1981-p23",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The center distance from A is four thirds of the circumradius, making each tangency distance AP and AQ equal to eight.",
+    "detailedSteps": [
+      "The equilateral triangle has circumradius $R=12/\\sqrt3=4\\sqrt3$. A circle tangent to both side segments has its center on the internal bisector from $A$. Write its center distance from $A$ as $t>0$; its radius is $r=t\\sin30^\\circ=t/2$.",
+      "The circumcenter is distance $R$ from $A$ on the same bisector. Internal tangency gives $|t-R|=R-r$. The branch $t\\le R$ would imply $t=0$, a degenerate circle, so $t>R$.",
+      "Thus $t-R=R-t/2$, yielding $t=4R/3$. The side tangency distances are $AP=AQ=t\\cos30^\\circ=8$, lying inside the length-twelve segments.",
+      "Triangle $APQ$ has equal sides $8$ and included angle $60^\\circ$, so it is equilateral and $PQ=8$."
+    ],
+    "keyIdeas": [
+      "Use internal circle tangency and the thirty-degree half-angle."
+    ],
+    "commonMistakes": [
+      "There are two center-distance branches; the degenerate one is inadmissible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The contact triangle is equilateral once its side distances are known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p24",
+    "problemId": "amc12-predecessor-1981-p24",
+    "finalAnswer": "$\\boxed{2\\cos(n\\theta)}$ (choice D)",
+    "shortExplanation": "Both sequences start with $2,2\\cos\\theta$ and satisfy the same second-order recurrence.",
+    "detailedSteps": [
+      "Set $u_n=x^n+x^{-n}$, which is defined because the original reciprocal requires $x\\ne0$. Multiplication gives $u_{n+1}=(x+x^{-1})u_n-u_{n-1}=2\\cos\\theta\\,u_n-u_{n-1}$.",
+      "The initial values are $u_0=2$ and $u_1=2\\cos\\theta$. The cosine addition identities show that $2\\cos(n\\theta)$ has exactly the same recurrence and initial values, proving the identity for every positive integer n.",
+      "Domain note: for $0<\\theta<\\pi$, the quadratic for x has roots $\\cos\\theta\\pm i\\sin\\theta$. No real-only condition on x appears in the source; adding one would make the hypotheses inconsistent."
+    ],
+    "keyIdeas": [
+      "The reciprocal power sums follow the cosine recurrence."
+    ],
+    "commonMistakes": [
+      "Raising a sum to a power does not give the sum of the powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The recurrence avoids a binomial expansion and makes the number domain explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p25",
+    "problemId": "amc12-predecessor-1981-p25",
+    "finalAnswer": "$\\boxed{2\\sqrt{10}}$ (choice A)",
+    "shortExplanation": "The two bisectors force $AB^2=40$, while the other sides are $11$ and $6\\sqrt6$.",
+    "detailedSteps": [
+      "Put $u=AB$ and $v=AD$. Since $AD$ bisects $\\angle BAE$, the angle-bisector theorem gives $AB/AE=BD/DE=2/3$, so $AE=3u/2$. Since $AE$ bisects $\\angle DAC$, $AD/AC=DE/EC=1/2$, so $AC=2v$.",
+      "For an internal bisector, Stewart’s theorem together with the bisector ratio gives its squared length as the product of the adjacent sides minus the product of the two opposite-side segments. Hence $v^2=AB\\cdot AE-BD\\cdot DE=3u^2/2-6$.",
+      "Applying the same identity to $AE$ gives $9u^2/4=AD\\cdot AC-DE\\cdot EC=2v^2-18$. Substitution yields $9u^2/4=3u^2-30$, so $u^2=40$ and $v^2=54$.",
+      "The three sides are $AB=2\\sqrt{10}$, $BC=2+3+6=11$, and $AC=2v=6\\sqrt6$. The shortest is $2\\sqrt{10}$. An actual coordinate construction with $B=(0,0)$, $C=(11,0)$ and $A=(-5/2,3\\sqrt{15}/2)$ verifies all three equal apex angles and the specified division points."
+    ],
+    "keyIdeas": [
+      "Apply the internal-bisector length identity twice."
+    ],
+    "commonMistakes": [
+      "The two bisected angles belong to different subtriangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coordinate witness confirms that the derived side lengths are attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p26",
+    "problemId": "amc12-predecessor-1981-p26",
+    "finalAnswer": "$\\boxed{\\frac{25}{91}}$ (choice D)",
+    "shortExplanation": "Carol wins in a cycle with probability $(5/6)^2(1/6)$; failed cycles have factor $(5/6)^3$.",
+    "detailedSteps": [
+      "Let $q=5/6$. For Carol to win on the first cycle, the first two players must fail and she must succeed, giving $q^2/6$.",
+      "Each completely failed cycle has probability $q^3$, independently. Thus her eventual winning probability is $(q^2/6)(1+q^3+q^6+\\cdots)=(q^2/6)/(1-q^3)$.",
+      "This equals $(25/216)/(91/216)=25/91$. The corresponding three player probabilities sum to one."
+    ],
+    "keyIdeas": [
+      "A complete failed cycle restarts the same experiment."
+    ],
+    "commonMistakes": [
+      "The players have different chances because their turns are ordered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convergence follows from q cubed being less than one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p27",
+    "problemId": "amc12-predecessor-1981-p27",
+    "finalAnswer": "$\\boxed{7\\sqrt3-12}$ (choice C)",
+    "shortExplanation": "The two side fractions are $2\\sqrt3-3$ and $2-\\sqrt3$, whose product is the area ratio.",
+    "detailedSteps": [
+      "Scale the circumcircle to radius one and take polar positions $A=90^\\circ$, $B=300^\\circ$, $C=240^\\circ$. These give $AB=AC$ and $\\angle CAB=30^\\circ$. The arc condition places $D$ at $210^\\circ$.",
+      "Equality of chord $DG$ with $AB$ makes the minor central separation $150^\\circ$. The two possible positions on arc BA are $G=0^\\circ$ and $G=60^\\circ$. The requirement that arc BG exceed arc GA selects $60^\\circ$, with arc lengths $120^\\circ$ and $30^\\circ$.",
+      "Thus $A=(0,1)$, $B=(1/2,-\\sqrt3/2)$, $C=(-1/2,-\\sqrt3/2)$, $D=(-\\sqrt3/2,-1/2)$ and $G=(1/2,\\sqrt3/2)$. Chord DG has equation $y=x+(\\sqrt3-1)/2$.",
+      "The side lines are $AC: y=1+(2+\\sqrt3)x$ and $AB: y=1-(2+\\sqrt3)x$. Intersecting with DG gives $AE/AC=(3-\\sqrt3)/(1+\\sqrt3)=2\\sqrt3-3$ and $AF/AB=(3-\\sqrt3)/(3+\\sqrt3)=2-\\sqrt3$. Both fractions are strictly between zero and one.",
+      "The two triangles share the angle at A. Their area ratio is the product of their two adjacent-side fractions, $(2\\sqrt3-3)(2-\\sqrt3)=7\\sqrt3-12$."
+    ],
+    "keyIdeas": [
+      "Use the arc condition to choose the correct chord and then intersect it with both sides."
+    ],
+    "commonMistakes": [
+      "The second possible chord violates the strict arc comparison and must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scaling preserves the area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p28",
+    "problemId": "amc12-predecessor-1981-p28",
+    "finalAnswer": "$\\boxed{\\frac52\\le r<3}$ (choice D)",
+    "shortExplanation": "The primary published non-strict coefficient bounds permit all three coefficients to be negative two, which attains the largest root.",
+    "detailedSteps": [
+      "Use the primary MAA published condition $|a_i|\\le2$. Any positive root t satisfies $t^3=-a_2t^2-a_1t-a_0\\le2(t^2+t+1)$.",
+      "The function $g(t)=t^3/(t^2+t+1)$ is strictly increasing for $t>0$, since $g\\prime(t)=t^2(t^2+2t+3)/(t^2+t+1)^2>0$. Therefore every such root is at most the unique positive solution of $g(t)=2$.",
+      "That bound is attained by choosing $a_2=a_1=a_0=-2$. For $P(t)=t^3-2t^2-2t-2$, $P(5/2)=-31/8<0$ and $P(3)=1>0$, so its unique positive root lies between $5/2$ and $3$.",
+      "Edition note: the linked primary collection actually prints a non-strict bound. The modern LIVE transcription instead prints $|a_i|<2$; under that strict variant no largest root exists, because coefficients can approach negative two without attaining them. That distinct variant and its increasing-root counterexample are preserved, rather than silently changed."
+    ],
+    "keyIdeas": [
+      "Compare every positive root with one attainable extremal polynomial."
+    ],
+    "commonMistakes": [
+      "A supremum under strict bounds need not be an attained maximum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The P28 source link points directly to the primary published page, not the conflicting modern version.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p29",
+    "problemId": "amc12-predecessor-1981-p29",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{4a-3}-1}{2}}$ (choice E)",
+    "shortExplanation": "Only one nonnegative root of the factored quartic satisfies the original radical equation.",
+    "detailedSteps": [
+      "The outer radical forces $x\\ge0$. Squaring once gives $\\sqrt{a+x}=a-x^2$, so also $a-x^2\\ge0$.",
+      "Squaring again yields $(a-x^2)^2=a+x$, which factors as $(x^2+x+1-a)(x^2-x-a)=0$.",
+      "The second factor has one positive root, but it obeys $x^2=a+x$, making $a-x^2=-x<0$, so it is extraneous. Its other root is negative. The first factor has the single nonnegative root $x=(\\sqrt{4a-3}-1)/2$, because $a\\ge1$.",
+      "For this root, $a=x^2+x+1$, so $\\sqrt{a+x}=x+1$ and $\\sqrt{a-\\sqrt{a+x}}=\\sqrt{x^2}=x$. It therefore satisfies the original equation, including $a=1,x=0$. The unique root is also the requested sum."
+    ],
+    "keyIdeas": [
+      "Keep the signs imposed by both radicals while factoring the squared equation."
+    ],
+    "commonMistakes": [
+      "Squaring introduces a positive root that violates the required sign of a minus x squared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A necessary equation becomes sufficient only after restoring the radical sign conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1981-p30",
+    "problemId": "amc12-predecessor-1981-p30",
+    "finalAnswer": "$\\boxed{3x^4-bx^3-1=0}$ (choice D)",
+    "shortExplanation": "The transformed roots are the negative reciprocals of the original nonzero roots.",
+    "detailedSteps": [
+      "The coefficient of the cubic term is zero, so Vieta gives $a+b+c+d=0$. The constant term is nonzero, so none of these roots is zero.",
+      "For any omitted root t, the corresponding three-root sum divided by $t^2$ is $(-t)/t^2=-1/t$. Thus the four new roots are precisely the negative reciprocals of the four original roots, with multiplicity.",
+      "To avoid confusion with the root labels, denote the original linear coefficient by $\\beta$, as printed b. Substitute $t=-1/z$ in $t^4-\\beta t-3=0$. Multiplication by $z^4$ gives $1+\\beta z^3-3z^4=0$, or $3z^4-\\beta z^3-1=0$.",
+      "The reciprocal substitution is reversible for nonzero roots, so it supplies exactly the requested four roots. Restoring the printed coefficient b gives $3x^4-bx^3-1=0$."
+    ],
+    "keyIdeas": [
+      "The missing cubic coefficient turns each three-root sum into the negative omitted root."
+    ],
+    "commonMistakes": [
+      "The denominators are the squares of the omitted roots; the cubic term appears after taking reciprocals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An earlier outside reciprocal-route snippet was exposed; the actual proof and checks are source-based, and this author work is not claimed blind.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

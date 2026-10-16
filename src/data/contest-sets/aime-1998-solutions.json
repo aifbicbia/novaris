@@ -1,0 +1,324 @@
+[
+  {
+    "id": "solution-aime-1998-p1",
+    "problemId": "aime-1998-p1",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The exponent of three in k is forced to 12; its exponent of two has 25 choices.",
+    "detailedSteps": [
+      "The source powers are $6^6=2^6 3^6$, $8^8=2^{24}$, and $12^{12}=2^{24}3^{12}$. No other prime may divide k, and its exponent of two must be at most 24.",
+      "The given two numbers already supply the full exponent 24 of two but only exponent 6 of three. Thus k must have exponent exactly 12 of three: $k=2^a3^{12}$, with $0\\le a\\le24$. All 25 choices have exactly the required least common multiple."
+    ],
+    "keyIdeas": [
+      "Prime exponents in a least common multiple"
+    ],
+    "commonMistakes": [
+      "Reading the superscripts as repeated decimal digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The missing prime exponent must be supplied by k alone.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p2",
+    "problemId": "aime-1998-p2",
+    "finalAnswer": "$\\boxed{480}$",
+    "shortExplanation": "The 900 pairs in the 30-by-30 square lose 210 choices on each side.",
+    "detailedSteps": [
+      "The inequalities imply $1\\le x,y\\le30$. Within this square the two forbidden conditions are $x>2y$ and $y>2x$, which cannot both hold for positive x,y.",
+      "For $x>2y$, the possible y are 1 through 14, with $30-2y$ choices of x. Their number is $14(30)-2(1+\\cdots+14)=210$. By symmetry the other condition also excludes 210.",
+      "The desired count is therefore $900-210-210=480$."
+    ],
+    "keyIdeas": [
+      "Removing two disjoint triangular forbidden regions"
+    ],
+    "commonMistakes": [
+      "Counting unordered pairs or excluding the equality boundaries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two forbidden regions are disjoint because the coordinates are positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p3",
+    "problemId": "aime-1998-p3",
+    "finalAnswer": "$\\boxed{800}$",
+    "shortExplanation": "The bounded region is a parallelogram of base 20 and height 40.",
+    "detailedSteps": [
+      "For $x\\ge0$, completing the square gives $(y+x)^2=(x-20)^2$, so the graph consists of $y=-20$ and $y=20-2x$ on that half-plane.",
+      "For $x\\le0$, it gives $(y+x)^2=(x+20)^2$, so the pieces are $y=20$ and $y=-20-2x$.",
+      "These pieces enclose the parallelogram with vertices $(-20,20),(0,20),(20,-20),(0,-20)$. Its horizontal sides have length 20 and are 40 apart. The remaining parts extend away as rays and form no further bounded region. Thus the area is 800."
+    ],
+    "keyIdeas": [
+      "The absolute-value conic splits into four straight pieces"
+    ],
+    "commonMistakes": [
+      "Treating the two completed-square equations as full-plane lines and adding artificial regions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Respecting each sign restriction identifies the actual closed boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p4",
+    "problemId": "aime-1998-p4",
+    "finalAnswer": "$\\boxed{017}$",
+    "shortExplanation": "The favorable odd-count distribution is a permutation of $(3,1,1)$, giving $3/14$.",
+    "detailedSteps": [
+      "There are five odd tiles and four even tiles. An odd sum in a three-tile hand requires either one or three odd tiles. Since the three hands use all five odds, their odd counts must be 3,1,1.",
+      "Choose the player receiving three odd tiles in 3 ways and those tiles in $\\binom53=10$ ways. Assign the remaining two odd tiles to the other two labeled players in 2 ways. Their two-even-tile allocations have $\\binom42=6$ choices.",
+      "This gives $3(10)(2)(6)=360$ favorable allocations. All $\\binom93\\binom63=1680$ allocations to labeled players are equally likely. Thus the probability is $360/1680=3/14$, and $m+n=17$."
+    ],
+    "keyIdeas": [
+      "Odd tile counts in three labeled hands"
+    ],
+    "commonMistakes": [
+      "Giving the three players independent hands despite their keeping previously selected tiles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity counts determine the unique allowable distribution of the five odd tiles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p5",
+    "problemId": "aime-1998-p5",
+    "finalAnswer": "$\\boxed{040}$",
+    "shortExplanation": "Each of twenty four-term blocks sums to $-2$.",
+    "detailedSteps": [
+      "Put $T_k=k(k-1)/2$. Because this is an integer, $A_k=(-1)^{T_k}T_k$. For k congruent to 0,1,2,3 modulo 4, its sign is respectively positive, positive, negative, negative.",
+      "The range 19 through 98 divides into twenty blocks starting at k congruent to 3 modulo 4. Each block sums to $-T_k+T_{k+1}+T_{k+2}-T_{k+3}$.",
+      "Using $T_{k+1}-T_k=k$ and $T_{k+3}-T_{k+2}=k+2$, the block sum is $k-(k+2)=-2$. Thus the full sum is $-40$ and its absolute value is 40."
+    ],
+    "keyIdeas": [
+      "Four-term cancellation in signed triangular numbers"
+    ],
+    "commonMistakes": [
+      "Using a sign alternating every term instead of every pair of triangular-number parities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four-periodic signs convert a large sum to a constant second difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p6",
+    "problemId": "aime-1998-p6",
+    "finalAnswer": "$\\boxed{308}$",
+    "shortExplanation": "The line-division equations give $RC/PQ=44/105$, hence 308.",
+    "detailedSteps": [
+      "An affine coordinate system can put $A=(0,0),B=(1,0),D=(0,1),C=(1,1)$ and $P=(0,-t)$ for t positive. Ratios of lengths along the single line PC are preserved. Write a point on PC as $P+s(C-P)=(s,-t+s(1+t))$.",
+      "At Q the second coordinate is zero, so $s_Q=t/(1+t)$. At R the coordinates sum to one, since R lies on DB; hence $s_R=(1+t)/(2+t)$. These parameters obey $0<s_Q<s_R<1$, confirming the source order P,Q,R,C.",
+      "Thus $QR/PQ=(s_R-s_Q)/s_Q=1/[t(t+2)]$. From $112/735=16/105$, we get $t(t+2)=105/16$ and $(t+1)^2=121/16$. Positivity gives $t=7/4$.",
+      "Now $RC/PQ=(1-s_R)/s_Q=(t+1)/[t(t+2)]=44/105$. Therefore $RC=735(44/105)=308$."
+    ],
+    "keyIdeas": [
+      "Affine line parameters in a parallelogram"
+    ],
+    "commonMistakes": [
+      "Treating an affine coordinate square as preserving arbitrary Euclidean lengths rather than ratios on the same line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only collinear ratios are needed, so the parallelogram shape is irrelevant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p7",
+    "problemId": "aime-1998-p7",
+    "finalAnswer": "$\\boxed{196}$",
+    "shortExplanation": "The transformed nonnegative quadruples total $\\binom{50}{3}=19600$.",
+    "detailedSteps": [
+      "Write $x_i=2y_i+1$ with each $y_i\\ge0$. The sum condition becomes $2(y_1+y_2+y_3+y_4)+4=98$, so the y values sum to 47.",
+      "Stars and bars gives $n=\\binom{47+4-1}{4-1}=\\binom{50}{3}=19600$. The requested value $n/100$ is 196."
+    ],
+    "keyIdeas": [
+      "Stars and bars after removing odd offsets"
+    ],
+    "commonMistakes": [
+      "Requiring the transformed y values to be positive instead of nonnegative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing one from each odd integer produces unrestricted nonnegative variables.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p8",
+    "problemId": "aime-1998-p8",
+    "finalAnswer": "$\\boxed{618}$",
+    "shortExplanation": "The unique maximizer 618 gives thirteen nonnegative terms followed by $-6$.",
+    "detailedSteps": [
+      "Index the sequence from $a_0=1000,a_1=x$, with $a_{j+2}=a_j-a_{j+1}$. If $x>1000$, the third term is already negative, so such x cannot beat the displayed long sequence below.",
+      "Expanding the recurrence gives $a_{11}=89x-55000$ and $a_{12}=89000-144x$. Any sequence of at least fourteen terms, including its terminal negative term, must have both of these terms nonnegative.",
+      "Therefore $55000/89\\le x\\le89000/144$. The lower bound lies strictly between 617 and 618; the upper lies strictly between 618 and 619. The only integer candidate is 618.",
+      "For that start the full sequence is $1000,618,382,236,146,90,56,34,22,12,10,2,8,-6$. It has fourteen terms, terminating exactly at its first negative term. Every other start has fewer, since it cannot satisfy both necessary late inequalities. Thus 618 is the unique maximizing positive integer."
+    ],
+    "keyIdeas": [
+      "Two late nonnegativity inequalities determine the best start"
+    ],
+    "commonMistakes": [
+      "Stopping at a zero term rather than at the first negative term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two consecutive late terms trap the integer start in a very narrow interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p9",
+    "problemId": "aime-1998-p9",
+    "finalAnswer": "$\\boxed{087}$",
+    "shortExplanation": "The nonmeeting probability is $(60-m)^2/3600$, giving $m=60-12\\sqrt{15}$.",
+    "detailedSteps": [
+      "The independent arrival times are uniform in a 60-by-60 square. Meeting occurs when their difference in arrival times has magnitude at most m. Since the probability is neither zero nor one, $0<m<60$.",
+      "The nonmeeting region consists of two right triangles, each with legs $60-m$. Its probability is $(60-m)^2/3600$. Thus $(60-m)^2/3600=3/5$.",
+      "Taking the positive root gives $60-m=12\\sqrt{15}$ and $m=60-12\\sqrt{15}$. The number 15 is squarefree, so $a+b+c=60+12+15=87$. Boundary equalities have probability zero."
+    ],
+    "keyIdeas": [
+      "The diagonal band of two arrival times"
+    ],
+    "commonMistakes": [
+      "Restricting the departure times to 10 a.m. instead of letting each stay for the full m minutes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two excluded corner triangles give the area immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p10",
+    "problemId": "aime-1998-p10",
+    "finalAnswer": "$\\boxed{152}$",
+    "shortExplanation": "The new radius is $100+50\\sqrt2$.",
+    "detailedSteps": [
+      "The eight outer centers lie in a plane 100 units above the surface. Their octagon sides are 200, so its circumradius is $\\rho=100/\\sin22.5^\\circ$, with $\\rho^2=10000(4+2\\sqrt2)$.",
+      "The ninth center has height r because its sphere touches the surface. Equal distances from this center to all outer centers force its horizontal projection to be the octagon center: subtracting any two squared-distance equations gives the corresponding perpendicular-bisector line.",
+      "External tangency gives $\\rho^2+(r-100)^2=(r+100)^2$, hence $r=\\rho^2/400=100+50\\sqrt2$. This positive radius satisfies all nine surface contacts and all eight required tangencies.",
+      "Thus $a+b+c=100+50+2=152$."
+    ],
+    "keyIdeas": [
+      "A central sphere tangent to a ring of equal spheres"
+    ],
+    "commonMistakes": [
+      "Placing the ninth center in the plane of the first eight centers despite its different radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The surface condition relates each center height to its own sphere radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p11",
+    "problemId": "aime-1998-p11",
+    "finalAnswer": "$\\boxed{525}$",
+    "shortExplanation": "The projection has area 175 and the plane\u2019s area scale factor is 3.",
+    "detailedSteps": [
+      "The edge length is 20. Choose $A=(0,0,0),B=(20,0,0),C=(20,20,0),D=(20,20,20)$, consistent with AD being an interior diagonal. Then $P=(5,0,0),Q=(20,15,0),R=(20,20,10)$.",
+      "Their plane is $2x-2y+z=10$, or $z=10-2x+2y$. Within the cube its xy projection is $0\\le x,y\\le20$ together with $-5\\le y-x\\le5$.",
+      "This is a hexagon: the 20-by-20 square with two corner right triangles of leg 15 removed. Its projected area is $400-2(15^2/2)=175$. All its boundary points lift to the cube, and every point of the cube section projects into this region, so it is the full section.",
+      "The vectors $(1,0,-2)$ and $(0,1,2)$ spanning a unit projected square have cross product of length 3. Thus the section\u2019s area is $3(175)=525$."
+    ],
+    "keyIdeas": [
+      "Projecting the full planar section of a cube"
+    ],
+    "commonMistakes": [
+      "Using just triangle PQR and overlooking the other cube-face intersections."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A planar graph converts area to a constant times its projected polygon area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p12",
+    "problemId": "aime-1998-p12",
+    "finalAnswer": "$\\boxed{083}$",
+    "shortExplanation": "The area ratio is $7+3\\sqrt5$, giving 83.",
+    "detailedSteps": [
+      "Use affine coordinates $A=(0,0),B=(2,0),C=(0,2)$; these preserve incidences and area ratios. The midpoints are $D=(1,1),E=(0,1),F=(1,0)$. Put $P=(p,1),Q=(q,1-q),R=(1,r)$ with p,q,r in $[0,1]$.",
+      "The three collinearities yield $q=p(1+q)$, $qr=1-q$, and $r(2-p)=1$. The first and third ensure $p<1$ and $r>0$; the second then gives $q>0$, so the following divisions are valid.",
+      "Thus $q=p/(1-p)$ and $r=(1-2p)/p=1/(2-p)$. Eliminating r gives $p^2-3p+1=0$. Only $p=(3-\\sqrt5)/2$ lies in the permitted interval; it gives $q=r=1-p$.",
+      "The determinant of $Q-P$ and $R-P$ is $1-3p+3p^2=6p-2=7-3\\sqrt5$, which is positive. Thus $[PQR]=(7-3\\sqrt5)/2$, whereas $[ABC]=2$. Their ratio is $4/(7-3\\sqrt5)=7+3\\sqrt5$.",
+      "The selected p,q,r are strictly between zero and one. The fractions along CQ,AR,BP locating P,Q,R are respectively $p/q,q,r$, also strictly between zero and one. Hence all source segment conditions are attained. Finally $a^2+b^2+c^2=49+9+25=83$."
+    ],
+    "keyIdeas": [
+      "Cyclic incidences on the medial triangle"
+    ],
+    "commonMistakes": [
+      "Invoking symmetry to assume equal parameters without proving the three incidence conditions force them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Affine coordinates simplify the midpoint geometry while preserving the desired area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p13",
+    "problemId": "aime-1998-p13",
+    "finalAnswer": "$\\boxed{368}$",
+    "shortExplanation": "The new largest element contributes $9i(1+i)^8=144i$.",
+    "detailedSteps": [
+      "Split the nonempty subsets of $\\{1,\\ldots,n\\}$ into those omitting n and those containing it. The first class contributes $S_{n-1}$. In the second, all earlier elements keep their ranks and together contribute another $S_{n-1}$.",
+      "For a subset containing n and k earlier elements, the new term is $ni^{k+1}$. Summing over all $\\binom{n-1}{k}$ choices gives $ni(1+i)^{n-1}$. Therefore $S_n=2S_{n-1}+ni(1+i)^{n-1}$.",
+      "Since $(1+i)^8=16$, the supplied value yields $S_9=2(-176-64i)+144i=-352+16i$. Thus $|p|+|q|=352+16=368$."
+    ],
+    "keyIdeas": [
+      "A recurrence over all subsets"
+    ],
+    "commonMistakes": [
+      "Using an element\u2019s original integer value as its exponent instead of its rank within the selected subset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The largest element appends to each subset without changing earlier ranks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p14",
+    "problemId": "aime-1998-p14",
+    "finalAnswer": "$\\boxed{130}$",
+    "shortExplanation": "The maximum 130 is attained by dimensions $(3,11,130)$.",
+    "detailedSteps": [
+      "The box dimensions are positive. The volume equation gives $2=(1+2/m)(1+2/n)(1+2/p)$. Since $m\\le n\\le p$, this product is at most $(1+2/m)^3$. If $m\\ge8$, it is at most $(5/4)^3<2$, impossible. Also $m\\le2$ makes its first factor at least 2 and the other factors greater than 1, impossible. Thus $3\\le m\\le7$.",
+      "Solving for p gives $p=2(m+2)(n+2)/[(m-2)n-2m-4]$, with a positive denominator. For fixed m this decreases as n increases: differentiating the fractional expression gives a negative numerator $-8m(m+2)$ over the squared denominator.",
+      "The smallest permitted n, using $n\\ge m$ and positivity of the denominator, is respectively 11,7,5,6,7 for m 3,4,5,6,7. Substituting gives respective upper bounds for p of $130,54,98,16,162/17$. None exceeds 130; integrality or the additional condition $p\\ge n$ can only restrict these bounds further.",
+      "The dimensions $(3,11,130)$ attain the bound: $2(3)(11)(130)=8580=(5)(13)(132)$, and they are ordered. Therefore the largest possible p is 130."
+    ],
+    "keyIdeas": [
+      "Bounding the smallest dimensions before optimizing the largest"
+    ],
+    "commonMistakes": [
+      "Searching a finite numerical range without proving that the smallest dimension or the largest dimension is bounded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ordering the dimensions bounds m, and monotonicity then bounds p.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1998-p15",
+    "problemId": "aime-1998-p15",
+    "finalAnswer": "$\\boxed{761}$",
+    "shortExplanation": "At least nineteen unordered pairs must be omitted; deleting a matching of nineteen pairs attains 761.",
+    "detailedSteps": [
+      "Regard the numbers 1 through 40 as graph vertices. A domino(i,j) traverses edge ij in its indicated direction. The proper-sequence rules say this is a trail using each unordered edge at most once. The complete graph has $\\binom{40}{2}=780$ edges.",
+      "The used-edge graph of any trail has at most two vertices of odd degree: all arrivals and departures pair off except possibly at the two endpoints. In the complete graph every vertex has odd degree 39. To leave at most two odd vertices, at least 38 vertices must lose an odd number of incident edges.",
+      "Each omitted edge can affect only two vertices, so at least 19 edges must be omitted. Consequently the sequence length is at most $780-19=761$.",
+      "For attainment, omit the nineteen disjoint edges(1,2),(3,4),through(37,38). The remaining graph is connected, since every vertex is adjacent to 39 and 40; vertices 1 through 38 have even degree 38, while 39 and 40 have odd degree 39.",
+      "A connected graph with exactly two odd-degree vertices has an Euler trail between them. One construction follows unused edges until no continuation remains, then splices in unused closed trails at visited vertices; the degree parity ensures it ends at the other odd vertex, and connectivity ensures all edges are eventually included. Orient each of its 761 traversals as a domino. The resulting sequence uses no repeated domino or reverse pair and satisfies every adjacency condition, proving the bound is attained."
+    ],
+    "keyIdeas": [
+      "An Euler trail in a nearly complete graph"
+    ],
+    "commonMistakes": [
+      "Using all 780 pairs even though forty odd vertex degrees prevent one continuous trail."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The degree parity obstruction gives the sharp number of deleted edges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

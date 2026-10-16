@@ -1,0 +1,110 @@
+[
+  {
+    "finalAnswer": "Let $\\delta=r_F-r_B$. Sum $\\delta(x_i-x_{i-1})\\max_{j\\ge i}c_j$ over all stops, with $x_0=0$. Compute the suffix maxima in one backward pass and output the total tastiness.",
+    "shortExplanation": "Each traveled gap releases additional time in which Bessie can rest without falling behind. That time can be spent at the current stop or a later one, so allocate it to the tastiest remaining stop. This gives a bound that a legal schedule attains.",
+    "detailedSteps": [
+      "The rates are seconds per meter, so $r_F>r_B$ means Bessie walks faster. Put $\\delta=r_F-r_B>0$. By position $x_i$, she has gained $\\delta x_i$ seconds over Farmer John before accounting for rests.",
+      "If $t_i$ is her waiting time at stop $i$, a legal schedule satisfies $\\sum_{j\\le i}t_j\\le\\delta x_i$ at every stop. This is necessary when a rest ends. It is also sufficient: the lead is smallest at the end of a rest and grows while she walks faster between stops.",
+      "The gap from $x_{i-1}$ to $x_i$, with $x_0=0$, releases $\\delta(x_i-x_{i-1})$ seconds of usable lead. Those seconds can be assigned to stop $i$ or any later stop, but cannot be spent earlier. Any feasible schedule can use only resources that have already been released.",
+      "For an upper bound, each second released in that gap earns at most $C_i=\\max_{j\\ge i}c_j$. Hence total tastiness is at most $\\sum_i\\delta(x_i-x_{i-1})C_i$. This accounts for the full shared time budget, rather than choosing every stop independently.",
+      "The bound is attainable. Assign each gap\u2019s released time to a stop attaining its suffix maximum, and add together the assignments at each chosen stop. Every assigned resource is available by its destination, so all prefix waiting inequalities hold. The resulting legal schedule earns exactly the displayed sum. This also covers continuous waiting times; the construction happens to use integer amounts for integer input.",
+      "Scan the stops from right to left. Update the largest tastiness seen so far, then add the gap length times $\\delta$ times that value. Equal tastiness values need no special tie rule. Time is $O(N)$, stored stops use $O(N)$ space, and the running scalars use $O(1)$ additional space.",
+      "The source has strictly increasing interior positions, $L\\le10^6$, $N\\le10^5$, and positive rates and tastiness at most $10^6$. The total is at most $(L-1)\\delta\\max c_i<10^{18}$, so use 64-bit arithmetic before multiplication. Read `reststops.in` and write one integer to `reststops.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"reststops.in\");\n    std::ofstream out(\"reststops.out\");\n    int length, n, farmer, bessie;\n    in >> length >> n >> farmer >> bessie;\n    std::vector<std::pair<long long,long long>> stops(n);\n    for (auto &stop : stops) in >> stop.first >> stop.second;\n    long long answer = 0, bestTaste = 0;\n    const long long advantage = farmer - bessie;\n    for (int i = n-1; i >= 0; --i) {\n        bestTaste = std::max(bestTaste, stops[i].second);\n        const long long previous = i ? stops[i-1].first : 0;\n        answer += (stops[i].first - previous) * advantage * bestTaste;\n    }\n    out << answer << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Translate the per-meter rate difference into a cumulative waiting budget.",
+      "Assign each released time resource only to a current or future stop.",
+      "A suffix maximum gives both an upper bound and an attainable schedule.",
+      "Promote every product to 64-bit arithmetic."
+    ],
+    "commonMistakes": [
+      "Treating the rates as meters per second and reversing which walker is faster.",
+      "Spending a future time budget at an earlier stop.",
+      "Counting the full accumulated lead independently at several stops.",
+      "Using only a local tastiness comparison without considering the remaining suffix.",
+      "Overflowing the gap-rate-tastiness product as a 32-bit integer."
+    ],
+    "alternativeMethods": [
+      "For small integer inputs, enumerate complete vectors of waiting times, enforce every cumulative no-behind inequality, and evaluate their earned tastiness directly. The integer attaining construction makes this a valid check of the continuous optimum."
+    ],
+    "difficultyNotes": "Intermediate greedy reasoning. The central obligations are a shared-resource upper bound and a legal schedule attaining it.",
+    "id": "solution-usaco-silver-2018-february-p1",
+    "problemId": "usaco-silver-2018-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Mark reachable states of the worn boot and current tile, allowing forward steps and switches to later usable boots. The first boot layer reaching the barn gives its zero-based index, which is the minimum discarded count.",
+    "shortExplanation": "An optimal history can postpone unworn-pair discards until a boot change and omit unused tail pairs. Its final worn index then equals the discarded prefix. Reachability must retain the switch tile because both worn pairs must tolerate its snow depth.",
+    "detailedSteps": [
+      "Use a state $(b,i)$ for standing on tile $i$ while wearing boot $b$. The state invariant says that this boot supports the tile\u2019s snow depth. The first pair can be worn on the sheltered starting tile without discarding anything, so mark the initial first-boot, first-tile state.",
+      "From a reached state, a forward step may land on any later tile within that boot\u2019s maximum step size, provided the destination snow depth does not exceed its capacity. Intervening tiles need not be touched. The source permits forward movement only.",
+      "A change may select any later boot that supports the current tile. The old boot already supports it by the state invariant, so both worn pairs meet the source condition. Boots skipped without being worn impose no such depth test. Changing at the starting tile also represents discarding an initial prefix before walking.",
+      "Normalize successful histories before compressing the state. A future unworn pair can be discarded while an older pair is still worn, but this does not enable any movement with that older pair. Postpone such discards until the later pair is actually put on; skipped unworn pairs have no standing-depth restriction. Omit discarded tail pairs never used for another change. The worn boots and tile route remain legal, and the discarded count cannot increase. An optimal normalized history therefore exists. Each represented step increases the tile index and each represented change increases the boot index, giving boot-then-tile topological order.",
+      "For soundness, the initial state is legal and each marked move or change extends a legal normalized history. For completeness, all actions of a normalized history are precisely the transitions enumerated; earlier predecessors appear in topological order. Induction marks every required state, and the normalization lemma ensures that the compressed graph contains a history attaining the optimum over all original permitted actions.",
+      "In a normalized history ending with boot $b$, exactly the earlier pairs have been discarded, including skipped unworn pairs, so its zero-based index is its waste. Any arbitrary history ending with that boot discards at least those earlier pairs. A reached state supplies a normalized witness attaining this lower bound. Thus the first boot layer reaching the barn gives the globally smallest discard count. The source guarantees success and the answer lies from zero through $B-1$; it is one Silver answer, rather than Gold\u2019s separate boot queries.",
+      "Each of $NB$ states checks at most $N$ moves and $B$ changes: $O(NB(N+B))$ time and $O(NB+N+B)$ storage. The real limits are $2\\le N,B\\le250$, snow and boot depth up to $10^9$, and step size at most $N-1$. Read `snowboots.in` and print one integer to `snowboots.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nstruct Boot { int depth, step; };\nint main() {\n    std::ifstream in(\"snowboots.in\");\n    std::ofstream out(\"snowboots.out\");\n    int n, b; in >> n >> b;\n    std::vector<int> snow(n);\n    for (int &depth : snow) in >> depth;\n    std::vector<Boot> boots(b);\n    for (Boot &boot : boots) in >> boot.depth >> boot.step;\n    std::vector<std::vector<bool>> reached(b, std::vector<bool>(n, false));\n    reached[0][0] = true;\n    for (int boot = 0; boot < b; ++boot) {\n        for (int tile = 0; tile < n; ++tile) if (reached[boot][tile]) {\n            for (int next = tile+1; next <= std::min(n-1,tile+boots[boot].step); ++next)\n                if (snow[next] <= boots[boot].depth) reached[boot][next] = true;\n            for (int next = boot+1; next < b; ++next)\n                if (snow[tile] <= boots[next].depth) reached[next][tile] = true;\n        }\n        if (reached[boot][n-1]) { out << boot << '\\n'; return 0; }\n    }\n    return 1; // Outside the source's guaranteed-solvable domain.\n}\n```"
+    ],
+    "keyIdeas": [
+      "Discarding boots follows a fixed prefix order.",
+      "A switch must be legal on the current tile for both worn pairs.",
+      "Strictly increasing boot or tile indices make the state graph acyclic.",
+      "The first successful boot index equals the discarded-prefix size."
+    ],
+    "commonMistakes": [
+      "Sorting boots by capacity and losing the backpack order.",
+      "Changing to a boot unable to support the tile currently occupied.",
+      "Requiring skipped, unworn boots to support the change tile.",
+      "Requiring a jumping boot to support every intervening tile.",
+      "Counting only previously worn boots and omitting skipped discarded pairs.",
+      "Confusing the single Silver discard-count output with Gold\u2019s per-boot answers."
+    ],
+    "alternativeMethods": [
+      "For tiny paths, enumerate every complete forward tile route and all nondecreasing boot assignments to its edges. Check both endpoint depths and step length for each worn edge, then minimize the final boot index among complete legal histories. This provides a global physical check without reachable-state dynamic programming."
+    ],
+    "difficultyNotes": "Intermediate dynamic programming. The switch location, skipped pairs and exact discarded-prefix cost are essential parts of the state model.",
+    "id": "solution-usaco-silver-2018-february-p2",
+    "problemId": "usaco-silver-2018-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sum direct haul distances, create slope changes for every pile that can benefit from the common endpoint, and sweep the sorted event coordinates. Print the smallest total distance seen; an integer optimum exists even when the endpoint may be real.",
+    "shortExplanation": "For a chosen endpoint, each pile uses the cheaper of direct hauling and hauling to zero followed by hauling from the endpoint. Its saving is a triangular function of the endpoint, so the total cost is affine between finitely many breakpoints.",
+    "detailedSteps": [
+      "For pile $i$, write $D_i=|a_i-b_i|$ and $A_i=|a_i|$. The teleporter\u2019s defined service goes from its fixed endpoint zero to the common endpoint $y$. The pile\u2019s achievable minimum driving distance is $\\min(D_i,A_i+|y-b_i|)$. All piles share one $y$ but can independently choose whether to use the teleporter.",
+      "Let $r_i=D_i-A_i$. If $r_i\\le0$, the teleported route cannot beat direct hauling. Otherwise the saving is $\\max(0,r_i-|y-b_i|)$, supported on $[b_i-r_i,b_i+r_i]$. The total cost is the direct baseline minus these savings.",
+      "For an active pile, the cost slope changes by $-1$ at $b_i-r_i$, by $+2$ at $b_i$, and by $-1$ at $b_i+r_i$. Add these three events and sort all events by coordinate. Initially, to the left of every saving interval, the total cost is the direct baseline and its slope is zero.",
+      "Move from one event coordinate to the next by adding the current slope times the coordinate difference. Evaluate this reached cost before applying the new slope change. This maintains the exact affine cost on each interval. Events at the same coordinate have zero distance between them, so their internal ordering does not affect the value.",
+      "A linear function on an interval has its minimum at an endpoint unless it is constant, in which case either endpoint is also optimal. Outside all saving intervals the baseline is unchanged. Checking the event coordinates and baseline therefore finds the global minimum, including overlapping intervals and flat optimal regions.",
+      "All breakpoints are integers because the input coordinates are integers. Thus the previous argument gives an integer optimal endpoint and integer minimum even though the source does not require $y$ to be integral. If there are no beneficial piles, the baseline is already optimal everywhere.",
+      "There are at most $3N$ events, giving $O(N\\log N)$ time and $O(N)$ memory. Input coordinates may be negative or repeated. The baseline is at most $2\\cdot10^{13}$; triangle inequality gives $r_i\\le|b_i|\\le10^8$, so breakpoint coordinates stay within $[-2\\cdot10^8,2\\cdot10^8]$. Use signed 64-bit coordinates, costs and slope products.",
+      "Read `teleport.in` and write one minimum total-distance integer to `teleport.out`. The objective counts driving while hauling each pile separately; it does not add travel between different piles or choose a different teleporter endpoint for each one.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"teleport.in\");\n    std::ofstream out(\"teleport.out\");\n    int n; in >> n;\n    long long baseline = 0;\n    std::vector<std::pair<long long,long long>> events;\n    for (int i = 0; i < n; ++i) {\n        long long a,b; in >> a >> b;\n        const long long direct = std::llabs(a-b);\n        baseline += direct;\n        const long long radius = direct - std::llabs(a);\n        if (radius > 0) {\n            events.push_back({b-radius,-1});\n            events.push_back({b,2});\n            events.push_back({b+radius,-1});\n        }\n    }\n    std::sort(events.begin(),events.end());\n    long long answer = baseline, cost = baseline, slope = 0;\n    long long previous = events.empty() ? 0 : events.front().first;\n    for (const auto &event : events) {\n        cost += slope * (event.first-previous);\n        answer = std::min(answer,cost);\n        slope += event.second;\n        previous = event.first;\n    }\n    out << answer << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Express each pile as the minimum of two physically achievable hauling costs.",
+      "A beneficial pile contributes a triangular saving around its destination.",
+      "Advance exact affine values before changing the sweep slope.",
+      "Integer breakpoints guarantee an integer global optimum."
+    ],
+    "commonMistakes": [
+      "Choosing a separate endpoint for every pile.",
+      "Replacing the source\u2019s defined zero-to-endpoint service with an invented reverse route.",
+      "Including piles whose teleport route can never improve the direct haul.",
+      "Updating the slope before charging the preceding coordinate interval.",
+      "Assuming an ordinary median minimizes the sum despite the direct-route caps.",
+      "Overflowing the baseline or coordinate-distance times slope in 32-bit storage."
+    ],
+    "alternativeMethods": [
+      "For small coordinate ranges, directly evaluate all piles\u2019 two physical route costs at shared integer and half-integer endpoint candidates, without constructing events or savings. The breakpoint proof supplies a complete finite range and explains why an integer optimum suffices."
+    ],
+    "difficultyNotes": "Advanced piecewise-linear optimization. Correctness requires the capped physical route model, exact event slopes and a proof that all real endpoint choices are covered.",
+    "id": "solution-usaco-silver-2018-february-p3",
+    "problemId": "usaco-silver-2018-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

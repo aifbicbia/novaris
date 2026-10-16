@@ -1,0 +1,509 @@
+[
+  {
+    "id": "solution-amc10a-2004-p1",
+    "problemId": "amc10a-2004-p1",
+    "finalAnswer": "$\\boxed{250}$ (choice A)",
+    "shortExplanation": "Six people divide the $1500$-dollar target equally.",
+    "detailedSteps": [
+      "You and five friends make six participants. Each share is $1500/6=250$ dollars."
+    ],
+    "keyIdeas": [
+      "Equal shares"
+    ],
+    "commonMistakes": [
+      "Counting only the five friends."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify the total number of participants before dividing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p2",
+    "problemId": "amc10a-2004-p2",
+    "finalAnswer": "$\\boxed{-\\frac14}$ (choice B)",
+    "shortExplanation": "The inner values are $-1$, $1$, and $-3$.",
+    "detailedSteps": [
+      "Using the definition, the three inner evaluations are $1/(2-3)=-1$, $2/(3-1)=1$, and $3/(1-2)=-3$.",
+      "The outer operation is then $-1/(1-(-3))=-1/4$. Every denominator used is nonzero."
+    ],
+    "keyIdeas": [
+      "Nested rational function"
+    ],
+    "commonMistakes": [
+      "Losing the double negative in the final denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Evaluate all three inputs before the outer operation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p3",
+    "problemId": "amc10a-2004-p3",
+    "finalAnswer": "$\\boxed{29}$ (choice E)",
+    "shortExplanation": "Apply the tax rate to the hourly wage expressed as $2000$ cents.",
+    "detailedSteps": [
+      "Twenty dollars is 2000 cents. The tax per hour is $2000\\cdot0.0145=29$ cents."
+    ],
+    "keyIdeas": [
+      "Percent and currency units"
+    ],
+    "commonMistakes": [
+      "Reporting 0.29 dollars as 0.29 cents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the result to the units requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p4",
+    "problemId": "amc10a-2004-p4",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice D)",
+    "shortExplanation": "The only point equally distant from $1$ and $2$ is their midpoint.",
+    "detailedSteps": [
+      "The absolute values measure distances from $x$ to 1 and 2. Equality places $x$ at the midpoint $(1+2)/2=3/2$.",
+      "Equivalently, squaring gives $x^2-2x+1=x^2-4x+4$, so $2x=3$."
+    ],
+    "keyIdeas": [
+      "Equal distances on a line"
+    ],
+    "commonMistakes": [
+      "Taking both expressions with the same sign and concluding there is no solution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric meaning of absolute value makes this immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p5",
+    "problemId": "amc10a-2004-p5",
+    "finalAnswer": "$\\boxed{\\frac2{21}}$ (choice C)",
+    "shortExplanation": "Eight of the $84$ three-point subsets lie on a line.",
+    "detailedSteps": [
+      "The inspected figure is a $3$-by-$3$ grid of nine points. There are $\\binom93=84$ equally likely three-point subsets.",
+      "Collinear triples consist of three rows, three columns, and the two long diagonals, for eight in all. No other line can contain three grid points: its step direction would require coordinate changes exceeding the grid range unless horizontal, vertical, or slope $\\pm1$.",
+      "The probability is $8/84=2/21$."
+    ],
+    "keyIdeas": [
+      "Collinear triples in a grid"
+    ],
+    "commonMistakes": [
+      "Counting only rows and columns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count subsets, not ordered triples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p6",
+    "problemId": "amc10a-2004-p6",
+    "finalAnswer": "$\\boxed{26}$ (choice E)",
+    "shortExplanation": "Four daughters have children; the other two daughters and all 24 granddaughters have none.",
+    "detailedSteps": [
+      "Of the 30 daughters and granddaughters, six are daughters, leaving 24 granddaughters. Since each daughter with children has six daughters, exactly $24/6=4$ of Bertha's daughters have children.",
+      "The count with no daughters is the two remaining daughters plus all 24 granddaughters: $2+24=26$."
+    ],
+    "keyIdeas": [
+      "Two generations"
+    ],
+    "commonMistakes": [
+      "Including Bertha in the group being counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the two generations before counting childless people.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p7",
+    "problemId": "amc10a-2004-p7",
+    "finalAnswer": "$\\boxed{100}$ (choice C)",
+    "shortExplanation": "Each successive layer loses one orange in each horizontal direction.",
+    "detailedSteps": [
+      "The layer dimensions are $5\\times8$, $4\\times7$, $3\\times6$, $2\\times5$, and $1\\times4$. The last is the required single row.",
+      "The total is $40+28+18+10+4=100$."
+    ],
+    "keyIdeas": [
+      "Layered rectangular stacks"
+    ],
+    "commonMistakes": [
+      "Reducing only one of the two layer dimensions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A pocket lies between two adjacent positions in each direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p8",
+    "problemId": "amc10a-2004-p8",
+    "finalAnswer": "$\\boxed{37}$ (choice B)",
+    "shortExplanation": "Every three rounds lower all three token counts by one; after 36 rounds the state is $(3,2,1)$.",
+    "detailedSteps": [
+      "Starting from $(15,14,13)$, the first three states are $(12,15,14)$, $(13,12,15)$, and $(14,13,12)$. The original ordering returns with every count reduced by 1.",
+      "This three-round pattern repeats while all players can pay. After 12 cycles, or 36 rounds, the state is $(3,2,1)$.",
+      "The next round makes the leader pay three tokens, producing $(0,3,2)$. No earlier state has a zero count, so the game lasts 37 rounds."
+    ],
+    "keyIdeas": [
+      "State-cycle reduction"
+    ],
+    "commonMistakes": [
+      "Subtracting the number discarded from the initial total without checking the stopping distribution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exploit the recurring state rather than guessing from the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p9",
+    "problemId": "amc10a-2004-p9",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "Subtract the areas of the two larger triangles sharing the same overlap.",
+    "detailedSteps": [
+      "Triangle $ABE$ has area $\\tfrac12\\cdot4\\cdot8=16$, and triangle $ABC$ has area $\\tfrac12\\cdot4\\cdot6=12$.",
+      "They both contain triangle $ABD$. Removing that common area leaves $ADE$ and $BDC$, respectively, so their area difference remains $16-12=4$."
+    ],
+    "keyIdeas": [
+      "Cancellation of overlapping triangle areas"
+    ],
+    "commonMistakes": [
+      "Trying to locate D before noticing that its contribution cancels."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal overlap cancels from a difference of areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p10",
+    "problemId": "amc10a-2004-p10",
+    "finalAnswer": "$\\boxed{\\frac{35}{128}}$ (choice D)",
+    "shortExplanation": "Sum the probabilities of equal head counts $0,1,2,3$.",
+    "detailedSteps": [
+      "All seven flips form $2^7=128$ equally likely outcomes. For a common head count $k$, the number of outcomes is $\\binom3k\\binom4k$.",
+      "The favorable total is $1\\cdot1+3\\cdot4+3\\cdot6+1\\cdot4=35$. Therefore the probability is $35/128$."
+    ],
+    "keyIdeas": [
+      "Matching binomial counts"
+    ],
+    "commonMistakes": [
+      "Assuming each possible number of heads is equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use binomial coefficients to weight different head counts correctly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p11",
+    "problemId": "amc10a-2004-p11",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "The wider base has $25/16$ times the area, so the new height is $16/25$ of the old height.",
+    "detailedSteps": [
+      "Increasing diameter by 25 percent multiplies radius by $5/4$. The base area therefore multiplies by $(5/4)^2=25/16$.",
+      "To keep volume fixed, height multiplies by $16/25$. Its decrease is $1-16/25=9/25=36\\%$."
+    ],
+    "keyIdeas": [
+      "Constant cylinder volume"
+    ],
+    "commonMistakes": [
+      "Using an inverse linear factor rather than an inverse area factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Radius changes affect cross-sectional area quadratically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p12",
+    "problemId": "amc10a-2004-p12",
+    "finalAnswer": "$\\boxed{768}$ (choice C)",
+    "shortExplanation": "There are $2^8$ condiment subsets for each of three patty counts.",
+    "detailedSteps": [
+      "Each of eight condiments can independently be included or omitted, giving $2^8=256$ collections, including the empty collection.",
+      "The patty count has three choices. Multiplying gives $3\\cdot256=768$ hamburgers."
+    ],
+    "keyIdeas": [
+      "Independent subsets"
+    ],
+    "commonMistakes": [
+      "Forgetting the option of no condiments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The order of condiments is irrelevant; inclusion is binary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p13",
+    "problemId": "amc10a-2004-p13",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "The 36 male-female pairs counted from the men must equal twice the number of women.",
+    "detailedSteps": [
+      "Twelve men each dance with three women, so there are $12\\cdot3=36$ distinct man-woman dance pairings.",
+      "Each woman belongs to two such pairs, so the number of women is $36/2=18$."
+    ],
+    "keyIdeas": [
+      "Counting dance pairs twice"
+    ],
+    "commonMistakes": [
+      "Multiplying by both partnership counts instead of counting the same pairs two ways."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The count concerns distinct partners, not the number of songs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p14",
+    "problemId": "amc10a-2004-p14",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "There are four coins worth 80 cents, which forces three quarters and one nickel.",
+    "detailedSteps": [
+      "If there are $n$ coins, adding a quarter changes the equation to $20n+25=21(n+1)$, giving $n=4$. The original total is 80 cents.",
+      "Four quarters would total 100 cents, so the actual coins create a 20-cent deficit. Replacing a quarter by a penny, nickel, or dime creates a deficit of 24,20, or 15 cents, respectively.",
+      "The only nonnegative combination totaling 20 is one nickel replacement and no penny or dime replacements. Thus there are no dimes."
+    ],
+    "keyIdeas": [
+      "Coin-count and value constraints"
+    ],
+    "commonMistakes": [
+      "Assuming all four denominations must be present."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use deficits from all quarters to make the integer restriction transparent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p15",
+    "problemId": "amc10a-2004-p15",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice D)",
+    "shortExplanation": "Write the expression as $1-y/|x|$ and minimize the subtracted positive fraction.",
+    "detailedSteps": [
+      "Since $x<0$, $(x+y)/x=1-y/|x|$. Here $2\\le y\\le4$ and $2\\le|x|\\le4$.",
+      "The smallest possible $y/|x|$ is $2/4=1/2$, attained at $y=2,x=-4$. Hence the maximum expression value is $1-1/2=1/2$."
+    ],
+    "keyIdeas": [
+      "Bounds with a negative denominator"
+    ],
+    "commonMistakes": [
+      "Ignoring that division by a negative x reverses comparisons."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rewriting with a positive denominator avoids sign errors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p16",
+    "problemId": "amc10a-2004-p16",
+    "finalAnswer": "$\\boxed{19}$ (choice D)",
+    "shortExplanation": "The possible positions for sides $1,2,3,4,5$ contribute $1,4,9,4,1$.",
+    "detailedSteps": [
+      "In one coordinate direction, an interval of $k$ cells inside a five-cell row contains the center cell in $1,2,3,2,1$ possible starting positions for $k=1,2,3,4,5$.",
+      "Horizontal and vertical choices are independent. Squaring and adding gives $1^2+2^2+3^2+2^2+1^2=19$."
+    ],
+    "keyIdeas": [
+      "Containing a central cell"
+    ],
+    "commonMistakes": [
+      "Counting the three positions available for a 3-cell interval as three squares rather than nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The count rises and then falls as boundary restrictions take over.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p17",
+    "problemId": "amc10a-2004-p17",
+    "finalAnswer": "$\\boxed{350}$ (choice C)",
+    "shortExplanation": "The interval between meetings is twice the initial meeting time, so Brenda travels 200 meters during it.",
+    "detailedSteps": [
+      "Before the first meeting, the runners together cover half the track. Between subsequent meetings, they together cover the whole track. Constant speeds make the second interval twice as long as the first.",
+      "Brenda ran 100 meters in the first interval, so she runs 200 in the second. Sally runs 150 in the second; their combined distance equals the track length, $200+150=350$ meters."
+    ],
+    "keyIdeas": [
+      "Relative travel on a circle"
+    ],
+    "commonMistakes": [
+      "Adding 100 and 150 even though those distances refer to different time intervals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Match distances to their correct intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p18",
+    "problemId": "amc10a-2004-p18",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The common difference is $-14$ or $10$, producing geometric third terms $1$ or $49$.",
+    "detailedSteps": [
+      "Write the arithmetic progression as $9,9+d,9+2d$. After the changes it is $9,11+d,29+2d$.",
+      "A three-term geometric progression satisfies $(11+d)^2=9(29+2d)$. Simplifying gives $d^2+4d-140=(d+14)(d-10)=0$.",
+      "The two resulting third terms are 1 and 49. Both triples are valid, $9,-3,1$ and $9,21,49$, so the minimum is 1."
+    ],
+    "keyIdeas": [
+      "Progression conversion"
+    ],
+    "commonMistakes": [
+      "Assuming a geometric ratio must be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Allow negative terms because the source permits real numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p19",
+    "problemId": "amc10a-2004-p19",
+    "finalAnswer": "$\\boxed{240}$ (choice C)",
+    "shortExplanation": "Every horizontal slice contributes a stripe length of 3 feet across the 80-foot height.",
+    "detailedSteps": [
+      "Cut and unwrap the cylinder along a vertical line, allowing the stripe pieces to continue into adjacent copies of the flat rectangle. The stripe becomes a slanted parallelogram whose horizontal cross-section is always 3 feet.",
+      "Its area is therefore horizontal width times vertical height, $3\\cdot80=240$ square feet. The two revolutions change its slant and displacement, not this area."
+    ],
+    "keyIdeas": [
+      "Unrolling a cylindrical stripe"
+    ],
+    "commonMistakes": [
+      "Using 3 as the perpendicular strip width or multiplying by the number of revolutions again."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The explicit word horizontal is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p20",
+    "problemId": "amc10a-2004-p20",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "Equal sides determine a relation that makes the two areas differ by a factor of 2.",
+    "detailedSteps": [
+      "Scale the square to side 1 and use $A=(0,0)$, $B=(1,0)$, $C=(1,1)$, $D=(0,1)$. Write $E=(0,t)$ and $F=(f,1)$. Equality $BE=BF$ gives $t=1-f$, since all lengths are nonnegative.",
+      "Thus $EF^2=2(1-t)^2$, while $BE^2=1+t^2$. Equating these yields $t^2-4t+1=0$, or $(1-t)^2=2t$.",
+      "Triangle $DEF$ has area $(1-t)^2/2$ and triangle $ABE$ has area $t/2$. Their ratio is $(1-t)^2/t=2$."
+    ],
+    "keyIdeas": [
+      "Equilateral triangle in a square"
+    ],
+    "commonMistakes": [
+      "Solving for a radical t unnecessarily or using the wrong denominator area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An algebraic relation suffices without calculating every coordinate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p21",
+    "problemId": "amc10a-2004-p21",
+    "finalAnswer": "$\\boxed{\\frac\\pi7}$ (choice B)",
+    "shortExplanation": "The shading has area $3\\pi+3\\theta$, and the given ratio makes it $24\\pi/7$.",
+    "detailedSteps": [
+      "Let the acute angle be $\\theta$ radians. Two opposite acute sectors together occupy fraction $\\theta/\\pi$ of a full circular layer.",
+      "The radius 1 disk and the ring between radii 2 and 3 are shaded in those acute sectors, contributing $\\theta+5\\theta=6\\theta$. The middle ring of area $3\\pi$ is shaded in the complementary sectors, contributing $3\\pi-3\\theta$. The total shaded area is $3\\pi+3\\theta$.",
+      "The whole radius 3 disk has area $9\\pi$. A shaded-to-unshaded ratio of $8:13$ gives shaded area $9\\pi\\cdot8/21=24\\pi/7$. Hence $3\\pi+3\\theta=24\\pi/7$, so $\\theta=\\pi/7$."
+    ],
+    "keyIdeas": [
+      "Alternating annular sectors"
+    ],
+    "commonMistakes": [
+      "Using 8/13 as the shaded fraction of the whole instead of 8/21."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read which angular sectors are shaded in each separate layer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p22",
+    "problemId": "amc10a-2004-p22",
+    "finalAnswer": "$\\boxed{\\frac52}$ (choice D)",
+    "shortExplanation": "Tangency makes $CE=2+AE$; the right triangle then gives $AE=1/2$.",
+    "detailedSteps": [
+      "Let $T$ be the tangency point on $CE$, and set $AE=t$. From external point $C$, equal tangent lengths give $CT=CB=2$. From $E$, they give $ET=EA=t$. Thus $CE=2+t$.",
+      "Triangle $CDE$ is right, with legs $CD=2$ and $DE=2-t$. Therefore $(2+t)^2=4+(2-t)^2$.",
+      "Expanding yields $8t=4$, so $t=1/2$ and $CE=5/2$."
+    ],
+    "keyIdeas": [
+      "Equal tangent lengths"
+    ],
+    "commonMistakes": [
+      "Using the semicircle radius as CT instead of the tangent lengthCB."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two external tangent-length equalities simplify the geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p23",
+    "problemId": "amc10a-2004-p23",
+    "finalAnswer": "$\\boxed{\\frac89}$ (choice D)",
+    "shortExplanation": "Coordinate tangency equations reduce to $r(9r-8)=0$.",
+    "detailedSteps": [
+      "Let the outer center be $O=(0,0)$. Circle A has radius 1 and passes through O, so its center can be taken as $(-1,0)$. Its internal tangency makes the outer radius 2. The centers of B and C are the two intersection points of circles centered at O and at the center of A, so they are reflections across the x-axis. Thus the equal circles B and C have centers $(u,r)$ and $(u,-r)$, because they touch each other and each has radius $r$.",
+      "Internal tangency to the outer circle gives $u^2+r^2=(2-r)^2$, hence $u^2=4-4r$. External tangency to A gives $(u+1)^2+r^2=(1+r)^2$, hence $u^2+2u=2r$.",
+      "Substituting the first equation into the second yields $u=3r-2$. Then $(3r-2)^2=4-4r$, which simplifies to $r(9r-8)=0$. A positive radius forces $r=8/9$."
+    ],
+    "keyIdeas": [
+      "Tangent circle coordinates"
+    ],
+    "commonMistakes": [
+      "Choosing the zero-radius algebraic root or confusing internal and external tangency distances."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The congruent pair supplies a useful symmetry axis.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p24",
+    "problemId": "amc10a-2004-p24",
+    "finalAnswer": "$\\boxed{2^{4950}}$ (choice D)",
+    "shortExplanation": "Each doubling of the index adds the previous index exponent to the exponent of 2 in the term.",
+    "detailedSteps": [
+      "At index $2^k$, the recurrence gives $a_{2^k}=2^{k-1}a_{2^{k-1}}$. Starting from $a_1=1$, iterate through $k=1,\\ldots,100$.",
+      "The accumulated exponent is $0+1+\\cdots+99=99\\cdot100/2=4950$. Thus $a_{2^{100}}=2^{4950}$."
+    ],
+    "keyIdeas": [
+      "Recurrence on powers of two"
+    ],
+    "commonMistakes": [
+      "Reading the requested index as 200 instead of 2^100."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep index exponents distinct from value exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2004-p25",
+    "problemId": "amc10a-2004-p25",
+    "finalAnswer": "$\\boxed{3+\\frac{\\sqrt{69}}3}$ (choice B)",
+    "shortExplanation": "The large center is $\\sqrt{69}/3$ above the plane of the small centers.",
+    "detailedSteps": [
+      "The three small centers lie one unit above the floor and form an equilateral triangle of side 2. The large center lies over its circumcenter, at horizontal distance $2/\\sqrt3$ from each small center.",
+      "External tangency makes the distance between a small and large center $1+2=3$. If $h$ is their vertical separation, then $h^2+(2/\\sqrt3)^2=3^2$, so $h=\\sqrt{23/3}=\\sqrt{69}/3$.",
+      "The top of the larger sphere is another radius 2 above its center. Including the small-center height 1 gives total height $1+h+2=3+\\sqrt{69}/3$."
+    ],
+    "keyIdeas": [
+      "Sphere centers and an equilateral base"
+    ],
+    "commonMistakes": [
+      "Adding 3 directly as a vertical separation when the centers are horizontally offset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the three vertical contributions:1, center separation, and 2.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

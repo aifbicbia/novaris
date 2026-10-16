@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-i-2007-p1",
+    "problemId": "aime-i-2007-p1",
+    "finalAnswer": "$\\boxed{083}$",
+    "shortExplanation": "There are 83 qualifying squares.",
+    "detailedSteps": [
+      "Write the square as $m^2$ with $m>0$. Since $24=2^3\\cdot3$, divisibility by 24 requires at least two factors of two and one of three in m, equivalently $12\\mid m$.",
+      "The strict bound $m^2<10^6$ means $1\\le m\\le999$. There are $\\lfloor999/12\\rfloor=83$ multiples of twelve in this interval, and their different roots give different squares."
+    ],
+    "keyIdeas": [
+      "The square root must be divisible by twelve"
+    ],
+    "commonMistakes": [
+      "Counting multiples of 24 below a million without requiring them to be squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime valuations are halved only after rounding the required exponents upward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p2",
+    "problemId": "aime-i-2007-p2",
+    "finalAnswer": "$\\boxed{052}$",
+    "shortExplanation": "Al is halfway between Bob and Cy at position 52.",
+    "detailedSteps": [
+      "Let $t$ be seconds after Al starts, with $t\\ge4$ so all three have started. Their distances are $A=6t$, $B=10(t-2)$ and $C=8(t-4)$; Bob\u2019s walking speed adds to the walkway speed.",
+      "For Al to be the middle person, $2A=B+C$ gives $12t=18t-52$, hence $t=26/3$. At this time the three positions are $52,200/3,112/3$, so Al really is between the other two.",
+      "For Bob, $2B=A+C$ gives $t=4/3$, before all three start. For Cy, $2C=A+B$ would require $-64=-20$, impossible. Thus the valid event is the Al-middle one.",
+      "All three positions are below 100, so this event occurs before anyone reaches the end. The requested distance is 52 feet."
+    ],
+    "keyIdeas": [
+      "Compare each possible middle-person equation"
+    ],
+    "commonMistakes": [
+      "Using Bob\u2019s four-foot-per-second relative speed as his ground speed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The staggered start times give three distinct affine position functions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p3",
+    "problemId": "aime-i-2007-p3",
+    "finalAnswer": "$\\boxed{015}$",
+    "shortExplanation": "The positive value of $b$ is $15$.",
+    "detailedSteps": [
+      "For $z=9+bi$, the imaginary part of $z^2$ is $18b$, while that of $z^3$ is $3\\cdot9^2b-b^3=243b-b^3$.",
+      "Equality gives $b(225-b^2)=0$. The source requires $b>0$, so $b=15$."
+    ],
+    "keyIdeas": [
+      "Equate the imaginary coefficients of the two powers"
+    ],
+    "commonMistakes": [
+      "Including the zero or negative roots despite the strict positive condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The imaginary part selects the odd powers of b in the expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p4",
+    "problemId": "aime-i-2007-p4",
+    "finalAnswer": "$\\boxed{105}$",
+    "shortExplanation": "The next collinearity occurs after 105 years.",
+    "detailedSteps": [
+      "The initial relative angles are already multiples of a half-turn. Therefore the next collinearity occurs when each relative orbital advance is again a multiple of one-half revolution.",
+      "The adjacent frequency differences are $1/60-1/84=1/210$ and $1/84-1/140=1/210$. Thus both conditions are exactly $t/210\\in\\tfrac12\\mathbb Z$.",
+      "The least positive time is 105. At that time the outer pair differ by a full revolution, so all three planets and the star are collinear, including either possible initial side placement."
+    ],
+    "keyIdeas": [
+      "Collinearity requires relative angles to be multiples of a half-turn"
+    ],
+    "commonMistakes": [
+      "Requiring all planets to occupy the same ray instead of allowing opposite rays along one line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positions on opposite sides of the star still satisfy collinearity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p5",
+    "problemId": "aime-i-2007-p5",
+    "finalAnswer": "$\\boxed{539}$",
+    "shortExplanation": "Five residues modulo nine survive the round trip.",
+    "detailedSteps": [
+      "Put $u=T-32$, so $0\\le u\\le968$, and let $c$ be the nearest integer to $5u/9$. Returning to Fahrenheit before rounding gives $32+9c/5$. The original T is recovered exactly when $|9c-5u|<5/2$. No half-integer tie is possible in either rounding.",
+      "The integer difference $9c-5u$ must therefore be one of $-2,-1,0,1,2$. The Celsius rounding selects the nearest multiple of nine to $5u$, so the permitted residues of 5 u modulo nine are $0,1,2,7,8$.",
+      "Multiplying by the inverse 2 of 5 modulo nine gives permitted residues of $u$ equal to $0,2,4,5,7$. The 969 integers from 0 through 968 contain 107 full nine-term blocks and a final block with residues 0 through 5.",
+      "The count is $107\\cdot5+4=539$."
+    ],
+    "keyIdeas": [
+      "Use the rounding error in the integer Celsius value"
+    ],
+    "commonMistakes": [
+      "Assuming every integer survives two inverse conversions after rounding."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The return rounding is a stricter bound on the first rounding error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p6",
+    "problemId": "aime-i-2007-p6",
+    "finalAnswer": "$\\boxed{169}$",
+    "shortExplanation": "There are 169 move sequences.",
+    "detailedSteps": [
+      "For a coordinate $x$, the next possible coordinates are $3(\\lfloor x/3\\rfloor+1)$ and $13(\\lfloor x/13\\rfloor+1)$. The strict greater-than condition is built into these formulas. All paths ending at 39 lie in the nodes 0,3,6,9,12,13,15,18,21,24,26,27,30,33,36,39.",
+      "Let $f(x)$ be the number of coordinate sequences from $x$ to $39$. Set $f(39)=1$, and work backward, adding the $f$ values of the distinct permissible successors at most 39. If both formulas give 39, it is one coordinate successor, not two different sequences.",
+      "For nodes in the listed ascending order, the resulting values are 169,140,111,82,53,29,24,19,14,9,5,4,3,2,1,1. Each value follows by the stated two-successor addition; for example $f(26)=f(27)+f(39)=4+1=5$ and $f(12)=f(13)+f(15)=29+24=53$.",
+      "The required starting value is $f(0)=169$."
+    ],
+    "keyIdeas": [
+      "Count paths in the increasing coordinate graph"
+    ],
+    "commonMistakes": [
+      "Counting the two rules as different moves when they produce the same next coordinate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every move increases the coordinate, so the graph has no cycles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p7",
+    "problemId": "aime-i-2007-p7",
+    "finalAnswer": "$\\boxed{477}$",
+    "shortExplanation": "The sum is 499477.",
+    "detailedSteps": [
+      "The difference between a number\u2019s ceiling and floor is zero when it is an integer, and one otherwise. The actual logarithm base is $\\sqrt2$. For positive integer $k$, $\\log_{\\sqrt2}k$ is an integer exactly when $k=(\\sqrt2)^m$ for an integer m; integrality of $k$ forces $m$ even, so $k$ is a power of two.",
+      "The excluded powers through 1000 are $1,2,4,\\ldots,512$, with sum 1023. Thus $N=1+2+\\cdots+1000-1023=500500-1023=499477$.",
+      "The required remainder is 477."
+    ],
+    "keyIdeas": [
+      "The ceiling-floor difference vanishes exactly at powers of two"
+    ],
+    "commonMistakes": [
+      "Using a base of two without checking why it gives the same exceptional integer k values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The noninteger odd powers of the square-root base do not correspond to integer k.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p8",
+    "problemId": "aime-i-2007-p8",
+    "finalAnswer": "$\\boxed{030}$",
+    "shortExplanation": "The largest possible parameter is 30.",
+    "detailedSteps": [
+      "Two degree-two divisors of a cubic must share a nonconstant factor, because their least common multiple has degree at most three. Their difference $Q_2-2Q_1=15x+3k$ is a nonzero linear polynomial, so any common root is $x=-k/5$.",
+      "Substituting this root in $Q_1$ gives $4k(30-k)/25=0$, so $k$ is either $0$ or $30$. No other parameter can work.",
+      "At $k=30$ the factorizations are $Q_1=(x+6)(x-5)$ and $Q_2=(x+6)(2x+5)$. The cubic $(x+6)(x-5)(2x+5)$ is divisible by both. Therefore 30 is attainable and largest."
+    ],
+    "keyIdeas": [
+      "Two quadratic factors of a cubic must have a common factor"
+    ],
+    "commonMistakes": [
+      "Multiplying the two quadratics and accepting a degree-four polynomial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The linear difference identifies the only possible common root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p9",
+    "problemId": "aime-i-2007-p9",
+    "finalAnswer": "$\\boxed{737}$",
+    "shortExplanation": "The common radius is $680/57$.",
+    "detailedSteps": [
+      "Put $C=(0,0),A=(30,0),B=(0,16)$. The hypotenuse has equation $8x+15y=240$, length 34 and normal length 17. For a radius $r$ circle touching the extension of CA beyond A, its center has $y=\\pm r$ and $x>30$.",
+      "The line-distance condition gives two possible centers, $(30+r/4,r)$ and $(30+4r,-r)$. The second projects onto the hypotenuse line at x greater than 30, so it touches only the line beyond A and is excluded by tangency to the actual hypotenuse segment. Similarly the CB-extension circle must have center $(r,16+3r/5)$; the alternative $(-r,16+5r/3)$ projects beyond B and is excluded.",
+      "Both retained centers have signed distance $r$ on the same side of the hypotenuse. Their perpendicular feet on that segment lie respectively $r/4$ from $A$ and $3r/5$ from $B$, as obtained by projecting along the unit normal $(8,15)/17$.",
+      "The center separation equals the separation of their feet, namely $|34-r/4-3r/5|$. External tangency requires this to equal $2r$. The positive branch gives $34=(2+17/20)r$, hence $r=680/57$. The negative branch would give $34=-23r/20$, impossible.",
+      "This radius puts both feet strictly on AB and both leg contacts beyond the original endpoints, so the construction satisfies every source condition. The fraction is reduced, and $p+q=680+57=737$."
+    ],
+    "keyIdeas": [
+      "Use the two actual hypotenuse tangency points"
+    ],
+    "commonMistakes": [
+      "Accepting circles that touch only an extension of the hypotenuse rather than the specified segment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal signed hypotenuse distances make the center separation equal to the tangency-foot separation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p10",
+    "problemId": "aime-i-2007-p10",
+    "finalAnswer": "$\\boxed{860}$",
+    "shortExplanation": "The total number of shadings is 1860.",
+    "detailedSteps": [
+      "The actual figure has six rows and four columns. Each row selects one of the six unordered pairs of columns. Let the multiplicities for pairs 12,13,14,23,24,34 be $a,b,c,d,e,f$.",
+      "The four column sums of three give $a+b+c=a+d+e=b+d+f=c+e+f=3$. Solving yields $a=f,b=e,c=d$ and $a+b+c=3$.",
+      "For each nonnegative triple $a,b,c$ summing to three, the six distinct rows can receive these pair types in $6!/(a!^2b!^2c!^2)$ ways. Triples of forms $(3,0,0),(2,1,0),(1,1,1)$ contribute respectively $3\\cdot20=60$, $6\\cdot180=1080$, and 720.",
+      "The total is 1860, whose remainder modulo 1000 is 860."
+    ],
+    "keyIdeas": [
+      "Opposite column-pair types have equal multiplicities"
+    ],
+    "commonMistakes": [
+      "Identifying shadings under row or column permutations when the source counts positions in a fixed grid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary pair types reduce four balance equations to three multiplicities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p11",
+    "problemId": "aime-i-2007-p11",
+    "finalAnswer": "$\\boxed{955}$",
+    "shortExplanation": "The sum is 59955.",
+    "detailedSteps": [
+      "The definition says $b(p)$ is the nearest positive integer to $\\sqrt p$. The strict interval $k-1/2<\\sqrt p<k+1/2$ is equivalent to the integer range $k^2-k+1\\le p\\le k^2+k$, containing $2k$ values. No integer p lies at a half-integer square boundary.",
+      "The intervals for $k=1$ through $44$ are complete through $44^2+44=1980$. The final $k=45$ interval contributes $p=1981$ through $2007$, which is 27 values.",
+      "Therefore $S=2\\sum_{k=1}^{44}k^2+45\\cdot27=2(44\\cdot45\\cdot89/6)+1215=59955$. Its remainder is 955."
+    ],
+    "keyIdeas": [
+      "Count the nearest-square-root intervals"
+    ],
+    "commonMistakes": [
+      "Rounding p itself or misreading the source\u2019s square root in the nearest-integer condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complete nearest-root intervals have lengths 2 k.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p12",
+    "problemId": "aime-i-2007-p12",
+    "finalAnswer": "$\\boxed{875}$",
+    "shortExplanation": "The overlap area is $500\\sqrt2-350\\sqrt3+300\\sqrt6-600$.",
+    "detailedSteps": [
+      "Isosceles symmetry gives $C=(10,10\\tan75^\\circ)=(10,20+10\\sqrt3)$. The required counterclockwise rotation is 15\u00b0. Write $t=2+\\sqrt3$, $v=2-\\sqrt3$ and $L=10(\\sqrt6+\\sqrt2)$, the height of the rotated image of C.",
+      "The original triangle is bounded by $y\\ge0$, $y\\le tx$ and $y\\le t(20-x)$. The rotated triangle is bounded by $x\\ge0$, $y\\ge vx$ and $y\\le L-\\sqrt3x$. Their common region is the convex quadrilateral with successive vertices A,U,P,V.",
+      "Intersect the lower ray with the original opposite side to get $U=(10+5\\sqrt3,5)$. Intersect the two opposite sides to get $P=(20+10\\sqrt3-5\\sqrt6-5\\sqrt2,-30-20\\sqrt3+15\\sqrt6+25\\sqrt2)$. Intersect the upper ray with the rotated opposite side to get $V=(5\\sqrt2,10\\sqrt2+5\\sqrt6)$.",
+      "These vertices satisfy all six bounding inequalities; the two opposite-side segments meet at P between the rays. Thus they describe the entire intersection, with no omitted region.",
+      "The shoelace formula, with A at the origin, gives $[U_xP_y-U_yP_x+P_xV_y-P_yV_x]/2=500\\sqrt2-350\\sqrt3+300\\sqrt6-600$.",
+      "Therefore $(p-q+r-s)/2=[500-(-350)+300-(-600)]/2=875$."
+    ],
+    "keyIdeas": [
+      "Find the four vertices of the triangle intersection"
+    ],
+    "commonMistakes": [
+      "Using the smaller triangle\u2019s full area instead of intersecting both pairs of opposite sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared angular sector has two different upper boundary segments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p13",
+    "problemId": "aime-i-2007-p13",
+    "finalAnswer": "$\\boxed{080}$",
+    "shortExplanation": "The section is a pentagon of area $4\\sqrt5$.",
+    "detailedSteps": [
+      "Use base coordinates $A=(-2,-2,0),B=(2,-2,0),C=(2,2,0),D=(-2,2,0)$. Since all eight edges have length 4, the apex is $E=(0,0,2\\sqrt2)$. The three specified midpoints are $M=(-1,-1,\\sqrt2)$, $U=(2,0,0)$ and $V=(0,2,0)$.",
+      "Their plane is $x+y+2\\sqrt2z=2$. Testing all eight edges shows it also meets BE at its one-quarter point $W=(3/2,-3/2,\\sqrt2/2)$ and DE at its one-quarter point $Z=(-3/2,3/2,\\sqrt2/2)$. It does not meet AB,DA or CE; thus the section is the pentagon U,V,Z,M,W.",
+      "The xy projection has area 8 by the shoelace formula. On the plane, $z=(2-x-y)/(2\\sqrt2)$, so the ratio of actual area to projected area is $\\sqrt{1+1/8+1/8}=\\sqrt5/2$.",
+      "The section area is $8\\cdot\\sqrt5/2=4\\sqrt5=\\sqrt{80}$, so $p=80$."
+    ],
+    "keyIdeas": [
+      "Intersect the plane with all eight pyramid edges"
+    ],
+    "commonMistakes": [
+      "Assuming that the section is a triangle through only the three given midpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Additional edge intersections determine the true polygon before area is computed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p14",
+    "problemId": "aime-i-2007-p14",
+    "finalAnswer": "$\\boxed{224}$",
+    "shortExplanation": "The requested ratio lies strictly between 224 and 225.",
+    "detailedSteps": [
+      "All terms are positive because the recurrence computes each next term as a positive numerator divided by the preceding positive term. For adjacent terms define $K_n=(a_n^2+a_{n-1}^2+2007)/(a_na_{n-1})$.",
+      "The recurrence gives $a_{n+1}a_{n-1}=a_n^2+2007$, so $K_n=(a_{n+1}+a_{n-1})/a_n$. Substituting the same identity into $K_{n+1}$ shows $K_{n+1}=K_n$. At $n=2$, $K_2=(9+9+2007)/9=225$.",
+      "Thus $a_{n+1}=225a_n-a_{n-1}$. We have $a_3=672>a_2=3$, and this linear recurrence makes all subsequent terms strictly increasing: if $a_n>a_{n-1}>0$, then $a_{n+1}>224a_n>a_n$.",
+      "The target ratio is $225-2007/(a_{2007}a_{2006})$. Its product denominator is at least $a_3a_2=2016>2007$, so the ratio is greater than 224 and less than 225. Its floor is 224."
+    ],
+    "keyIdeas": [
+      "The adjacent-term quadratic ratio has a constant invariant"
+    ],
+    "commonMistakes": [
+      "Trying to compute the enormous later terms before finding the invariant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The additive constant appears in a symmetric adjacent-term invariant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2007-p15",
+    "problemId": "aime-i-2007-p15",
+    "finalAnswer": "$\\boxed{989}$",
+    "shortExplanation": "The two side lengths involve $\\sqrt{989}$.",
+    "detailedSteps": [
+      "Let the equilateral side be $s$. Put $A=(0,0),B=(s,0),C=(s/2,\\sqrt3s/2)$, $F=(5,0)$, and $D=((s+2)/2,\\sqrt3(s-2)/2)$. Write $AE=u$, so $E=(u/2,\\sqrt3u/2)$, with $s\\ge5$ and $0\\le u\\le s$.",
+      "The determinant of D minus E and F minus E is $-\\sqrt3(5s-10-3u)/2$. The factor inside is nonnegative because it is at least $2s-10$. The required area 14\u221a3 therefore gives $5s-10-3u=56$, or $u=(5s-66)/3$. Hence $66/5\\le s\\le33$.",
+      "The angle at E is 60\u00b0 and the area gives $ED\\cdot EF=56$. Thus the dot product of the two vectors is 28. Direct coordinate expansion gives $4u^2-(4s+6)u+10s-92=0$.",
+      "Substituting the expression for u reduces this to $5s^2-231s+2223=0$. Its discriminant is $8901=9\\cdot989$, so $s=(231\\pm3\\sqrt{989})/10$.",
+      "Both roots lie strictly between $66/5$ and $33$, so their $u$ values are on the source segment CA. Their determinant magnitude is $28\\sqrt3$ and dot product is $28$; consequently both configurations have nonzero vectors with 60\u00b0 angle and the required area. The two side lengths are therefore genuinely attained.",
+      "Since $989=23\\cdot43$ is squarefree, the requested $r$ is $989$."
+    ],
+    "keyIdeas": [
+      "Combine the area determinant with the positive sixty-degree dot product"
+    ],
+    "commonMistakes": [
+      "Squaring the angle relation and retaining a 120\u00b0 angle, or failing to place E on the actual segment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area fixes a linear relation before the angle supplies the quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "finalAnswer": "Print the number of distinct winning cows, then the number of distinct unordered winning two-cow teams, on separate lines.",
+    "shortExplanation": "Examine the eight possible winning lines. One distinct initial identifies an individual winner; exactly two distinct initials identify a team with both members present. Sets prevent counting a cow or team more than once.",
+    "detailedSteps": [
+      "List all three rows, all three columns, and both diagonals. For each line, sort its initials and remove repeated letters, leaving the set of cow identities present.",
+      "A line with one identity is occupied completely by that cow and proves an individual win. A line with two identities contains only the corresponding team and uses both members, so it proves a team win. A line with three identities cannot be won by either an individual or a two-cow team.",
+      "Store individual winners in one set and canonical sorted two-letter team strings in another. Thus the same team on two different lines is counted once, and AB and BA describe the same team. A one-letter line cannot be credited to teams involving an absent partner.",
+      "Every legal victory uses one of the eight enumerated lines, so no winner is missed. Every inserted identity or pair satisfies its exact source condition, so none is spurious. Shared cells are allowed to support several victories. Print the two set cardinalities in the required order. Since the board and alphabet sizes are fixed, time and auxiliary space are O(1).",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <set>\n#include <string>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"tttt.in\");\n    ofstream out(\"tttt.out\");\n    vector<string> board(3), lines;\n    for (string &row : board) in >> row;\n    lines = board;\n    for (int column = 0; column < 3; ++column) {\n        string line;\n        for (int row = 0; row < 3; ++row) line += board[row][column];\n        lines.push_back(line);\n    }\n    string diagonal, reverse_diagonal;\n    for (int i = 0; i < 3; ++i) {\n        diagonal += board[i][i];\n        reverse_diagonal += board[i][2 - i];\n    }\n    lines.push_back(diagonal);\n    lines.push_back(reverse_diagonal);\n    set<char> individuals;\n    set<string> teams;\n    for (string line : lines) {\n        sort(line.begin(), line.end());\n        line.erase(unique(line.begin(), line.end()), line.end());\n        if (line.size() == 1) individuals.insert(line[0]);\n        if (line.size() == 2) teams.insert(line);\n    }\n    out << individuals.size() << '\\n' << teams.size() << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Translate a win into the number of distinct identities on a line.",
+      "Canonicalize unordered pairs before deduplicating them.",
+      "Count winners rather than winning lines."
+    ],
+    "commonMistakes": [
+      "Adding one for each successful line, even when several lines belong to the same cow or team.",
+      "Treating a single-cow line as a team win with any second cow.",
+      "Considering only rows and columns while omitting the two diagonals.",
+      "Treating the ordered strings AB and BA as different teams."
+    ],
+    "alternativeMethods": [
+      "Enumerate individual cows and unordered pairs of cows directly. For each candidate, ask whether at least one winning line is covered and, for a team, whether both members occur on that line. A cow absent from the entire board cannot contribute to a valid victory."
+    ],
+    "difficultyNotes": "Introductory exhaustive checking with a small fixed board. The key distinction is between a successful line and the identity of its winner.",
+    "id": "solution-usaco-bronze-2018-us-open-p1",
+    "problemId": "usaco-bronze-2018-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Test cow 1 positions in increasing order and return the first whose fixed anchors and social hierarchy admit a full milking permutation.",
+    "shortExplanation": "For a proposed position of cow 1, reserve every fixed cow and that proposed slot. Place each unfixed hierarchy cow in the earliest free position after its predecessor, respecting fixed hierarchy anchors. This greedy feasibility check succeeds exactly when some valid completion exists.",
+    "detailedSteps": [
+      "Try candidate positions $1,2,\\ldots,N$. Skip a candidate if it contradicts a printed fixed position of cow 1 or is already occupied by another fixed cow. Otherwise temporarily reserve that position for cow 1 together with all original fixed positions.",
+      "Traverse the hierarchy in its required order. A fixed hierarchy cow must sit at its anchor strictly after the previous hierarchy cow; otherwise the candidate fails. An unfixed hierarchy cow takes the earliest unreserved position strictly after its predecessor. If no such position remains, the candidate fails.",
+      "To prove the greedy check is necessary, compare it with any feasible completion for the same candidate. Inductively, the greedy predecessor is no later than its counterpart in that completion. For an unfixed next cow, the completion's slot is an eligible unreserved slot after the greedy predecessor, so the earliest greedy choice is no later. For a fixed next cow, both constructions use the same anchor; if greedy cannot reach it in increasing order, neither can the completion.",
+      "Therefore a feasible completion cannot cause the greedy check to fail. Conversely, a successful check has placed every hierarchy cow in order and preserved all fixed cows and cow 1. Fill the remaining slots bijectively with the remaining cows, which have no further hierarchy constraints. This constructs a valid total permutation and proves sufficiency.",
+      "Candidates are tested in increasing order, so the first successful candidate is the earliest possible position of cow 1. The source guarantees that at least one total order exists. The same check covers cow 1 already fixed, inside the hierarchy, or outside it; no separate assumption about cow 1's status is needed.",
+      "The slot cursor moves only forward during a candidate, scanning at most $N$ positions, while the hierarchy and reservation work also take $O(N)$ time because $M,K<N$. At most $N$ candidates give $O(N^2)$ total time and $O(N)$ auxiliary space, suitable for $N\\le100$.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"milkorder.in\");\n    ofstream out(\"milkorder.out\");\n    int n, m, k;\n    in >> n >> m >> k;\n    vector<int> hierarchy(m), position(n + 1, 0), reserved(n + 1, 0);\n    for (int &cow : hierarchy) in >> cow;\n    for (int i = 0; i < k; ++i) {\n        int cow, place;\n        in >> cow >> place;\n        position[cow] = place;\n        reserved[place] = cow;\n    }\n    for (int candidate = 1; candidate <= n; ++candidate) {\n        if (position[1] != 0 && position[1] != candidate) continue;\n        if (reserved[candidate] != 0 && reserved[candidate] != 1) continue;\n        vector<int> slots = reserved, anchors = position;\n        slots[candidate] = 1;\n        anchors[1] = candidate;\n        int cursor = 0;\n        bool valid = true;\n        for (int cow : hierarchy) {\n            int place;\n            if (anchors[cow] != 0) {\n                place = anchors[cow];\n                if (place <= cursor) { valid = false; break; }\n            } else {\n                place = cursor + 1;\n                while (place <= n && slots[place] != 0) ++place;\n                if (place > n) { valid = false; break; }\n                slots[place] = cow;\n            }\n            cursor = place;\n        }\n        if (valid) { out << candidate << '\\n'; return 0; }\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Reduce optimization to exact feasibility for each candidate position.",
+      "Reserve fixed slots before placing hierarchy cows.",
+      "Prove greedy dominance against an arbitrary feasible completion.",
+      "Complete a partial hierarchy placement with unconstrained cows."
+    ],
+    "commonMistakes": [
+      "Placing hierarchy cows through slots already reserved for later fixed cows.",
+      "Accepting a fixed hierarchy anchor that is before its predecessor.",
+      "Assuming cow 1 is always outside the hierarchy or always unfixed.",
+      "Using factorial permutation search for the full input limit."
+    ],
+    "alternativeMethods": [
+      "A global position dynamic program can track how much of the hierarchy has been placed, whether and where cow 1 has been placed, and how many unanchored ordinary cows have filled slots. Fixed positions force their exact occupants; free positions allow the next eligible hierarchy cow, cow 1 if unconstrained, or an ordinary filler. The minimum terminal cow 1 position gives an independent feasibility model.",
+      "For small instances, enumerate all complete permutations and retain only those satisfying every fixed position and hierarchy comparison. This is useful for verifying the greedy proof, but unsuitable for the full input size."
+    ],
+    "difficultyNotes": "Advanced Bronze greedy reasoning. The implementation is short once feasibility is understood; the proof must establish both necessity and an attainable full permutation.",
+    "id": "solution-usaco-bronze-2018-us-open-p2",
+    "problemId": "usaco-bronze-2018-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Find the nearest common maternal ancestor, classify the two upward distances, and output the exact source relationship phrase.",
+    "shortExplanation": "Record the first cow's chain of mothers with generation distances, then walk upward from the second cow to its first intersection. The two distances distinguish direct ancestry, siblings, aunt relationships, and cousins; no intersection means unrelated.",
+    "detailedSteps": [
+      "Source edition note: this solution uses the official French original problem page. Its final unrelated condition is conjunctive, agreeing with the official Chinese original, the relationship diagram, and the other explicit cases. The English page's final OR overlaps those cases and is preserved as a disclosed wording variant; no publisher-issued English erratum is claimed. The Chinese translator's note concerns aunt wording, rather than establishing an erratum for that final English clause.",
+      "Build a child-to-mother map for the source's biological maternal genealogy. Record the first query itself at distance $0$, its mother at distance $1$, and successive known ancestors at increasing distances. A cow has one biological mother and cannot be its own ancestor; missing records end a known chain.",
+      "Walk from the second query, including itself, until reaching a node in the first chain. If no intersection exists, neither query is a direct ancestor of the other and they share no recorded ancestor, so output NOT RELATED. Otherwise let $a$ and $b$ be the distances from the first and second queries to the intersection. Unique maternal chains share their remaining upward tail after intersecting, so the first intersection is the nearest common ancestor.",
+      "If $a=0$, the first query is an ancestor of the second at distance $b$; if $b=0$, reverse the direction. Distance $1$ means mother, distance $2$ means grand-mother, and distance $k\\ge3$ adds $k-2$ copies of great- before grand-mother. Output the ancestor's actual name first in the phrase.",
+      "If $a=b=1$, the queries have the same mother and the output is SIBLINGS. If $a=1$ and $b\\ge2$, the first query is a child of an ancestor of the second, without itself being the second's ancestor or sibling: output the first query as an aunt, with $b-2$ great- prefixes. The case $b=1$, $a\\ge2$ reverses the names. This also handles niece relations through the corresponding reversed aunt phrase.",
+      "If both $a$ and $b$ are at least $2$, the queries share an ancestor but fit none of the specific previous categories, so output COUSINS. These distance cases are disjoint and exhaustive for distinct queried cows in a maternal forest. Preserve the exact spaces and hyphens in the source's output strings.",
+      "The C++ implementation uses ordered maps. Building and following at most $N$ maternal links takes $O(N\\log N)$ time; links, ancestry distances, and the possible $O(N)$-length relationship phrase use $O(N)$ space. Queries may be absent from the records, and intermediate ancestor names must still be stored.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <map>\n#include <string>\nusing namespace std;\nstring ancestral_relation(int generations) {\n    if (generations == 1) return \"mother\";\n    string relation;\n    for (int i = 0; i < generations - 2; ++i) relation += \"great-\";\n    return relation + \"grand-mother\";\n}\nstring aunt_relation(int descendant_distance) {\n    string relation;\n    for (int i = 0; i < descendant_distance - 2; ++i) relation += \"great-\";\n    return relation + \"aunt\";\n}\nint main() {\n    ifstream in(\"family.in\");\n    ofstream out(\"family.out\");\n    int n;\n    string first, second;\n    in >> n >> first >> second;\n    map<string, string> parent;\n    for (int i = 0; i < n; ++i) {\n        string mother, child;\n        in >> mother >> child;\n        parent[child] = mother;\n    }\n    map<string, int> first_distance;\n    string current = first;\n    int distance = 0;\n    while (true) {\n        first_distance[current] = distance;\n        auto it = parent.find(current);\n        if (it == parent.end()) break;\n        current = it->second;\n        ++distance;\n    }\n    current = second;\n    int second_distance = 0;\n    while (first_distance.count(current) == 0) {\n        auto it = parent.find(current);\n        if (it == parent.end()) { out << \"NOT RELATED\\n\"; return 0; }\n        current = it->second;\n        ++second_distance;\n    }\n    int a = first_distance[current], b = second_distance;\n    if (a == 0) out << first << \" is the \" << ancestral_relation(b) << \" of \" << second << '\\n';\n    else if (b == 0) out << second << \" is the \" << ancestral_relation(a) << \" of \" << first << '\\n';\n    else if (a == 1 && b == 1) out << \"SIBLINGS\\n\";\n    else if (a == 1) out << first << \" is the \" << aunt_relation(b) << \" of \" << second << '\\n';\n    else if (b == 1) out << second << \" is the \" << aunt_relation(a) << \" of \" << first << '\\n';\n    else out << \"COUSINS\\n\";\n}\n```"
+    ],
+    "keyIdeas": [
+      "Reverse mother-child records into a child-to-mother function.",
+      "Include each query itself when looking for a shared ancestry node.",
+      "Classify the distances to the nearest common ancestor before formatting the relation.",
+      "Use the actual official original language edition and disclose source wording differences."
+    ],
+    "commonMistakes": [
+      "Searching only the parents of the two queries and missing direct ancestry or more distant relations.",
+      "Using the number of great- prefixes incorrectly: generation distance two already means grand-mother.",
+      "Reversing the names in an ancestor or aunt output phrase.",
+      "Treating unknown root mothers as the same mother and falsely classifying unrelated roots as siblings.",
+      "Silently replacing the original English wording without recording the official language-source difference."
+    ],
+    "alternativeMethods": [
+      "Build the undirected maternal forest and find the unique path between the queried cows with breadth-first search. Read each edge's mother-child orientation along that path; it first goes up, then down. The counts of upward and downward edges give the same relationship classification and provide an independent graph model."
+    ],
+    "difficultyNotes": "Intermediate ancestry traversal with careful output conventions. The official relationship diagram was checked as source evidence; no original diagram or source body is reproduced here.",
+    "id": "solution-usaco-bronze-2018-us-open-p3",
+    "problemId": "usaco-bronze-2018-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

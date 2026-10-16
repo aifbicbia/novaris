@@ -1,0 +1,319 @@
+[
+  {
+    "id": "solution-aime-1989-p1",
+    "problemId": "aime-1989-p1",
+    "finalAnswer": "$\\boxed{869}$",
+    "shortExplanation": "Pairing the outside and inside factors gives $868\\cdot870+1=869^2$.",
+    "detailedSteps": [
+      "The two products are $31\\cdot28=868$ and $30\\cdot29=870$. They differ by 2 and lie on either side of 869.",
+      "Thus the expression under the radical is $(869-1)(869+1)+1=869^2$. The positive square root is 869."
+    ],
+    "keyIdeas": [
+      "Recognizing neighboring factors around a square"
+    ],
+    "commonMistakes": [
+      "Adding 1 after taking the square root rather than inside it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Look for two factors symmetric around a common integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p2",
+    "problemId": "aime-1989-p2",
+    "finalAnswer": "$\\boxed{968}$",
+    "shortExplanation": "Exclude the subsets with fewer than three vertices from all 1024 subsets.",
+    "detailedSteps": [
+      "Any chosen subset of at least three distinct circle points has a unique convex polygon, with its vertices in circular order. Conversely the polygon determines its chosen subset.",
+      "There are $2^{10}$ subsets in total. Remove the empty subset, ten singletons and $\\binom{10}{2}=45$ pairs: $1024-1-10-45=968$."
+    ],
+    "keyIdeas": [
+      "Polygons correspond to subsets of circle points"
+    ],
+    "commonMistakes": [
+      "Counting different starting vertices as different polygons."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the one-to-one correspondence before counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p3",
+    "problemId": "aime-1989-p3",
+    "finalAnswer": "$\\boxed{750}$",
+    "shortExplanation": "The denominator 111 forces the repeating digit to be 9, giving n 750.",
+    "detailedSteps": [
+      "The repeated three-digit block is $100d+25$, so $n/810=(100d+25)/999$. Therefore $n=90(100d+25)/111$.",
+      "Since gcd(90,111)=3, integrality requires $37\\mid100d+25$. Modulo 37 this is $26d+25\\equiv0$, and the inverse of 26 is 10. Hence $d\\equiv9\\pmod{37}$.",
+      "Only $d=9$ lies in the digit range 0 through 9. Substitution gives $n=90\\cdot925/111=750$."
+    ],
+    "keyIdeas": [
+      "A repeating decimal and its integrality constraint"
+    ],
+    "commonMistakes": [
+      "Interpreting the repeated block as only a repeated final digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A digit bound turns a congruence into a unique choice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p4",
+    "problemId": "aime-1989-p4",
+    "finalAnswer": "$\\boxed{675}$",
+    "shortExplanation": "The least center is $3^3 5^2=675$.",
+    "detailedSteps": [
+      "The middle three sum to 3 c, while all five sum to 5 c. Write prime exponents of c as e. For prime 3, the square condition requires e+1 even and the cube condition requires e divisible by 3; the least allowed e is 3.",
+      "For prime 5, e must be even and e+1 divisible by 3, so the least e is 2. Every other prime exponent must be divisible by both 2 and 3, and may be 0.",
+      "Thus the least c is $3^3 5^2=675$. It gives $3c=2025=45^2$ and $5c=3375=15^3$. The five consecutive integers are positive."
+    ],
+    "keyIdeas": [
+      "Reconciling square and cube prime exponents"
+    ],
+    "commonMistakes": [
+      "Treating the square and cube conditions independently without matching their common center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime exponents give both a lower bound and an attaining example.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p5",
+    "problemId": "aime-1989-p5",
+    "finalAnswer": "$\\boxed{283}$",
+    "shortExplanation": "The head probability is 1/3, and three heads has probability 40/243.",
+    "detailedSteps": [
+      "Let p be the probability of heads. The positive common probability excludes p 0 and p 1. Equating the one-head and two-head probabilities gives $5p(1-p)^4=10p^2(1-p)^3$.",
+      "Cancel the positive factor $5p(1-p)^3$ to get $1-p=2p$, so $p=1/3$.",
+      "The probability of three heads is $\\binom53(1/3)^3(2/3)^2=40/243$. The fraction is reduced, and the requested sum is 40+243=283."
+    ],
+    "keyIdeas": [
+      "Equal neighboring binomial probabilities"
+    ],
+    "commonMistakes": [
+      "Cancelling without excluding the zero-probability endpoint cases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero condition makes the cancellation legitimate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p6",
+    "problemId": "aime-1989-p6",
+    "finalAnswer": "$\\boxed{160}$",
+    "shortExplanation": "The first feasible meeting occurs at 20 seconds, so Allie travels 160 meters.",
+    "detailedSteps": [
+      "Put A at(0,0), B at(100,0), and measure time t in seconds. Allie is at $(4t,4\\sqrt3\\,t)$ because her speed is 8 and direction makes 60 degrees with AB.",
+      "Billie can reach that point on a straight path at time t exactly when its distance from B equals 7 t. Squaring gives $(4t-100)^2+48t^2=49t^2$, or $15t^2-800t+10000=0$.",
+      "The positive roots are 20 and 100/3. For t between 0 and 20 the distance exceeds 7 t, so no earlier meeting is possible. At 20 a straight path realizes equality.",
+      "Allie travels $8\\cdot20=160$ meters."
+    ],
+    "keyIdeas": [
+      "An earliest meeting as a distance-speed equation"
+    ],
+    "commonMistakes": [
+      "Choosing the later quadratic root without checking the earliest feasible meeting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed direction converts the pursuit question into a quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p7",
+    "problemId": "aime-1989-p7",
+    "finalAnswer": "$\\boxed{925}$",
+    "shortExplanation": "The step magnitude is 4 and the first squared term is 961, giving k 925.",
+    "detailedSteps": [
+      "Write the three underlying arithmetic-progression terms as a,a+h,a+2 h. Their squared differences are 264 and 296, respectively.",
+      "The second difference is $296-264=2h^2$, so h equals 4 or-4. Also $2ah+h^2=264$, giving $ah=124$.",
+      "Hence $a^2=124^2/16=961$, and $k=a^2-36=925$. The realized squares are 961,1225,1521, corresponding to 31,35,39."
+    ],
+    "keyIdeas": [
+      "Second differences of squares in arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Assuming the squared values themselves form an arithmetic progression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Second differences isolate the progression step before its first term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p8",
+    "problemId": "aime-1989-p8",
+    "finalAnswer": "$\\boxed{334}$",
+    "shortExplanation": "The successive differences are 11,111,211, so the next sum is 334.",
+    "detailedSteps": [
+      "Define $S(t)=\\sum_{j=1}^7(j+t)^2x_j$. This is a polynomial of degree at most 2 in t, irrespective of the values of the $x_j$.",
+      "The source equations give  $S(0)=1$, $S(1)=12$, $S(2)=123$. Their first differences are 11 and 111; the constant second difference is 100.",
+      "The next difference is 211, giving $S(3)=123+211=334$. This is the requested shifted weighted sum."
+    ],
+    "keyIdeas": [
+      "A quadratic sequence of weighted sums"
+    ],
+    "commonMistakes": [
+      "Trying to determine all seven unknowns even though only one linear combination is needed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Quadratic coefficient shifts have constant second differences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p9",
+    "problemId": "aime-1989-p9",
+    "finalAnswer": "$\\boxed{144}$",
+    "shortExplanation": "The sum is 61917364224, which equals 144 to the fifth power.",
+    "detailedSteps": [
+      "Direct integer evaluation gives $133^5+110^5+84^5+27^5=61917364224$.",
+      "Also $144^5=61917364224$. Positive fifth powers are strictly increasing, so 144 is the unique positive integer with the required power."
+    ],
+    "keyIdeas": [
+      "Exact evaluation of a fifth-power sum"
+    ],
+    "commonMistakes": [
+      "Using a floating root without verifying the exact fifth power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The historical context is unnecessary for the integer calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p10",
+    "problemId": "aime-1989-p10",
+    "finalAnswer": "$\\boxed{994}$",
+    "shortExplanation": "The common area factor cancels, leaving(1989-1)/2=994.",
+    "detailedSteps": [
+      "Let the triangle area be K. The cosine and sine laws give $\\cot\\alpha=(b^2+c^2-a^2)/(4K)$, with analogous formulas for the other angles.",
+      "Thus $\\cot\\alpha+\\cot\\beta=2c^2/(4K)$, and $\\cot\\gamma=(a^2+b^2-c^2)/(4K)$.",
+      "The requested ratio is $(a^2+b^2-c^2)/(2c^2)=(1989-1)/2=994$. The denominator is positive, so cancellation is valid."
+    ],
+    "keyIdeas": [
+      "Writing cotangents in terms of side squares and area"
+    ],
+    "commonMistakes": [
+      "Inverting the source ratio or forgetting the common triangle-area factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Express all three cotangents with a shared denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p11",
+    "problemId": "aime-1989-p11",
+    "finalAnswer": "$\\boxed{947}$",
+    "shortExplanation": "The least total is $6340$, attained by four copies of $1000$ and three copies of each integer from $1$ to $39$.",
+    "detailedSteps": [
+      "The original paper maximizes mode minus mean, while the linked reprint uses its absolute value. Reflecting every value $v$ to $1001-v$ reverses the sign of the difference and preserves a unique mode, so the two maxima coincide. For a nonnegative difference, if the mode $m<1000$ occurs $k$ times, replace those occurrences by $1000$. The value $1000$ becomes the unique mode, and the difference increases by $(1000-m)(1-k/121)\\ge0$. Thus an optimum may be sought with mode $1000$.",
+      "If $1000$ occurs $k$ times, each other value occurs at most $k-1$ times. A unique mode requires $k\\ge2$. Minimize the sum by filling the smallest values $1,2,\\ldots$ in groups of $k-1$ until the remaining $121-k$ entries are used.",
+      "For $k=2,3,4,5,6$, these minimum totals are $9140,6540,6340,6740,7380$. If $k\\ge7$, the mode entries alone sum to at least $7000>6340$. Thus $6340$ is the global minimum.",
+      "The minimum is attained by four copies of $1000$ and three copies of each integer from $1$ to $39$: $4+3\\cdot39=121$ and $4000+3(1+\\cdots+39)=6340$. The mode is uniquely $1000$.",
+      "The maximum absolute difference is $1000-6340/121=114660/121$. This lies between 947 and 948, so its greatest integer is 947."
+    ],
+    "keyIdeas": [
+      "A unique mode imposes frequency caps"
+    ],
+    "commonMistakes": [
+      "Allowing another value to tie the mode frequency or optimizing the floor before checking the real-valued bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Frequency caps make a seemingly continuous optimization a short integer comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p12",
+    "problemId": "aime-1989-p12",
+    "finalAnswer": "$\\boxed{137}$",
+    "shortExplanation": "The midpoint identity gives(49+324+1296+729-1681-169)/4=137.",
+    "detailedSteps": [
+      "Let M and N be the midpoints of AB and CD. Apply the parallelogram identity first to vectors from A and B to C, then to D; it gives $AC^2+BC^2+AD^2+BD^2=4MN^2+AB^2+CD^2$.",
+      "Hence $MN^2=(AC^2+AD^2+BC^2+BD^2-AB^2-CD^2)/4$.",
+      "Substituting the six viewed edge lengths yields $(7^2+18^2+36^2+27^2-41^2-13^2)/4=137$."
+    ],
+    "keyIdeas": [
+      "Distance between opposite-edge midpoints"
+    ],
+    "commonMistakes": [
+      "Confusing the requested squared distance with the distance itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The identity avoids locating four vertices in three-dimensional coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p13",
+    "problemId": "aime-1989-p13",
+    "finalAnswer": "$\\boxed{905}$",
+    "shortExplanation": "Each full block of eleven contributes at most five, and a periodic construction gives 905.",
+    "detailedSteps": [
+      "Partition 1 through 1980 into 180 consecutive eleven-element blocks. Inside any block, connecting numbers that differ by 4 or 7 forms an eleven-cycle: moving by 4 modulo 11 visits all eleven numbers, and a wrap corresponds to an ordinary difference 7.",
+      "An independent set in an odd cycle of length 11 has at most 5 vertices: each selected vertex needs a distinct following unselected neighbor. Thus the full blocks contribute at most 900.",
+      "In the remaining nine numbers, four disjoint forbidden-difference pairs are formed by offsets(1,5),(2,6),(3,7),(4,8). Each pair contributes at most one, and the ninth number contributes at most one, giving 5 more. Hence the global bound is 905.",
+      "Choose every integer whose residue modulo 11 belongs to $\\{1,3,4,6,9\\}$. No two chosen residues differ by 4 or 7 modulo 11, so forbidden ordinary differences cannot occur, including across block boundaries. This gives 5 per full block and 5 in the remainder, attaining 905."
+    ],
+    "keyIdeas": [
+      "Packing an independent set in eleven-cycles"
+    ],
+    "commonMistakes": [
+      "Checking only conflicts within a block and missing pairs that cross a block boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A local odd-cycle bound and a globally valid periodic witness match.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p14",
+    "problemId": "aime-1989-p14",
+    "finalAnswer": "$\\boxed{490}$",
+    "shortExplanation": "The real integer expansions produce 10 through 19 and 30 through 39, with total 490.",
+    "detailedSteps": [
+      "Let z=-3+i. Then $z^2=8-6i$ and $z^3=-18+26i$. The imaginary part of a four-digit expansion vanishes exactly when $26a_3-6a_2+a_1=0$.",
+      "The digits range from 0 through 9 and $a_3$ is nonzero. Since $26a_3\\le6\\cdot9$, $a_3$ is 1 or 2. For $a_3=1$, the condition forces $a_2=5,a_1=4$; for $a_3=2$, it forces $a_2=9,a_1=2$.",
+      "The real part is $-18a_3+8a_2-3a_1+a_0$, giving $10+a_0$ or $30+a_0$. The free last digit $a_0$ runs from 0 through 9.",
+      "The twenty values are 10 through 19 and 30 through 39. Their sum is 145+345=490. Uniqueness in the stated base system ensures distinct expansions do not introduce duplicate integers."
+    ],
+    "keyIdeas": [
+      "Imaginary-part constraints on four complex-base digits"
+    ],
+    "commonMistakes": [
+      "Allowing a zero leading digit and thereby including shorter expansions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Vanishing imaginary part dramatically restricts the higher digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1989-p15",
+    "problemId": "aime-1989-p15",
+    "finalAnswer": "$\\boxed{108}$",
+    "shortExplanation": "The weights are 1/2,1/4,1/4; the given lengths force AP perpendicular BP and total area 108.",
+    "detailedSteps": [
+      "The barycentric weights of A and B at P are $PD/AD=1/2$ and $PE/BE=1/4$. The weight of C is therefore 1/4. Along CF this means PF/CF=1/4, so PF=5 and CP=15.",
+      "Take P as vector origin and write position vectors a,b,c for A,B,C. The barycentric relation is $2a+b+c=0$. Their lengths are 6,9,15, so $|2a+b|^2=|c|^2$ becomes $4\\cdot36+81+4a\\cdot b=225$. Thus a dot b is 0.",
+      "Triangle APB is right at P and has area $6\\cdot9/2=27$. Its area is the C-weight 1/4 of the whole triangle, so the area of ABC is 4(27)=108."
+    ],
+    "keyIdeas": [
+      "Cevian ratios determine barycentric weights and a right angle"
+    ],
+    "commonMistakes": [
+      "Using vertex-to-P rather than P-to-opposite-side distance as the barycentric weight."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining affine weights with metric lengths reveals the hidden right angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

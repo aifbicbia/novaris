@@ -1,0 +1,601 @@
+[
+  {
+    "id": "solution-amc12b-2019-p1",
+    "problemId": "amc12b-2019-p1",
+    "finalAnswer": "$\\boxed{\\frac9{10}}$ (choice D)",
+    "shortExplanation": "Express the unchanged water volume using each container capacity.",
+    "detailedSteps": [
+      "Let the two capacities be $V_1$ and $V_2$. The same water occupies $5V_1/6$ before the transfer and $3V_2/4$ afterward.",
+      "Therefore $5V_1/6=3V_2/4$, giving $V_1/V_2=(3/4)(6/5)=9/10$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Ratios",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "The fractions describe filled portions, not the capacities themselves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equating the conserved amount prevents reversing the requested capacity ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p2",
+    "problemId": "amc12b-2019-p2",
+    "finalAnswer": "$\\boxed{27}$ (choice E)",
+    "shortExplanation": "A counterexample must satisfy the hypothesis while falsifying the conclusion.",
+    "detailedSteps": [
+      "We need both $n$ and $n-2$ to be nonprime. For $n=27$, the numbers are $27=3^3$ and $25=5^2$, so both conditions hold.",
+      "The choices 11 and 19 are prime and do not satisfy the hypothesis. For the remaining composite choices 15 and 21, subtracting 2 gives the primes 13 and 19. Thus 27 is the only listed counterexample."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Primes",
+      "Logical implication"
+    ],
+    "commonMistakes": [
+      "A value with a false hypothesis cannot disprove the implication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logical condition matters as much as the elementary primality checks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p3",
+    "problemId": "amc12b-2019-p3",
+    "finalAnswer": "$\\boxed{\\text{clockwise }180^\\circ\\text{ rotation about the origin}}$ (choice E)",
+    "shortExplanation": "Compare the coordinate signs of both points and their images.",
+    "detailedSteps": [
+      "A half-turn about the origin sends every point $(x,y)$ to $(-x,-y)$. It sends $(-2,1)$ to $(2,-1)$ and $(-1,4)$ to $(1,-4)$, as required.",
+      "A clockwise rotation through $180^\\circ$ is such a half-turn, giving choice E. Checking both endpoints verifies the entire segment mapping."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinate geometry",
+      "Rotations"
+    ],
+    "commonMistakes": [
+      "Matching only one endpoint can leave an incorrect transformation untested."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both coordinate signs change, distinguishing the half-turn from either axis reflection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p4",
+    "problemId": "amc12b-2019-p4",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "Cancel the common factorial and complete a square.",
+    "detailedSteps": [
+      "Dividing by the positive quantity $n!$ gives $(n+1)+(n+2)(n+1)=440$, or $(n+1)(n+3)=440$.",
+      "Equivalently, $(n+2)^2=441=21^2$. Positivity selects $n=19$, and the digit sum is $1+9=10$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Factorials",
+      "Quadratic equations"
+    ],
+    "commonMistakes": [
+      "The question asks for the digit sum after finding n, not n itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing the shared factorial turns the equation into two factors separated by two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p5",
+    "problemId": "amc12b-2019-p5",
+    "finalAnswer": "$\\boxed{21}$ (choice B)",
+    "shortExplanation": "The total amount must be a common multiple of all four possible candy counts and prices.",
+    "detailedSteps": [
+      "Let $M$ be the amount of money in cents. Whole-cent prices for the first three colors require $12\\mid M$, $14\\mid M$, and $15\\mid M$. The purple price also requires $20\\mid M$.",
+      "The least possible total is $\\operatorname{lcm}(12,14,15,20)=420$. This gives integral prices 35, 30, and 28 cents for the first three colors and $n=420/20=21$ purple pieces."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility",
+      "Least common multiples"
+    ],
+    "commonMistakes": [
+      "The purple price must divide the same total amount, not one of the other candy counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the resulting prices shows that the least common multiple is attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p6",
+    "problemId": "amc12b-2019-p6",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The area condition forces a height too large for the available perimeter.",
+    "detailedSteps": [
+      "With base length 10 and area 100, the perpendicular distance from $C$ to line $AB$ must be $2\\cdot100/10=20$.",
+      "Each of $CA$ and $CB$ is at least this perpendicular distance. They cannot both equal 20, since that would put both distinct points $A$ and $B$ at the same perpendicular foot. Thus $CA+CB>40$.",
+      "The perimeter would then exceed $10+40=50$, a contradiction. There are no qualifying points."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Triangle area",
+      "Perpendicular distance",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "The altitude condition alone is insufficient; both other sides must also satisfy the perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A strict distance bound rules out all possible locations of C at once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p7",
+    "problemId": "amc12b-2019-p7",
+    "finalAnswer": "$\\boxed{-5}$ (choice A)",
+    "shortExplanation": "Split according to whether the unknown value changes the middle entry.",
+    "detailedSteps": [
+      "The mean is $(35+x)/5$. If $x\\le6$, the median is 6, so equality requires $35+x=30$ and gives $x=-5$, which is in this range.",
+      "If $6<x<8$, the median is $x$, requiring $35+x=5x$. The candidate $35/4$ is outside this interval.",
+      "If $x\\ge8$, the median is 8, requiring $x=5$, again outside the assumed range. The only solution is $-5$, so its sum is $-5$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Mean and median",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "Every algebraic candidate must be checked against the interval in which its median formula applies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two central fixed entries, 6 and 8, determine all relevant cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p8",
+    "problemId": "amc12b-2019-p8",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Pair arguments that add to one.",
+    "detailedSteps": [
+      "The function satisfies $f(1-x)=f(x)$. Pair the term indexed by $k$ with the term indexed by $2019-k$.",
+      "Because 2019 is odd, these two indices have opposite parity and hence opposite signs in the alternating sum. Their equal function values cancel.",
+      "All 2018 indices form such pairs, with no fixed index. The sum is 0."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Symmetry",
+      "Pairing terms"
+    ],
+    "commonMistakes": [
+      "Pairing adjacent indices does not exploit the exact equality f(x)=f(1-x)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd denominator makes each equal-value pair carry opposite signs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p9",
+    "problemId": "amc12b-2019-p9",
+    "finalAnswer": "$\\boxed{59}$ (choice B)",
+    "shortExplanation": "Express the two logarithmic sides in terms of a single positive variable.",
+    "detailedSteps": [
+      "Put $t=\\log_4x$, so the side lengths are $2t,t,3$. Positive area requires strict triangle inequalities, and positive side lengths require $t>0$.",
+      "The nontrivial inequalities are $2t+t>3$ and $t+3>2t$, giving $1<t<3$. Thus $4<x<64$.",
+      "The integer possibilities are $5,6,\\ldots,63$, totaling $63-5+1=59$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithms",
+      "Triangle inequalities"
+    ],
+    "commonMistakes": [
+      "Equality in a triangle inequality gives zero area and must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Changing logarithm bases reveals the fixed 2-to-1 ratio of the variable sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p10",
+    "problemId": "amc12b-2019-p10",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "Use degree parity to find the four omitted roads, then count the two loop orientations.",
+    "detailedSteps": [
+      "For reference, label the three rows of the displayed grid $A,B,C,D$; $E,F,G,H$; and $I,J,K,L$, from left to right. The route uses 13 of the 17 roads, so four roads are omitted.",
+      "In the used-edge graph, only $A$ and $L$ have odd degree. The original graph has odd-degree vertices $B,C,E,H,J,K$. Therefore the omitted-edge graph has odd degree at exactly the eight vertices $A,B,C,E,H,J,K,L$.",
+      "Four omitted edges have only eight endpoints in total. Each of these eight vertices must consequently be incident to exactly one omitted edge, with no other endpoint. Among this vertex set, $E$ can pair only with $A$, and $H$ only with $L$. The remaining pairs are forced to be $BC$ and $JK$. Thus the omitted roads are $AE,HL,BC,JK$.",
+      "The remaining graph consists of the path $A-B-F-G-K-L$ together with the two four-edge loops $F-E-I-J-F$ and $G-C-D-H-G$. The first loop must be completed before crossing from F to G, and the second before continuing from G to K.",
+      "Each loop can be traversed in either direction, independently. Hence there are $2\\cdot2=4$ routes."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Graph theory",
+      "Degree parity",
+      "Euler trails"
+    ],
+    "commonMistakes": [
+      "Returning to a city is permitted; reusing a road is not.",
+      "The parity argument concerns omitted edges as well as used edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Four omitted edges must account for exactly eight parity changes, making the route structure rigid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p11",
+    "problemId": "amc12b-2019-p11",
+    "finalAnswer": "$\\boxed{42}$ (choice D)",
+    "shortExplanation": "Separate intersecting edge pairs from parallel edge pairs.",
+    "detailedSteps": [
+      "Two distinct lines determine a plane exactly when they intersect or are parallel. At each of the eight cube vertices, any two of the three incident edges meet, giving $8\\binom32=24$ intersecting pairs.",
+      "For each of three edge directions there are four parallel edges, giving $3\\binom42=18$ parallel pairs. These do not overlap the intersecting pairs.",
+      "Every other pair is skew. Thus the required number is $24+18=42$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Spatial geometry",
+      "Counting pairs"
+    ],
+    "commonMistakes": [
+      "The objects being counted are pairs of edges, not distinct planes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classifying line pairs avoids treating skew edges as coplanar.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p12",
+    "problemId": "amc12b-2019-p12",
+    "finalAnswer": "$\\boxed{\\frac79}$ (choice D)",
+    "shortExplanation": "Find the two new side lengths, then measure the added angle from the hypotenuse.",
+    "detailedSteps": [
+      "The shared side AC, which is the hypotenuse of ABC, has length $AC=\\sqrt2$. Equality of the two perimeters gives $CD+AD=2$. Since triangle ACD is right at C, $(AD-CD)(AD+CD)=AC^2=2$, so $AD-CD=1$.",
+      "It follows that $AD=3/2$ and $CD=1/2$. Put $\\phi=\\angle CAD$. Then $\\cos(2\\phi)=(AC^2-CD^2)/AD^2=(2-1/4)/(9/4)=7/9$.",
+      "The outward construction shown places $\\angle BAD=45^\\circ+\\phi$. Hence $\\sin(2\\angle BAD)=\\sin(90^\\circ+2\\phi)=\\cos(2\\phi)=7/9$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Pythagorean theorem",
+      "Trigonometry",
+      "Perimeters"
+    ],
+    "commonMistakes": [
+      "The outward orientation makes the angle at A a sum, rather than a difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining a sum of lengths with their difference of squares avoids solving a radical equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p13",
+    "problemId": "amc12b-2019-p13",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice C)",
+    "shortExplanation": "Subtract the tie probability, then divide the remaining probability equally between the two orders.",
+    "detailedSteps": [
+      "Independence gives a tie probability of $\\sum_{k=1}^{\\infty}(2^{-k})^2=\\sum_{k=1}^{\\infty}4^{-k}=(1/4)/(1-1/4)=1/3$.",
+      "The two balls have identical distributions, so the probabilities of red being higher and green being higher are equal. Their sum is $1-1/3=2/3$, giving $1/3$ for the requested order."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Symmetry",
+      "Geometric series",
+      "Independence"
+    ],
+    "commonMistakes": [
+      "The probability is not 1/2 because equal bin numbers have positive probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Accounting for ties is the only correction needed to the exchange symmetry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p14",
+    "problemId": "amc12b-2019-p14",
+    "finalAnswer": "$\\boxed{117}$ (choice C)",
+    "shortExplanation": "Track the exponents of the only two prime factors.",
+    "detailedSteps": [
+      "Since $100000=2^5\\cdot5^5$, every divisor has form $2^a5^b$ with $0\\le a,b\\le5$. Any product of two divisors has exponents $(u,v)$ in $\\{0,1,\\ldots,10\\}^2$, giving 121 candidate values.",
+      "If each of $u,v$ is either 0 or 10, both exponent splits are forced: 0 must be $0+0$ and 10 must be $5+5$. These four corner pairs can only come from equal divisors and are disallowed.",
+      "For any other pair, at least one exponent is between 1 and 9. That exponent can be split into two different integers in $[0,5]$: for odd exponents use the two nearest integers; for even exponents use one below and one above half. Split the other exponent in any allowed way. The two resulting divisors are then distinct.",
+      "Exactly four candidates are excluded, leaving $121-4=117$ distinct products."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime factorization",
+      "Exponent counting"
+    ],
+    "commonMistakes": [
+      "Different pairs of divisors can produce the same number; count exponent pairs rather than factor pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the four extreme exponent pairs force the factors to be identical.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p15",
+    "problemId": "amc12b-2019-p15",
+    "finalAnswer": "$\\boxed{17}$ (choice E)",
+    "shortExplanation": "Subtract the middle semicircle and the two symmetric side overlaps from the large disk.",
+    "detailedSteps": [
+      "Use coordinates with $F=(0,1)$, the large circle radius 2, and the three semicircle centers at $(-2,0),(0,0),(2,0)$. The middle semicircle lies wholly in the large disk and has area $\\pi/2$. The two other overlaps have equal area; call each $I$.",
+      "Consider the rectangle $[-2,0]\\times[0,1]$. The right-hand quarter of the left unit circle has area $\\pi/4$. Its portion outside the large circle is exactly the part of this rectangle outside the large circle: throughout the strip, the large-circle left boundary lies between $x=-2$ and that quarter-circle arc.",
+      "The area inside the large circle and this rectangle equals a radius-2 sector of angle $\\pi/6$ together with a right triangle of legs 1 and $\\sqrt3$. Its area is $\\pi/3+\\sqrt3/2$. The rectangle area is 2, so $I=\\pi/4-[2-(\\pi/3+\\sqrt3/2)]=7\\pi/12+\\sqrt3/2-2$.",
+      "The shaded area is $4\\pi-\\pi/2-2I=7\\pi/3-\\sqrt3+4$. Thus $(a,b,c,d)=(7,3,3,4)$, whose sum is 17."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle sectors",
+      "Area subtraction",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "Only the portions of the side semicircles inside the large disk should be subtracted.",
+      "The lower part of the large circle is shaded and must remain in the total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side overlaps are easiest to measure as a quarter disk with a rectangular corner removed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p16",
+    "problemId": "amc12b-2019-p16",
+    "finalAnswer": "$\\boxed{\\frac{15}{256}}$ (choice A)",
+    "shortExplanation": "Factor the route probability at the forced jumps over the predator pads.",
+    "detailedSteps": [
+      "To avoid pad 3, the frog must first reach pad 2 and then jump to pad 4. The chance of reaching 2 from 0 is $1/2+(1/2)^2=3/4$, accounting for a direct jump or two single hops.",
+      "From 2, the moves $2\\to4$, $4\\to5$, and $5\\to7$ are all forced for success; each has probability $1/2$. Any alternative lands on pad 3 or pad 6.",
+      "From 7 to 10, the successful increment sequences are $(1,1,1)$, $(1,2)$, and $(2,1)$, with total probability $1/8+1/4+1/4=5/8$. A jump from 9 to 11 cannot return to 10.",
+      "Multiplying the successive conditional probabilities gives $(3/4)(1/2)^3(5/8)=15/256$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Conditional probability",
+      "Path counting"
+    ],
+    "commonMistakes": [
+      "Different successful paths can have different lengths and therefore different probabilities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The forbidden pads force the middle three moves and leave only short endpoint calculations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p17",
+    "problemId": "amc12b-2019-p17",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Divide by the nonzero vertex to normalize one side to the unit segment.",
+    "detailedSteps": [
+      "Multiplication by $1/z$ is a rotation and scaling. It takes the three vertices to $0,1,z^2$, preserving the equilateral condition.",
+      "The third vertex of an equilateral triangle on the segment from 0 to 1 is either $1/2+i\\sqrt3/2$ or $1/2-i\\sqrt3/2$. Thus $z^2=e^{i\\pi/3}$ or $z^2=e^{-i\\pi/3}$.",
+      "Each nonzero right-hand side has two square roots, and the two root sets are disjoint. All four give distinct triangle vertices, since neither possible value of $z^2$ is 0 or 1. The count is 4."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex numbers",
+      "Rotations",
+      "Square roots"
+    ],
+    "commonMistakes": [
+      "Both orientations of the equilateral triangle must be included."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalization removes the variable size and orientation before counting square roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p18",
+    "problemId": "amc12b-2019-p18",
+    "finalAnswer": "$\\boxed{2\\sqrt2}$ (choice C)",
+    "shortExplanation": "Use coordinates to find a horizontal base and a vertical altitude for the small triangle.",
+    "detailedSteps": [
+      "Place $A=(0,0,0)$, $B=(3,0,0)$, $C=(3,3,0)$, $D=(0,3,0)$, and $E=(0,0,6)$. The specified division ratios give $P=(2,0,2)$, $Q=(0,2,2)$, and $R=(1,1,4)$.",
+      "The midpoint of $PQ$ is $M=(1,1,2)$. The segment $RM$ is vertical with length 2, while $PQ$ is horizontal with length $2\\sqrt2$, so $RM\\perp PQ$.",
+      "Therefore the triangle area is $\\tfrac12(2\\sqrt2)(2)=2\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Spatial coordinates",
+      "Section formulas",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "The apex is directly above A, not above the center of the square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chosen division ratios put the third point directly above the midpoint of the other two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p19",
+    "problemId": "amc12b-2019-p19",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice B)",
+    "shortExplanation": "Show that every reachable holdings pattern has the same one-round chance of returning to equal holdings.",
+    "detailedSteps": [
+      "The total amount is always three dollars. Starting with the pattern $(1,1,1)$, one round produces either $(1,1,1)$ or a permutation of $(2,1,0)$. It cannot produce $(3,0,0)$, because a player cannot receive money from themselves.",
+      "From $(1,1,1)$, there are eight equally likely choices of recipients. Exactly the two directed three-cycles give each person one incoming dollar, so the chance of returning to equal holdings is $2/8=1/4$.",
+      "From a pattern $(2,1,0)$, only the two people with money make choices, giving four equally likely outcomes. After they give, their holdings before receiving are $(1,0,0)$. Equality requires the two-dollar player to give to the one-dollar player and the one-dollar player to give to the empty player, one of the four outcomes.",
+      "The other three outcomes remain permutations of $(2,1,0)$, so these are all reachable patterns. Conditional on any possible previous state, the next state is equal with probability $1/4$. This holds after every positive number of rounds, including 2019."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Conditional probability",
+      "State transitions",
+      "Conservation"
+    ],
+    "commonMistakes": [
+      "Transfers are simultaneous, and a player with no money makes no transfer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A constant return probability across reachable states makes the large round count irrelevant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p20",
+    "problemId": "amc12b-2019-p20",
+    "finalAnswer": "$\\boxed{\\frac{85\\pi}{8}}$ (choice C)",
+    "shortExplanation": "Find the common tangent intersection using equal tangent lengths, then solve for the center.",
+    "detailedSteps": [
+      "Let the common tangent intersection be $T=(t,0)$. Equal tangent lengths give $(t-6)^2+13^2=(t-12)^2+11^2$, so $t=5$.",
+      "Write the center as $O=(h,k)$. The radius to $A$ is perpendicular to $TA$, giving $(h-6)+13(k-13)=0$, or $h+13k=175$. Similarly, $7(h-12)+11(k-11)=0$, so $7h+11k=205$.",
+      "Solving yields $O=(37/4,51/4)$. Its squared distance to A is $(13/4)^2+(-1/4)^2=85/8$. The same value is obtained at B, so the constructed circle has the required tangents.",
+      "The circle area is $85\\pi/8$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangents",
+      "Dot products",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "The tangent intersection lies on the x-axis; the circle center need not."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal tangent lengths determine the external point before the perpendicular-radius equations are used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p21",
+    "problemId": "amc12b-2019-p21",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The coefficient set has at most two elements, so classify which two coefficients coincide.",
+    "detailedSteps": [
+      "Write the polynomial as $ax^2+bx+c$ with $a\\ne0$. Since its root set contains at most two elements, at least two of $a,b,c$ coincide. If all three coincide, the polynomial is $a(x^2+x+1)$ and has nonreal roots, so it cannot have the same set as its real coefficients.",
+      "If $a=b=p$ and $c=q\\ne p$, the roots must be $p,q$. Vieta gives $p+q=-1$ and $pq=q/p$, so $q(p^2-1)=0$. This produces $(p,q)=(-1,0)$ and $(1,-2)$, giving two polynomials.",
+      "If $a=c=p$ and $b=q\\ne p$, Vieta gives $pq=1$ and $p+q=-q/p$. Thus $q=1/p$ and $p^3+p+1=0$. This cubic is strictly increasing, is negative at -1, and positive at 0, so it has exactly one real root p. It is nonzero and does not satisfy $p^2=1$, so $q\\ne p$. This gives exactly one polynomial.",
+      "If $b=c=q$ and $a=p\\ne q$, Vieta gives $p^2+pq+q=0$ and $q(p^2-1)=0$. The case $q=0$ forces the forbidden $p=0$. The cases $p=1,-1$ respectively give $q=-1/2$ and no solution. Thus this case contributes one polynomial.",
+      "The three cases are disjoint and exhaustive, and their Vieta relations ensure the proposed coefficients really are the two roots. The total is $2+1+1=4$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Vieta formulas",
+      "Casework",
+      "Real roots"
+    ],
+    "commonMistakes": [
+      "The equality is between sets, so repeated coefficients are allowed.",
+      "A zero leading coefficient is never permitted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The set interpretation forces a repeated coefficient but still leaves one valid polynomial with irrational coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p22",
+    "problemId": "amc12b-2019-p22",
+    "finalAnswer": "$\\boxed{[81,242]}$ (choice C)",
+    "shortExplanation": "Subtract the limiting value and trap each step between two fixed contraction factors.",
+    "detailedSteps": [
+      "Put $e_n=x_n-4$. Algebra gives $e_{n+1}=e_n(e_n+9)/(e_n+10)$, with $e_0=1$. Thus $0<e_{n+1}<e_n\\le1$ for all n.",
+      "For $0<e_n\\le1$, the contraction factor satisfies $9/10<(e_n+9)/(e_n+10)\\le10/11$. Iterating gives $(9/10)^n\\le e_n\\le(10/11)^n$.",
+      "Since $(9/10)^4=6561/10000>1/2$, we have $e_{80}>(1/2)^{20}$. Hence the requested threshold has not been reached by index 80.",
+      "Also $(10/11)^8<1/2$, because $2\\cdot10^8<11^8=214358881$. Therefore $e_{160}<(1/2)^{20}$. The least qualifying index satisfies $81\\le m\\le160$, which lies in the answer interval $[81,242]$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Recurrences",
+      "Inequalities",
+      "Geometric bounds"
+    ],
+    "commonMistakes": [
+      "An exact formula or exact first crossing is unnecessary; it suffices to prove which listed interval contains it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform contraction bounds locate the threshold without iterating enormous rational expressions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p23",
+    "problemId": "amc12b-2019-p23",
+    "finalAnswer": "$\\boxed{65}$ (choice C)",
+    "shortExplanation": "Describe every string by the runs of ones between consecutive zeros.",
+    "detailedSteps": [
+      "Suppose there are $k+1$ zeros, giving k intervening runs of ones. Each run has length 1 or 2: length zero would give consecutive zeros, and length at least 3 would give three consecutive ones.",
+      "If r of the runs have length 2, the total length is $(k+1)+k+r=2k+1+r=19$. Thus $r=18-2k$, and $0\\le r\\le k$ restricts k to $6,7,8,9$.",
+      "For each k, choose which r runs are doubled. The count is $\\binom66+\\binom74+\\binom82+\\binom90=1+35+28+1=65$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Run lengths",
+      "Binomial coefficients"
+    ],
+    "commonMistakes": [
+      "The starting and ending zeros mean every run of ones lies between a pair of zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Encoding strings by runs converts both forbidden-pattern rules into a two-length composition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p24",
+    "problemId": "amc12b-2019-p24",
+    "finalAnswer": "$\\boxed{\\frac{3\\sqrt3}{2}}$ (choice C)",
+    "shortExplanation": "Find the corner images and recognize their convex hull.",
+    "detailedSteps": [
+      "The complex numbers satisfy $1+\\omega+\\omega^2=0$ and have unit modulus. The set is the image of the unit cube of parameters $(a,b,c)$ under the linear map $a+b\\omega+c\\omega^2$.",
+      "A linear image of a convex hull is the convex hull of the images of its vertices. The eight cube vertices map to $0,1,\\omega,\\omega^2,1+\\omega,1+\\omega^2,\\omega+\\omega^2,0$.",
+      "Using the sum relation, the six nonzero images are $\\pm1,\\pm\\omega,\\pm\\omega^2$. They are the vertices of a regular hexagon of side length 1; 0 is inside it.",
+      "Dividing the hexagon into six equilateral triangles gives area $6(\\sqrt3/4)=3\\sqrt3/2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Complex plane",
+      "Convex hulls",
+      "Regular hexagons"
+    ],
+    "commonMistakes": [
+      "Different parameter triples can map to the same point; the requested area is that of the image region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The dependence among the three complex directions changes the image from a parallelepiped into a hexagon.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2019-p25",
+    "problemId": "amc12b-2019-p25",
+    "finalAnswer": "$\\boxed{12+10\\sqrt3}$ (choice C)",
+    "shortExplanation": "The centroid condition forces an equilateral triangle along one diagonal, leaving a one-angle optimization.",
+    "detailedSteps": [
+      "Let the three given centroids be $U=(A+B+C)/3$, $V=(B+C+D)/3$, and $W=(A+C+D)/3$, using vector coordinates. Their side lengths are $AD/3$, $AB/3$, and $BD/3$. Thus their equilateral condition is exactly $AD=AB=BD$. Triangle ABD is equilateral.",
+      "Let $\\theta=\\angle BCD$, with $0<\\theta<\\pi$. The cosine rule gives $BD^2=2^2+6^2-2\\cdot2\\cdot6\\cos\\theta=40-24\\cos\\theta$. The area of triangle BCD is $6\\sin\\theta$.",
+      "Convexity places A and C on opposite sides of diagonal BD, so the quadrilateral area is the sum of the two triangle areas: $\\frac{\\sqrt3}{4}(40-24\\cos\\theta)+6\\sin\\theta=10\\sqrt3+6(\\sin\\theta-\\sqrt3\\cos\\theta)$.",
+      "The expression in parentheses is $2\\sin(\\theta-\\pi/3)$, at most 2. Equality occurs at $\\theta=5\\pi/6$. This angle is attainable with sides BC=2 and CD=6; erecting the equilateral triangle ABD on the opposite side of BD gives a convex quadrilateral, since the other two angles of BCD sum to $\\pi/6$ and remain convex after adding $\\pi/3$ at B and D.",
+      "The maximum area is therefore $12+10\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Centroids",
+      "Trigonometric optimization",
+      "Convexity"
+    ],
+    "commonMistakes": [
+      "An upper bound must be accompanied by a configuration achieving it.",
+      "The equal centroid distances correspond to sides of triangle ABD, not triangle BCD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting centroid vectors exposes an equilateral triangle before optimizing the remaining angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

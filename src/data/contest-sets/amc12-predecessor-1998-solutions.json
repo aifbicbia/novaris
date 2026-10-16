@@ -1,0 +1,634 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1998-p1",
+    "problemId": "amc12-predecessor-1998-p1",
+    "finalAnswer": "$\\boxed{E}$ (choice E)",
+    "shortExplanation": "The only complete placement has $E,D,A$ in the upper row and $B,C$ in the lower row, so $E$ occupies position I.",
+    "detailedSteps": [
+      "Because rotations and reflections are forbidden, a right label must equal the left label of the next rectangle. The actual labels give the only three-rectangle chain $E\\to D\\to A$. The separate chain $B\\to C$ has only two rectangles.",
+      "The upper row must therefore be $E,D,A$. The bottom label of $E$ matches the top of $B$, and the bottom of $D$ matches the top of $C$; their horizontal shared labels match as well.",
+      "Thus this placement satisfies every coincident side and is unique. Position I contains $E$."
+    ],
+    "keyIdeas": [
+      "Follow the fixed left-to-right matching chain"
+    ],
+    "commonMistakes": [
+      "Rotating a rectangle to create a match even though its orientation is fixed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The long row is forced before the vertical matches are checked.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p2",
+    "problemId": "amc12-predecessor-1998-p2",
+    "finalAnswer": "$\\boxed{17}$ (choice E)",
+    "shortExplanation": "The maximum integral quotient is $17/1$, with numerator sum seventeen.",
+    "detailedSteps": [
+      "Two distinct nonnegative digits have sum at least one. Two distinct digits have sum at most $9+8=17$, so every possible quotient is at most seventeen.",
+      "The four distinct digits $8,9,0,1$ attain $17/1=17$, which is an integer. To attain this bound, the numerator must be seventeen and the denominator one. Hence $A+B=17$."
+    ],
+    "keyIdeas": [
+      "Minimize the denominator while maximizing the numerator"
+    ],
+    "commonMistakes": [
+      "Reusing a digit in the numerator and denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A universal bound and a valid extremal assignment establish the maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p3",
+    "problemId": "amc12-predecessor-1998-p3",
+    "finalAnswer": "$\\boxed{17}$ (choice D)",
+    "shortExplanation": "The digits are $a=6,b=9,c=2$, giving sum seventeen.",
+    "detailedSteps": [
+      "The units column must borrow, since the final units digit is three and the upper digit is two. Thus $12-b=3$, so $b=9$.",
+      "The tens column has already lost one. Since $a-1-8$ cannot equal seven for a decimal digit, it borrows again: $a-1+10-8=7$, yielding $a=6$.",
+      "The hundreds column is then $7-1-4=2$, giving $c=2$. Indeed, $762-489=273$, and $6+9+2=17$."
+    ],
+    "keyIdeas": [
+      "Track both subtraction borrows"
+    ],
+    "commonMistakes": [
+      "Forgetting the units borrow when evaluating the tens column."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each borrow changes the next column as well as the current one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p4",
+    "problemId": "amc12-predecessor-1998-p4",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "shortExplanation": "Each inner bracket equals one, and the outer bracket equals two.",
+    "detailedSteps": [
+      "The three inner values are $(60+30)/90=1$, $(2+1)/3=1$, and $(10+5)/15=1$.",
+      "The outer operation is therefore $[1,1,1]=(1+1)/1=2$. Its denominator is nonzero, as required."
+    ],
+    "keyIdeas": [
+      "Evaluate the three inner operations first"
+    ],
+    "commonMistakes": [
+      "Treating the defined bracket as ordinary grouping and skipping its division."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested custom notation uses the same definition at each level.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p5",
+    "problemId": "amc12-predecessor-1998-p5",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The remaining coefficient is $8-4-2+1=3$.",
+    "detailedSteps": [
+      "Factor $2^{1995}$ from the four terms. The coefficients are $2^3, -2^2, -2^1, 1$.",
+      "The left side becomes $2^{1995}(8-4-2+1)=3\\cdot2^{1995}$. Since this power is nonzero, $k=3$."
+    ],
+    "keyIdeas": [
+      "Factor the smallest common power of two"
+    ],
+    "commonMistakes": [
+      "Losing one of the minus signs after factoring."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common factor avoids expanding any huge decimal integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p6",
+    "problemId": "amc12-predecessor-1998-p6",
+    "finalAnswer": "$\\boxed{17}$ (choice C)",
+    "shortExplanation": "The closest factor pair is $37\\cdot54$, whose difference is seventeen.",
+    "detailedSteps": [
+      "For a positive factor pair $a\\le b$ with product $1998$, increasing $a$ toward $\\sqrt{1998}$ decreases $b-a=1998/a-a$. Thus the smaller factor should be the largest divisor at most the square root.",
+      "The factorization is $1998=2\\cdot3^3\\cdot37$, and $\\sqrt{1998}$ lies between forty-four and forty-five. Divisors without a factor thirty-seven are divisors of fifty-four, with largest eligible one twenty-seven. A divisor containing thirty-seven can only be thirty-seven below the square root.",
+      "The largest eligible divisor is therefore thirty-seven, giving its partner fifty-four and difference $54-37=17$."
+    ],
+    "keyIdeas": [
+      "Find the largest divisor below the square root"
+    ],
+    "commonMistakes": [
+      "Selecting two nearby numbers without verifying that their product is the specified integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The closest factor pair straddles the square root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p7",
+    "problemId": "amc12-predecessor-1998-p7",
+    "finalAnswer": "$\\boxed{N^{13/27}}$ (choice D)",
+    "shortExplanation": "The exponents progress through $1/3,4/9,13/27$.",
+    "detailedSteps": [
+      "The innermost cube root is $N^{1/3}$. Multiplying by its adjacent $N$ and taking a cube root gives $(N^{1+1/3})^{1/3}=N^{4/9}$.",
+      "The outermost level then gives $(N\\cdot N^{4/9})^{1/3}=N^{(1+4/9)/3}=N^{13/27}$. Positivity makes these exponent rules valid for the actual real roots."
+    ],
+    "keyIdeas": [
+      "Combine the exponents from the innermost root outward"
+    ],
+    "commonMistakes": [
+      "Dividing the exponent by three without first adding the adjacent factor’s exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each new level multiplies by the base before taking the root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p8",
+    "problemId": "amc12-predecessor-1998-p8",
+    "finalAnswer": "$\\boxed{\\frac56}$ (choice D)",
+    "shortExplanation": "Each trapezoid has bases $x,1/2$ and height $1/2$, so equal area gives $x=5/6$.",
+    "detailedSteps": [
+      "Use the actual MAA-published problem diagram linked here. Each right-hand trapezoid has one parallel side of length $x$ on a square edge and one of length $1/2$ from the center to the right-side midpoint. Their separation is $1/2$.",
+      "The three regions have equal areas totaling one, so each trapezoid has area $1/3$. Its area equation is $\\tfrac12(x+\\tfrac12)\\cdot\\tfrac12=1/3$.",
+      "Solving gives $x+1/2=4/3$ and $x=5/6$. The remaining pentagon consequently also has area $1/3$.",
+      "The modern LIVE redraw does not preserve this partition; it incorrectly connects square corners. The solution uses the actual publisher-book figure, and the source link points to that correct page."
+    ],
+    "keyIdeas": [
+      "Use the correct publisher diagram and the trapezoid area"
+    ],
+    "commonMistakes": [
+      "Measuring or modeling the defective modern redraw instead of the actual trapezoid partition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original diagram comparison is essential to the stated partition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p9",
+    "problemId": "amc12-predecessor-1998-p9",
+    "finalAnswer": "$\\boxed{33}$ (choice D)",
+    "shortExplanation": "The mean is $0.2(60)+0.1(0)+0.35(20)+0.35(40)=33$ minutes.",
+    "detailedSteps": [
+      "The first two groups occupy twenty percent and ten percent, leaving seventy percent. Its two equal parts therefore each occupy thirty-five percent.",
+      "The corresponding listening times are sixty, zero, twenty and forty minutes. Their weighted mean is $12+0+7+14=33$ minutes."
+    ],
+    "keyIdeas": [
+      "Weight each listening time by its audience share"
+    ],
+    "commonMistakes": [
+      "Using half the entire audience for each of the final groups."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The word remainder changes the base for the last two percentages.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p10",
+    "problemId": "amc12-predecessor-1998-p10",
+    "finalAnswer": "$\\boxed{49}$ (choice A)",
+    "shortExplanation": "The rectangle dimensions sum to seven, which is the large square’s side; its area is forty-nine.",
+    "detailedSteps": [
+      "Write a congruent rectangle’s side lengths as $a,b$. Its perimeter gives $2(a+b)=14$, so $a+b=7$.",
+      "In the actual pinwheel arrangement, each outside square side consists of one length-$a$ edge and one length-$b$ edge. The large side is therefore seven, giving area $7^2=49$.",
+      "As an area check, the four rectangles and the inner square total $4ab+(b-a)^2=(a+b)^2=49$."
+    ],
+    "keyIdeas": [
+      "Relate the outside square side to both rectangle dimensions"
+    ],
+    "commonMistakes": [
+      "Taking a rectangle’s perimeter as the outside square’s side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The arrangement fixes the outer size without determining each rectangle dimension.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p11",
+    "problemId": "amc12-predecessor-1998-p11",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "The four side diameters give four circles, while the two diagonals give one shared circle.",
+    "detailedSteps": [
+      "There are six unordered pairs of rectangle vertices. The four side pairs have different midpoints, so their diameter circles are distinct.",
+      "The two diagonal pairs have the same midpoint and the same length. They therefore define the same circle, distinct from all four side circles.",
+      "The number of different circles is $4+1=5$. The reasoning also holds if the rectangle is a square."
+    ],
+    "keyIdeas": [
+      "Identify when two endpoint pairs define the same circle"
+    ],
+    "commonMistakes": [
+      "Counting the two rectangle diagonals as different circles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A diameter circle is determined by its midpoint and radius, not by a unique named diameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p12",
+    "problemId": "amc12-predecessor-1998-p12",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The number is a positive integer power of seven, so it has one distinct prime factor.",
+    "detailedSteps": [
+      "Undo the outer logarithm first: $\\log_3(\\log_5(\\log_7N))=2^{11}=2048$. Then $\\log_5(\\log_7N)=3^{2048}$.",
+      "The next steps give $\\log_7N=5^{3^{2048}}$ and $N=7^{5^{3^{2048}}}$. Its exponent is a positive integer.",
+      "Since seven is prime, the only distinct prime divisor of $N$ is seven. Thus the count is one."
+    ],
+    "keyIdeas": [
+      "Reverse the logarithm tower and inspect only its outer base"
+    ],
+    "commonMistakes": [
+      "Counting the bases of all four logarithms as prime factors of the final number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The enormous exponent does not change the set of prime divisors of a prime power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p13",
+    "problemId": "amc12-predecessor-1998-p13",
+    "finalAnswer": "$\\boxed{18}$ (choice E)",
+    "shortExplanation": "The possible sums are $14,15,16,17$, so eighteen cannot occur.",
+    "detailedSteps": [
+      "Sort the four faces. Their product is $144=2^4 3^2$, so no face can be five. If a face is one, the remaining triple with product144 must be $4,6,6$.",
+      "If the smallest face is two, the remaining sorted triple has product72. Its smallest face can be two or three; these give $2,6,6$ and $3,4,6$. A smallest remaining face of four would require two faces at least four with product eighteen, which is impossible.",
+      "If the smallest face is three, all faces are at least three. The only sorted possibility is $3,3,4,4$; if the second face were at least four, the product of the last three would exceed forty-eight. A smallest face of four already gives product at least $256$.",
+      "The complete sorted patterns are therefore $(1,4,6,6),(2,2,6,6),(2,3,4,6),(3,3,4,4)$, whose sums are seventeen, sixteen, fifteen and fourteen. Eighteen is the only listed unattainable sum."
+    ],
+    "keyIdeas": [
+      "Classify the four dice faces with the required product"
+    ],
+    "commonMistakes": [
+      "Testing some patterns without proving that all product-compatible cases have been considered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bounded faces make a complete product classification short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p14",
+    "problemId": "amc12-predecessor-1998-p14",
+    "finalAnswer": "$\\boxed{\\text{only }a}$ (choice A)",
+    "shortExplanation": "The coefficient signs are $a>0,b<0,c<0$, so only $a$ must be positive.",
+    "detailedSteps": [
+      "With vertex height negative five, a downward-opening parabola would stay below the axis and have no intercepts. Thus $a>0$.",
+      "The vertex’s horizontal coordinate gives $-b/(2a)=4$, hence $b=-8a<0$. The two roots have opposite signs, so their product $c/a$ is negative; therefore $c<0$.",
+      "These conditions are consistent: writing $y=a(x-4)^2-5$ gives $c=16a-5<0$ exactly when $0<a<5/16$. Only the first coefficient is positive."
+    ],
+    "keyIdeas": [
+      "Use the opening direction and the product of the roots"
+    ],
+    "commonMistakes": [
+      "Using the vertex coordinate to determine the sign of the linear coefficient without tracking the leading coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both the vertex and the sign of the root product supply necessary information.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p15",
+    "problemId": "amc12-predecessor-1998-p15",
+    "finalAnswer": "$\\boxed{\\sqrt6}$ (choice C)",
+    "shortExplanation": "The hexagon area is six unit-side equilateral areas, so the triangle side must be $\\sqrt6$ times the hexagon side.",
+    "detailedSteps": [
+      "If the hexagon side is $h$, its six center triangles are equilateral with side $h$. Its area is $6(\\sqrt3/4)h^2$.",
+      "If the triangle side is $t$, its area is $(\\sqrt3/4)t^2$. Equality gives $t^2=6h^2$, and positive lengths yield $t/h=\\sqrt6$."
+    ],
+    "keyIdeas": [
+      "Compare the numbers of equal-side equilateral triangles"
+    ],
+    "commonMistakes": [
+      "Taking an area factor of six as a side-length factor of six."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal areas compare squared side lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p16",
+    "problemId": "amc12-predecessor-1998-p16",
+    "finalAnswer": "$\\boxed{\\frac ab}$ (choice B)",
+    "shortExplanation": "The shaded and unshaded areas simplify to $\\pi a(a+b)/4$ and $\\pi b(a+b)/4$.",
+    "detailedSteps": [
+      "The big circle has diameter $a+b$. Its upper half has area $\\pi(a+b)^2/8$. The shaded region removes the upper diameter-$b$ semicircle and adds the lower diameter-$a$ semicircle.",
+      "Thus the shaded area is $\\pi((a+b)^2-b^2+a^2)/8=\\pi a(a+b)/4$. Its complementary area is $\\pi((a+b)^2+b^2-a^2)/8=\\pi b(a+b)/4$.",
+      "The ratio cancels the common positive factor and equals $a/b$. These two areas also sum to the full circle area."
+    ],
+    "keyIdeas": [
+      "Add and subtract the two actual semicircle areas"
+    ],
+    "commonMistakes": [
+      "Comparing just the two smaller semicircles and ignoring the remaining large-circle portion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shaded boundary changes which smaller semicircle is added or removed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p17",
+    "problemId": "amc12-predecessor-1998-p17",
+    "finalAnswer": "$\\boxed{2000}$ (choice E)",
+    "shortExplanation": "The rule immediately gives $f(x)=x+2$, so $f(1998)=2000$.",
+    "detailedSteps": [
+      "The functional relation holds for every pair of real arguments. Setting $y=0$ gives $f(x)=x+f(0)=x+2$.",
+      "This function satisfies the entire original relation, since $f(x+y)=x+y+2=x+f(y)$. At the requested input it gives $1998+2=2000$."
+    ],
+    "keyIdeas": [
+      "Set the free second argument equal to zero"
+    ],
+    "commonMistakes": [
+      "Treating the functional relation as though it applied only to positive integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An unrestricted argument often lets one substitution determine the entire function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p18",
+    "problemId": "amc12-predecessor-1998-p18",
+    "finalAnswer": "$\\boxed{A-M+C=0}$ (choice A)",
+    "shortExplanation": "The volume ratio is $A:M:C=1:3:2$, giving $A-M+C=0$.",
+    "detailedSteps": [
+      "Let the common radius be $r>0$. The cone and cylinder both have height $2r$. Their volumes are $A=\\tfrac23\\pi r^3$ and $M=2\\pi r^3$, while the sphere volume is $C=\\tfrac43\\pi r^3$.",
+      "Dividing by $\\tfrac23\\pi r^3$ gives the ratio $1:3:2$. Therefore $A-M+C=0$; substituting these same values into the other four proposed identities shows that none holds."
+    ],
+    "keyIdeas": [
+      "Express all three volumes in the same radius factor"
+    ],
+    "commonMistakes": [
+      "Using the sphere radius rather than its diameter as the common height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common volume factor turns the comparison into small integer ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p19",
+    "problemId": "amc12-predecessor-1998-p19",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "The third vertex must be at height two or negative two, giving four distinct points.",
+    "detailedSteps": [
+      "The fixed base has length ten on the horizontal axis. Triangle area ten requires $\\tfrac12\\cdot10\\cdot|y|=10$, hence $y=\\pm2$.",
+      "The third vertex also lies on $x^2+y^2=25$. At either allowed height, $x^2=21$, so $x=\\pm\\sqrt{21}$.",
+      "The four combinations give four distinct nondegenerate triangles. Periodically repeating the angle does not create a new third vertex."
+    ],
+    "keyIdeas": [
+      "Intersect the circle with the two required height lines"
+    ],
+    "commonMistakes": [
+      "Counting infinitely many angles rather than distinct geometric triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absolute height creates two horizontal lines, each meeting the circle twice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p20",
+    "problemId": "amc12-predecessor-1998-p20",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "After the three statements, only $(1,4,8)$ and $(2,4,7)$ remain; both have middle value four.",
+    "detailedSteps": [
+      "The complete increasing positive triples summing to thirteen are $(1,2,10),(1,3,9),(1,4,8),(1,5,7),(2,3,8),(2,4,7),(2,5,6),(3,4,6)$.",
+      "Casey’s left value would determine the whole triple only if it were three. The first statement removes $(3,4,6)$.",
+      "Given that removal, Tracy would know the whole triple for right values ten, nine or six. Her uncertainty leaves $(1,4,8),(1,5,7),(2,3,8),(2,4,7)$.",
+      "Stacy would know the triple if her middle value were five or three. Her uncertainty therefore leaves $(1,4,8)$ and $(2,4,7)$, both with middle value four."
+    ],
+    "keyIdeas": [
+      "Update the possible triples after each public statement"
+    ],
+    "commonMistakes": [
+      "Testing each speaker against the initial possibilities instead of the possibilities left by earlier statements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perfect reasoning and hearing earlier statements make each update public.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p21",
+    "problemId": "amc12-predecessor-1998-p21",
+    "finalAnswer": "$\\boxed{\\frac{d^2}{h}}$ (choice C)",
+    "shortExplanation": "The unchanged speed ratio leaves Windy $d^2/h$ meters short when Sunny finishes again.",
+    "detailedSteps": [
+      "In the first race, while Sunny covers $h$, Windy covers $h-d$. Their speed ratio is consequently $(h-d)/h$.",
+      "In the second race Sunny must cover $h+d$ from the handicap starting point. In that same time Windy covers $(h+d)(h-d)/h=h-d^2/h$.",
+      "Sunny is at the finish position $h$, so the second lead is $h-(h-d^2/h)=d^2/h$. The physical race has $0<d<h$, making this lead positive."
+    ],
+    "keyIdeas": [
+      "Preserve the first race’s speed ratio in the longer second run"
+    ],
+    "commonMistakes": [
+      "Assuming a distance handicap cancels a lead produced by a speed ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second race adds distance to the faster runner’s route as well as time to the slower runner.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p22",
+    "problemId": "amc12-predecessor-1998-p22",
+    "finalAnswer": "$\\boxed{1}$ (choice C)",
+    "shortExplanation": "The sum is $\\log_{100!}(2\\cdot3\\cdots100)=1$.",
+    "detailedSteps": [
+      "The reciprocal identity gives $1/\\log_j(100!)=\\log_{100!}j$. Every displayed base is greater than one, so all terms are defined.",
+      "Adding from two through one hundred combines the logarithms into $\\log_{100!}(2\\cdot3\\cdots100)=\\log_{100!}(100!)=1$."
+    ],
+    "keyIdeas": [
+      "Change the reciprocal logarithms to one common base"
+    ],
+    "commonMistakes": [
+      "Adding the logarithm bases directly rather than multiplying their arguments after changing base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common base exposes the product of the complete index range.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p23",
+    "problemId": "amc12-predecessor-1998-p23",
+    "finalAnswer": "$\\boxed{140}$ (choice D)",
+    "shortExplanation": "The second radius ranges from two to twelve, making $k$ range from $-36$ to $104$ and giving width $140$.",
+    "detailedSteps": [
+      "Complete the squares. The first circle has center $(6,3)$ and radius seven; the second has center $(2,6)$ and squared radius $k+40$. Their center distance is five.",
+      "Two circles meet, including tangency, exactly when their radii satisfy $|7-r|\\le5\\le7+r$. With $r\\ge0$, this reduces to $2\\le r\\le12$.",
+      "Thus $4\\le k+40\\le144$, or $-36\\le k\\le104$. The requested interval width is $104-(-36)=140$. Its endpoints are the two tangency cases."
+    ],
+    "keyIdeas": [
+      "Use the complete radius interval for two intersecting circles"
+    ],
+    "commonMistakes": [
+      "Ignoring internal tangency or removing the tangent endpoints from the stated inclusive interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source asks for an interval of a radius square, rather than of the radius itself.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p24",
+    "problemId": "amc12-predecessor-1998-p24",
+    "finalAnswer": "$\\boxed{19990}$ (choice C)",
+    "shortExplanation": "The two families have ten thousand each and overlap in ten all-equal strings, giving $19990$.",
+    "detailedSteps": [
+      "If the prefix repeats in positions four through six, choose its three digits and the seventh digit freely: $10^4$ strings. If it repeats in positions five through seven, choose its three digits and the fourth digit freely: another $10^4$.",
+      "If both conditions hold, the overlapping equalities force all seven digits to be equal. There are ten such strings, including the all-zero string because the source permits zero in every position.",
+      "Inclusion-exclusion gives $10^4+10^4-10=19990$."
+    ],
+    "keyIdeas": [
+      "Subtract the overlap of the two repetition patterns"
+    ],
+    "commonMistakes": [
+      "Excluding a leading zero even though all ten digits are explicitly permitted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The one-position shift between two repeated triples forces a single common digit in their intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p25",
+    "problemId": "amc12-predecessor-1998-p25",
+    "finalAnswer": "$\\boxed{6.8}$ (choice B)",
+    "shortExplanation": "The fold sends $(7,3)$ to $(3/5,31/5)$, whose coordinate sum is $6.8$.",
+    "detailedSteps": [
+      "The matched points have midpoint $(2,1)$ and connecting direction $(4,-2)$. Their perpendicular-bisector fold line is $2x-y=3$.",
+      "For a point $(x,y)$, reflection in this line subtracts $2(2x-y-3)/5$ times the normal vector $(2,-1)$.",
+      "At $(7,3)$ the signed numerator is eight, so the image is $(7,3)-(16/5)(2,-1)=(3/5,31/5)$. Its coordinate sum is $34/5=6.8$. The same reflection maps the original matched pair correctly."
+    ],
+    "keyIdeas": [
+      "Reflect in the perpendicular bisector of the matched pair"
+    ],
+    "commonMistakes": [
+      "Reflecting in the line joining the matched points rather than its perpendicular bisector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single nontrivial matched pair fixes the crease uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p26",
+    "problemId": "amc12-predecessor-1998-p26",
+    "finalAnswer": "$\\boxed{62}$ (choice B)",
+    "shortExplanation": "The diameter $AC$ equals $BD/\\sin120^\\circ=62$.",
+    "detailedSteps": [
+      "The two right angles at $B,D$ make all four vertices cyclic, with $AC$ as the common circle diameter. In triangle $ABD$, the cosine rule gives $BD^2=13^2+46^2-2(13)(46)\\cos120^\\circ=2883=3\\cdot31^2$.",
+      "The extended sine rule in that triangle gives its circumcircle diameter as $BD/\\sin120^\\circ=(31\\sqrt3)/(\\sqrt3/2)=62$. This is the same diameter $AC$.",
+      "The actual positive-side and right-angle configuration is realizable; the companion coordinate construction verifies both original right angles and the requested diameter."
+    ],
+    "keyIdeas": [
+      "Use the right-angle circle and its diameter"
+    ],
+    "commonMistakes": [
+      "Applying Pythagoras to the triangle whose included angle is $120^\\circ$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right angles identify the diameter before the cosine-rule calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p27",
+    "problemId": "amc12-predecessor-1998-p27",
+    "finalAnswer": "$\\boxed{1056}$ (choice E)",
+    "shortExplanation": "The total is $20\\cdot72-2\\cdot24\\cdot8=1056$ square units.",
+    "detailedSteps": [
+      "After the first removal, twenty length-three blocks remain. At the block scale their twenty occupied cells have twenty-four adjacent pairs: eight corner cells each have three edge-center neighbors, counting every pair once.",
+      "A length-three block subjected to the second removal contains twenty unit cells. They likewise have twenty-four adjacent pairs, so its surface area in isolation is $20\\cdot6-2\\cdot24=72$.",
+      "On each outside face of such a block, eight of the original nine unit faces remain. When two remaining blocks share a face, those eight matching faces are internal, counted once from each block, and must be removed from the sum.",
+      "The full final surface area is therefore $20(72)-2(24)(8)=1056$. The correct MAA-published diagram linked here shows the removed blocks; an independent full enumeration of $400$ cells verifies every exposed unit face."
+    ],
+    "keyIdeas": [
+      "Count block surface areas and remove shared interfaces"
+    ],
+    "commonMistakes": [
+      "Adding the individual block surfaces without removing their shared internal faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two removal scales affect both the individual block surfaces and the shared interfaces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p28",
+    "problemId": "amc12-predecessor-1998-p28",
+    "finalAnswer": "$\\boxed{14}$ (choice B)",
+    "shortExplanation": "The ratio $CD/BD$ is $5/9$, giving numerator-plus-denominator fourteen.",
+    "detailedSteps": [
+      "Put $\\theta=\\angle DAB$, so $\\angle CAD=2\\theta$ and $\\angle CAB=3\\theta<90^\\circ$. The given right-triangle ratio gives $\\cos2\\theta=AC/AD=2/3$.",
+      "The positive half-angle formula gives $\\tan\\theta=\\sqrt{(1-2/3)/(1+2/3)}=1/\\sqrt5$. Hence $\\tan2\\theta=\\sqrt5/2$, and $\\tan3\\theta=(3t-t^3)/(1-3t^2)=7/\\sqrt5$, where $t=1/\\sqrt5$.",
+      "Using the common adjacent leg $AC$, we have $CD=AC\\tan2\\theta$ and $CB=AC\\tan3\\theta$. Therefore $CD/BD=(\\sqrt5/2)/(7/\\sqrt5-\\sqrt5/2)=5/9$.",
+      "Both lengths are positive with $0<CD<CB$ and $CB>CA$, so the bounded-side condition holds. The reduced fraction gives $m+n=5+9=14$."
+    ],
+    "keyIdeas": [
+      "Use the half-angle and triple-angle tangent identities"
+    ],
+    "commonMistakes": [
+      "Using the whole angle at A for the smaller right triangle or subtracting lengths before putting them on the same scale."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle ordering fixes the positive branches of the half-angle formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p29",
+    "problemId": "amc12-predecessor-1998-p29",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "The largest area is exactly five; a universal lattice covering bound and a square with three interior points establish it.",
+    "detailedSteps": [
+      "First prove an upper bound. Use grid symmetries so one square side direction is $(c,s)$ with $c=\\cos\\theta,s=\\sin\\theta$, $0\\le\\theta\\le45^\\circ$. Translate a nearest lattice point to the origin, then rotate by a multiple of ninety degrees so the square center $(x,y)$ has $0\\le x,y\\le1/2$. Such quarter-turns preserve the two unoriented square directions.",
+      "Put $U=cx+sy$, $V=cy-sx$ and $r=c+s/2$. Then $0\\le U\\le(c+s)/2$ and $-s/2\\le V\\le c/2$. The two signed coordinates relative to the center, along the square directions, are $cp+sq-U$ and $-sp+cq-V$ for a lattice point $(p,q)$.",
+      "The points $(0,0),(1,0),(0,1)$ lie in the closed square of half-width $r$: their projection pairs are $(-U,-V),(c-U,-s-V),(s-U,c-V)$. The displayed bounds and $c\\ge s$ bound each absolute coordinate by $r$; in particular $s+c/2\\le c+s/2=r$.",
+      "If $U\\ge s/2$, add $(1,1)$. Its first projection is $c+s-U\\le r$, and its second $c-s-V$ has absolute value at most $c$. If $U\\le s/2$, instead add $(-1,0)$: its first absolute projection is $c+U\\le r$, and its second is $s-V$, between $s-c/2$ and $3s/2$, also of absolute value at most $r$. Thus this closed square always contains four distinct lattice points.",
+      "Any concentric square with side greater than $2r=2c+s$ contains all four strictly in its interior. By Cauchy’s inequality, $(2c+s)^2\\le(2^2+1^2)(c^2+s^2)=5$. Consequently any square of area greater than five has at least four interior lattice points.",
+      "Equality is attainable: take the square defined by $-2\\le2x+y\\le3$ and $-2\\le-x+2y\\le3$. Its perpendicular normals have length $\\sqrt5$, and each pair of lines has separation $5/\\sqrt5=\\sqrt5$, so its area is five.",
+      "Its strict inequalities contain exactly $(0,0),(0,1),(1,0)$. To see completeness, invert the two linear forms: with each strictly between $-2$ and three, the coordinates satisfy $-6/5<x<9/5$ and $-7/5<y<8/5$. Testing the three possible integers for each coordinate leaves precisely those three points. Boundary lattice points are permitted because the source counts only interior points."
+    ],
+    "keyIdeas": [
+      "Prove a four-point covering bound and construct equality"
+    ],
+    "commonMistakes": [
+      "Restricting the square to an axis-aligned position, or treating numerical sampling as a proof of the global maximum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The maximum requires a global argument over every rotation and translation, and boundary points affect attainment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1998-p30",
+    "problemId": "amc12-predecessor-1998-p30",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "The first qualifying product begins at $78117$ and its rightmost nonzero digit is nine.",
+    "detailedSteps": [
+      "The factorial quotient is the product of ten consecutive integers $n,n+1,\\ldots,n+9$. Its rightmost nonzero digit is odd exactly when its total exponent of two is no greater than its exponent of five, since removing trailing zeros cancels matched factors of two and five.",
+      "Every such block has five multiples of two, at least two multiples of four and at least one multiple of eight. Thus its exponent of two is at least $5+2+1=8$. It has exactly two multiples of five; their quotients by five are consecutive, so at most one contributes extra factors of five.",
+      "If every member is below $5^7=78125$, neither multiple can have more than six factors of five. The total exponent of five is then at most seven, so the required digit is still even. Hence the first possible block starts no earlier than $78125-9=78116$.",
+      "For the block starting at $78116$, the five even members have two-adic exponents $2,1,3,1,2$, totaling nine, while the five-adic exponent is eight. It fails. For the next block starting at $78117$, the even exponents are $1,3,1,2,1$, totaling eight, and the five-adic exponent remains eight.",
+      "This second block therefore qualifies first. Dividing its exact ten-factor product by $10^8$ gives remainder nine modulo ten, so its rightmost nonzero digit is nine. The companion enumeration independently checks every earlier starting value."
+    ],
+    "keyIdeas": [
+      "Compare the exponents of two and five before removing zeros"
+    ],
+    "commonMistakes": [
+      "Looking for the first product ending in an odd digit before removing all trailing zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A valuation bound proves minimality without depending on an unexplained search result.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

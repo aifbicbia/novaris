@@ -1,0 +1,537 @@
+[
+  {
+    "id": "solution-ajhsme-1996-p1",
+    "problemId": "ajhsme-1996-p1",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The qualifying factors are $4,12,36$, so there are three.",
+    "detailedSteps": [
+      "A factor divisible by $4$ is $4k$. The condition $4k\\mid36$ is equivalent to $k\\mid9$.",
+      "The positive divisors of $9$ are $1,3,9$, giving $4,12,36$."
+    ],
+    "keyIdeas": [
+      "Divisibility",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "A multiple of $4$ must also divide $36$; for example, $8$ fails the second requirement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Enumerate the divisors of the smaller quotient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p2",
+    "problemId": "ajhsme-1996-p2",
+    "finalAnswer": "$\\boxed{\\text{Kareem}}$ (choice C)",
+    "shortExplanation": "The three final values are $20,21,22$; Kareem obtains the largest.",
+    "detailedSteps": [
+      "Jose obtains $2(10-1)+2=20$.",
+      "Thuy obtains $2(10)-1+2=21$, while Kareem obtains $2(10-1+2)=22$.",
+      "The maximum is Kareem's $22$."
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Apply each instruction to the current value before performing the next operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Following the sequence of operations is the entire task.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p3",
+    "problemId": "ajhsme-1996-p3",
+    "finalAnswer": "$\\boxed{130}$ (choice A)",
+    "shortExplanation": "The corner entries are $1,8,57,64$, with sum $130$.",
+    "detailedSteps": [
+      "The top row begins at $1$ and ends at $8$. Seven full rows precede the bottom row, whose first number is $7\\cdot8+1=57$.",
+      "The four corners sum to $1+8+57+64=130$."
+    ],
+    "keyIdeas": [
+      "Array indexing",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The bottom-left value is $57$, not the final value in the preceding row."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The row length fixes the corner indices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p4",
+    "problemId": "ajhsme-1996-p4",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice B)",
+    "shortExplanation": "Both sums contain the same $17$-term integer sum, multiplied by $2$ and $3$.",
+    "detailedSteps": [
+      "The numerator is $2(1+2+\\cdots+17)$ and the denominator is $3(1+2+\\cdots+17)$.",
+      "Cancel the identical positive sum to obtain $2/3$."
+    ],
+    "keyIdeas": [
+      "Common factors in sums",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Check that both sequences have $17$ terms before canceling their common sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancellation works after matching the term counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p5",
+    "problemId": "ajhsme-1996-p5",
+    "finalAnswer": "$\\boxed{P-Q}$ (choice A)",
+    "shortExplanation": "Since $P<Q$, their difference is negative; every other displayed expression is positive.",
+    "detailedSteps": [
+      "The diagram gives $P<Q<0<R<S<T$. Therefore $P-Q<0$ and $PQ>0$.",
+      "Also $(S/Q)P>0$ because both factors are negative, $R/(PQ)>0$, and $(S+T)/R>0$.",
+      "Only $P-Q$ is negative."
+    ],
+    "keyIdeas": [
+      "Signs on a number line",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Subtracting a negative number does not by itself determine a sign; compare the two values first."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use both ordering and multiplication sign rules.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p6",
+    "problemId": "ajhsme-1996-p6",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "The three smallest inputs suffice, and the smallest multiplier yields $3(5+7)=36$.",
+    "detailedSteps": [
+      "For positive inputs, increasing any input increases $c(a+b)$. Thus a minimum uses the three smallest numbers, $3,5,7$.",
+      "The three possible multipliers give $3(5+7)=36$, $5(3+7)=50$, and $7(3+5)=56$.",
+      "The least result is $36$."
+    ],
+    "keyIdeas": [
+      "Minimizing a positive product",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The smallest addends are not necessarily optimal when the multiplier changes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity limits the search to three inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p7",
+    "problemId": "ajhsme-1996-p7",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "Brent begins at $1/32$ of Gretel's count, and their ratio doubles each month, reaching $1$ after five months.",
+    "detailedSteps": [
+      "After $m$ months the counts are $4\\cdot4^m$ and $128\\cdot2^m$.",
+      "Equality is equivalent to $2^m=32=2^5$. Therefore $m=5$."
+    ],
+    "keyIdeas": [
+      "Exponential growth ratios",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Compare multiplicative growth over the same number of months, not the initial difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A ratio removes the common exponential factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p8",
+    "problemId": "ajhsme-1996-p8",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The two later segments can reduce the initial separation by at most $4+3$, leaving minimum distance $3$.",
+    "detailedSteps": [
+      "The triangle inequality along the path from $A$ to $D$ to $C$ to $B$ gives $10\\le AD+3+4$. Hence $AD\\ge3$.",
+      "The bound is attained by collinear points in the order $A,D,C,B$ at coordinates $0,3,6,10$. Thus the minimum is $3$."
+    ],
+    "keyIdeas": [
+      "Shortest endpoint distance",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "A lower bound needs an attainable arrangement; placing all segments in the same direction gives the maximum instead."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove the bound and exhibit equality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p9",
+    "problemId": "ajhsme-1996-p9",
+    "finalAnswer": "$\\boxed{250}$ (choice D)",
+    "shortExplanation": "The number is $2/5$, whose reciprocal is $5/2$; multiplying by $100$ gives $250$.",
+    "detailedSteps": [
+      "If $5x=2$, then $x=2/5$.",
+      "The requested value is $100/x=100(5/2)=250$."
+    ],
+    "keyIdeas": [
+      "Reciprocals",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Take the reciprocal before multiplying by $100$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reciprocals reverse numerator and denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p10",
+    "problemId": "ajhsme-1996-p10",
+    "finalAnswer": "$\\boxed{15}$ (choice D)",
+    "shortExplanation": "The added fuel fills half the tank, so the capacity is twice $7.5$, or $15$ gallons.",
+    "detailedSteps": [
+      "The filled fraction rises by $5/8-1/8=1/2$.",
+      "If the capacity is $c$, then $c/2=7.5$, yielding $c=15$."
+    ],
+    "keyIdeas": [
+      "Tank capacity from fractions",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The purchase price is irrelevant to the capacity calculation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the change in filled fraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p11",
+    "problemId": "ajhsme-1996-p11",
+    "finalAnswer": "$\\boxed{\\frac3x}$ (choice D)",
+    "shortExplanation": "The positive $x$ is much smaller than $1$, so $3/x$ exceeds all the other choices.",
+    "detailedSteps": [
+      "The decimal satisfies $0<x<1/10$. Therefore $3/x>30$.",
+      "Meanwhile $3+x<3.1$, $3-x<3$, $3x<0.3$, and $x/3<1/30$.",
+      "Thus $3/x$ is the largest expression."
+    ],
+    "keyIdeas": [
+      "Comparing expressions near zero",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "A tiny positive divisor makes a quotient large; a tiny multiplier makes a product small."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A simple numerical bound avoids writing a huge decimal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p12",
+    "problemId": "ajhsme-1996-p12",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The original total is $66$; the desired ten-number total is $61$, so remove $5$.",
+    "detailedSteps": [
+      "The sum from $1$ to $11$ is $11\\cdot12/2=66$.",
+      "Ten numbers averaging $6.1$ must sum to $61$. The removed value is $66-61=5$."
+    ],
+    "keyIdeas": [
+      "Changing a mean",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "After removing one number, the mean denominator is ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate the target mean into a target sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p13",
+    "problemId": "ajhsme-1996-p13",
+    "finalAnswer": "$\\boxed{2700}$ (choice E)",
+    "shortExplanation": "Three annual factors of $1.5$ change $800$ to $2700$.",
+    "detailedSteps": [
+      "Each year retains the previous count and adds half of it, multiplying by $3/2$.",
+      "The expected count is $800(3/2)^3=800\\cdot27/8=2700$."
+    ],
+    "keyIdeas": [
+      "Compound percentage growth",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The increase is based on the previous year, rather than always on the original $800$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "There are exactly three annual growth steps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p14",
+    "problemId": "ajhsme-1996-p14",
+    "finalAnswer": "$\\boxed{29}$ (choice B)",
+    "shortExplanation": "The shared digit is forced to be $6$, so the combined total is $23+12-6=29$.",
+    "detailedSteps": [
+      "The vertical triple has distinct digits summing to $23$. Since the largest triple is $7+8+9=24$, the only triple totaling $23$ is $6,8,9$.",
+      "The other three horizontal digits sum to at least $1+2+3=6$. The shared digit is therefore at most $12-6=6$, forcing it to be $6$.",
+      "The horizontal-only digits are $1,2,3$, and the total of all six digits is $23+12-6=29$."
+    ],
+    "keyIdeas": [
+      "Overlapping digit sums",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Adding the two displayed sums counts the shared square twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The overlap and distinct-digit constraints work together.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p15",
+    "problemId": "ajhsme-1996-p15",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "The factors have remainders $2,1,2,1$ modulo $5$, whose product is $4$.",
+    "detailedSteps": [
+      "Reduce each factor: $1492\\equiv2$, $1776\\equiv1$, $1812\\equiv2$, $1996\\equiv1\\pmod5$.",
+      "The product is congruent to $2\\cdot1\\cdot2\\cdot1=4\\pmod5$."
+    ],
+    "keyIdeas": [
+      "Modular multiplication",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The units digit alone is not the remainder modulo five unless it is itself less than five."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Small residues replace enormous multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p16",
+    "problemId": "ajhsme-1996-p16",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "Every block of four consecutive terms cancels, and there are exactly $499$ blocks.",
+    "detailedSteps": [
+      "A block beginning with $4k+1$ is $(4k+1)-(4k+2)-(4k+3)+(4k+4)=0$.",
+      "Since $1996=4\\cdot499$, all terms belong to complete zero-sum blocks. The total is $0$."
+    ],
+    "keyIdeas": [
+      "Periodic signed sums",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The signs repeat as plus, minus, minus, plus; they do not simply alternate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Group by the repeating sign pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p17",
+    "problemId": "ajhsme-1996-p17",
+    "finalAnswer": "$\\boxed{(-2,0)}$ (choice C)",
+    "shortExplanation": "The square has area $4$ and $PQ=2$, so the triangle needs horizontal altitude $4$, putting $T$ at $x=-2$.",
+    "detailedSteps": [
+      "The diagram places $O=(0,0)$, $P=(2,0)$, and $Q=(2,2)$. The square area is $4$.",
+      "Using $PQ$ as the triangle base, $4=\\tfrac12(2)\\cdot h$, so $h=4$.",
+      "The point $T$ lies on the x-axis to the left of the square. Its x-coordinate is $2-4=-2$, giving $(-2,0)$."
+    ],
+    "keyIdeas": [
+      "Coordinate areas",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The altitude is the horizontal distance to line $PQ$, not the distance from $T$ to the origin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram specifies which side of the square contains T.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p18",
+    "problemId": "ajhsme-1996-p18",
+    "finalAnswer": "$\\boxed{1920}$ (choice A)",
+    "shortExplanation": "The two salary factors multiply to $1.2\\cdot0.8=0.96$, leaving $1920$.",
+    "detailedSteps": [
+      "The raise gives $2000(1.2)=2400$ dollars.",
+      "The cut is taken from that new salary: $2400(0.8)=1920$ dollars."
+    ],
+    "keyIdeas": [
+      "Successive percentage changes",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The pay cut applies to $2400$, so the two equal percentages do not cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the raised salary as the next percentage base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p19",
+    "problemId": "ajhsme-1996-p19",
+    "finalAnswer": "$\\boxed{32\\%}$ (choice C)",
+    "shortExplanation": "Tennis is preferred by $440+1000=1440$ of the combined $4500$ students, or $32\\%$.",
+    "detailedSteps": [
+      "The counts from the two charts are $2000(0.22)=440$ and $2500(0.40)=1000$.",
+      "The combined fraction is $1440/(2000+2500)=1440/4500=0.32$."
+    ],
+    "keyIdeas": [
+      "Weighted group proportions",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Do not average $22\\%$ and $40\\%$ without weighting by school size."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combine counts before dividing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p20",
+    "problemId": "ajhsme-1996-p20",
+    "finalAnswer": "$\\boxed{-0.25}$ (choice A)",
+    "shortExplanation": "The display cycles through $5,-1/4,4/5$; the hundredth press is equivalent to the first.",
+    "detailedSteps": [
+      "Beginning at $5$, successive applications give $1/(1-5)=-1/4$, then $1/(1+1/4)=4/5$, then $1/(1-4/5)=5$.",
+      "The starting value has returned after three presses. Since $100\\equiv1\\pmod3$, the hundredth press displays $-1/4=-0.25$."
+    ],
+    "keyIdeas": [
+      "Iteration cycles",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The initial display is before any presses; it is not the result of press one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep track of the number of button presses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p21",
+    "problemId": "ajhsme-1996-p21",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "An even sum requires two of the four odd numbers and one of the two even numbers, giving $\\binom42\\cdot2=12$.",
+    "detailedSteps": [
+      "There are four odd entries and two even entries. Three numbers have even sum when the number of odd entries is zero or two.",
+      "Three even entries cannot be chosen, so choose two odds in $\\binom42=6$ ways and one even in $2$ ways.",
+      "The total is $6\\cdot2=12$ subsets."
+    ],
+    "keyIdeas": [
+      "Parity of subset sums",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Subsets have no order, so the odd pair must not be counted twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity leaves one feasible composition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p22",
+    "problemId": "ajhsme-1996-p22",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice B)",
+    "shortExplanation": "The coordinates $A=(0,0)$, $B=(3,2)$, $C=(4,3)$ give determinant $9-8=1$, hence area $1/2$.",
+    "detailedSteps": [
+      "Choose the bottom-left point as the origin. Counting the unit grid gives $A=(0,0)$, $B=(3,2)$, and $C=(4,3)$.",
+      "The triangle area is $\\tfrac12|3\\cdot3-2\\cdot4|=1/2$."
+    ],
+    "keyIdeas": [
+      "Lattice-triangle area",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The nearly collinear appearance does not make the triangle degenerate; the determinant is nonzero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates make the thin triangle area exact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p23",
+    "problemId": "ajhsme-1996-p23",
+    "finalAnswer": "$\\boxed{995}$ (choice E)",
+    "shortExplanation": "The two funding equations give $20$ employees and a fund of $995$ dollars.",
+    "detailedSteps": [
+      "Let $n$ be the employee count and $F$ the fund. The proposed payment gives $F=50n-5$.",
+      "The actual payment gives $F=45n+95$. Equating them yields $5n=100$, so $n=20$.",
+      "Thus $F=50(20)-5=995$ dollars."
+    ],
+    "keyIdeas": [
+      "Two descriptions of a fund",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The initial shortage and final surplus enter the equations with opposite signs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equate the two accounts of the same fund.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p24",
+    "problemId": "ajhsme-1996-p24",
+    "finalAnswer": "$\\boxed{115^\\circ}$ (choice C)",
+    "shortExplanation": "The two angles of triangle $ADC$ at $A$ and $C$ total half of $130^\\circ$, leaving $115^\\circ$ at $D$.",
+    "detailedSteps": [
+      "In triangle $ABC$, the two angles at $A$ and $C$ sum to $180^\\circ-50^\\circ=130^\\circ$.",
+      "Because both rays are angle bisectors, $\\angle DAC+\\angle DCA=65^\\circ$.",
+      "The triangle angle sum now gives $\\angle ADC=180^\\circ-65^\\circ=115^\\circ$."
+    ],
+    "keyIdeas": [
+      "Angle bisectors",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Bisect the angles at $A$ and $C$, not the given angle at $B$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unused angle sum is halved by the bisectors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1996-p25",
+    "problemId": "ajhsme-1996-p25",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice A)",
+    "shortExplanation": "The condition selects the concentric disk of half the original radius, whose area is one quarter as large.",
+    "detailedSteps": [
+      "If the large radius is $R$ and the chosen point is distance $r$ from the center, its shortest distance to the boundary is $R-r$.",
+      "The condition is $r<R-r$, or $r<R/2$. This describes a concentric disk of radius $R/2$.",
+      "Uniform area sampling gives probability $\\pi(R/2)^2/(\\pi R^2)=1/4$. The equality circle has area zero."
+    ],
+    "keyIdeas": [
+      "Distance to a circle boundary",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Probability depends on the area ratio, not just the radius ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniformly choosing a point means area weighting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

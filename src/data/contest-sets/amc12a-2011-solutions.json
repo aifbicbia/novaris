@@ -1,0 +1,527 @@
+[
+  {
+    "id": "solution-amc12a-2011-p1",
+    "problemId": "amc12a-2011-p1",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "The text and overtime charges are five and three dollars.",
+    "detailedSteps": [
+      "The hundred texts cost $100(0.05)=5$ dollars. The excess half hour is thirty minutes and costs $30(0.10)=3$ dollars.",
+      "Including the monthly fee gives $20+5+3=28$ dollars."
+    ],
+    "keyIdeas": [
+      "A monthly plan with two surcharges"
+    ],
+    "commonMistakes": [
+      "Charging all thirty and a half hours as overtime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The threshold applies to hours, while its surcharge is per minute.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p2",
+    "problemId": "amc12a-2011-p2",
+    "finalAnswer": "$\\boxed{(C,E,D,A,B)}$ (choice E)",
+    "shortExplanation": "The visible boundary chain determines the order.",
+    "detailedSteps": [
+      "At an overlap, the uninterrupted boundary belongs to the upper coin. Reading the original MAA booklet diagram on page three gives C above E, E above D, D above A, and A above B. The original D boundary visibly hides the lower A arc, establishing the D-above-A comparison.",
+      "These comparisons form the complete chain $C,E,D,A,B$ from top to bottom, matching choice E."
+    ],
+    "keyIdeas": [
+      "Reading the boundaries of overlapping coins"
+    ],
+    "commonMistakes": [
+      "Interpreting a partially hidden arc as the boundary of the upper coin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This question requires the original diagram, linked externally.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p3",
+    "problemId": "amc12a-2011-p3",
+    "finalAnswer": "$\\boxed{15}$ (choice E)",
+    "shortExplanation": "Fourteen bottles are insufficient.",
+    "detailedSteps": [
+      "Fourteen small bottles hold $14\\cdot35=490$ milliliters, less than five hundred. Fifteen hold $525$, enough to fill the large bottle.",
+      "The minimum purchase is fifteen bottles, even though not all of the final bottle needs to be poured."
+    ],
+    "keyIdeas": [
+      "An integer ceiling for bottle capacity"
+    ],
+    "commonMistakes": [
+      "Rounding the required bottle count down."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The purchased capacity must be at least the target volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p4",
+    "problemId": "amc12a-2011-p4",
+    "finalAnswer": "$\\boxed{\\frac{88}{7}}$ (choice C)",
+    "shortExplanation": "The population weights are $4:2:1$.",
+    "detailedSteps": [
+      "Let the fifth-grade population be one unit. Then fourth grade has two units and third grade four.",
+      "The combined mean is $(4\\cdot12+2\\cdot15+1\\cdot10)/(4+2+1)=88/7$ minutes."
+    ],
+    "keyIdeas": [
+      "A weighted average across three grades"
+    ],
+    "commonMistakes": [
+      "Taking an unweighted mean of the three grade averages."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Population ratios determine the averaging weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p5",
+    "problemId": "amc12a-2011-p5",
+    "finalAnswer": "$\\boxed{40}$ (choice C)",
+    "shortExplanation": "Geese are thirty percent out of a seventy-five-percent subgroup.",
+    "detailedSteps": [
+      "The non-swan birds are $100-25=75$ percent of all birds. Geese are thirty percent of all birds, so their fraction within that subgroup is $30/75=0.4$, or forty percent."
+    ],
+    "keyIdeas": [
+      "Changing the population denominator"
+    ],
+    "commonMistakes": [
+      "Keeping the original whole-lake denominator after excluding swans."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requested percentage uses only birds that are not swans.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p6",
+    "problemId": "amc12a-2011-p6",
+    "finalAnswer": "$\\boxed{13}$ (choice A)",
+    "shortExplanation": "The total is five times the two-point-shot count plus one.",
+    "detailedSteps": [
+      "Let t be the number of successful two-point shots. Three-point shots also contribute $2t$ points, and the free throws contribute $t+1$ points.",
+      "Thus $2t+2t+(t+1)=61$, giving $t=12$ and thirteen free throws. Eight successful three-point shots supply the required twenty-four points."
+    ],
+    "keyIdeas": [
+      "Equal points from two scoring categories"
+    ],
+    "commonMistakes": [
+      "Equating the number of shots instead of the points from those shots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A made free throw contributes one point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p7",
+    "problemId": "amc12a-2011-p7",
+    "finalAnswer": "$\\boxed{11}$ (choice B)",
+    "shortExplanation": "The majority count is twenty-three and each buyer purchases seven pencils.",
+    "detailedSteps": [
+      "Let m be the number of buyers, k the number per buyer, and p the price in cents. Then $mkp=1771=7\\cdot11\\cdot23$, with $16\\le m\\le30$ and $1<k<p$.",
+      "The only divisor of 1771 in the required buyer range is twenty-three. Thus $kp=77$, and the only admissible ordered pair with $1<k<p$ is $(7,11)$.",
+      "The price is eleven cents."
+    ],
+    "keyIdeas": [
+      "Factoring a shared pencil purchase"
+    ],
+    "commonMistakes": [
+      "Accepting fifteen buyers as a majority of thirty, or allowing one pencil per buyer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The strict inequalities eliminate the alternative factor assignments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p8",
+    "problemId": "amc12a-2011-p8",
+    "finalAnswer": "$\\boxed{25}$ (choice C)",
+    "shortExplanation": "The eighth term equals the second.",
+    "detailedSteps": [
+      "Subtracting adjacent three-term sum equations shows that terms three positions apart are equal. Hence $H=B$ and $F=C=5$.",
+      "From $A+B+C=30$, obtain $A+H=A+B=25$."
+    ],
+    "keyIdeas": [
+      "A period-three sequence from equal triple sums"
+    ],
+    "commonMistakes": [
+      "Assuming all terms are equal because the triple sums agree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal overlapping sums yield repeated terms after cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p9",
+    "problemId": "amc12a-2011-p9",
+    "finalAnswer": "$\\boxed{441}$ (choice B)",
+    "shortExplanation": "The within-group counts are one hundred forty-four and one hundred thirty-five.",
+    "detailedSteps": [
+      "There are eighteen twins. Each shakes sixteen other twins, so twin-to-twin handshakes total $18\\cdot16/2=144$.",
+      "There are eighteen triplets. Each shakes fifteen triplets outside the family, so triplet-to-triplet handshakes total $18\\cdot15/2=135$.",
+      "Each twin shakes nine triplets, giving $18\\cdot9=162$ cross-group handshakes. Count these once from the twin side. The total is $144+135+162=441$."
+    ],
+    "keyIdeas": [
+      "Handshake counts within and between family groups"
+    ],
+    "commonMistakes": [
+      "Dividing cross-group handshakes by two after counting them from only one group."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both within-group degree totals need division by two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p10",
+    "problemId": "amc12a-2011-p10",
+    "finalAnswer": "$\\boxed{\\frac1{12}}$ (choice B)",
+    "shortExplanation": "The diameter must be less than four.",
+    "detailedSteps": [
+      "For diameter d, the inequality is $\\pi d^2/4<\\pi d$, equivalent to $d<4$ because d is positive.",
+      "The dice sums two and three have one and two outcomes, respectively. Thus the probability is $3/36=1/12$."
+    ],
+    "keyIdeas": [
+      "Comparing circle area with circumference"
+    ],
+    "commonMistakes": [
+      "Including sum four despite the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circumference is pi times the diameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p11",
+    "problemId": "amc12a-2011-p11",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Each lens has area $\\pi/2-1$.",
+    "detailedSteps": [
+      "Use source-aligned centers $A=(-1,0),B=(1,0),C=(0,1)$. Each overlap with C has center separation $\\sqrt2$, so the two bounding circular sectors have angles ninety degrees.",
+      "Each lens area is $2(\\pi/4-1/2)=\\pi/2-1$. The interiors of disks A and B do not overlap, so the two removed lenses have no positive-area overlap.",
+      "The required area is $\\pi-2(\\pi/2-1)=2$."
+    ],
+    "keyIdeas": [
+      "Two equal circle lenses removed from a unit disk"
+    ],
+    "commonMistakes": [
+      "Subtracting sector areas without restoring the triangular parts of the lenses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original diagram fixes the third circle above the shared tangency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p12",
+    "problemId": "amc12a-2011-p12",
+    "finalAnswer": "$\\boxed{4.5}$ (choice D)",
+    "shortExplanation": "The outward and return times are equal in the drifting frame.",
+    "detailedSteps": [
+      "Observe the motion in a frame moving with the current. The raft stays fixed, while the boat moves at the same speed v downstream and upstream relative to this frame.",
+      "If the boat turns after time t, it is distance vt from the raft. Returning that distance takes another t hours. Thus $2t=9$, giving $t=4.5$ hours."
+    ],
+    "keyIdeas": [
+      "Relative motion in the river-current frame"
+    ],
+    "commonMistakes": [
+      "Using land-frame downstream and upstream times as equal without accounting for the raft."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The turning dock does not need to remain fixed in the drifting frame after the turn.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p13",
+    "problemId": "amc12a-2011-p13",
+    "finalAnswer": "$\\boxed{30}$ (choice B)",
+    "shortExplanation": "The smaller triangle has scale five ninths.",
+    "detailedSteps": [
+      "Let H be the altitude to BC and r the inradius. The area is $24H/2=12H$, while the semiperimeter is $(12+24+18)/2=27$. Thus $r=12H/27=4H/9$.",
+      "The incenter-parallel line is height r above BC, so triangle AMN has height $H-r=5H/9$ and is similar to ABC with scale $5/9$.",
+      "Its perimeter is $54(5/9)=30$."
+    ],
+    "keyIdeas": [
+      "An incenter-parallel similarity cut"
+    ],
+    "commonMistakes": [
+      "Using the inradius as the smaller triangle’s height rather than subtracting it from the original altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel cut preserves all three side ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p14",
+    "problemId": "amc12a-2011-p14",
+    "finalAnswer": "$\\boxed{\\frac{19}{81}}$ (choice E)",
+    "shortExplanation": "The qualifying counts for a equal to one, two and three are nine, seven and three.",
+    "detailedSteps": [
+      "At horizontal coordinate a, the parabola height is $a^3-ab$. The point lies strictly above it exactly when $b(a+1)>a^3$.",
+      "For $a=1$, all nine b values work. For $a=2$, the valid values are three through nine, giving seven. For $a=3$, they are seven through nine, giving three.",
+      "For $a\\ge4$, $a^3/(a+1)>9$, so no single-digit b works. There are $9+7+3=19$ successes among eighty-one ordered pairs."
+    ],
+    "keyIdeas": [
+      "A point whose coordinates also parameterize a parabola"
+    ],
+    "commonMistakes": [
+      "Substituting b as the horizontal coordinate or including equality with the parabola."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the same parameters in both the point and its curve.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p15",
+    "problemId": "amc12a-2011-p15",
+    "finalAnswer": "$\\boxed{3\\sqrt2}$ (choice A)",
+    "shortExplanation": "The half-width squared is $9/2$.",
+    "detailedSteps": [
+      "Let the pyramid half-width be a. Tangency to the two opposite faces in each direction places the hemisphere’s base center at the square center: their signed plane distances must both equal the radius two.",
+      "In a section through the apex and the midpoints of opposite base edges, the sphere center is $(0,0)$ and one sloping face line is $6x+az-6a=0$. Its distance from the center is $6a/\\sqrt{36+a^2}$.",
+      "Equating this to two gives $36a^2=4(36+a^2)$, so $a^2=9/2$. The base side is $2a=3\\sqrt2$. The perpendicular contacts lie above the base and below the apex, so the upper hemisphere supplies the required tangencies."
+    ],
+    "keyIdeas": [
+      "A hemisphere tangent to four pyramid faces"
+    ],
+    "commonMistakes": [
+      "Using a pyramid edge rather than a face-distance cross section."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four equal tangencies justify the centered position.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p16",
+    "problemId": "amc12a-2011-p16",
+    "finalAnswer": "$\\boxed{3120}$ (choice C)",
+    "shortExplanation": "The five diagonals form a cycle.",
+    "detailedSteps": [
+      "The diagonal order is $A,C,E,B,D,A$. Fix A’s color. Let $s_j,t_j$ count proper colorings of the first j vertices of this path whose last color is the same as, or different from, A’s.",
+      "Beginning with $(s_1,t_1)=(1,0)$, adding a vertex gives $s_{j+1}=t_j$ and $t_{j+1}=5s_j+4t_j$. The successive pairs are $(0,5),(5,20),(20,105),(105,520)$.",
+      "Closing the final diagonal requires a different last color, so there are 520 choices for each of A’s six colors. The total is $6\\cdot520=3120$."
+    ],
+    "keyIdeas": [
+      "Proper colorings of the pentagon diagonal cycle"
+    ],
+    "commonMistakes": [
+      "Adding restrictions along ordinary pentagon sides, which the source does not require."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal graph is another five-cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p17",
+    "problemId": "amc12a-2011-p17",
+    "finalAnswer": "$\\boxed{\\frac65}$ (choice D)",
+    "shortExplanation": "The centers form a three-four-five triangle.",
+    "detailedSteps": [
+      "Place the radius-one center at $(0,0)$, the radius-two center at $(3,0)$, and the radius-three center at $(0,4)$. The center distances are the pairwise radius sums three, four and five.",
+      "The first two tangencies are $(1,0)$ and $(0,1)$. The tangency between the radius-two and radius-three circles divides their center segment in ratio $2:3$, giving $(9/5,8/5)$.",
+      "The determinant area of these three points is $\\tfrac12|(-1)(8/5)-(1)(4/5)|=6/5$."
+    ],
+    "keyIdeas": [
+      "Tangency points of three mutually tangent circles"
+    ],
+    "commonMistakes": [
+      "Using the triangle of centers instead of the triangle of contact points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "External tangency divides a center segment in the ratio of the radii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p18",
+    "problemId": "amc12a-2011-p18",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The constraint is $\\max(|x|,|y|)=1$.",
+    "detailedSteps": [
+      "The identity $|x+y|+|x-y|=2\\max(|x|,|y|)$ turns the constraint into the boundary of the square $[-1,1]^2$.",
+      "Within this square, $x^2-6x$ is largest at $x=-1$, giving seven; also $y^2\\le1$. Thus the expression is at most eight.",
+      "It attains eight at $(-1,1)$ and $(-1,-1)$, both satisfying the original equality."
+    ],
+    "keyIdeas": [
+      "An absolute-value square boundary"
+    ],
+    "commonMistakes": [
+      "Using the diamond |x|+|y|=1 in place of the correct square constraint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A coordinate sign case proves the absolute-value identity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p19",
+    "problemId": "amc12a-2011-p19",
+    "finalAnswer": "$\\boxed{154}$ (choice C)",
+    "shortExplanation": "The two least valid populations are forty-five and one hundred nine.",
+    "detailedSteps": [
+      "Put $j=\\lfloor\\log_2(N-1)\\rfloor$. Then $2^j\\le N-1<2^{j+1}$, and the elite equation gives $N=2^{j+1}-19$.",
+      "The lower bound becomes $2^j\\ge20$. The least admissible j is five, giving $N=64-19=45$; the next j is six, giving $N=128-19=109$. The upper bound automatically holds.",
+      "Their sum is $45+109=154$."
+    ],
+    "keyIdeas": [
+      "A floor logarithm locates the next power of two"
+    ],
+    "commonMistakes": [
+      "Replacing the floor logarithm by a continuously varying logarithm."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The domain requires N greater than one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p20",
+    "problemId": "amc12a-2011-p20",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The polynomial is $2x^2-7x+5$.",
+    "detailedSteps": [
+      "From $f(1)=0$, obtain $c=-a-b$. Then $f(7)=6(8a+b)$ and $f(8)=7(9a+b)$.",
+      "The only multiple of six strictly between fifty and sixty is fifty-four, and the only multiple of seven strictly between seventy and eighty is seventy-seven. Thus $8a+b=9$ and $9a+b=11$.",
+      "Solving gives $a=2,b=-7,c=5$. Consequently $f(100)=19305$, strictly between fifteen thousand and twenty thousand, so $k=3$."
+    ],
+    "keyIdeas": [
+      "Integer polynomial values restrict linear combinations"
+    ],
+    "commonMistakes": [
+      "Using the midpoint of each range without its divisibility justification."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The narrow ranges contain only one allowable multiple each.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p21",
+    "problemId": "amc12a-2011-p21",
+    "finalAnswer": "$\\boxed{-226}$ (choice A)",
+    "shortExplanation": "The fifth domain is the singleton $\\{-231\\}$.",
+    "detailedSteps": [
+      "The first domain is $(-\\infty,1]$. For n at least two, the input $\\sqrt{n^2-x}$ must be nonnegative and belong to the preceding domain.",
+      "Thus the second domain is $[3,4]$, and the third is $[9-4^2,9-3^2]=[-7,0]$. For the fourth, the only nonnegative preceding-domain value is zero, giving domain $\\{16\\}$.",
+      "The fifth input must be sixteen, giving $25-x=256$ and domain $\\{-231\\}$. A sixth square-root input cannot equal a negative number, so all later domains are empty.",
+      "Therefore $N=5,c=-231$, and $N+c=-226$."
+    ],
+    "keyIdeas": [
+      "Domains of nested reflected square roots"
+    ],
+    "commonMistakes": [
+      "Squaring interval endpoints without first intersecting the preceding domain with nonnegative inputs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source has radicals in both the initial function and every recursive input.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p22",
+    "problemId": "amc12a-2011-p22",
+    "finalAnswer": "$\\boxed{2320}$ (choice C)",
+    "shortExplanation": "The two grids share eighty-one interior points.",
+    "detailedSteps": [
+      "Normalize the square side to one. Every corner must be on a dividing ray: otherwise a piece containing that corner and both adjacent side portions has four vertices, not three. Let a side receive k of the equal-area triangles.",
+      "If the point is distance h from that side, its complete triangular fan has area h/2. Since each small triangle has area $1/n$, we require $h/2=k/n$, or $h=2k/n$. Opposite distances sum to one, so their counts sum to n/2.",
+      "Conversely, if both coordinates are $2k/n,2\\ell/n$ with $k,\\ell\\in\\{1,\\ldots,n/2-1\\}$, divide each side into the corresponding number of equal segments. The resulting rays through these endpoints and corners give exactly n equal-area triangles. This proves necessity and sufficiency.",
+      "For one hundred rays, the point coordinates are internal multiples of $1/50$, giving $49^2=2401$ points. For sixty rays they are internal multiples of $1/30$. Common internal coordinates are exactly multiples of $1/10$, so the intersection has $9^2=81$ points.",
+      "The required difference is $2401-81=2320$."
+    ],
+    "keyIdeas": [
+      "Equal-area rays force two rational coordinate grids"
+    ],
+    "commonMistakes": [
+      "Subtracting all 841 sixty-ray points even though most are absent from the hundred-ray grid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the intersection of the two sets before taking their difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p23",
+    "problemId": "amc12a-2011-p23",
+    "finalAnswer": "$\\boxed{\\sqrt3-1}$ (choice C)",
+    "shortExplanation": "The possible modulus range is $1\\le|b|\\le\\sqrt3$.",
+    "detailedSteps": [
+      "Represent f by $M=\\begin{pmatrix}1&a\\\\1&b\\end{pmatrix}$, with trace $t=1+b$ and determinant $\\Delta=b-a$. First consider $\\Delta=0$, so $a=b$ and f is the constant one on its domain. If $b\\ne-1$, all four applications are defined for every initial input except the first pole, and their constant value cannot equal every such z. If $a=b=-1$, the second application is undefined everywhere; the source condition is then vacuously satisfied and contributes only $|b|=1$. We now consider the nonzero-determinant cases.",
+      "Cayley-Hamilton gives $M^2=tM-\\Delta I$, hence $M^4=t(t^2-2\\Delta)M+\\Delta(\\Delta-t^2)I$. A nonconstant fractional linear map is the identity exactly when its matrix is a nonzero scalar matrix. As M itself is not scalar, the fourth-iterate condition is $t(t^2-2\\Delta)=0$.",
+      "If t is zero, then $b=-1$, of modulus one. Otherwise $t^2=2\\Delta$ reduces to $b^2+1+2a=0$. With $|a|=1$, this is $|b^2+1|=2$.",
+      "The circle for $w=b^2$ has center minus one and radius two, so $1\\le|w|\\le3$. Therefore $1\\le|b|\\le\\sqrt3$. The endpoints are attained by $(a,b)=(-1,1)$ and $(1,i\\sqrt3)$, both having nonzero determinant.",
+      "The largest-minus-smallest modulus is $\\sqrt3-1$. The identity is understood on the source’s domain where all four applications are defined."
+    ],
+    "keyIdeas": [
+      "A fourth-iterate identity for a fractional linear map"
+    ],
+    "commonMistakes": [
+      "Including a zero-determinant constant map or imposing a false realness restriction on b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Projective matrix scaling does not change a fractional linear transformation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p24",
+    "problemId": "amc12a-2011-p24",
+    "finalAnswer": "$\\boxed{2\\sqrt6}$ (choice C)",
+    "shortExplanation": "The maximum is attained by a cyclic quadrilateral tangent to a circle.",
+    "detailedSteps": [
+      "First exclude nonconvex simple quadrilaterals: their convex hull is a triangle with perimeter at most 42. Any contained circle then has radius at most that triangle’s inradius, which is at most $42/(6\\sqrt3)=7/\\sqrt3<2\\sqrt6$. The triangle bound follows from Heron’s formula and AM-GM at fixed perimeter.",
+      "For a convex quadrilateral containing a radius-r disk, join its center to the four vertices. Each side’s line is at distance at least r, so the area K satisfies $K\\ge r(14+9+7+12)/2=21r$.",
+      "Bretschneider’s formula gives $K^2=(s-a)(s-b)(s-c)(s-d)-abcd\\cos^2((A+C)/2)$, where $s=21$. Thus $K\\le\\sqrt{7\\cdot12\\cdot14\\cdot9}=42\\sqrt6$, and $r\\le2\\sqrt6$.",
+      "To attain this, take a circle of radius $\\sqrt{24}$ and prescribe successive vertex tangent lengths $8,6,3,4$. Their adjacent sums are the required sides $14,9,7,12$. Opposite products are both 24, so the corresponding opposite half-angles are complementary: the quadrilateral is cyclic.",
+      "More explicitly, take its exterior turns to be $2\\arctan(8/r),2\\arctan(6/r),2\\arctan(3/r),2\\arctan(4/r)$. Opposite pairs sum to pi, ensuring a complete convex circumscribed quadrilateral. All four sides are tangent, making both area inequalities equalities. Hence the largest radius is $2\\sqrt6$."
+    ],
+    "keyIdeas": [
+      "A sharp area bound with a bicentric realization"
+    ],
+    "commonMistakes": [
+      "Assuming convexity without addressing the source’s unrestricted quadrilateral wording, or giving an upper bound without a realizing shape."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two simultaneous equality conditions yield a bicentric quadrilateral.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2011-p25",
+    "problemId": "amc12a-2011-p25",
+    "finalAnswer": "$\\boxed{80^\\circ}$ (choice D)",
+    "shortExplanation": "The area reduces to one elementary trigonometric function.",
+    "detailedSteps": [
+      "Put $B=(0,0),C=(1,0)$ and A above BC. Since $AC\\ge AB$ and $B\\le90^\\circ$, write $B=60^\\circ+t$ with $0\\le t\\le30^\\circ$. In the following derivatives, t is measured in radians.",
+      "Let $b=AC,c=AB,q=b+c$, and $\\delta=b-c$. The sine rule gives $q=2\\cos t$, $\\delta=2\\sin t/\\sqrt3$. With $A=(u,v)$, the cosine rule and the sixty-degree area formula give $u=(1-q\\delta)/2$ and $v=(q^2-1)/(2\\sqrt3)$.",
+      "The circumradius is $1/\\sqrt3$, so $O=(1/2,1/(2\\sqrt3))$. The incenter’s side-weighted coordinates give $I=((1-\\delta)/2,(q-1)/(2\\sqrt3))$. Intersecting the two altitudes gives $H=(u,(q^2-3)/(2\\sqrt3))$.",
+      "The shoelace formula in the prescribed vertex order $B,C,O,I,H$ gives area $S=(q^2-2+(4-q)\\delta)/(8\\sqrt3)$. Substituting the trigonometric expressions simplifies this to $S(t)=\\cos(2t+\\pi/6)/6+\\sin t/3$.",
+      "Its derivative is $S^{\\prime}(t)=(\\cos t-\\sin(2t+\\pi/6))/3$. Both sine arguments $\\pi/2-t$ and $2t+\\pi/6$ lie in $[0,\\pi/2]$, where sine is strictly increasing. Therefore the derivative is positive for $t<\\pi/9$, zero there, and negative for $t>\\pi/9$.",
+      "The unique maximum is at $t=20^\\circ$, giving $\\angle CBA=60^\\circ+20^\\circ=80^\\circ$. At this interior parameter all five centers/vertices in the stated polygon order are distinct; endpoint degeneracies cannot exceed the interior maximum."
+    ],
+    "keyIdeas": [
+      "Optimizing the area formed by triangle centers"
+    ],
+    "commonMistakes": [
+      "Optimizing the original triangle’s area rather than the specified pentagon, or presuming the centers form a regular configuration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A center-coordinate formula reduces the geometry to a controlled one-variable maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,1030 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1959-p1",
+    "problemId": "amc12-predecessor-1959-p1",
+    "finalAnswer": "$\\boxed{125\\%}$ (choice B)",
+    "shortExplanation": "The edge multiplier is $3/2$, so the surface area multiplier is $9/4$. The increase is $125\\%$.",
+    "detailedSteps": [
+      "For an edge length $s>0$, the original surface area is $6s^2$. The new edge is $3s/2$, so the new surface area is $6(3s/2)^2=(9/4)6s^2$.",
+      "The relative increase is $9/4-1=5/4$, or $125\\%$."
+    ],
+    "keyIdeas": [
+      "Square the edge scale factor when comparing surface areas"
+    ],
+    "commonMistakes": [
+      "Applying the edge percentage directly to an area, or reporting the new area as the percentage increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare the change with the original area, rather than the new area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p2",
+    "problemId": "amc12-predecessor-1959-p2",
+    "finalAnswer": "$\\boxed{\\frac{2-\\sqrt2}{2}}$ (choice D)",
+    "shortExplanation": "The upper triangle has half the area, so its height is $1/\\sqrt2$. The distance above the base is $1-1/\\sqrt2$.",
+    "detailedSteps": [
+      "Let $h$ be the height of the smaller triangle above the parallel line. It is similar to the full triangle of height one.",
+      "The area ratio is $h^2=1/2$, so $h=1/\\sqrt2$ because heights are positive. The requested distance is the remainder $1-h=1-1/\\sqrt2=(2-\\sqrt2)/2$."
+    ],
+    "keyIdeas": [
+      "Use similarity for the triangle above the parallel cut"
+    ],
+    "commonMistakes": [
+      "Halving the height because the area is halved."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parallel cut gives similar triangles; their areas scale quadratically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p3",
+    "problemId": "amc12-predecessor-1959-p3",
+    "finalAnswer": "$\\boxed{\\text{none of these}}$ (choice E)",
+    "shortExplanation": "Perpendicular diagonals do not force any of the four listed special shapes. A convex kite supplies a counterexample.",
+    "detailedSteps": [
+      "Consider the consecutive vertices $(0,1),(-2,0),(0,-1),(1,0)$. They form a convex quadrilateral, and its diagonals lie on the two coordinate axes, so they are perpendicular.",
+      "The squared side lengths are $5,5,2,2$, so the figure is neither a rhombus nor a square. At $(0,1)$ the adjacent vectors $(-2,-1)$ and $(1,-1)$ have dot product $-1$, so it is not a rectangle.",
+      "Neither pair of opposite sides is parallel: their direction cross products are nonzero. It is therefore not an isosceles trapezoid under either common convention. No listed classification always follows."
+    ],
+    "keyIdeas": [
+      "Test a universal classification with a concrete counterexample"
+    ],
+    "commonMistakes": [
+      "Treating a property shared by some rhombi as a converse that characterizes every such quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One verified counterexample can refute all four proposed universal classifications.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p4",
+    "problemId": "amc12-predecessor-1959-p4",
+    "finalAnswer": "$\\boxed{\\frac{52}{3}}$ (choice C)",
+    "shortExplanation": "The weights sum to $3/2$. Their scale factor is $78/(3/2)=52$, giving a middle part of $52/3$.",
+    "detailedSteps": [
+      "Write the three parts as $t,t/3,t/6$. Their sum is $(3/2)t=78$, so $t=52$.",
+      "The middle part is $t/3=52/3=17\\frac13$. The three values $52,52/3,26/3$ sum to 78."
+    ],
+    "keyIdeas": [
+      "Normalize the proportional weights before dividing the total"
+    ],
+    "commonMistakes": [
+      "Dividing 78 by three without respecting the unequal proportions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratios describe weights, not fractions that must already sum to one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p5",
+    "problemId": "amc12-predecessor-1959-p5",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The exponents add to $0.25$, so the expression is the fourth root of 256, which is four.",
+    "detailedSteps": [
+      "Because the base is positive, $256^{0.16}256^{0.09}=256^{0.25}=256^{1/4}$.",
+      "Since $4^4=256$, the positive fourth root is four."
+    ],
+    "keyIdeas": [
+      "Combine powers with the same positive base"
+    ],
+    "commonMistakes": [
+      "Multiplying the exponents when multiplying powers with the same base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the terminating decimals to exact fractions if needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p6",
+    "problemId": "amc12-predecessor-1959-p6",
+    "finalAnswer": "$\\boxed{\\text{neither is true}}$ (choice D)",
+    "shortExplanation": "A nonsquare rectangle falsifies both the converse and the inverse.",
+    "detailedSteps": [
+      "The converse asserts that every rectangle is a square. A rectangle with side lengths two and one disproves it.",
+      "The inverse asserts that every quadrilateral that is not a square is not a rectangle. The same two-by-one rectangle disproves that assertion as well.",
+      "The original implication does have a true contrapositive, but neither of the two statements asked about is that contrapositive."
+    ],
+    "keyIdeas": [
+      "Distinguish the converse and inverse from the contrapositive"
+    ],
+    "commonMistakes": [
+      "Assuming that a true implication guarantees its converse or inverse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single concrete object distinguishes the logical statements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p7",
+    "problemId": "amc12-predecessor-1959-p7",
+    "finalAnswer": "$\\boxed{3:1}$ (choice D)",
+    "shortExplanation": "Pythagoras gives $(a-3d)(a+d)=0$. Positivity leaves $a=3d$.",
+    "detailedSteps": [
+      "Because $a,d>0$, the largest side is $a+2d$. Therefore $a^2+(a+d)^2=(a+2d)^2$.",
+      "Expanding and rearranging gives $a^2-2ad-3d^2=(a-3d)(a+d)=0$. The factor $a+d$ is positive, so $a=3d$ and $a:d=3:1$.",
+      "The resulting side ratio is $3:4:5$, which indeed satisfies Pythagoras."
+    ],
+    "keyIdeas": [
+      "Use the largest positive side as the hypotenuse"
+    ],
+    "commonMistakes": [
+      "Using one of the shorter sides as the hypotenuse or retaining the negative root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive increment orders the sides before any equation is written.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p8",
+    "problemId": "amc12-predecessor-1959-p8",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The expression is $(x-3)^2+4$, so its least real value is four.",
+    "detailedSteps": [
+      "Complete the square: $x^2-6x+13=(x-3)^2+4$.",
+      "The square is nonnegative for every real $x$, and it is zero at $x=3$. Thus four is both a lower bound and an attained minimum."
+    ],
+    "keyIdeas": [
+      "Complete the square and show that the bound is attained"
+    ],
+    "commonMistakes": [
+      "Stating a lower bound without checking whether equality is possible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The completed square proves the entire real-domain bound at once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p9",
+    "problemId": "amc12-predecessor-1959-p9",
+    "finalAnswer": "$\\boxed{140}$ (choice C)",
+    "shortExplanation": "The first three shares total $19/20$, leaving $1/20$ for seven cows. The herd contains 140 cows.",
+    "detailedSteps": [
+      "The allocated fraction is $1/2+1/4+1/5=19/20$. The fourth son therefore receives $n/20=7$.",
+      "Hence $n=140$. The four shares are $70,35,28,7$, all integers and totaling 140."
+    ],
+    "keyIdeas": [
+      "Find the unallocated fraction of the herd"
+    ],
+    "commonMistakes": [
+      "Adding the denominators instead of adding the fractional shares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the four integer shares confirms the allocation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p10",
+    "problemId": "amc12-predecessor-1959-p10",
+    "finalAnswer": "$\\boxed{10.8}$ (choice D)",
+    "shortExplanation": "Equal areas give $AD\\cdot AE=AB\\cdot AC=3.6^2$, so $AE=10.8$.",
+    "detailedSteps": [
+      "The two triangles have the same angle at $A$, because $D$ lies on $AB$ and $E$ lies along the prolongation of $AC$. Their areas are one half the product of the adjacent sides times the same positive sine.",
+      "Canceling that sine gives $AD\\cdot AE=AB\\cdot AC$. Thus $1.2\\,AE=3.6^2$ and $AE=10.8$.",
+      "This exceeds $AC=3.6$, as required for the stated prolongation."
+    ],
+    "keyIdeas": [
+      "Compare areas using the common included angle"
+    ],
+    "commonMistakes": [
+      "Equating one pair of side lengths instead of the products that determine areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared angle allows an area comparison without knowing its measure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p11",
+    "problemId": "amc12-predecessor-1959-p11",
+    "finalAnswer": "$\\boxed{-4}$ (choice D)",
+    "shortExplanation": "The decimal is $1/16=2^{-4}$, so its base-two logarithm is negative four.",
+    "detailedSteps": [
+      "We have $0.0625=1/16=2^{-4}$. By the definition of a logarithm, $\\log_2(0.0625)=-4$."
+    ],
+    "keyIdeas": [
+      "Recognize the decimal as a negative power of two"
+    ],
+    "commonMistakes": [
+      "Dropping the negative sign for a logarithm of a positive number below one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Converting the decimal to an exact fraction makes the power visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p12",
+    "problemId": "amc12-predecessor-1959-p12",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice A)",
+    "shortExplanation": "Adding 25 gives the geometric progression $45,75,125$, whose common ratio is $5/3$.",
+    "detailedSteps": [
+      "Let $t$ be the amount added to each term. For a geometric progression, $(50+t)^2=(20+t)(100+t)$.",
+      "Expansion gives $2500+100t+t^2=2000+120t+t^2$, so $t=25$. The resulting ratios are $75/45=125/75=5/3$."
+    ],
+    "keyIdeas": [
+      "Set the square of the middle term equal to the product of its neighbors"
+    ],
+    "commonMistakes": [
+      "Assuming that adding a common number preserves the original ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle-square identity reduces the problem to a linear equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p13",
+    "problemId": "amc12-predecessor-1959-p13",
+    "finalAnswer": "$\\boxed{37.5}$ (choice D)",
+    "shortExplanation": "The retained numbers sum to $50\\cdot38-45-55=1800$. Dividing by 48 gives 37.5.",
+    "detailedSteps": [
+      "The original total is $50\\cdot38=1900$. Removing the two specified numbers removes $45+55=100$, leaving 1800.",
+      "There are 48 numbers left, so their mean is $1800/48=75/2=37.5$."
+    ],
+    "keyIdeas": [
+      "Subtract the removed total before recomputing the mean"
+    ],
+    "commonMistakes": [
+      "Keeping the original number of terms after removing two entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An average determines a total even when the individual entries are unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p14",
+    "problemId": "amc12-predecessor-1959-p14",
+    "finalAnswer": "$\\boxed{1,2,3}$ (choice D)",
+    "shortExplanation": "Even integers are closed under addition, subtraction and multiplication, but not division or taking a two-number average.",
+    "detailedSteps": [
+      "Write two even integers as $2u$ and $2v$. Their sum and difference are $2(u+v)$ and $2(u-v)$; their product is $4uv$. All are even integers.",
+      "Division fails closure: $2/4=1/2$ is not an even integer, and division by zero is not defined. Averaging also fails, because the mean of zero and two is one.",
+      "Thus precisely operations one, two and three have the required closure."
+    ],
+    "keyIdeas": [
+      "Check closure of each operation on the stated set"
+    ],
+    "commonMistakes": [
+      "Checking a few favorable divisions or averages instead of requiring every allowed input to work."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Algebra proves the positive cases; one counterexample refutes each negative case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p15",
+    "problemId": "amc12-predecessor-1959-p15",
+    "finalAnswer": "$\\boxed{45^\\circ}$ (choice C)",
+    "shortExplanation": "The condition forces the two legs to be equal, making each acute angle $45^\\circ$.",
+    "detailedSteps": [
+      "Let the positive legs be $u,v$ and the hypotenuse be $c$. Pythagoras gives $c^2=u^2+v^2$. The given condition is $c^2=2uv$.",
+      "The stated comparison therefore gives $u^2+v^2=2uv$, or $(u-v)^2=0$. Hence $u=v$.",
+      "The two acute angles of the right isosceles triangle are equal and sum to $90^\\circ$, so each is $45^\\circ$."
+    ],
+    "keyIdeas": [
+      "Compare $c^2=u^2+v^2$ with $c^2=2uv$ to obtain $(u-v)^2=0$"
+    ],
+    "commonMistakes": [
+      "Reading the stated $2uv$ as the triangle area $uv/2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The squared difference identifies the equality case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p16",
+    "problemId": "amc12-predecessor-1959-p16",
+    "finalAnswer": "$\\boxed{1}$ (choice D)",
+    "shortExplanation": "Both fractions reduce to $(x-1)/(x-3)$. Their quotient is one for every input where the original expression is defined.",
+    "detailedSteps": [
+      "The first fraction factors as $(x-1)(x-2)/[(x-2)(x-3)]$. The second factors as $(x-1)(x-4)/[(x-3)(x-4)]$.",
+      "The original denominators exclude $x=2,3,4$. Because the second fraction is a divisor, it must also be nonzero, excluding $x=1$.",
+      "On the resulting domain $x\\notin\\{1,2,3,4\\}$, both fractions equal the same nonzero quantity $(x-1)/(x-3)$. Dividing them gives one."
+    ],
+    "keyIdeas": [
+      "Factor both rational expressions while preserving their original domains"
+    ],
+    "commonMistakes": [
+      "Canceling factors and then treating formerly excluded inputs as admissible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplification changes the formula, but it does not restore excluded inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p17",
+    "problemId": "amc12-predecessor-1959-p17",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "The two inputs give $a-b=1$ and $a-b/5=5$, yielding $b=5$, $a=6$ and sum 11.",
+    "detailedSteps": [
+      "Substitute the specified inputs in $y=a+b/x$: $a-b=1$ at $x=-1$, and $a-b/5=5$ at $x=-5$.",
+      "Subtracting the equations gives $4b/5=4$, so $b=5$. Then $a=6$ and $a+b=11$. Both original pairs satisfy the formula."
+    ],
+    "keyIdeas": [
+      "Treat the reciprocal-variable relation as two linear equations"
+    ],
+    "commonMistakes": [
+      "Reading $b/x$ as $bx$, which changes both equations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the actual reciprocal relationship shown in the source.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p18",
+    "problemId": "amc12-predecessor-1959-p18",
+    "finalAnswer": "$\\boxed{\\frac{n+1}{2}}$ (choice E)",
+    "shortExplanation": "The sum of the first $n$ positive integers is $n(n+1)/2$. Dividing by $n$ gives their mean.",
+    "detailedSteps": [
+      "Pairing terms from opposite ends gives $1+n=2+(n-1)=n+1$. This yields the sum $n(n+1)/2$, including odd $n$ by giving the middle term its correct half-pair contribution.",
+      "Since $n$ is positive, division by the term count gives the mean $(n+1)/2$."
+    ],
+    "keyIdeas": [
+      "Pair the first and last terms of a consecutive sequence"
+    ],
+    "commonMistakes": [
+      "Using $n/2$ instead of averaging the actual endpoints one and $n$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint mean works for both even and odd term counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p19",
+    "problemId": "amc12-predecessor-1959-p19",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "The signed sums of weights one, three and nine attain every integer from negative thirteen to thirteen, giving thirteen positive masses.",
+    "detailedSteps": [
+      "Each weight contributes its value, its negative, or zero, depending on the pan and whether it is used. The measurable signed masses are $a+3b+9c$ with $a,b,c\\in\\{-1,0,1\\}$.",
+      "The first two weights give every integer from $-4$ to $4$. Adding the signed nine-weight gives the three adjacent intervals $[-13,-5],[-4,4],[5,13]$. Thus every integer from $-13$ to $13$ occurs.",
+      "No larger magnitude is possible because the sum of all three weights is thirteen. The positive measurable masses are exactly one through thirteen."
+    ],
+    "keyIdeas": [
+      "Allow each weight to be placed on either pan or left unused"
+    ],
+    "commonMistakes": [
+      "Restricting all weights to the pan opposite the object."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two-pan balance uses signed sums rather than ordinary subset sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p20",
+    "problemId": "amc12-predecessor-1959-p20",
+    "finalAnswer": "$\\boxed{160}$ (choice B)",
+    "shortExplanation": "Quadrupling $y$ and halving $z$ each multiply $x$ by four, so the new value is $10\\cdot16=160$.",
+    "detailedSteps": [
+      "The variation law is $x=ky/z^2$. The original values give $10=4k/14^2$, hence $k=490$.",
+      "At $y=16,z=7$, the law gives $x=490\\cdot16/49=160$. Equivalently, the ratio is $(16/4)(14/7)^2=16$."
+    ],
+    "keyIdeas": [
+      "Compare the direct and inverse variation scale factors"
+    ],
+    "commonMistakes": [
+      "Treating inverse-square variation as inverse-linear variation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ratios avoid calculating the constant, although the constant provides a check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p21",
+    "problemId": "amc12-predecessor-1959-p21",
+    "finalAnswer": "$\\boxed{\\frac{\\pi p^2}{27}}$ (choice C)",
+    "shortExplanation": "The side is $p/3$ and the circumradius is that side divided by $\\sqrt3$, giving circle area $\\pi p^2/27$.",
+    "detailedSteps": [
+      "The equilateral triangle has side $s=p/3$ and altitude $\\sqrt3 s/2$. Its circumcenter is the centroid, two thirds of the altitude from a vertex.",
+      "Thus the circumradius is $(2/3)(\\sqrt3 s/2)=s/\\sqrt3$. The circle area is $\\pi s^2/3=\\pi p^2/27$."
+    ],
+    "keyIdeas": [
+      "Relate an equilateral triangle side to its circumradius"
+    ],
+    "commonMistakes": [
+      "Using the inradius rather than the circumradius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The centroid ratio on the altitude distinguishes the two radii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p22",
+    "problemId": "amc12-predecessor-1959-p22",
+    "finalAnswer": "$\\boxed{91}$ (choice C)",
+    "shortExplanation": "The diagonal-midpoint distance is half the difference of the parallel bases, so the shorter base is $97-2\\cdot3=91$.",
+    "detailedSteps": [
+      "Put the longer base at $(0,0),(97,0)$ and the shorter at $(t,h),(t+b,h)$, with $h>0$ and $0<b<97$.",
+      "The diagonal midpoints are $((t+b)/2,h/2)$ and $((97+t)/2,h/2)$. Their separation is $(97-b)/2$, independently of $t$ and $h$.",
+      "Setting that distance equal to three gives $97-b=6$, so $b=91$."
+    ],
+    "keyIdeas": [
+      "Compute the vector joining the two diagonal midpoints"
+    ],
+    "commonMistakes": [
+      "Using the midpoints of the legs, whose joining segment has half the sum of the bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal midpoints use the difference of the base lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p23",
+    "problemId": "amc12-predecessor-1959-p23",
+    "finalAnswer": "$\\boxed{\\text{two integers: }20,-5}$ (choice A)",
+    "shortExplanation": "The equation becomes $a^2-15a=100$, with integer roots 20 and negative five. Both give a positive logarithm argument.",
+    "detailedSteps": [
+      "A base-ten logarithm equal to two has argument 100. Therefore $a^2-15a=100$, or $a^2-15a-100=(a-20)(a+5)=0$.",
+      "The two candidates are $a=20$ and $a=-5$. Each gives argument 100, so neither is excluded by the logarithm domain. There are two integer values."
+    ],
+    "keyIdeas": [
+      "Use the logarithm definition and check its argument at every root"
+    ],
+    "commonMistakes": [
+      "Rejecting a negative input even though the logarithm is taken of the positive quadratic expression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm argument, rather than the variable itself, must be positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p24",
+    "problemId": "amc12-predecessor-1959-p24",
+    "finalAnswer": "$\\boxed{\\frac{m^2}{100-2m}}$ (choice C)",
+    "shortExplanation": "Mass balance gives $t=m^2/(100-2m)$ ounces of added salt on the physically feasible range $0<m<50$.",
+    "detailedSteps": [
+      "The initial salt mass is $m(m/100)=m^2/100$ ounces. After adding $t$ ounces of pure salt, the salt fraction is $(m^2/100+t)/(m+t)$.",
+      "The desired fraction is $2m/100$. Equating these and multiplying by the positive total mass gives $m^2+100t=2m^2+2mt$, so $(100-2m)t=m^2$.",
+      "For a positive, finite addition this requires $0<m<50$, and then $t=m^2/(100-2m)>0$. At $m=50$ a finite addition cannot remove the initial nonsalt mass to reach 100 percent; for $m>50$ the requested percentage exceeds 100 percent. The formula is the listed answer under the feasible physical interpretation."
+    ],
+    "keyIdeas": [
+      "Track the salt mass and the total solution mass separately"
+    ],
+    "commonMistakes": [
+      "Adding salt to the numerator while leaving the total mass denominator unchanged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The formal algebraic expression needs a feasible concentration range.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p25",
+    "problemId": "amc12-predecessor-1959-p25",
+    "finalAnswer": "$\\boxed{-1<x<7}$ (choice D)",
+    "shortExplanation": "The inequality is equivalent to $-4<3-x<4$, which simplifies to $-1<x<7$.",
+    "detailedSteps": [
+      "By the definition of absolute value, $|3-x|<4$ means $-4<3-x<4$.",
+      "The left inequality gives $x<7$, and the right gives $x>-1$. Both are strict, so the full interval is $(-1,7)$."
+    ],
+    "keyIdeas": [
+      "Convert an absolute-value bound into two strict inequalities"
+    ],
+    "commonMistakes": [
+      "Reversing only one sign incorrectly, or including either endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Think of a distance of less than four from the center three.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p26",
+    "problemId": "amc12-predecessor-1959-p26",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice A)",
+    "shortExplanation": "The perpendicular median condition gives height $3b/2$. With $b^2=2$, the area is $3b^2/4=3/2$.",
+    "detailedSteps": [
+      "Place the isosceles base endpoints at $(-b/2,0),(b/2,0)$ and the apex at $(0,h)$, where $b=\\sqrt2$ and $h>0$.",
+      "The two medians from the base endpoints have direction vectors $(3b/4,h/2)$ and $(-3b/4,h/2)$. Their dot product is $h^2/4-9b^2/16$.",
+      "Perpendicularity makes this zero, giving $h=3b/2$. The area is $bh/2=3b^2/4=3/2$."
+    ],
+    "keyIdeas": [
+      "Express the medians as vectors and apply perpendicularity"
+    ],
+    "commonMistakes": [
+      "Reading the printed base length $\\sqrt2$ as two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates make the median endpoints and the perpendicularity relation explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p27",
+    "problemId": "amc12-predecessor-1959-p27",
+    "finalAnswer": "$\\boxed{\\text{the root sum is not }2}$ (choice A)",
+    "shortExplanation": "The roots are $i$ and $-2i$, whose sum is $-i$. The statement that their sum is two is false.",
+    "detailedSteps": [
+      "Dividing $ix^2-x+2i=0$ by $i$ gives $x^2+ix+2=0$. Its factorization is $(x-i)(x+2i)=0$, so the roots are $i$ and $-2i$.",
+      "Their sum is $-i$, rather than two. Their product is two, both are purely imaginary, and the original discriminant is $(-1)^2-4(i)(2i)=9$, a positive real number.",
+      "These computations identify the first listed assertion as the false one."
+    ],
+    "keyIdeas": [
+      "Factor the complex quadratic before assessing the listed statements"
+    ],
+    "commonMistakes": [
+      "Using the discriminant of the normalized equation when the question refers to the original coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiplying a polynomial by a nonzero complex constant preserves roots but rescales its discriminant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p28",
+    "problemId": "amc12-predecessor-1959-p28",
+    "finalAnswer": "$\\boxed{\\frac ca}$ (choice E)",
+    "shortExplanation": "The two ratios are $AM/MB=b/a$ and $CL/LB=b/c$, so their quotient is $c/a$.",
+    "detailedSteps": [
+      "Using the usual side notation $BC=a,CA=b,AB=c$, the bisector from $C$ gives $AM/MB=CA/CB=b/a$.",
+      "The bisector from $A$ gives $BL/LC=AB/AC=c/b$, or $CL/LB=b/c$.",
+      "Consequently the factor comparing the first ratio to the second is $(b/a)/(b/c)=c/a$. All side lengths and the divided segments are positive."
+    ],
+    "keyIdeas": [
+      "Apply each angle-bisector theorem with the correct adjacent sides"
+    ],
+    "commonMistakes": [
+      "Inverting only one ratio when matching the segment order in the source."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Write the endpoint order beside each bisector relation before dividing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p29",
+    "problemId": "amc12-predecessor-1959-p29",
+    "finalAnswer": "$\\boxed{\\text{one value }(n=50)}$ (choice D)",
+    "shortExplanation": "The score equation is $15+(n-20)/3=n/2$, which has the single admissible solution $n=50$.",
+    "detailedSteps": [
+      "The first twenty questions contribute fifteen correct answers. The remaining $n-20$ contribute $(n-20)/3$ correct answers.",
+      "The overall half-correct condition gives $15+(n-20)/3=n/2$. Multiplication by six gives $90+2n-40=3n$, so $n=50$.",
+      "Then the remaining thirty questions contribute ten correct responses, and the total is twenty-five out of fifty. The counts are integral and consistent, so precisely one value is possible."
+    ],
+    "keyIdeas": [
+      "Count correct responses in the two disjoint portions"
+    ],
+    "commonMistakes": [
+      "Adding the success fractions without weighting them by their respective numbers of questions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check that the algebraic count corresponds to whole questions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p30",
+    "problemId": "amc12-predecessor-1959-p30",
+    "finalAnswer": "$\\boxed{24\\text{ seconds}}$ (choice B)",
+    "shortExplanation": "The combined rate is one lap per fifteen seconds, so the unknown lap rate is $1/15-1/40=1/24$.",
+    "detailedSteps": [
+      "Measure distance in laps. When the runners move in opposite directions, their relative speed is the sum of their speeds.",
+      "Thus $1/40+1/T=1/15$. This gives $1/T=1/24$ and the lap time $T=24$ seconds."
+    ],
+    "keyIdeas": [
+      "Add lap rates for runners moving in opposite directions"
+    ],
+    "commonMistakes": [
+      "Subtracting the runners' rates as if they were moving in the same direction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The time to meet corresponds to one complete lap of relative separation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p31",
+    "problemId": "amc12-predecessor-1959-p31",
+    "finalAnswer": "$\\boxed{100}$ (choice B)",
+    "shortExplanation": "For square side $s$, the circle radius satisfies $r^2=s^2+(s/2)^2$. With $s^2=40$, the full-circle square has area $2r^2=100$.",
+    "detailedSteps": [
+      "An inscribed square in a semicircle has two adjacent vertices on the diameter and its other two vertices on the arc. To see why, three arc vertices would force the fourth onto the same full circle, but the four corners of a square cannot all lie in one semicircle. Two opposite diameter vertices would put the other two on opposite sides of that line.",
+      "The adjacent diameter vertices are symmetric about the center: equating the distances from the center to the two upper corners gives bottom coordinates $(-s/2,0),(s/2,0)$. Hence $r^2=(s/2)^2+s^2=5s^2/4=50$.",
+      "A square inscribed in the entire circle has diagonal $2r$. Its area is $(2r)^2/2=2r^2=100$."
+    ],
+    "keyIdeas": [
+      "Locate the square against the diameter of the semicircle"
+    ],
+    "commonMistakes": [
+      "Treating the semicircle square side as the full circle's inscribed-square side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The semicircle includes its diameter as part of the boundary; no supplied diagram is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p32",
+    "problemId": "amc12-predecessor-1959-p32",
+    "finalAnswer": "$\\boxed{\\frac l2}$ (choice C)",
+    "shortExplanation": "The center distance is $5r/3$, so the nearest circle distance is $2r/3=l/2$.",
+    "detailedSteps": [
+      "Let $O$ be the center and $T$ the tangency point. Since $OT\\perp AT$, Pythagoras gives $OA^2=r^2+l^2$.",
+      "With $l=4r/3$, we get $OA=5r/3$. The nearest point of the circle lies on the ray from $O$ toward $A$, at distance $OA-r=2r/3=l/2$ from $A$."
+    ],
+    "keyIdeas": [
+      "Use the perpendicular tangent radius, then subtract the circle radius"
+    ],
+    "commonMistakes": [
+      "Reporting the distance to the center instead of the shortest distance to the circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The external point and center determine the nearest radial point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p33",
+    "problemId": "amc12-predecessor-1959-p33",
+    "finalAnswer": "$\\boxed{25}$ (choice B)",
+    "shortExplanation": "The reciprocal step is $-1/12$, making the fourth term twelve. The four-term sum is 25.",
+    "detailedSteps": [
+      "The first three reciprocals are $1/3,1/4,1/6$, with common difference $-1/12$. The fourth reciprocal is $1/12$, so the fourth term is twelve.",
+      "Thus $S_4=3+4+6+12=25$. Also $S_2=7$, which is not half of 25.",
+      "The fifth reciprocal would be zero, which has no finite reciprocal. Therefore the proposed finite sums involving a fifth or sixth term are not defined by this continuation."
+    ],
+    "keyIdeas": [
+      "Continue the arithmetic progression of reciprocals"
+    ],
+    "commonMistakes": [
+      "Continuing the original terms as an arithmetic progression, or taking the reciprocal of zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A harmonic progression is defined through its reciprocals and can terminate as a finite-valued sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p34",
+    "problemId": "amc12-predecessor-1959-p34",
+    "finalAnswer": "$\\boxed{7\\text{, a positive integer}}$ (choice A)",
+    "shortExplanation": "The roots have sum three and product one, so $r^2+s^2=3^2-2=7$.",
+    "detailedSteps": [
+      "Vieta gives $r+s=3$ and $rs=1$. Therefore $r^2+s^2=(r+s)^2-2rs=9-2=7$.",
+      "Thus the expression is a positive integer, the first listed classification. The historical choice language uses \"fraction\" for a noninteger rational value; the exact value seven removes any computational uncertainty."
+    ],
+    "keyIdeas": [
+      "Compute a symmetric expression using both Vieta relations"
+    ],
+    "commonMistakes": [
+      "Assuming that a symmetric expression must be irrational because the individual roots are irrational."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The individual roots need not be calculated; the exact value is stronger than a qualitative classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p35",
+    "problemId": "amc12-predecessor-1959-p35",
+    "finalAnswer": "$\\boxed{\\{n\\}\\text{; none of the listed sets}}$ (choice E)",
+    "shortExplanation": "Cancellation gives the unique solution $x=n$. None of the listed sets is exactly the singleton $\\{n\\}$.",
+    "detailedSteps": [
+      "Expand the left side to $(n-m)(2x-m-n)$. Since $m>0>n$, the factor $m-n$ is nonzero.",
+      "Dividing the equation by $m-n$ gives $m+n-2x=m-n$, so $x=n$. Substitution confirms this unique solution.",
+      "The half-line $x\\le n$ contains the solution but also contains nonsolutions such as $x=n-1$. It is not the requested solution set. The other listed sets likewise differ from $\\{n\\}$, so the answer is none of these."
+    ],
+    "keyIdeas": [
+      "Solve for the complete set rather than a weaker consequence"
+    ],
+    "commonMistakes": [
+      "Choosing a half-line that contains the solution instead of the exact solution set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The word \"set\" requires equivalence in both directions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p36",
+    "problemId": "amc12-predecessor-1959-p36",
+    "finalAnswer": "$\\boxed{17}$ (choice D)",
+    "shortExplanation": "Writing the side adjacent to the $60^\\circ$ angle as $b$ gives $(90-b)^2=80^2+b^2-80b$, so $b=17$.",
+    "detailedSteps": [
+      "Let $b$ be the nonbase side adjacent to the specified $60^\\circ$ angle. The opposite side is $90-b$.",
+      "The law of cosines gives $(90-b)^2=80^2+b^2-2(80)b\\cos60^\\circ=6400+b^2-80b$.",
+      "Canceling $b^2$ gives $8100-180b=6400-80b$, so $b=17$. The other side is 73; the side lengths 17,73,80 satisfy the triangle inequalities, and 17 is the shortest."
+    ],
+    "keyIdeas": [
+      "Combine the side-sum relation with the law of cosines"
+    ],
+    "commonMistakes": [
+      "Assuming that the shortest side is opposite the given angle without first identifying the unknown sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total of the two nonbase sides eliminates one unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p37",
+    "problemId": "amc12-predecessor-1959-p37",
+    "finalAnswer": "$\\boxed{\\frac2n}$ (choice B)",
+    "shortExplanation": "The factors are $2/3,3/4,\\ldots,(n-1)/n$, and all intermediate values cancel.",
+    "detailedSteps": [
+      "For the integer endpoint $n\\ge3$, write $1-1/k=(k-1)/k$. The product is $(2/3)(3/4)\\cdots((n-1)/n)$.",
+      "Each denominator except the last cancels the next numerator, leaving $2/n$."
+    ],
+    "keyIdeas": [
+      "Cancel consecutive numerators and denominators in the product"
+    ],
+    "commonMistakes": [
+      "Adding the factors or losing the initial surviving numerator two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Writing out the first and last factors makes telescoping transparent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p38",
+    "problemId": "amc12-predecessor-1959-p38",
+    "finalAnswer": "$\\boxed{\\frac18\\text{, a noninteger rational}}$ (choice B)",
+    "shortExplanation": "With $u=\\sqrt{2x}\\ge0$, the equation factors as $(2u-1)(u+1)=0$. Only $u=1/2$ is allowed, giving $x=1/8$.",
+    "detailedSteps": [
+      "The actual source equation is $4x+\\sqrt{2x}=1$, so a real solution requires $x\\ge0$. It is not an equation involving powers $4^x$ and $2^x$.",
+      "Put $u=\\sqrt{2x}\\ge0$, so $x=u^2/2$. Then $2u^2+u-1=(2u-1)(u+1)=0$.",
+      "The root $u=-1$ is inadmissible; $u=1/2$ gives $x=1/8$. Direct substitution gives $1/2+1/2=1$. This is one noninteger rational value, the historical \"fractional\" classification."
+    ],
+    "keyIdeas": [
+      "Read the radical correctly and use a nonnegative substitution"
+    ],
+    "commonMistakes": [
+      "Misreading the radical as an exponent, or accepting the negative auxiliary root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A nonnegative square-root substitution avoids an unchecked squaring step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p39",
+    "problemId": "amc12-predecessor-1959-p39",
+    "finalAnswer": "$\\boxed{\\frac{x^{10}-x}{x-1}+45a\\quad(x\\ne1)}$ (choice D)",
+    "shortExplanation": "For $x\\ne1$, the sum is $(x^{10}-x)/(x-1)+45a$. At $x=1$ the original sum is $9+45a$.",
+    "detailedSteps": [
+      "The nine terms sum to $S=(x+x^2+\\cdots+x^9)+a(1+2+\\cdots+9)$. The arithmetic sum contributes $45a$.",
+      "Multiplying the geometric sum by $x-1$ gives $x^{10}-x$. Thus for $x\\ne1$, $S=(x^{10}-x)/(x-1)+45a$, the fourth listed form.",
+      "At $x=1$, all nine geometric terms are one, so $S=9+45a$. The displayed quotient is undefined there; it represents the original polynomial only after explicitly supplying this removable extension."
+    ],
+    "keyIdeas": [
+      "Separate the geometric sum from the arithmetic sum and retain the exceptional input"
+    ],
+    "commonMistakes": [
+      "Canceling the geometric sum denominator and overlooking the admissible original input $x=1$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source omits an $x\\ne1$ restriction; the commentary supplies the complete piecewise interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p40",
+    "problemId": "amc12-predecessor-1959-p40",
+    "finalAnswer": "$\\boxed{15}$ (choice C)",
+    "shortExplanation": "The line through $C$ and $E$ meets $AB$ at $F=2B/3$. Thus $BF=BA/3=5$ and $BA=15$.",
+    "detailedSteps": [
+      "Take $A$ as the origin, and let the independent vectors to $B,C$ be $b,c$. Since $D$ is the midpoint of $AC$, it has vector $c/2$.",
+      "The midpoint $E$ of $BD$ has vector $b/2+c/4$. A point on $CE$ has vector $c+t(b/2-3c/4)$.",
+      "To lie on $AB$, its $c$ coefficient must vanish: $1-3t/4=0$, so $t=4/3$. Its vector is then $2b/3$, giving $BF=BA/3$. Therefore $BA=3\\cdot5=15$."
+    ],
+    "keyIdeas": [
+      "Use affine coordinates to track the two midpoint conditions"
+    ],
+    "commonMistakes": [
+      "Assuming that a line through a midpoint necessarily meets the opposite side at its midpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only affine ratios are needed; no right-angle or isosceles assumption is made.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p41",
+    "problemId": "amc12-predecessor-1959-p41",
+    "finalAnswer": "$\\boxed{16\\text{ inches}}$ (choice D)",
+    "shortExplanation": "The center equation is $r^2+(r-4)^2=(r+4)^2$, whose positive solution is $r=16$.",
+    "detailedSteps": [
+      "Take the common tangent as $y=0$. The two equal circles have centers at height $r$; mutual external tangency makes their horizontal separation $2r$. Put their centers at $(-r,r),(r,r)$.",
+      "The four-inch circle is tangent to the same line, so its center has height four. Being equidistant from the two equal centers places it on their perpendicular bisector, at $(0,4)$.",
+      "External tangency gives $r^2+(r-4)^2=(r+4)^2$. Simplifying gives $r(r-16)=0$; a radius is positive, so $r=16$. These three centers realize all required tangencies."
+    ],
+    "keyIdeas": [
+      "Use the symmetry of equal tangent circles above a common line"
+    ],
+    "commonMistakes": [
+      "Using a difference of radii for the external tangencies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal-circle symmetry determines the horizontal offset before Pythagoras is applied.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p42",
+    "problemId": "amc12-predecessor-1959-p42",
+    "finalAnswer": "$\\boxed{2,4}$ (choice E)",
+    "shortExplanation": "For a prime with ordered exponents $\\alpha\\le\\beta\\le\\gamma$, the exponent in $MD$ is $\\alpha+\\gamma$, at most the product exponent $\\alpha+\\beta+\\gamma$. Equality for every prime means pairwise coprimality.",
+    "detailedSteps": [
+      "For any prime, sort its exponents in $a,b,c$ as $\\alpha\\le\\beta\\le\\gamma$. The gcd contributes $\\alpha$ and the lcm contributes $\\gamma$, while $abc$ contributes $\\alpha+\\beta+\\gamma$.",
+      "Thus $MD$ divides $abc$ and cannot exceed it, proving statement two. Equality holds exactly when $\\beta=0$ for every prime, meaning that each prime divides at most one of the three integers. That is precisely pairwise coprimality, proving statement four.",
+      "The triple $(2,2,2)$ has $MD=4<8=abc$, refuting statement one and the assertion that three prime inputs always give equality. The composite pairwise-coprime triple $(4,9,25)$ also has equality, refuting the other direction of statement three."
+    ],
+    "keyIdeas": [
+      "Compare the exponents of each prime in the gcd, lcm and product"
+    ],
+    "commonMistakes": [
+      "Applying the two-integer gcd-lcm identity directly to three integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle prime exponent is the extra factor distinguishing three integers from two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p43",
+    "problemId": "amc12-predecessor-1959-p43",
+    "finalAnswer": "$\\boxed{\\frac{125}{3}}$ (choice B)",
+    "shortExplanation": "Heron gives area 468. The circumdiameter is $25\\cdot39\\cdot40/(2\\cdot468)=125/3$.",
+    "detailedSteps": [
+      "The semiperimeter is $(25+39+40)/2=52$. Heron gives $\\Delta^2=52(52-25)(52-39)(52-40)=52\\cdot27\\cdot13\\cdot12=468^2$, so $\\Delta=468$.",
+      "For side lengths $a,b,c$, the circumradius formula is $R=abc/(4\\Delta)$. Therefore the requested diameter is $2R=25\\cdot39\\cdot40/(2\\cdot468)=125/3$."
+    ],
+    "keyIdeas": [
+      "Compute the triangle area before using the circumdiameter formula"
+    ],
+    "commonMistakes": [
+      "Reporting the circumradius when the question asks for its diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive area square is exact, so no numerical root approximation is necessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p44",
+    "problemId": "amc12-predecessor-1959-p44",
+    "finalAnswer": "$\\boxed{\\text{positive}}$ (choice C)",
+    "shortExplanation": "If the roots are $r,s>1$, then $1+b+c=(1-r)(1-s)>0$.",
+    "detailedSteps": [
+      "Factor the monic quadratic as $(x-r)(x-s)$ with $r,s>1$. Evaluating at $x=1$ gives $1+b+c=(1-r)(1-s)$.",
+      "Both factors on the right are negative, so their product is strictly positive. Equality is impossible because neither root is one."
+    ],
+    "keyIdeas": [
+      "Evaluate the factored polynomial at one"
+    ],
+    "commonMistakes": [
+      "Inferring the sign from the separate coefficients instead of evaluating the polynomial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conclusion also holds if the two roots coincide above one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p45",
+    "problemId": "amc12-predecessor-1959-p45",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "The logarithm product reduces to $\\log_3y$, while the right side is two. Hence $y=9$.",
+    "detailedSteps": [
+      "The original logarithms require $x>0$, $x\\ne1$, $2x\\ne1$ and $y>0$. These ensure that every logarithm and denominator in change of base is defined.",
+      "Using natural logarithms, the product is $[\\ln x/\\ln3][\\ln(2x)/\\ln x][\\ln y/\\ln(2x)]=\\ln y/\\ln3=\\log_3y$.",
+      "The right side is $\\log_x(x^2)=2$ for every admissible base $x$. Thus $\\log_3y=2$, giving $y=9$, which is positive and works for every admissible $x$."
+    ],
+    "keyIdeas": [
+      "Telescope logarithms through change of base while enforcing all base restrictions"
+    ],
+    "commonMistakes": [
+      "Canceling a logarithm without first excluding bases one and nonpositive arguments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The intermediate base $2x$ creates the additional exclusion $x=1/2$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p46",
+    "problemId": "amc12-predecessor-1959-p46",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "There are eleven clear half-days and seven rainy half-days, so $2d=18$ and $d=9$.",
+    "detailedSteps": [
+      "The six clear mornings and five clear afternoons total eleven clear half-days. The seven rainy observations contribute seven rainy half-days.",
+      "These exhaust the $2d$ morning-or-afternoon periods, so $2d=11+7=18$ and $d=9$.",
+      "The condition forbidding rain in both halves of a day is consistent: take three morning-rain days, four afternoon-rain days and two fully clear days. This gives exactly six clear mornings and five clear afternoons."
+    ],
+    "keyIdeas": [
+      "Count clear and rainy half-days together"
+    ],
+    "commonMistakes": [
+      "Counting a clear morning and a clear afternoon as separate whole days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A concrete schedule checks the extra constraint rather than ignoring it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p47",
+    "problemId": "amc12-predecessor-1959-p47",
+    "finalAnswer": "$\\boxed{\\text{only statement }2}$ (choice A)",
+    "shortExplanation": "A thinking student is human, so some human thinks. None of the other three conclusions is forced.",
+    "detailedSteps": [
+      "The existential premise supplies a student who thinks. The universal student premise makes that individual human, so statement two follows.",
+      "For statement one, a human freshman who is not a student can coexist with that witness, so freshmen need not all be students. For statement three, a thinking freshman can be the student witness, so the premises do not forbid freshmen from thinking.",
+      "For statement four, a model with one human who is a thinking student and no other humans satisfies all premises but has no thinking human who is not a student. Therefore only statement two is a necessary consequence."
+    ],
+    "keyIdeas": [
+      "Transfer an existing student witness to the larger human set"
+    ],
+    "commonMistakes": [
+      "Importing the everyday assumption that freshmen must be students when it is not among the formal premises."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conclusion must hold in every model of precisely the given premises.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p48",
+    "problemId": "amc12-predecessor-1959-p48",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The degree can only be zero, one or two. The possibilities are $3$, $2x$, $x+1$, $x-1$ and $x^2$.",
+    "detailedSteps": [
+      "The positive leading coefficient satisfies $a_0\\ge1$, so $n+a_0\\le3$ forces $0\\le n\\le2$.",
+      "If $n=0$, the condition is $a_0=3$, giving the constant polynomial three. If $n=1$, it is $a_0+|a_1|=2$, giving $2x$, $x+1$ and $x-1$.",
+      "If $n=2$, positivity forces $a_0=1$ and all remaining coefficients zero, giving $x^2$. These five polynomials are distinct, and the degree bound proves the list complete."
+    ],
+    "keyIdeas": [
+      "Bound the degree and enumerate coefficient patterns at each degree"
+    ],
+    "commonMistakes": [
+      "Omitting constant polynomials or treating leading-zero expressions as additional degrees."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The leading coefficient is positive, so each enumerated representation has its actual degree.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p49",
+    "problemId": "amc12-predecessor-1959-p49",
+    "finalAnswer": "$\\boxed{\\frac27}$ (choice B)",
+    "shortExplanation": "Each three-term block is $1/4$ times a successive power of $1/8$. The geometric sum is $(1/4)/(1-1/8)=2/7$.",
+    "detailedSteps": [
+      "The absolute values sum to the convergent geometric series $1+1/2+1/4+\\cdots=2$, so grouping consecutive terms is legitimate.",
+      "The first block is $1-1/2-1/4=1/4$. Each following block has the same signs and is smaller by a factor $1/8$.",
+      "Therefore $S=(1/4)\\sum_{j=0}^{\\infty}(1/8)^j=(1/4)/(1-1/8)=2/7$. The absolute tail after any finite collection of blocks tends to zero."
+    ],
+    "keyIdeas": [
+      "Group one repeating sign block after establishing absolute convergence"
+    ],
+    "commonMistakes": [
+      "Treating the signs as alternating term by term instead of using the actual three-term pattern."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Absolute convergence justifies the block calculation without a rearrangement issue.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1959-p50",
+    "problemId": "amc12-predecessor-1959-p50",
+    "finalAnswer": "$\\boxed{6\\text{, one value between }4\\text{ and }8}$ (choice D)",
+    "shortExplanation": "Every member belongs to exactly one unordered committee pair, and every pair has exactly one member. Thus there are $\\binom42=6$ members.",
+    "detailedSteps": [
+      "Associate a member with the unordered pair of the two committees to which that member belongs. The exactly-two rule makes this association well-defined.",
+      "Every committee pair has one member in common, so every pair occurs. No pair can occur for two different members, because then its committees would have two common members. This gives a bijection between members and the six unordered pairs.",
+      "Existence is explicit: create one member for each pair and put that member in precisely those two committees. Each committee has three members, and every pair has its unique common member. Hence the single value is six, lying between four and eight."
+    ],
+    "keyIdeas": [
+      "Match each member with the unique pair of committees containing that member"
+    ],
+    "commonMistakes": [
+      "Counting committee memberships as separate people or neglecting the exactly-two rule."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bijection proves both uniqueness of the count and a construction attaining it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

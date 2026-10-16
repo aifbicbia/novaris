@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc12a-2009-p1",
+    "problemId": "amc12a-2009-p1",
+    "finalAnswer": "$\\boxed{46}$ (choice A)",
+    "shortExplanation": "The elapsed time is two hours forty-four minutes.",
+    "detailedSteps": [
+      "From 10:34 am to 12:34 pm is two hours, and the remaining time to 1:18 pm is forty-four minutes. Thus $h+m=2+44=46$."
+    ],
+    "keyIdeas": [
+      "Converting an elapsed flight time"
+    ],
+    "commonMistakes": [
+      "Subtracting clock labels without borrowing sixty minutes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both airports use the same time zone.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p2",
+    "problemId": "amc12a-2009-p2",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice C)",
+    "shortExplanation": "Work from the innermost denominator outward.",
+    "detailedSteps": [
+      "The innermost sum is $1+1=2$. The next denominator is $1+1/2=3/2$, so the entire expression is $1+2/3=5/3$."
+    ],
+    "keyIdeas": [
+      "Evaluating a nested fraction"
+    ],
+    "commonMistakes": [
+      "Flattening a nested fraction into a sum of independent fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fraction bars determine the order of operations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p3",
+    "problemId": "amc12a-2009-p3",
+    "finalAnswer": "$\\boxed{\\frac5{12}}$ (choice B)",
+    "shortExplanation": "Add one third of the interval length to its left endpoint.",
+    "detailedSteps": [
+      "The interval has length $3/4-1/4=1/2$. One third of this length is $1/6$, so the position is $1/4+1/6=5/12$."
+    ],
+    "keyIdeas": [
+      "A weighted position on a number line"
+    ],
+    "commonMistakes": [
+      "Taking one third of the right endpoint alone."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reference point is one quarter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p4",
+    "problemId": "amc12a-2009-p4",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "An odd total requires an odd number of dimes.",
+    "detailedSteps": [
+      "Pennies, nickels and quarters have odd values; dimes have even values. With four coins, an odd total therefore requires one or three dimes.",
+      "Three dimes already exceed fifteen cents. With one dime, the other three coins would have to sum to five cents, impossible because three available odd denominations sum to either three or at least seven.",
+      "The other listed totals have witnesses: $25=10+5+5+5$, $35=10+10+10+5$, $45=25+10+5+5$, and $55=25+10+10+10$. Thus only fifteen is impossible."
+    ],
+    "keyIdeas": [
+      "Four-coin denomination constraints"
+    ],
+    "commonMistakes": [
+      "Forgetting that exactly four coins must be used."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short parity argument rules out the smallest candidate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p5",
+    "problemId": "amc12a-2009-p5",
+    "finalAnswer": "$\\boxed{125}$ (choice D)",
+    "shortExplanation": "The volume loss is exactly the original side length.",
+    "detailedSteps": [
+      "Let the cube side be $s$. The modified volume is $(s+1)(s-1)s=s^3-s$. Its loss from $s^3$ is $s$, so $s=5$ and the original volume is $5^3=125$."
+    ],
+    "keyIdeas": [
+      "A volume difference after opposite side changes"
+    ],
+    "commonMistakes": [
+      "Treating the one-unit changes as percentage changes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The modified side lengths must be positive, which holds at the derived side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p6",
+    "problemId": "amc12a-2009-p6",
+    "finalAnswer": "$\\boxed{P^{2n}Q^m}$ (choice E)",
+    "shortExplanation": "The target has prime factors $2^{2mn}3^{mn}$.",
+    "detailedSteps": [
+      "Factor $12^{mn}=(2^2\\cdot3)^{mn}=2^{2mn}3^{mn}$. Since $P=2^m$ and $Q=3^n$, this is $P^{2n}Q^m$, choice E.",
+      "The identity remains valid for zero and negative integer exponents because the bases are nonzero."
+    ],
+    "keyIdeas": [
+      "Combining exponential prime factors"
+    ],
+    "commonMistakes": [
+      "Confusing the exponent on P with the exponent on its underlying base two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare exponents prime by prime.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p7",
+    "problemId": "amc12a-2009-p7",
+    "finalAnswer": "$\\boxed{502}$ (choice B)",
+    "shortExplanation": "The sequence starts at five with common difference four.",
+    "detailedSteps": [
+      "The first difference is $3x-8$ and the second is $-2x+12$. Equating them gives $x=4$.",
+      "The first term is $5$ and the difference is $4$, so $5+4(n-1)=2009$. Hence $n=502$."
+    ],
+    "keyIdeas": [
+      "Equal consecutive differences"
+    ],
+    "commonMistakes": [
+      "Using the third displayed expression as the general nth term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equality of the two first differences determines the parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p8",
+    "problemId": "amc12a-2009-p8",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The outer and inner side lengths are $L+S$ and $L-S$.",
+    "detailedSteps": [
+      "From the displayed arrangement, the outer square has side $L+S$, while the exposed central square has side $L-S$, where $L>S>0$ are the rectangle sides.",
+      "The area ratio four gives $(L+S)^2=4(L-S)^2$. Both side lengths are positive, so $L+S=2(L-S)$ and $L/S=3$."
+    ],
+    "keyIdeas": [
+      "A square frame made of four rectangles"
+    ],
+    "commonMistakes": [
+      "Equating the area ratio directly to the side-length ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original figure fixes which rectangle edges form each square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p9",
+    "problemId": "amc12a-2009-p9",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "The requested sum is $f(1)$.",
+    "detailedSteps": [
+      "Since $f(1)=a+b+c$, substitute $x=-2$ into the supplied expression for $f(x+3)$. This gives $f(1)=3(-2)^2+7(-2)+4=2$."
+    ],
+    "keyIdeas": [
+      "Evaluating a shifted polynomial"
+    ],
+    "commonMistakes": [
+      "Substituting one into the unshifted right-hand side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Evaluate at the input that makes the shifted argument one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p10",
+    "problemId": "amc12a-2009-p10",
+    "finalAnswer": "$\\boxed{13}$ (choice C)",
+    "shortExplanation": "The diagonal must lie strictly between twelve and fourteen.",
+    "detailedSteps": [
+      "Triangle $ABD$ requires $|9-5|<BD<9+5$, or $4<BD<14$. Triangle $BCD$ requires $|17-5|<BD<17+5$, or $12<BD<22$.",
+      "The intersection is $12<BD<14$, whose only integer is $13$. Both triangles exist and can be placed on opposite sides of the common diagonal."
+    ],
+    "keyIdeas": [
+      "Intersecting strict triangle-inequality intervals"
+    ],
+    "commonMistakes": [
+      "Allowing a triangle-inequality endpoint, which would give a degenerate triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the shared diagonal needs to be determined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p11",
+    "problemId": "amc12a-2009-p11",
+    "finalAnswer": "$\\boxed{761}$ (choice E)",
+    "shortExplanation": "Layer n contributes $4(n-1)$ new diamonds.",
+    "detailedSteps": [
+      "The first figure contains one diamond. On the outer square of figure $n$, there are $n$ diamonds per side; counting each corner twice would overcount by four. Thus its new layer contains $4n-4=4(n-1)$ diamonds.",
+      "Therefore figure twenty has $1+4(1+2+\\cdots+19)=1+4\\cdot190=761$ diamonds. The formula also gives thirteen for the displayed third figure."
+    ],
+    "keyIdeas": [
+      "Adding successive square-boundary layers"
+    ],
+    "commonMistakes": [
+      "Counting a corner separately on each of its two incident sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The central diamond is counted once, separately from all outer layers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p12",
+    "problemId": "amc12a-2009-p12",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Only the positive integer fifty-four qualifies.",
+    "detailedSteps": [
+      "Write the integer as $100a+10b+c$. The condition gives $94a+4b=5c$. Since a three-digit number is at most six times the maximum digit sum, it must be at most $162$, so $a\\in\\{0,1\\}$.",
+      "If $a=1$, the left side is at least ninety-four, exceeding $5c\\le45$. Hence $a=0$. Then $4b=5c$, giving $(b,c)=(0,0)$ or $(5,4)$. The first gives zero and is excluded; the second gives $54$."
+    ],
+    "keyIdeas": [
+      "A digit-sum equation"
+    ],
+    "commonMistakes": [
+      "Including zero although the source asks for positive integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit equation is substantially shorter than enumeration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p13",
+    "problemId": "amc12a-2009-p13",
+    "finalAnswer": "$\\boxed{[700,800]}$ (choice D)",
+    "shortExplanation": "The squared distance is $500+400\\cos\\theta$.",
+    "detailedSteps": [
+      "Let $\\theta$ be the change of heading. The interior triangle angle at the turn is $180^\\circ-\\theta$, so the cosine rule gives $AC^2=10^2+20^2+400\\cos\\theta$.",
+      "For $45^\\circ\\le\\theta\\le60^\\circ$, the value lies between $700$ and $500+200\\sqrt2<800$. Thus the listed interval is $[700,800]$. The same conclusion holds if the endpoints of the turn range are excluded."
+    ],
+    "keyIdeas": [
+      "The angle of a ship turn"
+    ],
+    "commonMistakes": [
+      "Using the turning angle as the triangle’s interior angle and reversing the cosine-rule sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Heading changes are exterior angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p14",
+    "problemId": "amc12a-2009-p14",
+    "finalAnswer": "$\\boxed{-\\frac16}$ (choice B)",
+    "shortExplanation": "The line must pass through the midpoint of the opposite side.",
+    "detailedSteps": [
+      "A segment from a triangle vertex creates equal areas exactly when it bisects the opposite side. That midpoint is $((1+6m)/2,1/2)$.",
+      "For it to lie on $y=mx$, we need $m(1+6m)=1$, or $6m^2+m-1=0$. Its roots are $1/3$ and $-1/2$, both yielding nondegenerate triangles and a genuine median.",
+      "Their sum is $-1/6$."
+    ],
+    "keyIdeas": [
+      "An equal-area line through a triangle vertex"
+    ],
+    "commonMistakes": [
+      "Assuming m must be positive because one other vertex is in the first quadrant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both signs of the third vertex’s horizontal coordinate are permitted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p15",
+    "problemId": "amc12a-2009-p15",
+    "finalAnswer": "$\\boxed{97}$ (choice D)",
+    "shortExplanation": "Ninety-six terms give $48-48i$.",
+    "detailedSteps": [
+      "A block with indices $4j+1$ through $4j+4$ contributes $(4j+1)i-(4j+2)-(4j+3)i+(4j+4)=2-2i$.",
+      "Twenty-four blocks give $48-48i$. Adding the next term $97i$ gives $48+49i$, so $n=97$.",
+      "For completeness, after $4q,4q+1,4q+2,4q+3$ terms the sums are respectively $2q-2qi$, $2q+(2q+1)i$, $-2q-2+(2q+1)i$, and $-2q-2-(2q+2)i$. These formulas show that no other positive index gives the target."
+    ],
+    "keyIdeas": [
+      "Grouping powers of i in blocks of four"
+    ],
+    "commonMistakes": [
+      "Grouping the powers while ignoring their index coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The target has positive real and imaginary parts, selecting the 4q+1 branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p16",
+    "problemId": "amc12a-2009-p16",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The center is $(r,r)$ and the center distance is $r+1$.",
+    "detailedSteps": [
+      "Tangency to the positive axes places the center at $(r,r)$ with $r>0$. External tangency to the given unit circle requires $(r-3)^2+r^2=(r+1)^2$.",
+      "This reduces to $r^2-8r+8=0$. Its two positive roots are $4\\pm2\\sqrt2$, and their sum is $8$. Both tangency points on the coordinate axes are positive."
+    ],
+    "keyIdeas": [
+      "A circle tangent to both positive axes"
+    ],
+    "commonMistakes": [
+      "Using an internal-tangency radius difference instead of the required radius sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive-axis requirement rules out centers in other quadrants.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p17",
+    "problemId": "amc12a-2009-p17",
+    "finalAnswer": "$\\boxed{1}$ (choice C)",
+    "shortExplanation": "The two ratios are the roots of $r^2-r+a=0$.",
+    "detailedSteps": [
+      "Positive terms and a finite sum imply $a>0$ and $0<r_j<1$. The equation $a/(1-r_j)=r_j$ is equivalent to $r_j^2-r_j+a=0$.",
+      "The series are different but have the same first term, so their ratios are distinct. They are therefore the two roots of this quadratic, whose sum is one by Vieta’s formula."
+    ],
+    "keyIdeas": [
+      "Two geometric sums with one first term"
+    ],
+    "commonMistakes": [
+      "Adding the two series term by term without using the special sum condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinctness matters: it ensures the two ratios exhaust the quadratic’s roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p18",
+    "problemId": "amc12a-2009-p18",
+    "finalAnswer": "$\\boxed{7}$ (choice B)",
+    "shortExplanation": "The exceptional index is four.",
+    "detailedSteps": [
+      "The integer is $I_k=10^{k+2}+64$. For $k=1,2,3$, factor out $2^3,2^4,2^5$, respectively; the remaining factors are odd, giving valuations three, four and five.",
+      "For $k=4$, $I_4=64(15625+1)=64\\cdot15626$, and the second factor has exactly one factor of two. Thus the valuation is seven.",
+      "For $k\\ge5$, the power of ten is divisible by $128$, so $I_k\\equiv64\\pmod{128}$ and its valuation is exactly six. The maximum is seven."
+    ],
+    "keyIdeas": [
+      "A power-of-two valuation with an exceptional case"
+    ],
+    "commonMistakes": [
+      "Assuming the valuation always increases with the number of zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A cancellation in the exceptional sixth power of ten adds one factor of two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p19",
+    "problemId": "amc12a-2009-p19",
+    "finalAnswer": "$\\boxed{A=B}$ (choice C)",
+    "shortExplanation": "Each area difference is $\\pi$ regardless of the number of sides.",
+    "detailedSteps": [
+      "Let $R$ be the circumradius and $r$ the inradius. The right triangle formed by the center, a side midpoint and a vertex has legs $r$ and half a side, which is one.",
+      "Thus $R^2-r^2=1$, and the area between the circles is $\\pi(R^2-r^2)=\\pi$. This holds for both polygons, giving $A=B$."
+    ],
+    "keyIdeas": [
+      "The annulus around a regular polygon"
+    ],
+    "commonMistakes": [
+      "Comparing polygon areas instead of the two circular regions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side length, rather than the number of sides, determines this annular area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p20",
+    "problemId": "amc12a-2009-p20",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The diagonal is divided in the ratio three to four.",
+    "detailedSteps": [
+      "Let $AE=x,CE=z,BE=y,DE=w$. Equal areas of $AED$ and $BEC$ give $xw=yz$, since their included angles have equal sines. Thus $x/z=y/w$.",
+      "Triangles $AEB$ and $CED$ have equal vertical angles and proportional surrounding sides, so they are similar. Hence $x/z=AB/CD=9/12=3/4$.",
+      "As $x+z=14$, we obtain $x=6$. Convexity ensures all four segment lengths are positive."
+    ],
+    "keyIdeas": [
+      "Equal diagonal subareas and similar triangles"
+    ],
+    "commonMistakes": [
+      "Pairing the wrong subtriangles when extracting the similarity ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal-area hypothesis turns the two diagonals into matching division ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p21",
+    "problemId": "amc12a-2009-p21",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "Each positive cubic root produces two nonreal fourth roots, while the nonreal root produces four.",
+    "detailedSteps": [
+      "The cubic has the three distinct roots $2009,9002,2009+9002\\pi i$. Since it is monic of degree three, these are all its roots.",
+      "The degree-twelve polynomial is $p(x^4)$. For each positive real cubic root, its four fourth roots consist of two real roots and two purely imaginary roots. The nonreal cubic root has no real fourth root, so all four corresponding roots are nonreal.",
+      "The three groups are disjoint and each contains four distinct roots. Thus the number of nonreal roots is $2+2+4=8$."
+    ],
+    "keyIdeas": [
+      "Fourth roots of three distinct cubic roots"
+    ],
+    "commonMistakes": [
+      "Assuming real-coefficient conjugate pairing although the cubic coefficients may be complex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Composition with x to the fourth separates naturally by the three target values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p22",
+    "problemId": "amc12a-2009-p22",
+    "finalAnswer": "$\\boxed{14}$ (choice E)",
+    "shortExplanation": "The section is a regular hexagon of side one half.",
+    "detailedSteps": [
+      "Place the vertices at $\\pm h e_1,\\pm h e_2,\\pm h e_3$, where $h=1/\\sqrt2$ makes every edge length one. The opposite face planes are $x+y+z=\\pm h$.",
+      "Central inversion interchanges the two halves cut by the middle plane. Moving a parallel plane away from the center gives unequal volumes, so congruent halves force the plane to pass through the center. The central plane $x+y+z=0$ cuts the six edges joining a positive-axis vertex to a different negative-axis vertex at their midpoints. These six section vertices are permutations of $(h/2,-h/2,0)$.",
+      "They form a regular hexagon with side $h/\\sqrt2=1/2$. Its area is $6(\\sqrt3/4)(1/2)^2=3\\sqrt3/8$. Thus $a+b+c=3+3+8=14$."
+    ],
+    "keyIdeas": [
+      "A central section of an octahedron"
+    ],
+    "commonMistakes": [
+      "Using the octahedron’s edge length as the hexagon side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The central parallel section splits the centrally symmetric solid into congruent halves.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p23",
+    "problemId": "amc12a-2009-p23",
+    "finalAnswer": "$\\boxed{752}$ (choice D)",
+    "shortExplanation": "The outer gap is $450+300\\sqrt2$.",
+    "detailedSteps": [
+      "Write $f(x)=A((x-h)^2-r^2)$, with $A\\ne0,r>0$. Its two roots are $h\\pm r$; the roots of $g$ are $100-h\\pm r$. Let $d=|100-2h|$ be the distance between their centers.",
+      "The condition $g(h)=f(h)$ gives $-A(d^2-r^2)=-Ar^2$, so $d=\\sqrt2r$. Since $r<d<2r$, the two root intervals overlap, with inner gap $2r-d$ and outer gap $2r+d$.",
+      "Therefore $(2-\\sqrt2)r=150$, and the outer gap is $150(2+\\sqrt2)/(2-\\sqrt2)=450+300\\sqrt2$. The requested sum is $450+300+2=752$."
+    ],
+    "keyIdeas": [
+      "Reflected quadratic roots and a vertex condition"
+    ],
+    "commonMistakes": [
+      "Assuming the two pairs of roots are disjoint instead of checking their ordering."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The leading coefficient cancels; the vertex condition fixes the ratio of the two geometric distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p24",
+    "problemId": "amc12a-2009-p24",
+    "finalAnswer": "$\\boxed{2013}$ (choice E)",
+    "shortExplanation": "The input lies strictly between towers of heights 2011 and 2012.",
+    "detailedSteps": [
+      "Put $N=2009,t=T(N),u=T(N-1),v=T(N-2)$. Then $\\log_2t=u$ and $\\log_2u=v$. From the definitions, $\\log_2 B=t^t u$, so $\\log_2\\log_2B=tu+v$.",
+      "For this integer $t\\ge16$, we have $t<tu+v<t^2<2^t$. The middle inequality follows from $u\\le t-1,v<t$; the last follows by induction for all integers $t\\ge5$. Consequently $T(N+2)<B<T(N+3)$, by comparing their second logarithms with $t$ and $2^t$.",
+      "After $N+2$ logarithms the value is strictly between one and two; after $N+3$ it is strictly between zero and one; after $N+4$ it is a finite negative number. The next logarithm is undefined. Thus the largest count is $N+4=2013$."
+    ],
+    "keyIdeas": [
+      "Bounding an iterated logarithm between power towers"
+    ],
+    "commonMistakes": [
+      "Stopping when a logarithm becomes negative: that last logarithm is still defined because its input was positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint zero and one levels determine how many further logarithms are allowed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2009-p25",
+    "problemId": "amc12a-2009-p25",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The underlying angle sequence repeats modulo twelve.",
+    "detailedSteps": [
+      "Write $a_n=\\tan(k_n\\pi/12)$, beginning with $k_1=3,k_2=2$. The tangent-addition identity gives $k_{n+2}\\equiv k_n+k_{n+1}\\pmod{12}$ whenever the next tangent is finite.",
+      "The first twenty-four residues are $3,2,5,7,0,7,7,2,9,11,8,7,3,10,1,11,0,11,11,10,9,7,4,11$. The next two are three and two, so the pair returns and the whole sequence has period twenty-four.",
+      "No residue is six, so all tangents and all recurrence denominators are defined. Since $2009\\equiv17\\pmod{24}$ and $k_{17}=0$, the required absolute value is zero."
+    ],
+    "keyIdeas": [
+      "A tangent-addition recurrence with a finite residue cycle"
+    ],
+    "commonMistakes": [
+      "Ignoring a possibly zero tangent-addition denominator or reducing the index by the wrong period."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A trigonometric change of variable makes the nonlinear recurrence a linear finite-state sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

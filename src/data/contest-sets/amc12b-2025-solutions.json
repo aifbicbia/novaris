@@ -1,0 +1,563 @@
+[
+  {
+    "id": "solution-amc12b-2025-p1",
+    "problemId": "amc12b-2025-p1",
+    "finalAnswer": "$\\boxed{17}$ (choice B)",
+    "shortExplanation": "Divide the available amount by the amount needed for one complete serving.",
+    "detailedSteps": [
+      "The quotient is $350/20=17.5$. Seventeen servings use $17\\cdot20=340$ grams, leaving 10 grams.",
+      "The remainder is insufficient for another full serving, so the greatest number is $17$, choice B."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Whole-number quotients"
+    ],
+    "commonMistakes": [
+      "Round down because only complete servings count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fractional quotient must be converted to a feasible whole-number count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p2",
+    "problemId": "amc12b-2025-p2",
+    "finalAnswer": "$\\boxed{9115}$ (choice D)",
+    "shortExplanation": "The last digits repeat after ten consecutive integers.",
+    "detailedSteps": [
+      "The square residues for one full period are $1,4,9,6,5,6,9,4,1,0$, whose sum is 45.",
+      "There are $2025=202\\cdot10+5$ entries. The five additional residues sum to $1+4+9+6+5=25$.",
+      "The total is $202\\cdot45+25=9115$, choice D."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Periodic last digits"
+    ],
+    "commonMistakes": [
+      "The final block is incomplete; include its first five residues."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The repeated block and the leftover entries must be counted separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p3",
+    "problemId": "amc12b-2025-p3",
+    "finalAnswer": "$\\boxed{-10}$ (choice D)",
+    "shortExplanation": "Pair the factors so the imaginary cross terms cancel.",
+    "detailedSteps": [
+      "Using $i^2=-1$, pair $i(i-3)=-1-3i$ and $(i-1)(i-2)=1-3i$.",
+      "The product is $(-1-3i)(1-3i)=-1-9=-10$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex-number products"
+    ],
+    "commonMistakes": [
+      "Remember that $(-3i)^2=-9$, not 9."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A useful pairing makes the cancellation visible before full expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p4",
+    "problemId": "amc12b-2025-p4",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "Translate each two-digit numeral into an ordinary linear expression.",
+    "detailedSteps": [
+      "The equality becomes $7a+b=9b+a$, hence $3a=4b$. Coprimality gives $a=4t$, $b=3t$ for a positive integer $t$.",
+      "Both are base-seven digits and both lead a two-digit numeral, so $1\\le a,b\\le6$. Thus $t=1$, giving $a+b=4+3=7$, choice A."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Place value in different bases"
+    ],
+    "commonMistakes": [
+      "The digit restrictions are part of the problem, not just the linear equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The base-seven digit limit eliminates every scale factor except one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p5",
+    "problemId": "amc12b-2025-p5",
+    "finalAnswer": "$\\boxed{15}$ (choice E)",
+    "shortExplanation": "Reduce modulo 22, then use positivity to bound the remaining variable.",
+    "detailedSteps": [
+      "Reducing the equation modulo 22 gives $13x\\equiv4\\pmod{22}$. Since $13\\cdot17\\equiv1\\pmod{22}$, we get $x\\equiv2\\pmod{22}$.",
+      "Positivity of $y$ implies $57x<400$, so $1\\le x\\le7$. The only possible residue representative is $x=2$.",
+      "Then $y=(400-114)/22=13$. The unique positive solution has $x+y=15$, choice E."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Linear Diophantine equations"
+    ],
+    "commonMistakes": [
+      "Allowing zero or negative variables would change the feasible set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence narrows the search more sharply than trying many sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p6",
+    "problemId": "amc12b-2025-p6",
+    "finalAnswer": "$\\boxed{11}$ (choice C)",
+    "shortExplanation": "Express the total in cents and test divisibility by 4 and 9.",
+    "detailedSteps": [
+      "Assuming the per-shirt price is a whole number of cents, the total $10001A+1110B$ is divisible by 36. Modulo 9 this requires $2A+3B\\equiv0\\pmod9$, so $A$ is divisible by 3.",
+      "Modulo 4 the condition is $A+2B\\equiv0\\pmod4$, which forces $A$ even. Since $A$ is a nonzero digit, these two facts give $A=6$.",
+      "Now $12+3B\\equiv0\\pmod9$, so $B\\equiv2\\pmod3$. Also $6+2B\\equiv0\\pmod4$, so $B$ is odd. Among 2,5,8 only 5 is odd.",
+      "Therefore $A+B=6+5=11$, choice C. The total 65556 cents gives 1821 cents per shirt."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility of decimal amounts"
+    ],
+    "commonMistakes": [
+      "Use cents throughout; testing divisibility on the dollar digits alone loses the final two digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The monetary convention supplies divisibility by 36, and its coprime factors isolate the digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p7",
+    "problemId": "amc12b-2025-p7",
+    "finalAnswer": "$\\boxed{\\frac78}$ (choice C)",
+    "shortExplanation": "Rewrite the numerator as a difference of the two logarithms in the denominator.",
+    "detailedSteps": [
+      "Because $\\log_2(1+1/n)=\\log_2(n+1)-\\log_2n$, each summand is $\\frac1{\\log_2 n}-\\frac1{\\log_2(n+1)}$.",
+      "The sum telescopes to $\\frac1{\\log_2 2}-\\frac1{\\log_2 256}=1-\\frac18=\\frac78$, choice C."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Telescoping logarithms"
+    ],
+    "commonMistakes": [
+      "The final uncancelled denominator uses 256, not 255."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing the difference in the numerator turns 254 terms into two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p8",
+    "problemId": "amc12b-2025-p8",
+    "finalAnswer": "$\\boxed{20}$ (choice C)",
+    "shortExplanation": "The irrational conjugate is also a root, which determines the remaining root.",
+    "detailedSteps": [
+      "The polynomial has integer coefficients, so $4-\\sqrt5$ accompanies $4+\\sqrt5$. Their sum is 8 and their product is 11.",
+      "All three roots sum to 5, so the third root is $-3$. Thus the polynomial factors as $(x^2-8x+11)(x+3)$.",
+      "Expanding gives $x^3-5x^2-13x+33$, so $a+b=-13+33=20$, choice C."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Conjugate roots and Vieta"
+    ],
+    "commonMistakes": [
+      "The constant term is the negative of the product of the three roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conjugacy determines two roots at once, leaving a simple coefficient comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p9",
+    "problemId": "amc12b-2025-p9",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "Only the last two digits are needed, and their period is five after the first power.",
+    "detailedSteps": [
+      "For powers with exponent at least 2, the residues modulo 100 repeat with period 5: $6^2,6^3,6^4,6^5,6^6\\equiv36,16,96,76,56$.",
+      "The period follows because $6^{m+5}-6^m=6^m(6^5-1)$ is divisible by 100 for $m\\ge2$: $6^m$ supplies a factor 4 and $6^5-1=7775$ supplies a factor 25.",
+      "The exponent $6^6$ is greater than 1 and is congruent to 1 modulo 5. Therefore the last two digits are 56, whose tens digit is 5, choice C."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular power cycles"
+    ],
+    "commonMistakes": [
+      "The power tower is evaluated from the top; it is not the same as multiplying exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first power is exceptional, so state where the modular cycle begins.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p10",
+    "problemId": "amc12b-2025-p10",
+    "finalAnswer": "$\\boxed{\\frac37}$ (choice A)",
+    "shortExplanation": "Use coordinates for a standard 30-60-90 triangle and compare distances along the altitude.",
+    "detailedSteps": [
+      "Place the right-angle vertex at $A=(0,0)$ and the other vertices at $B=(\\sqrt3,0)$, $C=(0,1)$. The shortest side is $AC$, with midpoint $M=(0,1/2)$.",
+      "The hypotenuse $BC$ has equation $y=1-x/\\sqrt3$, so its perpendicular altitude from $A$ lies on $y=\\sqrt3x$. Their intersection is $H=(\\sqrt3/4,3/4)$.",
+      "The median $BM$ has equation $y=1/2-x/(2\\sqrt3)$. It meets the altitude at $P=(\\sqrt3/7,3/7)$. Thus $AP/AH=4/7$ and $PH/AH=3/7$.",
+      "The shorter part is $PH$, so the required fraction is $3/7$, choice A."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Intersecting altitude and median"
+    ],
+    "commonMistakes": [
+      "The requested segment is the shorter part, which need not be adjacent to the right-angle vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The intersection ratio is easy to reverse unless both altitude segments are identified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p11",
+    "problemId": "amc12b-2025-p11",
+    "finalAnswer": "$\\boxed{\\frac9{28}}$ (choice C)",
+    "shortExplanation": "The three tallest athletes must receive three different colors.",
+    "detailedSteps": [
+      "By symmetry, reveal the wristbands of the three tallest athletes first. The first can have any color.",
+      "Of the 8 remaining wristbands,6 have a different color from the first. If the second is different,3 of the 7 remaining bands have the third color.",
+      "The desired probability is $(6/8)(3/7)=9/28$, choice C. Distinct colors are sufficient because each of these athletes then outranks both teammates."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Sampling without replacement"
+    ],
+    "commonMistakes": [
+      "The draws are without replacement, so the denominators decrease."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate the captain condition into a condition on just the tallest three.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p12",
+    "problemId": "amc12b-2025-p12",
+    "finalAnswer": "$\\boxed{10.50}$ (choice C)",
+    "shortExplanation": "Every vertical cross-section of the swept region has the same length as the blade.",
+    "detailedSteps": [
+      "Take the pivot as the origin, with upward direction vertical. The midpoint of the blade has horizontal coordinate $3\\sin\\theta$, where $-30^\\circ\\le\\theta\\le30^\\circ$. It therefore moves monotonically across a horizontal width of 3 feet.",
+      "For each horizontal coordinate in this range, the midpoint has exactly one height and the blade covers a vertical segment of length 3.5 feet. The upper and lower boundaries are vertical translates of one another.",
+      "By equal vertical cross-sections, the area is $3\\cdot3.5=10.50$ square feet, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area from parallel cross-sections"
+    ],
+    "commonMistakes": [
+      "The blade stays vertical; treating the swept region as an annular sector would model a different motion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area depends on horizontal width and blade length, despite the curved boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p13",
+    "problemId": "amc12b-2025-p13",
+    "finalAnswer": "$\\boxed{24}$ (choice D)",
+    "shortExplanation": "Classify the two red positions by their separation around the circle.",
+    "detailedSteps": [
+      "The differently sized sectors distinguish all six positions. The two red positions must be nonadjacent. There are 6 pairs separated by one sector and 3 opposite pairs.",
+      "For a pair separated by one sector, the remaining positions form a path of three positions and an isolated position. The path must alternate the other colors; its two possible colorings force the isolated position to supply the color used only once on the path. This gives 2 completions per red pair.",
+      "For opposite red positions, the remaining positions form two paths of two positions. Each path has one green and one blue, in either order, giving 4 completions.",
+      "The total is $6\\cdot2+3\\cdot4=24$, choice D."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Colorings of a labeled cycle"
+    ],
+    "commonMistakes": [
+      "Do not divide by rotations: the six unequal sectors retain their identities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Splitting by the red separation controls both adjacency and the required color counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p14",
+    "problemId": "amc12b-2025-p14",
+    "finalAnswer": "$\\boxed{1014}$ (choice B)",
+    "shortExplanation": "Recover each new term by subtracting consecutive prefix sums.",
+    "detailedSteps": [
+      "Let $A_k$ be the mean of the first $k$ terms. The complete source conditions give $A_k=2028-k$ for $k\\ge3$.",
+      "For $k\\ge4$, $x_k=kA_k-(k-1)A_{k-1}=2029-2k$. Positivity of the last term requires $2029-2n\\ge1$, so $n\\le1014$.",
+      "The bound is attained by beginning $2026,2025,2024$ and then using $x_k=2029-2k$ for $4\\le k\\le1014$. The first three average 2025, the fourth is 2021, and all later terms decrease by 2 to 1.",
+      "This is a strictly decreasing positive-integer sequence satisfying every mean condition, so the maximum is 1014, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Prefix means and sequences"
+    ],
+    "commonMistakes": [
+      "The formula for later terms begins at index 4; it does not prescribe the first three separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound from positivity must be paired with an admissible initial triple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p15",
+    "problemId": "amc12b-2025-p15",
+    "finalAnswer": "$\\boxed{95}$ (choice D)",
+    "shortExplanation": "Extend the sides to a common pyramid apex and subtract similar volumes.",
+    "detailedSteps": [
+      "The square side length changes linearly with height, so it is 2 at the midline, between the bottom side 1 and top side 3.",
+      "Extending the sides downward to the apex gives similar pyramids whose linear scales are 1,2,3 and whose volume scales are 1,8,27.",
+      "The lower portion has relative volume $8-1=7$, and the remaining portion has relative volume $27-8=19$. Constant flow makes time proportional to volume.",
+      "The additional time is $35\\cdot19/7=95$ minutes, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Volumes of similar pyramids"
+    ],
+    "commonMistakes": [
+      "Equal height intervals do not have equal volume when the cross-sectional area changes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting two similar-pyramid volumes is simpler than computing an absolute height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p16",
+    "problemId": "amc12b-2025-p16",
+    "finalAnswer": "$\\boxed{\\sqrt2-1}$ (choice B)",
+    "shortExplanation": "Compute the relative rotation, then use the tangent half-angle identity.",
+    "detailedSteps": [
+      "The minute hand gains $6-1/2=11/2$ degrees per minute on the hour hand. After 2025 minutes its relative angle is $2025\\cdot11/2=11137.5^\\circ$.",
+      "Reducing modulo 360 gives 337.5 degrees, so the acute angle between the hands is 22.5 degrees.",
+      "Using $\\tan(\\theta/2)=\\sin\\theta/(1+\\cos\\theta)$ at 45 degrees gives $\\tan22.5^\\circ=\\sqrt2-1$, choice B."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Clock angles and half angles"
+    ],
+    "commonMistakes": [
+      "The hour hand continues moving between hour marks."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for both hands before reducing the angle through many complete revolutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p17",
+    "problemId": "amc12b-2025-p17",
+    "finalAnswer": "$\\boxed{12}$ (choice C)",
+    "shortExplanation": "Force a six-cell color cycle, normalize it by a square symmetry, then inspect the remaining row.",
+    "detailedSteps": [
+      "Order the colors cyclically as $R\\to B\\to Y\\to R$. From each cell choose an adjacent cell of the next color. Following these arrows eventually reaches a directed simple cycle. Its length is divisible by 3, and the grid is bipartite, so its length is even. With only 9 cells, it must have length 6.",
+      "A six-edge simple cycle in this grid bounds two adjacent unit squares. Thus it follows the perimeter of a two-row-by-three-column or three-row-by-two-column block of cells. Rotate and, if necessary, reflect the board so this block is the top two rows and the cycle follows the indicated color order.",
+      "For one of the three cyclic choices of the starting color, the top rows are $\\begin{matrix}R&B&Y\\\\Y&B&R\\end{matrix}$. Let the bottom row be $(u,v,w)$. The top six cells already have their required neighbors.",
+      "Testing only the three bottom cells leaves exactly four rows: $(R,B,Y)$, $(B,R,Y)$, $(B,B,Y)$, and $(Y,R,Y)$. For example, if $w\\ne Y$, the right cell needs its successor at $v$; checking $w=R$ and $w=B$ makes either the middle or left cell fail. With $w=Y$, the possibilities for $u=R,B,Y$ give respectively 1,2,1 choices for $v$.",
+      "The last three completions each contain a unique six-cycle; consequently the normalization fixes their representative uniquely. The first completion contains both horizontal six-cycles, but normalizing either yields the same board: its top and bottom rows coincide. Its extra reflection symmetry therefore creates no additional representative.",
+      "The three choices of starting color and four rows produce $3\\cdot4=12$ equivalence classes, choice C. Colors are fixed names and are not themselves identified by symmetry."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Directed cycles and symmetry"
+    ],
+    "commonMistakes": [
+      "Dividing the number of labeled boards by 8 fails because some boards have a reflection symmetry.",
+      "A cell needs a neighbor of its specific successor color, not merely any different color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The forced six-cycle provides a complete classification while keeping the symmetry exceptions visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p18",
+    "problemId": "amc12b-2025-p18",
+    "finalAnswer": "$\\boxed{\\frac72}$ (choice D)",
+    "shortExplanation": "Condition on the first result, then wait for the opposite outcome.",
+    "detailedSteps": [
+      "One game is always played first. If it is a win, which occurs with probability 1/3, the additional waiting time for a loss has geometric mean $1/(2/3)=3/2$.",
+      "If the first game is a loss, which occurs with probability 2/3, the additional waiting time for a win has mean $1/(1/3)=3$.",
+      "The expected total is $1+\\frac13\\cdot\\frac32+\\frac23\\cdot3=\\frac72$, choice D."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Conditional waiting times"
+    ],
+    "commonMistakes": [
+      "The geometric waiting time includes the game that produces the opposite outcome; the initial game must still be added."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conditioning converts a two-outcome stopping rule into two ordinary geometric waits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p19",
+    "problemId": "amc12b-2025-p19",
+    "finalAnswer": "$\\boxed{11}$ (choice C)",
+    "shortExplanation": "Equate the two entry formulas using zero-based row and column indices.",
+    "detailedSteps": [
+      "At row $r$ and column $c$, with $0\\le r\\le140$ and $0\\le c\\le90$, the entries are $91r+c+1$ and $141c+r+1$.",
+      "Equality is equivalent to $90r=140c$, or $9r=14c$. Coprimality forces $r=14t$ and $c=9t$.",
+      "The bounds allow $t=0,1,\\ldots,10$, giving 11 squares, choice C."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Matching row and column indices"
+    ],
+    "commonMistakes": [
+      "Include both the upper-left and lower-right matching squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Writing both indexing rules exposes a small Diophantine equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p20",
+    "problemId": "amc12b-2025-p20",
+    "finalAnswer": "$\\boxed{\\frac1{97}}$ (choice E)",
+    "shortExplanation": "Write the eventual hitting probability at each position and solve the recurrence.",
+    "detailedSteps": [
+      "Let $p_j$ be the chance of reaching 4 before disappearing when starting at $j$. Then $p_4=1$, $p_0=p_1/2$, and $p_j=(p_{j-1}+p_{j+1})/4$ for $j=1,2,3$.",
+      "In terms of $p_0$, the recurrence gives $p_1=2p_0$, $p_2=7p_0$, $p_3=26p_0$, and $p_4=97p_0$.",
+      "Since $p_4=1$, the required probability is $p_0=1/97$, choice E. Disappearance occurs with probability 1/2 at every nonterminal step, so surviving indefinitely has probability 0 and the recurrence accounts for all paths."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Absorbing random walks"
+    ],
+    "commonMistakes": [
+      "A path can backtrack several times before success; counting only four forward hops misses those possibilities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Eventual hitting probabilities handle infinitely many possible paths through a finite linear system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p21",
+    "problemId": "amc12b-2025-p21",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "Equal areas force the included angles to be supplementary, which makes the third-side squares add to a constant.",
+    "detailedSteps": [
+      "Let the third sides be $c<d$, with included angles $\\theta$ and $\\phi$ between the sides 8 and 9. Equal areas give $\\sin\\theta=\\sin\\phi$. Because the triangles are noncongruent, $\\phi=180^\\circ-\\theta$.",
+      "The cosine rule therefore gives $c^2+d^2=2(8^2+9^2)=290$. Triangle inequalities require $1<c<d<17$.",
+      "Both lengths are odd, since their squares sum to 2 modulo 4. For the smaller side, the candidates 3,5,7,9,11 give complementary squares 281,265,241,209,169; only $169=13^2$ is a square.",
+      "The lengths are 11 and 13, both valid triangle sides, and their sum is 24, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equal areas and supplementary angles"
+    ],
+    "commonMistakes": [
+      "The formal pair 1 and 17 is degenerate and violates the strict triangle inequalities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area equality determines the angle relation; integer side restrictions finish the problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p22",
+    "problemId": "amc12b-2025-p22",
+    "finalAnswer": "$\\boxed{\\frac9{16}}$ (choice C)",
+    "shortExplanation": "Complex multiplication scales all lengths by the modulus and all areas by its square.",
+    "detailedSteps": [
+      "The fixed triangle with vertices 2, $1+i$, and $1-i$ has vertical base 2 and horizontal height 1, so its area is 1.",
+      "Multiplication by $z$ rotates and scales this triangle, giving area $|z|^2$. The constraint is $|z-1/2|=1/4$, a circle centered at 1/2 with radius 1/4.",
+      "The largest modulus is $1/2+1/4=3/4$, attained at $z=3/4$. Thus the greatest area is $9/16$, choice C."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex scaling and areas"
+    ],
+    "commonMistakes": [
+      "Area scales by the square of the modulus, not the modulus itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the fixed triangle from the common complex scaling factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p23",
+    "problemId": "amc12b-2025-p23",
+    "finalAnswer": "$\\boxed{4319}$ (choice E)",
+    "shortExplanation": "A strictly increasing list of all residue positions must be the complete list in its natural order.",
+    "detailedSteps": [
+      "For $x=0,1,\\ldots,z-1$, let $r_x$ be the remainder of $2025x$ modulo $z$. The condition requires $0=r_0<r_1<\\cdots<r_{z-1}\\le z-1$. There are $z$ distinct integers in a set of size $z$, so necessarily $r_x=x$.",
+      "In particular $2025\\equiv1\\pmod z$, or $z\\mid2024$. Conversely this congruence gives $r_x=x$ for every allowed $x$, so every divisor of 2024 greater than 1 works.",
+      "Factor $2024=2^3\\cdot11\\cdot23$. The sum of all divisors is $(1+2+4+8)(1+11)(1+23)=4320$. Excluding 1 gives 4319, choice E."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Ordered residues and divisors"
+    ],
+    "commonMistakes": [
+      "Coprimality would make the residues a permutation, but the problem also demands increasing order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ordering requirement is much stronger than merely having distinct residues.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p24",
+    "problemId": "amc12b-2025-p24",
+    "finalAnswer": "$\\boxed{399}$ (choice D)",
+    "shortExplanation": "Count only lobes with the correct sign, and justify that each crossing is unique.",
+    "detailedSteps": [
+      "Put $t=20x$ and $F(t)=\\sin(\\pi t)-\\log_{20}(t/20)$. The sine bound restricts all solutions to $1\\le t\\le400$. The logarithm is negative below 20, zero at 20, and positive above 20.",
+      "Below 20, only the ten negative lobes $[1,2],[3,4],\\ldots,[19,20]$ can contain roots. At each minimum $F<0$; the endpoints have $F>0$, except that $F(20)=0$. Also $F^{\\prime\\prime}=-\\pi^2\\sin(\\pi t)+1/(t^2\\ln20)>0$ on each negative lobe. Strict convexity gives exactly two roots per lobe, counting 20 in the final one:20 roots.",
+      "Above 20, the 190 positive lobes are $[20,21],[22,23],\\ldots,[398,399]$. At every peak $F>0$, while the endpoints have $F<0$, except the already-counted endpoint 20. On each falling half-lobe, $F^{\\prime}<0$, so there is exactly one root.",
+      "For a rising half-lobe, write $G(t)=t\\cos(\\pi t)$. Then $F^{\\prime}$ has the sign of $G(t)-1/(\\pi\\ln20)$. On that half-lobe $G^{\\prime\\prime}=-2\\pi\\sin(\\pi t)-\\pi^2t\\cos(\\pi t)<0$; its starting value is at least 20 and its final value is 0. Thus it crosses the positive threshold exactly once. Therefore $F$ first increases and then decreases, ending above 0 at the peak.",
+      "Each rising half-lobe whose left endpoint exceeds 20 consequently has exactly one root; the half-lobe starting at 20 has none beyond its left endpoint. Hence the positive lobes contribute $1+189\\cdot2=379$ new roots.",
+      "The remaining intervals have opposite signs on the two sides of the equation. The total is $20+379=399$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Counting trigonometric intersections"
+    ],
+    "commonMistakes": [
+      "Count the shared root at $x=1$ only once.",
+      "A sketch suggests the crossings but does not by itself exclude additional roots on a rising branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Endpoint bookkeeping is essential, and the derivative argument supplies rigorous uniqueness on the non-monotone difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2025-p25",
+    "problemId": "amc12b-2025-p25",
+    "finalAnswer": "$\\boxed{7}$ (choice E)",
+    "shortExplanation": "Place the equilateral triangle on the coordinate axes and impose the three distances to the common center.",
+    "detailedSteps": [
+      "Let the triangle vertices be $A=(0,0)$, $B=(s,0)$, and $C=(s/2,\\sqrt3s/2)$, with common circle center $O=(u,v)$ and distances $OA=1$, $OB=2$, $OC=3$.",
+      "Subtracting $OA^2$ from $OB^2$ gives $s^2-2su=3$, so $u=(s^2-3)/(2s)$. Subtracting $OA^2$ from $OC^2$ gives $s^2-su-\\sqrt3sv=8$, hence $v=(s^2-13)/(2\\sqrt3s)$.",
+      "Now $u^2+v^2=1$. Multiplying by $12s^2$ yields $3(s^2-3)^2+(s^2-13)^2=12s^2$. This simplifies to $4(s^2-7)^2=0$.",
+      "Therefore $s^2=7$, choice E. Substituting this value gives $u=2/\\sqrt7$ and $v=-3/\\sqrt{21}$, whose distances to the three vertices are indeed 1,2,3."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equilateral coordinates and distances"
+    ],
+    "commonMistakes": [
+      "The center of the three circles need not be the triangle center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting squared-distance equations removes the quadratic coordinate terms and leaves one equation in the side length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

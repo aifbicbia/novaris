@@ -1,0 +1,330 @@
+[
+  {
+    "id": "solution-aime-i-2015-p1",
+    "problemId": "aime-i-2015-p1",
+    "finalAnswer": "$\\boxed{722}$",
+    "shortExplanation": "$B$ exceeds $A$ by 722.",
+    "detailedSteps": [
+      "For every even $i$ from two through thirty-eight, $B$ contains $i(i+1)$ where $A$ contains $(i-1)i$. Their difference is $2i$. The unmatched single terms contribute $1-39=-38$.",
+      "Thus $B-A=2(2+4+\\cdots+38)-38=4(1+2+\\cdots+19)-38=760-38=722$. This is positive, so it is the requested positive difference."
+    ],
+    "keyIdeas": [
+      "Pair products sharing the same even factor"
+    ],
+    "commonMistakes": [
+      "Ignoring the unmatched single terms at the two ends of the alternating expressions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing at each even factor avoids separately expanding the large sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p2",
+    "problemId": "aime-i-2015-p2",
+    "finalAnswer": "$\\boxed{139}$",
+    "shortExplanation": "The probability is fifty-five eighty-fourths.",
+    "detailedSteps": [
+      "Every three-person subset of the nine delegates is equally likely. There are $\\binom93=84$ such subsets.",
+      "For a same-country pair from Mexico, Canada or the United States, respectively, the favorable counts are $\\binom22\\cdot7=7$, $\\binom32\\cdot6=18$, and $\\binom42\\cdot5=30$. The third sleeper is from another country, so each case has exactly one pair and the cases are disjoint.",
+      "The total is fifty-five, giving probability $55/84$ in lowest terms. Hence $m+n=139$."
+    ],
+    "keyIdeas": [
+      "Choose the unique same-country pair and one outsider"
+    ],
+    "commonMistakes": [
+      "Including three sleepers from the same country in the exactly-two condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The country occurring exactly twice identifies a unique counting case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p3",
+    "problemId": "aime-i-2015-p3",
+    "finalAnswer": "$\\boxed{307}$",
+    "shortExplanation": "The cube is seventeen cubed and the prime is 307.",
+    "detailedSteps": [
+      "Write $k^3=16p+1$ with positive integer $k$. Then $16p=(k-1)(k^2+k+1)$. The value $k$ exceeds one and is odd; the second factor is odd, so the factor sixteen divides $k-1$.",
+      "Dividing gives $p=((k-1)/16)(k^2+k+1)$. Both factors are positive integers and the second exceeds one. Since $p$ is prime, the first factor must be one, forcing $k=17$.",
+      "Then $p=17^2+17+1=307$. It is not divisible by any prime at most its square root, namely two, three, five, seven, eleven, thirteen or seventeen, so it is prime and satisfies the equation."
+    ],
+    "keyIdeas": [
+      "Factor the cube minus one and use primality"
+    ],
+    "commonMistakes": [
+      "Finding a cubed value by search without proving that the prime condition rules out all larger cubes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All powers of two in the factored expression belong to the first factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p4",
+    "problemId": "aime-i-2015-p4",
+    "finalAnswer": "$\\boxed{507}$",
+    "shortExplanation": "The area is thirteen square root three.",
+    "detailedSteps": [
+      "Put $B=(0,0)$, $A=(-16,0)$ and $C=(4,0)$. Choose the common side of the base to be above it. The equilateral apices are $D=(-8,8\\sqrt3)$ and $E=(2,2\\sqrt3)$.",
+      "The midpoints are $M=(-7,\\sqrt3)$ and $N=(-2,4\\sqrt3)$. The absolute determinant of their vectors from $B$ is $|-28\\sqrt3+2\\sqrt3|=26\\sqrt3$.",
+      "Therefore the area is $x=13\\sqrt3$, and $x^2=507$. A reflection across the common base gives the same area."
+    ],
+    "keyIdeas": [
+      "Take the two midpoints in coordinates along the common base"
+    ],
+    "commonMistakes": [
+      "Placing the two equilateral apices on opposite sides of the base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common-base coordinate system makes the midpoint vectors immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p5",
+    "problemId": "aime-i-2015-p5",
+    "finalAnswer": "$\\boxed{341}$",
+    "shortExplanation": "The probability is twenty-six over 315.",
+    "detailedSteps": [
+      "Monday must be a mismatch. Of $\\binom{10}2=45$ pairs, five match and forty do not. After any mismatch, the drawer has two single socks of different colors and three full pairs.",
+      "Among Tuesday\u2019s mismatches, taking both singles has one choice and leaves three matching Wednesday pairs. Taking one single and one sock from a full pair has $2\\cdot6=12$ choices and leaves two full pairs. Taking socks from two different full pairs has $\\binom32\\cdot4=12$ choices and leaves one full pair.",
+      "These cases contribute $1\\cdot3+12\\cdot2+12\\cdot1=39$ favorable Tuesday/Wednesday pair choices for each mismatched Monday. Their common denominator is $\\binom82\\binom62=28\\cdot15$.",
+      "Thus the probability that Wednesday is the first match is $(40/45)(39/(28\\cdot15))=26/315$. The fraction is reduced, giving $m+n=341$."
+    ],
+    "keyIdeas": [
+      "Classify Tuesday\u2019s mismatched pair after a mismatched Monday"
+    ],
+    "commonMistakes": [
+      "Using a fixed matching probability on Wednesday without accounting for which colors were removed on the first two days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The residual drawer after Monday is determined up to color relabeling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p6",
+    "problemId": "aime-i-2015-p6",
+    "finalAnswer": "$\\boxed{058}$",
+    "shortExplanation": "The requested angle is fifty-eight degrees.",
+    "detailedSteps": [
+      "Let $\u03b1$ be the first circle\u2019s central angle between successive points $A,B,C,D,E$, and $\u03b2$ the second circle\u2019s spacing between $E,F,G,H,I,A$. Their total arcs are minor, so $4\\alpha<180^\\circ$ and $5\\beta<180^\\circ$.",
+      "On the first circle, angle $ACE$ intercepts the major $AE$ arc, giving $\\angle ACE=180^\\circ-2\\alpha$. Since $C$ is the second circle\u2019s center, this same angle is its minor central angle from $E$ to $A$, so $5\\beta=180^\\circ-2\\alpha$.",
+      "Likewise $\\angle ABD=180^\\circ-3\\alpha/2$ and $\\angle AHG=180^\\circ-3\\beta/2$. Their stated difference gives $\\beta-\\alpha=8^\\circ$. Combining the equations yields $\\alpha=20^\\circ$ and $\\beta=28^\\circ$.",
+      "The first-circle angle $BAC$ is half the $BC$ arc, hence ten degrees. In the second circle, the minor $AG$ arc consists of three spacings, or eighty-four degrees; the isosceles triangle $CAG$ therefore has $\\angle CAG=(180^\\circ-84^\\circ)/2=48^\\circ$.",
+      "The specified minor-arc configuration places $AB$ and $AG$ on opposite sides of $AC$ at $A$, as in the actual figure. Consequently $\\angle BAG=\\angle BAC+\\angle CAG=10^\\circ+48^\\circ=58^\\circ$."
+    ],
+    "keyIdeas": [
+      "Relate the two equal arc spacings through their common center point"
+    ],
+    "commonMistakes": [
+      "Using the minor $AD$ or $AG$ arc for an inscribed angle whose vertex lies on that very arc."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first circle\u2019s middle point $C$ becomes the second circle\u2019s center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p7",
+    "problemId": "aime-i-2015-p7",
+    "finalAnswer": "$\\boxed{539}$",
+    "shortExplanation": "The small-to-large area ratio is nine forty-ninths.",
+    "detailedSteps": [
+      "Let the outer square have side $s$, with $A=(0,0)$, $B=(0,-s)$, $C=(s,-s)$ and $D=(s,0)$. Its midpoint is $E=(s/2,0)$, so the  $CE$ line has equation $y=s-2x$.",
+      "For the larger tilted square, use perpendicular side displacements $t(1,-2)$ and $t(2,1)$, each of length $t\\sqrt5$. Because $H$ is on $AB$, $J$ on $BC$, and $G$ on $CE$, the endpoints are $H=(0,s-5t)$, $J=(t,s-7t)$ and $G=(2t,s-4t)$. The $J$ condition gives $t=2s/7$.",
+      "Thus $GH$ has equation $y=x/2-3s/7$. For the smaller square, let its analogous side scale be $u$. The positions forced by $M$ on $AD$ and $N$ on $AB$ are $N=(0,-u)$, $M=(2u,0)$, $K=(u,-3u)$ and $L=(3u,-2u)$.",
+      "Imposing $K$ on $GH$ yields $-3u=u/2-3s/7$, so $u=6s/49$. The $L$ condition then holds as well. These coordinates place both $K$ and $L$ within segment $GH$ and all outer contact points on the required segments.",
+      "The two areas are $5u^2$ and $5t^2$, with ratio $(u/t)^2=(3/7)^2=9/49$. Since the smaller area is 99, the larger is $99\\cdot49/9=539$."
+    ],
+    "keyIdeas": [
+      "Solve both squares in a coordinate system aligned with the outer square"
+    ],
+    "commonMistakes": [
+      "Using the outer-square-to-large-square ratio for the second nested square without enforcing its different two side contacts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The $CE$ slope fixes the common pair of perpendicular side directions for both squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p8",
+    "problemId": "aime-i-2015-p8",
+    "finalAnswer": "$\\boxed{695}$",
+    "shortExplanation": "The smallest valid number is 695.",
+    "detailedSteps": [
+      "Adding 864 would add eighteen to the digit sum before carries. Each carry reduces the digit sum by nine, so the two digit sums agree exactly when there are two carries in total.",
+      "A number with digit sum twenty has at least three digits. The proposed value 695 has digit sum twenty, and $695+864=1559$ also has digit sum twenty, so it remains to exclude smaller numbers.",
+      "Any smaller three-digit candidate has digits $a,b,c$ with $a+b+c=20$ and $a\\le6$. Thus $b+c\\ge14$, so $b$ and $c$ are both at least five. In adding 864, the tens column always carries; also $a\\ge2$, so the hundreds column always carries into the thousands.",
+      "There must therefore be no carry in the units column, requiring $c\\le5$. Combined with $b\\le9$ and $a+b+c=20$, this forces $a\\ge6$. Equality forces $a=6,b=9,c=5$, giving 695 itself. Hence no smaller positive integer works."
+    ],
+    "keyIdeas": [
+      "Equality of digit sums requires exactly two carries"
+    ],
+    "commonMistakes": [
+      "Using only congruence of digit sums modulo nine, which does not enforce their exact value twenty."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The candidate\u2019s size reduces the proof to three digit positions and an exact carry count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p9",
+    "problemId": "aime-i-2015-p9",
+    "finalAnswer": "$\\boxed{494}$",
+    "shortExplanation": "Exactly 494 initial triples eventually give zero.",
+    "detailedSteps": [
+      "For an initial triple $(a,b,c)$, put $d=|b-a|$ and $e=|c-b|$. The next two terms are $cd$ and $cde$. If $d$ or $e$ is zero, zero appears immediately; if either is one, these terms create adjacent equal values, which force a zero two positions later.",
+      "Assume $d,e\\ge2$. The first two forward gaps, starting with $c$, are $c(d-1)$ and $cd(e-1)$. The second is always at least two. The first is at least two except in the single type $c=1,d=2$.",
+      "If a positive consecutive triple has both increasing gaps at least two, its next term is at least twice the last, so the new gap is at least the last value and at least two. Induction preserves this condition forever and no zero occurs. Thus every nonexceptional case with $d,e\\ge2$ is zero-free.",
+      "In the exceptional type, the forward values are $a_3=1,a_4=2,a_5=2e,a_6=2e$, so $a_8=0$. We have therefore proved the exact classification: eventual zero occurs when $|a-b|\\le1$ or $|b-c|\\le1$, or in the additional cases $c=1,|a-b|=2,|b-c|\\ge2$.",
+      "There are twenty-eight ordered pairs from one through ten with difference at most one. The first two families have 280 members each. Their intersection has $2\\cdot2^2+8\\cdot3^2=80$ members, since an endpoint middle value has two nearby choices and an interior value has three. Their union therefore has 480 members.",
+      "For the additional cases,  $c=1$ and $b$ ranges from three through ten. For $b$ from three through eight, both $a=b-2$ and $a=b+2$ work; for $b$ nine or ten only the first works. This contributes fourteen new triples. The total is $480+14=494$."
+    ],
+    "keyIdeas": [
+      "Classify zero-free recurrences by permanent growing gaps"
+    ],
+    "commonMistakes": [
+      "Simulating only a fixed number of terms without proving that every remaining sequence can never reach zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two increasing gaps of size at least two make nonvanishing permanent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p10",
+    "problemId": "aime-i-2015-p10",
+    "finalAnswer": "$\\boxed{072}$",
+    "shortExplanation": "The only possible cubics differ by an overall sign.",
+    "detailedSteps": [
+      "Let the leading coefficient of $f$ be $a$, which is nonzero. The degree-six polynomial $f(x)^2-144$ vanishes at one, two, three, five, six and seven, so it equals $a^2(x-1)(x-2)(x-3)(x-5)(x-6)(x-7)$.",
+      "Put $t=x-4$ and $F(t)=f(t+4)$. The identity becomes $F(t)^2-144=a^2(t^2-9)(t^2-4)(t^2-1)$, an even polynomial. Thus $(F(t)-F(-t))(F(t)+F(-t))=0$ identically, forcing $F$ to be even or odd. Degree three rules out evenness, so $F(t)=at^3+ct$.",
+      "Expanding the right-hand product gives $t^6-14t^4+49t^2-36$. Compare coefficients: $2ac=-14a^2$ gives $c=-7a$, and the constant term gives $-144=-36a^2$, so $a=\\pm2$.",
+      "Therefore $F(t)=\\pm2(t^3-7t)$. Both signs satisfy all six absolute values. At $x=0$, $t=-4$, giving $|f(0)|=2|-64+28|=72$."
+    ],
+    "keyIdeas": [
+      "The squared polynomial has six prescribed roots and becomes even about four"
+    ],
+    "commonMistakes": [
+      "Assuming all six function values share one sign, which would force a lower-degree constant polynomial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The six squared conditions determine a degree-six product with symmetry about the missing middle point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p11",
+    "problemId": "aime-i-2015-p11",
+    "finalAnswer": "$\\boxed{108}$",
+    "shortExplanation": "Only base twelve and equal sides forty-eight are possible.",
+    "detailedSteps": [
+      "Let the equal sides have length $l$ and the base have integer length $b$. Place the base endpoints at $(\\pm b/2,0)$ and the apex at height $h=\\sqrt{l^2-b^2/4}$. The incenter is on the symmetry axis at height $r=bh/(2l+b)$.",
+      "Thus $BI^2=b^2/4+r^2=b^2l/(2l+b)=64$. Rearranging gives $l=64b/(b^2-128)$, so positivity requires $b\\ge12$.",
+      "The triangle inequality $b<2l$ then gives $b^2<256$, so $b<16$. The only base candidates are twelve, thirteen, fourteen and fifteen. Their equal-side lengths are $48,832/41,224/17,960/97$, respectively.",
+      "Only the first is integral. The triangle with sides 48,48,12 is nondegenerate, has altitude $18\\sqrt7$ and inradius $2\\sqrt7$, giving $BI^2=36+28=64$. Its perimeter is 108, and the exhaustive base restriction proves this is the least possible perimeter."
+    ],
+    "keyIdeas": [
+      "Express the incenter distance through the integer base and equal sides"
+    ],
+    "commonMistakes": [
+      "Searching small equal sides without first bounding the possible base lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed incenter distance and triangle inequality leave just four integer base candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p12",
+    "problemId": "aime-i-2015-p12",
+    "finalAnswer": "$\\boxed{431}$",
+    "shortExplanation": "The mean minimum is 288 over 143.",
+    "detailedSteps": [
+      "For a 1000-element subset written in increasing order, record the counts of unselected integers before the first member, between successive members, and after the last member. This produces 1001 nonnegative gaps summing to 1015.",
+      "Every such gap vector determines exactly one subset, and every subset determines its gap vector. Uniform choice over all subsets is therefore uniform over these weak compositions. Permuting the gaps is a bijection of the collection, so every gap has mean $1015/1001$.",
+      "The least selected element is one plus the first gap. Its mean is $1+1015/1001=2016/1001=288/143$. The reduced numerator and denominator sum to $288+143=431$."
+    ],
+    "keyIdeas": [
+      "Use exchangeable gaps around the selected elements"
+    ],
+    "commonMistakes": [
+      "Treating the least element as uniformly distributed over its possible values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Gap permutation symmetry gives the expectation without enumerating enormous subset lists.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p13",
+    "problemId": "aime-i-2015-p13",
+    "finalAnswer": "$\\boxed{091}$",
+    "shortExplanation": "The product is two to the eighty-ninth power.",
+    "detailedSteps": [
+      "Let the ninety roots of $z^{90}+1$ be $\\zeta_j=e^{(2j-1)\\pi i/90}$. Evaluating its factored form at one gives $2=\\prod_{j=1}^{90}|1-\\zeta_j|=2^{90}\\prod_{j=1}^{90}\\sin((2j-1)^\\circ)$.",
+      "The ninety sine angles are the odd degrees from one through 179. Pairing each angle with its supplement gives $\\prod_{j=1}^{90}\\sin((2j-1)^\\circ)=[\\prod_{k=1}^{45}\\sin((2k-1)^\\circ)]^2$.",
+      "It follows that the requested squared-cosecant product is $2^{89}$. Since 89 is prime, an integer representation $m^n$ with both $m$ and $n$ greater than one requires $n=89$ and $m=2$ by prime factorization. Therefore $m+n=91$."
+    ],
+    "keyIdeas": [
+      "Pair the odd-angle sine factors from the roots of minus one"
+    ],
+    "commonMistakes": [
+      "Forgetting that the requested product contains squared cosecants and hence corresponds to the paired full sine product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The roots of z to the ninetieth plus one pick precisely the odd degree angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p14",
+    "problemId": "aime-i-2015-p14",
+    "finalAnswer": "$\\boxed{483}$",
+    "shortExplanation": "There are 483 integer-area endpoints.",
+    "detailedSteps": [
+      "Let $m=\\lfloor\\sqrt n\\rfloor$. On $k^2\\le x<(k+1)^2$, the actual height is $kx$. Hence $2A(n)=\\sum_{k=1}^{m-1}k((k+1)^4-k^4)+m(n^2-m^4)$. This is an integer, so $A(n)$ is integral exactly when this expression is even.",
+      "Modulo two, each difference $(k+1)^4-k^4$ is one. Thus $2A(n)\\equiv m(m-1)/2+m(n-m)\\pmod2$. For $m$ congruent to zero modulo four, every $n$ in its block works; for $m$ congruent to two, none works. For $m$ congruent to one, exactly odd $n$ work; for $m$ congruent to three, exactly even $n$ work.",
+      "For the complete blocks with $m=4,8,\\ldots,28$, the counts $2m+1$ sum to 231. For $m=1,5,\\ldots,29$, the odd counts $m+1$ sum to 128, but $n=1$ is outside the requested range, leaving 127.",
+      "For the complete blocks with $m=3,7,\\ldots,27$, the even counts $m$ sum to 105. The final truncated block has $m=31$ and $961\\le n\\le1000$, giving twenty even values.",
+      "The total is $231+127+105+20=483$. The open right boundary in $x$ does not change the integral."
+    ],
+    "keyIdeas": [
+      "Only the parity of twice the piecewise integral matters"
+    ],
+    "commonMistakes": [
+      "Using $\\lfloor x\\rfloor$ in place of the actual $\\lfloor\\sqrt{x}\\rfloor$, or counting the forbidden endpoint $n=1$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fourth-power integral differences simplify to a linear parity condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2015-p15",
+    "problemId": "aime-i-2015-p15",
+    "finalAnswer": "$\\boxed{053}$",
+    "shortExplanation": "The unpainted face area is twenty pi plus thirty square root three.",
+    "detailedSteps": [
+      "Center the cylinder at the origin with $x^2+y^2\\le36$ and $-4\\le z\\le4$. By rotation, choose the 120-degree top-rim endpoints $A=(3,3\\sqrt3,4)$ and $B=(3,-3\\sqrt3,4)$. The plane through them and the cylinder center is $z=4x/3$.",
+      "The cylinder height restriction on this plane is $|x|\\le3$. Thus the face projects onto the circular-disk strip $x^2+y^2\\le36$, $|x|\\le3$. Its area scale from this horizontal projection is $\\sqrt{1+(4/3)^2}=5/3$.",
+      "The projected strip area is $\\int_{-3}^3 2\\sqrt{36-x^2}\\,dx=18\\sqrt3+12\\pi$. For example, an antiderivative is $x\\sqrt{36-x^2}+36\\arcsin(x/6)$.",
+      "The actual flat cut area is therefore $(5/3)(18\\sqrt3+12\\pi)=30\\sqrt3+20\\pi$. Both halves have this same new face; the already painted boundary has zero area within the cut. Since three is squarefree, $a+b+c=20+30+3=53$."
+    ],
+    "keyIdeas": [
+      "Project the oblique cut onto a central strip of the circular base"
+    ],
+    "commonMistakes": [
+      "Using the area of the complete oblique ellipse without clipping it at the cylinder\u2019s two circular faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The finite cylinder height turns the full ellipse section into a clipped disk strip after projection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

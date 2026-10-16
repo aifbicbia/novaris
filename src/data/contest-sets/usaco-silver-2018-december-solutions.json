@@ -1,0 +1,106 @@
+[
+  {
+    "finalAnswer": "Binary-search the smallest waiting-time bound for which greedy consecutive groups use at most M buses, each with at most C passengers.",
+    "shortExplanation": "For a proposed bound, start each bus with the earliest unassigned cow and take as many following arrivals as its capacity and the bound allow. This uses the fewest buses. Feasibility is monotone, so binary search finds the minimum maximum wait.",
+    "detailedSteps": [
+      "Sort the arrival times as $a_0\\le a_1\\le\\cdots\\le a_{N-1}$. A nonempty bus can depart when its last passenger arrives. Departing any later only increases waiting, so the largest wait on that bus is its latest arrival minus its earliest arrival.",
+      "Fix a candidate maximum wait $W$. A legal bus group has at most $C$ cows and arrival span at most $W$. We may leave buses unused: feasibility means that all cows can be assigned to at most $M$ nonempty groups, not that every bus is full.",
+      "The greedy check starts at the earliest unassigned arrival $u$ and takes the longest consecutive prefix $G$ allowed by capacity and the bound $u+W$. Start another bus with the next unassigned cow and repeat. If more than $M$ buses are needed, reject the candidate.",
+      "To justify this check for arbitrary assignments, take any feasible assignment and let $A$ be its bus containing the earliest remaining cow. All passengers in $A$ arrive between $u$ and $u+W$. If $A$ has $q$ passengers, the greedy prefix has $g\\ge q$: at least $q$ eligible cows exist and $q\\le C$.",
+      "For each passenger of $A$ outside $G$, swap her with a passenger of $G$ outside $A$. There are enough such donors because $g\\ge q$, and a donor arrives no later than the displaced passenger. The donor fits $A$. In the other bus, the replacement does not decrease the minimum arrival, and its arrival is at most $u+W$, which is at most that bus's previous minimum plus $W$. Its capacity and span remain legal. Then move any extra members of $G$ into $A$; removing them cannot hurt their old buses.",
+      "This transformation makes $G$ the first bus without increasing the bus count. Apply the same argument to the remaining suffix. Therefore greedy uses no more buses than any feasible assignment. Conversely, every group it constructs obeys capacity and span, so its count is an exact feasibility test.",
+      "Increasing $W$ cannot destroy a feasible assignment. Search the inclusive integer range $[0,a_{N-1}-a_0]$. The upper endpoint is feasible because the stated capacity guarantee $MC\\ge N$ lets consecutive groups of at most $C$ use at most $M$ buses. At each midpoint keep the feasible half; the final bound is both minimal and attained by the greedy grouping.",
+      "Sorting costs $O(N\\log N)$. Each check is $O(N)$ and the number of checks is $O(\\log(1+R))$, where $R=a_{N-1}-a_0$. Total time is $O(N\\log N+N\\log(1+R))$ and space is $O(N)$. Equal arrival times and zero waiting are valid. Use a wide type for arithmetic such as $MC$, whose source-valid product can reach $10^{10}$.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main(){\n std::ifstream in(\"convention.in\");std::ofstream out(\"convention.out\");int n,m,c;in>>n>>m>>c;\n std::vector<long long> t(n);for(auto& x:t)in>>x;std::sort(t.begin(),t.end());\n auto feasible=[&](long long wait){int buses=0,i=0;while(i<n){int first=i;buses++;while(i<n&&i-first<c&&t[i]-t[first]<=wait)i++;if(buses>m)return false;}return true;};\n long long low=0,high=t.back()-t.front();\n while(low<high){long long mid=low+(high-low)/2;if(feasible(mid))high=mid;else low=mid+1;}\n out<<low<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Convert a maximum-wait objective into a monotone feasibility question.",
+      "Prove the consecutive-prefix greedy check against arbitrary, potentially interleaved assignments.",
+      "Depart at the latest assigned arrival and keep unused buses permissible."
+    ],
+    "commonMistakes": [
+      "Treating equal arrivals as distinct times or excluding a zero answer.",
+      "Filling every bus to capacity even when the waiting bound would be violated.",
+      "Assuming sorted consecutive groups are optimal without an exchange argument.",
+      "Using a 32-bit capacity product even though M and C can both be 100,000."
+    ],
+    "alternativeMethods": [
+      "For tiny instances, enumerate all partitions of the physical cows into legal bus groups and minimize their largest span. This checks even nonconsecutive assignments.",
+      "After proving that consecutive groups suffice, a dynamic program over every possible group boundary supplies a slower exact check of the greedy test."
+    ],
+    "difficultyNotes": "Binary search is the easy part. The key proof is that replacing a feasible bus containing the earliest cow by the greedy prefix cannot harm any other bus.",
+    "id": "solution-usaco-silver-2018-december-p1",
+    "problemId": "usaco-silver-2018-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Simulate service events with an arrival-sorted list and a min-heap of waiting cows keyed by original seniority index. Record the largest service-start time minus arrival time.",
+    "shortExplanation": "At each completion time, first add every cow who has arrived, including cows arriving exactly then. Serve the most senior waiting cow for her entire duration. When nobody is waiting, jump to the next arrival and collect all cows at that time before choosing.",
+    "detailedSteps": [
+      "Keep each cow's original input index as her seniority: a smaller index is more senior. Store arrival and duration by this index, then separately sort the pairs of arrival time and index. Sorting arrivals must not redefine seniority.",
+      "Maintain the time when the pasture is free, the next unqueued arrival, and a min-heap of waiting original indices. If the heap is empty, advance the clock to the next arrival when necessary. Add every not-yet-queued cow with arrival time at most the current clock.",
+      "The inclusive comparison is essential. A cow arriving exactly as the previous service ends is already waiting for the next selection. Likewise, when the pasture is idle and several cows arrive together, enqueue the entire tied group before selecting a cow.",
+      "Pop the least index, the most senior waiting cow. Her wait is the current clock minus her recorded arrival. Update the maximum, then advance the clock by her full positive eating duration. A more senior arrival during this interval does not interrupt her service.",
+      "Induct over service events. Before each selection, the heap contains exactly the unserved cows who have already arrived. The heap minimum is therefore exactly the choice required by the source. If the heap is empty, no cow can start before the next arrival, and collecting that entire arrival group preserves the same rule. Consequently every computed start time and wait equals the required history.",
+      "Each cow is enqueued and served once. Sorting and heap operations give $O(N\\log N)$ time and $O(N)$ space. The answer is zero for one cow or for isolated arrivals that never overlap service.",
+      "A wide clock is convenient, but the printed bounds do not themselves force 32-bit overflow: completion is at most $\\max_i a_i+\\sum_i t_i\\le2\\times10^9$, and any wait is at most the sum of other cows' durations. The implementation uses 64-bit time arithmetic conservatively. It does not replace the seniority rule with arrival-order or shortest-duration priority.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <queue>\n#include <utility>\n#include <vector>\nint main(){\n std::ifstream in(\"convention2.in\");std::ofstream out(\"convention2.out\");int n;in>>n;\n std::vector<long long> arrival(n),duration(n);std::vector<std::pair<long long,int>> order;\n for(int i=0;i<n;i++){in>>arrival[i]>>duration[i];order.push_back({arrival[i],i});}\n std::sort(order.begin(),order.end());std::priority_queue<int,std::vector<int>,std::greater<int>> waiting;\n int next=0,served=0;long long clock=0,longest=0;\n while(served<n){\n  if(waiting.empty()&&next<n)clock=std::max(clock,order[next].first);\n  while(next<n&&order[next].first<=clock){waiting.push(order[next].second);next++;}\n  int cow=waiting.top();waiting.pop();longest=std::max(longest,clock-arrival[cow]);clock+=duration[cow];served++;\n }\n out<<longest<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate chronological insertion from original-index service priority.",
+      "Add arrivals at the exact completion boundary before selecting.",
+      "Service is nonpreemptive, so jump between whole service events."
+    ],
+    "commonMistakes": [
+      "Prioritizing the earliest arrival instead of the most senior waiting cow.",
+      "Using a strict arrival-before-clock comparison and excluding an arrival at completion.",
+      "Selecting one cow from a tied arrival group before inserting the others.",
+      "Interrupting a running cow when a more senior cow arrives, or counting completion minus arrival as waiting."
+    ],
+    "alternativeMethods": [
+      "For small integer times, advance a clock one tick at a time and scan all unstarted cows whenever service is free. This literal timeline model checks event ordering independently of the heap.",
+      "For moderate N, scan every remaining cow at each service boundary to choose the most senior eligible cow; jump only when none has arrived. This trades the heap for quadratic work."
+    ],
+    "difficultyNotes": "The event sequence is determined by the seniority rule. Correct boundary handling matters more than a complicated data structure: all tied arrivals must be waiting before the next choice.",
+    "id": "solution-usaco-silver-2018-december-p2",
+    "problemId": "usaco-silver-2018-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Repeatedly mark all qualifying nonzero connected regions on the same board, erase them together, then compact each column downward. Print the final N rows of ten digits.",
+    "shortExplanation": "A round has two separate stages: simultaneous removal, followed by gravity. Find every sufficiently large same-color four-neighbor region before changing the board. After clearing them, preserve each column's surviving order while packing it at the bottom; stop when a round marks nothing.",
+    "detailedSteps": [
+      "Keep the board as $N$ strings of exactly ten digits. Zero represents an empty cell, so it is never a removable color. The source's gravity description gives packed initial columns; after every productive round the same condition must hold.",
+      "On the current unchanged board, flood-fill every unvisited nonzero cell using only equal-color neighbors above, below, left and right. Diagonal contact does not connect a region. Store the cells of each complete component.",
+      "If a component has at least $K$ cells, mark all its cells in a separate removal mask. Continue examining the rest of the unchanged board. Do not apply gravity between component discoveries: every qualifying region in this phase must disappear simultaneously.",
+      "If the mask is empty, no current region qualifies and the board is final. Otherwise clear every marked cell at once. For each column, scan from bottom to top and write its remaining nonzero digits into the lowest positions, then fill the upper positions with zeros. This preserves the survivors' vertical order and moves no haybale horizontally.",
+      "Induct on rounds. A flood fill finds exactly each current same-color component; the mask is the exact union of all simultaneous deletions. Column compaction then gives the unique settled state. Thus the next board, and eventually the reported fixed point, agrees with the specified process.",
+      "Let $V=10N$ and let $H$ be the initial number of occupied cells. Every productive round removes at least $K$ cells and never creates one, so there are at most $\\lfloor H/K\\rfloor$ productive rounds followed by one final scan. Each scan and gravity stage is $O(V)$, giving $O(V(1+H/K))$, at most $O(V+V^2/K)$ time and $O(V)$ space. Here $V\\le1000$.",
+      "Print every row as ten characters, including leading zeros and entirely empty rows. The answer is a picture, not a count of removed cells. For $K=1$ all nonzero cells disappear in the first productive round; an initially empty board has no productive round at all.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <string>\n#include <utility>\n#include <vector>\nint main(){\n std::ifstream in(\"mooyomooyo.in\");std::ofstream out(\"mooyomooyo.out\");int n,k;in>>n>>k;std::vector<std::string> board(n);for(auto& row:board)in>>row;\n while(true){\n  std::vector<std::vector<bool>> seen(n,std::vector<bool>(10,false)),remove(n,std::vector<bool>(10,false));bool changed=false;\n  for(int r=0;r<n;r++)for(int c=0;c<10;c++)if(board[r][c]!='0'&&!seen[r][c]){\n   std::vector<std::pair<int,int>> region,stack={{r,c}};seen[r][c]=true;\n   while(!stack.empty()){\n    auto [x,y]=stack.back();stack.pop_back();region.push_back({x,y});\n    std::pair<int,int> neighbors[4]={{x-1,y},{x+1,y},{x,y-1},{x,y+1}};\n    for(auto [a,b]:neighbors)if(a>=0&&a<n&&b>=0&&b<10&&!seen[a][b]&&board[a][b]==board[r][c]){seen[a][b]=true;stack.push_back({a,b});}\n   }\n   if(static_cast<int>(region.size())>=k){changed=true;for(auto [x,y]:region)remove[x][y]=true;}\n  }\n  if(!changed)break;\n  for(int r=0;r<n;r++)for(int c=0;c<10;c++)if(remove[r][c])board[r][c]='0';\n  for(int c=0;c<10;c++){int write=n-1;for(int r=n-1;r>=0;r--)if(board[r][c]!='0')board[write--][c]=board[r][c];while(write>=0)board[write--][c]='0';}\n }\n for(const auto& row:board)out<<row<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Determine every deletion from one unchanged snapshot.",
+      "Use a removal mask to separate simultaneous disappearance from gravity.",
+      "Preserve vertical order and fixed width when packing columns.",
+      "A decreasing number of occupied cells proves termination."
+    ],
+    "commonMistakes": [
+      "Treating zeros as a color or using diagonal adjacency.",
+      "Dropping columns or converting rows to integers and losing leading zeros.",
+      "Applying gravity immediately after one qualifying region, changing the same round's other decisions.",
+      "Stopping after a single deletion phase even though gravity can create another qualifying region."
+    ],
+    "alternativeMethods": [
+      "Represent each column by its list of surviving colors. At each round, reconstruct occupied coordinates and use a disjoint-set structure to determine component sizes, then filter every list simultaneously. This is an independent state model for verification.",
+      "A breadth-first queue can replace the iterative depth-first stack used for each component; keep the board unchanged until all qualifying cells are marked."
+    ],
+    "difficultyNotes": "The board is small, but an incorrect order of operations changes the game. Separate the unchanged-region scan, simultaneous removal and stable gravity, then verify the complete fixed-width output.",
+    "id": "solution-usaco-silver-2018-december-p3",
+    "problemId": "usaco-silver-2018-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

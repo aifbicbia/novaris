@@ -1,0 +1,719 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1968-p1",
+    "problemId": "amc12-predecessor-1968-p1",
+    "finalAnswer": "$\\boxed{\\pi^2}$ (choice D)",
+    "shortExplanation": "A diameter increase of $\\pi$ changes the circumference by $\\pi\\cdot\\pi=\\pi^2$.",
+    "detailedSteps": [
+      "Write the original diameter as $d$. The original and new circumferences are $\\pi d$ and $\\pi(d+\\pi)$.",
+      "The increase is their difference, $\\pi(d+\\pi)-\\pi d=\\pi^2$."
+    ],
+    "keyIdeas": [
+      "Use the linear relationship between circumference and diameter"
+    ],
+    "commonMistakes": [
+      "Confusing the diameter increase with a radius increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original diameter cancels, so no initial size is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p2",
+    "problemId": "amc12-predecessor-1968-p2",
+    "finalAnswer": "$\\boxed{-\\frac13}$ (choice B)",
+    "shortExplanation": "The equation becomes $2^{4x-4}=2^{16x}$, so $x=-1/3$.",
+    "detailedSteps": [
+      "The quotient is $64^{x-1}/4^{x-1}=2^{6(x-1)-2(x-1)}=2^{4x-4}$. The right side is $256^{2x}=2^{16x}$.",
+      "Base-two exponentiation is injective, so $4x-4=16x$. Solving gives $x=-1/3$; the denominator is positive for every real $x$."
+    ],
+    "keyIdeas": [
+      "Convert every exponential expression to base two"
+    ],
+    "commonMistakes": [
+      "Subtracting the bases instead of subtracting exponents with a common base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common base turns the exponential equation into a linear one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p3",
+    "problemId": "amc12-predecessor-1968-p3",
+    "finalAnswer": "$\\boxed{y+3x-4=0}$ (choice A)",
+    "shortExplanation": "The given line has slope $1/3$, so the required line has slope $-3$ and intercept four.",
+    "detailedSteps": [
+      "Rewrite the given equation as $y=x/3-7/3$. A perpendicular line has slope $-3$.",
+      "Passing through $(0,4)$ gives $y=-3x+4$, or $y+3x-4=0$."
+    ],
+    "keyIdeas": [
+      "Use the negative reciprocal slope and the given point"
+    ],
+    "commonMistakes": [
+      "Changing the sign of the slope without taking its reciprocal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The point on the vertical axis supplies the intercept directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p4",
+    "problemId": "amc12-predecessor-1968-p4",
+    "finalAnswer": "$\\boxed{\\frac43}$ (choice C)",
+    "shortExplanation": "The inner result is two, and applying the operation to four and two gives $4/3$.",
+    "detailedSteps": [
+      "Using the definition gives $4\\ast4=16/(4+4)=2$.",
+      "Therefore $4\\ast(4\\ast4)=4\\ast2=8/(4+2)=4/3$."
+    ],
+    "keyIdeas": [
+      "Evaluate the inner custom operation first"
+    ],
+    "commonMistakes": [
+      "Replacing the custom operation with ordinary multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Follow the parentheses and apply the stated definition at each step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p5",
+    "problemId": "amc12-predecessor-1968-p5",
+    "finalAnswer": "$\\boxed{r(r+1)}$ (choice A)",
+    "shortExplanation": "Factoring $r(r+1)/3$ leaves a difference of three.",
+    "detailedSteps": [
+      "The two terms are $r(r+1)(r+2)/3$ and $(r-1)r(r+1)/3$.",
+      "Their difference is $r(r+1)[(r+2)-(r-1)]/3=r(r+1)$."
+    ],
+    "keyIdeas": [
+      "Factor the common terms in the polynomial difference"
+    ],
+    "commonMistakes": [
+      "Replacing only one occurrence of the argument when evaluating $f(r-1)$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring makes the cancellation clearer than expanding both cubic expressions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p6",
+    "problemId": "amc12-predecessor-1968-p6",
+    "finalAnswer": "$\\boxed{1}$ (choice E)",
+    "shortExplanation": "The two exterior angles sum to the same value as the two opposite interior angles.",
+    "detailedSteps": [
+      "Let the interior angles of the convex quadrilateral be $A,B,C,D$. The extension angles at $C$ and $D$ are $180^\\circ-C$ and $180^\\circ-D$.",
+      "Their sum is $360^\\circ-(C+D)=A+B$, using the quadrilateral angle sum. Thus $S=S^{\\prime}$ and $S/S^{\\prime}=1$; the denominator is positive."
+    ],
+    "keyIdeas": [
+      "Relate the exterior angles to the quadrilateral angle sum"
+    ],
+    "commonMistakes": [
+      "Treating an exterior angle as equal to its adjacent interior angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both extensions are through the specified vertices, so the relevant angles are supplements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p7",
+    "problemId": "amc12-predecessor-1968-p7",
+    "finalAnswer": "$\\boxed{\\text{undetermined}}$ (choice E)",
+    "shortExplanation": "The centroid ratio controls each median separately; one median does not determine another.",
+    "detailedSteps": [
+      "A concrete family makes the freedom visible. Set $O=(0,0)$, $C=(0,6)$, $A=(t,0)$ and $B=(-t,-6)$ for any $t>0$. The centroid is $O$, and each triangle is nondegenerate.",
+      "The midpoint of $AB$ is $Q=(0,-3)$, so $OQ=3$ for every member of the family. The midpoint of $BC$ is $P=(-t/2,0)$, so $OP=t/2$ varies.",
+      "For example, $t=2$ and $t=4$ give $OP=1$ and $OP=2$ while preserving the given length. Therefore no unique value is determined."
+    ],
+    "keyIdeas": [
+      "Distinguish the lengths on different medians"
+    ],
+    "commonMistakes": [
+      "Applying the two-to-one centroid ratio to segments belonging to different medians."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two valid examples with different requested lengths prove that the information is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p8",
+    "problemId": "amc12-predecessor-1968-p8",
+    "finalAnswer": "$\\boxed{97\\%}$ (choice B)",
+    "shortExplanation": "The incorrect result is $1/36$ of the correct result, an error of about $97.22\\%$.",
+    "detailedSteps": [
+      "For a positive starting value $v$, the correct result is $6v$ and the incorrect result is $v/6$.",
+      "The relative error is $(6v-v/6)/(6v)=35/36$. As a percentage this is about $97.222\\%$, which rounds to $97\\%$."
+    ],
+    "keyIdeas": [
+      "Measure the error relative to the correct result"
+    ],
+    "commonMistakes": [
+      "Dividing the difference by the incorrect result rather than the correct result."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive starting value cancels in the relative error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p9",
+    "problemId": "amc12-predecessor-1968-p9",
+    "finalAnswer": "$\\boxed{\\frac{20}3}$ (choice E)",
+    "shortExplanation": "The two roots are six and two thirds, giving a sum of twenty thirds.",
+    "detailedSteps": [
+      "The equality of absolute values is equivalent to $x+2=2(x-2)$ or $x+2=-2(x-2)$.",
+      "These equations give $x=6$ and $x=2/3$. Both satisfy the original absolute-value equation, and their sum is $6+2/3=20/3$."
+    ],
+    "keyIdeas": [
+      "Account for both signs in an absolute-value equation"
+    ],
+    "commonMistakes": [
+      "Keeping only the branch in which both expressions have the same sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two sign branches are exhaustive because both sides are nonnegative absolute values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p10",
+    "problemId": "amc12-predecessor-1968-p10",
+    "finalAnswer": "$\\boxed{\\text{Some students are not fraternity members}}$ (choice C)",
+    "shortExplanation": "A student who is not honest cannot belong to a group whose members are all honest.",
+    "detailedSteps": [
+      "The first premise supplies at least one student who is not honest. The second premise says that every fraternity member is honest.",
+      "That particular student cannot be a fraternity member, since membership would force honesty. Hence some students are not fraternity members, choice C.",
+      "No premise requires a fraternity member to exist, and nothing rules out other students who are honest fraternity members. The stronger or unrelated choices therefore do not follow."
+    ],
+    "keyIdeas": [
+      "Apply the contrapositive to an existing witness"
+    ],
+    "commonMistakes": [
+      "Reading a universal statement as a claim that at least one member exists."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single guaranteed witness is enough for the necessary existential conclusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p11",
+    "problemId": "amc12-predecessor-1968-p11",
+    "finalAnswer": "$\\boxed{\\frac9{16}}$ (choice B)",
+    "shortExplanation": "The radius ratio is $3:4$, so the area ratio is $9:16$.",
+    "detailedSteps": [
+      "Equal arc lengths give $(\\pi/3)r_1=(\\pi/4)r_2$, so $r_1/r_2=3/4$.",
+      "Circle areas scale as the square of radius, giving $r_1^2/r_2^2=9/16$."
+    ],
+    "keyIdeas": [
+      "Relate arc lengths before squaring the radius ratio"
+    ],
+    "commonMistakes": [
+      "Using the ratio of central angles directly as the area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal arc length determines an inverse angle-to-radius ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p12",
+    "problemId": "amc12-predecessor-1968-p12",
+    "finalAnswer": "$\\boxed{\\frac{25}4}$ (choice C)",
+    "shortExplanation": "The triangle is right, so its circumradius is half the longest side.",
+    "detailedSteps": [
+      "The side lengths satisfy $(15/2)^2+10^2=(25/2)^2$. Thus the longest side is the hypotenuse of a right triangle.",
+      "The midpoint of the hypotenuse is equidistant from all three vertices, so the circumradius is $(25/2)/2=25/4$."
+    ],
+    "keyIdeas": [
+      "Recognize a scaled right triangle"
+    ],
+    "commonMistakes": [
+      "Using the hypotenuse itself as the radius rather than the diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The Pythagorean identity avoids a general circumradius calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p13",
+    "problemId": "amc12-predecessor-1968-p13",
+    "finalAnswer": "$\\boxed{-1}$ (choice B)",
+    "shortExplanation": "The product relation forces $m=1$, after which the sum relation gives $n=-2$.",
+    "detailedSteps": [
+      "Because the roots are $m,n$, Vieta gives $m+n=-m$ and $mn=n$. Since $n\\ne0$, the second relation gives $m=1$.",
+      "The first relation then gives $n=-2$, so the sum is $-1$. Indeed, $x^2+x-2=(x-1)(x+2)$ has the required two nonzero roots."
+    ],
+    "keyIdeas": [
+      "Use both Vieta relations and the nonzero constant term"
+    ],
+    "commonMistakes": [
+      "Forgetting to use the nonzero condition before dividing the product relation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The roots also appear as coefficients, so both Vieta equations matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p14",
+    "problemId": "amc12-predecessor-1968-p14",
+    "finalAnswer": "$\\boxed{x}$ (choice E)",
+    "shortExplanation": "Multiplication by the nonzero denominators gives $xy=y+1=x+1$, so $y=x$.",
+    "detailedSteps": [
+      "Multiply the first equation by $y$ and the second by $x$. This gives $xy=y+1$ and $xy=x+1$.",
+      "Comparing yields $y=x$. The equations are consistent: $x=y=(1\\pm\\sqrt5)/2$ gives two nonzero solutions, so the conclusion is not vacuous."
+    ],
+    "keyIdeas": [
+      "Compare the two expressions for the same product"
+    ],
+    "commonMistakes": [
+      "Substituting repeatedly when a common product allows immediate cancellation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conclusion holds for either sign of the nonzero solution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p15",
+    "problemId": "amc12-predecessor-1968-p15",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Every product is divisible by three, while two particular products have greatest common divisor three.",
+    "detailedSteps": [
+      "Three consecutive odd integers differ by two, so modulo three they run through all three residue classes. One factor is therefore divisible by three.",
+      "The allowed products $1\\cdot3\\cdot5=15$ and $7\\cdot9\\cdot11=693$ have greatest common divisor three. Any integer dividing every allowed product must divide both, and hence cannot exceed three."
+    ],
+    "keyIdeas": [
+      "Prove universal divisibility and then prove maximality"
+    ],
+    "commonMistakes": [
+      "Mistaking a divisor of the first few products for a divisor of every product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Universal divisibility gives the lower bound; two witnesses establish the maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p16",
+    "problemId": "amc12-predecessor-1968-p16",
+    "finalAnswer": "$\\boxed{x>\\frac12\\ \\text{or}\\ x<-\\frac13}$ (choice E)",
+    "shortExplanation": "Positive inputs require $x>1/2$; negative inputs require $x<-1/3$.",
+    "detailedSteps": [
+      "The denominator requires $x\\ne0$. For $x>0$, multiplying $1/x<2$ by $x$ gives $x>1/2$; the other inequality is automatic.",
+      "For $x<0$, the first inequality is automatic. Multiplying $1/x>-3$ by a negative number reverses it, giving $1<-3x$, or $x<-1/3$.",
+      "The inequalities are strict, so neither boundary is included. The complete set is $(-\\infty,-1/3)\\cup(1/2,\\infty)$."
+    ],
+    "keyIdeas": [
+      "Split reciprocal inequalities according to the sign"
+    ],
+    "commonMistakes": [
+      "Multiplying by a negative variable without reversing the inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sign split preserves the inequality direction and excludes zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p17",
+    "problemId": "amc12-predecessor-1968-p17",
+    "finalAnswer": "$\\boxed{\\begin{cases}0&n\\text{ even}\\\\-1/n&n\\text{ odd}\\end{cases}}$ (choice C)",
+    "shortExplanation": "Even numbers of terms cancel; odd numbers leave a numerator of negative one.",
+    "detailedSteps": [
+      "The sequence begins $-1,1,-1,1,\\ldots$. Each consecutive pair sums to zero.",
+      "For even $n$, the numerator is zero, so $f(n)=0$. For odd $n$, the final unpaired term is $-1$, so $f(n)=-1/n$. This is the parity description intended by choice C.",
+      "If $n$ varies over all positive integers, the full range is $\\{0,-1,-1/3,-1/5,\\ldots\\}$; the source notation $\\{0,-1/n\\}$ is a shorthand for the two parity cases."
+    ],
+    "keyIdeas": [
+      "Pair the alternating terms before taking their average"
+    ],
+    "commonMistakes": [
+      "Starting the alternating sequence with positive one instead of negative one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "State the parity dependence explicitly rather than treating the source shorthand as a fixed two-element set.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p18",
+    "problemId": "amc12-predecessor-1968-p18",
+    "finalAnswer": "$\\boxed{\\frac{40}3}$ (choice D)",
+    "shortExplanation": "The bisector makes $AB=BE=8$, and similarity gives $CE/BE=5/3$.",
+    "detailedSteps": [
+      "Let $\\theta=\\angle EAB$. Since $EF\\parallel AB$, the angle between $EF$ and the extension of $AE$ through $E$ is $\\theta$. The bisector condition makes the angle between that extension and $EC$ also $\\theta$.",
+      "The angle between $EA$ and $EC$ is therefore $180^\\circ-\\theta$. Since $EB$ points opposite $EC$, $\\angle AEB=\\theta$. Triangle $ABE$ has equal angles at $A,E$, so $BE=AB=8$.",
+      "Similarity of $CDE$ and $CAB$ gives $CE/CB=DE/AB=5/8$. Hence $BE/CB=3/8$, and $CE=(5/3)BE=40/3$."
+    ],
+    "keyIdeas": [
+      "Combine the exterior bisector with parallel-line angles"
+    ],
+    "commonMistakes": [
+      "Using the internal angle at $E$ when the specified bisector is an extension of $AE$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exterior bisector supplies an isosceles triangle before similarity determines the requested segment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p19",
+    "problemId": "amc12-predecessor-1968-p19",
+    "finalAnswer": "$\\boxed{19}$ (choice E)",
+    "shortExplanation": "The number of quarters must be an even integer from two through thirty-eight, giving nineteen choices.",
+    "detailedSteps": [
+      "Let $d,q$ be the positive numbers of dimes and quarters. In cents, $10d+25q=1000$, or $2d+5q=200$.",
+      "This forces $q$ to be even. Positivity of both coin counts permits exactly $q=2,4,\\ldots,38$; each determines a unique positive integer $d$. There are nineteen such values."
+    ],
+    "keyIdeas": [
+      "Use the parity constraint in the coin equation"
+    ],
+    "commonMistakes": [
+      "Including the all-dime or all-quarter changes even though both coin types are required."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parity equation and strict positivity determine both endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p20",
+    "problemId": "amc12-predecessor-1968-p20",
+    "finalAnswer": "$\\boxed{9}$ (choice A)",
+    "shortExplanation": "The angle sum equation factors as $(n-9)(n+16)=0$, giving nine sides.",
+    "detailedSteps": [
+      "With largest angle $160^\\circ$ and step $5^\\circ$, the smallest is $160-5(n-1)=165-5n$.",
+      "The sum is $n(325-5n)/2$. Equating this to $180(n-2)$ gives $n^2+7n-144=0$, or $(n-9)(n+16)=0$.",
+      "The polygon has a positive number of sides, so $n=9$. The resulting angles are $120^\\circ,125^\\circ,\\ldots,160^\\circ$, all strictly between zero and $180^\\circ$."
+    ],
+    "keyIdeas": [
+      "Equate the arithmetic-progression sum to the polygon angle sum"
+    ],
+    "commonMistakes": [
+      "Using the exterior-angle sum for a list of interior angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity of the side count removes the extraneous algebraic root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p21",
+    "problemId": "amc12-predecessor-1968-p21",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Every factorial from $5!$ onward ends in zero; the first four sum to thirty-three.",
+    "detailedSteps": [
+      "For every $k\\ge5$, $k!$ contains factors two and five and is divisible by ten.",
+      "Only $1!+2!+3!+4!=1+2+6+24=33$ affects the units digit. Thus the units digit is three."
+    ],
+    "keyIdeas": [
+      "Discard factorials that vanish modulo ten"
+    ],
+    "commonMistakes": [
+      "Stopping at $4!$ without checking which later factorials are multiples of ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A modular calculation avoids evaluating the large sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p22",
+    "problemId": "amc12-predecessor-1968-p22",
+    "finalAnswer": "$\\boxed{\\text{each side}<\\frac12}$ (choice E)",
+    "shortExplanation": "A side must be shorter than the other three together; that condition also permits a simple construction.",
+    "detailedSteps": [
+      "In a nondegenerate simple quadrilateral, each side is shorter than the path formed by the other three sides. With perimeter one, a side $a$ therefore satisfies $a<1-a$, or $a<1/2$.",
+      "For sufficiency, sort the positive lengths as $a\\ge b\\ge c\\ge d$. A diagonal for a triangle with sides $a,b$ can have any length in $(a-b,a+b)$; for sides $c,d$, it can have any length in $(c-d,c+d)$.",
+      "These open intervals overlap: $a-b<c+d$ follows from $a<1/2$, and $c-d<a+b$ follows from the ordering and positivity. Choose a diagonal strictly inside both intervals.",
+      "Construct the two nondegenerate triangles on opposite sides of that diagonal. Their four outer sides form a simple quadrilateral, because the outer edges of each triangle lie in its own half-plane and meet the other triangle only at the diagonal endpoints. Thus the stated condition is both necessary and sufficient, choice E."
+    ],
+    "keyIdeas": [
+      "Prove both directions of the polygon inequality"
+    ],
+    "commonMistakes": [
+      "Showing only the necessary side inequality and omitting a construction for sufficiency."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The open diagonal intervals avoid collapsed triangles and supply the complete existence proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p23",
+    "problemId": "amc12-predecessor-1968-p23",
+    "finalAnswer": "$\\boxed{\\text{no real solutions}}$ (choice B)",
+    "shortExplanation": "The algebraic equality would force $x=0$, but the logarithms require $x>3$.",
+    "detailedSteps": [
+      "The first two logarithms require $x>1$. The third argument is $(x-3)(x+1)$, so the combined domain is $x>3$.",
+      "On that domain, combining logarithms and using injectivity gives $(x+3)(x-1)=x^2-2x-3$. Expanding leaves $4x=0$.",
+      "The only algebraic candidate is $x=0$, which is outside the domain. Therefore no real value satisfies the original equation."
+    ],
+    "keyIdeas": [
+      "Enforce every logarithm domain before combining terms"
+    ],
+    "commonMistakes": [
+      "Accepting a root after combining logarithms without checking the original positive arguments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Domain restrictions must precede algebraic cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p24",
+    "problemId": "amc12-predecessor-1968-p24",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "The side wood is three inches wide, making the outer dimensions twenty-four by thirty-six.",
+    "detailedSteps": [
+      "Let the side width be $w>0$; the top and bottom widths are $2w$. The complete outer dimensions are $18+2w$ and $24+4w$.",
+      "The painting area is $432$. An equal area of wood makes the outer area $864$, so $(18+2w)(24+4w)=864$.",
+      "This simplifies to $w^2+15w-54=0$, whose roots are three and negative eighteen. The positive width is three, giving dimensions $24$ and $36$, with smaller-to-larger ratio $2/3$."
+    ],
+    "keyIdeas": [
+      "Distinguish the wood area from the complete outer area"
+    ],
+    "commonMistakes": [
+      "Setting the whole outer rectangle area equal to the painting area rather than adding the wood area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive width condition selects the physically valid algebraic branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p25",
+    "problemId": "amc12-predecessor-1968-p25",
+    "finalAnswer": "$\\boxed{\\frac{xy}{x-1}}$ (choice C)",
+    "shortExplanation": "The gap closes at speed $(x-1)v$, so Flash runs $xy/(x-1)$ yards.",
+    "detailedSteps": [
+      "Let Ace run at speed $v>0$. Flash runs at $xv$, so their relative speed is $(x-1)v>0$.",
+      "Closing the head start $y$ takes $t=y/[(x-1)v]$. Flash therefore travels $xvt=xy/(x-1)$."
+    ],
+    "keyIdeas": [
+      "Use relative speed to find the catching time"
+    ],
+    "commonMistakes": [
+      "Reporting the head start divided by the speed ratio without accounting for Ace continuing to move."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The initial gap is closed by the difference of speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p26",
+    "problemId": "amc12-predecessor-1968-p26",
+    "finalAnswer": "$\\boxed{1}$ (choice E)",
+    "shortExplanation": "The minimal index is one thousand, whose digits sum to one.",
+    "detailedSteps": [
+      "The even-number sum is $S=2(1+\\cdots+N)=N(N+1)$, strictly increasing for positive integer $N$.",
+      "At $N=999$, the value is $999000$; at $N=1000$, it is $1001000$. Thus the first value exceeding one million occurs at $N=1000$. Its digit sum is one."
+    ],
+    "keyIdeas": [
+      "Locate the first strict threshold crossing"
+    ],
+    "commonMistakes": [
+      "Replacing the strict threshold with an equality or rounding the quadratic estimate without testing neighbors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two adjacent checks and monotonicity prove minimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p27",
+    "problemId": "amc12-predecessor-1968-p27",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The three sums are nine, seventeen and negative twenty-five, which add to one.",
+    "detailedSteps": [
+      "Each pair $1-2$, $3-4$, and so on contributes negative one. Hence $S_{2m}=-m$, while $S_{2m+1}=m+1$.",
+      "Therefore $S_{17}=9$, $S_{33}=17$ and $S_{50}=-25$, giving a total of one."
+    ],
+    "keyIdeas": [
+      "Pair neighboring terms in each alternating sum"
+    ],
+    "commonMistakes": [
+      "Using the even-index formula for an odd number of terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The final unpaired term changes the parity formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p28",
+    "problemId": "amc12-predecessor-1968-p28",
+    "finalAnswer": "$\\boxed{14}$ (choice D)",
+    "shortExplanation": "The ratio is $7+4\\sqrt3\\approx13.928$, so it rounds to fourteen.",
+    "detailedSteps": [
+      "Set $u=\\sqrt{a/b}>1$. Dividing the mean relation by $b$ gives $(u^2+1)/2=2u$, so $u^2-4u+1=0$.",
+      "The roots are $2\\pm\\sqrt3$. Since $u>1$, choose $2+\\sqrt3$. Thus $a/b=u^2=7+4\\sqrt3\\approx13.928$, whose nearest integer is fourteen."
+    ],
+    "keyIdeas": [
+      "Replace the ratio by its positive square root"
+    ],
+    "commonMistakes": [
+      "Keeping the root below one despite the given ordering of $a$ and $b$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Taking a positive square root turns the mean relation into a quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p29",
+    "problemId": "amc12-predecessor-1968-p29",
+    "finalAnswer": "$\\boxed{x<z<y}$ (choice A)",
+    "shortExplanation": "Because $x<x^x<1$, exponent comparison gives $x<x^{x^x}<x^x$.",
+    "detailedSteps": [
+      "For $0<x<1$, the function $t\\mapsto x^t$ is strictly decreasing. Since $x<1$, this first gives $x=x^1<x^x=y<1$.",
+      "Now compare the exponents $x<y<1$. Decreasing exponentiation gives $x=x^1<x^y=z<x^x=y$. Thus the increasing order is $x,z,y$."
+    ],
+    "keyIdeas": [
+      "Use the decreasing exponential function for a base below one"
+    ],
+    "commonMistakes": [
+      "Treating the exponential function as increasing when its base lies below one, or changing the tower parentheses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source tower is $x^{(x^x)}$; it is not $(x^x)^x$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p30",
+    "problemId": "amc12-predecessor-1968-p30",
+    "finalAnswer": "$\\boxed{2n_1}$ (choice A)",
+    "shortExplanation": "Each side of the smaller polygon contributes at most two intersections, and the bound can be attained.",
+    "detailedSteps": [
+      "A side segment meets the boundary of a convex polygon in at most two isolated points unless it shares a boundary segment. The excluded shared-segment case therefore lets each of the $n_1$ sides contribute at most two points, for an upper bound of $2n_1$.",
+      "To attain it when the two counts are equal, place two regular $n_1$-gons on the same circle, rotating one by half a central step. Their vertices alternate, and each edge crosses the other boundary twice. All $2n_1$ crossings are distinct and transverse.",
+      "If $n_2>n_1$, add the extra distinct vertices on that circle extremely close to one existing vertex of the second polygon, along an adjacent arc. All vertices remain in strict convex position. With sufficiently small insertions, the original transverse edge crossings persist, so the second polygon has exactly $n_2$ sides and still achieves $2n_1$ intersections."
+    ],
+    "keyIdeas": [
+      "Combine a convex line-intersection bound with an attaining construction"
+    ],
+    "commonMistakes": [
+      "Multiplying the two side counts without using convexity, or giving an upper bound without showing it can occur."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A transverse construction makes the maximum stable when extra sides are introduced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p31",
+    "problemId": "amc12-predecessor-1968-p31",
+    "finalAnswer": "$\\boxed{75\\%}$ (choice D)",
+    "shortExplanation": "The total baseline shrinks by half the original square side, so the new square area is one quarter of the original.",
+    "detailedSteps": [
+      "Using $\\sqrt3 s^2/4$ for an equilateral triangle gives $AB=8\\sqrt2$ and $CD=4\\sqrt2$. The original square has $BC=\\sqrt{32}=4\\sqrt2$, so $AD=16\\sqrt2$.",
+      "The baseline reduction is one eighth of $AD$, or $2\\sqrt2$. The fixed triangle bases leave the new square side $BC=2\\sqrt2$, exactly half its original value.",
+      "The new area is one quarter of the old area, so the percentage decrease is $100(1-1/4)=75\\%$."
+    ],
+    "keyIdeas": [
+      "Find the changing square side after fixing the two triangle bases"
+    ],
+    "commonMistakes": [
+      "Applying the baseline percentage directly to the square area instead of finding the change in its own side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two fixed triangle bases concentrate the whole baseline reduction in the square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p32",
+    "problemId": "amc12-predecessor-1968-p32",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "The two encounters give speed sum 250 and speed difference 50, so the speeds are 100 and 150.",
+    "detailedSteps": [
+      "Let the speeds be $u,v>0$. At time $t$ after A reaches $O$, their distances from $O$ are $ut$ and $|500-vt|$.",
+      "The first equality occurs before B reaches $O$, at $t=500/(u+v)$. A second equality is possible only when $v>u$, after B passes $O$, at $t=500/(v-u)$.",
+      "The stated times are two minutes and ten minutes, giving $u+v=250$ and $v-u=50$. Hence $u=100$, $v=150$ and $u/v=2/3$. B passes $O$ at $10/3$ minutes, correctly between the two times."
+    ],
+    "keyIdeas": [
+      "Use the two absolute-distance branches before and after passing the intersection"
+    ],
+    "commonMistakes": [
+      "Reading eight more minutes as a total elapsed time of eight minutes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absolute value changes its branch after B crosses the intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p33",
+    "problemId": "amc12-predecessor-1968-p33",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The place-value equation makes the middle digit a multiple of eight; its base-seven range forces zero.",
+    "detailedSteps": [
+      "Write the base-seven digits as $a,b,c$, so the reversed base-nine number has digits $c,b,a$. Both leading digits are nonzero, and $0\\le b\\le6$.",
+      "Equating values gives $49a+7b+c=81c+9b+a$, or $24a=40c+b$. The two multiples of eight force $b$ to be a multiple of eight, so $b=0$.",
+      "The remaining equation is $3a=5c$. The admissible digits are $a=5,c=3$, and indeed $503_7=305_9=248$."
+    ],
+    "keyIdeas": [
+      "Translate the reversed digits into their place values"
+    ],
+    "commonMistakes": [
+      "Comparing the numeral strings without expanding their different base place values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit bound is what turns divisibility by eight into a unique digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p34",
+    "problemId": "amc12-predecessor-1968-p34",
+    "finalAnswer": "$\\boxed{60}$ (choice B)",
+    "shortExplanation": "The votes for the bill rise from 180 to 240, an increase of sixty.",
+    "detailedSteps": [
+      "Let $N$ be the original number against the bill. Then the original favorable count is $400-N$, and the defeat margin is $2N-400$.",
+      "The second favorable count is $12N/11$, so the passage margin is $24N/11-400$. The double-margin condition gives $24N/11-400=2(2N-400)$.",
+      "Solving yields $N=220$. The first favorable count is 180 and the second is 240, so the increase is sixty. The margins are forty and eighty, respectively."
+    ],
+    "keyIdeas": [
+      "Translate vote margins and the comparison between the two ballots"
+    ],
+    "commonMistakes": [
+      "Treating the original defeat margin as the original number of unfavorable votes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use positive winning margins: unfavorable minus favorable for defeat, and favorable minus unfavorable for passage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1968-p35",
+    "problemId": "amc12-predecessor-1968-p35",
+    "finalAnswer": "$\\boxed{\\frac12+\\frac1{\\sqrt2}}$ (choice D)",
+    "shortExplanation": "The chord-length ratio tends to $\\sqrt2$, making the area ratio tend to $1/2+1/\\sqrt2$.",
+    "detailedSteps": [
+      "Let $g=OG<a$ and $\\delta=a-g>0$. From $JH=HG$, the upper chord is at height $OH=a-\\delta/2$, while the lower chord is at $a-\\delta$. Their vertical separation is $\\delta/2$.",
+      "A chord at height $y$ has length $2\\sqrt{a^2-y^2}$. Therefore $CD=2\\sqrt{\\delta(2a-\\delta)}$ and $EF=2\\sqrt{\\delta(a-\\delta/4)}$.",
+      "The trapezoid and rectangle have the same positive height. Thus $K/R=(CD+EF)/(2EF)=1/2+(1/2)\\sqrt{(2a-\\delta)/(a-\\delta/4)}$.",
+      "As $\\delta\\to0^+$, this tends to $1/2+\\sqrt2/2=1/2+1/\\sqrt2$. We take a limit from positive heights; the collapsed endpoint itself would make both areas zero."
+    ],
+    "keyIdeas": [
+      "Cancel a positive common height before taking the limit"
+    ],
+    "commonMistakes": [
+      "Substituting the fully collapsed position before forming the ratio, which produces an undefined zero over zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common height cancels only before the limiting position is reached.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,644 @@
+[
+  {
+    "id": "solution-amc8-2005-p1",
+    "problemId": "amc8-2005-p1",
+    "finalAnswer": "$\\boxed{\\text{B }(15)}$",
+    "shortExplanation": "**Idea:** Undo the mistaken multiplication to find Connie's original number, then divide by $2$.",
+    "detailedSteps": [
+      "If multiplying by $2$ gave $60$, then the original number was $60/2=30$.",
+      "The correct operation was to divide the original number by $2$.",
+      "So the correct answer is $30/2=15$.",
+      "Final Answer: ($\\boxed{\\text{B }(15)}$)"
+    ],
+    "keyIdeas": [
+      "Inverse operations",
+      "Division"
+    ],
+    "commonMistakes": [
+      "Do not divide $60$ directly by $2$ only once; first recover the original number."
+    ],
+    "alternativeMethods": [
+      "Let the number be $x$ and solve $2x=60$ first."
+    ],
+    "difficultyNotes": "A short inverse-operation warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p2",
+    "problemId": "amc8-2005-p2",
+    "finalAnswer": "$\\boxed{\\text{C }(2.50\\text{ dollars})}$",
+    "shortExplanation": "**Idea:** Find the total original price and take $20\\%$ of it.",
+    "detailedSteps": [
+      "Five folders at 2.50 dollars each cost $5\\cdot2.50=12.50$ dollars.",
+      "A $20\\%$ discount saves one-fifth of the price.",
+      "The savings are $12.50/5=2.50$ dollars.",
+      "Final Answer: ($\\boxed{\\text{C }(2.50\\text{ dollars})}$)"
+    ],
+    "keyIdeas": [
+      "Percent discount",
+      "Total cost"
+    ],
+    "commonMistakes": [
+      "Take $20\\%$ of all five folders, not just one folder."
+    ],
+    "alternativeMethods": [
+      "Compute $0.20\\cdot12.50$ directly."
+    ],
+    "difficultyNotes": "A basic percent-of-total problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p3",
+    "problemId": "amc8-2005-p3",
+    "finalAnswer": "$\\boxed{\\text{D }(4)}$",
+    "shortExplanation": "**Idea:** Reflect each already-colored square across diagonal $BD$ and count missing partners.",
+    "detailedSteps": [
+      "Squares lying on the diagonal are already symmetric with themselves.",
+      "Each off-diagonal black square needs a matching reflected black square on the other side of $BD$.",
+      "The diagram has four missing reflected partners.",
+      "Thus $4$ additional squares are needed.",
+      "Final Answer: ($\\boxed{\\text{D }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Reflection symmetry",
+      "Grid geometry"
+    ],
+    "commonMistakes": [
+      "Do not count squares already on the diagonal as needing new partners."
+    ],
+    "alternativeMethods": [
+      "Label rows and columns, then map each square by reflection across $BD$."
+    ],
+    "difficultyNotes": "A visual symmetry count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p4",
+    "problemId": "amc8-2005-p4",
+    "finalAnswer": "$\\boxed{\\text{C }(36)}$",
+    "shortExplanation": "**Idea:** The square's perimeter equals the triangle's perimeter.",
+    "detailedSteps": [
+      "The triangle perimeter is $6.1+8.2+9.7=24$ cm.",
+      "The square has perimeter $24$, so each side is $24/4=6$ cm.",
+      "Its area is $6^2=36$ square centimeters.",
+      "Final Answer: ($\\boxed{\\text{C }(36)}$)"
+    ],
+    "keyIdeas": [
+      "Perimeter",
+      "Square area"
+    ],
+    "commonMistakes": [
+      "Do not use the triangle area; only its perimeter matters."
+    ],
+    "alternativeMethods": [
+      "Add the three sides first, then divide by $4$."
+    ],
+    "difficultyNotes": "A direct perimeter-to-area conversion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p5",
+    "problemId": "amc8-2005-p5",
+    "finalAnswer": "$\\boxed{\\text{B }(5)}$",
+    "shortExplanation": "**Idea:** Use as many $24$-packs as possible, then finish with one smaller pack.",
+    "detailedSteps": [
+      "Three $24$-packs give $72$ cans.",
+      "The remaining number is $90-72=18$ cans.",
+      "That can be made with one $12$-pack and one $6$-pack.",
+      "So the minimum is $3+1+1=5$ packs.",
+      "Final Answer: ($\\boxed{\\text{B }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Optimization",
+      "Multiples"
+    ],
+    "commonMistakes": [
+      "Four packs cannot work: the maximum with four packs is $4\\cdot24=96$, but no replacement pattern gives exactly $90$."
+    ],
+    "alternativeMethods": [
+      "List combinations using mostly $24$-packs first."
+    ],
+    "difficultyNotes": "A small integer optimization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p6",
+    "problemId": "amc8-2005-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(5)}$",
+    "shortExplanation": "**Idea:** Compare decimal places carefully.",
+    "detailedSteps": [
+      "The number $2.005$ can be written as $2.0050$.",
+      "The number $2.00d5$ has thousandths digit $d$, while $2.0050$ has thousandths digit $5$.",
+      "If $d>5$, the number is immediately greater than $2.0050$.",
+      "If $d=5$, then $2.0055>2.0050$ because the ten-thousandths digit is larger.",
+      "Thus $d$ can be $5,6,7,8,9$.",
+      "So there are $5$ possible digits.",
+      "Final Answer: ($\\boxed{\\text{C }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Decimal comparison",
+      "Place value"
+    ],
+    "commonMistakes": [
+      "When $d=5$, the next digit $5$ still makes the number larger than $2.0050$."
+    ],
+    "alternativeMethods": [
+      "Pad the shorter decimal with a zero and compare digit by digit."
+    ],
+    "difficultyNotes": "Place value is the whole problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p7",
+    "problemId": "amc8-2005-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(1\\frac14)}$",
+    "shortExplanation": "**Idea:** Combine the southward distances and eastward distance as legs of a right triangle.",
+    "detailedSteps": [
+      "Bill walks $\\frac12+\\frac12=1$ mile south in total.",
+      "He also walks $\\frac34$ mile east.",
+      "The direct distance is $\\sqrt{1^2+(\\frac34)^2}=\\sqrt{1+\\frac{9}{16}}=\\sqrt{\\frac{25}{16}}=\\frac54=1\\frac14$.",
+      "Final Answer: ($\\boxed{\\text{B }(1\\frac14)}$)"
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Net displacement"
+    ],
+    "commonMistakes": [
+      "Do not add the path lengths; direct distance is straight-line displacement."
+    ],
+    "alternativeMethods": [
+      "Draw the final position relative to the start as a right triangle."
+    ],
+    "difficultyNotes": "A simple displacement problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p8",
+    "problemId": "amc8-2005-p8",
+    "finalAnswer": "$\\boxed{\\text{E }(3mn)}$",
+    "shortExplanation": "**Idea:** Use parity: odd times odd is odd, and odd plus odd is even.",
+    "detailedSteps": [
+      "Since $m$ and $n$ are odd, $mn$ is odd.",
+      "Multiplying by $3$ keeps it odd, so $3mn$ must be odd.",
+      "The other expressions can be even because they involve adding or subtracting odd quantities.",
+      "Final Answer: ($\\boxed{\\text{E }(3mn)}$)"
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Odd integers"
+    ],
+    "commonMistakes": [
+      "Remember that odd plus odd is even."
+    ],
+    "alternativeMethods": [
+      "Test $m=n=1$ to eliminate choices quickly, then verify the survivor."
+    ],
+    "difficultyNotes": "A parity reasoning problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p9",
+    "problemId": "amc8-2005-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(17)}$",
+    "shortExplanation": "**Idea:** Triangle $ADC$ has two equal sides of length $17$ with included angle $60^\\circ$.",
+    "detailedSteps": [
+      "In $\\triangle ADC$, $AD=CD=17$ and $\\angle ADC=60^\\circ$.",
+      "By the law of cosines, $AC^2=17^2+17^2-2\\cdot17\\cdot17\\cos60^\\circ=17^2$.",
+      "So $AC=17$.",
+      "Final Answer: ($\\boxed{\\text{D }(17)}$)"
+    ],
+    "keyIdeas": [
+      "Law of cosines",
+      "Equilateral triangle condition"
+    ],
+    "commonMistakes": [
+      "The side lengths $AB$ and $BC$ are not needed to find diagonal $AC$."
+    ],
+    "alternativeMethods": [
+      "Notice that two equal sides with a $60^\\circ$ included angle form an equilateral triangle."
+    ],
+    "difficultyNotes": "A geometry shortcut if the $60^\\circ$ angle is noticed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p10",
+    "problemId": "amc8-2005-p10",
+    "finalAnswer": "$\\boxed{\\text{D }(8)}$",
+    "shortExplanation": "**Idea:** Running the same distance at three times the speed takes one-third the time.",
+    "detailedSteps": [
+      "Joe walked the first half in $6$ minutes.",
+      "He ran the second half, the same distance, at $3$ times his walking speed.",
+      "So the running time was $6/3=2$ minutes.",
+      "Total time was $6+2=8$ minutes.",
+      "Final Answer: ($\\boxed{\\text{D }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Same distance"
+    ],
+    "commonMistakes": [
+      "Do not multiply the walking time by $3$; faster speed means less time."
+    ],
+    "alternativeMethods": [
+      "Use time inversely proportional to speed for a fixed distance."
+    ],
+    "difficultyNotes": "A direct rate comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p11",
+    "problemId": "amc8-2005-p11",
+    "finalAnswer": "$\\boxed{\\text{C }(0\\text{ dollars})}$",
+    "shortExplanation": "**Idea:** A percentage discount and sales tax are both multiplicative factors, so their order does not change the final product.",
+    "detailedSteps": [
+      "Jack computes $90\\cdot1.06\\cdot0.80$.",
+      "Jill computes $90\\cdot0.80\\cdot1.06$.",
+      "Multiplication commutes, so the totals are equal.",
+      "Jack's total minus Jill's total is $0$.",
+      "Final Answer: ($\\boxed{\\text{C }(0\\text{ dollars})}$)"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Commutative multiplication"
+    ],
+    "commonMistakes": [
+      "Do not assume tax and discount order matters when both are applied to the full current amount."
+    ],
+    "alternativeMethods": [
+      "Calculate both totals numerically as a check."
+    ],
+    "difficultyNotes": "A neat order-of-operations percent problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p12",
+    "problemId": "amc8-2005-p12",
+    "finalAnswer": "$\\boxed{\\text{D }(32)}$",
+    "shortExplanation": "**Idea:** Model the five days as an arithmetic sequence with common difference $6$.",
+    "detailedSteps": [
+      "Let the May 1 amount be $x$.",
+      "The five amounts are $x,x+6,x+12,x+18,x+24$.",
+      "Their sum is $5x+60=100$, so $5x=40$ and $x=8$.",
+      "On May 5, Big Al ate $x+24=32$ bananas.",
+      "Final Answer: ($\\boxed{\\text{D }(32)}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences",
+      "Sum of terms"
+    ],
+    "commonMistakes": [
+      "The increase is between consecutive days, so May 5 is four increases after May 1."
+    ],
+    "alternativeMethods": [
+      "Use the average of the first and last terms: the middle value is $20$, so the last is $32$."
+    ],
+    "difficultyNotes": "A short arithmetic-sequence setup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p13",
+    "problemId": "amc8-2005-p13",
+    "finalAnswer": "$\\boxed{\\text{C }(9)}$",
+    "shortExplanation": "**Idea:** View the shape as an $8\\times9$ rectangle with one rectangle removed.",
+    "detailedSteps": [
+      "The bounding rectangle has area $8\\cdot9=72$.",
+      "The polygon area is $52$, so the missing rectangle has area $72-52=20$.",
+      "Its height is $9-5=4$, so its width $DE$ is $20/4=5$.",
+      "Also $EF=4$, hence $DE+EF=5+4=9$.",
+      "Final Answer: ($\\boxed{\\text{C }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Composite area",
+      "Missing rectangle"
+    ],
+    "commonMistakes": [
+      "Use $FA=5$ to find the missing rectangle's height as $9-5$."
+    ],
+    "alternativeMethods": [
+      "Subtract from the full rectangle first."
+    ],
+    "difficultyNotes": "A clean area-subtraction problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p14",
+    "problemId": "amc8-2005-p14",
+    "finalAnswer": "$\\boxed{\\text{B }(96)}$",
+    "shortExplanation": "**Idea:** Count games within divisions and between divisions separately.",
+    "detailedSteps": [
+      "In one six-team division, there are $\\binom62=15$ pairs of teams, and each pair plays twice, giving $30$ games.",
+      "Two divisions contribute $60$ within-division games.",
+      "Between divisions, each of $6$ teams plays each of $6$ teams in the other division, giving $36$ games.",
+      "Total games: $60+36=96$.",
+      "Final Answer: ($\\boxed{\\text{B }(96)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Scheduling"
+    ],
+    "commonMistakes": [
+      "Do not double-count cross-division games; $6\\cdot6$ already counts each matchup once."
+    ],
+    "alternativeMethods": [
+      "Break the schedule into same-division and cross-division games."
+    ],
+    "difficultyNotes": "A structured counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p15",
+    "problemId": "amc8-2005-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(6)}$",
+    "shortExplanation": "**Idea:** Let the equal side length be $x$ and the base be $23-2x$.",
+    "detailedSteps": [
+      "For an isosceles triangle with equal sides $x,x$, the base is $23-2x$.",
+      "The triangle inequality requires $23-2x>0$ and $23-2x<2x$.",
+      "Thus $x<11.5$ and $x>5.75$, so $x=6,7,8,9,10,11$.",
+      "There are $6$ possible triangles.",
+      "Final Answer: ($\\boxed{\\text{C }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Triangle inequality",
+      "Integer side lengths"
+    ],
+    "commonMistakes": [
+      "Do not count different orientations of the same side lengths as different triangles."
+    ],
+    "alternativeMethods": [
+      "Choose the equal side length and test the base."
+    ],
+    "difficultyNotes": "A late-set integer geometry count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p16",
+    "problemId": "amc8-2005-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(13)}$",
+    "shortExplanation": "**Idea:** Use the worst case before a color is forced to appear five times.",
+    "detailedSteps": [
+      "With three colors, the Martian could draw $4$ red, $4$ white and $4$ blue socks without having five of any color.",
+      "That accounts for $12$ socks.",
+      "The next sock, number $13$, must make one color reach $5$.",
+      "Final Answer: ($\\boxed{\\text{D }(13)}$)"
+    ],
+    "keyIdeas": [
+      "Pigeonhole principle",
+      "Worst case"
+    ],
+    "commonMistakes": [
+      "The Martian has five legs, but the question asks about five socks of one color, not a matching set for all legs."
+    ],
+    "alternativeMethods": [
+      "Maximize the number drawn while avoiding five of a color."
+    ],
+    "difficultyNotes": "A classic pigeonhole problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p17",
+    "problemId": "amc8-2005-p17",
+    "finalAnswer": "$\\boxed{\\text{E }(Evelyn)}$",
+    "shortExplanation": "**Idea:** Average speed is distance divided by time, so compare slopes from the origin.",
+    "detailedSteps": [
+      "Each point gives a distance-time pair.",
+      "The greatest average speed corresponds to the largest ratio $\\frac{\\text{distance}}{\\text{time}}$, or steepest line from the origin.",
+      "Evelyn's point has the steepest slope among the five points.",
+      "Final Answer: ($\\boxed{\\text{E }(Evelyn)}$)"
+    ],
+    "keyIdeas": [
+      "Average speed",
+      "Slope"
+    ],
+    "commonMistakes": [
+      "Do not choose the greatest distance alone; time matters too."
+    ],
+    "alternativeMethods": [
+      "Imagine drawing a line from the origin to each point and compare steepness."
+    ],
+    "difficultyNotes": "A graph interpretation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p18",
+    "problemId": "amc8-2005-p18",
+    "finalAnswer": "$\\boxed{\\text{C }(69)}$",
+    "shortExplanation": "**Idea:** Count multiples of $13$ between $100$ and $999$.",
+    "detailedSteps": [
+      "The largest three-digit multiple count up to $999$ is $\\lfloor999/13\\rfloor=76$.",
+      "The multiples up to $99$ number $\\lfloor99/13\\rfloor=7$.",
+      "So the three-digit multiples are $76-7=69$.",
+      "Final Answer: ($\\boxed{\\text{C }(69)}$)"
+    ],
+    "keyIdeas": [
+      "Counting multiples",
+      "Floor division"
+    ],
+    "commonMistakes": [
+      "Subtract the two-digit and smaller multiples."
+    ],
+    "alternativeMethods": [
+      "Find the first and last three-digit multiples, then count by arithmetic sequence."
+    ],
+    "difficultyNotes": "A direct multiples-counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p19",
+    "problemId": "amc8-2005-p19",
+    "finalAnswer": "$\\boxed{\\text{A }(180)}$",
+    "shortExplanation": "**Idea:** Find the bottom base from the two right triangles and the top base.",
+    "detailedSteps": [
+      "The left slanted side is $30$ and the height is $24$, so its horizontal offset is $\\sqrt{30^2-24^2}=18$.",
+      "The right slanted side is $25$ with height $24$, so its horizontal offset is $\\sqrt{25^2-24^2}=7$.",
+      "The bottom base is $18+50+7=75$.",
+      "The perimeter is $30+50+25+75=180$.",
+      "Final Answer: ($\\boxed{\\text{A }(180)}$)"
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Trapezoid perimeter"
+    ],
+    "commonMistakes": [
+      "Do not forget the bottom base is longer than the top base by both horizontal offsets."
+    ],
+    "alternativeMethods": [
+      "Drop perpendiculars from the top vertices to form two right triangles."
+    ],
+    "difficultyNotes": "A diagram-based perimeter problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p20",
+    "problemId": "amc8-2005-p20",
+    "finalAnswer": "$\\boxed{\\text{A }(6)}$",
+    "shortExplanation": "**Idea:** Track each player's position modulo $12$.",
+    "detailedSteps": [
+      "Bob moving $9$ points counterclockwise is the same as moving $3$ points clockwise modulo $12$.",
+      "After one turn, Alice gains $5-3=2$ positions on Bob.",
+      "They meet when this gain is a multiple of $12$.",
+      "The smallest positive $t$ with $2t\\equiv0\\pmod{12}$ is $t=6$.",
+      "Final Answer: ($\\boxed{\\text{A }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Modular arithmetic",
+      "Relative motion"
+    ],
+    "commonMistakes": [
+      "Counterclockwise movement should be converted consistently before comparing positions."
+    ],
+    "alternativeMethods": [
+      "Use relative position rather than tracking both players separately."
+    ],
+    "difficultyNotes": "A circular-motion modular arithmetic problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p21",
+    "problemId": "amc8-2005-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(18)}$",
+    "shortExplanation": "**Idea:** Choose any three dots, then subtract collinear triples.",
+    "detailedSteps": [
+      "There are $6$ dots total, so there are $\\binom63=20$ ways to choose three dots.",
+      "The only non-triangles are the three dots in the top row and the three dots in the bottom row.",
+      "Subtracting these $2$ collinear choices gives $20-2=18$ triangles.",
+      "Final Answer: ($\\boxed{\\text{C }(18)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Collinearity"
+    ],
+    "commonMistakes": [
+      "Three collinear points do not form a triangle."
+    ],
+    "alternativeMethods": [
+      "Count all triples first and subtract bad triples."
+    ],
+    "difficultyNotes": "A counting problem with a geometry restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p22",
+    "problemId": "amc8-2005-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(MLS)}$",
+    "shortExplanation": "**Idea:** Compare cost per amount for each box size.",
+    "detailedSteps": [
+      "Let the small box contain $1$ unit and cost $1$ unit.",
+      "The large box contains $2$ units. The medium contains $20\\%$ less than large, so it contains $1.6$ units.",
+      "The medium costs $1.5$ units, and the large costs $1.3\\cdot1.5=1.95$ units.",
+      "Unit costs are: small $1/1=1$, medium $1.5/1.6=0.9375$, large $1.95/2=0.975$.",
+      "Best to worst is medium, large, small: $\\text{MLS}$.",
+      "Final Answer: ($\\boxed{\\text{E }(MLS)}$)"
+    ],
+    "keyIdeas": [
+      "Unit rates",
+      "Percent comparison"
+    ],
+    "commonMistakes": [
+      "Best buy means lowest cost per amount, not biggest box or lowest price."
+    ],
+    "alternativeMethods": [
+      "Assign convenient values to the small size and compute all unit costs."
+    ],
+    "difficultyNotes": "A multi-step percent comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p23",
+    "problemId": "amc8-2005-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(8)}$",
+    "shortExplanation": "**Idea:** Use the semicircle area to find its radius, then relate that radius to the isosceles right triangle.",
+    "detailedSteps": [
+      "The semicircle has area $2\\pi$, so $\\frac12\\pi r^2=2\\pi$ and $r=2$.",
+      "Because the center lies on the hypotenuse and the circle is tangent to both legs, each leg of the isosceles right triangle has length $2r=4$.",
+      "The triangle area is $\\frac12\\cdot4\\cdot4=8$.",
+      "Final Answer: ($\\boxed{\\text{B }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Isosceles right triangle"
+    ],
+    "commonMistakes": [
+      "Use semicircle area, not full circle area, to find the radius."
+    ],
+    "alternativeMethods": [
+      "Place the right angle at the origin; the center on the hypotenuse is equally far from both legs."
+    ],
+    "difficultyNotes": "A circle-tangent geometry problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p24",
+    "problemId": "amc8-2005-p24",
+    "finalAnswer": "$\\boxed{\\text{B }(9)}$",
+    "shortExplanation": "**Idea:** Work backward from $200$ using inverse operations.",
+    "detailedSteps": [
+      "The inverse of [x2] is dividing by $2$, and the inverse of [+1] is subtracting $1$.",
+      "A shortest backward path is $200\\to100\\to50\\to25\\to24\\to12\\to6\\to3\\to2\\to1$.",
+      "This uses $9$ inverse moves, so the forward path also uses $9$ keystrokes.",
+      "Final Answer: ($\\boxed{\\text{B }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Reverse operations",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "Greedy forward moves can get stuck; backward from the target is cleaner."
+    ],
+    "alternativeMethods": [
+      "When the number is even, divide by $2$ going backward; when odd, subtract $1$."
+    ],
+    "difficultyNotes": "A shortest-path number operation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2005-p25",
+    "problemId": "amc8-2005-p25",
+    "finalAnswer": "$\\boxed{\\text{A }(\\frac{2}{\\sqrt\\pi})}$",
+    "shortExplanation": "**Idea:** The equal leftover areas imply the circle and square have equal total area.",
+    "detailedSteps": [
+      "Let $I$ be the overlap area of the circle and square.",
+      "The area inside the circle but outside the square is $\\pi r^2-I$.",
+      "The area outside the circle but inside the square is $4-I$ because the square has area $2^2=4$.",
+      "These are equal, so $\\pi r^2-I=4-I$, hence $\\pi r^2=4$.",
+      "Thus $r=\\frac{2}{\\sqrt\\pi}$.",
+      "Final Answer: ($\\boxed{\\text{A }(\\frac{2}{\\sqrt\\pi})}$)"
+    ],
+    "keyIdeas": [
+      "Area equality",
+      "Overlapping regions"
+    ],
+    "commonMistakes": [
+      "The overlap area cancels; do not try to compute it directly."
+    ],
+    "alternativeMethods": [
+      "Use variables for the shared area and subtract it from both shapes."
+    ],
+    "difficultyNotes": "A clever equal-area cancellation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

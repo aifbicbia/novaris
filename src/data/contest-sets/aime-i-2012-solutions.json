@@ -1,0 +1,330 @@
+[
+  {
+    "id": "solution-aime-i-2012-p1",
+    "problemId": "aime-i-2012-p1",
+    "finalAnswer": "$\\boxed{040}$",
+    "shortExplanation": "Each middle digit permits four ordered pairs of outer digits.",
+    "detailedSteps": [
+      "Divisibility by four depends only on the last two digits. Thus $2b+c\\equiv0\\pmod4$ and $2b+a\\equiv0\\pmod4$.",
+      "When $b$ is even, each nonzero outer digit is either four or eight. When $b$ is odd, each outer digit is either two or six. In either case there are two independent choices for $a$ and two for $c$.",
+      "Each of the ten middle digits therefore gives four numbers, for a total of forty. The conditions allow the outer digits to coincide."
+    ],
+    "keyIdeas": [
+      "Use the last two digits in both directions"
+    ],
+    "commonMistakes": [
+      "Excluding repeated digits even though the source explicitly permits them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reverse divisibility condition restricts the other outer digit in exactly the same way.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p2",
+    "problemId": "aime-i-2012-p2",
+    "finalAnswer": "$\\boxed{195}$",
+    "shortExplanation": "The sequence has eleven terms and middle term sixty-five.",
+    "detailedSteps": [
+      "If there are $k$ terms, the sum of their increases is $1+3+\\cdots+(2k-1)=k^2$. Hence $k^2=836-715=121$, so $k=11$.",
+      "In an eleven-term arithmetic sequence, the middle term equals the average of all the terms, namely $715/11=65$. The first and last terms sum to twice the middle term, or 130.",
+      "The requested sum is therefore $65+130=195$."
+    ],
+    "keyIdeas": [
+      "The total increase is the square of the term count"
+    ],
+    "commonMistakes": [
+      "Using the last odd increase as the total increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An odd-length arithmetic sequence has its mean at the middle term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p3",
+    "problemId": "aime-i-2012-p3",
+    "finalAnswer": "$\\boxed{216}$",
+    "shortExplanation": "Each choice of the unique correct diner allows twenty-four assignments.",
+    "detailedSteps": [
+      "There are nine choices for the unique correctly served diner. By symmetry, suppose this diner ordered beef. The remaining diners comprise two beef orders, three chicken orders and three fish orders; the remaining meals have the same multiplicities.",
+      "Let $x$ of the two remaining beef diners receive chicken. Their other $2-x$ meals are fish. To use exactly two remaining beef meals, the chicken diners must receive $2-x$ beef meals and $1+x$ fish meals; the fish diners then receive $x$ beef meals and $3-x$ chicken meals.",
+      "The possibilities are $x=0,1,2$. For a fixed $x$, the number of assignments to the distinct diners is $\\binom2x\\binom3{2-x}\\binom3x$. These three counts are three, eighteen and three, summing to twenty-four.",
+      "The unique correct diner determines disjoint cases, so the total is $9\\cdot24=216$. Identical meals of the same type are not separately labeled."
+    ],
+    "keyIdeas": [
+      "Fix the unique correct diner and count the remaining wrong assignments"
+    ],
+    "commonMistakes": [
+      "Multiplying by factorials for identical meals, or permitting an additional correct diner in the remaining assignments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Once all diagonal entries but one are forbidden, the remaining meal allocation has one integer parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p4",
+    "problemId": "aime-i-2012-p4",
+    "finalAnswer": "$\\boxed{279}$",
+    "shortExplanation": "The first meeting at an integer mile occurs at mile nineteen after 260 minutes.",
+    "detailedSteps": [
+      "Use hours and miles. A walking interval beginning at position $p$ and time $u$ has position $p+v(t-u)$, with $v=4$ for Butch and $v=5/2$ for Sundance. A riding interval has speed six. Sundance first leaves the horse at mile one at time one sixth; Butch reaches it at time one quarter.",
+      "For each subsequent handoff, let $H$ be the horse post and $t$ the arriving rider\u2019s mounting time. If the other walker is at $W$, their next meeting occurs after $(W-H)/(6-v)$ hours, at position $H+6(W-H)/(6-v)$. After passing the walker, the rider drops the horse at the first integer post beyond that meeting. The other walker\u2019s next mounting time follows from its walking line.",
+      "This recurrence gives the following mounting posts for the first ten riding intervals: $1,2,4,5,8,9,12,13,16,17$. Their mounting times in minutes are $15,34,55,78,110,132,165,186,220,240$, with Butch and Sundance alternating.",
+      "The resulting meeting positions, in the same order, are $19/14,19/5,57/14,38/5,57/7,57/5,171/14,76/5,114/7,19$. The meeting times in minutes are $130/7,52,390/7,104,780/7,156,1170/7,208,1560/7,260$.",
+      "There is no intervening meeting while both walk. If Butch has just dropped the horse, he is already ahead and walks faster. If Sundance has just dropped it, Butch remains behind even upon reaching the horse; the successive positive gaps at those mounts are $5/24,1/24,1/12,1/8,1/6$ miles. Thus every meeting up to the target appears in the list.",
+      "The first nine listed positions are nonintegers, and the tenth is nineteen. Therefore $n+t=19+260=279$."
+    ],
+    "keyIdeas": [
+      "Track every catch and horse handoff with exact times"
+    ],
+    "commonMistakes": [
+      "Dropping the horse at a post before passing the other traveler, or counting a meeting between posts as the requested event."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integer post rounding makes a continuous average-speed calculation insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p5",
+    "problemId": "aime-i-2012-p5",
+    "finalAnswer": "$\\boxed{330}$",
+    "shortExplanation": "The lower binary word must end in zero-one.",
+    "detailedSteps": [
+      "A difference of one corresponds to exactly one ordered pair $(b+1,b)$ with both entries in the set. If $b$ has $t$ trailing ones, incrementing it replaces those $t$ ones by zeros and replaces the preceding zero by a one.",
+      "The number of ones changes by $1-t$, so it is preserved exactly when $t=1$. Thus $b$ ends in zero-one. Its first eleven positions must contain seven ones and four zeros.",
+      "There are $\\binom{11}{7}=330$ such words. Incrementing changes the final zero-one to one-zero, preserves the thirteen-position length, and gives another permitted word. Leading zeros create no additional restrictions."
+    ],
+    "keyIdeas": [
+      "Incrementing preserves the number of ones only with one trailing one"
+    ],
+    "commonMistakes": [
+      "Counting words with any trailing block of ones instead of requiring the one-count to stay unchanged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A subtraction count becomes a count of adjacent members of the set.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p6",
+    "problemId": "aime-i-2012-p6",
+    "finalAnswer": "$\\boxed{071}$",
+    "shortExplanation": "Every positive imaginary part has the required denominator seventy-one.",
+    "detailedSteps": [
+      "Substitution gives $z^{143}=z$. The case $z=0$ has imaginary part zero and is impossible because $0<m<n$ makes $\\sin(m\\pi/n)>0$. Thus $z^{142}=1$.",
+      "Write $z=e^{\\pi i k/71}$. Its positive imaginary part forces the representative $1\\le k\\le70$. Therefore $\\sin(m\\pi/n)=\\sin(k\\pi/71)$, with both angles strictly between zero and $\\pi$.",
+      "On that interval equal sine values imply equal angles or supplementary angles. Thus $m/n=k/71$ or $(71-k)/71$. Since seventy-one is prime and both numerators lie between one and seventy, these fractions are reduced. Hence $n=71$."
+    ],
+    "keyIdeas": [
+      "The nonzero solutions are 142nd roots of unity"
+    ],
+    "commonMistakes": [
+      "Including the zero solution or overlooking the supplementary-angle possibility for equal sines."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sine representation is not unique in angle, but its reduced denominator is fixed here.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p7",
+    "problemId": "aime-i-2012-p7",
+    "finalAnswer": "$\\boxed{280}$",
+    "shortExplanation": "The center has five of the network\u2019s sixty degree units.",
+    "detailedSteps": [
+      "Let $c_v$ be the original coins at vertex $v$ and $d_v$ its degree, and put $f_v=c_v/d_v$. The unchanged-distribution condition is $d_vf_v=\\sum_{u\\sim v}f_u$, so $f_v$ is the average of its neighbors\u2019 values.",
+      "Choose a vertex where $f$ is maximal. Every neighbor must have the same maximum, since their average equals it. The pictured graph is connected, so propagation shows $f$ is constant throughout the network. This proves uniqueness without assuming rotational symmetry.",
+      "The actual diagram has five outer vertices of degree four, five middle vertices of degree four, five inner vertices of degree three, and the center of degree five. Their degree sum is $5\\cdot4+5\\cdot4+5\\cdot3+5=60$.",
+      "The common value is $3360/60=56$ coins per degree unit. The center therefore starts with $5\\cdot56=280$ coins. This distribution sends exactly fifty-six coins along each edge in each direction and is feasible with integer coins."
+    ],
+    "keyIdeas": [
+      "A fixed distribution is proportional to vertex degree"
+    ],
+    "commonMistakes": [
+      "Assuming every vertex keeps the same coin count despite different numbers of neighbors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The maximum principle for neighbor averages proves the degree distribution is the only fixed distribution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p8",
+    "problemId": "aime-i-2012-p8",
+    "finalAnswer": "$\\boxed{089}$",
+    "shortExplanation": "The smaller volume is $7/48$.",
+    "detailedSteps": [
+      "Use the pictured labeling with $A=(0,0,0)$, $B=(1,0,0)$, $C=(1,1,0)$ and $D=(0,1,0)$, and the upper vertices one unit above them. Then $M=(1/2,0,0)$ and $N=(1,1,1/2)$. The cutting plane is $2x+y-4z=1$.",
+      "The portion below the plane has height $\\max(0,(2x+y-1)/4)$ above each point of the unit base. The plane never exceeds height one on this base, so there is no upper clipping.",
+      "The signed integral of $(2x+y-1)/4$ over the whole base is $1/8$. Its negative part lies over the triangle with vertices $(0,0),(1/2,0),(0,1)$. That triangle has area one quarter, and the linear depth rises to one quarter at the origin; the negative volume has magnitude $(1/3)(1/4)(1/4)=1/48$.",
+      "Removing this negative contribution gives the actual lower volume $1/8+1/48=7/48$. The larger solid has volume $41/48$, a reduced fraction, so $p+q=41+48=89$."
+    ],
+    "keyIdeas": [
+      "Integrate the positive height below the cutting plane"
+    ],
+    "commonMistakes": [
+      "Integrating signed plane heights as physical volume where the plane lies below the cube."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The correction below the base is a triangular pyramid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p9",
+    "problemId": "aime-i-2012-p9",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "The requested product is $2^{-43/6}$.",
+    "detailedSteps": [
+      "Put $X=\\log_2x$, $Y=\\log_2y$ and $Z=\\log_2z$, and let $L$ be the common nonzero value. The three relations become $2(1+Y)/X=L$, $2(2+Z)/(1+X)=L$, and $(3+Y+Z)/(1+4X)=L$. The bases require all displayed denominators to be nonzero.",
+      "The first two equations give $Y=LX/2-1$ and $Z=L(1+X)/2-2$. Substitute these into the third. Since $L$ is nonzero, cancellation gives $(2X+1)/2=1+4X$, hence $X=-1/6$.",
+      "Now $\\log_2(xy^5z)=X+5Y+Z=X+L(6X+1)/2-7=-43/6$. The L-dependent part vanishes.",
+      "At $X=-1/6$, the three base logarithms are $-1/6,5/6,1/3$, all nonzero. Any nonzero $L$ supplies positive $y$ and $z$ satisfying the relations, so the system is consistent. Since forty-three and six are coprime, $p+q=49$."
+    ],
+    "keyIdeas": [
+      "The nonzero common logarithm cancels to determine log base two of x"
+    ],
+    "commonMistakes": [
+      "Canceling the common value without using the explicit nonzero condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same cancellation that fixes x also removes the free parameter from the product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p10",
+    "problemId": "aime-i-2012-p10",
+    "finalAnswer": "$\\boxed{170}$",
+    "shortExplanation": "The tenth root is 2,484 and the tenth truncated square is 6,170.",
+    "detailedSteps": [
+      "The condition $r^2\\equiv256\\pmod{1000}$ forces $r$ even, say $r=2u$. It becomes $u^2\\equiv64\\pmod{250}$, so $u$ is even and $u^2\\equiv64\\pmod{125}$.",
+      "Since $(u-8)(u+8)$ is divisible by 125 and the two factors differ by sixteen, five cannot divide both. Thus one factor is divisible by 125, giving $u\\equiv\\pm8\\pmod{125}$. Imposing even parity yields $u\\equiv8,242\\pmod{250}$, hence $r\\equiv16,484\\pmod{500}$.",
+      "The nonnegative roots in increasing order begin $16,484,516,984,1016,1484,1516,1984,2016,2484$. Their squares and their truncated values increase in the same order.",
+      "The tenth truncated value is $(2484^2-256)/1000=6170$, whose remainder modulo one thousand is 170. The first member is zero, arising from the square 256, and must be included."
+    ],
+    "keyIdeas": [
+      "Solve the square-root congruence and order its positive representatives"
+    ],
+    "commonMistakes": [
+      "Starting the truncated set at a positive value and omitting zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring the root congruence gives two residue classes modulo five hundred.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p11",
+    "problemId": "aime-i-2012-p11",
+    "finalAnswer": "$\\boxed{373}$",
+    "shortExplanation": "There are 1,373 reachable points in the diamond.",
+    "detailedSteps": [
+      "Name the four jumps $v_1=(7,2)$, $v_2=(2,7)$, $v_3=(-5,-10)$ and $v_4=(-10,-5)$. Each has coordinate sum divisible by three and coordinate difference divisible by five. Every reachable point therefore satisfies $x+y\\equiv0\\pmod3$ and $x-y\\equiv0\\pmod5$.",
+      "These restrictions are sufficient. The integer span contains $b_1=(3,3)=2v_1+2v_2+v_3+v_4$ and $b_2=(4,-1)=v_1-b_1$. A point with the two congruences has the representation $(x,y)=((x+4y)/15)b_1+((x-y)/5)b_2$, with both coefficients integral.",
+      "This integer-span representation can be turned into permitted nonnegative jump counts. Indeed $5v_1+5v_2+3v_3+3v_4=(0,0)$. Add a sufficiently large multiple of this positive zero relation to every integer coefficient representation. All four counts then become nonnegative, without changing the endpoint.",
+      "For counting, put $u=(x+y)/3$ and $v=(x-y)/5$. The identity $|x|+|y|=\\max(|x+y|,|x-y|)$ gives $|u|\\le33$ and $|v|\\le20$. Recovering integral $x$ and $y$ requires $u$ and $v$ to have the same parity.",
+      "There are thirty-three even and thirty-four odd $u$ values, and twenty-one even and twenty odd $v$ values. Hence $M=33\\cdot21+34\\cdot20=1373$, with requested remainder 373."
+    ],
+    "keyIdeas": [
+      "Prove the positive-jump semigroup equals a congruence lattice"
+    ],
+    "commonMistakes": [
+      "Establishing only necessary congruences, without showing that negative integer coefficients can be replaced by actual allowed jumps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positive zero cycle removes the distinction between the generated group and reachable endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p12",
+    "problemId": "aime-i-2012-p12",
+    "finalAnswer": "$\\boxed{018}$",
+    "shortExplanation": "The tangent is $4\\sqrt3/11$.",
+    "detailedSteps": [
+      "Set $C=(0,0)$, $A=(a,0)$ and $B=(0,b)$, with $t=a/b=\\tan B>0$. The hypotenuse has equation $x/a+y/b=1$. The rays $CD$ and $CE$ make angles thirty and sixty degrees with $CA$, respectively, because $D$ lies closer to $A$ than $E$.",
+      "A ray at angle $\\theta$ meets the hypotenuse at $x=a/(1+t\\tan\\theta)$. Its fraction of the distance from $B$ to $A$ is $x/a$. Thus $BD/BA=1/(1+t/\\sqrt3)$ and $BE/BA=1/(1+t\\sqrt3)$.",
+      "Therefore $DE/BE=BD/BE-1=2t/(\\sqrt3+t)=8/15$. Solving gives $22t=8\\sqrt3$, or $t=4\\sqrt3/11$.",
+      "This positive $t$ makes both intersections interior and in the required order. The coefficient fraction is reduced and three is squarefree, so $m+n+p=4+11+3=18$."
+    ],
+    "keyIdeas": [
+      "Intersect the two trisecting rays with the hypotenuse"
+    ],
+    "commonMistakes": [
+      "Interchanging the thirty-degree and sixty-degree rays and reversing the stipulated D,E order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distances along the same hypotenuse can be compared through their horizontal coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p13",
+    "problemId": "aime-i-2012-p13",
+    "finalAnswer": "$\\boxed{041}$",
+    "shortExplanation": "The largest area is $9+25\\sqrt3/4$.",
+    "detailedSteps": [
+      "Let $G$ be the centroid vector measured from the common circle center, and let $R$ be the triangle\u2019s circumradius. Its vertices are $G+R\\mathbf u_1,G+R\\mathbf u_2,G+R\\mathbf u_3$, where the unit directions are separated by 120 degrees and sum to zero.",
+      "Adding the three squared radii gives $|G|^2+R^2=(9+16+25)/3=50/3$. Their deviations from this mean are $d_1=-23/3$, $d_2=-2/3$ and $d_3=25/3$, with $d_i=2R G\\cdot\\mathbf u_i$.",
+      "For three such unit directions, $\\sum_i(G\\cdot\\mathbf u_i)^2=3|G|^2/2$. Since $\\sum_i d_i^2=386/3$, it follows that $R^2|G|^2=193/9$. Writing $z=R^2$ gives $z(50/3-z)=193/9$, and hence $z=25/3\\pm4\\sqrt3$.",
+      "Both algebraic values are attainable. Choose $\\mathbf u_1=(1,0)$, $\\mathbf u_2=(-1/2,\\sqrt3/2)$ and $\\mathbf u_3=(-1/2,-\\sqrt3/2)$, and, for either positive $R$ obtained above, take $G=(-23/(6R),-3\\sqrt3/(2R))$. These coordinates give exactly the three required deviations and $|G|^2=193/(9R^2)$, so the vertices lie on circles of radii three, four and five.",
+      "The area is $3\\sqrt3 R^2/4$, yielding $25\\sqrt3/4\\pm9$. The larger is $9+25\\sqrt3/4$. Its radical is squarefree and its coefficient is reduced, so $a+b+c+d=9+25+4+3=41$."
+    ],
+    "keyIdeas": [
+      "Use the centroid and the three equally spaced unit directions"
+    ],
+    "commonMistakes": [
+      "Finding an algebraic upper candidate without proving that an equilateral triangle realizes it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prescribed three distances leave only two possible circumradii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p14",
+    "problemId": "aime-i-2012-p14",
+    "finalAnswer": "$\\boxed{375}$",
+    "shortExplanation": "The squared hypotenuse is 375.",
+    "detailedSteps": [
+      "Vieta\u2019s formula gives $a+b+c=0$. Expanding squared differences and using this zero sum yields $|a-b|^2+|b-c|^2+|c-a|^2=3(|a|^2+|b|^2+|c|^2)=750$.",
+      "In the right triangle, the two leg squares sum to the hypotenuse square. Thus all three side squares sum to $2h^2$, giving $h^2=750/2=375$."
+    ],
+    "keyIdeas": [
+      "The zero root sum converts the norm sum to a side-length sum"
+    ],
+    "commonMistakes": [
+      "Identifying the sum of the three root norms with the sum of side squares without accounting for the centroid factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The missing quadratic coefficient fixes the triangle\u2019s centroid at the origin.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2012-p15",
+    "problemId": "aime-i-2012-p15",
+    "finalAnswer": "$\\boxed{332}$",
+    "shortExplanation": "Exactly the values of $n$ relatively prime to six work.",
+    "detailedSteps": [
+      "The seat multiplication must be a permutation, so $\\gcd(a,n)=1$. For a pair whose old clockwise seat separation is $\\delta$, the old numbers of intervening people are $\\delta-1$ and $n-\\delta-1$. Equality with either new count occurs exactly when $a\\delta\\equiv\\delta$ or $a\\delta\\equiv-\\delta\\pmod n$.",
+      "For all nonzero separations to avoid both equalities, multiplication by $a-1$ and by $a+1$ must each have no nonzero kernel modulo $n$. Equivalently, $\\gcd(a-1,n)=\\gcd(a+1,n)=1$. Together with the permutation condition, three consecutive integers must all be relatively prime to $n$.",
+      "If two divides $n$, one of these three integers is even; if three divides $n$, one is divisible by three. Either is impossible. Conversely, if $\\gcd(n,6)=1$, the choice $a=2$ works, because one, two and three are all units modulo $n$. Thus the condition is necessary and sufficient.",
+      "Each full block of six contains two integers relatively prime to six. From one through 996 there are 332; the final three integers 997,998,999 contribute just 997. Removing the inadmissible value $n=1$ leaves $333-1=332$ possibilities."
+    ],
+    "keyIdeas": [
+      "Require three consecutive integers to be units modulo n"
+    ],
+    "commonMistakes": [
+      "Checking only the clockwise separation or only the permutation condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Avoiding both possible old counts produces the adjacent-unit conditions a minus one and a plus one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

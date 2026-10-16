@@ -1,0 +1,87 @@
+[
+  {
+    "finalAnswer": "Process the words in order. Start a new line exactly when adding the next word would make the current non-space character count exceed $K$.",
+    "shortExplanation": "Keep a count of letters on the current line. Spaces separate words but do not use this capacity.",
+    "detailedSteps": [
+      "Maintain `used`, the number of non-space characters already written on the current line. For each word of length $w$, test whether $\\mathrm{used}+w>K$. If so, write a newline and reset the count before writing the word.",
+      "Write one space before the word only when the current line is nonempty. Write the word itself and increase `used` by its length. After the final word, write a newline. This places separators between words and never after them.",
+      "**Why the simulation is exact.** Initially the empty line has count zero. If all previous words follow the required rule, the next word belongs on that same line precisely when the new count is at most $K$. The two branches therefore make exactly the required choice and preserve the count invariant. Induction covers every word. The original guarantee that each word fits individually prevents an empty first line or an overfull fresh line.",
+      "**Cost and file interface.** For $S$ total letters and maximum word length $W$, the program takes $O(N+S)$ time and $O(W)$ working memory, excluding stream buffers. It reads `word.in` and writes `word.out`. Word case is retained.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <string>\n\nvoid formatEssay(std::istream& in, std::ostream& out, int n, int k) {\n    int used = 0;\n    for (int i = 0; i < n; ++i) {\n        std::string word;\n        in >> word;\n        if (used + static_cast<int>(word.size()) > k) {\n            out << '\\n';\n            used = 0;\n        }\n        if (used != 0) out << ' ';\n        out << word;\n        used += static_cast<int>(word.size());\n    }\n    out << '\\n';\n}\n\nint main() {\n    std::ifstream in(\"word.in\");\n    std::ofstream out(\"word.out\");\n    int n, k;\n    in >> n >> k;\n    formatEssay(in, out, n, k);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A running count implements the specified formatting process.",
+      "Count letters, while treating spaces only as separators."
+    ],
+    "commonMistakes": [
+      "Counting the inserted spaces against the capacity.",
+      "Printing a trailing space or an empty line before the first word.",
+      "Starting a new line when the new count is exactly equal to the limit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Introductory simulation. The important distinction is the non-space capacity, rather than the printed line length.",
+    "id": "solution-usaco-bronze-2020-january-p1",
+    "problemId": "usaco-bronze-2020-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Try the first label in increasing order and reconstruct every later label using $a_{i+1}=b_i-a_i$. Return the first candidate that is a permutation of $1,\\ldots,N$.",
+    "shortExplanation": "One first label fixes the entire sequence. Increasing first labels also orders the distinct candidates lexicographically.",
+    "detailedSteps": [
+      "**Reduce the search.** Instead of enumerating all permutations, choose $a_1$ from $1$ through $N$. The adjacent-sum equation forces each next entry: $$a_{i+1}=b_i-a_i.$$ There is no further choice once the first entry is fixed.",
+      "**Validate the forced sequence.** Keep a Boolean array recording labels already used. Reject a candidate if a forced value falls outside $1,\\ldots,N$ or repeats a label. If all $N$ entries survive, they are $N$ distinct members of an $N$-element set, hence a permutation. The recurrence also guarantees every required adjacent sum.",
+      "**Prove completeness and minimality.** Any valid answer is generated when the loop reaches its actual first entry, and its entries cannot fail the range or uniqueness checks. Thus no valid answer is missed. There is at most one sequence per first entry; two distinct candidates differ already in that entry. Testing it in increasing order makes the first accepted candidate lexicographically smallest. The original existence guarantee ensures one is accepted.",
+      "**Cost and file interface.** There are $N$ candidate first labels and at most $N$ checks per candidate, giving $O(N^2)$ time and $O(N)$ memory. At the source bound $N\\le1000$, this is small. Read `photo.in` and write the labels to `photo.out` with spaces only between entries.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\n\nstd::vector<int> restorePhoto(int n, const std::vector<int>& sums) {\n    for (int first = 1; first <= n; ++first) {\n        std::vector<int> a(n);\n        std::vector<bool> seen(n + 1, false);\n        a[0] = first;\n        seen[first] = true;\n        bool valid = true;\n        for (int i = 1; i < n; ++i) {\n            int next = sums[i - 1] - a[i - 1];\n            if (next < 1 || next > n || seen[next]) {\n                valid = false;\n                break;\n            }\n            a[i] = next;\n            seen[next] = true;\n        }\n        if (valid) return a;\n    }\n    return {}; // Unreachable on the original guaranteed-valid inputs.\n}\n\nint main() {\n    std::ifstream in(\"photo.in\");\n    std::ofstream out(\"photo.out\");\n    int n;\n    in >> n;\n    std::vector<int> sums(n - 1);\n    for (int& x : sums) in >> x;\n    std::vector<int> answer = restorePhoto(n, sums);\n    for (int i = 0; i < n; ++i) {\n        if (i != 0) out << ' ';\n        out << answer[i];\n    }\n    out << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A single starting value determines a recurrence.",
+      "Range and uniqueness together certify a permutation.",
+      "The first differing entry settles lexicographic order."
+    ],
+    "commonMistakes": [
+      "Returning any valid permutation without considering lexicographic order.",
+      "Checking the sums but allowing repeated or out-of-range labels.",
+      "Reading $N$ sums instead of $N-1$."
+    ],
+    "alternativeMethods": [
+      "Each entry can also be expressed as an alternating-sign multiple of the first label plus a fixed constant. Range restrictions and collisions then constrain that first label. The direct candidate loop is simpler at this bound."
+    ],
+    "difficultyNotes": "A small exhaustive search after eliminating all but one degree of freedom. Correctness needs both complete coverage and the ordering argument.",
+    "id": "solution-usaco-bronze-2020-january-p2",
+    "problemId": "usaco-bronze-2020-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each speed limit $X$, output the smallest integer $t$ for which $$D(t,X)=\\sum_{i=1}^{t}\\min(i,X+t-i)\\ge K.$$ Evaluate the sum in constant time and binary-search $t$.",
+    "shortExplanation": "Acceleration from zero and the ability to slow to the finishing limit bound every second’s speed. A discrete construction also shows that this distance bound can produce a legal first crossing.",
+    "detailedSteps": [
+      "**Bound every speed.** A $t$-second path starts at speed zero and changes speed by at most one each second. Its speed in second $i$ is at most $i$. If its final speed is at most $X$, it is also at most $X+t-i$, since only $t-i$ braking steps remain. Therefore its total distance is at most $$D(t,X)=\\sum_{i=1}^{t}\\min(i,X+t-i).$$ The envelope given by these minimum values itself obeys every speed-change bound and ends at speed $\\min(t,X)$.",
+      "**Handle first crossing carefully.** Reaching the finish at an excessive speed and braking later is not allowed. So an envelope with distance at least $K$ is not, by itself, a sufficient race plan. Start with that envelope and repeatedly lower one occurrence of its positive global maximum by one until its total is exactly $K$. Its neighboring speeds are either the same maximum or one smaller, so each lowering preserves the allowed transitions, nonnegativity and finishing speed cap. Integer totals decrease by one, so the process reaches exactly $K$. This is an existence proof, not a loop executed by the program.",
+      "**Verify that the constructed first crossing is legal.** If the exact-$K$ path reaches $K$ before second $t$, all remaining speeds must be zero. Its last positive speed is then at most one, because it is followed by zero; this is at most $X$, since the source has $X\\ge1$. If arrival occurs in second $t$, the final speed cap applies directly. Thus $D(t,X)\\ge K$ is sufficient for some legal finish by time $t$. The speed bounds make it necessary for any finish at time $t$. The smallest such $t$ is therefore precisely the answer.",
+      "**Sum the discrete envelope.** If $X\\ge t$, all entries are $1,\\ldots,t$, so $D=t(t+1)/2$. Otherwise let $$u=\\left\\lfloor\\frac{t+X}{2}\\right\\rfloor,\\qquad v=t-u.$$ The rising entries are $1,\\ldots,u$ and the remaining entries are $X+v-1,\\ldots,X$. Hence $$D(t,X)=\\frac{u(u+1)}2+vX+\\frac{v(v-1)}2.$$ This integer formula covers both parities without floating-point rounding.",
+      "**Search and bound the arithmetic.** Increasing $t$ never decreases any old envelope entry and adds a positive final entry, so $D$ is increasing. Binary-search between zero and $K$: speed one for $K$ seconds always supplies a legal upper bound. All tested times are at most $10^9$, and $D\\le t(t+1)/2\\le500000000500000000<2^{63}-1$. Use 64-bit integers before multiplying. Each query takes $O(\\log K)$ time and $O(1)$ working memory, or $O(N\\log K)$ total. Read `race.in` and write one answer per line to `race.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n\nlong long maxDistance(long long time, long long limit) {\n    if (limit >= time) return time * (time + 1) / 2;\n    long long rise = (time + limit) / 2;\n    long long fall = time - rise;\n    return rise * (rise + 1) / 2\n         + fall * limit + fall * (fall - 1) / 2;\n}\n\nlong long minimumTime(long long length, long long limit) {\n    long long low = 0, high = length;\n    while (low < high) {\n        long long mid = low + (high - low) / 2;\n        if (maxDistance(mid, limit) >= length) high = mid;\n        else low = mid + 1;\n    }\n    return low;\n}\n\nint main() {\n    std::ifstream in(\"race.in\");\n    std::ofstream out(\"race.out\");\n    long long length;\n    int n;\n    in >> length >> n;\n    while (n--) {\n        long long limit;\n        in >> limit;\n        out << minimumTime(length, limit) << '\\n';\n    }\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Bound speeds from both the start and the required finishing speed.",
+      "A discrete maximum-distance function turns the question into a monotone search.",
+      "A construction must respect the first crossing, not merely the eventual terminal speed."
+    ],
+    "commonMistakes": [
+      "Allowing a high-speed first crossing followed by braking.",
+      "Applying a continuous triangular-distance formula to the discrete seconds.",
+      "Computing the distance products in 32-bit integers."
+    ],
+    "alternativeMethods": [
+      "For small lengths, breadth-first search on (distance, speed) states gives an independent oracle. Discard a transition immediately if it crosses the finish above the speed limit. This is useful for testing but not for the full length bound."
+    ],
+    "difficultyNotes": "The implementation is short; the harder point is proving sufficiency despite the first-crossing constraint. The integer envelope also gives a faster approach than simulating a long trajectory for every query.",
+    "id": "solution-usaco-bronze-2020-january-p3",
+    "problemId": "usaco-bronze-2020-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

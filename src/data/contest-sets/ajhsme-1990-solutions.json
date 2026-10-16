@@ -1,0 +1,544 @@
+[
+  {
+    "id": "solution-ajhsme-1990-p1",
+    "problemId": "ajhsme-1990-p1",
+    "finalAnswer": "$\\boxed{1047}$ (choice C)",
+    "shortExplanation": "Put $4,5$ in the hundreds places, $6,7$ in tens, and $8,9$ in units, giving $1047$.",
+    "detailedSteps": [
+      "The sum weights the six digits by $100,100,10,10,1,1$. Assigning a smaller digit to a larger weight can only reduce the total.",
+      "The minimum is $100(4+5)+10(6+7)+(8+9)=1047$, realized by $468+579$."
+    ],
+    "keyIdeas": [
+      "Place-value minimization",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The objective is the sum, so both hundreds positions matter together."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Assign small digits to large place-value weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p2",
+    "problemId": "ajhsme-1990-p2",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "Changing the tenths digit from one to nine gives $0.92345$, larger than every other possible change.",
+    "detailedSteps": [
+      "Changing any later digit leaves the tenths digit at one, so the result remains below $0.2$.",
+      "Changing the first digit gives a number above $0.9$, which is necessarily larger."
+    ],
+    "keyIdeas": [
+      "Decimal place value",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "An earlier decimal place outweighs all later places."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tenths digit settles the comparison before later digits matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p3",
+    "problemId": "ajhsme-1990-p3",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice E)",
+    "shortExplanation": "Reflection across the diagonal pairs each shaded piece with a congruent unshaded piece, so half the square is shaded.",
+    "detailedSteps": [
+      "Use the diagonal from lower left to upper right as a mirror line.",
+      "The top shaded region reflects to the right unshaded region. The lower-left shaded triangle reflects to its unshaded neighbor; the remaining middle pair likewise exchanges shade.",
+      "The reflection preserves area and pairs all shaded area with all unshaded area, so each is half the square."
+    ],
+    "keyIdeas": [
+      "Reflection pairing of shaded regions",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The conclusion follows from the matched regions; no unsupported equal-spacing assumption is needed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflection proves the fraction without measuring the picture.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p4",
+    "problemId": "ajhsme-1990-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "A square can end only in $0,1,4,5,6,9$, so it cannot end in eight.",
+    "detailedSteps": [
+      "Square the ten possible units digits $0,1,\\ldots,9$ and retain only the last digit.",
+      "The results are $0,1,4,9,6,5,6,9,4,1$. Eight never appears."
+    ],
+    "keyIdeas": [
+      "Quadratic residues modulo ten",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The last digit of the original number is all that matters modulo ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Enumerating residues handles all whole numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p5",
+    "problemId": "ajhsme-1990-p5",
+    "finalAnswer": "$\\boxed{0.110}$ (choice B)",
+    "shortExplanation": "The cube is approximately $0.11071$, closest to $0.110$.",
+    "detailedSteps": [
+      "The factor is just below $0.5$, so its cube is just below $0.125$.",
+      "More precisely, $0.48017^3\\approx0.11071$, confirming the listed value $0.110$."
+    ],
+    "keyIdeas": [
+      "Estimating a cube",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Three factors less than one make a smaller product, not a larger power of ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The answer choices differ mainly in scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p6",
+    "problemId": "ajhsme-1990-p6",
+    "finalAnswer": "$\\boxed{13579\\div\\frac1{2468}}$ (choice D)",
+    "shortExplanation": "Dividing by $1/2468$ multiplies by $2468$, making choice D far larger than the others.",
+    "detailedSteps": [
+      "Choice D is $13579\\cdot2468$, which exceeds $13579$ by a large factor.",
+      "Choices A, B and E are within one of $13579$, while C is less than $13579$. Thus D is largest."
+    ],
+    "keyIdeas": [
+      "Division by a small fraction",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Division by a positive number below one increases the value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Taking a reciprocal turns the division into multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p7",
+    "problemId": "ajhsme-1990-p7",
+    "finalAnswer": "$\\boxed{30}$ (choice C)",
+    "shortExplanation": "The best positive product is $(-3)(-2)(5)=30$.",
+    "detailedSteps": [
+      "There are only two positive numbers available, so a positive three-number product must use two negatives and one positive.",
+      "The largest negative-pair product is $(-3)(-2)=6$, and the largest positive choice is five.",
+      "The maximum is $6(5)=30$; all products with an odd number of negative factors are smaller."
+    ],
+    "keyIdeas": [
+      "Maximizing a signed triple product",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Three negative factors produce a negative product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sign analysis narrows the candidates before maximizing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p8",
+    "problemId": "ajhsme-1990-p8",
+    "finalAnswer": "$\\boxed{66}$ (choice D)",
+    "shortExplanation": "The sale price is $60$ dollars, and ten percent tax adds six dollars, giving $66$.",
+    "detailedSteps": [
+      "The discount leaves $80(0.75)=60$ dollars.",
+      "The final price is $60(1.10)=66$ dollars."
+    ],
+    "keyIdeas": [
+      "Discount followed by tax",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The tax is based on the discounted price."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the two percentage factors in sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p9",
+    "problemId": "ajhsme-1990-p9",
+    "finalAnswer": "$\\boxed{33\\frac13\\%}$ (choice D)",
+    "shortExplanation": "Five of the fifteen scores fall from $75$ through $84$, giving one third of the class.",
+    "detailedSteps": [
+      "The C scores are $77,75,84,78,80$, so there are five.",
+      "The percentage is $5/15\\cdot100\\%=33\\frac13\\%$."
+    ],
+    "keyIdeas": [
+      "Counting scores in an interval",
+      "Data"
+    ],
+    "commonMistakes": [
+      "Include both endpoints of the stated C interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count scores using the exact grade endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p10",
+    "problemId": "ajhsme-1990-p10",
+    "finalAnswer": "$\\boxed{\\text{P}}$ (choice A)",
+    "shortExplanation": "C is one day before A, so the required date must be one day after B, which is P.",
+    "detailedSteps": [
+      "The condition is $X+C=A+B$, or $X=B+(A-C)$.",
+      "A and C occupy consecutive dates in the same week, so $A-C=1$.",
+      "The date immediately after B is P."
+    ],
+    "keyIdeas": [
+      "Calendar offsets",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Moving one row in a calendar adds seven days, while moving one column adds one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A relative date difference removes the unknown month.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p11",
+    "problemId": "ajhsme-1990-p11",
+    "finalAnswer": "$\\boxed{81}$ (choice E)",
+    "shortExplanation": "The labels must be $11,12,13,14,15,16$, whose sum is $81$.",
+    "detailedSteps": [
+      "Six consecutive whole numbers containing the visible labels $11,14,15$ can only be $10$ through $15$ or $11$ through $16$.",
+      "In either case, equal opposite sums pair the smallest with the largest, the second smallest with the second largest, and the middle two together.",
+      "For $10$ through $15$, labels $11$ and $14$ would be opposite, contradicting their adjacent visible faces. Thus the labels run from $11$ to $16$, summing to $6(11+16)/2=81$."
+    ],
+    "keyIdeas": [
+      "Consecutive labels on opposite cube faces",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The visible faces are pairwise adjacent, so they cannot form an opposite pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adjacency rules out one of the two consecutive-label ranges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p12",
+    "problemId": "ajhsme-1990-p12",
+    "finalAnswer": "$\\boxed{5724}$ (choice B)",
+    "shortExplanation": "Positions thirteen through eighteen begin with five; their fifth entry is $5724$, at overall position seventeen.",
+    "detailedSteps": [
+      "Each leading digit begins a block of $3!=6$ numbers. The first twelve begin with two or four, so position seventeen is fifth in the block beginning with five.",
+      "That block in order is $5247,5274,5427,5472,5724,5742$.",
+      "The desired entry is $5724$."
+    ],
+    "keyIdeas": [
+      "Rank among digit permutations",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Rank the remaining digits within the correct leading-digit block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Permutation blocks locate the rank efficiently.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p13",
+    "problemId": "ajhsme-1990-p13",
+    "finalAnswer": "$\\boxed{1.18}$ (choice C)",
+    "shortExplanation": "Beyond the first ounce, $3.5$ ounces require four additional charges, for $30+4(22)=118$ cents.",
+    "detailedSteps": [
+      "The first ounce costs thirty cents.",
+      "The remaining $4.5-1=3.5$ ounces are charged as four whole-or-fractional increments.",
+      "The total is $118$ cents, or $1.18$ dollars."
+    ],
+    "keyIdeas": [
+      "Rounding up postal weight increments",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "A fractional additional ounce is charged as a full increment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The billing rule applies a ceiling to excess ounces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p14",
+    "problemId": "ajhsme-1990-p14",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "Six blue balls are one quarter of the total, so there are twenty-four balls and eighteen green ones.",
+    "detailedSteps": [
+      "If the total is $T$, then $6/T=1/4$, giving $T=24$.",
+      "The green count is $24-6=18$."
+    ],
+    "keyIdeas": [
+      "Recovering a population from a fraction",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Twenty-four is the total, not the number of green balls."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recover the total before subtracting the known color.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p15",
+    "problemId": "ajhsme-1990-p15",
+    "finalAnswer": "$\\boxed{50}$ (choice E)",
+    "shortExplanation": "Each small square has side five centimeters, and the outer boundary contains ten such sides, giving fifty centimeters.",
+    "detailedSteps": [
+      "The four congruent squares share the area equally, so each has area $100/4=25$ and side five.",
+      "The pictured shape has three shared sides. Starting from sixteen separate square sides, remove two for each shared side to get $16-2(3)=10$ boundary sides.",
+      "The perimeter is $10(5)=50$ centimeters."
+    ],
+    "keyIdeas": [
+      "Perimeter of a four-square shape",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Shared sides contribute no exterior boundary and must be removed twice from the separate perimeters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area gives the unit length, and shared edges determine the perimeter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p16",
+    "problemId": "ajhsme-1990-p16",
+    "finalAnswer": "$\\boxed{1000}$ (choice D)",
+    "shortExplanation": "Ninety-nine pairs each contribute ten, and the final unpaired term is ten, giving one thousand.",
+    "detailedSteps": [
+      "Pair adjacent terms from the start: $(1990-1980)+(1970-1960)+\\cdots+(30-20)+10$.",
+      "There are $199$ terms, so there are $99$ pairs and one remaining term.",
+      "The value is $99(10)+10=1000$."
+    ],
+    "keyIdeas": [
+      "Alternating arithmetic sequence",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The final positive ten is unpaired and must be included."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for the odd number of terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p17",
+    "problemId": "ajhsme-1990-p17",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The volume is $45$ cubic feet, or $5/3$ cubic yards, so two whole cubic yards must be ordered.",
+    "detailedSteps": [
+      "Three inches equals one quarter of a foot. The volume is $3(60)(1/4)=45$ cubic feet.",
+      "One cubic yard is $27$ cubic feet, giving $45/27=5/3$ cubic yards.",
+      "Orders must be whole cubic yards, so round upward to two."
+    ],
+    "keyIdeas": [
+      "Volume conversion and an ordering ceiling",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Length conversion factors must be cubed when converting volume."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert units before rounding the amount to order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p18",
+    "problemId": "ajhsme-1990-p18",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "Twelve original edges remain shortened, and eight triangular cuts add three edges each, giving thirty-six.",
+    "detailedSteps": [
+      "Each original edge survives as a shorter edge between two cut faces, so the original twelve still count.",
+      "Every removed corner creates a triangular face with three new edges. These edges are distinct from those at other corners.",
+      "The total is $12+8(3)=36$."
+    ],
+    "keyIdeas": [
+      "Edges after truncating all vertices",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Truncating a corner creates new edges; it does not simply delete the three old incident edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate shortened old edges from new cut edges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p19",
+    "problemId": "ajhsme-1990-p19",
+    "finalAnswer": "$\\boxed{40}$ (choice B)",
+    "shortExplanation": "Each occupied seat can cover itself and at most two neighbors, so forty are necessary and sufficient.",
+    "detailedSteps": [
+      "To force every next person beside someone, every unoccupied seat must neighbor an occupied one. One occupied seat accounts for at most three seats including itself.",
+      "Therefore at least $120/3=40$ occupied seats are required.",
+      "Occupy seats $2,5,8,\\ldots,119$. Each block of three seats has its middle seat occupied, so all remaining seats neighbor someone."
+    ],
+    "keyIdeas": [
+      "Covering a row by occupied seats and neighbors",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "The question asks for an arrangement requiring the fewest occupants, not for every possible arrangement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A three-seat coverage bound has a matching construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p20",
+    "problemId": "ajhsme-1990-p20",
+    "finalAnswer": "$\\boxed{882}$ (choice A)",
+    "shortExplanation": "The erroneous total is higher by $882000$ dollars, so the mean is higher by $882$ dollars.",
+    "detailedSteps": [
+      "The single-entry error is $980000-98000=882000$.",
+      "Divide by the unchanged number of families: $882000/1000=882$."
+    ],
+    "keyIdeas": [
+      "Effect of one error on the mean",
+      "Data"
+    ],
+    "commonMistakes": [
+      "Only the sum changes; the number of observations remains one thousand."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A one-entry error distributes equally over the mean denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p21",
+    "problemId": "ajhsme-1990-p21",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice B)",
+    "shortExplanation": "Working backward produces $1/4,4,1,4,4,16,64,1024$, so the first term is one quarter.",
+    "detailedSteps": [
+      "If consecutive terms satisfy $a_{n+2}=a_na_{n+1}$, recover $a_n$ by dividing $a_{n+2}$ by $a_{n+1}$.",
+      "Starting from $16,64,1024$, the preceding terms in reverse order are $4,4,1,4,1/4$.",
+      "Forward multiplication checks the full sequence $1/4,4,1,4,4,16,64,1024$."
+    ],
+    "keyIdeas": [
+      "Reversing a multiplicative recurrence",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The reverse step divides consecutive terms in the correct order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Backward division inverts the recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p22",
+    "problemId": "ajhsme-1990-p22",
+    "finalAnswer": "$\\boxed{11}$ (choice B)",
+    "shortExplanation": "The first and hundredth candies are ninety-nine turns apart, so the number of students must divide ninety-nine; eleven is the only listed divisor.",
+    "detailedSteps": [
+      "Chris receives candies numbered $1,1+n,1+2n,\\ldots$ when there are $n$ students.",
+      "For candy one hundred to return to Chris, $100-1=99$ must be a multiple of $n$.",
+      "Among the choices, only $11$ divides $99$."
+    ],
+    "keyIdeas": [
+      "Return time in a circular cycle",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The first candy is already taken by Chris, so use ninety-nine subsequent moves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count transitions rather than total candy pieces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p23",
+    "problemId": "ajhsme-1990-p23",
+    "finalAnswer": "$\\boxed{\\text{the second hour}}$ (choice B)",
+    "shortExplanation": "The distance rises most during the one-to-two-hour interval, so the second hour has the largest average speed.",
+    "detailedSteps": [
+      "Every candidate interval lasts one hour, so compare its vertical rise on the distance graph.",
+      "Between hours one and two the increase is about five hundred miles; the other listed intervals have smaller increases.",
+      "Therefore the second hour has the greatest average speed."
+    ],
+    "keyIdeas": [
+      "Average speed from distance increments",
+      "Data"
+    ],
+    "commonMistakes": [
+      "A high total distance is not the same as a high speed during that interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare equal-time distance increments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p24",
+    "problemId": "ajhsme-1990-p24",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "Substituting one triangle as one diamond plus one dot gives four diamonds equal to six dots, so two diamonds equal three dots.",
+    "detailedSteps": [
+      "Measure weights in dot units, and let triangle and diamond weights be $t,d$. The balances give $3t+d=9$ and $t=d+1$.",
+      "Substitute to obtain $3(d+1)+d=9$, hence $4d=6$.",
+      "Thus two diamonds weigh $2d=3$ dot units."
+    ],
+    "keyIdeas": [
+      "Eliminating a variable from balance equations",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Use the equality of weights to substitute an entire shape, not merely its outline count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A substitution turns two balances into one unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1990-p25",
+    "problemId": "ajhsme-1990-p25",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "There are two types in each of four categories, giving eight distinct patterns.",
+    "detailedSteps": [
+      "If the center is shaded, the other cell is either a corner or a side midpoint: two types.",
+      "Without the center, two corners can be adjacent or opposite, and two side midpoints can likewise be adjacent or opposite: four more types.",
+      "The remaining case has a corner and a side midpoint. The midpoint lies on a side incident to that corner or on a nonincident side: two types.",
+      "Rotations and reflections identify all choices within each type and preserve the distinctions between types. The total is $2+2+2+2=8$."
+    ],
+    "keyIdeas": [
+      "Pair patterns up to square symmetries",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "There are thirty-six raw pairs, but many become equivalent after turning or flipping the square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cell types and relative positions provide a complete symmetry classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

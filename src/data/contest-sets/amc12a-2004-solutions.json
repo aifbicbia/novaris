@@ -1,0 +1,513 @@
+[
+  {
+    "id": "solution-amc12a-2004-p1",
+    "problemId": "amc12a-2004-p1",
+    "finalAnswer": "$\\boxed{29}$ (choice E)",
+    "shortExplanation": "The tax is $0.29$, or $29$ cents.",
+    "detailedSteps": [
+      "The deduction is $20(1.45/100)=0.29$ dollars. Multiplying by $100$ converts this to $29$ cents per hour."
+    ],
+    "keyIdeas": [
+      "Percent and currency units"
+    ],
+    "commonMistakes": [
+      "Giving the dollar amount when cents were requested."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep track of the requested unit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p2",
+    "problemId": "amc12a-2004-p2",
+    "finalAnswer": "$\\boxed{14}$ (choice C)",
+    "shortExplanation": "The unanswered questions contribute $20$ points.",
+    "detailedSteps": [
+      "Eight blanks give $8(2.5)=20$ points. With $c$ correct answers, the score is $20+6c$.",
+      "To reach $100$, require $c\\ge80/6$. The least integer satisfying this is $14$, and it is within the $17$ attempted questions."
+    ],
+    "keyIdeas": [
+      "A scoring threshold"
+    ],
+    "commonMistakes": [
+      "Rounding the threshold down."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A minimum integer count uses the ceiling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p3",
+    "problemId": "amc12a-2004-p3",
+    "finalAnswer": "$\\boxed{49}$ (choice B)",
+    "shortExplanation": "Every $y=1,\\ldots,49$ gives exactly one positive $x$.",
+    "detailedSteps": [
+      "From $x=100-2y>0$, one gets $1\\le y\\le49$. Each of these choices supplies a unique positive integer x, so there are $49$ ordered pairs."
+    ],
+    "keyIdeas": [
+      "Positive solutions of a linear equation"
+    ],
+    "commonMistakes": [
+      "Including the solution with $x=0$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity requirement removes an endpoint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p4",
+    "problemId": "amc12a-2004-p4",
+    "finalAnswer": "$\\boxed{26}$ (choice E)",
+    "shortExplanation": "Twenty-four granddaughters and two daughters have no daughters.",
+    "detailedSteps": [
+      "Of the $30$ descendants, $6$ are daughters and $24$ are granddaughters. Thus $24/6=4$ daughters have children, leaving $2$ daughters without children.",
+      "All $24$ granddaughters have no daughters because there are no great-granddaughters. The requested count is $24+2=26$."
+    ],
+    "keyIdeas": [
+      "Counting relatives without daughters"
+    ],
+    "commonMistakes": [
+      "Counting only Bertha’s childless daughters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the two generations before counting the desired property.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p5",
+    "problemId": "amc12a-2004-p5",
+    "finalAnswer": "$\\boxed{-1<mb<0}$ (choice B)",
+    "shortExplanation": "The intercept is between zero and one, and the gentle negative slope has magnitude below one.",
+    "detailedSteps": [
+      "The graph shows $0<b<1$, negative slope $m$, and a positive height at $x=1$. Therefore $m+b>0$, giving $-b<m<0$.",
+      "Multiplying by $b>0$ yields $-b^2<mb<0$. As $b^2<1$, this implies $-1<mb<0$."
+    ],
+    "keyIdeas": [
+      "Bounding slope and intercept from a graph"
+    ],
+    "commonMistakes": [
+      "Estimating exact coefficients from a sketch when inequalities suffice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only qualitative graph bounds are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p6",
+    "problemId": "amc12a-2004-p6",
+    "finalAnswer": "$\\boxed{U-V}$ (choice A)",
+    "shortExplanation": "Divide every difference by the positive quantity $2004^{2004}$.",
+    "detailedSteps": [
+      "After this division, the five differences are $2004,1,2001,1,1-1/2004$, in the listed order.",
+      "The largest is $2004$, so $U-V$ is largest."
+    ],
+    "keyIdeas": [
+      "A common exponential scale"
+    ],
+    "commonMistakes": [
+      "Comparing the original enormous numbers without simplifying differences."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common factor preserves the ordering.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p7",
+    "problemId": "amc12a-2004-p7",
+    "finalAnswer": "$\\boxed{37}$ (choice B)",
+    "shortExplanation": "Every three rounds subtract one token from each player.",
+    "detailedSteps": [
+      "The first three states are $(15,14,13)\\to(12,15,14)\\to(13,12,15)\\to(14,13,12)$. The pattern repeats with each entry one smaller after three rounds.",
+      "After $36$ rounds the state is $(3,2,1)$. The next round changes it to $(0,3,2)$, ending the game.",
+      "No earlier round has a zero: in an earlier complete cycle the starting minimum exceeds $1$, and the temporary losing leader remains positive. Thus there are $37$ rounds."
+    ],
+    "keyIdeas": [
+      "A repeating token cycle"
+    ],
+    "commonMistakes": [
+      "Forgetting the token placed in the discard pile."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the state over a complete three-round cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p8",
+    "problemId": "amc12a-2004-p8",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "Cancel the same central triangle from two larger triangles.",
+    "detailedSteps": [
+      "The large triangles ABE and ABC have areas $(1/2)(4)(8)=16$ and $(1/2)(4)(6)=12$.",
+      "They contain the same triangle ABD. Removing it leaves ADE and BDC, respectively, so their area difference remains $16-12=4$."
+    ],
+    "keyIdeas": [
+      "A shared-area cancellation"
+    ],
+    "commonMistakes": [
+      "Subtracting triangles with different common pieces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common region cancels without locating the intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p9",
+    "problemId": "amc12a-2004-p9",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "The new height is $16/25$ of the original height.",
+    "detailedSteps": [
+      "The radius, like the diameter, is multiplied by $5/4$. Base area is therefore multiplied by $25/16$.",
+      "To preserve volume, height must be multiplied by $16/25$. The reduction is $1-16/25=9/25=36\\%$."
+    ],
+    "keyIdeas": [
+      "Volume-preserving cylinder scaling"
+    ],
+    "commonMistakes": [
+      "Decreasing height by 25 percent to offset a 25 percent diameter increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Volume depends quadratically on diameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p10",
+    "problemId": "amc12a-2004-p10",
+    "finalAnswer": "$\\boxed{343}$ (choice C)",
+    "shortExplanation": "The median is the sum divided by $49$.",
+    "detailedSteps": [
+      "A list of $49$ consecutive integers is symmetric around its middle entry, so its mean and median coincide.",
+      "The median is $7^5/49=7^3=343$."
+    ],
+    "keyIdeas": [
+      "Mean equals median in an odd consecutive list"
+    ],
+    "commonMistakes": [
+      "Reading the exponent in the source as a separate digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source sum is 7 to the fifth power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p11",
+    "problemId": "amc12a-2004-p11",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "There are four coins, necessarily three quarters and one nickel.",
+    "detailedSteps": [
+      "If there are N coins, then $(20N+25)/(N+1)=21$, giving $N=4$. Their original total is $80$ cents.",
+      "At most two quarters would give at most $25+25+10+10=70$ cents; four quarters would give $100$. Hence there are three quarters, and the fourth coin must be a nickel. There are no dimes."
+    ],
+    "keyIdeas": [
+      "A small coin-count constraint"
+    ],
+    "commonMistakes": [
+      "Assuming each named coin denomination must be present."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The changed average determines the total coin count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p12",
+    "problemId": "amc12a-2004-p12",
+    "finalAnswer": "$\\boxed{2\\sqrt2}$ (choice B)",
+    "shortExplanation": "The diagonal intersections are $(6,6)$ and $(4,4)$.",
+    "detailedSteps": [
+      "The line through A and C is $y=9-x/2$. Setting $y=x$ gives $x=6$, so $A^{\\prime}=(6,6)$.",
+      "The line through B and C is $y=12-2x$. Its diagonal intersection is $B^{\\prime}=(4,4)$.",
+      "The distance is $\\sqrt{2^2+2^2}=2\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Intersecting lines with a diagonal"
+    ],
+    "commonMistakes": [
+      "Treating C as lying on the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use each given collinearity separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p13",
+    "problemId": "amc12a-2004-p13",
+    "finalAnswer": "$\\boxed{20}$ (choice B)",
+    "shortExplanation": "The eight three-point lines each create two extra pair counts.",
+    "detailedSteps": [
+      "The nine grid points yield $\\binom92=36$ point pairs. Three horizontal lines, three vertical lines and two main diagonals each contain three grid points.",
+      "Each such line is counted $\\binom32=3$ times but should count once, so subtract $2$ for each of the eight lines. No other line contains three grid points, because a three-point direction in this grid must have coordinate step sizes at most 1.",
+      "The distinct-line count is $36-8(2)=20$."
+    ],
+    "keyIdeas": [
+      "Correcting pair counts for three-point lines"
+    ],
+    "commonMistakes": [
+      "Counting point pairs as distinct lines."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for each collinear triple once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p14",
+    "problemId": "amc12a-2004-p14",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The two allowed differences give final terms $49$ and $1$.",
+    "detailedSteps": [
+      "Write the original arithmetic progression as $9,9+d,9+2d$. The adjusted terms are $9,11+d,29+2d$.",
+      "The geometric condition gives $(11+d)^2=9(29+2d)$, or $d^2+4d-140=0$. Thus $d=10$ or $-14$.",
+      "The adjusted third term is $49$ or $1$. The smaller is $1$, realized by $9,-3,1$ with common ratio $-1/3$."
+    ],
+    "keyIdeas": [
+      "Arithmetic terms adjusted to a geometric progression"
+    ],
+    "commonMistakes": [
+      "Rejecting the negative common ratio although the terms are real numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Geometric progressions need not have positive terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p15",
+    "problemId": "amc12a-2004-p15",
+    "finalAnswer": "$\\boxed{350}$ (choice C)",
+    "shortExplanation": "The time between consecutive meetings is twice the time to their first meeting.",
+    "detailedSteps": [
+      "Let T be the first meeting time. The two runners cover half a circumference in time T because they start opposite each other. Between successive meetings they cover a full circumference, taking $2T$.",
+      "Sally runs $150$ meters in that second interval, so she runs $75$ meters in the initial interval. Brenda runs $100$ meters initially.",
+      "Half the track is $100+75=175$ meters, giving full length $350$ meters."
+    ],
+    "keyIdeas": [
+      "Opposite-direction meeting intervals"
+    ],
+    "commonMistakes": [
+      "Equating the first meeting interval with the later full-lap relative interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Initial separation is half a lap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p16",
+    "problemId": "amc12a-2004-p16",
+    "finalAnswer": "$\\boxed{2001^{2002}}$ (choice B)",
+    "shortExplanation": "The outer logarithm requires the preceding logarithm to be positive.",
+    "detailedSteps": [
+      "Let $u=\\log_{2001}x$, $v=\\log_{2002}u$ and $w=\\log_{2003}v$. The expression is $\\log_{2004}w$.",
+      "It is defined exactly when $w>0$, which is equivalent to $v>1$, then $u>2002$, and finally $x>2001^{2002}$.",
+      "These inequalities also guarantee positivity of every earlier logarithm argument. Therefore the threshold c is $2001^{2002}$."
+    ],
+    "keyIdeas": [
+      "Working outward through logarithm domains"
+    ],
+    "commonMistakes": [
+      "Requiring the final value itself to be positive instead of only its argument."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All bases exceed 1, so inequality directions are preserved.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p17",
+    "problemId": "amc12a-2004-p17",
+    "finalAnswer": "$\\boxed{2^{4950}}$ (choice D)",
+    "shortExplanation": "The exponents contributed are $0,1,\\ldots,99$.",
+    "detailedSteps": [
+      "At input $2^k$, the recursion is $f(2^k)=2^{k-1}f(2^{k-1})$. Starting from $f(1)=1$, multiply these relations for $k=1,\\ldots,100$.",
+      "The result is $2^{0+1+\\cdots+99}=2^{4950}$."
+    ],
+    "keyIdeas": [
+      "Multipliers along powers of two"
+    ],
+    "commonMistakes": [
+      "Using one factor 2 per recursion step."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each halving step contributes a different power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p18",
+    "problemId": "amc12a-2004-p18",
+    "finalAnswer": "$\\boxed{\\frac52}$ (choice D)",
+    "shortExplanation": "The point E has height $1/2$ above A.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(2,0),C=(2,2)$ and the semicircle center at $(1,0)$. Let $E=(0,e)$. The line CE is $(2-e)x-2y+2e=0$.",
+      "Tangency to the radius-$1$ circle requires $(2+e)^2=(2-e)^2+4$, giving $e=1/2$. The corresponding tangent point lies on the upper semicircle and the segment CE.",
+      "Then $CE=\\sqrt{2^2+(2-1/2)^2}=5/2$."
+    ],
+    "keyIdeas": [
+      "A tangent-line distance equation"
+    ],
+    "commonMistakes": [
+      "Using the vertical tangent through B, which does not meet AD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A radius is perpendicular to its tangent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p19",
+    "problemId": "amc12a-2004-p19",
+    "finalAnswer": "$\\boxed{\\frac89}$ (choice D)",
+    "shortExplanation": "The outer radius is $2$, and the equal small-circle radius solves $9r^2-8r=0$.",
+    "detailedSteps": [
+      "Place the outer center at $(0,0)$ and circle A’s center at $(-1,0)$. Its radius is 1 and it passes through the outer center, so internal tangency forces outer radius 2.",
+      "By symmetry the two congruent centers can be written $(u,r)$ and $(u,-r)$: their vertical separation is $2r$. Outer tangency gives $u^2+r^2=(2-r)^2$, so $u^2=4-4r$.",
+      "Tangency to A gives $(u+1)^2+r^2=(1+r)^2$, or $u^2+2u=2r$. Combining yields $u=3r-2$. Hence $(3r-2)^2=4-4r$, giving $r(9r-8)=0$. The positive radius is $8/9$."
+    ],
+    "keyIdeas": [
+      "Three tangencies in coordinates"
+    ],
+    "commonMistakes": [
+      "Using outer radius 1 rather than recognizing its diameter across circle A."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal radii force reflected centers about the line of the other two centers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p20",
+    "problemId": "amc12a-2004-p20",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice E)",
+    "shortExplanation": "All mixed-rounding pairs work, as do half of each matching quarter-square.",
+    "detailedSteps": [
+      "When exactly one of a,b exceeds $1/2$, their rounded sum is 1 and $1/2<a+b<3/2$, so C is also 1. These two quarter-squares have total area $1/2$.",
+      "When both are below $1/2$, equality requires $a+b<1/2$, a right triangle of area $1/8$. When both are above $1/2$, it requires $a+b>3/2$, another area $1/8$.",
+      "The probability is $1/2+1/8+1/8=3/4$. Half-integer boundaries have measure zero."
+    ],
+    "keyIdeas": [
+      "Rounding regions in a unit square"
+    ],
+    "commonMistakes": [
+      "Assuming rounding commutes with addition for every pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent uniform inputs correspond to planar area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p21",
+    "problemId": "amc12a-2004-p21",
+    "finalAnswer": "$\\boxed{\\frac35}$ (choice D)",
+    "shortExplanation": "The common ratio is $4/5$.",
+    "detailedSteps": [
+      "With $r=\\cos^2\\theta$, the convergent series has sum $1/(1-r)=5$, so $r=4/5$.",
+      "Then $\\cos2\\theta=2\\cos^2\\theta-1=2(4/5)-1=3/5$."
+    ],
+    "keyIdeas": [
+      "Geometric series and a double angle"
+    ],
+    "commonMistakes": [
+      "Reporting cos squared theta instead of cos twice theta."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent 2n makes cos squared the ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p22",
+    "problemId": "amc12a-2004-p22",
+    "finalAnswer": "$\\boxed{3+\\frac{\\sqrt{69}}3}$ (choice B)",
+    "shortExplanation": "The centers form an equilateral base with circumradius $2/\\sqrt3$.",
+    "detailedSteps": [
+      "The three unit-sphere centers lie at height 1 and form an equilateral triangle of side 2. The large center projects to its circumcenter, horizontally $2/\\sqrt3$ from each small center.",
+      "The center-to-center distance is 3, so the vertical rise is $\\sqrt{3^2-(2/\\sqrt3)^2}=\\sqrt{69}/3$.",
+      "Add the base center height 1 and large radius 2 to obtain top height $3+\\sqrt{69}/3$."
+    ],
+    "keyIdeas": [
+      "A sphere resting on three equal spheres"
+    ],
+    "commonMistakes": [
+      "Adding radii vertically without accounting for horizontal center separation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the equilateral circumradius for the horizontal leg.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p23",
+    "problemId": "amc12a-2004-p23",
+    "finalAnswer": "$\\boxed{\\sum_{k=1}^{2004}c_k}$ (choice E)",
+    "shortExplanation": "Only the coefficient sum need not vanish.",
+    "detailedSteps": [
+      "Because the polynomial has real coefficients, its nonreal roots come in conjugate pairs, giving $\\sum b_k=0$. The given equality then forces $\\sum a_k=0$, so the total root sum is 0 and Viète gives $c_{2003}=0$. Also the root 0 forces $c_0=0$.",
+      "After the root 0 is removed, $2003$ roots remain. Nonreal roots occur in pairs, so at least one remaining root is real; consequently $b_2\\cdots b_{2004}=0$.",
+      "The coefficient sum equals $P(1)$ because $c_0=0$, and this can be nonzero. For example, $P(x)=x(x-2)(x-3)(x+5)\\prod_{j=1}^{1000}(x^2+j)$ has $2004$ distinct roots with total real and imaginary sums 0, while $P(1)=12\\prod_{j=1}^{1000}(1+j)\\ne0$."
+    ],
+    "keyIdeas": [
+      "Conjugate roots and a nonzero witness"
+    ],
+    "commonMistakes": [
+      "Assuming an odd number of remaining roots can all be nonreal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A can-be-nonzero claim needs an example satisfying every condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p24",
+    "problemId": "amc12a-2004-p24",
+    "finalAnswer": "$\\boxed{3\\pi-\\frac{\\sqrt3}{2}}$ (choice C)",
+    "shortExplanation": "The disk centers form a unit-circle lens, and the union expands that lens by one unit.",
+    "detailedSteps": [
+      "A radius-$1$ disk covers AB exactly when its center is within distance 1 of both A and B. Thus the allowed-center region K is the intersection of their unit disks. Its two boundary arcs each subtend $120^\\circ$, and its area is $2\\pi/3-\\sqrt3/2$.",
+      "The desired union consists of all points at distance at most 1 from K. Along each boundary arc, the outward strip is an annular sector with radii 1 and 2 and angle $120^\\circ$, of area $\\pi$. At each of the two corners, the remaining outward sector has radius 1 and angle $60^\\circ$, of area $\\pi/6$.",
+      "The added area is $2\\pi+\\pi/3=7\\pi/3$. Together with K, this gives $3\\pi-\\sqrt3/2$. Convexity ensures the boundary pieces meet without interior overlap."
+    ],
+    "keyIdeas": [
+      "Offsetting the lens of allowed centers"
+    ],
+    "commonMistakes": [
+      "Confusing the union of covering disks with their intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First describe all allowed centers before describing the union.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2004-p25",
+    "problemId": "amc12a-2004-p25",
+    "finalAnswer": "$\\boxed{962}$ (choice E)",
+    "shortExplanation": "The repeating-base fractions telescope to $962/98!$.",
+    "detailedSteps": [
+      "For base k, the repeating block 133 gives $a_k=(k^2+3k+3)/(k^3-1)$. Let $F(k)=k^2+k+1$; then $a_k=F(k+1)/((k-1)F(k))$.",
+      "Multiplying for $k=4,\\ldots,99$ cancels consecutive F terms, leaving $F(100)/(F(4)\\,3\\cdot4\\cdots98)=10101\\cdot2/(21\\cdot98!)=962/98!$.",
+      "The next smaller factorial would give $962/98=481/49$, which is not an integer. If any still smaller factorial worked, multiplying by the intervening integers would make this one work too. Thus the minimum denominator factorial is 98!, and m is 962."
+    ],
+    "keyIdeas": [
+      "A telescoping product in varying bases"
+    ],
+    "commonMistakes": [
+      "Stopping at the telescoping value without proving the factorial index is minimal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the fraction identity from denominator minimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

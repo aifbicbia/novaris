@@ -1,0 +1,328 @@
+[
+  {
+    "id": "solution-aime-i-2022-p1",
+    "problemId": "aime-i-2022-p1",
+    "finalAnswer": "$\\boxed{116}$",
+    "shortExplanation": "The sum is the linear polynomial $116-x/2$.",
+    "detailedSteps": [
+      "Let $L=P+Q$. Its quadratic coefficient vanishes, so it has degree at most one. At the two given abscissas its values are $L(16)=108$ and $L(20)=106$.",
+      "Therefore its slope is $(106-108)/(20-16)=-1/2$. The line is $L(x)=116-x/2$, and the requested constant is $L(0)=116$."
+    ],
+    "keyIdeas": [
+      "Cancel the quadratic terms before interpolating"
+    ],
+    "commonMistakes": [
+      "Solving separately for both quadratics when their leading terms already cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The opposite leading coefficients reduce the problem to linear interpolation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p2",
+    "problemId": "aime-i-2022-p2",
+    "finalAnswer": "$\\boxed{227}$",
+    "shortExplanation": "The decimal integer is $227$.",
+    "detailedSteps": [
+      "Every digit also occurs in the base-nine representation, so $1\\le a,b\\le8$ and $0\\le c\\le8$. Equating the two values gives $100a+10b+c=81b+9c+a$, or $99a=71b+8c$.",
+      "Reducing modulo nine gives $b+c\\equiv0\\pmod9$. Their sum is between one and sixteen, so $b+c=9$. Substituting $c=9-b$ and dividing by nine yields $11a=7b+8$.",
+      "Modulo seven this forces $a\\equiv2\\pmod7$. The allowed digit range leaves only $a=2$, then $b=2$ and $c=7$. Indeed $227=2\\cdot9^2+7\\cdot9+2$."
+    ],
+    "keyIdeas": [
+      "Use the common base-nine digit bounds"
+    ],
+    "commonMistakes": [
+      "Allowing the digit nine even though each digit appears in base nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence plus the restricted digit sum determines the digits without a broad search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p3",
+    "problemId": "aime-i-2022-p3",
+    "finalAnswer": "$\\boxed{242}$",
+    "shortExplanation": "The two bisector intersections are $242$ units apart.",
+    "detailedSteps": [
+      "Place the long base at $D=(-325,0)$ and $C=(325,0)$, and the short base at $A=(-250,h)$ and $B=(250,h)$. Each horizontal leg offset is $75$, and $h^2=333^2-75^2>0$.",
+      "A point on both internal bisectors at $A$ and $D$ has equal distances to the two parallel bases, so $P$ lies at height $h/2$. If the angle at $D$ is $\\theta$, then $\\cot(\\theta/2)=(333+75)/h=408/h$.",
+      "The internal bisector from $D$ reaches height $h/2$ after horizontal travel $(h/2)(408/h)=204$. Hence $P=(-121,h/2)$. Reflection in the trapezoid symmetry axis gives $Q=(121,h/2)$, so $PQ=242$."
+    ],
+    "keyIdeas": [
+      "Use equal distances to the parallel bases"
+    ],
+    "commonMistakes": [
+      "Using a leg midpoint instead of the intersection of the two angle bisectors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel bases force the common bisector point onto the mid-height line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p4",
+    "problemId": "aime-i-2022-p4",
+    "finalAnswer": "$\\boxed{834}$",
+    "shortExplanation": "The number of ordered pairs is $834$.",
+    "detailedSteps": [
+      "The source numbers have arguments $\\pi/6$ and $2\\pi/3$, with unit modulus. Thus $w=e^{i\\pi/6}$, $z=w^4$ and $i=w^3$. The equality is equivalent to $r+3\\equiv4s\\pmod{12}$.",
+      "For $s\\equiv1,2,0\\pmod3$, the required residues of $r$ modulo twelve are respectively $1,5,9$. Among one through one hundred, those residues occur $9,8,8$ times. The three corresponding classes of $s$ contain $34,33,33$ integers.",
+      "Every matching choice is an ordered pair, giving $34\\cdot9+33\\cdot8+33\\cdot8=834$."
+    ],
+    "keyIdeas": [
+      "Translate powers to a congruence modulo twelve"
+    ],
+    "commonMistakes": [
+      "Omitting the phase contributed by the factor i, or forgetting that the pairs are ordered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common twelfth root converts the complex equation to one finite congruence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p5",
+    "problemId": "aime-i-2022-p5",
+    "finalAnswer": "$\\boxed{550}$",
+    "shortExplanation": "The initial separation is $550$ meters.",
+    "detailedSteps": [
+      "Put Sherry at east coordinate zero and Melanie at $D$. Equal destination distances place the target at east coordinate $D/2$. With common time $t$, set $u=D/(2t)$ and $v=264/t$. Their ground velocities are $(u,v)$ and $(-u,v)$.",
+      "Subtract the current from each ground velocity. The swimming speeds give $(u-14)^2+v^2=60^2$ and $(u+14)^2+v^2=80^2$. Subtraction yields $56u=2800$, so $u=50$.",
+      "The first equation now gives $v^2=3600-36^2=2304$. The northward velocity is positive, so $v=48$ and $t=264/48=11/2$. Hence $D=2ut=550$, and both original speed equations are satisfied."
+    ],
+    "keyIdeas": [
+      "Compare the two water-relative velocity squares"
+    ],
+    "commonMistakes": [
+      "Treating the stated swimming speeds as speeds relative to the riverbanks."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the squared speed equations eliminates the common northward component.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p6",
+    "problemId": "aime-i-2022-p6",
+    "finalAnswer": "$\\boxed{228}$",
+    "shortExplanation": "Exactly $228$ pairs are allowed.",
+    "detailedSteps": [
+      "Initially $6\\le a<b\\le29$, giving $\\binom{24}{2}=276$ pairs. Including six creates the progression $3,4,5,6$; including twenty creates $20,30,40,50$. These remove $23+23-1=45$ pairs.",
+      "After these exclusions, a prohibited progression must use exactly two of the fixed six numbers and both unknown terms. Three fixed terms could only have produced one of the two already excluded values; there are no four fixed terms in progression.",
+      "The remaining possibilities for the unknown pair are $(7,9)$, $(12,21)$ and $(16,28)$, producing $3,5,7,9$, $3,12,21,30$ and $4,16,28,40$. For an exhaustive way to obtain this list, put any two fixed numbers at two positions of a four-term progression. Their difference is one, two or three times its positive common difference; test these three divisibilities and all position placements, retaining other terms only when they lie between six and twenty-nine.",
+      "These three additional pairs are distinct and contain neither six nor twenty. Thus the valid count is $276-45-3=228$."
+    ],
+    "keyIdeas": [
+      "List every possible four-term progression"
+    ],
+    "commonMistakes": [
+      "Checking only four consecutive entries of the displayed sequence rather than every four-term subset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "With only two unknown entries, every prohibited progression contains at least two fixed entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p7",
+    "problemId": "aime-i-2022-p7",
+    "finalAnswer": "$\\boxed{289}$",
+    "shortExplanation": "The minimum positive fraction is $1/288$.",
+    "detailedSteps": [
+      "The numerator is a positive integer and the denominator is at most $7\\cdot8\\cdot9=504$. If the numerator is at least two, the ratio is at least $2/504=1/252$, which exceeds $1/288$. Therefore a fraction attaining $1/288$ can only be beaten by another arrangement with numerator one.",
+      "For a difference of one, the two triple products have opposite parity. The odd triple consists of three distinct values from $\\{1,3,5,7,9\\}$, and its possible products are $15,21,27,35,45,63,105,135,189,315$. For each, factor the adjacent even integers using three distinct available digits, disjoint from the odd triple.",
+      "This complete finite factor test leaves exactly $36-35=(2\\cdot3\\cdot6)-(1\\cdot5\\cdot7)$ and $64-63=(2\\cdot4\\cdot8)-(1\\cdot7\\cdot9)$. The respective leftover denominators are $4\\cdot8\\cdot9=288$ and $3\\cdot5\\cdot6=90$.",
+      "The smaller ratio is $1/288$, and the earlier bound excludes every larger numerator. The reduced numerator and denominator sum to $289$."
+    ],
+    "keyIdeas": [
+      "Separate numerator one from larger differences"
+    ],
+    "commonMistakes": [
+      "Minimizing the numerator without checking which denominator digits remain unused."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A denominator bound reduces the global minimum to a complete small numerator-one classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p8",
+    "problemId": "aime-i-2022-p8",
+    "finalAnswer": "$\\boxed{378}$",
+    "shortExplanation": "The side length is $\\sqrt{351}-\\sqrt{27}$.",
+    "detailedSteps": [
+      "Put the outer center at the origin and $A=(18,0)$. A circle tangent to the two sides at $A$ has center $(18-2r,0)$, because the angle is sixty degrees. Internal tangency requires $|18-2r|=18-r$. The positive solution is $r=12$, with center $(-6,0)$; the other two centers are its rotations through $120^\\circ$ and $240^\\circ$.",
+      "The latter two centers are $(3,3\\sqrt3)$ and $(3,-3\\sqrt3)$. Their common chord lies on the horizontal axis. A common point therefore satisfies $(x-3)^2+27=144$, giving $x=3\\pm3\\sqrt{13}$.",
+      "The point at $3+3\\sqrt{13}$ belongs to the larger triangle nearest $A$. The point at $3-3\\sqrt{13}$ and its two rotations form the smaller triangle, whose circumradius is $3\\sqrt{13}-3$. A regular triangle has side length $\\sqrt3$ times its circumradius.",
+      "Thus the smaller side is $3\\sqrt{39}-3\\sqrt3=\\sqrt{351}-\\sqrt{27}$. The requested radicand sum is $351+27=378$."
+    ],
+    "keyIdeas": [
+      "Find the equal-circle chord on the symmetry axis"
+    ],
+    "commonMistakes": [
+      "Selecting the intersection point nearest the corresponding vertex, which belongs to the larger triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry fixes the common chord direction and distinguishes the two equilateral triples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p9",
+    "problemId": "aime-i-2022-p9",
+    "finalAnswer": "$\\boxed{247}$",
+    "shortExplanation": "The probability is $16/231$.",
+    "detailedSteps": [
+      "An even number of intervening blocks means the two equal-colored blocks occupy positions of opposite parity. Thus each color must appear exactly once in the six odd positions and once in the six even positions.",
+      "There are $(6!)^2$ favorable color arrangements: independently permute the six colors in the odd and even positions. All arrangements of the twelve blocks have the same probability; there are $12!/(2!)^6$ color arrangements in total.",
+      "The probability is $(6!)^2 2^6/12!=64/\\binom{12}{6}=16/231$. The fraction is reduced, so $m+n=247$."
+    ],
+    "keyIdeas": [
+      "Put each color once in each parity class"
+    ],
+    "commonMistakes": [
+      "Requiring equal colors to occupy positions of the same parity; that gives an odd number between them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity positions encode all six separation conditions at once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p10",
+    "problemId": "aime-i-2022-p10",
+    "finalAnswer": "$\\boxed{756}$",
+    "shortExplanation": "The required squared distance is $756$.",
+    "detailedSteps": [
+      "Let the common section radius be $r$, and let the sphere-center heights above the plane be $u,v,w>0$ in increasing sphere-radius order. Then $u^2=121-r^2$, $v^2=169-r^2$ and $w^2=361-r^2$.",
+      "External tangency of the first two spheres and projection onto the plane give $AB^2=24^2-(v-u)^2=560$. Hence $v-u=4$, while $v^2-u^2=48$ gives $v+u=12$. Thus $u=4$, $v=8$ and $r^2=105$.",
+      "It follows that $w=16$. The first and third sphere centers are thirty units apart, so $AC^2=30^2-(16-4)^2=900-144=756$."
+    ],
+    "keyIdeas": [
+      "Recover the common cross-section radius from two heights"
+    ],
+    "commonMistakes": [
+      "Using a sum of heights even though all three centers are on the same side of the plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A projected tangent-center distance determines one height difference; the squared radii determine its sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p11",
+    "problemId": "aime-i-2022-p11",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The area is $147\\sqrt3$.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $D=(L,0)$, $B=(u,h)$ and $C=(u+L,h)$, where $h,L>0$. The acute angle at $A$ requires $u>0$. The circle tangent to the two horizontal sides has radius $r=h/2$. Since $AP=3$ and $AQ=12$, the tangent length from $A$ is $\\sqrt{AP\\cdot AQ}=6$, so its center is $(6,r)$.",
+      "From $C$, the secant lengths are $CQ=16$ and $CP=25$, giving tangent length twenty. Thus the horizontal distance from $C$ to the upper tangency point is twenty: $|u+L-6|=20$. Since $u+L>0$, the only possible value is $u+L=26$.",
+      "The diagonal has length $3+9+16=28$, so $h^2=28^2-26^2=108$. Therefore $h=6\\sqrt3$ and $r=3\\sqrt3$. If $\\theta=\\angle BAD$, the center on its internal bisector gives $\\tan(\\theta/2)=r/6=\\sqrt3/2$. Hence $\\tan\\theta=4\\sqrt3$, so $u=h\\cot\\theta=3/2$.",
+      "The base is $L=26-3/2=49/2$ and the area is $Lh=147\\sqrt3$. These coordinates place all three tangency feet on the actual sides and give the two diagonal-circle intersections at distances three and twelve from $A$, so the configuration is attained. The requested sum is $147+3=150$."
+    ],
+    "keyIdeas": [
+      "Use tangent powers at both ends of the diagonal"
+    ],
+    "commonMistakes": [
+      "Ignoring the acute-angle condition or using the nine-unit interior chord as the full secant length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two endpoint powers determine the horizontal component of the diagonal before any angle calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p12",
+    "problemId": "aime-i-2022-p12",
+    "finalAnswer": "$\\boxed{245}$",
+    "shortExplanation": "The reduced ratio is $16341804/4084441$.",
+    "detailedSteps": [
+      "Count triples consisting of an ordered equal-sized pair $(A,B)$ and one designated element of $A\\cap B$. Each pair contributes exactly its intersection size, so these triples are counted by $S_n$.",
+      "Choose the designated element in $n$ ways. If each set has $j$ additional elements, they can be chosen independently in $\\binom{n-1}{j}^2$ ways. Thus $S_n=n\\sum_{j=0}^{n-1}\\binom{n-1}{j}^2=n\\binom{2n-2}{n-1}$, by Vandermonde convolution.",
+      "Therefore $S_{2022}/S_{2021}=(2022/2021)(4042\\cdot4041/2021^2)=16341804/4084441$. The denominator is $2021^2$; its prime factors are $43$ and $47$, and neither divides $2\\cdot2022\\cdot4041$, so the displayed fraction is reduced.",
+      "The numerator and denominator sum to $20426245$, whose remainder modulo one thousand is $245$."
+    ],
+    "keyIdeas": [
+      "Count a designated common element"
+    ],
+    "commonMistakes": [
+      "Counting equal-sized pairs without weighting them by the size of their intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Designating a shared element turns the weighted sum into a binomial convolution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p13",
+    "problemId": "aime-i-2022-p13",
+    "finalAnswer": "$\\boxed{392}$",
+    "shortExplanation": "There are $6392$ distinct reduced numerators.",
+    "detailedSteps": [
+      "Every source decimal is $k/9999$, with $1\\le k\\le9999$, and $9999=3^2\\cdot11\\cdot101$. A positive integer $m$ occurs as a reduced numerator exactly when some divisor $d$ of $9999$ satisfies $m\\le d$ and $\\gcd(m,d)=1$. Indeed choose $k=m(9999/d)$ for sufficiency; reduction proves necessity.",
+      "The largest such coprime divisor deletes the full prime power for each of $3,11,101$ dividing $m$. If none divides $m$, all $\\varphi(9999)=6000$ coprime values up to $9999$ occur.",
+      "If only three divides $m$, the bound is $m\\le1111$. There are $\\lfloor1111/3\\rfloor-\\lfloor1111/33\\rfloor-\\lfloor1111/303\\rfloor+\\lfloor1111/3333\\rfloor=370-33-3=334$ such values. If only eleven divides $m$, the bound is $909$, giving $\\lfloor909/11\\rfloor-\\lfloor909/33\\rfloor=82-27=55$ values; no multiple of $1111$ lies in this interval.",
+      "If three and eleven both divide $m$, but not 101, the bound is $101$, leaving the three values $33,66,99$. Any numerator divisible by 101 has largest coprime denominator at most 99, so it cannot occur. These disjoint classes exhaust every possible numerator.",
+      "The total is $6000+334+55+3=6392$, and its remainder modulo one thousand is $392$."
+    ],
+    "keyIdeas": [
+      "Choose the largest denominator coprime to a numerator"
+    ],
+    "commonMistakes": [
+      "Counting fractions or decimal blocks instead of distinct reduced numerators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator can vary; retaining its largest coprime divisor proves a sharp numerator bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p14",
+    "problemId": "aime-i-2022-p14",
+    "finalAnswer": "$\\boxed{459}$",
+    "shortExplanation": "The side lengths are $51$, $189$ and $219$.",
+    "detailedSteps": [
+      "Write $a=BC$, $b=CA$ and $c=AB$. A cut from the midpoint $M$ of $AB$ has equal resulting perimeters exactly when its other endpoint is half a total boundary perimeter away from $M$; the common cut length cancels.",
+      "Let $e$ and $f$ be the unit vectors from $A$ to $B$ and $C$. If $b\\ge a$, the other endpoint is on $AC$ at distance $(a+b)/2$ from $A$, and the cut direction is $[(a+b)f-ce]/2$. If $b\\le a$, it is on $BC$ at distance $(a+b)/2$ from $B$, and its direction is $b[(a+b)f-ce]/(2a)$. Thus both cases give the same line direction.",
+      "The internal bisector direction at $C$ is $-f+(ce-bf)/a=[ce-(a+b)f]/a$. Hence the midpoint cut through $M$ is parallel to this bisector. Likewise the cut through $N$ is parallel to the bisector at $B$. Their smaller angle is $90^\\circ-A/2$, so the stated thirty-degree intersection gives $A=120^\\circ$.",
+      "The cosine law now gives $b^2+bc+c^2=219^2$. Reducing modulo three shows $b\\equiv c\\pmod3$. Write $c=b+3t$; reduction modulo nine gives $3b^2\\equiv0\\pmod9$, so both sides are divisible by three.",
+      "Put $b=3u$ and $c=3v$, and exchange the labels if necessary so $u\\le v$. Then $u^2+uv+v^2=73^2$ implies $1\\le u\\le42$. Solving the quadratic for $v$ requires $21316-3u^2$ to be an integer square, with $v=(-u+\\sqrt{21316-3u^2})/2\\ge u$. Checking the forty-two integer values is an exhaustive exact test: the only square is $20449=143^2$ at $u=17$, giving $v=63$. This finite check is reproduced in the mathematical audit script.",
+      "Thus the unordered side pair is $\\{51,189\\}$. It satisfies the original strict triangle inequalities and the cosine-law equation, so its midpoint cuts have the required angle. The perimeter is $51+189+219=459$."
+    ],
+    "keyIdeas": [
+      "Relate midpoint perimeter cuts to angle bisectors"
+    ],
+    "commonMistakes": [
+      "Using area-bisecting medians; the source cuts divide perimeter, and their directions are different."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perimeter equality first identifies the cleaver directions; integrality then leaves one bounded side pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2022-p15",
+    "problemId": "aime-i-2022-p15",
+    "finalAnswer": "$\\boxed{033}$",
+    "shortExplanation": "The requested square is $1/32$.",
+    "detailedSteps": [
+      "The real radicands and positive variables force $0<x,y,z\\le2$. Put $x=2\\sin^2\\alpha$, $y=2\\sin^2\\beta$ and $z=2\\sin^2\\gamma$, with each angle in $(0,\\pi/2]$. Nonnegative square roots then turn the three left sides into $2\\sin(\\alpha+\\beta)$, $2\\sin(\\beta+\\gamma)$ and $2\\sin(\\gamma+\\alpha)$.",
+      "The respective pair sums are $\\pi/6$ or $5\\pi/6$, $\\pi/4$ or $3\\pi/4$, and $\\pi/3$ or $2\\pi/3$. For any selection $s_1,s_2,s_3$, the angles must be $(s_1+s_3-s_2)/2$, $(s_1+s_2-s_3)/2$ and $(s_2+s_3-s_1)/2$.",
+      "Testing these eight choices against the angle bounds leaves exactly $(\\alpha,\\beta,\\gamma)=(\\pi/8,\\pi/24,5\\pi/24)$ and $(3\\pi/8,11\\pi/24,7\\pi/24)$. The latter angles are the complements of the former, and both triples satisfy the original equations.",
+      "Since $1-x=\\cos2\\alpha$ and likewise for the others, the first triple has product $\\cos(\\pi/4)\\cos(\\pi/12)\\cos(5\\pi/12)$. Product-to-sum gives $\\cos(\\pi/12)\\cos(5\\pi/12)=1/4$, so the product is $\\sqrt2/8$. Complementing all three angles changes its sign, but not its square.",
+      "The square is therefore $1/32$ for every admissible solution, and the reduced numerator and denominator sum to $33$."
+    ],
+    "keyIdeas": [
+      "Keep every inverse-sine branch"
+    ],
+    "commonMistakes": [
+      "Taking only the smaller inverse-sine angles without checking the other seven branch combinations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The substitution is bijective on the source domain, and complete branch checking makes the requested value unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,325 @@
+[
+  {
+    "id": "solution-aime-i-2020-p1",
+    "problemId": "aime-i-2020-p1",
+    "finalAnswer": "$\\boxed{547}$",
+    "shortExplanation": "The base angle is $540/7$ degrees.",
+    "detailedSteps": [
+      "Let $\\theta=\\angle ABC=\\angle BCA$. Because $DB=BC$, triangle BDC has angles $\\theta,\\theta,180^\\circ-2\\theta$. Hence $\\angle ABD=3\\theta-180^\\circ$ and $\\angle ADB=180^\\circ-\\theta$.",
+      "In triangle AED, $AE=ED$, so $\\angle EDA=\\angle DAE=180^\\circ-2\\theta$. Consequently $\\angle EDB=\\theta$ and $\\angle AED=4\\theta-180^\\circ$. The strict positions of E and D ensure the indicated angle differences use the interior rays.",
+      "Since $ED=DB$, the base angle $\\angle DEB$ is $90^\\circ-\\theta/2$. It is also supplementary to $\\angle AED$, so $360^\\circ-4\\theta=90^\\circ-\\theta/2$. Thus $\\theta=540^\\circ/7$, and $m+n=547$.",
+      "The configuration exists: normalize the common short length to one, take $AB=AC=1/(2\\cos\\theta)$ and $AD=2\\cos(180^\\circ-2\\theta)$. These give $0<AE<AB$ and $0<AD<AC$, as well as the required equal distances."
+    ],
+    "keyIdeas": [
+      "Track equal-side angles in three triangles"
+    ],
+    "commonMistakes": [
+      "Treating a supplementary angle at E as the same angle in both triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The interior-point conditions determine which angle differences are valid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p2",
+    "problemId": "aime-i-2020-p2",
+    "finalAnswer": "$\\boxed{017}$",
+    "shortExplanation": "The logarithm values are minus one, minus two and minus four.",
+    "detailedSteps": [
+      "Put $t=\\log_2x$. The three terms are $(1+t)/3$, $t/2$ and $t$. The value $t=0$ cannot have a positive common ratio, because its first term is nonzero and its last two are zero.",
+      "For $t\\ne0$, the last-to-middle ratio is two. Therefore $(1+t)/3=t/4$, giving $t=-4$ and $x=1/16$. Substitution yields the valid progression $-1,-2,-4$, so $m+n=17$."
+    ],
+    "keyIdeas": [
+      "Convert all three logarithms to base two"
+    ],
+    "commonMistakes": [
+      "Assuming a positive common ratio requires positive terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A geometric progression can have negative terms and a positive ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p3",
+    "problemId": "aime-i-2020-p3",
+    "finalAnswer": "$\\boxed{621}$",
+    "shortExplanation": "The smallest valid digit triple is five, one, five.",
+    "detailedSteps": [
+      "All three digits occur in the base-eight representation, so $1\\le a\\le7$ and $0\\le b,c\\le7$. Equating positional values gives $121a+11b+c=512+64b+8c+a$, or $120a-53b-7c=512$.",
+      "If $a\\le4$, the left side is at most 480, impossible. At $a=5$, the equation becomes $53b+7c=88$. With the digit bounds it forces $b=1,c=5$. The corresponding value is $121(5)+11+5=621$.",
+      "Any larger leading digit in base eleven gives a larger integer regardless of the lower digits, so 621 is the minimum."
+    ],
+    "keyIdeas": [
+      "Compare the two positional-value expansions"
+    ],
+    "commonMistakes": [
+      "Allowing a digit eight through ten when it also occurs in base eight."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common digits must satisfy the more restrictive base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p4",
+    "problemId": "aime-i-2020-p4",
+    "finalAnswer": "$\\boxed{093}$",
+    "shortExplanation": "There are twelve valid prefixes.",
+    "detailedSteps": [
+      "Write $N=10000k+2020$, where the removed prefix $k$ must be a positive divisor of N. This is equivalent to $k\\mid2020$. A zero prefix is not a divisor.",
+      "Since $2020=2^2\\cdot5\\cdot101$, its twelve positive divisors are $1,2,4,5,10,20,101,202,404,505,1010,2020$. Their digit sums total 45.",
+      "Appending 2020 adds four to each digit sum without altering the prefix. Thus the requested total is $45+12(4)=93$."
+    ],
+    "keyIdeas": [
+      "Removing four digits identifies a divisor of 2020"
+    ],
+    "commonMistakes": [
+      "Including 2020 itself with an empty or zero prefix."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisibility condition reduces to the fixed four-digit suffix.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p5",
+    "problemId": "aime-i-2020-p5",
+    "finalAnswer": "$\\boxed{052}$",
+    "shortExplanation": "There are twenty-six possibilities for each monotone direction.",
+    "detailedSteps": [
+      "For increasing order, begin with the sorted six cards and move one chosen card to a new position. There are $6\\cdot5=30$ nontrivial moves plus the unchanged arrangement.",
+      "Two different removed cards can explain the same nontrivial arrangement only when its sole inversion is that pair: after either is removed, every remaining pair must be correctly ordered. Such an arrangement is an adjacent transposition of consecutive values. There are five of these, each counted twice by the moves.",
+      "Therefore increasing order after a deletion occurs for $1+30-5=26$ arrangements. Reversing the order gives another 26. The two families are disjoint: five-card increasing and decreasing subsequences in six positions would share at least four cards, whose order cannot be both increasing and decreasing. The total is 52."
+    ],
+    "keyIdeas": [
+      "Count a single misplaced card without duplicate deletions"
+    ],
+    "commonMistakes": [
+      "Counting the choice of removed card as part of an arrangement, causing duplicate adjacent swaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The only duplicated single-card moves are adjacent transpositions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p6",
+    "problemId": "aime-i-2020-p6",
+    "finalAnswer": "$\\boxed{173}$",
+    "shortExplanation": "The common radius squared is $160/13$.",
+    "detailedSteps": [
+      "Write $R=r^2$. A sphere sitting in a circular hole of radius $a$ has center height $\\sqrt{R-a^2}$ above the board. Thus the two center heights are $\\sqrt{R-1}$ and $\\sqrt{R-4}$, with $R\\ge4$.",
+      "External tangency and the horizontal center spacing give $49+(\\sqrt{R-1}-\\sqrt{R-4})^2=4R$. Rearranging yields $\\sqrt{(R-1)(R-4)}=22-R$, so $R\\le22$.",
+      "Squaring gives $R^2-5R+4=R^2-44R+484$, hence $R=160/13$. It lies strictly between four and twenty-two and satisfies the original unsquared equation. The reduced numerator and denominator sum to 173."
+    ],
+    "keyIdeas": [
+      "Use the sphere-center heights above the board"
+    ],
+    "commonMistakes": [
+      "Using the hole centers as the sphere centers or failing to check the sign after squaring."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The different hole sizes put equal spheres at different heights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p7",
+    "problemId": "aime-i-2020-p7",
+    "finalAnswer": "$\\boxed{081}$",
+    "shortExplanation": "The committee count has six distinct prime factors.",
+    "detailedSteps": [
+      "If $k$ men are selected, $k+1$ women are selected, so $N=\\sum_{k=0}^{11}\\binom{11}{k}\\binom{12}{k+1}$. Since $\\binom{12}{k+1}=\\binom{12}{11-k}$, Vandermonde gives $N=\\binom{23}{11}$.",
+      "The factorial quotient factors as $N=1352078=2\\cdot7\\cdot13\\cdot17\\cdot19\\cdot23$. For example, the exponent of each prime is obtained by subtracting its exponents in $11!$ and $12!$ from that in $23!$; no other prime survives.",
+      "The requested sum is $2+7+13+17+19+23=81$."
+    ],
+    "keyIdeas": [
+      "Turn the committee count into one binomial coefficient"
+    ],
+    "commonMistakes": [
+      "Excluding the one-woman or all-member committees, both allowed by the source."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complementing the women converts the gender condition into a fixed-size choice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p8",
+    "problemId": "aime-i-2020-p8",
+    "finalAnswer": "$\\boxed{103}$",
+    "shortExplanation": "The limit distance squared is $100/3$.",
+    "detailedSteps": [
+      "Represent east by the positive real axis. Each daily displacement is multiplied by $q=\\tfrac12e^{i\\pi/3}=\\tfrac14+i\\tfrac{\\sqrt3}{4}$. Since $|q|=1/2<1$, the final displacement is $5/(1-q)$.",
+      "Therefore $OP^2=25/|1-q|^2=25/(9/16+3/16)=100/3$. The fraction is reduced, so $m+n=103$."
+    ],
+    "keyIdeas": [
+      "Sum the displacement vectors as a geometric series"
+    ],
+    "commonMistakes": [
+      "Adding the travel lengths instead of the oriented displacement vectors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convergence of the vector series follows from the halving distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p9",
+    "problemId": "aime-i-2020-p9",
+    "finalAnswer": "$\\boxed{077}$",
+    "shortExplanation": "The reduced probability is $77/1805$.",
+    "detailedSteps": [
+      "A divisor of $20^9=2^{18}5^9$ is uniquely $2^u5^v$, with $0\\le u\\le18$ and $0\\le v\\le9$. Independent uniform divisor selections make the corresponding exponent triples uniform independently.",
+      "The two divisibilities require $u_1\\le u_2\\le u_3$ and $v_1\\le v_2\\le v_3$. A nondecreasing three-term sequence from $L$ possible values has $\\binom{L+2}{3}$ possibilities, allowing repetition.",
+      "The probability is $\\binom{21}{3}\\binom{12}{3}/190^3=1330\\cdot220/190^3=77/1805$. The numerator is 77."
+    ],
+    "keyIdeas": [
+      "Divisibility chains are nondecreasing exponent triples"
+    ],
+    "commonMistakes": [
+      "Requiring strict divisibility or distinct chosen divisors when repetition is allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Stars and bars counts weakly ordered choices with repetition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p10",
+    "problemId": "aime-i-2020-p10",
+    "finalAnswer": "$\\boxed{407}$",
+    "shortExplanation": "The first permissible pair is $m=286$, $n=121$.",
+    "detailedSteps": [
+      "Every prime dividing n must divide m, since $n^n\\mid m^m$. Also $m>n$: if a prime has a smaller exponent in m than in n, the required exponent inequality cannot hold when $m\\le n$. Such a prime exists because $n\\nmid m$.",
+      "No common prime may be 2,3,5 or 7, since it would divide $m+n$ and violate the gcd condition. Furthermore n cannot be squarefree, since then all its prime factors in m would imply $n\\mid m$.",
+      "The proposed pair has sum 407. To rule out any smaller sum, it suffices to consider $n<407/2$. A non-squarefree integer below 204 using only primes at least 11 is either $11^2=121$ or $13^2=169$. Any extra permitted prime factor makes it too large.",
+      "For $n=169$, m is divisible by 13 but not 169, so its 13-exponent is one. The divisibility of powers requires $m\\ge338$, already giving sum at least 507. For $n=121$, the corresponding condition is $m\\ge242$, with m a multiple of 11 but not 121. At or below 286, the candidates are 242,253,264,275,286. The first is a multiple of 121; the next three give sums divisible by 2,5,2 respectively.",
+      "The last gives $(m,n)=(286,121)$ and sum 407. Here $286=2\\cdot11\\cdot13$, so the 11-exponent in $m^m$ is 286, at least 242, and $\\gcd(407,210)=1$. Thus the minimum is 407."
+    ],
+    "keyIdeas": [
+      "A missing prime power forces a small square factor"
+    ],
+    "commonMistakes": [
+      "Concluding that n divides m merely from divisibility of their powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The failed ordinary divisibility must come from a prime exponent of at least two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p11",
+    "problemId": "aime-i-2020-p11",
+    "finalAnswer": "$\\boxed{510}$",
+    "shortExplanation": "The two cases contribute 441 and 69 triples.",
+    "detailedSteps": [
+      "Let $u=f(2)=4+2a+b$ and $v=f(4)=16+4a+b$. Subtracting the two equations $g(u)=g(v)=0$ gives $(u-v)(u+v+c)=0$.",
+      "If $u=v$, then $a=-6$. Every one of the 21 choices for b and 21 choices for c permits the integer $d=-u^2-cu$, contributing 441.",
+      "If $a\\ne-6$, we need $c=-(20+6a+2b)$. Conversely this equality and $d=uv$ make both u and v roots of g. Thus count the b values in $[-10,10]$ with $-10\\le20+6a+2b\\le10$.",
+      "For $a=-8,-7,-5,-4,-3,-2,-1,0,1$, the counts are respectively $2,5,11,11,11,11,9,6,3$; all other allowed a contribute zero in this case. These total 69, so the final count is $441+69=510$."
+    ],
+    "keyIdeas": [
+      "Separate equal and distinct inner polynomial values"
+    ],
+    "commonMistakes": [
+      "Bounding $d$ by ten even though only $a,b,c$ have that bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the equations reveals the exceptional equal-root case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p12",
+    "problemId": "aime-i-2020-p12",
+    "finalAnswer": "$\\boxed{270}$",
+    "shortExplanation": "The least exponent is $2^2\\cdot3^2\\cdot5^4\\cdot7^5$.",
+    "detailedSteps": [
+      "For the odd primes 3 and 7, lifting the exponent applies because $149-2=147=3\\cdot7^2$. It gives $v_3(149^n-2^n)=1+v_3(n)$ and $v_7(149^n-2^n)=2+v_7(n)$. Hence $3^2\\mid n$ and $7^5\\mid n$.",
+      "Modulo five the ratio 149/2 is two, whose order is four. Therefore a necessary condition is $n=4k$. The difference $149^4-2^4=(149^2-4)(149^2+4)$ has five-adic valuation one, since its factors are 22197 and 22205.",
+      "Applying lifting the exponent to the fourth powers gives $v_5(149^{4k}-2^{4k})=1+v_5(k)$. Thus $5^4\\mid k$. All three conditions are both necessary and sufficient, and their least common multiple is $n=2^2\\cdot3^2\\cdot5^4\\cdot7^5$.",
+      "The number of divisors is $(2+1)(2+1)(4+1)(5+1)=270$."
+    ],
+    "keyIdeas": [
+      "Compute the three prime-power requirements on the exponent"
+    ],
+    "commonMistakes": [
+      "Applying the difference-version valuation lemma at five before first passing to fourth powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The initial order modulo five accounts for the factor four.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p13",
+    "problemId": "aime-i-2020-p13",
+    "finalAnswer": "$\\boxed{036}$",
+    "shortExplanation": "The desired area is $15\\sqrt7/14$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$ and let its angle-bisector ray be the positive x-axis. If half the A-angle is $\\theta$, the cosine law gives $\\cos(2\\theta)=9/16$, so $\\cos\\theta=5/(4\\sqrt2)$ and $\\sin\\theta=\\sqrt7/(4\\sqrt2)$.",
+      "Take $B=(5/\\sqrt2,\\sqrt7/\\sqrt2)$ and $C=(15/(2\\sqrt2),-3\\sqrt7/(2\\sqrt2))$. The angle-bisector theorem gives $D=(3\\sqrt2,0)$, while the incenter is $I=(2\\sqrt2,0)$. The perpendicular bisector of AD is $x=3\\sqrt2/2$.",
+      "The B-angle bisector is line BI, of slope $\\sqrt7$; the C-angle bisector is line CI, of slope $-3\\sqrt7/7$. Their intersections with that vertical line have y-coordinates $-\\sqrt{14}/2$ and $3\\sqrt{14}/14$. Both lie on the actual bisector rays from B and C.",
+      "Thus $EF=5\\sqrt{14}/7$ and the distance from A to EF is $3\\sqrt2/2$. The area is $\\tfrac12(5\\sqrt{14}/7)(3\\sqrt2/2)=15\\sqrt7/14$. Its numerator and denominator are coprime, giving $m+n+p=15+7+14=36$."
+    ],
+    "keyIdeas": [
+      "Place the A-angle bisector on a coordinate axis"
+    ],
+    "commonMistakes": [
+      "Replacing the perpendicular bisector of AD by the angle bisector AD itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates along an angle bisector simplify both D and the incenter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p14",
+    "problemId": "aime-i-2020-p14",
+    "finalAnswer": "$\\boxed{085}$",
+    "shortExplanation": "The possible squared sums are 49 and 36.",
+    "detailedSteps": [
+      "Write $P(x)=x^2+ux+v$. Both P(3) and P(4) are roots of P. If they are equal, their difference $7+u$ is zero, so $u=-7$. The other two composition roots have sum $a+b=-u=7$, giving squared sum 49.",
+      "This case actually occurs. Put $r=P(3)=v-12$. Requiring $P(r)=0$ gives $r^2-6r+12=0$, so choose $r=3+i\\sqrt3$ and $v=15+i\\sqrt3$. The other outer root is $4-i\\sqrt3$; its two preimages have nonzero discriminant $5-8i\\sqrt3$ and are distinct from 3 and 4.",
+      "If P(3) and P(4) differ, they are both outer roots. Their sum equals $-u$, giving $v=-4u-25/2$. Their product equals v. After substitution P(3) becomes $-u-7/2$ and P(4) becomes $7/2$, so $(-u-7/2)(7/2)=-4u-25/2$. Thus $u=-1/2,v=-21/2$.",
+      "For this polynomial the four distinct composition roots are $3,4,-5/2,-7/2$. The other two sum to minus six, with square 36. The two cases are exhaustive and both meet distinctness, so the requested sum is $49+36=85$."
+    ],
+    "keyIdeas": [
+      "Classify whether P sends three and four to the same root"
+    ],
+    "commonMistakes": [
+      "Assuming complex coefficients are real or discarding the case P(3)=P(4)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two prescribed inner images either coincide or exhaust the outer roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2020-p15",
+    "problemId": "aime-i-2020-p15",
+    "finalAnswer": "$\\boxed{058}$",
+    "shortExplanation": "The triangle area is $3\\sqrt{55}$.",
+    "detailedSteps": [
+      "Because the triangle is acute, H lies inside its circumcircle and lies between A and the BC line. Reflect H across BC to $H^\\prime$, which lies on the circumcircle and the A-altitude. The tangent line through H meets the circumcircle in opposite directions, so its power is $-HX\\cdot HY=-12$.",
+      "Along the altitude the same power is $-HA\\cdot HH^\\prime$. Since HA is three, $HH^\\prime=4$. Therefore H is two units above BC and A is five units above it.",
+      "Choose $A=(0,5),H=(0,2),B=(-p,0),C=(q,0)$ with $p,q>0$. The perpendicularity of BH and AC gives $pq=10$. The original circumcircle has equation $x^2+y^2+(p-q)x-3y-10=0$; the HBC circle has the same equation with $+3y$.",
+      "The latter circle has tangent normal $(p-q,7)$ at H. A unit direction along that tangent is $\\mathbf u=(7,q-p)/\\sqrt{49+(p-q)^2}$. Substituting $(x,y)=H+t\\mathbf u$ into the original circle gives $t^2+Lt-12=0$, where $L=6(p-q)/\\sqrt{49+(p-q)^2}$.",
+      "The signed roots have absolute values two and six, so their sum has absolute value four and $L^2=16$. Consequently $(p-q)^2=196/5$, and $(p+q)^2=196/5+4pq=396/5$. The base is $6\\sqrt{55}/5$, giving area $\\tfrac12(5)(6\\sqrt{55}/5)=3\\sqrt{55}$.",
+      "Positive p,q with this sum and product exist. Both base angles are acute, and the A-angle is acute since $(B-A)\\cdot(C-A)=25-pq=15>0$. The reconstructed tangent intersections have exactly the required distances, so the area is attained. As 55 is squarefree, $m+n=3+55=58$."
+    ],
+    "keyIdeas": [
+      "Combine orthocenter reflection with the tangent chord"
+    ],
+    "commonMistakes": [
+      "Using a positive chord power for the interior orthocenter or assuming the tangent is parallel to BC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflecting the orthocenter across a side places it on the circumcircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

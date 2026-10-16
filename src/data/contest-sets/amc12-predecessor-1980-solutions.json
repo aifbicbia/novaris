@@ -1,0 +1,627 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1980-p1",
+    "problemId": "amc12-predecessor-1980-p1",
+    "finalAnswer": "$\\boxed{14}$ (choice C)",
+    "shortExplanation": "The strict bound is $n<100/7$, so the largest whole number is $14$.",
+    "detailedSteps": [
+      "$7n<100$ is equivalent to $n<100/7=14+2/7$.",
+      "Thus $n=14$ works, while the next whole number gives $7\\cdot15=105\\ge100$."
+    ],
+    "keyIdeas": [
+      "A strict integer bound is checked at its neighboring integers."
+    ],
+    "commonMistakes": [
+      "Rounding $100/7$ upward gives a number that violates the inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single division and a boundary check suffice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p2",
+    "problemId": "amc12-predecessor-1980-p2",
+    "finalAnswer": "$\\boxed{17}$ (choice D)",
+    "shortExplanation": "The two factors have degrees $8$ and $9$, and their leading coefficients are nonzero.",
+    "detailedSteps": [
+      "The highest term in $(x^2+1)^4$ is $x^8$, and the highest term in $(x^3+1)^3$ is $x^9$.",
+      "Their product has leading term $x^{17}$ with coefficient $1$, so its degree is $17$."
+    ],
+    "keyIdeas": [
+      "Degrees add when nonzero polynomials are multiplied."
+    ],
+    "commonMistakes": [
+      "Adding the outside exponents alone misses the degrees of the inner powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "There is no need to expand the entire product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p3",
+    "problemId": "amc12-predecessor-1980-p3",
+    "finalAnswer": "$\\boxed{\\frac54}$ (choice E)",
+    "shortExplanation": "Cross-multiplication gives $4x=5y$, hence $x/y=5/4$.",
+    "detailedSteps": [
+      "From $(2x-y)/(x+y)=2/3$, obtain $3(2x-y)=2(x+y)$.",
+      "Therefore $6x-3y=2x+2y$, or $4x=5y$. The given ratio has a nonzero denominator, which also excludes $y=0$, so $x/y=5/4$."
+    ],
+    "keyIdeas": [
+      "A ratio equation is a linear relation between its variables."
+    ],
+    "commonMistakes": [
+      "Reversing the requested ratio gives $4/5$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the order of the two requested quantities clear.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p4",
+    "problemId": "amc12-predecessor-1980-p4",
+    "finalAnswer": "$\\boxed{120^\\circ}$ (choice C)",
+    "shortExplanation": "The three known sectors around $D$ total $90^\\circ+60^\\circ+90^\\circ$.",
+    "detailedSteps": [
+      "In the source diagram, the square at $DC$ contributes $\\angle CDA=90^\\circ$, the equilateral triangle contributes $\\angle CDE=60^\\circ$, and the other square contributes $\\angle EDG=90^\\circ$.",
+      "The remaining sector is $\\angle GDA=360^\\circ-90^\\circ-60^\\circ-90^\\circ=120^\\circ$."
+    ],
+    "keyIdeas": [
+      "Angles around a point sum to $360^\\circ$."
+    ],
+    "commonMistakes": [
+      "The squares lie outside the equilateral triangle; choosing the wrong sector changes the angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual orientation of the original figure is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p5",
+    "problemId": "amc12-predecessor-1980-p5",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "In the right triangle $PQC$, $\\tan60^\\circ=QC/PQ$, and $QC=AQ$.",
+    "detailedSteps": [
+      "The diagram places $P$ on the horizontal diameter and $C$ on the perpendicular diameter, so $\\angle PQC=90^\\circ$.",
+      "Write the radius as $r=AQ=QC$. Then $\\tan60^\\circ=r/PQ=\\sqrt3$, giving $PQ/AQ=1/\\sqrt3=\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "The two radii turn the requested length ratio into a trigonometric ratio."
+    ],
+    "commonMistakes": [
+      "Using $\\sin60^\\circ$ would compare $QC$ with the hypotenuse, not $PQ$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This calculation uses the point placement shown in the source figure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p6",
+    "problemId": "amc12-predecessor-1980-p6",
+    "finalAnswer": "$\\boxed{x>\\frac14}$ (choice A)",
+    "shortExplanation": "Both sides are positive, so squaring gives $x<4x^2$, equivalently $x>1/4$.",
+    "detailedSteps": [
+      "For $x>0$, squaring preserves $\\sqrt{x}<2x$: it becomes $x<4x^2$.",
+      "Dividing by $x$ gives $1<4x$, hence $x>1/4$. Every step is reversible under the stated positivity condition."
+    ],
+    "keyIdeas": [
+      "Check signs before squaring or dividing an inequality."
+    ],
+    "commonMistakes": [
+      "The equality case $x=1/4$ is excluded by the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity assumption makes this equivalence straightforward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p7",
+    "problemId": "amc12-predecessor-1980-p7",
+    "finalAnswer": "$\\boxed{36}$ (choice B)",
+    "shortExplanation": "The diagonal is $5$, so it creates right triangles with areas $6$ and $30$.",
+    "detailedSteps": [
+      "In right triangle $ABC$, $AC=\\sqrt{3^2+4^2}=5$ and $[ABC]=3\\cdot4/2=6$.",
+      "Triangle $ACD$ has side lengths $5,12,13$, so it is right because $5^2+12^2=13^2$. Its area is $5\\cdot12/2=30$.",
+      "Convexity places the two triangles on opposite sides of the diagonal; the quadrilateral area is $6+30=36$."
+    ],
+    "keyIdeas": [
+      "A diagonal can reveal two familiar Pythagorean triples."
+    ],
+    "commonMistakes": [
+      "Convexity is what permits adding the two areas rather than subtracting them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing both right triangles avoids a general quadrilateral formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p8",
+    "problemId": "amc12-predecessor-1980-p8",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The equation would force $a^2+ab+b^2=0$, which is impossible for nonzero real $b$.",
+    "detailedSteps": [
+      "The equation is defined only when $a,b,a+b$ are nonzero. Clearing these denominators gives $(a+b)^2=ab$.",
+      "Thus $a^2+ab+b^2=(a+b/2)^2+3b^2/4=0$. The second term is strictly positive for $b\\ne0$, so there are no pairs."
+    ],
+    "keyIdeas": [
+      "A positive quadratic form can rule out all real solutions."
+    ],
+    "commonMistakes": [
+      "The roots of a related quadratic may be complex; the problem requires real numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completing the square proves the impossibility without trial cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p9",
+    "problemId": "amc12-predecessor-1980-p9",
+    "finalAnswer": "$\\boxed{\\text{not uniquely determined}}$ (choice E)",
+    "shortExplanation": "The displacement equation has two positive solutions, $x=\\sqrt3$ and $x=2\\sqrt3$.",
+    "detailedSteps": [
+      "After walking west, a left turn of $150^\\circ$ points $30^\\circ$ below east. The final displacement is $(-x+3\\sqrt3/2,-3/2)$.",
+      "Its squared length must be $3$, so $(x-3\\sqrt3/2)^2+9/4=3$, or $(x-3\\sqrt3/2)^2=3/4$.",
+      "Therefore $x=3\\sqrt3/2\\pm\\sqrt3/2$, giving $\\sqrt3$ and $2\\sqrt3$. Both lengths are positive and satisfy the stated walk, so the information does not determine one value."
+    ],
+    "keyIdeas": [
+      "A prescribed distance can give two positions along the first path."
+    ],
+    "commonMistakes": [
+      "Discarding one quadratic branch without a geometric reason loses a valid walk."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both valid routes must be kept even though the choices list their individual lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p10",
+    "problemId": "amc12-predecessor-1980-p10",
+    "finalAnswer": "$\\boxed{yz:xz:xy}$ (choice D)",
+    "shortExplanation": "Equal tooth-passage rates make the speed magnitudes inversely proportional to the tooth counts.",
+    "detailedSteps": [
+      "At a meshing point the same number of teeth pass per minute on both gears. Thus $x\\omega_A=y\\omega_B=z\\omega_C$.",
+      "The speed ratio is $1/x:1/y:1/z$. Multiplying all three entries by $xyz$ gives $yz:xz:xy$."
+    ],
+    "keyIdeas": [
+      "Meshed gears have equal peripheral tooth-passage rates."
+    ],
+    "commonMistakes": [
+      "Adjacent gears rotate in opposite directions, but the question asks speed magnitudes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absolute speed is unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p11",
+    "problemId": "amc12-predecessor-1980-p11",
+    "finalAnswer": "$\\boxed{-110}$ (choice D)",
+    "shortExplanation": "Write the cumulative arithmetic-progression sum as $S_n=un^2+vn$ and use the two given values.",
+    "detailedSteps": [
+      "An arithmetic progression has $S_n=un^2+vn$ for constants $u,v$. The conditions give $100u+10v=100$ and $10000u+100v=10$.",
+      "Subtracting ten times the first equation from the second yields $9000u=-990$, so $u=-11/100$. Then $v=111/10$.",
+      "Hence $S_{110}=(-11/100)110^2+(111/10)110=-1331+1221=-110$."
+    ],
+    "keyIdeas": [
+      "Cumulative sums of an arithmetic progression are quadratic in the number of terms."
+    ],
+    "commonMistakes": [
+      "The sum of $110$ terms is not obtained by adding the two given overlapping sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A two-equation system is simpler than listing the progression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p12",
+    "problemId": "amc12-predecessor-1980-p12",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The tangent double-angle formula and $m=4n$ imply $n^2=1/2$, so $mn=2$.",
+    "detailedSteps": [
+      "Let the angle of $L_2$ be $\\theta$, so $n=\\tan\\theta$ and $m=\\tan2\\theta=2n/(1-n^2)$. All slopes are finite, so the denominator here is nonzero.",
+      "Also $m=4n$. Because $L_1$ is not horizontal, $n\\ne0$; cancellation gives $4=2/(1-n^2)$ and $n^2=1/2$.",
+      "Thus $mn=4n^2=2$, regardless of the sign of $n$."
+    ],
+    "keyIdeas": [
+      "Angle doubling translates into a rational relation between slopes."
+    ],
+    "commonMistakes": [
+      "A doubled angle does not mean a doubled slope."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the nonzero and finite-slope conditions before cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p13",
+    "problemId": "amc12-predecessor-1980-p13",
+    "finalAnswer": "$\\boxed{\\left(\\frac45,\\frac25\\right)}$ (choice B)",
+    "shortExplanation": "The successive displacements form the complex geometric series $1+i/2+(i/2)^2+\\cdots$.",
+    "detailedSteps": [
+      "Represent a displacement by a complex number. Each turn and halving multiplies the preceding displacement by $i/2$.",
+      "Since $|i/2|<1$, the limiting position is $1/(1-i/2)=(1+i/2)/(5/4)=4/5+(2/5)i$.",
+      "The bug approaches $(4/5,2/5)$ arbitrarily closely, so this choice has distance infimum zero.",
+      "The first two segments lie on $y=0$ and $x=1$. After the second segment, the horizontal and vertical displacement sequences are alternating geometric series with ratio $-1/4$. Their endpoints, and the segments between those endpoints, remain in the closed rectangle $[3/4,1]\\times[3/8,1/2]$.",
+      "Each other listed point has positive $y$ and $x\\le2/3<3/4$, so none lies in that rectangle or on either initial segment. This closed union has positive distance from each of those four points. Thus only the limiting point has distance infimum zero."
+    ],
+    "keyIdeas": [
+      "A quarter-turn and a scale factor combine into one complex multiplier."
+    ],
+    "commonMistakes": [
+      "Summing the unsigned travel lengths does not give the coordinates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The limit need not be reached after a finite number of moves; the other choices must also be excluded from the complete path.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p14",
+    "problemId": "amc12-predecessor-1980-p14",
+    "finalAnswer": "$\\boxed{-3}$ (choice A)",
+    "shortExplanation": "The composition is $c^2x/((2c+6)x+9)$; identity for all admissible $x$ forces $c=-3$.",
+    "detailedSteps": [
+      "Direct substitution gives $f(f(x))=c^2x/((2c+6)x+9)$ wherever the composition is defined.",
+      "For every nonzero admissible $x$, the identity requires $c^2=(2c+6)x+9$. Since this holds on an interval, the linear coefficient vanishes: $2c+6=0$, hence $c=-3$.",
+      "For this value, the composition simplifies to $x$. Moreover $-3x/(2x+3)=-3/2$ has no solution, so no admissible input sends the first application to the excluded value."
+    ],
+    "keyIdeas": [
+      "A functional identity imposes coefficient conditions, not merely a condition at one input."
+    ],
+    "commonMistakes": [
+      "Checking only $c^2=9$ leaves the invalid value $c=3$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the domain of the second application completes the argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p15",
+    "problemId": "amc12-predecessor-1980-p15",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "With the price in integer cents $k$, exact taxation gives $13k=1250n$, forcing $13\\mid n$.",
+    "detailedSteps": [
+      "A price of $k$ cents becomes $(26/25)k$ cents after the tax, and this equals $100n$. Therefore $13k=1250n$.",
+      "Because $\\gcd(13,1250)=1$, the integer $n$ must be a positive multiple of $13$.",
+      "The smallest choice $n=13$ gives $k=1250$ cents, and the taxed price is exactly $13$ dollars."
+    ],
+    "keyIdeas": [
+      "Convert money to integer cents before using divisibility."
+    ],
+    "commonMistakes": [
+      "Allowing arbitrary fractions of a cent removes the stated pricing constraint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The attaining price is $12.50$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p16",
+    "problemId": "amc12-predecessor-1980-p16",
+    "finalAnswer": "$\\boxed{\\sqrt3}$ (choice B)",
+    "shortExplanation": "The tetrahedron edges are face diagonals of the cube, so its four faces have total area $2\\sqrt3$ for a unit cube.",
+    "detailedSteps": [
+      "For cube side $a$, the four alternating vertices form a regular tetrahedron with edge $a\\sqrt2$. The source figure depicts these face-diagonal edges.",
+      "Each tetrahedron face has area $(\\sqrt3/4)(a\\sqrt2)^2=\\sqrt3a^2/2$. Its surface area is $2\\sqrt3a^2$.",
+      "The cube has surface area $6a^2$, giving the ratio $6/(2\\sqrt3)=\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "The regular tetrahedron uses alternating cube vertices."
+    ],
+    "commonMistakes": [
+      "The tetrahedron edge is a face diagonal, not the cube edge or space diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scale cancels from the requested surface-area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p17",
+    "problemId": "amc12-predecessor-1980-p17",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "The imaginary part is $4n(n^2-1)$, which vanishes exactly for $n=-1,0,1$.",
+    "detailedSteps": [
+      "Expanding gives $(n+i)^4=(n^4-6n^2+1)+4n(n^2-1)i$.",
+      "For integral $n$, the real part is already an integer. The expression is an integer precisely when $n(n-1)(n+1)=0$.",
+      "The three integers $-1,0,1$ all work, giving values $-4,1,-4$ respectively."
+    ],
+    "keyIdeas": [
+      "An ordinary integer has zero imaginary part."
+    ],
+    "commonMistakes": [
+      "Being a Gaussian integer does not mean being a real integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor the imaginary coefficient rather than computing many fourth powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p18",
+    "problemId": "amc12-predecessor-1980-p18",
+    "finalAnswer": "$\\boxed{\\frac12\\log_b(1-b^{2a})}$ (choice D)",
+    "shortExplanation": "Use $\\sin x=b^a$ and the positive cosine branch before taking the logarithm.",
+    "detailedSteps": [
+      "The given logarithm means $\\sin x=b^a$. From $\\sin^2x+\\cos^2x=1$ and $\\cos x>0$, obtain $\\cos x=\\sqrt{1-b^{2a}}$.",
+      "Taking logarithms to base $b$ gives $\\log_b\\cos x=\\tfrac12\\log_b(1-b^{2a})$. Positivity of the original cosine guarantees the logarithm argument is positive."
+    ],
+    "keyIdeas": [
+      "Trigonometric identities and logarithmic power rules must be applied in the correct order."
+    ],
+    "commonMistakes": [
+      "$\\log_b(1-u)$ cannot be split into a difference of logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign assumptions determine the square-root branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p19",
+    "problemId": "amc12-predecessor-1980-p19",
+    "finalAnswer": "$\\boxed{\\frac{5\\sqrt{22}}2}$ (choice D)",
+    "shortExplanation": "Chord half-lengths $10,8,4$ give equal-spacing equations that yield $R^2=275/2$.",
+    "detailedSteps": [
+      "The longer chord is closer to the center. Since all three chords are on the same side and equally spaced, their distances are $h,h+d,h+2d$, with $h\\ge0$ and $d>0$.",
+      "The half-chord equations are $R^2-h^2=100$, $R^2-(h+d)^2=64$, and $R^2-(h+2d)^2=16$. Subtraction gives $2hd+d^2=36$ and $2hd+3d^2=48$.",
+      "Thus $d^2=6$ and $2hd=30$, so $h^2=75/2$. Consequently $R^2=100+75/2=275/2$, giving $R=5\\sqrt{22}/2$."
+    ],
+    "keyIdeas": [
+      "A chord length is controlled by its perpendicular distance from the center."
+    ],
+    "commonMistakes": [
+      "Dropping the same-side condition permits a different spacing analysis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two successive differences isolate the spacing before the radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p20",
+    "problemId": "amc12-predecessor-1980-p20",
+    "finalAnswer": "$\\boxed{\\frac{127}{924}}$ (choice C)",
+    "shortExplanation": "Four denomination patterns meet the value bound, and they account for $127$ of the $924$ equally likely subsets.",
+    "detailedSteps": [
+      "Let $p,n,d$ be the numbers of pennies, nickels and dimes. Then $p+n+d=6$, $0\\le p\\le2$, $0\\le n\\le4$, and $p+5n+10d\\ge50$.",
+      "Substitution gives the value $60-9p-5n$. The admissible patterns $(p,n,d)$ are $(0,0,6),(0,1,5),(0,2,4),(1,0,5)$; larger $p$ or $n$ violates $9p+5n\\le10$.",
+      "Their numbers of subsets are $1$, $\\binom41\\binom65=24$, $\\binom42\\binom64=90$, and $\\binom21\\binom65=12$. Thus there are $127$ favorable subsets out of $\\binom{12}{6}=924$."
+    ],
+    "keyIdeas": [
+      "Coins are distinguishable even when they share a denomination."
+    ],
+    "commonMistakes": [
+      "Counting denomination patterns as equally likely gives the wrong probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An independent enumeration of all $924$ physical subsets checks the hypergeometric count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p21",
+    "problemId": "amc12-predecessor-1980-p21",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice A)",
+    "shortExplanation": "The median intersection makes $[BDF]=[ABC]/12$, while $[FDCE]=5[ABC]/12$.",
+    "detailedSteps": [
+      "Give $B,D,C$ masses $2,3,1$ respectively, so $BD:DC=1:2$. Since $E$ is the midpoint of $AC$, the masses at $A$ and $C$ are both $1$, and the mass at $E$ is $2$. Hence $BF:FE=2:2=1:1$.",
+      "Triangle $BDE$ has area $[ABC]/6$: its base is one third of $BC$ and its height is half the height from $A$. Since $F$ is the midpoint of $BE$, $[BDF]=[BDE]/2=[ABC]/12$.",
+      "Triangle $BCE$ has area $[ABC]/2$. Removing $BDF$ leaves quadrilateral $FDCE$, whose area is $5[ABC]/12$. The requested ratio is therefore $1/5$."
+    ],
+    "keyIdeas": [
+      "Midpoints and a side division determine area ratios independently of the angle."
+    ],
+    "commonMistakes": [
+      "The quadrilateral is $BCE$ with $BDF$ removed; subtracting from the whole triangle is incorrect."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The $72^\\circ$ angle is compatible with the construction but does not affect the ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p22",
+    "problemId": "amc12-predecessor-1980-p22",
+    "finalAnswer": "$\\boxed{\\frac83}$ (choice E)",
+    "shortExplanation": "The lines $x+2$ and $-2x+4$ meet at height $8/3$, and the third line lies above them there.",
+    "detailedSteps": [
+      "For $x\\le2/3$, $f(x)\\le x+2\\le8/3$. For $x\\ge2/3$, $f(x)\\le-2x+4\\le8/3$. Thus $8/3$ is a global upper bound.",
+      "At $x=2/3$, the three values are $11/3,8/3,8/3$, so their minimum attains $8/3$."
+    ],
+    "keyIdeas": [
+      "Two opposing linear upper bounds can locate the maximum of a lower envelope."
+    ],
+    "commonMistakes": [
+      "A crossing of two lines matters only if the remaining line does not lie below it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two half-line bounds avoid a long piecewise case table.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p23",
+    "problemId": "amc12-predecessor-1980-p23",
+    "finalAnswer": "$\\boxed{\\frac{3\\sqrt5}{5}}$ (choice C)",
+    "shortExplanation": "The sum of the squared trisection lengths is $5/9$ of the squared hypotenuse, and also equals $1$.",
+    "detailedSteps": [
+      "Put the right-angle vertex at $(0,0)$ and the other vertices at $(a,0)$ and $(0,b)$. The trisection points are $(2a/3,b/3)$ and $(a/3,2b/3)$.",
+      "The sum of the squared distances to these points is $(5/9)(a^2+b^2)$. By the given lengths it equals $\\sin^2x+\\cos^2x=1$.",
+      "The squared hypotenuse is therefore $a^2+b^2=9/5$, so its length is $3/\\sqrt5=3\\sqrt5/5$."
+    ],
+    "keyIdeas": [
+      "Add squared lengths so that the trigonometric identity removes the unknown angle."
+    ],
+    "commonMistakes": [
+      "The two trisection segments need not be equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A coordinate calculation applies to every shape of right triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p24",
+    "problemId": "amc12-predecessor-1980-p24",
+    "finalAnswer": "$\\boxed{1.52}$ (choice D)",
+    "shortExplanation": "A repeated root is a common zero of the polynomial and its derivative; it is $3/2$, closest to $1.52$.",
+    "detailedSteps": [
+      "Let $P(x)=8x^3-4x^2-42x+45$. If $(x-r)^2$ divides $P$, then $P(r)=P\\prime(r)=0$.",
+      "The derivative equation $24r^2-8r-42=0$ has roots $3/2$ and $-7/6$. Direct substitution gives $P(3/2)=0$ and $P(-7/6)\\ne0$, so $r=3/2$.",
+      "The distances from $1.5$ to the five choices are $0.28,0.18,0.08,0.02,0.12$, respectively. The closest is $1.52$."
+    ],
+    "keyIdeas": [
+      "Multiple roots are also roots of the derivative."
+    ],
+    "commonMistakes": [
+      "Not every critical point is a repeated root."
+    ],
+    "alternativeMethods": [
+      "Direct multiplication verifies $P(x)=(2x-3)^2(2x+5)$, so the repeated root is $3/2$."
+    ],
+    "difficultyNotes": "The derivative is an optional efficient method; direct factorization is also available.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p25",
+    "problemId": "amc12-predecessor-1980-p25",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The odd-number block ending at position $k^2$ has value $2k-1$, giving $a_n=2\\lfloor\\sqrt{n-1}\\rfloor+1$.",
+    "detailedSteps": [
+      "The first $k$ odd numbers sum to $1+3+\\cdots+(2k-1)=k^2$. Thus the block of value $2k-1$ occupies $(k-1)^2<n\\le k^2$.",
+      "Exactly on this range $\\lfloor\\sqrt{n-1}\\rfloor=k-1$, so $a_n=2\\lfloor\\sqrt{n-1}\\rfloor+1$. This gives $b=2,c=-1,d=1$.",
+      "These constants are forced: the square root must be real at $n=1$, so integer $c\\ge-1$. If $c\\ge0$, then for sufficiently large $k$, the floors at $n=k^2$ and $n=k^2+1$ are equal, although the sequence jumps there. Hence $c=-1$; the first two terms then force $d=1$ and $b=2$. Therefore $b+c+d=2$."
+    ],
+    "keyIdeas": [
+      "The sum of consecutive odd numbers is a square."
+    ],
+    "commonMistakes": [
+      "Using $\\lfloor\\sqrt n\\rfloor$ mishandles the end of each block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The index shift and the claimed constants must work at every square boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p26",
+    "problemId": "amc12-predecessor-1980-p26",
+    "finalAnswer": "$\\boxed{2+2\\sqrt6}$ (choice E)",
+    "shortExplanation": "In the circumscribed corner configuration, moving each face one unit outward from the center tetrahedron increases its edge by $2\\sqrt6$.",
+    "detailedSteps": [
+      "The centers of the four mutually tangent unit balls form a regular tetrahedron of edge $2$. In the circumscribed corner arrangement, each ball touches the three faces adjacent to its corresponding outer vertex; the floor is the base face.",
+      "For a regular tetrahedron of edge $s$, the altitude is $s\\sqrt{2/3}$, and the inradius is one quarter of the altitude, $s\\sqrt6/12=s/(2\\sqrt6)$.",
+      "The planes through each triple of centers are parallel to the corresponding outer faces. Translating each such plane outward by $1$ makes it tangent to those three unit balls. The outer inradius is therefore $1+2/(2\\sqrt6)=1+1/\\sqrt6$.",
+      "Consequently $s=2\\sqrt6(1+1/\\sqrt6)=2+2\\sqrt6$. All four faces are tangent to three balls, and each ball touches its three adjacent faces."
+    ],
+    "keyIdeas": [
+      "Parallel face offsets of a regular tetrahedron preserve similarity."
+    ],
+    "commonMistakes": [
+      "The edge of the center tetrahedron is $2$, while the outer edge is larger by a face-offset amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Here circumscribed refers to the tight corner configuration with the floor as a base face. The calculation is not a uniqueness assertion for arbitrary tetrahedral enclosures.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p27",
+    "problemId": "amc12-predecessor-1980-p27",
+    "finalAnswer": "$\\boxed{1\\ \\text{(none of the numerical choices)}}$ (choice E)",
+    "shortExplanation": "The two real cube roots have product $-3$, so their sum satisfies $(s-1)(s^2+s+10)=0$.",
+    "detailedSteps": [
+      "Write $u=\\sqrt[3]{5+2\\sqrt{13}}$ and $v=\\sqrt[3]{5-2\\sqrt{13}}$, using real cube roots. Then $u^3+v^3=10$ and $uv=\\sqrt[3]{25-52}=-3$.",
+      "For $s=u+v$, the cubic identity gives $s^3=10-9s$, or $s^3+9s-10=0$.",
+      "Factor to obtain $(s-1)(s^2+s+10)=0$. The quadratic has discriminant $1-40<0$, so the real sum is $s=1$, which is absent from the four numerical choices."
+    ],
+    "keyIdeas": [
+      "Use the sum and product of the cube roots to derive a polynomial for their sum."
+    ],
+    "commonMistakes": [
+      "The second radicand is negative; its real cube root is negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The identity avoids guessing separate closed forms for the two radicals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p28",
+    "problemId": "amc12-predecessor-1980-p28",
+    "finalAnswer": "$\\boxed{21}$ (choice C)",
+    "shortExplanation": "Modulo $x^2+x+1$, the expression vanishes unless $3$ divides $n$; only $21$ is such a choice.",
+    "detailedSteps": [
+      "Let $\\omega$ be a nonreal cube root of unity, so $\\omega^3=1$ and $1+\\omega+\\omega^2=0$. Since $1+\\omega=-\\omega^2$, the polynomial at $\\omega$ becomes $1+\\omega^{2n}+\\omega^{4n}=1+\\omega^{2n}+\\omega^n$.",
+      "If $3\\nmid n$, these are the three cube roots and their sum is $0$. If $3\\mid n$, the value is $3$, not $0$. Real coefficients make the conjugate root satisfy the same zero test, so divisibility is equivalent to $3\\nmid n$.",
+      "Among $17,20,21,64,65$, only $21$ is divisible by $3$, making that polynomial not divisible by $x^2+x+1$."
+    ],
+    "keyIdeas": [
+      "Test divisibility at both roots of the quadratic using roots of unity."
+    ],
+    "commonMistakes": [
+      "The question asks when divisibility fails, reversing the usual test."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integer polynomial remainders provide a separate exact check of all five exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p29",
+    "problemId": "amc12-predecessor-1980-p29",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Modulo $3$, any solution would have $y,z$ divisible by $3$; modulo $9$, the first two equations then contradict each other.",
+    "detailedSteps": [
+      "The second equation modulo $3$ gives $x^2+z^2\\equiv1$. Since squares modulo $3$ are $0,1$, exactly one of $x,z$ is divisible by $3$.",
+      "If $x\\equiv0$ and $z^2\\equiv1$, the third equation has left side $2$ modulo $3$, whereas $100\\equiv1$, impossible. Hence $x^2\\equiv1$ and $z\\equiv0$. The first equation then gives $y\\equiv0$.",
+      "Now reduce modulo $9$. The first equation gives $x^2\\equiv31\\equiv4$, because all terms involving $y,z$ are divisible by $9$. The second gives $-x^2\\equiv44\\equiv8$, or $x^2\\equiv1$. This contradiction proves there are no integral triples."
+    ],
+    "keyIdeas": [
+      "A small-modulus obstruction can rule out an unbounded integer system."
+    ],
+    "commonMistakes": [
+      "A bounded brute-force search alone would not prove that no larger solution exists."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All $729$ triples of residues modulo $9$ independently confirm the obstruction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1980-p30",
+    "problemId": "amc12-predecessor-1980-p30",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "Exhausting the $216$ possible square-block concatenations leaves $166464=408^2$ and $646416=804^2$.",
+    "detailedSteps": [
+      "The two-digit squares containing no zero are precisely $16,25,36,49,64,81$. Thus every candidate has the unique form $10000a+100b+c$, with $a,b,c$ in this six-element set.",
+      "There are only $6^3=216$ candidates. Test each by its integer square root: keep $N$ exactly when $\\lfloor\\sqrt N\\rfloor^2=N$. A complete reproducible enumeration is:\n\n```python\nfrom itertools import product\nfrom math import isqrt\nblocks = (16, 25, 36, 49, 64, 81)\nanswers = []\nfor a, b, c in product(blocks, repeat=3):\n    number = 10000*a + 100*b + c\n    root = isqrt(number)\n    if root*root == number:\n        answers.append((number, root))\nprint(answers)\n```",
+      "The output is `[(166464, 408), (646416, 804)]`. Both numbers have six nonzero digits and all three required square blocks. Since every permitted block triple was tested, these two exhaust the possibilities."
+    ],
+    "keyIdeas": [
+      "Encode the digit restrictions first, making the exhaustive search small and complete."
+    ],
+    "commonMistakes": [
+      "The first, middle and last pairs are fixed blocks, not overlapping pairs of digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exact finite enumeration is a proof by exhaustion; a separate search of all six-digit square roots confirms it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

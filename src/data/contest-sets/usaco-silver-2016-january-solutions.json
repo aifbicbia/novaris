@@ -1,0 +1,104 @@
+[
+  {
+    "finalAnswer": "Binary-search the smallest integer radius for which a greedy left-to-right cover uses at most K cows.",
+    "shortExplanation": "At a fixed radius, cover the first uncovered bale with the rightmost possible blast. This covers as many subsequent bales as any blast covering that bale. Repeat to test the radius, then binary-search the first feasible one.",
+    "detailedSteps": [
+      "Sort the distinct bale positions. A cow of radius $R$ covers a closed interval of length $2R$. The landing center need not coincide with a bale.",
+      "Let $a$ be the leftmost uncovered bale. Any blast that covers it has a right endpoint at most $a+2R$. Landing at $a+R$ achieves that endpoint, so cover every remaining bale at or before $a+2R$.",
+      "This choice is safe: in an optimal cover of the remaining bales, replace a blast covering $a$ by the greedy blast. Its right endpoint moves no farther left, and no uncovered bale lies left of $a$, so no uncovered bale covered by the replaced blast is lost. Apply the same argument to the remaining suffix.",
+      "The greedy scan therefore uses the fewest cows possible at this radius. Feasibility means that its count is at most $K$. Extra available cows do not force a larger radius; they can repeat a landing if needed.",
+      "If a radius works, every larger radius works. Binary-search integer radii in $[0,10^9]$, whose upper endpoint certainly covers all bales with one cow. On success set `high = mid`; on failure set `low = mid + 1`. The common endpoint at termination is the minimum feasible radius.",
+      "Include bales exactly at the right endpoint. Radius zero is valid when enough cows can cover individual bale locations. Even if real landing centers are permitted, $a+R$ is an integer center that achieves the best rightward reach, so this algorithm imposes no additional center restriction.",
+      "Sorting takes $O(N\\log N)$ time; each check takes $O(N)$, with at most $31$ checks. Total time is $O(N\\log N+N\\log U)$ for $U=10^9+1$, and space is $O(N)$. The implementation uses 64-bit positions and radius arithmetic, and the original `angry.in` and `angry.out` files.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"angry.in\");\n    std::ofstream out(\"angry.out\");\n    int n, k;\n    in >> n >> k;\n    std::vector<long long> x(n);\n    for (auto& p : x) in >> p;\n    std::sort(x.begin(), x.end());\n    auto possible = [&](long long radius) {\n        int used = 0, i = 0;\n        while (i < n) {\n            if (++used > k) return false;\n            long long right = x[i] + 2 * radius;\n            while (i < n && x[i] <= right) ++i;\n        }\n        return true;\n    };\n    long long low = 0, high = 1000000000LL;\n    while (low < high) {\n        long long mid = low + (high - low) / 2;\n        if (possible(mid)) high = mid;\n        else low = mid + 1;\n    }\n    out << low << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A greedy exchange argument proves the optimal fixed-radius cover.",
+      "Feasibility is monotone, enabling binary search.",
+      "A blast has diameter twice its radius."
+    ],
+    "commonMistakes": [
+      "Using R as the full interval length rather than the radius.",
+      "Restricting landing sites to bale locations.",
+      "Excluding a bale exactly at the interval endpoint.",
+      "Adding chain reactions that this Silver statement does not specify.",
+      "Starting the radius search at 1 and missing a zero-radius answer."
+    ],
+    "alternativeMethods": [
+      "For small inputs, enumerate contiguous partitions of the sorted bales into at most K groups. A group of span s needs integer radius ceil(s/2); minimize the largest required group radius. This gives an independent check but is too costly for the full input."
+    ],
+    "difficultyNotes": "The binary search is routine once the greedy exchange proof is established. Keep the landing-center freedom and the factor of two explicit.",
+    "id": "solution-usaco-silver-2016-january-p1",
+    "problemId": "usaco-silver-2016-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each prefix remainder modulo 7, maximize the distance from its first occurrence to a later occurrence.",
+    "shortExplanation": "A contiguous group sums to a multiple of 7 exactly when the prefixes before and after it have the same remainder. For each ending prefix, the earliest matching prefix gives the longest valid group.",
+    "detailedSteps": [
+      "Write $S_i$ for the sum of the first $i$ IDs, including $S_0=0$. The group after prefix $\\ell$ and through prefix $r$ has sum $S_r-S_{\\ell}$.",
+      "That sum is divisible by $7$ exactly when $S_r\\equiv S_{\\ell}\\pmod 7$. Store the first index of each of the seven possible prefix remainders.",
+      "Initialize remainder zero at index $0$, representing the empty prefix. Mark the other remainders unseen. This allows a valid photo that begins with the first cow.",
+      "At index $i$, update the running remainder with the next ID. If it is unseen, save $i$; otherwise compare $i$ minus its first index with the answer. Never replace a first index by a later one.",
+      "Every reported distance describes a valid contiguous group. Conversely, any valid group ending at $i$ starts after some matching prefix; the first matching prefix is no later, so the algorithm finds a group at least as long. The maximum is therefore optimal.",
+      "The scan takes $O(N)$ time and $O(1)$ auxiliary space. It accumulates only a remainder: adding an ID gives at most $1{,}000{,}006$, so ordinary integer arithmetic is safe here. A solution that instead stores full prefix sums must use 64-bit values. Read `div7.in` and write `div7.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\nint main() {\n    std::ifstream in(\"div7.in\");\n    std::ofstream out(\"div7.out\");\n    int n;\n    in >> n;\n    std::array<int, 7> first;\n    first.fill(-1);\n    first[0] = 0;\n    int remainder = 0, answer = 0;\n    for (int i = 1; i <= n; ++i) {\n        int id;\n        in >> id;\n        remainder = (remainder + id) % 7;\n        if (first[remainder] == -1) first[remainder] = i;\n        else answer = std::max(answer, i - first[remainder]);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Contiguous sums are differences of prefix sums.",
+      "Equal remainders give divisibility.",
+      "The earliest matching prefix maximizes the length."
+    ],
+    "commonMistakes": [
+      "Searching for an arbitrary noncontiguous subsequence.",
+      "Omitting the empty prefix and missing groups that start at the first cow.",
+      "Overwriting the first occurrence of a remainder.",
+      "Overflowing a 32-bit full prefix sum.",
+      "Ignoring ID zero: a zero sum is divisible by 7."
+    ],
+    "alternativeMethods": [
+      "Store the first and last occurrence of each prefix remainder, then take the largest index difference. For a small independent check, sum every contiguous interval with a sufficiently wide integer type."
+    ],
+    "difficultyNotes": "The key reduction is from many intervals to seven remainder classes. The source describes N IDs, as its sample shows; its input paragraph repeats N awkwardly but does not describe an N-by-N matrix.",
+    "id": "solution-usaco-silver-2016-january-p2",
+    "problemId": "usaco-silver-2016-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "The minimum number of gates is $E-V+1$, where $E$ counts distinct undirected unit fence segments and $V$ counts distinct fence vertices.",
+    "shortExplanation": "The traced fence is a connected plane graph. Euler’s formula gives its number of bounded regions. Each gate can join at most two region-components, and a spanning tree of adjacent regions achieves one gate per bounded region.",
+    "detailedSteps": [
+      "Follow the path from $(0,0)$. Store every visited integer vertex and every undirected unit fence edge. Order an edge’s two endpoints canonically, so traversing the same segment backward or repeatedly does not add another edge.",
+      "The graph is connected because one continuous walk traces it. All segments are axis-aligned unit segments with integer endpoints. Distinct perpendicular segments can intersect only at endpoints, so every crossing is already a graph vertex; no hidden intersection subdivision is needed.",
+      "Let $F$ count all faces, including the unbounded outside region. For a connected plane graph, Euler’s formula is $V-E+F=2$, hence $F-1=E-V+1$.",
+      "Initially these $F$ regions are separated by fences. A gate allows passage across one segment and can merge at most two previously disconnected region-components. At least $F-1$ gates are needed to connect them all.",
+      "This bound is attainable. Form the graph of regions, joining two regions when they share a fence segment. It is connected: a path between region interiors can avoid the finitely many fence vertices and cross fence segments, producing a sequence of adjacent regions. Open the segments corresponding to a spanning tree of this graph, using exactly $F-1$ gates.",
+      "A fence edge with the same region on both sides does not require a gate. Retracing an existing edge also adds no new region. Distinct-edge and distinct-vertex counts handle these cases, as well as multiple loops touching at a vertex.",
+      "The ordered sets give $O(N\\log N)$ time and $O(N)$ space. Add the starting vertex before the walk; the integer counts and coordinates are small enough for ordinary integers. Preserve `gates.in` and `gates.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <set>\n#include <string>\n#include <utility>\nint main() {\n    std::ifstream in(\"gates.in\");\n    std::ofstream out(\"gates.out\");\n    int n;\n    std::string path;\n    in >> n >> path;\n    std::set<std::pair<int, int>> vertices;\n    std::set<std::array<int, 4>> edges;\n    int x = 0, y = 0;\n    vertices.insert({x, y});\n    for (char direction : path) {\n        int nx = x, ny = y;\n        if (direction == 'N') ++ny;\n        else if (direction == 'S') --ny;\n        else if (direction == 'E') ++nx;\n        else --nx;\n        std::pair<int, int> a{x, y}, b{nx, ny};\n        if (b < a) std::swap(a, b);\n        edges.insert({a.first, a.second, b.first, b.second});\n        vertices.insert({nx, ny});\n        x = nx;\n        y = ny;\n    }\n    out << static_cast<int>(edges.size()) - static_cast<int>(vertices.size()) + 1 << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Treat the physical fence as a connected plane graph.",
+      "Repeated traversal does not create a new physical edge.",
+      "Euler’s formula counts bounded regions.",
+      "A spanning tree of the region-adjacency graph proves the gate count is achievable."
+    ],
+    "commonMistakes": [
+      "Counting every return to a visited point as a new region, even along an already existing segment.",
+      "Treating the two traversal directions of one edge as different fences.",
+      "Forgetting the starting vertex.",
+      "Counting the unbounded region as an additional required gate.",
+      "Ignoring a crossing vertex or assuming that every cycle must be disjoint."
+    ],
+    "alternativeMethods": [
+      "Rasterize the unit fence segments as blocked adjacencies between unit square cells. Flood-fill the cells inside a bounding rectangle with an exterior margin. The number of cell components minus one is the gate count; this is a separate geometric check of the graph formula."
+    ],
+    "difficultyNotes": "The formula needs two proofs: it counts regions, and that many gates are both necessary and sufficient. The unit lattice structure makes distinct-edge graph counting exact, including crossings and retraces.",
+    "id": "solution-usaco-silver-2016-january-p3",
+    "problemId": "usaco-silver-2016-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

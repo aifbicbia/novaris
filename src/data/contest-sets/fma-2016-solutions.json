@@ -1,0 +1,536 @@
+[
+  {
+    "id": "solution-fma-2016-p1",
+    "problemId": "fma-2016-p1",
+    "finalAnswer": "$\\boxed{0.85}$ (choice E)",
+    "shortExplanation": "In the textbook concentric-path model, the left wheel follows the smaller circle. Equal wheel radii make wheel rotation rates proportional to those path radii.",
+    "detailedSteps": [
+      "For a counterclockwise turn, the left wheel is inside. Its path radius is $9.60\\,\\mathrm m$, while the right wheel follows radius $9.60+1.74=11.34\\,\\mathrm m$.",
+      "Both paths sweep the same angle about the turn center in the same time. Therefore their speeds satisfy $v_L/v_R=9.60/11.34$.",
+      "Rolling without slipping with equal wheel radii gives $\\omega_L/\\omega_R=v_L/v_R=0.84656\\ldots$, nearest $0.85$."
+    ],
+    "keyIdeas": [
+      "Use the common orbital angular rate and the different path radii."
+    ],
+    "commonMistakes": [
+      "Do not confuse the turn rate about the road circle with each wheel's rotation about its own axle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This uses the simple concentric wheel-path model; the data do not describe a full wheelbase or steering geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p2",
+    "problemId": "fma-2016-p2",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice B)",
+    "shortExplanation": "The initial displaced-water and displaced-oil weights determine the cylinder density. In oil alone, its submerged fraction is the ratio of cylinder density to oil density.",
+    "detailedSteps": [
+      "Let the cylinder volume be $V$. The initial equilibrium gives $\\rho_c Vg=(\\rho_w+\\rho_o)Vg/3$. With the given liquid densities, $\\rho_c=(1000+800)/3=600\\,\\mathrm{kg/m^3}$.",
+      "When oil alone supports the cylinder, $\\rho_o V_{\\rm sub}g=\\rho_c Vg$. Thus $V_{\\rm sub}/V=600/800=3/4$."
+    ],
+    "keyIdeas": [
+      "Add the buoyancies of the separately displaced liquid volumes."
+    ],
+    "commonMistakes": [
+      "The cylinder density is not the unweighted average of the liquid densities; each initially displaced volume is one third of the cylinder."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Air buoyancy is neglected in the ideal fluid calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p3",
+    "problemId": "fma-2016-p3",
+    "finalAnswer": "$\\boxed{200\\,\\mathrm N}$ (choice E)",
+    "shortExplanation": "Gravity acts during both the initial fall and the snow penetration. Its total work is balanced by the snow force acting over the final meter.",
+    "detailedSteps": [
+      "The mass starts and ends at rest, so the total work is zero. Gravity contributes $mg(3+1)=5(10)(4)=200\\,\\mathrm J$.",
+      "The constant upward snow force acts only during the $1\\,\\mathrm m$ penetration: $200-F_s(1)=0$. Therefore $F_s=200\\,\\mathrm N$."
+    ],
+    "keyIdeas": [
+      "Include all displacement over which each force acts."
+    ],
+    "commonMistakes": [
+      "Ignoring gravity during penetration gives the snow force too small a value."
+    ],
+    "alternativeMethods": [
+      "At the snow surface, $v^2=2g(3)=60\\,\\mathrm{m^2/s^2}$. Stopping in one meter requires net upward acceleration $30\\,\\mathrm{m/s^2}$, so $F_s=5(30+10)=200\\,\\mathrm N$."
+    ],
+    "difficultyNotes": "The distinction between net stopping force and the snow force is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p4",
+    "problemId": "fma-2016-p4",
+    "finalAnswer": "$\\boxed{\\text{graph D}}$ (choice D)",
+    "shortExplanation": "With an ideal smooth wire, tangential acceleration is constant, while the normal acceleration grows with the square of speed. Their perpendicular sum starts positive and curves upward.",
+    "detailedSteps": [
+      "A uniform vertical helix has constant slope angle $\\alpha$ and curvature $\\kappa$. Neglecting wire friction, $a_t=g\\sin\\alpha$ is constant and $v=a_t t$ from rest.",
+      "The curvature acceleration is $a_n=\\kappa v^2=\\kappa a_t^2t^2$, perpendicular to $a_t$. Hence $$|\\mathbf a|=\\sqrt{a_t^2+\\kappa^2a_t^4t^4}.$$",
+      "This magnitude begins at $a_t>0$ with zero initial slope, then increases with upward curvature. These features identify D."
+    ],
+    "keyIdeas": [
+      "Resolve acceleration along and normal to the path."
+    ],
+    "commonMistakes": [
+      "Constant tangential acceleration does not imply constant total acceleration on a curved path."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source gives no friction coefficient and does not explicitly say frictionless; the smooth-constraint idealization is stated here.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p5",
+    "problemId": "fma-2016-p5",
+    "finalAnswer": "$\\boxed{\\text{trajectory C}}$ (choice C)",
+    "shortExplanation": "In box coordinates the constant effective acceleration points down and left. The nondegenerate trajectory is therefore a tilted parabola opening in that direction.",
+    "detailedSteps": [
+      "Take right and up as positive. The box acceleration is $a$ rightward, so the ball's effective acceleration is $(-a,-g)$. Its relative position is $$\\mathbf r(t)=\\mathbf r_0+\\mathbf v_0t+\\tfrac12(-a,-g)t^2.$$",
+      "A constant acceleration produces a parabola unless it is parallel to the initial velocity, in which case the path is a line. Here the general parabolic axis points down and left, and there is no inflection.",
+      "The actual option C has the appropriate tilted, down-left-opening shape. The other sketches either bend incompatibly with constant acceleration or have a different axis."
+    ],
+    "keyIdeas": [
+      "Subtract the box acceleration from the inertial acceleration."
+    ],
+    "commonMistakes": [
+      "A rising segment of the path does not require upward acceleration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source sketches are qualitative; this is a shape classification, not an exact fit to drawn curve control points.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p6",
+    "problemId": "fma-2016-p6",
+    "finalAnswer": "$\\boxed{\\text{trajectory A}}$ (choice A)",
+    "shortExplanation": "Returning to the same point forces the constant effective acceleration to be opposite the initial velocity. The ball travels along one line and then retraces it.",
+    "detailedSteps": [
+      "For a nonzero return time $T$, the relative displacement obeys $\\mathbf v_0T+\\tfrac12\\mathbf a_{\\rm eff}T^2=0$. Consequently $\\mathbf a_{\\rm eff}=-2\\mathbf v_0/T$.",
+      "Every displacement is then a scalar multiple of $\\mathbf v_0$. The path is a straight outward-and-returning line, as A shows.",
+      "For the common context, $a/g=v_{x0}/v_{y0}$ and $T=2v_{y0}/g$ satisfy both component return equations."
+    ],
+    "keyIdeas": [
+      "Use both coordinates of the exact return condition."
+    ],
+    "commonMistakes": [
+      "A loop cannot be generated by one constant acceleration vector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The launch conditions are on the preceding source page and are linked along with this question.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p7",
+    "problemId": "fma-2016-p7",
+    "finalAnswer": "$\\boxed{T(A)\\searrow\\pi\\sqrt{m/k}}$ (choice C)",
+    "shortExplanation": "The restoring force per unit displacement increases with amplitude. A rescaled energy integral proves that the period decreases; at large amplitude the spring approaches a linear restoring force.",
+    "detailedSteps": [
+      "Let each half have natural length $b$; if the full spring constant is $k$, each half has constant $2k$. At transverse displacement $y$, its length is $s=\\sqrt{b^2+y^2}$. Adding the two vertical force components gives $$F(y)=-4ky\\left(1-\\frac b{\\sqrt{b^2+y^2}}\\right).$$",
+      "The restoring ratio $f(y)/y=4k(1-b/\\sqrt{b^2+y^2})$, with $f=-F$ for $y>0$, increases strictly with $y$. The potential is $U(y)=2k(\\sqrt{b^2+y^2}-b)^2$.",
+      "For amplitude $A$, energy gives $T(A)=4\\sqrt{m/2}\\int_0^A[U(A)-U(y)]^{-1/2}\\,dy$. Put $y=Az$. Then $$\\frac{U(A)-U(Az)}{A^2}=\\int_z^1\\frac{f(Au)}{Au}\\,u\\,du.$$",
+      "The right side increases with $A$ for every $z<1$. Therefore each rescaled period integrand decreases, proving that $T(A)$ decreases.",
+      "For the large-amplitude limit, put $y=A\\sin\\theta$, $S=\\sqrt{b^2+A^2}$ and $s=\\sqrt{b^2+A^2\\sin^2\\theta}$. Factoring the potential difference gives $$T(A)=2\\sqrt{\\frac mk}\\int_0^{\\pi/2}\\left(1-\\frac{2b}{S+s}\\right)^{-1/2}\\,d\\theta.$$ The integrand tends to $1$ and, for $A\\geq A_0>0$, is bounded by its continuous value at $A_0$. Taking the limit inside the integral therefore gives $T\\to\\pi\\sqrt{m/k}$.",
+      "At small amplitude, $F\\sim-2ky^3/b^2$ and rescaling the quartic-potential energy integral gives $T\\propto1/A$. Thus the period decreases from an unbounded small-amplitude value toward a finite limit, as C describes."
+    ],
+    "keyIdeas": [
+      "Derive the transverse force from the changing spring geometry.",
+      "Use the energy integral to prove amplitude dependence."
+    ],
+    "commonMistakes": [
+      "An initially unstretched horizontal spring does not provide a linear transverse force near its midpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The monotonicity proof is supplemented by independent numerical quadrature and a complete nonlinear trajectory integration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p8",
+    "problemId": "fma-2016-p8",
+    "finalAnswer": "$\\boxed{\\text{only law II}}$ (choice B)",
+    "shortExplanation": "A central inverse-cube force still has zero torque and preserves areal velocity. It does not generally preserve focus-centered ellipses or the inverse-square period law.",
+    "detailedSteps": [
+      "The force is radial, so $\\boldsymbol\\tau=\\mathbf r\\times\\mathbf F=0$. Angular momentum is conserved, giving constant areal velocity: law II survives.",
+      "For inverse-cube attraction, the orbit equation for $u=1/r$ has the form $u^{\\prime\\prime}+(1-\\kappa/h^2)u=0$. It does not generally produce the focus-centered ellipse law.",
+      "A circular orbit satisfies $r\\omega^2\\propto r^{-3}$, so $T^2\\propto r^4$, rather than the old $r^3$ relation. Thus only II is generally valid, choice B."
+    ],
+    "keyIdeas": [
+      "Separate torque conservation from the particular radial force law."
+    ],
+    "commonMistakes": [
+      "A special circular orbit does not establish an ellipse law for all trajectories."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circular-orbit counterexample is enough to reject the original period scaling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p9",
+    "problemId": "fma-2016-p9",
+    "finalAnswer": "$\\boxed{\\sqrt{\\frac{gD}{3}}}$ (choice E)",
+    "shortExplanation": "At separation the normal reaction vanishes. Combining the radial equation with energy gives a polar-angle cosine of two thirds.",
+    "detailedSteps": [
+      "Use radius $r=D/2$ and interpret the slight push as an infinitesimal start with negligible initial energy. At angle $\\phi$ from the top, $v^2=2gr(1-\\cos\\phi)$.",
+      "The inward radial equation is $mg\\cos\\phi-N=mv^2/r$. At separation $N=0$, so $gr\\cos\\phi=2gr(1-\\cos\\phi)$.",
+      "Thus $\\cos\\phi=2/3$ and $v^2=2gr/3=gD/3$, giving the square root in E."
+    ],
+    "keyIdeas": [
+      "Set the contact reaction to zero at departure."
+    ],
+    "commonMistakes": [
+      "The given diameter is twice the radius. A finite starting speed would change the energy equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The slight-push convention is explicitly a limiting start.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p10",
+    "problemId": "fma-2016-p10",
+    "finalAnswer": "$\\boxed{a_1=30\\,\\mathrm{m/s^2}\\ \\text{downward},\\quad a_2=0}$ (choice D)",
+    "shortExplanation": "The lower elastic string has not changed extension at the instant of cutting, so its tension stays at its original value. That force still balances the lower block, but adds to the upper block's weight.",
+    "detailedSteps": [
+      "Initially the lower-string tension is $T=m_2g=4(10)=40\\,\\mathrm N$. Its elastic extension is continuous through the cut, so this initial tension remains $40\\,\\mathrm N$.",
+      "The lower block has $m_2g-T=0$, hence $a_2=0$ at that instant.",
+      "The upper block now feels $m_1g+T=20+40=60\\,\\mathrm N$ downward. Dividing by $m_1=2\\,\\mathrm{kg}$ gives $a_1=30\\,\\mathrm{m/s^2}$ downward, choice D."
+    ],
+    "keyIdeas": [
+      "Elastic force depends on the instantaneous extension."
+    ],
+    "commonMistakes": [
+      "An elastic connector is not an inextensible string imposing the same immediate acceleration on both masses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is an instantaneous result; the elastic motion afterward changes the tension.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p11",
+    "problemId": "fma-2016-p11",
+    "finalAnswer": "$\\boxed{v\\propto m^{1/9}}$ (choice A)",
+    "shortExplanation": "At top speed, drag power scales as frontal area times speed cubed. The same-density cube area scales as mass to the two-thirds power.",
+    "detailedSteps": [
+      "For similar cubes of fixed density, side length scales as $m^{1/3}$ and frontal area as $A\\propto m^{2/3}$.",
+      "The drag law is $F_d\\propto Av^2$, so maintaining top speed requires $P=F_dv\\propto Av^3$.",
+      "Given $P\\propto m$, it follows that $v^3\\propto m/m^{2/3}=m^{1/3}$ and $v\\propto m^{1/9}$, choice A."
+    ],
+    "keyIdeas": [
+      "Convert a force law to a power law before comparing exponents."
+    ],
+    "commonMistakes": [
+      "Power is force times speed, not force alone."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The material density and shape similarity supply the area scaling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p12",
+    "problemId": "fma-2016-p12",
+    "finalAnswer": "$\\boxed{\\text{immersion height unchanged}}$ (choice C)",
+    "shortExplanation": "The upward container acceleration increases effective gravity equally in the block's weight and the liquid's buoyancy. The required displaced volume stays the same.",
+    "detailedSteps": [
+      "In the coaccelerating frame, downward effective gravity is $g+a$. For incompressible liquid and block, equilibrium requires $\\rho_l(g+a)V_{\\rm sub}=\\rho_b(g+a)V$.",
+      "Cancel the common factor: $V_{\\rm sub}/V=\\rho_b/\\rho_l$, independent of $a$. Thus the immersion height is unchanged, C."
+    ],
+    "keyIdeas": [
+      "Use the same effective gravity for both weight and hydrostatic buoyancy."
+    ],
+    "commonMistakes": [
+      "Increasing effective weight without increasing the liquid pressure gradient omits half the effect."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The result uses the ideal hydrostatic, incompressible model.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p13",
+    "problemId": "fma-2016-p13",
+    "finalAnswer": "$\\boxed{\\frac1{1+\\alpha}\\leq\\frac{v_2}{v_0}\\leq\\frac2{1+\\alpha}}$ (choice E)",
+    "shortExplanation": "Momentum and a restitution coefficient between zero and one give the complete allowed range. The endpoints are sticking and elastic collisions.",
+    "detailedSteps": [
+      "Write $u_i=v_i/v_0$ and $e\\in[0,1]$ for a passive collision. Momentum gives $u_1+\\alpha u_2=1$, and relative separation gives $u_2-u_1=e$.",
+      "Solving, $u_2=(1+e)/(1+\\alpha)$ and $u_1=(1-\\alpha e)/(1+\\alpha)$. Since $0<\\alpha<1$, both final velocities are nonnegative.",
+      "Varying $e$ over its full range yields $1/(1+\\alpha)\\leq u_2\\leq2/(1+\\alpha)$, choice E. Energy loss is nonnegative and proportional to $1-e^2$."
+    ],
+    "keyIdeas": [
+      "Use momentum together with the possible range of restitution."
+    ],
+    "commonMistakes": [
+      "The elastic endpoint is not the only allowed collision; superelastic outcomes are outside the stated passive setting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The separation condition excludes a final state in which the first object continues passing through the second.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p14",
+    "problemId": "fma-2016-p14",
+    "finalAnswer": "$\\boxed{\\frac f2}$ (choice A)",
+    "shortExplanation": "Small rotation moves the spring attachment by its distance from the pivot times the angle. Both the extension and torque lever arm scale with that distance, making angular stiffness proportional to its square.",
+    "detailedSteps": [
+      "Let the attachment distance from the pivot be $b$. To first order in angle $\\phi$, the initially perpendicular, unstretched spring extends by $b\\phi$. Its force magnitude is $kb\\phi$.",
+      "The restoring torque is therefore $-kb^2\\phi$. Since the rod's pivot inertia $I$ is unchanged, $\\omega^2=kb^2/I$.",
+      "Moving $b$ from $\\ell$ to $\\ell/2$ makes $\\omega$, and hence frequency, half its original value: $f/2$, choice A."
+    ],
+    "keyIdeas": [
+      "Account for the attachment distance in both extension and torque."
+    ],
+    "commonMistakes": [
+      "Halving the force alone misses the simultaneous halving of its lever arm."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual shared condition is $L\\gg\\ell$; the source illustration is not to scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p15",
+    "problemId": "fma-2016-p15",
+    "finalAnswer": "$\\boxed{\\text{approximately }f}$ (choice C)",
+    "shortExplanation": "The pre-tensioned axial spring creates an angular restoring torque even though its first-order length change vanishes. The exact finite-length correction tends to the listed original frequency in the source long-spring limit.",
+    "detailedSteps": [
+      "After the extra post shift, the pivot-to-post distance is $d=L+2\\ell$. At equilibrium the spring length is $s_0=L+\\ell$ and its tension is $k\\ell$.",
+      "At rod angle $\\phi$, $$s(\\phi)=\\sqrt{d^2+\\ell^2-2d\\ell\\cos\\phi},\\qquad \\tau=-k(s-L)\\frac{\\ell d\\sin\\phi}{s}.$$",
+      "Linearizing gives angular stiffness $K=k\\ell^2(L+2\\ell)/(L+\\ell)$. Relative to the original $k\\ell^2$, the exact small-angle frequency ratio is $$\\frac{f_{\\rm new}}f=\\sqrt{\\frac{L+2\\ell}{L+\\ell}}.$$",
+      "The printed condition $L\\gg\\ell$ makes this ratio approximately one. Thus the listed long-spring answer is $f$, choice C; equality is not exact for finite $L$."
+    ],
+    "keyIdeas": [
+      "Pre-tension can provide transverse restoring force without first-order extension."
+    ],
+    "commonMistakes": [
+      "Do not replace the explicitly printed long-spring approximation with an exact equality at arbitrary finite length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keeping the finite-length correction makes the approximation and its scope visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p16",
+    "problemId": "fma-2016-p16",
+    "finalAnswer": "$\\boxed{4.0\\,\\mathrm m\\ \\text{behind the truck}}$ (choice C)",
+    "shortExplanation": "The ball falls for half a second and moves backward relative to the truck at eight meters per second.",
+    "detailedSteps": [
+      "The fall time is $t=\\sqrt{2h/g}=\\sqrt{2(1.25)/10}=0.5\\,\\mathrm s$.",
+      "In the constant-speed truck frame, the horizontal velocity is $-8\\,\\mathrm{m/s}$, so the relative displacement is $-8(0.5)=-4\\,\\mathrm m$. It lands four meters behind, C."
+    ],
+    "keyIdeas": [
+      "Choose an inertial frame and keep all velocities in it."
+    ],
+    "commonMistakes": [
+      "Do not add the truck speed to a relative velocity and then treat the result as still relative."
+    ],
+    "alternativeMethods": [
+      "In the ground frame the ball moves at $10-8=2\\,\\mathrm{m/s}$, covering one meter while the truck covers five. Their separation is again four meters."
+    ],
+    "difficultyNotes": "The rotation of the ball does not change this horizontal displacement calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p17",
+    "problemId": "fma-2016-p17",
+    "finalAnswer": "$\\boxed{v_c=\\frac23R\\omega}$ (choice A)",
+    "shortExplanation": "For the shown backspin, leftward friction reduces both rightward motion and counterclockwise spin. Requiring both to reach zero under the same impulse fixes the critical speed.",
+    "detailedSteps": [
+      "Let leftward friction impulse have magnitude $J$. Then $v_f=v-J/m$ and $\\omega_f=\\omega-RJ/I$ for the drawn counterclockwise positive spin.",
+      "Simultaneous rest requires $J=mv=I\\omega/R$. A hollow sphere has $I=2mR^2/3$.",
+      "Therefore $v_c=I\\omega/(mR)=2R\\omega/3$, choice A. At simultaneous rest the ideal model no longer requires a horizontal friction force."
+    ],
+    "keyIdeas": [
+      "Use the same impulse in translation and rotation."
+    ],
+    "commonMistakes": [
+      "The hollow-sphere inertia differs from the solid-sphere value, and the actual spin direction matters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The contact point initially slips right for the actual drawn velocity and spin.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p18",
+    "problemId": "fma-2016-p18",
+    "finalAnswer": "$\\boxed{95\\,\\mathrm s}$ (choice E)",
+    "shortExplanation": "Each acceleration ramp lasts five seconds. Their combined angular displacement replaces one five-second rectangle under the maximum angular velocity.",
+    "detailedSteps": [
+      "The ramp time is $t_r=\\omega/\\alpha=(\\pi/15)/(\\pi/75)=5\\,\\mathrm s$.",
+      "Three rotations require angle $6\\pi$. The two ramp triangles together contribute $\\omega t_r=\\pi/3$, so the constant-speed interval is $(6\\pi-\\pi/3)/(\\pi/15)=85\\,\\mathrm s$.",
+      "Total time is $5+85+5=95\\,\\mathrm s$, choice E."
+    ],
+    "keyIdeas": [
+      "Integrate angular velocity rather than treating the entire motion as top speed."
+    ],
+    "commonMistakes": [
+      "Both acceleration and deceleration intervals must be included."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The trapezoid area is equivalent to $6\\pi=\\omega(T-t_r)$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p19",
+    "problemId": "fma-2016-p19",
+    "finalAnswer": "$\\boxed{RH=\\frac{D^2}{8}\\quad\\text{(graph D)}}$ (choice D)",
+    "shortExplanation": "The semicircle supplies a drop of two radii before launch. Multiplying the squared launch speed by the squared fall time gives a linear relation between the plotted variables.",
+    "detailedSteps": [
+      "The bead drops $2R$ along the smooth wire, so $v^2=2g(2R)=4gR$. It leaves horizontally.",
+      "Falling through height $H$ takes $t^2=2H/g$. Thus $D^2=v^2t^2=8RH$.",
+      "The plotted relation is $RH=D^2/8$, a straight positive-slope line through the origin: D."
+    ],
+    "keyIdeas": [
+      "Read the squared-range horizontal axis correctly."
+    ],
+    "commonMistakes": [
+      "A parabola in range is a straight line when range squared is the plotted variable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No nonzero intercept is supplied by the energy or flight equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p20",
+    "problemId": "fma-2016-p20",
+    "finalAnswer": "$\\boxed{\\mu_{\\rm critical}=3}$ (choice E)",
+    "shortExplanation": "The centroid height is one third of the triangle height, while its horizontal distance to a support edge equals the height. The tipping angle therefore has tangent three.",
+    "detailedSteps": [
+      "For the actual symmetric right triangle on its base, base width is $w=2h$ and centroid height is $h/3$. Its gravity line reaches the downhill support edge when $(h/3)\\tan\\theta=w/2=h$.",
+      "Thus $\\tan\\theta_{\\rm tip}=3$. The static sliding threshold is $\\tan\\theta_{\\rm slide}=\\mu_s$.",
+      "The critical coefficient is $3$, choice E. Strict tipping before sliding requires $\\mu_s>3$; at $\\mu_s=3$ the two onset thresholds coincide. The listed minimum is the critical infimum, not an attained strict-precedence value."
+    ],
+    "keyIdeas": [
+      "Compare gravity-line stability with the static friction limit."
+    ],
+    "commonMistakes": [
+      "The centroid is not halfway up the triangle. Do not omit the equality boundary between simultaneous onset and strict precedence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The printed wording and listed critical threshold require an explicit boundary clarification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p21",
+    "problemId": "fma-2016-p21",
+    "finalAnswer": "$\\boxed{\\frac{3L}{4}}$ (choice A)",
+    "shortExplanation": "There is no external horizontal force, so the horizontal center of mass stays fixed. The upper ball receives three quarters of the rod's horizontal separation.",
+    "detailedSteps": [
+      "Interpret the small nudge as a limiting start with negligible initial momentum. Let $\\phi$ be the rod angle from vertical and take the initial horizontal positions as zero.",
+      "For masses $3m$ below and $m$ above, horizontal center-of-mass conservation gives $3x_l+x_u=0$. Rod geometry gives $x_u-x_l=L\\sin\\phi$.",
+      "Solving yields $x_u=(3L/4)\\sin\\phi$. At ground impact $\\phi=\\pi/2$, so the upper displacement is $3L/4$, choice A."
+    ],
+    "keyIdeas": [
+      "The lower ball slides; it is not a fixed pivot."
+    ],
+    "commonMistakes": [
+      "Giving the upper ball the whole distance $L$ incorrectly holds the lower endpoint fixed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The next question's full reaction calculation verifies that the lower ball stays on the ground.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p22",
+    "problemId": "fma-2016-p22",
+    "finalAnswer": "$\\boxed{\\sqrt{2gL}}$ (choice A)",
+    "shortExplanation": "At the final horizontal rod position both horizontal velocities vanish. The released potential energy therefore becomes only the upper ball's downward kinetic energy.",
+    "detailedSteps": [
+      "From the shared geometry, $x_l=-(L/4)\\sin\\phi$, $x_u=(3L/4)\\sin\\phi$, and $y_u=L\\cos\\phi$. Both horizontal velocities are proportional to $\\cos\\phi$.",
+      "Just before ground impact $\\phi=\\pi/2$, so both horizontal velocities are zero and the lower ball is instantaneously at rest. Energy gives $mgL=\\tfrac12mv_u^2$, hence $v_u=\\sqrt{2gL}$, choice A.",
+      "The assumed lower contact is dynamically valid throughout. Set $c=\\cos\\phi$. The exact kinetic energy gives $$\\dot\\phi^2=\\frac{8g(1-c)}{L(4-c^2)},\\qquad \\ddot\\phi=\\frac{4g\\sin\\phi(4-2c+c^2)}{L(4-c^2)^2}.$$",
+      "The vertical force equations then give the lower normal reaction $$\\frac N{mg}=\\frac{12(c^2-2c+4)}{(4-c^2)^2}>0\\qquad(0\\leq c\\leq1).$$ Thus no earlier loss of lower ground contact invalidates the energy argument."
+    ],
+    "keyIdeas": [
+      "Combine exact two-body geometry, horizontal momentum and energy.",
+      "Check contact-force feasibility rather than assume it."
+    ],
+    "commonMistakes": [
+      "Energy is not generally confined to the upper ball; that simplification holds only at the final horizontal configuration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small initial nudge is taken in the negligible-energy limit, and the normal reaction is checked over the entire path.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p23",
+    "problemId": "fma-2016-p23",
+    "finalAnswer": "$\\boxed{\\frac{4\\pi^2kR}{4\\pi^2k-M\\omega^2}}$ (choice D)",
+    "shortExplanation": "The ring tension follows the total circumference extension. Balancing the inward resultant on a small arc with its centripetal force gives the stabilized radius.",
+    "detailedSteps": [
+      "At radius $r$, the circumference extension is $2\\pi(r-R)$, so tension is $T=2\\pi k(r-R)$.",
+      "An arc subtending $d\\phi$ has mass $M\\,d\\phi/(2\\pi)$. The two end tensions have inward resultant $T\\,d\\phi$, so $T=Mr\\omega^2/(2\\pi)$.",
+      "Combining gives $4\\pi^2k(r-R)=Mr\\omega^2$, hence $$r=\\frac{4\\pi^2kR}{4\\pi^2k-M\\omega^2},$$ choice D.",
+      "A finite positive stabilized radius requires $M\\omega^2<4\\pi^2k$. As $\\omega\\to0$, the radius tends to the natural value $R$."
+    ],
+    "keyIdeas": [
+      "Use circumference extension and a local arc force balance."
+    ],
+    "commonMistakes": [
+      "The given Hooke constant is not a radial stiffness; circumference supplies factors of $2\\pi$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity condition states the domain of the stabilized solution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p24",
+    "problemId": "fma-2016-p24",
+    "finalAnswer": "$\\boxed{\\frac5{24}ma^2}$ (choice B)",
+    "shortExplanation": "Six equilateral triangles determine the polar inertia about the hexagon center. Symmetry makes either central diameter inertia half the polar value.",
+    "detailedSteps": [
+      "Divide the hexagon into six triangles of mass $m_t=m/6$. The given base-axis inertia is $m_ta^2/8$. The triangle centroid is $\\sqrt3a/6$ from its base, so its parallel centroid-axis inertia is $m_ta^2/8-m_ta^2/12=m_ta^2/24$.",
+      "Threefold symmetry makes the other perpendicular in-plane centroid inertia equal. The polar centroid inertia is therefore $m_ta^2/12$.",
+      "That triangle centroid is $a/\\sqrt3$ from the hexagon center. The parallel-axis theorem makes its polar contribution $m_ta^2/12+m_ta^2/3=5m_ta^2/12$. Summing gives $I_z=5ma^2/12$.",
+      "Sixfold symmetry makes the two perpendicular central diameter inertias equal. The perpendicular-axis theorem gives $I_{\\rm diameter}=I_z/2=5ma^2/24$, choice B."
+    ],
+    "keyIdeas": [
+      "Apply parallel-axis and perpendicular-axis theorems at their proper centers."
+    ],
+    "commonMistakes": [
+      "The given triangle inertia is about its base, not its centroid or the hexagon center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An independent area integral over all six uniform triangles verifies the coefficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2016-p25",
+    "problemId": "fma-2016-p25",
+    "finalAnswer": "$\\boxed{\\sigma_C<\\sigma_A<\\sigma_B}$ (choice A)",
+    "shortExplanation": "Independent random measurement variances add. Christina's sum has the smallest uncertainty, while Bob's sum exceeds Alice's single measurement.",
+    "detailedSteps": [
+      "Alice's uncertainty is $2\\,\\mathrm{mm}$. Bob adds two independent measurements each with uncertainty $2\\,\\mathrm{mm}$, giving $\\sigma_B=\\sqrt{2^2+2^2}=2\\sqrt2\\,\\mathrm{mm}$.",
+      "Christina adds two independent measurements each with uncertainty $1\\,\\mathrm{mm}$, giving $\\sigma_C=\\sqrt{1^2+1^2}=\\sqrt2\\,\\mathrm{mm}$.",
+      "Thus $\\sigma_C<\\sigma_A<\\sigma_B$: Christina is preferred, then Alice, then Bob, choice A."
+    ],
+    "keyIdeas": [
+      "Sum variances of the explicitly independent random errors."
+    ],
+    "commonMistakes": [
+      "Linear addition describes worst-case bounds, not independent random uncertainty propagation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The uncertainty scales are treated consistently; systematic correlations are outside the stated independent-error model.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

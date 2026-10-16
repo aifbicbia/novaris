@@ -1,0 +1,502 @@
+[
+  {
+    "id": "solution-amc10a-2003-p1",
+    "problemId": "amc10a-2003-p1",
+    "finalAnswer": "$\\boxed{2003}$ (choice D)",
+    "shortExplanation": "Each even number exceeds its paired odd number by one.",
+    "detailedSteps": [
+      "Pair $2k$ with $2k-1$ for $k=1,\\ldots,2003$. Every difference is $1$, so their sum is $2003$."
+    ],
+    "keyIdeas": [
+      "Pairing consecutive integers"
+    ],
+    "commonMistakes": [
+      "Computing two large sums when their terms can be paired."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Termwise comparison keeps the arithmetic small.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p2",
+    "problemId": "amc10a-2003-p2",
+    "finalAnswer": "$\\boxed{91}$ (choice B)",
+    "shortExplanation": "Each participant needs two $13$-dollar outfits.",
+    "detailedSteps": [
+      "A shirt costs $4+5=9$ dollars. Socks and shirt together cost $4+9=13$ dollars.",
+      "Home and away outfits cost $2\\cdot13=26$ dollars per person. The league therefore has $2366/26=91$ members."
+    ],
+    "keyIdeas": [
+      "Cost per participant"
+    ],
+    "commonMistakes": [
+      "Buying only one outfit per member."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish the price difference from the shirt price.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p3",
+    "problemId": "amc10a-2003-p3",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "The eight removed cubes occupy $216$ of the original $1200$ cubic centimeters.",
+    "detailedSteps": [
+      "The original volume is $15\\cdot10\\cdot8=1200$. There are eight corners, each contributing a removed volume of $3^3=27$.",
+      "The removed cubes do not overlap, since each box dimension exceeds $2\\cdot3$. Thus the removed percentage is $100(8\\cdot27)/1200=18$."
+    ],
+    "keyIdeas": [
+      "Removed corner volumes"
+    ],
+    "commonMistakes": [
+      "Removing only four cubes or failing to consider overlap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A three-dimensional box has eight corners.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p4",
+    "problemId": "amc10a-2003-p4",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "Divide the total distance of $2$ kilometers by $2/3$ hour.",
+    "detailedSteps": [
+      "The trip takes $30+10=40$ minutes, or $2/3$ hour, and covers $2$ kilometers. The average speed is $2/(2/3)=3$ kilometers per hour."
+    ],
+    "keyIdeas": [
+      "Average speed over a round trip"
+    ],
+    "commonMistakes": [
+      "Averaging the uphill and downhill speeds arithmetically."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Different travel times require a total-distance calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p5",
+    "problemId": "amc10a-2003-p5",
+    "finalAnswer": "$\\boxed{0}$ (choice B)",
+    "shortExplanation": "One root is $1$, making one factor in the requested product zero.",
+    "detailedSteps": [
+      "The polynomial factors as $(2x+5)(x-1)$. Hence one of $d,e$ equals $1$, and $(d-1)(e-1)=0$."
+    ],
+    "keyIdeas": [
+      "Recognizing a root"
+    ],
+    "commonMistakes": [
+      "Multiplying the original roots instead of their shifted values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only one root is needed to determine this product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p6",
+    "problemId": "amc10a-2003-p6",
+    "finalAnswer": "$\\boxed{\\text{statement C}}$ (choice C)",
+    "shortExplanation": "The expression $x\\mathbin{\\heartsuit}0$ equals $|x|$, which need not equal $x$.",
+    "detailedSteps": [
+      "Take $x=-1$. Then $x\\mathbin{\\heartsuit}0=|-1|=1$, whereas $x=-1$. Thus statement C fails.",
+      "The other statements follow from symmetry of absolute value, $|2t|=2|t|$, $|0|=0$, and positivity of $|t|$ for nonzero $t$."
+    ],
+    "keyIdeas": [
+      "Absolute value counterexample"
+    ],
+    "commonMistakes": [
+      "Assuming an identity that holds for nonnegative x holds for every real x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single counterexample disproves a universal statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p7",
+    "problemId": "amc10a-2003-p7",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The possible sorted side triples are $(1,3,3)$ and $(2,2,3)$.",
+    "detailedSteps": [
+      "Write the sides as positive integers $a\\le b\\le c$ with sum $7$. The triangle inequality gives $c<7-c$, so $c\\le3$. Also $c\\ge\\lceil7/3\\rceil=3$, hence $c=3$.",
+      "Then $a+b=4$ with $a\\le b\\le3$, producing $(a,b)=(1,3)$ or $(2,2)$. Both give valid triangles, so there are $2$."
+    ],
+    "keyIdeas": [
+      "Integer triangle enumeration"
+    ],
+    "commonMistakes": [
+      "Counting reorderings of the same side lengths as different triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sorting eliminates congruent duplicates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p8",
+    "problemId": "amc10a-2003-p8",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice E)",
+    "shortExplanation": "Six of the twelve positive divisors are below $7$.",
+    "detailedSteps": [
+      "Since $60=2^2\\cdot3\\cdot5$, it has $(2+1)(1+1)(1+1)=12$ positive divisors.",
+      "The favorable divisors are $1,2,3,4,5,6$. The probability is therefore $6/12=1/2$."
+    ],
+    "keyIdeas": [
+      "Uniform choice among divisors"
+    ],
+    "commonMistakes": [
+      "Using 60 as the size of the sample space."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The random choice is a divisor, not an arbitrary integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p9",
+    "problemId": "amc10a-2003-p9",
+    "finalAnswer": "$\\boxed{\\sqrt{x}}$ (choice A)",
+    "shortExplanation": "Each cube-root layer sends $\\sqrt{x}$ back to $\\sqrt{x}$.",
+    "detailedSteps": [
+      "The innermost square root requires $x\\ge0$. For such $x$, $\\sqrt[3]{x\\sqrt{x}}=\\sqrt[3]{x^{3/2}}=\\sqrt{x}$.",
+      "Apply this identity successively to all three cube-root layers. The entire expression remains $\\sqrt{x}$."
+    ],
+    "keyIdeas": [
+      "Nested radical fixed form"
+    ],
+    "commonMistakes": [
+      "Multiplying root indices without accounting for the extra x inside each layer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplify from the innermost radical outward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p10",
+    "problemId": "amc10a-2003-p10",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "Positions $4,5,6,7,8,9$ work; the other three force overlap or an incompatible fold.",
+    "detailedSteps": [
+      "Fold the leftmost solid square in the top row as the front face. The next two solid squares become the right and back faces, and the lower solid square becomes the bottom face.",
+      "An added square at position $1$ folds onto the already occupied back face; position $3$ folds onto the bottom face. Position $2$ completes a flat $2$-by-$2$ block: its shared edges with the right and bottom faces impose incompatible face orientations.",
+      "Positions $4,8,9$ each supply the left face, while positions $5,6,7$ each supply the top face. Each of these six additions supplies one new face without overlap, leaving the other face missing."
+    ],
+    "keyIdeas": [
+      "Folding partial cube nets"
+    ],
+    "commonMistakes": [
+      "Counting a polygon as a net without checking whether folded faces coincide."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track which face each square occupies, not just its outline.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p11",
+    "problemId": "amc10a-2003-p11",
+    "finalAnswer": "$\\boxed{14}$ (choice E)",
+    "shortExplanation": "The smaller number is $61710$, so the three letters represent $6,1,7$.",
+    "detailedSteps": [
+      "The two numbers differ by $2$. The smaller is $(123422-2)/2=61710$. Therefore $A=6$, $M=1$, and $C=7$, giving $A+M+C=14$."
+    ],
+    "keyIdeas": [
+      "Place-value reconstruction"
+    ],
+    "commonMistakes": [
+      "Treating the letters as separate addends rather than digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the fixed final digits to recover one number directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p12",
+    "problemId": "amc10a-2003-p12",
+    "finalAnswer": "$\\boxed{\\frac18}$ (choice A)",
+    "shortExplanation": "The favorable region is a right triangle of area $1/2$ inside a rectangle of area $4$.",
+    "detailedSteps": [
+      "Inside the rectangle, $x<y$ is possible only for $0\\le x<1$. The favorable region has vertices $(0,0),(0,1),(1,1)$, with its diagonal boundary omitted.",
+      "Boundary segments have area zero. Thus the probability is $(1/2)/4=1/8$."
+    ],
+    "keyIdeas": [
+      "Area probability in a rectangle"
+    ],
+    "commonMistakes": [
+      "Using half of the whole rectangle instead of half of its unit-square corner."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform planar probability is an area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p13",
+    "problemId": "amc10a-2003-p13",
+    "finalAnswer": "$\\boxed{28}$ (choice A)",
+    "shortExplanation": "The numbers are $16$, $7/2$, and $1/2$.",
+    "detailedSteps": [
+      "If the last two sum to $s$, the first is $4s$, so $5s=20$ and $s=4$.",
+      "The last two are in ratio $7:1$, hence they are $7/2$ and $1/2$. Their product with $16$ is $16\\cdot(7/2)\\cdot(1/2)=28$."
+    ],
+    "keyIdeas": [
+      "Ratios in a three-number system"
+    ],
+    "commonMistakes": [
+      "Assuming the three numbers must be integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source imposes no integrality condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p14",
+    "problemId": "amc10a-2003-p14",
+    "finalAnswer": "$\\boxed{12}$ (choice A)",
+    "shortExplanation": "The largest product is $7\\cdot3\\cdot73=1533$, whose digit sum is $12$.",
+    "detailedSteps": [
+      "The one-digit primes are $2,3,5,7$. For $10d+e$ to be prime, its final digit must be $3$ or $7$. Testing the distinct choices gives only $(d,e)=(2,3),(3,7),(5,3),(7,3)$.",
+      "The corresponding products are $138,777,795,1533$. The largest is $1533$, with digit sum $1+5+3+3=12$."
+    ],
+    "keyIdeas": [
+      "Restricted prime products"
+    ],
+    "commonMistakes": [
+      "Maximizing d and e separately without checking whether 10d+e is prime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A tiny finite list gives a complete maximality argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p15",
+    "problemId": "amc10a-2003-p15",
+    "finalAnswer": "$\\boxed{\\frac{17}{50}}$ (choice C)",
+    "shortExplanation": "Of the $50$ even integers, $16$ are also divisible by $3$.",
+    "detailedSteps": [
+      "There are $\\lfloor100/2\\rfloor=50$ multiples of $2$. Those also divisible by $3$ are multiples of $6$, numbering $\\lfloor100/6\\rfloor=16$.",
+      "Thus $34$ of the $100$ integers qualify, and the probability is $34/100=17/50$."
+    ],
+    "keyIdeas": [
+      "Subtracting multiples of six"
+    ],
+    "commonMistakes": [
+      "Subtracting all multiples of 3, including odd ones."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the least common multiple for the overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p16",
+    "problemId": "amc10a-2003-p16",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The powers of $3$ cycle through $3,9,7,1$.",
+    "detailedSteps": [
+      "The units digit of $13^{2003}$ is that of $3^{2003}$. The cycle has length $4$, and $2003\\equiv3\\pmod4$. The required digit is the third entry, $7$."
+    ],
+    "keyIdeas": [
+      "Units-digit cycle"
+    ],
+    "commonMistakes": [
+      "Using the remainder as the digit rather than as a cycle position."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the residue of the exponent modulo 4 matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p17",
+    "problemId": "amc10a-2003-p17",
+    "finalAnswer": "$\\boxed{\\frac{3\\sqrt3}{\\pi}}$ (choice B)",
+    "shortExplanation": "An equilateral triangle with circumradius $R$ has side $\\sqrt3R$.",
+    "detailedSteps": [
+      "The central angle between adjacent vertices is $120^\\circ$, so its chord length is $2R\\sin60^\\circ=\\sqrt3R$.",
+      "The given numerical equality becomes $3\\sqrt3R=\\pi R^2$. Since $R>0$, division by $\\pi R$ gives $R=3\\sqrt3/\\pi$ inches."
+    ],
+    "keyIdeas": [
+      "Equilateral circumradius"
+    ],
+    "commonMistakes": [
+      "Confusing the circumradius with the inradius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep track of the geometric relation between side length and radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p18",
+    "problemId": "amc10a-2003-p18",
+    "finalAnswer": "$\\boxed{-1}$ (choice B)",
+    "shortExplanation": "After substituting $y=1/x$, the reciprocals are roots of a quadratic with linear coefficient $1$.",
+    "detailedSteps": [
+      "The original equation excludes $x=0$. Put $y=1/x$ and multiply by $y$ to obtain $y^2+y+2003/2004=0$.",
+      "The sum of its two roots is $-1$ by the coefficient relation. These are precisely the reciprocals requested. The identity is valid for complex roots as well as real roots."
+    ],
+    "keyIdeas": [
+      "Reciprocals and root identities"
+    ],
+    "commonMistakes": [
+      "Assuming real roots exist or forgetting the nonzero denominator restriction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The question can be answered algebraically without extracting the roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p19",
+    "problemId": "amc10a-2003-p19",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{4}-\\frac{\\pi}{24}}$ (choice C)",
+    "shortExplanation": "Subtract the large circle segment above the common chord from the smaller semicircle.",
+    "detailedSteps": [
+      "The smaller semicircle has radius $1/2$ and area $\\pi/8$. The same diameter is a chord of length $1$ in the radius-$1$ circle; its central angle is $60^\\circ$.",
+      "The large-circle segment above the chord has area $\\pi/6-\\sqrt3/4$, the sector area minus the equilateral triangle area.",
+      "The lune therefore has area $\\pi/8-(\\pi/6-\\sqrt3/4)=\\sqrt3/4-\\pi/24$."
+    ],
+    "keyIdeas": [
+      "Lune as semicircle minus segment"
+    ],
+    "commonMistakes": [
+      "Subtracting the entire large semicircle rather than only its segment above the chord."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common chord identifies exactly which areas overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p20",
+    "problemId": "amc10a-2003-p20",
+    "finalAnswer": "$\\boxed{0.7}$ (choice E)",
+    "shortExplanation": "The allowed decimal integers run from $121$ through $728$.",
+    "detailedSteps": [
+      "A positive integer has three digits in base $b$ exactly when $b^2\\le n<b^3$. For bases $9$ and $11$, the ranges are $81\\le n\\le728$ and $121\\le n\\le1330$.",
+      "Intersecting with the decimal three-digit range leaves $121\\le n\\le728$, or $608$ integers. The probability is $608/900\\approx0.6756$, closest to $0.7$."
+    ],
+    "keyIdeas": [
+      "Digit-length intervals in different bases"
+    ],
+    "commonMistakes": [
+      "Omitting one endpoint when counting an inclusive integer interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The answer is the closest listed decimal, not the exact probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p21",
+    "problemId": "amc10a-2003-p21",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "Count the nonnegative solutions of $a+b+c=6$.",
+    "detailedSteps": [
+      "An assortment is determined by the counts of the three cookie types. The available supply imposes no further restriction.",
+      "Place two dividers among six identical cookie markers: there are $\\binom{8}{2}=28$ arrangements, corresponding to all nonnegative triples summing to $6$."
+    ],
+    "keyIdeas": [
+      "Nonnegative counts of three kinds"
+    ],
+    "commonMistakes": [
+      "Treating the order of the six cookies as relevant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Zero cookies of a given type is allowed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p22",
+    "problemId": "amc10a-2003-p22",
+    "finalAnswer": "$\\boxed{20}$ (choice B)",
+    "shortExplanation": "The two specified lines intersect at $(20,15)$ when $AD$ is the vertical axis.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $B=(8,0)$, $C=(8,9)$, $D=(0,9)$. The given distances place $H=(8,6)$ and $E=(0,5)$.",
+      "Line $AH$ is $y=3x/4$, and line $EC$ is $y=5+x/2$. Equating them gives $x/4=5$, so $G=(20,15)$.",
+      "The perpendicular from $G$ to line $AD$, the vertical axis, is horizontal. Its length is therefore $GF=20$."
+    ],
+    "keyIdeas": [
+      "Coordinate intersection outside a rectangle"
+    ],
+    "commonMistakes": [
+      "Restricting G to the rectangle even though intersections of extended lines are allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rotation of the pictured rectangle does not affect the lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p23",
+    "problemId": "amc10a-2003-p23",
+    "finalAnswer": "$\\boxed{1507509}$ (choice C)",
+    "shortExplanation": "The base row implies $1002$ rows, and each edge direction contributes $1002\\cdot1003/2$ toothpicks.",
+    "detailedSteps": [
+      "With $n$ rows of small triangles, the base row contains $2n-1$ triangles. Thus $2n-1=2003$, giving $n=1002$.",
+      "In each of the three edge directions, the parallel rows contain $1,2,\\ldots,n$ toothpicks. The total is $3n(n+1)/2=3\\cdot1002\\cdot1003/2=1507509$."
+    ],
+    "keyIdeas": [
+      "Edges in a triangular lattice"
+    ],
+    "commonMistakes": [
+      "Using 2003 as the number of unit segments along a side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adjacent small triangles share toothpicks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p24",
+    "problemId": "amc10a-2003-p24",
+    "finalAnswer": "$\\boxed{12}$ (choice E)",
+    "shortExplanation": "Up to reversal, the stack is $5,5,1,3,3,6,2,4,4$, with red cards in odd positions.",
+    "detailedSteps": [
+      "Only blue $5$ is divisible by red $5$, so red $5$ must be an endpoint. Similarly red $4$ must be the other endpoint, next to blue $4$.",
+      "Orient the stack from red $5$ toward red $4$. Blue $5$ must have red $1$ as its other neighbor. Blue $4$ must have red $2$ as its other neighbor, since red $1$ is already used and red $3$ does not divide $4$.",
+      "The remaining red card is $3$. Of the remaining blue cards $3$ and $6$, the one next to red $2$ must be $6$. This forces the displayed stack. Its middle three values are $3,3,6$, summing to $12$."
+    ],
+    "keyIdeas": [
+      "Forced alternating arrangement"
+    ],
+    "commonMistakes": [
+      "Assuming cards with the same number also have the same color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The rare divisibility options force both endpoints first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2003-p25",
+    "problemId": "amc10a-2003-p25",
+    "finalAnswer": "$\\boxed{8181}$ (choice B)",
+    "shortExplanation": "Each of the $900$ quotients contributes nine remainders, and $81$ quotients contribute one extra.",
+    "detailedSteps": [
+      "The quotient satisfies $100\\le q\\le999$ and the remainder satisfies $0\\le r\\le99$. These choices correspond bijectively to five-digit integers.",
+      "Among $0,1,\\ldots,98$, every residue modulo $11$ occurs nine times. The extra remainder $99$ has residue $0$. Therefore each quotient permits nine remainders with $q+r\\equiv0\\pmod{11}$, plus one extra exactly when $11\\mid q$.",
+      "There are $\\lfloor999/11\\rfloor-\\lfloor99/11\\rfloor=81$ such quotients. The answer is $900\\cdot9+81=8181$."
+    ],
+    "keyIdeas": [
+      "Quotient-remainder residue count"
+    ],
+    "commonMistakes": [
+      "Assuming 100 remainders split equally among 11 residue classes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Isolate the extra element after nine full residue cycles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

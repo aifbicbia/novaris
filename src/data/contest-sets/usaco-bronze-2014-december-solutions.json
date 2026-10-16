@@ -1,0 +1,125 @@
+[
+  {
+    "finalAnswer": "Compute $D-\\max(0,s_1,\\ldots,s_{N-2})$, where $D$ is the full course length and $s_i$ is the distance saved by omitting interior checkpoint $i$.",
+    "shortExplanation": "Skipping one checkpoint replaces just its two adjacent route segments. Compute the saving for every interior checkpoint and subtract the largest saving from the full distance.",
+    "detailedSteps": [
+      "Use zero-based checkpoint indices $0$ through $N-1$. Use Manhattan distance $d(a,b)=|a_x-b_x|+|a_y-b_y|$. First sum the distances between consecutive checkpoint occurrences to obtain the full course length $D$.",
+      "For each interior index $i$, compute $s_i=d(p_{i-1},p_i)+d(p_i,p_{i+1})-d(p_{i-1},p_{i+1})$. Keep the largest saving, starting at zero so that skipping no checkpoint is also allowed.",
+      "An omission leaves every other route segment unchanged, so its total distance is exactly $D-s_i$. These are all the legal omission choices. The largest saving therefore produces the smallest legal total. The triangle inequality guarantees that each saving is nonnegative.",
+      "Keep equal-coordinate checkpoints as separate indexed occurrences. Never consider omitting the first or last checkpoint. In the sample, omitting the second checkpoint gives a total distance of 14.",
+      "The algorithm takes $O(N)$ time and $O(N)$ space. Each edge is at most 4000, so the full distance is at most 399996000 under the printed bounds. The code uses `long long`, although these bounds also fit a signed 32-bit integer.",
+      "**C++11 / C++17 implementation.** Read `marathon.in` and write `marathon.out`, as required by this historical contest.\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nstruct Point { long long x, y; };\nlong long distance_between(const Point& a, const Point& b) {\n    return llabs(a.x - b.x) + llabs(a.y - b.y);\n}\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    vector<Point> p(n);\n    for (int i = 0; i < n; ++i) in >> p[i].x >> p[i].y;\n    long long total = 0, saving = 0;\n    for (int i = 1; i < n; ++i) total += distance_between(p[i-1], p[i]);\n    for (int i = 1; i + 1 < n; ++i) {\n        long long candidate = distance_between(p[i-1], p[i])\n                            + distance_between(p[i], p[i+1])\n                            - distance_between(p[i-1], p[i+1]);\n        saving = max(saving, candidate);\n    }\n    out << total - saving << '\\n';\n}\nint main() {\n    ifstream in(\"marathon.in\");\n    ofstream out(\"marathon.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "One omission changes only two adjacent edges.",
+      "Choose the greatest local saving over all legal interior occurrences."
+    ],
+    "commonMistakes": [
+      "Using Euclidean distance instead of Manhattan distance.",
+      "Deleting every checkpoint at a repeated location instead of only one occurrence.",
+      "Testing an endpoint as a possible skipped checkpoint."
+    ],
+    "alternativeMethods": [
+      "For a small course, rebuild and measure the route for every possible omission. This is a useful independent check, but its quadratic time is unnecessary for the full input."
+    ],
+    "difficultyNotes": "The main observation is that a single deletion affects only its neighboring route segments.",
+    "id": "solution-usaco-bronze-2014-december-p1",
+    "problemId": "usaco-bronze-2014-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print the number of cells that start at least one clue, followed by their one-based coordinates in row-major order.",
+    "shortExplanation": "A horizontal clue starts at the first cell of a clear run of length at least three. Test this condition and its vertical counterpart at every clear cell, counting a cell once if either holds.",
+    "detailedSteps": [
+      "Scan the grid from the top row to the bottom, and from left to right within each row. Skip blocked cells.",
+      "A horizontal start has a blocked or missing left neighbor, with two existing clear cells immediately to its right. A vertical start has a blocked or missing upper neighbor, with two existing clear cells immediately below it.",
+      "Append the cell once when the horizontal or vertical condition holds. Use logical OR: a cell starting both directions receives only one clue number.",
+      "These tests are equivalent to being the first cell of a maximal clear run with length at least three. They accept every legal clue start and reject all other cells. The scan order already gives the required numbering order, so no later sort is needed.",
+      "Print the list size, then each coordinate after adding one to its row and column. Clear cells belonging to no clue are allowed. The sample has four numbered cells, including a cell that starts in both directions.",
+      "Each cell takes constant work, giving $O(NM)$ time. The grid and output list use $O(NM)$ space, with at most 2500 cells under the source bounds.",
+      "**C++11 / C++17 implementation.** Read `crosswords.in` and write `crosswords.out`, as required by this historical contest.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, m; in >> n >> m;\n    vector<string> grid(n);\n    for (int r = 0; r < n; ++r) in >> grid[r];\n    vector<pair<int, int> > clues;\n    for (int r = 0; r < n; ++r) {\n        for (int c = 0; c < m; ++c) {\n            if (grid[r][c] != '.') continue;\n            bool horizontal = (c == 0 || grid[r][c-1] == '#')\n                           && c + 2 < m && grid[r][c+1] == '.' && grid[r][c+2] == '.';\n            bool vertical = (r == 0 || grid[r-1][c] == '#')\n                         && r + 2 < n && grid[r+1][c] == '.' && grid[r+2][c] == '.';\n            if (horizontal || vertical) clues.push_back(make_pair(r+1, c+1));\n        }\n    }\n    out << clues.size() << '\\n';\n    for (size_t i = 0; i < clues.size(); ++i) out << clues[i].first << ' ' << clues[i].second << '\\n';\n}\nint main() {\n    ifstream in(\"crosswords.in\");\n    ofstream out(\"crosswords.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Recognize the beginning of a clear run with length at least three.",
+      "Use one entry per cell and retain row-major order."
+    ],
+    "commonMistakes": [
+      "Counting a horizontal and vertical start at the same cell twice.",
+      "Accepting a run of only one or two clear cells.",
+      "Accessing the two right or lower cells before checking the grid boundary.",
+      "Printing zero-based coordinates."
+    ],
+    "alternativeMethods": [
+      "Scan each entire maximal clear row run and column run. Put qualifying start cells in a set, then sort the set by row and column. This gives a separate way to verify the local predicates."
+    ],
+    "difficultyNotes": "The two boundary tests and the one-number-per-cell rule require careful implementation.",
+    "id": "solution-usaco-bronze-2014-december-p2",
+    "problemId": "usaco-bronze-2014-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Scan speeds from front to back and count every speed no greater than the running minimum ahead.",
+    "shortExplanation": "A cow faster than the slowest group immediately ahead eventually catches that group. A cow with no greater speed remains a separate group, including when the speeds are equal.",
+    "detailedSteps": [
+      "The input already orders cows by increasing starting position. Process it backwards, beginning with the frontmost cow. Keep the speed of the nearest eventual group ahead, initially larger than every legal speed.",
+      "For a cow of speed $v$, create a new group when $v\\le m$, where $m$ is the running minimum. Set $m=v$. If $v>m$, the cow eventually catches the group ahead and contributes no new group.",
+      "To justify the rule, assume the processed cows have been divided into their final groups. Final group speeds must be nondecreasing toward the front: otherwise a faster rear group would eventually close its finite gap. Thus the nearest group ahead has the minimum speed $m$.",
+      "When $v>m$, the cow closes the gap and joins that group. When $v\\le m$, every group ahead is at least as fast, and their earlier motion cannot be slower than their final motion. The gap therefore cannot close. This preserves the final-group invariant and proves the count.",
+      "Equality creates a new group because equal speeds do not close a positive initial gap. Starting positions are still read; their guaranteed order is what the scan uses. This problem asks about eventual groups and has no finite time parameter.",
+      "Time is $O(N)$ and the stored speed array uses $O(N)$ space. The count is at most 100000. The source sample gives two groups.",
+      "**C++11 / C++17 implementation.** Read `cowjog.in` and write `cowjog.out`, as required by this historical contest.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    vector<long long> speed(n);\n    for (int i = 0; i < n; ++i) {\n        long long position; in >> position >> speed[i];\n    }\n    long long slowest_ahead = 1000000001LL;\n    int groups = 0;\n    for (int i = n - 1; i >= 0; --i) {\n        if (speed[i] <= slowest_ahead) {\n            ++groups;\n            slowest_ahead = speed[i];\n        }\n    }\n    out << groups << '\\n';\n}\nint main() {\n    ifstream in(\"cowjog.in\");\n    ofstream out(\"cowjog.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Process the frontmost cows first.",
+      "A speed equal to the minimum ahead still forms a separate group."
+    ],
+    "commonMistakes": [
+      "Using a strict comparison for a new group and merging equal speeds.",
+      "Scanning from the rear without accounting for later slow groups.",
+      "Introducing a finite time limit from another version of Cow Jog."
+    ],
+    "alternativeMethods": [
+      "For small inputs, simulate adjacent collisions at exact rational times. Advance all groups to the next event and merge simultaneous contacts. This physical simulation is a useful independent check of the final count."
+    ],
+    "difficultyNotes": "The reverse-scan invariant is the key; equal speeds determine the comparison direction.",
+    "id": "solution-usaco-bronze-2014-december-p3",
+    "problemId": "usaco-bronze-2014-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort the existing cows, count spotted query weights in each nearest-neighbor interval, and include an integer midpoint once when either tied endpoint is spotted.",
+    "shortExplanation": "Between two consecutive existing weights, only those two cows can be nearest. Split the integer gap at their midpoint, apply the spotted tie rule, and count interval lengths inside the shipment range.",
+    "detailedSteps": [
+      "Sort the distinct existing weights and keep each S/NS label. The newly arriving cows never become training data. Handle weights below the first existing weight using its label, weights above the last using its label, and each existing weight using its own label.",
+      "For consecutive existing weights $u<v$, set $s=u+v$. Integer weights in $[u+1,\\lfloor(s-1)/2\\rfloor]$ are strictly closer to the left cow. Those in $[\\lfloor s/2\\rfloor+1,v-1]$ are strictly closer to the right cow. Count a side only when its endpoint is spotted.",
+      "If $s$ is even, the integer midpoint $s/2$ ties the two endpoints. Count it once when either label is S. A gap of one contains no query integer, and an odd sum has no integer tie.",
+      "Intersect every counted interval $[L,R]$ with $[A,B]$. Its contribution is $\\max(0,\\min(R,B)-\\max(L,A)+1)$. This includes both shipment endpoints and handles an empty intersection.",
+      "Every query belongs to exactly one tail, existing weight, or open gap. Inside a gap, any cow farther left than $u$ is farther away than $u$, and any cow farther right than $v$ is farther away than $v$. The midpoint comparison therefore gives exactly the source nearest-neighbor rule. The partition is disjoint, so no query or S/S tie is counted twice.",
+      "Sorting takes $O(N\\log N)$ time; the interval scan takes $O(N)$ time and $O(N)$ storage. Do not loop from $A$ to $B$, since that range may contain one billion weights. `long long` keeps the interval arithmetic convenient; the printed bounds give an answer at most one billion.",
+      "For the sample, the spotted query weights are 1, 2, 7, 8, 9 and 10, so the output is 6.",
+      "**C++11 / C++17 implementation.** Read `learning.in` and write `learning.out`, as required by this historical contest.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nlong long count_in_range(long long left, long long right, long long a, long long b) {\n    left = max(left, a);\n    right = min(right, b);\n    return left <= right ? right - left + 1 : 0;\n}\nvoid solve(istream& in, ostream& out) {\n    int n; long long a, b; in >> n >> a >> b;\n    vector<pair<long long, bool> > cows;\n    for (int i = 0; i < n; ++i) {\n        string label; long long weight; in >> label >> weight;\n        cows.push_back(make_pair(weight, label == \"S\"));\n    }\n    sort(cows.begin(), cows.end());\n    long long answer = 0;\n    if (cows.front().second) answer += count_in_range(1, cows.front().first - 1, a, b);\n    if (cows.back().second) answer += count_in_range(cows.back().first + 1, 1000000000LL, a, b);\n    for (int i = 0; i < n; ++i) {\n        if (cows[i].second) answer += count_in_range(cows[i].first, cows[i].first, a, b);\n        if (i + 1 == n) continue;\n        long long u = cows[i].first, v = cows[i+1].first, sum = u + v;\n        if (cows[i].second) answer += count_in_range(u + 1, (sum - 1) / 2, a, b);\n        if (cows[i+1].second) answer += count_in_range(sum / 2 + 1, v - 1, a, b);\n        if (sum % 2 == 0 && (cows[i].second || cows[i+1].second)) {\n            answer += count_in_range(sum / 2, sum / 2, a, b);\n        }\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ifstream in(\"learning.in\");\n    ofstream out(\"learning.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Only adjacent training weights matter inside their open gap.",
+      "Count integer intervals instead of visiting every query weight.",
+      "Treat the integer midpoint separately with the inclusive spotted tie rule."
+    ],
+    "commonMistakes": [
+      "Leaving the existing cows unsorted.",
+      "Assigning a tie to only one endpoint and losing a spotted neighbor.",
+      "Counting a midpoint twice when both endpoints are spotted.",
+      "Adding incoming cows to the classifier or iterating across the full shipment."
+    ],
+    "alternativeMethods": [
+      "For a small shipment, inspect every integer weight, find its minimum distance to all training cows, and OR the labels of all nearest cows. This directly checks ties without using the interval formula."
+    ],
+    "difficultyNotes": "The main work is a disjoint interval partition with exact integer midpoint and endpoint handling.",
+    "id": "solution-usaco-bronze-2014-december-p4",
+    "problemId": "usaco-bronze-2014-december-p4",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "solution-aime-1993-p1",
+    "problemId": "aime-1993-p1",
+    "finalAnswer": "$\\boxed{728}$",
+    "shortExplanation": "The first digits 4 and 6 give four even last-digit choices each; first digit 5 gives five.",
+    "detailedSteps": [
+      "The thousands digit is 4,5,or 6. If it is 4 or 6, the last digit has four even choices, excluding that first digit. If it is 5, all five even digits are available.",
+      "Once the first and last digits are fixed, the two middle digits have 8 and 7 choices in order; zero is allowed in these positions.",
+      "The count is $(4+5+4)(8)(7)=728$. Neither endpoint of the stated interval has distinct digits, so endpoint inclusion cannot change it."
+    ],
+    "keyIdeas": [
+      "Distinct digits split by the thousands digit"
+    ],
+    "commonMistakes": [
+      "Excluding zero from the internal positions or allowing the first and last digits to repeat."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parity restriction affects only the final digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p2",
+    "problemId": "aime-1993-p2",
+    "finalAnswer": "$\\boxed{580}$",
+    "shortExplanation": "The final displacement is 400 miles west and 420 miles south.",
+    "detailedSteps": [
+      "Group the days into ten blocks indexed by $j=0,\\ldots,9$. The east-minus-west displacement in a block is $((4j+1)^2-(4j+3)^2)/2=-8j-4$.",
+      "The north-minus-south displacement is $((4j+2)^2-(4j+4)^2)/2=-8j-6$. Summing with $0+\\cdots+9=45$ gives coordinates $(-400,-420)$.",
+      "The distance from the start is $\\sqrt{400^2+420^2}=580$."
+    ],
+    "keyIdeas": [
+      "Summing signed squared daily displacements"
+    ],
+    "commonMistakes": [
+      "Adding path length instead of signed displacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Four-day blocks simplify the quadratic differences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p3",
+    "problemId": "aime-1993-p3",
+    "finalAnswer": "$\\boxed{943}$",
+    "shortExplanation": "The contestants catching 3..12 fish caught 816; adding both outside groups gives 943.",
+    "detailedSteps": [
+      "Let N and F be the number of contestants and fish in the 3-through 12 group. The 0-through 2 group has 21 contestants and 19 fish; the 13-through 15 group has 8 contestants and 108 fish. No one caught more than 15.",
+      "The average of the 3-or-more group gives $F+108=6(N+8)$, hence $F=6N-60$. The 12-or-fewer average gives $F+19=5(N+21)$, hence $F=5N+86$.",
+      "Equating gives $N=146,F=816$. Add the disjoint groups to obtain $19+816+108=943$ fish."
+    ],
+    "keyIdeas": [
+      "Reconciling two overlapping average groups"
+    ],
+    "commonMistakes": [
+      "Counting the overlapping 3-through 12 group twice in the grand total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unreported frequencies are unnecessary once their count and total are isolated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p4",
+    "problemId": "aime-1993-p4",
+    "finalAnswer": "$\\boxed{870}$",
+    "shortExplanation": "The positive gaps multiply to 93, yielding 405 and 465 quadruples.",
+    "detailedSteps": [
+      "Write $b=a+r,c=a+s$ with $0<r<s$. The equal-sum condition forces $d=a+r+s$. Then $bc-ad=rs=93$.",
+      "The two positive factor pairs with $r<s$ are $(1,93)$ and $(3,31)$. For each, $1\\le a\\le499-r-s$, so the counts are 405 and 465.",
+      "Every such choice gives the required strict increasing order and both equations. Their total is 870."
+    ],
+    "keyIdeas": [
+      "A symmetric quadruple reduces to two factor pairs"
+    ],
+    "commonMistakes": [
+      "Counting a factor pair twice by interchanging the middle two entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use gap variables to eliminate the common translation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p5",
+    "problemId": "aime-1993-p5",
+    "finalAnswer": "$\\boxed{763}$",
+    "shortExplanation": "All shifts total 210; expanding the translated cubic gives coefficient 763.",
+    "detailedSteps": [
+      "The recurrence gives $P_{20}(x)=P_0(x-(1+\\cdots+20))=P_0(x-210)$.",
+      "The coefficient of x in $(x-210)^3+313(x-210)^2-77(x-210)-8$ is $3(210)^2-626(210)-77=763$."
+    ],
+    "keyIdeas": [
+      "Combining repeated polynomial translations"
+    ],
+    "commonMistakes": [
+      "Applying only the last shift 20 instead of their accumulated sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translations compose by adding their offsets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p6",
+    "problemId": "aime-1993-p6",
+    "finalAnswer": "$\\boxed{495}$",
+    "shortExplanation": "The number must be a multiple of 99 and congruent to 5 modulo 10.",
+    "detailedSteps": [
+      "A sum of nine consecutive integers is divisible by 9, and a sum of eleven is divisible by 11. A sum of ten beginning at a is $10a+45$, so it is congruent to 5 modulo 10.",
+      "Thus the number is $99q$ with $99q\\equiv5\\pmod{10}$, giving $q\\equiv5\\pmod{10}$. The smallest positive choice is $q=5$, giving 495.",
+      "The value is realized by the nine integers 51..59, ten integers 45..54, and eleven integers 40..50. Hence all three representations actually exist."
+    ],
+    "keyIdeas": [
+      "Three consecutive-sum congruences"
+    ],
+    "commonMistakes": [
+      "Requiring each starting integer to be positive without first reading the source; the minimum still has positive witnesses here."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Odd-length sums and even-length sums obey different congruences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p7",
+    "problemId": "aime-1993-p7",
+    "finalAnswer": "$\\boxed{005}$",
+    "shortExplanation": "Five of the twenty equally likely assignments of three brick ranks among six ranks fit.",
+    "detailedSteps": [
+      "All six sampled dimensions are distinct. Sort the three brick dimensions and three box dimensions increasingly. A fitting parallel-side rotation exists exactly when the ith brick dimension is smaller than the ith box dimension for each i.",
+      "Sufficiency follows by matching sorted coordinates. For necessity, if the ith brick dimension exceeds the ith box dimension, the $4-i$ brick dimensions at least that large would have only $3-i$ larger box dimensions available, which is impossible.",
+      "In the ascending list of the six selected numbers, mark a brick dimension A and a box dimension B. The sorted criterion says every prefix has at least as many As as Bs. All $\\binom63=20$ A-position patterns are equally likely.",
+      "The five valid patterns are AAABBB,AABABB,AABBAB,ABAABB,ABABAB. Therefore $p=5/20=1/4$ and the requested numerator-denominator sum is 5."
+    ],
+    "keyIdeas": [
+      "Sorted matching and a Catalan rank pattern"
+    ],
+    "commonMistakes": [
+      "Comparing the originally drawn dimension order instead of allowing rotation and sorting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only relative ranks matter, so the large sampling set disappears.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p8",
+    "problemId": "aime-1993-p8",
+    "finalAnswer": "$\\boxed{365}$",
+    "shortExplanation": "There are 729 ordered covering pairs, and only the pair(S,S) is fixed by swapping.",
+    "detailedSteps": [
+      "Each element of S must belong only to the first subset, only to the second, or to both. Thus there are $3^6=729$ ordered pairs with union S.",
+      "Under interchange of the subsets, only a pair with equal subsets is fixed. Their union condition forces both to be S, giving one fixed pair.",
+      "The remaining 728 ordered pairs form 364 two-element swap pairs. Add the fixed pair to obtain 365 unordered selections."
+    ],
+    "keyIdeas": [
+      "Unordered covering pairs and their fixed point"
+    ],
+    "commonMistakes": [
+      "Dividing 729 by two without accounting for equal subsets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A symmetry count must include its fixed configurations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p9",
+    "problemId": "aime-1993-p9",
+    "finalAnswer": "$\\boxed{118}$",
+    "shortExplanation": "The relevant triangular-number residue is 1021, first reached at index 118.",
+    "detailedSteps": [
+      "The figure confirms that label k advances k points from label $k-1$. Taking label 1 as position 0, the position of label k is $k(k+1)/2-1$ modulo 2000.",
+      "For label 1993 the triangular number is 1987021, congruent to 1021. We seek the smallest positive k with $k(k+1)/2\\equiv1021\\pmod{2000}$.",
+      "At $k=118$, the triangular number is 7021. Any smaller positive index has triangular number below 7021, so the only possible residue representatives are 1021,3021,5021.",
+      "Their discriminants $1+8t$ are 8169,24169,40169, lying strictly between $90^2,91^2$; $155^2,156^2$; and $200^2,201^2$, respectively. None is a square. Since $1+8(7021)=237^2$, the first index is 118."
+    ],
+    "keyIdeas": [
+      "Triangular-number positions modulo2000"
+    ],
+    "commonMistakes": [
+      "Counting the starting point as one of the points advanced, contrary to the actual figure."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A periodic labeling becomes a triangular-number congruence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p10",
+    "problemId": "aime-1993-p10",
+    "finalAnswer": "$\\boxed{250}$",
+    "shortExplanation": "Two triangles and two pentagons meet at each of 30 vertices.",
+    "detailedSteps": [
+      "Let F 3 and F 5 be the face counts. Face-vertex incidences give $3F_3=VT$ and $5F_5=VP$, while $F_3+F_5=32$. Each vertex has $T+P$ incident edges, so $2E=V(T+P)$.",
+      "Euler’s formula gives $V(T+P-2)=60$. Meanwhile $32=V(T/3+P/5)$. Eliminating V yields $3T+5P=16$.",
+      "The only nonnegative integer solution is $T=2,P=2$: reduce modulo 3 to get $P\\equiv2\\pmod3$, and $5P\\le16$ permits only 2. Therefore $V=60/(4-2)=30$.",
+      "The required expression is $100(2)+10(2)+30=250$. The implied face counts 20 and 12 and edge count 60 satisfy Euler’s formula."
+    ],
+    "keyIdeas": [
+      "Face incidences combined with Euler characteristic"
+    ],
+    "commonMistakes": [
+      "Counting each edge only once when summing incidences across its two endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Local incidence data controls the global face and edge counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p11",
+    "problemId": "aime-1993-p11",
+    "finalAnswer": "$\\boxed{093}$",
+    "shortExplanation": "The sixth-game winning probability is 364/729, giving last three digits 093.",
+    "detailedSteps": [
+      "The first player wins with probability $1/2+1/8+1/32+\\cdots=2/3$, while the second wins with probability 1/3.",
+      "Let $w_n$ be Alfred’s chance to win game n. He starts the next game precisely when he loses the current one, so $w_{n+1}=(2/3)(1-w_n)+(1/3)w_n=2/3-w_n/3$, with $w_1=2/3$.",
+      "Subtract the fixed point 1/2: $w_n-1/2=(-1/3)^{n-1}(1/6)$. Thus $w_6=1/2-1/1458=364/729$.",
+      "The reduced numerator and denominator sum to 1093, whose last three digits are 093."
+    ],
+    "keyIdeas": [
+      "A two-state recurrence for who starts next"
+    ],
+    "commonMistakes": [
+      "Keeping the same starter in each game despite the loser-starts rule."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The centered recurrence alternates toward its equilibrium probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p12",
+    "problemId": "aime-1993-p12",
+    "finalAnswer": "$\\boxed{344}$",
+    "shortExplanation": "The only possible starting point is(336,8).",
+    "detailedSteps": [
+      "Let L 1 through L 6 be the six chosen vertices. Unwinding the midpoint recurrence gives $64P_7=P_1+\\sum_{j=1}^6 2^{j-1}L_j$.",
+      "Let U and V be the sums of binary weights assigned to vertex C and vertex B. Then $k=896-560U$ and $m=5888-420V$. Interior bounds $0<k<560,0<m<420$ force $U=1,V=14$.",
+      "The binary digits are disjoint: U uses weight 1, V uses 2,4,8, and the remaining 16,32 use A. Hence the choices are attainable and uniquely determine $P_1=(336,8)$.",
+      "This point satisfies $336/560+8/420<1$, so it is strictly inside the triangle. Its coordinate sum is 344."
+    ],
+    "keyIdeas": [
+      "Recovering six midpoint choices by binary weights"
+    ],
+    "commonMistakes": [
+      "Reversing the binary weights of earlier and later midpoint choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Binary expansions encode the vertex decisions uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p13",
+    "problemId": "aime-1993-p13",
+    "finalAnswer": "$\\boxed{163}$",
+    "shortExplanation": "The second tangency occurs 160/3 seconds after the first.",
+    "detailedSteps": [
+      "Put the building center at the origin and the paths at $y=100$ and $y=-100$, with motion in the positive x-direction. Since the people are 200 feet apart at first blockage, their x-coordinates then agree. Their connecting vertical line is the entry tangent $x=-50$.",
+      "After t seconds place Jenny at $(-50+t,100)$ and Kenny at $(-50+3t,-100)$. Their connecting line is $x+(t/100)y=-50+2t$.",
+      "The distance of this line from the center is $|{-50+2t}|/\\sqrt{1+t^2/10000}$. Tangency requires its square equal 2500, giving $t(15t/4-200)=0$. The positive second time is $t=160/3$.",
+      "For $0<t<160/3$, the distance is less than 50, so the building blocks the view. All intersections with the building lie between the two path heights and therefore on the sightline segment. After the second time the distance exceeds 50, restoring visibility.",
+      "The reduced fraction has numerator 160 and denominator 3, giving 163."
+    ],
+    "keyIdeas": [
+      "Moving sightline tangent to a fixed circle"
+    ],
+    "commonMistakes": [
+      "Treating the persons’ horizontal separation as their full distance at the initial moment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circle blocks a segment exactly while its connecting line crosses the disk between the two paths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p14",
+    "problemId": "aime-1993-p14",
+    "finalAnswer": "$\\boxed{448}$",
+    "shortExplanation": "The least possible perimeter is $8\\sqrt7=\\sqrt{448}$.",
+    "detailedSteps": [
+      "The inner and outer rectangles share a center, because their opposite supporting lines are equally far from their centers. Let the inner side lengths be a,b and their angle to the outer horizontal axis be theta. Reflecting or swapping the inner sides permits $0<\\theta<\\pi/4$. The horizontal and vertical spans are $a\\cos\\theta+b\\sin\\theta=8$ and $a\\sin\\theta+b\\cos\\theta=6$. The axis-parallel endpoint cannot rotate inside the outer rectangle.",
+      "Write $c=\\cos\\theta,s=\\sin\\theta$. Solving gives $a=(8c-6s)/\\cos2\\theta$ and $b=(6c-8s)/\\cos2\\theta$. Positivity restricts $\\tan\\theta<3/4$. Adding the span equations gives the perimeter $2(a+b)=28/(c+s)$.",
+      "When the inner rectangle rotates, holding a,b fixed, the derivatives of its spans are $W^{\\prime}=bc-as=(6-8\\sin2\\theta)/\\cos2\\theta$ and $H^{\\prime}=ac-bs=(8-6\\sin2\\theta)/\\cos2\\theta>0$. If W prime is negative, either direction increases one span, so the rectangle is stuck. If W prime is positive, a small negative rotation decreases both spans.",
+      "At $W^{\\prime}=0$, a small negative rotation decreases the vertical span, while the horizontal span decreases to second order because $W^{\\prime\\prime}=-8$. Thus this boundary case is also unstuck. The exact admissibility condition is $\\sin2\\theta\\le3/4$.",
+      "Since $(c+s)^2=1+\\sin2\\theta$, the perimeter is at least $28/\\sqrt{7/4}=8\\sqrt7$. Equality occurs at $\\sin2\\theta=3/4$, within the positive-side range, and the local rotation argument proves that this rectangle is unstuck. Therefore $N=448$."
+    ],
+    "keyIdeas": [
+      "A local rotation criterion for an inscribed rectangle"
+    ],
+    "commonMistakes": [
+      "Minimizing the perimeter over all inscribed rectangles without imposing the ability to rotate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "At a zero first derivative, the second derivative decides whether a small motion remains possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1993-p15",
+    "problemId": "aime-1993-p15",
+    "finalAnswer": "$\\boxed{997}$",
+    "shortExplanation": "The difference of the two contact heights is 332/665.",
+    "detailedSteps": [
+      "Put $a=AB=1995,b=AC=1994,c=BC=1993$, and $h=CH$. The altitude foot is interior, with $AH=(a^2+b^2-c^2)/(2a)$ and $BH=a-AH$.",
+      "For a right triangle, the inradius is half the sum of its legs minus its hypotenuse. Thus the distances of R and S from H along CH are $(AH+h-b)/2$ and $(BH+h-c)/2$.",
+      "Their difference is $RS=|AH-BH-b+c|/2$. Since $AH-BH=(b^2-c^2)/a$, this becomes $(b-c)(b+c-a)/(2a)$, positive for these lengths.",
+      "Consequently $RS=1992/3990=332/665$. The integers 332 and 665 are coprime, and their sum is 997."
+    ],
+    "keyIdeas": [
+      "Subtracting right-triangle inradii removes the altitude"
+    ],
+    "commonMistakes": [
+      "Calculating the large altitude radical even though it cancels when the two contact positions are subtracted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared altitude cancels from the difference of the two inradii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

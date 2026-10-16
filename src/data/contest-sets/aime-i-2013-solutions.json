@@ -1,0 +1,331 @@
+[
+  {
+    "id": "solution-aime-i-2013-p1",
+    "problemId": "aime-i-2013-p1",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The bicycle ride takes two and a half hours.",
+    "detailedSteps": [
+      "If the swimming speed is $v$ miles per hour, the running and cycling speeds are $5v$ and $10v$. The total time is $\\frac{1/2}{v}+\\frac{30}{10v}+\\frac8{5v}=\\frac{51}{10v}$ hours.",
+      "This equals $17/4$ hours, giving $v=6/5$. The cycling speed is therefore twelve miles per hour, so thirty miles take two and a half hours, or 150 minutes."
+    ],
+    "keyIdeas": [
+      "Express all three stage times through the swimming speed"
+    ],
+    "commonMistakes": [
+      "Averaging the three speeds without accounting for the different stage distances."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common speed scale cancels in the ratio of the stage times.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p2",
+    "problemId": "aime-i-2013-p2",
+    "finalAnswer": "$\\boxed{200}$",
+    "shortExplanation": "Each choice of the first two inner digits allows two final inner digits.",
+    "detailedSteps": [
+      "Divisibility by five makes the last digit zero or five. It equals the first digit, which cannot be zero in a five-digit number. Hence both outer digits are five.",
+      "The digit-sum condition now requires the three inner digits to sum to zero modulo five. Choose the first two freely, in one hundred ways. The last inner digit must have one specified residue modulo five, and precisely two digits from zero through nine have that residue.",
+      "The total count is $100\\cdot2=200$."
+    ],
+    "keyIdeas": [
+      "The matching outer digits are forced to be five"
+    ],
+    "commonMistakes": [
+      "Allowing zero as the common first and last digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first-digit condition eliminates one of the two possible terminal digits immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p3",
+    "problemId": "aime-i-2013-p3",
+    "finalAnswer": "$\\boxed{018}$",
+    "shortExplanation": "The requested reciprocal ratio sum is eighteen.",
+    "detailedSteps": [
+      "Let $AE=a$ and $EB=b$, so the large square has side $a+b$. The two square pieces must have sides $a$ and $b$: the horizontal subdivision aligns its two heights with these two widths, in one of the two possible diagonal arrangements.",
+      "Thus $a^2+b^2=\\frac9{10}(a+b)^2$. Dividing by the positive product $ab$ and putting $T=a/b+b/a$ gives $T=\\frac9{10}(T+2)$.",
+      "Solving yields $T=18$. The resulting unequal positive side lengths also ensure that the other two pieces are nonsquare rectangles, as required."
+    ],
+    "keyIdeas": [
+      "The square areas are the two complementary side lengths squared"
+    ],
+    "commonMistakes": [
+      "Treating the two square pieces as adjacent pieces with a common full side rather than opposite pieces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requested expression is exactly the symmetric ratio appearing after division by the side product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p4",
+    "problemId": "aime-i-2013-p4",
+    "finalAnswer": "$\\boxed{429}$",
+    "shortExplanation": "There are three invariant colorings among 1,287 colorings.",
+    "detailedSteps": [
+      "In the actual thirteen-square array, the central square is fixed by a quarter-turn. The other twelve squares form three distinct orbits of four, according to their position within each three-square arm.",
+      "An invariant coloring is constant on each orbit. There are five blue squares, so the center must be blue and exactly one of the three four-square orbits must be blue. The other two orbits are red.",
+      "There are three invariant colorings, while the total number of colorings is $\\binom{13}{5}=1287$. Thus the probability is $3/1287=1/429$, giving $n=429$."
+    ],
+    "keyIdeas": [
+      "The noncentral squares form three rotation orbits of length four"
+    ],
+    "commonMistakes": [
+      "Counting quarter-turn equivalence classes when the question asks for colorings individually fixed by the rotation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The blue count modulo four forces the central color.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p5",
+    "problemId": "aime-i-2013-p5",
+    "finalAnswer": "$\\boxed{098}$",
+    "shortExplanation": "The real root is the sum of cube roots of eighty-one and nine, plus one, divided by eight.",
+    "detailedSteps": [
+      "Put $y=8x-1$. Direct expansion transforms the equation into $y^3-27y-90=0$.",
+      "Let $u=\\sqrt[3]{81}$ and $v=\\sqrt[3]9$. Then $uv=9$ and $u^3+v^3=90$, so $(u+v)^3=90+27(u+v)$. Consequently $y=u+v$ solves the transformed cubic.",
+      "The derivative of $y^3-27y-90$ vanishes at $y=-3$ and $y=3$. The cubic\u2019s values there are  $-36$ and $-144$, respectively. Both its local maximum and local minimum are negative, so it has just one real root.",
+      "It follows that $x=(\\sqrt[3]{81}+\\sqrt[3]9+1)/8$ is the stated real root. Therefore $a+b+c=81+9+8=98$."
+    ],
+    "keyIdeas": [
+      "Depress the cubic and match a sum of cube roots"
+    ],
+    "commonMistakes": [
+      "Matching the radicand sum without also matching the cube-root product and linear coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shift one eighth eliminates the quadratic term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p6",
+    "problemId": "aime-i-2013-p6",
+    "finalAnswer": "$\\boxed{047}$",
+    "shortExplanation": "The probability is three forty-fourths.",
+    "detailedSteps": [
+      "View the random packing as twelve distinct positions, with blocks of three, four and five positions assigned to the respective boxes. The three mathematics books occupy a uniformly random three-subset of these positions.",
+      "They share a box exactly when all their positions lie in one of the three blocks. The favorable count is $\\binom33+\\binom43+\\binom53=1+4+10=15$, and the total count is $\\binom{12}3=220$.",
+      "Thus the probability is $15/220=3/44$, and $m+n=47$."
+    ],
+    "keyIdeas": [
+      "Count the three math books\u2019 occupied positions"
+    ],
+    "commonMistakes": [
+      "Giving the three boxes equal probability despite their different capacities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every position subset corresponds to the same number of distinct-book packing orders.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p7",
+    "problemId": "aime-i-2013-p7",
+    "finalAnswer": "$\\boxed{041}$",
+    "shortExplanation": "The height is thirty-six fifths.",
+    "detailedSteps": [
+      "Place the shared corner at the origin and the box along the coordinate axes. The three adjacent face centers are $U=(6,8,0)$, $V=(6,0,h/2)$ and $W=(0,8,h/2)$.",
+      "Their displacement vectors are $(0,-8,h/2)$ and $(-6,0,h/2)$, with cross product $(-4h,-3h,-48)$. Therefore the triangle\u2019s area is $\\frac12\\sqrt{25h^2+2304}$.",
+      "Equating this to thirty gives $25h^2=1296$. Since height is positive, $h=36/5$, a reduced fraction. Hence $m+n=41$."
+    ],
+    "keyIdeas": [
+      "Use the cross product of two face-center displacement vectors"
+    ],
+    "commonMistakes": [
+      "Using face diagonals in place of distances between the centers of the adjacent faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three-dimensional area is the norm of a cross product divided by two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p8",
+    "problemId": "aime-i-2013-p8",
+    "finalAnswer": "$\\boxed{371}$",
+    "shortExplanation": "The least pair is $m=3$ and $n=5368$.",
+    "detailedSteps": [
+      "The inverse sine requires $-1\\le\\log_m(nx)\\le1$. Since $m>1$, this is equivalent to $1/(mn)\\le x\\le m/n$. The endpoints are positive, so the logarithm is defined throughout the closed interval.",
+      "The interval length is $(m^2-1)/(mn)=1/2013$, giving $n=2013(m^2-1)/m$. Because $\\gcd(m,m^2-1)=1$, integrality of $n$ forces $m$ to divide 2013.",
+      "The factorization is $2013=3\\cdot11\\cdot61$. Thus the smallest eligible $m>1$ is three. Moreover $m+n=2014m-2013/m$ strictly increases with positive $m$, so this smallest eligible $m$ also minimizes the sum.",
+      "For $m=3$, $n=5368$ and $m+n=5371$, with remainder 371 modulo one thousand."
+    ],
+    "keyIdeas": [
+      "Convert the inverse sine domain to a closed logarithm range"
+    ],
+    "commonMistakes": [
+      "Requiring the inverse sine input to lie between zero and one rather than minus one and one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm base\u2019s integrality converts the continuous interval constraint to divisibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p9",
+    "problemId": "aime-i-2013-p9",
+    "finalAnswer": "$\\boxed{113}$",
+    "shortExplanation": "The crease has length thirty-nine square root thirty-nine over thirty-five.",
+    "detailedSteps": [
+      "Use $B=(0,0)$, $C=(12,0)$ and $A=(6,6\\sqrt3)$. The target point is $T=(9,0)$. A fold carrying $A$ to $T$ lies along their perpendicular bisector, consisting of points equally distant from them.",
+      "Expanding that equality gives $6x-12\\sqrt3y=-63$, or $y=(2x+21)/(4\\sqrt3)$. Intersecting with $AB$, whose equation is $y=\\sqrt3x$, gives $U=(21/10,21\\sqrt3/10)$.",
+      "Intersecting with $AC$, whose equation is $y=\\sqrt3(12-x)$, gives $V=(123/14,45\\sqrt3/14)$. Both points lie strictly on their original triangle sides; the line does not meet segment $BC$, so $UV$ is the complete crease within the paper.",
+      "The coordinate differences are $234/35$ and $39\\sqrt3/35$. Thus $UV=\\sqrt{234^2+3\\cdot39^2}/35=39\\sqrt{39}/35$. The coefficient fraction is reduced and thirty-nine is squarefree, giving $m+n+p=39+35+39=113$."
+    ],
+    "keyIdeas": [
+      "The fold is the perpendicular bisector of the original and target vertices"
+    ],
+    "commonMistakes": [
+      "Using the distance from A to its target as the crease length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A paper reflection fixes exactly the perpendicular bisector of a point and its image.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p10",
+    "problemId": "aime-i-2013-p10",
+    "finalAnswer": "$\\boxed{080}$",
+    "shortExplanation": "The sixteen distinct coefficient pairs have root sums totaling eighty.",
+    "detailedSteps": [
+      "Because the coefficients are real, the nonreal integer-coordinate roots are $r+si$ and $r-si$. The third root $t$ is the integer $a-2r$. Their product is 65, so $t(r^2+s^2)=65$. In particular $t$ is a positive divisor of 65.",
+      "For $t=65$, the squared norm is one, impossible with nonzero r and s. For $t=13$, the norm is five and $r=\\pm1,\\pm2$. For $t=5$, the norm is thirteen and $r=\\pm2,\\pm3$. For $t=1$, the norm is sixty-five and $r=\\pm1,\\pm4,\\pm7,\\pm8$. These lists exhaust the positive-square decompositions.",
+      "Each listed $r$ produces $a=t+2r$ and $b=65/t+2rt$. All are nonzero: $a$ is odd, and the displayed $b$ expressions do not vanish for any listed $r$. The sign of $s$ exchanges the two conjugate roots and produces no new coefficient pair.",
+      "Within a fixed $t$, distinct $r$ values give distinct $a$. Different $t$ values also give distinct polynomials, because a real cubic with a nonreal conjugate pair has a unique real root $t$. Thus the four, four and eight cases are counted exactly once.",
+      "By Vieta, the sum of the roots is $a$. In each symmetric $r$ list the $r$ values cancel, so the total is $4\\cdot13+4\\cdot5+8\\cdot1=80$."
+    ],
+    "keyIdeas": [
+      "Pair the nonreal conjugate roots and use the constant product"
+    ],
+    "commonMistakes": [
+      "Counting both signs of the same imaginary part as different polynomials."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The constant term bounds the possible integer norms and third roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p11",
+    "problemId": "aime-i-2013-p11",
+    "finalAnswer": "$\\boxed{148}$",
+    "shortExplanation": "The least block count is 220,080.",
+    "detailedSteps": [
+      "The equal distributions to sixteen, fifteen and fourteen students require $N=1680k$. For $d$ students to leave exactly three blocks, $d$ must exceed three and $1680k\\equiv3\\pmod d$. Hence $\\gcd(1680,d)$ must divide three.",
+      "Among integers from four through thirteen, this condition leaves exactly nine, eleven and thirteen. Since three distinct attendance counts are required, all three must work.",
+      "Their congruences reduce to $k\\equiv2\\pmod3$, $k\\equiv10\\pmod{11}$ and $k\\equiv1\\pmod{13}$. Write $k=1+13j$; the condition modulo eleven gives $j\\equiv10\\pmod{11}$, hence $k=131+143t$.",
+      "The condition modulo three now requires $t\\equiv0\\pmod3$. Thus $k\\equiv131\\pmod{429}$, with least positive value 131. Consequently $N=1680\\cdot131=220080$.",
+      "The factor 131 is prime, and $1680=2^4\\cdot3\\cdot5\\cdot7$. The distinct prime divisors sum to $2+3+5+7+131=148$. The derived congruences verify that all three smaller attendance counts really leave exactly three blocks."
+    ],
+    "keyIdeas": [
+      "Only nine, eleven and thirteen can give remainder three"
+    ],
+    "commonMistakes": [
+      "Including student counts one, two or three as legitimate divisors with a remainder of three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gcd obstruction identifies all three possible smaller attendance counts before the Chinese remainder calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p12",
+    "problemId": "aime-i-2013-p12",
+    "finalAnswer": "$\\boxed{021}$",
+    "shortExplanation": "The triangle area is nine plus five square root three, divided by four.",
+    "detailedSteps": [
+      "Place the regular hexagon at $A=(0,0)$, $B=(1,0)$, $C=(3/2,\\sqrt3/2)$, $D=(1,\\sqrt3)$, $E=(0,\\sqrt3)$ and $F=(-1/2,\\sqrt3/2)$. The $AB$ and $CD$ supporting lines meet at $Q=(2,0)$, with the hexagon in their sixty-degree wedge.",
+      "The point $P$ lies to the left of $A$ on the first supporting line. Since its angle is seventy-five degrees, line $PR$ has slope $k=\\tan75^\\circ=2+\\sqrt3$. Write $P=(p,0)$, so $PR$ has equation $y=k(x-p)$. The hexagon must lie below this line.",
+      "The remaining vertices eligible to touch $PR$ are $E$ and $F$. The quantity $y-kx$ is $\\sqrt3$ at $E$ and $1+\\sqrt3$ at $F$. Thus a line through $E$ would leave $F$ outside the triangle, whereas the supporting line through $F$ encloses every vertex. Consequently $-kp=1+\\sqrt3$, or $p=1-\\sqrt3$.",
+      "It follows that $PQ=1+\\sqrt3$. Intersecting $PR$ with $QR$, whose equation is $y=\\sqrt3(2-x)$, gives $R=((2-\\sqrt3)/2,(3+2\\sqrt3)/2)$. The three supporting half-planes contain all six vertices, so this configuration realizes the required inscribed hexagon.",
+      "The triangle area is $\\frac12(1+\\sqrt3)(3+2\\sqrt3)/2=(9+5\\sqrt3)/4$. Its rational numerator and denominator are coprime, and the radical is squarefree. Hence $a+b+c+d=9+5+3+4=21$."
+    ],
+    "keyIdeas": [
+      "Select the supporting line that actually encloses the hexagon"
+    ],
+    "commonMistakes": [
+      "Choosing the contact at $E$ without checking that the other hexagon vertex $F$ remains inside the triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The support value $y-kx$ decides which remaining vertex can touch the third side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p13",
+    "problemId": "aime-i-2013-p13",
+    "finalAnswer": "$\\boxed{961}$",
+    "shortExplanation": "The union area is 30,240 over 961.",
+    "detailedSteps": [
+      "First consider one stage, scaled to the original side lengths. The similarity $\\triangle B_{n-1}C_nC_{n-1}\\sim\\triangle AB_{n-1}C_{n-1}$ maps its side $B_{n-1}C_{n-1}$ of length seventeen to the original side of length twenty-five. Its scale is therefore $17/25$.",
+      "The side $C_nC_{n-1}$ corresponds to the original length seventeen, so its length is $289/25$. Therefore $AC_n=25-289/25=336/25$. The smaller triangle about A has scale $\\lambda=336/625$. Its other side endpoint $B_n$ lies at the same scale along AB.",
+      "The two similar triangles and the requested triangle $B_{n-1}C_nB_n$ partition the parent triangle. The second similar triangle has area ratio $(17/25)^2=1-\\lambda$, and the smaller triangle at $A$ has ratio $\\lambda^2$. Thus the requested piece has area ratio $\\lambda-\\lambda^2$.",
+      "The requested pieces have disjoint interiors: each lies in the current parent outside the next smaller A triangle, while all later pieces lie inside that smaller triangle. Their common boundary segments have zero area. Subsequent parent areas multiply by $\\lambda^2$, so the union area is the convergent geometric sum $K(\\lambda-\\lambda^2)/(1-\\lambda^2)=K\\lambda/(1+\\lambda)$.",
+      "Heron\u2019s formula gives the original area $K=\\sqrt{27\\cdot15\\cdot10\\cdot2}=90$. Hence the union area is $90\\cdot336/961=30240/961$. The denominator is $31^2$ and the numerator is not divisible by 31, so the reduced denominator is 961."
+    ],
+    "keyIdeas": [
+      "Use the stipulated similarity order to obtain a geometric area series"
+    ],
+    "commonMistakes": [
+      "Reversing the vertex correspondence in the stated similarity or summing overlapping full parent triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The similarity order fixes the contraction; subtracting the two similar pieces identifies the required third piece.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p14",
+    "problemId": "aime-i-2013-p14",
+    "finalAnswer": "$\\boxed{036}$",
+    "shortExplanation": "The permitted sine value is minus seventeen nineteenth.",
+    "detailedSteps": [
+      "Let $w=ie^{i\\theta}/2$. Comparing successive real and imaginary terms gives $Q+iP=1+w+w^2+\\cdots=1/(1-w)$, valid since $|w|=1/2$.",
+      "Write $s=\\sin\\theta$ and $c=\\cos\\theta$. Then $1-w=1+s/2-ic/2$, so its reciprocal has real and imaginary parts proportional to $1+s/2$ and $c/2$. Thus $P/Q=c/(2+s)$. In particular $Q$ is positive and this ratio is defined.",
+      "The given ratio makes $c/(2+s)=2\\sqrt2/7$. Squaring and using $c^2=1-s^2$ yields $57s^2+32s-17=0$, whose roots are $1/3$ and $-17/19$.",
+      "The interval $\\pi\\le\\theta<2\\pi$ excludes the positive sine root. For $s=-17/19$, take $c=6\\sqrt2/19>0$, which is in the fourth quadrant and satisfies the original positive ratio without squaring ambiguity.",
+      "Therefore $m+n=17+19=36$."
+    ],
+    "keyIdeas": [
+      "Combine the two convergent series into one complex geometric series"
+    ],
+    "commonMistakes": [
+      "Using the reciprocal ratio Q over P or retaining a sine root outside the stated angle interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The alternating sine and cosine coefficients are consecutive powers of the same complex number.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2013-p15",
+    "problemId": "aime-i-2013-p15",
+    "finalAnswer": "$\\boxed{272}$",
+    "shortExplanation": "There are 272 admissible increasing triples.",
+    "detailedSteps": [
+      "Write the increasing triple as $(A,B,C)=(A,A+d,A+2d)$ with $d>0$. Reducing its arithmetic-progression relation modulo $p$ gives $a+c\\equiv2b\\pmod p$. The other stipulated progression is ordered $(b,a,c)$, so $b+c=2a$.",
+      "Subtracting yields $3(a-b)\\equiv0\\pmod p$. Because $0<a-b<p$ and $p$ is prime, necessarily $p=3$. The strictly ordered residues are then forced to be $(b,a,c)=(0,1,2)$.",
+      "Conversely, these residues work whenever $A\\equiv1\\pmod3$ and $d\\equiv2\\pmod3$. They produce $B\\equiv0$ and $C\\equiv2$, and both required progressions with $p=3$. Thus the conditions are equivalent to this single pair of congruences.",
+      "The possible differences are $d=2,5,8,\\ldots,47$. For these sixteen values, the counts of $A\\equiv1\\pmod3$ with $0\\le A\\le99-2d$ are respectively $32,30,28,\\ldots,2$. Their sum is $2(1+2+\\cdots+16)=272$.",
+      "Each counted pair determines exactly one increasing triple, and every admissible triple determines its own $A$ and $d$, so none is counted repeatedly."
+    ],
+    "keyIdeas": [
+      "Both arithmetic progressions force the prime to be three"
+    ],
+    "commonMistakes": [
+      "Reading the second arithmetic progression as a,b,c rather than its actual order b,a,c."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conflicting residue orders isolate the prime before any counting is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "finalAnswer": "Count pairs anchored at either qualifying first cow of a breed, then subtract their shared pair when both anchors qualify.",
+    "shortExplanation": "A leader who lists every cow of her breed must be its first cow. Every valid pair contains at least one such leader, since two forward lists cannot each contain the other cow. At most two anchors therefore need to be checked.",
+    "detailedSteps": [
+      "Find the first and last positions of each breed. The first G cow covers all G cows exactly when her endpoint reaches the last G; check H in the same way.",
+      "Why are these the only full-breed candidates? A later cow cannot list an earlier cow of the same breed because her list begins at her own position.",
+      "Why must a valid pair contain an anchor? If neither leader covers her own breed, both must list the other leader. For two distinct positions $g,h$, that would require $g\\le h$ and $h\\le g$, an impossibility.",
+      "If the full-G anchor exists, scan every H cow. Count the pair when that H cow covers all H cows or her inclusive list contains the G anchor. The G leader already satisfies her own condition.",
+      "Repeat symmetrically for a full-H anchor. If both anchors exist, subtract one: the pair consisting of the two anchors is valid and appears in both scans. No other pair is counted twice.",
+      "The scans take $O(N)$ time. The implementation stores the endpoints in $O(N)$ space and uses a 64-bit pair count.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\n\nlong long read_and_solve_leaders() {\n    int n;\n    std::cin >> n;\n    std::string breed;\n    std::cin >> breed;\n    std::vector<int> end(n);\n    for (int i = 0; i < n; ++i) std::cin >> end[i];\n    int first_g = n, first_h = n, last_g = -1, last_h = -1;\n    for (int i = 0; i < n; ++i) {\n        if (breed[i] == 'G') {\n            if (first_g == n) first_g = i;\n            last_g = i;\n        } else {\n            if (first_h == n) first_h = i;\n            last_h = i;\n        }\n    }\n    const bool covers_g = end[first_g] >= last_g + 1;\n    const bool covers_h = end[first_h] >= last_h + 1;\n    long long answer = 0;\n    if (covers_g) {\n        for (int h = 0; h < n; ++h) {\n            if (breed[h] != 'H') continue;\n            const bool owns_breed = h == first_h && covers_h;\n            const bool contains_g = h <= first_g && end[h] >= first_g + 1;\n            if (owns_breed || contains_g) ++answer;\n        }\n    }\n    if (covers_h) {\n        for (int g = 0; g < n; ++g) {\n            if (breed[g] != 'G') continue;\n            const bool owns_breed = g == first_g && covers_g;\n            const bool contains_h = g <= first_h && end[g] >= first_h + 1;\n            if (owns_breed || contains_h) ++answer;\n        }\n    }\n    if (covers_g && covers_h) --answer;\n    return answer;\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    std::cout << read_and_solve_leaders() << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Forward intervals cannot form a two-cow inclusion cycle.",
+      "Only the first cow of a breed can include every cow of that breed.",
+      "Count the union of two anchored families and remove the one possible overlap."
+    ],
+    "commonMistakes": [
+      "Testing every G/H pair is quadratic and too slow at the maximum N.",
+      "A leader may satisfy either clause; she need not contain all cows of her own breed.",
+      "When both full-breed anchors exist, their pair must be counted once rather than twice.",
+      "The listed endpoint is inclusive, so an endpoint exactly equal to the other leader position qualifies."
+    ],
+    "alternativeMethods": [
+      "The later-position leader in a valid pair cannot list the earlier one, so she must cover her own breed. This gives a second way to organize the same count by which breed has the later first occurrence."
+    ],
+    "difficultyNotes": "The main work is the structural proof that reduces many possible pairs to at most two anchors. After that reduction, the implementation is a pair of linear scans.",
+    "id": "solution-usaco-bronze-2023-january-p1",
+    "problemId": "usaco-bronze-2023-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate every subset of conditioners and choose the cheapest subset whose combined cooling meets every occupied-stall requirement.",
+    "shortExplanation": "With at most ten conditioners, there are only 1024 subsets. For each one, add cooling on its covered stalls and test the resulting amounts against the cows requirements.",
+    "detailedSteps": [
+      "Create an array of requirements for stalls 1 through 100. Fill each cow interval inclusively with her required cooling. Cow intervals are disjoint, so each occupied stall has one requirement.",
+      "A mask of $M$ bits selects a subset of the conditioners. Iterate all masks from zero through $2^M-1$, including the empty subset.",
+      "For a mask, start a zero cooling array and zero cost. For each selected conditioner, add its cooling to every stall in its inclusive interval and add its operating cost once. Overlapping conditioners contribute their sum.",
+      "The mask is feasible precisely when every stall receives at least its required cooling. Record its cost only if this test passes.",
+      "Every possible operating plan is one of the masks, and the feasibility test reproduces the source conditions. Taking the minimum over all feasible masks therefore gives the global optimum. The all-conditioners guarantee ensures a feasible mask exists.",
+      "This implementation takes $O(2^M M\\cdot100+N\\cdot100)$ time and $O(M+100)$ space. It uses 64-bit cooling and cost values. The non-sample guarantee $M=10$ fits this bound.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <climits>\n#include <iostream>\n#include <vector>\n\nstruct Conditioner {\n    int first, last;\n    long long cooling, cost;\n};\n\nlong long read_and_solve_air() {\n    int n, m;\n    std::cin >> n >> m;\n    std::vector<long long> required(101, 0);\n    for (int i = 0; i < n; ++i) {\n        int first, last;\n        long long amount;\n        std::cin >> first >> last >> amount;\n        for (int stall = first; stall <= last; ++stall) required[stall] = amount;\n    }\n    std::vector<Conditioner> ac(m);\n    for (int i = 0; i < m; ++i) {\n        std::cin >> ac[i].first >> ac[i].last >> ac[i].cooling >> ac[i].cost;\n    }\n    long long best = LLONG_MAX;\n    for (int mask = 0; mask < (1 << m); ++mask) {\n        std::vector<long long> supplied(101, 0);\n        long long cost = 0;\n        for (int i = 0; i < m; ++i) {\n            if (!(mask & (1 << i))) continue;\n            cost += ac[i].cost;\n            for (int stall = ac[i].first; stall <= ac[i].last; ++stall) {\n                supplied[stall] += ac[i].cooling;\n            }\n        }\n        bool feasible = true;\n        for (int stall = 1; stall <= 100; ++stall) {\n            if (supplied[stall] < required[stall]) {\n                feasible = false;\n                break;\n            }\n        }\n        if (feasible) best = std::min(best, cost);\n    }\n    return best;\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    std::cout << read_and_solve_air() << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Small numbers of binary choices make exhaustive subset search practical.",
+      "Cooling adds on overlapping conditioner intervals.",
+      "Feasibility is a requirement at every occupied stall, not an average over the barn."
+    ],
+    "commonMistakes": [
+      "Choosing the cheapest single conditioner can miss a cheaper combination that jointly supplies enough cooling.",
+      "Testing only interval endpoints can miss an interior stall with insufficient cooling.",
+      "Cow intervals are disjoint, but conditioner intervals may overlap.",
+      "Use inclusive ranges; the last stall of an interval must receive cooling too."
+    ],
+    "alternativeMethods": [
+      "A recursive include-or-exclude search enumerates the same plans. An independent checking oracle instead branches on a presently deficient stall, because every feasible completion must add an unused conditioner covering it."
+    ],
+    "difficultyNotes": "The small conditioner bound permits a direct complete search. Correct interval aggregation and testing all required stalls matter more than a sophisticated optimization method.",
+    "id": "solution-usaco-bronze-2023-january-p2",
+    "problemId": "usaco-bronze-2023-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Minimize $L-3+[s_i=\\mathrm O]+[s_{i+2}=\\mathrm M]$ over three-character windows whose middle is O; return -1 if none exists.",
+    "shortExplanation": "The three surviving characters must be a contiguous original window. Its middle character can never become an editable endpoint, so it must already be O. The outer characters can then be flipped after the unwanted prefix and suffix are deleted.",
+    "detailedSteps": [
+      "If the original length $L$ is below three, return -1: the operations cannot add characters.",
+      "Endpoint deletions leave a contiguous interval. A result of length three therefore keeps some original window $s_i s_{i+1}s_{i+2}$ and uses exactly $L-3$ deletions.",
+      "The middle survivor can never be first while the left survivor remains, and can never be last while the right survivor remains. Since all three survive, the middle character cannot be flipped. Skip any window whose middle is not O.",
+      "For a remaining window, delete the outer prefix and suffix. Flip its first character once if it is O rather than M, and flip its last character once if it is M rather than O.",
+      "The total is $L-3$ plus those zero, one or two endpoint flips. Every successful transformation has one of these windows and needs at least those operations; the construction attains that bound. Taking the minimum is therefore exact.",
+      "Scan at most $L-2$ windows per query, giving $O(L)$ time and $O(1)$ extra optimization space. The stored input string uses $O(L)$ space.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\n\nstd::vector<int> read_and_solve_moo() {\n    int q;\n    std::cin >> q;\n    std::vector<int> answers;\n    while (q--) {\n        std::string s;\n        std::cin >> s;\n        int best = 1000000;\n        const int length = static_cast<int>(s.size());\n        for (int i = 0; i + 2 < length; ++i) {\n            if (s[i + 1] != 'O') continue;\n            const int flips = (s[i] == 'O') + (s[i + 2] == 'M');\n            best = std::min(best, length - 3 + flips);\n        }\n        answers.push_back(best == 1000000 ? -1 : best);\n    }\n    return answers;\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    const std::vector<int> answers = read_and_solve_moo();\n    for (std::size_t i = 0; i < answers.size(); ++i) std::cout << answers[i] << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Deleting only endpoints preserves a contiguous block of original characters.",
+      "The middle of the final block is never editable.",
+      "A matching endpoint costs zero flips; a mismatching endpoint costs one."
+    ],
+    "commonMistakes": [
+      "Replacing an arbitrary interior character is not an allowed operation.",
+      "An O at the very first or last original position cannot become the middle survivor of a three-character window.",
+      "A subsequence is too broad: the surviving three characters must be adjacent in the original string.",
+      "Do not assume every length-three string is possible; MMO has an uneditable middle M."
+    ],
+    "alternativeMethods": [
+      "For small strings, breadth-first search over the exact endpoint operations gives a separate minimum-distance checker. It verifies the window formula without using that formula to generate the expected answer."
+    ],
+    "difficultyNotes": "The important proof concerns which original character is never exposed as an endpoint. Once that invariant is established, the optimal cost for each window is immediate.",
+    "id": "solution-usaco-bronze-2023-january-p3",
+    "problemId": "usaco-bronze-2023-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

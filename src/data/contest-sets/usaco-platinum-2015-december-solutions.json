@@ -1,0 +1,89 @@
+[
+  {
+    "finalAnswer": "Maximum number of requested paths containing one vertex",
+    "shortExplanation": "Mark each path at its endpoints and lowest common ancestor, then accumulate the markers up the tree. The largest accumulated value is the maximum stall load.",
+    "detailedSteps": [
+      "Root the tree and build binary-lifting ancestors. Find the lowest common ancestor $w$ of each requested pair $(s,t)$. Every path counts both endpoints, so this is a vertex-load problem.",
+      "For that path, apply $d_s\\mathrel{+}=1$, $d_t\\mathrel{+}=1$, $d_w\\mathrel{-}=1$, and $d_{\\operatorname{parent}(w)}\\mathrel{-}=1$ if the parent exists. Process vertices in reverse traversal order, adding each value into its parent.",
+      "To prove the update, inspect a vertex subtree. Strictly above $w$, all four marks cancel. At $w$, the two positive marks and its one subtraction leave one. Below $w$, a subtree contains one endpoint exactly when its root lies on the requested path. Other subtrees contribute zero. Thus the accumulated value is the exact number of paths through that vertex.",
+      "The same formula handles $s=t$: only that vertex receives a unit load. The root has no parent stall to subtract. Sum all path contributions and take the largest value.",
+      "Binary lifting takes $O((N+K)\\log N)$ time and $O(N\\log N)$ space. Iterative traversal avoids stack overflow on a long chain; the load itself never exceeds $K$.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <climits>\n#include <fstream>\n#include <set>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"maxflow.in\"); ofstream out(\"maxflow.out\");\n    int n,k; if (!(in>>n>>k)) return 0;\n    vector<vector<int>> g(n+1);\n    for(int i=1,u,v;i<n;i++){in>>u>>v;g[u].push_back(v);g[v].push_back(u);}\n    int lg=1; while((1<<lg)<=n) ++lg;\n    vector<vector<int>> up(lg,vector<int>(n+1));\n    vector<int> depth(n+1),order{1};\n    for(size_t i=0;i<order.size();i++){\n        int u=order[i];\n        for(int v:g[u]) if(v!=up[0][u]){up[0][v]=u;depth[v]=depth[u]+1;order.push_back(v);}\n    }\n    for(int b=1;b<lg;b++)for(int u=1;u<=n;u++)up[b][u]=up[b-1][up[b-1][u]];\n    auto lca=[&](int u,int v){\n        if(depth[u]<depth[v])swap(u,v);\n        int diff=depth[u]-depth[v];\n        for(int b=0;b<lg;b++)if(diff&(1<<b))u=up[b][u];\n        if(u==v)return u;\n        for(int b=lg-1;b>=0;b--)if(up[b][u]!=up[b][v]){u=up[b][u];v=up[b][v];}\n        return up[0][u];\n    };\n    vector<long long> delta(n+1);\n    for(int i=0,s,t;i<k;i++){\n        in>>s>>t;int w=lca(s,t);\n        ++delta[s];++delta[t];--delta[w];if(up[0][w])--delta[up[0][w]];\n    }\n    for(int i=n-1;i>0;i--)delta[up[0][order[i]]]+=delta[order[i]];\n    out<<*max_element(delta.begin()+1,delta.end())<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Use subtree sums of endpoint markers to recover inclusive vertex paths.",
+      "Distinguish vertex loads from edge loads at the lowest common ancestor."
+    ],
+    "commonMistakes": [
+      "Subtracting twice at the lowest common ancestor removes a vertex that must count.",
+      "Do not count a fictitious parent of the root as an actual stall.",
+      "A recursive traversal can exhaust the stack on a maximum-length chain."
+    ],
+    "alternativeMethods": [
+      "Heavy-light decomposition with inclusive range increments can also accumulate path loads. It requires more updates per path but follows the same unique-path geometry."
+    ],
+    "difficultyNotes": "The mathematical step is the four-marker identity. Once it is proved, lowest common ancestors and a reverse traversal implement it directly.",
+    "id": "solution-usaco-platinum-2015-december-p1",
+    "problemId": "usaco-platinum-2015-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Maximum score over all allowed switch positions",
+    "shortExplanation": "Compute the best high-card matching for every prefix and the best low-card matching for every suffix. Their sum is feasible because the largest cards can be reserved for the prefix and the smallest for the suffix.",
+    "detailedSteps": [
+      "Consider a switch after $k$ rounds, with $0\\le k\\le N$. There is an optimum that reserves the largest $k$ Bessie cards for the high-card phase. Swapping a smaller high-phase card with a larger low-phase card cannot spoil either win, so repeated exchanges produce that allocation.",
+      "Let $H[k]$ be the best score against the first $k$ opponents when matching winners from the entire hand. It equals the optimum with just the largest $k$ cards: any winning matching uses at most $k$ cards, and replacing its sorted supply by the largest $k$ only helps. Similarly, $L[k]$ for the suffix uses the smallest $N-k$ cards. These two reserved supplies are disjoint, so $H[k]+L[k]$ is an attainable score.",
+      "Build $H$ in forward order with an ordered set. Against card $e$, use the smallest available card strictly greater than $e$ when one exists; otherwise leave the round unmatched. Remove only winning cards. An exchange with any later holder of that chosen card preserves a maximum matching, establishing the greedy rule.",
+      "Build $L$ by reading opponents in reverse order from a fresh copy of the hand. Match $e$ with the largest available card strictly below $e$. The symmetric exchange argument proves this greedy maximum matching. Losing rounds can later be filled by distinct unused cards.",
+      "Evaluate $\\max_{0\\le k\\le N}(H[k]+L[k])$. The endpoints include switching immediately or never switching. Two ordered-set scans use $O(N\\log N)$ time and $O(N)$ space; no assumption that $N$ is even is needed.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <climits>\n#include <fstream>\n#include <set>\n#include <vector>\nusing namespace std;\nint main(){\n    ifstream in(\"cardgame.in\");ofstream out(\"cardgame.out\");\n    int n;if(!(in>>n))return 0;\n    vector<int> e(n),hi(n+1),lo(n+1);vector<bool> used(2*n+1);\n    for(int&v:e){in>>v;used[v]=true;}\n    set<int> hand;for(int v=1;v<=2*n;v++)if(!used[v])hand.insert(v);\n    auto high=hand;\n    for(int i=0;i<n;i++){\n        hi[i+1]=hi[i];auto it=high.upper_bound(e[i]);\n        if(it!=high.end()){++hi[i+1];high.erase(it);}\n    }\n    auto low=hand;\n    for(int i=n-1;i>=0;i--){\n        lo[i]=lo[i+1];auto it=low.lower_bound(e[i]);\n        if(it!=low.begin()){--it;++lo[i];low.erase(it);}\n    }\n    int answer=0;for(int k=0;k<=n;k++)answer=max(answer,hi[k]+lo[k]);\n    out<<answer<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate the two phases by an exchange argument before adding their independent optimum scores.",
+      "A matching counts winning rounds; it need not consume a losing card while building the score arrays."
+    ],
+    "commonMistakes": [
+      "The switch position is chosen freely; it is not fixed halfway through the game.",
+      "Two optimizations using the whole hand could overlap unless the sorted disjoint-allocation proof is supplied.",
+      "Equality does not win. The two hands are disjoint parts of the deck."
+    ],
+    "alternativeMethods": [
+      "One can maintain maximum threshold matchings with a balanced tree of unmatched requirements. The two ordered-set scans are simpler here because all switch positions share prefix and suffix optima."
+    ],
+    "difficultyNotes": "The crucial proof is that the two independently computed matching counts can be attained with disjoint groups of cards. The implementation alone does not establish that fact.",
+    "id": "solution-usaco-platinum-2015-december-p2",
+    "problemId": "usaco-platinum-2015-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print the current minimum or sum for each requested interval",
+    "shortExplanation": "A lazy segment tree stores interval sums, minima and deferred uniform increments. It answers every M or S query after the preceding P updates.",
+    "detailedSteps": [
+      "Each segment-tree node represents an inclusive interval and stores its exact sum, minimum and a lazy increment. Build leaves from the initial nonnegative counts; merge children by adding sums and taking the smaller minimum.",
+      "A uniform addition $c$ to an interval of length $\\ell$ changes its summaries to $\\text{sum}+c\\ell$ and $\\text{minimum}+c$. Add $c$ to the lazy tag. Because the same amount is added everywhere, relative order and the minimum translate exactly.",
+      "Before partially descending into a node, push its stored tag into both children. Update the intersecting pieces and recombine them. For a query, combine the contributions of covered pieces using sum and minimum; an empty piece has sum zero and minimum infinity.",
+      "The invariant follows by induction: a complete-interval addition transforms exact summaries correctly, pushing applies the same pending operations to both children, and recombination restores the exact parent values. Therefore overlapping and nested updates preserve every later minimum and sum.",
+      "Use 64-bit integers for summaries, tags and the product $c\\ell$. A field can reach $100000+100000\\cdot100000=10000100000$, and a full-range sum is at most $2000020000000000$. Build time is $O(N)$; each operation takes $O(\\log N)$ time, with $O(N)$ storage. Print one line per M or S and no line for P.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <climits>\n#include <fstream>\n#include <set>\n#include <vector>\nusing namespace std;\nstruct Tree{\n    int n;vector<long long> sum,mn,lazy;\n    Tree(const vector<long long>&a):n((int)a.size()),sum(4*n),mn(4*n),lazy(4*n){build(1,0,n-1,a);}\n    void pull(int p){sum[p]=sum[2*p]+sum[2*p+1];mn[p]=min(mn[2*p],mn[2*p+1]);}\n    void build(int p,int l,int r,const vector<long long>&a){\n        if(l==r){sum[p]=mn[p]=a[l];return;}\n        int m=(l+r)/2;build(2*p,l,m,a);build(2*p+1,m+1,r,a);pull(p);\n    }\n    void apply(int p,int l,int r,long long c){sum[p]+=c*(r-l+1);mn[p]+=c;lazy[p]+=c;}\n    void push(int p,int l,int r){\n        if(l!=r && lazy[p]){int m=(l+r)/2;apply(2*p,l,m,lazy[p]);apply(2*p+1,m+1,r,lazy[p]);lazy[p]=0;}\n    }\n    void add(int p,int l,int r,int a,int b,long long c){\n        if(a<=l&&r<=b){apply(p,l,r,c);return;}\n        push(p,l,r);int m=(l+r)/2;\n        if(a<=m)add(2*p,l,m,a,b,c);if(b>m)add(2*p+1,m+1,r,a,b,c);pull(p);\n    }\n    pair<long long,long long> query(int p,int l,int r,int a,int b){\n        if(a<=l&&r<=b)return {sum[p],mn[p]};\n        push(p,l,r);int m=(l+r)/2;pair<long long,long long> x={0,LLONG_MAX};\n        if(a<=m){auto y=query(2*p,l,m,a,b);x.first+=y.first;x.second=min(x.second,y.second);}\n        if(b>m){auto y=query(2*p+1,m+1,r,a,b);x.first+=y.first;x.second=min(x.second,y.second);}\n        return x;\n    }\n};\nint main(){\n    ifstream in(\"haybales.in\");ofstream out(\"haybales.out\");\n    int n,q;if(!(in>>n>>q))return 0;vector<long long>a(n);for(auto&x:a)in>>x;Tree t(a);\n    while(q--){char c;int l,r;in>>c>>l>>r;--l;--r;\n        if(c=='P'){long long v;in>>v;t.add(1,0,n-1,l,r,v);}\n        else{auto x=t.query(1,0,n-1,l,r);out<<(c=='S'?x.first:x.second)<<'\\n';}\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Uniform translation updates both an interval minimum and its sum without visiting individual fields.",
+      "Push pending work before inspecting a partial interval."
+    ],
+    "commonMistakes": [
+      "Increase the sum by the increment times the interval length, not by the increment alone.",
+      "Initial counts fit in 32 bits, but repeated updates and full sums do not.",
+      "Use inclusive endpoints and preserve the original output order. An update-only input legitimately produces an empty output."
+    ],
+    "alternativeMethods": [
+      "A range-add Fenwick structure can handle the sum queries, but it does not also provide arbitrary range minima. The combined segment-tree summaries answer both required query types."
+    ],
+    "difficultyNotes": "The key is the lazy invariant, rather than a complicated formula. Correct 64-bit arithmetic and partial-overlap handling matter at the printed limits.",
+    "id": "solution-usaco-platinum-2015-december-p3",
+    "problemId": "usaco-platinum-2015-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

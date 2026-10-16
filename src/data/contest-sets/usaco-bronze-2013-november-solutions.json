@@ -1,0 +1,90 @@
+[
+  {
+    "id": "solution-usaco-bronze-2013-november-p1",
+    "problemId": "usaco-bronze-2013-november-p1",
+    "finalAnswer": "Write the number of distinct accepted dial triples to combo.out.",
+    "shortExplanation": "Enumerate each ordered setting once. Accept it when all three dials are close to John’s combination or all three are close to the master combination.",
+    "detailedSteps": [
+      "For dial values x and y, the two circular distances are their absolute difference and N minus that difference. The dial is within tolerance when the smaller distance is at most two.",
+      "Enumerate every ordered triple in $\\{1,\\ldots,N\\}^3$. Test all three coordinates against John’s combination, and separately test all three against the master combination. A mixture of the two combinations does not qualify.",
+      "Join the two whole-triple tests with OR. Each setting is visited once, so a setting close to both combinations is counted once. Identical combinations need no special case.",
+      "This visits exactly the possible settings, and the test is exactly the opening condition. Therefore every accepted setting is counted and every rejected setting is omitted.",
+      "There are $N^3\\leq 10^6$ settings. Time is $O(N^3)$ and auxiliary space is $O(1)$. For small dials, wrapping may merge several nearby offsets; do not assume every neighborhood has 125 settings.",
+      "Read combo.in and write one count to combo.out. Keep dial order: permuting a setting can change whether it opens the lock.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, a[3], b[3]; in >> n;\n    for (int& x : a) in >> x;\n    for (int& x : b) in >> x;\n    auto close = [&](int x, int y) {\n        int d = x > y ? x - y : y - x;\n        return min(d, n - d) <= 2;\n    };\n    int count = 0;\n    for (int x = 1; x <= n; ++x)\n        for (int y = 1; y <= n; ++y)\n            for (int z = 1; z <= n; ++z) {\n                bool john = close(x,a[0]) && close(y,a[1]) && close(z,a[2]);\n                bool master = close(x,b[0]) && close(y,b[1]) && close(z,b[2]);\n                if (john || master) ++count;\n            }\n    out << count << '\\n';\n}\nint main() {\n    ifstream in(\"combo.in\"); ofstream out(\"combo.out\"); solve(in,out);\n}\n```"
+    ],
+    "keyIdeas": [
+      "Circular distance handles the boundary between 1 and N.",
+      "Each valid combination must satisfy all three dials together.",
+      "A whole-triple OR prevents double counting."
+    ],
+    "commonMistakes": [
+      "Combining one dial from each valid combination.",
+      "Counting an overlap twice or using ordinary distance at the wraparound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Straight enumeration is enough; the main checks are wraparound, whole-combination tolerance and overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2013-november-p2",
+    "problemId": "usaco-bronze-2013-november-p2",
+    "finalAnswer": "Write the maximum total milk at one integer temperature to milktemp.out.",
+    "shortExplanation": "Track how each cow’s milk changes at the start of its comfortable range and immediately after its end. Sweep all simultaneous changes together.",
+    "detailedSteps": [
+      "A cow changes from cold to comfortable at A, increasing milk by $Y-X$. It changes from comfortable to hot at $B+1$, changing milk by $Z-Y$. The endpoint B itself is still comfortable.",
+      "Before every preferred range, all cows are cold and the total is $NX$. Record the two changes per cow and sort them by integer temperature.",
+      "At one event temperature, combine every change before checking the total. A partially processed group of changes does not describe any actual temperature.",
+      "Between consecutive event temperatures, no cow changes its category, so the total is constant. The initial cold regime, each event regime and the final hot regime cover all possible integer temperatures.",
+      "Inductively the running total equals the literal sum of cow contributions in each regime. Its maximum is therefore exactly the best total obtainable with one thermostat setting.",
+      "Sorting $2N$ events takes $O(N\\log N)$ time and $O(N)$ space. This avoids scanning every temperature. Equal endpoints, zero-width comfortable ranges and simultaneous arrivals and departures are handled by the same grouped sweep.",
+      "Read milktemp.in and write the maximum to milktemp.out. The upper transition is at B+1, and Y is strictly larger than both X and Z in the original problem.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; long long x,y,z; in >> n >> x >> y >> z;\n    vector<pair<long long,long long>> events;\n    for (int i=0; i<n; ++i) {\n        long long a,b; in >> a >> b;\n        events.push_back({a,y-x});\n        events.push_back({b+1,z-y});\n    }\n    sort(events.begin(),events.end());\n    long long milk=n*x, best=milk;\n    for (size_t i=0; i<events.size();) {\n        long long t=events[i].first, change=0;\n        while (i<events.size() && events[i].first==t) change+=events[i++].second;\n        milk+=change;\n        best=max(best,milk);\n    }\n    out << best << '\\n';\n}\nint main() {\n    ifstream in(\"milktemp.in\"); ofstream out(\"milktemp.out\"); solve(in,out);\n}\n```"
+    ],
+    "keyIdeas": [
+      "Inclusive preferred intervals end at B+1 in the event model.",
+      "Process equal-temperature events as one group.",
+      "The total is constant between category changes."
+    ],
+    "commonMistakes": [
+      "Treating B as the first hot temperature.",
+      "Taking a maximum halfway through simultaneous changes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key detail is the integer transition after an inclusive upper endpoint and grouping simultaneous events.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2013-november-p3",
+    "problemId": "usaco-bronze-2013-november-p3",
+    "finalAnswer": "Write the adjectives of the Kth present cow, in order, to nocow.out.",
+    "shortExplanation": "Give every adjective tuple a lexicographic rank. Skip the missing ranks, then decode the rank of the Kth remaining tuple.",
+    "detailedSteps": [
+      "For each adjective position, collect its distinct observed words and sort them. Every possible cow is one tuple from these position-specific vocabularies. Remove duplicate missing descriptions before subtracting missing types.",
+      "Let $S_j$ be the product of vocabulary sizes after position j. If a tuple uses zero-based word indices $d_j$, its zero-based lexicographic rank is $\\sum_j d_jS_j$. Earlier words decide before later words, so these blocks have exactly the required order.",
+      "Convert all missing tuples to ranks, sort them and remove duplicate ranks. Start with $r=K-1$, the desired rank if no type were missing.",
+      "Visit missing ranks in increasing order. If a missing rank is at most r, skipping that absent item shifts the desired rank one place right, so increment r. Stop when the next missing rank exceeds r.",
+      "After each processed exclusion, r is the Kth surviving rank in the universe with those exclusions removed. A later missing item affects that rank exactly when it is at or before r. This proves the final rank is the Kth present cow.",
+      "Decode from left to right: the next word index is $\\lfloor r/S_j\\rfloor$, then replace r by its remainder modulo $S_j$. Print only the adjectives, separated by spaces.",
+      "If D distinct descriptions are missing, the total product is the number of present cows plus D, hence at most $10^9+100$. Suffix products and ranks therefore fit the code’s integer arithmetic even with thirty adjective positions.",
+      "For L positions and N missing lines, time is $O(LN\\log N)$ and space is $O(LN)$. The algorithm never lists a billion cows. Read nocow.in and write the selected description to nocow.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; long long k; in >> n >> k;\n    vector<vector<string>> missing(n);\n    for (int i=0; i<n; ++i) {\n        string word;\n        for (int j=0; j<4; ++j) in >> word;\n        while (in >> word && word!=\"cow.\") missing[i].push_back(word);\n    }\n    int length=static_cast<int>(missing[0].size());\n    vector<vector<string>> words(length);\n    for (int j=0; j<length; ++j) {\n        for (const auto& row:missing) words[j].push_back(row[j]);\n        sort(words[j].begin(),words[j].end());\n        words[j].erase(unique(words[j].begin(),words[j].end()),words[j].end());\n    }\n    vector<long long> suffix(length+1,1);\n    for (int j=length-1; j>=0; --j) suffix[j]=suffix[j+1]*words[j].size();\n    vector<long long> absent;\n    for (const auto& row:missing) {\n        long long rank=0;\n        for (int j=0; j<length; ++j)\n            rank+=(lower_bound(words[j].begin(),words[j].end(),row[j])-words[j].begin())*suffix[j+1];\n        absent.push_back(rank);\n    }\n    sort(absent.begin(),absent.end());\n    absent.erase(unique(absent.begin(),absent.end()),absent.end());\n    long long rank=k-1;\n    for (long long forbidden:absent) {\n        if (forbidden<=rank) ++rank;\n        else break;\n    }\n    for (int j=0; j<length; ++j) {\n        if (j) out << ' ';\n        out << words[j][static_cast<size_t>(rank/suffix[j+1])];\n        rank%=suffix[j+1];\n    }\n    out << '\\n';\n}\nint main() {\n    ifstream in(\"nocow.in\"); ofstream out(\"nocow.out\"); solve(in,out);\n}\n```"
+    ],
+    "keyIdeas": [
+      "Lexicographic tuples form mixed-radix blocks.",
+      "Each excluded rank shifts the desired surviving rank once.",
+      "Quotient and remainder decode the final tuple."
+    ],
+    "commonMistakes": [
+      "Subtracting duplicate missing descriptions more than once.",
+      "Using K instead of K-1 for a zero-based rank.",
+      "Printing the story prefix instead of the requested adjectives."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ranking argument avoids the huge product, but exclusion order and zero-based indexing need care.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

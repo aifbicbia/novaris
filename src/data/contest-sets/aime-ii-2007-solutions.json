@@ -1,0 +1,332 @@
+[
+  {
+    "id": "solution-aime-ii-2007-p1",
+    "problemId": "aime-ii-2007-p1",
+    "finalAnswer": "$\\boxed{372}$",
+    "shortExplanation": "There are 3720 plates.",
+    "detailedSteps": [
+      "The six nonzero characters A,I,M,E,2,7 may each occur at most once, while the character 0 may occur at most twice. Count five-character sequences by their number of zeroes.",
+      "With no zero, choose five of six characters and order them: $\\binom65 5!=720$. With one zero, choose four nonzero characters and order all five: $\\binom64 5!=1800$.",
+      "With two indistinguishable zeroes, choose three nonzero characters and order the five-character multiset: $\\binom63 5!/2!=1200$.",
+      "Thus $N=720+1800+1200=3720$, and the requested quotient is $N/10=372$."
+    ],
+    "keyIdeas": [
+      "Separate the cases with zero, one and two zero digits"
+    ],
+    "commonMistakes": [
+      "Treating the two copies of the digit zero as different printed characters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the zero character has multiplicity two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p2",
+    "problemId": "aime-ii-2007-p2",
+    "finalAnswer": "$\\boxed{200}$",
+    "shortExplanation": "The seven allowed divisors contribute 200 triples.",
+    "detailedSteps": [
+      "Write $b=au,c=av$ with $u,v$ positive. Then $a(1+u+v)=100$, so $a$ divides $100$ and the quotient $100/a$ must be at least three.",
+      "The possible values of $a$ are $1,2,4,5,10,20,25$. For fixed $a$, the number of ordered positive solutions of $u+v=100/a-1$ is $100/a-2$.",
+      "The seven counts are 98, 48, 23, 18, 8, 3 and 2. Their sum is 200. Every counted pair gives the required divisibility and original sum."
+    ],
+    "keyIdeas": [
+      "Choose the common divisor a before the two positive quotients"
+    ],
+    "commonMistakes": [
+      "Counting u and v as unordered when b and c are ordered entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum equation first restricts a to a short divisor list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p3",
+    "problemId": "aime-ii-2007-p3",
+    "finalAnswer": "$\\boxed{578}$",
+    "shortExplanation": "The squared distance is 578.",
+    "detailedSteps": [
+      "Use the orientation of the actual figure: $A=(0,13),B=(13,13),C=(13,0),D=(0,0)$. Write $E=(x,13+h)$ with $h$ positive because E is exterior above AB.",
+      "The two distances give $x^2+h^2=144$ and $(x-13)^2+h^2=25$. Subtracting gives $x=144/13$ and then $h=60/13$, so $E=(144/13,229/13)$.",
+      "Similarly the exterior point below CD has $F=(25/13,-60/13)$ from $DF=5$ and $CF=12$. The exterior restrictions select these signs; the other circle-intersection points lie inside the square.",
+      "Therefore $EF^2=(119/13)^2+(289/13)^2=578$."
+    ],
+    "keyIdeas": [
+      "Resolve the two exterior five-twelve-thirteen triangles"
+    ],
+    "commonMistakes": [
+      "Reflecting an exterior point into the square or assuming E and F are directly above one another."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the distance equations determines each horizontal coordinate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p4",
+    "problemId": "aime-ii-2007-p4",
+    "finalAnswer": "$\\boxed{450}$",
+    "shortExplanation": "The third group produces 450 whoosits.",
+    "detailedSteps": [
+      "Let $w$ and $h$ be the worker-hours needed for one widget and one whoosit. The first two observations give $300w+200h=100$ and $240w+300h=120$.",
+      "Dividing by 100 and 120 gives $3w+2h=1$ and $2w+(5/2)h=1$, so $w=h/2$, $h=2/7$ and $w=1/7$.",
+      "The third observation is $150w+mh=50\\cdot3=150$. Substituting yields $150+2m=1050$, hence $m=450$."
+    ],
+    "keyIdeas": [
+      "Measure work in worker-hours"
+    ],
+    "commonMistakes": [
+      "Using wall-clock hours without multiplying by the number of workers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two products have independent constant labor costs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p5",
+    "problemId": "aime-ii-2007-p5",
+    "finalAnswer": "$\\boxed{888}$",
+    "shortExplanation": "The eight rows contain 888 complete squares.",
+    "detailedSteps": [
+      "A unit square in the first quadrant has upper-right corner $(i,j)$ with positive integers $i,j$. Because the line has negative slope, the square’s whole interior is below it exactly when $9i+223j\\le2007$. Equality at a corner is allowed because the source restricts the interior.",
+      "The positive column count in row $j$ is $\\lfloor(2007-223j)/9\\rfloor$. The only nonempty rows have $1\\le j\\le8$; $j=9$ gives the y-intercept and allows no positive $i$.",
+      "The eight row counts are 198, 173, 148, 123, 99, 74, 49 and 24. Their sum is 888. Squares with an edge on an axis still have their interiors in the first quadrant."
+    ],
+    "keyIdeas": [
+      "Test the upper-right corner of each grid square"
+    ],
+    "commonMistakes": [
+      "Counting every square touched by the triangular region instead of squares whose entire interiors fit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A decreasing affine boundary is lowest at the upper-right corner.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p6",
+    "problemId": "aime-ii-2007-p6",
+    "finalAnswer": "$\\boxed{640}$",
+    "shortExplanation": "Each final digit occurs in 64 valid four-digit numbers.",
+    "detailedSteps": [
+      "For any target next digit $e$, its allowed preceding digit $d$ is either odd and smaller than $e$, or even and greater than $e$. The digit zero can never be a predecessor because it is even and cannot exceed any decimal digit.",
+      "If $e=2j$ or $e=2j+1$, there are $j$ smaller odd digits and $4-j$ larger nonzero even digits. Thus there are exactly four allowed predecessors for every $e$, all nonzero.",
+      "For a two-digit number, each final digit consequently has four valid prefixes. Once the counts are equal across all ten final digits, each additional digit multiplies the count for each target digit by four. At three digits the counts are 16, and at four digits 64.",
+      "The ten choices for the last digit give $10\\cdot64=640$. The first digit is nonzero throughout this construction."
+    ],
+    "keyIdeas": [
+      "Every next digit has four possible predecessors"
+    ],
+    "commonMistakes": [
+      "Forbidding zero in every position instead of only in the leading position."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform predecessor counts make the digit dynamic program constant across final digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p7",
+    "problemId": "aime-ii-2007-p7",
+    "finalAnswer": "$\\boxed{553}$",
+    "shortExplanation": "The interval uses $k=22$ and ends at quotient $553$.",
+    "detailedSteps": [
+      "The floor-cube-root condition is $k^3\\le n<(k+1)^3$, and $k$ is positive. Write $n=kq$. Then $k^2\\le q<k^2+3k+3+1/k$.",
+      "For $k=1$ there are only seven possible positive values of $n$, so it does not fit the required count. For $k\\ge2$, the integer values of $q$ run from $k^2$ through $k^2+3k+3$, numbering $3k+4$.",
+      "Exactly 70 values therefore require $3k+4=70$, giving $k=22$. The largest quotient is $22^2+3\\cdot22+3=553$."
+    ],
+    "keyIdeas": [
+      "Count the multiples of k inside the cube-root interval"
+    ],
+    "commonMistakes": [
+      "Including the endpoint $(k+1)^3$ despite the strict upper floor bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Dividing the interval by k converts the problem to consecutive integer quotients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p8",
+    "problemId": "aime-ii-2007-p8",
+    "finalAnswer": "$\\boxed{896}$",
+    "shortExplanation": "The maximum is 49896 basic rectangles.",
+    "detailedSteps": [
+      "Let $m$ be the number of drawn lines crossing the paper in the four-unit direction and $n$ the number in the five-unit direction. Then $4m+5n=2007$. A basic rectangle must use consecutive lines in both families, so for distinct drawn lines the count is $(m-1)(n-1)$; undrawn paper edges do not supply a side.",
+      "The congruence gives $n=4t+3$ and $m=498-5t$. The product is $(497-5t)(4t+2)=-20t^2+1978t+994$, a concave quadratic with vertex at $t=1978/40=49.45$.",
+      "The integer maximizer is therefore among 49 and 50. They give 49896 and 49894 respectively, so the maximum is 49896 at $m=253,n=199$. These counts are feasible by drawing that many distinct full lines at different positions in the two directions.",
+      "The remainder modulo 1000 is 896."
+    ],
+    "keyIdeas": [
+      "Maximize the product of the two numbers of gaps"
+    ],
+    "commonMistakes": [
+      "Counting rectangles that contain additional drawn lines or using the paper boundary as an undrawn side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The no-interior-line condition makes basic rectangles the elementary grid cells.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p9",
+    "problemId": "aime-ii-2007-p9",
+    "finalAnswer": "$\\boxed{259}$",
+    "shortExplanation": "The two contact points are 259 units apart.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(63,0),C=(63,448),D=(0,448)$. Then $E=(0,84)$ and $F=(63,364)$. The relevant lengths are $BE=DF=105$, $BF=DE=364$, and $EF=287$.",
+      "Both triangles BEF and DEF have semiperimeter $(105+364+287)/2=378$. In triangle BEF the incircle contact on EF has $EP=s-BF=14$. In triangle DEF it has $EQ=s-DF=273$.",
+      "Both contact points lie on EF, so $PQ=|EQ-EP|=273-14=259$."
+    ],
+    "keyIdeas": [
+      "Use the tangent-length formula on the common side"
+    ],
+    "commonMistakes": [
+      "Using a side’s full length instead of the semiperimeter-minus-opposite-side tangent length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two triangles have swapped 105 and 364 side lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p10",
+    "problemId": "aime-ii-2007-p10",
+    "finalAnswer": "$\\boxed{710}$",
+    "shortExplanation": "The probability is $697/2^{11}$.",
+    "detailedSteps": [
+      "For each of the six elements, its memberships in A and B are independent fair bits. The event $B\\subseteq A$ permits three of the four bit pairs, so its probability is $(3/4)^6$. The event $B\\subseteq S-A$ has the same probability.",
+      "Both events hold exactly when B is empty, with probability $1/2^6$. Inclusion and exclusion give $2(3/4)^6-1/64=697/2048=697/2^{11}$.",
+      "The numerator 697 is odd, so this is reduced with prime $n=2$ and exponent $r=11$. The requested sum is $697+2+11=710$."
+    ],
+    "keyIdeas": [
+      "Subtract the empty-subset overlap of the two containment events"
+    ],
+    "commonMistakes": [
+      "Counting the empty set twice or requiring B to be nonempty."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two containment events overlap in exactly one possible B.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p11",
+    "problemId": "aime-ii-2007-p11",
+    "finalAnswer": "$\\boxed{179}$",
+    "shortExplanation": "The total displacement is $80\\pi+96\\sqrt3$.",
+    "detailedSteps": [
+      "View the parallel tubes in cross-section. The large radius is 72 and the fixed small radius 24. When the large tube first and last touches the small one while also resting on the floor, the center separation is 96 and the vertical separation 48. The horizontal offset is $\\sqrt{96^2-48^2}=48\\sqrt3$.",
+      "The large center travels around the fixed center from polar angle $150^\\circ$ to $30^\\circ$ over the top, sweeping $120^\\circ=2\\pi/3$. Its center-path arc length is $96\\cdot2\\pi/3=64\\pi$.",
+      "No slip at the fixed small tube means the moving center’s tangential speed equals 72 times the large tube’s angular speed about its own center. Hence its clockwise spin during this arc is $(96/72)(2\\pi/3)=8\\pi/9$.",
+      "The full motion has one complete spin $2\\pi$, so the total straight-floor travel before and after the obstacle is $72(2\\pi-8\\pi/9)=80\\pi$. The obstacle contributes horizontal displacement $2\\cdot48\\sqrt3=96\\sqrt3$, rather than its curved path length.",
+      "Thus $x=80\\pi+96\\sqrt3$, and $a+b+c=80+96+3=179$. The remaining floor rotation is positive, so this one-revolution motion is feasible."
+    ],
+    "keyIdeas": [
+      "Track center motion and angular rotation during no-slip contact"
+    ],
+    "commonMistakes": [
+      "Treating the center’s curved path length as its horizontal displacement or using the small-circle radius alone in the spin rate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angular sweep of the centers differs from the large tube’s rotation about its own center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p12",
+    "problemId": "aime-ii-2007-p12",
+    "finalAnswer": "$\\boxed{091}$",
+    "shortExplanation": "The sequence exponents begin at 21 and increase by five.",
+    "detailedSteps": [
+      "Write $x_n=3^{a+dn}$. Because every term is an integral power of three, $a$ and $d$ are integers, and the increasing condition requires $d>0$. The first condition gives $8a+28d=308$, or $2a+7d=77$.",
+      "Let $M$ be the largest exponent among the first eight terms, $M=a+7d$. Their sum is strictly greater than $3^M$ and strictly less than $3^M/(1-3^{-d})\\le(3/2)3^M<3^{M+1}$.",
+      "Since $M$ is an integer and the logarithm of the sum lies between $56$ and $57$ inclusive, these strict bounds force $M=56$. The equation $M=(77+7d)/2$ then gives $d=5$ and $a=21$. The derived sum really has logarithm strictly between $56$ and $57$.",
+      "Therefore $\\log_3x_{14}=a+14d=21+70=91$."
+    ],
+    "keyIdeas": [
+      "Use the largest exponent to bound the logarithm of the sum"
+    ],
+    "commonMistakes": [
+      "Replacing the logarithm of a sum with the sum of logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An increasing geometric sum lies between its largest term and the next integral power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p13",
+    "problemId": "aime-ii-2007-p13",
+    "finalAnswer": "$\\boxed{640}$",
+    "shortExplanation": "Five active-bit patterns combine with 128 free patterns.",
+    "detailedSteps": [
+      "After ten rows of adjacent addition, the top entry is the weighted bottom sum with coefficients $\\binom{10}{j}$ for $0\\le j\\le10$. This follows inductively from Pascal’s rule.",
+      "The eleven coefficients are 1, 10, 45, 120, 210, 252, 210, 120, 45, 10 and 1. Modulo three, only positions 0, 1, 9 and 10 contribute, and each has coefficient one. The other seven bottom bits are unrestricted.",
+      "The four contributing bits must have 0 or 3 ones to give a multiple of three. There are $\\binom40+\\binom43=5$ such patterns. Each combines with $2^7=128$ patterns of the free bits.",
+      "The total is $5\\cdot128=640$, including the all-zero bottom row."
+    ],
+    "keyIdeas": [
+      "Only four bottom entries have nonzero coefficients modulo three"
+    ],
+    "commonMistakes": [
+      "Excluding the top value zero, which is a multiple of three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pascal coefficients expose which bottom entries survive modulo three.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p14",
+    "problemId": "aime-ii-2007-p14",
+    "finalAnswer": "$\\boxed{676}$",
+    "shortExplanation": "The source conditions force $f(x)=(1+x^2)^2$.",
+    "detailedSteps": [
+      "First compare the coefficient of $x^2$ in $f(x)f(2x^2)=f(x+2x^3)$. Since $f(0)=1$, that comparison forces the linear coefficient to be zero. Let $\\lambda$ be the coefficient of $x^2$.",
+      "Near zero, the real analytic function $g(x)=(1+x^2)^\\lambda$ satisfies the same identity: $1+(x+2x^3)^2=(1+x^2)(1+4x^4)$. Also $f$ and $g$ have identical coefficients through degree two.",
+      "If their Taylor series first differed by $cx^m$ with $m\\ge3$ and $c\\ne0$, subtract the two functional identities and cancel the unshifted difference. On the left, the additional factor is $f(2x^2)-1=O(x^4)$, while the substituted difference starts at degree $2m$, so there is no remaining term of degree $m+2$. On the right, substituting $x+2x^3$ instead of $x$ contributes exactly $2mcx^{m+2}$. This is a contradiction because $m+2<2m$. Thus $f$ and $g$ have identical Taylor series.",
+      "The coefficients of $g$ are $\\binom\\lambda j$ at degree $2j$. Since $f$ is a polynomial, some sufficiently large $j$ has coefficient zero; the product $\\lambda(\\lambda-1)\\cdots(\\lambda-j+1)$ then forces $\\lambda$ to be a nonnegative integer $d$. Consequently $f(x)=(1+x^2)^d$ as polynomials.",
+      "The remaining source condition is $5^d+10^d=125$. The left side increases strictly for nonnegative integer $d$, and $d=2$ gives $25+100=125$, so $d=2$ is the unique value.",
+      "Therefore $f(5)=(1+25)^2=676$. This argument establishes the form rather than merely guessing a polynomial that works."
+    ],
+    "keyIdeas": [
+      "Prove the polynomial must be a nonnegative integral power of one plus x squared"
+    ],
+    "commonMistakes": [
+      "Verifying one candidate polynomial without ruling out other polynomial solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first possible coefficient difference cannot survive the two different substitutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2007-p15",
+    "problemId": "aime-ii-2007-p15",
+    "finalAnswer": "$\\boxed{389}$",
+    "shortExplanation": "The common radius is $260/129$.",
+    "detailedSteps": [
+      "The 13-14-15 triangle has semiperimeter 21 and area 84 by Heron’s formula. Its inradius is $\\rho=84/21=4$, and its circumradius is $R=13\\cdot14\\cdot15/(4\\cdot84)=65/8$.",
+      "Let the common radius be $r$. A circle inside the triangle tangent to the two sides at a vertex has its center on the interior angle bisector. Relative to the incenter I, its center is $I+(1-r/4)(A-I)$ at vertex A, and similarly at B and C, because distance to each adjacent side scales linearly along that bisector.",
+      "Any interior circle has radius at most the inradius. The case $r=4$ makes all three corner centers equal to I; an interior radius-four circle must also be the incircle and cannot be externally tangent to them. Thus $0<r<4$, and the three distinct corner centers form a triangle similar to ABC with scale $1-r/4$.",
+      "The fourth circle’s center is at distance $2r$ from each corner center, hence it is their circumcenter. Their circumradius is $(1-r/4)R$, so $(1-r/4)(65/8)=2r$. Solving gives $r=260/129$.",
+      "Check containment as well as distances. Take $B=(0,0),C=(14,0),A=(5,12)$, so $I=(6,4)$ and the original circumcenter is $(7,33/8)$. At the derived scale 64/129 the fourth center is $(838/129,524/129)$. Its distances to BC,AB,AC are respectively 524/129,572/129,460/129, all greater than $r$.",
+      "The three corner centers are $(710/129,1028/129)$, $(390/129,260/129)$ and $(1286/129,260/129)$. Each has distance $r$ to its two required sides and greater than $r$ to the remaining side; their distances to the fourth center equal $2r$. Thus all four circles exist wholly inside the triangle with the prescribed tangencies.",
+      "The fraction is reduced, so $m+n=260+129=389$."
+    ],
+    "keyIdeas": [
+      "The three corner-circle centers are a homothetic triangle"
+    ],
+    "commonMistakes": [
+      "Finding an equidistant center without checking that the resulting circle lies inside the original triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The corner centers move from the vertices toward the incenter at a common scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

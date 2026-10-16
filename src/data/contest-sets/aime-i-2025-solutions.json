@@ -1,0 +1,374 @@
+[
+  {
+    "id": "solution-aime-i-2025-p1",
+    "problemId": "aime-i-2025-p1",
+    "finalAnswer": "$\\boxed{070}$",
+    "shortExplanation": "Translate the base notation into ordinary integers, then turn the divisibility condition into a divisor of a fixed number.",
+    "detailedSteps": [
+      "The two base-$b$ numerals have ordinary values $b+7$ and $9b+7$. Since $9b+7=9(b+7)-56$, the required condition is equivalent to $b+7\\mid56$.",
+      "Because $b>9$, the positive divisor $b+7$ is greater than $16$. Among the divisors of $56$, only $28$ and $56$ qualify.",
+      "Thus $b=21$ or $49$, and their sum is $70$. Both bases allow the digit $9$, and direct substitution confirms divisibility."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility in an unknown base"
+    ],
+    "commonMistakes": [
+      "Divisibility is a statement about the values of the numerals; their written digits cannot be divided as decimal integers.",
+      "The condition $b>9$ excludes the smaller divisors of $56$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The useful subtraction removes the unknown base from the remainder.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p2",
+    "problemId": "aime-i-2025-p2",
+    "finalAnswer": "$\\boxed{588}$",
+    "shortExplanation": "Use affine coordinates along the two sides. The reflections then have integer coordinates, and a shoelace ratio gives the area.",
+    "detailedSteps": [
+      "Take $A=(0,0)$ in an affine coordinate system whose basis vectors are $\\overrightarrow{AD}$ and $\\overrightarrow{AF}$. These axes need not be perpendicular. The side ratios give $D=(1,0)$, $E=(5,0)$, $B=(7,0)$, $F=(0,1)$, $G=(0,5)$, and $C=(0,7)$.",
+      "Reflection through a point sends $P$ to $2Q-P$. Therefore $M=2F-D=(-1,2)$ and $N=2E-G=(10,-5)$.",
+      "The coordinate area of $DEGF$ is $(25-1)/2=12$. Its actual area is $288$, so every coordinate area must be multiplied by $24$. This common scale is the absolute determinant of the two basis vectors.",
+      "In the specified order, the heptagon has coordinates $(0,0),(0,1),(10,-5),(7,0),(0,7),(5,0),(-1,2)$. Its signed shoelace sum is $0-10+35+49-35+10+0=49$, so its coordinate area is $49/2$.",
+      "The required area is $24\\cdot49/2=588$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Affine area and reflections"
+    ],
+    "commonMistakes": [
+      "The given side lengths do not make the triangle right angled. Affine coordinates preserve area ratios without requiring that assumption.",
+      "Reflecting $G$ through $E$ gives $2E-G$, not $2G-E$.",
+      "The heptagon is not convex; retain the specified vertex order in the shoelace formula."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choosing units along the two sides makes all reflections exact and avoids finding the angle at $A$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p3",
+    "problemId": "aime-i-2025-p3",
+    "finalAnswer": "$\\boxed{016}$",
+    "shortExplanation": "List the strictly decreasing positive flavor counts, then assign the labeled players using multinomial coefficients.",
+    "detailedSteps": [
+      "Write the chocolate, vanilla, and strawberry counts as $(c,v,s)$, with $c>v>s\\ge1$ and $c+v+s=9$. If $s=1$, the possibilities are $(6,2,1)$ and $(5,3,1)$. If $s=2$, only $(4,3,2)$ is possible. If $s\\ge3$, the smallest total is $5+4+3=12$, which is too large.",
+      "The three counts of assignments are $$\\frac{9!}{6!2!1!}=252,\\qquad \\frac{9!}{5!3!1!}=504,\\qquad \\frac{9!}{4!3!2!}=1260.$$",
+      "The total is $2016$, giving remainder $16$, written in AIME format as $016$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Ordered flavor counts"
+    ],
+    "commonMistakes": [
+      "The players are distinct, so counting just the three possible count triples is insufficient.",
+      "The flavor order is prescribed by the inequalities; do not multiply by $3!$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main step is exhausting the possible count triples before counting assignments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p4",
+    "problemId": "aime-i-2025-p4",
+    "finalAnswer": "$\\boxed{117}$",
+    "shortExplanation": "Factor the quadratic into two lines, count lattice points on each line, and subtract their shared origin.",
+    "detailedSteps": [
+      "The expression factors as $$12x^2-xy-6y^2=(3x+2y)(4x-3y).$$ Thus every solution lies on one of these two lines.",
+      "On $3x+2y=0$, coprimality gives $(x,y)=(2t,-3t)$ for an integer $t$. The coordinate bounds require $-33\\le t\\le33$, yielding $67$ points.",
+      "On $4x-3y=0$, write $(x,y)=(3t,4t)$. Here $-25\\le t\\le25$, yielding $51$ points.",
+      "The lines intersect only at $(0,0)$, counted twice. The answer is $67+51-1=117$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Factoring an integer quadratic"
+    ],
+    "commonMistakes": [
+      "The more restrictive coordinate determines each parameter bound.",
+      "The origin belongs to both factors and must be counted only once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring exposes the lattice structure; no quadratic formula is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p5",
+    "problemId": "aime-i-2025-p5",
+    "finalAnswer": "$\\boxed{279}$",
+    "shortExplanation": "Use the alternating digit sum to select the odd-position digits, then enforce an even final digit.",
+    "detailedSteps": [
+      "Let $S$ be the sum of the four digits in odd-numbered positions from the left. The total digit sum is $36$, so the alternating sum is $2S-36$. Since $10\\le S\\le26$, this is an even integer between $-16$ and $16$. Its only possible multiple of $11$ is $0$, so $S=18$.",
+      "The four-element digit sets with sum $18$ are $\\{1,2,7,8\\}$, $\\{1,3,6,8\\}$, $\\{1,4,5,8\\}$, $\\{1,4,6,7\\}$, $\\{2,3,5,8\\}$, $\\{2,3,6,7\\}$, $\\{2,4,5,7\\}$, and $\\{3,4,5,6\\}$. Listing by the smallest digit exhausts the possibilities.",
+      "Each of these sets, and each complementary set for the even positions, contains two even digits. For any one odd-position set, there are $4!$ ways to arrange it, $2$ choices for the last digit, and $3!$ ways to arrange the other even-position digits.",
+      "Therefore $N=8\\cdot4!\\cdot2\\cdot3!=2304$. The requested difference is $2304-2025=279$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility by 22"
+    ],
+    "commonMistakes": [
+      "Divisibility by $11$ does not alone imply divisibility by $22$; the final digit must also be even.",
+      "The possible alternating sums do not include $\\pm11$, because the sum is even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisibility tests separate naturally into a subset choice and a final-position restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p6",
+    "problemId": "aime-i-2025-p6",
+    "finalAnswer": "$\\boxed{504}$",
+    "shortExplanation": "The inradius fixes the height, while equal tangent lengths fix the leg length. Pythagoras then determines the squared difference of the bases.",
+    "detailedSteps": [
+      "The circle is tangent to both parallel sides, so the height is $6$. The area equation is $72=6(r+s)/2$, giving $r+s=24$.",
+      "In any quadrilateral with an incircle, the sums of opposite side lengths agree, by pairing tangent segments from each vertex. The two legs are equal here, so each leg has length $(r+s)/2=12$.",
+      "Dropping perpendiculars from the shorter base gives a right triangle with height $6$, horizontal leg $|r-s|/2$, and hypotenuse $12$. Thus $(r-s)^2=4(12^2-6^2)=432$.",
+      "It follows that $$r^2+s^2=\\frac{(r+s)^2+(r-s)^2}{2}=\\frac{576+432}{2}=504.$$"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangential isosceles trapezoids"
+    ],
+    "commonMistakes": [
+      "The trapezoid height is the diameter of the incircle, not its radius.",
+      "In the isosceles trapezoid, the horizontal offset of one leg is half the difference of the bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Computing the sum and difference of the bases avoids unnecessary radical side lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p7",
+    "problemId": "aime-i-2025-p7",
+    "finalAnswer": "$\\boxed{821}$",
+    "shortExplanation": "The last word is the pair with the largest smaller letter. Separate whether $G$ is that smaller letter or the larger one.",
+    "detailedSteps": [
+      "There are $11\\cdot9\\cdot7\\cdot5\\cdot3\\cdot1=10395$ equally likely pairings. Sorting within each pair and then sorting the pairs means the final pair has the largest minimum letter.",
+      "First suppose $G$ is paired with one of $H,I,J,K,L$. There are $5$ choices. For this pair to be last, the four remaining letters larger than $G$ must each be paired with one of $A$ through $F$; pairing two of them together would create a later word. Choose and assign their four distinct partners in $6\\cdot5\\cdot4\\cdot3$ ways. The two unused lower letters pair with each other. This case contributes $1800$.",
+      "Now suppose $G$ is the larger member of its pair. If its partner has $j$ earlier letters, then $j\\le5$. Of the other letters, $10-j$ are later than that partner, and each must pair with an earlier letter. Thus $10-j\\le j$, forcing $j=5$: the pair is $FG$. The remaining five lower letters must pair bijectively with $H$ through $L$, giving $5!=120$ possibilities.",
+      "The desired probability is $1920/10395=128/693$. The sum of its reduced numerator and denominator is $821$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "The last pair in a matching"
+    ],
+    "commonMistakes": [
+      "The last word need not contain $L$; alphabetical order first compares the smaller member of each pair.",
+      "The $FG$ case is possible and is separate from the five cases where $G$ is the smaller letter.",
+      "After choosing partners for the four higher letters, the final two lower letters have just one pairing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum of each pair is the statistic that controls the ordering.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p8",
+    "problemId": "aime-i-2025-p8",
+    "finalAnswer": "$\\boxed{077}$",
+    "shortExplanation": "The second modulus equality defines a line. Exactly one point of the circle lies on that line precisely when the line is tangent.",
+    "detailedSteps": [
+      "Write $z=x+iy$. The first equation describes a circle with center $(25,20)$ and radius $5$. Squaring the second equation and cancelling the common terms gives $$8x-6y=8k+7.$$",
+      "The distance from the circle center to this line is $$\\frac{|8\\cdot25-6\\cdot20-(8k+7)|}{\\sqrt{8^2+(-6)^2}}=\\frac{|73-8k|}{10}.$$",
+      "Tangency requires this distance to be $5$, so $73-8k=\\pm50$. Hence $k=23/8$ or $123/8$. Their sum is $73/4$, already reduced, and $73+4=77$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangency to a perpendicular bisector"
+    ],
+    "commonMistakes": [
+      "A single intersection requires tangency, not that the line pass through the center.",
+      "Keep both signs when solving the absolute-value equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Interpreting complex absolute values as Euclidean distances turns the problem into one line-distance calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p9",
+    "problemId": "aime-i-2025-p9",
+    "finalAnswer": "$\\boxed{062}$",
+    "shortExplanation": "Find a point whose inverse rotation is its reflection across the original parabola’s axis of symmetry.",
+    "detailedSteps": [
+      "For a point $(x,y)$, inverse rotation by $60^\\circ$ gives $$u=\\frac{x+\\sqrt3y}{2},\\qquad v=\\frac{y-\\sqrt3x}{2}.$$ If $y=-\\sqrt3x$, these become $(u,v)=(-x,y)$. Thus a point on this line and the original parabola also belongs to the rotated parabola.",
+      "Solve $x^2-4=-\\sqrt3x$. The positive solution is $x=(\\sqrt{19}-\\sqrt3)/2$, and its ordinate is $y=(3-\\sqrt{57})/2<0$, so the point is in the required quadrant.",
+      "One can also exclude other intersections in that quadrant. At any common point, rotation preserves $x^2+y^2=u^2+v^2$. Using $x^2=y+4$ and $u^2=v+4$ gives $(y-v)(y+v+1)=0$. The branch $y=v$ is exactly the line already used. On the other branch, $x=(3y+2)/\\sqrt3$, and substitution yields $9y^2+9y-8=0$. Its negative root $(-3-\\sqrt{41})/6$ makes $x<0$, while its positive root is above the horizontal axis.",
+      "Therefore the required expression has $a=3$, $b=57$, and $c=2$, giving $62$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rotation and parabola symmetry"
+    ],
+    "commonMistakes": [
+      "Testing membership in the rotated curve requires applying the inverse rotation to the candidate point.",
+      "The positive square-root choice for $x$ is essential for the fourth quadrant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry finds the useful intersection directly; norm preservation provides a short completeness check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p10",
+    "problemId": "aime-i-2025-p10",
+    "finalAnswer": "$\\boxed{081}$",
+    "shortExplanation": "Fix the first row and count where its three groups of digits can go in the second row. The third-row groups are then forced.",
+    "detailedSteps": [
+      "There are $9!$ possibilities for the first row. Fix one, and call its three block groups $A,B,C$, each containing three digits. In the second row, no digit can enter its original block.",
+      "Let $k$ of the $A$ digits enter block $B$ and $3-k$ enter block $C$. Since every second-row block must contain three digits, the counts of $B$ digits going to $C$ and of $C$ digits going to $A$ are also $k$; the reverse directions each have count $3-k$. Thus $k$ can be $0,1,2,3$, and the digit choices number $$\\sum_{k=0}^3\\binom3k^3=1+27+27+1=56.$$",
+      "Arrange the chosen digits within each of the three second-row blocks in $(3!)^3$ ways. Each digit has now appeared in two different blocks, so it must appear in the remaining block in the third row. This supplies exactly three distinct digits to each block and uses every digit once. Arrange them in another $(3!)^3$ ways.",
+      "The total is $9!\\cdot56\\cdot6^6=2^{16}3^{10}5^1 7^2$. The requested weighted exponent sum is $2\\cdot16+3\\cdot10+5+7\\cdot2=81$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Counting a Sudoku band"
+    ],
+    "commonMistakes": [
+      "The problem imposes row and block conditions, not an additional restriction connecting different columns across blocks.",
+      "Once the first two rows are fixed, third-row block membership is forced, but the order of its three digits is still free."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The single parameter $k$ encodes every possible flow of digits between blocks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p11",
+    "problemId": "aime-i-2025-p11",
+    "finalAnswer": "$\\boxed{259}$",
+    "shortExplanation": "On each rising or falling segment, substitute the parabola and use Vieta’s formula. Only the final falling segment contributes an unpaired root.",
+    "detailedSteps": [
+      "The wave has $-1\\le y\\le1$, so intersections satisfy $0\\le x=34y^2\\le34$. Its rising pieces have $x=4k+y$ and its falling pieces have $x=4k+2-y$.",
+      "On a rising piece, $34y^2-y-4k=0$, whose roots are $(1\\pm\\sqrt{1+544k})/68$. For $k=0,1,\\ldots,8$, both roots lie in $[-1,1)$ and give points on that piece; other integers $k$ supply none. Each pair has sum $1/34$, for a total of $9/34$.",
+      "On a falling piece, $34y^2+y-4k-2=0$, whose roots are $(-1\\pm\\sqrt{273+544k})/68$. For $k=0,1,\\ldots,7$, both roots lie in $(-1,1]$, and their sum is $-1/34$. Their combined contribution is $-8/34$.",
+      "For the last falling piece, $k=8$, the discriminant is $4625=25\\cdot185$. Only $(-1+5\\sqrt{185})/68$ lies between $-1$ and $1$; the other root is below $-1$. No later piece meets the parabola within the allowed range.",
+      "Thus all $35$ intersections have ordinate sum $$\\frac9{34}-\\frac8{34}+\\frac{-1+5\\sqrt{185}}{68}=\\frac{1+5\\sqrt{185}}{68}.$$ The coefficients have the required coprimality and $185=5\\cdot37$ is squarefree. The answer is $1+5+185+68=259$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Vieta sums on linear pieces"
+    ],
+    "commonMistakes": [
+      "The quadratic equation for a segment may have a root outside that segment; the final negative root must be discarded.",
+      "The two roots at $k=0$ on the first rising piece are $0$ and $1/34$, so both count.",
+      "Keep the half-open endpoint conventions when checking which line pieces contain a root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing roots avoids summing many unrelated radicals. The boundary piece is the only exception.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p12",
+    "problemId": "aime-i-2025-p12",
+    "finalAnswer": "$\\boxed{510}$",
+    "shortExplanation": "Shift every coordinate by one, factor the inequalities, and identify the bounded ordering chamber inside an equilateral triangle.",
+    "detailedSteps": [
+      "Put $u=x+1$, $v=y+1$, and $w=z+1$. Then $u+v+w=78$, and the strict inequalities become $$(u-v)w<0,\\qquad(v-w)u<0.$$ In particular, neither $u$ nor $w$ is zero.",
+      "If $u,w>0$, these require $0<u<v<w$. If both are negative, they would require $w<v<u<0$, contradicting the positive sum. The two mixed-sign cases give $v<w<0<u$ and $u<0<w<v$; each extends without bound in the plane. Thus the finite region is precisely $0<u<v<w$ with sum $78$.",
+      "The positive-coordinate triangle in that plane has vertices $(78,0,0)$, $(0,78,0)$, and $(0,0,78)$ and side length $78\\sqrt2$. Its area is $3042\\sqrt3$. Permuting the three coordinates divides this triangle into six congruent ordering regions; boundaries have zero area.",
+      "The required area is $3042\\sqrt3/6=507\\sqrt3$. Hence $a+b=507+3=510$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Ordered regions in a plane"
+    ],
+    "commonMistakes": [
+      "Factoring the inequalities is not enough to infer an ordering until the signs of the other factors are considered.",
+      "The plane is tilted: the triangle side is $78\\sqrt2$, not $78$.",
+      "Translation by $(1,1,1)$ changes the plane constant from $75$ to $78$ but preserves area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shift reveals a symmetric bounded chamber and also makes the two unbounded cases explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p13",
+    "problemId": "aime-i-2025-p13",
+    "finalAnswer": "$\\boxed{204}$",
+    "shortExplanation": "Add one region for each new chord and one more for each distinct crossing, then use linearity of expectation.",
+    "detailedSteps": [
+      "With probability one, no new endpoint is a diameter endpoint and no three relevant segments meet at one interior point. The initial diameters create four regions. Adding each new chord increases the count by one plus its number of crossings with the segments already present. Consequently the final count is $4+25$, plus crossings between new chords and diameters, plus crossings between pairs of new chords.",
+      "A random chord uses one of the six unordered pairs of quadrants, equally likely. Four are adjacent pairs and cross one diameter; the two opposite pairs cross both. Its expected number of diameter crossings is $(4+2\\cdot2)/6=4/3$.",
+      "For two new chords, consider their $36$ equally likely ordered pairs of quadrant-pair types. When their four endpoints occupy all four quadrants, the two ordered choices of opposite pairs always cross, and the four ordered choices of adjacent disjoint pairs never cross.",
+      "The remaining $30$ type pairs share a quadrant or use the same two quadrants. Their crossing probability is $1/2$: with one shared quadrant it depends on the equally likely order of the two endpoints there; with two shared quadrants it depends on whether the two endpoint orders alternate around the boundary. Thus the crossing probability is $(2+30/2)/36=17/36$.",
+      "Linearity of expectation now gives $$4+25+25\\cdot\\frac43+\\binom{25}{2}\\frac{17}{36}=29+\\frac{100}{3}+\\frac{425}{3}=204.$$"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Expected intersections of chords"
+    ],
+    "commonMistakes": [
+      "Conditioning the two endpoints to lie in different quadrants changes the chord distribution; the usual unrestricted random-chord crossing probability does not apply.",
+      "Count each pair of new chords once, using $\\binom{25}{2}$.",
+      "The two original diameters already cross at the center; their contribution is included in the initial four regions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Expected crossings are much easier to count than the distribution of all possible region arrangements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p14",
+    "problemId": "aime-i-2025-p14",
+    "finalAnswer": "$\\boxed{060}$",
+    "shortExplanation": "Locate a point where the five unit directions toward the vertices sum to zero. A supporting-line inequality then proves it minimizes the total distance globally.",
+    "detailedSteps": [
+      "The cosine rule in $ABC$ and $AED$ gives $AC=7\\sqrt3$ and $AD=13\\sqrt3$. These two triangles are right angled at $C$ and $D$, respectively, and each has a $30^\\circ$ angle at $A$. If $\\theta=\\angle CAD$, then $$\\cos\\theta=\\frac{(7\\sqrt3)^2+(13\\sqrt3)^2-24^2}{2(7\\sqrt3)(13\\sqrt3)}=\\frac17,\\qquad\\sin\\theta=\\frac{4\\sqrt3}{7}.$$",
+      "Convexity places the diagonals inside $\\angle BAE$, so that angle is $\\theta+60^\\circ$. Therefore $\\cos\\angle BAE=-11/14$, and the cosine rule gives $BE^2=14^2+26^2-2\\cdot14\\cdot26(-11/14)=38^2$.",
+      "Choose coordinates $B=(0,0)$ and $E=(38,0)$, with $A$ above their line. From $AB=14$ and $AE=26$, obtain $A=(241/19,65\\sqrt3/19)$. The $60^\\circ$ angles and the side lengths give $C=(109/19,-44\\sqrt3/19)$ and $D=(553/19,-104\\sqrt3/19)$. These choices put the vertices in the convex order required; they also give $CD=24$.",
+      "Let $F=(241/19,0)$, which lies between $B$ and $E$. Direct subtraction gives $$AF=\\frac{65\\sqrt3}{19},\\quad CF=\\frac{88\\sqrt3}{19},\\quad DF=\\frac{208\\sqrt3}{19},\\quad BF=\\frac{241}{19},\\quad EF=\\frac{481}{19}.$$ The unit vectors from $F$ toward $A,C,D$ are $(0,1)$, $(-\\sqrt3/2,-1/2)$, and $(\\sqrt3/2,-1/2)$, whose sum is zero. The directions toward $B$ and $E$ also cancel.",
+      "For any vertex $V$ and any point $X$, projection onto the direction from $V$ to $F$ gives $$|X-V|\\ge |F-V|+\\frac{F-V}{|F-V|}\\cdot(X-F).$$ Sum this over the five vertices. The vector coefficients sum to zero, so the total distance at $X$ is at least the total at $F$. This proves a global minimum, not just a stationary value.",
+      "At $F$, the total is $(65+88+208)\\sqrt3/19+(241+481)/19=19\\sqrt3+38$. Thus $m+n+p=38+19+3=60$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Minimizing a sum of distances"
+    ],
+    "commonMistakes": [
+      "Finding a stationary point alone is insufficient unless global minimality is justified; the projection inequality supplies that justification.",
+      "The two $30^\\circ$ angles at $A$ add to $\\angle CAD$ when computing $\\angle BAE$.",
+      "The candidate point must lie on segment $BE$ for the two corresponding unit vectors to cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric construction is encoded in exact coordinates, and a single inequality verifies the minimum for every point in the plane.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2025-p15",
+    "problemId": "aime-i-2025-p15",
+    "finalAnswer": "$\\boxed{735}$",
+    "shortExplanation": "Classify the triples by which entries are divisible by three. Unit cubes are a bijective set of residues, leaving a smaller version of the same count for the all-divisible case.",
+    "detailedSteps": [
+      "Cubes modulo $9$ are $0,1,-1$. A sum of three cubes divisible by $3^7$ therefore has either all three entries divisible by $3$, or exactly two units whose cubes have opposite signs modulo $9$. One unit cannot work, and a sum of three elements of $\\{1,-1\\}$ is never $0$ modulo $9$.",
+      "We need a small injectivity fact. If units $a,b$ have equal cubes modulo $3^k$, then $a\\equiv b\\pmod3$. Write $a=b+3t$. The factor $a^2+ab+b^2=3(b^2+3bt+3t^2)$ contains exactly one factor of $3$, so $3^k\\mid(a^3-b^3)$ holds exactly when $3^{k-1}\\mid(a-b)$. Thus cubing units modulo $3^{k-1}$ is injective into residues modulo $3^k$.",
+      "For $k=7$, there are $486$ units among the $729$ available integers and exactly $486$ residues modulo $2187$ that are $1$ or $-1$ modulo $9$. The injectivity fact makes their cube map a bijection onto those residues. In the case of exactly two units, choose the position of the multiple of $3$ in $3$ ways, its value in $243$ ways, and the unit in the earlier remaining position in $486$ ways. The last cube is forced to a residue of the opposite sign modulo $9$, so there is exactly one available last unit. This contributes $3\\cdot243\\cdot486=354294$.",
+      "If all entries are divisible by $3$, divide them by $3$. The new entries range from $1$ to $243$, and their cube sum must vanish modulo $81$. A cube modulo $81$ depends only on the input modulo $27$, and each such residue has nine representatives. Let $T$ count triples of residues modulo $27$ with cube sum divisible by $81$. This case contributes $9^3T$.",
+      "To find $T$, apply the same classification. For exactly two units there are $3\\cdot9\\cdot18=486$ triples: choose the position and residue of the multiple of $3$, then one unit; the other is unique by the injectivity fact with $k=4$. For three multiples of $3$, write the residues as $3r,3s,3t$ with $r,s,t$ modulo $9$. The condition is $r^3+s^3+t^3\\equiv0\\pmod3$, equivalently $r+s+t\\equiv0\\pmod3$. Each choice of $r,s$ permits three values of $t$, giving $9^2\\cdot3=243$. Thus $T=729$.",
+      "The full count is $354294+9^3\\cdot729=885735$, and the requested remainder is $735$.",
+      "The count can also be reproduced without the casework by tabulating cube residues and checking every ordered pair of first coordinates:\n\n```python\nfrom collections import Counter\nmodulus = 3**7\ncubes = [pow(a, 3, modulus) for a in range(1, 3**6 + 1)]\nfrequency = Counter(cubes)\ncount = sum(frequency[(-u - v) % modulus]\n            for u in cubes for v in cubes)\nassert count == 885735\nprint(count % 1000)\n```"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Cubes modulo powers of three"
+    ],
+    "commonMistakes": [
+      "At the reduced stage, the variables have nine representatives for each residue modulo $27$, producing a factor of $9^3$.",
+      "The triples are ordered; choosing which coordinate is the multiple of $3$ contributes a factor of three.",
+      "The uniqueness of the last unit requires the cube-map argument. Cubing is not a bijection on all residues modulo a power of three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The central step is proving the precise unit-cube bijection before using it at two different moduli.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

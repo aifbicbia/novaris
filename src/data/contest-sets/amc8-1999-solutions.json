@@ -1,0 +1,626 @@
+[
+  {
+    "id": "solution-amc8-1999-p1",
+    "problemId": "amc8-1999-p1",
+    "finalAnswer": "$\\boxed{\\div}$ (choice A)",
+    "shortExplanation": "Simplify the fixed part first, then identify the operation that produces 2.",
+    "detailedSteps": [
+      "The fixed terms contribute $4-(2-1)=3$.",
+      "Thus $6\\ ?\\ 3=5-3=2$.",
+      "Only division gives $6\\div3=2$, so the operation is division.",
+      "Final answer: $\\boxed{\\div}$ (choice A)."
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Inverse operations"
+    ],
+    "commonMistakes": [
+      "Combining the subtraction in the wrong order."
+    ],
+    "alternativeMethods": [
+      "Check all four arithmetic operations directly."
+    ],
+    "difficultyNotes": "One-step expression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p2",
+    "problemId": "amc8-1999-p2",
+    "finalAnswer": "$\\boxed{60}$ (choice C)",
+    "shortExplanation": "Each hour mark spans 30 degrees, and 10 o'clock places the hands two marks apart.",
+    "detailedSteps": [
+      "A full turn has $360^\\circ$ divided into twelve equal hour intervals.",
+      "Each interval is $30^\\circ$.",
+      "The smaller angle from 10 to 12 is $2\\cdot30^\\circ=60^\\circ$.",
+      "Final answer: $\\boxed{60}$ (choice C)."
+    ],
+    "keyIdeas": [
+      "Circle measure",
+      "Angle counting"
+    ],
+    "commonMistakes": [
+      "Using the reflex angle instead of the smaller angle."
+    ],
+    "alternativeMethods": [
+      "Subtract the 10 o'clock hand direction from 12 o'clock directly."
+    ],
+    "difficultyNotes": "Clock-face angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p3",
+    "problemId": "amc8-1999-p3",
+    "finalAnswer": "$\\boxed{0}$ (choice D)",
+    "shortExplanation": "Evaluate each listed triplet; exactly one totals zero.",
+    "detailedSteps": [
+      "The first, second, and third triplets sum to $1$.",
+      "For choice D, $1.1-2.1+1.0=0$.",
+      "Choice E also sums to $-\\frac32-\\frac52+5=1$, so D is the exception.",
+      "Final answer: $\\boxed{0}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Decimal arithmetic",
+      "Signed numbers"
+    ],
+    "commonMistakes": [
+      "Treating $-2.1$ as positive."
+    ],
+    "alternativeMethods": [
+      "Convert every decimal to tenths and add as integers."
+    ],
+    "difficultyNotes": "Finite option check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p4",
+    "problemId": "amc8-1999-p4",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "Read both distances at four hours and subtract.",
+    "detailedSteps": [
+      "The graph gives Alberto about $60$ miles after four hours.",
+      "It gives Bjorn about $45$ miles at the same time.",
+      "The difference is $60-45=15$ miles.",
+      "Final answer: $\\boxed{15}$ (choice A)."
+    ],
+    "keyIdeas": [
+      "Coordinate reading",
+      "Difference"
+    ],
+    "commonMistakes": [
+      "Reading the values at five hours instead of four."
+    ],
+    "alternativeMethods": [
+      "Estimate each plotted line from its slope and confirm the same difference."
+    ],
+    "difficultyNotes": "Graph interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p5",
+    "problemId": "amc8-1999-p5",
+    "finalAnswer": "$\\boxed{400}$ (choice D)",
+    "shortExplanation": "Preserve the fence perimeter, then compare the two areas.",
+    "detailedSteps": [
+      "The original perimeter is $2(50+10)=120$ feet.",
+      "A square with this perimeter has side $120/4=30$ feet and area $900$ square feet.",
+      "The old area is $50\\cdot10=500$, so the increase is $900-500=400$.",
+      "Final answer: $\\boxed{400}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Perimeter",
+      "Area"
+    ],
+    "commonMistakes": [
+      "Keeping the old side length instead of the perimeter."
+    ],
+    "alternativeMethods": [
+      "Use $A=s^2$ with $s=(2L+2W)/4$."
+    ],
+    "difficultyNotes": "Conservation of perimeter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p6",
+    "problemId": "amc8-1999-p6",
+    "finalAnswer": "$\\boxed{Moe}$ (choice E)",
+    "shortExplanation": "Every other person is explicitly above Moe.",
+    "detailedSteps": [
+      "Both Bo and Coe have more money than Moe.",
+      "Jo has more than Moe.",
+      "Flo is above Jo and Bo, hence also above Moe; Moe is least.",
+      "Final answer: $\\boxed{Moe}$ (choice E)."
+    ],
+    "keyIdeas": [
+      "Transitive inequalities",
+      "Elimination"
+    ],
+    "commonMistakes": [
+      "Assuming the names are ordered alphabetically."
+    ],
+    "alternativeMethods": [
+      "Draw the directed comparison graph and inspect the unique minimal vertex."
+    ],
+    "difficultyNotes": "Logic chain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p7",
+    "problemId": "amc8-1999-p7",
+    "finalAnswer": "$\\boxed{130}$ (choice E)",
+    "shortExplanation": "Take three quarters of the interval from milepost 40 to 160.",
+    "detailedSteps": [
+      "The interval length is $160-40=120$ miles.",
+      "Three quarters of it is $\\frac34\\cdot120=90$ miles.",
+      "Adding this to the starting milepost gives $40+90=130$.",
+      "Final answer: $\\boxed{130}$ (choice E)."
+    ],
+    "keyIdeas": [
+      "Fraction of a segment",
+      "Linear interpolation"
+    ],
+    "commonMistakes": [
+      "Multiply 160 by three fourths without translating from 40."
+    ],
+    "alternativeMethods": [
+      "Use the weighted average $\\frac14(40)+\\frac34(160)$."
+    ],
+    "difficultyNotes": "Segment interpolation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p8",
+    "problemId": "amc8-1999-p8",
+    "finalAnswer": "$\\boxed{\\text{Blue}}$ (choice A)",
+    "shortExplanation": "Track the faces around the yellow hinge to identify the face opposite white.",
+    "detailedSteps": [
+      "Keep the yellow face fixed. Green and orange fold onto its left and right sides, while white folds downward from yellow.",
+      "Blue is attached above green. After the green face folds, blue folds across the upper side, opposite the white face.",
+      "Equivalently, assign yellow outward normal $(0,0,1)$. The normals of green, orange, white, and blue become $(-1,0,0)$, $(1,0,0)$, $(0,-1,0)$, and $(0,1,0)$, respectively. White and blue have opposite normals.",
+      "Final answer: $\\boxed{\\text{Blue}}$ (choice A)."
+    ],
+    "keyIdeas": [
+      "Cube net",
+      "Opposite faces"
+    ],
+    "commonMistakes": [
+      "Treating adjacent net squares as opposite cube faces."
+    ],
+    "alternativeMethods": [
+      "Assign coordinate normals to the net squares and propagate quarter-turns."
+    ],
+    "difficultyNotes": "Spatial visualization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p9",
+    "problemId": "amc8-1999-p9",
+    "finalAnswer": "$\\boxed{1150}$ (choice C)",
+    "shortExplanation": "Subtract the two listed pairwise overlaps from the sum of the bed totals.",
+    "detailedSteps": [
+      "Adding all beds gives $500+450+350=1300$.",
+      "Plants in the A-B overlap and A-C overlap were counted twice, contributing $50+100$ extra.",
+      "No triple overlap is shown, so the union has $1300-150=1150$ plants.",
+      "Final answer: $\\boxed{1150}$ (choice C)."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Set union"
+    ],
+    "commonMistakes": [
+      "Subtracting an overlap twice."
+    ],
+    "alternativeMethods": [
+      "Count the five disjoint regions: A only has $500-50-100=350$ plants, B only has $450-50=400$, and C only has $350-100=250$. Add the two overlap regions to get $350+400+250+50+100=1150$."
+    ],
+    "difficultyNotes": "Two-overlap union count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p10",
+    "problemId": "amc8-1999-p10",
+    "finalAnswer": "$\\boxed{\\frac{7}{12}}$ (choice E)",
+    "shortExplanation": "The non-green part of the cycle lasts 35 of the 60 seconds.",
+    "detailedSteps": [
+      "Yellow plus red lasts $5+30=35$ seconds.",
+      "A uniformly chosen time in the cycle is non-green with probability $35/60$.",
+      "Reduce to $\\frac{7}{12}$, choice E.",
+      "Final answer: $\\boxed{\\frac{7}{12}}$ (choice E)."
+    ],
+    "keyIdeas": [
+      "Complementary probability",
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Using the green time as the numerator for a non-green event."
+    ],
+    "alternativeMethods": [
+      "Compute $1-25/60=7/12$."
+    ],
+    "difficultyNotes": "Uniform time in a repeating cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p11",
+    "problemId": "amc8-1999-p11",
+    "finalAnswer": "$\\boxed{24}$ (choice D)",
+    "shortExplanation": "The common sum is maximized by placing the largest number in the center.",
+    "detailedSteps": [
+      "If the center is $x$, the horizontal and vertical sums together equal $35+x$, so their common value is $(35+x)/2$.",
+      "The maximum possible center is $x=13$, giving an upper bound $(35+13)/2=24$.",
+      "Place 13 in the center and pair $(1,10)$ with $(4,7)$; both arms sum to 11, so each line totals $13+11=24$.",
+      "Final answer: $\\boxed{24}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Double counting",
+      "Extremal choice"
+    ],
+    "commonMistakes": [
+      "Forgetting that the center is counted in both line sums."
+    ],
+    "alternativeMethods": [
+      "Enumerate the five choices for the center and test pair partitions."
+    ],
+    "difficultyNotes": "Center double-counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p12",
+    "problemId": "amc8-1999-p12",
+    "finalAnswer": "$\\boxed{27\\%}$ (choice B)",
+    "shortExplanation": "Convert the win-loss ratio into a fraction of all games lost.",
+    "detailedSteps": [
+      "Write wins and losses as $11k$ and $4k$.",
+      "The total number of games is $15k$, so the lost fraction is $4/15$.",
+      "Thus the percentage is $(4/15)100\\%=26\\frac23\\%$, which rounds to $27\\%$.",
+      "Final answer: $\\boxed{27\\%}$ (choice B)."
+    ],
+    "keyIdeas": [
+      "Part-to-whole ratios",
+      "Rounding"
+    ],
+    "commonMistakes": [
+      "Using 4/11 as the lost fraction instead of 4/15."
+    ],
+    "alternativeMethods": [
+      "Use a representative group of 15 games: 11 wins and 4 losses. The loss percentage is $100(4/15)\\%$, which rounds to $27\\%$."
+    ],
+    "difficultyNotes": "Nearest whole percent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p13",
+    "problemId": "amc8-1999-p13",
+    "finalAnswer": "$\\boxed{28}$ (choice C)",
+    "shortExplanation": "Convert every group average to a total age, then divide the adult remainder by five.",
+    "detailedSteps": [
+      "The camp total age is $40\\cdot17=680$.",
+      "Girls contribute $20\\cdot15=300$ and boys contribute $15\\cdot16=240$.",
+      "Adults contribute $680-300-240=140$, so their average is $140/5=28$.",
+      "Final answer: $\\boxed{28}$ (choice C)."
+    ],
+    "keyIdeas": [
+      "Weighted mean",
+      "Totals"
+    ],
+    "commonMistakes": [
+      "Averaging the three group means without weighting by group size."
+    ],
+    "alternativeMethods": [
+      "Use a single equation $20(15)+15(16)+5x=40(17)$."
+    ],
+    "difficultyNotes": "Weighted-average equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p14",
+    "problemId": "amc8-1999-p14",
+    "finalAnswer": "$\\boxed{34}$ (choice D)",
+    "shortExplanation": "Drop an altitude; the equal legs split the base difference into two 4-3-5 triangles.",
+    "detailedSteps": [
+      "The bases differ by $16-8=8$, so each horizontal leg is $8/2=4$.",
+      "The altitude is 3, hence each equal side is $\\sqrt{4^2+3^2}=5$.",
+      "The perimeter is $8+16+5+5=34$.",
+      "Final answer: $\\boxed{34}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Isosceles trapezoid"
+    ],
+    "commonMistakes": [
+      "Using the base difference 8 as one leg of a side triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal-leg trapezoid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p15",
+    "problemId": "amc8-1999-p15",
+    "finalAnswer": "$\\boxed{40}$ (choice D)",
+    "shortExplanation": "Compare all ways to distribute two new letters among the three position sets.",
+    "detailedSteps": [
+      "The original count is $5\\cdot3\\cdot4=60$.",
+      "Putting both letters in the second set gives $5\\cdot5\\cdot4=100$; putting one in each of the second and third sets also gives $5\\cdot4\\cdot5=100$.",
+      "All other placements give at most 96, so the maximum additional count is $100-60=40$.",
+      "Final answer: $\\boxed{40}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Multiplication principle",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "Reporting 100 as the additional number rather than subtracting the old count."
+    ],
+    "alternativeMethods": [
+      "Balance the multiplicative factors, subject to changing only two sets."
+    ],
+    "difficultyNotes": "Finite distribution cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p16",
+    "problemId": "amc8-1999-p16",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "Compute the current correct count and compare it with 60% of 75.",
+    "detailedSteps": [
+      "Correct answers are $0.70(10)+0.40(30)+0.60(35)=7+12+21=40$.",
+      "A 60% score on 75 requires $0.60(75)=45$ correct answers.",
+      "She needs $45-40=5$ more, choice B.",
+      "Final answer: $\\boxed{5}$ (choice B)."
+    ],
+    "keyIdeas": [
+      "Weighted percentage",
+      "Thresholds"
+    ],
+    "commonMistakes": [
+      "Rounding each category before adding."
+    ],
+    "alternativeMethods": [
+      "Work with integer counts directly: 7, 12, and 21."
+    ],
+    "difficultyNotes": "Passing-score threshold.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p17",
+    "problemId": "amc8-1999-p17",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "Make enough whole recipes for 216 cookies, then convert eggs to half-dozens.",
+    "detailedSteps": [
+      "The party needs $108\\cdot2=216$ cookies.",
+      "At 15 cookies per recipe, $216/15=14.4$, so 15 full recipes are required.",
+      "Those recipes use $15\\cdot2=30$ eggs, or $30/6=5$ half-dozens.",
+      "Final answer: $\\boxed{5}$ (choice C)."
+    ],
+    "keyIdeas": [
+      "Ceiling division",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Rounding 14.4 recipes down."
+    ],
+    "alternativeMethods": [
+      "Check the first feasible integer recipe count by multiplying by 15."
+    ],
+    "difficultyNotes": "Discrete production.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p18",
+    "problemId": "amc8-1999-p18",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "Apply the attendance decrease before converting students to cookies and whole recipes.",
+    "detailedSteps": [
+      "A 25% decrease leaves $108\\cdot0.75=81$ students.",
+      "They need $81\\cdot2=162$ cookies.",
+      "Since $162/15=10.8$, they must make 11 full recipes.",
+      "Final answer: $\\boxed{11}$ (choice E)."
+    ],
+    "keyIdeas": [
+      "Percent change",
+      "Ceiling division"
+    ],
+    "commonMistakes": [
+      "Reducing the number of recipes by 25% instead of the attendance."
+    ],
+    "alternativeMethods": [
+      "Use $\\lceil 0.75\\cdot108\\cdot2/15\\rceil$."
+    ],
+    "difficultyNotes": "Discrete recipe count after a percentage change.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p19",
+    "problemId": "amc8-1999-p19",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "Use the same 15 recipes and round the butter sticks up.",
+    "detailedSteps": [
+      "Producing 216 cookies still requires 15 recipes.",
+      "The recipes use $15\\cdot3=45$ tablespoons of butter.",
+      "With 8 tablespoons per stick, $45/8=5.625$, so 6 sticks are needed.",
+      "Final answer: $\\boxed{6}$ (choice B)."
+    ],
+    "keyIdeas": [
+      "Ceiling division",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Rounding 5.625 sticks down or using 216/15 without a ceiling."
+    ],
+    "alternativeMethods": [
+      "Check both 5 and 6 sticks against the 45-tablespoon requirement."
+    ],
+    "difficultyNotes": "Discrete supply requirement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p20",
+    "problemId": "amc8-1999-p20",
+    "finalAnswer": "$\\boxed{(2,3,4)}$ (choice B)",
+    "shortExplanation": "For each front column, the visible height is the larger stack in the corresponding front-back pair.",
+    "detailedSteps": [
+      "Figure 4 has six stack positions arranged in two rows: $(2,2,4)$ in the back and $(1,3,1)$ in the front.",
+      "Looking from the front, the height of each visible column is the larger of its two stack heights. Thus the heights are $\\max(2,1)=2$, $\\max(2,3)=3$, and $\\max(4,1)=4$.",
+      "This increasing three-column silhouette is choice B.",
+      "Final answer: $\\boxed{(2,3,4)}$ (choice B)."
+    ],
+    "keyIdeas": [
+      "Orthographic projection",
+      "Maxima"
+    ],
+    "commonMistakes": [
+      "Adding the front and back heights instead of taking the visible maximum."
+    ],
+    "alternativeMethods": [
+      "Make a three-column table and take a maximum in each column."
+    ],
+    "difficultyNotes": "Projection of a stack map.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p21",
+    "problemId": "amc8-1999-p21",
+    "finalAnswer": "$\\boxed{30^\\circ}$ (choice B)",
+    "shortExplanation": "Use supplementary angles and one triangle sum to transfer the marked 100, 110, and 40 degree data to angle A.",
+    "detailedSteps": [
+      "Name the intersection of the horizontal segment and the steep segment $X$, the lower-left star tip $L$, and the right intersection marked $110^\\circ$ as $Z$. Let $Y$ be where the steep segment meets the segment from $A$ through $Z$.",
+      "The angle at $Z$ inside triangle $LYZ$ is the supplement of the marked angle: $180^\\circ-110^\\circ=70^\\circ$. With $\\angle YLZ=40^\\circ$, the remaining angle $\\angle LYZ$ is $70^\\circ$.",
+      "Vertical angles give $\\angle AYX=70^\\circ$. At $X$, the angle in triangle $AXY$ is supplementary to the marked $100^\\circ$, so it is $80^\\circ$.",
+      "Therefore $\\angle A=180^\\circ-70^\\circ-80^\\circ=30^\\circ$.",
+      "Final answer: $\\boxed{30^\\circ}$ (choice B)."
+    ],
+    "keyIdeas": [
+      "Supplementary angles",
+      "Triangle angle sum"
+    ],
+    "commonMistakes": [
+      "Using 100 or 110 directly instead of their supplements."
+    ],
+    "alternativeMethods": [
+      "Trace the two intersecting transversals and use vertical angles before the final triangle sum."
+    ],
+    "difficultyNotes": "Star-shaped angle chase.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p22",
+    "problemId": "amc8-1999-p22",
+    "finalAnswer": "$\\boxed{\\frac83}$ (choice D)",
+    "shortExplanation": "Convert fish to loaves, then loaves to bags of rice.",
+    "detailedSteps": [
+      "From $3$ fish $=2$ loaves, one fish is $2/3$ of a loaf.",
+      "One loaf is worth 4 bags of rice.",
+      "Therefore one fish is $(2/3)\\cdot4=8/3$ bags, choice D.",
+      "Final answer: $\\boxed{\\frac83}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Proportions",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Inverting the fish-to-loaf ratio."
+    ],
+    "alternativeMethods": [
+      "Set one fish equal to x rice bags and solve $3x=2\\cdot4$."
+    ],
+    "difficultyNotes": "Chained exchange rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p23",
+    "problemId": "amc8-1999-p23",
+    "finalAnswer": "$\\boxed{\\sqrt{13}}$ (choice C)",
+    "shortExplanation": "The equal-area condition fixes the distance from M to B, after which Pythagoras gives CM.",
+    "detailedSteps": [
+      "The square has area $9$, so triangle MBC has area $3$.",
+      "Using base $BC=3$, $\\frac12(MB)(3)=3$ gives $MB=2$.",
+      "Right triangle MBC has legs 2 and 3, so $CM=\\sqrt{2^2+3^2}=\\sqrt{13}$.",
+      "Final answer: $\\boxed{\\sqrt{13}}$ (choice C)."
+    ],
+    "keyIdeas": [
+      "Area of a triangle",
+      "Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "Using side AB=3 as the base without identifying the correct triangle."
+    ],
+    "alternativeMethods": [
+      "Compute the coordinates M=(0,1), C=(3,3) after placing the square on axes."
+    ],
+    "difficultyNotes": "Equal-area partition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p24",
+    "problemId": "amc8-1999-p24",
+    "finalAnswer": "$\\boxed{1}$ (choice D)",
+    "shortExplanation": "Reduce the base modulo 5 and use the parity of the exponent.",
+    "detailedSteps": [
+      "Since $1999\\equiv-1\\pmod5$, we have $1999^{2000}\\equiv(-1)^{2000}\\pmod5$.",
+      "The exponent is even, so the residue is $1$.",
+      "Final answer: $\\boxed{1}$ (choice D)."
+    ],
+    "keyIdeas": [
+      "Congruences",
+      "Powers"
+    ],
+    "commonMistakes": [
+      "Looking only at the final decimal digit of the exponentiation."
+    ],
+    "alternativeMethods": [
+      "Use the period-two sequence of powers of 1999 modulo 5."
+    ],
+    "difficultyNotes": "Small-modulus power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-1999-p25",
+    "problemId": "amc8-1999-p25",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The shaded areas form a geometric series inside the right isosceles triangle.",
+    "detailedSteps": [
+      "The large triangle $ACG$ has area $\\frac12\\cdot6\\cdot6=18$.",
+      "The first shaded triangle has area $18/4$, and each next shaded area is one quarter of the preceding one because each midpoint subdivision halves both relevant lengths.",
+      "The total after 100 stages is $18(\\frac14+\\frac1{16}+\\cdots+\\frac1{4^{100}})$, which is just below $18\\cdot\\frac{1/4}{1-1/4}=6$.",
+      "Thus the nearest listed value is 6, choice A.",
+      "Final answer: $\\boxed{6}$ (choice A)."
+    ],
+    "keyIdeas": [
+      "Geometric series",
+      "Midpoint similarity"
+    ],
+    "commonMistakes": [
+      "Adding the areas of all large triangles instead of only the shaded pieces."
+    ],
+    "alternativeMethods": [
+      "The infinite sum is $6$, and the unshaded tail after 100 stages is exactly $6/4^{100}$. This positive error is less than $1/2$, so the nearest listed number is $6$."
+    ],
+    "difficultyNotes": "Iterated midpoint construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

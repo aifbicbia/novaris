@@ -1,0 +1,652 @@
+[
+  {
+    "id": "solution-amc10a-2019-p1",
+    "problemId": "amc10a-2019-p1",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use exponents to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Evaluate from the top: $1^9=1$, $0^1=0$, and $2^0=1$.",
+      "The second term is also $1$ because $(2^0)^1=1$.",
+      "So the value is $1+1=2$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Exponents"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p2",
+    "problemId": "amc10a-2019-p2",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Use factorials and digits to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Both $20!$ and $15!$ are multiples of $1000$.",
+      "Therefore $20!-15!equiv0pmod{1000}$.",
+      "The hundreds digit is $0$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factorials and digits"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on factorials and digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p3",
+    "problemId": "amc10a-2019-p3",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use age equations to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Let Bonita be $B$ this year and Ana be $A$. Then $A=B^2$ and $A-1=5(B-1)$.",
+      "Solving gives $B^2-1=5B-5$, so $B=4$.",
+      "Thus $A=16$, and the difference is $12$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Age equations"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on age equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p4",
+    "problemId": "amc10a-2019-p4",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use pigeonhole principle to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "To delay a guarantee, draw $14$ red, $14$ green, $14$ yellow, all $13$ blue, all $11$ white, and all $9$ black balls.",
+      "That is $75$ balls without forcing $15$ of one color.",
+      "The next draw forces $15$ of red, green, or yellow, so the answer is $76$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Pigeonhole principle"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on pigeonhole principle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p5",
+    "problemId": "amc10a-2019-p5",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use consecutive integer sums to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A block of $90$ consecutive integers can have average $\\frac12$, giving sum $45$.",
+      "For $N$ consecutive integers summing to $45$, $N$ must divide $90$.",
+      "No longer block is possible, so the greatest number is $90$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Consecutive integer sums"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on consecutive integer sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p6",
+    "problemId": "amc10a-2019-p6",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use cyclic quadrilaterals to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A point equidistant from all vertices means the quadrilateral is cyclic.",
+      "Squares, rectangles, and isosceles trapezoids are cyclic.",
+      "The listed non-square rhombus and non-rectangular parallelogram need not be cyclic, so $3$ types work.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Cyclic quadrilaterals"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on cyclic quadrilaterals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p7",
+    "problemId": "amc10a-2019-p7",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use coordinate geometry to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The two lines are $y=\\frac12x+1$ and $y=2x-2$.",
+      "They meet $x+y=10$ at $(6,4)$ and $(4,6)$.",
+      "Using these with $(2,2)$ gives area $6$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinate geometry"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on coordinate geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p8",
+    "problemId": "amc10a-2019-p8",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use rigid motions and symmetry to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A translation by one period preserves the infinite pattern.",
+      "A $180^{\\circ}$ rotation about the correct midpoint also preserves it.",
+      "The two reflections listed do not preserve every slanted segment, so exactly $2$ kinds work.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rigid motions and symmetry"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on rigid motions and symmetry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p9",
+    "problemId": "amc10a-2019-p9",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use divisibility to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The sum is $\\frac{n(n+1)}2$.",
+      "The obstruction is when $n+1$ is a prime missing from $n!$.",
+      "The largest such three-digit $n$ is $996$, since $997$ is prime.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on divisibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p10",
+    "problemId": "amc10a-2019-p10",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use grid diagonals to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A diagonal through a $10\\times17$ grid crosses $9$ vertical and $16$ horizontal interior grid lines.",
+      "Because $gcd(10,17)=1$, it crosses no interior lattice point.",
+      "Thus it visits $1+9+16=26$ tiles.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Grid diagonals"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on grid diagonals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p11",
+    "problemId": "amc10a-2019-p11",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use divisors and powers to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Since $201=3cdot67$, a divisor is $3^a67^b$ with $0le a,ble9$.",
+      "Square divisors give $25$ choices, cube divisors give $16$ choices, and sixth-power divisors overlap in $4$ choices.",
+      "The union count is $25+16-4=37$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisors and powers"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on divisors and powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p12",
+    "problemId": "amc10a-2019-p12",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Use mean median and mode to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The modes are $1,2,ldots,28$, so $d=14.5$.",
+      "The $183$rd entry is $16$, so $M=16$.",
+      "The mean is between them, giving $d<mu<M$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Statistics",
+      "Mean median and mode"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on mean median and mode.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p13",
+    "problemId": "amc10a-2019-p13",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use circle and angle chasing to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The base angles of the isosceles triangle are $70^{\\circ}$.",
+      "Diameter angles give right angles at $D$ and $E$.",
+      "Angle chasing in the two small triangles gives $\\angle BFC=110^{\\circ}$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle and angle chasing"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on circle and angle chasing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p14",
+    "problemId": "amc10a-2019-p14",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use line arrangements to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Four lines can create $0,1,3,4,5,$ or $6$ intersection points.",
+      "These are all attainable by using parallel lines or concurrency.",
+      "Their sum is $19$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Line arrangements"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on line arrangements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p15",
+    "problemId": "amc10a-2019-p15",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Use recursive sequences to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The first few terms suggest $a_n=\\frac3{4n-1}$.",
+      "Substitution into the recurrence verifies the formula.",
+      "Thus $a_{2019}=\\frac3{8075}$, so $p+q=8078$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Recursive sequences"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on recursive sequences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p16",
+    "problemId": "amc10a-2019-p16",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Use circle packing area to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The farthest small-circle center is $2sqrt3$ from the large center, so the large radius is $2sqrt3+1$.",
+      "Subtract the areas of the $13$ unit circles from the large circle.",
+      "The shaded area is $\\pi(2\\sqrt3+1)^2-13\\pi=4\\pi\\sqrt3$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle packing area"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on circle packing area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p17",
+    "problemId": "amc10a-2019-p17",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use permutations with repetition to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Count by the color left out.",
+      "Leaving red, blue, or green gives $\\frac{8!}{1!3!4!}$, $\\frac{8!}{2!2!4!}$, and $\\frac{8!}{2!3!3!}$.",
+      "The sum is $280+420+560=1260$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Permutations with repetition"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on permutations with repetition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p18",
+    "problemId": "amc10a-2019-p18",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use base representation to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Let $a=0.232323ldots_k$. Then $(k^2-1)a=23_k=2k+3$.",
+      "So $\\frac{2k+3}{k^2-1}=\\frac7{51}$.",
+      "Solving gives $k=16$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Base representation"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on base representation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p19",
+    "problemId": "amc10a-2019-p19",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use completing the square to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Let $u=x^2+5x+5$.",
+      "Then $(x+1)(x+2)(x+3)(x+4)=(u-1)(u+1)=u^2-1$.",
+      "The expression is $u^2+2018$, whose least value is $2018$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Completing the square"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on completing the square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p20",
+    "problemId": "amc10a-2019-p20",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use parity grids to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A row or column has odd sum when it has either three odds or one odd.",
+      "Choose the all-odd row and all-odd column in $3cdot3$ ways, then arrange the $5$ odds and $4$ evens.",
+      "The probability is $\\frac{9\\cdot5!\\cdot4!}{9!}=\\frac1{14}$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Parity grids"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on parity grids.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p21",
+    "problemId": "amc10a-2019-p21",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use sphere tangent to triangle sides to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "The triangle area is $\\frac12\\cdot24\\cdot9=108$ and its semiperimeter is $27$.",
+      "So the incircle radius is $4$.",
+      "If the sphere radius is $6$, then $h^2+4^2=6^2$, giving $h=2sqrt5$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Sphere tangent to triangle sides"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on sphere tangent to triangle sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p22",
+    "problemId": "amc10a-2019-p22",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use mixed discrete and continuous probability to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Both discrete contributes $\\frac14\\cdot\\frac12=\\frac18$.",
+      "One discrete and one continuous contributes $\\frac12\\cdot\\frac12=\\frac14$.",
+      "Both continuous contributes $\\frac14\\cdot\\frac14=\\frac1{16}$, for total $\\frac7{16}$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Mixed discrete and continuous probability"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on mixed discrete and continuous probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p23",
+    "problemId": "amc10a-2019-p23",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use arithmetic series to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "In round $n$, Tadd says $3n-2$ numbers, so after $n$ rounds he has said $\\frac{n(3n-1)}2$ numbers.",
+      "After $36$ rounds this is $1926$, so the desired term is in round $37$.",
+      "Round $37$ starts at $5887$, so the $2019$th Tadd number is $5887+92=5979$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Arithmetic series"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on arithmetic series.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p24",
+    "problemId": "amc10a-2019-p24",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use partial fractions and vieta to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "Plugging in $s=p,q,r$ gives $\\frac1A=(p-q)(p-r)$ and cyclic forms.",
+      "Adding gives $(p+q+r)^2-3(pq+pr+qr)$.",
+      "By Vieta this is $22^2-3cdot80=244$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Partial fractions and Vieta"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on partial fractions and vieta.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2019-p25",
+    "problemId": "amc10a-2019-p25",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use factorials and divisibility to reduce the problem to a small, checkable computation.",
+    "detailedSteps": [
+      "A prime $n$ fails because the denominator needs too many factors of $n$.",
+      "The value $n=4$ also fails by checking powers of $2$.",
+      "All other composite values in the range work by Legendre exponent counts, so $50-16=34$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factorials and divisibility"
+    ],
+    "commonMistakes": [
+      "Match the final value to the requested answer choice, not just to an intermediate quantity.",
+      "Keep all stated restrictions in place while simplifying the expression or count."
+    ],
+    "alternativeMethods": [
+      "A quick check is to substitute the selected answer back into the condition or verify the count with a small equivalent model."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on factorials and divisibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

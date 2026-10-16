@@ -1,0 +1,630 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1987-p1",
+    "problemId": "amc12-predecessor-1987-p1",
+    "finalAnswer": "$\\boxed{1+x^2-x^3-x^5}$ (choice D)",
+    "shortExplanation": "The four products give $1+x^2-x^3-x^5$.",
+    "detailedSteps": [
+      "Multiply one by each term in the second factor to obtain $1-x^3$, then multiply $x^2$ by each term to obtain $x^2-x^5$.",
+      "Adding gives $1+x^2-x^3-x^5$. The last exponent is $2+3=5$, and its sign is negative."
+    ],
+    "keyIdeas": [
+      "Distribute every term with its sign"
+    ],
+    "commonMistakes": [
+      "Multiplying the exponents or losing the minus sign in the last product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ordinary distribution controls both signs and exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p2",
+    "problemId": "amc12-predecessor-1987-p2",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The cut-off corner is equilateral with side one, so the new perimeter is $9-2+1=8$.",
+    "detailedSteps": [
+      "The original equilateral triangle has perimeter nine. At the removed corner, the two incident segments have length one and include an angle of $60^\\circ$. Their joining segment consequently also has length one.",
+      "The new boundary removes two unit segments and adds that unit cut. Its perimeter is $9-1-1+1=8$."
+    ],
+    "keyIdeas": [
+      "Replace the two removed boundary segments by the new cut"
+    ],
+    "commonMistakes": [
+      "Subtracting the removed triangle\u2019s entire perimeter without adding the new cut edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A cut replaces old boundary segments with a new boundary segment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p3",
+    "problemId": "amc12-predecessor-1987-p3",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "The eligible primes are $7,17,37,47,67,97$, giving six.",
+    "detailedSteps": [
+      "The positive candidates below one hundred ending in seven are $7,17,27,37,47,57,67,77,87,97$.",
+      "The numbers $27,57,87$ are divisible by three, and $77=7\\cdot11$. Each of the remaining six has no prime divisor at most its square root, so all six are prime."
+    ],
+    "keyIdeas": [
+      "Check the complete last-digit candidate list"
+    ],
+    "commonMistakes": [
+      "Treating every number ending in seven as prime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last-digit restriction makes a complete finite list short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p4",
+    "problemId": "amc12-predecessor-1987-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The numerator is $7/2$ and the denominator is $7/16$, so the quotient is eight.",
+    "detailedSteps": [
+      "The numerator is $2+1+1/2=7/2$. The denominator is $1/4+1/8+1/16=7/16$.",
+      "Dividing gives $(7/2)/(7/16)=8$. Each negative exponent denotes a reciprocal power, not a negative number."
+    ],
+    "keyIdeas": [
+      "Evaluate the negative powers as reciprocals"
+    ],
+    "commonMistakes": [
+      "Interpreting a negative exponent as a minus sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common denominator keeps this calculation exact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p5",
+    "problemId": "amc12-predecessor-1987-p5",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The one-eighth categories force a total divisible by eight, and eight measurements realize every frequency.",
+    "detailedSteps": [
+      "The exact frequencies are $1/8,0,1/2,1/4,1/8$. In particular, an eighth of the total number must be an integer, so the positive total is a multiple of eight.",
+      "The smallest candidate, eight, gives category counts $1,0,4,2,1$, all nonnegative integers summing to eight. Thus it is attainable and minimal."
+    ],
+    "keyIdeas": [
+      "Make every exact percentage count integral"
+    ],
+    "commonMistakes": [
+      "Rounding a percentage count even though the source frequencies are exact."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exact frequencies impose divisibility conditions on the sample size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p6",
+    "problemId": "amc12-predecessor-1987-p6",
+    "finalAnswer": "$\\boxed{w-y-z}$ (choice A)",
+    "shortExplanation": "The two triangle angle sums differ by $x+y+z-w=0$, giving $x=w-y-z$.",
+    "detailedSteps": [
+      "Let the two base angles of triangle $ADB$ be $\\alpha$ and $\\beta$. Its angle sum is $\\alpha+\\beta+w=180^\\circ$.",
+      "In the actual marked diagram, the outer triangle has angles $\\alpha+y$, $\\beta+z$ and $x$. Its sum is $\\alpha+\\beta+y+z+x=180^\\circ$.",
+      "Subtracting the first equation from the second gives $x+y+z-w=0$, hence $x=w-y-z$."
+    ],
+    "keyIdeas": [
+      "Subtract the inner triangle\u2019s angle sum"
+    ],
+    "commonMistakes": [
+      "Treating a marked partial angle as the entire outer angle at that vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Introducing the unmarked base angles lets them cancel naturally.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p7",
+    "problemId": "amc12-predecessor-1987-p7",
+    "finalAnswer": "$\\boxed{c}$ (choice C)",
+    "shortExplanation": "The four offsets from the common value are $1,-2,3,-4$; the largest belongs to $c$.",
+    "detailedSteps": [
+      "Call the common value $t$. Then $a=t+1$, $b=t-2$, $c=t+3$ and $d=t-4$.",
+      "Their order is always $c>a>b>d$, independently of the value of $t$. Therefore $c$ is largest."
+    ],
+    "keyIdeas": [
+      "Recover all four quantities from their common value"
+    ],
+    "commonMistakes": [
+      "Comparing the constants in the original equations without reversing them when solving for each variable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared additive shift cannot change an ordering.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p8",
+    "problemId": "amc12-predecessor-1987-p8",
+    "finalAnswer": "$\\boxed{15<AD+BD<16}$ (choice C)",
+    "shortExplanation": "The two distances are $\\sqrt{116}$ and five; their sum lies strictly between fifteen and sixteen.",
+    "detailedSteps": [
+      "Set $A=(0,0)$ and $B=(13,0)$. The two actual right angles place $C=(13,4)$ and $D=(10,4)$, because the top horizontal segment has length three.",
+      "Thus $BD=\\sqrt{3^2+4^2}=5$, while $AD=\\sqrt{10^2+4^2}=\\sqrt{116}$.",
+      "Since $10^2<116<11^2$, we have $10<AD<11$. Adding five gives $15<AD+BD<16$."
+    ],
+    "keyIdeas": [
+      "Read both perpendicular offsets from the diagram"
+    ],
+    "commonMistakes": [
+      "Using the full thirteen-unit lower segment as the horizontal separation from the first point to the top-left point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram supplies offsets, not a drawn-to-scale measurement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p9",
+    "problemId": "amc12-predecessor-1987-p9",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice B)",
+    "shortExplanation": "The common difference is $x/2$, so the first and third terms have ratio $1/3$.",
+    "detailedSteps": [
+      "Let the common difference be $d$. The first four terms can be written $x-d,x,x+d,x+2d$. The last term is $2x$, so $d=x/2$.",
+      "Hence $a=x/2$ and $b=3x/2$. On the domain of the requested ratio, $b\\ne0$, so $x\\ne0$ and $a/b=1/3$."
+    ],
+    "keyIdeas": [
+      "Express every term using the common difference"
+    ],
+    "commonMistakes": [
+      "Canceling a possibly zero scale without respecting the denominator of the requested ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio itself requires a nonzero denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p10",
+    "problemId": "amc12-predecessor-1987-p10",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Each variable is either one or negative one, and the product must be one; exactly four sign triples work.",
+    "detailedSteps": [
+      "Multiplying the three given equations yields $abc=(abc)^2$. Since none of the three variables is zero, their product is nonzero and must equal one.",
+      "For example, $a^2=a(bc)=abc=1$. Likewise $b^2=c^2=1$. Thus every variable has magnitude one.",
+      "The valid ordered triples are $(1,1,1)$ and the three placements of one positive one and two negative ones. Each satisfies all three original equations, so the count is four."
+    ],
+    "keyIdeas": [
+      "Use the nonzero product to restrict every magnitude"
+    ],
+    "commonMistakes": [
+      "Including zero triples despite the explicit nonzero condition, or counting unordered sign patterns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero condition is essential when dividing by the product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p11",
+    "problemId": "amc12-predecessor-1987-p11",
+    "finalAnswer": "$\\boxed{-1<c<\\frac32}$ (choice E)",
+    "shortExplanation": "The coordinates are $5/(c+1)$ and $(3-2c)/(c+1)$, giving the open interval $(-1,3/2)$.",
+    "detailedSteps": [
+      "If $c=-1$, the two equations require $x-y=2$ and $-x+y=3$, which are inconsistent. For every other value, adding the equations gives $x=5/(c+1)$.",
+      "Then $y=x-2=(3-2c)/(c+1)$. Positivity of $x$ first requires $c>-1$. On that domain, positivity of $y$ requires $c<3/2$.",
+      "Conversely, both coordinates are positive throughout this interval and satisfy the original equations. The endpoints are excluded because one is inconsistent and the other has $y=0$."
+    ],
+    "keyIdeas": [
+      "Require both solved coordinates to be positive"
+    ],
+    "commonMistakes": [
+      "Including an axis point as a point inside the first quadrant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inside a quadrant means both inequalities are strict.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p12",
+    "problemId": "amc12-predecessor-1987-p12",
+    "finalAnswer": "$\\boxed{4,5,2,3,1}$ (choice D)",
+    "shortExplanation": "After typing four and five first, letter three still sits above letter two, so the proposed next letter two is impossible.",
+    "detailedSteps": [
+      "To type four first, letters one through four must all have arrived, and only four has been removed. The stack is then topped by three, with two below it. Typing five next means five arrives and is immediately removed, leaving three still above two.",
+      "Therefore two cannot be typed next, so the displayed order $4,5,2,3,1$ is impossible.",
+      "The other choices can occur. The increasing order types each letter immediately, and the decreasing order waits for all deliveries. For $2,4,3,5,1$, deliver through two and type two, deliver through four and type four then three, then deliver and type five, then one.",
+      "For $3,2,4,1,5$, deliver through three and type three then two, deliver and type four, type one, then deliver and type five. Thus only the stated order is excluded."
+    ],
+    "keyIdeas": [
+      "Respect the last-in-first-out obstruction"
+    ],
+    "commonMistakes": [
+      "Assuming any permutation can occur when the secretary must always remove the top letter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single trapped letter proves impossibility; feasible schedules verify the other choices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p13",
+    "problemId": "amc12-predecessor-1987-p13",
+    "finalAnswer": "$\\boxed{36\\pi\\text{ meters}}$ (choice A)",
+    "shortExplanation": "The mean diameter is six centimeters, giving total length $600(6\\pi)=3600\\pi$ centimeters, or $36\\pi$ meters.",
+    "detailedSteps": [
+      "Under the source\u2019s stated circular approximation, the six hundred diameters form an arithmetic sequence from two to ten centimeters. Their mean is $(2+10)/2=6$ centimeters.",
+      "The sum of their circumferences is $\\pi$ times the sum of the diameters, namely $600\\cdot6\\pi=3600\\pi$ centimeters. Dividing by one hundred gives $36\\pi$ meters.",
+      "The paper\u2019s width does not enter this length calculation."
+    ],
+    "keyIdeas": [
+      "Average the evenly spaced diameters"
+    ],
+    "commonMistakes": [
+      "Using the outer circumference for every layer or forgetting the conversion from centimeters to meters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The explicitly supplied approximation turns the layers into an arithmetic-sequence sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p14",
+    "problemId": "amc12-predecessor-1987-p14",
+    "finalAnswer": "$\\boxed{\\frac35}$ (choice B)",
+    "shortExplanation": "The vectors have determinant magnitude $3/4$ and length product $5/4$, giving sine $3/5$.",
+    "detailedSteps": [
+      "Scale the square to unit side and set $A=(0,0)$, $B=(0,1)$, $C=(1,1)$, $D=(1,0)$. The actual midpoints give $\\overrightarrow{AM}=(1/2,1)$ and $\\overrightarrow{AN}=(1,1/2)$.",
+      "The sine of the angle between two vectors is the absolute determinant divided by their length product. Here the numerator is $|1/4-1|=3/4$, and both squared lengths are $5/4$.",
+      "The product of the lengths is therefore $5/4$, yielding $\\sin\\theta=(3/4)/(5/4)=3/5$."
+    ],
+    "keyIdeas": [
+      "Compute the sine from the two midpoint vectors"
+    ],
+    "commonMistakes": [
+      "Finding the sine of one segment\u2019s angle with a square edge instead of the angle between the two segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A determinant calculates the sine without separately finding either angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p15",
+    "problemId": "amc12-predecessor-1987-p15",
+    "finalAnswer": "$\\boxed{69}$ (choice D)",
+    "shortExplanation": "The product is six and the sum is nine, so the squared sum is $9^2-2(6)=69$.",
+    "detailedSteps": [
+      "The second expression factors as $xy(x+y)+(x+y)=(xy+1)(x+y)$. Using $xy=6$ gives $7(x+y)=63$, hence $x+y=9$.",
+      "Now $x^2+y^2=(x+y)^2-2xy=81-12=69$.",
+      "The resulting sum and product are consistent: the two values are the roots of $t^2-9t+6=0$, namely $(9\\pm\\sqrt{57})/2$, and they satisfy both original equations."
+    ],
+    "keyIdeas": [
+      "Factor the symmetric expression through the product"
+    ],
+    "commonMistakes": [
+      "Expanding all powers separately instead of recognizing the shared sum and product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetric expressions often require only the sum and product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p16",
+    "problemId": "amc12-predecessor-1987-p16",
+    "finalAnswer": "$\\boxed{108}$ (choice D)",
+    "shortExplanation": "The unique code is $V=2,W=0,X=4,Y=1,Z=3$, so the target is $413_5=108$.",
+    "detailedSteps": [
+      "In the first increment, the first two code symbols stay unchanged, so the units digit rises from $Z$ to $X$ without a carry. In the next increment, the middle symbol changes; this requires $X=4$ and $W=0$, with $Z=3$.",
+      "The middle digit rises from $Y$ to $V$ without changing the leading digit, so $V=Y+1$. The unused digits are one and two, giving $Y=1$ and $V=2$.",
+      "The three original codes are therefore $213_5,214_5,220_5$, which are consecutive. The requested code is $413_5=4\\cdot25+1\\cdot5+3=108$."
+    ],
+    "keyIdeas": [
+      "Use the carry to determine the base-five digits"
+    ],
+    "commonMistakes": [
+      "Treating the letter code as decimal or allowing two different letters to represent the same digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A carry is more informative than an ordinary digit increment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p17",
+    "problemId": "amc12-predecessor-1987-p17",
+    "finalAnswer": "$\\boxed{\\text{Ann, Dick, Bill, Carol}}$ (choice E)",
+    "shortExplanation": "The interchange gives Bill above Carol; the remaining conditions then force Ann above Dick above Bill.",
+    "detailedSteps": [
+      "Use initials for the four nonnegative scores. The original equality is $B+D=A+C$, and after interchanging Bill and Carol, the strict inequality is $A+B>C+D$.",
+      "Substituting $A=B+D-C$ into that inequality gives $2(B-C)>0$, so $B>C$.",
+      "The remaining condition gives $D>B+C\\ge B$. Also $A-D=B-C>0$. Thus the strict order is $A>D>B>C$, meaning Ann, Dick, Bill, Carol."
+    ],
+    "keyIdeas": [
+      "Convert the score interchange into a strict comparison"
+    ],
+    "commonMistakes": [
+      "Swapping the contestants\u2019 names without actually swapping their scores in the group sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nonnegativity turns the inequality above a sum into a comparison with each summand.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p18",
+    "problemId": "amc12-predecessor-1987-p18",
+    "finalAnswer": "$\\boxed{\\frac{AM-SH}{M-H}}$ (choice D)",
+    "shortExplanation": "Writing $E=A+Hr=S+Mr$ eliminates the thickness ratio and gives $(AM-SH)/(M-H)$.",
+    "detailedSteps": [
+      "Measure all lengths in units of one algebra book\u2019s thickness, and let a geometry book have thickness $r>1$. The common shelf length is $E=A+Hr=S+Mr$.",
+      "Equating the two mixed arrangements gives $(H-M)r=S-A$. The source\u2019s distinct counts ensure $H\\ne M$, so $r=(S-A)/(H-M)$.",
+      "Substituting into $E=A+Hr$ and combining over one denominator gives $E=(HS-AM)/(H-M)=(AM-SH)/(M-H)$."
+    ],
+    "keyIdeas": [
+      "Eliminate the geometry-to-algebra thickness ratio"
+    ],
+    "commonMistakes": [
+      "Equating the numbers of books rather than their total thicknesses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalizing one book thickness removes an unnecessary unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p19",
+    "problemId": "amc12-predecessor-1987-p19",
+    "finalAnswer": "$\\boxed{0.13}$ (choice B)",
+    "shortExplanation": "The difference is slightly greater than $0.125$ and below $0.135$, so $0.13$ is closest.",
+    "detailedSteps": [
+      "Rationalizing gives $\\sqrt{65}-\\sqrt{63}=2/(\\sqrt{65}+\\sqrt{63})$.",
+      "The denominator is less than sixteen: its square is $128+2\\sqrt{4095}<128+128=256$. Thus the difference is strictly greater than $2/16=0.125$.",
+      "The denominator is greater than fifteen, since $\\sqrt{65}>8$ and $\\sqrt{63}>7$. Hence the difference is less than $2/15<0.135$.",
+      "These strict bounds put the value in the rounding interval for $0.13$. In particular, the near-midpoint is not an exact tie between $0.12$ and $0.13$."
+    ],
+    "keyIdeas": [
+      "Rationalize before deciding the nearest hundredth"
+    ],
+    "commonMistakes": [
+      "Replacing both radicals by rough approximations that conceal which side of the rounding midpoint the value lies on."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small difference of radicals is more stable when rationalized.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p20",
+    "problemId": "amc12-predecessor-1987-p20",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "Each complementary pair has product one, and the middle tangent is one, so the logarithm sum is zero.",
+    "detailedSteps": [
+      "For each integer $k$ from one through forty-four, $\\tan k^\\circ\\tan(90^\\circ-k^\\circ)=1$. Both factors are positive, so the sum of their base-ten logarithms is $\\log_{10}1=0$.",
+      "These forty-four pairs account for all terms except the one at $45^\\circ$. That remaining term is also zero because $\\tan45^\\circ=1$.",
+      "The complete sum is therefore zero."
+    ],
+    "keyIdeas": [
+      "Pair complementary tangent arguments"
+    ],
+    "commonMistakes": [
+      "Pairing neighboring angles instead of complementary angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd central term must be handled after the pairing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p21",
+    "problemId": "amc12-predecessor-1987-p21",
+    "finalAnswer": "$\\boxed{392}$ (choice B)",
+    "shortExplanation": "The triangle legs are forty-two; the rotated square has diagonal length twenty-eight and area $392$.",
+    "detailedSteps": [
+      "Put the right-angle vertex at the origin and the equal legs along the coordinate axes. For leg length $L$, the hypotenuse is $x+y=L$. In the first figure the corner square has side $L/2$. Its area is $441=21^2$, so $L=42$.",
+      "In the second actual placement, write the rotated square\u2019s two axis vertices as $(a,0)$ and $(0,a)$. Its other vertices are $(2a,a)$ and $(a,2a)$. Both lie on the hypotenuse exactly when $3a=L$, so $a=14$.",
+      "Each square side has squared length $a^2+a^2=2a^2$. Its area is therefore $2(14)^2=392$. All four vertices are inside the triangle, with the stated edge contacts."
+    ],
+    "keyIdeas": [
+      "Recover the triangle size before modeling the rotated square"
+    ],
+    "commonMistakes": [
+      "Assuming the two different square placements have equal side length in the same triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first square determines the triangle\u2019s scale; the second placement determines a different square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p22",
+    "problemId": "amc12-predecessor-1987-p22",
+    "finalAnswer": "$\\boxed{13}$ (choice C)",
+    "shortExplanation": "The opening radius is twelve and the cap depth eight, giving $r^2=12^2+(r-8)^2$ and $r=13$.",
+    "detailedSteps": [
+      "In a central vertical section, the opening has half-width twelve. The bottom of the hole is eight below its top plane. If the sphere radius is $r$, the vertical separation from the center to that plane has magnitude $|r-8|$.",
+      "The right triangle from the sphere center to the opening rim gives $r^2=12^2+(r-8)^2$. Canceling $r^2$ yields $16r=144+64=208$, hence $r=13$.",
+      "The resulting center-to-plane distance is five, and $5^2+12^2=13^2$ verifies the entire section."
+    ],
+    "keyIdeas": [
+      "Relate the circular opening to the sphere\u2019s cap depth"
+    ],
+    "commonMistakes": [
+      "Using the opening\u2019s twenty-four-unit diameter as its radius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The hole depth measures a spherical cap, not the sphere\u2019s radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p23",
+    "problemId": "amc12-predecessor-1987-p23",
+    "finalAnswer": "$\\boxed{37}$ (choice D)",
+    "shortExplanation": "The only possible prime is thirty-seven, which belongs to the displayed interval $(31,41]$.",
+    "detailedSteps": [
+      "Integer roots require the discriminant $p^2+1776p=p(p+1776)$ to be a square, say $s^2$. Since the prime $p$ divides $s^2$, it divides $s$; write $s=pk$.",
+      "Then $p(k^2-1)=1776=2^4\\cdot3\\cdot37$. The only prime possibilities are $2,3,37$. The corresponding values of $k^2$ are $889,593,49$. Only forty-nine is a square.",
+      "Thus $p=37$ and $k=7$. The two roots are $(-37\\pm259)/2=111,-148$, both integers. Therefore the appropriate range is $31<p\\le41$."
+    ],
+    "keyIdeas": [
+      "Force the prime into a square-root divisibility condition"
+    ],
+    "commonMistakes": [
+      "Testing primes only in the displayed ranges without establishing a complete bound on the possible prime divisors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A prime dividing a square must divide its square root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p24",
+    "problemId": "amc12-predecessor-1987-p24",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Degree comparison forces a quadratic; coefficient comparison then forces $f(x)=x^2$, so there is one function.",
+    "detailedSteps": [
+      "If $f$ has degree $n\\ge1$, then $[f(x)]^2$ has degree $2n$ and $f(f(x))$ has degree $n^2$. The identity requires $n^2=2n$, hence $n=2$.",
+      "Write $f(x)=ax^2+bx+c$ with $a\\ne0$. In $f(x^2)=[f(x)]^2$, the fourth-degree coefficients give $a=a^2$, so $a=1$. The cubic coefficients give $2ab=0$, so $b=0$.",
+      "The quadratic coefficients now give $0=2c$, hence $c=0$. Thus the only candidate is $f(x)=x^2$.",
+      "This function satisfies both equalities: $f(x^2)=x^4=[f(x)]^2=f(f(x))$. Consequently exactly one function works."
+    ],
+    "keyIdeas": [
+      "Compare degrees before comparing quadratic coefficients"
+    ],
+    "commonMistakes": [
+      "Finding a valid monomial without proving that other degrees or other coefficients are impossible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Degree comparison makes the exhaustive classification very short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p25",
+    "problemId": "amc12-predecessor-1987-p25",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice C)",
+    "shortExplanation": "Twice the positive area is a nonzero multiple of three, and the lattice point $(7,3)$ attains the minimum $3/2$.",
+    "detailedSteps": [
+      "For an integer point $C=(u,v)$, the triangle area is $\\tfrac12|36v-15u|$. Since both coefficients are divisible by three, the integer determinant is a multiple of three.",
+      "The source asks for a triangle, so its area must be positive. Therefore the absolute determinant is at least three, giving area at least $3/2$.",
+      "The point $C=(7,3)$ gives $36\\cdot3-15\\cdot7=3$, attaining this positive lower bound. The minimum area is $3/2$."
+    ],
+    "keyIdeas": [
+      "Use the greatest common divisor in the area determinant"
+    ],
+    "commonMistakes": [
+      "Using a collinear integer point to claim zero area even though it would not form a triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An arithmetic lower bound needs an actual geometric construction attaining it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p26",
+    "problemId": "amc12-predecessor-1987-p26",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice B)",
+    "shortExplanation": "The favorable intervals have total length one out of the full length $2.5$, giving probability $2/5$.",
+    "detailedSteps": [
+      "Let the first amount be uniform on $[0,2.5]$, with the other amount $2.5-x$. Away from rounding ties, the thresholds divide this interval into five half-unit pieces.",
+      "For $x$ in $(0.5,1)$, the rounded values are one and two; for $x$ in $(1.5,2)$, they are two and one. On the other three pieces the sum is two.",
+      "The two favorable intervals have total length one. Their probability is $1/2.5=2/5$. The finitely many tie points have probability zero, so the rounding convention at exact halves does not change this result."
+    ],
+    "keyIdeas": [
+      "Partition the uniform split at every rounding threshold"
+    ],
+    "commonMistakes": [
+      "Assuming the rounded sum always equals the nearest integer to the original total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform continuous sampling turns probability into a ratio of interval lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p27",
+    "problemId": "amc12-predecessor-1987-p27",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The three cuts produce one piece for each of the six strict coordinate orders.",
+    "detailedSteps": [
+      "A point off all cut planes has three distinct coordinates. Its strict order is one of the six permutations of $x,y,z$, such as $x<y<z$.",
+      "Each such region inside the cube is nonempty, as witnessed by assigning the coordinates $1/4,1/2,3/4$ in its chosen order. Each region is convex because it is defined by linear inequalities, so it forms one connected piece.",
+      "The order cannot change along a path without crossing a cut plane. Thus the six regions are exactly the six pieces. Boundaries shared by pieces do not add another three-dimensional piece."
+    ],
+    "keyIdeas": [
+      "Classify the strict order of the three coordinates"
+    ],
+    "commonMistakes": [
+      "Applying a generic three-plane count even though all three planes share the cube\u2019s main diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared intersection line changes how many regions the third plane creates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p28",
+    "problemId": "amc12-predecessor-1987-p28",
+    "finalAnswer": "$\\boxed{-a}$ (choice D)",
+    "shortExplanation": "The reciprocal-root sum equals the conjugate of the root sum, which is the real number $-a$.",
+    "detailedSteps": [
+      "For a root $z$ on the unit circle, $z\\overline z=1$, so $1/z=\\overline z$. All roots are nonzero.",
+      "Vieta\u2019s formula gives the sum of the four roots, counted with multiplicity, as $-a$. Since $a$ is real, its conjugate is also $-a$.",
+      "Therefore the sum of the reciprocals is the sum of the conjugate roots, namely $\\overline{\\sum z}=\\overline{-a}=-a$. Repeated roots cause no change to the argument."
+    ],
+    "keyIdeas": [
+      "Replace unit-modulus reciprocals by conjugates"
+    ],
+    "commonMistakes": [
+      "Using the product of the roots as though it were their reciprocal sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The real coefficient and the unit-circle condition are both used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p29",
+    "problemId": "amc12-predecessor-1987-p29",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "The inverse recurrence gives $n=1905$, whose decimal digit sum is fifteen.",
+    "detailedSteps": [
+      "All terms are positive. At an even index, the value is greater than one. At an odd index greater than one, it is the reciprocal of the preceding even-index value, so it is less than one. Only the base index has value one.",
+      "For a value $t>1$, the index is even and its half-index value is $t-1$. For $t<1$, the index is odd and the value at index $(n-1)/2$ is $1/t-1$, after reversing the preceding even step.",
+      "Starting with $19/87$, the successive reduced values are $68/19,49/19,30/19,11/19,8/11,3/8,5/3,2/3,1/2,1$. Their operations are odd, even, even, even, odd, odd, odd, even, odd, odd.",
+      "Reverse those operations from index one, using $m\\mapsto2m$ for an even operation and $m\\mapsto2m+1$ for an odd operation. The indices become $1,3,7,14,29,59,119,238,476,952,1905$. The recurrence verifies $t_{1905}=19/87$, and each parity step was forced. Hence the requested digit sum is $1+9+0+5=15$."
+    ],
+    "keyIdeas": [
+      "Recover each index parity from the value"
+    ],
+    "commonMistakes": [
+      "Using the odd reciprocal rule without also reversing the preceding even index when halving the index."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The value\u2019s position above or below one identifies the index parity uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1987-p30",
+    "problemId": "amc12-predecessor-1987-p30",
+    "finalAnswer": "$\\boxed{\\frac1{\\sqrt[4]{12}}}$ (choice E)",
+    "shortExplanation": "The equal-area cut meets $AC$ and has $AD/AB=12^{-1/4}$; the alternative intersection on $CB$ cannot bisect the area.",
+    "detailedSteps": [
+      "Normalize $A=(0,0)$ and $B=(1,0)$. The two base angles place $C=(c,c)$ with $c=(\\sqrt3-1)/2$. Write $D=(d,0)$. The upward ray making $60^\\circ$ with $DA$ is $y=\\sqrt3(d-x)$.",
+      "This ray passes through $C$ when $d=c+c/\\sqrt3=1/\\sqrt3$. Thus an intersection $E$ on $CB$ requires $d\\ge1/\\sqrt3>1/2$. On that branch, $E$ has height at most $c$, so the area of $BDE$ is at most $(1-d)$ times the whole triangle\u2019s area, strictly below one half. It cannot be the equal-area cut.",
+      "On the valid branch $E\\in AC$, write $E=(e,e)$. The line equation gives $e=Kd$, where $K=\\sqrt3/(1+\\sqrt3)$. The whole triangle\u2019s area is $c/2$, and triangle $ADE$ has area $de/2$. Bisection therefore gives $Kd^2=c/2$.",
+      "Hence $d^2=c/(2K)=1/(2\\sqrt3)$ and $d=12^{-1/4}$. This positive value is less than $1/\\sqrt3$, so the constructed point actually lies on $AC$. All angle and area conditions hold, and the normalized $d$ is the requested ratio $AD/AB$."
+    ],
+    "keyIdeas": [
+      "Test both possible sides for the intersection point"
+    ],
+    "commonMistakes": [
+      "Trusting the provisional drawn location of the intersection without checking the source\u2019s explicit alternative-side warning."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A diagram warning makes branch validation essential to the proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,318 @@
+[
+  {
+    "id": "solution-aime-1988-p1",
+    "problemId": "aime-1988-p1",
+    "finalAnswer": "$\\boxed{770}$",
+    "shortExplanation": "There are 1022 new permitted button sets, of which 252 were already allowed.",
+    "detailedSteps": [
+      "A combination is a set, since button order does not matter. The redesign allows all subsets of the ten buttons except the empty and full sets: $2^{10}-2=1022$.",
+      "The old locks already permit $\\binom{10}{5}=252$ sets. The additional number is $1022-252=770$."
+    ],
+    "keyIdeas": [
+      "Subtracting old subsets from new subsets"
+    ],
+    "commonMistakes": [
+      "Counting ordered button sequences or reporting the total instead of the additional count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish the new total from the increase.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p2",
+    "problemId": "aime-1988-p2",
+    "finalAnswer": "$\\boxed{169}$",
+    "shortExplanation": "The iterates reach the cycle 169,256; the even-indexed 1988 th iterate is 169.",
+    "detailedSteps": [
+      "Squaring the digit sum successively gives $f_1(11)=4$, $f_2(11)=16$, $f_3(11)=49$, and $f_4(11)=169$.",
+      "The next values are $(1+6+9)^2=256$ and $(2+5+6)^2=169$, so the two-cycle repeats. Even indices from 4 onward have value 169;1988 is even."
+    ],
+    "keyIdeas": [
+      "An eventual two-cycle under a digit operation"
+    ],
+    "commonMistakes": [
+      "Counting the original 11 as the first iterate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the iteration index when reducing a long cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p3",
+    "problemId": "aime-1988-p3",
+    "finalAnswer": "$\\boxed{027}$",
+    "shortExplanation": "Writing $t=\\log_2x$ gives $\\log_2t=(3/2)\\log_23$, so $t^2=27$.",
+    "detailedSteps": [
+      "The nested logarithms require $t=\\log_2x>0$. Also $\\log_8x=t/3$, and $\\log_8t=(\\log_2t)/3$.",
+      "The condition is $\\log_2t-\\log_23=(\\log_2t)/3$. Thus $\\log_2t=(3/2)\\log_23$, giving $t=3^{3/2}$.",
+      "The requested square is $t^2=27$. This positive t satisfies both nested-log domains."
+    ],
+    "keyIdeas": [
+      "Reducing a nested change of base"
+    ],
+    "commonMistakes": [
+      "Missing the logarithm domain or applying change of base to only one side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single log variable removes the nesting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p4",
+    "problemId": "aime-1988-p4",
+    "finalAnswer": "$\\boxed{020}$",
+    "shortExplanation": "Both sign groups need at least ten entries, and twenty entries attain the condition.",
+    "detailedSteps": [
+      "Let P be the sum of the positive entries and N the absolute sum of the negative entries. The source condition is $P+N=19+|P-N|$, so $2\\min(P,N)=19$. In particular both P and N are at least 9.5.",
+      "Each positive entry is strictly less than 1, so nine or fewer positive entries cannot reach 9.5. At least ten are needed; likewise at least ten negative entries are needed. Zero entries cannot improve this bound.",
+      "Take ten entries equal to 0.95 and ten equal to-0.95. Their absolute sum is 19 and their signed sum is 0, satisfying the condition. The least n is 20."
+    ],
+    "keyIdeas": [
+      "Strict bounds on positive and negative totals"
+    ],
+    "commonMistakes": [
+      "Dropping the outer absolute value around the signed sum on the right side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate positive and negative contributions before optimizing the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p5",
+    "problemId": "aime-1988-p5",
+    "finalAnswer": "$\\boxed{634}$",
+    "shortExplanation": "The probability is $12^2/100^2=9/625$, so the requested sum is 634.",
+    "detailedSteps": [
+      "Every positive divisor of $10^{99}=2^{99}5^{99}$ is uniquely $2^a5^b$ with $0\\le a,b\\le99$. There are 10000 equally likely divisors.",
+      "It is a multiple of $10^{88}$ exactly when a,b are both at least 88. There are 12 choices for each, giving 144 favorable divisors.",
+      "The reduced probability is $144/10000=9/625$, and 9+625=634."
+    ],
+    "keyIdeas": [
+      "Independent divisor exponents"
+    ],
+    "commonMistakes": [
+      "Counting exponent values 88 through 99 as eleven rather than twelve."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform divisors correspond to uniform independent exponent pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p6",
+    "problemId": "aime-1988-p6",
+    "finalAnswer": "$\\boxed{142}$",
+    "shortExplanation": "The entry in row r,column c is $52-13r+30c+5rc$ with indices starting at 0, so the starred entry is 142.",
+    "detailedSteps": [
+      "Rows that are arithmetic sequences give an entry of the form $A_r+B_rc$. The first and second columns are also arithmetic sequences in r, so both A_r and B_r are linear in r. Thus the general entry is $A+Br+Cc+Drc$.",
+      "From the viewed grid, the prescribed entries are 0 at(4,0),74 at(1,1),186 at(2,4), and 103 at(3,2). Their equations give $A=-4B$, $-3B+C+D=74$, $-2B+4C+8D=186$, and $-B+2C+6D=103$.",
+      "Eliminate C to get $5B+2D=-55$ and $5B+4D=-45$. Hence D=5,B=-13,A=52,C=30.",
+      "The star is at(0,3), giving $52+3\\cdot30=142$. Every unfilled entry is positive: at c=0 the unfilled values are 52,39,26,13; increasing c adds 30+5 r>0. The fixed supplied 0 is not a vacant cell."
+    ],
+    "keyIdeas": [
+      "A grid arithmetic in both directions"
+    ],
+    "commonMistakes": [
+      "Misreading the starred column or requiring the already supplied 0 to be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two-direction arithmetic forces a bilinear grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p7",
+    "problemId": "aime-1988-p7",
+    "finalAnswer": "$\\boxed{110}$",
+    "shortExplanation": "The altitude is 11, so the area is 110.",
+    "detailedSteps": [
+      "Let h be the altitude. The two angles at A on either side of the altitude have tangents 3/h and 17/h. The tangent-addition formula gives $\\tan A=20h/(h^2-51)=22/7$.",
+      "The given tangent is positive, and the angle is between 0 and 180 degrees, so A is acute and h^2>51. Rearranging yields $11h^2-70h-561=(h-11)(11h+51)=0$.",
+      "Only h=11 is positive. The base length is 3+17=20, so the area is $20\\cdot11/2=110$."
+    ],
+    "keyIdeas": [
+      "The tangent of the angle split by an altitude"
+    ],
+    "commonMistakes": [
+      "Taking 22/7 as the tangent of one of the smaller altitude angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The altitude converts the full angle into two simple tangent ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p8",
+    "problemId": "aime-1988-p8",
+    "finalAnswer": "$\\boxed{364}$",
+    "shortExplanation": "The normalized value $f(x,y)/(xy)$ reduces to $1/\\gcd(x,y)$, giving 364.",
+    "detailedSteps": [
+      "Put $g(x,y)=f(x,y)/(xy)$. Dividing the functional relation by xy(x+y) gives $g(x,y)=g(x,x+y)$, and symmetry gives g(x,y)=g(y,x).",
+      "If y>x, the same relation with y-x gives $g(x,y)=g(x,y-x)$. Repeated subtraction and swapping are the Euclidean algorithm, ending at(d,d), where d=gcd(x,y).",
+      "The diagonal condition gives $g(d,d)=f(d,d)/d^2=1/d$. Thus $f(x,y)=xy/d$. This formula also directly satisfies all three given identities.",
+      "For x 14,y 52,d 2, the answer is $14\\cdot52/2=364$."
+    ],
+    "keyIdeas": [
+      "Euclidean invariance of a functional equation"
+    ],
+    "commonMistakes": [
+      "Guessing the function without proving the identities determine every positive integer pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize first to make the functional equation invariant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p9",
+    "problemId": "aime-1988-p9",
+    "finalAnswer": "$\\boxed{192}$",
+    "shortExplanation": "The cube condition forces $n\\equiv192\\pmod{250}$, whose least positive representative is 192.",
+    "detailedSteps": [
+      "A cube ending in 8 must have units digit 2, so write n=2+10 k. Modulo 1000, $n^3\\equiv8+120k+600k^2$. The required residue 888 gives $3k+15k^2\\equiv22\\pmod{25}$ after dividing by 40.",
+      "Modulo 5 this forces k=4+5 t. Substitute to obtain $2+15t\\equiv22\\pmod{25}$, or $3t\\equiv4\\pmod5$. Hence t\u22613 modulo 5 and k\u226119 modulo 25.",
+      "Thus n\u2261192 modulo 250. Every positive n in this residue class satisfies the cube congruence; the least is 192, and $192^3=7077888$."
+    ],
+    "keyIdeas": [
+      "Lifting a cube congruence"
+    ],
+    "commonMistakes": [
+      "Stopping after the units digit or dividing a congruence without also dividing its modulus."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Lift one digit condition at a time with controlled modulus division.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p10",
+    "problemId": "aime-1988-p10",
+    "finalAnswer": "$\\boxed{840}$",
+    "shortExplanation": "There are 48 vertices,72 edges and 216 face diagonals, leaving 840 interior diagonals.",
+    "detailedSteps": [
+      "The face incidences total $12\\cdot4+8\\cdot6+6\\cdot8=144$. Since exactly three faces meet at each vertex, there are V=48 vertices. Three edges also meet there, so E=3 V/2=72.",
+      "There are $\\binom{48}{2}=1128$ vertex pairs. A k-gon has k(k-3)/2 diagonals, so the face diagonals total $12\\cdot2+8\\cdot9+6\\cdot20=216$.",
+      "In a convex polyhedron, the non-edge diagonals in distinct faces are distinct, and every other vertex-pair segment lies in the interior apart from its endpoints. The answer is 1128-72-216=840."
+    ],
+    "keyIdeas": [
+      "Removing edges and face diagonals from all vertex pairs"
+    ],
+    "commonMistakes": [
+      "Subtracting all face vertex pairs and therefore counting edges twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate edges, face diagonals and interior diagonals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p11",
+    "problemId": "aime-1988-p11",
+    "finalAnswer": "$\\boxed{163}$",
+    "shortExplanation": "The mean point is $(3/5,504/5)$, whose line to $(0,3)$ has slope 163.",
+    "detailedSteps": [
+      "The defining equation says the sums of the z-points and w-points coincide. A line containing every z-point contains their average, hence must contain the average w-point. Conversely, a line through that average is a mean line by choosing every z-point equal to the average.",
+      "The given real parts sum to 3 and imaginary parts to 504, so the average is $(3/5,504/5)$. Its x-coordinate is nonzero, making its line with y-intercept 3 unique.",
+      "The slope is $(504/5-3)/(3/5)=489/3=163$."
+    ],
+    "keyIdeas": [
+      "A mean line passes through the centroid"
+    ],
+    "commonMistakes": [
+      "Using the sum point instead of the average when combining it with a fixed intercept."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Averages preserve membership in an affine line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p12",
+    "problemId": "aime-1988-p12",
+    "finalAnswer": "$\\boxed{441}$",
+    "shortExplanation": "The three length ratios sum to 1, giving $abc=9(a+b+c)+54=441$.",
+    "detailedSteps": [
+      "Let the opposite-side intersections of AP,BP,CP be U,V,W. In barycentric coordinates the weight of A at P equals $PU/AU=d/(a+d)$, and similarly for the other vertices. The three weights sum to 1.",
+      "Thus $d/(a+d)+d/(b+d)+d/(c+d)=1$. Multiplying through and expanding yields $abc=d^2(a+b+c)+2d^3$.",
+      "With d=3 and a+b+c=43, the product is $9\\cdot43+54=441$."
+    ],
+    "keyIdeas": [
+      "Barycentric coordinates from three cevian ratios"
+    ],
+    "commonMistakes": [
+      "Reading a,b,c as whole cevian lengths rather than the vertex-to-P portions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cevian division ratios encode the three barycentric weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p13",
+    "problemId": "aime-1988-p13",
+    "finalAnswer": "$\\boxed{987}$",
+    "shortExplanation": "The remainders of $x^{17}$ and $x^{16}$ form a two-by-two linear system with solution a=987.",
+    "detailedSteps": [
+      "Modulo $x^2-x-1$, the relation x^2=x+1 gives $x^n\\equiv F_nx+F_{n-1}$, with F 0=0,F 1=1. This follows by induction on n.",
+      "The relevant values are $F_{15}=610,F_{16}=987,F_{17}=1597$. The remainder of the given polynomial is $(1597a+987b)x+(987a+610b+1)$.",
+      "Both coefficients must vanish. The determinant $1597\\cdot610-987^2=1$ makes the unique solution a=987,b=-1597. Thus the requested a is 987."
+    ],
+    "keyIdeas": [
+      "Reducing powers modulo a quadratic"
+    ],
+    "commonMistakes": [
+      "Checking only one root of the quadratic or omitting the constant remainder 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A recurrence tracks powers in a two-dimensional remainder space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p14",
+    "problemId": "aime-1988-p14",
+    "finalAnswer": "$\\boxed{084}$",
+    "shortExplanation": "The reflected equation is $12x^2-7xy-12y^2+25=0$, so bc=84.",
+    "detailedSteps": [
+      "Reflection across the direction(1,2) has matrix $2uu^T/(u^Tu)-I=\\frac15\\begin{pmatrix}-3&4\\\\4&3\\end{pmatrix}$. It is its own inverse.",
+      "Thus an image point(x,y) corresponds to original coordinates $X=(-3x+4y)/5$, $Y=(4x+3y)/5$. Substitute into XY=1: $(-3x+4y)(4x+3y)=25$.",
+      "Expanding and multiplying by-1 yields $12x^2-7xy-12y^2+25=0$. Therefore b=-7,c=-12, and bc=84."
+    ],
+    "keyIdeas": [
+      "Reflecting a conic with a linear map"
+    ],
+    "commonMistakes": [
+      "Using the rotation matrix for the same angle instead of the reflection matrix."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A self-inverse reflection allows direct substitution in the original equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1988-p15",
+    "problemId": "aime-1988-p15",
+    "finalAnswer": "$\\boxed{704}$",
+    "shortExplanation": "The possible later orders number $2^7+\\sum_{k=0}^7\\binom7k(k+1)=704$.",
+    "detailedSteps": [
+      "Once letter 8 has been delivered and typed, letters 1 through 7 have all been delivered. Any untyped subset S remains in descending stack order. Every subset is attainable: retain its letters as they arrive and immediately type each excluded letter before the next delivery.",
+      "If letter 9 has already been typed before lunch, it contributes nothing to the later order. The later order is S in descending order, giving $2^7=128$ possibilities, including the empty order. Each is attainable by typing 9 immediately after its delivery once 8 has been typed.",
+      "If letter 9 is still untyped at lunch, it appears in the later order. It may already be on top of the pile, forcing it to be first, or may arrive after lunch. For a fixed S of size k, the possible later orders are exactly its descending order with 9 inserted in one of k+1 positions. All these positions are attainable by postponing delivery of 9 until the chosen position and typing it immediately. In particular, delivery of 9 after 8 is typed does not imply that 9 has already been typed.",
+      "This second family has $\\sum_{k=0}^7\\binom7k(k+1)=7\\cdot2^6+2^7=576$ orders. It contains 9, so it is disjoint from the first family. The total is 128+576=704."
+    ],
+    "keyIdeas": [
+      "Stack states after a distinguished letter is typed"
+    ],
+    "commonMistakes": [
+      "Counting multiple delivery schedules that produce the same after-lunch order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classify later orders by whether 9 has already been typed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

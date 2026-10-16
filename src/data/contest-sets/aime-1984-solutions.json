@@ -1,0 +1,314 @@
+[
+  {
+    "id": "solution-aime-1984-p1",
+    "problemId": "aime-1984-p1",
+    "finalAnswer": "$\\boxed{093}$",
+    "shortExplanation": "The even-indexed sum exceeds the odd-indexed sum by 49.",
+    "detailedSteps": [
+      "Let $E$ and $O$ denote the even- and odd-indexed sums. Each of the 49 pairs contributes $a_{2k}-a_{2k-1}=1$, so $E-O=49$.",
+      "The total gives $E+O=137$. Adding these equations yields $2E=186$, hence $E=93$."
+    ],
+    "keyIdeas": [
+      "Pairing consecutive progression terms"
+    ],
+    "commonMistakes": [
+      "Taking half the total even though each even-indexed term is larger."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing removes the need to solve for the first term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p2",
+    "problemId": "aime-1984-p2",
+    "finalAnswer": "$\\boxed{592}$",
+    "shortExplanation": "The least admissible multiple is 8880, which gives quotient 592.",
+    "detailedSteps": [
+      "Divisibility by 5 forces the last digit to be 0. If there are $k$ copies of digit 8, divisibility by 3 forces $8k\\equiv0\\pmod3$, so $k$ is a positive multiple of 3.",
+      "At least three 8s and one terminal 0 are necessary. The only four-digit candidate with these requirements is 8880, and it is divisible by 15. Longer candidates are larger, so $n/15=8880/15=592$."
+    ],
+    "keyIdeas": [
+      "Digit restrictions and divisibility by fifteen"
+    ],
+    "commonMistakes": [
+      "Using only divisibility by 5 and overlooking the digit-sum condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A length lower bound proves minimality without a long search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p3",
+    "problemId": "aime-1984-p3",
+    "finalAnswer": "$\\boxed{144}$",
+    "shortExplanation": "The three similarity ratios sum to one, so the square roots of the areas add to 12.",
+    "detailedSteps": [
+      "Let the whole triangle have area $T$. All three small triangles in the figure are similar to it, so their linear ratios are $2/\\sqrt T$, $3/\\sqrt T$, and $7/\\sqrt T$.",
+      "The two upper triangles have bases on the horizontal line through $P$. These adjacent bases together form the segment cut off from the whole triangle by that parallel line. The third small triangle has its base on $BC$ and vertex $P$. The common-height proportions therefore make the three linear ratios add to 1.",
+      "Thus $(2+3+7)/\\sqrt T=1$. Consequently $T=12^2=144$."
+    ],
+    "keyIdeas": [
+      "Linear scales of three similar triangles"
+    ],
+    "commonMistakes": [
+      "Adding the three areas instead of their linear similarity ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parallel lines turn the area information into side-length ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p4",
+    "problemId": "aime-1984-p4",
+    "finalAnswer": "$\\boxed{649}$",
+    "shortExplanation": "There are 13 entries with total 728; setting eleven of the other entries to 1 leaves 649.",
+    "detailedSteps": [
+      "If there are $N$ entries, removing one 68 gives $56N-68=55(N-1)$. Hence $N=13$ and the original total is $728$.",
+      "A largest entry other than the required 68 is at most $728-68-11=649$, because the other eleven positive integers are at least 1.",
+      "The list consisting of 649, 68, and eleven 1s attains the bound. Its total is 728, and removing 68 leaves total 660 over 12 entries, with mean 55."
+    ],
+    "keyIdeas": [
+      "An average change and an extremal positive entry"
+    ],
+    "commonMistakes": [
+      "Allowing the other positive integers to be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First determine the list length, then concentrate the remaining total in one entry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p5",
+    "problemId": "aime-1984-p5",
+    "finalAnswer": "$\\boxed{512}$",
+    "shortExplanation": "Adding the base-2 versions gives $\\log_2 a+\\log_2 b=9$.",
+    "detailedSteps": [
+      "The logarithms require $a,b>0$. Let $A=\\log_2 a$ and $B=\\log_2 b$. Then the equations are $A/3+B=5$ and $B/3+A=7$.",
+      "Adding gives $4(A+B)/3=12$, so $A+B=9$. Therefore $ab=2^{A+B}=512$."
+    ],
+    "keyIdeas": [
+      "Combining logarithms through a common base"
+    ],
+    "commonMistakes": [
+      "Treating log base 4 of b squared as twice log base 2 of b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adding the two equations determines the product without needing its factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p6",
+    "problemId": "aime-1984-p6",
+    "finalAnswer": "$\\boxed{024}$",
+    "shortExplanation": "The line must pass through the midpoint of the other two centers, giving slope $-24$.",
+    "detailedSteps": [
+      "The circle centered at $(17,76)$ is divided in half by every line through that point. The other two equal disks must therefore contribute complementary areas. For a disk cut by a line, its area on one side varies strictly with its signed center-to-line distance while the line intersects the disk.",
+      "Relative to $(17,76)$, the other center vectors are $u=(-3,16)$ and $v=(2,8)$. They cannot both lie entirely on opposite sides: if a unit normal $n=(n_x,n_y)$ gave $n\\cdot u\\le-3$ and $n\\cdot v\\ge3$, subtracting twice the second inequality from the first would give $-7n_x\\le-9$, impossible for $|n_x|\\le1$. The reversed orientation is equally impossible.",
+      "Thus complementary areas require opposite, equal signed distances. The line passes through the midpoint $(16.5,88)$ of those two centers. Together with $(17,76)$, this gives slope $(88-76)/(16.5-17)=-24$, whose absolute value is 24.",
+      "For this line the two distances are $56/\\sqrt{577}<3$, confirming that both disks are actually cut and the equal-area balance is attained."
+    ],
+    "keyIdeas": [
+      "Balancing equal disks by signed distances"
+    ],
+    "commonMistakes": [
+      "Assuming the line must bisect each of the three disks individually."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal shapes have complementary cut areas at opposite signed distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p7",
+    "problemId": "aime-1984-p7",
+    "finalAnswer": "$\\boxed{997}$",
+    "shortExplanation": "Every even input below 1000 returns 997; every odd one returns 998.",
+    "detailedSteps": [
+      "First evaluate from the upper end: $f(999)=f(f(1004))=f(1001)=998$ and $f(998)=f(f(1003))=f(1000)=997$. Similarly, $f(997)=998$, $f(996)=997$, and $f(995)=998$.",
+      "Proceed by descending induction. For $n\\le994$, the already determined value $f(n+5)$ is 998 when $n$ is even and 997 when $n$ is odd. Applying $f$ once more gives 997 in the even case and 998 in the odd case.",
+      "This proves the pattern for every integer below 1000. Since 84 is even, $f(84)=997$."
+    ],
+    "keyIdeas": [
+      "A nested recursion with a two-value terminal pattern"
+    ],
+    "commonMistakes": [
+      "Replacing the two nested applications by one or assuming a constant output regardless of parity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove the terminal pattern first, then use induction toward smaller inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p8",
+    "problemId": "aime-1984-p8",
+    "finalAnswer": "$\\boxed{160}$",
+    "shortExplanation": "The roots have angles $40,80,160,200,280,320$ degrees.",
+    "detailedSteps": [
+      "Multiplying $z^6+z^3+1=0$ by $z^3-1$ shows $z^9=1$. Values with $z^3=1$ do not solve the original polynomial, because its value there is 3.",
+      "The ninth roots of unity have angles $40k$ degrees for $k=0,\\ldots,8$. Remove the cube-root angles $0,120,240$ degrees. The only remaining angle strictly between 90 and 180 degrees is $160^\\circ$."
+    ],
+    "keyIdeas": [
+      "Ninth roots of unity excluding cube roots"
+    ],
+    "commonMistakes": [
+      "Including roots introduced by multiplying by z cubed minus one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor a geometric-series polynomial into roots of unity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p9",
+    "problemId": "aime-1984-p9",
+    "finalAnswer": "$\\boxed{020}$",
+    "shortExplanation": "The height from $D$ to the plane of $ABC$ is 4, giving volume 20.",
+    "detailedSteps": [
+      "Using common base $AB=3$, the distances from $C$ and $D$ to the line $AB$ in their respective faces are $2\\cdot15/3=10$ and $2\\cdot12/3=8$.",
+      "The face planes meet at $30^\\circ$. Resolving the second height perpendicular to the first face gives the tetrahedron height $8\\sin30^\\circ=4$. Hence $V=[ABC]\\cdot4/3=15\\cdot4/3=20$."
+    ],
+    "keyIdeas": [
+      "Face heights and a dihedral angle"
+    ],
+    "commonMistakes": [
+      "Using the face altitude 8 as the height perpendicular to the other face."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The dihedral angle converts a face altitude into a solid altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p10",
+    "problemId": "aime-1984-p10",
+    "finalAnswer": "$\\boxed{119}$",
+    "shortExplanation": "The first score above 80 with only one feasible correct-count is 119.",
+    "detailedSteps": [
+      "For a fixed number $c$ correct, $0\\le w\\le30-c$ makes all integer scores in the interval $5c\\le s\\le30+4c$ attainable.",
+      "For an integer score $81\\le s\\le118$, write $s=5c+r$ with $c=\\lfloor s/5\\rfloor$ and $0\\le r\\le4$. Both $c$ and $c-1$ are feasible: for $c-1$, the upper-bound condition reduces to $c+r\\le26$. This holds when $c\\le22$, and also when $c=23$ because then $r\\le3$. The other interval inequalities are immediate.",
+      "At $s=119$, feasibility requires $\\lceil(119-30)/4\\rceil\\le c\\le\\lfloor119/5\\rfloor$, so $23\\le c\\le23$. Thus only $c=23$ works, with $w=3$, and the desired score is 119."
+    ],
+    "keyIdeas": [
+      "Recovering a unique correct-count from a score"
+    ],
+    "commonMistakes": [
+      "Ignoring the limit that correct plus wrong cannot exceed 30."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Feasible-score intervals encode the unanswered questions correctly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p11",
+    "problemId": "aime-1984-p11",
+    "finalAnswer": "$\\boxed{106}$",
+    "shortExplanation": "The five birches can occupy 56 of the 792 possible position sets.",
+    "detailedSteps": [
+      "The five birch positions form a uniformly chosen five-element subset of the 12 positions, regardless of how the other seven trees are arranged. There are $\\binom{12}{5}=792$ possibilities.",
+      "Place the seven non-birches first. Their eight gaps, including the two ends, can each receive at most one birch. Choose five of these gaps: $\\binom85=56$.",
+      "The probability is $56/792=7/99$. The sum of numerator and denominator is $106$."
+    ],
+    "keyIdeas": [
+      "Choosing nonadjacent positions"
+    ],
+    "commonMistakes": [
+      "Using only the internal gaps and omitting the two ends."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The non-birch species and identities cancel from the probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p12",
+    "problemId": "aime-1984-p12",
+    "finalAnswer": "$\\boxed{401}$",
+    "shortExplanation": "The forced zero set has residues 0 and 4 modulo 10, giving 401 roots in the closed interval.",
+    "detailedSteps": [
+      "The two symmetries preserve values under reflections $x\\mapsto4-x$ and $x\\mapsto14-x$. Composing them gives translation by 10. Starting with the root 0 therefore forces roots $10k$ and $4+10k$ for every integer $k$.",
+      "In $[-1000,1000]$, there are 201 multiples of 10. The second sequence runs from -996 to 994 and has 200 terms. The two sequences are disjoint, so at least 401 roots are forced.",
+      "This minimum is attainable: $f(x)=\\sin(\\pi x/10)\\sin(\\pi(x-4)/10)$ has exactly those two zero sequences and satisfies both reflection identities. Thus no additional roots are necessary."
+    ],
+    "keyIdeas": [
+      "An orbit under two reflections"
+    ],
+    "commonMistakes": [
+      "Counting only the ten-unit translates of zero or counting the closed endpoints incorrectly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A minimum-root argument needs a construction showing the forced orbit is sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p13",
+    "problemId": "aime-1984-p13",
+    "finalAnswer": "$\\boxed{015}$",
+    "shortExplanation": "The product $(3+i)(7+i)(13+i)(21+i)$ is $5100+3400i$, so the cotangent is $3/2$.",
+    "detailedSteps": [
+      "For positive $a$, the argument of $a+i$ is $\\cot^{-1}a$ in the first quadrant. Multiplication adds these arguments, and the cotangent of the resulting angle is the real part divided by the imaginary part.",
+      "Pair the factors: $(3+i)(7+i)=20+10i$ and $(13+i)(21+i)=272+34i$. Their product is $5100+3400i$.",
+      "Therefore the requested quantity is $10\\cdot5100/3400=15$. The nonzero imaginary part confirms that this cotangent is defined."
+    ],
+    "keyIdeas": [
+      "Multiplying complex numbers to add angles"
+    ],
+    "commonMistakes": [
+      "Adding the four cotangents rather than their inverse-cotangent angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product avoids repeated trigonometric fraction simplification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p14",
+    "problemId": "aime-1984-p14",
+    "finalAnswer": "$\\boxed{038}$",
+    "shortExplanation": "Every even integer at least 40 has a construction, while 38 does not.",
+    "detailedSteps": [
+      "For even $N\\ge40$, split into three residue classes modulo 6. If $N\\equiv0$, write $N=9+(N-9)$; the second term is an odd multiple of 3 at least 33. If $N\\equiv4$, write $N=25+(N-25)$; the second term is an odd multiple of 3 at least 15.",
+      "If $N\\equiv2$, its least possible value in this range is 44. Write $N=35+(N-35)$; the second term is an odd multiple of 3 at least 9. Each construction uses two odd composites.",
+      "For 38, the smaller summand would be an odd composite at most 19, hence either 9 or 15. Their complements are 29 and 23, both prime. Thus 38 cannot be represented and is the largest such even integer."
+    ],
+    "keyIdeas": [
+      "Covering all sufficiently large even numbers"
+    ],
+    "commonMistakes": [
+      "Using 1 or an odd prime as a composite, or relying only on a finite search for a largest value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite obstruction plus an infinite covering argument proves a largest exception.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1984-p15",
+    "problemId": "aime-1984-p15",
+    "finalAnswer": "$\\boxed{036}$",
+    "shortExplanation": "The coefficient of $1/t$ at infinity gives the sum of the four squares as 36.",
+    "detailedSteps": [
+      "Define $F(t)=x^2/(t-1)+y^2/(t-9)+z^2/(t-25)+w^2/(t-49)-1$. After multiplication by $D(t)=(t-1)(t-9)(t-25)(t-49)$, its numerator is a degree-four polynomial with leading coefficient -1.",
+      "The four given equations say this numerator vanishes at $t=4,16,36,64$. Hence $F(t)=-(t-4)(t-16)(t-36)(t-64)/D(t)$.",
+      "As $t$ grows, the original expression has expansion $-1+(x^2+y^2+z^2+w^2)/t+O(t^{-2})$. The numerator root sum is 120 and the denominator root sum is 84, so the factored expression expands as $-1+(120-84)/t+O(t^{-2})$.",
+      "Comparing the coefficients of $1/t$ yields $w^2+x^2+y^2+z^2=36$."
+    ],
+    "keyIdeas": [
+      "A rational function determined by its zeros"
+    ],
+    "commonMistakes": [
+      "Treating the denominator values as independent variables and missing the common rational function."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum can be recovered from polynomial coefficients without solving each square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

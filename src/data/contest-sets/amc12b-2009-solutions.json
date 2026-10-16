@@ -1,0 +1,516 @@
+[
+  {
+    "id": "solution-amc12b-2009-p1",
+    "problemId": "amc12b-2009-p1",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The bagel count must be two modulo four.",
+    "detailedSteps": [
+      "With b bagels, the total cost in cents is $75b+50(5-b)=250+25b$. A whole-dollar total requires $10+b$ divisible by 4.",
+      "Among $0\\le b\\le5$, only $b=2$ works."
+    ],
+    "keyIdeas": [
+      "A weekly purchase congruence"
+    ],
+    "commonMistakes": [
+      "Using the number of dollars as the count of bagels."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Express the prices in integer cents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p2",
+    "problemId": "amc12b-2009-p2",
+    "finalAnswer": "$\\boxed{15}$ (choice C)",
+    "shortExplanation": "Three cans cover five rooms.",
+    "detailedSteps": [
+      "The lost three cans reduce capacity by $30-25=5$ rooms. Thus 25 rooms use $25\\cdot3/5=15$ cans."
+    ],
+    "keyIdeas": [
+      "Paint cans proportional to rooms"
+    ],
+    "commonMistakes": [
+      "Reporting the original eighteen cans instead of the remaining fifteen."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The loss identifies the conversion rate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p3",
+    "problemId": "amc12b-2009-p3",
+    "finalAnswer": "$\\boxed{36}$ (choice D)",
+    "shortExplanation": "Forty-eight is four thirds of the unknown number.",
+    "detailedSteps": [
+      "Twenty percent less than 60 is $0.8(60)=48$. Being one third more than n means $48=(4/3)n$, so $n=36$."
+    ],
+    "keyIdeas": [
+      "Two successive percentage comparisons"
+    ],
+    "commonMistakes": [
+      "Subtracting one third of 48 when reversing the increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reverse a multiplicative increase by division.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p4",
+    "problemId": "amc12b-2009-p4",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice C)",
+    "shortExplanation": "The rectangle has dimensions twenty-five by five.",
+    "detailedSteps": [
+      "Each congruent corner triangle removes a horizontal length t from the top edge. Since the trapezoid bases differ by 10, $2t=10$ and $t=5$.",
+      "The right-isosceles condition makes the yard height also 5. The two flower beds have total area $2(5\\cdot5/2)=25$, while the rectangle area is $25\\cdot5=125$. The fraction is 1/5."
+    ],
+    "keyIdeas": [
+      "Corner flower-bed triangles"
+    ],
+    "commonMistakes": [
+      "Using the trapezoid area as the whole-yard denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source picture identifies the two removed corners.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p5",
+    "problemId": "amc12b-2009-p5",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "The twins are eight and the younger sibling is two.",
+    "detailedSteps": [
+      "Let the twins have whole-number age t and the younger sibling age k. Then $kt^2=128=2^7$, so $t=2^j$ with $j=0,1,2,3$.",
+      "The younger condition $k<t$ rejects t=1,2,4. It permits $t=8,k=2$, giving total age $8+8+2=18$."
+    ],
+    "keyIdeas": [
+      "Twin ages from a power of two"
+    ],
+    "commonMistakes": [
+      "Ignoring that both twins are older than the third sibling."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square divisors of 128 restrict the twin age.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p6",
+    "problemId": "amc12b-2009-p6",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "The five full parenthesizations produce four distinct values.",
+    "detailedSteps": [
+      "Keeping the original operand and operation order, the five full groupings are $((2\\cdot3)+4)\\cdot5$, $(2\\cdot(3+4))\\cdot5$, $(2\\cdot3)+(4\\cdot5)$, $2\\cdot((3+4)\\cdot5)$, and $2\\cdot(3+(4\\cdot5))$.",
+      "Their values are $50,70,26,70,46$, respectively, giving four distinct results. Partial parentheses give one of these same full evaluation trees."
+    ],
+    "keyIdeas": [
+      "Parenthesizing three ordered operations"
+    ],
+    "commonMistakes": [
+      "Counting the two different groupings that both give 70 as different values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count results rather than syntax.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p7",
+    "problemId": "amc12b-2009-p7",
+    "finalAnswer": "$\\boxed{17}$ (choice B)",
+    "shortExplanation": "The first three changes multiply the price by six fifths.",
+    "detailedSteps": [
+      "The accumulated factor is $(6/5)(4/5)(5/4)=6/5$. Restoring the original price requires an April factor of $5/6$.",
+      "The decrease is $100(1-5/6)=50/3$ percent, whose nearest integer is 17."
+    ],
+    "keyIdeas": [
+      "A reversal of compounded percentages"
+    ],
+    "commonMistakes": [
+      "Adding signed percentages rather than multiplying successive price factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A percentage decrease uses the latest price as its base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p8",
+    "problemId": "amc12b-2009-p8",
+    "finalAnswer": "$\\boxed{3a-2b}$ (choice E)",
+    "shortExplanation": "The full water weight is $6(a-b)$.",
+    "detailedSteps": [
+      "Let the empty bucket weigh e and its full water content weigh w. Then $a=e+2w/3$ and $b=e+w/2$, so $w=6(a-b)$.",
+      "The full total is $b+w/2=b+3(a-b)=3a-2b$."
+    ],
+    "keyIdeas": [
+      "Separating container and water weights"
+    ],
+    "commonMistakes": [
+      "Treating the empty bucket weight as part of the fractional water amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the two observations eliminates the bucket.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p9",
+    "problemId": "amc12b-2009-p9",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The base is $3\\sqrt2$ and the altitude is $2\\sqrt2$.",
+    "detailedSteps": [
+      "AB lies on $x+y=3$ and has length $3\\sqrt2$. The point C lies on the parallel line $x+y=7$, whose perpendicular separation is $4/\\sqrt2=2\\sqrt2$.",
+      "The area is $(1/2)(3\\sqrt2)(2\\sqrt2)=6$, independent of the location of C along its line."
+    ],
+    "keyIdeas": [
+      "An area between parallel lines"
+    ],
+    "commonMistakes": [
+      "Assuming a special coordinate for C without explaining the constant altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parallel lines fix the perpendicular height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p10",
+    "problemId": "amc12b-2009-p10",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice A)",
+    "shortExplanation": "Eight hours and forty-five minutes per hour contain no digit one.",
+    "detailedSteps": [
+      "The acceptable hours are $2,3,4,5,6,7,8,9$, eight of twelve. The minute tens digit has five acceptable values and the units digit nine, giving 45 of 60 minutes.",
+      "The fraction of the complete repeated clock cycle is $(8/12)(45/60)=1/2$."
+    ],
+    "keyIdeas": [
+      "A faulty digit on a twelve-hour clock"
+    ],
+    "commonMistakes": [
+      "Checking the minute digits but overlooking hours 10,11,12."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The displayed hour and minute restrictions multiply.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p11",
+    "problemId": "amc12b-2009-p11",
+    "finalAnswer": "$\\boxed{\\text{Friday}}$ (choice D)",
+    "shortExplanation": "After day $d$ is filled, the millet quantity is $1-(3/4)^d$.",
+    "detailedSteps": [
+      "Let $M_d$ be the millet amount immediately after the addition on day d, with Monday indexed as 1. Then $M_1=1/4$ and $M_{d+1}=3M_d/4+1/4$.",
+      "Induction gives $M_d=1-(3/4)^d$. The other seeds always total 3/4 quart immediately after a refill, so millet is a majority iff $M_d>3/4$.",
+      "This requires $(3/4)^d<1/4$. It fails at d=4 but holds at d=5, Friday."
+    ],
+    "keyIdeas": [
+      "Accumulating uneaten millet"
+    ],
+    "commonMistakes": [
+      "Measuring the majority after feeding instead of just after the refill."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only millet carries over to the next day.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p12",
+    "problemId": "amc12b-2009-p12",
+    "finalAnswer": "$\\boxed{315}$ (choice E)",
+    "shortExplanation": "The ratio is two, and four backward steps divide by sixteen.",
+    "detailedSteps": [
+      "The eighth-to-fifth ratio is $8!/7!=8=r^3$. Since r is real, $r=2$.",
+      "The first term is $7!/2^4=5040/16=315$."
+    ],
+    "keyIdeas": [
+      "A real geometric sequence ratio"
+    ],
+    "commonMistakes": [
+      "Using three backward steps from the fifth term to the first."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fifth term is four ratios after the first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p13",
+    "problemId": "amc12b-2009-p13",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "The two possible bases have lengths fourteen and four.",
+    "detailedSteps": [
+      "The distances along the base line from the altitude foot to B and C are $\\sqrt{13^2-12^2}=5$ and $\\sqrt{15^2-12^2}=9$.",
+      "The foot can be between B and C, giving base $5+9=14$, or outside the segment, giving base $9-5=4$. Their sum is 18."
+    ],
+    "keyIdeas": [
+      "Both positions of an altitude foot"
+    ],
+    "commonMistakes": [
+      "Assuming the altitude foot must lie inside the triangle base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unsigned projection lengths allow two placements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p14",
+    "problemId": "amc12b-2009-p14",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "The shaded area is (7-3a)/2.",
+    "detailedSteps": [
+      "The actual unit squares occupy two bottom slots, two middle slots shifted right by one, and one top slot. For $0<a<1$, the slanted line has horizontal coordinate $x(y)=a+(3-a)y/3$ throughout the three rows.",
+      "At heights in the three rows, the right endpoints are respectively 2,3,3. Their accumulated area is $2+3+3=8$. The area to the right of the line is therefore $8-\\int_0^3x(y)\\,dy=8-3(a+3)/2=(7-3a)/2$.",
+      "This must equal half of the five-square area, 5/2, giving $a=2/3$. It lies in the assumed interval, so the row intersections are valid."
+    ],
+    "keyIdeas": [
+      "A line bisecting a five-square staircase"
+    ],
+    "commonMistakes": [
+      "Treating the region as a full three-by-three square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integral of a line can also be calculated as a trapezoid area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p15",
+    "problemId": "amc12b-2009-p15",
+    "finalAnswer": "$\\boxed{\\text{equation B}}$ (choice B)",
+    "shortExplanation": "The increment r/10 is smaller than every competing increment.",
+    "detailedSteps": [
+      "All equations have $x=\\log(7/3)/\\log(1+t)$, where t is a positive base increment. Since the numerator is positive, the smallest t gives the largest x.",
+      "For $0<r<3$, $r/10<r$ and $r/10<2r$. Also $(r/10)^2<r$, so $r/10<\\sqrt r$, and $r^2<9<10$ gives $r/10<1/r$.",
+      "Thus the source equation B, with base $1+r/10$, has the largest solution."
+    ],
+    "keyIdeas": [
+      "The smallest exponential base gives the largest exponent"
+    ],
+    "commonMistakes": [
+      "Comparing bases in the same direction as the resulting exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The restriction r<3 ensures the reciprocal comparison too.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p16",
+    "problemId": "amc12b-2009-p16",
+    "finalAnswer": "$\\boxed{\\frac45}$ (choice B)",
+    "shortExplanation": "The extended-leg triangle has two equal sides of length one.",
+    "detailedSteps": [
+      "Let E be the intersection of the extended legs AB and DC. Because AD is the shorter parallel base, the orders are E,A,B and E,D,C, and $ED/EC=AD/BC=5/9$.",
+      "In triangle EBD, the angle at B is 23 degrees. At D, DC is opposite DE, so the angle is $180-46=134$ degrees, leaving angle E also 23 degrees.",
+      "Equal opposite angles give $ED=BD=1$. Hence $EC=9/5$, and $CD=EC-ED=4/5$."
+    ],
+    "keyIdeas": [
+      "A trapezoid and extended-leg similar triangles"
+    ],
+    "commonMistakes": [
+      "Using 46 degrees as the interior angle of the extended triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extend the nonparallel sides to reveal a similar-triangle ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p17",
+    "problemId": "amc12b-2009-p17",
+    "finalAnswer": "$\\boxed{\\frac3{16}}$ (choice B)",
+    "shortExplanation": "There are three disjoint four-face ring events.",
+    "detailedSteps": [
+      "Each face has two opposite-edge stripe choices. A stripe segment lies in one of the three central coordinate planes. To connect at an edge midpoint, the stripe on the neighboring face must lie in that same plane.",
+      "Therefore any complete encircling stripe is one of the three four-face coordinate-plane rings. A fixed ring requires four specified independent face choices, with probability $2^{-4}=1/16$.",
+      "Two different rings require incompatible stripes on each of their two shared faces, so the three events are disjoint. The probability is $3/16$."
+    ],
+    "keyIdeas": [
+      "Closed stripes on a cube"
+    ],
+    "commonMistakes": [
+      "Adding events without checking whether they overlap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Continuity at an edge forces the same central plane.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p18",
+    "problemId": "amc12b-2009-p18",
+    "finalAnswer": "$\\boxed{\\frac3{16}}$ (choice C)",
+    "shortExplanation": "The overlap lasts eleven and one quarter seconds.",
+    "detailedSteps": [
+      "Use seconds, with the photograph time uniform in $[600,660]$. Rachel is within the quarter-track window when within $90/8=11.25$ seconds of a start-line passage; her only such passage in range is at 630.",
+      "Robert is within $80/8=10$ seconds of his passage at 640. Thus their respective visibility intervals are $[618.75,641.25]$ and $[630,650]$.",
+      "The intersection has length 11.25, giving probability $11.25/60=3/16$."
+    ],
+    "keyIdeas": [
+      "A photograph of two deterministic runners"
+    ],
+    "commonMistakes": [
+      "Treating the runners’ positions at this restricted common time as independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both positions are determined by the same time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p19",
+    "problemId": "amc12b-2009-p19",
+    "finalAnswer": "$\\boxed{802}$ (choice E)",
+    "shortExplanation": "Factoring forces the smaller factor to equal one.",
+    "detailedSteps": [
+      "$f(n)=(n^2-20n+20)(n^2+20n+20)$. The second factor is a positive integer greater than one.",
+      "For the product to be a positive prime, the first factor must be 1. This gives $n^2-20n+19=0$, hence $n=1$ or 19.",
+      "The corresponding values are 41 and 761. Both are prime by testing prime divisors up to their square roots, so their sum is 802."
+    ],
+    "keyIdeas": [
+      "A quartic with only two prime outputs"
+    ],
+    "commonMistakes": [
+      "Including negative polynomial values as primes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization controls every positive integer n, not merely a finite search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p20",
+    "problemId": "amc12b-2009-p20",
+    "finalAnswer": "$\\boxed{300}$ (choice C)",
+    "shortExplanation": "One old-edge remainder and two new edge incidences arise per original edge.",
+    "detailedSteps": [
+      "Each original edge survives as one shortened edge because the disjoint vertex-cut planes do not meet on it. This contributes 100 edges.",
+      "A cut at a degree-d vertex produces a d-sided new face and d new edges. Summing over vertices gives $\\sum d=2(100)=200$ new edges.",
+      "The planes are disjoint, so these new edges are distinct. The total is $100+200=300$."
+    ],
+    "keyIdeas": [
+      "Edges after cutting off every vertex"
+    ],
+    "commonMistakes": [
+      "Counting the two endpoint cuts as two surviving old edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate shortened original edges from newly created cut-face edges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p21",
+    "problemId": "amc12b-2009-p21",
+    "finalAnswer": "$\\boxed{89}$ (choice A)",
+    "shortExplanation": "Only fixed points and disjoint neighboring swaps are possible.",
+    "detailedSteps": [
+      "The first woman either stays in seat one, leaving the same problem on nine seats, or moves to seat two. In the latter case only the second woman can fill seat one, so those two must swap.",
+      "Thus $F_n=F_{n-1}+F_{n-2}$ with $F_0=F_1=1$. The values through n=10 are $1,1,2,3,5,8,13,21,34,55,89$.",
+      "Therefore 89 reseatings satisfy all restrictions."
+    ],
+    "keyIdeas": [
+      "Permutations with displacement at most one"
+    ],
+    "commonMistakes": [
+      "Allowing longer cycles despite the one-seat movement limit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An endpoint seat gives a complete recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p22",
+    "problemId": "amc12b-2009-p22",
+    "finalAnswer": "$\\boxed{784}$ (choice C)",
+    "shortExplanation": "The area condition is a three-factor decomposition of one million.",
+    "detailedSteps": [
+      "Write $B=(a,a)$ and $D=(b,kb)$ with positive integers a,b and integer $k>1$. The area determinant is $ab(k-1)=1000000=2^6 5^6$.",
+      "For each prime, its exponent 6 can be distributed among the three ordered factors in $\\binom82=28$ ways. The two distributions are independent, giving $28^2=784$ triples.",
+      "Each triple uniquely determines B,D and $C=B+D$, all in the first quadrant, so no further multiplicity or geometric exclusion occurs."
+    ],
+    "keyIdeas": [
+      "Counting integer parallelogram parameters"
+    ],
+    "commonMistakes": [
+      "Counting factor pairs instead of the three ordered factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer slope contributes the third positive factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p23",
+    "problemId": "amc12b-2009-p23",
+    "finalAnswer": "$\\boxed{\\frac79}$ (choice D)",
+    "shortExplanation": "Four corner triangles of area two ninths are excluded.",
+    "detailedSteps": [
+      "Multiplication maps $(x,y)$ to $(3(x-y)/4,3(x+y)/4)$. Remaining in S requires $|x-y|\\le4/3$ and $|x+y|\\le4/3$.",
+      "Within the original square of area 4, these inequalities remove four disjoint corner triangles, each with legs $2-4/3=2/3$ and area 2/9.",
+      "The probability is $(4-4(2/9))/4=7/9$."
+    ],
+    "keyIdeas": [
+      "A complex multiplication clips four square corners"
+    ],
+    "commonMistakes": [
+      "Using only the modulus scaling while overlooking square orientation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The real and imaginary bounds are both necessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p24",
+    "problemId": "amc12b-2009-p24",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The four solutions are 0, pi/7, 2pi/5 and 3pi/7.",
+    "detailedSteps": [
+      "On $[0,\\pi]$, $\\arccos(\\cos x)=x$. Since arcsine has range $[-\\pi/2,\\pi/2]$, any solution must have $0\\le x\\le\\pi/2$.",
+      "On that interval, the equation is equivalent to $\\sin6x=\\sin x$. Hence either $6x=x+2k\\pi$ or $6x=\\pi-x+2k\\pi$.",
+      "The first family gives $x=0,2\\pi/5$, and the second gives $x=\\pi/7,3\\pi/7$. All four are in range and are distinct."
+    ],
+    "keyIdeas": [
+      "Inverse trigonometric principal ranges"
+    ],
+    "commonMistakes": [
+      "Using the sine equality over the full interval without the arcsine range restriction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First use the inverse-function ranges, then solve the periodic equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2009-p25",
+    "problemId": "amc12b-2009-p25",
+    "finalAnswer": "$\\boxed{225}$ (choice E)",
+    "shortExplanation": "There are eighty-five axis-aligned and one hundred forty tilted squares.",
+    "detailedSteps": [
+      "Each corner block has diameter $4\\sqrt2<6$. Any two vertices of an eligible square are at least its side length apart, so its four vertices must occupy the four different blocks.",
+      "For an axis-aligned square, the counts of coordinate pairs at separations $6,7,\\ldots,14$ are $1,2,3,4,5,4,3,2,1$. Choosing horizontal and vertical pairs of the same separation gives $1^2+2^2+\\cdots+5^2+4^2+\\cdots+1^2=85$.",
+      "For a tilted square in one orientation, write the bottom-left-block vertex as $(x,y)$ and the others as $(x+a,y+b),(x+b,y-a),(x+a+b,y+b-a)$, with $1\\le a\\le4$. All four-block constraints leave $a+6\\le b\\le14-a$.",
+      "The permitted x values lie in $[-7,-3-a]\\cap[3-b,7-a-b]$, and the y values in $[-7+a,-3]\\cap[3+a-b,7-b]$. Each interval contains $m=\\min(b-a-5,15-a-b)$ integers. There are $m^2$ translations and two reflected orientations, for $2m^2$ squares.",
+      "For a=1, the seven b values contribute $2,8,18,32,18,8,2$, totaling 88. For a=2 they contribute $2,8,18,8,2$, totaling 38; a=3 contributes $2,8,2$, totaling 12; a=4 contributes 2. The tilted total is 140.",
+      "These ranges have b at least 7, so the side-length condition is automatic. The two orientations are distinct, and the uniquely identified bottom-left-block vertex prevents duplicate translations. The full total is $85+140=225$."
+    ],
+    "keyIdeas": [
+      "Squares in four separated lattice blocks"
+    ],
+    "commonMistakes": [
+      "Counting square diagonals or alternative starting vertices as separate squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side bound forces exactly one vertex in each separated block.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

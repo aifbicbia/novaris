@@ -1,0 +1,776 @@
+[
+  {
+    "id": "solution-amc8-2015-p1",
+    "problemId": "amc8-2015-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(12)}$",
+    "shortExplanation": "**Idea:** Convert the floor area from square feet to square yards.",
+    "detailedSteps": [
+      "The rectangular floor has area",
+      "[\n12\\cdot 9=108\n]",
+      "square feet. Since $1$ yard is $3$ feet,",
+      "[\n1\\text{ square yard}=3\\cdot3=9\\text{ square feet}.\n]",
+      "Thus the required number of square yards is",
+      "[\n\\frac{108}{9}=12.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Area",
+      "Square-unit conversion"
+    ],
+    "commonMistakes": [
+      "Do not divide by $3$ only; area units require dividing by $3^2=9$.",
+      "Compute the floor area before converting units."
+    ],
+    "alternativeMethods": [
+      "Convert the dimensions first: $12$ feet is $4$ yards and $9$ feet is $3$ yards, so the area is $4cdot3=12$ square yards."
+    ],
+    "difficultyNotes": "A unit conversion problem where square units matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p2",
+    "problemId": "amc8-2015-p2",
+    "finalAnswer": "$\\boxed{\\text{D }(\\frac{7}{16})}$",
+    "shortExplanation": "**Idea:** Split the regular octagon into $8$ equal central triangles.",
+    "detailedSteps": [
+      "Connecting the center $O$ to all vertices divides the regular octagon into $8$ congruent triangles.",
+      "The shaded region contains the $3$ full central triangles $OBC$, $OCD$, and $ODE$.",
+      "It also contains triangle $OBX$, which is half of triangle $OBA$ because $X$ is the midpoint of $AB$.",
+      "So the shaded fraction is",
+      "[\n3\\cdot\\frac18+\\frac12\\cdot\\frac18=\\frac38+\\frac1{16}=\\frac7{16}.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac7{16}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Regular polygon symmetry",
+      "Area fractions"
+    ],
+    "commonMistakes": [
+      "Do not treat triangle $OBX$ as a full central triangle.",
+      "The regular octagon's central triangles are equal in area."
+    ],
+    "alternativeMethods": [
+      "Use angles: each central triangle subtends $45^circ$, and $OBX$ is half of one such triangle."
+    ],
+    "difficultyNotes": "The midpoint $X$ adds exactly half of one central triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p3",
+    "problemId": "amc8-2015-p3",
+    "finalAnswer": "$\\boxed{\\text{D }(9)}$",
+    "shortExplanation": "**Idea:** Compute each person's travel time for one mile.",
+    "detailedSteps": [
+      "Jill bikes $1$ mile at $10$ miles per hour, so her time is",
+      "[\n\\frac1{10}\\text{ hour}=6\\text{ minutes}.\n]",
+      "Jack walks $1$ mile at $4$ miles per hour, so his time is",
+      "[\n\\frac14\\text{ hour}=15\\text{ minutes}.\n]",
+      "The difference is",
+      "[\n15-6=9\n]",
+      "minutes.",
+      "Final Answer: ($\\boxed{\\text{D }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Speed",
+      "Time conversion"
+    ],
+    "commonMistakes": [
+      "Do not compare the speeds directly; the question asks for minutes.",
+      "Convert fractions of an hour to minutes."
+    ],
+    "alternativeMethods": [
+      "Use $60/r$ minutes per mile for speed $r$ miles per hour."
+    ],
+    "difficultyNotes": "A straightforward rate problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p4",
+    "problemId": "amc8-2015-p4",
+    "finalAnswer": "$\\boxed{\\text{E }(12)}$",
+    "shortExplanation": "**Idea:** Arrange the two boys at the ends and the three girls in the middle.",
+    "detailedSteps": [
+      "The two boys can be placed at the two ends in",
+      "[\n2!\n]",
+      "ways.",
+      "The three girls can be arranged in the middle seats in",
+      "[\n3!\n]",
+      "ways.",
+      "Therefore the total number of arrangements is",
+      "[\n2!\\cdot3!=2\\cdot6=12.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Restricted arrangements"
+    ],
+    "commonMistakes": [
+      "Do not arrange all $5$ students freely; the end seats are restricted.",
+      "The girls may be permuted among the three middle positions."
+    ],
+    "alternativeMethods": [
+      "Choose which boy sits on the left end, then arrange the girls; the right end is forced."
+    ],
+    "difficultyNotes": "A small permutation count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p5",
+    "problemId": "amc8-2015-p5",
+    "finalAnswer": "$\\boxed{\\text{A }(\\text{range})}$",
+    "shortExplanation": "**Idea:** Adding $40$ creates a new lower minimum, increasing only the range.",
+    "detailedSteps": [
+      "The original minimum is $42$ and maximum is $73$, so the range is",
+      "[\n73-42=31.\n]",
+      "After adding $40$, the minimum becomes $40$ and the maximum remains $73$, so the new range is",
+      "[\n73-40=33.\n]",
+      "The median remains $58$, the mode remains $58$, the mean decreases, and the mid-range decreases.",
+      "Final Answer: ($\\boxed{\\text{A }(\\text{range})}$)"
+    ],
+    "keyIdeas": [
+      "Range",
+      "Median",
+      "Mean"
+    ],
+    "commonMistakes": [
+      "Check each statistic, not only the mean.",
+      "Adding a low value can increase the range while decreasing the mean."
+    ],
+    "alternativeMethods": [
+      "Since $40$ is below every original score, the only statistic that clearly grows is the spread from minimum to maximum."
+    ],
+    "difficultyNotes": "A comparison of common summary statistics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p6",
+    "problemId": "amc8-2015-p6",
+    "finalAnswer": "$\\boxed{\\text{B }(420)}$",
+    "shortExplanation": "**Idea:** Drop the altitude of the isosceles triangle to split the base in half.",
+    "detailedSteps": [
+      "The altitude from $B$ to $AC$ bisects the base because $AB=BC$.",
+      "Each half of the base is",
+      "[\n\\frac{42}{2}=21.\n]",
+      "The altitude is",
+      "[\n\\sqrt{29^2-21^2}=\\sqrt{841-441}=\\sqrt{400}=20.\n]",
+      "So the area is",
+      "[\n\\frac12\\cdot42\\cdot20=420.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(420)}$)"
+    ],
+    "keyIdeas": [
+      "Isosceles triangles",
+      "Pythagorean theorem",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "Do not use $29$ as the height.",
+      "The altitude cuts the base into two segments of length $21$."
+    ],
+    "alternativeMethods": [
+      "Heron's formula also works, but the isosceles altitude is faster."
+    ],
+    "difficultyNotes": "A classic base-height geometry calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p7",
+    "problemId": "amc8-2015-p7",
+    "finalAnswer": "$\\boxed{\\text{E }(\\frac{5}{9})}$",
+    "shortExplanation": "**Idea:** Count the complement: the product is odd only if both chips are odd.",
+    "detailedSteps": [
+      "In each box, the odd chips are $1$ and $3$, so the probability of drawing an odd chip is",
+      "[\n\\frac23.\n]",
+      "The product is odd with probability",
+      "[\n\\frac23\\cdot\\frac23=\\frac49.\n]",
+      "Therefore the product is even with probability",
+      "[\n1-\\frac49=\\frac59.\n]",
+      "Final Answer: ($\\boxed{\\text{E }\\left(\\frac59\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Complement probability",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "A product is even if at least one factor is even.",
+      "Do not count only the case where both chips are even."
+    ],
+    "alternativeMethods": [
+      "List the $9$ ordered outcomes; $5$ of them include at least one $2$."
+    ],
+    "difficultyNotes": "The complement is much shorter than direct casework.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p8",
+    "problemId": "amc8-2015-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(48)}$",
+    "shortExplanation": "**Idea:** Use the triangle inequality to find the largest possible perimeter limit.",
+    "detailedSteps": [
+      "Let the third side be $x$. The triangle inequality gives",
+      "[\n19-5<x<19+5,\n]",
+      "so",
+      "[\n14<x<24.\n]",
+      "The perimeter is",
+      "[\n5+19+x=24+x<48.\n]",
+      "Perimeters can get arbitrarily close to $48$, but never reach it.",
+      "Final Answer: ($\\boxed{\\text{D }(48)}$)"
+    ],
+    "keyIdeas": [
+      "Triangle inequality",
+      "Perimeter bounds"
+    ],
+    "commonMistakes": [
+      "The third side must be less than $24$, not less than or equal to $24$.",
+      "The question asks for the smallest whole number larger than every possible perimeter."
+    ],
+    "alternativeMethods": [
+      "The maximum possible perimeter is just below $5+19+24=48$."
+    ],
+    "difficultyNotes": "The strict inequality is the key detail.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p9",
+    "problemId": "amc8-2015-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(400)}$",
+    "shortExplanation": "**Idea:** The daily sales form the first $20$ odd numbers.",
+    "detailedSteps": [
+      "The sales are",
+      "[\n1,3,5,\\ldots,39,\n]",
+      "the first $20$ odd numbers.",
+      "Their average is",
+      "[\n\\frac{1+39}{2}=20.\n]",
+      "Thus the total is",
+      "[\n20\\cdot20=400.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(400)}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences",
+      "Odd numbers"
+    ],
+    "commonMistakes": [
+      "The $20$th term is $39$, not $40$.",
+      "Do not confuse the number of days with the final day's sales."
+    ],
+    "alternativeMethods": [
+      "The sum of the first $n$ odd numbers is $n^2$, so the total is $20^2=400$."
+    ],
+    "difficultyNotes": "A standard arithmetic sequence sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p10",
+    "problemId": "amc8-2015-p10",
+    "finalAnswer": "$\\boxed{\\text{B }(4536)}$",
+    "shortExplanation": "**Idea:** Count the choices digit by digit.",
+    "detailedSteps": [
+      "The thousands digit has $9$ choices: $1$ through $9$.",
+      "After that, the hundreds digit has $9$ choices, including $0$ but not the thousands digit.",
+      "The tens and ones digits then have $8$ and $7$ choices.",
+      "So the count is",
+      "[\n9\\cdot9\\cdot8\\cdot7=4536.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(4536)}$)"
+    ],
+    "keyIdeas": [
+      "Digit counting",
+      "Multiplication principle"
+    ],
+    "commonMistakes": [
+      "The first digit cannot be $0$.",
+      "After the first digit, $0$ is allowed if it has not already been used."
+    ],
+    "alternativeMethods": [
+      "Count all ordered selections of four distinct digits with a nonzero first digit."
+    ],
+    "difficultyNotes": "A direct use of the multiplication principle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p11",
+    "problemId": "amc8-2015-p11",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{1}{21000})}$",
+    "shortExplanation": "**Idea:** There is exactly one desired plate among all allowed plates.",
+    "detailedSteps": [
+      "The first symbol has $5$ choices.",
+      "The second and third symbols are two different non-vowels, so they have",
+      "[\n21\\cdot20\n]",
+      "choices.",
+      "The last symbol has $10$ choices.",
+      "Thus the number of possible plates is",
+      "[\n5\\cdot21\\cdot20\\cdot10=21000.\n]",
+      "Only one of these plates is $AMC8$, so the probability is",
+      "[\n\\frac{1}{21000}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac1{21000}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Counting outcomes",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The second and third letters must be different.",
+      "Count all legal plates before taking the reciprocal."
+    ],
+    "alternativeMethods": [
+      "Multiply the probabilities of choosing $A$, then $M$, then $C$, then $8$."
+    ],
+    "difficultyNotes": "A sample-space size problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p12",
+    "problemId": "amc8-2015-p12",
+    "finalAnswer": "$\\boxed{\\text{C }(18)}$",
+    "shortExplanation": "**Idea:** A cube has $3$ direction classes, each with $4$ parallel edges.",
+    "detailedSteps": [
+      "The $12$ edges of a cube come in $3$ parallel directions.",
+      "In each direction there are $4$ edges.",
+      "The number of pairs in one direction is",
+      "[\n\\binom42=6.\n]",
+      "Therefore the total number of pairs of parallel edges is",
+      "[\n3\\cdot6=18.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(18)}$)"
+    ],
+    "keyIdeas": [
+      "Cube geometry",
+      "Combinations"
+    ],
+    "commonMistakes": [
+      "Do not count ordered pairs twice.",
+      "There are $4$ edges in each parallel family, not just $2$."
+    ],
+    "alternativeMethods": [
+      "Pick a direction first, then pick two of the four edges in that direction."
+    ],
+    "difficultyNotes": "A geometry counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p13",
+    "problemId": "amc8-2015-p13",
+    "finalAnswer": "$\\boxed{\\text{D }(5)}$",
+    "shortExplanation": "**Idea:** The two removed numbers must have sum $12$.",
+    "detailedSteps": [
+      "The sum of $1$ through $11$ is",
+      "[\n\\frac{11\\cdot12}{2}=66.\n]",
+      "After removing two numbers, $9$ numbers remain with mean $6$, so their sum must be",
+      "[\n9\\cdot6=54.\n]",
+      "Thus the removed pair must sum to",
+      "[\n66-54=12.\n]",
+      "The pairs are",
+      "[\n(1,11),(2,10),(3,9),(4,8),(5,7),\n]",
+      "so there are $5$ subsets.",
+      "Final Answer: ($\\boxed{\\text{D }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Pair sums"
+    ],
+    "commonMistakes": [
+      "The removed set has two elements, so order does not matter.",
+      "Use the sum of the remaining $9$ numbers, not $11$ numbers."
+    ],
+    "alternativeMethods": [
+      "Because the original mean is $6$, the removed pair must also average $6$."
+    ],
+    "difficultyNotes": "The mean condition becomes a fixed removed sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p14",
+    "problemId": "amc8-2015-p14",
+    "finalAnswer": "$\\boxed{\\text{D }(100)}$",
+    "shortExplanation": "**Idea:** The sum of four consecutive odd integers is always divisible by $8$.",
+    "detailedSteps": [
+      "Write the four odd integers as",
+      "[\nn,\\ n+2,\\ n+4,\\ n+6,\n]",
+      "where $n$ is odd. Their sum is",
+      "[\n4n+12=4(n+3).\n]",
+      "Since $n$ is odd, $n+3$ is even, so the sum is a multiple of $8$.",
+      "Among the choices, $100$ is not divisible by $8$.",
+      "Final Answer: ($\\boxed{\\text{D }(100)}$)"
+    ],
+    "keyIdeas": [
+      "Consecutive odd integers",
+      "Divisibility by 8"
+    ],
+    "commonMistakes": [
+      "Do not test only divisibility by $4$; all such sums are divisible by $8$.",
+      "The four odd integers may be negative, but the divisibility condition still holds."
+    ],
+    "alternativeMethods": [
+      "Check the choices modulo $8$: only $100equiv4pmod8$."
+    ],
+    "difficultyNotes": "A parity pattern problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p15",
+    "problemId": "amc8-2015-p15",
+    "finalAnswer": "$\\boxed{\\text{D }(99)}$",
+    "shortExplanation": "**Idea:** Use inclusion-exclusion on the two issue groups.",
+    "detailedSteps": [
+      "Since $29$ students voted against both issues, the number who voted in favor of at least one issue is",
+      "[\n198-29=169.\n]",
+      "By inclusion-exclusion,",
+      "[\n149+119-\\text{both}=169.\n]",
+      "So",
+      "[\n\\text{both}=149+119-169=99.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(99)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Two-set counting"
+    ],
+    "commonMistakes": [
+      "Do not add $149$ and $119$ without subtracting overlap.",
+      "Students against both are outside the union of the two favor groups."
+    ],
+    "alternativeMethods": [
+      "Draw a two-circle Venn diagram and place $29$ outside both circles first."
+    ],
+    "difficultyNotes": "A standard Venn diagram count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p16",
+    "problemId": "amc8-2015-p16",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{4}{11})}$",
+    "shortExplanation": "**Idea:** The same number of sixth graders and ninth graders are paired.",
+    "detailedSteps": [
+      "Let there be $G$ ninth graders and $S$ sixth graders.",
+      "The number of paired ninth graders equals the number of paired sixth graders, so",
+      "[\n\\frac13G=\\frac25S.\n]",
+      "Multiplying by $15$ gives",
+      "[\n5G=6S,\n]",
+      "so $G:S=6:5$.",
+      "Use $G=6k$ and $S=5k$. Then the paired students are",
+      "[\n\\frac13(6k)+\\frac25(5k)=2k+2k=4k.\n]",
+      "The total number of students is $11k$, so the desired fraction is",
+      "[\n\\frac{4k}{11k}=\\frac4{11}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac4{11}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Paired counts"
+    ],
+    "commonMistakes": [
+      "The paired ninth graders and paired sixth graders are the same number of buddy pairs.",
+      "The final fraction is out of all sixth and ninth graders."
+    ],
+    "alternativeMethods": [
+      "Choose $6$ ninth graders and $5$ sixth graders as a scale model."
+    ],
+    "difficultyNotes": "A ratio problem with a shared paired count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p17",
+    "problemId": "amc8-2015-p17",
+    "finalAnswer": "$\\boxed{\\text{D }(9)}$",
+    "shortExplanation": "**Idea:** Express each speed in terms of the unknown distance.",
+    "detailedSteps": [
+      "Let the distance to school be $d$ miles.",
+      "In traffic, $20$ minutes is $\\frac13$ hour, so the speed is $3d$ miles per hour.",
+      "Without traffic, $12$ minutes is $\\frac15$ hour, so the speed is $5d$ miles per hour.",
+      "The difference in speeds is $18$, so",
+      "[\n5d-3d=18.\n]",
+      "Thus",
+      "[\nd=9.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Speed",
+      "Time conversion",
+      "Equations"
+    ],
+    "commonMistakes": [
+      "Convert minutes to hours before computing miles per hour.",
+      "The faster speed is not $18$ mph; it is $18$ mph faster."
+    ],
+    "alternativeMethods": [
+      "Use the same distance equation: $20r=12(r+18)$ after keeping minutes proportional."
+    ],
+    "difficultyNotes": "A compact rate equation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p18",
+    "problemId": "amc8-2015-p18",
+    "finalAnswer": "$\\boxed{\\text{B }(31)}$",
+    "shortExplanation": "**Idea:** In this arithmetic grid, the center is the average of the four corners.",
+    "detailedSteps": [
+      "Because every row and every column is arithmetic, values change linearly across rows and columns.",
+      "The center value is the average of the four corner values:",
+      "[\nX=\\frac{17+81+1+25}{4}.\n]",
+      "Compute:",
+      "[\nX=\\frac{124}{4}=31.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(31)}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences",
+      "Grid averaging"
+    ],
+    "commonMistakes": [
+      "Do not average only a row or only a column without accounting for both directions.",
+      "The center is balanced equally among the four corners."
+    ],
+    "alternativeMethods": [
+      "Model the entries as $a+bx+cy+dxy$; substituting the four corners gives the same center average."
+    ],
+    "difficultyNotes": "The structure lets us avoid filling the whole grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p19",
+    "problemId": "amc8-2015-p19",
+    "finalAnswer": "$\\boxed{\\text{A }(\\frac{1}{6})}$",
+    "shortExplanation": "**Idea:** Compute the triangle area and divide by the grid area.",
+    "detailedSteps": [
+      "Using the coordinate area formula for $A=(1,3)$, $B=(5,1)$, and $C=(4,4)$,",
+      "[\n[ABC]=\\frac12\\left|1(1-4)+5(4-3)+4(3-1)\\right|.\n]",
+      "This is",
+      "[\n\\frac12|-3+5+8|=5.\n]",
+      "The grid area is",
+      "[\n6\\cdot5=30.\n]",
+      "The fraction covered is",
+      "[\n\\frac{5}{30}=\\frac16.\n]",
+      "Final Answer: ($\\boxed{\\text{A }\\left(\\frac16\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Area fraction"
+    ],
+    "commonMistakes": [
+      "Use the area of the whole $6\\times5$ grid as the denominator.",
+      "The plotted triangle does not fill its bounding rectangle."
+    ],
+    "alternativeMethods": [
+      "Find the area by subtracting three right triangles from the bounding rectangle."
+    ],
+    "difficultyNotes": "A coordinate-area computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p20",
+    "problemId": "amc8-2015-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(7)}$",
+    "shortExplanation": "**Idea:** Set up equations for the number and cost of socks.",
+    "detailedSteps": [
+      "Let $x,y,z$ be the numbers of 1-dollar, 3-dollar, and 4-dollar pairs.",
+      "Then",
+      "[\nx+y+z=12\n]",
+      "and",
+      "[\nx+3y+4z=24.\n]",
+      "Subtract the first equation from the second:",
+      "[\n2y+3z=12.\n]",
+      "Since $y,z\\ge 1$, the only positive integer solution is",
+      "[\nz=2,\\qquad y=3.\n]",
+      "Then",
+      "[\nx=12-3-2=7.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Systems of equations",
+      "Integer solutions"
+    ],
+    "commonMistakes": [
+      "Use at least one pair of each type.",
+      "Do not forget that $x,y,z$ must be positive integers."
+    ],
+    "alternativeMethods": [
+      "Start with one of each type, costing $8$ for $3$ pairs, then distribute the remaining $16$ dollars and $9$ pairs."
+    ],
+    "difficultyNotes": "The positivity condition makes the solution unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p21",
+    "problemId": "amc8-2015-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(12)}$",
+    "shortExplanation": "**Idea:** Use side lengths from the square areas and coordinates for triangle $KBC$.",
+    "detailedSteps": [
+      "From the square areas,",
+      "[\nAB=\\sqrt{18}=3\\sqrt2,\\qquad FE=\\sqrt{32}=4\\sqrt2.\n]",
+      "Since $FE=BC$, we have $BC=4\\sqrt2$.",
+      "Place $B=(0,0)$, let $BJ$ be vertical, and let $BC$ point $60^circ$ below the horizontal. Then",
+      "[\nC=(2\\sqrt2,-2\\sqrt6).\n]",
+      "Because $\\triangle JBK$ is equilateral on side $BJ=3\\sqrt2$,",
+      "[\nK=\\left(\\frac{3\\sqrt6}{2},\\frac{3\\sqrt2}{2}\\right).\n]",
+      "The area of $\\triangle KBC$ is half the absolute determinant of vectors $C$ and $K$:",
+      "[\n\\frac12\\left|(2\\sqrt2)\\left(\\frac{3\\sqrt2}{2}\\right)-(-2\\sqrt6)\\left(\\frac{3\\sqrt6}{2}\\right)\\right|\n]",
+      "[\n=\\frac12|6+18|=12.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Square area to side length",
+      "Equilateral triangle coordinates",
+      "Determinant area"
+    ],
+    "commonMistakes": [
+      "Use $BC=FE=4\\sqrt2$, not $AB$.",
+      "The hexagon being equiangular fixes the $60^circ$ direction of $BC$."
+    ],
+    "alternativeMethods": [
+      "A trigonometric base-height method gives the same area after finding the perpendicular distance from $K$ to $BC$."
+    ],
+    "difficultyNotes": "The coordinate setup turns a complicated diagram into a clean determinant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p22",
+    "problemId": "amc8-2015-p22",
+    "finalAnswer": "$\\boxed{\\text{C }(60)}$",
+    "shortExplanation": "**Idea:** The number of possible row sizes is the number of divisors of the group size.",
+    "detailedSteps": [
+      "A different row organization corresponds to a different divisor of the number of students.",
+      "The group works for $15$ per row, $1$ per row, all in one row, and $6$ per row, so the number must be divisible by $15$ and $6$.",
+      "Thus it must be divisible by",
+      "[\n\\operatorname{lcm}(15,6)=30.\n]",
+      "They find new organizations through June $12$ but none on June $13$, so the number must have exactly $12$ divisors.",
+      "The smallest multiple of $30$ with exactly $12$ divisors is",
+      "[\n60=2^2\\cdot3\\cdot5,\n]",
+      "which has",
+      "[\n(2+1)(1+1)(1+1)=12\n]",
+      "divisors.",
+      "Final Answer: ($\\boxed{\\text{C }(60)}$)"
+    ],
+    "keyIdeas": [
+      "Divisors",
+      "Least common multiple"
+    ],
+    "commonMistakes": [
+      "Do not confuse rows with students per row; both correspond to divisors.",
+      "June $13$ means there are exactly $12$ possible organizations."
+    ],
+    "alternativeMethods": [
+      "Check the choices: $30$ has only $8$ divisors, while $60$ has exactly $12$."
+    ],
+    "difficultyNotes": "A divisor-counting interpretation unlocks the problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p23",
+    "problemId": "amc8-2015-p23",
+    "finalAnswer": "$\\boxed{\\text{D }(D)}$",
+    "shortExplanation": "**Idea:** The cup totals must be $5,6,7,8,9$, and the given slips force $3.5$ into cup $D$.",
+    "detailedSteps": [
+      "The total of all slips is",
+      "[\n2+2+2+2.5+2.5+3+3+3+3+3.5+4+4.5=35.\n]",
+      "Five consecutive increasing integers summing to $35$ must be",
+      "[\n5,6,7,8,9.\n]",
+      "So cups $A,B,C,D,E$ must total $5,6,7,8,9$, respectively.",
+      "Cup $B$ contains a $3$ and totals $6$, so it must be $3+3$.",
+      "With a $2$ in cup $E$, the possible completions force the half-integer slips to pair so that the only cup total compatible with $3.5$ is $8$.",
+      "A valid forced pattern is",
+      "[\nA:2+3,\\quad B:3+3,\\quad C:2+2.5+2.5,\\quad D:3.5+4.5,\\quad E:2+3+4.\n]",
+      "Thus $3.5$ is in cup $D$.",
+      "Final Answer: ($\\boxed{\\text{D }(D)}$)"
+    ],
+    "keyIdeas": [
+      "Consecutive sums",
+      "Casework",
+      "Half-integer pairing"
+    ],
+    "commonMistakes": [
+      "The cup totals are not arbitrary; they must be consecutive and sum to $35$.",
+      "The half-integer slips must combine to produce integer cup totals."
+    ],
+    "alternativeMethods": [
+      "Use a small table of possible integer partitions for totals $5$ through $9$ after placing the required $2$ and $3$."
+    ],
+    "difficultyNotes": "A controlled casework problem; the answer is forced even though several slips repeat.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p24",
+    "problemId": "amc8-2015-p24",
+    "finalAnswer": "$\\boxed{\\text{B }(48)}$",
+    "shortExplanation": "**Idea:** Translate the schedule into the equation $3N+4M=76$.",
+    "detailedSteps": [
+      "Each team has $3$ other teams in its own division, so it plays",
+      "[\n3N\n]",
+      "in-division games.",
+      "It has $4$ teams in the other division, so it plays",
+      "[\n4M\n]",
+      "cross-division games.",
+      "The schedule gives",
+      "[\n3N+4M=76,\n]",
+      "with $N>2M$ and $M>4$.",
+      "Testing integer values $M>4$, $M=7$ gives",
+      "[\n3N=76-28=48,\\qquad N=16,\n]",
+      "and $16>2cdot7$.",
+      "The number of in-division games is",
+      "[\n3N=48.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(48)}$)"
+    ],
+    "keyIdeas": [
+      "Integer equations",
+      "Schedule counting"
+    ],
+    "commonMistakes": [
+      "The answer asks for total in-division games, $3N$, not just $N$.",
+      "Remember each team plays four teams in the other division."
+    ],
+    "alternativeMethods": [
+      "Check the answer choices by setting $3N$ equal to each listed value and solving for $M$."
+    ],
+    "difficultyNotes": "A constraint equation with a small integer search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2015-p25",
+    "problemId": "amc8-2015-p25",
+    "finalAnswer": "$\\boxed{\\text{C }(15)}$",
+    "shortExplanation": "**Idea:** Build the largest tilted square from the central $3\\times3$ square plus four congruent triangles.",
+    "detailedSteps": [
+      "After cutting out the four $1$-inch corner squares, the middle $3\\times3$ square remains.",
+      "The largest fitted square can be tilted so that it contains this middle square plus four triangles around it.",
+      "Each added triangle has base $3$ and height $1$, so each has area",
+      "[\n\\frac12\\cdot3\\cdot1=\\frac32.\n]",
+      "The four triangles add area",
+      "[\n4\\cdot\\frac32=6.\n]",
+      "The central square has area",
+      "[\n3^2=9.\n]",
+      "So the largest square has area",
+      "[\n9+6=15.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(15)}$)"
+    ],
+    "keyIdeas": [
+      "Area decomposition",
+      "Rotated square"
+    ],
+    "commonMistakes": [
+      "The largest square is not axis-aligned.",
+      "Do not include the four removed corner squares."
+    ],
+    "alternativeMethods": [
+      "Subtract the four outside right triangles and four removed unit squares from the original $5\\times5$ square."
+    ],
+    "difficultyNotes": "The fastest solution is an area decomposition, not a side-length calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

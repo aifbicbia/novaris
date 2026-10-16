@@ -1,0 +1,109 @@
+[
+  {
+    "finalAnswer": "Process thresholds in decreasing order, joining all tree edges whose relevance meets the current threshold. A query\u2019s answer is its vertex\u2019s DSU component size minus one, restored to the original query order.",
+    "shortExplanation": "A tree path has minimum relevance at least K precisely when every edge on it has relevance at least K. Offline sorting lets a single growing DSU represent all these threshold forests efficiently.",
+    "detailedSteps": [
+      "For a threshold $k$, keep exactly the edges with relevance at least $k$. Because the original network has a unique path between every pair of vertices, a video is relevant to $v$ exactly when it lies in $v$\u2019s component of this retained forest. Subtract one from that component size to exclude $v$ itself.",
+      "Sort the edges by decreasing relevance and sort the queries by decreasing threshold, retaining each query\u2019s original index. Initially every vertex is a DSU component of size one. An edge pointer records which sorted edges have already been incorporated.",
+      "Before answering a query with threshold $k$, insert every remaining edge with weight at least $k$, including edges equal to the threshold. Unite the endpoint roots and add their component sizes. Equal query thresholds may appear in any internal order once all eligible edges have been inserted.",
+      "Induct over this insertion sequence. At every query, the DSU contains all and only the edges of its threshold forest. DSU union preserves exactly the graph\u2019s connected components and their sizes. The resulting size minus one therefore counts every recommended video once and includes no video whose path has a weaker edge.",
+      "Lower thresholds only add edges, so no deletion or reconstruction is needed. Place each computed count into the answer array at the query\u2019s original index. Print exactly Q lines in that original order; sorting the processing order must not reorder the public answers.",
+      "Use path compression and union by size. Sorting takes $O(N\\log N+Q\\log Q)$ time; all DSU operations add $O((N+Q)\\alpha(N))$ amortized time. Space is $O(N+Q)$ including edges, queries and saved answers. For a one-video tree every query correctly prints zero. This Gold source permits $N,Q$ up to $100{,}000$, whereas a similarly named Silver source has smaller bounds.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <numeric>\n#include <vector>\nstruct Edge {int u,v,weight;};\nstruct Query {int threshold,vertex,index;};\nint main() {\n    std::ifstream in(\"mootube.in\");std::ofstream out(\"mootube.out\");int n,q;in >> n >> q;\n    std::vector<Edge> edges(n-1);for(auto& e:edges){in >> e.u >> e.v >> e.weight;--e.u;--e.v;}\n    std::vector<Query> queries(q);for(int i=0;i<q;++i){in >> queries[i].threshold >> queries[i].vertex;--queries[i].vertex;queries[i].index=i;}\n    std::sort(edges.begin(),edges.end(),[](const Edge& a,const Edge& b){return a.weight>b.weight;});\n    std::sort(queries.begin(),queries.end(),[](const Query& a,const Query& b){return a.threshold>b.threshold;});\n    std::vector<int> parent(n),size(n,1),answer(q);std::iota(parent.begin(),parent.end(),0);\n    auto find=[&](int u){while(parent[u]!=u){parent[u]=parent[parent[u]];u=parent[u];}return u;};\n    std::size_t next=0;\n    for(const auto& query:queries){\n        while(next<edges.size() && edges[next].weight>=query.threshold){int u=find(edges[next].u),v=find(edges[next].v);if(u!=v){if(size[u]<size[v]) std::swap(u,v);parent[v]=u;size[u]+=size[v];}++next;}\n        answer[query.index]=size[find(query.vertex)]-1;\n    }\n    for(int value:answer) out << value << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A bottleneck path condition becomes connectivity after thresholding edges.",
+      "Descending offline queries require edge insertions only.",
+      "DSU sizes count relevant vertices, but the queried vertex is excluded.",
+      "Stable answer indexing is separate from the sorted processing order."
+    ],
+    "commonMistakes": [
+      "Using a sum of path weights instead of the minimum.",
+      "Discarding an edge whose relevance equals the threshold.",
+      "Counting the queried video itself or printing answers in threshold order.",
+      "Running a full tree search for every query at the Gold maximum bounds."
+    ],
+    "alternativeMethods": [
+      "For a small input, traverse each unique path from the queried video and carry its minimum edge relevance. This directly checks the bottleneck definition, though O(NQ) work is too large for the full Gold limits.",
+      "An offline descending-edge sweep with queries bucketed by distinct threshold values implements the same monotone connectivity argument."
+    ],
+    "difficultyNotes": "The reduction is simple once the minimum-on-path condition is interpreted correctly. The full Gold bounds require sharing work across queries; inclusivity, self-exclusion and original output order are essential implementation details.",
+    "id": "solution-usaco-gold-2018-january-p1",
+    "problemId": "usaco-gold-2018-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compute distances from Bessie\u2019s start and from the nearest exit. Count the first vertices in rooted branches where nearest-exit distance is at most start distance, and stop descending each counted branch.",
+    "shortExplanation": "Each first such vertex can be guarded by one farmer arriving from an exit inside its subtree. Those frontier subtrees are disjoint, and leaving one without any farmer permits a straight escape that equally fast outside farmers cannot catch.",
+    "detailedSteps": [
+      "An exit is a degree-one barn. Root the tree at Bessie\u2019s given starting barn. Let dB be the distance from that root and dL the distance to the nearest exit. Compute all dL values with a multi-source BFS starting from every exit; a rooted traversal supplies dB. If Bessie starts at an exit, one farmer must start there at time zero, and one suffices.",
+      "For an internal start, traverse each rooted branch until its first vertex $v$ satisfying $d_L(v)\\le d_B(v)$. Count that frontier vertex once and do not descend below it. Every path from the root to an exit encounters a frontier, because the exit has nearest-exit distance zero. All earlier vertices on the path satisfy the strict reverse inequality.",
+      "A frontier\u2019s closest exit lies inside its rooted subtree. Its parent $u$ is still safe, with $d_L(u)>d_B(u)$. Any exit outside the subtree reaches $v$ through $u$, requiring at least $d_L(u)+1>d_B(u)+1=d_B(v)$ steps. Such an outside exit cannot witness the frontier inequality.",
+      "This begins the attainable upper bound. Put one farmer at a closest inside exit for each frontier and move that farmer to the frontier, then hold the occupied boundary. Each arrives no later than Bessie can, including if she waits or reverses; a tunnel meeting also catches her. Once all guards arrive, every uncaught cow location lies in the remaining connected unoccupied safe tree, whose outside neighbors are occupied. To ensure eventual capture, repeatedly choose a leaf of that safe tree, treating a singleton as a leaf, and move an adjacent boundary farmer into it while the other farmers keep guarding. If Bessie waits there or moves into it, she is caught. If she crosses toward the newly vacated boundary vertex, the same-tunnel rule catches her. Otherwise she can only remain in the safe tree with that leaf removed. The occupied boundary is preserved and no extra farmer is used. Each round removes one safe vertex, so the finite tree becomes empty and capture is guaranteed, rather than merely preventing escape.",
+      "For the lower bound, the frontier subtrees are disjoint. With fewer farmers than frontiers, at least one of these subtrees contains no initial farmer. Let Bessie travel straight from the root into that subtree and onward to one of its exits.",
+      "Every proper ancestor of the selected frontier is safe. Any farmer needs strictly more time to reach such an ancestor than Bessie needs on her straight route. This also prevents an opposing tunnel interception on the safe prefix: a farmer cannot enter from the next safe vertex early enough. Any outside farmer entering the empty subtree must first pass its parent, strictly after Bessie, and then follow along the unique path. Equal speed prevents overtaking her. There is no inside farmer approaching from the exit, so the straight escape succeeds regardless of the farmers\u2019 information or adaptive choices.",
+      "Therefore every frontier requires an initial farmer in its subtree, and the upper placement uses exactly that many. The count is the minimum guaranteed-capture deployment, not just the cost of a convenient strategy against one chosen route. Guarding uses the source\u2019s permission to move one edge per step; no extra speed or teleportation is assumed.",
+      "Nearest-exit BFS and the rooted traversal each use $O(N)$ time and $O(N)$ space. Use iterative queues and traversal arrays to handle a chain of $100{,}000$ barns. Stop immediately at counted frontiers to avoid charging additional farmers for exits already sealed off.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"atlarge.in\");std::ofstream out(\"atlarge.out\");int n,start;in >> n >> start;--start;\n    std::vector<std::vector<int>> edges(n);for(int i=0;i<n-1;++i){int u,v;in >> u >> v;--u;--v;edges[u].push_back(v);edges[v].push_back(u);}\n    std::vector<int> nearest(n,-1);std::queue<int> pending;\n    for(int u=0;u<n;++u) if(edges[u].size()==1){nearest[u]=0;pending.push(u);}\n    while(!pending.empty()){int u=pending.front();pending.pop();for(int v:edges[u]) if(nearest[v]==-1){nearest[v]=nearest[u]+1;pending.push(v);}}\n    std::vector<int> parent(n,-1),depth(n,0),order{start};parent[start]=start;int farmers=0;\n    for(std::size_t i=0;i<order.size();++i){int u=order[i];if(nearest[u]<=depth[u]){++farmers;continue;}for(int v:edges[u]) if(v!=parent[u]){parent[v]=u;depth[v]=depth[u]+1;order.push_back(v);}}\n    out << farmers << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Multi-source BFS measures the fastest exit-origin arrival at every barn.",
+      "First blocked vertices form disjoint rooted frontier subtrees.",
+      "Prove both a feasible capture deployment and a matching physical escape lower bound.",
+      "Equal-time vertex contact and opposing tunnel crossing count as captures."
+    ],
+    "commonMistakes": [
+      "Counting every vertex satisfying the distance inequality rather than only the first one in each rooted branch.",
+      "Using distances from Bessie alone and ignoring all possible exit starts.",
+      "Treating equality as safe for Bessie or forgetting capture within a tunnel.",
+      "Assuming that a frontier can be supplied by a closer exit outside its subtree without checking its safe parent.",
+      "Skipping the start-at-an-exit case or using recursive DFS on the maximum chain."
+    ],
+    "alternativeMethods": [
+      "For a small tree, enumerate exit-starting farmer subsets and direct escape trajectories, checking barn meetings and opposing tunnel crossings. These fixed rootward trajectory tests give necessary interception evidence; they are not a universal capture strategy for a cow that waits or reverses. The frontier lower bound and maintained-boundary safe-tree leaf-pruning construction above justify the optimum and finite guaranteed capture. This finite source certificate is not an online judge or an unrelated digital pursuit model.",
+      "Unit-distance waves starting from all original exits compute nearest-exit distances. This distance computation is separate from the adaptive pruning of the remaining safe tree used to finish the capture strategy."
+    ],
+    "difficultyNotes": "The distance comparison alone is not a complete optimality proof. The essential step is showing that each first frontier has an inside exit and that an empty frontier subtree gives a real equal-speed escape, including the tunnel-capture rule.",
+    "id": "solution-usaco-gold-2018-january-p2",
+    "problemId": "usaco-gold-2018-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Count all M^N color words and subtract words with no monochromatic run of length K. A sliding sum computes the complement in O(N) time modulo 1,000,000,007.",
+    "shortExplanation": "The last stamp leaves a K-cell monochromatic block, so such a block is necessary. Conversely, any target with such a block can be painted by fixing cells outward from its two sides and applying that block last. The remaining task is a bounded-run word count.",
+    "detailedSteps": [
+      "First prove which final paintings are attainable. The final stamping operation covers K neighboring cells with one color, and no later operation overwrites them. Thus every completed painting has a monochromatic run of at least K cells. Count final paintings, not operation histories: arbitrarily many repeated stamps can produce the same painting.",
+      "For sufficiency, choose a target block $[L,R]$ of length $K$ and color $c$. Stamp windows $[i,i+K-1]$ in increasing order for $i=0,\\ldots,L-1$, using the target color at $i$. Each such step fixes cell $i$, which no later left-side window touches. Then stamp $[j-K+1,j]$ for $j=N-1,\\ldots,R+1$ in decreasing order, using the target color at $j$. These steps fix every right-side cell.",
+      "All those windows fit on the canvas. The left-side windows cannot reach beyond R-1, and the right-side windows cannot begin before L+1, so the two sweeps do not damage each other\u2019s already fixed outer cells. Finally stamp the chosen block with c. Every cell is painted and has its target color. This constructs every word that contains a K-cell monochromatic block.",
+      "Let $b_i$ count length-$i$ words with no monochromatic run of length $K$. For $1\\le i<K$, every word is allowed, so $b_i=M^i$. For $i\\ge K$, its final maximal run has a unique length $\\ell\\in\\{1,\\ldots,K-1\\}$. The preceding nonempty prefix has $b_{i-\\ell}$ choices; the final run\u2019s color has $M-1$ choices different from that prefix\u2019s last color. Therefore $$b_i=(M-1)\\sum_{j=i-K+1}^{i-1}b_j\\pmod{10^9+7}.$$ The separate small-length base cases avoid applying $M-1$ to an empty prefix.",
+      "Maintain the sum of the previous K-1 positive-length complement counts. After computing a new count, add it to the window and subtract the term that has just fallen out. Also maintain the current power of M. Every length takes constant work; normalize a subtraction by adding the modulus before reducing.",
+      "The answer is $\\bigl(M^N-b_N\\bigr)\\bmod(10^9+7)$. For $K=1$, the complement sum is empty and all words are attainable. For $K=N$, only the $M$ monochromatic full-canvas words are attainable. With one color and $K\\le N$, there is exactly one possible painting.",
+      "The original implementation retains an array of $N+1$ complement counts, giving $O(N)$ time and $O(N)$ space. Both power updates and the recurrence products fit signed 64-bit arithmetic under the printed million-color bound. The explicit source condition $K\\le N$ and full million-unit limits are honored; the smaller partial-scoring limits do not replace them.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"spainting.in\");std::ofstream out(\"spainting.out\");int n,k;long long colors;in >> n >> colors >> k;\n    constexpr long long mod=1000000007;std::vector<long long> bad(n+1,0);bad[0]=1;long long power=1,window=0;\n    for(int i=1;i<=n;++i){\n        power=power*colors%mod;\n        bad[i]=(i<k?power:(colors-1)*window%mod);\n        window=(window+bad[i])%mod;\n        if(i-k+1>=1) window=(window-bad[i-k+1]+mod)%mod;\n    }\n    out << (power-bad[n]+mod)%mod << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The last stamp proves necessity, while two outward-fixing sweeps prove sufficiency.",
+      "Count final color words rather than sequences of operations.",
+      "Decompose a forbidden-run-free word by its final maximal run.",
+      "A sliding sum reduces the recurrence from O(NK) to O(N)."
+    ],
+    "commonMistakes": [
+      "Claiming that a long monochromatic block is sufficient without constructing a legal stamping sequence.",
+      "Counting stamping orders or permitting a stamp to extend beyond the canvas.",
+      "Applying M-1 choices to an empty prefix or mishandling K=1.",
+      "Keeping a negative modular window sum, or claiming O(K) memory while retaining N+1 counts.",
+      "Treating the partial-scoring N,K limits as the full constraints."
+    ],
+    "alternativeMethods": [
+      "Prefix sums of the complement counts give the same recurrence in O(N) time and O(N) space, independently of a mutable sliding window.",
+      "For a tiny canvas, BFS all partial painted states from an entirely unpainted canvas, applying every legal window and every stamp color. Count reachable fully painted words once. This literal physical oracle does not assume the long-run characterization."
+    ],
+    "difficultyNotes": "There are two distinct proof obligations: characterizing physically attainable final canvases, then counting them efficiently. The final-run recurrence needs carefully separated base cases, and the constructive painting order prevents a counting formula from relying on an unproved reachability claim.",
+    "id": "solution-usaco-gold-2018-january-p3",
+    "problemId": "usaco-gold-2018-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

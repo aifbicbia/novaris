@@ -1,0 +1,552 @@
+[
+  {
+    "id": "solution-amc12a-2017-p1",
+    "problemId": "amc12a-2017-p1",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "Compare the number of popsicles per dollar, then attain the resulting integer bound.",
+    "detailedSteps": [
+      "Every purchase supplies at most $5/3$ popsicles per dollar. With eight dollars the total is at most $40/3$, so an integer total cannot exceed $13$.",
+      "Two five-popsicle boxes and one three-popsicle box cost $3+3+2=8$ dollars and supply $13$ popsicles."
+    ],
+    "keyIdeas": [
+      "Upper bounds",
+      "Integer optimization"
+    ],
+    "commonMistakes": [
+      "Buying only the largest boxes can waste the remaining two dollars."
+    ],
+    "difficultyNotes": "Integer purchases.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p2",
+    "problemId": "amc12a-2017-p2",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Combine the reciprocals over their common denominator.",
+    "detailedSteps": [
+      "For the two nonzero numbers $u,v$, the condition is $u+v=4uv$. Thus $1/u+1/v=(u+v)/(uv)=4$."
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Nonzero denominators"
+    ],
+    "commonMistakes": [
+      "The nonzero condition permits division by the product."
+    ],
+    "difficultyNotes": "Reciprocal sums.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p3",
+    "problemId": "amc12a-2017-p3",
+    "finalAnswer": "$\\boxed{\\text{At least one wrong}}$ (choice B)",
+    "shortExplanation": "Use the contrapositive of the promise.",
+    "detailedSteps": [
+      "Let $P$ mean that all multiple-choice answers are correct and $Q$ mean that the grade is A. The promise is $P\\Rightarrow Q$, whose contrapositive is $\\neg Q\\Rightarrow\\neg P$.",
+      "Therefore a grade other than A implies at least one incorrect multiple-choice answer. It does not imply that every answer was wrong. This is choice B."
+    ],
+    "keyIdeas": [
+      "Implication",
+      "Contrapositive"
+    ],
+    "commonMistakes": [
+      "Reversing an implication produces its converse, which need not hold."
+    ],
+    "difficultyNotes": "Contraposition.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p4",
+    "problemId": "amc12a-2017-p4",
+    "finalAnswer": "$\\boxed{30\\%}$ (choice A)",
+    "shortExplanation": "Use the two legs and the diagonal of the same square.",
+    "detailedSteps": [
+      "For side length $s$, the two walking distances are $2s$ and $s\\sqrt2$. The fractional saving relative to the longer route is $(2s-s\\sqrt2)/(2s)=1-\\sqrt2/2$.",
+      "This is about $0.293$, so the closest listed percentage is $30\\%$."
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Relative change"
+    ],
+    "commonMistakes": [
+      "The denominator is the original two-leg route, not the diagonal."
+    ],
+    "difficultyNotes": "Comparing routes.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p5",
+    "problemId": "amc12a-2017-p5",
+    "finalAnswer": "$\\boxed{245}$ (choice B)",
+    "shortExplanation": "Separate handshakes between the two groups from those within the group of strangers.",
+    "detailedSteps": [
+      "There are $20\\cdot10=200$ pairs with one person from each group, and $\\binom{10}{2}=45$ pairs within the group of ten strangers.",
+      "All these pairs shake hands. The remaining pairs hug, so the handshake total is $200+45=245$."
+    ],
+    "keyIdeas": [
+      "Unordered pairs",
+      "Complementary counting"
+    ],
+    "commonMistakes": [
+      "A handshake belongs to an unordered pair and must not be counted twice."
+    ],
+    "difficultyNotes": "Classifying pairs.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p6",
+    "problemId": "amc12a-2017-p6",
+    "finalAnswer": "$\\boxed{17}$ (choice B)",
+    "shortExplanation": "A nondegenerate quadrilateral exists exactly when every side is shorter than the sum of the other three.",
+    "detailedSteps": [
+      "If the fourth length is $t$, the only restrictive inequalities are $15<3+7+t$ and $t<3+7+15$. They give $5<t<25$.",
+      "The integer lengths $6$ through $24$ give $19$ candidates, but rods $7$ and $15$ are already on the table. Removing them leaves $17$ choices."
+    ],
+    "keyIdeas": [
+      "Polygon inequalities",
+      "Strict inequalities"
+    ],
+    "commonMistakes": [
+      "Equality produces zero area, and an already-used rod cannot be chosen again."
+    ],
+    "difficultyNotes": "The quadrilateral inequality.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p7",
+    "problemId": "amc12a-2017-p7",
+    "finalAnswer": "$\\boxed{2018}$ (choice B)",
+    "shortExplanation": "The odd-indexed values form an arithmetic progression.",
+    "detailedSteps": [
+      "For $n=2k+1$, repeated use of the odd recurrence gives $f(2k+1)=f(1)+2k=2+2k$.",
+      "Since $2017=2\\cdot1008+1$, the value is $2018$."
+    ],
+    "keyIdeas": [
+      "Recurrences",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "The odd recurrence moves back two indices, not one."
+    ],
+    "difficultyNotes": "A parity recurrence.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p8",
+    "problemId": "amc12a-2017-p8",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "shortExplanation": "Split the solid into a cylinder and two hemispherical caps.",
+    "detailedSteps": [
+      "The cylinder has radius $3$ and length $L=AB$, hence volume $9\\pi L$. The two end caps form one radius-three sphere with volume $36\\pi$.",
+      "Therefore $9\\pi L+36\\pi=216\\pi$, giving $L=20$."
+    ],
+    "keyIdeas": [
+      "Volumes",
+      "Spatial decomposition"
+    ],
+    "commonMistakes": [
+      "The end caps are needed because points beyond the segment endpoints can still be within three units."
+    ],
+    "difficultyNotes": "A capsule volume.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p9",
+    "problemId": "amc12a-2017-p9",
+    "finalAnswer": "$\\boxed{\\text{Three rays}}$ (choice E)",
+    "shortExplanation": "Consider each possible pair of equal quantities.",
+    "detailedSteps": [
+      "If $x+2=3$, then $x=1$ and $y\\le7$. If $y-4=3$, then $y=7$ and $x\\le1$.",
+      "If $x+2=y-4\\ge3$, then $y=x+6$ and $x\\ge1$. These are three rays with common endpoint $(1,7)$, which is choice E."
+    ],
+    "keyIdeas": [
+      "Coordinate loci",
+      "Cases"
+    ],
+    "commonMistakes": [
+      "The third quantity must not exceed the repeated value, so the loci are rays rather than complete lines."
+    ],
+    "difficultyNotes": "Piecewise loci.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p10",
+    "problemId": "amc12a-2017-p10",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice C)",
+    "shortExplanation": "Compute the complementary triangular region where the second choice is smaller.",
+    "detailedSteps": [
+      "Write $L=2017$. The equally likely pairs fill the rectangle $0\\le x\\le L$, $0\\le y\\le2L$, of area $2L^2$.",
+      "The event $y\\le x$ occupies a triangle of area $L^2/2$, hence has probability $1/4$. Equality has probability zero, so the requested probability is $3/4$."
+    ],
+    "keyIdeas": [
+      "Geometric probability",
+      "Complement"
+    ],
+    "commonMistakes": [
+      "The two intervals have different lengths, so symmetry does not give one half."
+    ],
+    "difficultyNotes": "Area in a rectangle.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p11",
+    "problemId": "amc12a-2017-p11",
+    "finalAnswer": "$\\boxed{143}$ (choice D)",
+    "shortExplanation": "The complete angle sum is the next multiple of 180 above the partial sum.",
+    "detailedSteps": [
+      "If the missing angle is $a$, strict convexity gives $0<a<180$. The full sum $2017+a$ is an integer multiple of $180$.",
+      "The only such multiple strictly between $2017$ and $2197$ is $2160$. Hence $a=2160-2017=143$ degrees."
+    ],
+    "keyIdeas": [
+      "Interior angles",
+      "Modular reasoning"
+    ],
+    "commonMistakes": [
+      "A convex polygon has no interior angle of 180 degrees or more."
+    ],
+    "difficultyNotes": "Polygon angle sums.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p12",
+    "problemId": "amc12a-2017-p12",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Count how many of the integers from one through ten divide a candidate time.",
+    "detailedSteps": [
+      "Any positive time when even one horse is at the start is a positive integer: it is an integer multiple of that horse's integer lap time. At an integer time $t$, Horse $k$ is at the start exactly when $k\\mid t$.",
+      "For times $1$ through $11$, the respective numbers of returning horses are $1,2,2,3,2,4,2,4,3,4,1$. None is five.",
+      "At $t=12$, horses $1,2,3,4,6$ return together. Thus the earliest time is $12$, whose digit sum is $3$."
+    ],
+    "keyIdeas": [
+      "Divisibility",
+      "Least positive solutions"
+    ],
+    "commonMistakes": [
+      "The least time for five horses need not divide or closely approach the return time for all ten."
+    ],
+    "difficultyNotes": "Simultaneous return times.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p13",
+    "problemId": "amc12a-2017-p13",
+    "finalAnswer": "$\\boxed{135}$ (choice B)",
+    "shortExplanation": "Express each part of the trip in terms of the usual speed.",
+    "detailedSteps": [
+      "Let the usual speed be $v$ miles per hour. The usual three-hour trip has distance $3v$. Its first third still takes one hour; the remaining distance $2v$ is driven at speed $v-20$.",
+      "The new total time is $276/60=23/5$ hours, so $1+2v/(v-20)=23/5$. Solving gives $10v=18(v-20)$, hence $v=45$.",
+      "The distance is $3v=135$ miles. The reduced speed $25$ is positive and gives the specified travel time."
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "A drop of $20$ miles per hour is an absolute change, not a $20\\%$ change."
+    ],
+    "difficultyNotes": "Travel time at two speeds.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p14",
+    "problemId": "amc12a-2017-p14",
+    "finalAnswer": "$\\boxed{28}$ (choice C)",
+    "shortExplanation": "Apply inclusion-exclusion to the three forbidden neighboring pairs.",
+    "detailedSteps": [
+      "Let the bad events be adjacency of Alice and Bob, Alice and Carla, and Derek and Eric. Each has $2\\cdot4!=48$ arrangements among the $5!=120$ total.",
+      "The first two together force a three-person block with Alice in the middle, giving $2\\cdot3!=12$ arrangements. Each intersection involving Derek and Eric and one Alice pair gives two independent two-person blocks, hence $4\\cdot3!=24$ arrangements.",
+      "All three events require the Alice-centered block and the Derek-Eric block, giving $2\\cdot2\\cdot2!=8$ arrangements. The desired count is $120-3(48)+12+24+24-8=28$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Block counting"
+    ],
+    "commonMistakes": [
+      "The two pairs involving Alice overlap, so their intersection is not counted like two disjoint blocks."
+    ],
+    "difficultyNotes": "Forbidden adjacencies.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p15",
+    "problemId": "amc12a-2017-p15",
+    "finalAnswer": "$\\boxed{(3,4)}$ (choice D)",
+    "shortExplanation": "Check signs by quadrant and bracket a root with a special angle.",
+    "detailedSteps": [
+      "On $(0,\\pi/2)$ all three terms are positive. On $(\\pi/2,\\pi)$, rewrite the function as $\\sin x(1+3/\\cos x)+2\\cos x$. Both summands are negative, so neither interval contains a zero; $\\pi/2$ is outside the domain.",
+      "At $x=\\pi$, the value is $-2$. At $x=5\\pi/4$, it is $3-3\\sqrt2/2>0$. Continuity on $[\\pi,5\\pi/4]$ gives a zero between these endpoints.",
+      "There are no earlier positive zeros, and $3<\\pi<5\\pi/4<4$. Therefore the smallest positive zero belongs to $(3,4)$."
+    ],
+    "keyIdeas": [
+      "Signs by quadrant",
+      "Continuity",
+      "Intermediate value theorem"
+    ],
+    "commonMistakes": [
+      "A sign change across the undefined point $\\pi/2$ does not imply a root."
+    ],
+    "difficultyNotes": "Locating the first root.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p16",
+    "problemId": "amc12a-2017-p16",
+    "finalAnswer": "$\\boxed{\\frac67}$ (choice B)",
+    "shortExplanation": "Subtract squared distance equations to eliminate the vertical coordinate.",
+    "detailedSteps": [
+      "Use coordinates $J=(0,0)$, $K=(6,0)$, $A=(2,0)$, and $B=(5,0)$. The outer semicircle has center $(3,0)$ and radius $3$. Write the desired center as $(u,v)$ and its radius as $r$.",
+      "Tangency gives $(u-2)^2+v^2=(r+2)^2$, $(u-5)^2+v^2=(r+1)^2$, and $(u-3)^2+v^2=(3-r)^2$.",
+      "Subtracting the first equation from the third gives $u=5r$. Subtracting the first from the second gives $u=4+r/3$. Therefore $5r=4+r/3$, so $r=6/7$.",
+      "The center $(30/7,12/7)$ satisfies all three distance equations and has height greater than the radius. Thus the resulting circle lies above the common diameter, as required by the figure."
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Internal and external tangency"
+    ],
+    "commonMistakes": [
+      "External tangency uses a sum of radii, whereas internal tangency uses their difference."
+    ],
+    "difficultyNotes": "Three circle tangencies.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p17",
+    "problemId": "amc12a-2017-p17",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "Parameterize the roots by their arguments.",
+    "detailedSteps": [
+      "The roots are $z=e^{2\\pi i k/24}$ for $0\\le k<24$. Then $z^6=e^{\\pi i k/2}$ is real exactly when $k$ is even.",
+      "Twelve of the integers from $0$ through $23$ are even, so there are $12$ such roots."
+    ],
+    "keyIdeas": [
+      "Roots of unity",
+      "Real complex numbers"
+    ],
+    "commonMistakes": [
+      "Both positive and negative real sixth powers count."
+    ],
+    "difficultyNotes": "Roots of unity.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p18",
+    "problemId": "amc12a-2017-p18",
+    "finalAnswer": "$\\boxed{1239}$ (choice D)",
+    "shortExplanation": "Count the trailing nines that disappear when one is added.",
+    "detailedSteps": [
+      "If there are $t$ trailing nines, adding one lowers their digit sum by $9t$ and raises the preceding digit by one. Thus $S(n+1)=1275-9t$.",
+      "It follows that $S(n+1)$ is congruent to $6$ modulo $9$. Among the offered values only $1239$ has that remainder, and it corresponds to $t=4$.",
+      "This is attainable: take a decimal number consisting of $137$ nines, then a digit $5$, then four nines. Its digit sum is $137\\cdot9+5+36=1274$; after adding one its digit sum is $137\\cdot9+6=1239$."
+    ],
+    "keyIdeas": [
+      "Carrying",
+      "Congruences",
+      "Existence constructions"
+    ],
+    "commonMistakes": [
+      "Digit sums usually do not increase by one when a carry occurs."
+    ],
+    "difficultyNotes": "Digit sums after carrying.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p19",
+    "problemId": "amc12a-2017-p19",
+    "finalAnswer": "$\\boxed{\\frac{37}{35}}$ (choice D)",
+    "shortExplanation": "Use similar triangles to express the available width at the far side of each square.",
+    "detailedSteps": [
+      "For the square at the right-angle vertex, place the triangle legs on the coordinate axes. Its opposite square vertex $(x,x)$ lies on $u/3+v/4=1$, so $x=12/7$.",
+      "For the square resting on the hypotenuse, the triangle has base $5$ and height $h=12/5$. At height $y$ above this base the available parallel width is $5(1-y/h)$. It equals the square side $y$.",
+      "Solving gives $y=5h/(5+h)=60/37$. Hence $x/y=(12/7)/(60/37)=37/35$."
+    ],
+    "keyIdeas": [
+      "Similarity",
+      "Altitude",
+      "Coordinate intercepts"
+    ],
+    "commonMistakes": [
+      "The second square uses the hypotenuse as its supporting base, so its relevant triangle height is $12/5$."
+    ],
+    "difficultyNotes": "Inscribed squares in two orientations.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p20",
+    "problemId": "amc12a-2017-p20",
+    "finalAnswer": "$\\boxed{597}$ (choice E)",
+    "shortExplanation": "Treat the logarithm itself as the unknown.",
+    "detailedSteps": [
+      "For each allowed base $b$, put $t=\\log_b a$. The equation becomes $t^{2017}=2017t$, or $t(t^{2016}-2017)=0$.",
+      "There are three real values: $0$ and $\\pm2017^{1/2016}$. The bijection $a=b^t$ gives three distinct positive values of $a$ for each base.",
+      "There are $200-2+1=199$ bases, so the number of ordered pairs is $3\\cdot199=597$."
+    ],
+    "keyIdeas": [
+      "Logarithm laws",
+      "Even powers",
+      "Bijective substitutions"
+    ],
+    "commonMistakes": [
+      "The negative logarithm is valid and corresponds to a positive value of $a$ below $1$."
+    ],
+    "difficultyNotes": "A logarithmic substitution.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p21",
+    "problemId": "amc12a-2017-p21",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "First restrict possible roots using the rational-root argument, then construct every allowed value.",
+    "detailedSteps": [
+      "Every nonzero integer initially available divides $10$. This property persists: remove any initial powers of $x$ from a nonzero polynomial with an integer root $r\\ne0$. Its remaining nonzero constant coefficient is divisible by $r$, because all the other terms are divisible by $r$. Thus $r$ divides a nonzero member already present, and so divides $10$.",
+      "Therefore the final set is contained in $\\{0,\\pm1,\\pm2,\\pm5,\\pm10\\}$, a set of nine elements.",
+      "The polynomial $10x+10$ adds $-1$. Next $10-x-x^2-\\cdots-x^{10}$ adds $1$. Now $x+10$ adds $-10$, and $x^3+x-10$ adds $2$. The polynomial $2x-10$ then adds $5$; finally $x+2$ and $x+5$ add $-2$ and $-5$.",
+      "All coefficients used at each step are already available. Every member of the nine-element upper bound is therefore obtained, so the answer is $9$."
+    ],
+    "keyIdeas": [
+      "Integer-root divisibility",
+      "Invariant",
+      "Constructive closure"
+    ],
+    "commonMistakes": [
+      "A bound on possible roots must be accompanied by a valid sequence that generates them."
+    ],
+    "difficultyNotes": "Closure under integer polynomial roots.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p22",
+    "problemId": "amc12a-2017-p22",
+    "finalAnswer": "$\\boxed{39}$ (choice E)",
+    "shortExplanation": "Use one unknown for each symmetry type of interior lattice point.",
+    "detailedSteps": [
+      "Let $a$ be the probability from the origin, $b$ from an interior point of type $(1,0)$, and $c$ from type $(1,1)$. A corner has success value $1$ and every other boundary point has value $0$.",
+      "Conditioning on the next step gives $8a=4b+4c$, $8b=2b+2c+a$, and $8c=1+2b+a$. The coefficients count the eight allowed neighboring positions.",
+      "The first two equations imply $b=5a/8$ and $c=11a/8$. Substitution into the third gives $11a=1+9a/4$, hence $a=4/35$.",
+      "The walk reaches the boundary with probability one: from every interior point there is a path of at most two steps to the boundary, with probability at least $1/64$. The probability of surviving $2k$ steps is at most $(63/64)^k$, which tends to zero. The computed hitting probability is therefore the required one, and $m+n=4+35=39$."
+    ],
+    "keyIdeas": [
+      "First-step equations",
+      "Symmetry",
+      "Absorption"
+    ],
+    "commonMistakes": [
+      "Interior edge-adjacent points and interior diagonal points have different neighbor counts."
+    ],
+    "difficultyNotes": "A symmetric absorbing walk.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p23",
+    "problemId": "amc12a-2017-p23",
+    "finalAnswer": "$\\boxed{-7007}$ (choice C)",
+    "shortExplanation": "The three distinct common roots force the cubic to divide the quartic.",
+    "detailedSteps": [
+      "Because the cubic has three distinct roots, division leaves a remainder of degree at most two that vanishes at all three. That remainder is zero, so $f(x)=(x+d)g(x)$.",
+      "Comparing the coefficient of $x$ gives $10+d=100$, hence $d=90$. Comparing the coefficient of $x^3$ gives $a+d=1$, hence $a=-89$.",
+      "Consequently $f(1)=91g(1)=91(1-89+1+10)=-7007$."
+    ],
+    "keyIdeas": [
+      "Polynomial division",
+      "Coefficient comparison"
+    ],
+    "commonMistakes": [
+      "Distinctness is what forces a degree-two remainder with three zeros to vanish identically."
+    ],
+    "difficultyNotes": "Polynomial divisibility.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p24",
+    "problemId": "amc12a-2017-p24",
+    "finalAnswer": "$\\boxed{17}$ (choice A)",
+    "shortExplanation": "Compute the diagonal length, then separate the affine construction from the circle metric.",
+    "detailedSteps": [
+      "Put $d=BD$. Opposite angles of the cyclic quadrilateral are supplementary. Applying the cosine rule at $A$ and $C$ gives $(73-d^2)/48=-(40-d^2)/24$, hence $d^2=51$.",
+      "For the intersection construction, use affine vectors $B=0$, $D=\\mathbf d$, $A=\\mathbf a$. Then $X=3\\mathbf d/4$ and $Y=11\\mathbf d/36$. Write $E=X+t(A-X)=Y+t(A-D)$; equality of the $\\mathbf d$ coefficients gives $3(1-t)/4=11/36-t$, so $t=-16/9$.",
+      "Since $EF$ is parallel to $AC$ and $X,F,C$ are collinear, the same homothety centered at $X$ gives $F-X=t(C-X)$. Thus $XF=(16/9)XC$.",
+      "Point $X$ is inside the circle, and the two secants give $XC\\cdot XG=XB\\cdot XD=(3/16)BD^2$. Therefore $XF\\cdot XG=(16/9)(3/16)\\cdot51=17$."
+    ],
+    "keyIdeas": [
+      "Cyclic quadrilaterals",
+      "Directed ratios",
+      "Power of a point"
+    ],
+    "commonMistakes": [
+      "The affine scale is negative: F lies opposite C across $X$. Use its absolute value for lengths."
+    ],
+    "difficultyNotes": "Affine ratios and power of a point.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2017-p25",
+    "problemId": "amc12a-2017-p25",
+    "finalAnswer": "$\\boxed{\\frac{2^2\\cdot5\\cdot11}{3^{10}}}$ (choice E)",
+    "shortExplanation": "First force the magnitude to be one, then count the possible arguments.",
+    "detailedSteps": [
+      "Two vertices have modulus $\\sqrt2$, while the other four have modulus $1/2$. If $k$ of the twelve choices come from the first pair, the product modulus is $2^{k/2-(12-k)}$. It equals one exactly when $k=8$.",
+      "The probability of this magnitude pattern is $\\binom{12}{8}(1/3)^8(2/3)^4$. Conditional on the pattern, arguments of the four small-modulus factors are independently uniform over the odd multiples of $\\pi/4$.",
+      "Their sum is uniform over the four even multiples of $\\pi/4$ modulo $2\\pi$: after fixing three of these arguments, the fourth produces each even residue once. The eight other arguments have an even total residue, so adding them preserves this uniform distribution.",
+      "Exactly one of the four resulting arguments is $\\pi$, giving conditional probability $1/4$. The final probability is $\\frac14\\binom{12}{8}\\frac{16}{3^{12}}=\\frac{220}{3^{10}}=\\frac{2^2\\cdot5\\cdot11}{3^{10}}$."
+    ],
+    "keyIdeas": [
+      "Complex modulus",
+      "Uniform residues",
+      "Binomial distribution"
+    ],
+    "commonMistakes": [
+      "A modulus of $1$ permits four real-or-imaginary phase values here; the desired sign cannot be ignored."
+    ],
+    "difficultyNotes": "Magnitude and phase of a complex product.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

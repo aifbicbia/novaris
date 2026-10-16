@@ -1,0 +1,97 @@
+[
+  {
+    "finalAnswer": "Count the nontrivial cycles of cows moving to their target positions and take the greatest cycle length. If no cow moves, print 0 -1.",
+    "shortExplanation": "Carry a misplaced cow to her destination, continue with the displaced cow, and stop when the starting cow returns. Each such process fixes one entire cycle.",
+    "detailedSteps": [
+      "Record the target position of every cow using the desired ordering. Keep a mutable copy of the current ordering; already-correct cows need no shift.",
+      "At an incorrect position, hold its cow. Move her to her target position, saving the cow displaced there. Continue with that saved cow and count each move.",
+      "The destination map is a permutation. Following it returns to the starting cow within this cycle, rather than reaching another cycle. On return, every cow in the cycle has been put in its correct position.",
+      "Count this shift once and update the longest length. Later positions already fixed by it are skipped. The remaining misplaced positions belong to disjoint cycles, so each required shift is counted exactly once.",
+      "Fixed positions are cycles of length one in the permutation, but the source excludes them from actual shifts. If there is no nontrivial cycle, keep the longest-length output at -1.",
+      "Each misplaced cow moves once, giving $O(N)$ time and $O(N)$ storage. The source example has one three-cow cycle and one two-cow cycle, so it outputs 2 3.",
+      "**C++11 / C++17 implementation.** This historical task reads `reorder.in` and writes `reorder.out`.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <vector>\nvoid solveReorder(std::istream& in, std::ostream& out) {\n    int n; in >> n;\n    std::vector<int> current(n), desired(n), destination(n + 1);\n    for (int& cow : current) in >> cow;\n    for (int position = 0; position < n; ++position) {\n        in >> desired[position]; destination[desired[position]] = position;\n    }\n    int cycles = 0, longest = -1;\n    for (int position = 0; position < n; ++position) {\n        if (current[position] == desired[position]) continue;\n        int first = current[position], moving = first, length = 0;\n        do {\n            int target = destination[moving];\n            int displaced = current[target];\n            current[target] = moving;\n            moving = displaced;\n            ++length;\n        } while (moving != first);\n        ++cycles;\n        longest = std::max(longest, length);\n    }\n    out << cycles << ' ' << longest << '\\n';\n}\nint main() {\n    std::ifstream in(\"reorder.in\");\n    std::ofstream out(\"reorder.out\");\n    solveReorder(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A permutation decomposes into disjoint cycles.",
+      "Implement the actual carry-and-displace process.",
+      "Exclude already-correct cows from the shift count."
+    ],
+    "commonMistakes": [
+      "Counting fixed positions as cyclic shifts.",
+      "Confusing cow labels with row positions.",
+      "Reporting 0 as the longest length when no shift is needed."
+    ],
+    "alternativeMethods": [
+      "Build an undirected graph connecting each original position to its cow’s target position. Its components are the permutation cycles; count components with at least two vertices."
+    ],
+    "difficultyNotes": "The main distinction is between a cow’s label and her destination position; the cycle process itself is linear.",
+    "id": "solution-usaco-bronze-2014-march-p1",
+    "problemId": "usaco-bronze-2014-march-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort patches by coordinate and maximize the grass in a consecutive window whose coordinate span is at most 2K.",
+    "shortExplanation": "A location reaches an interval of radius K, hence width 2K. Positive grass amounts make the widest feasible sorted window ending at each patch the best one for that endpoint.",
+    "detailedSteps": [
+      "Read each patch as grass amount followed by coordinate, and sort by coordinate. The Bronze field is one-dimensional.",
+      "Patches from $x_{\\min}$ to $x_{\\max}$ fit within distance K of one location exactly when $x_{\\max}-x_{\\min}\\le2K$. Their possible centres form the nonempty interval $[x_{\\max}-K,\\,x_{\\min}+K]$. Its integer endpoints also guarantee an integer centre.",
+      "Maintain a left index, a right index and the running grass sum. Add the new rightmost patch. While its span from the leftmost patch exceeds 2K, subtract the leftmost amount and advance left.",
+      "The remaining left index is the earliest feasible start for this right endpoint. Every earlier start is too far away, and adding any feasible earlier patch would increase the sum because amounts are positive.",
+      "Every centre covers a consecutive sorted segment. Thus each optimal coverage is considered, or improved by the feasible window with the same right endpoint. Each maintained window also has a centre, proving that the maximum sum is attainable.",
+      "Boundary distance is inclusive: a span equal to 2K is allowed. Do not restrict centres to grass patches; in the sample, the best location is between patches and reaches a total of 11.",
+      "Sorting takes $O(N\\log N)$ time; both indices then advance at most N times. Storage is $O(N)$. The largest possible total is $100000\\cdot10000=10^9$; the code uses a convenient 64-bit running sum.",
+      "**C++11 / C++17 implementation.** This historical task reads `lazy.in` and writes `lazy.out`.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <utility>\n#include <vector>\nvoid solveLazy(std::istream& in, std::ostream& out) {\n    int n, k; in >> n >> k;\n    std::vector<std::pair<int, int>> patches(n);\n    for (auto& patch : patches) in >> patch.second >> patch.first;\n    std::sort(patches.begin(), patches.end());\n    int left = 0;\n    long long sum = 0, best = 0;\n    for (int right = 0; right < n; ++right) {\n        sum += patches[right].second;\n        while (static_cast<long long>(patches[right].first) - patches[left].first > 2LL * k) {\n            sum -= patches[left].second;\n            ++left;\n        }\n        best = std::max(best, sum);\n    }\n    out << best << '\\n';\n}\nint main() {\n    std::ifstream in(\"lazy.in\");\n    std::ofstream out(\"lazy.out\");\n    solveLazy(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Convert radius K into maximum patch span 2K.",
+      "Use positive weights and a running window sum.",
+      "Sort coordinates, preserving the grass amount paired with each one."
+    ],
+    "commonMistakes": [
+      "Using K as the whole window width.",
+      "Checking only centres that already contain grass.",
+      "Discarding endpoints exactly K steps away.",
+      "Reading the two patch fields in the wrong order."
+    ],
+    "alternativeMethods": [
+      "For small inputs, try every centre at a patch coordinate minus K or plus K and directly sum patches within absolute distance K. Moving any optimal covered set’s centre to its leftmost feasible endpoint proves that these candidates suffice."
+    ],
+    "difficultyNotes": "The geometric width argument is essential; once it is established, two monotone indices keep the scan simple.",
+    "id": "solution-usaco-bronze-2014-march-p2",
+    "problemId": "usaco-bronze-2014-march-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Count four-neighbor connected regions twice: once with R, G and B distinct, and once with R and G equivalent. Print human count first, cow count second.",
+    "shortExplanation": "A region is a connected component under the viewer’s color rules. Changing the perceived colors changes which neighboring cells connect, so each viewer needs a separate traversal.",
+    "detailedSteps": [
+      "For a human, neighboring cells match only when their letters are equal. For a cow, equal letters match and any R/G pair also matches; B remains separate.",
+      "Scan the grid with a fresh visited array. An unvisited cell starts a new region. Follow only matching north, east, south and west neighbors using an explicit stack.",
+      "Every reached cell has a compatible path from the starting cell. Conversely, every cell in that component is reached by following the successive edges of such a path. Therefore one traversal marks exactly one whole region.",
+      "Continue the scan, then repeat with a new visited array under the cow’s equivalence rule. Keep the original grid intact so the human view is not changed prematurely.",
+      "Each cell and its four possible neighboring edges are processed a constant number of times. Both counts take $O(N^2)$ time and $O(N^2)$ working space. An iterative stack also handles a full 100-by-100 connected region without recursive stack dependence.",
+      "Diagonal contact does not join regions. The source example’s two separate red regions remain separate for the human, while red/green connectivity reduces its count from 4 to 3 for the cow.",
+      "**C++11 / C++17 implementation.** This historical task reads `cowart.in` and writes `cowart.out`.\n\n```cpp\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <string>\n#include <utility>\n#include <vector>\nint regions(const std::vector<std::string>& grid, bool cow) {\n    int n = static_cast<int>(grid.size()), count = 0;\n    std::vector<std::vector<unsigned char>> seen(n, std::vector<unsigned char>(n, 0));\n    const int dr[] = {-1, 0, 1, 0}, dc[] = {0, 1, 0, -1};\n    for (int row = 0; row < n; ++row) {\n        for (int col = 0; col < n; ++col) {\n            if (seen[row][col]) continue;\n            ++count;\n            std::vector<std::pair<int, int>> stack{{row, col}};\n            seen[row][col] = 1;\n            while (!stack.empty()) {\n                auto cell = stack.back(); stack.pop_back();\n                for (int direction = 0; direction < 4; ++direction) {\n                    int r = cell.first + dr[direction], c = cell.second + dc[direction];\n                    if (r < 0 || r >= n || c < 0 || c >= n || seen[r][c]) continue;\n                    char a = grid[cell.first][cell.second], b = grid[r][c];\n                    if (a == b || (cow && a != 'B' && b != 'B')) {\n                        seen[r][c] = 1; stack.push_back({r, c});\n                    }\n                }\n            }\n        }\n    }\n    return count;\n}\nvoid solveCowArt(std::istream& in, std::ostream& out) {\n    int n; in >> n;\n    std::vector<std::string> grid(n);\n    for (std::string& row : grid) in >> row;\n    out << regions(grid, false) << ' ' << regions(grid, true) << '\\n';\n}\nint main() {\n    std::ifstream in(\"cowart.in\");\n    std::ofstream out(\"cowart.out\");\n    solveCowArt(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Define color equivalence before exploring connectivity.",
+      "Use only four face neighbors.",
+      "Reset visitation between the two viewpoints."
+    ],
+    "commonMistakes": [
+      "Joining cells diagonally.",
+      "Reusing the human visited array for the cow.",
+      "Merging blue with the red/green class."
+    ],
+    "alternativeMethods": [
+      "For each viewpoint, union every compatible right/down neighboring pair with disjoint sets and count the resulting components. This checks connectivity without flood traversal."
+    ],
+    "difficultyNotes": "The flood fill is standard; the important step is applying the correct color rule independently to both counts.",
+    "id": "solution-usaco-bronze-2014-march-p3",
+    "problemId": "usaco-bronze-2014-march-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

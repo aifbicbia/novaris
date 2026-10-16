@@ -1,0 +1,93 @@
+[
+  {
+    "finalAnswer": "Sort the three names within each record, count each resulting triple, and print the largest frequency.",
+    "shortExplanation": "The same group may appear in different name orders. Sorting each triple gives one representation for that group, so a frequency map identifies the most common group.",
+    "detailedSteps": [
+      "Read each hourly record as three separate names. Sort those three strings lexicographically, keeping all three tokens.",
+      "Use the sorted triple itself as the map key. Increment its count and update the maximum frequency. A structured triple avoids merging different names merely because their concatenated letters look the same.",
+      "Two records describe the same unordered group exactly when their sorted triples match. After any prefix of the input, the map therefore stores the true occurrence count for every group in that prefix. Updating the maximum after each increment proves that the final maximum is the requested answer.",
+      "With three names of length at most ten, sorting one group costs bounded constant work. The map gives $O(N\\log N)$ time and $O(N)$ storage. The answer is at most 1000. The sample group appears three times, so its output is 3.",
+      "**C++11 / C++17 implementation.** Read `records.in` and write `records.out` for this historical contest.\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    map<array<string, 3>, int> frequency;\n    int answer = 0;\n    for (int i = 0; i < n; ++i) {\n        array<string, 3> group;\n        for (int j = 0; j < 3; ++j) in >> group[j];\n        sort(group.begin(), group.end());\n        answer = max(answer, ++frequency[group]);\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ifstream in(\"records.in\");\n    ofstream out(\"records.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Use a canonical representation for an unordered group.",
+      "Store three names as a structured key and keep their frequency."
+    ],
+    "commonMistakes": [
+      "Counting different permutations of the same group separately.",
+      "Concatenating names without boundaries and creating key collisions.",
+      "Counting distinct groups instead of the largest group frequency."
+    ],
+    "alternativeMethods": [
+      "For small inputs, compare one record with every other record through all six permutations of its three names. This checks the unordered-group interpretation directly without a sorting map."
+    ],
+    "difficultyNotes": "The important step is making name order irrelevant while preserving the boundaries between names.",
+    "id": "solution-usaco-bronze-2013-december-p1",
+    "problemId": "usaco-bronze-2013-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each first and middle cow $X<Y$, count third-cow positions in the inclusive interval $[2Y-X,3Y-2X]$. Sum those counts.",
+    "shortExplanation": "Once the first two cows are fixed, the permitted second throw determines one interval for the third cow. Sorting positions lets two increasing pointers count that interval efficiently.",
+    "detailedSteps": [
+      "Sort the distinct cow positions. Fix the first cow at $X=p_i$ and the middle cow at $Y=p_j$ with $i<j$. The first throw has positive distance $d=Y-X$.",
+      "The source rule $d\\le Z-Y\\le 2d$ is equivalent to $2Y-X\\le Z\\le 3Y-2X$. Its lower endpoint is greater than $Y$, so every candidate in this interval is automatically to the right of the middle cow.",
+      "For a fixed $i$, scan $j$ from left to right. Both interval endpoints increase. Keep `left` at the first position at least the lower endpoint, and `right` at the first position greater than the upper endpoint. Advance them as needed, first raising `right` to `left` if the lower boundary has passed it.",
+      "The interval contains exactly `right - left` cows. The strict comparison for the lower boundary and inclusive comparison for the upper boundary keep both permitted equality cases. Add this count for every pair $i,j$.",
+      "Every valid physical triple has one unique ordering $X<Y<Z$, because positions are distinct. Its first two cows are visited once, and its third cow is counted precisely when the throw rule holds. This proves both completeness and no double counting.",
+      "Each pointer moves at most $N$ times for one first cow, so the scan takes $O(N^2)$ time after sorting, with $O(N)$ storage. `long long` is convenient, although the source bound of at most $\\binom{1000}{3}=166167000$ triples fits a signed 32-bit integer. The sample output is 4.",
+      "**C++11 / C++17 implementation.** Read `baseball.in` and write `baseball.out` for this historical contest.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    vector<long long> position(n);\n    for (int i = 0; i < n; ++i) in >> position[i];\n    sort(position.begin(), position.end());\n    long long answer = 0;\n    for (int i = 0; i + 2 < n; ++i) {\n        int left = i + 2, right = i + 2;\n        for (int j = i + 1; j + 1 < n; ++j) {\n            long long lower = 2 * position[j] - position[i];\n            long long upper = 3 * position[j] - 2 * position[i];\n            while (left < n && position[left] < lower) ++left;\n            right = max(right, left);\n            while (right < n && position[right] <= upper) ++right;\n            answer += right - left;\n        }\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ifstream in(\"baseball.in\");\n    ofstream out(\"baseball.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Translate the two throw distances into an interval for the third position.",
+      "For a fixed first cow, both interval boundaries move only to the right."
+    ],
+    "commonMistakes": [
+      "Assuming the input positions are already sorted.",
+      "Excluding the lower or upper distance equality.",
+      "Requiring the receiver to be the immediately next cow.",
+      "Letting the upper pointer remain behind the lower pointer."
+    ],
+    "alternativeMethods": [
+      "For each first and last cow $X<Z$, count middle positions in $[\\lceil(Z+2X)/3\\rceil,\\lfloor(Z+X)/2\\rfloor]$ using binary searches. This gives a separate $O(N^2\\log N)$ check."
+    ],
+    "difficultyNotes": "The main observation is that the third-cow range moves monotonically as the middle cow moves right.",
+    "id": "solution-usaco-bronze-2013-december-p2",
+    "problemId": "usaco-bronze-2013-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate every undirected perfect pairing once, and count the pairings whose rightward walk and teleport transitions contain a cycle.",
+    "shortExplanation": "A fixed pairing makes the next wormhole exit deterministic. Test that finite transition system for a cycle, and repeat the test for every distinct pairing.",
+    "detailedSteps": [
+      "For each wormhole, find the nearest wormhole strictly to its right on the same horizontal row. If none exists, a cow emerging there walks away and escapes. Input order is irrelevant, so check the actual coordinates.",
+      "Use the state just after Bessie emerges from wormhole $i$. She walks to `next_right[i]`, enters it, and emerges at its mate. Thus the next exit state is `mate[next_right[i]]`, or escape if there is no rightward entrance. Emerging does not immediately trigger the exit again; the original two-hole example confirms that she continues walking right.",
+      "For a completed pairing, try all $N$ exit states. Follow at most $N$ transitions from each. If one walk still has a wormhole state after those transitions, its $N+1$ visited states repeat one of the $N$ states, so it cycles forever. If every walk escapes, there is no cycle.",
+      "This detects exactly an unlucky real starting position. Any infinite physical path eventually repeats an exit state. Conversely, for a transition on a detected cycle, choose a starting point strictly between its exit and the next rightward entrance. The cow enters that entrance and reaches the next cycle exit, then stays in the cycle. No assumption about starting exactly on a wormhole is needed.",
+      "Generate pairings by selecting the first unpaired wormhole and trying each remaining unpaired wormhole as its partner. Recursively pair the rest, then undo the selected pair. Every complete pairing has one unique partner for the first unpaired index, so this generates all pairings exactly once.",
+      "There are $(N-1)!!$ complete pairings, at most 10395 when $N=12$. Testing all starts costs $O(N^2)$ per pairing, giving $O((N-1)!!N^2)$ time and $O(N)$ storage. Count a trapping pairing once, even if it has several cycles or many unlucky starting points. The source square sample has two trapping pairings.",
+      "**C++11 / C++17 implementation.** Read `wormhole.in` and write `wormhole.out` for this historical contest.\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <vector>\nusing namespace std;\nstruct Point { long long x, y; };\nstruct PairingCounter {\n    int n;\n    vector<Point> points;\n    vector<int> mate, next_right;\n    bool has_cycle() const {\n        for (int start = 0; start < n; ++start) {\n            int exit = start;\n            for (int steps = 0; steps < n && exit != -1; ++steps) {\n                int entry = next_right[exit];\n                exit = entry == -1 ? -1 : mate[entry];\n            }\n            if (exit != -1) return true;\n        }\n        return false;\n    }\n    int count() {\n        int first = 0;\n        while (first < n && mate[first] != -1) ++first;\n        if (first == n) return has_cycle() ? 1 : 0;\n        int answer = 0;\n        for (int other = first + 1; other < n; ++other) {\n            if (mate[other] != -1) continue;\n            mate[first] = other;\n            mate[other] = first;\n            answer += count();\n            mate[first] = mate[other] = -1;\n        }\n        return answer;\n    }\n};\nvoid solve(istream& in, ostream& out) {\n    PairingCounter counter;\n    in >> counter.n;\n    counter.points.resize(counter.n);\n    counter.mate.assign(counter.n, -1);\n    counter.next_right.assign(counter.n, -1);\n    for (int i = 0; i < counter.n; ++i) in >> counter.points[i].x >> counter.points[i].y;\n    for (int i = 0; i < counter.n; ++i) {\n        for (int j = 0; j < counter.n; ++j) {\n            if (counter.points[j].y != counter.points[i].y\n                || counter.points[j].x <= counter.points[i].x) continue;\n            int nearest = counter.next_right[i];\n            if (nearest == -1 || counter.points[j].x < counter.points[nearest].x)\n                counter.next_right[i] = j;\n        }\n    }\n    out << counter.count() << '\\n';\n}\nint main() {\n    ifstream in(\"wormhole.in\");\n    ofstream out(\"wormhole.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A fixed pairing creates a deterministic partial function on wormhole exit states.",
+      "A surviving walk through more states than exist must repeat and cycle.",
+      "Pair the first unpaired index to avoid counting the same matching in different orders."
+    ],
+    "commonMistakes": [
+      "Using any rightward wormhole instead of the nearest one on the same row.",
+      "Teleporting again immediately at the exit instead of continuing right.",
+      "Counting cycles or starting positions instead of distinct pairings.",
+      "Generating the same matching repeatedly by changing pair order."
+    ],
+    "alternativeMethods": [
+      "For small geometries, generate pairings from permutations and deduplicate their unordered pair sets. Simulate actual rightward rays and teleport arrivals from fractional row starting points, stopping on escape or a repeated entrance. This independently checks the state model."
+    ],
+    "difficultyNotes": "Both the complete pairing enumeration and the connection between a graph cycle and a real starting position need justification.",
+    "id": "solution-usaco-bronze-2013-december-p3",
+    "problemId": "usaco-bronze-2013-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

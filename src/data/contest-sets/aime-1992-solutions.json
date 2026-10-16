@@ -1,0 +1,323 @@
+[
+  {
+    "id": "solution-aime-1992-p1",
+    "problemId": "aime-1992-p1",
+    "finalAnswer": "$\\boxed{400}$",
+    "shortExplanation": "Eighty eligible fractions form forty pairs, each summing to 10.",
+    "detailedSteps": [
+      "The fractions are n/30 with $1\\le n\\le299$ and gcd(n,30)=1. In each block of 30 there are eight eligible residues 1,7,11,13,17,19,23,29. Across ten blocks there are 80 fractions.",
+      "Pair numerator n with 300-n. This preserves coprimality and stays within the range. No pair is fixed, since 150 is not coprime to 30.",
+      "Each pair sums to 300/30=10, so the total is 40 times 10, or 400."
+    ],
+    "keyIdeas": [
+      "Pairing fractions with a complementary numerator"
+    ],
+    "commonMistakes": [
+      "Summing unreduced fractions whose true denominators are smaller than 30."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complement pairing bypasses a long arithmetic sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p2",
+    "problemId": "aime-1992-p2",
+    "finalAnswer": "$\\boxed{502}$",
+    "shortExplanation": "Choose any subset of 1 through 9 with at least two members.",
+    "detailedSteps": [
+      "Zero cannot occur: in a strictly increasing digit list it would have to lead, which is forbidden. No digit repeats.",
+      "Every subset of the nine nonzero digits gives exactly one increasing arrangement. Excluding the empty subset and nine singletons leaves $2^9-1-9=502$ numbers."
+    ],
+    "keyIdeas": [
+      "Increasing-digit numbers as nonzero digit subsets"
+    ],
+    "commonMistakes": [
+      "Including digit 0 or multiplying by permutations of the chosen digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The increasing order is forced once the digits are selected.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p3",
+    "problemId": "aime-1992-p3",
+    "finalAnswer": "$\\boxed{164}$",
+    "shortExplanation": "The inequality gives fewer than 164 and 2/3 initial wins, so the maximum integer is 164.",
+    "detailedSteps": [
+      "If the initial wins are w, the initial match total is 2 w. After the weekend the ratio is $(w+3)/(2w+4)$.",
+      "The strict bound gives $1000(w+3)>503(2w+4)$, or $988>6w$. Thus $w<164+2/3$.",
+      "The maximum integer 164 satisfies the strict ratio, while 165 does not."
+    ],
+    "keyIdeas": [
+      "A strict win-rate threshold"
+    ],
+    "commonMistakes": [
+      "Rounding the upper bound upward despite the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the strict comparison until the final integer step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p4",
+    "problemId": "aime-1992-p4",
+    "finalAnswer": "$\\boxed{062}$",
+    "shortExplanation": "The first index is 26 and the row number is 62.",
+    "detailedSteps": [
+      "Write the three entries as $\\binom nk,\\binom n{k+1},\\binom n{k+2}$. The consecutive ratios give $(n-k)/(k+1)=4/3$ and $(n-k-1)/(k+2)=5/4$.",
+      "Equivalently $3n=7k+4$ and $4n=9k+14$. Multiply these by 4 and 3 to eliminate n: $k=26$, then $n=62$.",
+      "The source numbers the top row 0, so the requested row is 62. Exact binomial values at indices 26,27,28 have ratio 3:4:5."
+    ],
+    "keyIdeas": [
+      "Ratios of consecutive binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Adding 1 to the row index despite the shown zero-based numbering."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adjacent binomial ratios turn the search into two linear equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p5",
+    "problemId": "aime-1992-p5",
+    "finalAnswer": "$\\boxed{660}$",
+    "shortExplanation": "There are 648 numerators coprime to 999 and twelve additional multiples of 3 below 37.",
+    "detailedSteps": [
+      "Every repeated three-digit block represents N/999 for 1 through 998, with $999=3^3\\cdot37$. Its reduced denominator must divide 999, and its positive numerator must be smaller than that denominator and coprime to it.",
+      "Every numerator below 999 coprime to 999 occurs with denominator 999. There are $\\varphi(999)=18\\cdot36=648$ such numerators.",
+      "If a numerator is divisible by 3 but not 37, its denominator can contain no 3, so its largest possible denominator is 37. Exactly 3,6,...,36 give twelve extra numerators, each realized with denominator 37.",
+      "If a numerator is divisible by 37 but not 3, its denominator is at most 27, too small. If it is divisible by both primes, no denominator greater than it is available. Thus there are 648+12=660 distinct numerators."
+    ],
+    "keyIdeas": [
+      "Classifying reduced numerators by omitted denominator primes"
+    ],
+    "commonMistakes": [
+      "Counting distinct reduced fractions rather than distinct numerators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classify the numerator by the primes it prevents the denominator from using.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p6",
+    "problemId": "aime-1992-p6",
+    "finalAnswer": "$\\boxed{156}$",
+    "shortExplanation": "The four trailing-nine cases contribute 125,25,5,1.",
+    "detailedSteps": [
+      "Let n be the smaller integer, so 1000 through 1999 are possible. If its units digit is 0 through 4, adding n and n+1 requires tens and hundreds digits also 0 through 4. This gives 5 cubed, or 125 cases.",
+      "If the units digit is 9 but the tens digit is not 9, the units sum is 9 and the increment enters only the tens digit of n+1. The tens digit may be 0 through 4, and the hundreds digit 0 through 4, giving 25 cases.",
+      "If the last two digits are 99 but the hundreds digit is not 9, that hundreds digit may be 0 through 4, giving 5 cases. Finally 1999+2000 has digitwise sums 3,9,9,9, so it contributes one case.",
+      "These disjoint cases exhaust the increment patterns, giving 125+25+5+1=156."
+    ],
+    "keyIdeas": [
+      "No-carry addition split by trailing nines"
+    ],
+    "commonMistakes": [
+      "Excluding pairs involving a trailing 9 merely because the increment itself carries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A carry in forming the successor is different from a carry when adding the pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p7",
+    "problemId": "aime-1992-p7",
+    "finalAnswer": "$\\boxed{320}$",
+    "shortExplanation": "The second face altitude is 16 and its height above the first face is 8.",
+    "detailedSteps": [
+      "The altitude of D above line BC within face BCD is $2\\cdot80/10=16$. The angle between the face planes is 30 degrees, so the perpendicular height of D above plane ABC is $16\\sin30^\\circ=8$.",
+      "Using ABC as base, the tetrahedron volume is $(1/3)(120)(8)=320$."
+    ],
+    "keyIdeas": [
+      "A dihedral angle converts a face altitude into pyramid height"
+    ],
+    "commonMistakes": [
+      "Using the whole face altitude 16 as the tetrahedron height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Measure both altitudes perpendicular to the common edge.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p8",
+    "problemId": "aime-1992-p8",
+    "finalAnswer": "$\\boxed{819}$",
+    "shortExplanation": "The sequence is $a_n=(n-19)(n-92)/2$, giving 819 at its first term.",
+    "detailedSteps": [
+      "Constant second difference 1 implies that the sequence values are a quadratic polynomial in n with leading coefficient 1/2. This follows by summing the arithmetic progression of first differences.",
+      "The zeros at  $n=19$ and $n=92$ therefore determine the polynomial $a_n=(n-19)(n-92)/2$.",
+      "At $n=1$, the value is $(-18)(-91)/2=819$."
+    ],
+    "keyIdeas": [
+      "A quadratic sequence from constant second differences"
+    ],
+    "commonMistakes": [
+      "Assigning leading coefficient 1 instead of 1/2 for second difference 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Known zeros determine the quadratic once its leading coefficient is fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p9",
+    "problemId": "aime-1992-p9",
+    "finalAnswer": "$\\boxed{164}$",
+    "shortExplanation": "The center satisfies $AP/70=PB/50$, giving AP 161/3.",
+    "detailedSteps": [
+      "Let the trapezoid height be h and put AP=p. The area of triangle APD, divided by its base AD, gives the perpendicular distance from P to AD as ph/70.",
+      "The analogous distance from P to BC is(92-p)h/50. Tangency to both sides requires these positive distances equal, so $p/70=(92-p)/50$.",
+      "Solve $120p=6440$ to obtain $p=161/3$. To check segment tangency, place $A=(0,0),B=(92,0),D=(u,h),C=(u+19,h)$. The leg equations give $u=7729/146$ and $h^2=4900-u^2>0$. The projection parameters from A on AD and from B on BC are respectively $pu/4900$ and $(92-p)(73-u)/2500$; both lie strictly between 0 and 1. Thus the equal-distance circle touches the actual segments. The reduced numerator-denominator sum is 161+3=164."
+    ],
+    "keyIdeas": [
+      "Equidistance from two trapezoid legs"
+    ],
+    "commonMistakes": [
+      "Equating distances to the endpoints rather than perpendicular distances to the legs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Triangle areas express the two line distances without solving the whole trapezoid first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p10",
+    "problemId": "aime-1992-p10",
+    "finalAnswer": "$\\boxed{572}$",
+    "shortExplanation": "The area is $1200-200\\pi$, whose nearest integer is 572.",
+    "detailedSteps": [
+      "Write $z=40(u+iv)$. The source uses $40/\\overline z$, with a conjugate in the denominator. Both normalized components $u,v$ lie between $0$ and $1$, and $40/\\overline z=(u+iv)/(u^2+v^2)$.",
+      "The reciprocal component bounds require $u^2+v^2\\ge u$ and $u^2+v^2\\ge v$. Within the unit square, the permitted points therefore lie outside the radius-$1/2$ disks centered at $(1/2,0)$ and $(0,1/2)$. The undefined origin is excluded and has zero area.",
+      "Each disk contributes a half-disk of area $\\pi/8$ within the square. Their overlap is a lens of two $90^\\circ$ sectors minus two right triangles, with area $\\pi/8-1/4$.",
+      "The excluded union has area $\\pi/4-(\\pi/8-1/4)=\\pi/8+1/4$. Thus the allowed normalized area is $3/4-\\pi/8$.",
+      "Scaling by $40^2$ gives $1200-200\\pi\\approx571.68147$, whose nearest integer is $572$."
+    ],
+    "keyIdeas": [
+      "An inversion condition removes two overlapping half-disks"
+    ],
+    "commonMistakes": [
+      "Missing the conjugation bar and incorrectly forcing the imaginary part to zero."
+    ],
+    "alternativeMethods": [
+      "In normalized polar coordinates, the allowed radius lies between $\\max(\\cos\\theta,\\sin\\theta)$ and its reciprocal for $0\\le\\theta\\le\\pi/2$. Symmetry reduces the area to $\\int_0^{\\pi/4}(\\sec^2\\theta-\\cos^2\\theta)\\,d\\theta=3/4-\\pi/8$. Scaling by $40^2$ gives the same result."
+    ],
+    "difficultyNotes": "Read the conjugate carefully before translating the complex conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p11",
+    "problemId": "aime-1992-p11",
+    "finalAnswer": "$\\boxed{945}$",
+    "shortExplanation": "The rotation angle is 8 pi/945, and line directions repeat modulo pi.",
+    "detailedSteps": [
+      "Reflection in a line at angle alpha sends direction theta to 2 alpha-theta. The two reflections therefore add $2(\\pi/54-\\pi/70)=8\\pi/945$ to the line direction.",
+      "An unoriented line returns to itself when the total rotation is an integer multiple of pi. Hence $8m/945$ must be an integer.",
+      "Because gcd(8,945)=1, the least positive m is 945. The initial slope does not affect the period."
+    ],
+    "keyIdeas": [
+      "Two reflections rotate an unoriented line"
+    ],
+    "commonMistakes": [
+      "Requiring a full 2 pi rotation even though a line is unoriented."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Composition of reflections converts the iteration to modular angle arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p12",
+    "problemId": "aime-1992-p12",
+    "finalAnswer": "$\\boxed{792}$",
+    "shortExplanation": "The boundary is a monotone path with five vertical and seven horizontal steps, giving 792.",
+    "detailedSteps": [
+      "Every remaining square set is closed downward and leftward: if a square remains, every square below or to its left also remains, because each bite removes an upper-right quadrant.",
+      "Conversely, every such lower-left shape is attainable. Prescribe its row lengths from top to bottom and remove the unwanted suffix of each row in that order; later lower-row bites cannot remove any prescribed retained square in a shorter higher row.",
+      "The separating boundary is a monotone path consisting of five vertical and seven horizontal steps. Each ordering corresponds uniquely to one remaining shape, including the full and empty boards.",
+      "The count is $\\binom{12}{5}=792$."
+    ],
+    "keyIdeas": [
+      "Chomp positions are monotone lower-left shapes"
+    ],
+    "commonMistakes": [
+      "Counting arbitrary subsets of the 35 squares rather than only shapes reachable by quadrant bites."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove both closure and attainability before using the boundary-path count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p13",
+    "problemId": "aime-1992-p13",
+    "finalAnswer": "$\\boxed{820}$",
+    "shortExplanation": "The circle of possible third vertices has radius 1640/9, making the maximum area 820.",
+    "detailedSteps": [
+      "Place A at(0,0) and B at(9,0), and write C=(x,y). The ratio condition gives $41^2((x-9)^2+y^2)=40^2(x^2+y^2)$.",
+      "Completing the square yields $(x-1681/9)^2+y^2=(1640/9)^2$. Thus the largest possible absolute altitude above AB is 1640/9, attained at the top or bottom of this circle.",
+      "The maximum area is $(9/2)(1640/9)=820$. These extremal points have nonzero altitude and satisfy the ratio, so genuine triangles attain the bound."
+    ],
+    "keyIdeas": [
+      "A side-ratio locus is an Apollonius circle"
+    ],
+    "commonMistakes": [
+      "Assuming the triangle of largest area must be right-angled."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed side ratio and a fixed base constrain the third vertex to a circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p14",
+    "problemId": "aime-1992-p14",
+    "finalAnswer": "$\\boxed{094}$",
+    "shortExplanation": "For the three ratios a,b,c, barycentric weights give abc=a+b+c+2=94.",
+    "detailedSteps": [
+      "Write a,b,c for the three vertex-to-O divided by O-to-opposite-side ratios. The barycentric weights of A,B,C at O are respectively 1/(a+1),1/(b+1),1/(c+1), and their sum is 1.",
+      "Multiply the identity by(a+1)(b+1)(c+1). The left side expands to $ab+bc+ca+2(a+b+c)+3$, while the right side is $abc+ab+bc+ca+(a+b+c)+1$.",
+      "Cancelling gives abc=a+b+c+2. The given sum 92 therefore gives product 94."
+    ],
+    "keyIdeas": [
+      "Three concurrent cevian ratios satisfy a product identity"
+    ],
+    "commonMistakes": [
+      "Using the complementary ratios or confusing whole-cevian lengths with the two parts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Concurrency is encoded by affine weights, not three independent ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1992-p15",
+    "problemId": "aime-1992-p15",
+    "finalAnswer": "$\\boxed{396}$",
+    "shortExplanation": "There are 1595 attainable positive tail lengths below 1992, leaving 396 missing.",
+    "detailedSteps": [
+      "The number of trailing zeros of $m!$ is its exponent of $5$, namely $T(m)=\\lfloor m/5\\rfloor+\\lfloor m/25\\rfloor+\\cdots$. Put $q=\\lfloor m/5\\rfloor$. Then $T(m)=q+T(q)$.",
+      "As q runs through nonnegative integers, q+T(q) increases strictly, so each q gives one distinct tail length. Every q is realized by $m=5q$.",
+      "At $q=1595$, $T(q)=319+63+12+2=396$, so the tail length is 1991. At $q=1596$ it is 1992. Thus precisely $q=1$ through 1595 give positive tail lengths below 1992.",
+      "There are 1991 positive integers below 1992. Subtract the 1595 attained values to obtain 396 non-tails."
+    ],
+    "keyIdeas": [
+      "Counting the distinct values of factorial valuations"
+    ],
+    "commonMistakes": [
+      "Assuming every integer number of trailing zeros appears because the valuation is nondecreasing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parameterize by floor(m/5) to remove repetitions and expose the jumps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

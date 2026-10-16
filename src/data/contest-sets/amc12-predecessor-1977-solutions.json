@@ -1,0 +1,627 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1977-p1",
+    "problemId": "amc12-predecessor-1977-p1",
+    "finalAnswer": "$\\boxed{7x}$ (choice D)",
+    "shortExplanation": "The two substitutions give $y=2x$ and $z=4x$, so the sum is $7x$.",
+    "detailedSteps": [
+      "First use $y=2x$. Then $z=2y=2(2x)=4x$.",
+      "Adding the three terms gives $x+2x+4x=7x$."
+    ],
+    "keyIdeas": [
+      "Substitute through both linked equations."
+    ],
+    "commonMistakes": [
+      "Treating $z$ as another $2x$ skips the second substitution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two direct substitutions suffice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p2",
+    "problemId": "amc12-predecessor-1977-p2",
+    "finalAnswer": "$\\boxed{\\text{not all congruent}}$ (choice D)",
+    "shortExplanation": "Equilateral triangles can have different side lengths, so they need not be congruent.",
+    "detailedSteps": [
+      "An equilateral triangle has three equal angles, each $60^\\circ$, and at least two equal sides. It is therefore equiangular, isosceles and a regular polygon.",
+      "Any two equilateral triangles are similar by their three equal angles. However, examples with side lengths one and two are not congruent because their corresponding side lengths differ.",
+      "Thus the claim that all are congruent to each other is false."
+    ],
+    "keyIdeas": [
+      "Distinguish a common shape from a common size."
+    ],
+    "commonMistakes": [
+      "Confusing similarity with congruence, or excluding equilateral triangles from the inclusive definition of isosceles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Congruence requires the same size as well as the same shape.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p3",
+    "problemId": "amc12-predecessor-1977-p3",
+    "finalAnswer": "$\\boxed{15}$ (choice E)",
+    "shortExplanation": "One of each coin is worth $91$ cents; there are three such groups and fifteen coins.",
+    "detailedSteps": [
+      "A group containing one penny, nickel, dime, quarter and half dollar has value $1+5+10+25+50=91$ cents.",
+      "The amount is $273$ cents, so the equal number of each denomination is $273/91=3$. With five denominations, the total count is $5\\cdot3=15$."
+    ],
+    "keyIdeas": [
+      "Group equal numbers of the five denominations."
+    ],
+    "commonMistakes": [
+      "Reporting the number of each denomination instead of the total number of coins."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Converting the amount to cents keeps every calculation integral.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p4",
+    "problemId": "amc12-predecessor-1977-p4",
+    "finalAnswer": "$\\boxed{50^\\circ}$ (choice C)",
+    "shortExplanation": "The two smaller isosceles triangles each contribute a $65^\\circ$ angle at $D$, leaving $50^\\circ$.",
+    "detailedSteps": [
+      "The equal sides $AB=AC$ and vertex angle $80^\\circ$ give base angles $B=C=(180-80)/2=50^\\circ$.",
+      "In triangle $CDE$, the equal sides $CE=CD$ make the two remaining angles $65^\\circ$. In triangle $BDF$, the relation $BF=BD$ gives the same angle at $D$.",
+      "These two angles and $\\angle EDF$ fill the straight angle above $BC$. Hence $\\angle EDF=180-65-65=50^\\circ$."
+    ],
+    "keyIdeas": [
+      "Use both small isosceles triangles along the base."
+    ],
+    "commonMistakes": [
+      "Using a small triangle’s vertex angle as its base angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual side-point positions determine which angles form the straight angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p5",
+    "problemId": "amc12-predecessor-1977-p5",
+    "finalAnswer": "$\\boxed{\\text{the closed segment }AB}$ (choice A)",
+    "shortExplanation": "Equality in the triangle inequality holds exactly on the segment joining the two fixed points.",
+    "detailedSteps": [
+      "The triangle inequality gives $PA+PB\\ge AB$. If $P$ lies between $A$ and $B$, including either endpoint, the distances add to exactly $AB$.",
+      "Conversely, equality requires the two directed pieces from $A$ to $P$ to $B$ to lie on the same straight segment with no reversal. A collinear point outside the segment would add extra distance. Thus the full locus is the closed segment $AB$."
+    ],
+    "keyIdeas": [
+      "Use the equality condition of the triangle inequality."
+    ],
+    "commonMistakes": [
+      "Including the entire supporting line, whose points beyond the endpoints give a larger sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is the degenerate boundary of the usual ellipse construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p6",
+    "problemId": "amc12-predecessor-1977-p6",
+    "finalAnswer": "$\\boxed{\\frac1{xy}}$ (choice D)",
+    "shortExplanation": "Writing the two summands as $u=2x$ and $v=y/2$ makes the expression $1/(uv)=1/(xy)$.",
+    "detailedSteps": [
+      "Put $u=2x$ and $v=y/2$. The stated exclusions ensure $u$, $v$ and $u+v$ are nonzero.",
+      "Then $(u+v)^{-1}(u^{-1}+v^{-1})=\\frac1{u+v}\\cdot\\frac{u+v}{uv}=\\frac1{uv}$. Since $uv=(2x)(y/2)=xy$, the value is $1/(xy)$."
+    ],
+    "keyIdeas": [
+      "Combine the reciprocal sum before cancelling."
+    ],
+    "commonMistakes": [
+      "Cancelling one term of a sum, or forgetting the nonzero condition for its full denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source exclusions make the cancellation valid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p7",
+    "problemId": "amc12-predecessor-1977-p7",
+    "finalAnswer": "$\\boxed{-(1+\\sqrt[4]{2})(1+\\sqrt2)}$ (choice E)",
+    "shortExplanation": "Two successive conjugate factors rationalize the fourth-root denominator and produce a minus sign.",
+    "detailedSteps": [
+      "Let $r=\\sqrt[4]{2}$, so $r^2=\\sqrt2$ and $r^4=2$. Multiplying $1-r$ by $1+r$ gives $1-r^2$.",
+      "A further factor $1+r^2$ makes the product $(1-r^2)(1+r^2)=1-r^4=-1$.",
+      "Therefore $(1-r)\\bigl(-(1+r)(1+r^2)\\bigr)=1$, and the reciprocal is $-(1+\\sqrt[4]{2})(1+\\sqrt2)$."
+    ],
+    "keyIdeas": [
+      "Rationalize in two stages, squaring the radical each time."
+    ],
+    "commonMistakes": [
+      "Losing the negative sign when the final difference is $1-2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator is negative, providing a useful sign check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p8",
+    "problemId": "amc12-predecessor-1977-p8",
+    "finalAnswer": "$\\boxed{\\{-4,0,4\\}}$ (choice B)",
+    "shortExplanation": "All positive signs give four, all negative signs give minus four, and every mixed pattern gives zero.",
+    "detailedSteps": [
+      "For a nonzero real number, division by its absolute value gives its sign. Let the three signs be $\\varepsilon,\\eta,\\zeta\\in\\{-1,1\\}$; the final term has sign $\\varepsilon\\eta\\zeta$.",
+      "With zero negative signs the sum is four; with three it is minus four. With one negative sign, the first three sum to one and their product is minus one. With two, the first three sum to minus one and their product is one.",
+      "Every mixed pattern therefore gives zero. All three results occur, so the exact set is $\\{-4,0,4\\}$."
+    ],
+    "keyIdeas": [
+      "Reduce nonzero real numbers to their signs."
+    ],
+    "commonMistakes": [
+      "Treating the product’s sign as independent of the signs of its three factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The eight sign triples are exhausted by the number of negative factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p9",
+    "problemId": "amc12-predecessor-1977-p9",
+    "finalAnswer": "$\\boxed{15^\\circ}$ (choice B)",
+    "shortExplanation": "The remaining arc $AD$ is $30^\\circ$, and the inscribed angle intercepting it is half that.",
+    "detailedSteps": [
+      "Let each of the three equal displayed arcs $AB$, $BC$ and $CD$ have measure $t$. The remaining arc $AD$ then measures $360^\\circ-3t$.",
+      "For the two secants from $E$, the external-angle formula gives $40=(t-(360-3t))/2$. Thus $t=110^\\circ$ and the remaining arc is $30^\\circ$.",
+      "The angle $ACD$ is an inscribed angle intercepting the arc $AD$ that does not contain $C$. Consequently it equals $30/2=15^\\circ$."
+    ],
+    "keyIdeas": [
+      "Combine the exterior-secant and inscribed-angle formulas."
+    ],
+    "commonMistakes": [
+      "Taking the sum of the intercepted arcs when the exterior angle uses their difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Follow the actual circular order of the four points.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p10",
+    "problemId": "amc12-predecessor-1977-p10",
+    "finalAnswer": "$\\boxed{128}$ (choice E)",
+    "shortExplanation": "Substitution of $x=1$ sums the coefficients and gives $(3-1)^7=128$.",
+    "detailedSteps": [
+      "For a polynomial written in powers of $x$, evaluating at one replaces every power by one and sums all coefficients.",
+      "Therefore the requested sum is $(3\\cdot1-1)^7=2^7=128$."
+    ],
+    "keyIdeas": [
+      "Use evaluation instead of expanding the binomial."
+    ],
+    "commonMistakes": [
+      "Using $x=-1$, which gives an alternating coefficient sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A coefficient sum is often a one-step polynomial evaluation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p11",
+    "problemId": "amc12-predecessor-1977-p11",
+    "finalAnswer": "$\\boxed{\\text{I only}}$ (choice B)",
+    "shortExplanation": "Integer translation preserves the floor; addition and multiplication have counterexamples.",
+    "detailedSteps": [
+      "If $n\\le x<n+1$, then $n+1\\le x+1<n+2$. Hence $\\lfloor x+1\\rfloor=\\lfloor x\\rfloor+1$ for every real $x$.",
+      "For $x=y=3/5$, the floor of the sum is one, while the sum of the two floors is zero. Thus statement II fails.",
+      "For $x=y=3/2$, the floor of the product is two, while the product of the floors is one. Thus III also fails, leaving only I."
+    ],
+    "keyIdeas": [
+      "Prove the translation law and use precise counterexamples for the other two laws."
+    ],
+    "commonMistakes": [
+      "Assuming the floor distributes over addition or multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One counterexample refutes a statement asserted for all real inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p12",
+    "problemId": "amc12-predecessor-1977-p12",
+    "finalAnswer": "$\\boxed{102}$ (choice D)",
+    "shortExplanation": "The difference of squares equals sixteen times the requested total, so the total is $1632/16=102$.",
+    "detailedSteps": [
+      "Let $S$ be the sum of Bob’s and Carl’s ages, and let $A$ be Al’s age. The two statements give $A-S=16$ and $A^2-S^2=1632$.",
+      "Factor the second equation: $(A-S)(A+S)=1632$. Substituting the difference gives $16(A+S)=1632$, so the sum of all three ages is $A+S=102$."
+    ],
+    "keyIdeas": [
+      "Factor the difference of squares around the requested sum."
+    ],
+    "commonMistakes": [
+      "Replacing the square of Bob’s and Carl’s sum by the sum of their separate squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The individual ages of Bob and Carl are unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p13",
+    "problemId": "amc12-predecessor-1977-p13",
+    "finalAnswer": "$\\boxed{a_1=a_2=1}$ (choice E)",
+    "shortExplanation": "The first three successive ratios force both initial terms and the common ratio to equal one.",
+    "detailedSteps": [
+      "Suppose the positive sequence is geometric with common ratio $q$. The recurrence gives $a_3/a_2=a_1$ and $a_4/a_3=a_2$, so both $a_1$ and $a_2$ must equal $q$.",
+      "Then the first ratio $a_2/a_1$ equals one, forcing $q=1$ and $a_1=a_2=1$. Positivity permits every division.",
+      "Conversely, these initial values make every term one by the recurrence. This sequence is geometric, establishing both directions."
+    ],
+    "keyIdeas": [
+      "Compare the first few ratios, rather than merely comparing two terms."
+    ],
+    "commonMistakes": [
+      "Assuming equal initial terms guarantee a geometric progression under this multiplicative recurrence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An if-and-only-if statement needs necessity and sufficiency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p14",
+    "problemId": "amc12-predecessor-1977-p14",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The equation becomes $(m-1)(n-1)=1$, giving only $(0,0)$ and $(2,2)$.",
+    "detailedSteps": [
+      "Rearrange $m+n=mn$ to $mn-m-n+1=1$, or $(m-1)(n-1)=1$.",
+      "The integer factor pairs of one are $(1,1)$ and $(-1,-1)$. They give $(m,n)=(2,2)$ and $(0,0)$ respectively, so the number of pairs is two."
+    ],
+    "keyIdeas": [
+      "Complete a product and enumerate integer factors of one."
+    ],
+    "commonMistakes": [
+      "Adding a positivity condition that the original integer variables do not have."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integer factorization makes the list exhaustive without a search bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p15",
+    "problemId": "amc12-predecessor-1977-p15",
+    "finalAnswer": "$\\boxed{18+18\\sqrt3}$ (choice D)",
+    "shortExplanation": "The circle centers form an equilateral triangle of side six; an outward offset of three adds $6\\sqrt3$ to each side.",
+    "detailedSteps": [
+      "Mutual external tangency of equal radius-three circles makes their center distances six. Their three centers therefore form an equilateral triangle of side six.",
+      "Each containing triangle side is the outer common tangent to the two corresponding circles, parallel to their center segment and at perpendicular distance three. The three side directions remain equilateral.",
+      "At each $60^\\circ$ corner, shifting both sides outward by three extends either end of a side by $3\\cot30^\\circ=3\\sqrt3$. Thus the outer side is $6+6\\sqrt3$, and the perimeter is $3(6+6\\sqrt3)=18+18\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Offset the equilateral center triangle to its common outer tangents."
+    ],
+    "commonMistakes": [
+      "Using the center triangle’s side length as the containing triangle’s side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original diagram selects the outer enclosing tangents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p16",
+    "problemId": "amc12-predecessor-1977-p16",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt2}{2}(21-20i)}$ (choice D)",
+    "shortExplanation": "The even-indexed terms each give $\\sqrt2/2$ and the odd-indexed terms each give $-i\\sqrt2/2$.",
+    "detailedSteps": [
+      "For even $n=2k$, the factor $i^{2k}=(-1)^k$ cancels the same sign in $\\cos(45+180k)^\\circ$, leaving $\\sqrt2/2$.",
+      "For odd $n=2k+1$, the cosine equals $(-1)^{k+1}\\sqrt2/2$ and $i^{2k+1}=i(-1)^k$. Their product is $-i\\sqrt2/2$.",
+      "The indices run from zero through forty, giving twenty-one even terms and twenty odd terms. Their sum is $\\frac{\\sqrt2}{2}(21-20i)$."
+    ],
+    "keyIdeas": [
+      "Group terms by parity and keep the zero index."
+    ],
+    "commonMistakes": [
+      "Counting forty terms instead of the inclusive forty-one, or losing the negative odd-term sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The individual factors are periodic even though the written angles are large.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p17",
+    "problemId": "amc12-predecessor-1977-p17",
+    "finalAnswer": "$\\boxed{\\frac19}$ (choice B)",
+    "shortExplanation": "Four sets of consecutive values each have six ordered outcomes, giving $24/216=1/9$.",
+    "detailedSteps": [
+      "A rearrangement with common difference one requires three distinct consecutive values. The possible sets are $\\{1,2,3\\}$, $\\{2,3,4\\}$, $\\{3,4,5\\}$ and $\\{4,5,6\\}$.",
+      "Each set has $3!=6$ orders on the three dice, and the four sets are disjoint. There are thus twenty-four favorable outcomes among $6^3=216$ equally likely ordered outcomes.",
+      "The probability is $24/216=1/9$."
+    ],
+    "keyIdeas": [
+      "Count ordered die outcomes after identifying the allowed unordered sets."
+    ],
+    "commonMistakes": [
+      "Counting only already increasing rolls when rearrangement is allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All three values differ, so each permitted set has six orders.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p18",
+    "problemId": "amc12-predecessor-1977-p18",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "Changing every logarithm to the same base makes the product telescope to $\\log_2 32=5$.",
+    "detailedSteps": [
+      "By change of base, $\\log_n(n+1)=\\ln(n+1)/\\ln n$. All logarithms here have positive arguments and valid bases.",
+      "In the product for $n=2$ through $31$, each intermediate logarithm cancels between consecutive factors. The value is $\\ln32/\\ln2=\\log_2 32=5$."
+    ],
+    "keyIdeas": [
+      "Write logarithmic factors with a common base."
+    ],
+    "commonMistakes": [
+      "Adding the factors or stopping the cancellation at thirty-one instead of thirty-two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A chain of successive bases is designed for telescoping.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p19",
+    "problemId": "amc12-predecessor-1977-p19",
+    "finalAnswer": "$\\boxed{PQRS\\text{ is a parallelogram}}$ (choice A)",
+    "shortExplanation": "Each side of the center quadrilateral lies on a perpendicular bisector of one diagonal segment, so opposite sides are parallel.",
+    "detailedSteps": [
+      "Centers $P$ and $Q$ are both equidistant from $B$ and $E$, so their connecting line is the perpendicular bisector of $BE$. Likewise $RS$ lies on the perpendicular bisector of $DE$. Since $B,E,D$ are collinear, $PQ\\parallel RS$.",
+      "Similarly, $QR$ lies on the perpendicular bisector of $CE$ and $SP$ on that of $AE$. Hence $QR\\parallel SP$, because $A,E,C$ are collinear.",
+      "The neighboring centers are distinct: a coincident pair would place three distinct collinear points of a diagonal on one circle, which is impossible. Also the two diagonal directions of a convex quadrilateral are nonparallel, so the two neighboring center-side directions are nonparallel.",
+      "Therefore the centers form a nondegenerate parallelogram for every original convex quadrilateral. No special rectangle or rhombus assumption is needed."
+    ],
+    "keyIdeas": [
+      "Use the shared chord of each pair of circumcircles."
+    ],
+    "commonMistakes": [
+      "Assuming the original quadrilateral must already be a parallelogram."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perpendicular bisectors explain the general result and also rule out degeneracy.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p20",
+    "problemId": "amc12-predecessor-1977-p20",
+    "finalAnswer": "$\\boxed{127}$ (choice E)",
+    "shortExplanation": "The top starting point contributes one path; the two boundary starts in each later row contribute $2\\binom6r$, totaling $127$.",
+    "detailedSteps": [
+      "Number rows zero through six, and columns by horizontal steps from the center. The letter at $(r,c)$ has index $r-|c|$ in the word, with the unique final $T$ at $(6,0)$. This describes the actual supplied diagram.",
+      "A starting $C$ on a boundary in row $r>0$ needs exactly $r$ inward horizontal moves and $6-r$ downward moves to spell the full word. Each move increases the letter index by one. Any order of these six moves is valid; after reaching the center, all remaining moves are downward.",
+      "Each of the two boundary starts in row $r$ therefore contributes $\\binom6r$ paths. The top $C$ contributes just the central downward path.",
+      "The total is $1+2\\sum_{r=1}^{6}\\binom6r=1+2(2^6-1)=127$, which is not among the four listed numerical counts."
+    ],
+    "keyIdeas": [
+      "Count from each possible boundary starting point using its required moves."
+    ],
+    "commonMistakes": [
+      "Omitting starting points below the top row, or counting the single central start twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The literal letter adjacency is checked independently by a full dynamic program.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p21",
+    "problemId": "amc12-predecessor-1977-p21",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Eliminating $a$ gives $x^3+1=0$, whose only real root determines $a=2$.",
+    "detailedSteps": [
+      "A common real root satisfies the second equation, so $a=x^2-x$. Substituting in the first gives $x^2+x(x^2-x)+1=x^3+1=0$.",
+      "Factor $x^3+1=(x+1)(x^2-x+1)$. The quadratic is $(x-1/2)^2+3/4>0$ for real $x$, so the only common real root is $x=-1$.",
+      "Then $a=(-1)^2-(-1)=2$, and substitution checks both original equations. Thus exactly one value of the coefficient works."
+    ],
+    "keyIdeas": [
+      "Eliminate the coefficient using the shared root."
+    ],
+    "commonMistakes": [
+      "Counting complex roots of the resulting cubic when the common solution is required to be real."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count coefficient values after proving the real-root classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p22",
+    "problemId": "amc12-predecessor-1977-p22",
+    "finalAnswer": "$\\boxed{f(-x)=f(x)}$ (choice C)",
+    "shortExplanation": "The equation at zero first gives $f(0)=0$, then forces evenness.",
+    "detailedSteps": [
+      "Taking $a=b=0$ yields $2f(0)=4f(0)$, hence $f(0)=0$.",
+      "Now take $a=0$ and $b=x$. The equation becomes $f(x)+f(-x)=2f(x)$, so $f(-x)=f(x)$ for every real $x$.",
+      "This is the required universal conclusion. For example, $f(x)=x^2$ is nonzero and satisfies the original equation, while it is neither odd nor additive nor periodic with a positive period. Thus the other proposed conclusions need not hold."
+    ],
+    "keyIdeas": [
+      "Choose zero inputs to reveal the functional equation’s symmetry."
+    ],
+    "commonMistakes": [
+      "Assuming continuity or classifying every solution when only evenness is needed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The argument applies to every solution without additional regularity assumptions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p23",
+    "problemId": "amc12-predecessor-1977-p23",
+    "finalAnswer": "$\\boxed{p=m^3-3mn}$ (choice B)",
+    "shortExplanation": "Vieta’s formulas and the sum-of-cubes identity give $p=m^3-3mn$.",
+    "detailedSteps": [
+      "Let the original two roots be $r,s$, counted with multiplicity. Vieta gives $r+s=-m$ and $rs=n$. The new roots are $r^3,s^3$, whose sum is $-p$.",
+      "Use $r^3+s^3=(r+s)^3-3rs(r+s)=-m^3+3mn$. Negating gives $p=m^3-3mn$.",
+      "The new constant is also $q=r^3s^3=n^3$. These identities do not require distinct or real original roots."
+    ],
+    "keyIdeas": [
+      "Apply Vieta before expanding cubes."
+    ],
+    "commonMistakes": [
+      "Losing the negative sign between the root sum and the linear coefficient of a monic quadratic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetric sum-of-cubes identity avoids solving either quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p24",
+    "problemId": "amc12-predecessor-1977-p24",
+    "finalAnswer": "$\\boxed{\\frac{128}{257}}$ (choice D)",
+    "shortExplanation": "The partial-fraction differences telescope to $(1-1/257)/2=128/257$.",
+    "detailedSteps": [
+      "Each term is $\\frac1{(2n-1)(2n+1)}=\\frac12\\left(\\frac1{2n-1}-\\frac1{2n+1}\\right)$.",
+      "The final denominator $255\\cdot257$ corresponds to $n=128$. Summing all terms cancels every intermediate odd reciprocal and leaves $\\frac12(1-1/257)=128/257$."
+    ],
+    "keyIdeas": [
+      "Split each term into two consecutive odd reciprocals."
+    ],
+    "commonMistakes": [
+      "Confusing the final odd denominator with the number of terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check both surviving boundary terms of the telescope.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p25",
+    "problemId": "amc12-predecessor-1977-p25",
+    "finalAnswer": "$\\boxed{250}$ (choice E)",
+    "shortExplanation": "The exponent of five in the literal factorial $1005!$ is $201+40+8+1=250$, so the maximal power of ten is $10^{250}$.",
+    "detailedSteps": [
+      "A factor of ten uses one factor of two and one factor of five. In this factorial, twos are more numerous, so the number of complete tens equals the exponent of five.",
+      "Count multiples of successive powers of five: $\\left\\lfloor1005/5\\right\\rfloor+\\left\\lfloor1005/25\\right\\rfloor+\\left\\lfloor1005/125\\right\\rfloor+\\left\\lfloor1005/625\\right\\rfloor=201+40+8+1=250$. Higher powers exceed 1005.",
+      "Thus $10^{250}$ divides $1005!$, and $10^{251}$ does not. The answer 250 is not among the four listed numerical values."
+    ],
+    "keyIdeas": [
+      "Count all multiplicities of the limiting prime factor five."
+    ],
+    "commonMistakes": [
+      "Replacing the source’s $1005!$ by $1000!$, or counting each multiple of five only once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Maximal divisibility requires checking the limiting prime exponent exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p26",
+    "problemId": "amc12-predecessor-1977-p26",
+    "finalAnswer": "$\\boxed{\\text{equality iff a rectangle}}$ (choice B)",
+    "shortExplanation": "Both diagonal splits give area bounds whose average is $(a+c)(b+d)/4$; equality forces all four angles to be right.",
+    "detailedSteps": [
+      "Splitting along one diagonal, the area is at most the sum of the two triangle areas. The two adjacent-side products give $A\\le(ab+cd)/2$, since each triangle’s area is half a side product times the sine of its included angle. The other diagonal similarly gives $A\\le(ad+bc)/2$.",
+      "Averaging these bounds gives $A\\le(ab+cd+ad+bc)/4=(a+c)(b+d)/4$. This remains an upper bound for a concave simple quadrilateral, since its area is at most either sum of triangle areas.",
+      "Equality in the averaged bound requires equality in both constituent bounds. A concave quadrilateral has one diagonal outside it; that split expresses its area as a difference of two positive triangle areas, so its bound is strict. Equality therefore requires convexity.",
+      "For a convex quadrilateral, equality in both bounds forces the sine of each of the four interior angles to be one. All four angles are $90^\\circ$, so it is a rectangle. Conversely, a rectangle has $a=c$, $b=d$, and area $ab=(a+c)(b+d)/4$.",
+      "Therefore equality holds if and only if the quadrilateral is a rectangle, as asserted in choice B. The inequality itself holds more generally."
+    ],
+    "keyIdeas": [
+      "Average the two diagonal area bounds and trace every equality condition."
+    ],
+    "commonMistakes": [
+      "Reading an inequality that holds for all quadrilaterals as an if-and-only-if characterization of rectangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An equality characterization needs both the upper bound and its exact attainment conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p27",
+    "problemId": "amc12-predecessor-1977-p27",
+    "finalAnswer": "$\\boxed{40\\text{ inches}}$ (choice C)",
+    "shortExplanation": "The two possible positive radii are five and fifteen inches, giving a total diameter of forty inches.",
+    "detailedSteps": [
+      "Use local perpendicular wall and floor coordinates for either corner. A sphere of radius $r$ touching both walls and the floor has center $(r,r,r)$. The specified surface point has coordinates $(5,5,10)$.",
+      "The radius equation is $2(5-r)^2+(10-r)^2=r^2$, or $r^2-20r+75=(r-5)(r-15)=0$.",
+      "Both roots five and fifteen are positive and satisfy the full surface equation. Since the balls have different sizes, they use these two distinct radii. Their diameters sum to $2(5+15)=40$ inches."
+    ],
+    "keyIdeas": [
+      "Express all three tangencies with the sphere center coordinates."
+    ],
+    "commonMistakes": [
+      "Selecting only the smaller quadratic root even though the two balls have different sizes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each corner may use its own local axes; the radius equation is the same.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p28",
+    "problemId": "amc12-predecessor-1977-p28",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "Modulo $g(x)$, we have $x^6=1$ and therefore $x^{12}=1$, so all six summands leave remainder one.",
+    "detailedSteps": [
+      "The polynomial identity $(x-1)g(x)=x^6-1$ implies $x^6\\equiv1\\pmod{g(x)}$. Squaring gives $x^{12}\\equiv1$.",
+      "Consequently every term in $g(x^{12})=1+x^{12}+x^{24}+x^{36}+x^{48}+x^{60}$ is congruent to one. Their sum is congruent to six.",
+      "The constant six has degree less than the degree-five divisor, so it is the actual remainder. No division by $x-1$ inside a congruence is required."
+    ],
+    "keyIdeas": [
+      "Use the geometric-sum identity to reduce high powers."
+    ],
+    "commonMistakes": [
+      "Substituting one for $x$ in both polynomials instead of proving the polynomial remainder identity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A simple congruence can replace a long division of a degree-sixty polynomial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p29",
+    "problemId": "amc12-predecessor-1977-p29",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "A sum-of-squares identity proves the bound with three, and equal nonzero magnitudes force that value.",
+    "detailedSteps": [
+      "The difference is $3(x^4+y^4+z^4)-(x^2+y^2+z^2)^2=(x^2-y^2)^2+(y^2-z^2)^2+(z^2-x^2)^2\\ge0$. Thus the inequality holds for $n=3$ and every real triple.",
+      "Taking $x=y=z=1$ makes the original inequality $9\\le3n$, forcing $n\\ge3$. Therefore three is the smallest integer.",
+      "Equality occurs whenever $x^2=y^2=z^2$, including the all-zero triple."
+    ],
+    "keyIdeas": [
+      "Prove a sharp inequality and test its equality case."
+    ],
+    "commonMistakes": [
+      "Giving an upper bound without proving that a smaller integer fails."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The argument depends on squared magnitudes, so negative inputs need no separate case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1977-p30",
+    "problemId": "amc12-predecessor-1977-p30",
+    "finalAnswer": "$\\boxed{d=a+b}$ (choice A)",
+    "shortExplanation": "The chord lengths are proportional to $\\sin20^\\circ$, $\\sin40^\\circ$ and $\\sin80^\\circ$, with the last sine equal to the sum of the first two.",
+    "detailedSteps": [
+      "Let $R$ be the circumradius. A regular nonagon has central angle $40^\\circ$ between adjacent vertices. A side, shortest diagonal and longest diagonal respectively skip one, two and four vertex intervals, giving $a=2R\\sin20^\\circ$, $b=2R\\sin40^\\circ$, $d=2R\\sin80^\\circ$.",
+      "The sum-to-product identity gives $\\sin20^\\circ+\\sin40^\\circ=2\\sin30^\\circ\\cos10^\\circ=\\cos10^\\circ=\\sin80^\\circ$.",
+      "Multiplying by $2R$ yields $a+b=d$. The actual nine-vertex chord list confirms the specified shortest and longest diagonals."
+    ],
+    "keyIdeas": [
+      "Express all three lengths as chords of the same circle."
+    ],
+    "commonMistakes": [
+      "Using a diagonal that skips three vertices as the longest one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal central angles produce a useful special-angle identity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

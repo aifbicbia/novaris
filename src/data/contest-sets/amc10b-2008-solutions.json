@@ -1,0 +1,506 @@
+[
+  {
+    "id": "solution-amc10b-2008-p1",
+    "problemId": "amc10b-2008-p1",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "Each three-point basket raises the total by one above 10.",
+    "detailedSteps": [
+      "If k of the five baskets are worth three points, the total is $3k+2(5-k)=10+k$. Every integer $k=0,1,\\ldots,5$ is possible, giving six distinct totals."
+    ],
+    "keyIdeas": [
+      "Counting attainable point totals"
+    ],
+    "commonMistakes": [
+      "Counting only the two extreme scores."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Different orders may have the same total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p2",
+    "problemId": "amc10b-2008-p2",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The two diagonal sums become 50 and 54.",
+    "detailedSteps": [
+      "After the reversals the rows are $(1,2,3,4)$, $(11,10,9,8)$, $(15,16,17,18)$, and $(25,24,23,22)$.",
+      "The diagonals total $1+10+17+22=50$ and $4+9+16+25=54$. Their positive difference is 4."
+    ],
+    "keyIdeas": [
+      "Reversing alternate rows before summing"
+    ],
+    "commonMistakes": [
+      "Reversing columns or using the diagonals before changing the rows."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the transformations in the stated order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p3",
+    "problemId": "amc10b-2008-p3",
+    "finalAnswer": "$\\boxed{x^{1/2}}$ (choice D)",
+    "shortExplanation": "The cube root divides the exponent 3/2 by three.",
+    "detailedSteps": [
+      "Because $x>0$, $x\\sqrt{x}=x^{3/2}$. Thus $\\sqrt[3]{x\\sqrt{x}}=(x^{3/2})^{1/3}=x^{1/2}$."
+    ],
+    "keyIdeas": [
+      "Nested radicals as fractional powers"
+    ],
+    "commonMistakes": [
+      "Taking the cube root of only the first factor inside the radical."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source radical bar covers both x and its square root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p4",
+    "problemId": "amc10b-2008-p4",
+    "finalAnswer": "$\\boxed{400000}$ (choice C)",
+    "shortExplanation": "Pay the other twenty players their minimum salaries.",
+    "detailedSteps": [
+      "The twenty other players require at least $20\\cdot15000=300000$ dollars. The remaining salary can therefore be at most $700000-300000=400000$ dollars.",
+      "Assigning exactly the minimum to those twenty players attains the bound."
+    ],
+    "keyIdeas": [
+      "Maximizing one salary under a team cap"
+    ],
+    "commonMistakes": [
+      "Subtracting the minimum salary for all 21 players, including the player being maximized."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum needs a bound and an assignment realizing it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p5",
+    "problemId": "amc10b-2008-p5",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The two inputs are equal, so their difference is zero.",
+    "detailedSteps": [
+      "Let $U=(x-y)^2$ and $V=(y-x)^2$. Since $y-x=-(x-y)$, we have $U=V$.",
+      "The defined operation gives $(U-V)^2=0$."
+    ],
+    "keyIdeas": [
+      "Equal squares in a defined operation"
+    ],
+    "commonMistakes": [
+      "Applying the operation directly to x and y instead of to their squared differences."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Negating a quantity leaves its square unchanged.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p6",
+    "problemId": "amc10b-2008-p6",
+    "finalAnswer": "$\\boxed{\\frac1{10}}$ (choice C)",
+    "shortExplanation": "B lies at four fifths of AD and C at nine tenths.",
+    "detailedSteps": [
+      "Normalize $AD=1$. The relation $AB=4BD$ gives $AB=4/5$, while $AC=9CD$ gives $AC=9/10$.",
+      "Therefore $BC=AC-AB=9/10-4/5=1/10$ of AD."
+    ],
+    "keyIdeas": [
+      "Two internal division ratios"
+    ],
+    "commonMistakes": [
+      "Treating AB:BD=4:1 as AB:AD=4:1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert part-to-part ratios to part-to-whole fractions first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p7",
+    "problemId": "amc10b-2008-p7",
+    "finalAnswer": "$\\boxed{100}$ (choice C)",
+    "shortExplanation": "The area ratio is the square of the side ratio.",
+    "detailedSteps": [
+      "All equilateral triangles are similar. The large triangle has $10^2=100$ times the area of a side-1 triangle.",
+      "Because the small triangles fill it without overlaps, exactly 100 are required."
+    ],
+    "keyIdeas": [
+      "Area scaling for a triangular tiling"
+    ],
+    "commonMistakes": [
+      "Using the side ratio rather than its square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The no-overlap and complete-fill conditions make areas additive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p8",
+    "problemId": "amc10b-2008-p8",
+    "finalAnswer": "$\\boxed{9}$ (choice C)",
+    "shortExplanation": "The rose count must be even and can range from 0 to 16.",
+    "detailedSteps": [
+      "Write the cost condition as $3r+2c=50$, where r and c are nonnegative integers. Reducing modulo 2 shows r is even.",
+      "Its possible values are $0,2,4,\\ldots,16$, and each determines one nonnegative c. There are nine bouquets."
+    ],
+    "keyIdeas": [
+      "Nonnegative solutions to a purchase equation"
+    ],
+    "commonMistakes": [
+      "Requiring both flower types even though the problem only restricts the allowed types."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bouquet can consist entirely of carnations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p9",
+    "problemId": "amc10b-2008-p9",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "Vieta gives a root sum of two.",
+    "detailedSteps": [
+      "Since this is a quadratic, $a\\ne0$. The sum of its two roots is $-(-2a)/a=2$, so their average is 1."
+    ],
+    "keyIdeas": [
+      "Average of quadratic roots"
+    ],
+    "commonMistakes": [
+      "Confusing the root product b/a with the root sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the linear and leading coefficients determine the average.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p10",
+    "problemId": "amc10b-2008-p10",
+    "finalAnswer": "$\\boxed{\\sqrt{10}}$ (choice A)",
+    "shortExplanation": "The radius-to-chord distance is 4 and the arc midpoint is one unit beyond the chord.",
+    "detailedSteps": [
+      "Place the circle center at the origin and the chord endpoints at $(-3,4)$ and $(3,4)$. Their radius is 5 because $3^2+4^2=25$.",
+      "The midpoint of the minor arc is $(0,5)$. Its distance to either endpoint is $\\sqrt{3^2+(5-4)^2}=\\sqrt{10}$."
+    ],
+    "keyIdeas": [
+      "Chord midpoint and minor-arc midpoint"
+    ],
+    "commonMistakes": [
+      "Using the midpoint of the chord instead of the midpoint of the arc."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minor-arc midpoint lies on the perpendicular bisector nearer the chord.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p11",
+    "problemId": "amc10b-2008-p11",
+    "finalAnswer": "$\\boxed{53}$ (choice B)",
+    "shortExplanation": "Express u5 and u6 in terms of u4.",
+    "detailedSteps": [
+      "Set $u_4=t$. Then $u_5=2t+9$ and $u_6=2(2t+9)+t=5t+18$.",
+      "The value $u_6=128$ gives $t=22$, so $u_5=2\\cdot22+9=53$."
+    ],
+    "keyIdeas": [
+      "Recovering a missing recurrence value"
+    ],
+    "commonMistakes": [
+      "Applying the recurrence with shifted subscripts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the nearest unknown as a temporary variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p12",
+    "problemId": "amc10b-2008-p12",
+    "finalAnswer": "$\\boxed{2500}$ (choice A)",
+    "shortExplanation": "Each wrap accounts for 100000 steps, then the final reading adds 50000.",
+    "detailedSteps": [
+      "The total step count is $44\\cdot100000+50000=4450000$. Dividing by 1800 gives about 2472.22 miles.",
+      "Among the listed values, 2500 is closest."
+    ],
+    "keyIdeas": [
+      "Counting odometer wraps"
+    ],
+    "commonMistakes": [
+      "Counting each complete cycle as 99999 rather than 100000 steps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A counter includes the transition from its maximum back to zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p13",
+    "problemId": "amc10b-2008-p13",
+    "finalAnswer": "$\\boxed{4015}$ (choice B)",
+    "shortExplanation": "Subtract consecutive partial sums.",
+    "detailedSteps": [
+      "If the mean of the first n terms is n, their sum is $S_n=n^2$. Therefore the nth term is $S_n-S_{n-1}=n^2-(n-1)^2=2n-1$.",
+      "At $n=2008$ this is $4015$."
+    ],
+    "keyIdeas": [
+      "A sequence recovered from its partial sums"
+    ],
+    "commonMistakes": [
+      "Reporting the partial sum instead of the individual term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The change in cumulative sum isolates one term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p14",
+    "problemId": "amc10b-2008-p14",
+    "finalAnswer": "$\\boxed{\\left(-\\frac{5\\sqrt3}{3},5\\right)}$ (choice B)",
+    "shortExplanation": "The original point is (5,5/sqrt(3)), then rotation maps (x,y) to (-y,x).",
+    "detailedSteps": [
+      "The right angle at B puts A vertically above $(5,0)$. Since the angle at O is $30^\\circ$, its height is $5\\tan30^\\circ=5/\\sqrt3$.",
+      "A $90^\\circ$ counterclockwise rotation maps $(x,y)$ to $(-y,x)$, giving $(-5/\\sqrt3,5)=(-5\\sqrt3/3,5)$."
+    ],
+    "keyIdeas": [
+      "A counterclockwise quarter-turn"
+    ],
+    "commonMistakes": [
+      "Rotating clockwise or negating the wrong coordinate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A point in the first quadrant moves to the second quadrant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p15",
+    "problemId": "amc10b-2008-p15",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The other leg is an odd integer whose square is below 201.",
+    "detailedSteps": [
+      "Pythagoras gives $a^2+b^2=(b+1)^2$, so $a^2=2b+1$. Thus a is odd, and positivity excludes $a=1$, which would give $b=0$.",
+      "Because $b<100$, the possibilities are $a=3,5,7,9,11,13$. They give $b=4,12,24,40,60,84$, respectively, so there are six triangles."
+    ],
+    "keyIdeas": [
+      "Consecutive leg and hypotenuse"
+    ],
+    "commonMistakes": [
+      "Including a degenerate triangle with b=0 or requiring all triples to be primitive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference of consecutive squares sharply bounds a.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p16",
+    "problemId": "amc10b-2008-p16",
+    "finalAnswer": "$\\boxed{\\frac38}$ (choice A)",
+    "shortExplanation": "With at least one die, the sum is odd with probability one half.",
+    "detailedSteps": [
+      "No die is rolled only when both coins are tails, with probability $1/4$. That case gives the even sum 0.",
+      "One die or two dice each have an odd sum with probability $1/2$. Hence the requested probability is $(1-1/4)(1/2)=3/8$."
+    ],
+    "keyIdeas": [
+      "A random number of dice"
+    ],
+    "commonMistakes": [
+      "Assigning probability one half to the zero-dice outcome."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Condition on how many dice are rolled.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p17",
+    "problemId": "amc10b-2008-p17",
+    "finalAnswer": "$\\boxed{0.189}$ (choice B)",
+    "shortExplanation": "Choose the approving occasion and multiply its probability by two disapprovals.",
+    "detailedSteps": [
+      "For each of the three possible approving positions, the probability is $0.7(0.3)^2$. The events are disjoint, giving $3\\cdot0.7\\cdot0.3^2=0.189$."
+    ],
+    "keyIdeas": [
+      "Exactly one approval in three selections"
+    ],
+    "commonMistakes": [
+      "Counting exactly two approvals instead of exactly one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factor three selects the location of the single approval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p18",
+    "problemId": "amc10b-2008-p18",
+    "finalAnswer": "$\\boxed{900}$ (choice B)",
+    "shortExplanation": "Use the total brick count to express each individual hourly rate.",
+    "detailedSteps": [
+      "If N bricks are required, the individual rates are $N/9$ and $N/10$ bricks per hour. The combined effective rate is $N/9+N/10-10$.",
+      "Finishing in 5 hours means $N/9+N/10-10=N/5$. Thus $N/90=10$ and $N=900$."
+    ],
+    "keyIdeas": [
+      "A fixed reduction in a combined work rate"
+    ],
+    "commonMistakes": [
+      "Subtracting ten percent instead of ten bricks per hour."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the units of the productivity loss explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p19",
+    "problemId": "amc10b-2008-p19",
+    "finalAnswer": "$\\boxed{48\\pi-36\\sqrt3}$ (choice E)",
+    "shortExplanation": "The water cross-section is a 120-degree sector minus its central triangle.",
+    "detailedSteps": [
+      "The water surface is 2 feet below the center of the radius-4 circle. Half its chord subtends $\\arccos(2/4)=60^\\circ$, so the full central angle is $120^\\circ$.",
+      "The segment area is $(120/360)\\pi\\cdot4^2-\\tfrac12\\cdot4^2\\sin120^\\circ=16\\pi/3-4\\sqrt3$.",
+      "Multiply by the cylinder length 9 to get $48\\pi-36\\sqrt3$ cubic feet."
+    ],
+    "keyIdeas": [
+      "A horizontal cylindrical segment"
+    ],
+    "commonMistakes": [
+      "Using a rectangular 2-by-8 cross-section or interpreting 9 as the vertical height after the tank is turned."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sideways tank has a constant circular-segment cross-section.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p20",
+    "problemId": "amc10b-2008-p20",
+    "finalAnswer": "$\\boxed{\\frac7{18}}$ (choice B)",
+    "shortExplanation": "Count faces, retaining multiplicities, among 36 equally likely outcomes.",
+    "detailedSteps": [
+      "For the first die face 1, the second die has three successful faces, labeled 4,6,8. Each face labeled 2 has two successes, labeled 3,5. Each face labeled 3 also has two successes, labeled 4,6. The face labeled 4 has three successes, labeled 1,3,5.",
+      "There are $3+2(2)+2(2)+3=14$ favorable outcomes out of 36, so the probability is $14/36=7/18$."
+    ],
+    "keyIdeas": [
+      "Dice with repeated face labels"
+    ],
+    "commonMistakes": [
+      "Treating the four distinct labels on the first die as equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Repeated labels are separate equally probable faces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p21",
+    "problemId": "amc10b-2008-p21",
+    "finalAnswer": "$\\boxed{480}$ (choice C)",
+    "shortExplanation": "There are two gender patterns, 5! male assignments, and two valid spouse assignments.",
+    "detailedSteps": [
+      "The numbered chairs give two choices for which parity holds the men. Seat the five distinct men in those chairs in $5!$ ways.",
+      "For a husband at chair i, his wife must sit three chairs clockwise or three chairs counterclockwise from him: the other three opposite-gender chairs are adjacent or directly across.",
+      "For fixed husbands, either all wives take the clockwise choice or all take the counterclockwise choice. To see why a mixture fails, label the husbands and the interleaved wife positions in cyclic order modulo 5. Husband i permits wife position i+1 or i+3. If wife i takes i+3, wife i+2 cannot take her first position i+3 and is forced to take her second. Repeating this shift of 2 modulo 5 visits all five husbands, so one second choice forces them all.",
+      "Therefore there are exactly two spouse matchings, giving $2\\cdot5!\\cdot2=480$ arrangements. Numbered chairs make rotations distinct."
+    ],
+    "keyIdeas": [
+      "Two perfect matchings after seating one gender"
+    ],
+    "commonMistakes": [
+      "Dividing by rotations despite the numbered chairs, or treating the wives two choices as independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The allowed bipartite graph is one cycle, which has two perfect matchings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p22",
+    "problemId": "amc10b-2008-p22",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice C)",
+    "shortExplanation": "There are ten acceptable color strings out of sixty.",
+    "detailedSteps": [
+      "There are $6!/(3!2!)=60$ equally likely color orders. First arrange the nonred beads: WWB, WBW, or BWW.",
+      "Insert the three red beads into three different ones of the four gaps, so no reds touch. For WWB and BWW, the gap between the white beads must be filled; each has three valid choices of the omitted gap. For WBW, all four choices work.",
+      "Thus $3+4+3=10$ orders have no matching neighbors, and their probability is $10/60=1/6$."
+    ],
+    "keyIdeas": [
+      "Inserting isolated red beads into gaps"
+    ],
+    "commonMistakes": [
+      "Separating all red beads while overlooking adjacent white beads."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identical beads make color strings equally likely because their label multiplicities are constant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p23",
+    "problemId": "amc10b-2008-p23",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The equation becomes (a-4)(b-4)=8.",
+    "detailedSteps": [
+      "The painted area is $(a-2)(b-2)$, and it equals half the floor area. Thus $2(a-2)(b-2)=ab$, which rearranges to $(a-4)(b-4)=8$.",
+      "The painted rectangle requires $a,b>2$. If $a=3$, the equation would give $b=-4$, and $a=4$ is impossible. Hence both factors are positive.",
+      "With $a<b$, the factor pairs are $(1,8)$ and $(2,4)$, giving $(a,b)=(5,12)$ and $(6,8)$. There are two possibilities."
+    ],
+    "keyIdeas": [
+      "Factoring a border-area equation"
+    ],
+    "commonMistakes": [
+      "Subtracting only one foot from each dimension or losing the physical positivity constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A completed product reduces the unbounded search to a finite divisor list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p24",
+    "problemId": "amc10b-2008-p24",
+    "finalAnswer": "$\\boxed{85}$ (choice C)",
+    "shortExplanation": "An equilateral triangle on BC locates the line AD.",
+    "detailedSteps": [
+      "Construct E inside the quadrilateral so that BCE is equilateral. Since $\\angle ABC=70^\\circ$, $\\angle ABE=10^\\circ$. The equality $AB=BE$ gives $\\angle BAE=\\angle AEB=85^\\circ$.",
+      "Also $CE=CD$ and $\\angle ECD=170^\\circ-60^\\circ=110^\\circ$, so $\\angle CED=35^\\circ$.",
+      "The successive angles $\\angle AEB+\\angle BEC+\\angle CED$ total $85^\\circ+60^\\circ+35^\\circ=180^\\circ$. Hence A,E,D are collinear, and $\\angle BAD=\\angle BAE=85^\\circ$."
+    ],
+    "keyIdeas": [
+      "An auxiliary equilateral triangle"
+    ],
+    "commonMistakes": [
+      "Assuming three equal consecutive sides imply equal angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An equilateral auxiliary triangle converts the two given angles into compatible isosceles angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2008-p25",
+    "problemId": "amc10b-2008-p25",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "There are five distinct meeting times: 200,240,260,280,320 seconds.",
+    "detailedSteps": [
+      "Take the initial pail as position 0 and time 0. Michael is at $5t$. The truck initially leaves position 200. Each truck cycle consists of 20 seconds driving 200 feet and 30 seconds stopped, so at cycle k it departs position $200+200k$ at time $50k$.",
+      "During its driving interval, equality of positions gives $5t=200+200k+10(t-50k)$, or $t=60k-40$. This lies in $[50k,50k+20]$ precisely for $k=4,5,6$, giving times 200,260,320.",
+      "During the following stop at position $400+200k$, equality gives $t=80+40k$. This lies in $[50k+20,50k+50]$ precisely for $k=3,4,5,6$, giving times 200,240,280,320.",
+      "Taking the union counts the endpoint meetings only once: $\\{200,240,260,280,320\\}$ has five elements. The interval inequalities rule out all later cycles."
+    ],
+    "keyIdeas": [
+      "Meeting times in a piecewise motion"
+    ],
+    "commonMistakes": [
+      "Counting a meeting at a stop endpoint twice or assuming there are infinitely many meetings."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Because the truck average speed is lower, eventually it remains behind permanently.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

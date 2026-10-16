@@ -1,0 +1,92 @@
+[
+  {
+    "finalAnswer": "Let $W$ and $H$ be the two rectangles\u2019 combined horizontal and vertical spans. Print $\\max(W,H)^2$.",
+    "shortExplanation": "A containing square must span the full width and full height of both regions. The larger span is a necessary side length, and a square of that side placed at the lower coordinate bounds contains everything.",
+    "detailedSteps": [
+      "Compute $x_{\\min}$ from the two left edges and $x_{\\max}$ from the two right edges. Do the same for the bottom and top edges. The combined bounding rectangle has $W=x_{\\max}-x_{\\min}$ and $H=y_{\\max}-y_{\\min}$.",
+      "Any axis-aligned enclosing square must have side $L\\ge W$ and $L\\ge H$. Therefore its area is at least $\\max(W,H)^2$.",
+      "Take $L=\\max(W,H)$ and place the square\u2019s lower-left corner at $(x_{\\min},y_{\\min})$. Both coordinate intervals contain those of the combined bounding rectangle, so this square contains both entire original regions. It attains the lower bound.",
+      "Print $L^2$, not $L$. The original coordinate bound applies to the two input rectangles; the new square may extend beyond it. With coordinates in $[0,10]$, $L\\le10$ and the area is at most 100. Eight input values and a fixed number of comparisons give $O(1)$ time and space. The reference uses square.in and square.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nint main() {\n    std::ifstream in(\"square.in\");\n    std::ofstream out(\"square.out\");\n    int left = 11, bottom = 11, right = 0, top = 0;\n    for (int rectangle = 0; rectangle < 2; ++rectangle) {\n        int x1, y1, x2, y2;\n        in >> x1 >> y1 >> x2 >> y2;\n        left = std::min(left, x1);\n        bottom = std::min(bottom, y1);\n        right = std::max(right, x2);\n        top = std::max(top, y2);\n    }\n    const int side = std::max(right - left, top - bottom);\n    out << side * side << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Coordinate projections give a lower bound for every containing square.",
+      "A square built from the lower bounds attains that bound."
+    ],
+    "commonMistakes": [
+      "Printing the side length instead of its square.",
+      "Adding the two original areas, which does not control their separation.",
+      "Restricting the new square\u2019s upper edges to the input coordinate limit."
+    ],
+    "alternativeMethods": [
+      "Enumerate side lengths and square positions for the small coordinate range, checking all original corners. This direct containment search independently confirms the projection formula."
+    ],
+    "difficultyNotes": "Introductory geometry. The lower-bound and attaining-placement argument completely resolves the optimization.",
+    "id": "solution-usaco-bronze-2016-december-p1",
+    "problemId": "usaco-bronze-2016-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each letter $\\ell$, print $\\sum_{i=1}^{N}\\max(c_{i,0}(\\ell),c_{i,1}(\\ell))$, where the two counts come from that board\u2019s faces. Emit all 26 results in alphabet order.",
+    "shortExplanation": "For one letter, each board can independently show the face that needs more copies. Summing those local maxima is the exact worst-case demand for that letter. Repeating this calculation for every letter gives an inventory sufficient for every joint orientation.",
+    "detailedSteps": [
+      "For a board, count each letter separately on its two words. Add the larger of the two counts to that letter\u2019s running inventory. Different letters may favor different faces of the same board.",
+      "Fix one letter $\\ell$. In any visible-face configuration, board $i$ uses at most $\\max(c_{i,0}(\\ell),c_{i,1}(\\ell))$ copies. Summing proves that our inventory is sufficient for this letter in every configuration.",
+      "To prove necessity, orient every board toward the face with more copies of this particular letter. Those choices form an actual joint configuration requiring exactly our sum. Any smaller count of that letter would fail there.",
+      "Apply these two arguments separately to all 26 letters. Their worst-case configurations need not be the same: the blocks for different letters are separate resources, and the resulting inventory covers every configuration component by component.",
+      "Read every board and print all counts from a through z, including zeros. Do not add both faces, choose only the longer word, or enumerate all flips in the main implementation.",
+      "Time is $O(\\text{total word length}+26N)$ and auxiliary space is $O(26)$ plus the two short input words. With $N\\le100$ and word lengths at most 10, a letter\u2019s result is at most 1000. The original blocks.in and blocks.out interface prints exactly 26 lines.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <string>\nint main() {\n    std::ifstream in(\"blocks.in\");\n    std::ofstream out(\"blocks.out\");\n    int n;\n    in >> n;\n    std::array<int, 26> total{};\n    for (int board = 0; board < n; ++board) {\n        std::string first, second;\n        in >> first >> second;\n        std::array<int, 26> a{}, b{};\n        for (char ch : first) ++a[ch - 'a'];\n        for (char ch : second) ++b[ch - 'a'];\n        for (int letter = 0; letter < 26; ++letter)\n            total[letter] += std::max(a[letter], b[letter]);\n    }\n    for (int count : total) out << count << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Independent face choices let a fixed letter attain its sum of local maxima.",
+      "A component-wise worst-case inventory can cover all configurations even when the component maxima are not jointly attained."
+    ],
+    "commonMistakes": [
+      "Summing counts from both faces, although only one is visible.",
+      "Taking a maximum after summing all front faces and all back faces, which misses mixed orientations.",
+      "Assuming the longer word needs at least as many copies of every letter.",
+      "Printing only the letters that occur instead of all 26 counts."
+    ],
+    "alternativeMethods": [
+      "For small $N$, enumerate all $2^N$ full orientations, spell their visible words literally and take each letter\u2019s largest demand across configurations. This direct oracle verifies the independent-board decomposition."
+    ],
+    "difficultyNotes": "Intermediate quantifier reasoning with simple counting code. Necessity for each letter and sufficiency for every orientation are both essential.",
+    "id": "solution-usaco-bronze-2016-december-p2",
+    "problemId": "usaco-bronze-2016-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Output the complete $KM\\times KN$ picture, with each original cell replaced by a $K\\times K$ tile of its original character.",
+    "shortExplanation": "Repeat each character K times to stretch a row horizontally, then write that expanded row K times to stretch it vertically. Process original rows in order and preserve both dots and uppercase X characters.",
+    "detailedSteps": [
+      "An original cell at $(r,c)$ must occupy output rows $Kr,\\ldots,Kr+K-1$ and columns $Kc,\\ldots,Kc+K-1$. These tiles are disjoint and cover the enlarged picture exactly.",
+      "Build an expanded row by repeating every input character $K$ times. Its length is $KN$, with the original column order preserved.",
+      "Write this row $K$ times, then move to the next original row. This gives $KM$ rows, and each original character appears throughout exactly its intended tile. Thus every output location contains the correct source character.",
+      "Preserve dots as well as uppercase X. Do not insert spaces, blank separator rows or numeric encodings. A scale factor of one reproduces the original picture.",
+      "The reference streams one original row at a time. Its expanded row uses $O(NK)$ auxiliary space. Writing the $MNK^2$ output characters takes $O(MNK^2)$ time, which is unavoidable for an explicit picture.",
+      "All three source parameters lie in $[1,10]$, so the maximum output has 100 rows and 100 columns. Read cowsignal.in and write every complete row to cowsignal.out. Output verification must compare ordered rows, their lengths and characters rather than parse an integer.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <string>\nint main() {\n    std::ifstream in(\"cowsignal.in\");\n    std::ofstream out(\"cowsignal.out\");\n    int rows, columns, factor;\n    in >> rows >> columns >> factor;\n    for (int row = 0; row < rows; ++row) {\n        std::string original, expanded;\n        in >> original;\n        expanded.reserve(columns * factor);\n        for (char ch : original) expanded.append(factor, ch);\n        for (int copy = 0; copy < factor; ++copy) out << expanded << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Scale both axes independently by the same factor.",
+      "One expanded row can be reused without storing the full picture."
+    ],
+    "commonMistakes": [
+      "Repeating rows without also repeating their characters.",
+      "Stretching only uppercase X and dropping the dots that preserve spacing.",
+      "Writing only K times as many characters instead of K squared times as many.",
+      "Treating the result as one scalar answer."
+    ],
+    "alternativeMethods": [
+      "Visit each output cell $(u,v)$ and copy the original cell at $(\\lfloor u/K\\rfloor,\\lfloor v/K\\rfloor)$. This inverse-index method gives the same complete picture. An explicit two-dimensional tile-painting oracle is useful for checking the streamed row implementation."
+    ],
+    "difficultyNotes": "Introductory simulation. The important checks are both dimensions, exact row order and preservation of every symbol.",
+    "id": "solution-usaco-bronze-2016-december-p3",
+    "problemId": "usaco-bronze-2016-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

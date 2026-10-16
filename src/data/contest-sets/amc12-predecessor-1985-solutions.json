@@ -1,0 +1,632 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1985-p1",
+    "problemId": "amc12-predecessor-1985-p1",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "Doubling $2x+1=8$ gives $4x+2=16$, so $4x+1=15$.",
+    "detailedSteps": [
+      "Multiply both sides of the given equation by two: $4x+2=16$.",
+      "The target is one less than the expression on that left side, hence $4x+1=15$. Equivalently, $x=7/2$ gives the same value."
+    ],
+    "keyIdeas": [
+      "Double the known linear combination"
+    ],
+    "commonMistakes": [
+      "Doubling the variable term while failing to double the constant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requested expression can be recovered without first isolating the variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p2",
+    "problemId": "amc12-predecessor-1985-p2",
+    "finalAnswer": "$\\boxed{\\frac{5\\pi}{3}+2}$ (choice E)",
+    "shortExplanation": "The remaining arc has length $5\\pi/3$, and the two mouth edges add two centimeters.",
+    "detailedSteps": [
+      "The remaining circular arc subtends $360^\\circ-60^\\circ=300^\\circ$. With radius one, its length is $(300/360)2\\pi=5\\pi/3$.",
+      "The boundary also contains both straight radius segments forming the mouth. Their total length is two, so the full perimeter is $5\\pi/3+2$."
+    ],
+    "keyIdeas": [
+      "Include the two exposed radii in the boundary"
+    ],
+    "commonMistakes": [
+      "Counting only the remaining arc and omitting the newly exposed straight edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sector’s perimeter contains its arc and its straight sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p3",
+    "problemId": "amc12-predecessor-1985-p3",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The hypotenuse is thirteen, placing the two intersections at distances eight and twelve from the first endpoint, so their separation is four.",
+    "detailedSteps": [
+      "The right triangle has hypotenuse $AB=\\sqrt{5^2+12^2}=13$. The circle centered at $A$ gives $AM=12$.",
+      "The circle centered at $B$ gives $BN=5$, so $AN=AB-BN=8$. The actual order on the segment is $A,N,M,B$.",
+      "Thus $MN=AM-AN=12-8=4$."
+    ],
+    "keyIdeas": [
+      "Measure both arc intersections along the hypotenuse"
+    ],
+    "commonMistakes": [
+      "Subtracting the two radii directly without accounting for their different centers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The intersections can be located by one-dimensional distances once the hypotenuse is known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p4",
+    "problemId": "amc12-predecessor-1985-p4",
+    "finalAnswer": "$\\boxed{342}$ (choice C)",
+    "shortExplanation": "Each penny-count unit contributes $171$ cents, and only $342$ dollars is an integer multiple of that amount.",
+    "detailedSteps": [
+      "If there are $k$ pennies, there are $2k$ dimes and $6k$ quarters. The total value in cents is $k+10(2k)+25(6k)=171k$.",
+      "The proposed totals in cents are $30600,33300,34200,34800,36000$. Only $34200=171\\cdot200$ is divisible by 171.",
+      "This value is attainable with 200 pennies, 400 dimes and 1200 quarters. Therefore the possible listed total is 342 dollars."
+    ],
+    "keyIdeas": [
+      "Convert the coin ratio into a unit monetary total"
+    ],
+    "commonMistakes": [
+      "Applying the quarter-to-dime ratio directly to the penny count without its additional factor of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The count ratio must be converted into values before comparing dollar totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p5",
+    "problemId": "amc12-predecessor-1985-p5",
+    "finalAnswer": "$\\boxed{\\frac18\\text{ and }\\frac1{10}}$ (choice E)",
+    "shortExplanation": "The full sum is $49/40$, so removing $1/8+1/10=9/40$ leaves one.",
+    "detailedSteps": [
+      "With a common denominator, the six displayed terms sum to $49/40$. The amount to remove is therefore $49/40-1=9/40$.",
+      "The listed pair $1/8$ and $1/10$ sums to $5/40+4/40=9/40$. Removing it gives exactly one; checking the other four proposed pairs gives different removed totals."
+    ],
+    "keyIdeas": [
+      "Calculate exactly how much the sum must lose"
+    ],
+    "commonMistakes": [
+      "Using rounded decimals for several close reciprocal sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The required removed amount is the original sum minus the target.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p6",
+    "problemId": "amc12-predecessor-1985-p6",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice B)",
+    "shortExplanation": "The boys and girls are in the ratio $2:3$, so boys make up $2/5$ of the class.",
+    "detailedSteps": [
+      "Equal likelihood for each student makes the boy-to-girl probability ratio equal to the boy-to-girl count ratio. The given ratio is $2/3$.",
+      "The class therefore consists of two boy-count units and three girl-count units. The fraction of the whole class represented by boys is $2/(2+3)=2/5$."
+    ],
+    "keyIdeas": [
+      "Translate the probability comparison into a count ratio"
+    ],
+    "commonMistakes": [
+      "Using the boy-to-girl ratio as the fraction of boys in the entire class."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A ratio to one subgroup differs from a ratio to the whole population.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p7",
+    "problemId": "amc12-predecessor-1985-p7",
+    "finalAnswer": "$\\boxed{\\frac{a}{b-c-d}}$ (choice E)",
+    "shortExplanation": "The parse is $a\\div(b-(c+d))$, which becomes $a/(b-c-d)$.",
+    "detailedSteps": [
+      "Start at the right end: the final addition forms $c+d$. The preceding subtraction then forms $b-(c+d)$.",
+      "The remaining division is $a/[b-(c+d)]=a/(b-c-d)$, on the original domain where this denominator is nonzero. This follows the source’s special grouping rule rather than conventional precedence."
+    ],
+    "keyIdeas": [
+      "Apply the stated right-to-left grouping rule"
+    ],
+    "commonMistakes": [
+      "Applying ordinary multiplication-and-division precedence instead of the explicitly defined language rule."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The provided notation rule determines the parentheses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p8",
+    "problemId": "amc12-predecessor-1985-p8",
+    "finalAnswer": "$\\boxed{\\frac{b^{\\prime}}{a^{\\prime}}<\\frac ba}$ (choice E)",
+    "shortExplanation": "The roots are $-b/a$ and $-b^{\\prime}/a^{\\prime}$; comparing them reverses the inequality between their negatives.",
+    "detailedSteps": [
+      "The two nonzero leading coefficients give roots $-b/a$ and $-b^{\\prime}/a^{\\prime}$.",
+      "The requested strict order is $-b/a<-b^{\\prime}/a^{\\prime}$. Multiplying both sides by negative one reverses it, yielding $b^{\\prime}/a^{\\prime}<b/a$.",
+      "No multiplication by $aa^{\\prime}$ is needed, so this conclusion holds for every permitted combination of coefficient signs."
+    ],
+    "keyIdeas": [
+      "Negate the two roots without multiplying by uncertain signs"
+    ],
+    "commonMistakes": [
+      "Cross-multiplying by a product of unknown sign without considering whether the inequality reverses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Comparing ratios directly avoids unnecessary sign cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p9",
+    "problemId": "amc12-predecessor-1985-p9",
+    "finalAnswer": "$\\boxed{\\text{second column}}$ (choice B)",
+    "shortExplanation": "The number 1985 is the 993rd positive odd integer, whose cycle position is one and hence column two.",
+    "detailedSteps": [
+      "Reading the actual arrangement in increasing numerical order gives columns $2,3,4,5,4,3,2,1$, repeated every eight numbers. The turns at the left and right ends preserve that cycle.",
+      "The number 1985 has odd-number index $(1985+1)/2=993$. Since $993\\equiv1\\pmod8$, it occupies the first position in the displayed cycle.",
+      "That position is the second column from the left."
+    ],
+    "keyIdeas": [
+      "Track the eight-step column cycle"
+    ],
+    "commonMistakes": [
+      "Reducing the number itself modulo the number of columns instead of reducing its odd-number index modulo the traversal period."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The alternating direction makes the period different from the number of columns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p10",
+    "problemId": "amc12-predecessor-1985-p10",
+    "finalAnswer": "$\\boxed{\\text{more than }16}$ (choice E)",
+    "shortExplanation": "A sufficiently large circle tangent to the horizontal axis crosses nine separate positive sine lobes twice each, giving at least eighteen points.",
+    "detailedSteps": [
+      "Consider the single circle $x^2+(y-10000)^2=10000^2$. On the sine graph, its intersection equation is $F(x)=x^2+\\sin^2x-20000\\sin x=0$.",
+      "For each integer $j=1,\\ldots,9$, at the two endpoints $2j\\pi,(2j+1)\\pi$ of a positive sine lobe, $F(x)=x^2>0$. At the middle point $(2j+1/2)\\pi$, it is $x^2+1-20000<0$; even the crude bound $\\pi<4$ makes $x<74$, establishing that strict negativity.",
+      "Continuity gives one root on each side of each of these nine peaks. The eighteen open intervals are disjoint, so the resulting intersection points are distinct.",
+      "Thus one actual circle has more than sixteen intersections. This construction suffices to reject every proposed small universal upper bound."
+    ],
+    "keyIdeas": [
+      "Construct one circle with many sine-wave crossings"
+    ],
+    "commonMistakes": [
+      "Assuming a circle can meet a nonalgebraic oscillating graph only as often as it meets a parabola."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A concrete large-circle construction is enough; a maximum-count classification is unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p11",
+    "problemId": "amc12-predecessor-1985-p11",
+    "finalAnswer": "$\\boxed{120}$ (choice B)",
+    "shortExplanation": "The two initial vowel orders and $5!/2!$ consonant orders give $2(60)=120$.",
+    "detailedSteps": [
+      "The two vowels, O and E, must occupy the first two positions. They have $2!$ orders.",
+      "The remaining five letters are C, N, S, T, T. The repeated T makes their distinguishable arrangements $5!/2!=60$.",
+      "The product is $2\\cdot60=120$."
+    ],
+    "keyIdeas": [
+      "Arrange the vowels and then the repeated consonants"
+    ],
+    "commonMistakes": [
+      "Counting the two identical T letters as distinguishable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positional restriction and the repeated-letter correction apply to different parts of the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p12",
+    "problemId": "amc12-predecessor-1985-p12",
+    "finalAnswer": "$\\boxed{(pqr^2)^3}$ (choice D)",
+    "shortExplanation": "The required exponents become three, three and six, giving the minimum cube $p^3q^3r^6$.",
+    "detailedSteps": [
+      "A positive integer is a perfect cube exactly when every exponent in its prime factorization is divisible by three.",
+      "The divisor requires exponents at least one, two and four on the distinct primes $p,q,r$. Their smallest eligible cube exponents are three, three and six.",
+      "Therefore the smallest cube is $p^3q^3r^6=(pqr^2)^3$. Any larger exponent or additional prime factor increases the positive integer."
+    ],
+    "keyIdeas": [
+      "Raise each prime exponent to the next multiple of three"
+    ],
+    "commonMistakes": [
+      "Cubing the entire original divisor even when some of its exponents can be raised by less."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinctness of the primes makes the exponent conditions independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p13",
+    "problemId": "amc12-predecessor-1985-p13",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The actual vertices are $(1,3),(4,1),(3,0),(0,1)$; their shoelace area is six.",
+    "detailedSteps": [
+      "Choose the bottom-left grid peg as the origin and one-unit peg spacing as each coordinate unit. Reading the actual figure in boundary order gives $(1,3),(4,1),(3,0),(0,1)$.",
+      "The shoelace determinant is $(1\\cdot1+4\\cdot0+3\\cdot1+0\\cdot3)-(3\\cdot4+1\\cdot3+0\\cdot0+1\\cdot1)=-12$.",
+      "The area is half its absolute value, $12/2=6$. A bounding-rectangle subtraction gives the same result."
+    ],
+    "keyIdeas": [
+      "Read the peg vertices in unit-grid coordinates"
+    ],
+    "commonMistakes": [
+      "Treating a sloping rubber-band edge as an integer grid length instead of locating its endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grid spacing supplies exact coordinates even when the polygon is slanted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p14",
+    "problemId": "amc12-predecessor-1985-p14",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Every nonobtuse vertex contributes at least ninety degrees of turning, so there can be at most three of them in addition to the three obtuse vertices.",
+    "detailedSteps": [
+      "For a convex polygon, the positive exterior angles sum to $360^\\circ$. At each of the three obtuse vertices, the exterior angle is strictly between zero and ninety degrees. Every other vertex contributes at least ninety degrees.",
+      "With $n$ vertices, this forces $90(n-3)<360$, hence $n<7$ and $n\\le6$. The inequality is strict because the three obtuse vertices contribute a positive amount.",
+      "Six is attainable: take six unit edges with directions $0^\\circ,30^\\circ,120^\\circ,150^\\circ,240^\\circ,270^\\circ$. Their vectors sum to zero and turn alternately by thirty and ninety degrees, forming a convex hexagon with three $150^\\circ$ and three $90^\\circ$ interior angles."
+    ],
+    "keyIdeas": [
+      "Bound the nonobtuse vertices with exterior angles"
+    ],
+    "commonMistakes": [
+      "Allowing zero exterior angles or using a nonstrict bound that incorrectly permits a seventh side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound and an attaining polygon establish the maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p15",
+    "problemId": "amc12-predecessor-1985-p15",
+    "finalAnswer": "$\\boxed{\\sqrt[4]3}$ (choice E)",
+    "shortExplanation": "The relation reduces to $a^8=9$, whose positive solution is $\\sqrt[4]3$.",
+    "detailedSteps": [
+      "Substitute $b=9a$ into the exponential equality, giving $a^{9a}=(9a)^a$. Since $a>0$, taking the power $1/a$ is valid and gives $a^9=9a$.",
+      "Divide by the positive number $a$ to obtain $a^8=9$. Its unique positive solution is $9^{1/8}=3^{1/4}$.",
+      "With $b=9a$, reversing these steps verifies both original relations."
+    ],
+    "keyIdeas": [
+      "Use positivity to take the same reciprocal exponent"
+    ],
+    "commonMistakes": [
+      "Treating the variable exponents as constants before using the positivity condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positive bases justify the exponent manipulation without extra branches.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p16",
+    "problemId": "amc12-predecessor-1985-p16",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The tangent addition formula gives $\\tan A+\\tan B=1-\\tan A\\tan B$, so the product is two.",
+    "detailedSteps": [
+      "The actual angles sum to $45^\\circ$. Therefore $(\\tan A+\\tan B)/(1-\\tan A\\tan B)=1$. The denominator is nonzero for these acute angles.",
+      "Expand the target: $1+\\tan A+\\tan B+\\tan A\\tan B$. Replacing the middle sum by $1-\\tan A\\tan B$ makes the product terms cancel, leaving two."
+    ],
+    "keyIdeas": [
+      "Use the forty-five-degree sum"
+    ],
+    "commonMistakes": [
+      "Replacing the tangent of an angle sum by the sum of its tangents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle sum matters more than either individual angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p17",
+    "problemId": "amc12-predecessor-1985-p17",
+    "finalAnswer": "$\\boxed{4.2}$ (choice B)",
+    "shortExplanation": "The rectangle’s area is $3\\sqrt2$, which rounds to $4.2$.",
+    "detailedSteps": [
+      "Put the diagonal endpoints at $D=(0,0)$ and $B=(3,0)$. The perpendicular projection through $A$ meets it one unit from $D$, so write $A=(1,h)$. The opposite vertex is then $C=(2,-h)$ because the rectangle’s diagonals have the same midpoint.",
+      "The angle at $A$ is right, so $(D-A)\\cdot(B-A)=(-1,-h)\\cdot(2,-h)=-2+h^2=0$. Hence the positive altitude to the diagonal is $h=\\sqrt2$.",
+      "The diagonal splits the rectangle into two triangles of base three and height $\\sqrt2$. Their total area is $3\\sqrt2\\approx4.2426$, which rounds to $4.2$ at one decimal place."
+    ],
+    "keyIdeas": [
+      "Use the perpendicular projections onto the three-unit diagonal"
+    ],
+    "commonMistakes": [
+      "Treating a projection segment of length one as one of the rectangle’s side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A diagonal coordinate system simplifies the given perpendicular cuts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p18",
+    "problemId": "amc12-predecessor-1985-p18",
+    "finalAnswer": "$\\boxed{23}$ (choice D)",
+    "shortExplanation": "The chipped bag must contain twenty-three marbles; the remaining bags split as $78=2(39)$.",
+    "detailedSteps": [
+      "The six bags total $140$ marbles. If the chipped bag has $c$ and George receives $g$, Jane receives $2g$, so $140-c=3g$. Thus $c\\equiv2\\pmod3$.",
+      "Among the six actual bag counts, only twenty-three has this residue. It is feasible: George takes the bags with eighteen and twenty-one, totaling thirty-nine; Jane takes nineteen, twenty-five and thirty-four, totaling seventy-eight.",
+      "The correct chipped bag therefore contains twenty-three marbles, with the required two-bag/three-bag allocation."
+    ],
+    "keyIdeas": [
+      "Use the total before checking an actual allocation"
+    ],
+    "commonMistakes": [
+      "Checking only the total ratio without verifying that it comes from the required numbers of whole bags."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence isolates the candidate, and an allocation proves it is attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p19",
+    "problemId": "amc12-predecessor-1985-p19",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The quadratic in $u=x^2$ has two distinct positive roots for every $A>0$, and each gives two horizontal coordinates.",
+    "detailedSteps": [
+      "Substitute $y=Ax^2$ and put $u=x^2$. The second equation becomes $A^2u^2-(4A+1)u+3=0$.",
+      "The discriminant is $(4A+1)^2-12A^2=4A^2+8A+1>0$, so there are two distinct real roots. Their sum $(4A+1)/A^2$ and product $3/A^2$ are positive, so both roots are positive.",
+      "Each positive $u$ gives the two distinct values $x=\\pm\\sqrt u$, with the uniquely corresponding $y=Au$. The two squared values differ, so all four intersection points are distinct."
+    ],
+    "keyIdeas": [
+      "Reduce the intersections to two positive squared coordinates"
+    ],
+    "commonMistakes": [
+      "Counting the two squared-coordinate roots as only two original intersection points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parameter proof covers the entire positive range, rather than a few plotted instances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p20",
+    "problemId": "amc12-predecessor-1985-p20",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The counts are $6(n-2)^2$ and $(n-2)^3$, which are equal exactly when $n=8$.",
+    "detailedSteps": [
+      "On each of the six faces, a small cube has exactly one painted face only if it is away from every edge. There are $(n-2)^2$ such cubes per face.",
+      "A completely unpainted cube has all three coordinates interior, giving $(n-2)^3$ cubes.",
+      "The equality is $6(n-2)^2=(n-2)^3$. Since the source requires $n>2$, cancel the positive square to get $n-2=6$, hence $n=8$."
+    ],
+    "keyIdeas": [
+      "Compare face interiors with the cube interior"
+    ],
+    "commonMistakes": [
+      "Including edge cubes among those with just one painted face."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The given lower bound makes the cancellation valid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p21",
+    "problemId": "amc12-predecessor-1985-p21",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "The integer solutions are $-2,-1,0,2$, giving four.",
+    "detailedSteps": [
+      "The zero exponent occurs at $x=-2$, where the base is five and the power equals one.",
+      "For a nonzero integer exponent, an integer base can give one only when its value is one, or when it is negative one with an even exponent. A base with absolute value at least two cannot work; a zero base either gives zero or is undefined.",
+      "The base-one equation $x^2-x-1=1$ gives $x=-1,2$, both valid. The base-negative-one equation gives $x=0,1$; their exponents are two and three, so only zero works.",
+      "Thus the complete list is $-2,-1,0,2$, containing four integers. Negative exponents are evaluated on their usual nonzero-base domain."
+    ],
+    "keyIdeas": [
+      "Separate zero exponents and unit-magnitude bases"
+    ],
+    "commonMistakes": [
+      "Forgetting the zero-exponent case or accepting an odd power of negative one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent sign does not remove the need to inspect the base magnitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p22",
+    "problemId": "amc12-predecessor-1985-p22",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "The half-chord is $15/2$ and the internal point is $5/2$ from the midpoint toward the left, so $BC=5$.",
+    "detailedSteps": [
+      "Let $H$ be the midpoint of chord $AC$ and let the circle radius be $R$. The diameter $AD$ and the $60^\\circ$ arc $CD$ make the arc $AC$ on that semicircle $120^\\circ$. Thus $OH=R\\cos60^\\circ=R/2$, and $CH=R\\sin60^\\circ=R\\sqrt3/2$.",
+      "In the actual diagram, the projection of $BO$ onto the chord is directed from $B$ toward $A$. The given $BO=5$ and $\\angle ABO=60^\\circ$ therefore give $OH=5\\sin60^\\circ=5\\sqrt3/2$ and $BH=5\\cos60^\\circ=5/2$.",
+      "Hence $R=5\\sqrt3$, so $CH=15/2$. Since $B$ lies between $C$ and $H$, $BC=CH-BH=15/2-5/2=5$."
+    ],
+    "keyIdeas": [
+      "Use the chord midpoint and the given internal-point angle"
+    ],
+    "commonMistakes": [
+      "Treating the internal point B as a point on the circle or adding the midpoint distance in the wrong direction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram establishes the order of the internal point and the chord midpoint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p23",
+    "problemId": "amc12-predecessor-1985-p23",
+    "finalAnswer": "$\\boxed{x^9+y^9=-1\\text{ is false}}$ (choice C)",
+    "shortExplanation": "The two numbers are primitive cube roots of unity, so their ninth powers sum to two, making that listed assertion false.",
+    "detailedSteps": [
+      "The displayed values satisfy $x^3=y^3=1$ and $x+y=x^2+y^2=-1$. Thus the power sum is two when its exponent is divisible by three, and negative one otherwise.",
+      "Among the listed exponents $5,7,9,11,13$, only nine is divisible by three. Therefore $x^9+y^9=2$, while each of the other four asserted sums equals negative one.",
+      "The incorrect statement is the one asserting that the ninth-power sum is negative one."
+    ],
+    "keyIdeas": [
+      "Reduce the exponents modulo three"
+    ],
+    "commonMistakes": [
+      "Forgetting that the question asks for the incorrect assertion rather than a correct one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Roots of unity turn large exponents into short residue calculations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p24",
+    "problemId": "amc12-predecessor-1985-p24",
+    "finalAnswer": "$\\boxed{\\{4,5,6,7,8\\}}$ (choice C)",
+    "shortExplanation": "The target set probability is $\\log_{10}(9/4)$, which is the telescoping sum for digits four through eight.",
+    "detailedSteps": [
+      "The probability of choosing two is $\\log_{10}3-\\log_{10}2=\\log_{10}(3/2)$. The sought set must have twice this probability, namely $\\log_{10}(9/4)$.",
+      "For consecutive digits $m$ through $n$, the given probabilities sum by telescoping to $\\log_{10}((n+1)/m)$. The five displayed ratios are $2,5/3,9/4,2,5/2$, respectively.",
+      "Only digits $4,5,6,7,8$ give the required ratio $9/4$. The original distribution is normalized as well: the sum over one through nine is $\\log_{10}10=1$."
+    ],
+    "keyIdeas": [
+      "Telescope the logarithmic probability over each listed set"
+    ],
+    "commonMistakes": [
+      "Interpreting half the set probability as a request for half the single-digit probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The half-probability wording determines which side must be doubled.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p25",
+    "problemId": "amc12-predecessor-1985-p25",
+    "finalAnswer": "$\\boxed{32}$ (choice B)",
+    "shortExplanation": "The middle dimension is two and the dimension sum is eight, so all twelve edges total thirty-two centimeters.",
+    "detailedSteps": [
+      "Write the positive dimensions as $m/r,m,mr$ with $r>0$. Their product is $m^3=8$, so $m=2$.",
+      "The surface-area equation is $2(4/r+4+4r)=32$, giving $r+1/r=3$. Therefore the dimension sum is $2(1/r+1+r)=8$.",
+      "Each dimension occurs on four edges of a rectangular solid. The complete edge-length sum is $4\\cdot8=32$ centimeters."
+    ],
+    "keyIdeas": [
+      "Find the middle dimension from the geometric progression"
+    ],
+    "commonMistakes": [
+      "Adding each dimension only once when the question asks for all twelve edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle term of a three-term geometric progression determines the volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p26",
+    "problemId": "amc12-predecessor-1985-p26",
+    "finalAnswer": "$\\boxed{84}$ (choice E)",
+    "shortExplanation": "The common divisor must be seventy-one, so the first admissible nonzero numerator occurs at $n=84$, giving the none-of-these choice.",
+    "detailedSteps": [
+      "The Euclidean algorithm gives $\\gcd(n-13,5n+6)=\\gcd(n-13,71)$, because $5n+6=5(n-13)+71$.",
+      "Seventy-one is prime, so the fraction is reducible exactly when $n\\equiv13\\pmod{71}$. The first positive candidate, thirteen, makes the numerator zero and is expressly excluded.",
+      "The next candidate is $13+71=84$, giving $71/426=1/6$. This is the least positive admissible integer and is absent from the four numeric choices, so the none-of-these alternative is correct."
+    ],
+    "keyIdeas": [
+      "Use the invariant greatest common divisor"
+    ],
+    "commonMistakes": [
+      "Accepting thirteen even though the source requires a nonzero fraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The numerator’s nonzero condition changes which congruence solution is first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p27",
+    "problemId": "amc12-predecessor-1985-p27",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "The fourth term is three; the preceding terms lie strictly between consecutive integers, so the least index is four.",
+    "detailedSteps": [
+      "The initial exponent of three is $1/3$. Each recurrence step multiplies it by $\\sqrt[3]3$, so $x_n=3^{3^{(n-4)/3}}$. In particular, $x_4=3$.",
+      "The first term is $\\sqrt[3]3$, strictly between one and two. In the second term the exponent is $3^{-2/3}<1/2$, since $3^{2/3}>2$ follows from $9>8$. Hence $1<x_2<\\sqrt3<2$.",
+      "The third exponent is $3^{-1/3}$. Since $\\sqrt[3]3<3/2$, this exponent exceeds $2/3$, making $x_3>3^{2/3}>2$. It is also less than one, so $x_3<3$.",
+      "None of the first three terms is an integer, while the fourth is three. Thus the least index is four."
+    ],
+    "keyIdeas": [
+      "Track the exponent and bound the first three terms exactly"
+    ],
+    "commonMistakes": [
+      "Assuming that an irrational exponent automatically gives a noninteger power without proving it for these terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simple inequalities establish minimality without any advanced transcendence theorem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p28",
+    "problemId": "amc12-predecessor-1985-p28",
+    "finalAnswer": "$\\boxed{35}$ (choice B)",
+    "shortExplanation": "The sine rule gives $\\cos A=5/6$ and then $b/a=35/27$, so $b=35$.",
+    "detailedSteps": [
+      "The sine rule and $C=3A$ give $\\sin3A/\\sin A=c/a=48/27=16/9$. Using $\\sin3A/\\sin A=4\\cos^2A-1$ yields $\\cos^2A=25/36$.",
+      "Because all triangle angles are positive and $B=\\pi-4A$, we have $0<A<\\pi/4$. Hence $\\cos A=5/6$ is the only permissible sign, and $\\cos2A=2(25/36)-1=7/18$.",
+      "Now $\\sin B=\\sin4A$, so $b/a=\\sin4A/\\sin A=4\\cos A\\cos2A=4(5/6)(7/18)=35/27$. With $a=27$, this gives $b=35$.",
+      "The determined angles are all positive and satisfy the given side ratio, so the triangle and the computed side are consistent."
+    ],
+    "keyIdeas": [
+      "Use the triple-angle ratio and the remaining angle"
+    ],
+    "commonMistakes": [
+      "Choosing an additional cosine sign or supplementary angle without checking the triangle’s positive-angle range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The triangle-angle range removes the otherwise ambiguous trigonometric sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p29",
+    "problemId": "amc12-predecessor-1985-p29",
+    "finalAnswer": "$\\boxed{17865}$ (choice C)",
+    "shortExplanation": "The product has $N-1$ fours, then three, $N-1$ fives, then six and zero; its digit sum is $9N=17865$.",
+    "detailedSteps": [
+      "Let $N=1985$ and $T=10^N$. The repunit is $(T-1)/9$, so the two source integers are $8(T-1)/9$ and $5(T-1)/9$. Thus $9ab=40(T-1)^2/9$.",
+      "The decimal prefix consisting of $N-1$ fours and then three is $(4T-13)/9$. The suffix consisting of $N-1$ fives and then sixty is $(50T+40)/9$, occupying $N+1$ places.",
+      "Combining that prefix and suffix gives $10T(4T-13)/9+(50T+40)/9=40(T^2-2T+1)/9$, exactly the original product. This proves the full decimal pattern rather than extrapolating it from small examples.",
+      "Its digit sum is $4(N-1)+3+5(N-1)+6+0=9N=17865$. A full exact integer multiplication independently verifies the entire 1985-digit construction."
+    ],
+    "keyIdeas": [
+      "Derive the full decimal pattern of the product"
+    ],
+    "commonMistakes": [
+      "Guessing a carry pattern from one short example without accounting for the middle transition digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prefix and suffix formulas make every carry in the long product explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1985-p30",
+    "problemId": "amc12-predecessor-1985-p30",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "The permissible floor values are $2,6,7,8$, each producing one real root, so there are four solutions.",
+    "detailedSteps": [
+      "Write $k=\\lfloor x\\rfloor$. The equation gives $x^2=10k-51/4\\ge0$, hence the integer $k\\ge2$. Therefore $x$ is positive and equals $\\sqrt{10k-51/4}$.",
+      "The lower floor bound $k\\le x$ is equivalent to $k^2\\le10k-51/4$, or $(2k-3)(2k-17)\\le0$. With integer $k$, this restricts it to $2,3,4,5,6,7,8$.",
+      "The strict upper bound $x<k+1$ is equivalent to $10k-51/4<(k+1)^2$, or $(2k-5)(2k-11)>0$. Within the first list, it retains exactly $2,6,7,8$.",
+      "Each retained integer gives one positive root lying in its required interval $[k,k+1)$. Negative roots cannot have these positive floor values. The total is four."
+    ],
+    "keyIdeas": [
+      "Enforce both bounds of the floor interval"
+    ],
+    "commonMistakes": [
+      "Checking only one floor bound or allowing the upper endpoint of its interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The floor condition converts a continuous equation into exact integer interval inequalities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

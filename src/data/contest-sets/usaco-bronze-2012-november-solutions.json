@@ -1,0 +1,77 @@
+[
+  {
+    "id": "solution-usaco-bronze-2012-november-p1",
+    "problemId": "usaco-bronze-2012-november-p1",
+    "finalAnswer": "Write the number of valid location-index pairs to cowfind.out.",
+    "shortExplanation": "Scan adjacent pairs from left to right. Every right-parenthesis pair can follow each earlier left-parenthesis pair.",
+    "detailedSteps": [
+      "A location is a pair of adjacent-pattern starting indices: a left-parenthesis pair must start before a right-parenthesis pair. The input itself does not need to be balanced, and overlapping occurrences inside a run are distinct starts.",
+      "Keep a count of left-parenthesis pairs already seen. At a right-parenthesis pair, add that count to the answer: each earlier left start creates one location ending at this right start.",
+      "Every valid location is counted exactly once, when its right start is scanned. Left and right pair patterns cannot occur at the same start, so this counts strictly earlier starts. A one-character input has no adjacent pair and returns zero.",
+      "Time is $O(N)$ and extra storage is $O(1)$ beyond the input. With $N\\le50000$, the number of distinct ordered start pairs is at most $(N-1)(N-2)/2<1.25\\cdot10^9$; the code uses 64-bit counts. Read cowfind.in and write one full count to cowfind.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    string s; if (!(in >> s)) return;\n    long long leftPairs=0, answer=0;\n    for (size_t i=0;i+1<s.size();++i) {\n        if (s[i]=='(' && s[i+1]=='(') ++leftPairs;\n        if (s[i]==')' && s[i+1]==')') answer+=leftPairs;\n    }\n    out << answer << '\\n';\n}\nint main() { ifstream in(\"cowfind.in\"); ofstream out(\"cowfind.out\"); solve(in,out); return 0; }\n```"
+    ],
+    "keyIdeas": [
+      "Count locations by their right-pattern starting index."
+    ],
+    "commonMistakes": [
+      "Counting only disjoint occurrences inside a run.",
+      "Requiring the whole input to be balanced."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main detail is keeping adjacent-pair identities and their left-to-right order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2012-november-p2",
+    "problemId": "usaco-bronze-2012-november-p2",
+    "finalAnswer": "Write the number of valid single-character reversals to typo.out.",
+    "shortExplanation": "A flip changes every later prefix balance by the same amount. Test the unchanged prefixes, shifted later prefixes and final total.",
+    "detailedSteps": [
+      "Let $b_j$ be the balance after the first $j$ original characters, with $b_0=0$: an opening adds one and a closing subtracts one. A balanced string ends at zero and never has a negative prefix.",
+      "Reversing zero-based position $i$ shifts every prefix from $i+1$ onward by $\\Delta=-2$ for an opening, or $\\Delta=2$ for a closing. Earlier prefixes are unchanged.",
+      "The flip is valid exactly when $b_N+\\Delta=0$, $\\min_{0\\le j\\le i}b_j\\ge0$, and $\\min_{i+1\\le j\\le N}b_j+\\Delta\\ge0$. These conditions cover the final balance and every repaired prefix, proving both necessity and sufficiency.",
+      "Precompute prefix minima and suffix minima, then check all positions with those three tests. Exactly one character must change; an already balanced input is not counted as a zero-change repair. If no position works, output zero.",
+      "Time and storage are $O(N)$ for $N\\le100000$. Prefix balances lie in $[-N,N]$, and the answer is at most $N$, so the retained 32-bit integer target is sufficient. Read typo.in and write one count to typo.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    string s; if (!(in >> s)) return;\n    int n=int(s.size()); vector<int> balance(n+1,0), before(n+1), suffix(n+1);\n    for (int i=0;i<n;++i) balance[i+1]=balance[i]+(s[i]=='('?1:-1);\n    before[0]=0;\n    for (int i=1;i<=n;++i) before[i]=min(before[i-1],balance[i]);\n    suffix[n]=balance[n];\n    for (int i=n-1;i>=0;--i) suffix[i]=min(balance[i],suffix[i+1]);\n    int answer=0;\n    for (int i=0;i<n;++i) {\n        int change=s[i]=='('? -2:2;\n        if (balance[n]+change==0 && before[i]>=0 && suffix[i+1]+change>=0) ++answer;\n    }\n    out << answer << '\\n';\n}\nint main() { ifstream in(\"typo.in\"); ofstream out(\"typo.out\"); solve(in,out); return 0; }\n```"
+    ],
+    "keyIdeas": [
+      "A single flip shifts one complete suffix of prefix balances."
+    ],
+    "commonMistakes": [
+      "Checking only the final total without checking every prefix.",
+      "Counting an unchanged balanced input despite requiring exactly one reversal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prefix split at the changed character must include every affected and unaffected prefix.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2012-november-p3",
+    "problemId": "usaco-bronze-2012-november-p3",
+    "finalAnswer": "Write the maximum perfectly balanced walk length to hshoe.out.",
+    "shortExplanation": "Search simple grid walks with one opening block followed by one closing block. Record a walk when the two block sizes become equal.",
+    "detailedSteps": [
+      "Perfectly balanced means one uninterrupted block of openings followed by an equally long block of closings. An ordinary balanced sequence with several opening blocks is insufficient. Start by collecting the upper-left cell, move only to an orthogonal neighbor, and never revisit a collected cell.",
+      "The search state contains the current cell, visited mask and the opening/closing counts. An opening is allowed only before the first closing; a closing is allowed while fewer closings than openings have been collected. A closing starting cell gives answer zero.",
+      "These rules preserve exactly the prefixes of possible perfect strings. Conversely, each valid physical walk follows one of the searched neighbor sequences. When the counts become equal, record its length; extending it could only violate block order or produce too many closings.",
+      "If there are already more than $\\lfloor N^2/2\\rfloor$ openings, the required equal closing block would need more than $N^2$ distinct cells, so that branch can be rejected. Take the largest recorded length, which may be zero.",
+      "For $2\\le N\\le5$, there are at most 25 cells and the 32-bit unsigned mask covers all of them. Search is exponential, with worst-case time $O(3^{N^2})$ and storage $O(N^2)$ for the grid and recursion. Every answer is even and at most $2\\lfloor N^2/2\\rfloor\\le24$. Read hshoe.in and write one maximum length to hshoe.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdint>\n#include <fstream>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid search(int at, uint32_t used, int opens, int closes, const vector<string>& grid, int& best) {\n    int n=int(grid.size());\n    if (opens>n*n/2) return;\n    if (closes==opens) { best=max(best,opens+closes); return; }\n    int r=at/n, c=at%n;\n    const int dr[]={-1,1,0,0}, dc[]={0,0,-1,1};\n    for (int d=0;d<4;++d) {\n        int rr=r+dr[d], cc=c+dc[d];\n        if (rr<0 || rr>=n || cc<0 || cc>=n) continue;\n        int next=rr*n+cc; uint32_t bit=uint32_t(1)<<next;\n        if (used&bit) continue;\n        if (grid[rr][cc]=='(') {\n            if (closes==0) search(next,used|bit,opens+1,0,grid,best);\n        } else if (closes<opens) search(next,used|bit,opens,closes+1,grid,best);\n    }\n}\nvoid solve(istream& in, ostream& out) {\n    int n; if (!(in >> n)) return;\n    vector<string> grid(n); for (string& row:grid) in >> row;\n    int best=0;\n    if (grid[0][0]=='(') search(0,uint32_t(1),1,0,grid,best);\n    out << best << '\\n';\n}\nint main() { ifstream in(\"hshoe.in\"); ofstream out(\"hshoe.out\"); solve(in,out); return 0; }\n```"
+    ],
+    "keyIdeas": [
+      "Perfect balance imposes one irreversible opening-to-closing phase change.",
+      "The visited mask enforces the physical no-return rule."
+    ],
+    "commonMistakes": [
+      "Accepting ordinary balanced strings such as several alternating pairs.",
+      "Returning to a cell whose horseshoe was already picked up."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed small board allows search, but the perfect-block rule and no-return condition must both be enforced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

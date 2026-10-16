@@ -1,0 +1,505 @@
+[
+  {
+    "id": "solution-amc10b-2007-p1",
+    "problemId": "amc10b-2007-p1",
+    "finalAnswer": "$\\boxed{876}$ (choice E)",
+    "shortExplanation": "Find the exposed wall area in one room, then multiply by three.",
+    "detailedSteps": [
+      "The four walls have area $2(12+10)\\cdot8=352$ square feet per room. The area to paint is $352-60=292$ square feet.",
+      "Therefore the three rooms require $3\\cdot292=876$ square feet of paint coverage."
+    ],
+    "keyIdeas": [
+      "Wall area with openings removed"
+    ],
+    "commonMistakes": [
+      "Including the floor or ceiling, or subtracting the openings only once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only vertical walls contribute to the requested area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p2",
+    "problemId": "amc10b-2007-p2",
+    "finalAnswer": "$\\boxed{16}$ (choice E)",
+    "shortExplanation": "The common sum is 8, but the final multipliers differ.",
+    "detailedSteps": [
+      "The two operation values are $3\\star5=8\\cdot5=40$ and $5\\star3=8\\cdot3=24$. Their difference is $40-24=16$."
+    ],
+    "keyIdeas": [
+      "Evaluating an asymmetric operation"
+    ],
+    "commonMistakes": [
+      "Assuming the operation is commutative because its definition contains a+b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second argument has a special role.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p3",
+    "problemId": "amc10b-2007-p3",
+    "finalAnswer": "$\\boxed{24}$ (choice B)",
+    "shortExplanation": "Divide the round-trip distance by the total fuel used.",
+    "detailedSteps": [
+      "The outward trip consumes $120/30=4$ gallons and the return consumes $120/20=6$ gallons.",
+      "The combined mileage is $240/(4+6)=24$ miles per gallon."
+    ],
+    "keyIdeas": [
+      "Fuel-weighted average mileage"
+    ],
+    "commonMistakes": [
+      "Taking the arithmetic mean of the two mileages."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal distances do not imply equal amounts of fuel.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p4",
+    "problemId": "amc10b-2007-p4",
+    "finalAnswer": "$\\boxed{50}$ (choice D)",
+    "shortExplanation": "The arc AC away from B has central angle 100 degrees.",
+    "detailedSteps": [
+      "The remaining angle at the center is $360^\\circ-140^\\circ-120^\\circ=100^\\circ$. The figure places that arc AC opposite B.",
+      "The inscribed angle subtending the arc is half its central angle, so $\\angle ABC=50^\\circ$."
+    ],
+    "keyIdeas": [
+      "Inscribed angle and complementary central arc"
+    ],
+    "commonMistakes": [
+      "Halving the arc through B rather than the arc opposite B."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram identifies which arc the inscribed angle intercepts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p5",
+    "problemId": "amc10b-2007-p5",
+    "finalAnswer": "$\\boxed{\\text{All Crups are Arogs and Brafs}}$ (choice D)",
+    "shortExplanation": "Follow the implication from Crups through Dramps and Arogs.",
+    "detailedSteps": [
+      "The premises give $\\text{Crup}\\Rightarrow\\text{Dramp}\\Rightarrow\\text{Arog}\\Rightarrow\\text{Braf}$. Hence a Crup must be both an Arog and a Braf, as stated in choice D.",
+      "The reverse implications need not hold: an Arog need not be a Dramp, and a Braf need not be a Crup."
+    ],
+    "keyIdeas": [
+      "Transitive containment"
+    ],
+    "commonMistakes": [
+      "Reversing a one-way implication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A containment chain proves the conclusion without assuming categories are equal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p6",
+    "problemId": "amc10b-2007-p6",
+    "finalAnswer": "$\\boxed{16}$ (choice D)",
+    "shortExplanation": "The three blanks provide 4.5 points, leaving 95.5 points to earn.",
+    "detailedSteps": [
+      "If c attempted problems are correct, the score is $6c+3(1.5)$. The condition is $6c+4.5\\ge100$, or $c\\ge95.5/6$.",
+      "The smallest integer meeting that bound is 16. Its score is 100.5; 15 correct answers give only 94.5."
+    ],
+    "keyIdeas": [
+      "An integer score threshold"
+    ],
+    "commonMistakes": [
+      "Ignoring the points awarded for unanswered questions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Round the lower bound upward because a problem count is an integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p7",
+    "problemId": "amc10b-2007-p7",
+    "finalAnswer": "$\\boxed{150}$ (choice E)",
+    "shortExplanation": "The two right angles create a square, and the remaining tip is equilateral.",
+    "detailedSteps": [
+      "Scale every side to 1 and place $A=(0,0)$, $B=(1,0)$, $C=(1,1)$, and $E=(0,1)$. Convexity puts C and E on the same side of AB, so ABCE is a square.",
+      "Since $CD=DE=CE=1$, triangle CDE is equilateral. Its outward location is forced by convexity. Thus the angle at E is $90^\\circ+60^\\circ=150^\\circ$."
+    ],
+    "keyIdeas": [
+      "A square completed by an equilateral triangle"
+    ],
+    "commonMistakes": [
+      "Assuming the whole pentagon is regular merely because its sides are equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal sides together with the adjacent right angles impose a rigid shape.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p8",
+    "problemId": "amc10b-2007-p8",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "shortExplanation": "Choose the middle digit and its permitted common difference.",
+    "detailedSteps": [
+      "Write $a=b-d$ and $c=b+d$, where $d\\ge1$. The bounds give $d\\le\\min(b,9-b)$ for $b=1,\\ldots,8$.",
+      "The respective counts are $1,2,3,4,4,3,2,1$, whose sum is 20. Each triple gives a distinct five-digit number of the required form."
+    ],
+    "keyIdeas": [
+      "Three digits in arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Counting orderings of the same three digits even though their positions are fixed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positive middle digit automatically prevents a leading zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p9",
+    "problemId": "amc10b-2007-p9",
+    "finalAnswer": "$\\boxed{\\text{s}}$ (choice D)",
+    "shortExplanation": "The final s is the twelfth occurrence, producing a shift of 78.",
+    "detailedSteps": [
+      "The words contribute respectively $1,2,1,0,4,2,2$ occurrences of s, for a total of 12. The shift for the last one is $1+2+\\cdots+12=12\\cdot13/2=78$.",
+      "Since $78=3\\cdot26$, the shift makes three complete trips around the alphabet and returns to s."
+    ],
+    "keyIdeas": [
+      "A triangular shift modulo 26"
+    ],
+    "commonMistakes": [
+      "Restarting the count at each word or shifting by 12 instead of the sum through 12."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The occurrence count is global across the message.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p10",
+    "problemId": "amc10b-2007-p10",
+    "finalAnswer": "$\\boxed{\\text{two parallel lines}}$ (choice A)",
+    "shortExplanation": "A fixed base requires a fixed positive distance from its supporting line.",
+    "detailedSteps": [
+      "If $BC=L$, then $1=\\tfrac12 Lh$ implies $h=2/L$. All vertices at this perpendicular distance lie on one of the two lines parallel to BC, one on each side.",
+      "Every point on either line gives the required area, so the locus is the full pair of lines."
+    ],
+    "keyIdeas": [
+      "A fixed-area vertex locus"
+    ],
+    "commonMistakes": [
+      "Restricting the altitude foot to the segment BC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Triangle area uses the supporting line as its altitude reference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p11",
+    "problemId": "amc10b-2007-p11",
+    "finalAnswer": "$\\boxed{\\frac{81\\pi}{32}}$ (choice C)",
+    "shortExplanation": "Find the triangle area before using the circumradius formula.",
+    "detailedSteps": [
+      "The altitude bisects the base and has length $\\sqrt{3^2-1^2}=2\\sqrt2$. Hence the triangle area is $\\Delta=2\\sqrt2$.",
+      "The circumradius is $R=abc/(4\\Delta)=18/(8\\sqrt2)=9/(4\\sqrt2)$. Its circle area is $\\pi R^2=81\\pi/32$."
+    ],
+    "keyIdeas": [
+      "Circumradius of an isosceles triangle"
+    ],
+    "commonMistakes": [
+      "Using the inradius instead of the radius of the circle through all three vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circumcircle passes through vertices; its radius need not equal the altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p12",
+    "problemId": "amc10b-2007-p12",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "The total age of three children decreases three times as fast as one parent age.",
+    "detailedSteps": [
+      "N years earlier, the parent was $T-N$ and the children had total age $T-3N$. Thus $T-N=2(T-3N)$.",
+      "Simplifying yields $T=5N$, so $T/N=5$."
+    ],
+    "keyIdeas": [
+      "Ages changing at different aggregate rates"
+    ],
+    "commonMistakes": [
+      "Subtracting only N from the combined ages of all three children."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count how many individual ages contribute to each total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p13",
+    "problemId": "amc10b-2007-p13",
+    "finalAnswer": "$\\boxed{2(\\pi-2)}$ (choice D)",
+    "shortExplanation": "Each half of the lens is a quarter-disk sector minus a right triangle.",
+    "detailedSteps": [
+      "The circle centers are $2\\sqrt2$ apart. Their intersections are $(0,0)$ and $(2,2)$, which subtend a right angle at either center.",
+      "Each radius-2 quarter sector has area $\\pi$, and its isosceles right triangle has area 2. Adding the two segments gives $2(\\pi-2)$."
+    ],
+    "keyIdeas": [
+      "Two circular segments in a lens"
+    ],
+    "commonMistakes": [
+      "Counting only one circular segment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetric lens consists of two congruent segments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p14",
+    "problemId": "amc10b-2007-p14",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The total headcount stays fixed while the girl count falls by two.",
+    "detailedSteps": [
+      "Let the original headcount be N. After two girls leave and two boys arrive, the count is still N, while the number of girls changes from $0.4N$ to $0.4N-2$.",
+      "Therefore $0.4N-2=0.3N$, giving $N=20$ and an original girl count of $0.4\\cdot20=8$."
+    ],
+    "keyIdeas": [
+      "A percentage change with fixed group size"
+    ],
+    "commonMistakes": [
+      "Changing the denominator even though departures and arrivals cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the unchanged total to compare the two percentages directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p15",
+    "problemId": "amc10b-2007-p15",
+    "finalAnswer": "$\\boxed{173}$ (choice D)",
+    "shortExplanation": "Express all four angles in terms of A and use their sum.",
+    "detailedSteps": [
+      "The other angles are $A/2$, $A/3$, and $A/4$. Thus $A(1+1/2+1/3+1/4)=360^\\circ$.",
+      "Since the coefficient is $25/12$, $A=4320/25=172.8^\\circ$, which rounds to $173^\\circ$."
+    ],
+    "keyIdeas": [
+      "Unequal angles with a common multiple"
+    ],
+    "commonMistakes": [
+      "Interpreting A=2B=3C=4D as angles in the ratio 1:2:3:4."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equality gives reciprocal ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p16",
+    "problemId": "amc10b-2007-p16",
+    "finalAnswer": "$\\boxed{93}$ (choice C)",
+    "shortExplanation": "The juniors must offset the seniors average being one point below the overall mean.",
+    "detailedSteps": [
+      "Let the common junior score be j. Then $0.1j+0.9(83)=84$.",
+      "Hence $0.1j=9.3$ and $j=93$."
+    ],
+    "keyIdeas": [
+      "A weighted class average"
+    ],
+    "commonMistakes": [
+      "Averaging the junior and senior subgroup means with equal weights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The subgroup sizes determine the weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p17",
+    "problemId": "amc10b-2007-p17",
+    "finalAnswer": "$\\boxed{4\\sqrt3}$ (choice D)",
+    "shortExplanation": "Adding the three subtriangle areas gives the altitude of the whole triangle.",
+    "detailedSteps": [
+      "Let the equilateral side length be s and its altitude h. The three triangles with vertex P have total area $\\tfrac12 s(1+2+3)=3s$.",
+      "This equals the outer area $\\tfrac12 sh$, so $h=6$. Since $h=s\\sqrt3/2$, $s=12/\\sqrt3=4\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Sum of distances to equilateral sides"
+    ],
+    "commonMistakes": [
+      "Treating the three distances as independent side lengths of a right triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This area argument proves the constant sum of perpendicular distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p18",
+    "problemId": "amc10b-2007-p18",
+    "finalAnswer": "$\\boxed{1+\\sqrt2}$ (choice B)",
+    "shortExplanation": "The surrounding centers form a square of side 2r.",
+    "detailedSteps": [
+      "Adjacent outer circles are tangent, so their centers form a square with side $2r$. Its center-to-vertex distance is $r\\sqrt2$.",
+      "Tangency to the middle circle gives $r\\sqrt2=r+1$. Solving and rationalizing yields $r=1/(\\sqrt2-1)=1+\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Centers of four tangent circles"
+    ],
+    "commonMistakes": [
+      "Using the full diagonal as the center-to-vertex distance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate circle tangencies into distances between centers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p19",
+    "problemId": "amc10b-2007-p19",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice C)",
+    "shortExplanation": "The second spin has equally many odd and even row remainders.",
+    "detailedSteps": [
+      "The six equally likely wheel labels are $1,2,3,6,7,9$. Modulo 5 their remainders are $1,2,3,1,2,4$, giving three odd and three even rows.",
+      "A square is shaded exactly when its row and column labels have the same parity. Whatever the first spin selects, half the second spins match that parity. The probability is $1/2$."
+    ],
+    "keyIdeas": [
+      "Checkerboard parity under remainders"
+    ],
+    "commonMistakes": [
+      "Assuming all board squares are equally likely without checking the wheel labels."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Condition on the selected column; its distribution then becomes irrelevant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p20",
+    "problemId": "amc10b-2007-p20",
+    "finalAnswer": "$\\boxed{600}$ (choice C)",
+    "shortExplanation": "Choose three rows, three columns, and a bijection between them.",
+    "detailedSteps": [
+      "There are $\\binom53$ choices for the rows and the same number for the columns. Once chosen, there are $3!$ ways to match each row to a different column.",
+      "The total is $\\binom53^2\\,3!=10^2\\cdot6=600$. Each unordered selection is counted once."
+    ],
+    "keyIdeas": [
+      "Three nonattacking selections in a grid"
+    ],
+    "commonMistakes": [
+      "Counting ordered selections of the three blocks without dividing by 3!."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate selecting coordinates from matching them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p21",
+    "problemId": "amc10b-2007-p21",
+    "finalAnswer": "$\\boxed{\\frac{60}{37}}$ (choice B)",
+    "shortExplanation": "Similar triangles relate the horizontal cross-section to the square height.",
+    "detailedSteps": [
+      "The altitude to the length-5 hypotenuse is $h=2(3\\cdot4/2)/5=12/5$. Let the square side be s.",
+      "The triangle width at height s above AC is $5(1-s/h)$ by similarity. This width equals the upper square side s, so $s=5(1-5s/12)$.",
+      "Hence $37s=60$ and $s=60/37$."
+    ],
+    "keyIdeas": [
+      "A square resting on a triangle hypotenuse"
+    ],
+    "commonMistakes": [
+      "Using a square resting on one of the legs instead of the hypotenuse shown."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square width and its height must be the same unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p22",
+    "problemId": "amc10b-2007-p22",
+    "finalAnswer": "$\\boxed{-\\frac1{16}}$ (choice B)",
+    "shortExplanation": "Weight the three payoffs by their probabilities.",
+    "detailedSteps": [
+      "Exactly one match occurs in $2\\cdot1\\cdot3=6$ of the 16 outcomes; two matches occur once; no match occurs in the other nine.",
+      "The mean payoff is $(6\\cdot1+1\\cdot2+9(-1))/16=-1/16$ dollars."
+    ],
+    "keyIdeas": [
+      "Expected payoff on two tetrahedral dice"
+    ],
+    "commonMistakes": [
+      "Treating a no-match roll as a zero payoff rather than a loss."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Expected value includes negative returns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p23",
+    "problemId": "amc10b-2007-p23",
+    "finalAnswer": "$\\boxed{4+2\\sqrt2}$ (choice E)",
+    "shortExplanation": "The small pyramid has height h-2 and linear scale 1/sqrt(2).",
+    "detailedSteps": [
+      "A cut parallel to the base produces a pyramid similar to the original. If the original altitude is h, its top part has altitude $h-2$.",
+      "Surface areas scale quadratically, so $((h-2)/h)^2=1/2$. Both heights are positive; therefore $(h-2)/h=1/\\sqrt2$.",
+      "Solving gives $h=2/(1-1/\\sqrt2)=4+2\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Surface area and linear similarity"
+    ],
+    "commonMistakes": [
+      "Using an area ratio of one half as the linear scale factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The new cut face is the smaller pyramid base, so the complete surface areas scale together.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p24",
+    "problemId": "amc10b-2007-p24",
+    "finalAnswer": "$\\boxed{4944}$ (choice C)",
+    "shortExplanation": "Divisibility by 9 requires nine occurrences of 4; divisibility by 4 forces a final 44.",
+    "detailedSteps": [
+      "If there are k digits equal to 4, the digit sum is congruent to $4k$ modulo 9. Thus k is a positive multiple of 9, and the shortest possible number has nine 4s and one 9.",
+      "Among the possible last two digits 44,49,94,99, only 44 is divisible by 4. With that suffix fixed, the single 9 must be as far right as possible to minimize the ten-digit number.",
+      "The result is 4444444944, whose last four digits are 4944."
+    ],
+    "keyIdeas": [
+      "Minimal length before lexicographic minimization"
+    ],
+    "commonMistakes": [
+      "Placing the 9 at the very end, which violates divisibility by 4."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Numerical minimization starts with the shortest possible digit length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2007-p25",
+    "problemId": "amc10b-2007-p25",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "First restrict b to a divisor of 9 and a to a divisor of 14.",
+    "detailedSteps": [
+      "Integrality is equivalent to $9ab\\mid9a^2+14b^2$. Because $\\gcd(a,b)=1$, reducing modulo b gives $b\\mid9$, and reducing modulo a gives $a\\mid14$.",
+      "The numerator must be divisible by 3, so $3\\mid b$; hence $b=3$ or 9. If $b=9$, the expression is $(a^2+126)/(9a)$, which would require $3\\mid a$, contradicting coprimality.",
+      "For $b=3$, the expression is $(a^2+14)/(3a)$. Each of $a=1,2,7,14$ divides 14 and has $a^2\\equiv1\\pmod3$, so all four work. These are all possibilities."
+    ],
+    "keyIdeas": [
+      "Coprimality forces divisors of fixed constants"
+    ],
+    "commonMistakes": [
+      "Checking a finite search without proving a bound on a and b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coprimality lets a denominator divisor be isolated from the other variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

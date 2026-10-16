@@ -1,0 +1,509 @@
+[
+  {
+    "id": "solution-amc12a-2003-p1",
+    "problemId": "amc12a-2003-p1",
+    "finalAnswer": "$\\boxed{2003}$ (choice D)",
+    "shortExplanation": "Each even term exceeds its corresponding odd term by one.",
+    "detailedSteps": [
+      "Pair $2k$ with $2k-1$ for $k=1,\\ldots,2003$. Each difference is $1$, so the difference between the sums is $2003$."
+    ],
+    "keyIdeas": [
+      "Pairwise differences"
+    ],
+    "commonMistakes": [
+      "Computing both large sums separately and losing an endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing avoids large arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p2",
+    "problemId": "amc12a-2003-p2",
+    "finalAnswer": "$\\boxed{91}$ (choice B)",
+    "shortExplanation": "Each member’s two complete outfits cost $26$.",
+    "detailedSteps": [
+      "A shirt costs $4+5=9$ dollars. The home and away outfits together cost $2(4+9)=26$ dollars per member.",
+      "Therefore the membership is $2366/26=91$."
+    ],
+    "keyIdeas": [
+      "Cost per league member"
+    ],
+    "commonMistakes": [
+      "Counting only one outfit per person."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Include both home and away needs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p3",
+    "problemId": "amc12a-2003-p3",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "Eight removed cubes account for $216$ cubic centimeters.",
+    "detailedSteps": [
+      "The original volume is $15\\cdot10\\cdot8=1200$. All eight corner cubes are disjoint because even the shortest box side exceeds twice their side length.",
+      "The removed volume is $8\\cdot3^3=216$, or $100(216/1200)=18\\%$."
+    ],
+    "keyIdeas": [
+      "Disjoint corner volumes"
+    ],
+    "commonMistakes": [
+      "Using six faces instead of eight corners."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count solid pieces before calculating volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p4",
+    "problemId": "amc12a-2003-p4",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The round trip covers $2$ kilometers in $40$ minutes.",
+    "detailedSteps": [
+      "Total time is $30+10=40$ minutes, or $2/3$ hour. Average speed is total distance divided by total time: $2/(2/3)=3$ km/hr."
+    ],
+    "keyIdeas": [
+      "Total-distance average speed"
+    ],
+    "commonMistakes": [
+      "Averaging the uphill and downhill speeds arithmetically."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two journeys take different amounts of time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p5",
+    "problemId": "amc12a-2003-p5",
+    "finalAnswer": "$\\boxed{14}$ (choice E)",
+    "shortExplanation": "The first number is $61710$, so the letter digits are $6,1,7$.",
+    "detailedSteps": [
+      "The second number exceeds the first by $2$. Hence $2\\overline{AMC10}+2=123422$, giving $\\overline{AMC10}=61710$.",
+      "Thus $A=6,M=1,C=7$ and their sum is $14$."
+    ],
+    "keyIdeas": [
+      "Recovering the shared decimal prefix"
+    ],
+    "commonMistakes": [
+      "Treating AMC as multiplication of letters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two numbers share all but their last digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p6",
+    "problemId": "amc12a-2003-p6",
+    "finalAnswer": "$\\boxed{\\text{Statement C}}$ (choice C)",
+    "shortExplanation": "A negative input disproves the claimed identity with zero.",
+    "detailedSteps": [
+      "At $x=-1$, the operation with zero gives $|-1-0|=1$, which is not $x=-1$. Thus C is false.",
+      "The others follow from symmetry, $|2(x-y)|=2|x-y|$, a zero self-difference, and positivity when the two inputs differ."
+    ],
+    "keyIdeas": [
+      "Absolute-value counterexample"
+    ],
+    "commonMistakes": [
+      "Assuming every real input is nonnegative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A universal claim is disproved by one valid input.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p7",
+    "problemId": "amc12a-2003-p7",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The only sorted triples are $(1,3,3)$ and $(2,2,3)$.",
+    "detailedSteps": [
+      "Write the sides as $a\\le b\\le c$. Then $a+b>c$ and $a+b+c=7$ imply $c<7/2$, so $c\\le3$.",
+      "If $c=3$, the remaining sum is $4$, giving $(1,3,3)$ or $(2,2,3)$. A largest side at most $2$ cannot total $7$. Hence there are two shapes."
+    ],
+    "keyIdeas": [
+      "Integer triangle inequalities"
+    ],
+    "commonMistakes": [
+      "Including the degenerate triple $(1,2,4)$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sorting removes congruent reorderings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p8",
+    "problemId": "amc12a-2003-p8",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice E)",
+    "shortExplanation": "Six of the twelve divisors are below $7$.",
+    "detailedSteps": [
+      "The factorization $60=2^2\\cdot3\\cdot5$ gives $(2+1)(1+1)(1+1)=12$ positive factors.",
+      "The favorable factors are $1,2,3,4,5,6$, so the probability is $6/12=1/2$."
+    ],
+    "keyIdeas": [
+      "Uniform selection from divisors"
+    ],
+    "commonMistakes": [
+      "Counting integers below 7 without confirming they divide 60."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sample space consists of divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p9",
+    "problemId": "amc12a-2003-p9",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The reflections force all sign choices and both coordinate orders.",
+    "detailedSteps": [
+      "Reflection in the axes yields $(\\pm2,\\pm3)$. Reflection in $y=x$ also yields $(\\pm3,\\pm2)$. These eight points are distinct.",
+      "This eight-point set is closed under all the required symmetries, including the origin, so the lower bound is attained."
+    ],
+    "keyIdeas": [
+      "Orbit under reflections"
+    ],
+    "commonMistakes": [
+      "Counting the origin symmetry as eight additional points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove both necessity and closure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p10",
+    "problemId": "amc12a-2003-p10",
+    "finalAnswer": "$\\boxed{\\frac5{18}}$ (choice D)",
+    "shortExplanation": "The three remaining-fraction multipliers are $1/2,2/3,5/6$.",
+    "detailedSteps": [
+      "The intended shares are $3/6,2/6,1/6$. Each person takes that fraction of what is present, so the corresponding fraction left is $1/2,2/3,5/6$.",
+      "The unclaimed proportion is their product, $(1/2)(2/3)(5/6)=5/18$. The product is independent of the arrival order."
+    ],
+    "keyIdeas": [
+      "Successive shares of the remainder"
+    ],
+    "commonMistakes": [
+      "Subtracting all three fractions from the original pile."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every mistaken claimant uses the current pile as the base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p11",
+    "problemId": "amc12a-2003-p11",
+    "finalAnswer": "$\\boxed{\\frac{27}{32}}$ (choice C)",
+    "shortExplanation": "Normalize the common perimeter to $12$.",
+    "detailedSteps": [
+      "Then the square side is $3$ and its circumradius squared is $3^2/2=9/2$. The equilateral triangle side is $4$, giving circumradius squared $4^2/3=16/3$.",
+      "The circle area ratio is the squared-radius ratio: $(9/2)/(16/3)=27/32$."
+    ],
+    "keyIdeas": [
+      "Circumradii with equal perimeter"
+    ],
+    "commonMistakes": [
+      "Comparing the polygon areas instead of circumcircle areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scale invariance permits a convenient perimeter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p12",
+    "problemId": "amc12a-2003-p12",
+    "finalAnswer": "$\\boxed{12}$ (choice E)",
+    "shortExplanation": "The card $5$ and card $4$ must be the two red endpoints.",
+    "detailedSteps": [
+      "Red $5$ can neighbor only blue $5$, and red $4$ only blue $4$. Neither can be an interior red card, which would need two distinct neighboring blue cards. Thus they occupy the endpoints.",
+      "Orient the stack from red $5$ toward red $4$. Its next two cards are blue $5$, red $1$; at the other end the last three are red $2$, blue $4$, red $4$.",
+      "The remaining red $3$ must lie between the remaining blue $3$ and $6$. Blue $3$ goes next to red $1$, since it cannot be next to red $2$. The full order is $5_R,5_B,1_R,3_B,3_R,6_B,2_R,4_B,4_R$. The middle three sum to $3+3+6=12$."
+    ],
+    "keyIdeas": [
+      "Divisibility constraints in an alternating stack"
+    ],
+    "commonMistakes": [
+      "Treating card 5 as an interior card by reusing the same blue card twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Forced endpoints reduce the arrangement to one order and its reversal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p13",
+    "problemId": "amc12a-2003-p13",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "Positions $4,5,6,7,8,9$ work; the first three cause overlap.",
+    "detailedSteps": [
+      "View the source’s upper-left existing square as a face with outward normal $+z$. The upper middle, upper right, and lower left squares then have normals $+x,-z,-y$ after folding.",
+      "At positions $1,2,3$, the added square would have normal $-z,+x,-y$, respectively. Each repeats an existing face, so these positions fail; position $2$ also joins a planar four-square block that cannot fold consistently.",
+      "Positions $4,8,9$ produce the unused normal $-x$, and positions $5,6,7$ produce $+y$. In every one of these six cases, five distinct cube faces are obtained with consistent shared-edge folds. Thus exactly six positions work."
+    ],
+    "keyIdeas": [
+      "Face orientations of a folded partial cube"
+    ],
+    "commonMistakes": [
+      "Assuming every five-square attachment is a valid partial cube net."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A repeated face orientation exposes overlap without redrawing the source.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p14",
+    "problemId": "amc12a-2003-p14",
+    "finalAnswer": "$\\boxed{32+16\\sqrt3}$ (choice D)",
+    "shortExplanation": "The diagonals of the new square both have length $4(1+\\sqrt3)$.",
+    "detailedSteps": [
+      "The original side is $4$, and each outward equilateral triangle has altitude $2\\sqrt3$. Opposite new vertices are therefore separated by $4+4\\sqrt3$.",
+      "The four new vertices are symmetrically arranged, so their quadrilateral is a square with perpendicular equal diagonals. Its area is $(4+4\\sqrt3)^2/2=32+16\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Diagonals of an outward construction"
+    ],
+    "commonMistakes": [
+      "Choosing the inward equilateral vertices instead of those in the diagram."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The supplied figure fixes the outward triangle orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p15",
+    "problemId": "amc12a-2003-p15",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{4}-\\frac{\\pi}{24}}$ (choice C)",
+    "shortExplanation": "Subtract the large-circle segment from the small semicircle.",
+    "detailedSteps": [
+      "The small semicircle has radius $1/2$, so its area is $\\pi/8$. Its diameter is a chord of length $1$ in the large radius-$1$ circle, subtending $60^\\circ$.",
+      "The large circular segment above this chord has area $\\pi/6-\\sqrt3/4$, obtained by subtracting the equilateral triangle from the sector.",
+      "The lune area is $\\pi/8-(\\pi/6-\\sqrt3/4)=\\sqrt3/4-\\pi/24$."
+    ],
+    "keyIdeas": [
+      "Subtracting a circular segment"
+    ],
+    "commonMistakes": [
+      "Subtracting the entire large semicircle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify exactly which overlapping segment is removed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p16",
+    "problemId": "amc12a-2003-p16",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice C)",
+    "shortExplanation": "The three possibilities are equally likely, and ties occupy zero area.",
+    "detailedSteps": [
+      "Rotating the equilateral triangle through $120^\\circ$ permutes the three subtriangle areas and preserves uniform area measure.",
+      "Except on the lines where two areas agree, exactly one subtriangle has the largest area. Those lines have probability zero. The three equal probabilities therefore sum to $1$, giving $1/3$."
+    ],
+    "keyIdeas": [
+      "Symmetry among three subtriangle areas"
+    ],
+    "commonMistakes": [
+      "Adding tie cases as if they had positive area probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A symmetry argument avoids explicit region formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p17",
+    "problemId": "amc12a-2003-p17",
+    "finalAnswer": "$\\boxed{\\frac{16}{5}}$ (choice B)",
+    "shortExplanation": "Subtracting the circle equations gives $y=x/2$.",
+    "detailedSteps": [
+      "Place $D=(0,0),C=(4,0),A=(0,4)$ and $M=(2,0)$. The circle equations are $x^2+(y-4)^2=16$ and $(x-2)^2+y^2=4$.",
+      "Subtracting gives $y=x/2$. Substitution into the second equation yields $5x^2/4-4x=0$. One intersection is $D$ at $x=0$; the other has $x=16/5$.",
+      "The line $AD$ is $x=0$, so the required perpendicular distance is $16/5$."
+    ],
+    "keyIdeas": [
+      "The radical axis of two circles"
+    ],
+    "commonMistakes": [
+      "Reporting the y-coordinate instead of the distance from the vertical side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtraction cancels the quadratic terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p18",
+    "problemId": "amc12a-2003-p18",
+    "finalAnswer": "$\\boxed{8181}$ (choice B)",
+    "shortExplanation": "There are nine full remainder cycles and one extra remainder.",
+    "detailedSteps": [
+      "The quotient ranges from $100$ through $999$, and the remainder from $0$ through $99$. Among remainders $0$ through $98$, every residue modulo $11$ occurs nine times, giving $900\\cdot9=8100$ eligible pairs.",
+      "The extra remainder $99$ contributes exactly when $q$ is divisible by $11$. There are $\\lfloor999/11\\rfloor-\\lfloor99/11\\rfloor=81$ such quotients.",
+      "The total is $8100+81=8181$."
+    ],
+    "keyIdeas": [
+      "Counting residue classes in quotient and remainder"
+    ],
+    "commonMistakes": [
+      "Giving every remainder residue ten representatives."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An incomplete residue cycle needs a separate endpoint count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p19",
+    "problemId": "amc12a-2003-p19",
+    "finalAnswer": "$\\boxed{\\text{A non-horizontal line}}$ (choice D)",
+    "shortExplanation": "The quadratic terms cancel but the linear slope cannot vanish.",
+    "detailedSteps": [
+      "Choose the translations so that $f(x)=a(x-5)^2+b(x-5)+c$ and $g(x)=-a(x+5)^2-b(x+5)-c$.",
+      "The sum is $-20ax-10b$. Since the original graph is a parabola, $a\\ne0$, so the resulting slope is nonzero. Swapping the translation directions reverses the slope but preserves this conclusion."
+    ],
+    "keyIdeas": [
+      "Cancellation after opposite translations"
+    ],
+    "commonMistakes": [
+      "Assuming all terms cancel because the original graphs are reflections."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite horizontal shifts leave a linear difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p20",
+    "problemId": "amc12a-2003-p20",
+    "finalAnswer": "$\\boxed{\\sum_{k=0}^{5}\\binom5k^3}$ (choice A)",
+    "shortExplanation": "Choose the number of B’s in the first block; it fixes all three block compositions.",
+    "detailedSteps": [
+      "Let the first block have $k$ B’s and $5-k$ C’s. Since B is forbidden in the second block, the third block must contain $5-k$ B’s and $k$ A’s.",
+      "The remaining counts force the second block to contain $5-k$ A’s and $k$ C’s. Each block can be arranged in $\\binom5k$ ways.",
+      "For a fixed $k$ the count is $\\binom5k^3$. Summing over $k=0,\\ldots,5$ gives the displayed expression, equal to $2252$."
+    ],
+    "keyIdeas": [
+      "Matching block letter counts"
+    ],
+    "commonMistakes": [
+      "Choosing the three block compositions independently without enforcing total counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single composition parameter coordinates all global constraints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p21",
+    "problemId": "amc12a-2003-p21",
+    "finalAnswer": "$\\boxed{d}$ (choice D)",
+    "shortExplanation": "The coefficient $d=P^{\\prime}(0)$ is nonzero because zero is a simple root.",
+    "detailedSteps": [
+      "Factor the polynomial as $P(x)=x\\prod_{j=1}^{4}(x-r_j)$, where the other four distinct real roots are all nonzero.",
+      "The coefficient of $x$ is $d=\\prod_{j=1}^{4}(-r_j)$, a product of nonzero numbers. Hence $d$ cannot vanish."
+    ],
+    "keyIdeas": [
+      "A simple root and the derivative"
+    ],
+    "commonMistakes": [
+      "Confusing the zero constant term with the coefficient of x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinct intercepts make every root simple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p22",
+    "problemId": "amc12a-2003-p22",
+    "finalAnswer": "$\\boxed{0.20}$ (choice C)",
+    "shortExplanation": "At step $6$, the total number of horizontal moves must be $5$.",
+    "detailedSteps": [
+      "The initial Manhattan distance is $12$, and each simultaneous step reduces the sum of the two coordinate gaps by $2$. A meeting can therefore occur only after $6$ steps.",
+      "Let $X$ be A’s right moves and $Y$ B’s left moves in those steps. Their horizontal coordinates agree exactly when $X+Y=5$; the vertical coordinates then agree automatically.",
+      "The twelve independent move choices make $X+Y$ binomial with parameters $12,1/2$. The probability is $\\binom{12}{5}/2^{12}=99/512\\approx0.19336$, whose closest option is $0.20$."
+    ],
+    "keyIdeas": [
+      "Meeting at the unique possible time"
+    ],
+    "commonMistakes": [
+      "Treating the two final coordinates as independent requirements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total-step constraint removes one coordinate equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p23",
+    "problemId": "amc12a-2003-p23",
+    "finalAnswer": "$\\boxed{672}$ (choice B)",
+    "shortExplanation": "The prime exponents in the factorial product are $30,13,5,3$.",
+    "detailedSteps": [
+      "Summing prime valuations of $1!,\\ldots,9!$ gives exponents $30$ for $2$, $13$ for $3$, $5$ for $5$, and $3$ for $7$.",
+      "A square divisor chooses an even exponent for each prime. The numbers of choices are $16,7,3,2$, respectively, so the count is $16\\cdot7\\cdot3\\cdot2=672$."
+    ],
+    "keyIdeas": [
+      "Even exponents in divisors"
+    ],
+    "commonMistakes": [
+      "Using all possible exponents rather than only even exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Square divisors correspond to independent even prime exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p24",
+    "problemId": "amc12a-2003-p24",
+    "finalAnswer": "$\\boxed{0}$ (choice B)",
+    "shortExplanation": "Writing the two logarithms through natural logs gives $2-t-1/t$.",
+    "detailedSteps": [
+      "Set $t=\\ln a/\\ln b\\ge1$. Then $\\log_a(a/b)=1-1/t$ and $\\log_b(b/a)=1-t$.",
+      "The sum is $2-t-1/t\\le0$, since $t+1/t\\ge2$. Equality occurs when $t=1$, equivalently $a=b>1$, so the maximum is $0$."
+    ],
+    "keyIdeas": [
+      "A reciprocal logarithm bound"
+    ],
+    "commonMistakes": [
+      "Treating logarithms with different bases as directly additive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equality is permitted by a≥b.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2003-p25",
+    "problemId": "amc12a-2003-p25",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Exactly $a=0$ and $a=-4$ work.",
+    "detailedSteps": [
+      "For $a>0$ and $b>0$, the domain includes $(-\\infty,-b/a]$, while the square-root range is nonnegative. Equality is impossible.",
+      "For $a=0$, the domain and range of $\\sqrt{bx}$ are both $[0,\\infty)$, so this value works.",
+      "For $a=-t<0$, the domain is $[0,b/t]$. The quadratic reaches its maximum $b^2/(4t)$ at $x=b/(2t)$, so the range is $[0,b/(2\\sqrt t)]$.",
+      "The intervals coincide exactly when $b/t=b/(2\\sqrt t)$. Since $b>0$, this forces $t=4$, hence $a=-4$. Both values admit positive b, and no others do."
+    ],
+    "keyIdeas": [
+      "Matching domain and range of a square-root quadratic"
+    ],
+    "commonMistakes": [
+      "Missing the square root or comparing only the endpoints of the quadratic rather than its square-root range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three signs of a give fundamentally different domains.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

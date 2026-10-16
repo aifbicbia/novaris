@@ -1,0 +1,623 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1995-p1",
+    "problemId": "amc12-predecessor-1995-p1",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The average rises from eighty-six to eighty-seven, an increase of one.",
+    "detailedSteps": [
+      "The first three scores sum to $87+83+88=258$, so their average is $258/3=86$.",
+      "Including the fourth score gives total $258+90=348$ and average $348/4=87$. The increase is $87-86=1$."
+    ],
+    "keyIdeas": [
+      "Compare the two actual averages"
+    ],
+    "commonMistakes": [
+      "Dividing both totals by the same number of examinations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator changes when a new observation is included.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p2",
+    "problemId": "amc12-predecessor-1995-p2",
+    "finalAnswer": "$\\boxed{49}$ (choice D)",
+    "shortExplanation": "Two successive squarings give $\\sqrt{x}=7$ and $x=49$.",
+    "detailedSteps": [
+      "The actual equation is $\\sqrt{2+\\sqrt{x}}=3$. Squaring gives $2+\\sqrt{x}=9$, hence $\\sqrt{x}=7$.",
+      "Squaring once more gives $x=49$. Substitution verifies $\\sqrt{2+\\sqrt{49}}=\\sqrt9=3$; both radicals use their nonnegative values."
+    ],
+    "keyIdeas": [
+      "Undo the outer square root before the inner one"
+    ],
+    "commonMistakes": [
+      "Squaring the inner radical before isolating it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the order of the two radical operations explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p3",
+    "problemId": "amc12-predecessor-1995-p3",
+    "finalAnswer": "$\\boxed{7\\text{ cents}}$ (choice B)",
+    "shortExplanation": "The advertisement totals $9992$ cents, seven cents less than the store price.",
+    "detailedSteps": [
+      "The three payments cost $3\\cdot2998=8994$ cents. Add the one-time shipping charge of $998$ cents to get $9992$ cents.",
+      "The store price is $9999$ cents, so the saving is $9999-9992=7$ cents. The shipping charge is paid once."
+    ],
+    "keyIdeas": [
+      "Work in integer cents"
+    ],
+    "commonMistakes": [
+      "Adding the one-time shipping charge to each payment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integer cents avoid rounding artifacts in currency subtraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p4",
+    "problemId": "amc12-predecessor-1995-p4",
+    "finalAnswer": "$\\boxed{\\frac3{25}}$ (choice B)",
+    "shortExplanation": "$M=0.06P$ and $N=0.5P$, giving $M/N=3/25$.",
+    "detailedSteps": [
+      "Combine the first two percentage relations: $M=0.3Q=0.3(0.2P)=0.06P$. The third gives $N=0.5P$.",
+      "The requested quotient is defined only when $N\\ne0$, so the common factor $P$ is nonzero and cancels: $M/N=0.06/0.5=3/25$."
+    ],
+    "keyIdeas": [
+      "Express both quantities in the same base"
+    ],
+    "commonMistakes": [
+      "Adding successive percentage factors instead of multiplying them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common reference quantity makes chained percentages easy to compare.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p5",
+    "problemId": "amc12-predecessor-1995-p5",
+    "finalAnswer": "$\\boxed{50\\text{ million (approximately)}}$ (choice C)",
+    "shortExplanation": "The density estimate gives $51.84$ million ants, closest to fifty million.",
+    "detailedSteps": [
+      "The field area is $300\\cdot400=120000$ square feet. Each square foot contains $12^2=144$ square inches.",
+      "The estimated count is $120000\\cdot144\\cdot3=51840000$. Among the five actual choices, fifty million is the closest approximation. This is an estimate from sampling, not an exact census."
+    ],
+    "keyIdeas": [
+      "Square the length conversion when converting area"
+    ],
+    "commonMistakes": [
+      "Multiplying the area by twelve instead of one hundred forty-four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area units require the square of the linear conversion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p6",
+    "problemId": "amc12-predecessor-1995-p6",
+    "finalAnswer": "$\\boxed{C}$ (choice C)",
+    "shortExplanation": "The folded normal of face $C$ is opposite the normal of $x$.",
+    "detailedSteps": [
+      "Use the exact source net: $A$ is to the right of $x$, $B$ above $A$, $C$ to the right of $B$, $D$ above $C$, and $E$ to the right of $D$. Start with $x$ facing upward.",
+      "For a consistent fold, these six faces have outward normals $+z,+x,+y,-z,-x,-y$, respectively, in that order. Each fold is a quarter-turn about its shared edge.",
+      "Thus $C$ faces $-z$ while $x$ faces $+z$. They are the opposite faces. Reversing the fold convention reflects the entire cube and preserves the same opposite pairs."
+    ],
+    "keyIdeas": [
+      "Track the directions of all folded face normals"
+    ],
+    "commonMistakes": [
+      "Reading which net squares are far apart without actually folding the intervening edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual stepped net, rather than a memorized generic net, determines the pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p7",
+    "problemId": "amc12-predecessor-1995-p7",
+    "finalAnswer": "$\\boxed{50\\text{ hours (approximately)}}$ (choice C)",
+    "shortExplanation": "The flight time is $16\\pi\\approx50.27$ hours, nearest to fifty.",
+    "detailedSteps": [
+      "At negligible altitude the route length is the equatorial circumference $2\\pi\\cdot4000=8000\\pi$ miles.",
+      "The given speed is relative to Earth, so the time is $8000\\pi/500=16\\pi\\approx50.27$ hours. The closest listed estimate is fifty hours."
+    ],
+    "keyIdeas": [
+      "Divide the equatorial circumference by the stated speed"
+    ],
+    "commonMistakes": [
+      "Using the diameter instead of the circumference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated reference frame already supplies the relevant speed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p8",
+    "problemId": "amc12-predecessor-1995-p8",
+    "finalAnswer": "$\\boxed{\\frac{20}3}$ (choice C)",
+    "shortExplanation": "The scale factor is $DE/AC=2/3$, so $BD=(2/3)AB=20/3$.",
+    "detailedSteps": [
+      "Pythagoras gives $AB=\\sqrt{6^2+8^2}=10$. Because $DE$ and $AC$ are both perpendicular to $BC$, they are parallel.",
+      "Triangles $BDE$ and $BAC$ share the angle at $B$ and have right angles at $E$ and $C$, so they are similar. Therefore $BD/AB=DE/AC=4/6=2/3$.",
+      "The required length is $BD=(2/3)\\cdot10=20/3$. The corresponding $BE=16/3$ lies within the original side of length eight."
+    ],
+    "keyIdeas": [
+      "Use the similar right triangles with the shared angle at B"
+    ],
+    "commonMistakes": [
+      "Matching the hypotenuse to a leg when writing the similarity ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The explicit right angle determines the parallel sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p9",
+    "problemId": "amc12-predecessor-1995-p9",
+    "finalAnswer": "$\\boxed{16}$ (choice D)",
+    "shortExplanation": "There are eight small triangles, four middle-sized triangles and four half-square triangles, for sixteen.",
+    "detailedSteps": [
+      "Scale the square to side two. Its four corners, four side midpoints and central intersection are the only possible triangle vertices formed by the drawn straight lines.",
+      "The eight wedges from the center to neighboring boundary vertices have area $1/2$. Four triangles use an entire square side as base and the center as apex; each has area one.",
+      "Each selection of three square corners gives a triangle of area two, producing four more. No other vertex triples have all three sides on the drawn segments; checking those segments completes the classification.",
+      "The total is $8+4+4=16$. Larger triangles remain eligible even when internal lines subdivide them."
+    ],
+    "keyIdeas": [
+      "Count triangles by their area scale in the actual drawing"
+    ],
+    "commonMistakes": [
+      "Counting only the eight smallest regions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classification by scale prevents both omissions and double counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p10",
+    "problemId": "amc12-predecessor-1995-p10",
+    "finalAnswer": "$\\boxed{36}$ (choice E)",
+    "shortExplanation": "The vertices are $(0,0),(-6,6),(6,6)$, so the area is thirty-six.",
+    "detailedSteps": [
+      "The two sloping lines meet at $(0,0)$. Intersecting each with $y=6$ gives $(6,6)$ and $(-6,6)$.",
+      "The horizontal base has length twelve and its perpendicular height from the origin is six. Thus the area is $\\tfrac12\\cdot12\\cdot6=36$."
+    ],
+    "keyIdeas": [
+      "Find the three pairwise line intersections"
+    ],
+    "commonMistakes": [
+      "Using the sloping side length as the height above the horizontal base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The horizontal line makes the base-height calculation direct.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p11",
+    "problemId": "amc12-predecessor-1995-p11",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "There are two leading digits, six middle pairs and two final digits, giving twenty-four.",
+    "detailedSteps": [
+      "The interval restricts the thousands digit to four or five. Divisibility by five restricts the units digit to zero or five.",
+      "The two middle digits satisfy $3\\le b<c\\le6$. Choosing two of the four digits $3,4,5,6$ determines their increasing order, giving $\\binom42=6$ pairs.",
+      "These three independent choices produce $2\\cdot6\\cdot2=24$ distinct numbers; every resulting number meets the original interval condition."
+    ],
+    "keyIdeas": [
+      "Choose the leading digit, the ordered middle pair and the last digit"
+    ],
+    "commonMistakes": [
+      "Counting both orders of the middle digits despite the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every digit restriction controls a separate choice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p12",
+    "problemId": "amc12-predecessor-1995-p12",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "The slope must be both nonnegative and nonpositive, so the function is constantly five.",
+    "detailedSteps": [
+      "Write $f(x)=mx+b$. The inequality $f(1)\\le f(2)$ gives $m\\ge0$, while $f(3)\\ge f(4)$ gives $m\\le0$. Hence $m=0$.",
+      "The function is constant. Since $f(5)=5$, that constant is five, so $f(0)=5$."
+    ],
+    "keyIdeas": [
+      "Read the inequalities as opposite restrictions on the slope"
+    ],
+    "commonMistakes": [
+      "Assuming one inequality makes the slope strictly positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nonstrict inequalities permit, and here force, a constant function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p13",
+    "problemId": "amc12-predecessor-1995-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "Replacing every two by six corrects the addition, so $d+e=2+6=8$.",
+    "detailedSteps": [
+      "The displayed addition has error $742586+829430-1212016=360000$. Replacing digit $d$ by $e$ changes this error by $(e-d)K_d$, where $K_d$ is the net sum of its place values in the two addends minus those in the result.",
+      "Since $|e-d|\\le9$, only digits with $|K_d|\\ge40000$ can repair that error. From the actual display these are $d=1,2,7,8$, with weights $-1010010,-90000,100000,100010$, respectively. None of the first, third or fourth weights divides $360000$, so only $d=2$ is possible.",
+      "Then $360000-90000(e-2)=0$ gives $e=6$. The corrected equality is $746586+869430=1616016$, and the requested sum is eight. All replaced digits, including both occurrences in the result, have been included."
+    ],
+    "keyIdeas": [
+      "Measure how one digit replacement changes the addition error"
+    ],
+    "commonMistakes": [
+      "Changing just one occurrence of a digit when the instruction applies to every occurrence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The column positions supply a short completeness argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p14",
+    "problemId": "amc12-predecessor-1995-p14",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The only term that changes sign is $x$, so $f(3)=f(-3)+6=8$.",
+    "detailedSteps": [
+      "The terms $ax^4$ and $-bx^2$, as well as the constant five, have the same values at three and negative three.",
+      "Therefore $f(3)-f(-3)=3-(-3)=6$. With $f(-3)=2$, the requested value is eight; finding either coefficient separately is unnecessary."
+    ],
+    "keyIdeas": [
+      "Cancel the even-power terms at opposite inputs"
+    ],
+    "commonMistakes": [
+      "Trying to solve two coefficients from one supplied equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry isolates the requested value without recovering the whole function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p15",
+    "problemId": "amc12-predecessor-1995-p15",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The bug follows $5\\to1\\to2\\to4\\to1$, so jump $1995$ ends at four.",
+    "detailedSteps": [
+      "The actual clockwise rule sends five to one, one to two, two to four, and four back to one. After the first jump the cycle is $1,2,4$, repeating every three jumps.",
+      "Jump numbers congruent to one, two and zero modulo three end at one, two and four, respectively. Since $1995$ is divisible by three, the final point is four."
+    ],
+    "keyIdeas": [
+      "Separate the first jump from the repeating three-state cycle"
+    ],
+    "commonMistakes": [
+      "Including the starting point five as a recurring state of the cycle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short transient can matter when indexing a periodic walk.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p16",
+    "problemId": "amc12-predecessor-1995-p16",
+    "finalAnswer": "$\\boxed{22000}$ (choice E)",
+    "shortExplanation": "The maximum difference is about $21666.7$, rounding to twenty-two thousand.",
+    "detailedSteps": [
+      "Atlanta attendance lies between $0.9\\cdot50000=45000$ and $1.1\\cdot50000=55000$. Boston instead satisfies $0.9B\\le60000\\le1.1B$, so $60000/1.1\\le B\\le60000/0.9$.",
+      "The greatest difference occurs with Boston at its upper bound and Atlanta at its lower bound: $60000/0.9-45000=65000/3\\approx21666.7$. The opposite direction gives only $55000-60000/1.1\\approx454.5$.",
+      "Attendance is integer-valued: Boston can have $66666$ fans and Atlanta $45000$, attaining difference $21666$ under both actual percentage conditions. Either the integer maximum or its continuous bound rounds to $22000$ to the nearest thousand."
+    ],
+    "keyIdeas": [
+      "Use the correct reference quantity in each percentage bound"
+    ],
+    "commonMistakes": [
+      "Treating both ten-percent conditions as percentages of the quoted estimates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The wording changes the percentage denominator between the two games.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p17",
+    "problemId": "amc12-predecessor-1995-p17",
+    "finalAnswer": "$\\boxed{144^\\circ}$ (choice E)",
+    "shortExplanation": "The angle between tangent $AB$ and chord $AD$ is seventy-two degrees, giving minor arc measure $144^\\circ$.",
+    "detailedSteps": [
+      "Each regular-pentagon interior angle is $108^\\circ$. Triangle $AED$ is isosceles with angle $AED=108^\\circ$, so its base angle $EAD$ is $36^\\circ$.",
+      "Thus $\\angle DAB=108^\\circ-36^\\circ=72^\\circ$. Because $AB$ is tangent to the circle at $A$, the tangent-chord theorem makes the intercepted arc $AD$ twice that angle: $144^\\circ$.",
+      "This is less than $180^\\circ$, so it is the requested minor arc. The supplied tangency at $D$ is consistent with the same circle, as the independent center construction verifies."
+    ],
+    "keyIdeas": [
+      "Apply the tangent-chord theorem after finding the pentagon angle"
+    ],
+    "commonMistakes": [
+      "Using the pentagon side arc instead of the arc on the different tangent circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circle need not be the pentagon circumcircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p18",
+    "problemId": "amc12-predecessor-1995-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "$OB\\sin30^\\circ\\le AB=1$ gives $OB\\le2$, and equality is attainable.",
+    "detailedSteps": [
+      "Let $OA=a$ and $OB=b$. The cosine rule rearranges to $AB^2=(a-b\\cos30^\\circ)^2+b^2\\sin^230^\\circ$. Its first term is nonnegative, so $1\\ge b^2/4$, yielding $b\\le2$.",
+      "Equality occurs at $b=2$ and $a=b\\cos30^\\circ=\\sqrt3$. Both points lie on their required positive rays and their separation is one. Hence the bound is the maximum."
+    ],
+    "keyIdeas": [
+      "Bound the perpendicular distance from B to the other ray"
+    ],
+    "commonMistakes": [
+      "Giving a bound without checking it can be attained on the rays."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The perpendicular projection provides both the bound and its equality case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p19",
+    "problemId": "amc12-predecessor-1995-p19",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice C)",
+    "shortExplanation": "The inner side is $1/\\sqrt3$ times the outer side, so the area ratio is one third.",
+    "detailedSteps": [
+      "Scale the outer side to one, with $B=(0,0)$, $C=(1,0)$ and $A=(1/2,\\sqrt3/2)$. Write $D=(t,0)$. Since $DE$ is vertical and $E$ lies on $AC$, its height is $h=\\sqrt3(1-t)$.",
+      "The third vertex of the inner equilateral triangle on the depicted left side is $F=(t-\\sqrt3h/2,h/2)$. Its membership on $AB$, whose equation is $y=\\sqrt3x$, gives $h/2=\\sqrt3(t-\\sqrt3h/2)$, or $2h=\\sqrt3t$.",
+      "Combining the height equations gives $t=2/3$ and $h=1/\\sqrt3$. Thus the inner-to-outer side ratio is $1/\\sqrt3$ and the area ratio is its square, $1/3$. All vertices belong to the actual sides shown."
+    ],
+    "keyIdeas": [
+      "Determine the unique inscribed coordinates before comparing areas"
+    ],
+    "commonMistakes": [
+      "Using a side-length ratio directly as the area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The explicit perpendicular side fixes the otherwise variable rotation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p20",
+    "problemId": "amc12-predecessor-1995-p20",
+    "finalAnswer": "$\\boxed{\\frac{59}{125}}$ (choice B)",
+    "shortExplanation": "The two even-sum cases contribute $27/125$ and $32/125$, totaling $59/125$.",
+    "detailedSteps": [
+      "Use the customary independent uniform draws with replacement. Three of the five entries are odd, so $ab$ is odd with probability $(3/5)^2=9/25$ and even with probability $16/25$.",
+      "The sum $ab+c$ is even exactly when both terms have the same parity. Its probability is $(9/25)(3/5)+(16/25)(2/5)=59/125$. The two cases are disjoint and exhaust the event."
+    ],
+    "keyIdeas": [
+      "Match the parity of the product with the parity of the last draw"
+    ],
+    "commonMistakes": [
+      "Treating the product as equally likely to be odd or even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Replacement uses the standard independent sampling model; the convention is stated explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p21",
+    "problemId": "amc12-predecessor-1995-p21",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "The circle $x^2+y^2=25$ supplies five other antipodal lattice pairs, hence five rectangles.",
+    "detailedSteps": [
+      "The given opposite vertices have midpoint $(0,0)$ and distance five from that midpoint. Every other rectangle vertex lies on the circle $x^2+y^2=25$, by the right-angle diameter theorem, and its opposite vertex is its negative.",
+      "The integer points on that circle are $(\\pm5,0),(0,\\pm5),(\\pm4,\\pm3),(\\pm3,\\pm4)$, twelve in total. The given pair removes two, leaving ten available vertices.",
+      "Each pair $P,-P$ describes the same nondegenerate rectangle, so there are $10/2=5$ rectangles. Every remaining pair is distinct from the given diagonal endpoints and realizes a right-angle rectangle."
+    ],
+    "keyIdeas": [
+      "Use the circle determined by the fixed rectangle diagonal"
+    ],
+    "commonMistakes": [
+      "Counting each rectangle twice by distinguishing its two remaining opposite vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed diagonal determines one circle even when the rectangle is rotated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p22",
+    "problemId": "amc12-predecessor-1995-p22",
+    "finalAnswer": "$\\boxed{745}$ (choice E)",
+    "shortExplanation": "The cut removes a right triangle of legs twelve and five from a $31$ by $25$ rectangle, leaving $745$.",
+    "detailedSteps": [
+      "Let $W,H$ be the untouched rectangle sides and $w,h$ the shortened sides after the corner is cut. They satisfy $W>w$, $H>h$, and the fifth side is the slant length $s$, with $s^2=(W-w)^2+(H-h)^2$.",
+      "For any proposed $s$, the other four lengths can be paired in three ways. The greatest possible sum of squared differences for $s=19,20,25,31$ is respectively $349,360,325,145$, each smaller than its required square. Thus none can be the slant side.",
+      "For $s=13$, the three sums are $37,157,169$; only $169=13^2$ works. Its two differences are $31-19=12$ and $25-20=5$, determining the rectangle dimensions up to interchange.",
+      "The remaining area is $31\\cdot25-\\tfrac12\\cdot12\\cdot5=775-30=745$. This assignment produces a valid positive cut at one corner, so it is attainable."
+    ],
+    "keyIdeas": [
+      "Try the five possible cut-side roles rather than their numerical order"
+    ],
+    "commonMistakes": [
+      "Assuming the largest listed side must be the cut slant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The boundary order is unknown; the right-triangle relation determines it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p23",
+    "problemId": "amc12-predecessor-1995-p23",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "The allowable obtuse values are $5$ through $10$ and $19$ through $25$, thirteen in total.",
+    "detailedSteps": [
+      "The strict triangle inequalities require $|15-11|<k<15+11$, hence integer values $5\\le k\\le25$.",
+      "For $k\\le15$, the longest side is fifteen. Obtuseness requires $15^2>11^2+k^2$, or $k^2<104$, giving $k=5,6,7,8,9,10$.",
+      "For $k>15$, the longest side is $k$. Now obtuseness requires $k^2>11^2+15^2=346$, giving $k=19,20,\\ldots,25$. The two ranges contain six and seven values, totaling thirteen."
+    ],
+    "keyIdeas": [
+      "Separate the two possible longest-side cases"
+    ],
+    "commonMistakes": [
+      "Applying the same largest-side inequality after k exceeds fifteen."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both the triangle inequality and the obtuse inequality are strict.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p24",
+    "problemId": "amc12-predecessor-1995-p24",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The primitive positive triple is $(A,B,C)=(2,3,1)$, so the sum is six.",
+    "detailedSteps": [
+      "Combining and exponentiating the base-two-hundred logarithms gives $5^A2^B=200^C$. Since $200=2^3\\cdot5^2$, unique prime factorization requires $A=2C$ and $B=3C$.",
+      "The greatest common divisor of $2C,3C,C$ is $C$. The stated absence of a common factor greater than one forces $C=1$, and then $A=2$, $B=3$. Their sum is six."
+    ],
+    "keyIdeas": [
+      "Compare prime exponents after exponentiating the logarithm equation"
+    ],
+    "commonMistakes": [
+      "Requiring pairwise coprimality instead of the stated common-factor condition for all three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime factorization proves the integer relation uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p25",
+    "problemId": "amc12-predecessor-1995-p25",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The second-largest entry can be $10,12,14,16,18$ or $20$, giving six possibilities.",
+    "detailedSteps": [
+      "Order the five entries as $a\\le b\\le8\\le d\\le e$. Their total is sixty, and range eighteen gives $e=a+18$. The stated mode eight must occur at least twice.",
+      "If $d=8$, then the median and fourth entry are both eight. The sum equation becomes $2a+b=26$, impossible because $a,b\\le8$ makes its left side at most twenty-four. Thus the repeated eight must be $b=8$.",
+      "Now $a+8+8+d+(a+18)=60$ yields $d=26-2a$. The conditions $d\\ge8$ and $d\\le a+18$ give $3\\le a\\le8$. For these six integer values, $d$ is $20,18,16,14,12,10$, respectively.",
+      "Each corresponding list has mean twelve, range eighteen, median eight and eight as its unique most frequent value. Thus every candidate occurs and there are exactly six distinct second-largest values."
+    ],
+    "keyIdeas": [
+      "Use the repeated median and the total before counting values"
+    ],
+    "commonMistakes": [
+      "Counting different lists when the question asks different values of one order statistic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ordinary mode convention means a repeated most frequent value; every constructed list has a unique mode.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p26",
+    "problemId": "amc12-predecessor-1995-p26",
+    "finalAnswer": "$\\boxed{24\\pi}$ (choice C)",
+    "shortExplanation": "The two identities are $r^2+OE^2=36$ and $r^2-OE^2=12$, giving $r^2=24$.",
+    "detailedSteps": [
+      "Let the radius be $r$ and put $x=OE$. The perpendicular diameters make triangle $DOE$ right, so $r^2+x^2=DE^2=36$.",
+      "At the internal chord intersection $E$, the intersecting-chords theorem gives $EA\\cdot EB=DE\\cdot EF=6\\cdot2=12$. Along diameter $AB$, this is $(r+x)(r-x)=r^2-x^2$.",
+      "Adding the two equations yields $2r^2=48$, so $r^2=24$ and the circle area is $24\\pi$. The resulting $x^2=12<r^2$ also verifies the internal intersection."
+    ],
+    "keyIdeas": [
+      "Combine the right triangle with intersecting chords"
+    ],
+    "commonMistakes": [
+      "Using the full chord length eight as one factor of the intersecting-chords product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum and difference of squares eliminate the unknown offset.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p27",
+    "problemId": "amc12-predecessor-1995-p27",
+    "finalAnswer": "$\\boxed{74}$ (choice E)",
+    "shortExplanation": "The row sums satisfy $f(n)=2f(n-1)+2$, giving $f(100)=2^{100}-2\\equiv74\\pmod{100}$.",
+    "detailedSteps": [
+      "Row $n$ has boundary values $n-1$. When the preceding row is summed into adjacent pairs, its interior entries are counted twice and its two boundary entries once. Adding the new boundaries therefore gives $f(n)=2f(n-1)-2(n-2)+2(n-1)=2f(n-1)+2$. The formula also checks directly for row two.",
+      "Since $f(1)=0$, the shifted sum $f(n)+2$ doubles at every step. Thus $f(n)=2^n-2$.",
+      "Modulo one hundred, $2^{20}\\equiv76$, and $76^2\\equiv76$. Consequently $2^{100}=(2^{20})^5\\equiv76$, so the required remainder is $76-2=74$."
+    ],
+    "keyIdeas": [
+      "Sum the interior recurrence and keep the boundary correction"
+    ],
+    "commonMistakes": [
+      "Doubling the whole preceding row without correcting how its boundary entries are counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The boundary correction changes the usual Pascal-triangle row sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p28",
+    "problemId": "amc12-predecessor-1995-p28",
+    "finalAnswer": "$\\boxed{184}$ (choice E)",
+    "shortExplanation": "The middle half-chord has square $46$, so its full length has square $184$.",
+    "detailedSteps": [
+      "Put the two chords at signed offsets $m-3$ and $m+3$ from the center, since their separation is six. Their half-length squares are $25$ and $49$, each equal to the radius square minus its corresponding offset square.",
+      "Averaging gives $(25+49)/2=r^2-m^2-9$. Thus the middle half-chord square is $r^2-m^2=37+9=46$.",
+      "The full middle length is twice its half-length, so its square is $4\\cdot46=184$. The signed-offset calculation works whether the original chords straddle the center or lie on the same side."
+    ],
+    "keyIdeas": [
+      "Average the half-chord squares and correct for the midpoint offset"
+    ],
+    "commonMistakes": [
+      "Averaging the chord lengths directly instead of their squared half-lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint correction follows from a quadratic, not linear, chord-length relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p29",
+    "problemId": "amc12-predecessor-1995-p29",
+    "finalAnswer": "$\\boxed{40}$ (choice C)",
+    "shortExplanation": "There are $3^5-3$ ordered distinct triples; dividing by six gives forty sets.",
+    "detailedSteps": [
+      "The product is $2310=2\\cdot3\\cdot5\\cdot7\\cdot11$, with five different primes. Assigning each prime to one of three labelled factors gives $3^5=243$ ordered positive triples, with an empty box representing the factor one.",
+      "Two factors could be equal only if both equal one: any prime common to equal factors would occur twice in the squarefree product. The repeated-factor triples are therefore precisely the three permutations of $(1,1,2310)$.",
+      "Remove these three triples. Each remaining triple has three distinct entries and exactly $3!=6$ orders representing the same three-element set. Thus the count is $(243-3)/6=40$."
+    ],
+    "keyIdeas": [
+      "Distribute the five distinct prime factors into three labelled boxes"
+    ],
+    "commonMistakes": [
+      "Dividing all ordered triples by six before removing triples with repeated entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squarefreeness makes the only repeated-entry exception easy to classify.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1995-p30",
+    "problemId": "amc12-predecessor-1995-p30",
+    "finalAnswer": "$\\boxed{19}$ (choice D)",
+    "shortExplanation": "The plane is $x+y+z=9/2$ and meets the six, seven and six cubes in index-sum layers two, three and four.",
+    "detailedSteps": [
+      "Place the large cube at $[0,3]^3$ and choose its diagonal from $(0,0,0)$ to $(3,3,3)$. A plane perpendicular to that diagonal through its midpoint has equation $x+y+z=9/2$. Other body diagonals give equivalent counts by cube symmetry.",
+      "A unit cube with lower corner $(i,j,k)$, where each index is zero, one or two, has sum-coordinate interval $[i+j+k,i+j+k+3]$. The plane meets it exactly when its integer index sum is two, three or four. Equality with either endpoint of this sum-coordinate interval cannot occur because the plane level is a half-integer.",
+      "For sum two, the index types are $(2,0,0)$ and $(1,1,0)$, three orders each, giving six. For sum three there are six orders of $(2,1,0)$ and one $(1,1,1)$, giving seven. Sum four has six cubes by the reflection $(i,j,k)\\mapsto(2-i,2-j,2-k)$.",
+      "The count is $6+7+6=19$. Every counted cube has an actual interior slice, so no convention about touching edges changes this count."
+    ],
+    "keyIdeas": [
+      "Compare the plane level with each unit cube’s minimum and maximum"
+    ],
+    "commonMistakes": [
+      "Counting only the central index-sum layer instead of all cubes crossed by the plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A three-dimensional slice is easiest to count through coordinate intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

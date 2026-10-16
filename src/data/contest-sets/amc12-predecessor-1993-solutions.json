@@ -1,0 +1,633 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1993-p1",
+    "problemId": "amc12-predecessor-1993-p1",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "The three terms give $1-1+2=2$.",
+    "detailedSteps": [
+      "Substitute $a=1,b=-1,c=2$ into the definition. The first term is $1^{-1}=1$, the subtracted term is $(-1)^2=1$, and the last term is $2^1=2$.",
+      "Combining them with their specified signs gives $1-1+2=2$."
+    ],
+    "keyIdeas": [
+      "Preserve the exponent and sign in each defined term"
+    ],
+    "commonMistakes": [
+      "Treating a negative exponent as a negative value, or moving the minus sign inside the squared term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The custom notation requires substitution, with the original signs intact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p2",
+    "problemId": "amc12-predecessor-1993-p2",
+    "finalAnswer": "$\\boxed{65^\\circ}$ (choice D)",
+    "shortExplanation": "The equal sides give base angles of $65^\\circ$.",
+    "detailedSteps": [
+      "The original triangle has angle $B=180^\\circ-55^\\circ-75^\\circ=50^\\circ$. Because $D$ and $E$ lie on its two incident sides, $\\angle DBE=50^\\circ$.",
+      "The equality $BD=BE$ makes triangle $BDE$ isosceles. Each base angle is $(180^\\circ-50^\\circ)/2=65^\\circ$, including the requested angle at $E$."
+    ],
+    "keyIdeas": [
+      "Find the apex angle of the smaller isosceles triangle"
+    ],
+    "commonMistakes": [
+      "Using an angle from the larger triangle as a base angle of the smaller one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positions of the two points matter through the shared apex angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p3",
+    "problemId": "amc12-predecessor-1993-p3",
+    "finalAnswer": "$\\boxed{5^{15}}$ (choice E)",
+    "shortExplanation": "The quotient is $(15^2/45)^{15}=5^{15}$.",
+    "detailedSteps": [
+      "Write the numerator as $(15^2)^{15}$. The original quotient becomes $(15^2/45)^{15}$.",
+      "Since $225/45=5$, its value is $5^{15}$."
+    ],
+    "keyIdeas": [
+      "Match the exponents before dividing the bases"
+    ],
+    "commonMistakes": [
+      "Dividing the exponents while also dividing the bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared exponent turns this into one small base calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p4",
+    "problemId": "amc12-predecessor-1993-p4",
+    "finalAnswer": "$\\boxed{\\text{all real }y}$ (choice E)",
+    "shortExplanation": "The equality holds for every real $y$.",
+    "detailedSteps": [
+      "Substituting the first argument gives $3\\circ y=4(3)-3y+3y=12$.",
+      "The two variable terms cancel for every real value. Therefore there are infinitely many solutions, which satisfies the listed choice saying more than four."
+    ],
+    "keyIdeas": [
+      "Check whether the variable coefficient cancels"
+    ],
+    "commonMistakes": [
+      "Dividing by the zero coefficient left after cancellation and claiming one solution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An equation can be an identity rather than a condition selecting particular values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p5",
+    "problemId": "amc12-predecessor-1993-p5",
+    "finalAnswer": "$\\boxed{6\\%}$ (choice A)",
+    "shortExplanation": "The combined cost increases by twelve dollars on a two-hundred-dollar base, or $6\\%$.",
+    "detailedSteps": [
+      "The bicycle increase is $160(0.05)=8$ dollars, and the helmet increase is $40(0.10)=4$ dollars.",
+      "The original total was $200$ dollars. Its twelve-dollar increase is $12/200=0.06$, so the percent increase is $6\\%$."
+    ],
+    "keyIdeas": [
+      "Measure the total increase against the combined old cost"
+    ],
+    "commonMistakes": [
+      "Adding or averaging the percentages without weighting their different starting prices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The larger original price receives more weight in the combined percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p6",
+    "problemId": "amc12-predecessor-1993-p6",
+    "finalAnswer": "$\\boxed{16}$ (choice B)",
+    "shortExplanation": "The radicand is $2^8$, whose positive square root is $16$.",
+    "detailedSteps": [
+      "The numerator is $2^{30}+2^{20}=2^{20}(2^{10}+1)$. The denominator is $2^{12}+2^{22}=2^{12}(1+2^{10})$.",
+      "The matching positive factors cancel, leaving $2^8$. Its square root is $2^4=16$."
+    ],
+    "keyIdeas": [
+      "Factor a common binary-power expression from each sum"
+    ],
+    "commonMistakes": [
+      "Cancelling terms separately inside sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two sums share a factor that is easy to see after rewriting in base two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p7",
+    "problemId": "amc12-predecessor-1993-p7",
+    "finalAnswer": "$\\boxed{15}$ (choice E)",
+    "shortExplanation": "The quotient has twenty-one digits: six ones and fifteen zeros.",
+    "detailedSteps": [
+      "The repunit identity is $R_k=(10^k-1)/9$. Thus $R_{24}/R_4=(10^{24}-1)/(10^4-1)=1+10^4+10^8+10^{12}+10^{16}+10^{20}$.",
+      "The largest place is $10^{20}$, so the quotient has twenty-one digits. Its six nonzero places all contain a one, and the remaining $21-6=15$ places contain zeros."
+    ],
+    "keyIdeas": [
+      "Expand the quotient as a short geometric sum"
+    ],
+    "commonMistakes": [
+      "Assuming the quotient still has twenty-four digits or forgetting the units-position one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gap between successive nonzero places controls the digit count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p8",
+    "problemId": "amc12-predecessor-1993-p8",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "The four tangency types give $2+2+1+1=6$ circles.",
+    "detailedSteps": [
+      "Put the unit-circle centers at $(-1,0)$ and $(1,0)$. A radius-three circle has center distance four from a unit circle under external tangency, or two under internal tangency.",
+      "If both distances are four, the two equal-radius center-locus circles meet at two points. If both are two, their loci also meet at two points.",
+      "For distances four and two, the center-locus circles are internally tangent because their radius difference equals the distance two between the fixed centers. This gives one point for each of the two orders.",
+      "The four distance pairs distinguish all resulting centers, so they do not overlap. All six circles are genuine tangencies to both original circles."
+    ],
+    "keyIdeas": [
+      "Include both internal and external tangency"
+    ],
+    "commonMistakes": [
+      "Counting only new circles that are externally tangent to both originals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Internal tangency adds cases that an external-tangent-only sketch can miss.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p9",
+    "problemId": "amc12-predecessor-1993-p9",
+    "finalAnswer": "$\\boxed{\\frac{de}{cf}}$ (choice D)",
+    "shortExplanation": "The ratio is $(d/c)/(f/e)=de/(cf)$.",
+    "detailedSteps": [
+      "Let the world totals for population and wealth be $P$ and $W$. A citizen of country $A$ owns $(dW/100)/(cP/100)=(d/c)(W/P)$.",
+      "A citizen of country $B$ owns $(f/e)(W/P)$. Taking the first amount divided by the second cancels the shared world wealth-per-person factor and gives $de/(cf)$."
+    ],
+    "keyIdeas": [
+      "Compare the wealth per person in each country"
+    ],
+    "commonMistakes": [
+      "Comparing the total wealth shares without adjusting for the population shares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both percentages in one per-capita calculation use the same factor of one hundred.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p10",
+    "problemId": "amc12-predecessor-1993-p10",
+    "finalAnswer": "$\\boxed{27a^2}$ (choice C)",
+    "shortExplanation": "The required positive number is $27a^2$.",
+    "detailedSteps": [
+      "Tripling both base and exponent gives $r=(3a)^{3b}$. The specified product is $a^bx^b=(ax)^b$, valid because both bases are positive.",
+      "Taking the positive $b$th-root equality gives $(3a)^3=ax$. Dividing by positive $a$ yields $x=27a^2$."
+    ],
+    "keyIdeas": [
+      "Combine positive powers before taking the common root"
+    ],
+    "commonMistakes": [
+      "Tripling the base alone, or treating the tripled exponent as a multiplicative factor outside the power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity makes the root transformation one-to-one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p11",
+    "problemId": "amc12-predecessor-1993-p11",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The original number is $65536$, which has five digits.",
+    "detailedSteps": [
+      "The outer equality gives $\\log_2(\\log_2x)=2^2=4$. Hence $\\log_2x=2^4=16$.",
+      "Therefore $x=2^{16}=65536$. Its base-ten representation has five digits. All intermediate logarithm arguments are positive."
+    ],
+    "keyIdeas": [
+      "Undo the logarithms from the outside inward"
+    ],
+    "commonMistakes": [
+      "Undoing all three logarithms with a single exponentiation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested logarithms must be reversed one layer at a time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p12",
+    "problemId": "amc12-predecessor-1993-p12",
+    "finalAnswer": "$\\boxed{\\frac8{4+x}}$ (choice E)",
+    "shortExplanation": "Changing the input variable gives $2f(x)=8/(4+x)$.",
+    "detailedSteps": [
+      "For a positive input $t$, substitute $x=t/2$ into the given identity. It yields $f(t)=2/(2+t/2)=4/(4+t)$.",
+      "Now set $t=x$ and multiply the output by two. The required expression is $2f(x)=8/(4+x)$."
+    ],
+    "keyIdeas": [
+      "Recover the function at the desired input"
+    ],
+    "commonMistakes": [
+      "Confusing doubling the function input with doubling its output."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Renaming the input avoids mixing the two uses of the same variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p13",
+    "problemId": "amc12-predecessor-1993-p13",
+    "finalAnswer": "$\\boxed{\\sqrt{65}}$ (choice D)",
+    "shortExplanation": "The greatest cross-vertex distance has squared length $65$.",
+    "detailedSteps": [
+      "The squares have side lengths five and seven. Place the outer vertices at $(0,0),(7,0),(7,7),(0,7)$. Up to reflection, the inner vertices are $(a,0),(7,a),(7-a,7),(0,7-a)$. Equal perpendicular side vectors give this form.",
+      "The inner side length gives $a^2+(7-a)^2=25$, so $a=3$ or $4$. The two values exchange the mirror orientations.",
+      "Using $a=3$, the inner vertices are $(3,0),(7,3),(4,7),(0,4)$. For example, $(3,0)$ is farthest from the outer vertex $(7,7)$, at distance $\\sqrt{4^2+7^2}=\\sqrt{65}$.",
+      "Checking the other outer vertices gives squared distances $9,16,58,65$ from that inner vertex. Square symmetry covers all four inner vertices and both orientations, so no pair is farther."
+    ],
+    "keyIdeas": [
+      "Determine the two possible offsets of the inscribed square"
+    ],
+    "commonMistakes": [
+      "Using a diagonal of one square rather than a distance between the two different vertex sets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inner side length and the outer side length determine the offset exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p14",
+    "problemId": "amc12-predecessor-1993-p14",
+    "finalAnswer": "$\\boxed{7\\sqrt3}$ (choice B)",
+    "shortExplanation": "The trapezoid and equilateral triangle have areas $3\\sqrt3$ and $4\\sqrt3$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $B=(2,0)$. The two interior angles of $120^\\circ$ and the adjacent side lengths two force $E=(-1,\\sqrt3)$ and $C=(3,\\sqrt3)$ on the convex side.",
+      "Thus $EC=4$, and the lower trapezoid has bases two and four and height $\\sqrt3$. Its area is $3\\sqrt3$.",
+      "The equal lengths $CD=DE=4$ make triangle $CDE$ equilateral. Convexity selects its apex above $EC$; the lower intersection would make the pentagon nonconvex. The upper triangle has area $4\\sqrt3$.",
+      "The two regions have disjoint interiors and fill the pentagon, whose area is $7\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Split the convex pentagon along the upper trapezoid base"
+    ],
+    "commonMistakes": [
+      "Choosing the other intersection of the two radius-four circles and ignoring convexity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The convexity condition fixes the branch of the otherwise two-point construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p15",
+    "problemId": "amc12-predecessor-1993-p15",
+    "finalAnswer": "$\\boxed{22}$ (choice D)",
+    "shortExplanation": "There are twenty-two eligible divisors of $360$.",
+    "detailedSteps": [
+      "An interior angle of a regular $n$-gon is $180^\\circ-360^\\circ/n$. It is integral exactly when the positive integer $n$ divides $360$, with $n\\ge3$.",
+      "The factorization $360=2^3\\cdot3^2\\cdot5$ gives $(3+1)(2+1)(1+1)=24$ positive divisors.",
+      "The divisors one and two do not define polygons. Removing them leaves $24-2=22$ values."
+    ],
+    "keyIdeas": [
+      "Require the exterior angle to be an integer"
+    ],
+    "commonMistakes": [
+      "Including the two smallest divisors, which are not polygon side counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Integrality turns an unbounded-looking geometry question into a finite divisor problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p16",
+    "problemId": "amc12-predecessor-1993-p16",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "The term is $63$, whose remainder modulo five is three.",
+    "detailedSteps": [
+      "The first $n$ value blocks contain $1+2+\\cdots+n=n(n+1)/2$ terms.",
+      "The block through sixty-two ends at $62\\cdot63/2=1953$, while the block through sixty-three ends at $63\\cdot64/2=2016$.",
+      "The requested position lies in the block of sixty-three, so its value is $63$ and the remainder is three."
+    ],
+    "keyIdeas": [
+      "Locate the term between two consecutive cumulative counts"
+    ],
+    "commonMistakes": [
+      "Using the term index as the value or stopping at the earlier triangular count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cumulative counts identify the block without listing thousands of terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p17",
+    "problemId": "amc12-predecessor-1993-p17",
+    "finalAnswer": "$\\boxed{2\\sqrt3-2}$ (choice A)",
+    "shortExplanation": "The corner-to-triangle area ratio is $2\\sqrt3-2$.",
+    "detailedSteps": [
+      "Scale the square to side two, centered at the origin with horizontal and vertical sides. Standard clock hour positions are $30^\\circ$ apart. The rays at twelve and one o’clock meet the top edge at $(0,1)$ and $(1/\\sqrt3,1)$.",
+      "The intervening triangle therefore has area $t=1/(2\\sqrt3)$. In the upper-right quadrant, the one-to-two corner region is what remains after two congruent triangles of that area are removed from the unit square.",
+      "Thus $q=1-2t=1-1/\\sqrt3$, and $q/t=2\\sqrt3-2$. The eight triangles and four corner regions together have area $8t+4q=4$, the entire square.",
+      "The computation uses the stated standard hour spacing; the schematic rays should not be measured as though the drawing were to scale."
+    ],
+    "keyIdeas": [
+      "Use the thirty-degree spacing of clock hour positions"
+    ],
+    "commonMistakes": [
+      "Using the triangular area as half of a quadrant without accounting for the thirty-degree ray."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal angular spacing produces unequal areas because the boundary is a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p18",
+    "problemId": "amc12-predecessor-1993-p18",
+    "finalAnswer": "$\\boxed{100}$ (choice E)",
+    "shortExplanation": "Two matching rest days occur every twenty days, giving one hundred in total.",
+    "detailedSteps": [
+      "Al rests on multiples of four. Barb rests on day residues $8,9,0$ modulo ten, after each seven-day work block.",
+      "The joint period is $\\operatorname{lcm}(4,10)=20$. In its first twenty days the shared rest days are eight and twenty.",
+      "There are fifty complete periods among the first thousand days, so both rest together on $50\\cdot2=100$ days."
+    ],
+    "keyIdeas": [
+      "Count simultaneous rest days in one full joint period"
+    ],
+    "commonMistakes": [
+      "Starting the schedules with rest instead of work, or considering only day residues zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A joint period handles the endpoint and the starting phase exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p19",
+    "problemId": "amc12-predecessor-1993-p19",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The factorization gives four ordered solution pairs.",
+    "detailedSteps": [
+      "Multiplying by positive $mn$ gives $mn-4n-2m=0$, or $(m-4)(n-2)=8$. The original positive terms force $m>4$ and $n>2$.",
+      "The positive factor pairs of eight are $(1,8),(2,4),(4,2),(8,1)$. They give $(m,n)=(5,10),(6,6),(8,4),(12,3)$.",
+      "All four satisfy the original reciprocal equation and the factorization exhausts the possibilities."
+    ],
+    "keyIdeas": [
+      "Turn the reciprocal equation into a product of positive integers"
+    ],
+    "commonMistakes": [
+      "Treating ordered factor pairs as unordered and merging two distinct solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The constant product gives a global bound and a complete count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p20",
+    "problemId": "amc12-predecessor-1993-p20",
+    "finalAnswer": "$\\boxed{\\text{negative real }k}$ (choice B)",
+    "shortExplanation": "For every negative real $k$, both roots are purely imaginary.",
+    "detailedSteps": [
+      "Put $z=it$ with real $t$. The equation becomes $10t^2-3t+k=0$. When $k<0$, its discriminant is $9-40k>9$.",
+      "It therefore has two real nonzero roots, and multiplication by $i$ gives the two purely imaginary roots of the original quadratic.",
+      "The other universal assertions fail: for $k=1$ the original discriminant $-9+40k=31$ gives nonzero real parts; for $k=i$ the root sum $3i/10$ prevents both roots being real; and for $k=0$ one root is real, namely zero."
+    ],
+    "keyIdeas": [
+      "Test imaginary roots by substituting a real multiple of i"
+    ],
+    "commonMistakes": [
+      "Interpreting a real discriminant in the original complex-coefficient quadratic as automatically making both roots real."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A variable rotation turns the relevant complex-root condition into an ordinary real discriminant test.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p21",
+    "problemId": "amc12-predecessor-1993-p21",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "The common difference is $2/3$, and the final index is eighteen.",
+    "detailedSteps": [
+      "The first three specified terms are equally spaced around $a_7$, so $3a_7=17$ and $a_7=17/3$.",
+      "The eleven terms from indices four through fourteen are symmetric around $a_9$. Their sum gives $11a_9=77$, hence $a_9=7$.",
+      "The two-index gap therefore gives common difference $(7-17/3)/2=2/3$. Reaching thirteen from seven takes nine more steps, so $k=9+9=18$."
+    ],
+    "keyIdeas": [
+      "Use the middle term in each symmetric arithmetic sum"
+    ],
+    "commonMistakes": [
+      "Counting ten terms in the inclusive eleven-term sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetric averages are shorter than solving for the first term immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p22",
+    "problemId": "amc12-predecessor-1993-p22",
+    "finalAnswer": "$\\boxed{114}$ (choice C)",
+    "shortExplanation": "The coefficient weights are three ones, six threes, and one six; the minimum is $114$.",
+    "detailedSteps": [
+      "Trace a bottom label upward through the three summation layers. Each supporting move has three choices, so its final coefficient is a trinomial coefficient of total degree three.",
+      "The three bottom corner blocks have coefficient one, the six edge blocks have coefficient three, and the one central block has coefficient six. These weights also follow directly by back-propagating the top coefficient through the actual support graph.",
+      "If a larger label is assigned a larger weight, swapping it with a smaller label at a smaller weight decreases the total by the product of their positive differences. Thus the minimum pairs the weights in descending order with labels in ascending order.",
+      "Assign one to the central weight-six block, two through seven to the six weight-three blocks, and eight through ten to the corners. The attainable minimum is $6+3(2+3+4+5+6+7)+(8+9+10)=114$."
+    ],
+    "keyIdeas": [
+      "Pair larger accumulation weights with smaller labels"
+    ],
+    "commonMistakes": [
+      "Giving all ten bottom labels equal weight even though the middle labels are counted along more upward paths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Linear propagation separates the geometric support pattern from the label optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p23",
+    "problemId": "amc12-predecessor-1993-p23",
+    "finalAnswer": "$\\boxed{\\cos6^\\circ\\sin12^\\circ\\csc18^\\circ}$ (choice B)",
+    "shortExplanation": "The required distance is $\\cos6^\\circ\\sin12^\\circ/\\sin18^\\circ$.",
+    "detailedSteps": [
+      "The inscribed angle at $A$ is $12^\\circ$, so the minor arc $BC$ has central angle $24^\\circ$. The point $X$ cannot be the circle center, since that would give $\\angle BXC=24^\\circ$ instead of $36^\\circ$.",
+      "Both the center and $X$ are equidistant from $B,C$. Their line is consequently the perpendicular bisector of $BC$ and coincides with the diameter $AD$. The chord endpoints are symmetric about that diameter, on its end near $D$, giving $\\angle BAX=6^\\circ$.",
+      "Because $X$ lies on the bounded diameter, it is on the $A$ side of the chord: the alternative symmetric point on the other side would lie beyond $D$. Thus the triangle angle $\\angle BXA=180^\\circ-18^\\circ=162^\\circ$, leaving $\\angle ABX=12^\\circ$.",
+      "The angle in the semicircle makes $ADB$ right at $B$, and the unit diameter gives $AB=\\cos6^\\circ$. The sine rule in $ABX$ yields $AX=AB\\sin12^\\circ/\\sin162^\\circ=\\cos6^\\circ\\sin12^\\circ\\csc18^\\circ$.",
+      "For the excluded branch, coordinates $A=(0,0),D=(1,0),B=(\\cos^26^\\circ,\\sin6^\\circ\\cos6^\\circ)$ give $X$-coordinate $\\cos^26^\\circ+\\sin6^\\circ\\cos6^\\circ\\cot18^\\circ>1$. Indeed, $\\cot18^\\circ=\\tan72^\\circ>\\tan6^\\circ$, so the added term exceeds $\\sin^26^\\circ$ and the coordinate exceeds one. This explicitly confirms it is outside the specified diameter."
+    ],
+    "keyIdeas": [
+      "Use the diameter symmetry and the sine rule"
+    ],
+    "commonMistakes": [
+      "Using the smaller eighteen-degree angle at X as the triangle’s angle toward A, or retaining a point beyond D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diameter is a segment, which removes the otherwise plausible external branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p24",
+    "problemId": "amc12-predecessor-1993-p24",
+    "finalAnswer": "$\\boxed{66}$ (choice E)",
+    "shortExplanation": "The probability is $31/35$, giving $31+35=66$.",
+    "detailedSteps": [
+      "The three shiny pennies occupy a uniformly chosen three-position subset of the seven draw positions. There are $\\binom73=35$ such subsets.",
+      "The third shiny appears by draw four exactly when all three shiny positions are among the first four. There are $\\binom43=4$ such subsets.",
+      "The desired probability is the complement $1-4/35=31/35$. This is already reduced, so the numerator and denominator sum to sixty-six."
+    ],
+    "keyIdeas": [
+      "Count the complementary draw-position event"
+    ],
+    "commonMistakes": [
+      "Counting just a shiny fourth draw instead of the time when the third shiny has appeared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Without replacement, positions of identical-type coins give an economical uniform sample space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p25",
+    "problemId": "amc12-predecessor-1993-p25",
+    "finalAnswer": "$\\boxed{\\text{infinitely many}}$ (choice E)",
+    "shortExplanation": "There are infinitely many distinct equilateral triangles, so the final listed choice applies.",
+    "detailedSteps": [
+      "Place the angle vertex at the origin and scale $P$ to $(1,0)$. The two unit ray directions are $(1/2,\\sqrt3/2)$ and $(1/2,-\\sqrt3/2)$.",
+      "For any $s$ with $0<s<1$, choose $Q=(s/2,s\\sqrt3/2)$ and $R=((1-s)/2,-(1-s)\\sqrt3/2)$. Both points lie on the required rays.",
+      "Direct calculation gives $PQ^2=PR^2=QR^2=1-s+s^2>0$. Thus every choice produces a nondegenerate equilateral triangle.",
+      "Different values of $s$ change the unique point on the upper ray and hence the unordered pair of vertices. Relabeling $Q,R$ does not merge these triangles. Infinitely many distinct triangles already occur in this family, which proves there are more than fifteen."
+    ],
+    "keyIdeas": [
+      "Construct a continuous family on the two rays"
+    ],
+    "commonMistakes": [
+      "Assuming every contact pattern gives at most one triangle and missing a continuous family."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parameterized family gives a stronger conclusion than a large finite enumeration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p26",
+    "problemId": "amc12-predecessor-1993-p26",
+    "finalAnswer": "$\\boxed{2\\sqrt3}$ (choice C)",
+    "shortExplanation": "The common domain is $[6,8]$, and the value at six attains the upper bound $2\\sqrt3$.",
+    "detailedSteps": [
+      "The first radicand is $x(8-x)$, giving $0\\le x\\le8$. The second is $1-(x-7)^2$, giving $6\\le x\\le8$. Their common real domain is therefore $[6,8]$.",
+      "On this interval the first radicand is $16-(x-4)^2\\le12$, while the second square root is nonnegative. Hence the difference is at most $\\sqrt{12}=2\\sqrt3$.",
+      "At $x=6$ the first radicand is twelve and the second is zero, so equality holds. This attained positive value is the requested maximum."
+    ],
+    "keyIdeas": [
+      "Intersect the radical domains before bounding the difference"
+    ],
+    "commonMistakes": [
+      "Optimizing outside the common real domain or bounding the two radicals independently at incompatible inputs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A domain-aware upper bound makes differentiation unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p27",
+    "problemId": "amc12-predecessor-1993-p27",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "The center travels along a triangle of half the original perimeter, a distance of twelve.",
+    "detailedSteps": [
+      "The original right triangle has area $6\\cdot8/2=24$ and semiperimeter twelve, so its inradius is two.",
+      "To keep a radius-one circle inside, its center must lie at least one unit from each side. To remain tangent to at least one side, the center follows the boundary of the triangle formed by those three inward parallel lines.",
+      "This smaller triangle is homothetic to the original about its incenter. The distance to every side decreases from two to one, so the scale factor is one-half.",
+      "The original perimeter is twenty-four. One complete circuit of the center therefore has length $24/2=12$. The circle’s rotation does not add distance to the center’s path."
+    ],
+    "keyIdeas": [
+      "Follow the triangle formed by the circle’s center"
+    ],
+    "commonMistakes": [
+      "Adding corner arcs to the center path even though the feasible boundary is formed by inward parallel straight lines."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center’s locus is easier to track than the moving circle’s circumference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p28",
+    "problemId": "amc12-predecessor-1993-p28",
+    "finalAnswer": "$\\boxed{516}$ (choice D)",
+    "shortExplanation": "There are $560-44=516$ triangles of positive area.",
+    "detailedSteps": [
+      "The grid has sixteen points, so all unordered triples number $\\binom{16}{3}=560$. Exactly the collinear triples must be removed.",
+      "Four rows and four columns each have four points, giving $8\\binom43=32$ collinear triples.",
+      "For each of the two diagonal slope directions, one line has four points and two lines have three. They contribute $\\binom43+2\\binom33=6$ per direction, twelve more in total.",
+      "Three lattice points on a line have a primitive integer direction whose two-step span fits within three units in each coordinate. Both components therefore have absolute value at most one. This leaves only rows, columns and the two diagonal directions already counted.",
+      "The final count is $560-32-12=516$. Each degenerate triple belongs to one line, so none has been subtracted twice."
+    ],
+    "keyIdeas": [
+      "Subtract collinear triples from all point triples"
+    ],
+    "commonMistakes": [
+      "Subtracting only horizontal and vertical triples, or counting a collinear quadruple as just one degenerate triple."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A primitive direction bound proves the collinearity classification is exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p29",
+    "problemId": "amc12-predecessor-1993-p29",
+    "finalAnswer": "$\\boxed{\\{4,5,7\\}}$ (choice B)",
+    "shortExplanation": "Only the set containing four, five and seven cannot occur.",
+    "detailedSteps": [
+      "For positive edge lengths $a,b,c$, the squared face diagonals are $a^2+b^2$, $b^2+c^2$ and $c^2+a^2$. Solving these linear equations gives each edge square as half the sum of two diagonal squares minus the third.",
+      "All three edge squares are positive exactly when the largest diagonal square is smaller than the sum of the other two.",
+      "For the set in choice B, $7^2=49>4^2+5^2=41$, which forces a negative edge square. Every other displayed set passes the strict inequality and yields three positive edges, so B is the unique impossible set."
+    ],
+    "keyIdeas": [
+      "Recover the three positive edge squares from face diagonals"
+    ],
+    "commonMistakes": [
+      "Using the ordinary triangle inequality on the diagonal lengths instead of their squared-length system."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "These are face diagonals, rather than the body diagonal of the prism.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1993-p30",
+    "problemId": "amc12-predecessor-1993-p30",
+    "finalAnswer": "$\\boxed{31}$ (choice D)",
+    "shortExplanation": "The fixed starting values are $k/31$ for $k=0,1,\\ldots,30$, thirty-one in total.",
+    "detailedSteps": [
+      "The given rule is $x_n=\\{2x_{n-1}\\}$, where braces denote the fractional part. Repeating it five times gives $x_5=\\{32x_0\\}$.",
+      "The equality $x_5=x_0$ is therefore $32x_0-\\lfloor32x_0\\rfloor=x_0$, or $31x_0=\\lfloor32x_0\\rfloor$, an integer.",
+      "Since $0\\le x_0<1$, write $x_0=k/31$ with $k=0,\\ldots,30$. Conversely, for these values $32k/31=k+k/31$ has fractional part $k/31$, so every candidate works.",
+      "The endpoint zero is included, while one is excluded. Thus there are exactly thirty-one distinct starting values."
+    ],
+    "keyIdeas": [
+      "Express five piecewise doublings as one fractional-part map"
+    ],
+    "commonMistakes": [
+      "Counting only values of exact period five and forgetting shorter periods also satisfy the equality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fixed-point equation converts a branching process into a complete rational list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-ii-2002-p1",
+    "problemId": "aime-ii-2002-p1",
+    "finalAnswer": "$\\boxed{009}$",
+    "shortExplanation": "The nine possible differences are 99 times 0 through 8.",
+    "detailedSteps": [
+      "Write $x=100a+10b+c$. Since both x and its reversal are three-digit numbers, $1\\le a,c\\le9$, while b can be any digit. Then $y=100c+10b+a$ and $|x-y|=99|a-c|$.",
+      "The absolute digit difference can be any integer from 0 through 8: use $a=1$ and $c=1,2,\\ldots,9$. These give nine distinct z values, including zero."
+    ],
+    "keyIdeas": [
+      "Reversal cancels the middle digit"
+    ],
+    "commonMistakes": [
+      "Excluding zero or allowing a reversal with a leading zero despite the three-digit condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle digit disappears completely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p2",
+    "problemId": "aime-ii-2002-p2",
+    "finalAnswer": "$\\boxed{294}$",
+    "shortExplanation": "The cube\u2019s edge squared is 49.",
+    "detailedSteps": [
+      "The three squared distances are $PQ^2=1+16+81=98$, $PR^2=16+81+1=98$, and $QR^2=9+25+64=98$. For cube edge length s, vertex-pair squared distances are $s^2,2s^2,3s^2$.",
+      "Three cube vertices cannot all be connected by edges: the cube edge graph is bipartite, with parity determined by the sum of the three vertex bits. They cannot all be opposite vertices either, because each vertex has only one opposite. Thus their common squared distance must be $2s^2$, giving $s^2=49$.",
+      "Attainment can be checked directly. From P use edge vectors $(-2,-6,-3)$, $(3,2,-6)$, and $(6,-3,2)$. They are mutually perpendicular and each has squared length 49; the first plus second gives Q minus P, and the first plus third gives R minus P.",
+      "The cube surface area is $6s^2=294$."
+    ],
+    "keyIdeas": [
+      "Equidistant cube vertices must be pairwise face diagonals"
+    ],
+    "commonMistakes": [
+      "Assuming that the given point pairs are cube edges merely because they are vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cube\u2019s possible vertex distances and its parity rule determine the distance type.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p3",
+    "problemId": "aime-ii-2002-p3",
+    "finalAnswer": "$\\boxed{111}$",
+    "shortExplanation": "The increasing triple is 27,36,48.",
+    "detailedSteps": [
+      "Combining the logarithms gives $abc=6^6$. For a geometric triple, $ac=b^2$, so $b^3=abc=6^6$ and $b=36$. Hence $ac=1296$.",
+      "The increasing condition gives $1\\le a<36$. Since 36 minus a is a positive square, its square root is 1 through 5, leaving $a=35,32,27,20,11$. Of these, only 27 divides 1296.",
+      "Thus $c=48$. The ratio is 4/3 throughout, and b minus a is 9, a square. Therefore $a+b+c=27+36+48=111$."
+    ],
+    "keyIdeas": [
+      "The product fixes the middle geometric term"
+    ],
+    "commonMistakes": [
+      "Assuming that the common ratio of integer terms must itself be an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric mean converts the logarithmic product to a fixed middle term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p4",
+    "problemId": "aime-ii-2002-p4",
+    "finalAnswer": "$\\boxed{803}$",
+    "shortExplanation": "The area coefficient is 361803.",
+    "detailedSteps": [
+      "The pictured path has n hexagons along each side including both corner cells, so its centers form the outer ring of a hexagonal tiling at ring index n minus one. The garden consists of the full cells in all preceding rings, through ring index n minus two.",
+      "Ring j has 6 j cells: there are six sides with j steps each, counting each corner once. Including the central cell, the garden cell count is $1+\\sum_{j=1}^{n-2}6j=1+3(n-2)(n-1)$. The shared edges cause no area overlap.",
+      "A unit-side regular hexagon has area $3\\sqrt3/2$. Thus the coefficient in the source\u2019s area form is $m=3[1+3(n-2)(n-1)]$.",
+      "For $n=202$, $m=3+9(200)(201)=361803$, whose remainder modulo 1000 is 803."
+    ],
+    "keyIdeas": [
+      "The hexagonal boundary encloses complete rings of hexagon cells"
+    ],
+    "commonMistakes": [
+      "Counting the path\u2019s hexagons in the garden or treating n as the ring index rather than the side-cell count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The edge-to-edge diagram makes the interior a union of complete tiling cells.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p5",
+    "problemId": "aime-ii-2002-p5",
+    "finalAnswer": "$\\boxed{042}$",
+    "shortExplanation": "The only exceptions are 2,3,4,8,9,16.",
+    "detailedSteps": [
+      "For $a=2^n3^m$, the exponents of two and three in $a^6$ are 6 n and 6 m, while both exponents in $6^a$ are a. Thus divisibility fails exactly when $a<6\\max(n,m)$.",
+      "Put $K=\\max(n,m)$. We have $a\\ge2^K$. For K at least 5, $2^K\\ge6K$: this holds at $K=5$, and doubling preserves it since $12K\\ge6(K+1)$. Hence all exceptions have n,m between 0 and 4.",
+      "Checking this finite range gives exponent pairs $(1,0),(2,0),(3,0),(4,0),(0,1),(0,2)$, and values 2,4,8,16,3,9. Unique factorization makes all six distinct. Their sum is 42."
+    ],
+    "keyIdeas": [
+      "A maximum-exponent bound makes the exceptional set finite"
+    ],
+    "commonMistakes": [
+      "Comparing the exponent a to n or m instead of to six times those exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exponential growth proves that the finite search includes every exception.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p6",
+    "problemId": "aime-ii-2002-p6",
+    "finalAnswer": "$\\boxed{521}$",
+    "shortExplanation": "The exact sum times 1000 lies between 520.5 and 521.5.",
+    "detailedSteps": [
+      "Use $1/(n^2-4)=\\tfrac14[1/(n-2)-1/(n+2)]$. Summing from 3 through 10000 leaves $\\tfrac14[1+1/2+1/3+1/4-1/9999-1/10000-1/10001-1/10002]$.",
+      "After multiplying by 1000, the positive part is $250(25/12)=6250/12$. The amount subtracted is positive and less than $1000/9999$.",
+      "Therefore the value is below 520.8334 and above $6250/12-1000/9999$, which exceeds 520.5. Both bounds lie below 521.5, so the nearest integer is 521."
+    ],
+    "keyIdeas": [
+      "A four-term telescoping residue controls the nearest integer"
+    ],
+    "commonMistakes": [
+      "Dropping the final four tail terms before justifying the nearest-integer rounding."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The offset of four produces exactly four uncancelled terms at each end.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p7",
+    "problemId": "aime-ii-2002-p7",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "The smallest k is 112, with square sum 474600.",
+    "detailedSteps": [
+      "The square sum is a multiple of 200 precisely when $k(k+1)(2k+1)$ is a multiple of 1200. Its factor 3 is automatic. Since 2 k plus one is odd, divisibility by 16 requires $k\\equiv0$ or 15 modulo 16.",
+      "At most one of k,k plus one,2 k plus one is divisible by five, because the pairwise gcds have no factor five. Hence divisibility by 25 requires $k\\equiv0,24,$ or 12 modulo 25.",
+      "The six combinations of these residues give least nonnegative solutions 0,112,224,175,287,399 modulo 400. The zero class has least positive member 400, so the least positive solution among them is 112.",
+      "Indeed $112(113)(225)/6=474600=200(2373)$. Thus 112 is both necessary and attainable as the least value."
+    ],
+    "keyIdeas": [
+      "Separate the sixteen and twenty-five divisibility conditions"
+    ],
+    "commonMistakes": [
+      "Checking divisibility by 200 before accounting for the formula\u2019s denominator six."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factors of two and five are confined to specific consecutive linear factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p8",
+    "problemId": "aime-ii-2002-p8",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "All positive k through 48 occur, while 49 does not.",
+    "detailedSteps": [
+      "A positive k can only come from positive n, and $\\lfloor2002/n\\rfloor=k$ is equivalent to $2002/(k+1)<n\\le2002/k$. For 1 through 44, this interval has length $2002/[k(k+1)]\\ge2002/(44\\cdot45)>1$, so it contains an integer.",
+      "The next four values 45,46,47,48 occur at $n=44,43,42,41$, respectively.",
+      "For $k=49$ the interval is $2002/50<n\\le2002/49$, that is 40.04 less than n at most 40.8572. No integer lies in it. Negative n yields a negative floor, and $n=0$ is undefined, so they supply no additional solutions.",
+      "The least missing positive value is 49."
+    ],
+    "keyIdeas": [
+      "The quotient-floor intervals first omit an integer at forty-nine"
+    ],
+    "commonMistakes": [
+      "Restricting the search for n arbitrarily or forgetting to justify all the earlier positive k."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An interval longer than one guarantees all the small quotient values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p9",
+    "problemId": "aime-ii-2002-p9",
+    "finalAnswer": "$\\boxed{501}$",
+    "shortExplanation": "There are 28501 unordered pairs.",
+    "detailedSteps": [
+      "For an ordered pair of disjoint subsets, each of the ten elements goes into the first set, the second set, or neither, giving $3^{10}$ assignments. Exclude the $2^{10}$ with the first set empty and the $2^{10}$ with the second empty, then restore the single all-empty assignment.",
+      "The number of ordered pairs of nonempty disjoint subsets is $3^{10}-2(2^{10})+1=57002$. Swapping the two sets has no fixed pair: equal disjoint sets would both be empty, which is excluded.",
+      "The requested set of two subsets is unordered, so its count is 57002/2 equal to 28501. The remainder modulo 1000 is 501."
+    ],
+    "keyIdeas": [
+      "Three element states count unordered disjoint subset pairs"
+    ],
+    "commonMistakes": [
+      "Counting ordered pairs when the source asks for a set of two subsets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nonemptiness makes the exchange action free, permitting division by two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p10",
+    "problemId": "aime-ii-2002-p10",
+    "finalAnswer": "$\\boxed{900}$",
+    "shortExplanation": "The two least positive arguments are $180\\pi/(180+\\pi)$ and $360\\pi/(180-\\pi)$.",
+    "detailedSteps": [
+      "In radian units the equality is $\\sin(\\pi x/180)=\\sin x$. Equality of sines gives either $x-\\pi x/180=2\\pi k$ or $x+\\pi x/180=(2k+1)\\pi$.",
+      "The positive solutions in the first family are $360\\pi k/(180-\\pi)$ for $k=1,2,3,\\ldots$. In the second they are $180\\pi(2k+1)/(180+\\pi)$ for $k=0,1,2,\\ldots$.",
+      "The second family\u2019s first value is less than the first family\u2019s first value. The latter is less than the second family\u2019s next value $540\\pi/(180+\\pi)$, because this comparison is equivalent to $\\pi<36$. The later members of each family are larger.",
+      "Thus the two values have the prescribed parameters $m=360,n=180,p=180,q=180$. Their sum is 900."
+    ],
+    "keyIdeas": [
+      "Both sine-equality families must be ordered"
+    ],
+    "commonMistakes": [
+      "Taking two successive members of one equality family and missing a smaller member of the other."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The period and supplementary-angle branches interleave.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p11",
+    "problemId": "aime-ii-2002-p11",
+    "finalAnswer": "$\\boxed{518}$",
+    "shortExplanation": "The shared second term is $(\\sqrt5-1)/8$.",
+    "detailedSteps": [
+      "Let a convergent real geometric series have ratio r. Its first term is 1 minus r because the sum is one, with $|r|<1$. Its second term is $r(1-r)$. Two different ratios with this same second term must sum to one, since they are the roots of the same quadratic. For both ratios to have absolute value below one, both must lie strictly between zero and one.",
+      "The given third term imposes $(1-r)r^2=1/8$, or $8r^3-8r^2+1=0$. Factoring gives $(2r-1)(4r^2-2r-1)=0$. The roots are one-half and $(1\\pm\\sqrt5)/4$.",
+      "The root one-half would give the same ratio for both series, contrary to distinctness. The negative root would force its partner to exceed one, contrary to convergence. Thus $r=(1+\\sqrt5)/4$ and the partner is $(3-\\sqrt5)/4$, both in $(0,1)$.",
+      "The common second term is $r(1-r)=(\\sqrt5-1)/8$. Hence $m=5,n=1,p=8$, and $100m+10n+p=518$."
+    ],
+    "keyIdeas": [
+      "Convergence and distinctness select one cubic root"
+    ],
+    "commonMistakes": [
+      "Keeping the one-half ratio even though it produces only one series, or allowing a nonconvergent partner."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two possible ratios for a common second term are complementary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p12",
+    "problemId": "aime-ii-2002-p12",
+    "finalAnswer": "$\\boxed{660}$",
+    "shortExplanation": "There are 23 permitted four-success sequences.",
+    "detailedSteps": [
+      "The final ratio requires four made shots and six misses. Let their made-shot positions be $j_1<j_2<j_3<j_4$. The ratio can increase only at a made shot, so all prefix conditions are equivalent to $j_i\\ge\\lceil5i/2\\rceil$. Thus $j_1\\ge3$, $j_2\\ge5$, $j_3\\ge8$, and $j_4=10$.",
+      "If $j_3=8$, choose the first two positions from 3 through 7, excluding only the pair $(3,4)$. This gives $\\binom52-1=9$ choices. If $j_3=9$, choose them from 3 through 8 with the same exclusion, giving $\\binom62-1=14$. The full count is 23.",
+      "Every sequence has probability $(2/5)^4(3/5)^6$, by the stated shot independence. Hence the requested probability is $23\\cdot2^4 3^6/5^{10}$.",
+      "The distinct prime factors are 2,3,23,5 and the indicated exponents sum to 4 plus 6 plus 10 equal to 20. The requested expression is $(2+3+23+5)(20)=660$."
+    ],
+    "keyIdeas": [
+      "Prefix bounds become lower bounds on the success positions"
+    ],
+    "commonMistakes": [
+      "Using all four-success sequences without testing each earlier prefix ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking only the made-shot positions suffices because misses decrease the ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p13",
+    "problemId": "aime-ii-2002-p13",
+    "finalAnswer": "$\\boxed{901}$",
+    "shortExplanation": "The area ratio is $225/676$.",
+    "detailedSteps": [
+      "Use affine coordinates $C=(0,0)$, $A=(1,0)$ and $B=(0,1)$. The stated side divisions put $D=(0,2/7)$ and $E=(1/4,0)$. Thus AD has equation $x+(7/2)y=1$, while BE has equation $4x+y=1$.",
+      "Their intersection is $P=(5/26,6/26)$. Since AB is the line x plus y equal to one, the parallel through P to CA meets it at $Q=(20/26,6/26)$, and the parallel through P to CB meets it at $R=(5/26,21/26)$. These points are on the actual AB segment.",
+      "The determinant of the two vectors PQ and PR is $(15/26)^2$. The reference triangle ABC has determinant magnitude one, so the area ratio is $225/676$. Affine transformations preserve this ratio.",
+      "The fraction is reduced, giving $m+n=225+676=901$. The supplied side lengths form a nondegenerate triangle, so the affine model corresponds to the actual geometry."
+    ],
+    "keyIdeas": [
+      "Affine coordinates locate the cevian intersection and both parallels"
+    ],
+    "commonMistakes": [
+      "Reversing the CE:EA or CD:DB fractions when placing the division points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only line incidences and ratios of areas are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p14",
+    "problemId": "aime-ii-2002-p14",
+    "finalAnswer": "$\\boxed{098}$",
+    "shortExplanation": "The distance OP is $95/3$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$, $P=(p,0)$ and $M=(0,h)$, with hypotenuse length L. Tangency to AM puts the center at $O=(19,0)$, since it lies on AP. Write $q=OP=p-19$. The distance from O to PM gives $hq=19L$. Since L exceeds h, q exceeds 19.",
+      "Pythagoras and $p=q+19$ give $L^2=(q+19)^2+h^2$. Substituting $L=hq/19$ yields $h^2=19^2(q+19)/(q-19)$. Put $t=h/19>1$; then $q=19(t^2+1)/(t^2-1)$.",
+      "The perimeter equation is $q+19+h+L=152$. Using $L=tq$ and $h=19t$, it becomes $(q+19)(1+t)=152$, or $38t^2/(t-1)=152$. Thus $(t-2)^2=0$ and $t=2$.",
+      "It follows that $h=38$, $q=95/3$, $p=152/3$ and $L=190/3$. They satisfy Pythagoras and the perimeter; the perpendicular foot from O to PM is inside that segment, so the stated tangency is attained.",
+      "The fraction 95/3 is reduced, giving $m+n=98$."
+    ],
+    "keyIdeas": [
+      "Tangency and the perimeter force a double-root relation"
+    ],
+    "commonMistakes": [
+      "Using the triangle\u2019s incircle formula even though the circle\u2019s center lies on AP itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center-on-leg condition gives a different circle from the triangle\u2019s incircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2002-p15",
+    "problemId": "aime-ii-2002-p15",
+    "finalAnswer": "$\\boxed{282}$",
+    "shortExplanation": "The common tangent slope is $12\\sqrt{221}/49$.",
+    "detailedSteps": [
+      "Both circles must lie above the x-axis because they contain $(9,6)$ and are tangent to that axis. Write a center as $(kr,r)$, where r is its radius. Tangency to y equal to mx gives $k=(1\\pm\\sqrt{1+m^2})/m$. The plus branch has k greater than one; the minus branch lies strictly between minus one and zero.",
+      "The two circles lie on the same side of the other common tangent. If they lay on opposite sides, every common point would lie on the tangent line, where each circle has just one point, contradicting two intersections. Therefore they use the same k branch.",
+      "Incidence of $(9,6)$ gives $(9-kr)^2+(6-r)^2=r^2$, or $k^2r^2-(18k+12)r+117=0$. The two distinct radii are its two roots, so their product is $117/k^2=68$. Thus $k^2=117/68>1$, excluding the negative branch.",
+      "For the positive branch, squaring $mk=1+\\sqrt{1+m^2}$ gives $m=2k/(k^2-1)$. With $k=3\\sqrt{221}/34$, this yields $m=12\\sqrt{221}/49$. It is positive and satisfies the original unsquared tangency equation.",
+      "Attainment follows from the quadratic: its discriminant is $144(-k^2+3k+1)>0$, and both roots are positive. Their centers have x-coordinate k times their radius, so both lines are tangent and both circles contain the given point. That point is not on the center line, since k is not 3/2, so the intersections are two distinct points.",
+      "The number 221 is 13 times 17 and is squarefree, while 12 and 49 are coprime. Hence $a+b+c=12+221+49=282$."
+    ],
+    "keyIdeas": [
+      "The common tangent wedge and radius product determine the slope"
+    ],
+    "commonMistakes": [
+      "Assuming a tangent wedge without excluding the other branch or treating circles on opposite sides of a common tangent as intersecting twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The radius-product equation determines the angle-bisector branch as well as the slope.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,510 @@
+[
+  {
+    "id": "solution-amc10b-2004-p1",
+    "problemId": "amc10b-2004-p1",
+    "finalAnswer": "$\\boxed{363}$ (choice C)",
+    "shortExplanation": "There are $22-12+1=11$ reserved rows.",
+    "detailedSteps": [
+      "Including both endpoints, the row count is 11. With 33 seats per row, the club has $11\\cdot33=363$ seats."
+    ],
+    "keyIdeas": [
+      "Inclusive row counting"
+    ],
+    "commonMistakes": [
+      "Using 22-12 and omitting one endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inclusive intervals contain one more integer than their endpoint difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p2",
+    "problemId": "amc10b-2004-p2",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "Ten numbers have tens digit 7, nine have units digit 7, and 77 is counted twice.",
+    "detailedSteps": [
+      "The tens-digit group is 70 through 79, giving 10 numbers. The units-digit group is 17 through 97 in steps of 10, giving 9.",
+      "Only 77 belongs to both groups, so the total is $10+9-1=18$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion on digit positions"
+    ],
+    "commonMistakes": [
+      "Counting 07 as a two-digit positive integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract the overlap after counting the two digit positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p3",
+    "problemId": "amc10b-2004-p3",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The fifth practice is four doublings after the first.",
+    "detailedSteps": [
+      "If the first count is $a$, the fifth is $2^4a=48$. Thus $a=48/16=3$."
+    ],
+    "keyIdeas": [
+      "Reversing four doublings"
+    ],
+    "commonMistakes": [
+      "Dividing by 2 five times."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count transitions between practices, not the number of practices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p4",
+    "problemId": "amc10b-2004-p4",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "The six possible products have greatest common divisor 12.",
+    "detailedSteps": [
+      "If the hidden bottom face is $k$, the visible product is $6!/k=720/k$. For $k=1,\\ldots,6$, these are $720,360,240,180,144,120$.",
+      "Their greatest common divisor is 12. Thus 12 always divides the product, and no larger integer does."
+    ],
+    "keyIdeas": [
+      "Greatest common divisor across hidden faces"
+    ],
+    "commonMistakes": [
+      "Using the maximum product rather than a divisor common to every outcome."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unseen face determines exactly which factor is omitted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p5",
+    "problemId": "amc10b-2004-p5",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "The maximum occurs at $(a,b,c,d)=(3,2,1,0)$.",
+    "detailedSteps": [
+      "If $c=0$ or $a=0$, the result is nonpositive; in the latter case $b>0$ because the four values are distinct. If $b=0$, the result is $c-d\\le3$.",
+      "The remaining case is $d=0$. Permuting 1,2,3 among $a,b,c$ gives values $3,2,6,8,6,9$, whose maximum is 9.",
+      "The assignment $a=3,b=2,c=1,d=0$ attains $1\\cdot3^2=9$."
+    ],
+    "keyIdeas": [
+      "Locating zero in a constrained maximum"
+    ],
+    "commonMistakes": [
+      "Reading a^b as the product ab or ignoring which position contains 0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the zero placement before checking the small remaining list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p6",
+    "problemId": "amc10b-2004-p6",
+    "finalAnswer": "$\\boxed{99!\\cdot100!}$ (choice C)",
+    "shortExplanation": "The product in choice C is $(10\\cdot99!)^2$.",
+    "detailedSteps": [
+      "Since $100!=100\\cdot99!$, we have $99!\\cdot100!=100(99!)^2=(10\\cdot99!)^2$.",
+      "After removing the square of the smaller factorial, the other choices leave 99,9900,10100, or 101, none a perfect square. Thus C is the unique square."
+    ],
+    "keyIdeas": [
+      "Extracting a factorial square"
+    ],
+    "commonMistakes": [
+      "Assuming the product of two factorials is automatically a square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor out a large square before checking the remaining small multiplier.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p7",
+    "problemId": "amc10b-2004-p7",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The equation $(10/7)d-60=d$ gives $d=140$.",
+    "detailedSteps": [
+      "The exchange produces $(10/7)d$ Canadian dollars. After spending 60, the remaining amount equals $d$, so $(3/7)d=60$ and $d=140$.",
+      "The digit sum is $1+4+0=5$."
+    ],
+    "keyIdeas": [
+      "Currency exchange and remaining balance"
+    ],
+    "commonMistakes": [
+      "Using the reciprocal exchange rate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two numerical amounts use different currencies but share the same symbol d.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p8",
+    "problemId": "amc10b-2004-p8",
+    "finalAnswer": "$\\boxed{13}$ (choice A)",
+    "shortExplanation": "The two city-to-airport routes form a right angle, giving separation $\\sqrt{164}$.",
+    "detailedSteps": [
+      "From the airport, St. Paul lies northeast and Minneapolis northwest. These directions are perpendicular, with distances 8 and 10 miles.",
+      "The city separation is $\\sqrt{8^2+10^2}=\\sqrt{164}\\approx12.81$ miles, closest to 13."
+    ],
+    "keyIdeas": [
+      "Perpendicular compass directions"
+    ],
+    "commonMistakes": [
+      "Adding the two route lengths despite their right-angle directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Interpret compass directions before applying the distance formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p9",
+    "problemId": "amc10b-2004-p9",
+    "finalAnswer": "$\\boxed{100+75\\pi}$ (choice B)",
+    "shortExplanation": "The square and disk overlap in a quarter disk of area $25\\pi$.",
+    "detailedSteps": [
+      "The circle center is a square vertex, and its radius equals the side length 10. The overlap is exactly the 90-degree sector between the two adjoining sides.",
+      "Add the areas and subtract the overlap: $100+100\\pi-25\\pi=100+75\\pi$."
+    ],
+    "keyIdeas": [
+      "Union area with a quarter-circle overlap"
+    ],
+    "commonMistakes": [
+      "Adding both areas without subtracting the shared region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The corner angle identifies the fraction of the circle inside the square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p10",
+    "problemId": "amc10b-2004-p10",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "shortExplanation": "The first $n$ odd integers sum to $n^2$.",
+    "detailedSteps": [
+      "The row lengths are $1,3,5,\\ldots,2n-1$. Their sum is $n^2=100$, so the positive row count is $n=10$."
+    ],
+    "keyIdeas": [
+      "A sum of consecutive odd row sizes"
+    ],
+    "commonMistakes": [
+      "Using a triangular-number formula for consecutive integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The increase is 2 per row, so the sizes are the odd integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p11",
+    "problemId": "amc10b-2004-p11",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice C)",
+    "shortExplanation": "Both faces must be at least 2, and the pair $(2,2)$ must be excluded.",
+    "detailedSteps": [
+      "For faces $a,b$, the inequality $ab>a+b$ is equivalent to $(a-1)(b-1)>1$. A face 1 makes this impossible.",
+      "There are $7^2=49$ ordered pairs with both faces from 2 through 8. Only $(2,2)$ gives equality rather than a strict inequality. Thus 48 of 64 outcomes succeed, giving $3/4$."
+    ],
+    "keyIdeas": [
+      "Counting an inequality on two dice"
+    ],
+    "commonMistakes": [
+      "Including the equality case(2,2)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring the inequality makes the exceptional cases transparent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p12",
+    "problemId": "amc10b-2004-p12",
+    "finalAnswer": "$\\boxed{\\pi a^2}$ (choice A)",
+    "shortExplanation": "The tangent-radius right triangle gives $b^2-c^2=a^2$.",
+    "detailedSteps": [
+      "The radius $OZ$ is perpendicular to tangent $XZ$, so triangle OZX is right with hypotenuse $OX=b$ and legs $OZ=c$, $XZ=a$.",
+      "Pythagoras yields $b^2-c^2=a^2$. The annulus area is therefore $\\pi(b^2-c^2)=\\pi a^2$."
+    ],
+    "keyIdeas": [
+      "A tangent length determines annulus area"
+    ],
+    "commonMistakes": [
+      "Using the difference of radii squared instead of the difference of their squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The extra labeled lengths are unnecessary once tangency is used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p13",
+    "problemId": "amc10b-2004-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "In units of $0.05$ millimeter, every thickness is 3 modulo 4.",
+    "detailedSteps": [
+      "The four coin thicknesses become 31,39,27,35 units, each congruent to 3 modulo 4. The total height 14 millimeters is 280 units, divisible by 4. If there are $N$ coins, $3N\\equiv0\\pmod4$, so 4 divides $N$.",
+      "Each coin is between 1.35 and 1.95 millimeters thick. Hence $14/1.95\\le N\\le14/1.35$, leaving only 8,9,10 as possible integers. Only 8 is divisible by 4.",
+      "For example, eight quarters have total thickness $8\\cdot1.75=14$, confirming feasibility."
+    ],
+    "keyIdeas": [
+      "Congruence of coin thicknesses"
+    ],
+    "commonMistakes": [
+      "Averaging the four thicknesses without knowing the coin mixture."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common residue determines the count more sharply than size bounds alone.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p14",
+    "problemId": "amc10b-2004-p14",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice C)",
+    "shortExplanation": "Before the final step, the bag has $B$ blue marbles among $5B$ total.",
+    "detailedSteps": [
+      "Use $B$ for the unchanged blue count before the final step. After the yellow additions, blue is one fifth of the total, so the total is $5B$.",
+      "Doubling the blue count adds $B$ marbles, producing $2B$ blue among $6B$ total. The final fraction is $2B/(6B)=1/3$."
+    ],
+    "keyIdeas": [
+      "Doubling one category after fixing its fraction"
+    ],
+    "commonMistakes": [
+      "Doubling the numerator while leaving the denominator unchanged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the state immediately before the last change is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p15",
+    "problemId": "amc10b-2004-p15",
+    "finalAnswer": "$\\boxed{1.15}$ (choice A)",
+    "shortExplanation": "There are 17 nickels and 3 dimes.",
+    "detailedSteps": [
+      "If the counts are $n,d$, then $n+d=20$. Swapping denominations increases value by $5n-5d=70$ cents, so $n-d=14$.",
+      "Solving gives $n=17,d=3$. The original value is $17\\cdot5+3\\cdot10=115$ cents, or $1.15$ dollars."
+    ],
+    "keyIdeas": [
+      "Value gained by swapping denominations"
+    ],
+    "commonMistakes": [
+      "Reversing the sign of the value change."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each nickel contributes a 5-cent gain while each dime contributes a 5-cent loss.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p16",
+    "problemId": "amc10b-2004-p16",
+    "finalAnswer": "$\\boxed{1+\\frac{2\\sqrt3}{3}}$ (choice D)",
+    "shortExplanation": "The three unit-circle centers form an equilateral triangle of side 2.",
+    "detailedSteps": [
+      "Pairwise external tangency makes every distance between small centers equal to 2. The outer center is equally distant from all three, because each internally tangent unit circle has center distance $R-1$.",
+      "The circumradius of the equilateral center triangle is $2/\\sqrt3$. Thus $R-1=2/\\sqrt3$, giving $R=1+2\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "Circumcenter of three tangent-circle centers"
+    ],
+    "commonMistakes": [
+      "Adding the full center-triangle altitude instead of its circumradius."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal small radii identify the outer center as the triangle circumcenter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p17",
+    "problemId": "amc10b-2004-p17",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "The current ages are 31 and 13.",
+    "detailedSteps": [
+      "Write Jack's age as $10a+b$ and Bill's as $10b+a$. The future condition gives $10a+b+5=2(10b+a+5)$, or $8a-19b=5$.",
+      "Modulo 8, this implies $b\\equiv1\\pmod8$. A digit b is therefore 1 or 9. The value 9 would force $a=22$, impossible; b 1 gives a 3.",
+      "The age difference is $31-13=18$."
+    ],
+    "keyIdeas": [
+      "Reversed age digits"
+    ],
+    "commonMistakes": [
+      "Doubling only Bill's present age instead of his age five years later."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit bounds complete the modular argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p18",
+    "problemId": "amc10b-2004-p18",
+    "finalAnswer": "$\\boxed{\\frac7{16}}$ (choice E)",
+    "shortExplanation": "Each corner triangle occupies $3/16$ of the original triangle.",
+    "detailedSteps": [
+      "The chosen points divide the sides in ratios $AB/AC=CD/CE=EF/EA=1/4$. Hence $AF/AE=CB/CA=ED/EC=3/4$.",
+      "Triangles ABF, CBD, and EDF each share a vertex angle with the large triangle. Their area ratios are products of the two adjoining side ratios, in every case $(1/4)(3/4)=3/16$.",
+      "The central area ratio is $1-3(3/16)=7/16$."
+    ],
+    "keyIdeas": [
+      "Removing three corner triangles"
+    ],
+    "commonMistakes": [
+      "Using the length ratio 1/4 as an area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the three corners avoids computing the central triangle directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p19",
+    "problemId": "amc10b-2004-p19",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "The odd-indexed terms are $2000+n$, and the even-indexed terms are $2004-n$.",
+    "detailedSteps": [
+      "The first few terms are $2001,2002,2003,2000,2005,1998$. They suggest the formula $a_n=2000+n$ for odd n and $a_n=2004-n$ for even n.",
+      "The formula matches the first three terms. Substituting either parity into $a_n=a_{n-3}+a_{n-2}-a_{n-1}$ verifies the formula inductively for all later terms.",
+      "Because 2004 is even, $a_{2004}=2004-2004=0$."
+    ],
+    "keyIdeas": [
+      "Two interlaced arithmetic patterns"
+    ],
+    "commonMistakes": [
+      "Assuming the initially increasing sequence remains increasing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove the observed pattern by substitution rather than relying on the first few terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p20",
+    "problemId": "amc10b-2004-p20",
+    "finalAnswer": "$\\boxed{\\frac4{11}}$ (choice D)",
+    "shortExplanation": "Coordinate section formulas place D at $11/15$ of the way from B to C.",
+    "detailedSteps": [
+      "Use $B=(0,0)$, $C=(1,0)$, $A=(u,v)$ with $v\\ne0$, and write $D=(d,0)$. Since $AT/DT=3$, the point T is $((u+3d)/4,v/4)$.",
+      "The relation $BT/ET=4$ gives $E=(5/4)T=((5u+15d)/16,5v/16)$. As E lies on AC, its height also places it at $(5u/16+11/16,5v/16)$.",
+      "Equating the horizontal coordinates yields $15d=11$. Therefore $CD/BD=(1-d)/d=(4/15)/(11/15)=4/11$."
+    ],
+    "keyIdeas": [
+      "Ratios at intersecting cevians"
+    ],
+    "commonMistakes": [
+      "Inverting the requested CD/BD ratio or either supplied segment ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the direction of each ratio explicit throughout the computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p21",
+    "problemId": "amc10b-2004-p21",
+    "finalAnswer": "$\\boxed{3722}$ (choice A)",
+    "shortExplanation": "The two lists overlap in 286 integers.",
+    "detailedSteps": [
+      "The first list is $1+3k$ for $0\\le k\\le2003$, ending at 6010. The second is $9+7j$, ending at 14030.",
+      "A common term must be 1 modulo 3 and 2 modulo 7, giving $16\\pmod{21}$. The common terms within both lists are $16,37,\\ldots$ up to 6010, totaling $\\lfloor(6010-16)/21\\rfloor+1=286$.",
+      "The union therefore has $2004+2004-286=3722$ distinct terms."
+    ],
+    "keyIdeas": [
+      "Intersection of two arithmetic progressions"
+    ],
+    "commonMistakes": [
+      "Counting the overlap beyond the smaller list's final term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solve the congruences and then apply the actual endpoint bounds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p22",
+    "problemId": "amc10b-2004-p22",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{65}}2}$ (choice D)",
+    "shortExplanation": "The incenter is $(2,2)$ and circumcenter is $(5/2,6)$.",
+    "detailedSteps": [
+      "Place the right-angle vertex at the origin and the other vertices at $(5,0)$ and $(0,12)$. The circumcenter is the hypotenuse midpoint $(5/2,6)$.",
+      "The inradius is area divided by semiperimeter: $r=30/15=2$. Tangency to the two axes places the incenter at $(2,2)$.",
+      "The center distance is $\\sqrt{(5/2-2)^2+(6-2)^2}=\\sqrt{65}/2$."
+    ],
+    "keyIdeas": [
+      "Centers of a right triangle"
+    ],
+    "commonMistakes": [
+      "Placing the incenter at the centroid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Right-triangle coordinates make both centers easy to locate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p23",
+    "problemId": "amc10b-2004-p23",
+    "finalAnswer": "$\\boxed{\\frac5{16}}$ (choice B)",
+    "shortExplanation": "There are 20 favorable colorings among 64 equally likely face colorings.",
+    "detailedSteps": [
+      "All six faces the same color gives 2 favorable colorings. Exactly five of one color gives $2\\cdot6=12$; place the lone different face on top or bottom.",
+      "With exactly four of one color, the other two faces must be opposite, so they can be top and bottom. There are 3 opposite pairs and 2 majority colors, giving 6 more. A three-three split cannot supply four matching vertical faces.",
+      "The probability is $(2+12+6)/2^6=20/64=5/16$."
+    ],
+    "keyIdeas": [
+      "Color counts compatible with a cube orientation"
+    ],
+    "commonMistakes": [
+      "Counting every four-two coloring without requiring the minority faces to be opposite."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classifying by majority-color count avoids double-counting successful orientations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p24",
+    "problemId": "amc10b-2004-p24",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice B)",
+    "shortExplanation": "The angle bisector makes $BD=CD$, and Ptolemy supplies the requested ratio.",
+    "detailedSteps": [
+      "Equal inscribed angles BAD and DAC subtend equal chords BD and DC. Write their common length as t.",
+      "Apply Ptolemy to cyclic quadrilateral A B D C: $AD\\cdot BC=AB\\cdot DC+AC\\cdot BD$. Thus $9AD=(7+8)t=15t$.",
+      "Therefore $AD/CD=15/9=5/3$."
+    ],
+    "keyIdeas": [
+      "Angle-bisector chords and Ptolemy"
+    ],
+    "commonMistakes": [
+      "Using the ratio CD/AD instead of the requested AD/CD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal chord lengths make the cyclic-quadrilateral identity especially simple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2004-p25",
+    "problemId": "amc10b-2004-p25",
+    "finalAnswer": "$\\boxed{\\frac{5\\pi}{3}-2\\sqrt3}$ (choice B)",
+    "shortExplanation": "The radius 2 circles have centers two units apart, and their lens area is $8\\pi/3-2\\sqrt3$.",
+    "detailedSteps": [
+      "Place the small-circle center at the origin and its tangency diameter endpoints at $(\\pm1,0)$. Internal tangency forces the large centers to be those same two points in reversed order, so their separation is 2.",
+      "The common chord of the two radius 2 circles subtends $120^\\circ$ at each center. The lens is the sum of two such sectors minus two triangles, with area $2(4\\pi/3)-2\\sqrt3=8\\pi/3-2\\sqrt3$.",
+      "The entire unit disk lies in the lens. Removing its areaπ gives $5\\pi/3-2\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "A two-circle lens minus an inner disk"
+    ],
+    "commonMistakes": [
+      "Subtracting the small disk from a single large circle instead of the intersection of both."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Internal tangency fixes the two outer centers before the area calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

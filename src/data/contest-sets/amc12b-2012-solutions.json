@@ -1,0 +1,524 @@
+[
+  {
+    "id": "solution-amc12b-2012-p1",
+    "problemId": "amc12b-2012-p1",
+    "finalAnswer": "$\\boxed{64}$ (choice C)",
+    "shortExplanation": "Each classroom has sixteen more students than rabbits.",
+    "detailedSteps": [
+      "The difference per classroom is $18-2=16$. Across four classrooms it is $4\\cdot16=64$."
+    ],
+    "keyIdeas": [
+      "A classroom difference repeated four times"
+    ],
+    "commonMistakes": [
+      "Subtracting the rabbits only once across all four rooms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same difference repeats four times.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p2",
+    "problemId": "amc12b-2012-p2",
+    "finalAnswer": "$\\boxed{200}$ (choice E)",
+    "shortExplanation": "The rectangle is twenty by ten.",
+    "detailedSteps": [
+      "In the source figure, the circle touches the two long sides. Its diameter gives width $2\\cdot5=10$. The two-to-one side ratio gives length 20, so the area is 200."
+    ],
+    "keyIdeas": [
+      "A circle fixes the rectangle width"
+    ],
+    "commonMistakes": [
+      "Using the radius as the full width."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the circle placement from the actual picture.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p3",
+    "problemId": "amc12b-2012-p3",
+    "finalAnswer": "$\\boxed{48}$ (choice D)",
+    "shortExplanation": "Sixteen chipmunk holes and twelve squirrel holes each hold forty-eight.",
+    "detailedSteps": [
+      "If the chipmunk digs h holes, the squirrel digs h-4. Equality gives $3h=4(h-4)$, hence h=16.",
+      "The chipmunk therefore hides $3\\cdot16=48$ acorns."
+    ],
+    "keyIdeas": [
+      "Equal acorns with fewer holes"
+    ],
+    "commonMistakes": [
+      "Reporting the number of holes instead of the acorns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared total eliminates one variable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p4",
+    "problemId": "amc12b-2012-p4",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The euro amount is worth five hundred twenty dollars.",
+    "detailedSteps": [
+      "Convert $400$ euros to $400(1.30)=520$ dollars. The excess over Diana is 20 dollars, a fraction $20/500=4\\%$ of her money."
+    ],
+    "keyIdeas": [
+      "A currency comparison percentage"
+    ],
+    "commonMistakes": [
+      "Using the larger amount as the comparison denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the amount being exceeded as the percentage base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p5",
+    "problemId": "amc12b-2012-p5",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "Only the middle pair must contain an even integer.",
+    "detailedSteps": [
+      "The three pair sums are $26,41-26=15,57-41=16$. The odd sum 15 needs one odd and one even entry, forcing at least one even.",
+      "Both even sums can use two odd entries. For example, $(13,13,7,8,7,9)$ meets every subtotal with exactly one even integer, so the minimum is one."
+    ],
+    "keyIdeas": [
+      "Parity in three successive pairs"
+    ],
+    "commonMistakes": [
+      "Assuming an even sum requires even summands."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity gives a lower bound and a short witness attains it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p6",
+    "problemId": "amc12b-2012-p6",
+    "finalAnswer": "$\\boxed{\\text{larger than }x-y}$ (choice A)",
+    "shortExplanation": "The difference increases by twice the rounding amount.",
+    "detailedSteps": [
+      "For the common positive error e, the computed difference is $(x+e)-(y-e)=x-y+2e$. Because e is positive, this is larger than the actual difference."
+    ],
+    "keyIdeas": [
+      "Opposite rounding errors reinforce each other"
+    ],
+    "commonMistakes": [
+      "Treating the two equal rounding amounts as canceling."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting a downward-rounded quantity raises the result.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p7",
+    "problemId": "amc12b-2012-p7",
+    "finalAnswer": "$\\boxed{\\frac{45}{2}}$ (choice E)",
+    "shortExplanation": "The third and twenty-first red lights are forty-five gaps apart.",
+    "detailedSteps": [
+      "Each block has five lights, with red lights in positions 1 and 2. The third red is position 6, while the twenty-first is position 51.",
+      "There are $51-6=45$ gaps, each six inches, giving $270/12=45/2$ feet."
+    ],
+    "keyIdeas": [
+      "The positions of two odd-numbered red lights"
+    ],
+    "commonMistakes": [
+      "Counting lights rather than spaces between the endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two endpoints are corresponding positions in nine blocks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p8",
+    "problemId": "amc12b-2012-p8",
+    "finalAnswer": "$\\boxed{729}$ (choice A)",
+    "shortExplanation": "Choose the six neighboring desserts outward from Friday.",
+    "detailedSteps": [
+      "Friday is fixed as cake. Moving backward from Thursday to Sunday gives three choices at each of five steps, and Saturday has three choices distinct from Friday.",
+      "Thus the count is $3^5\\cdot3=729$. Every choice is determined by its already-fixed neighbor, so all restrictions hold."
+    ],
+    "keyIdeas": [
+      "A fixed Friday dessert"
+    ],
+    "commonMistakes": [
+      "Choosing all seven days independently."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Starting at the fixed interior day makes both directions independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p9",
+    "problemId": "amc12b-2012-p9",
+    "finalAnswer": "$\\boxed{40}$ (choice B)",
+    "shortExplanation": "The escalator speed is one fortieth of its length per second.",
+    "detailedSteps": [
+      "Normalize the escalator length to one. Walking speed is $1/60$, while combined downward speed is $1/24$. The escalator speed is $1/24-1/60=1/40$.",
+      "Standing still therefore takes 40 seconds."
+    ],
+    "keyIdeas": [
+      "Combining walking and escalator speeds"
+    ],
+    "commonMistakes": [
+      "Subtracting the travel times instead of the speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rates combine linearly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p10",
+    "problemId": "amc12b-2012-p10",
+    "finalAnswer": "$\\boxed{27}$ (choice B)",
+    "shortExplanation": "The intersections form a triangle with base six and altitude nine.",
+    "detailedSteps": [
+      "Substitute $y^2=25-x^2$ into the ellipse equation. This gives $x^2+x-20=0$, so x is 4 or -5.",
+      "The points are $(4,3),(4,-3),(-5,0)$. Their triangle area is $(1/2)(6)(9)=27$."
+    ],
+    "keyIdeas": [
+      "A polygon from circle-ellipse intersections"
+    ],
+    "commonMistakes": [
+      "Assuming both x roots give two different y values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A zero y value produces just one intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p11",
+    "problemId": "amc12b-2012-p11",
+    "finalAnswer": "$\\boxed{13}$ (choice C)",
+    "shortExplanation": "The valid bases are six and seven.",
+    "detailedSteps": [
+      "Expanding the numerals gives $A^2+3A+2+4B+3=6(A+B)+9$, equivalently $A^2-3A-2B-4=0$.",
+      "For $B=A+1$, this factors as $(A-6)(A+1)=0$, yielding positive A=6,B=7. For $B=A-1$, the discriminant of $A^2-5A-2=0$ is 33, so there is no integer A.",
+      "The bases satisfy all digit restrictions, and $A+B=13$."
+    ],
+    "keyIdeas": [
+      "Consecutive integer bases"
+    ],
+    "commonMistakes": [
+      "Forgetting that the same written digits change value with the base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check digit validity after solving the base equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p12",
+    "problemId": "amc12b-2012-p12",
+    "finalAnswer": "$\\boxed{382}$ (choice E)",
+    "shortExplanation": "Each event has two hundred eleven strings and their overlap forty.",
+    "detailedSteps": [
+      "A string with its zeros consecutive has either no zeros or one nonempty zero block. There are $1+20+19+\\cdots+1=211$ choices, and the same count applies to consecutive ones.",
+      "Both kinds consecutive means at most one switch: the two constant strings and the two orientations of a switch in each of nineteen positions. The intersection has $2+2\\cdot19=40$.",
+      "Inclusion-exclusion gives $211+211-40=382$."
+    ],
+    "keyIdeas": [
+      "A union of two single-block events"
+    ],
+    "commonMistakes": [
+      "Counting strings with both blocks consecutive twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Treat an empty symbol class consistently.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p13",
+    "problemId": "amc12b-2012-p13",
+    "finalAnswer": "$\\boxed{\\frac{31}{36}}$ (choice D)",
+    "shortExplanation": "Only distinct parallel translates fail to meet.",
+    "detailedSteps": [
+      "Equating the two expressions leaves $(a-c)x=d-b$. If a differs from c, this linear equation has one real solution; if a=c, it works exactly when b=d.",
+      "Failure has probability $(1/6)(5/6)=5/36$, so success is 31/36. Coincident parabolas count as having points in common."
+    ],
+    "keyIdeas": [
+      "When two equal-leading-coefficient parabolas meet"
+    ],
+    "commonMistakes": [
+      "Excluding identical curves or using a quadratic discriminant after the quadratic terms cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancel the common quadratic term first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p14",
+    "problemId": "amc12b-2012-p14",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "The first winning initial number is sixteen.",
+    "detailedSteps": [
+      "If Bernardo receives x, his output is 2x. He is the last to produce a value below 1000 exactly when $950\\le2x\\le999$, or $475\\le x\\le499$.",
+      "Between his turns the input changes as $x\\mapsto2x+50$. After j completed rounds it is $x_j=2^j(N+50)-50$. A winning turn therefore requires $525/2^j-50\\le N\\le549/2^j-50$.",
+      "For j=0,1,2 the lower integer bounds are respectively 475,213,82. For j=3 the interval is $[15.625,18.625]$, whose least integer is 16. For j at least 4 its upper endpoint is negative, impossible for the initial nonnegative N.",
+      "At N=16 all preceding outputs are below the cutoff and the fourth Bernardo output is 956, followed by Silvia’s 1006. The required digit sum is $1+6=7$."
+    ],
+    "keyIdeas": [
+      "The earliest initial winning number"
+    ],
+    "commonMistakes": [
+      "Declaring the first person to cross the threshold the winner."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Work backward from the final valid doubled output.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p15",
+    "problemId": "amc12b-2012-p15",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{10}}{10}}$ (choice C)",
+    "shortExplanation": "The base radii are four and eight, with equal slant heights twelve.",
+    "detailedSteps": [
+      "The sector arcs become base circumferences. For angles 120 and 240 degrees, the radii are $12/3=4$ and $2(12)/3=8$.",
+      "Both cones have slant height 12. Their vertical heights are $\\sqrt{144-16}=8\\sqrt2$ and $\\sqrt{144-64}=4\\sqrt5$.",
+      "The volume ratio is $(4^2\\cdot8\\sqrt2)/(8^2\\cdot4\\sqrt5)=\\sqrt{10}/10$."
+    ],
+    "keyIdeas": [
+      "Two cones rolled from complementary sectors"
+    ],
+    "commonMistakes": [
+      "Assuming the vertical height stays twelve when the sector is rolled."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Volume uses base area and vertical height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p16",
+    "problemId": "amc12b-2012-p16",
+    "finalAnswer": "$\\boxed{132}$ (choice B)",
+    "shortExplanation": "Inclusion-exclusion forces three special song types to appear.",
+    "detailedSteps": [
+      "With all-three-like forbidden, each song has seven possible like-subsets. The three exclusive pair types are required to occur at least once among the four distinct songs.",
+      "Inclusion-exclusion gives $7^4-3\\cdot6^4+3\\cdot5^4-4^4=132$. The last term excludes menus missing all three pair types."
+    ],
+    "keyIdeas": [
+      "Every pair of listeners needs its own exclusive song"
+    ],
+    "commonMistakes": [
+      "Treating songs with the same liking subset as indistinguishable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The pair requirement is an occurrence condition on three specified types.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p17",
+    "problemId": "amc12b-2012-p17",
+    "finalAnswer": "$\\boxed{\\frac{32}{5}}$ (choice C)",
+    "shortExplanation": "The center is at twenty-three fifths and nine fifths.",
+    "detailedSteps": [
+      "Write the slopes of SP,RQ as m and of PQ,SR as -1/m. The distances between the first parallel pair and the second are $2|m|/\\sqrt{1+m^2}$ and $6/\\sqrt{1+m^2}$. Equality forces $|m|=3$.",
+      "The negative slope produces the reflected square below the x-axis, so the first-quadrant condition selects m=3. The center lies on the midway lines $y=3(x-4)$ and $y=-(x-10)/3$.",
+      "Their intersection is $(23/5,9/5)$, giving coordinate sum $32/5=6.4$. All four actual square vertices have positive coordinates."
+    ],
+    "keyIdeas": [
+      "Four axis intercepts determine a tilted square"
+    ],
+    "commonMistakes": [
+      "Using only one pair of side intercepts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite sides are parallel and adjacent sides perpendicular.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p18",
+    "problemId": "amc12b-2012-p18",
+    "finalAnswer": "$\\boxed{512}$ (choice B)",
+    "shortExplanation": "Each reverse deletion chooses one of the two endpoints.",
+    "detailedSteps": [
+      "The occupied numbers in every prefix form an interval: the next permitted number is one beyond its left or right endpoint. Conversely, every such sequence meets the neighbor condition.",
+      "In reverse, remove the least or greatest remaining integer at each of the first nine deletions; the final single value is then forced. These choices uniquely reconstruct the original list.",
+      "The count is $2^9=512$."
+    ],
+    "keyIdeas": [
+      "Growing a connected interval of integers"
+    ],
+    "commonMistakes": [
+      "Allowing a jump to a nonadjacent unused integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The neighbor restriction preserves interval connectivity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p19",
+    "problemId": "amc12b-2012-p19",
+    "finalAnswer": "$\\boxed{\\frac{3\\sqrt2}{4}}$ (choice A)",
+    "shortExplanation": "The lower edge positions are three quarters from their common cube vertex.",
+    "detailedSteps": [
+      "Place $P_1=(0,0,0)$ and $P_1^\\prime=(1,1,1)$. The lower vertices have forms $(r_1,0,0),(0,r_2,0),(0,0,r_3)$, and upper ones $(1-s_1,1,1),(1,1-s_2,1),(1,1,1-s_3)$.",
+      "Two lower vertices cannot be opposite octahedron vertices: their midpoint has one coordinate zero, so reflection of an upper vertex with that coordinate one would leave the cube. Similarly no upper pair can be opposite. Thus each triple is a face, and equal triangle edges force $r_1=r_2=r_3=r$ and $s_1=s_2=s_3=s$.",
+      "Central symmetry and the mean of all vertices give center coordinates $1/2+(r-s)/6$. Reflect a lower vertex through this center; the two equal coordinates in its image must include an upper fixed coordinate one. Hence r=s, and the center is $(1/2,1/2,1/2)$.",
+      "The opposite pairs then match corresponding axes. A lower-to-upper nonopposite edge has squared length $2(1-r)^2+1$, equal to the lower face edge square $2r^2$. Solving gives r=3/4.",
+      "The edge length is therefore $r\\sqrt2=3\\sqrt2/4$, and the six constructed vertices have all required octahedron distances."
+    ],
+    "keyIdeas": [
+      "A regular octahedron on six cube edges"
+    ],
+    "commonMistakes": [
+      "Assuming all six cube-edge positions are midpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Regular octahedra have three centrally opposite vertex pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p20",
+    "problemId": "amc12b-2012-p20",
+    "finalAnswer": "$\\boxed{63}$ (choice D)",
+    "shortExplanation": "Exactly three base assignments give nondegenerate trapezoids.",
+    "detailedSteps": [
+      "For bases p,q and legs u,v, their difference delta must satisfy $|u-v|<\\delta<u+v$. The altitude is twice the area of the triangle with sides u,v,delta divided by delta.",
+      "Among the six unordered base pairs from $3,5,7,11$, only $(3,11),(5,11),(7,11)$ meet these strict bounds. The other pairs $(3,5),(3,7),(5,7)$ fail the lower bound.",
+      "Heron’s formula gives the corresponding triangle areas $10\\sqrt3,4\\sqrt5,6$, and hence trapezoid areas $(35/2)\\sqrt3,(32/3)\\sqrt5,27$. Each reflected leg arrangement gives the same area.",
+      "The requested coefficient-and-radicand sum is $35/2+32/3+27+3+5=379/6$, whose floor is 63."
+    ],
+    "keyIdeas": [
+      "All choices of trapezoid bases"
+    ],
+    "commonMistakes": [
+      "Selecting a base pair without testing whether its legs can reach the parallel line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small auxiliary triangle captures all possible leg arrangements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p21",
+    "problemId": "amc12b-2012-p21",
+    "finalAnswer": "$\\boxed{29\\sqrt3}$ (choice A)",
+    "shortExplanation": "The squared side length is two thousand five hundred twenty-three.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(40,0)$ and write $X=(U,V)$, $Z=(-V,U)$ and $Y=(U-V,U+V)$ for the inscribed square. Equiangular hexagon directions advance by sixty degrees, so BC has slope sqrt(3). Thus $U-V/\\sqrt3=40$.",
+      "Let $AF=f$ and $EF=e=41(\\sqrt3-1)$. Then $F=(-f/2,\\sqrt3f/2)$, and $E=F+(e/2,\\sqrt3e/2)$. The EF line containing Z gives $f=V+U/\\sqrt3$.",
+      "DE is horizontal and contains Y, so $U+V=\\sqrt3(f+e)/2$. Eliminating f gives $U+(2-\\sqrt3)V=\\sqrt3e=123-41\\sqrt3$.",
+      "Solving the two linear equations yields $U=30+(21/2)\\sqrt3$ and $V=63/2-10\\sqrt3$. Their squared sum is 2523, so the square side is $\\sqrt{2523}=29\\sqrt3$.",
+      "The computed values have positive V and give f=42; Z lies between F and E. A compatible hexagon can be completed with BC=40 and CD=f+e-40, for which X and Y lie on their required side segments. Thus the derived side length satisfies the original placement, not only the supporting lines."
+    ],
+    "keyIdeas": [
+      "A square constrained by equiangular hexagon sides"
+    ],
+    "commonMistakes": [
+      "Using a regular-hexagon side length equality that an equiangular hexagon need not have."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direction constraints suffice; most hexagon side lengths need not be known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p22",
+    "problemId": "amc12b-2012-p22",
+    "finalAnswer": "$\\boxed{2400}$ (choice E)",
+    "shortExplanation": "A finite used-edge recurrence gives two thousand four hundred paths.",
+    "detailedSteps": [
+      "The original MAA booklet diagram on page seven has sixteen hexagons in columns of sizes $1,2,3,4,3,2,1$. Horizontal arrows point right except the three middle-row arrows, which point left. Slanted edges have no arrow, allow either direction, and cannot be repeated. The LIVE redraw adds slanted arrows and changes the problem, so use the linked original booklet diagram.",
+      "A reproducible graph has centers $(3i,j)$ for $0\\le i\\le6$ and $j=-h,-h+2,\\ldots,h$, with $h=\\min(i,6-i)$. Use each hexagon’s vertices $(3i-2,j),(3i-1,j-1),(3i+1,j-1),(3i+2,j),(3i+1,j+1),(3i-1,j+1)$, merging shared edges. There are 48 vertices and 63 edges, from A=(-2,0) to B=(20,0).",
+      "For vertex v and used-edge set S, define $F(B,S)=1$, and otherwise sum $F(w,S\\cup\\{e\\})$ over unused legal outgoing edges e. Each recursive step uses a new edge, so the recurrence terminates and counts a disjoint partition of all legal next moves.",
+      "Classifying the evaluations by the three leftward arrows used, with bits ordered left to right, gives $1024,256,512,128,256,64,128,32$ for masks 0 through 7. Their sum is 2400. As a separate check, the no-left-arrow paths have count $2\\cdot2\\cdot4\\cdot4\\cdot4\\cdot2\\cdot2=1024$."
+    ],
+    "keyIdeas": [
+      "Counting trails in a partly directed honeycomb"
+    ],
+    "commonMistakes": [
+      "Treating the leftward arrows as undirected edges or prohibiting all vertex revisits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The restriction is on edges; a vertex can be visited again.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p23",
+    "problemId": "amc12b-2012-p23",
+    "finalAnswer": "$\\boxed{92}$ (choice B)",
+    "shortExplanation": "Five minus-one cases and one case each of orders three and five contribute ninety-two.",
+    "detailedSteps": [
+      "For a unit root z, multiply the source polynomial by 1-z to obtain $4z^5=d+(c-d)z+(b-c)z^2+(a-b)z^3+(4-a)z^4$. All five coefficients on the right are nonnegative and sum to 4.",
+      "Equality in the triangle inequality requires $z^{5-j}=1$ whenever the coefficient of $z^j$ is positive. Also z cannot be 1 because P(1) is positive. Thus the greatest common divisor of those positive-index differences must exceed one.",
+      "The differences are $5,4,3,2,1$. A divisor 2 requires $a=4,b=c,d=0$, giving five cases c=0 through 4 with P(1) values $8,10,12,14,16$. A divisor 3 requires $a=b=4,c=d=0$, giving 12. A divisor 5 requires $a=b=c=d=4$, giving 20.",
+      "A divisor 4 yields $a=b=c=4,d=0$, already included in the divisor-2 cases. These exhaust possible gcds, and each case indeed has a root of that order. The total is $60+12+20=92$."
+    ],
+    "keyIdeas": [
+      "Equality in a unit-circle triangle inequality"
+    ],
+    "commonMistakes": [
+      "Using numerical root approximations as the sole test of unit modulus."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nonnegative coefficient differences turn root existence into an equality condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p24",
+    "problemId": "amc12b-2012-p24",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "Eighteen initial values lead to growing powers of two.",
+    "detailedSteps": [
+      "Write f for the source transformation. Prime factors appearing once contribute exponent zero, so f(N) depends only on the core $C=\\prod_{e_p\\ge2}p^{e_p}$. For N at most 400, there are precisely 33 possible cores.",
+      "The single-prime cores are the powers of 2 from 4 through 256, of 3 from 9 through 243, of 5 equal to 25,125, of 7 equal to 49,343, and the squares 121,169,289,361. The mixed cores are $36,72,108,144,216,288,324,100,200,400,196,392,225$; include core 1. Three repeated primes cannot occur because $2^2 3^2 5^2>400$.",
+      "For $e\\ge5$, $f(2^e)=3^{e-1}$ and $f^2(2^e)=2^{2e-4}$. The exponent increases by the recurrence $e_j=4+2^j(e_0-4)$, proving unboundedness. In contrast, 1 is fixed and $16\\leftrightarrow27$ is a bounded cycle.",
+      "Exact substitution for the finite cores gives ten that reach a power of two with exponent at least five: $32,64,81,128,243,256,288,324,343,400$. Six reach the 16/27 cycle: $16,27,108,144,200,216$. The other seventeen $1,4,8,9,25,36,49,72,100,121,125,169,196,225,289,361,392$ reach 1. These lists exhaust all 33 cores.",
+      "The corresponding initial numbers are $32,64,81,96,128,160,162,192,224,243,256,288,320,324,343,352,384,400$, eighteen in total. For example, the two less immediate growth cases are $343\\to64$ and $400\\to162\\to64$. Each listed number’s core is in the growing list, while every other initial value has a bounded classified core."
+    ],
+    "keyIdeas": [
+      "Finite squareful cores and an infinite growth proof"
+    ],
+    "commonMistakes": [
+      "Treating rapid numerical growth as a proof of an unbounded infinite sequence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The finite core classification reduces the workload; the infinite growth still needs proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2012-p25",
+    "problemId": "amc12b-2012-p25",
+    "finalAnswer": "$\\boxed{\\frac{625}{144}}$ (choice B)",
+    "shortExplanation": "Reflection cancels the full rectangle product; the removed corner contributes the reciprocal.",
+    "detailedSteps": [
+      "First restore O=(0,0) to get the full five-by-six point rectangle. Reflection in a vertical axis reverses orientation and exchanges the B,C labels in the required counterclockwise order. It sends each tangent factor to its reciprocal, so the product over all right triangles in the full rectangle is 1.",
+      "We must divide by the product for triangles containing O. If the right angle is at O, choose axis endpoints $(a,0),(0,b)$ for $1\\le a\\le4,1\\le b\\le5$. The factor is b/a, and their product is $(5!)^4/(4!)^5$.",
+      "If the right angle lies on either positive axis, the factors are a/b for the same endpoint ranges. Together these two classes contribute $[(4!)^5/(5!)^4]^2$. Thus these three axis classes have combined product $24/625$.",
+      "For an interior right-angle vertex $(a,b)$, put $g=\\gcd(a,b)$, $u=a/g,v=b/g$. The other endpoint is $(a+kv,b-ku)$ or $(a-kv,b+ku)$ for a positive integer k. Their factor contributions are k/g and g/k, respectively.",
+      "The permitted largest k values are $m_+=\\min(\\lfloor(4-a)/v\\rfloor,\\lfloor b/u\\rfloor)$ and $m_-=\\min(\\lfloor a/v\\rfloor,\\lfloor(5-b)/u\\rfloor)$. The product at that vertex is $g^{m_--m_+}m_+!/m_-!$. Across the twenty interior vertices, all contributions equal 1 except $(2,1):1/2$, $(3,3):3/2$, $(4,2):2$, $(4,4):4$. Their product is 6.",
+      "The removed-triangle product is therefore $(24/625)6=144/625$. Dividing the full product 1 by this gives $625/144$. The perpendicular primitive-vector parametrization exhausts all removed nonaxis triangles without repetition."
+    ],
+    "keyIdeas": [
+      "A product over oriented lattice right triangles"
+    ],
+    "commonMistakes": [
+      "Ignoring the orientation-dependent B,C assignment or omitting triangles whose right angle is away from the removed point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflection gives the global cancellation, then exact local classification handles the missing corner.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

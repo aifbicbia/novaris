@@ -1,0 +1,643 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1976-p1",
+    "problemId": "amc12-predecessor-1976-p1",
+    "finalAnswer": "$\\boxed{-1}$ (choice B)",
+    "shortExplanation": "The equation gives $1-x=2$, hence $x=-1$.",
+    "detailedSteps": [
+      "The denominator requires $x\\ne1$. Moving the reciprocal on the left to the right gives $1=2/(1-x)$.",
+      "Multiplication by the nonzero denominator yields $1-x=2$, so $x=-1$. It gives $1-1/2=1/2$ in the original equation."
+    ],
+    "keyIdeas": [
+      "Combine the two equal reciprocals"
+    ],
+    "commonMistakes": [
+      "Replacing the reciprocal by the number itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check the denominator before clearing a fraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p2",
+    "problemId": "amc12-predecessor-1976-p2",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Only $x=-1$ makes the radicand nonnegative, so there is one real input.",
+    "detailedSteps": [
+      "A real square root requires $-(x+1)^2\\ge0$. Since a real square is nonnegative, its negative can satisfy this condition only if it is zero.",
+      "Thus $x+1=0$, giving exactly one real value, $x=-1$. The square root is then zero."
+    ],
+    "keyIdeas": [
+      "A negative square can only be nonnegative at zero"
+    ],
+    "commonMistakes": [
+      "Discarding zero as an allowable square-root value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The domain includes a radicand equal to zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p3",
+    "problemId": "amc12-predecessor-1976-p3",
+    "finalAnswer": "$\\boxed{2+2\\sqrt5}$ (choice E)",
+    "shortExplanation": "The four distances are $1,\\sqrt5,\\sqrt5,1$, whose sum is $2+2\\sqrt5$.",
+    "detailedSteps": [
+      "Use the square with vertices $(0,0),(2,0),(2,2),(0,2)$ and choose the first vertex.",
+      "The four side midpoints are $(1,0),(2,1),(1,2),(0,1)$. Their squared distances from the chosen vertex are $1,5,5,1$.",
+      "Taking positive square roots and adding gives $2+2\\sqrt5$. All vertices give the same result by symmetry."
+    ],
+    "keyIdeas": [
+      "Place all four midpoints in square coordinates"
+    ],
+    "commonMistakes": [
+      "Counting only the two sides incident to the selected vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry reduces the four lengths to two pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p4",
+    "problemId": "amc12-predecessor-1976-p4",
+    "finalAnswer": "$\\boxed{\\frac{s}{r^{n-1}}}$ (choice C)",
+    "shortExplanation": "Multiplying the reciprocal sum by $r^{n-1}$ gives the original sum $s$.",
+    "detailedSteps": [
+      "The original terms are $1,r,\\ldots,r^{n-1}$. Their reciprocals are $1,r^{-1},\\ldots,r^{-(n-1)}$, because $r\\ne0$.",
+      "Multiply the reciprocal sum by $r^{n-1}$. Its terms become $r^{n-1},r^{n-2},\\ldots,1$, the original progression in reverse order.",
+      "This scaled sum is $s$, so the required sum is $s/r^{n-1}$. The argument also covers $r=1$, negative ratios, and a one-term progression."
+    ],
+    "keyIdeas": [
+      "Reverse the reciprocal progression after scaling"
+    ],
+    "commonMistakes": [
+      "Taking the reciprocal of the entire sum instead of each term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Term reversal avoids a special-case geometric-series formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p5",
+    "problemId": "amc12-predecessor-1976-p5",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The units digit must be one greater than the tens digit, giving eight numbers.",
+    "detailedSteps": [
+      "Write the number as $10a+b$. Reversing its digits changes it by $(10b+a)-(10a+b)=9(b-a)$.",
+      "The increase is nine exactly when $b=a+1$. With $1\\le a\\le9$ and $0\\le b\\le9$, the tens digit can be one through eight.",
+      "The numbers are $12,23,34,45,56,67,78,89$, giving eight."
+    ],
+    "keyIdeas": [
+      "Express reversal as a digit difference"
+    ],
+    "commonMistakes": [
+      "Including a units digit of ten or a leading zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reversal condition directly determines the second digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p6",
+    "problemId": "amc12-predecessor-1976-p6",
+    "finalAnswer": "$\\boxed{0,\\ 3}$ (choice C)",
+    "shortExplanation": "The shared-root condition forces $c=0$, so the original roots are zero and three.",
+    "detailedSteps": [
+      "Let $t$ be the indicated root of the first polynomial. Then $t^2-3t+c=0$. Substituting $-t$ in the second gives $t^2-3t-c=0$.",
+      "Subtracting yields $2c=0$. The first polynomial is therefore $x^2-3x=x(x-3)$.",
+      "Its roots are zero and three. Their negatives, zero and minus three, are roots of $x^2+3x$, so the condition really holds."
+    ],
+    "keyIdeas": [
+      "Use the shared root to eliminate the constant"
+    ],
+    "commonMistakes": [
+      "Changing only the linear coefficient when substituting a negative root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The argument works even before assuming anything about the root signs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p7",
+    "problemId": "amc12-predecessor-1976-p7",
+    "finalAnswer": "$\\boxed{x<-1\\ \\text{or}\\ -1<x<1}$ (choice E)",
+    "shortExplanation": "The expression is positive for every $x<1$ except $x=-1$.",
+    "detailedSteps": [
+      "For $x\\ge0$, the expression is $(1-x)(1+x)=1-x^2$, positive exactly when $0\\le x<1$.",
+      "For $x<0$, it becomes $(1+x)^2$, positive except at $x=-1$.",
+      "The combined set is $x<-1$ or $-1<x<1$. Both endpoints $-1$ and $1$ give zero and are excluded."
+    ],
+    "keyIdeas": [
+      "Split the absolute value at zero"
+    ],
+    "commonMistakes": [
+      "Assuming both factors must be positive when their product is positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The negative-input branch is a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p8",
+    "problemId": "amc12-predecessor-1976-p8",
+    "finalAnswer": "$\\boxed{\\frac{13}{81}}$ (choice A)",
+    "shortExplanation": "Thirteen of the eighty-one equally likely lattice points satisfy the distance bound.",
+    "detailedSteps": [
+      "Each coordinate has nine possible integer values, so there are $9^2=81$ equally likely points.",
+      "For $x=0$, there are five allowed y-values from minus two to two. For $x=\\pm1$, there are three each; for $x=\\pm2$, only $y=0$ works.",
+      "The disk therefore contains $5+2\\cdot3+2\\cdot1=13$ points. The probability is $13/81$."
+    ],
+    "keyIdeas": [
+      "Count the integer points in the closed disk"
+    ],
+    "commonMistakes": [
+      "Using the area of a disk for a discrete lattice-point probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The probability space is discrete and finite.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p9",
+    "problemId": "amc12-predecessor-1976-p9",
+    "finalAnswer": "$\\boxed{36}$ (choice D)",
+    "shortExplanation": "The area ratio is $(3/4)(1/2)=3/8$, giving area thirty-six.",
+    "detailedSteps": [
+      "Since D is halfway along AB and E is halfway from D to B, $AE=3AB/4$.",
+      "Because F is the midpoint of BC, its perpendicular height above line AB is half the height of C.",
+      "Thus $[AEF]/[ABC]=(3/4)(1/2)=3/8$. Multiplying by ninety-six gives thirty-six."
+    ],
+    "keyIdeas": [
+      "Use the base and altitude fractions"
+    ],
+    "commonMistakes": [
+      "Using AE equal to one quarter of AB instead of three quarters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Base and altitude ratios multiply in an area comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p10",
+    "problemId": "amc12-predecessor-1976-p10",
+    "finalAnswer": "$\\boxed{n(1-p)-q(1-m)=0}$ (choice D)",
+    "shortExplanation": "A solution exists precisely when $n(1-p)-q(1-m)=0$.",
+    "detailedSteps": [
+      "The compositions are $f(g(x))=mpx+mq+n$ and $g(f(x))=pmx+pn+q$.",
+      "The x-coefficients are equal, so the equation reduces to $mq+n-pn-q=0$, equivalent to $n(1-p)-q(1-m)=0$.",
+      "If this constant vanishes, every real x is a solution. If it does not, there is no solution. This proves both directions."
+    ],
+    "keyIdeas": [
+      "Cancel the common linear coefficient in the compositions"
+    ],
+    "commonMistakes": [
+      "Trying to divide by the x-coefficient after it has canceled to zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Existence here depends entirely on the constant terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p11",
+    "problemId": "amc12-predecessor-1976-p11",
+    "finalAnswer": "$\\boxed{\\text{III and IV only}}$ (choice B)",
+    "shortExplanation": "The contrapositive in III and the disjunction in IV express the original implication.",
+    "detailedSteps": [
+      "Let E mean the eye condition is true and W mean the nose condition is true. The original assertion is $E\\Rightarrow\\neg W$.",
+      "Its contrapositive is $W\\Rightarrow\\neg E$, which is III. Also an implication $P\\Rightarrow Q$ is equivalent to $\\neg P\\lor Q$, so the original assertion is $\\neg E\\lor\\neg W$, which is IV.",
+      "I is $W\\Rightarrow E$ and II is $\\neg E\\Rightarrow\\neg W$. Their truth tables differ from the original. For example, E false and W true contradicts I while satisfying the original.",
+      "For II, E true and W true makes II true but the original false. Hence only III and IV are equivalent."
+    ],
+    "keyIdeas": [
+      "Use the contrapositive and implication disjunction"
+    ],
+    "commonMistakes": [
+      "Confusing a contrapositive with a converse or an inverse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inclusive or is exactly the disjunction used in an implication identity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p12",
+    "problemId": "amc12-predecessor-1976-p12",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Six crates are guaranteed, and a distribution with no larger group is possible.",
+    "detailedSteps": [
+      "The possible apple counts are the twenty-five integers from 120 through 144. If every count occurred at most five times, there would be at most $25\\cdot5=125$ crates.",
+      "Since there are 128, at least one count occurs six or more times.",
+      "This guarantee cannot be raised to seven: assign six crates to each of three counts and five crates to each of the remaining twenty-two. This gives $3\\cdot6+22\\cdot5=128$, with largest group six."
+    ],
+    "keyIdeas": [
+      "Prove the pigeonhole bound is sharp"
+    ],
+    "commonMistakes": [
+      "Giving a pigeonhole lower bound without showing it is the largest guarantee."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit distribution establishes the upper limit of the guarantee.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p13",
+    "problemId": "amc12-predecessor-1976-p13",
+    "finalAnswer": "$\\boxed{\\frac{x(x+2)(x+5)}{(x+1)(x+3)}}$ (choice A)",
+    "shortExplanation": "Dividing the target yield by the new daily production gives the stated fraction.",
+    "detailedSteps": [
+      "The original group produces $x+1$ cans over $x(x+2)$ cow-days. Thus each cow produces $(x+1)/(x(x+2))$ cans per day, under the stated constant-rate model.",
+      "The new daily production is $(x+3)(x+1)/(x(x+2))$. Divide the desired $x+5$ cans by this rate.",
+      "The required time is $x(x+2)(x+5)/((x+1)(x+3))$ days. The physical number of cows is positive, so these denominators do not vanish."
+    ],
+    "keyIdeas": [
+      "Find the production rate per cow per day"
+    ],
+    "commonMistakes": [
+      "Making the time directly proportional to the number of cows."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the number of cows from the production of one cow.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p14",
+    "problemId": "amc12-predecessor-1976-p14",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The average angle is 120 degrees, forcing six sides.",
+    "detailedSteps": [
+      "An arithmetic progression has average equal to the average of its first and last terms. The average interior angle is therefore $(100+140)/2=120$ degrees.",
+      "For n sides, $120n=180(n-2)$. Solving gives $60n=360$, so $n=6$.",
+      "The corresponding progression is $100,108,116,124,132,140$ degrees; its sum is 720 degrees, the required hexagon total, and each angle is convex."
+    ],
+    "keyIdeas": [
+      "Compare the arithmetic mean angle with the polygon angle sum"
+    ],
+    "commonMistakes": [
+      "Using the exterior-angle total as the interior-angle total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common difference is not needed to determine the number of sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p15",
+    "problemId": "amc12-predecessor-1976-p15",
+    "finalAnswer": "$\\boxed{15}$ (choice B)",
+    "shortExplanation": "The divisor is 179, the common remainder is 164, and their difference is fifteen.",
+    "detailedSteps": [
+      "A common remainder means d divides every difference of two given numbers. In particular it divides $1417-1059=358$ and $2312-1059=1253$.",
+      "Their greatest common divisor is 179. This number is prime: none of the primes two, three, five, seven, eleven or thirteen divides it, and its square root is below fourteen. Since $d>1$, necessarily $d=179$.",
+      "The three divisions give $1059=5\\cdot179+164$, $1417=7\\cdot179+164$ and $2312=12\\cdot179+164$. The remainder is valid because $0\\le164<179$.",
+      "Thus $d-r=179-164=15$."
+    ],
+    "keyIdeas": [
+      "Take differences before finding the common remainder"
+    ],
+    "commonMistakes": [
+      "Taking the gcd of the original numbers instead of their differences."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal remainders are detected by divisibility of differences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p16",
+    "problemId": "amc12-predecessor-1976-p16",
+    "finalAnswer": "$\\boxed{\\text{II and III only}}$ (choice E)",
+    "shortExplanation": "The vertex angles are supplementary, so the two isosceles triangles have equal areas.",
+    "detailedSteps": [
+      "Let s be the common equal side, and let $\\alpha=\\angle ACB$ and $\\beta=\\angle DFE$. The first base is $AB=2s\\sin(\\alpha/2)$; the second altitude is $s\\cos(\\beta/2)$.",
+      "The given relation therefore becomes $\\sin(\\alpha/2)=\\cos(\\beta/2)=\\sin(90^\\circ-\\beta/2)$. Both half-angles lie strictly between zero and ninety degrees, where sine is one-to-one.",
+      "Hence $\\alpha+\\beta=180^\\circ$, establishing II. The areas are $s^2\\sin\\alpha/2$ and $s^2\\sin\\beta/2$, and supplementary angles have equal sines, establishing III.",
+      "They cannot also be complementary, and their equal positive areas cannot be in a two-to-one ratio. Thus I and IV are false."
+    ],
+    "keyIdeas": [
+      "Relate the two vertex half-angles"
+    ],
+    "commonMistakes": [
+      "Using the base of the second triangle instead of its altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The acute half-angle bounds eliminate the other branches of a sine equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p17",
+    "problemId": "amc12-predecessor-1976-p17",
+    "finalAnswer": "$\\boxed{\\sqrt{a+1}}$ (choice A)",
+    "shortExplanation": "The square is $1+a$, and the acute angle makes the sum positive.",
+    "detailedSteps": [
+      "Expand $(\\sin\\theta+\\cos\\theta)^2=\\sin^2\\theta+\\cos^2\\theta+2\\sin\\theta\\cos\\theta=1+\\sin2\\theta=1+a$.",
+      "Both sine and cosine are positive for the stated acute angle. Taking the positive square root gives $\\sin\\theta+\\cos\\theta=\\sqrt{a+1}$."
+    ],
+    "keyIdeas": [
+      "Square the sum and choose its positive sign"
+    ],
+    "commonMistakes": [
+      "Keeping both square-root signs despite the acute-angle condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle condition selects the sign after squaring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p18",
+    "problemId": "amc12-predecessor-1976-p18",
+    "finalAnswer": "$\\boxed{\\sqrt{22}}$ (choice E)",
+    "shortExplanation": "The two powers give $R^2=22$, so the radius is $\\sqrt{22}$.",
+    "detailedSteps": [
+      "Let F be the other intersection of the full secant with the circle beyond D. The order is B,C,D,F. Tangent-secant power at B gives $BC\\cdot BF=AB^2=36$, so $BF=12$.",
+      "The given equal segments give $BD=6$, so $DF=BF-BD=6$.",
+      "At the interior point D, the signed power is $-DC\\cdot DF=-18$. It also equals $OD^2-R^2=4-R^2$.",
+      "Therefore $4-R^2=-18$, or $R^2=22$. The positive radius is $\\sqrt{22}$."
+    ],
+    "keyIdeas": [
+      "Apply power at the exterior and interior points"
+    ],
+    "commonMistakes": [
+      "Using a positive secant product for the interior point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Introduce the unmarked second intersection to use the full secant length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p19",
+    "problemId": "amc12-predecessor-1976-p19",
+    "finalAnswer": "$\\boxed{x+2}$ (choice B)",
+    "shortExplanation": "The unique linear remainder with values three at one and five at three is $x+2$.",
+    "detailedSteps": [
+      "The remainder on division by a quadratic has degree at most one, so write it as $ax+b$.",
+      "The two given linear-division remainders imply $p(1)=3$ and $p(3)=5$. At those inputs the quadratic divisor vanishes, so $a+b=3$ and $3a+b=5$.",
+      "Subtracting gives $a=1$, then $b=2$. Thus the remainder is $x+2$."
+    ],
+    "keyIdeas": [
+      "Interpolate a remainder of degree below two"
+    ],
+    "commonMistakes": [
+      "Adding the two numerical remainders instead of matching the two values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A quadratic remainder is determined by its values at two distinct roots of the divisor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p20",
+    "problemId": "amc12-predecessor-1976-p20",
+    "finalAnswer": "$\\boxed{\\text{none of these}}$ (choice E)",
+    "shortExplanation": "The complete condition is $a=b^2$ or $a=b^{2/3}$; no listed equivalence states both.",
+    "detailedSteps": [
+      "Set $U=\\log_a x$ and $V=\\log_b x$. The nonunit positive bases and nonunit positive x make both logarithms defined and nonzero.",
+      "The equation is $4U^2-8UV+3V^2=0$, or $(2U-V)(2U-3V)=0$. Thus $U/V=1/2$ or $3/2$.",
+      "Change of base gives $U/V=\\ln b/\\ln a$. The complete condition is therefore $\\ln a=2\\ln b$ or $\\ln a=(2/3)\\ln b$, equivalently $a=b^2$ or $a=b^{2/3}$.",
+      "The first proposed equivalence omits the second branch: $a=4,b=8,x=3$ satisfies the equation but not $a=b^2$. Likewise $a=4,b=2,x=3$ satisfies it with neither $b=a^2$ nor $x=ab$.",
+      "It does not hold for all inputs, as $a=8,b=2,x=3$ shows. Hence none of the listed conditions is equivalent to the equation."
+    ],
+    "keyIdeas": [
+      "Keep both factors of the logarithm equation"
+    ],
+    "commonMistakes": [
+      "Dropping one of the two factors and treating one sufficient branch as necessary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The condition is independent of x once x is a positive nonunit number.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p21",
+    "problemId": "amc12-predecessor-1976-p21",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "The product is $2^{(n+1)^2/7}$, and the first qualifying positive odd n is nine.",
+    "detailedSteps": [
+      "The numerators are $1,3,\\ldots,2n+1$, so there are $n+1$ terms. Their sum is $(n+1)^2$.",
+      "The product is $2^{(n+1)^2/7}$ and increases with positive n. For the odd value seven, compare seventh powers: $2^{64}<1000^7$. For nine, $2^{100}>1000^7$.",
+      "All smaller positive odd n give smaller products, so the minimum is nine."
+    ],
+    "keyIdeas": [
+      "Count the last odd numerator as an additional term"
+    ],
+    "commonMistakes": [
+      "Counting n terms when the final numerator is $2n+1$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity reduces the threshold check to two consecutive odd candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p22",
+    "problemId": "amc12-predecessor-1976-p22",
+    "finalAnswer": "$\\boxed{\\text{a circle when }a>s^2}$ (choice A)",
+    "shortExplanation": "The distance sum is $3PG^2+s^2$, so its positive-radius level sets are circles.",
+    "detailedSteps": [
+      "Let G be the centroid and write the three vertex vectors from G as $v_1,v_2,v_3$. They sum to zero, and each has squared length $s^2/3$.",
+      "For the vector p from G to P, expanding and summing gives $\\sum|p-v_i|^2=3|p|^2-2p\\cdot\\sum v_i+\\sum|v_i|^2=3PG^2+s^2$.",
+      "The level equation is therefore $PG^2=(a-s^2)/3$. It is a circle of positive radius when $a>s^2$, the single point G when $a=s^2$, and empty when $a<s^2$."
+    ],
+    "keyIdeas": [
+      "Expand squared distances around the centroid"
+    ],
+    "commonMistakes": [
+      "Forgetting the fixed vertex-distance contribution at the centroid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The vanishing vector sum eliminates the mixed terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p23",
+    "problemId": "amc12-predecessor-1976-p23",
+    "finalAnswer": "$\\boxed{\\text{all }k\\text{ and }n}$ (choice A)",
+    "shortExplanation": "The expression equals $\\binom n{k+1}-\\binom nk$, hence is always an integer.",
+    "detailedSteps": [
+      "The adjacent-coefficient ratio is $\\binom n{k+1}=\\frac{n-k}{k+1}\\binom nk$.",
+      "Subtracting $\\binom nk$ gives $\\binom n{k+1}-\\binom nk=\\frac{n-2k-1}{k+1}\\binom nk$, exactly the source expression.",
+      "Both binomial coefficients are integers for every $1\\le k<n$. Their difference is an integer even when the fractional multiplier is not itself integral or the resulting value is negative."
+    ],
+    "keyIdeas": [
+      "Express the fraction as a difference of adjacent binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Requiring the multiplier alone to be an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integer difference can reveal divisibility hidden in a fraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p24",
+    "problemId": "amc12-predecessor-1976-p24",
+    "finalAnswer": "$\\boxed{16}$ (choice C)",
+    "shortExplanation": "The small radius is one quarter of the large radius, so the area ratio is sixteen.",
+    "detailedSteps": [
+      "Use the actual inside-circle configuration shown in the source. Scale the large radius to one and place its center at the origin, with AB horizontal. The circle L has radius one half and center $(0,1/2)$.",
+      "If M has radius r, its center is $(x,r)$ because it is tangent to AB on the upper side. Internal tangency to K gives $x^2+r^2=(1-r)^2$, hence $x^2=1-2r$.",
+      "External tangency to L gives $x^2+(r-1/2)^2=(r+1/2)^2$, hence $x^2=2r$.",
+      "Equating gives $1-2r=2r$, so $r=1/4$. The realized centers satisfy all three tangencies. Since areas scale as squared radii, $[K]/[M]=1/(1/4)^2=16$."
+    ],
+    "keyIdeas": [
+      "Write both circle tangencies as center-distance equations"
+    ],
+    "commonMistakes": [
+      "Using a radius ratio as an area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the large circle before solving the two smaller tangencies.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p25",
+    "problemId": "amc12-predecessor-1976-p25",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The third difference is the nonzero constant six, and the fourth is zero.",
+    "detailedSteps": [
+      "From $u_n=n^3+n$, the first difference is $3n^2+3n+2$.",
+      "The next differences are $\\Delta^2u_n=6n+6$ and $\\Delta^3u_n=6$.",
+      "The fourth difference is zero for every n. Since the third is not zero, four is the first vanishing order. All higher differences also vanish."
+    ],
+    "keyIdeas": [
+      "Track the degree through successive finite differences"
+    ],
+    "commonMistakes": [
+      "Expecting a cubic to have zero third difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each nonzero difference reduces a polynomial degree by one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p26",
+    "problemId": "amc12-predecessor-1976-p26",
+    "finalAnswer": "$\\boxed{\\text{the external tangent length}}$ (choice C)",
+    "shortExplanation": "The intersection distance is $\\sqrt{d^2+4Rr}$, exactly the external tangent length.",
+    "detailedSteps": [
+      "Consult the primary publisher diagram linked for this question: it contains the internal common tangent that is omitted in the modern redraw. Choose that line as $y=0$, with centers $(0,R)$ and $(d,-r)$, where $R,r,d>0$. Its two contact points are $(0,0)$ and $(d,0)$.",
+      "Consider a nonhorizontal tangent through $(p,0)$ to the first circle. Its unit normal can be written as $\\nu=(2Rp/(R^2+p^2),(p^2-R^2)/(R^2+p^2))$, and the line equation is $\\nu\\cdot(x,y)=\\nu_xp$. Substitution shows the first center has signed distance $-R$.",
+      "For external common tangency the second center must have signed distance $-r$ on that same side. Substitute $(d,-r)$ and simplify to $p^2-dp-Rr=0$. This condition is sufficient as well: the displayed unit-normal line then has the required distance from each center.",
+      "The two roots are $(d-\\sqrt{d^2+4Rr})/2$ and $(d+\\sqrt{d^2+4Rr})/2$. One lies left of both contact points and the other right of them, giving the actual P and Q. Their difference is $PQ=\\sqrt{d^2+4Rr}$.",
+      "The squared center distance is $d^2+(R+r)^2$. A common external tangent segment has squared length equal to this minus $(R-r)^2$, namely $d^2+4Rr$. Thus its length always equals PQ, including when the radii are equal."
+    ],
+    "keyIdeas": [
+      "Use the internal tangent as the coordinate axis"
+    ],
+    "commonMistakes": [
+      "Assuming equal radii when comparing the tangent segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unit-normal form also covers a vertical external tangent without dividing by its slope.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p27",
+    "problemId": "amc12-predecessor-1976-p27",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The first fraction is $\\sqrt2$ and the final radical is $\\sqrt2-1$, leaving one.",
+    "detailedSteps": [
+      "Let $u=\\sqrt{\\sqrt5+2}+\\sqrt{\\sqrt5-2}$. Both terms are real and positive. Squaring gives $u^2=2\\sqrt5+2\\sqrt{5-4}=2(\\sqrt5+1)$.",
+      "Thus $u/\\sqrt{\\sqrt5+1}=\\sqrt2$, taking the positive root.",
+      "Also $3-2\\sqrt2=(\\sqrt2-1)^2$ and $\\sqrt2-1>0$. The final radical is therefore $\\sqrt2-1$.",
+      "The requested difference is $\\sqrt2-(\\sqrt2-1)=1$."
+    ],
+    "keyIdeas": [
+      "Square the positive radical sum before dividing"
+    ],
+    "commonMistakes": [
+      "Removing a square root without checking the sign of its proposed value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity resolves the signs after squaring a nested radical.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p28",
+    "problemId": "amc12-predecessor-1976-p28",
+    "finalAnswer": "$\\boxed{4351}$ (choice B)",
+    "shortExplanation": "The forced parallel and concurrent groups reduce 4950 pair intersections to a maximum of 4351 points.",
+    "detailedSteps": [
+      "Without restrictions, one hundred distinct lines have at most $\\binom{100}{2}=4950$ pairwise intersection points.",
+      "There are twenty-five lines with indices divisible by four. Their $\\binom{25}{2}=300$ pairs are parallel and contribute no points.",
+      "The twenty-five lines with indices congruent to one modulo four meet at A. Their three hundred pairs contribute only one point, losing another $300-1=299$ distinct points. These two forced groups are disjoint.",
+      "The upper bound is therefore $4950-300-299=4351$.",
+      "It is attainable: take the parallel lines away from A, choose distinct directions through A for the concurrent group, and place all other lines to avoid existing intersection points and parallel directions. At each step only finitely many positions are forbidden, so such a choice exists. Then every unforced pair contributes a distinct point, and only the stated losses remain."
+    ],
+    "keyIdeas": [
+      "Subtract forced intersection losses and prove attainment"
+    ],
+    "commonMistakes": [
+      "Subtracting all concurrent pairs without adding back their one common point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite forbidden-incidence argument supplies the maximum configuration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p29",
+    "problemId": "amc12-predecessor-1976-p29",
+    "finalAnswer": "$\\boxed{24}$ (choice B)",
+    "shortExplanation": "The constant age difference is four years, giving Ann age twenty-four.",
+    "detailedSteps": [
+      "Let their present ages be A for Ann and B for Barbara, and let $d=A-B$ be the constant difference.",
+      "At the earliest referenced moment, Barbara was $A/2$, so Ann was $A/2+d$. At the next moment Barbara was as old as that earlier Ann, namely $A/2+d$, and Ann was then $A/2+2d$.",
+      "The outer comparison says present Barbara is as old as Ann at that next moment: $B=A/2+2d$. Since $B=A-d$, this gives $A=6d$ and $B=5d$.",
+      "The total age is $11d=44$, so $d=4$ and $A=24$. For a direct check, their ages at the two earlier moments were Ann/Barbara $16/12$ and $20/16$; their present ages are $24/20$. All comparisons hold."
+    ],
+    "keyIdeas": [
+      "Read the two historical age comparisons from the inside outward"
+    ],
+    "commonMistakes": [
+      "Comparing everyone to a past value of Ann instead of the stated present Ann, or inserting an extra historical moment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Working from the innermost clause prevents losing track of whose age is referenced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1976-p30",
+    "problemId": "amc12-predecessor-1976-p30",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The scaled variables are a permutation of two, four and six, giving six ordered triples.",
+    "detailedSteps": [
+      "Put $X=x$, $Y=2y$ and $Z=4z$. The three equations become $X+Y+Z=12$, $XY+YZ+XZ=44$ and $XYZ=48$.",
+      "By expansion, X, Y and Z are the three roots, with multiplicity, of $t^3-12t^2+44t-48=(t-2)(t-4)(t-6)$. These distinct roots exhaust every possible triple.",
+      "Every permutation of two, four and six satisfies the symmetric equations. Undoing the invertible scaling gives $(x,y,z)=(X,Y/2,Z/4)$.",
+      "The six permutations yield six distinct ordered triples and satisfy all original equations. Thus the answer is six."
+    ],
+    "keyIdeas": [
+      "Scale the variables into elementary symmetric sums"
+    ],
+    "commonMistakes": [
+      "Treating the unscaled variables as roots of the symmetric cubic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The variable weights are chosen to match both the sum and the pair products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

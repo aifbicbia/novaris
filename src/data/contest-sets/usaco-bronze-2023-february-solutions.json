@@ -1,0 +1,92 @@
+[
+  {
+    "finalAnswer": "Print the number of haybales eaten during days $1$ through $T$.",
+    "shortExplanation": "Process deliveries rather than individual days. Between two delivery mornings, Bessie eats the smaller of the stored hay and the number of evenings. Include the dinner on the final day.",
+    "detailedSteps": [
+      "Keep the barn inventory `stock`, the number eaten, and `previous`, the earliest dinner not yet processed. Initially the barn is empty and `previous = 1`.",
+      "Before a delivery on day $d$, process the $d-\\mathrm{previous}$ dinners ending on day $d-1$. There are no arrivals in this interval, so the number eaten is $\\min(\\mathrm{stock},d-\\mathrm{previous})$. Subtract it from the stock and add it to the total.",
+      "Now add the delivery and set `previous = d`. This order respects the source rule that a delivery arrives before dinner. The same update works when the first delivery is on day $1$ or follows several empty days.",
+      "After the last delivery, process $T-\\mathrm{previous}+1$ dinners. These disjoint intervals account for every dinner exactly once; in each interval the stock decreases by one until it runs out. Therefore the total matches the literal daily process.",
+      "Use `long long`: the total delivered stock is at most $10^5\\cdot10^9=10^{14}$, and the answer is at most $T$. The streaming implementation uses $O(N)$ time and $O(1)$ extra space.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n;\n    long long t;\n    in >> n >> t;\n    long long stock = 0, eaten = 0, previous = 1;\n    for (int i = 0; i < n; ++i) {\n        long long day, bales;\n        in >> day >> bales;\n        long long used = min(stock, day - previous);\n        eaten += used;\n        stock -= used;\n        stock += bales;\n        previous = day;\n    }\n    eaten += min(stock, t - previous + 1);\n    out << eaten << '\\n';\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compress intervals without deliveries.",
+      "Preserve the physical barn inventory.",
+      "The horizon includes the dinner on day $T$."
+    ],
+    "commonMistakes": [
+      "Adding a delivery before consuming the preceding interval.",
+      "Using $T-\\mathrm{previous}$ for the last interval and missing its final dinner.",
+      "Iterating over every calendar day or storing inventory in a 32-bit integer."
+    ],
+    "alternativeMethods": [
+      "For a small horizon, simulate each morning delivery and each evening meal directly. This gives an independent check of the compressed intervals."
+    ],
+    "difficultyNotes": "The large dates make calendar simulation impractical. The main details are delivery-before-dinner ordering and the inclusive final evening.",
+    "id": "solution-usaco-bronze-2023-february-p1",
+    "problemId": "usaco-bronze-2023-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print YES if the desired painting can be made; otherwise print NO.",
+    "shortExplanation": "Try every position in each of the four rotations. A placement is safe when all its ink lands on desired black cells. Combine all safe placements and check whether they cover the entire desired painting.",
+    "detailedSteps": [
+      "Keep the full $K\\times K$ stamp, including its blank margins. For each rotation, try every top-left offset from $0$ through $N-K$ in each direction; the whole stamp frame must fit.",
+      "Reject a placement if any inked stamp cell lands on a target white cell. Blank stamp cells do nothing, so they need not match the target.",
+      "For every remaining placement, mark its inked cells in a separate coverage grid. Rotate clockwise using $(r,c)\\mapsto(c,K-1-r)$, and repeat for all four orientations.",
+      "For correctness, any successful sequence must use only safe placements: black paint cannot be erased. Thus every black cell in a successful painting belongs to the union we computed. Conversely, stamping all safe placements paints that union without touching any target white cell. The target is reachable exactly when this union equals it.",
+      "An empty target is reachable with no stamps. An all-blank stamp can create only an empty target; the same coverage test handles both cases. For one case, time is $O(N^2K^2)$ and extra space is $O(N^2)$. Sum the time over the actual test cases.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int tests;\n    in >> tests;\n    while (tests--) {\n        int n, k;\n        in >> n;\n        vector<string> target(n);\n        for (string& row : target) in >> row;\n        in >> k;\n        vector<string> stamp(k);\n        for (string& row : stamp) in >> row;\n        vector<vector<bool> > covered(n, vector<bool>(n, false));\n        for (int rotation = 0; rotation < 4; ++rotation) {\n            for (int top = 0; top + k <= n; ++top) {\n                for (int left = 0; left + k <= n; ++left) {\n                    bool safe = true;\n                    for (int r = 0; r < k; ++r) {\n                        for (int c = 0; c < k; ++c) {\n                            if (stamp[r][c] == '*' && target[top + r][left + c] != '*')\n                                safe = false;\n                        }\n                    }\n                    if (safe) {\n                        for (int r = 0; r < k; ++r) {\n                            for (int c = 0; c < k; ++c) {\n                                if (stamp[r][c] == '*') covered[top + r][left + c] = true;\n                            }\n                        }\n                    }\n                }\n            }\n            vector<string> next(k, string(k, '.'));\n            for (int r = 0; r < k; ++r)\n                for (int c = 0; c < k; ++c)\n                    next[c][k - 1 - r] = stamp[r][c];\n            stamp.swap(next);\n        }\n        bool possible = true;\n        for (int r = 0; r < n; ++r)\n            for (int c = 0; c < n; ++c)\n                if (covered[r][c] != (target[r][c] == '*')) possible = false;\n        out << (possible ? \"YES\" : \"NO\") << '\\n';\n    }\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Paint only accumulates; an unwanted black cell cannot be repaired.",
+      "Safe stamps may overlap and can all be used.",
+      "Check full-frame positions and all four rotations."
+    ],
+    "commonMistakes": [
+      "Requiring blank stamp cells to match target white cells.",
+      "Cropping blank margins and allowing positions forbidden for the original stamp frame.",
+      "Trying to choose stamps greedily while ignoring other safe placements."
+    ],
+    "alternativeMethods": [
+      "On a tiny canvas, enumerate every reachable black-cell bitmask from the blank canvas by applying literal stamp actions. This independently checks both YES and NO outcomes."
+    ],
+    "difficultyNotes": "The proof uses the fact that ink is permanent. Overlap causes no conflict once a placement avoids every target white cell.",
+    "id": "solution-usaco-bronze-2023-february-p2",
+    "problemId": "usaco-bronze-2023-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print $K+1+\\sum_{i=2}^{N}\\min(d_i-d_{i-1},K+1)$.",
+    "shortExplanation": "The first watched day costs one daily charge and one activation fee. At each later watched day, either extend the current subscription across the gap or start a new one. Add the cheaper contribution.",
+    "detailedSteps": [
+      "Subscriptions need not start before their first watched day or end after their last watched day. Trimming those unused days only saves money. The remaining intervals partition the ordered watching days into consecutive blocks.",
+      "A block from $d_a$ to $d_b$ costs $K+d_b-d_a+1$. Start with $K+1$ for the first watched day.",
+      "At the boundary before day $d_i$, keeping the two adjacent watching days in one block adds $d_i-d_{i-1}$ paid days. Cutting there adds a fresh subscription costing $K+1$. Every pattern of cuts forms valid, nonoverlapping subscriptions, so these contributions can be minimized independently.",
+      "Add $\\min(d_i-d_{i-1},K+1)$ for each boundary. This proves the formula globally, including ties and $N=1$; it does not rely on an unproved local choice.",
+      "Stream the already sorted dates with `long long`. Buying one-day subscriptions gives the upper bound $N(K+1)\\le100000000100000$, so the accumulated minimum fits 64-bit storage. Time is $O(N)$ and extra space is $O(1)$.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n;\n    long long k, previous;\n    in >> n >> k >> previous;\n    long long cost = k + 1;\n    for (int i = 1; i < n; ++i) {\n        long long day;\n        in >> day;\n        cost += min(day - previous, k + 1);\n        previous = day;\n    }\n    out << cost << '\\n';\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Trim subscriptions to the watched days they serve.",
+      "View a plan as consecutive blocks of watched days.",
+      "Each boundary compares an extension with a new fee and one day."
+    ],
+    "commonMistakes": [
+      "Comparing the gap with $K$ instead of $K+1$.",
+      "Charging only the unwatched days in a gap and forgetting the next watched day.",
+      "Using a 32-bit integer for dates or the total cost."
+    ],
+    "alternativeMethods": [
+      "For a small calendar, use dynamic programming over every possible subscription duration at each day when no subscription is active. Allow waiting only on days that do not require watching."
+    ],
+    "difficultyNotes": "The partition argument explains why separate boundary choices give a global optimum. Large dates and fees also require 64-bit arithmetic.",
+    "id": "solution-usaco-bronze-2023-february-p3",
+    "problemId": "usaco-bronze-2023-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "finalAnswer": "For each boot, output 1 exactly when its maximum stride is at least the largest gap between consecutive tiles whose snow depth does not exceed its capacity. Answer boots offline in decreasing capacity.",
+    "shortExplanation": "Removing tiles that are too deep leaves an ordered set of possible landings. The widest gap in that set is unavoidable, and walking through every remaining tile realizes that bound. Process capacities from large to small so that each tile is removed only once.",
+    "detailedSteps": [
+      "Fix one boot. Call a tile usable when its depth is at most the boot's capacity. The two endpoints are usable because their depths are zero. List the usable tiles as $u_0<u_1<\\cdots<u_m$ and set $G=\\max_j(u_{j+1}-u_j)$. A trek exists if and only if the allowed stride is at least $G$.",
+      "To prove necessity, consider two consecutive usable tiles $u<v$. A forward trek must cross from the left side of this empty interval to its right side, so one of its steps has length at least $v-u$. For sufficiency, visit all usable tiles in order. These steps have lengths at most $G$, and every landing has acceptable snow depth.",
+      "Sort boots by decreasing snow capacity, retaining each original index. Sort interior tiles by decreasing depth. Maintain all remaining tiles with predecessor and successor arrays. Initially every tile remains and the largest gap is 1.",
+      "Before answering capacity $s$, delete every interior tile with depth strictly greater than $s$. If the deleted tile has remaining neighbors $L$ and $R$, connect those neighbors and update the largest gap to $\\max(G,R-L)$. The endpoints are never deleted. A depth equal to $s$ remains usable.",
+      "The maintained list is exactly the usable set for the current boot. Deleting a tile replaces two neighboring gaps by their sum, so the largest gap cannot decrease. This proves that one running maximum suffices; no multiset of gap lengths is needed. Compare the boot's stride with that maximum, store the resulting bit at its original index, and finally print one bit per boot in input order.",
+      "Each interior tile is deleted at most once, and each boot is answered once after sorting. The running time is $O(N\\log N+B\\log B)$ and the space usage is $O(N+B)$. The implementation uses the historical files `snowboots.in` and `snowboots.out`.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <numeric>\n#include <vector>\n\nstruct Boot { int depth, stride, index; };\n\nint main() {\n    std::freopen(\"snowboots.in\", \"r\", stdin);\n    std::freopen(\"snowboots.out\", \"w\", stdout);\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n, b;\n    if (!(std::cin >> n >> b)) return 0;\n    std::vector<int> snow(n);\n    for (int& x : snow) std::cin >> x;\n    std::vector<Boot> boots(b);\n    for (int i = 0; i < b; ++i) {\n        std::cin >> boots[i].depth >> boots[i].stride;\n        boots[i].index = i;\n    }\n    std::vector<int> answer(b, 1);\n    if (n > 1) {\n        std::vector<int> tiles;\n        for (int i = 1; i + 1 < n; ++i) tiles.push_back(i);\n        std::sort(tiles.begin(), tiles.end(), [&](int x, int y) {\n            return snow[x] > snow[y];\n        });\n        std::sort(boots.begin(), boots.end(), [](const Boot& x, const Boot& y) {\n            return x.depth > y.depth;\n        });\n        std::vector<int> before(n), after(n);\n        for (int i = 0; i < n; ++i) {\n            before[i] = i - 1;\n            after[i] = i + 1;\n        }\n        int largest_gap = 1;\n        std::size_t removed = 0;\n        for (const Boot& boot : boots) {\n            while (removed < tiles.size() && snow[tiles[removed]] > boot.depth) {\n                const int tile = tiles[removed++];\n                const int left = before[tile], right = after[tile];\n                after[left] = right;\n                before[right] = left;\n                largest_gap = std::max(largest_gap, right - left);\n            }\n            answer[boot.index] = boot.stride >= largest_gap;\n        }\n    }\n    for (int x : answer) std::cout << x << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A largest-gap feasibility certificate with both necessity and sufficiency.",
+      "Offline threshold queries ordered so the active set only shrinks.",
+      "Array-based linked neighbors and a monotone maximum."
+    ],
+    "commonMistakes": [
+      "Treating these Gold queries as a sequence of boot changes. Each pair is tested separately.",
+      "Deleting tiles whose depth equals the capacity; the capacity bound is inclusive.",
+      "Ignoring the two sheltered endpoints or printing answers in sorted rather than input order.",
+      "Measuring only the number of blocked tiles instead of the distance between usable neighbors."
+    ],
+    "alternativeMethods": [
+      "Process increasing capacities instead and insert usable tiles into an ordered set, splitting gaps and maintaining their maximum with a multiset. This is also efficient but requires more bookkeeping.",
+      "A direct reachability search for each boot is useful for checking small cases, although it is too slow for the full limits."
+    ],
+    "difficultyNotes": "The main step is replacing a path search with a precise gap condition. Although the source lists N starting at 1, its simultaneous positive-stride bound d ≤ N−1 and at least one boot imply N ≥ 2 for a fully valid input. The code's already-arrived N=1 branch is a natural extension, not a fabricated valid test case.",
+    "id": "solution-usaco-gold-2018-february-p1",
+    "problemId": "usaco-gold-2018-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compute the sum of relative-path lengths from the root, reroot that sum across every directory edge, and return the minimum over directories. Use 64-bit arithmetic and iterative tree traversals.",
+    "shortExplanation": "Moving the starting point into a child directory removes that child's name and slash from every path inside its subtree. Every other file path gains one ../ component. Subtree file counts therefore let us update the entire path-length sum in constant time per directory edge.",
+    "detailedSteps": [
+      "Let $F(u)$ be the number of files below object $u$. For a file, $F(u)=1$; for a directory, sum the counts of its children. Let $D(u)$ be the total lengths of all downward file paths from inside $u$, taking $D(u)=0$ for a file. A child $v$ contributes its name length plus one slash when $v$ is a directory, and just its name length when $v$ is a file.",
+      "Writing this prefix length as $w(v)$ gives $$D(u)=\\sum_{v\\text{ child of }u}\\bigl(D(v)+F(v)w(v)\\bigr).$$ Compute these values in reverse traversal order. The root has no files outside its subtree, so its total cost is $T(1)=D(1)$. The root's own name is not part of a relative path that starts inside it.",
+      "Now move from directory $u$ to its directory child $v$. For each of the $F(v)$ files in that subtree, the prefix `vname/` disappears. For each of the other $F(1)-F(v)$ files, the path gains `../`, which has three characters. Thus $$T(v)=T(u)-F(v)\\bigl(\\operatorname{len}(v)+1\\bigr)+3\\bigl(F(1)-F(v)\\bigr).$$",
+      "The downward recurrence is exact because every root-to-file path is its first component followed by the child's remaining path. The reroot transition partitions all files into the two disjoint groups just described, so it counts every change exactly once. Induction along directory edges therefore computes the exact cost at every allowed starting directory. Taking the smallest such cost proves global optimality; a file is never a starting candidate.",
+      "Build a traversal order from root ID 1 with an explicit vector. Traverse that vector backward for subtree counts and downward costs, then forward for rerooted costs. This handles a very deep tree without recursion and remains correct when a child's input ID is smaller than its parent's. In this input format, a zero-child object is a file, not an empty directory.",
+      "All tree edges are processed a constant number of times, giving $O(N)$ time and $O(N)$ space. Counts, products, and total costs use `long long`; the sum can exceed a 32-bit integer. Read `dirtraverse.in` and write the single minimum to `dirtraverse.out`.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <limits>\n#include <string>\n#include <vector>\n\nint main() {\n    std::freopen(\"dirtraverse.in\", \"r\", stdin);\n    std::freopen(\"dirtraverse.out\", \"w\", stdout);\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    if (!(std::cin >> n)) return 0;\n    std::vector<std::vector<int>> child(n);\n    std::vector<int> length(n);\n    for (int i = 0; i < n; ++i) {\n        std::string name;\n        int count;\n        std::cin >> name >> count;\n        length[i] = static_cast<int>(name.size());\n        child[i].resize(count);\n        for (int& id : child[i]) { std::cin >> id; --id; }\n    }\n    std::vector<int> order{0};\n    for (std::size_t i = 0; i < order.size(); ++i) {\n        for (int v : child[order[i]]) order.push_back(v);\n    }\n    std::vector<long long> file_count(n, 0), downward(n, 0), total(n, 0);\n    for (auto it = order.rbegin(); it != order.rend(); ++it) {\n        const int u = *it;\n        if (child[u].empty()) {\n            file_count[u] = 1;\n        } else {\n            for (int v : child[u]) {\n                const long long prefix = length[v] + (child[v].empty() ? 0 : 1);\n                file_count[u] += file_count[v];\n                downward[u] += downward[v] + prefix * file_count[v];\n            }\n        }\n    }\n    total[0] = downward[0];\n    long long answer = total[0];\n    const long long all_files = file_count[0];\n    for (int u : order) {\n        if (child[u].empty()) continue;\n        answer = std::min(answer, total[u]);\n        for (int v : child[u]) {\n            if (!child[v].empty()) {\n                total[v] = total[u]\n                    - static_cast<long long>(length[v] + 1) * file_count[v]\n                    + 3 * (all_files - file_count[v]);\n            }\n        }\n    }\n    std::cout << answer << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate downward path costs from costs to files outside a subtree.",
+      "Rerooting by subtracting one prefix and adding one parent component.",
+      "Iterative traversal order and 64-bit weighted sums."
+    ],
+    "commonMistakes": [
+      "Charging the root's name even though the starting point is inside that directory.",
+      "Adding a slash after a filename or forgetting the slash after a directory name.",
+      "Using a file as a candidate starting point.",
+      "Assuming child IDs increase along edges, using deep recursion, or multiplying in a 32-bit type."
+    ],
+    "alternativeMethods": [
+      "Express each candidate's cost as the root cost plus the accumulated reroot changes along its ancestor path; this is the same identity written as a prefix sum.",
+      "For a small tree, explicitly construct every relative path from every directory to every file. This provides a direct check of the character-count model but is too slow at the full limits."
+    ],
+    "difficultyNotes": "The asymmetry matters: descending through a folder costs its name plus a slash, whereas ascending costs three characters regardless of that folder's name. Reroot only across directory edges and count files rather than all objects.",
+    "id": "solution-usaco-gold-2018-february-p2",
+    "problemId": "usaco-gold-2018-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For every exact breakout count k, return the minimum repair cost of a partition into k nonempty consecutive segments. Precompute segment mismatch costs and use a prefix dynamic program.",
+    "shortExplanation": "Between consecutive breakouts, the correct counter must be 0, 1, 2, and so on. Every possible history is therefore a partition of the days into reset segments. Count mismatches within each segment and minimize their sum for each number of segments.",
+    "detailedSteps": [
+      "Index days from $0$ to $N-1$. A segment beginning at day $l$ and ending at day $r$ has correct entry $t-l$ on day $t$. Its repair cost is $$C(l,r)=\\sum_{t=l}^{r}[a_t\\ne t-l].$$ For each fixed start, extend the end one day at a time to compute all costs in $O(N^2)$ time. Every observed entry can be wrong, including the first one.",
+      "Let $P(k,i)$ be the minimum repairs for the first $i$ days with exactly $k$ nonempty segments. Set $P(0,0)=0$ and every other zero-segment state to infinity. For $i\\ge k\\ge1$, choose the start $j$ of the final segment: $$P(k,i)=\\min_{k-1\\le j<i}\\bigl(P(k-1,j)+C(j,i-1)\\bigr).$$",
+      "Every legal breakout history starts with a breakout on day 0 and determines exactly one consecutive-segment partition. Conversely, every such partition defines a legal history with one breakout at each segment start. In a fixed history, precisely the unequal entries must be changed, and changing those entries is sufficient. Its minimum repair count is therefore the sum of the segment costs.",
+      "Any optimal k-segment history has some final start j. Removing that last segment leaves an optimal prefix for that split; otherwise, improving the prefix would improve the whole history. The recurrence considers every possible split and combines disjoint intervals, so induction establishes both optimality and attainability of every computed value.",
+      "After computing row $k$, output $P(k,N)$, giving exactly $N$ answers, one per line. Keep only the preceding and current DP rows while retaining the segment-cost table. The source's observed values are nonnegative integers, not unknown-entry markers; the first observed value need not be zero even though the first true value must be zero.",
+      "There are $O(N^2)$ DP states across all rows and up to $O(N)$ splits per state, for $O(N^3)$ total time and $O(N^2)$ space. Each finite cost is at most $N$, so a large integer sentinel is safe. The implementation reads `taming.in` and writes the complete answer sequence to `taming.out`.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <vector>\n\nint main() {\n    std::freopen(\"taming.in\", \"r\", stdin);\n    std::freopen(\"taming.out\", \"w\", stdout);\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    if (!(std::cin >> n)) return 0;\n    std::vector<int> observed(n);\n    for (int& x : observed) std::cin >> x;\n    std::vector<std::vector<int>> changed(n, std::vector<int>(n, 0));\n    for (int start = 0; start < n; ++start) {\n        int errors = 0;\n        for (int end = start; end < n; ++end) {\n            errors += observed[end] != end - start;\n            changed[start][end] = errors;\n        }\n    }\n    constexpr int infinity = 1000000;\n    std::vector<int> previous(n + 1, infinity);\n    previous[0] = 0;\n    for (int breakouts = 1; breakouts <= n; ++breakouts) {\n        std::vector<int> current(n + 1, infinity);\n        for (int days = breakouts; days <= n; ++days) {\n            for (int split = breakouts - 1; split < days; ++split) {\n                if (previous[split] != infinity) {\n                    current[days] = std::min(current[days],\n                        previous[split] + changed[split][days - 1]);\n                }\n            }\n        }\n        std::cout << current[n] << '\\n';\n        previous.swap(current);\n    }\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A bijection between breakout histories and consecutive reset segments.",
+      "Mismatch counts as additive segment costs.",
+      "Prefix dynamic programming with an exact number of nonempty segments."
+    ],
+    "commonMistakes": [
+      "Accepting the observed first entry as correct instead of charging a mismatch against its mandatory true value zero.",
+      "Treating entries as -1 wildcards from another version of the problem.",
+      "Allowing empty segments or computing only the minimum over all breakout counts.",
+      "Overlapping segments, skipping days, or printing fewer than N answers."
+    ],
+    "alternativeMethods": [
+      "A day-by-day DP can track the number of breakouts and the current age of the counter, choosing either an increment or a reset on the next day. It gives another way to model the same histories.",
+      "Enumerating all subsets of possible later breakout mornings directly constructs every true counter log. This is useful for a small exhaustive oracle, but its exponential running time is unsuitable for N=100."
+    ],
+    "difficultyNotes": "The first breakout is a fact about the true history, not a guarantee that the written log begins with zero. Exact segment counts are essential: different rows can have quite different minimum repairs.",
+    "id": "solution-usaco-gold-2018-february-p3",
+    "problemId": "usaco-gold-2018-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

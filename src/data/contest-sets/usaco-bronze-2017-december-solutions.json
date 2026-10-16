@@ -1,0 +1,96 @@
+[
+  {
+    "finalAnswer": "Add the two billboard areas and subtract each billboard\u2019s intersection area with the truck. Clamp each intersection width and height at zero. This uses $O(1)$ time and space.",
+    "shortExplanation": "The truck hides exactly its rectangular intersection with each billboard. The billboards have no positive-area overlap, so their remaining visible areas can be added directly.",
+    "detailedSteps": [
+      "**Compute a rectangle\u2019s full area.** For lower-left corner $(x_1,y_1)$ and upper-right corner $(x_2,y_2)$, the width is $x_2-x_1$, the height is $y_2-y_1$, and the area is their product. Negative coordinate values do not change this difference calculation.",
+      "**Find the intersection spans.** For a billboard $B$ and truck $T$, the common horizontal interval starts at the larger left endpoint and ends at the smaller right endpoint. Its length is\n\n$$w=\\max(0,\\min(x_{2,B},x_{2,T})-\\max(x_{1,B},x_{1,T})).$$\n\nCompute the analogous clamped vertical length $h$.",
+      "**Subtract the hidden area.** A point belongs to both rectangles exactly when both its horizontal and vertical coordinates belong to the common intervals. Their intersection therefore has area $wh$. The visible part of that billboard has area $\\operatorname{area}(B)-wh$. If the rectangles are disjoint in either direction, or only touch along a boundary, at least one span is zero.",
+      "**Add the two visible parts.** Apply the same calculation to both billboards. Their positive-area interiors do not overlap by the source guarantee, so adding their visible areas does not count any area twice. The calculation handles a truck covering neither billboard, part of either, both, or all of a billboard.",
+      "**Bounds and interface.** Coordinates lie between $-1000$ and $1000$. The nonoverlapping billboards are contained in a $2000$ by $2000$ coordinate window, so the combined visible area is at most $4000000$. The reference uses `long long` for coordinate differences and products. Read the three rectangles from `billboard.in` and write one integer to `billboard.out`; only a fixed number of operations and stored coordinates is needed.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\nusing Rectangle = std::array<long long, 4>;\nlong long area(const Rectangle &r) {\n    return (r[2] - r[0]) * (r[3] - r[1]);\n}\nlong long overlap(const Rectangle &a, const Rectangle &b) {\n    const long long width = std::max(0LL, std::min(a[2], b[2]) - std::max(a[0], b[0]));\n    const long long height = std::max(0LL, std::min(a[3], b[3]) - std::max(a[1], b[1]));\n    return width * height;\n}\nint main() {\n    std::ifstream in(\"billboard.in\");\n    std::ofstream out(\"billboard.out\");\n    std::array<Rectangle, 3> rectangles;\n    for (auto &rectangle : rectangles)\n        for (auto &coordinate : rectangle) in >> coordinate;\n    out << area(rectangles[0]) + area(rectangles[1])\n        - overlap(rectangles[0], rectangles[2]) - overlap(rectangles[1], rectangles[2]) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Intersect horizontal and vertical intervals independently.",
+      "Boundary contact has zero area and is handled by clamping.",
+      "The source\u2019s nonoverlap guarantee makes the two visible areas additive."
+    ],
+    "commonMistakes": [
+      "Multiplying negative overlap spans when rectangles do not intersect.",
+      "Subtracting the entire truck area instead of only its intersection with each billboard.",
+      "Counting a shared edge as positive hidden area.",
+      "Ignoring negative coordinates or assuming the truck affects only one billboard."
+    ],
+    "alternativeMethods": [
+      "Partition the plane using all rectangle edge coordinates. For each resulting cell, test a midpoint to decide whether it is inside a billboard and outside the truck, then sum that cell\u2019s area. This gives an independent exact area check without using an intersection-area formula."
+    ],
+    "difficultyNotes": "Introductory rectangle geometry. Correct interval clamping and the nonoverlap assumption are the main details; pixel enumeration is unnecessary for the full coordinate range.",
+    "id": "solution-usaco-bronze-2017-december-p1",
+    "problemId": "usaco-bronze-2017-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Undo one shuffle by setting `previous[i] = current[a[i] - 1]`. Repeat this into a separate array three times, then print all $N$ original cow IDs, one per line. Time is $O(N)$ and space is $O(N)$.",
+    "shortExplanation": "The mapping specifies where a cow moves from a source position. The cow originally at position $i$ must therefore be found at destination $a_i$ after one shuffle. Pull that destination\u2019s current ID back into the source slot.",
+    "detailedSteps": [
+      "**Read the direction of the permutation.** The source gives a move from position $i$ to position $a_i$. If `old` is a lineup before one forward shuffle and `new` is the lineup after it, then $\\text{new}[a_i]=\\text{old}[i]$ with one-based positions.",
+      "**Reverse one forward step.** Rearranging that identity gives $\\text{old}[i]=\\text{new}[a_i]$. For zero-based C++ arrays, create a fresh `previous` array and assign `previous[i] = current[destination[i] - 1]`. The mapping entries remain one-based input values, hence the subtraction.",
+      "**Preserve all needed values.** Fill the entire previous array before replacing the current one. Updating current in place could overwrite an ID that another source position still needs, especially on a nontrivial cycle.",
+      "**Reverse exactly three steps.** The source says the final lineup follows three applications of the same shuffle. After one inverse pass, the stored lineup is the state after two forward shuffles; after two passes, it is the state after one; after the third, it is the original state. The mapping is a permutation, so every forward state and its inverse are unique.",
+      "**Output the complete order.** With $N\\le100$, three linear passes take $O(3N)=O(N)$ time and two lineup arrays plus the mapping take $O(N)$ space. IDs are distinct seven-digit integers and fit ordinary `int`. Read `shuffle.in` and write exactly $N$ lines to `shuffle.out`, each containing the recovered ID at that original position.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"shuffle.in\");\n    std::ofstream out(\"shuffle.out\");\n    int n;\n    in >> n;\n    std::vector<int> destination(n), current(n);\n    for (int &value : destination) in >> value;\n    for (int &id : current) in >> id;\n    for (int round = 0; round < 3; ++round) {\n        std::vector<int> previous(n);\n        for (int i = 0; i < n; ++i) previous[i] = current[destination[i] - 1];\n        current = previous;\n    }\n    for (int id : current) out << id << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A source-to-destination mapping gives a direct inverse pull for the labels.",
+      "Use a separate buffer for simultaneous permutation updates.",
+      "Apply the inverse as many times as the forward shuffle was applied."
+    ],
+    "commonMistakes": [
+      "Applying the forward movement to the final lineup instead of undoing it.",
+      "Confusing one-based mapping values with zero-based array indices.",
+      "Updating a permutation in place without preserving all old labels.",
+      "Returning only one ID or printing a count instead of the entire recovered ordering."
+    ],
+    "alternativeMethods": [
+      "Track the destination of each original position through three forward mapping applications. The original ID for that position is the given final ID at the resulting destination. This computes the same recovery directly and is useful as a different implementation check."
+    ],
+    "difficultyNotes": "Intermediate permutation interpretation. The arithmetic is small; the challenge is the direction of the given move and preserving simultaneous updates.",
+    "id": "solution-usaco-bronze-2017-december-p2",
+    "problemId": "usaco-bronze-2017-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort the log by day, update the three milk totals, and count changes in the entire set of cows tied for maximum production. Time is $O(N\\log N)$ and stored-log space is $O(N)$.",
+    "shortExplanation": "The display shows cow identities, including every tied leader. A change in the numeric maximum is not enough to change it, and a cow joining or leaving a tie does change it. Compare the full leader set after each chronological measurement.",
+    "detailedSteps": [
+      "**Set the initial state.** The three named cows each begin at production $7$, so all three photos are initially displayed. Store each cow\u2019s production and this complete initial leader set.",
+      "**Put measurements in chronological order.** The input order may differ from the day order. Sort the records by their day. Days range from one to $100$, and there is at most one record on a day. Apply the signed change to the named cow\u2019s current production.",
+      "**Recompute all leaders.** Find the maximum of the three totals and collect every cow attaining it. The reference encodes this set in three bits, one for each fixed cow identity; all three initial photos give mask `7`. That mask is a set representation, separate from the initial milk amount, which also happens to be seven.",
+      "**Count a day only if its photo set changes.** Compare the new mask with the old mask. Increment the answer if they differ, then retain the new mask. A leader\u2019s production can increase without changing the display, while a tie can appear or disappear even if the numeric maximum stays the same.",
+      "**Prove the chronological invariant.** Before each record, the stored totals equal the initial values plus all earlier logged changes, and the stored set contains exactly the current maximizers. Applying the new delta gives the next correct totals; recomputing and comparing their complete maximizer set gives exactly whether that day requires a display change. Unique measurement days ensure one increment means one day. No-record days change no value in this model and need no separate update.",
+      "**Bounds and interface.** The unique days imply at most $100$ records; the source does not separately print a lower numerical bound for their count. Production always stays between zero and $1000$, and every recorded delta is nonzero. Sorting costs $O(N\\log N)$ and each record examines only three cows. The answer is between zero and the number of records, hence at most $100$. Read `measurement.in` and print the one change count to `measurement.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <string>\n#include <vector>\nstruct Record {\n    int day;\n    std::string cow;\n    int change;\n};\nint main() {\n    std::ifstream in(\"measurement.in\");\n    std::ofstream out(\"measurement.out\");\n    int n;\n    in >> n;\n    std::vector<Record> records(n);\n    for (auto &record : records) in >> record.day >> record.cow >> record.change;\n    std::sort(records.begin(), records.end(), [](const Record &a, const Record &b) {\n        return a.day < b.day;\n    });\n    const std::array<std::string, 3> names{\"Bessie\", \"Elsie\", \"Mildred\"};\n    std::array<int, 3> milk{7, 7, 7};\n    int display = 7, answer = 0;\n    for (const auto &record : records) {\n        for (int i = 0; i < 3; ++i)\n            if (names[i] == record.cow) milk[i] += record.change;\n        const int best = *std::max_element(milk.begin(), milk.end());\n        int updated = 0;\n        for (int i = 0; i < 3; ++i)\n            if (milk[i] == best) updated |= 1 << i;\n        if (updated != display) ++answer;\n        display = updated;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Process signed production changes in day order.",
+      "The output concerns the whole maximizer identity set, not the maximum value.",
+      "Ties are part of the displayed state and must be compared exactly."
+    ],
+    "commonMistakes": [
+      "Processing the unsorted log as written.",
+      "Counting every production change or every change of the maximum amount.",
+      "Showing only one arbitrary cow when several tie for the lead.",
+      "Starting with just one displayed cow even though all three initially tie."
+    ],
+    "alternativeMethods": [
+      "For each day, reconstruct each cow\u2019s absolute production as seven plus all of her changes up to that day, then compare the resulting leader set with the preceding day\u2019s set. This slower method supplies an independent chronological oracle without incremental state updates."
+    ],
+    "difficultyNotes": "Intermediate simulation with small state. The important modeling choice is to compare sets of displayed cow identities, including all ties, rather than comparing just numeric maxima.",
+    "id": "solution-usaco-bronze-2017-december-p3",
+    "problemId": "usaco-bronze-2017-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

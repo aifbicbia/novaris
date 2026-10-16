@@ -1,0 +1,359 @@
+[
+  {
+    "id": "solution-aime-ii-2016-p1",
+    "problemId": "aime-ii-2016-p1",
+    "finalAnswer": "$\\boxed{108}$",
+    "shortExplanation": "Use the new arithmetic progression to determine its middle term, then recover the two outer terms from their sum and product.",
+    "detailedSteps": [
+      "After eating, the combined total is $444-(5+9+25)=405$. The middle amount in the new arithmetic progression is therefore $135$. We first determine whose amount this is, without assuming the original order is preserved.",
+      "If Alex has the middle amount, his original amount is $140$ and the other original amounts satisfy $b+c=304$ and $b^2=140c$. The resulting quadratic for $b$ has discriminant $189840$, strictly between $435^2$ and $436^2$. If Charlie has the middle amount, his original amount is $160$; now $a+b=284$ and $b^2=160a$ give discriminant $207360$, strictly between $455^2$ and $456^2$. Neither permits integer amounts. Hence Betty has $135$ left and originally had $144$.",
+      "Write the original outer amounts as $u<v$. Their sum is $u+v=444-144=300$. Since the original amounts form a geometric progression, $uv=144^2=20736$.",
+      "Thus $u$ and $v$ are the roots of $t^2-300t+20736=(t-108)(t-192)$. Alex initially had $108$ peanuts. As a check, the remaining amounts are $103,135,167$, with common difference $32$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic and geometric progressions"
+    ],
+    "commonMistakes": [
+      "The arithmetic progression applies after eating; the geometric progression applies before eating.",
+      "The smaller quadratic root belongs to Alex because he initially had the least."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two progressions become a sum-and-product calculation once the middle term is known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p2",
+    "problemId": "aime-ii-2016-p2",
+    "finalAnswer": "$\\boxed{107}$",
+    "shortExplanation": "First determine the conditional Sunday probabilities, then subtract the overlap from the two daily probabilities.",
+    "detailedSteps": [
+      "Let $q$ be the chance of Sunday rain conditional on a dry Saturday. The chance conditional on a rainy Saturday is $2q$. The law of total probability gives $3/10=(2/5)(2q)+(3/5)q$, hence $q=3/14$.",
+      "The chance of rain on both days is $(2/5)(3/7)=6/35$. Inclusion-exclusion therefore gives $2/5+3/10-6/35=37/70$ for at least one rainy day.",
+      "The fraction is reduced, and the required sum is $37+70=107$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Conditional probability"
+    ],
+    "commonMistakes": [
+      "The rain events are dependent; multiplying the two unconditional daily probabilities gives the wrong overlap.",
+      "The phrase twice as likely compares two conditional probabilities, not Sunday with Saturday."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short conditional-probability equation is more reliable than an independence assumption.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p3",
+    "problemId": "aime-ii-2016-p3",
+    "finalAnswer": "$\\boxed{265}$",
+    "shortExplanation": "Introduce one variable for the shared product term; a strictly monotone equation then determines all three logarithms.",
+    "detailedSteps": [
+      "All three variables are positive because their base-$5$ logarithms are defined. Put $t=xyz-3$, so $t>-3$. Exponentiating the three outer logarithms gives $\\log_5x=32-t$, $\\log_5y=81-t$, and $\\log_5z=256-t$.",
+      "Adding these identities yields $\\log_5(t+3)=369-3t$. On $t>-3$, the left side is strictly increasing and the right side is strictly decreasing, so there is at most one solution. The value $t=122$ works because $t+3=125$ and both sides equal $3$.",
+      "The logarithms are consequently $-90,-41,134$. Positive values $x=5^{-90}$, $y=5^{-41}$, and $z=5^{134}$ realize these logarithms and have product $125$, so the solution exists. The requested sum of absolute values is $90+41+134=265$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithms and monotonicity"
+    ],
+    "commonMistakes": [
+      "Take absolute values only after finding the individual logarithms; the absolute value of their sum is different.",
+      "Checking a guessed product without proving uniqueness leaves a gap."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared product makes an apparently three-variable system effectively one-dimensional.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p4",
+    "problemId": "aime-ii-2016-p4",
+    "finalAnswer": "$\\boxed{180}$",
+    "shortExplanation": "Count each color through both families of layers, and then exhibit a coloring that attains the volume bound.",
+    "detailedSteps": [
+      "The total number of green cubes is both $12a$ and $20b$, so $3a=5b$. Since $a,b$ are positive integers, write $a=5k$ and $b=3k$ for a positive integer $k$.",
+      "The total red, green, and yellow counts are respectively $9a=45k$, $12a=60k$, and $25b=75k$. Thus the volume is $180k$, which is at least $180$. Also $abc=15k^2c=180k$, so $kc=12$.",
+      "For $k=1$, take dimensions $5\\times3\\times12$. In each vertical stack of $12$ cubes, put $3$ red, $4$ green, and $5$ yellow cubes. Each layer perpendicular to the first axis then has $9$ red and $12$ green cubes; each layer perpendicular to the second has $20$ green and $25$ yellow cubes. The bound is attained, so the minimum volume is $180$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Layer counts and constructive minima"
+    ],
+    "commonMistakes": [
+      "Total color counts alone give a lower bound; a minimum also needs an actual coloring.",
+      "The two kinds of layers contain different numbers of cubes and cannot be equated directly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separating the counting bound from the construction makes the minimum rigorous.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p5",
+    "problemId": "aime-ii-2016-p5",
+    "finalAnswer": "$\\boxed{182}$",
+    "shortExplanation": "The successive altitudes form a geometric series. Combine its sum with the parametrization of primitive right triangles.",
+    "detailedSteps": [
+      "Let $a=BC_0$, $b=AC_0$, and $c=AB$. The first altitude has length $ab/c$. Each subsequent right triangle shares the angle at $B$ with the original and is scaled by $a/c$, so successive altitude lengths have ratio $a/c$. Their sum is $ab/(c-a)=a(c+a)/b$.",
+      "Because the side lengths are pairwise coprime, the triangle is primitive. There are coprime integers $m>n>0$ of opposite parity with $c=m^2+n^2$ and legs $m^2-n^2,2mn$. Its perimeter is $p=2m(m+n)$.",
+      "If $a=m^2-n^2$ and $b=2mn$, the ratio of the altitude sum to $p$ is $(m-n)/(2n)$. Setting this equal to $6$ forces $m=13n$. Coprimality would give $(m,n)=(13,1)$, which has the wrong parity, so this orientation is impossible.",
+      "If $a=2mn$ and $b=m^2-n^2$, the same ratio is $n/(m-n)$. Thus $n=6(m-n)$, and coprimality gives $(m,n)=(7,6)$. The sides are $a=84$, $b=13$, and $c=85$, hence $p=182$. Indeed, $ab/(c-a)=1092=6\\cdot182$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Repeated altitudes and primitive right triangles"
+    ],
+    "commonMistakes": [
+      "The ratio between successive altitudes is the leg-to-hypotenuse ratio, not its square.",
+      "Both assignments of the two legs must be considered in Euclid's parametrization."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity supplies the infinite sum; the primitive-triangle conditions remove spurious integer scalings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p6",
+    "problemId": "aime-ii-2016-p6",
+    "finalAnswer": "$\\boxed{275}$",
+    "shortExplanation": "Every coefficient has a predetermined sign, so evaluating at minus one adds the absolute values without expanding the whole product.",
+    "detailedSteps": [
+      "In each factor $P(x^j)$, where $j$ is odd, the constant and degree-$2j$ terms have positive coefficients and the degree-$j$ term has a negative coefficient. Thus the sign of every selected term is $(-1)$ to the power of its degree.",
+      "When terms of a given total degree $i$ are collected, all their contributions have sign $(-1)^i$. There is no cancellation between opposite signs. Therefore $\\sum_{i=0}^{50}|a_i|=Q(-1)$.",
+      "Every substituted exponent is odd, so $Q(-1)=P(-1)^5=(1+1/3+1/6)^5=(3/2)^5=243/32$. The requested answer is $243+32=275$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Coefficient signs in polynomial products"
+    ],
+    "commonMistakes": [
+      "Evaluating at 1 gives a signed coefficient sum, not the sum of absolute values.",
+      "The sign argument depends on all five substitution exponents being odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The useful structure is parity of exponents, which avoids a fifty-degree expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p7",
+    "problemId": "aime-ii-2016-p7",
+    "finalAnswer": "$\\boxed{840}$",
+    "shortExplanation": "Express the two successive size ratios using the rotation angle, then impose that both relevant areas are integers.",
+    "detailedSteps": [
+      "Let the outer, middle, and inner side lengths be $L,s,t$. An inscribed square is centered in the outer square; choose its rotation angle $0\\le\\theta\\le45^\\circ$. Its horizontal width is $s(\\cos\\theta+\\sin\\theta)=L$. The inner square is parallel to the outer one, and its width measured normal to a middle side is $t(\\cos\\theta+\\sin\\theta)=s$.",
+      "Consequently $t=s^2/L$. If the middle area is the integer $K=s^2$, the inner area is $t^2=K^2/2016$. Thus $2016$ must divide $K^2$. Since $2016=2^5\\cdot3^2\\cdot7$, this is equivalent to $168\\mid K$.",
+      "As $1\\le\\cos\\theta+\\sin\\theta\\le\\sqrt2$, the possible middle areas satisfy $1008\\le K\\le2016$. Equality at the upper endpoint would make the inner and outer squares identical, contrary to the required smaller inner area. Hence $K$ ranges over the multiples of $168$ from $1008$ to $1848$.",
+      "Every value in that interval is attained by a rotation angle, since $2016/(\\cos\\theta+\\sin\\theta)^2$ varies continuously through the interval $[1008,2016]$. In particular, both permitted endpoints occur and give integer inner areas. The required difference is $1848-1008=840$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Nested squares and divisibility"
+    ],
+    "commonMistakes": [
+      "The middle area cannot be arbitrarily small: an inscribed square has at least half the outer square's area.",
+      "The integer condition is on K squared divided by 2016, not on K divided by 2016."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Geometric bounds and number-theoretic divisibility are both needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p8",
+    "problemId": "aime-ii-2016-p8",
+    "finalAnswer": "$\\boxed{728}$",
+    "shortExplanation": "Count ordered factorizations first, remove repeated entries, and only then forget the order.",
+    "detailedSteps": [
+      "The fixed product factors as $N=3^2\\cdot7\\cdot11\\cdot17\\cdot31\\cdot41\\cdot61$. For each of the six primes occurring once, choose one of the three ordered entries to receive it, giving $3^6$ choices.",
+      "The exponent $2$ of the prime $3$ can be distributed among three entries in $\\binom42=6$ ways. Thus there are $6\\cdot3^6=4374$ ordered positive triples with product $N$.",
+      "If two entries equal $u$, then $u^2\\mid N$. The only possible repeated values are $u=1$ and $u=3$, producing the triples $(1,1,N)$ and $(3,3,N/9)$ and their permutations. These contribute $3+3=6$ ordered triples. No triple has all three entries equal, since $N$ is not a cube.",
+      "All remaining entries are distinct, so each unordered set occurs exactly $3!=6$ times. The answer is $(4374-6)/6=728$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factor distributions with distinct entries"
+    ],
+    "commonMistakes": [
+      "Dividing by six before removing repeated entries is invalid, because those triples have only three distinct orderings.",
+      "The product has a squared factor of 3; it is not squarefree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small correction for repeated factors turns an easy ordered count into the desired set count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p9",
+    "problemId": "aime-ii-2016-p9",
+    "finalAnswer": "$\\boxed{262}$",
+    "shortExplanation": "Use the two known terms to bound the integer ratio and index, then exhaust the small remaining possibilities exactly.",
+    "detailedSteps": [
+      "Write $a_n=1+(n-1)d$ and $b_n=r^{n-1}$, where $d\\ge1$ and $r\\ge2$ are integers. Put $m=k-2$. Since $c_1=2$, we have $m\\ge1$. The two given values imply $md+r^m=99$ and $2d+r^m(r^2-1)=900$.",
+      "Eliminating $d$ gives $$r^m\\bigl(m(r^2-1)-2\\bigr)=900m-198.$$ Also $r^m\\le98$, so $1\\le m\\le6$. For fixed $m$, the left side is strictly increasing for integers $r\\ge2$.",
+      "For $m=1$, the equation is $r^3-3r=702$, whose unique admissible solution is $r=9$. For $m=2$, it becomes $r^2(r^2-2)=801$, and its value jumps from $575$ at $r=5$ to $1224$ at $r=6$. For $m=3$, the left side is $594$ at $r=3$ and $2752$ at $r=4$, straddling the target $2502$.",
+      "For $m=4$, the bound $r^m\\le98$ permits only $r=2,3$; even the larger gives $2430<3402$. For $m=5,6$, only $r=2$ is possible, giving $416<4302$ and $1024<5202$, respectively. This proves that $(m,r)=(1,9)$ is the only case.",
+      "Then $d=99-9=90$ and $k=3$. Therefore $c_k=1+2\\cdot90+9^2=262$. The neighboring values are $100$ and $1000$, as required."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic plus geometric sequences"
+    ],
+    "commonMistakes": [
+      "The geometric ratio is an integer because the first geometric term is 1 and the second is an integer.",
+      "A successful trial does not prove uniqueness; the bound on r raised to m makes the exclusion complete."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An exponential bound leaves only six possible indices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p10",
+    "problemId": "aime-ii-2016-p10",
+    "finalAnswer": "$\\boxed{43}$",
+    "shortExplanation": "The two cevians determine a ratio of chord products. Ptolemy then isolates the missing chord.",
+    "detailedSteps": [
+      "The segment lengths on $AB$ give $AB=13$, $PB=9$, and $AQ=7$. Ratios of areas with a common altitude yield $$\\frac{AP}{PB}=\\frac{CA\\sin\\angle ACS}{CB\\sin\\angle BCS}.$$ By the extended sine rule in the common circumcircle, the two sine values are proportional to the chords $AS$ and $BS$. Hence $AP/PB=CA\\cdot AS/(CB\\cdot BS)$.",
+      "Applying the same argument to the other cevian gives $AQ/QB=CA\\cdot AT/(CB\\cdot BT)$. Dividing the identities eliminates $CA/CB$: $$\\frac{AS\\cdot BT}{BS\\cdot AT}=\\frac{4/9}{7/6}=\\frac8{21}.$$ Since $AS\\cdot BT=35$, we obtain $BS\\cdot AT=735/8$.",
+      "The rays through the ordered interior points $P,Q$ meet the arc opposite $C$ in the order $A,S,T,B$. Ptolemy's theorem for this cyclic quadrilateral states $AT\\cdot BS=AS\\cdot BT+AB\\cdot ST$. Therefore $13ST=735/8-35=455/8$, so $ST=35/8$.",
+      "The numerator and denominator are coprime, and their sum is $35+8=43$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Chord ratios and Ptolemy's theorem"
+    ],
+    "commonMistakes": [
+      "Ptolemy's diagonal product is AT times BS; reversing the cyclic order changes the identity.",
+      "The cevian ratios are AP/PB and AQ/QB, so the denominators are 9 and 6."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unknown side lengths CA and CB disappear after dividing two area-ratio equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p11",
+    "problemId": "aime-ii-2016-p11",
+    "finalAnswer": "$\\boxed{749}$",
+    "shortExplanation": "Characterize a k-nice number by a single congruence, then use inclusion-exclusion.",
+    "detailedSteps": [
+      "If $a=\\prod p_i^{e_i}$, then the number of positive divisors of $a^k$ is $\\prod(ke_i+1)$, which is congruent to $1$ modulo $k$. Thus every $k$-nice number satisfies $N\\equiv1\\pmod{k}$.",
+      "This condition is sufficient as well: if $N=ke+1$ with $e\\ge0$, choose $a=2^e$. Its $k$th power has exactly $ke+1=N$ divisors. In particular, $N=1$ is included through $a=1$.",
+      "Among $1,\\ldots,999$, there are $143$ integers congruent to $1$ modulo $7$, and $125$ congruent to $1$ modulo $8$. Their intersection is the class $1$ modulo $56$, containing $18$ integers.",
+      "The required complement has size $999-(143+125-18)=749$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisor counts and congruences"
+    ],
+    "commonMistakes": [
+      "The integer 1 is k-nice for every positive k, because 1 has one positive divisor.",
+      "The upper limit is strictly less than 1000."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Proving both directions of the congruence characterization avoids unnecessary factorization cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p12",
+    "problemId": "aime-ii-2016-p12",
+    "finalAnswer": "$\\boxed{732}$",
+    "shortExplanation": "Keep track of whether the last painted section matches the first; the final adjacency then becomes a simple state condition.",
+    "detailedSteps": [
+      "Fix one of the four colors for the first section. For a chain of $n$ sections, let $A_n$ count valid colorings ending in that same color, and $B_n$ count those ending in a different color. Initially $(A_1,B_1)=(1,0)$.",
+      "To append a section ending in the first color, the previous end must be different, so $A_{n+1}=B_n$. To end in a different color, there are three choices after a matching end and two after a nonmatching end. Hence $B_{n+1}=3A_n+2B_n$.",
+      "The successive pairs for $n=2,3,4,5,6$ are $(0,3)$, $(3,6)$, $(6,21)$, $(21,60)$, and $(60,183)$. A ring closes validly exactly when the last section differs from the first, giving $4B_6=4\\cdot183=732$.",
+      "The sections occupy fixed positions on a wall, so rotations and reflections are not identified."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Colorings of a cycle"
+    ],
+    "commonMistakes": [
+      "Counting a chain without testing its two ends misses the final adjacency.",
+      "Dividing by six would incorrectly identify different paintings of the fixed wall."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A two-state recurrence handles the closing edge without complicated casework.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p13",
+    "problemId": "aime-ii-2016-p13",
+    "finalAnswer": "$\\boxed{371}$",
+    "shortExplanation": "Count arrangements whose minimum score is at least each threshold, instead of sorting all arrangements by their exact minima.",
+    "detailedSteps": [
+      "A valid arrangement is a permutation of the six column numbers, so there are $6!=720$ equally weighted arrangements. Every score is at least $2$ and at most $7$: the rook in row $1$ already has value at most $7$.",
+      "Let $N_k$ be the number of arrangements with score at least $k$. For $2\\le k\\le7$, row $i$ may use only columns $j\\ge k-i$. Assign rows from top to bottom. Before the allowed-column set becomes all six columns, the number of available choices remains $8-k$; the remaining choices then descend factorially. Thus $$N_k=(8-k)^{k-1}(7-k)!.$$",
+      "This gives $N_2=720$, $N_3=600$, $N_4=384$, $N_5=162$, $N_6=32$, and $N_7=1$. Counting each score by its threshold contributions, the sum of all scores is $$2\\cdot720+600+384+162+32+1=2619.$$",
+      "The average is $2619/720=291/80$, so the requested sum is $291+80=371$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Tail sums and rook permutations"
+    ],
+    "commonMistakes": [
+      "The score is a minimum, so averaging the six occupied square values answers a different question.",
+      "Earlier occupied columns remain allowable in later rows; subtracting them gives the constant initial choice count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested allowed-column sets make threshold counting much easier than direct minimum counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p14",
+    "problemId": "aime-ii-2016-p14",
+    "finalAnswer": "$\\boxed{450}$",
+    "shortExplanation": "Put all equidistant points on the perpendicular axis through the triangle's center, then use a planar cross section to measure the dihedral angle.",
+    "detailedSteps": [
+      "Let $H$ be the center of the equilateral triangle and $M$ the midpoint of $AB$. Write $r=HM=100\\sqrt3$; then $HA=2r$. Since $P,Q,O$ are each equidistant from $A,B,C$, all three lie on the line through $H$ perpendicular to the triangle's plane.",
+      "Use signed heights $p>0$ for $P$ and $q<0$ for $Q$. Because $OP=OQ=d$, the height of $O$ is $(p+q)/2$ and $p-q=2d$. Comparing $OA^2$ with $OP^2$ gives $4r^2+(p+q)^2/4=(p-q)^2/4$, hence $pq=-4r^2$.",
+      "In the plane through $M$ perpendicular to $AB$, the vectors from $M$ to $P,Q$ have coordinates $(r,p)$ and $(r,q)$. Their dot product is $r^2+pq=-3r^2$. The given $120^\\circ$ angle therefore forces their length product to equal $6r^2$.",
+      "The identity $$(r^2+p^2)(r^2+q^2)=(r^2+pq)^2+r^2(p-q)^2$$ now becomes $36r^4=9r^4+4r^2d^2$. Thus $d^2=27r^2/4=202500$ and $d=450$. The resulting conditions have opposite-sign real heights, so no extraneous case was introduced."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circumspheres and dihedral angles"
+    ],
+    "commonMistakes": [
+      "Measure the dihedral angle in a cross section perpendicular to the shared edge AB.",
+      "Signed heights simplify the fact that P and Q are on opposite sides of the base plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sphere condition fixes the product of the heights; the angle condition fixes their difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2016-p15",
+    "problemId": "aime-ii-2016-p15",
+    "finalAnswer": "$\\boxed{863}$",
+    "shortExplanation": "Rewrite the quadratic constraint as equality in Cauchy-Schwarz; it determines the whole vector rather than leaving a genuine optimization problem.",
+    "detailedSteps": [
+      "The geometric sum and the repeated final term give $\\sum_{i=1}^{216}a_i=1$. Therefore the positive weights $w_i=1-a_i$ satisfy $\\sum w_i=215$.",
+      "Using $\\sum x_i=1$, we have $2\\sum_{i<j}x_ix_j=1-\\sum x_i^2$. Double the given equation and collect the square terms to obtain $$\\sum_{i=1}^{216}\\frac{x_i^2}{w_i}=\\frac1{215}.$$",
+      "Weighted Cauchy-Schwarz gives $$(\\sum x_i)^2\\le\\left(\\sum\\frac{x_i^2}{w_i}\\right)(\\sum w_i)=1.$$ Both sides are already $1$, so equality holds. Its equality condition is $x_i=\\lambda w_i$ for every $i$. The sum constraint forces $\\lambda=1/215$.",
+      "All these values are positive, and substituting them verifies both constraints. Hence there is exactly one admissible vector. Its second entry, and therefore its maximum second entry, is $x_2=(1-1/4)/215=3/860$. The answer is $3+860=863$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Weighted Cauchy-Schwarz equality"
+    ],
+    "commonMistakes": [
+      "The final a-value repeats the preceding power of two; it completes the sum of the a-values to exactly 1.",
+      "An inequality bound must be accompanied by its equality condition and an attainable vector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing a forced equality turns a 216-variable optimization into one line of proportionality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

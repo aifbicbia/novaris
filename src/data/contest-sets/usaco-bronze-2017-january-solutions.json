@@ -1,0 +1,95 @@
+[
+  {
+    "finalAnswer": "Aggregate all seven cows, choose the second distinct production level, and print its unique cow or `Tie`. The reference program runs in $O(N)$ time with constant-size herd storage.",
+    "shortExplanation": "The desired cow is just above the minimum production level. A tie at the minimum is harmless; a tie at the next distinct level requires `Tie`. Start every named cow at zero so that missing records are handled correctly.",
+    "detailedSteps": [
+      "**Keep the entire herd.** Create one zero total for each of the seven names. Read every log entry and add its amount to that cow. A cow that never appears keeps its source-required zero total; it must still participate in the ranking.",
+      "**Rank levels rather than positions.** Sort the seven totals and remove duplicate values. Write the distinct values as $v_0<v_1<\\cdots<v_{k-1}$. If $k=1$, all cows have the same total, so there is no eligible second level and the output is `Tie`.",
+      "**Check multiplicity at the correct level.** For $k\\ge2$, inspect all seven cows with total $v_1$. If exactly one cow has that total, print her name. Otherwise print `Tie`. Do not reject the answer merely because several cows have total $v_0$.",
+      "**Why this selects exactly the requested cow.** Summing the log gives the true production of every cow. The first distinct value $v_0$ is the herd minimum, and $v_1$ is the least total strictly above it. Thus the cows found in the final scan are precisely the eligible cows with minimal production. Their number determines exactly whether the designation is unique.",
+      "**Bounds and interface.** There are only seven cows, while the log has at most $100$ entries, each at most $100$. Hence no total exceeds $10000$. Ordinary integer arithmetic suffices. Aggregation takes $O(N)$ time; sorting seven values and scanning seven cows are constant-size work. Use `notlast.in` and `notlast.out`, and terminate the name or `Tie` with a newline.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <string>\n#include <vector>\nint main() {\n    std::ifstream in(\"notlast.in\");\n    std::ofstream out(\"notlast.out\");\n    const std::array<std::string, 7> names{\"Bessie\", \"Elsie\", \"Daisy\", \"Gertie\", \"Annabelle\", \"Maggie\", \"Henrietta\"};\n    std::array<int, 7> totals{};\n    int n;\n    in >> n;\n    for (int entry = 0; entry < n; ++entry) {\n        std::string name;\n        int milk;\n        in >> name >> milk;\n        for (int cow = 0; cow < 7; ++cow) if (names[cow] == name) totals[cow] += milk;\n    }\n    std::vector<int> levels(totals.begin(), totals.end());\n    std::sort(levels.begin(), levels.end());\n    levels.erase(std::unique(levels.begin(), levels.end()), levels.end());\n    if (levels.size() < 2) {\n        out << \"Tie\\n\";\n        return 0;\n    }\n    int selected = -1, matches = 0;\n    for (int cow = 0; cow < 7; ++cow) {\n        if (totals[cow] == levels[1]) {\n            selected = cow;\n            ++matches;\n        }\n    }\n    out << (matches == 1 ? names[selected] : \"Tie\") << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Zero initialization models missing records without a special case.",
+      "A rank among distinct values differs from a rank among individual cows.",
+      "Keep the production-level choice separate from the uniqueness check."
+    ],
+    "commonMistakes": [
+      "Ignoring cows absent from the log, whose production is zero.",
+      "Taking the second entry of a sorted list that still contains repeated minimum totals.",
+      "Reporting `Tie` whenever the minimum is shared, instead of checking the next distinct level."
+    ],
+    "alternativeMethods": [
+      "Find the minimum total, then scan for the least total strictly above it and count how many cows attain that value. This avoids sorting but needs careful handling when no such total exists."
+    ],
+    "difficultyNotes": "Introductory aggregation with a precise ranking rule. The main challenge is translating the definition of second-smallest into distinct levels and applying the tie rule at that level.",
+    "id": "solution-usaco-bronze-2017-january-p1",
+    "problemId": "usaco-bronze-2017-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Count first-cow wins under the two orientations of the numeric three-cycle and output the larger count. This gives the optimum for one fixed gesture mapping in $O(N)$ time and $O(1)$ space.",
+    "shortExplanation": "Every labeling of Hoof, Paper and Scissors induces one of two directed cycles on the numbers. Score both cycles over the entire log. Equal labels tie under every mapping and contribute no wins.",
+    "detailedSteps": [
+      "**Use one mapping for the whole log.** The labels describe gestures consistently for both cows in every round. We may choose their interpretation, but may not change it between rounds. For equal labels, both cows show the same gesture, so neither wins.",
+      "**List the two possible winning cycles.** Cycle A has $1\\to2$, $2\\to3$, $3\\to1$, where an arrow points from winner to loser. Cycle B reverses every arrow. Mapping labels $(1,2,3)$ to $(\\text{Hoof},\\text{Scissors},\\text{Paper})$ realizes A; mapping them to $(\\text{Hoof},\\text{Paper},\\text{Scissors})$ realizes B.",
+      "**Why there are no other win patterns.** The actual gestures form a directed three-cycle. Relabeling its three vertices preserves that cycle and can only choose one of the two orientations on numeric labels. All six bijections therefore induce A or B. Conversely the explicit mappings above show that both orientations are available.",
+      "**Score the ordered rounds.** For the first label $a$ and second label $b$, compute $d=(b-a+3)\\bmod3$. If $d=1$, the first cow wins under A; if $d=2$, she wins under B; if $d=0$, the round is a tie. Maintain the two counts $W_A,W_B$ and return $\\max(W_A,W_B)$.",
+      "**Prove optimality and attainment.** Any legal fixed mapping induces one of the two cycles, so its score is at most the larger recorded count. Choose a mapping realizing the cycle with that count; it wins exactly the counted rounds. The upper bound is attained, proving the returned maximum.",
+      "**Complexity and files.** Each of at most $100$ rounds needs constant work, so time is $O(N)$ and auxiliary space is $O(1)$. The answer lies between zero and $N$. This is the Bronze unknown-label task: use `hps.in` and `hps.out`, and print one integer.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nint main() {\n    std::ifstream in(\"hps.in\");\n    std::ofstream out(\"hps.out\");\n    int n;\n    in >> n;\n    int a = 0, b = 0;\n    for (int round = 0; round < n; ++round) {\n        int first, second;\n        in >> first >> second;\n        const int direction = (second - first + 3) % 3;\n        if (direction == 1) ++a;\n        if (direction == 2) ++b;\n    }\n    out << std::max(a, b) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Relabeling a three-cycle changes only its orientation on the numeric labels.",
+      "The same gesture bijection must hold for the entire input.",
+      "An optimization proof needs both a bound and a mapping that achieves it."
+    ],
+    "commonMistakes": [
+      "Choosing the favorable interpretation separately for each round.",
+      "Counting ties as wins or scoring the second cow instead of the first.",
+      "Solving a different HPS variant that allows gesture changes over time."
+    ],
+    "alternativeMethods": [
+      "Enumerate all six assignments of the three gesture names to the labels, score the entire input for each assignment using the literal winning pairs, and take the maximum. With six mappings this also takes $O(N)$ time."
+    ],
+    "difficultyNotes": "Intermediate modeling. The two-counter implementation is short, but its correctness depends on proving that the two cycles cover every fixed gesture bijection.",
+    "id": "solution-usaco-bronze-2017-january-p2",
+    "problemId": "usaco-bronze-2017-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each original grid cell, XOR it with the cells immediately below, right, and diagonally below-right, treating outside cells as zero. The sum of these bits is the minimum number of prefix flips. Time is $O(N^2)$ and stored-grid space is $O(N^2)$.",
+    "shortExplanation": "Each upper-left rectangle has one bottom-right endpoint. The four-cell XOR determines whether that rectangle must occur an odd number of times. These parities are unique, so using every required rectangle once is both sufficient and minimal.",
+    "detailedSteps": [
+      "**Describe operations by their endpoints.** Let $g_{r,c}$ be an original grid bit, with rows counted from the top and columns from the left. Let $f_{i,j}$ be one if the prefix rectangle ending at $(i,j)$ is used an odd number of times, and zero otherwise. A cell $(r,c)$ belongs exactly to rectangles with $i\\ge r$ and $j\\ge c$.",
+      "**Write the parity equations.** To end with zero at every cell, the applied toggles must equal its original bit:\n\n$$g_{r,c}=\\bigoplus_{i\\ge r,\\,j\\ge c}f_{i,j}.$$\n\nHere $\\oplus$ is XOR. Repeating the same rectangle twice has no effect, and the order of toggles does not affect these equations.",
+      "**Invert the equations locally.** Extend $g$ by zero beyond the bottom and right edges. XOR the equations at $(r,c)$, $(r+1,c)$, $(r,c+1)$ and $(r+1,c+1)$. Every rectangle variable appears an even number of times except $f_{r,c}$, so\n\n$$f_{r,c}=g_{r,c}\\oplus g_{r+1,c}\\oplus g_{r,c+1}\\oplus g_{r+1,c+1}.$$\n\nThis determines all rectangle parities uniquely.",
+      "**Show that the determined flips really clear the board.** For any cell $(r,c)$, XOR these four-cell differences over every endpoint at or below and to the right. Interior bits cancel, and the zero boundary leaves exactly $g_{r,c}$. Therefore applying each rectangle with $f_{i,j}=1$ once supplies exactly the toggle needed at every cell.",
+      "**Show that fewer applications are impossible.** Every successful sequence must have the uniquely determined parity matrix. Each endpoint with parity one requires at least one application. Our construction uses exactly one for each such endpoint and none for parity-zero endpoints, attaining that lower bound. Thus the minimum is $\\sum_{r,c}f_{r,c}$.",
+      "**Compute from the original grid.** At each endpoint calculate its four-cell XOR and add the resulting zero or one. Read outside cells as zero, including corners. Do not mutate the input while evaluating this formula. The $N^2$ terms give $O(N^2)$ time and $O(N^2)$ storage, and the count is at most $100$ for the printed maximum $N=10$. Use `cowtip.in` and `cowtip.out` and print the count.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <string>\n#include <vector>\nint main() {\n    std::ifstream in(\"cowtip.in\");\n    std::ofstream out(\"cowtip.out\");\n    int n;\n    in >> n;\n    std::vector<std::string> rows(n);\n    for (std::string &row : rows) in >> row;\n    const auto bit = [&](int r, int c) {\n        return r < n && c < n ? rows[r][c] - '0' : 0;\n    };\n    int answer = 0;\n    for (int r = 0; r < n; ++r)\n        for (int c = 0; c < n; ++c)\n            answer += bit(r, c) ^ bit(r + 1, c) ^ bit(r, c + 1) ^ bit(r + 1, c + 1);\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Toggle operations are parity variables over two states.",
+      "A suffix XOR relation has a four-cell local inverse.",
+      "Unique operation parity plus an attaining construction proves global minimality."
+    ],
+    "commonMistakes": [
+      "Using arbitrary rectangles rather than rectangles anchored at the top-left corner.",
+      "Counting initially tipped cows, even though one operation can change many cows.",
+      "Changing the grid before evaluating all four-cell differences.",
+      "Forgetting the zero padding at the bottom and right boundaries."
+    ],
+    "alternativeMethods": [
+      "Process cells from bottom-right toward top-left. If the current cell is one, flip the prefix ending there. Later, smaller prefixes cannot reach this already processed cell, so this choice is forced. Literal flipping takes $O(N^4)$ time, which is still small for $N\\le10$; the parity formula computes the same forced choices in $O(N^2)$."
+    ],
+    "difficultyNotes": "Intermediate to advanced reasoning for a Bronze task. The implementation is a short local parity sum; the substantial part is proving that these uniquely forced operation parities are attainable and minimize the number of flips.",
+    "id": "solution-usaco-bronze-2017-january-p3",
+    "problemId": "usaco-bronze-2017-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

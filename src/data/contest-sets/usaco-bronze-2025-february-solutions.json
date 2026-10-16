@@ -1,0 +1,101 @@
+[
+  {
+    "finalAnswer": "For each four-cell reflection orbit with $k$ painted cells, contribute $\\min(k,4-k)$. Maintain the sum and adjust only the orbit containing each toggled cell. The C++17 implementation below prints every required optimum.",
+    "shortExplanation": "Reflection forces four corresponding cells to agree. Make each group entirely painted or entirely blank, whichever costs fewer flips. A cell update changes one group, so its contribution can be replaced in constant time.",
+    "detailedSteps": [
+      "**1. Find the independent groups.** Using zero-based indices, the group containing $(r,c)$ is $$(r,c),\\quad(N-1-r,c),\\quad(r,N-1-c),\\quad(N-1-r,N-1-c).$$ Since $N$ is even, these are four distinct cells. Groups partition the canvas. Their common states may be selected independently: each selects the state of one cell in the original top-right quadrant.",
+      "**2. Solve one group exactly.** If $k$ of its cells are painted, converting the group to blank takes $k$ flips, while converting it to painted takes $4-k$. Thus its minimum is $$c(k)=\\min(k,4-k).$$ Every valid canvas pays at least this much in each group. Picking an optimal state separately for all groups attains the sum, so the sum is the global minimum.",
+      "**3. Initialize without double counting.** Iterate over the top-left quarter as a convenient set of group representatives, count the four cells for each, and add its contribution. Choosing this quarter for enumeration does not change which reflected canvases are allowed.",
+      "**4. Maintain the invariant.** Before toggling a cell, subtract the old contribution of its group. Toggle that actual cell in the stored grid, recompute the same four-cell count, and add the new contribution. Other groups retain their costs. Therefore the maintained total remains the optimum after each update; print it once initially and again after every update, including repeated updates to one cell.",
+      "**5. Complexity and bounds.** Initialization takes $O(N^2)$ time and each update takes $O(1)$, giving $O(N^2+U)$ overall. The stored grid uses $O(N^2)$ space. There are $N^2/4$ groups and each costs at most $2$, so the result is at most $N^2/2\\le2{,}000{,}000$. A `long long` sum provides ample margin. A zero-update input still produces its initial answer.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n, u;\n    if (!(std::cin >> n >> u)) return 0;\n    std::vector<std::string> grid(n);\n    for (auto& row : grid) std::cin >> row;\n    auto cost = [&](int r, int c) {\n        int painted = (grid[r][c] == '#') + (grid[n-1-r][c] == '#')\n                    + (grid[r][n-1-c] == '#') + (grid[n-1-r][n-1-c] == '#');\n        return std::min(painted, 4-painted);\n    };\n    long long total = 0;\n    for (int r = 0; r < n/2; ++r)\n        for (int c = 0; c < n/2; ++c)\n            total += cost(r,c);\n    std::cout << total << '\\n';\n    while (u--) {\n        int r, c;\n        std::cin >> r >> c;\n        --r; --c;\n        total -= cost(r,c);\n        grid[r][c] = (grid[r][c] == '#' ? '.' : '#');\n        total += cost(r,c);\n        std::cout << total << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Symmetry partitions the canvas into disjoint four-cell orbits.",
+      "A local lower bound becomes a global optimum when choices are independent.",
+      "Update a maintained sum by removing and replacing one contribution."
+    ],
+    "commonMistakes": [
+      "Counting the same group once for each of its four cells.",
+      "Reflecting about an outer edge instead of the two center lines.",
+      "Keeping an unchanged group count after a repeated toggle.",
+      "Printing only the update answers and omitting the initial answer."
+    ],
+    "alternativeMethods": [
+      "Store a painted-cell count for every canonical group using $(\\min(r,N-1-r),\\min(c,N-1-c))$. A toggle changes that count by one. This has the same time bound; recomputing four cells avoids an extra count table."
+    ],
+    "difficultyNotes": "Intermediate. The main step is seeing that reflections create independent groups. Consult the official source for the complete input, examples, and reflected canvas illustrations; those originals are externally linked.",
+    "id": "solution-usaco-bronze-2025-february-p1",
+    "problemId": "usaco-bronze-2025-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Let $f_i$ be the frequency of $i$, and let $M_i$ count missing values below $i$. The minimum is $$\\boxed{\\max(f_i,M_i)}\\qquad(0\\le i\\le N).$$ The C++17 program computes all targets in one scan.",
+    "shortExplanation": "Every occurrence of the desired mex must disappear, and each missing smaller value must be inserted. One edit can do both. These two lower bounds combine as a maximum, and enough redundant positions always exist to attain it.",
+    "detailedSteps": [
+      "**1. State the two requirements.** Mex $i$ means every value in $\\{0,1,\\ldots,i-1\\}$ is present and $i$ is absent. Write $f_i$ for the number of current occurrences of $i$ and $M_i$ for the number of absent values in that smaller range.",
+      "**2. Establish a lower bound.** Removing all occurrences of $i$ needs at least $f_i$ changes. Inserting the $M_i$ distinct missing values needs at least $M_i$ changes because one position can receive only one value. Consequently at least $\\max(f_i,M_i)$ operations are needed. The bounds should not be added: replacing $i$ by a missing smaller value contributes to both.",
+      "**3. Attain the bound when $f_i\\ge M_i$.** Replace $M_i$ different occurrences of $i$ by the missing values. Replace every other occurrence of $i$ by any value greater than $i$. All previously present required values are untouched, all missing ones appear, and $i$ disappears. The cost is exactly $f_i$.",
+      "**4. Attain it when $M_i>f_i$.** First use all $f_i$ occurrences to insert missing values. Preserve one occurrence of each already present smaller value. There are $i-M_i$ such preserved positions, so the remaining usable positions other than the original $i$ occurrences number $$N-(i-M_i)-f_i\\ge M_i-f_i,$$ where the inequality uses $i\\le N$. These positions contain duplicates of smaller values or values above $i$. Change enough of them to insert the remaining missing values without destroying a required representative. Exactly $M_i$ edits suffice. This also proves attainability for the boundary target $N$.",
+      "**5. Scan in the correct order.** Build frequencies for $0$ through $N$. Initialize `missing = 0`. At target $i$, print $\\max(\\texttt{missing},f_i)$, then increase `missing` if $f_i=0$. Before this increase, `missing` counts absences strictly below $i$, as required. At target zero it is zero, so the answer simply removes every zero.",
+      "**6. Complexity and integer ranges.** Counting and the scan each take $O(N)$ time. Frequencies use $O(N)$ space; every frequency, missing count and answer is at most $N\\le200{,}000$, so `int` is sufficient. Changes to arbitrary non-negative values are allowed by the source, so using a value greater than $i$ in the construction is valid.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n;\n    if (!(std::cin >> n)) return 0;\n    std::vector<int> count(n+1);\n    for (int j = 0; j < n; ++j) {\n        int x;\n        std::cin >> x;\n        ++count[x];\n    }\n    int missing = 0;\n    for (int target = 0; target <= n; ++target) {\n        std::cout << std::max(missing, count[target]) << '\\n';\n        if (count[target] == 0) ++missing;\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Characterize a desired mex by required presence and required absence.",
+      "Share edits between two obligations; use the maximum of lower bounds.",
+      "Prove enough replaceable positions exist by preserving one necessary representative.",
+      "Maintain a prefix count of missing values."
+    ],
+    "commonMistakes": [
+      "Adding $f_i+M_i$ and counting shared edits twice.",
+      "Counting whether $i$ itself is missing before producing its answer.",
+      "Destroying the only occurrence of an already required smaller value in the construction.",
+      "Computing only the current mex instead of all $N+1$ targets."
+    ],
+    "alternativeMethods": [
+      "Build an explicit prefix array of absent values, with $M_0=0$ and $M_{i+1}=M_i+[f_i=0]$, then use the same formula. The running counter removes the need for that additional array."
+    ],
+    "difficultyNotes": "Intermediate. Finding the maximum is quick; the essential proof is that the missing values can always be supplied without losing required representatives. The original statement and samples remain at the official link.",
+    "id": "solution-usaco-bronze-2025-february-p2",
+    "problemId": "usaco-bronze-2025-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Use interval dynamic programming for the minimum number of syntactic `PRINT` statements. Concatenation adds costs; repeating an identical shorter block preserves its cost. Output `YES` exactly when the complete interval costs at most $K$. The C++17 implementation includes constant-time repetition tests.",
+    "shortExplanation": "A program either joins smaller programs or repeats the output of a smaller program. Apply these two constructions to every interval. The grammar guarantees that they cover all programs, including arbitrarily nested repeats.",
+    "detailedSteps": [
+      "**1. Use the right cost.** A `PRINT` inside a repeat counts once in the source program even though it executes many times. Let $D(l,r)$ be the minimum number of written `PRINT` statements needed to emit exactly the interval $a_l,\\ldots,a_r$. A singleton has cost $1$, and printing each element separately always gives a cost at most its length.",
+      "**2. Join two programs.** For every proper split $s$, generate $a_l,\\ldots,a_s$ and then $a_{s+1},\\ldots,a_r$. This gives the candidate $$D(l,s)+D(s+1,r).$$ Both outputs are nonempty, as every valid program must be.",
+      "**3. Repeat a shorter block.** Let $L=r-l+1$. For any proper block length $p$ dividing $L$, check whether the interval is $L/p$ identical copies of its first $p$ entries. If it is, wrap an optimal program for that block in a repeat of count $L/p$. This produces the full interval at cost $$D(l,l+p-1).$$ Take the minimum of all split and repeat candidates.",
+      "**4. Prove the recurrence complete.** Remove every repeat of count one from a candidate program; this preserves its output and `PRINT` cost and terminates because the program syntax is finite. A program with multiple outer statements has a proper output boundary, so the split rule covers it. A single outer statement producing more than one entry must be a repeat of count at least two; its inner output is a shorter repeated block covered by the repeat rule. By induction on interval length, the dynamic program is no more expensive than any valid program. Conversely, every candidate describes a valid program. Hence its cost equals the true minimum, with no restriction on nesting depth.",
+      "**5. Test periods in constant time.** Precompute $\\operatorname{LCP}(i,j)$, the common-prefix length of the suffixes starting at $i$ and $j$, backwards: matching entries contribute $1+\\operatorname{LCP}(i+1,j+1)$, and different entries contribute zero. When $p\\mid L$, the interval repeats its first block precisely when $$\\operatorname{LCP}(l,l+p)\\ge L-p.$$ This compares every entry with the one $p$ positions later. Those equalities force all complete blocks to agree.",
+      "**6. Evaluate by length and decide.** Fill the singleton states, then intervals of increasing length. Every candidate uses strictly shorter intervals, so its values are ready. The entire sequence is possible within the budget exactly when $D(0,N-1)\\le K$. A constant sequence may cost one regardless of its length; the number of distinct labels alone does not decide the answer.",
+      "**7. Complexity and source limits.** The common-prefix table costs $O(N^2)$ time and space. There are $O(N^2)$ interval states and at most $O(N)$ splits and period lengths per state, yielding $O(N^3)$ time and $O(N^2)$ memory per test. Over all inputs the bound is $O(\\sum N_t^3)$, at most $O(TN_{\\max}^3)$ for the printed $T\\le100$ and $N\\le100$. No bound on their sum is assumed. All costs and prefix lengths are at most $100$, fitting `int`.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\n\nint minimum_prints(const std::vector<int>& a) {\n    int n = static_cast<int>(a.size());\n    std::vector<std::vector<int>> lcp(n+1, std::vector<int>(n+1));\n    for (int i = n-1; i >= 0; --i)\n        for (int j = n-1; j >= 0; --j)\n            if (a[i] == a[j]) lcp[i][j] = 1+lcp[i+1][j+1];\n    std::vector<std::vector<int>> dp(n, std::vector<int>(n));\n    for (int i = 0; i < n; ++i) dp[i][i] = 1;\n    for (int length = 2; length <= n; ++length) {\n        for (int left = 0; left+length <= n; ++left) {\n            int right = left+length-1;\n            int best = length;\n            for (int split = left; split < right; ++split)\n                best = std::min(best, dp[left][split]+dp[split+1][right]);\n            for (int period = 1; period <= length/2; ++period)\n                if (length % period == 0 && lcp[left][left+period] >= length-period)\n                    best = std::min(best, dp[left][left+period-1]);\n            dp[left][right] = best;\n        }\n    }\n    return dp[0][n-1];\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int t;\n    std::cin >> t;\n    while (t--) {\n        int n, k;\n        std::cin >> n >> k;\n        std::vector<int> a(n);\n        for (int& x : a) std::cin >> x;\n        std::cout << (minimum_prints(a) <= k ? \"YES\" : \"NO\") << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Dynamic programming mirrors a finite program grammar.",
+      "Concatenation adds source costs; repetition reuses source statements.",
+      "Normalize repeat-count-one wrappers for the completeness proof.",
+      "Common-prefix lengths test a proposed period without rescanning the interval."
+    ],
+    "commonMistakes": [
+      "Counting executed prints rather than written `PRINT` statements.",
+      "Assuming the number of distinct values is enough to describe ordering.",
+      "Checking periodicity without requiring the block length to divide the interval length.",
+      "Approximating unlimited nesting by a fixed depth.",
+      "Using an unstated aggregate bound across test cases."
+    ],
+    "alternativeMethods": [
+      "Because $K\\le3$, one can enumerate special shapes of programs with very few `PRINT` statements. The interval recurrence avoids a separate structural case analysis and directly handles every legal repeat nesting."
+    ],
+    "difficultyNotes": "Advanced. The main challenge is connecting the program grammar to a complete recurrence, then keeping repeat checks cheap. The full language definition, examples and case-sensitive output requirements are available through the official source link.",
+    "id": "solution-usaco-bronze-2025-february-p3",
+    "problemId": "usaco-bronze-2025-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

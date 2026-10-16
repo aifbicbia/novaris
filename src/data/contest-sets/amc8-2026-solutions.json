@@ -1,0 +1,562 @@
+[
+  {
+    "id": "solution-amc8-2026-p1",
+    "problemId": "amc8-2026-p1",
+    "finalAnswer": "$\\boxed{18}$ (choice A)",
+    "shortExplanation": "The sum from one through twelve is 78; changing the four multiples of three to negative subtracts sixty, leaving eighteen.",
+    "detailedSteps": [
+      "If all signs were positive, the sum would be $12(13)/2=78$.",
+      "The negative terms are three, six, nine, and twelve, whose sum is thirty. Replacing a positive term by its negative subtracts twice that term.",
+      "Therefore the required value is $78-2(30)=18$."
+    ],
+    "keyIdeas": [
+      "Adjusting an all-positive sum",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Changing a plus to a minus subtracts twice the original positive contribution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare to a familiar all-positive sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p2",
+    "problemId": "amc8-2026-p2",
+    "finalAnswer": "$\\boxed{53}$ (choice C)",
+    "shortExplanation": "Count one for every cell, one more for the inner fifteen cells, and one more for the three central cells: $35+15+3=53$.",
+    "detailedSteps": [
+      "The full array has $5\\cdot7=35$ cells, all with value at least one.",
+      "The inner $3\\cdot5=15$ cells each contribute an additional one because their values are at least two.",
+      "The three central cells each contribute one final unit, giving a total of $35+15+3=53$."
+    ],
+    "keyIdeas": [
+      "Counting an array in nested layers",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "A layer count must include only the extra contribution beyond layers already counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested layers avoid recounting the border by individual sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p3",
+    "problemId": "amc8-2026-p3",
+    "finalAnswer": "$\\boxed{\\text{square and triangle only}}$ (choice D)",
+    "shortExplanation": "The square and right triangle each need 24 centimeters of wire, whereas the hexagon needs thirty.",
+    "detailedSteps": [
+      "The regular hexagon perimeter is $6(5)=30$, exceeding the available wire.",
+      "The square has side $\\sqrt{36}=6$ and perimeter $4(6)=24$.",
+      "The right triangle has hypotenuse $\\sqrt{6^2+8^2}=10$, so its perimeter is $6+8+10=24$.",
+      "Thus precisely the square and triangle can be formed."
+    ],
+    "keyIdeas": [
+      "Comparing required perimeters",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The square's area must first be converted into a side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Wire length is the perimeter of the intended shape.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p4",
+    "problemId": "amc8-2026-p4",
+    "finalAnswer": "$\\boxed{120\\%}$ (choice E)",
+    "shortExplanation": "The savings retain eighty percent and then grow by a factor of one and a half, leaving 120 percent of the original amount.",
+    "detailedSteps": [
+      "Let the original amount be S. The decrease gives $0.8S$.",
+      "The subsequent increase gives $1.5(0.8S)=1.2S$, which is $120\\%$ of the original."
+    ],
+    "keyIdeas": [
+      "Successive percentage multipliers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The requested percentage of the original is 120 percent; the net increase is twenty percent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the final proportion distinct from the net increase.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p5",
+    "problemId": "amc8-2026-p5",
+    "finalAnswer": "$\\boxed{30}$ (choice B)",
+    "shortExplanation": "Driving takes two and a half hours, leaving half an hour, or thirty minutes, for lunch.",
+    "detailedSteps": [
+      "The time actually driving is $100/40=2.5$ hours.",
+      "The lunch break lasts $3-2.5=0.5$ hour.",
+      "Convert to minutes: $0.5(60)=30$."
+    ],
+    "keyIdeas": [
+      "Separating driving time from elapsed time",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The forty-mile-per-hour average excludes the lunch stop."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the driving-only rate before subtracting the stop.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p6",
+    "problemId": "amc8-2026-p6",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice E)",
+    "shortExplanation": "The unreachable interior is eight by six, leaving 32 of the field's eighty square meters reachable.",
+    "detailedSteps": [
+      "The full field area is $10(8)=80$ square meters.",
+      "Removing a one-meter border from all four sides leaves an inner rectangle with dimensions $10-2=8$ and $8-2=6$, area 48.",
+      "The reachable fraction is $(80-48)/80=32/80=2/5$."
+    ],
+    "keyIdeas": [
+      "Area of an interior border",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The interior loses one meter from each end of both dimensions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract the unreachable rectangle to avoid overlapping corner strips.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p7",
+    "problemId": "amc8-2026-p7",
+    "finalAnswer": "$\\boxed{50}$ (choice C)",
+    "shortExplanation": "The forty miles use four fifths of a charge, giving an estimated full-charge range of fifty miles.",
+    "detailedSteps": [
+      "The combined battery usage is $1/2+3/10=4/5$ of a full charge.",
+      "Using the proportional-consumption estimate in the problem, the range is $40/(4/5)=50$ miles."
+    ],
+    "keyIdeas": [
+      "Scaling distance by battery usage",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The fractions refer to the full battery capacity, not successive fractions of a remainder."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "State the proportional estimate underlying battery range.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p8",
+    "problemId": "amc8-2026-p8",
+    "finalAnswer": "$\\boxed{50}$ (choice D)",
+    "shortExplanation": "Exactly seventy-four percent is $37/50$, so the number polled must be a multiple of fifty; fifty is attainable.",
+    "detailedSteps": [
+      "If N people are polled and Y say yes, then $Y/N=74/100=37/50$.",
+      "The integers thirty-seven and fifty are relatively prime, so N must be divisible by fifty.",
+      "Taking $N=50,Y=37$ satisfies the condition, establishing the minimum."
+    ],
+    "keyIdeas": [
+      "A percentage as a reduced fraction",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The percentage is exact rather than rounded to a whole percent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A reduced denominator determines the minimum sample size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p9",
+    "problemId": "amc8-2026-p9",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice B)",
+    "shortExplanation": "The numerator is twelve and the denominator eighteen, giving two thirds.",
+    "detailedSteps": [
+      "Evaluate the inner radicals: $\\sqrt{81}=9$ and $\\sqrt{16}=4$.",
+      "The whole numerator is $\\sqrt{16\\cdot9}=12$ and the whole denominator is $\\sqrt{81\\cdot4}=18$.",
+      "The ratio is $12/18=2/3$."
+    ],
+    "keyIdeas": [
+      "Nested square roots",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Each outside radical covers the full product beneath it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Respect the full scope of both radical bars.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p10",
+    "problemId": "amc8-2026-p10",
+    "finalAnswer": "$\\boxed{\\text{Luke}}$ (choice A)",
+    "shortExplanation": "The time offsets behind Pedro are zero, three, five, nine, and eleven minutes; Luke is fourth.",
+    "detailedSteps": [
+      "Set Pedro's finishing time to zero. Olympia is at three minutes, Melina at $3+2=5$, Luke at $3+6=9$, and Nico at eleven.",
+      "The increasing order is Pedro, Olympia, Melina, Luke, Nico.",
+      "Thus Luke finishes fourth."
+    ],
+    "keyIdeas": [
+      "Ordering times relative to one reference",
+      "Logic"
+    ],
+    "commonMistakes": [
+      "A larger finishing-time offset means a later finish."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single reference time makes all five offsets comparable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p11",
+    "problemId": "amc8-2026-p11",
+    "finalAnswer": "$\\boxed{6\\pi}$ (choice B)",
+    "shortExplanation": "The five radii sum to twelve, so their quarter-circle arcs total six pi.",
+    "detailedSteps": [
+      "A quarter-circle arc of radius r has length $(1/4)(2\\pi r)=\\pi r/2$.",
+      "The radii are the square side lengths, totaling $1+1+2+3+5=12$.",
+      "Add the arc lengths to get $(\\pi/2)(12)=6\\pi$."
+    ],
+    "keyIdeas": [
+      "Adding quarter-circle arc lengths",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The labels give radii of quarter circles, not diameters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the sum of the five radii matters for total arc length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p12",
+    "problemId": "amc8-2026-p12",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "Trying the three possible top values three, four, and five leaves only five without a repeated digit.",
+    "detailedSteps": [
+      "Let the top digit be x. Moving clockwise, the edge sums force the six digits to be $x,6-x,x-2,7-x,x+1,9-x$.",
+      "Every digit must lie from one to six. In particular, $x-2\\ge1$ and $x+1\\le6$ give $3\\le x\\le5$.",
+      "At $x=3$, the first two digits repeat three. At $x=4$, the second and third repeat two.",
+      "At $x=5$, the clockwise digits are $5,1,3,2,6,4$, which use every required digit once and satisfy all six sums."
+    ],
+    "keyIdeas": [
+      "A cyclic system with distinct digits",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The sum equations alone do not enforce that the six digits are distinct."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity narrows the variable and distinctness finishes the argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p13",
+    "problemId": "amc8-2026-p13",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "A side of the shaded square moves three units horizontally and one vertically, so its squared length, and hence its area, is ten.",
+    "detailedSteps": [
+      "Use the upper side between the leftmost and topmost marked vertices. Counting the underlying unit grid gives horizontal displacement three and vertical displacement one.",
+      "The Pythagorean theorem gives side length squared $3^2+1^2=10$.",
+      "The area of a square equals the square of its side length, so the area is ten square units."
+    ],
+    "keyIdeas": [
+      "Squared length on a shifted grid",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The staggered row boundaries do not change the horizontal unit length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squared side length directly equals square area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p14",
+    "problemId": "amc8-2026-p14",
+    "finalAnswer": "$\\boxed{75}$ (choice B)",
+    "shortExplanation": "The middle value is twenty-five, so the three equally spaced values total seventy-five.",
+    "detailedSteps": [
+      "Call the equally spaced values a, b, c. Then $a+c=2b$.",
+      "Adding the given equations $a+b=40$ and $b+c=60$ gives $a+2b+c=100$, hence $4b=100$ and $b=25$.",
+      "The total is $a+b+c=3b=75$. The values are fifteen, twenty-five, and thirty-five."
+    ],
+    "keyIdeas": [
+      "Using the middle of an arithmetic progression",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Adding the two given pair sums counts the middle value twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal spacing makes the total three times the middle value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p15",
+    "problemId": "amc8-2026-p15",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "Four cubes in a two-by-two flat block suffice, and fewer cannot hide two faces of every cube.",
+    "detailedSteps": [
+      "Each cube needs a neighbor across each of its two gray faces, so every cube must have at least two distinct face-sharing neighbors.",
+      "With at most three cubes, that would require three cubes to be mutually face-adjacent. This is impossible: on the unit-cube grid, a face step changes the parity of the sum of the three center coordinates, so no three-step adjacency cycle exists.",
+      "Place four cubes in a two-by-two single-layer block. Each cube has two adjacent inward faces; orient its two gray faces toward its two neighbors.",
+      "All gray faces are internal and every outer face is white, giving the minimum four."
+    ],
+    "keyIdeas": [
+      "Hiding adjacent faces inside an assembly",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Hiding faces from one viewpoint is insufficient; every gray face must be glued inside the assembly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An adjacency lower bound and a four-cube construction establish minimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p16",
+    "problemId": "amc8-2026-p16",
+    "finalAnswer": "$\\boxed{\\frac35}$ (choice D)",
+    "shortExplanation": "The even tens digit contributes a multiple of four, so the final digit must be zero, four, or eight: three of five choices.",
+    "detailedSteps": [
+      "The available digits are $0,2,4,6,8$, with the leading digit restricted to the four nonzero choices.",
+      "A number is divisible by four exactly when its last two digits form a multiple of four. Since its tens digit t is even, $10t$ is already divisible by four.",
+      "The units digit must therefore be one of $0,4,8$. All five units choices occur equally often with each choice of the first three digits.",
+      "The fraction is $3/5$."
+    ],
+    "keyIdeas": [
+      "Divisibility determined by the last two digits",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The leading-zero restriction affects numerator and denominator equally and does not change the units-digit fraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last-two-digit rule simplifies because every tens digit is even.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p17",
+    "problemId": "amc8-2026-p17",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The only allowable neighbor links form the path $3-1-4-2$, so that path and its reverse are the two rearrangements.",
+    "detailedSteps": [
+      "Label the original order $1,2,3,4$. The forbidden unordered adjacent pairs are $12,23,34$.",
+      "Of the six possible pairs, the allowed ones are precisely $13,14,24$.",
+      "A row of four students uses three different adjacent pairs, so it must use all three allowed links. They join into the path $3-1-4-2$.",
+      "The only orders are that path and its reverse $2-4-1-3$."
+    ],
+    "keyIdeas": [
+      "Permutations avoiding old neighbors",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "An old neighboring pair remains forbidden when its left-right order is reversed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Allowed unordered neighbor pairs form a single path.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p18",
+    "problemId": "amc8-2026-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The two representations are $29+31$ and $5+7+9+11+13+15$.",
+    "detailedSteps": [
+      "Let k be the number of terms and a the first positive odd term. The sum is $k(a+k-1)=60$.",
+      "The minimum sum for k terms is $1+3+\\cdots+(2k-1)=k^2$, so $2\\le k\\le7$. Also k must divide sixty.",
+      "An odd number of odd terms has odd sum, so only even k are possible: $k=2,4,6$. The corresponding first terms $a=60/k-k+1$ are twenty-nine, twelve, and five.",
+      "Twelve is not odd, leaving exactly the two stated representations."
+    ],
+    "keyIdeas": [
+      "Consecutive odd sums and factorization",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Consecutive odd terms differ by two, and the first term must remain positive and odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sum formula and parity restrict the possible number of terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p19",
+    "problemId": "amc8-2026-p19",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice D)",
+    "shortExplanation": "If Miguel walks x and the tree is distance D away, Luna runs $2D-x=5x$, giving $x/D=1/3$.",
+    "detailedSteps": [
+      "Luna runs distance D to the tree, then returns distance $D-x$ to meet Miguel, for a total of $2D-x$.",
+      "During the same elapsed time, Luna travels five times Miguel's distance, so $2D-x=5x$.",
+      "Solving gives $6x=2D$ and $x/D=1/3$."
+    ],
+    "keyIdeas": [
+      "Equating distances over a shared time",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The dog returns to Miguel's new position, not to the park entrance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Dog and walker distances share the same elapsed time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p20",
+    "problemId": "amc8-2026-p20",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "With zero, one, or two silver coins, the stack counts are one, six, and six, totaling thirteen.",
+    "detailedSteps": [
+      "Let s be the silver-coin count. Since each is three millimeters thick, $s=0,1,2$ are the only possibilities.",
+      "For $s=0$, eight gold coins give one stack. For $s=1$, five gold coins join the silver coin, whose six possible positions give six stacks.",
+      "For $s=2$, two gold and two silver coins make four coins; choose the two silver positions in $\\binom42=6$ ways.",
+      "The total is $1+6+6=13$."
+    ],
+    "keyIdeas": [
+      "Ordered stacks classified by thick-coin count",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "Order matters, but coins of the same metal are indistinguishable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate cases by thick coins before arranging positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p21",
+    "problemId": "amc8-2026-p21",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice B)",
+    "shortExplanation": "After one move the spider is inner; it must stay inner on move two and move outward on move three, each with probability one half.",
+    "detailedSteps": [
+      "Every outer point connects only to two inner points. Each inner point has four neighbors: two inner and two outer.",
+      "The first move is therefore certainly to an inner point. To finish outer after move three, move two must also end inner, since an outer point would force move three inward.",
+      "The required two transitions each have probability $2/4=1/2$, so the final probability is $(1/2)(1/2)=1/4$."
+    ],
+    "keyIdeas": [
+      "Reducing a walk to inner and outer states",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The ten points do not all have the same degree, and all endpoint types are not equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track transition probabilities for point types.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p22",
+    "problemId": "amc8-2026-p22",
+    "finalAnswer": "$\\boxed{9}$ (choice A)",
+    "shortExplanation": "At least nine distinct original numbers must be at most M, so $M\\ge9$; a grouping with medians three, six, nine, eighteen, and twenty-three attains nine.",
+    "detailedSteps": [
+      "At least three of the five group medians are at most M. In each corresponding five-number group, at least three entries are at most that group's median, hence at most M.",
+      "These groups are disjoint, yielding at least nine different numbers no greater than M. Among the integers one through twenty-five, this forces $M\\ge9$.",
+      "To attain nine, take groups $\\{1,2,3,10,11\\}$, $\\{4,5,6,12,13\\}$, $\\{7,8,9,14,15\\}$, $\\{16,17,18,19,20\\}$, and $\\{21,22,23,24,25\\}$.",
+      "The group medians are $3,6,9,18,23$, whose median is nine."
+    ],
+    "keyIdeas": [
+      "A lower bound for a median of medians",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The median of group medians need not equal the median of all twenty-five numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nine forced small entries give the lower bound; a partition attains it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p23",
+    "problemId": "amc8-2026-p23",
+    "finalAnswer": "$\\boxed{20+4\\pi}$ (choice C)",
+    "shortExplanation": "The straight portions total twenty centimeters, and the circular portions together make a full radius-two circle, adding four pi.",
+    "detailedSteps": [
+      "Join the centers of the four coins on the convex boundary. They form a trapezoid with bases eight and four and both sloping sides four, so its perimeter is twenty.",
+      "The straight tangent segments of the band have these same lengths. At the rounded corners, the turning angles sum to $360^\\circ$.",
+      "All arcs have radius two, so their combined length is $2\\pi(2)=4\\pi$.",
+      "The total band length is $20+4\\pi$ centimeters."
+    ],
+    "keyIdeas": [
+      "Taut band around equal circles",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The middle lower coin does not create an extra bend in the taut band."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Straight tangent lengths and total turning account for the entire band.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p24",
+    "problemId": "amc8-2026-p24",
+    "finalAnswer": "$\\boxed{171}$ (choice E)",
+    "shortExplanation": "The multiples of seven contribute 168 factors across the factorials, and the extra seven in forty-nine contributes three more, totaling 171.",
+    "detailedSteps": [
+      "The integer k occurs in every factorial from $k!$ through $51!$, hence $52-k$ times in their product.",
+      "The multiples $7,14,21,28,35,42,49$ each supply at least one seven. Their contribution is $45+38+31+24+17+10+3=168$.",
+      "Since $49=7^2$, its second factor of seven appears once more in $49!,50!,51!$, adding three.",
+      "No multiple of $7^3$ occurs, so the total exponent is $168+3=171$."
+    ],
+    "keyIdeas": [
+      "Prime valuation of a product of factorials",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The factor forty-nine contributes two sevens each time it occurs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count repeated prime factors through all component factorials.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2026-p25",
+    "problemId": "amc8-2026-p25",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The triangle has side six; its three equilateral corner cuts have eight possible unordered positive integer size triples.",
+    "detailedSteps": [
+      "Each cut-off corner in the example is equilateral, because the triangle angles are $60^\\circ$ and the hexagon angles are $120^\\circ$. The lower-left, lower-right, and top cuts have sides one, two, and two, so the original triangle side is $1+3+2=6$.",
+      "For any admissible hexagon, no vertex can lie at a triangle corner and no triangle side can contain three hexagon vertices. Thus each triangle side contains two vertices, and the hexagon is obtained by removing three equilateral corner triangles.",
+      "Let their side lengths, in increasing order, be $a\\le b\\le c$. They are positive integers. The three remaining boundary segments have lengths $6-a-b$, $6-b-c$, and $6-c-a$, all positive; equivalently, $b+c\\le5$.",
+      "If $b=1$, then $a=1$ and $c=1,2,3,4$, giving four triples. If $b=2$, then $a=1$ or two and $c=2$ or three, giving four more. A value $b\\ge3$ is impossible.",
+      "The eight triples are $(1,1,1),(1,1,2),(1,1,3),(1,1,4),(1,2,2),(1,2,3),(2,2,2),(2,2,3)$. Permuting a triple only rotates or reflects the construction. These eight give distinct side-length multisets for the resulting hexagons, so no further congruences identify them. The answer is eight."
+    ],
+    "keyIdeas": [
+      "Classifying integer corner cuts of a triangle",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "All six sides must have positive length; a zero remaining segment creates a degenerate polygon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reduce every admissible shape to a nondegenerate integer corner-cut triple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

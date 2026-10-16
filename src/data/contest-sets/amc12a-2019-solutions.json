@@ -1,0 +1,588 @@
+[
+  {
+    "shortExplanation": "Compare the squared radii because the area of a circle is proportional to the square of its radius.",
+    "detailedSteps": [
+      "The two areas are $16\\pi$ and $9\\pi$. The increase relative to the smaller pizza is $(16\\pi-9\\pi)/(9\\pi)=7/9$.",
+      "Thus $N=100(7/9)=700/9\\approx77.78$. The closest integer is $78$."
+    ],
+    "keyIdeas": [
+      "Percent change",
+      "Circle area"
+    ],
+    "commonMistakes": [
+      "Using the percentage change in radius would miss the square in the area formula."
+    ],
+    "difficultyNotes": "The smaller area is the reference value in the percentage calculation.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p1",
+    "problemId": "amc12a-2019-p1",
+    "finalAnswer": "$\\boxed{78}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Express both quantities as multiples of the same variable.",
+    "detailedSteps": [
+      "The given relation is $a=(3/2)b$. Therefore $3b/a=3/(3/2)=2$.",
+      "A ratio of $2$ is $200\\%$, so the requested percent is $200$."
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Percentages"
+    ],
+    "commonMistakes": [
+      "The requested reference is a, not b; the ratio must be $3b/a$."
+    ],
+    "difficultyNotes": "One substitution avoids reversing the percentage relation.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p2",
+    "problemId": "amc12a-2019-p2",
+    "finalAnswer": "$\\boxed{200}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Maximize a draw that still avoids fifteen balls of every color.",
+    "detailedSteps": [
+      "For each of the three colors with at least $15$ available, take at most $14$. All balls of each remaining color can be taken without reaching $15$.",
+      "The largest draw avoiding the target therefore has $14+14+14+13+11+9=75$ balls. These counts are attainable with the given supplies.",
+      "One additional ball forces some color to reach $15$, so the least guaranteed number is $76$."
+    ],
+    "keyIdeas": [
+      "Pigeonhole principle",
+      "Worst-case bounds"
+    ],
+    "commonMistakes": [
+      "Applying a uniform bound of 14 to all six colors ignores the smaller supplies."
+    ],
+    "difficultyNotes": "The proof needs both an avoiding selection and a bound that its next draw must exceed.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p3",
+    "problemId": "amc12a-2019-p3",
+    "finalAnswer": "$\\boxed{76}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Allow negative starting values and use the formula for an arithmetic sum.",
+    "detailedSteps": [
+      "If there are $n$ terms starting with integer $a$, their sum is $n(2a+n-1)/2=45$. Hence $n(2a+n-1)=90$.",
+      "Both factors are positive integers: $n>0$, and their product is positive. Thus $n\\le90$.",
+      "For $n=90$, choose $a=-44$. The integers from $-44$ through $45$ sum to $45$, attaining the bound. The answer is $90$."
+    ],
+    "keyIdeas": [
+      "Arithmetic series",
+      "Integer factorization"
+    ],
+    "commonMistakes": [
+      "The problem does not require the consecutive integers to be positive."
+    ],
+    "difficultyNotes": "Negative terms make a much longer consecutive run possible.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p4",
+    "problemId": "amc12a-2019-p4",
+    "finalAnswer": "$\\boxed{90}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Find the two intersections on the third line, then use its perpendicular distance from the common vertex.",
+    "detailedSteps": [
+      "The two given lines have equations $y=x/2+1$ and $y=2x-2$. Their intersections with $x+y=10$ are $(6,4)$ and $(4,6)$.",
+      "The base length is $2\\sqrt2$. The perpendicular distance from $(2,2)$ to $x+y=10$ is $|2+2-10|/\\sqrt2=3\\sqrt2$.",
+      "The area is $\\tfrac12(2\\sqrt2)(3\\sqrt2)=6$."
+    ],
+    "keyIdeas": [
+      "Line intersections",
+      "Distance to a line",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "The segment joining the two new intersections is a slanted base; its height must be perpendicular to it."
+    ],
+    "difficultyNotes": "The common intersection is already known, leaving only two linear equations to solve.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p5",
+    "problemId": "amc12a-2019-p5",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Check the whole pattern, including the short oblique segments.",
+    "detailedSteps": [
+      "Translate by two square widths along the reference line. Every upper square, lower square, and attached segment moves to the next corresponding copy, so a nonidentity translation works.",
+      "A $180^\\circ$ rotation about a point where an upper and lower square meet on the reference line exchanges those squares and their attached segments. Repetition extends this to the whole figure.",
+      "Reflection in either the reference line or any line perpendicular to it changes each positive-slope oblique segment into a negative-slope one. The pattern has no such segments, so neither type of reflection works.",
+      "Exactly $2$ of the listed transformation types are possible."
+    ],
+    "keyIdeas": [
+      "Translations",
+      "Half-turn symmetry",
+      "Reflection"
+    ],
+    "commonMistakes": [
+      "The squares alone can suggest extra symmetries that the attached oblique segments destroy."
+    ],
+    "difficultyNotes": "The small oblique marks distinguish rotation symmetry from reflection symmetry.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p6",
+    "problemId": "amc12a-2019-p6",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Count the occurrences of each calendar date and locate the middle observation.",
+    "detailedSteps": [
+      "Each date from $1$ through $28$ occurs $12$ times; $29$ and $30$ occur $11$ times each, and $31$ occurs $7$ times. Thus the modes are $1,\\ldots,28$, whose median is $d=(14+15)/2=14.5$.",
+      "The median of $365$ observations is the $183$rd. Dates $1$ through $15$ occupy the first $180$ positions, so $M=16$.",
+      "The sum of all dates is $12(1+\\cdots+28)+11(29+30)+7\\cdot31=5738$. Consequently $\\mu=5738/365\\approx15.72$, and $d<\\mu<M$."
+    ],
+    "keyIdeas": [
+      "Frequency distributions",
+      "Order statistics",
+      "Weighted mean"
+    ],
+    "commonMistakes": [
+      "The median of the modes and the median of all observations are different statistics."
+    ],
+    "difficultyNotes": "The repeated frequencies determine both medians without listing all 365 observations.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p7",
+    "problemId": "amc12a-2019-p7",
+    "finalAnswer": "$\\boxed{d<\\mu<M}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Separate concurrency from parallel-line cases so that repeated intersections are counted once.",
+    "detailedSteps": [
+      "If three lines meet at one point, the fourth either passes through that point, producing $1$ intersection, or misses it. In the latter case it is parallel to at most one of the three and adds $2$ or $3$ new points, giving totals $3$ or $4$.",
+      "If no three lines are concurrent, every nonparallel pair produces a distinct point. The possible sizes of the parallel classes are $4$, $3+1$, $2+2$, $2+1+1$, and $1+1+1+1$. The resulting counts are respectively $0,3,4,5,6$.",
+      "Each of these configurations can be drawn, and four concurrent lines realize $1$. Thus the possible values are $0,1,3,4,5,6$, whose sum is $19$."
+    ],
+    "keyIdeas": [
+      "Case analysis",
+      "Concurrency",
+      "Parallel classes"
+    ],
+    "commonMistakes": [
+      "There are six pairs of lines, but parallel pairs contribute nothing and concurrent pairs can share a point."
+    ],
+    "difficultyNotes": "Classifying the parallel classes also proves why a count of two cannot occur.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p8",
+    "problemId": "amc12a-2019-p8",
+    "finalAnswer": "$\\boxed{19}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Taking reciprocals turns the nonlinear recurrence into constant first differences.",
+    "detailedSteps": [
+      "Set $b_n=1/a_n$. The recurrence becomes $b_n=2b_{n-1}-b_{n-2}$, so $b_n-b_{n-1}$ is constant.",
+      "The initial values are $b_1=1$ and $b_2=7/3$, giving difference $4/3$. Hence $b_n=1+4(n-1)/3=(4n-1)/3$.",
+      "At $n=2019$, this gives $a_{2019}=3/8075$. The numerator and denominator are coprime, and their sum is $8078$. The formula also keeps all reciprocal terms positive, so the recurrence has no zero-denominator obstruction."
+    ],
+    "keyIdeas": [
+      "Reciprocal substitution",
+      "Arithmetic progressions",
+      "Recurrences"
+    ],
+    "commonMistakes": [
+      "Taking the reciprocal reverses the whole fraction; the new recurrence is $2b_{n-1}-b_{n-2}$."
+    ],
+    "difficultyNotes": "The nonlinear expression is designed to become a linear recurrence after inversion.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p9",
+    "problemId": "amc12a-2019-p9",
+    "finalAnswer": "$\\boxed{8078}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the equilateral triangles formed by centers of tangent unit circles to find the enclosing radius.",
+    "detailedSteps": [
+      "Adjacent centers are $2$ units apart. Three pairwise tangent circles form an equilateral center triangle of side $2$, whose altitude is $\\sqrt3$.",
+      "Place the central center at $(0,0)$. The center rows in the figure have heights $0,\\pm\\sqrt3,\\pm2\\sqrt3$: the middle row has x-coordinates $-2,0,2$, the two adjacent rows have $-3,-1,1,3$, and the top and bottom centers have x-coordinate $0$.",
+      "The six farthest centers are all $2\\sqrt3$ from the origin. The symmetric enclosing circle therefore has radius $R=2\\sqrt3+1$, making its tangencies agree with the source figure.",
+      "The unit disks have disjoint interiors, so the required area is $\\pi R^2-13\\pi=\\pi(13+4\\sqrt3)-13\\pi=4\\pi\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Circle tangency",
+      "Equilateral triangles",
+      "Area subtraction"
+    ],
+    "commonMistakes": [
+      "The enclosing radius includes the additional unit radius beyond the outer centers."
+    ],
+    "difficultyNotes": "The staggered rows of centers are more useful than the curved boundaries of the disks.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p10",
+    "problemId": "amc12a-2019-p10",
+    "finalAnswer": "$\\boxed{4\\pi\\sqrt3}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Sum the repeating two-digit block as a geometric series.",
+    "detailedSteps": [
+      "The repeating block has value $2k+3$ in base $k$, so its fractional repetition is $(2k+3)/(k^2-1)$. Thus $51(2k+3)=7(k^2-1)$.",
+      "Rearranging and factoring gives $7k^2-102k-160=(k-16)(7k+10)=0$.",
+      "The negative root is not a base, while $k=16$ admits both digits $2$ and $3$. The answer is $16$."
+    ],
+    "keyIdeas": [
+      "Geometric series",
+      "Positional notation",
+      "Quadratic factorization"
+    ],
+    "commonMistakes": [
+      "The repeated block has base-k value $2k+3$, not decimal value 23."
+    ],
+    "difficultyNotes": "A two-digit repeating block always introduces the denominator $k^2-1$.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p11",
+    "problemId": "amc12a-2019-p11",
+    "finalAnswer": "$\\boxed{16}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Replace the logarithms by two variables and use their sum and product.",
+    "detailedSteps": [
+      "Let $u=\\log_2x$ and $v=\\log_2y$. The logarithmic equation becomes $u=4/v$, so $uv=4$. The relation $xy=64$ gives $u+v=6$.",
+      "The target is $\\bigl(\\log_2(x/y)\\bigr)^2=(u-v)^2=(u+v)^2-4uv=36-16=20$.",
+      "The roots $u,v=3\\pm\\sqrt5$ are positive, so the logarithmic domains and the original relation are valid."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Symmetric expressions",
+      "Logarithm laws"
+    ],
+    "commonMistakes": [
+      "The squared difference is $(u+v)^2-4uv$, not $(u+v)^2-2uv$."
+    ],
+    "difficultyNotes": "There is no need to determine x and y themselves.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p12",
+    "problemId": "amc12a-2019-p12",
+    "finalAnswer": "$\\boxed{20}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Color the forced triangle first, then count the remaining dependent vertices.",
+    "detailedSteps": [
+      "The numbers $2,4,8$ are pairwise connected by the divisor restriction, so they must use all three colors in $3!=6$ ways. The numbers $5$ and $7$ have no restriction with other numbers in the given range, contributing $3^2=9$.",
+      "Fix the color of $2$. If $3$ has that same color, then $6$ has two available colors and $9$ has two, giving $4$ choices.",
+      "If $3$ has one of the other two colors, $6$ is forced to the third color and $9$ has two choices. This gives $2\\cdot1\\cdot2=4$ more.",
+      "The total is $6\\cdot9\\cdot(4+4)=432$. These cases account for every divisor edge among the integers $2$ through $9$."
+    ],
+    "keyIdeas": [
+      "Graph coloring",
+      "Divisibility",
+      "Conditional counting"
+    ],
+    "commonMistakes": [
+      "The color choices for 3 and 6 are not independent because 6 is divisible by both 2 and 3."
+    ],
+    "difficultyNotes": "The small triangle of mutually constrained numbers makes the rest of the graph easy to count.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p13",
+    "problemId": "amc12a-2019-p13",
+    "finalAnswer": "$\\boxed{432}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "The two fixed quadratic factors already supply four distinct roots, so the remaining roots must come from that set.",
+    "detailedSteps": [
+      "The fixed factors have roots $1+i,1-i,2+2i,2-2i$, all distinct. For the full product to have exactly these four distinct roots, both roots of $x^2-cx+4$ must belong to this set.",
+      "Their product must be $4$. Checking unordered pairs, including repeated roots, leaves only $(1+i,2-2i)$ and $(1-i,2+2i)$. The within-factor conjugate products are $2$ and $8$, while the other mixed products are $\\pm4i$; repeated squares also do not equal $4$.",
+      "The corresponding sums are $c=3-i$ and $c=3+i$. Both have absolute value $\\sqrt{3^2+1^2}=\\sqrt{10}$."
+    ],
+    "keyIdeas": [
+      "Vieta’s formulas",
+      "Complex conjugates",
+      "Distinct roots"
+    ],
+    "commonMistakes": [
+      "The middle quadratic need not have repeated roots itself; it needs to reuse roots of the other factors."
+    ],
+    "difficultyNotes": "Counting distinct roots is a set-containment condition, not a multiplicity calculation.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p14",
+    "problemId": "amc12a-2019-p14",
+    "finalAnswer": "$\\boxed{\\sqrt{10}}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Turn the integrality conditions into even square roots and complete two squares.",
+    "detailedSteps": [
+      "Let $u=\\sqrt{\\log a}$ and $v=\\sqrt{\\log b}$. They are positive integers. Since $\\log\\sqrt a=u^2/2$ and $\\log\\sqrt b=v^2/2$ are also integers, both $u$ and $v$ are even.",
+      "The given sum becomes $u+v+(u^2+v^2)/2=100$, or $(u+1)^2+(v+1)^2=202$.",
+      "Here $u+1$ and $v+1$ are odd integers at least $3$ and less than $15$. Among the squares $9,25,49,81,121,169$, the only pair summing to $202$ is $81+121$. Thus $\\{u,v\\}=\\{8,10\\}$.",
+      "Consequently $\\log(ab)=u^2+v^2=164$, giving $ab=10^{164}$."
+    ],
+    "keyIdeas": [
+      "Integrality",
+      "Completing the square",
+      "Logarithm laws"
+    ],
+    "commonMistakes": [
+      "The integer conditions on the logarithms of the square roots force u and v to be even.",
+      "Completing both squares adds 2 to the doubled equation."
+    ],
+    "difficultyNotes": "All four integrality requirements matter; the parity restriction makes the square search short.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p15",
+    "problemId": "amc12a-2019-p15",
+    "finalAnswer": "$\\boxed{10^{164}}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Only the locations of the five odd entries affect the row and column parities.",
+    "detailedSteps": [
+      "Every set of five odd positions among the nine cells is equally likely, so there are $\\binom95=126$ relevant patterns.",
+      "If all three row sums are odd, their odd-entry counts must be $3,1,1$ in some order, since the total is $5$. The same argument applies to the columns.",
+      "There is therefore exactly one all-odd row and exactly one all-odd column. Their union already contains all five odd cells. Choosing that row and column gives $3\\cdot3=9$ valid patterns, and each such cross satisfies every parity condition.",
+      "The probability is $9/126=1/14$."
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Uniform subsets",
+      "Row and column constraints"
+    ],
+    "commonMistakes": [
+      "Counting only odd rows does not enforce the column conditions."
+    ],
+    "difficultyNotes": "The total of five odd entries forces a cross-shaped pattern once both sets of parity conditions are used.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p16",
+    "problemId": "amc12a-2019-p16",
+    "finalAnswer": "$\\boxed{\\frac1{14}}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Multiply the root equation by powers of each root, then add.",
+    "detailedSteps": [
+      "For any root $r$ of the cubic, $r^3=5r^2-8r+13$. Multiplying by $r^{n-3}$ and summing over the three roots gives $s_n=5s_{n-1}-8s_{n-2}+13s_{n-3}$ for every $n\\ge3$.",
+      "To verify that the coefficient triple is forced, Newton’s identities give $s_0=3,s_1=5,s_2=9,s_3=44,s_4=213,s_5=830$. The first three required equations have coefficient matrix $\\begin{pmatrix}9&5&3\\\\44&9&5\\\\213&44&9\\end{pmatrix}$, whose determinant is $2151\\ne0$.",
+      "Thus $(a,b,c)=(5,-8,13)$ is the unique triple, and $a+b+c=10$."
+    ],
+    "keyIdeas": [
+      "Polynomial roots",
+      "Newton’s identities",
+      "Linear recurrences"
+    ],
+    "commonMistakes": [
+      "The constant term contributes positively to the recurrence after the root equation is rearranged."
+    ],
+    "difficultyNotes": "The polynomial supplies the recurrence directly; the nonzero determinant rules out a second coefficient triple.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p17",
+    "problemId": "amc12a-2019-p17",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "The plane section of the sphere must be the triangle’s incircle.",
+    "detailedSteps": [
+      "The triangle has semiperimeter $27$. Its altitude to the side of length $24$ is $\\sqrt{15^2-12^2}=9$, so its area is $108$. Its inradius is therefore $r=108/27=4$.",
+      "The sphere’s intersection with the triangle’s plane is a circle tangent to the three sides. Tangency to the side segments identifies the incircle. Even if the extended side lines were considered, the three exradii are $9,9,36$, all greater than the sphere’s radius $6$.",
+      "If the distance from the sphere center to the plane is $h$, a radius to the section circle gives $h^2+4^2=6^2$. Hence $h=\\sqrt{20}=2\\sqrt5$."
+    ],
+    "keyIdeas": [
+      "Plane sections of a sphere",
+      "Inradius",
+      "Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "The triangle’s inradius is the radius of the plane section, not the radius of the sphere."
+    ],
+    "difficultyNotes": "The three-dimensional distance follows from a two-dimensional inradius calculation.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p18",
+    "problemId": "amc12a-2019-p18",
+    "finalAnswer": "$\\boxed{2\\sqrt5}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Find the positive sines of the three angles and apply the sine rule.",
+    "detailedSteps": [
+      "From the given cosines, the sines are $\\sin A=3\\sqrt{15}/16$, $\\sin B=\\sqrt{15}/8$, and $\\sin C=\\sqrt{15}/4$. The positive square roots are used because all triangle angles lie between $0$ and $180^\\circ$.",
+      "The sine rule gives the side ratio $a:b:c=3:2:4$. These lengths form a triangle and reproduce the given cosine values.",
+      "If the sides are $3t,2t,4t$ and all are integers, then $t=3t-2t$ is a positive integer. The least possible value is $t=1$, giving perimeter $9$."
+    ],
+    "keyIdeas": [
+      "Sine rule",
+      "Trigonometric identities",
+      "Primitive integer ratios"
+    ],
+    "commonMistakes": [
+      "An obtuse angle still has positive sine; use the positive root even when its cosine is negative."
+    ],
+    "difficultyNotes": "The integer-side condition is satisfied at the primitive ratio and cannot be improved by a fractional scaling.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p19",
+    "problemId": "amc12a-2019-p19",
+    "finalAnswer": "$\\boxed{9}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Condition on whether each draw comes from the endpoint branch or the uniform branch.",
+    "detailedSteps": [
+      "A draw uses the discrete endpoint branch with probability $1/2$ and the uniform branch with probability $1/2$. Conditional on the discrete branch, the two endpoints are equally likely.",
+      "If both draws are discrete, their branch probability is $1/4$, and only opposite endpoints qualify, with conditional probability $1/2$. This contributes $1/8$.",
+      "If exactly one draw is uniform, the branch probability is $1/2$. For either endpoint, the uniform draw is more than $1/2$ away on half of its interval, contributing $1/4$.",
+      "If both draws are uniform, the branch probability is $1/4$. In the unit square, $|x-y|>1/2$ occupies two right triangles of total area $1/4$, contributing $1/16$.",
+      "The total is $1/8+1/4+1/16=7/16$. The boundaries inside the continuous cases have probability zero."
+    ],
+    "keyIdeas": [
+      "Conditional probability",
+      "Mixed distributions",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "The endpoint masses must be retained; this is not simply two uniform draws on the unit interval."
+    ],
+    "difficultyNotes": "Three branch types separate the atomic and continuous parts cleanly.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p20",
+    "problemId": "amc12a-2019-p20",
+    "finalAnswer": "$\\boxed{\\frac7{16}}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Reduce the square exponents modulo eight before adding.",
+    "detailedSteps": [
+      "The number $z=(1+i)/\\sqrt2$ has modulus $1$, satisfies $z^4=-1$, and has $z^8=1$. Among $1,\\ldots,12$, the six odd integers have square congruent to $1\\pmod8$.",
+      "The three multiples of four have square congruent to $0$, while the other three even integers have square congruent to $4$. The first sum is therefore $6z+3-3=6z$.",
+      "The reciprocal sum is the complex conjugate, $6\\overline z$. Their product is $36|z|^2=36$."
+    ],
+    "keyIdeas": [
+      "Roots of unity",
+      "Quadratic residues",
+      "Complex conjugation"
+    ],
+    "commonMistakes": [
+      "The exponents are the squares of the indices; reducing the indices alone gives the wrong multiplicities."
+    ],
+    "difficultyNotes": "The two even residue classes cancel, leaving a single complex term.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p21",
+    "problemId": "amc12a-2019-p21",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Place the tangent line horizontally and use the division ratio to determine the direction of the radius through A.",
+    "detailedSteps": [
+      "Put $O=(0,0)$ and the tangent line at $y=17$, with the triangle above it. Write the side length as $s>0$, and let $A=(t,17+\\sqrt3s/2)$. Then $B=(t-s/2,17)$ and $C=(t+s/2,17)$. A reflection, if needed, gives this orientation.",
+      "The ratio $BP/CP=3$ gives $P=(t+s/4,17)$. Since $O,P,A$ are collinear, $17t=(t+s/4)(17+\\sqrt3s/2)$. Dividing the expanded relation by $s$ yields $t=-17/(2\\sqrt3)-s/4$.",
+      "Write $y=17+\\sqrt3s/2$. The previous equation is $t=-y/(2\\sqrt3)$. Since A lies on the radius-20 circle, $t^2+y^2=(13/12)y^2=400$, so $y=40\\sqrt3/\\sqrt{13}$.",
+      "Solving for the side gives $s=(2/\\sqrt3)(y-17)=80/\\sqrt{13}-34/\\sqrt3$. Both numerator-denominator pairs are coprime. Thus $(m,n,p,q)=(80,13,34,3)$ and their sum is $130$.",
+      "The derived side is positive. The other two vertices lie inside the outer circle, and the whole triangle lies in the half-plane $y\\ge17$, outside the inner disk. Thus the solution respects the specified placement; the tangent point itself need not lie on segment BC."
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Internal division",
+      "Circle equations",
+      "Equilateral triangle altitude"
+    ],
+    "commonMistakes": [
+      "The line containing BC is tangent to the inner circle; the tangency point is not required to lie on the segment."
+    ],
+    "difficultyNotes": "The unequal division ratio fixes the horizontal displacement that an altitude-only calculation would miss.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p22",
+    "problemId": "amc12a-2019-p22",
+    "finalAnswer": "$\\boxed{130}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Take a logarithm before expanding the custom operations.",
+    "detailedSteps": [
+      "Let $L_n=\\log_7a_n$. The initial operation gives $L_3=\\log_7 3/\\log_7 2$. For the recurrence, taking the outer exponent into account gives $L_n=(\\log_7n/\\log_7(n-1))L_{n-1}$.",
+      "The product telescopes, leaving $L_n=\\log_7n/\\log_7 2=\\log_2n$. All logarithm arguments in this derivation exceed one, so the operation denominators are nonzero.",
+      "For $n=2019$, $2^{21}<2019^2<2^{23}$, hence $10.5<\\log_2 2019<11.5$. The nearest integer is $11$."
+    ],
+    "keyIdeas": [
+      "Logarithm laws",
+      "Telescoping products",
+      "Change of base"
+    ],
+    "commonMistakes": [
+      "The outer custom operation multiplies logarithms after taking log base seven; it is not ordinary multiplication of its two inputs."
+    ],
+    "difficultyNotes": "The chosen operation notation hides a product of consecutive logarithm ratios.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p23",
+    "problemId": "amc12a-2019-p23",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use prime exponents to prove that precisely the primes and one small composite fail.",
+    "detailedSteps": [
+      "For a prime $p$, the exponent of $p$ in the quotient is $V_p=\\sum_{k\\ge1}\\left(\\left\\lfloor(n^2-1)/p^k\\right\\rfloor-n\\left\\lfloor n/p^k\\right\\rfloor\\right)$. With $d=p^k$ and $n=qd+r$, each summand is $\\lfloor(nr-1)/d\\rfloor$. It is $-1$ when $r=0$ and is nonnegative otherwise.",
+      "If $p$ does not divide $n$, no negative summands occur. If $p^a$ is the exact power dividing $n$, the first $a$ terms contribute $-a$, and all later terms are nonnegative. At $k=a+1$, write $r=p^at$ with $1\\le t<p$. That particular term is $nt/p-1\\ge n/p-1$. Thus $V_p\\ge-a+n/p-1$.",
+      "For every composite $n\\ne4$ and every prime divisor $p$, we have $n/p\\ge a+1$. If $a=1$, compositeness gives $n/p\\ge2$. If $a=2$, the inequality fails only for $n=4$. If $a\\ge3$, it follows from $n/p\\ge2^{a-1}\\ge a+1$. Therefore every prime exponent is nonnegative for those composites, and their quotients are integers.",
+      "If $n$ is prime, take $p=n$: the numerator exponent is $n-1$ and the denominator exponent is $n$, so the quotient fails. For $n=4$, the exponent of $2$ is $\\lfloor15/2\\rfloor+\\lfloor15/4\\rfloor+\\lfloor15/8\\rfloor-4(\\lfloor4/2\\rfloor+\\lfloor4/4\\rfloor)=-1$, so it fails as well.",
+      "The value $n=1$ works. There are $15$ primes at most $50$: $2,3,5,7,11,13,17,19,23,29,31,37,41,43,47$. Excluding these and $4$ from the $50$ candidates leaves $34$."
+    ],
+    "keyIdeas": [
+      "Legendre’s formula",
+      "Prime valuations",
+      "Divisibility",
+      "Floor functions"
+    ],
+    "commonMistakes": [
+      "It is insufficient to note that the related multinomial coefficient is integral: the extra factor $n^2$ in its numerator still matters.",
+      "Prime powers other than 4 can satisfy the condition; excluding all prime powers gives the wrong count."
+    ],
+    "difficultyNotes": "The key is bounding the positive valuation term immediately after the powers of p that divide n.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p24",
+    "problemId": "amc12a-2019-p24",
+    "finalAnswer": "$\\boxed{34}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Track the small deviations from sixty degrees under the orthic-triangle angle formula.",
+    "detailedSteps": [
+      "For an acute triangle with angles $A,B,C$, its orthic triangle has corresponding angles $180^\\circ-2A$, $180^\\circ-2B$, and $180^\\circ-2C$. This follows from the cyclic quadrilaterals formed by pairs of altitude feet: at the foot opposite A, the two angles next to the base each equal A, leaving $180^\\circ-2A$ between the orthic sides.",
+      "If an angle is $60^\\circ+\\delta$, the corresponding new angle is $60^\\circ-2\\delta$. Starting with deviations $-0.001^\\circ,0,0.001^\\circ$, after $n$ iterations the angle set is $(60-0.001\\cdot2^n)^\\circ$, $60^\\circ$, $(60+0.001\\cdot2^n)^\\circ$, for as long as the preceding triangles are acute.",
+      "The largest angle first exceeds $90^\\circ$ when $2^n>30000$. Since $2^{14}=16384$ and $2^{15}=32768$, the first such index is $n=15$.",
+      "All earlier triangles remain acute, so every use of the angle formula is valid. At step 15 the angles are $27.232^\\circ,60^\\circ,92.768^\\circ$, confirming that the triangle is obtuse and nondegenerate."
+    ],
+    "keyIdeas": [
+      "Orthic triangles",
+      "Angle chasing",
+      "Exponential growth"
+    ],
+    "commonMistakes": [
+      "The deviation from sixty doubles in magnitude and changes sign; the angle itself does not double.",
+      "The acute-triangle formula must only be used while the preceding triangle is acute."
+    ],
+    "difficultyNotes": "A tiny initial perturbation grows geometrically, so exact powers of two determine the stopping index.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2019-p25",
+    "problemId": "amc12a-2019-p25",
+    "finalAnswer": "$\\boxed{15}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,545 @@
+[
+  {
+    "id": "solution-ajhsme-1985-p1",
+    "problemId": "ajhsme-1985-p1",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "Every numerator factor cancels with the same denominator factor, leaving one.",
+    "detailedSteps": [
+      "Combine the fractions into a single fraction with numerator $3\\cdot5\\cdot7\\cdot9\\cdot11$ and denominator $9\\cdot11\\cdot3\\cdot5\\cdot7$.",
+      "The two products contain exactly the same nonzero factors, so their ratio is one."
+    ],
+    "keyIdeas": [
+      "Cancellation in a product of fractions",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Cancel multiplicative factors, not unrelated digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognize matching products before multiplying.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p2",
+    "problemId": "ajhsme-1985-p2",
+    "finalAnswer": "$\\boxed{945}$ (choice B)",
+    "shortExplanation": "Five pairs each sum to 189, giving a total of 945.",
+    "detailedSteps": [
+      "Pair $90$ with $99$, $91$ with $98$, and continue inward.",
+      "The ten terms form five pairs, all with sum $189$. Their total is $5(189)=945$."
+    ],
+    "keyIdeas": [
+      "Pairing consecutive integers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "There are ten terms, including both endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Five equal pair sums give the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p3",
+    "problemId": "ajhsme-1985-p3",
+    "finalAnswer": "$\\boxed{200}$ (choice D)",
+    "shortExplanation": "The powers simplify to $10^3$, and dividing by five gives two hundred.",
+    "detailedSteps": [
+      "Use $10^7/10^4=10^{7-4}=1000$.",
+      "The full quotient is $1000/5=200$."
+    ],
+    "keyIdeas": [
+      "Dividing powers of ten",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The coefficient five in the denominator must remain after subtracting exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the coefficient from the power of ten.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p4",
+    "problemId": "ajhsme-1985-p4",
+    "finalAnswer": "$\\boxed{46}$ (choice C)",
+    "shortExplanation": "The six-by-nine outer rectangle has area 54; removing a two-by-four corner leaves 46.",
+    "detailedSteps": [
+      "Complete the figure to an outer rectangle with width six and height nine.",
+      "The missing lower-left corner has width $6-4=2$ and height $9-5=4$.",
+      "The polygon area is $6(9)-2(4)=54-8=46$."
+    ],
+    "keyIdeas": [
+      "Subtracting a rectangular cutout",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The labels on the short edges determine the missing corner dimensions by subtraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Infer the cutout dimensions from the labeled outer lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p5",
+    "problemId": "ajhsme-1985-p5",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice C)",
+    "shortExplanation": "Fifteen of the twenty grades are satisfactory, giving three fourths.",
+    "detailedSteps": [
+      "The bars show counts five, four, three, three, and five for grades A, B, C, D, and F.",
+      "The satisfactory categories total $5+4+3+3=15$, while all categories total twenty.",
+      "The fraction is $15/20=3/4$."
+    ],
+    "keyIdeas": [
+      "Combining categories in a bar chart",
+      "Data"
+    ],
+    "commonMistakes": [
+      "Include every satisfactory category, but exclude F."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Add the relevant bar heights before dividing by the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p6",
+    "problemId": "ajhsme-1985-p6",
+    "finalAnswer": "$\\boxed{750}$ (choice D)",
+    "shortExplanation": "The new stack is one and a half times as high, so it contains approximately 750 sheets.",
+    "detailedSteps": [
+      "For paper of the same thickness, the number of sheets scales with total height.",
+      "The scale factor is $7.5/5=1.5$. Therefore the count is $500(1.5)=750$."
+    ],
+    "keyIdeas": [
+      "Proportional scaling of a stack",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The stated thickness is for the whole ream, not one sheet."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal sheet thickness gives direct proportionality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p7",
+    "problemId": "ajhsme-1985-p7",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "Row thirty-seven has thirty-seven white squares and thirty-six black squares.",
+    "detailedSteps": [
+      "The displayed pattern gives row n a total of $2n-1$ squares, alternating colors and beginning and ending white.",
+      "There are n white positions and $n-1$ black positions.",
+      "At $n=37$, the black count is $37-1=36$."
+    ],
+    "keyIdeas": [
+      "Alternating rows with white endpoints",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The count requested is for one row, not all rows through thirty-seven."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One more white than black appears in each row.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p8",
+    "problemId": "ajhsme-1985-p8",
+    "finalAnswer": "$\\boxed{-3a}$ (choice A)",
+    "shortExplanation": "At $a=-2$, the five expressions become $6,-8,-12,4,1$; the largest comes from $-3a$.",
+    "detailedSteps": [
+      "Substitute $a=-2$ into each expression: $-3a=6$, $4a=-8$, $24/a=-12$, $a^2=4$, and the constant is one.",
+      "The maximum is six, so the requested expression is $-3a$, choice A."
+    ],
+    "keyIdeas": [
+      "Evaluating expressions at a negative input",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Squaring a negative value gives a positive result, while multiplying it by four remains negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish the maximizing expression from its numerical value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p9",
+    "problemId": "ajhsme-1985-p9",
+    "finalAnswer": "$\\boxed{\\frac1{10}}$ (choice A)",
+    "shortExplanation": "After rewriting the factors, all interior integers cancel and only one tenth remains.",
+    "detailedSteps": [
+      "Write $1-1/k=(k-1)/k$ for $k=2,3,\\ldots,10$.",
+      "The product is $(1/2)(2/3)(3/4)\\cdots(9/10)$.",
+      "Cancel the factors two through nine to obtain $1/10$."
+    ],
+    "keyIdeas": [
+      "Telescoping product",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The subtraction occurs inside each factor before the multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Neighboring numerator and denominator factors cancel in sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p10",
+    "problemId": "ajhsme-1985-p10",
+    "finalAnswer": "$\\boxed{\\frac4{15}}$ (choice C)",
+    "shortExplanation": "The midpoint is the mean of one fifth and one third, which is four fifteenths.",
+    "detailedSteps": [
+      "Add the two endpoints: $1/5+1/3=3/15+5/15=8/15$.",
+      "Divide by two to obtain $(8/15)/2=4/15$."
+    ],
+    "keyIdeas": [
+      "Midpoint of two numbers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The midpoint is an average, not simply the difference of the endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A number-line midpoint is an arithmetic mean.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p11",
+    "problemId": "ajhsme-1985-p11",
+    "finalAnswer": "$\\boxed{\\text{Y}}$ (choice E)",
+    "shortExplanation": "When X is the bottom face, U, V, W, and Z form the four sides, leaving Y opposite X.",
+    "detailedSteps": [
+      "Fold V and Z up along the two edges they share with X.",
+      "Continue folding U and W from V; they occupy the remaining two side faces.",
+      "The square Y attached above W folds across the opening, so Y is the face opposite X."
+    ],
+    "keyIdeas": [
+      "Opposite faces in a cube net",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Opposite faces need not be separated by a straight strip in the flat net."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Follow shared edges to fold each labeled face.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p12",
+    "problemId": "ajhsme-1985-p12",
+    "finalAnswer": "$\\boxed{36}$ (choice B)",
+    "shortExplanation": "The common perimeter is 24 centimeters, so the square has side six and area 36 square centimeters.",
+    "detailedSteps": [
+      "The triangle perimeter is $6.2+8.3+9.5=24$ centimeters.",
+      "The square side is $24/4=6$ centimeters.",
+      "Its area is $6^2=36$ square centimeters."
+    ],
+    "keyIdeas": [
+      "Equal perimeters with different shapes",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Equal perimeters do not imply equal areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Find a square side from its perimeter before computing area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p13",
+    "problemId": "ajhsme-1985-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The walk covers three miles and the run five, for eight miles in total.",
+    "detailedSteps": [
+      "Convert forty-five minutes to $3/4$ hour and thirty minutes to $1/2$ hour.",
+      "The distance is $4(3/4)+10(1/2)=3+5=8$ miles."
+    ],
+    "keyIdeas": [
+      "Distance over two time intervals",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Rates in miles per hour require times in hours."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Add distances rather than unweighted rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p14",
+    "problemId": "ajhsme-1985-p14",
+    "finalAnswer": "$\\boxed{0.10}$ (choice B)",
+    "shortExplanation": "The tax rates differ by half a percent, which is ten cents on twenty dollars.",
+    "detailedSteps": [
+      "The rate difference is $6.5\\%-6\\%=0.5\\%=0.005$.",
+      "Multiplying by the pretax price gives $20(0.005)=0.10$ dollars."
+    ],
+    "keyIdeas": [
+      "Difference between tax rates",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Half a percent is $0.005$ as a decimal, not $0.5$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the rate difference into a decimal fraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p15",
+    "problemId": "ajhsme-1985-p15",
+    "finalAnswer": "$\\boxed{138}$ (choice C)",
+    "shortExplanation": "The two-hundreds contribute one hundred numbers, and each neighboring hundreds block contributes nineteen, totaling 138.",
+    "detailedSteps": [
+      "Every number from 200 through 299 contains a two, giving one hundred.",
+      "In either the 100s or the 300s, the last two digits contain a two in ten tens-place choices and ten units-place choices. The ending 22 belongs to both groups, so each block contributes $10+10-1=19$.",
+      "The overall count is $100+19+19=138$. Neither endpoint 100 nor 400 contains two."
+    ],
+    "keyIdeas": [
+      "Counting digit occurrence by hundreds block",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "Within a hundreds block, a number ending 22 must not be counted twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the hundreds blocks to control double counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p16",
+    "problemId": "ajhsme-1985-p16",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "Each ratio part represents six students, and girls exceed boys by one part, or six.",
+    "detailedSteps": [
+      "The ratio $2:3$ has five total parts, so one part is $30/5=6$ students.",
+      "There are twelve boys and eighteen girls.",
+      "The difference is $18-12=6$."
+    ],
+    "keyIdeas": [
+      "Difference between ratio parts",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The denominator for the class total is five parts, not three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A part-to-part ratio has five total parts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p17",
+    "problemId": "ajhsme-1985-p17",
+    "finalAnswer": "$\\boxed{91}$ (choice D)",
+    "shortExplanation": "The seven-test total is 595 and the first six total 504; the last score is 91.",
+    "detailedSteps": [
+      "The first six scores sum to $6(84)=504$.",
+      "The first seven scores sum to $7(85)=595$.",
+      "Subtracting gives the seventh score $595-504=91$."
+    ],
+    "keyIdeas": [
+      "Recovering one score from two means",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The change in an average is not itself the new test score."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiply each mean by its own sample size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p18",
+    "problemId": "ajhsme-1985-p18",
+    "finalAnswer": "$\\boxed{1.11}$ (choice E)",
+    "shortExplanation": "The price must exceed $1.10$ but be less than $10/9$; only $1.11$ among the choices fits.",
+    "detailedSteps": [
+      "If the price per copy is p dollars, the two conditions are $9p<10$ and $10p>11$.",
+      "Therefore $1.10<p<10/9\\approx1.1111$.",
+      "The listed price $1.11$ satisfies both inequalities: nine copies cost $9.99$ and ten cost $11.10$."
+    ],
+    "keyIdeas": [
+      "A price constrained by strict inequalities",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The phrases less than and more than give strict bounds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both strict inequalities must hold for the chosen price.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p19",
+    "problemId": "ajhsme-1985-p19",
+    "finalAnswer": "$\\boxed{10\\%}$ (choice B)",
+    "shortExplanation": "Every side length is multiplied by $1.1$, so the perimeter also grows by ten percent.",
+    "detailedSteps": [
+      "The original perimeter is $2(L+W)$.",
+      "The new perimeter is $2(1.1L+1.1W)=1.1[2(L+W)]$.",
+      "The multiplier $1.1$ represents a ten-percent increase."
+    ],
+    "keyIdeas": [
+      "Scaling a perimeter",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The twenty-one-percent change would apply to area, not perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perimeter is linear in all side lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p20",
+    "problemId": "ajhsme-1985-p20",
+    "finalAnswer": "$\\boxed{\\text{Wednesday}}$ (choice C)",
+    "shortExplanation": "The three weekdays occurring five times must be Wednesday, Thursday, and Friday, so January first was Wednesday.",
+    "detailedSteps": [
+      "A thirty-one-day month contains four full weeks plus three extra consecutive days beginning on the first.",
+      "Neither Tuesday nor Saturday can be one of these extra days, since both occur exactly four times.",
+      "The only run of three consecutive weekdays avoiding both is Wednesday, Thursday, Friday. Thus the month starts on Wednesday."
+    ],
+    "keyIdeas": [
+      "Weekday frequencies in a month",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The extra weekdays form a consecutive run, rather than an arbitrary set of three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A month has a fixed run of extra weekdays after four full weeks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p21",
+    "problemId": "ajhsme-1985-p21",
+    "finalAnswer": "$\\boxed{\\text{more than }45\\%}$ (choice E)",
+    "shortExplanation": "Four raises multiply the salary by $1.1^4=1.4641$, an increase of $46.41\\%$, which exceeds $45\\%$.",
+    "detailedSteps": [
+      "Each annual raise multiplies the current salary by $1.1$.",
+      "After four raises the factor is $(11/10)^4=14641/10000=1.4641$.",
+      "Subtract one and convert to a percentage: the increase is $46.41\\%$."
+    ],
+    "keyIdeas": [
+      "Compounding repeated raises",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Later raises apply to an already increased salary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Repeated percentage growth multiplies rather than adds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p22",
+    "problemId": "ajhsme-1985-p22",
+    "finalAnswer": "$\\boxed{\\frac1{80}}$ (choice B)",
+    "shortExplanation": "One of the eight allowed first digits and one of the ten last digits meet the conditions, giving one eightieth.",
+    "detailedSteps": [
+      "Under the problem's model, the first digit has eight possibilities, two through nine, and each remaining digit has ten.",
+      "There are $8\\cdot10^6$ permitted seven-digit numbers.",
+      "Fixing the first digit to nine and the last to zero leaves five free digits, or $10^5$ numbers. Their fraction is $10^5/(8\\cdot10^6)=1/80$."
+    ],
+    "keyIdeas": [
+      "Independent choices for permitted digits",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The model excludes both zero and one as the first digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the explicitly stated historical telephone model only.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p23",
+    "problemId": "ajhsme-1985-p23",
+    "finalAnswer": "$\\boxed{50}$ (choice E)",
+    "shortExplanation": "There are six thousand student-class attendances per day, requiring two hundred classes and fifty teachers.",
+    "detailedSteps": [
+      "The students create $1200(5)=6000$ daily class attendances.",
+      "At thirty students per class, this requires $6000/30=200$ class meetings.",
+      "Each teacher leads four of them, so the number of teachers is $200/4=50$."
+    ],
+    "keyIdeas": [
+      "Counting student-class attendances",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The number of class meetings differs from the number of teachers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the same daily attendances by students and by classes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p24",
+    "problemId": "ajhsme-1985-p24",
+    "finalAnswer": "$\\boxed{39}$ (choice D)",
+    "shortExplanation": "The corner values can contribute at most forty-two; this bounds the common side sum by thirty-nine, and a construction attains it.",
+    "detailedSteps": [
+      "The six values sum to $10+11+12+13+14+15=75$. Adding the three side sums counts every value once and each corner a second time.",
+      "Thus $3S=75+V$, where V is the sum of the three corners. Since $V\\le13+14+15=42$, we have $S\\le39$.",
+      "Place thirteen, fourteen, and fifteen at the corners. Put twelve between thirteen and fourteen, ten between fourteen and fifteen, and eleven between fifteen and thirteen.",
+      "All three side sums equal thirty-nine, so the upper bound is attained."
+    ],
+    "keyIdeas": [
+      "Weighted sum bound in a magic triangle",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The corner values appear on two sides each; the midpoint values appear on only one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Double-counting gives a sharp bound with an explicit arrangement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1985-p25",
+    "problemId": "ajhsme-1985-p25",
+    "finalAnswer": "$\\boxed{\\text{the card showing }3}$ (choice A)",
+    "shortExplanation": "Only the card showing three can hide a vowel paired with an odd number, which would disprove the statement.",
+    "detailedSteps": [
+      "The claim fails only on a card with a vowel on one side and an odd number on the other.",
+      "The visible letters P and Q are consonants, so neither card can be a counterexample regardless of its hidden number. Cards four and six show even numbers, so neither can violate the claim.",
+      "The card showing three is the sole remaining possibility. Revealing a vowel on its reverse disproves the statement."
+    ],
+    "keyIdeas": [
+      "Falsifying an implication",
+      "Logic"
+    ],
+    "commonMistakes": [
+      "A consonant paired with an even number does not refute a one-way implication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only a vowel paired with an odd number falsifies the claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

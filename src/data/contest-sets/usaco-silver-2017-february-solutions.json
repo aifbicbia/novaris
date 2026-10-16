@@ -1,0 +1,102 @@
+[
+  {
+    "finalAnswer": "Process chickens by time and match each to an eligible cow with the earliest deadline.",
+    "shortExplanation": "At each chicken time, consider every unused cow whose interval has started. Discard cows whose intervals have ended, then use the eligible cow that must cross soonest. An exchange argument shows this preserves a maximum matching.",
+    "detailedSteps": [
+      "Sort chicken times and cow intervals by their starting times. For the current chicken time $t$, add every newly available cow with $A_j\\le t$ to a min-heap keyed by its deadline $B_j$. Remove heap entries with $B_j<t$, because those cows cannot use this or any later chicken.",
+      "Every remaining heap entry is an unused cow eligible at time $t$. If the heap is nonempty, match this chicken to the cow $i$ with smallest deadline and remove exactly that entry. If empty, no remaining cow can use the current chicken. Equal times and equal intervals remain separate individuals.",
+      "For correctness, take an optimal matching agreeing with earlier greedy decisions. If it already uses $(t,i)$, retain it. If $t$ is unused and $i$ is used by a later chicken, move that match to $t$. If $t$ is matched to another cow $q$ while $i$ is unused, replace $q$ by $i$. Both changes preserve the number of pairs. If both resources were unused, adding their pair would contradict optimality.",
+      "If the optimum uses $(t,q)$ and $(u,i)$ for a later chicken time $u$, swap them. Cow $i$ accepts $t$. Cow $q$ accepts $u$ because $A_q\\le t\\le u$ and $u\\le B_i\\le B_q$. Thus an optimum can agree with this greedy decision without losing a pair. Induction over the chickens proves the complete greedy matching is maximum.",
+      "Sorting and heap operations take $O(C\\log(C+1)+N\\log(N+1))$ time, with $O(C+N)$ storage. Every cow enters and leaves the heap at most once. Both interval endpoints are inclusive.",
+      "This C++17 implementation preserves helpcross.in and helpcross.out.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <queue>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"helpcross.in\");\n    std::ofstream out(\"helpcross.out\");\n    int c, n;\n    if (!(in >> c >> n)) return 1;\n    std::vector<long long> chicken(c);\n    std::vector<std::pair<long long, long long>> cow(n);\n    for (auto &t : chicken) in >> t;\n    for (auto &interval : cow) in >> interval.first >> interval.second;\n    std::sort(chicken.begin(), chicken.end());\n    std::sort(cow.begin(), cow.end());\n    std::priority_queue<long long, std::vector<long long>, std::greater<long long>> deadline;\n    int j = 0, answer = 0;\n    for (long long t : chicken) {\n        while (j < n && cow[j].first <= t) deadline.push(cow[j++].second);\n        while (!deadline.empty() && deadline.top() < t) deadline.pop();\n        if (!deadline.empty()) {\n            deadline.pop();\n            ++answer;\n        }\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Keep all started, unused cow intervals in deadline order.",
+      "Use the most urgent eligible cow before a more flexible one.",
+      "An exchange preserves both resource uniqueness and pair count.",
+      "Duplicate numerical values still represent different cows or chickens."
+    ],
+    "commonMistakes": [
+      "An arbitrary eligible cow can use a chicken needed by a tighter interval.",
+      "Removing a cow whose deadline equals t incorrectly excludes the inclusive endpoint.",
+      "Deduplicating equal times or intervals removes real individuals.",
+      "Matching a cow or chicken more than once violates the resource constraint.",
+      "Processing chickens in arbitrary time order invalidates the deadline-based exchange."
+    ],
+    "alternativeMethods": [
+      "Process cow intervals in nondecreasing deadline order and keep unused chicken times in a multiset. Match a cow to the earliest remaining time at least its start, provided that time does not exceed its deadline. Keep repeated chicken times as separate multiset entries."
+    ],
+    "difficultyNotes": "An intermediate Silver greedy-matching problem. The key work is the exchange argument, not just choosing an intuitive deadline order. The original explicitly permits repeated times, including zero and equal interval endpoints. Verification also enumerates unrestricted bipartite assignments for small cases and executes the full 20,000-resource domains.",
+    "id": "solution-usaco-silver-2017-february-p1",
+    "problemId": "usaco-silver-2017-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Take the minimum number of distinct damaged signals inside any length-K contiguous block.",
+    "shortExplanation": "A chosen block works exactly when all damaged signals inside it are repaired. Prefix counts give each block’s repair cost in constant time. The cheapest block achieves the minimum for at least K consecutive working signals.",
+    "detailedSteps": [
+      "A run of at least $K$ working signals contains a run of exactly $K$. It is therefore sufficient to consider every length-$K$ contiguous block.",
+      "For a fixed block, every damaged signal inside it must be repaired. Repairing exactly those signals is sufficient, so the block’s minimum repair cost is its damaged-signal count. Repairs outside the block cannot reduce this cost.",
+      "Mark each physical damaged ID once, then build $P(0)=0$ and $P(i)=P(i-1)+\\mathrm{broken}(i)$. Thus $P(i)$ counts damaged signals among positions $1,\\ldots,i$. A block from $s$ through $s+K-1$ costs $P(s+K-1)-P(s-1)$.",
+      "Evaluate all $N-K+1$ legal starts and keep the smallest count. The implementation’s zero-based start variable gives the equivalent difference $P(s+K)-P(s)$. This includes the final block and handles $K=1$ and $K=N$. A zero answer is possible even when other signals are damaged.",
+      "Time is $O(N+B)$ and storage is $O(N)$. The original explicitly has $B\\ge1$. Repeated ID records, if supplied, do not create an extra physical repair cost; the implementation marks their signal idempotently.",
+      "The following C++17 implementation uses maxcross.in and maxcross.out.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"maxcross.in\");\n    std::ofstream out(\"maxcross.out\");\n    int n, k, b;\n    if (!(in >> n >> k >> b)) return 1;\n    std::vector<int> broken(n + 1, 0), prefix(n + 1, 0);\n    for (int i = 0; i < b; ++i) {\n        int position;\n        in >> position;\n        broken[position] = 1;\n    }\n    for (int i = 1; i <= n; ++i) prefix[i] = prefix[i - 1] + broken[i];\n    int best = k;\n    for (int start = 0; start + k <= n; ++start)\n        best = std::min(best, prefix[start + k] - prefix[start]);\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "At least K working signals reduces to exactly K for minimization.",
+      "Each block requires exactly its own damaged physical signals to be repaired.",
+      "A prefix difference counts damage in a contiguous block.",
+      "Check every legal starting position, including the last."
+    ],
+    "commonMistakes": [
+      "Repairing every damaged signal can be unnecessary.",
+      "Subtracting the wrong prefix endpoint changes the block length.",
+      "Stopping before the last legal start misses a potentially optimal block.",
+      "A damaged signal outside the chosen block does not need repair.",
+      "Repeated records of the same damaged ID do not describe separate physical signals."
+    ],
+    "alternativeMethods": [
+      "Maintain a sliding count for the first K signals, then subtract the outgoing signal’s damaged mark and add the incoming mark as the window moves. This uses the same physical block cost in O(N+B) time."
+    ],
+    "difficultyNotes": "An introductory Silver interval-counting task. The lower-bound and attainability argument explains why a damaged count is exactly a repair cost. Primary checks respect the printed positive B, while repeated-ID robustness is recorded separately from the distinct-set enumeration.",
+    "id": "solution-usaco-silver-2017-february-p2",
+    "problemId": "usaco-silver-2017-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Subtract same-component cow pairs from all cow pairs after removing road-separated grid adjacencies.",
+    "shortExplanation": "Two cows can meet without crossing a road exactly when their fields are connected using only road-free moves. Flood those connected components and count their cows. All pairs in different components are distant.",
+    "detailedSteps": [
+      "Model every field as a graph vertex. Keep only orthogonal neighboring moves that are not separated by a road, and keep movement inside the outer fence. Mark each road as blocked in both directions.",
+      "Flood every unvisited field through unblocked neighbors and assign it a component ID. A discovered field has a free path from its component root. Conversely, the first undiscovered field on any free path would be discovered when its predecessor is processed. The flood therefore labels exactly the road-free connected components.",
+      "Cows in one component can visit each other without a road crossing. Cows in different components cannot: any legal visit stays inside the fence and must include a removed road adjacency somewhere. A direct road between two fields does not necessarily make their cows distant if a free detour exists.",
+      "Let component $i$ contain $c_i$ cows. There are $\\binom K2$ unordered cow pairs in total and $\\binom{c_i}{2}$ nondistant pairs within that component. Therefore the required answer is $\\binom K2-\\sum_i\\binom{c_i}{2}$. Empty components contribute zero but their fields still matter when determining paths.",
+      "Road processing costs $O(R)$, the flood costs $O(N^2)$, and cow aggregation costs $O(K)$. Total time is $O(R+N^2+K)$ and storage is $O(N^2)$. Road records are streamed into a fixed grid of blocked directions; no separate numerical upper bound on $R$ is asserted. Use 64-bit products for pair counts.",
+      "This C++17 implementation preserves countcross.in and countcross.out.\n\n```cpp\n#include <array>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"countcross.in\");\n    std::ofstream out(\"countcross.out\");\n    int n, k;\n    long long roadRecords;\n    if (!(in >> n >> k >> roadRecords)) return 1;\n    const std::array<int, 4> dr{-1, 0, 1, 0}, dc{0, 1, 0, -1};\n    std::vector<std::vector<std::array<bool, 4>>> blocked(\n        n + 1, std::vector<std::array<bool, 4>>(n + 1));\n    for (long long i = 0; i < roadRecords; ++i) {\n        int r, c, rr, cc;\n        in >> r >> c >> rr >> cc;\n        int direction = -1;\n        for (int d = 0; d < 4; ++d)\n            if (r + dr[d] == rr && c + dc[d] == cc) direction = d;\n        if (direction < 0) return 1;\n        blocked[r][c][direction] = true;\n        blocked[rr][cc][(direction + 2) % 4] = true;\n    }\n    std::vector<std::vector<int>> component(n + 1, std::vector<int>(n + 1, -1));\n    int groups = 0;\n    for (int r = 1; r <= n; ++r) {\n        for (int c = 1; c <= n; ++c) {\n            if (component[r][c] >= 0) continue;\n            std::vector<std::pair<int, int>> stack{{r, c}};\n            component[r][c] = groups;\n            while (!stack.empty()) {\n                auto [x, y] = stack.back();\n                stack.pop_back();\n                for (int d = 0; d < 4; ++d) {\n                    int xx = x + dr[d], yy = y + dc[d];\n                    if (xx < 1 || xx > n || yy < 1 || yy > n || blocked[x][y][d]) continue;\n                    if (component[xx][yy] < 0) {\n                        component[xx][yy] = groups;\n                        stack.emplace_back(xx, yy);\n                    }\n                }\n            }\n            ++groups;\n        }\n    }\n    std::vector<long long> cows(groups, 0);\n    for (int i = 0; i < k; ++i) {\n        int r, c;\n        in >> r >> c;\n        ++cows[component[r][c]];\n    }\n    long long answer = 1LL * k * (k - 1) / 2;\n    for (long long size : cows) answer -= size * (size - 1) / 2;\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Distant means a road crossing is unavoidable along every legal path.",
+      "Remove blocked adjacencies and count connected components.",
+      "An undirected road must block both movement directions.",
+      "Count unordered pairs across components by complement subtraction."
+    ],
+    "commonMistakes": [
+      "Counting road-adjacent cow pairs misses longer paths and free detours.",
+      "Allowing an outside-grid detour violates the perimeter fence.",
+      "Marking only one direction of a road creates false reachability.",
+      "Allowing diagonal moves changes the original field graph.",
+      "Flooding only cow-occupied fields loses connections through empty fields.",
+      "Counting ordered cow pairs doubles the answer."
+    ],
+    "alternativeMethods": [
+      "Build a disjoint-set structure over all fields and union every orthogonal adjacency without a road. Count cows by representative, then count pairs in different sets. Another verifier can explicitly compute global Boolean path closure on tiny grids and inspect each cow pair."
+    ],
+    "difficultyNotes": "An intermediate Silver connectivity and counting problem. The real third Silver task is a fenced square grid. Distinct cow locations and the 100-by-100 maximum are enforced in checks. The source supplies no separate R upper bound or road-record uniqueness statement; repeated or reversed records are idempotent, and their robustness checks are recorded explicitly.",
+    "id": "solution-usaco-silver-2017-february-p3",
+    "problemId": "usaco-silver-2017-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

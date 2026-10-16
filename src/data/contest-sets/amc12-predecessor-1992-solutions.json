@@ -1,0 +1,625 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1992-p1",
+    "problemId": "amc12-predecessor-1992-p1",
+    "finalAnswer": "$\\boxed{4P}$ (choice B)",
+    "shortExplanation": "The requested expression is four times the expression defining $P$.",
+    "detailedSteps": [
+      "Factor a two from the target parentheses: $6(8x+10\\pi)=12(4x+5\\pi)$.",
+      "The definition gives $P=3(4x+5\\pi)$, so the target equals $4P$. This comparison also works when the common expression is zero."
+    ],
+    "keyIdeas": [
+      "Compare the coefficients after factoring"
+    ],
+    "commonMistakes": [
+      "Doubling only the outer coefficient and overlooking the doubled parentheses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common factor makes direct substitution unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p2",
+    "problemId": "amc12-predecessor-1992-p2",
+    "finalAnswer": "$\\boxed{48\\%}$ (choice B)",
+    "shortExplanation": "Gold coins form $0.80\\cdot0.60=0.48$ of all objects.",
+    "detailedSteps": [
+      "The complement of the bead proportion is the coin proportion, $1-0.20=0.80$.",
+      "The complement of the silver-coin proportion is the gold-coin proportion among coins, $1-0.40=0.60$. Multiplying the proportion of coins by this conditional proportion gives $0.80\\cdot0.60=0.48$, or $48\\%$."
+    ],
+    "keyIdeas": [
+      "Multiply the two appropriate proportions"
+    ],
+    "commonMistakes": [
+      "Treating the stated silver proportion as a percentage of all objects."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the denominator population clear for each percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p3",
+    "problemId": "amc12-predecessor-1992-p3",
+    "finalAnswer": "$\\boxed{\\sqrt3}$ (choice C)",
+    "shortExplanation": "The slope condition gives $m^2=3$, and positivity selects $\\sqrt3$.",
+    "detailedSteps": [
+      "The slope through the actual points is $(m-3)/(1-m)$. A line with the given finite slope cannot have $m=1$: then the two different points would have equal first coordinates.",
+      "Set $(m-3)/(1-m)=m$ and multiply by the nonzero denominator. This gives $m-3=m-m^2$, hence $m^2=3$. The hypothesis $m>0$ leaves $m=\\sqrt3$, which also has $m\\ne1$."
+    ],
+    "keyIdeas": [
+      "Use the coordinate formula for slope"
+    ],
+    "commonMistakes": [
+      "Reversing just one of the coordinate differences in the slope fraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One quadratic equation follows from the geometric condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p4",
+    "problemId": "amc12-predecessor-1992-p4",
+    "finalAnswer": "$\\boxed{\\text{odd for every }c}$ (choice A)",
+    "shortExplanation": "The first term is odd and the second term is even, regardless of $c$.",
+    "detailedSteps": [
+      "Any positive integer power of three is odd. Because $b$ is odd, $b-1$ is even, and therefore $(b-1)^2$ is even.",
+      "Multiplying that square by any integer $c$ leaves an even number. Its sum with the odd first term is always odd. The parity of $c$ does not change the result."
+    ],
+    "keyIdeas": [
+      "Reduce the entire expression modulo two"
+    ],
+    "commonMistakes": [
+      "Allowing the parity of $c$ to change a product that already has an even factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is a parity argument, rather than an exponent calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p5",
+    "problemId": "amc12-predecessor-1992-p5",
+    "finalAnswer": "$\\boxed{6^7}$ (choice B)",
+    "shortExplanation": "There are six identical summands, giving $6\\cdot6^6=6^7$.",
+    "detailedSteps": [
+      "Adding six copies of a number multiplies that number by six. Thus the displayed sum is $6\\cdot6^6$.",
+      "The product has the same base, so the exponents add: $6^1\\cdot6^6=6^{1+6}=6^7$."
+    ],
+    "keyIdeas": [
+      "Factor identical terms from a sum"
+    ],
+    "commonMistakes": [
+      "Adding the exponents while the original operation is addition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the product rule only after factoring the sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p6",
+    "problemId": "amc12-predecessor-1992-p6",
+    "finalAnswer": "$\\boxed{\\left(\\frac{x}{y}\\right)^{y-x}}$ (choice D)",
+    "shortExplanation": "The quotient is $x^{y-x}y^{x-y}=(x/y)^{y-x}$.",
+    "detailedSteps": [
+      "For the base $x$, division gives the exponent $y-x$. For the base $y$, division gives the exponent $x-y$. Hence the original fraction equals $x^{y-x}y^{x-y}$.",
+      "The two exponents are negatives of one another, so $y^{x-y}=1/y^{y-x}$. Combining the positive bases gives $(x/y)^{y-x}$. The assumption $x>y>0$ makes these real powers well defined."
+    ],
+    "keyIdeas": [
+      "Collect exponents separately for each base"
+    ],
+    "commonMistakes": [
+      "Using $x-y$ as the exponent while keeping $x/y$ as the base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal exponent is the main source of a sign error.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p7",
+    "problemId": "amc12-predecessor-1992-p7",
+    "finalAnswer": "$\\boxed{16:3}$ (choice B)",
+    "shortExplanation": "Taking $z=2$ gives $x=12$, $y=3$ and $w=16$, so $w:y=16:3$.",
+    "detailedSteps": [
+      "Use $z=2$ as a convenient scale. The relation $z:x=1:6$ then gives $x=12$, and $y:z=3:2$ gives $y=3$.",
+      "Now $w:x=4:3$ gives $w=16$. Therefore $w:y=16:3$. Scaling all four values together would preserve this final ratio."
+    ],
+    "keyIdeas": [
+      "Choose one common scale for all ratios"
+    ],
+    "commonMistakes": [
+      "Combining ratio terms whose common quantities have different scales."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common scale avoids complicated ratio multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p8",
+    "problemId": "amc12-predecessor-1992-p8",
+    "finalAnswer": "$\\boxed{2601}$ (choice E)",
+    "shortExplanation": "An odd grid has $2n-1$ black tiles, so $n=51$ and the total is $51^2=2601$.",
+    "detailedSteps": [
+      "Let there be $n$ tiles along each side. Each diagonal contains $n$ tiles. If $n$ is even, the diagonal tile sets are disjoint, producing $2n$ black tiles.",
+      "The given black count is odd, so $n$ is odd. The diagonals then share exactly the central tile, and the black count is $2n-1=101$. Thus $n=51$, and the full square contains $n^2=2601$ tiles."
+    ],
+    "keyIdeas": [
+      "Count the overlap of the two tile diagonals"
+    ],
+    "commonMistakes": [
+      "Counting the central black tile twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity identifies the correct overlap case before solving for $n$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p9",
+    "problemId": "amc12-predecessor-1992-p9",
+    "finalAnswer": "$\\boxed{12\\sqrt3}$ (choice E)",
+    "shortExplanation": "Five triangle areas minus four quarter-sized overlaps give $12\\sqrt3$.",
+    "detailedSteps": [
+      "Each equilateral triangle has area $(\\sqrt3/4)(2\\sqrt3)^2=3\\sqrt3$. Adjacent bases are displaced by half a side, as specified and drawn in the source.",
+      "The overlap of two adjacent triangles is an equilateral triangle with half the side length, hence one quarter of the original area. Nonadjacent triangles have no overlap of positive area, and there is no positive-area triple overlap.",
+      "There are four adjacent pairs. Thus the union has area $5(3\\sqrt3)-4(3\\sqrt3/4)=12\\sqrt3$. Boundaries have zero area and do not affect this calculation."
+    ],
+    "keyIdeas": [
+      "Subtract the four adjacent overlaps once"
+    ],
+    "commonMistakes": [
+      "Subtracting an overlap with half the area instead of one quarter of the area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source arrangement makes elementary inclusion-exclusion exact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p10",
+    "problemId": "amc12-predecessor-1992-p10",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "The required positive values of $k$ are precisely the six divisors of twelve.",
+    "detailedSteps": [
+      "The equation gives $x=3+12/k$. Since $k$ is a positive integer, $x$ is an integer exactly when $k$ divides twelve.",
+      "The positive divisors are $1,2,3,4,6,12$, so there are six possibilities. Each gives an integer solution through the displayed formula."
+    ],
+    "keyIdeas": [
+      "Turn the integer solution condition into divisibility"
+    ],
+    "commonMistakes": [
+      "Including negative divisors when $k$ is explicitly positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solving for the other variable reveals a standard divisor count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p11",
+    "problemId": "amc12-predecessor-1992-p11",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "The chord and diameter imply $AB=2R/3$, so the outer radius is $18$.",
+    "detailedSteps": [
+      "Write $R$ for the larger radius. The smaller radius is $R/3$, and tangency means that the distance from the common center to chord $BC$ is $R/3$. The perpendicular from the center bisects the chord, giving $(BC/2)^2=R^2-(R/3)^2=8R^2/9$.",
+      "Because $AC$ is a diameter and $B$ lies on the circle, $\\angle ABC$ is right. Thus $AB^2=AC^2-BC^2=4R^2-32R^2/9=4R^2/9$.",
+      "Positive lengths give $AB=2R/3$. Substituting $AB=12$ yields $R=18$."
+    ],
+    "keyIdeas": [
+      "Combine a tangent chord with an inscribed right angle"
+    ],
+    "commonMistakes": [
+      "Treating the tangent chord as a diameter of the smaller circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two right triangles use different hypotenuses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p12",
+    "problemId": "amc12-predecessor-1992-p12",
+    "finalAnswer": "$\\boxed{-4}$ (choice C)",
+    "shortExplanation": "The reflected line is $y=-(x+11)/3$, with coefficient sum $-4$.",
+    "detailedSteps": [
+      "Solve the original line for its second coordinate: $y=(x+11)/3$. Reflection in the $x$-axis changes $(x,y)$ to $(x,-y)$.",
+      "The image therefore has equation $y=-x/3-11/3$. Its slope and intercept sum to $-1/3-11/3=-4$."
+    ],
+    "keyIdeas": [
+      "Reflect the dependent coordinate across the horizontal axis"
+    ],
+    "commonMistakes": [
+      "Negating the slope while leaving the intercept unchanged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both terms in the dependent coordinate change sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p13",
+    "problemId": "amc12-predecessor-1992-p13",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The fraction simplifies to $a/b$, so $a=13b$ and $b$ can be any integer from one through seven.",
+    "detailedSteps": [
+      "Write the numerator as $(ab+1)/b$ and the denominator as $(ab+1)/a$. Since $a,b$ are positive, $ab+1$ is nonzero and cancels, leaving $a/b$.",
+      "The equation therefore gives $a=13b$. The original sum restriction becomes $14b\\le100$. Thus $b=1,2,\\ldots,7$, and each gives exactly one positive ordered pair. The total is seven."
+    ],
+    "keyIdeas": [
+      "Cancel the common positive factor before counting"
+    ],
+    "commonMistakes": [
+      "Counting arbitrary factor pairs without first simplifying the reciprocal terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancellation turns a complicated fraction into a linear relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p14",
+    "problemId": "amc12-predecessor-1992-p14",
+    "finalAnswer": "$\\boxed{\\text{all three graphs differ}}$ (choice E)",
+    "shortExplanation": "Equation II removes one point, while equation III adds an entire vertical line.",
+    "detailedSteps": [
+      "Equation I is the complete line $y=x-2$. Factoring the numerator in II cancels $x+2$ only where $x\\ne-2$, so II is that line with the point $(-2,-4)$ removed.",
+      "Equation III rearranges to $(x+2)(y-x+2)=0$. It therefore describes the full line $y=x-2$ together with the vertical line $x=-2$.",
+      "The point $(-2,-4)$ belongs to I and III but not II. The point $(-2,0)$ belongs only to III. These witnesses distinguish all three graphs, so none of the proposed equalities of graphs holds."
+    ],
+    "keyIdeas": [
+      "Track the domain and the vertical component"
+    ],
+    "commonMistakes": [
+      "Cancelling $x+2$ without retaining the original equation domain."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equivalent formulas on a restricted domain need not define the same graph.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p15",
+    "problemId": "amc12-predecessor-1992-p15",
+    "finalAnswer": "$\\boxed{\\sqrt2}$ (choice B)",
+    "shortExplanation": "After the first two terms, the sequence alternates between $-1+i$ and $-i$; the requested term has modulus $\\sqrt2$.",
+    "detailedSteps": [
+      "Applying the original recurrence gives $z_2=i$, $z_3=i^2+i=-1+i$, and $z_4=(-1+i)^2+i=-i$.",
+      "Then $(-i)^2+i=-1+i$ again. These two values therefore repeat indefinitely by the recurrence. Every odd index at least three has value $-1+i$.",
+      "The requested index is odd, so its distance from the origin is $|-1+i|=\\sqrt{(-1)^2+1^2}=\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Identify the short exact complex cycle"
+    ],
+    "commonMistakes": [
+      "Using the repeating cycle with an index shifted by one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short cycle replaces a long computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p16",
+    "problemId": "amc12-predecessor-1992-p16",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "shortExplanation": "Setting $t=x/y$ leads to $(t-2)(t+1)=0$, and positivity leaves $t=2$.",
+    "detailedSteps": [
+      "Let $t=x/y>0$. From $(x+y)/z=x/y=t$, obtain $z/y=(t+1)/t$. The other equality $y/(x-z)=t$ gives $x/y-z/y=1/t$.",
+      "Substitute to get $t-(t+1)/t=1/t$. Multiplying by the positive $t$ yields $t^2-t-2=0$, with roots $2$ and $-1$. Only $2$ is positive.",
+      "This root is actually feasible: taking $y=1$ gives $x=2$, $z=3/2$. All three are positive and different, and every original ratio is two."
+    ],
+    "keyIdeas": [
+      "Normalize by the positive middle variable"
+    ],
+    "commonMistakes": [
+      "Keeping the negative quadratic root despite the positive original variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalization reduces three unknowns to one scale-independent ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p17",
+    "problemId": "amc12-predecessor-1992-p17",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The full integer is divisible by three but has remainder three modulo nine, so its three-adic exponent is one.",
+    "detailedSteps": [
+      "Concatenating two-digit blocks means writing the integer in base one hundred. Modulo nine, $100\\equiv1$, so its residue equals the sum of all blocks.",
+      "The block sum is $(19+92)\\cdot74/2=4107$, which has remainder three modulo nine. Thus the original integer is divisible by three and is not divisible by nine. The highest exponent of three is exactly one."
+    ],
+    "keyIdeas": [
+      "Work with the concatenation modulo nine"
+    ],
+    "commonMistakes": [
+      "Trying to determine the valuation from only the final two-digit block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A modular sum avoids working directly with a very large integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p18",
+    "problemId": "amc12-predecessor-1992-p18",
+    "finalAnswer": "$\\boxed{194}$ (choice D)",
+    "shortExplanation": "The only increasing positive integer seed is $(8,10)$, giving the next requested term $194$.",
+    "detailedSteps": [
+      "Write $a_1=p$ and $a_2=q$. Repeated use of the recurrence gives $a_7=5p+8q$ and $a_8=8p+13q$. The given seventh term therefore yields $5p+8q=120$.",
+      "Modulo eight, $5p\\equiv0$, hence $p$ is a positive multiple of eight. The increasing condition gives $q>p$, so $120=5p+8q>13p$. Thus $p<120/13$, forcing $p=8$.",
+      "Now $q=(120-40)/8=10$. The sequence begins $8,10,18,28,46,74,120,194$, so the requested term is $194$."
+    ],
+    "keyIdeas": [
+      "Use increasing initial terms to force the recurrence seed"
+    ],
+    "commonMistakes": [
+      "Ignoring the increasing condition and accepting another recurrence seed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An inequality and a congruence together give uniqueness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p19",
+    "problemId": "amc12-predecessor-1992-p19",
+    "finalAnswer": "$\\boxed{84\\%\\text{ (closest)}}$ (choice D)",
+    "shortExplanation": "The remaining volume ratio is $5/6$, approximately $83.33\\%$, closest to $84\\%$.",
+    "detailedSteps": [
+      "Scale the cube to side one. At each corner the three perpendicular tetrahedron edges have length $1/2$, so its volume is $(1/6)(1/2)^3=1/48$.",
+      "The eight corner tetrahedra have disjoint interiors. Their total volume is $8/48=1/6$, leaving volume ratio $1-1/6=5/6$.",
+      "This is $83\\frac13\\%$. Among the listed percentages, $84\\%$ is closest; the requested answer is this approximation, not an exact equality to the ratio."
+    ],
+    "keyIdeas": [
+      "Subtract the eight disjoint corner tetrahedra"
+    ],
+    "commonMistakes": [
+      "Applying the one-third pyramid factor to the product of three perpendicular edges without halving the triangular base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The answer asks for the nearest displayed percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p20",
+    "problemId": "amc12-predecessor-1992-p20",
+    "finalAnswer": "$\\boxed{36}$ (choice D)",
+    "shortExplanation": "The polygon angle sum gives $n(\\beta-\\alpha)=360^\\circ$, so a ten-degree difference requires $n=36$.",
+    "detailedSteps": [
+      "Let $\\alpha$ be the acute angle at an outer vertex, and let $\\beta$ be the smaller acute angle between the edges at an inward vertex. The polygon interior angle at the latter vertex is the reflex angle $360^\\circ-\\beta$, as in the actual diagram.",
+      "There are $n$ vertices of each kind, and the polygon has $2n$ sides. Its interior angle sum is therefore $n(\\alpha+360^\\circ-\\beta)=(2n-2)180^\\circ$.",
+      "Simplifying gives $n(\\beta-\\alpha)=360^\\circ$. The given difference is $10^\\circ$, so $n=36$. An alternating-radius regular star realizes these angles and equal edges."
+    ],
+    "keyIdeas": [
+      "Use the reflex interior angles at the inward vertices"
+    ],
+    "commonMistakes": [
+      "Using the acute inward angle as the interior angle of the simple polygon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognizing which angles are reflex is the essential geometric step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p21",
+    "problemId": "amc12-predecessor-1992-p21",
+    "finalAnswer": "$\\boxed{991}$ (choice A)",
+    "shortExplanation": "The new partial sums total $100+99\\cdot1000$, whose average over one hundred terms is $991$.",
+    "detailedSteps": [
+      "Let $S_1,\\ldots,S_{99}$ be the original partial sums. Their Cesaro average is one thousand, so $\\sum_{k=1}^{99}S_k=99000$.",
+      "After prepending one, the new partial sums are $1,1+S_1,\\ldots,1+S_{99}$. Their sum is $100+99000=99100$.",
+      "There are one hundred new partial sums, giving Cesaro average $99100/100=991$."
+    ],
+    "keyIdeas": [
+      "Express every new partial sum in terms of the old ones"
+    ],
+    "commonMistakes": [
+      "Averaging the original terms instead of the partial sums specified in the definition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The definition becomes a linear identity once the new sums are listed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p22",
+    "problemId": "amc12-predecessor-1992-p22",
+    "finalAnswer": "$\\boxed{450}$ (choice B)",
+    "shortExplanation": "Each choice of two points on each axis produces one possible crossing, giving $\\binom{10}{2}\\binom{5}{2}=450$.",
+    "detailedSteps": [
+      "An interior crossing cannot involve two segments sharing an axis endpoint. It must therefore use two different points from each axis. For any such four points, exactly one pairing crosses inside the first quadrant: connect the nearer point on one axis to the farther point on the other.",
+      "There are $\\binom{10}{2}\\binom{5}{2}=450$ four-endpoint choices. This bounds the number of distinct intersection points, since concurrence could merge crossings but cannot add them.",
+      "The bound is attainable by choosing generic positive coordinates so no three segments concur inside the quadrant. Each unwanted concurrence is an algebraic equality in the endpoint coordinates. It is not forced: for a triple without shared endpoints, moving one endpoint changes its intersection condition; a triple sharing an endpoint cannot concur in the interior. Finitely many such proper conditions can be avoided simultaneously.",
+      "An exact rational coordinate construction in the accompanying check also realizes all fifty segments with exactly four hundred fifty different interior crossing points. Therefore the maximum is $450$."
+    ],
+    "keyIdeas": [
+      "Count crossings by their four endpoints and ensure distinctness"
+    ],
+    "commonMistakes": [
+      "Counting segment pairs that meet only at an endpoint, or counting concurrent crossings as different points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting incidences establishes an upper bound; attainability also requires controlling concurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p23",
+    "problemId": "amc12-predecessor-1992-p23",
+    "finalAnswer": "$\\boxed{23}$ (choice E)",
+    "shortExplanation": "The best complementary classes contribute $8+7+7$, and one multiple of seven can be added, for total $23$.",
+    "detailedSteps": [
+      "Residue classes one and six cannot both be represented, because every cross-pair sums to a multiple of seven. The same restriction holds for classes two and five, and for classes three and four.",
+      "Among the integers in the given interval, class one contains eight numbers and each other nonzero class contains seven. The three complementary pairs therefore contribute at most $8,7,7$ elements, respectively.",
+      "At most one residue-zero number may be chosen, since two distinct multiples of seven would form a forbidden pair. This gives the upper bound $8+7+7+1=23$.",
+      "Take all numbers with residues one, two or three, together with the number seven. No two selected nonzero residues sum to zero modulo seven, and the lone zero residue causes no forbidden pair. This attains $23$."
+    ],
+    "keyIdeas": [
+      "Separate residues into complementary classes modulo seven"
+    ],
+    "commonMistakes": [
+      "Allowing several multiples of seven because each has the same residue."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary residue pairs give independent sharp bounds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p24",
+    "problemId": "amc12-predecessor-1992-p24",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The quadrilateral occupies half the parallelogram area, giving $5$.",
+    "detailedSteps": [
+      "Let $\\mathbf u=\\overrightarrow{AB}$ and $\\mathbf v=\\overrightarrow{AD}$, and place $A$ at the origin. Because $|\\mathbf u|=3$ and $|\\mathbf v|=5$, the actual points have coordinates $E=(2/3,0)$, $F=(1,2/5)$ and $G=(0,2/5)$ in this basis.",
+      "The direction $F-E$ is $(1/3,2/5)$. On the line through $G$ in this direction, the second coordinate reaches one when the direction parameter is $3/2$. Thus $H=(1/2,1)$, which lies on segment $CD$.",
+      "The shoelace formula for $E,F,H,G$ gives area $1/2$ in the unit basis parallelogram. Affine area scaling multiplies this by the actual parallelogram area ten, yielding $5$. The oblique angle between the sides need not be found."
+    ],
+    "keyIdeas": [
+      "Use affine coordinates and the parallelogram determinant"
+    ],
+    "commonMistakes": [
+      "Using the same fractional position on $AB$ and $AD$ even though their lengths differ."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Affine coordinates preserve the useful ratios and parallel lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p25",
+    "problemId": "amc12-predecessor-1992-p25",
+    "finalAnswer": "$\\boxed{\\frac{10}{\\sqrt3}}$ (choice E)",
+    "shortExplanation": "The perpendicular intersection is $D=(3,11/\\sqrt3)$, giving $CD=10/\\sqrt3$.",
+    "detailedSteps": [
+      "Put $B=(0,0)$ and $A=(3,0)$. The actual length and angle place $C=(4\\cos120^\\circ,4\\sin120^\\circ)=(-2,2\\sqrt3)$.",
+      "The perpendicular to $AB$ through $A$ has equation $x=3$. A point $D=(3,t)$ on the perpendicular through $C$ must satisfy $(D-C)\\cdot C=0$, because $C$ is a direction vector for $BC$.",
+      "This gives $-10+2\\sqrt3(t-2\\sqrt3)=0$, hence $t=11/\\sqrt3$. Therefore $D-C=(5,5/\\sqrt3)$ and $CD=\\sqrt{25+25/3}=10/\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Solve the two perpendicular-line equations in coordinates"
+    ],
+    "commonMistakes": [
+      "Using the sixty-degree supplement as the original angle without changing the direction of a side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates avoid ambiguity about the exterior intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p26",
+    "problemId": "amc12-predecessor-1992-p26",
+    "finalAnswer": "$\\boxed{(2-\\sqrt2)\\pi-1}$ (choice B)",
+    "shortExplanation": "The outer boundary encloses $(5/2-\\sqrt2)\\pi-1$; subtracting the semicircle leaves $(2-\\sqrt2)\\pi-1$.",
+    "detailedSteps": [
+      "Choose $A=(-1,0)$, $B=(1,0)$ and $D=(0,-1)$. The radius-two arcs centered at $B$ and $A$ give $E=(1-\\sqrt2,-\\sqrt2)$ and $F=(\\sqrt2-1,-\\sqrt2)$. The small arc centered at $D$ has radius $r=2-\\sqrt2$ and angle $\\pi/2$. The other two arc angles are each $\\pi/4$.",
+      "The straight-sided trapezoid $AEFB$ has area two. Replacing its two outer slanted chords by the corresponding radius-two arcs adds two circular segments, each of area $\\tfrac12\\cdot4(\\pi/4-\\sin(\\pi/4))=\\pi/2-\\sqrt2$.",
+      "Replacing chord $EF$ by its lower arc adds the circular segment $\\tfrac12r^2(\\pi/2-1)$. Thus the full outer area is $2+\\pi-2\\sqrt2+(3-2\\sqrt2)(\\pi/2-1)=(5/2-\\sqrt2)\\pi-1$.",
+      "The requested shaded smile excludes the original unit semicircle above this boundary, whose area is $\\pi/2$. Subtracting gives $(2-\\sqrt2)\\pi-1$. The unshaded semicircle must not be included."
+    ],
+    "keyIdeas": [
+      "Separate the outer circular boundary from the original semicircle"
+    ],
+    "commonMistakes": [
+      "Reporting the full outer area instead of subtracting the original semicircle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original shading and arc centers are necessary to choose the correct region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p27",
+    "problemId": "amc12-predecessor-1992-p27",
+    "finalAnswer": "$\\boxed{73}$ (choice D)",
+    "shortExplanation": "The center is $(13,4\\sqrt3)$ relative to the exterior intersection, and its squared distance to the nearer first chord endpoint is $73$.",
+    "detailedSteps": [
+      "The first secant has near distance eight and far distance eighteen from $P$, so its power is $8\\cdot18=144$. On the other secant, let the near distance be $t>0$. Then $t(t+7)=144$, yielding $t=9$; the negative root is outside the permitted distance domain. The far distance is sixteen.",
+      "Put $P=(0,0)$, with the first secant along the positive horizontal axis and the second making angle $60^\\circ$. The chord midpoints are at distances thirteen and $25/2$ along these rays.",
+      "The center lies on both perpendicular bisectors, so its horizontal coordinate is thirteen and its projection onto the second ray is $25/2$. Writing it as $(13,h)$ gives $13/2+(\\sqrt3/2)h=25/2$, hence $h=4\\sqrt3$.",
+      "The first near endpoint is $(8,0)$. Its squared distance from the center is $(13-8)^2+(4\\sqrt3)^2=25+48=73$, which is $r^2$."
+    ],
+    "keyIdeas": [
+      "Use secant power and the two chord midpoints"
+    ],
+    "commonMistakes": [
+      "Using the chord length itself instead of the far secant distance in the power product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chord midpoints turn the center calculation into two linear projections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p28",
+    "problemId": "amc12-predecessor-1992-p28",
+    "finalAnswer": "$\\boxed{-6}$ (choice B)",
+    "shortExplanation": "The roots are $3-i$ and $-2+i$, so their real parts multiply to $-6$.",
+    "detailedSteps": [
+      "Rearrange to $z^2-z-(5-5i)=0$. Its discriminant is $1+4(5-5i)=21-20i=(5-2i)^2$.",
+      "The quadratic formula gives $z=(1\\pm(5-2i))/2$, namely $3-i$ and $-2+i$. Their real parts are three and negative two, whose product is $-6$."
+    ],
+    "keyIdeas": [
+      "Recognize an exact square for the complex discriminant"
+    ],
+    "commonMistakes": [
+      "Multiplying the complex roots instead of their real parts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An exact complex square avoids an unnecessary polar form.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p29",
+    "problemId": "amc12-predecessor-1992-p29",
+    "finalAnswer": "$\\boxed{\\frac12\\left(1+\\frac1{3^{50}}\\right)}$ (choice D)",
+    "shortExplanation": "Adding the binomial expansions with signs $+$ and $-$ cancels all odd-head outcomes.",
+    "detailedSteps": [
+      "Use the customary model of independent tosses with the same head probability on each toss; independence is implicit in the repeated-coin-toss wording. Let $p=2/3$ and $q=1/3$. The sum of probabilities for all outcomes is $(q+p)^{50}=1$. The signed expansion $(q-p)^{50}$ is the even-head probability minus the odd-head probability.",
+      "Adding these two identities and dividing by two isolates the even-head probability: $\\big((q+p)^{50}+(q-p)^{50}\\big)/2$.",
+      "Because fifty is even, $(q-p)^{50}=(-1/3)^{50}=1/3^{50}$. The result is $\\tfrac12(1+1/3^{50})$."
+    ],
+    "keyIdeas": [
+      "Project the binomial distribution onto even parity"
+    ],
+    "commonMistakes": [
+      "Assuming even and odd head counts are exactly equally likely for a biased coin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign in the parity correction depends on the number of tosses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1992-p30",
+    "problemId": "amc12-predecessor-1992-p30",
+    "finalAnswer": "$\\boxed{1679}$ (choice B)",
+    "shortExplanation": "The tangency-foot condition gives $x^2\\ge46\\cdot(73/2)=1679$, and equality is attainable.",
+    "detailedSteps": [
+      "Center the longer base at the origin: $A=(-46,0)$, $B=(46,0)$, $D=(-19/2,h)$ and $C=(19/2,h)$, with $h>0$. Each leg has horizontal projection $d=(92-19)/2=73/2$, so $x^2=d^2+h^2$.",
+      "A circle center $(s,0)$ on $AB$ has distances to the two leg lines proportional to $|s+46|$ and $|s-46|$. Equality of these distances forces $s=0$. Thus the center is the midpoint $O$ of $AB$.",
+      "The foot from $O$ onto $AD$ is at distance $(O-A)\\cdot(D-A)/x=46d/x$ along the leg from $A$. It lies on segment $AD$ exactly when $46d/x\\le x$, or $x^2\\ge46d$. The other leg gives the same condition by symmetry.",
+      "At $x^2=46d=1679$, the height squared is $1679-(73/2)^2>0$, and the two feet are exactly $D$ and $C$. A positive-radius circle centered at $O$ is tangent to the two segments at these endpoints, so the bound is attained. The source asks only for these segment tangencies; it does not require the whole circle to lie inside the trapezoid.",
+      "Therefore the smallest possible leg length has square $m^2=1679$."
+    ],
+    "keyIdeas": [
+      "Require the perpendicular feet to lie on the leg segments"
+    ],
+    "commonMistakes": [
+      "Imposing an unstated incircle condition, or accepting feet beyond the actual leg segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum is a boundary tangency configuration, so endpoint feasibility must be shown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

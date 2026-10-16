@@ -1,0 +1,506 @@
+[
+  {
+    "id": "solution-amc10b-2003-p1",
+    "problemId": "amc10b-2003-p1",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "The numerator and denominator are two and three times the same nonzero sum.",
+    "detailedSteps": [
+      "Let $S=1-2+3-4+5-6+7=4$. The fraction is $2S/(3S)=2/3$."
+    ],
+    "keyIdeas": [
+      "Canceling a common alternating sum"
+    ],
+    "commonMistakes": [
+      "Canceling the common expression without checking it is nonzero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring exposes the shared alternating pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p2",
+    "problemId": "amc10b-2003-p2",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "shortExplanation": "The two pills together cost $546/14=39$ dollars per day.",
+    "detailedSteps": [
+      "If a green pill costs $g$ dollars, a pink pill costs $g-1$. The daily pair gives $2g-1=39$, so $g=20$."
+    ],
+    "keyIdeas": [
+      "Cost of a daily pair"
+    ],
+    "commonMistakes": [
+      "Using two weeks as two days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert the treatment duration to fourteen daily pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p3",
+    "problemId": "amc10b-2003-p3",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The five even integers sum to $60$, so their middle term is $12$.",
+    "detailedSteps": [
+      "The first eight positive odd integers sum to $8^2=64$. The even integers therefore sum to $64-4=60$.",
+      "The middle of five equally spaced terms equals their mean, $60/5=12$. The smallest is two even steps below it, $12-4=8$."
+    ],
+    "keyIdeas": [
+      "The mean of consecutive even integers"
+    ],
+    "commonMistakes": [
+      "Subtracting 2 rather than 4 from the middle term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use symmetry about the middle term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p4",
+    "problemId": "amc10b-2003-p4",
+    "finalAnswer": "$\\boxed{108}$ (choice A)",
+    "shortExplanation": "The five region areas are $21,20,15,6,4$ square feet.",
+    "detailedSteps": [
+      "The top-right, top-left, bottom-right, and bottom-left regions have areas $7\\cdot3=21$, $4\\cdot5=20$, $5\\cdot3=15$, and $6\\cdot1=6$. The remaining region has width $6-4=2$ and height $3-1=2$, hence area 4.",
+      "To minimize cost, assign the lowest price to the largest area, and continue in opposite order. Indeed, for areas $A>B$ and prices $p>q$, swapping the prices saves $(A-B)(p-q)>0$.",
+      "The minimum is $21(1)+20(1.5)+15(2)+6(2.5)+4(3)=108$ dollars."
+    ],
+    "keyIdeas": [
+      "Pairing low prices with large areas"
+    ],
+    "commonMistakes": [
+      "Matching expensive flowers to the largest region."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An exchange argument proves the cheapest ordering, not just a plausible assignment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p5",
+    "problemId": "amc10b-2003-p5",
+    "finalAnswer": "$\\boxed{1.35}$ (choice C)",
+    "shortExplanation": "The overlap leaves a working width of $24$ inches, or $2$ feet.",
+    "detailedSteps": [
+      "Each pass adds approximately $28-4=24$ inches of newly cut width. At $5000$ feet per hour, the effective area rate is $2\\cdot5000=10000$ square feet per hour.",
+      "The lawn area is $90\\cdot150=13500$ square feet, giving about $13500/10000=1.35$ hours. This is the listed estimate; turn time is not specified."
+    ],
+    "keyIdeas": [
+      "Effective mowing width"
+    ],
+    "commonMistakes": [
+      "Using the full 28-inch swath for every new strip."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert inches to feet before forming an area rate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p6",
+    "problemId": "amc10b-2003-p6",
+    "finalAnswer": "$\\boxed{21.5}$ (choice D)",
+    "shortExplanation": "The horizontal side is $4/5$ of the diagonal, or $21.6$ inches.",
+    "detailedSteps": [
+      "With side ratio $4:3$, the diagonal ratio is $5$ by the Pythagorean theorem. Thus the width is $27\\cdot4/5=21.6$ inches.",
+      "Among the listed choices, $21.5$ is closest."
+    ],
+    "keyIdeas": [
+      "A scaled three-four-five rectangle"
+    ],
+    "commonMistakes": [
+      "Taking four sevenths of the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A screen is labeled by its diagonal, not its width.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p7",
+    "problemId": "amc10b-2003-p7",
+    "finalAnswer": "$\\boxed{38}$ (choice B)",
+    "shortExplanation": "The values $1,2,3,4$ occur $3,5,7,1$ times, respectively.",
+    "detailedSteps": [
+      "For $k=1,2,3$, the integers from $k^2$ through $(k+1)^2-1$ have floor square root $k$. These blocks have lengths $3,5,7$.",
+      "The final value at 16 is 4. Thus the sum is $3\\cdot1+5\\cdot2+7\\cdot3+1\\cdot4=38$."
+    ],
+    "keyIdeas": [
+      "Grouping floor square roots"
+    ],
+    "commonMistakes": [
+      "Treating floor square root as square root of a floor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perfect squares mark where the floor value changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p8",
+    "problemId": "amc10b-2003-p8",
+    "finalAnswer": "$\\boxed{-\\frac{2\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "The common ratio may be $-\\sqrt3$, giving the listed negative first term.",
+    "detailedSteps": [
+      "If the first term is $a$ and ratio $r$, then $ar=2$ and $ar^3=6$. Dividing yields $r^2=3$, so $r=\\pm\\sqrt3$.",
+      "Therefore $a=2/r=\\pm2\\sqrt3/3$. The negative value is the one appearing among the answer choices."
+    ],
+    "keyIdeas": [
+      "Both signs of a geometric ratio"
+    ],
+    "commonMistakes": [
+      "Assuming the common ratio must be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A square equation gives two possible signs unless the source restricts them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p9",
+    "problemId": "amc10b-2003-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The equation becomes $5^{-4}=5^{-12/x}$.",
+    "detailedSteps": [
+      "The denominator has base 5 exponent $26/x+2(17/x)=60/x$. The quotient therefore has exponent $48/x-60/x=-12/x$.",
+      "The left side is $25^{-2}=5^{-4}$. Since base 5 is injective and $x\\ne0$, $-4=-12/x$, giving $x=3$."
+    ],
+    "keyIdeas": [
+      "Reducing to one exponential base"
+    ],
+    "commonMistakes": [
+      "Missing the factor 2 when converting powers of 25 to powers of 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read every fraction as part of its exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p10",
+    "problemId": "amc10b-2003-p10",
+    "finalAnswer": "$\\boxed{\\frac{26^2}{10}}$ (choice C)",
+    "shortExplanation": "Two additional letters multiply the count by $26^2$, while losing one digit divides it by 10.",
+    "detailedSteps": [
+      "The old format permits $26\\cdot10^4$ plates and the new format permits $26^3\\cdot10^3$. Their ratio is $26^2/10$."
+    ],
+    "keyIdeas": [
+      "Comparing two product-rule counts"
+    ],
+    "commonMistakes": [
+      "Forbidding repeated letters or leading zero digits without such a restriction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the changed positions need to be compared.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p11",
+    "problemId": "amc10b-2003-p11",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The two x-intercepts are $5$ and $7$.",
+    "detailedSteps": [
+      "A line of slope $m$ through $(10,15)$ has equation $y-15=m(x-10)$. Setting $y=0$ gives x-intercept $10-15/m$.",
+      "For slopes 3 and 5, these are 5 and 7. Their distance along the x-axis is 2."
+    ],
+    "keyIdeas": [
+      "Intercepts of lines through one point"
+    ],
+    "commonMistakes": [
+      "Using the difference of slopes as a distance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solve for the zero height on each line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p12",
+    "problemId": "amc10b-2003-p12",
+    "finalAnswer": "$\\boxed{400}$ (choice C)",
+    "shortExplanation": "If Al starts with $a$, the final total is $a-100+2(1000-a)$.",
+    "detailedSteps": [
+      "Betty and Clare together begin with $1000-a$ dollars, regardless of how they split it. The final total equation is $a-100+2(1000-a)=1500$.",
+      "This reduces to $1900-a=1500$, so $a=400$. The remaining 600 can be split into two distinct positive amounts different from 400."
+    ],
+    "keyIdeas": [
+      "Combining the two doubled investments"
+    ],
+    "commonMistakes": [
+      "Trying to determine all three initial amounts individually."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two investments with the same growth factor can be grouped.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p13",
+    "problemId": "amc10b-2003-p13",
+    "finalAnswer": "$\\boxed{10}$ (choice E)",
+    "shortExplanation": "The first digit sum must be $3$ or $12$.",
+    "detailedSteps": [
+      "A two-digit number has digit sum between 1 and 18. Among these possible sums, only 3 and 12 have digit sum 3.",
+      "For sum 3, the two-digit numbers are 12,21,30, giving three. For sum 12, the tens digit can be 3 through 9, with the units digit then fixed, giving seven. The total is 10."
+    ],
+    "keyIdeas": [
+      "Two applications of the digit-sum function"
+    ],
+    "commonMistakes": [
+      "Using divisibility by 3 alone, which also admits other final digit sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Work backward from the second digit sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p14",
+    "problemId": "amc10b-2003-p14",
+    "finalAnswer": "$\\boxed{407}$ (choice D)",
+    "shortExplanation": "The largest permissible exponent is $b=2$, giving $a=405$.",
+    "detailedSteps": [
+      "If $a^b=3^8\\cdot5^2$ with positive integers $a,b$, then $b$ must divide both prime exponents 8 and 2. Thus $b$ is 1 or 2.",
+      "For $b=2$, $a=3^4\\cdot5=405$ and $a+b=407$. For $b=1$, $a=164025$ and the sum is larger. Hence 407 is minimal."
+    ],
+    "keyIdeas": [
+      "A perfect-power exponent constraint"
+    ],
+    "commonMistakes": [
+      "Taking b 8 without checking the exponent of 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A perfect-power exponent must divide every prime exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p15",
+    "problemId": "amc10b-2003-p15",
+    "finalAnswer": "$\\boxed{\\text{divisible by }11}$ (choice E)",
+    "shortExplanation": "Exactly 99 players must be eliminated, requiring 99 matches.",
+    "detailedSteps": [
+      "Every match eliminates exactly one player, and the champion is the only one never eliminated. Hence the tournament has $100-1=99$ matches.",
+      "Since $99=9\\cdot11$, the correct property is divisibility by 11. The first-round byes change the schedule but not the elimination total."
+    ],
+    "keyIdeas": [
+      "One elimination per match"
+    ],
+    "commonMistakes": [
+      "Counting byes as matches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track eliminated players rather than the bracket layout.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p16",
+    "problemId": "amc10b-2003-p16",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "With $m$ main courses, there are $6m^2$ dinners.",
+    "detailedSteps": [
+      "The restaurant has $2m$ appetizers, $m$ main courses, and 3 desserts, giving $2m\\cdot m\\cdot3=6m^2$ possible dinners.",
+      "The year 2003 has 365 days. Seven main courses give 294 dinners, while eight give 384. Thus the minimum is 8."
+    ],
+    "keyIdeas": [
+      "A minimum integer from the product rule"
+    ],
+    "commonMistakes": [
+      "Adding the numbers of menu items instead of multiplying their independent choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check neighboring integers after deriving the quadratic bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p17",
+    "problemId": "amc10b-2003-p17",
+    "finalAnswer": "$\\boxed{3:1}$ (choice B)",
+    "shortExplanation": "The melted volume is $\\pi r^3$, which fills a cone of height $3r$.",
+    "detailedSteps": [
+      "The sphere and cone share radius $r$. Melting leaves $(3/4)(4\\pi r^3/3)=\\pi r^3$ of volume.",
+      "Equating this with the cone volume gives $\\pi r^2h/3=\\pi r^3$, hence $h=3r$. The height-to-radius ratio is $3:1$."
+    ],
+    "keyIdeas": [
+      "A volume reduction on melting"
+    ],
+    "commonMistakes": [
+      "Equating the cone to the full frozen sphere volume."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the volume change before matching the two shapes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p18",
+    "problemId": "amc10b-2003-p18",
+    "finalAnswer": "$\\boxed{15}$ (choice D)",
+    "shortExplanation": "Every product is divisible by 15, and three specific products have greatest common divisor 15.",
+    "detailedSteps": [
+      "The five factors are consecutive odd integers. Modulo 5 they represent all five residues, so one is divisible by 5. At least one is divisible by 3 as well. Thus 15 divides every product.",
+      "To rule out a larger common divisor, compare the products at $n=2,10,12$. Their factorizations have common part exactly $3\\cdot5$: the first is $3^2\\cdot5\\cdot7\\cdot11$, the second is $3\\cdot5\\cdot11\\cdot13\\cdot17\\cdot19$, and the third has factors $13,15,17,19,21$ and no 11.",
+      "The greatest common divisor of these three products is 15, so no larger integer can divide all products."
+    ],
+    "keyIdeas": [
+      "The common divisor of five consecutive odd factors"
+    ],
+    "commonMistakes": [
+      "Assuming an observed divisor of one product is universal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove both universal divisibility and maximality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p19",
+    "problemId": "amc10b-2003-p19",
+    "finalAnswer": "$\\boxed{\\frac{7\\pi}{6}-\\frac{\\sqrt3}{2}}$ (choice E)",
+    "shortExplanation": "Add back the two equal overlaps when subtracting the three small semicircles.",
+    "detailedSteps": [
+      "The large semicircle has area $2\\pi$, and the three small ones have total area $3\\pi/2$. Each neighboring pair has centers one unit apart; the two outer small semicircles meet only at a point, and there is no positive-area triple overlap.",
+      "For one neighboring overlap above the diameter, the upper intersection and the two centers form an equilateral triangle. Two $60^\\circ$ sectors cover the overlap plus that triangle, so the overlap area is $\\pi/3-\\sqrt3/4$.",
+      "The unshaded union is $3\\pi/2-2(\\pi/3-\\sqrt3/4)$. Subtracting from the large semicircle yields $2\\pi-3\\pi/2+2\\pi/3-\\sqrt3/2=7\\pi/6-\\sqrt3/2$."
+    ],
+    "keyIdeas": [
+      "Overlapping semicircles and inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Subtracting all three small areas without correcting for their overlaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only adjacent small semicircles overlap in positive area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p20",
+    "problemId": "amc10b-2003-p20",
+    "finalAnswer": "$\\boxed{\\frac{25}{2}}$ (choice D)",
+    "shortExplanation": "The intersection is five units above the base AB.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(5,0)$, $D=(0,3)$, $C=(5,3)$. Then $F=(1,3)$ and $G=(3,3)$.",
+      "Line $AF$ is $y=3x$, and line $BG$ is $y=(3/2)(5-x)$. Their intersection satisfies $3x=(3/2)(5-x)$, so $x=5/3$ and $y=5$.",
+      "Triangle AEB has base 5 and height 5, giving area $25/2$."
+    ],
+    "keyIdeas": [
+      "Intersection of extended rectangle lines"
+    ],
+    "commonMistakes": [
+      "Using the rectangle height 3 as the triangle height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The relevant lines extend beyond the rectangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p21",
+    "problemId": "amc10b-2003-p21",
+    "finalAnswer": "$\\boxed{\\frac9{32}}$ (choice C)",
+    "shortExplanation": "Use inclusion-exclusion on the events of missing each initially green bead.",
+    "detailedSteps": [
+      "Label the four bead positions, including the two initially green positions. Replacing the bead at a chosen position with red makes every later selection of that position harmless. Thus success means selecting both initially green positions in three independent uniform draws of positions.",
+      "The probability of missing one specified position is $(3/4)^3$, and of missing both is $(2/4)^3$. Inclusion-exclusion gives $1-2(3/4)^3+(2/4)^3=9/32$."
+    ],
+    "keyIdeas": [
+      "Hitting both initially green positions"
+    ],
+    "commonMistakes": [
+      "Treating the color probabilities as unchanged after each replacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Persistent position labels preserve independence even though colors change.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p22",
+    "problemId": "amc10b-2003-p22",
+    "finalAnswer": "$\\boxed{\\text{March 9}}$ (choice B)",
+    "shortExplanation": "Eleven full days contribute 1980 chimes; the next 23 occur on March 9.",
+    "detailedSteps": [
+      "In each 12-hour period, the hourly chimes total $1+2+\\cdots+12=78$, and twelve half-hour chimes add 12, for 90 total. A full day therefore contributes 180.",
+      "From February 26 at 11:15 AM, eleven full days reach March 9 at 11:15 AM and contribute $11\\cdot180=1980$ chimes. There are 23 still needed.",
+      "The chimes from 11:30 AM through 3:30 PM contribute $1+12+1+1+1+2+1+3+1=23$. Thus the 2003rd chime is at 3:30 PM on March 9."
+    ],
+    "keyIdeas": [
+      "Periodic chime count with a calendar offset"
+    ],
+    "commonMistakes": [
+      "Treating the twelve chimes at noon as one event rather than twelve chimes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count sounds, and preserve the starting time within the daily cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p23",
+    "problemId": "amc10b-2003-p23",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice D)",
+    "shortExplanation": "The octagon has twice the area of the rectangle ABEF.",
+    "detailedSteps": [
+      "Let the octagon side be $s$. Its enclosing square has side $L=s(1+\\sqrt2)$, and each removed corner is a right isosceles triangle with legs $s/\\sqrt2$.",
+      "The octagon area is $L^2-4(s^2/4)=s^2(2+2\\sqrt2)$. Rectangle ABEF has width $s$ and height $L$, giving area $s^2(1+\\sqrt2)$.",
+      "The ratio is 1/2. Since the octagon area is 1, the rectangle area is 1/2."
+    ],
+    "keyIdeas": [
+      "Central rectangle inside a regular octagon"
+    ],
+    "commonMistakes": [
+      "Using a diagonal rectangle with different vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Preserve the cyclic vertex labels when identifying the rectangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p24",
+    "problemId": "amc10b-2003-p24",
+    "finalAnswer": "$\\boxed{\\frac{123}{40}}$ (choice E)",
+    "shortExplanation": "The common difference forces $y=-3/5$ and $x=-9/8$.",
+    "detailedSteps": [
+      "The first difference is $-2y$, so the third and fourth terms must equal $x-3y$ and $x-5y$. Therefore $xy=x-3y$ and $x/y=x-5y$, with $y\\ne0$.",
+      "The first equation gives $x(1-y)=3y$. Multiplying the second by y gives $x(1-y)=-5y^2$. Equating and dividing by nonzero y yields $3=-5y$, hence $y=-3/5$ and $x=-9/8$.",
+      "The fifth term is $x-7y=-9/8+21/5=123/40$. The denominator condition also excludes the apparent y 0 branch."
+    ],
+    "keyIdeas": [
+      "Four expressions in arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Reading the fourth term as xy instead of x/y or allowing y 0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Visual inspection of the fraction is essential before forming equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2003-p25",
+    "problemId": "amc10b-2003-p25",
+    "finalAnswer": "$\\boxed{30}$ (choice B)",
+    "shortExplanation": "The leading two-digit block must be $1$ modulo 3.",
+    "detailedSteps": [
+      "Write the number as $100k+23$, where $10\\le k\\le99$. Modulo 3, the number is congruent to $k+2$, so divisibility requires $k\\equiv1\\pmod3$.",
+      "The possible values are $10,13,\\ldots,97$, numbering $(97-10)/3+1=30$."
+    ],
+    "keyIdeas": [
+      "A fixed decimal suffix modulo 3"
+    ],
+    "commonMistakes": [
+      "Allowing a one-digit leading block, which would produce a three-digit number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the fixed suffix from the two variable leading digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

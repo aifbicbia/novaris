@@ -1,0 +1,571 @@
+[
+  {
+    "id": "solution-amc10b-2019-p1",
+    "problemId": "amc10b-2019-p1",
+    "finalAnswer": "$\\boxed{\\frac{9}{10}}$ (choice **D**)",
+    "shortExplanation": "Equate the water volume before and after the transfer, then identify the smaller capacity.",
+    "detailedSteps": [
+      "Let the two container capacities be $V_1$ and $V_2$. The same water volume is $5V_1/6$ before the transfer and $3V_2/4$ afterward.",
+      "Therefore $V_1/V_2=(3/4)/(5/6)=9/10$. Since this is less than one, the first container is the smaller one, so the requested ratio is $9/10$."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Conservation of volume"
+    ],
+    "commonMistakes": [
+      "The filling fractions refer to different container capacities; their ratio must be taken in the order determined by the volume equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conservation of water supplies the one needed equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p2",
+    "problemId": "amc10b-2019-p2",
+    "finalAnswer": "$\\boxed{27}$ (choice **E**)",
+    "shortExplanation": "A counterexample must make the hypothesis true and the conclusion false.",
+    "detailedSteps": [
+      "We need a listed value for which both $n$ and $n-2$ are nonprime.",
+      "The values $11$ and $19$ are prime, so they do not satisfy the hypothesis. The values $15$ and $21$ lead to the primes $13$ and $19$, respectively.",
+      "For $n=27$, both $27=3^3$ and $25=5^2$ are composite. Thus $27$ is the counterexample."
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Counterexamples to an implication"
+    ],
+    "commonMistakes": [
+      "A false hypothesis does not disprove an implication. Both the hypothesis and the failure of the conclusion must be checked."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This question tests the logical meaning of a counterexample, not just primality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p3",
+    "problemId": "amc10b-2019-p3",
+    "finalAnswer": "$\\boxed{154}$ (choice **B**)",
+    "shortExplanation": "Count the students who do not play an instrument in the two groups, then recover the requested subgroup.",
+    "detailedSteps": [
+      "Let $s$ be the number of seniors. The number who do not play is $0.6s+0.3(500-s)$. The overall percentage says this equals $0.468\\cdot500=234$.",
+      "Solving $0.3s+150=234$ gives $s=280$, so there are $220$ non-seniors.",
+      "Among the non-seniors, $70\\%$ play an instrument. Their number is $0.7\\cdot220=154$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Weighted percentages"
+    ],
+    "commonMistakes": [
+      "The senior percentage in the source counts players, while the non-senior percentage counts nonplayers.",
+      "The question asks for non-senior players, not the total number of non-seniors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Put both given percentages on the same side of the play/nonplay distinction first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p4",
+    "problemId": "amc10b-2019-p4",
+    "finalAnswer": "$\\boxed{(-1,2)}$ (choice **A**)",
+    "shortExplanation": "The arithmetic-progression condition makes the line equation an identity at one fixed point.",
+    "detailedSteps": [
+      "The coefficient condition is $c=2b-a$. Thus the line equation can be rewritten as $a(x+1)+b(y-2)=0$.",
+      "This is satisfied by $x=-1$ and $y=2$ for every allowed line. To see that the common point is unique, the family includes $x+y=1$ and $x+2y=3$, whose unique intersection is $(-1,2)$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "A family of lines"
+    ],
+    "commonMistakes": [
+      "The arithmetic progression concerns the three coefficients in their stated order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rearranging around the fixed point is more efficient than comparing many lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p5",
+    "problemId": "amc10b-2019-p5",
+    "finalAnswer": "$\\boxed{\\text{Perpendicularity of }AB\\text{ and }A' B'}$ (choice **E**)",
+    "shortExplanation": "Reflection swaps the coordinates. It preserves the first quadrant and area, but does not generally make a side perpendicular to its image.",
+    "detailedSteps": [
+      "Under reflection across $y=x$, a point $(u,v)$ becomes $(v,u)$. Positive coordinates remain positive, and reflection preserves area.",
+      "The vector joining a point to its image is $(v-u,u-v)$, which has slope $-1$ because the point is not on $y=x$. Thus the claims about the slopes of $AA'$ and $CC'$ always hold.",
+      "For a counterexample to the remaining claim, take $A=(1,2)$, $B=(2,4)$, and $C=(3,1)$. This is a nondegenerate triangle with no vertex on the reflection line. The direction vectors of $AB$ and $A' B'$ are $(1,2)$ and $(2,1)$, with dot product $4$, not zero.",
+      "Therefore the claimed perpendicularity of the side and its reflected image is not always true, which is choice E."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Reflection across the diagonal"
+    ],
+    "commonMistakes": [
+      "The segment joining a point to its reflected image is perpendicular to the mirror. A general side and its reflected side need not be perpendicular to each other."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One valid counterexample is enough to disprove an always-true claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p6",
+    "problemId": "amc10b-2019-p6",
+    "finalAnswer": "$\\boxed{10}$ (choice **C**)",
+    "shortExplanation": "Divide by the common factorial and complete a square.",
+    "detailedSteps": [
+      "Dividing by $n!$ gives $(n+1)+(n+2)(n+1)=440$, or $(n+1)(n+3)=440$.",
+      "Thus $(n+2)^2=441$. Positivity of $n$ selects $n+2=21$, so $n=19$. Its digit sum is $10$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "A factorial equation"
+    ],
+    "commonMistakes": [
+      "The quotient $(n+2)!/n!$ contains two factors, not just $n+2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorial notation hides a short quadratic equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p7",
+    "problemId": "amc10b-2019-p7",
+    "finalAnswer": "$\\boxed{21}$ (choice **B**)",
+    "shortExplanation": "The budget must be a common multiple of every possible purchase count and of the purple unit price.",
+    "detailedSteps": [
+      "Let the budget be $B$ cents. Integral unit prices force $12$, $14$, and $15$ to divide $B$. Their least common multiple is $420$. Also $B=20n$, and $420$ is divisible by $20$.",
+      "The budget $420$ cents is feasible: the other unit prices are $35$, $30$, and $28$ cents. It gives $n=420/20=21$, and no smaller budget can satisfy the divisibility conditions."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Least common multiples"
+    ],
+    "commonMistakes": [
+      "The least common multiple gives a budget in cents; divide by the purple price to obtain the number of pieces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The whole-cent condition is what turns the problem into divisibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p8",
+    "problemId": "amc10b-2019-p8",
+    "finalAnswer": "$\\boxed{12-4\\sqrt3}$ (choice **B**)",
+    "shortExplanation": "The height of an equilateral triangle is half the side length of the square.",
+    "detailedSteps": [
+      "An equilateral triangle of side $2$ has height $\\sqrt3$. Since its apex is the square center and its base lies on a square side, the square has side length $2\\sqrt3$ and area $12$.",
+      "Each of the four triangles has area $\\sqrt3$. Their interiors are disjoint: their apex directions are a quarter-turn apart, while each triangle subtends $60^\\circ$ at the center.",
+      "The shaded area is therefore $12-4\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equilateral triangles inside a square"
+    ],
+    "commonMistakes": [
+      "The labeled length $2$ is a triangle side, not the full side of the square.",
+      "Check that the triangle interiors do not overlap before subtracting all four areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared center fixes the square size through a triangle altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p9",
+    "problemId": "amc10b-2019-p9",
+    "finalAnswer": "$\\boxed{\\{-1,0\\}}$ (choice **A**)",
+    "shortExplanation": "Separate nonnegative inputs, negative integers, and negative nonintegers.",
+    "detailedSteps": [
+      "For $x\\ge0$, the two terms are both $\\lfloor x\\rfloor$, so the value is $0$. For a negative integer, both terms equal $-x$, again giving $0$.",
+      "For a negative noninteger, write $x=-m-t$, where $m\\ge0$ is an integer and $0<t<1$. Then $\\lfloor|x|\\rfloor=m$ while $|\\lfloor x\\rfloor|=m+1$, so the value is $-1$.",
+      "Both values occur, for example at $x=0$ and $x=-1/2$. The range is exactly $\\{-1,0\\}$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Floor functions and sign cases"
+    ],
+    "commonMistakes": [
+      "For negative nonintegers, taking the floor and taking the absolute value do not commute."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Writing the negative fractional part explicitly prevents sign errors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p10",
+    "problemId": "amc10b-2019-p10",
+    "finalAnswer": "$\\boxed{0}$ (choice **A**)",
+    "shortExplanation": "The area condition forces a height that is already too large for the allowed perimeter.",
+    "detailedSteps": [
+      "Using $AB$ as the base, the area condition gives height $2\\cdot100/10=20$. Each of the two other sides is therefore at least $20$.",
+      "Both sides could equal $20$ only if $C$ were directly above or below both distinct endpoints at once, which is impossible. Hence $AC+BC>40$, so the perimeter exceeds $50$.",
+      "No point meets both conditions; the answer is $0$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area and perimeter constraints"
+    ],
+    "commonMistakes": [
+      "A counting question may have no valid configurations. The area and perimeter conditions must be checked for compatibility before counting positions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A strict lower bound settles the problem without solving an ellipse equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p11",
+    "problemId": "amc10b-2019-p11",
+    "finalAnswer": "$\\boxed{5}$ (choice **A**)",
+    "shortExplanation": "Use the common jar total to express both green counts.",
+    "detailedSteps": [
+      "If each jar contains $N$ marbles, their green counts are $N/10$ and $N/9$. Thus $N(1/10+1/9)=95$, so $N=450$.",
+      "The green counts are $45$ and $50$. Because the total counts agree, the jar with five fewer green marbles has five more blue marbles. The answer is $5$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Ratios with equal totals"
+    ],
+    "commonMistakes": [
+      "A blue-to-green ratio of $9:1$ means the green fraction is $1/10$, not $1/9$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal totals let the difference of blue counts be read directly from the green counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p12",
+    "problemId": "amc10b-2019-p12",
+    "finalAnswer": "$\\boxed{22}$ (choice **C**)",
+    "shortExplanation": "Bound the leading digit and show the only way to reach digit sum 23 is too large.",
+    "detailedSteps": [
+      "Every allowed number has at most four base-seven digits, because $7^4=2401>2019$. For a four-digit number the first digit is at most $5$, since $6\\cdot7^3=2058>2019$.",
+      "The digit sum is therefore at most $5+6+6+6=23$. Equality would require $5666_7=2057$, which is too large. Numbers with fewer than four digits have sum at most $18$.",
+      "The number $4666_7=1714$ is allowed and has digit sum $22$, so this bound is attained."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Maximizing a base-seven digit sum"
+    ],
+    "commonMistakes": [
+      "The integer must be strictly less than $2019$.",
+      "A large digit sum need not come from the largest allowed integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound plus one construction avoids a long search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p13",
+    "problemId": "amc10b-2019-p13",
+    "finalAnswer": "$\\boxed{-5}$ (choice **A**)",
+    "shortExplanation": "The median has three possible formulas depending on where the variable lies.",
+    "detailedSteps": [
+      "The mean is $(35+x)/5$. If $x\\le6$, the median is $6$, so equality gives $x=-5$, which is in this interval.",
+      "If $6\\le x\\le8$, the median is $x$. Equality would give $x=35/4$, outside the interval. If $x\\ge8$, the median is $8$, giving $x=5$, again outside the interval.",
+      "Only $x=-5$ qualifies, so the requested sum is $-5$. The branch endpoints satisfy none of the equations and add no extra solutions."
+    ],
+    "keyIdeas": [
+      "Statistics",
+      "Piecewise median equations"
+    ],
+    "commonMistakes": [
+      "Every algebraic candidate must lie in the interval whose median formula produced it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle value changes only when the variable crosses 6 or 8.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p14",
+    "problemId": "amc10b-2019-p14",
+    "finalAnswer": "$\\boxed{12}$ (choice **C**)",
+    "shortExplanation": "Use trailing zeroes and divisibility by 9 and 11 to recover the missing digits.",
+    "detailedSteps": [
+      "There are three factors of $5$ in $19!$ and more than enough factors of $2$, so the last three digits are zero. Hence $H=0$.",
+      "The sum of the displayed known digits is $33$. Since $19!$ is divisible by $9$, we have $T+M\\equiv3\\pmod9$. With two digits, this permits $T+M=3$ or $12$.",
+      "The alternating digit sum of the displayed number is $T-M-7$. Divisibility by $11$ gives $T-M=7$ or $-4$, the only possibilities within the digit-difference range.",
+      "Combining these two conditions and requiring integer digits from $0$ to $9$ leaves $T=4$ and $M=8$. Thus $T+M+H=12$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Missing factorial digits"
+    ],
+    "commonMistakes": [
+      "The zeroes in the displayed number still occupy positions when applying the alternating-sum test.",
+      "A congruence alone may admit several digit sums; the second divisibility test selects the actual digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two small divisibility tests recover the digits without expanding the whole factorial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p15",
+    "problemId": "amc10b-2019-p15",
+    "finalAnswer": "$\\boxed{\\frac{28}{3}}$ (choice **A**)",
+    "shortExplanation": "The common larger side must be a leg in one triangle and the hypotenuse in the other; compare their squared areas.",
+    "detailedSteps": [
+      "Let the shared side lengths be $a<b$. If they played the same roles in both right triangles, the third side and area would also agree, which is impossible. Thus one triangle has legs $a,b$, and the other has leg $a$ and hypotenuse $b$. The latter has the smaller area.",
+      "The area equations give $ab/2=2$ and $a\\sqrt{b^2-a^2}/2=1$. Squaring yields $a^2b^2=16$ and $a^2b^2-a^4=4$, so $a^4=12$ and $b^4=256/12$.",
+      "The two unshared sides have squared lengths $a^2+b^2$ and $b^2-a^2$. The square of their product is therefore $$ (a^2+b^2)(b^2-a^2)=b^4-a^4=\\frac{256}{12}-12=\\frac{28}{3}. $$"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Right triangles sharing two sides"
+    ],
+    "commonMistakes": [
+      "The actual source asks for the square of the product; taking an extra square root would answer a different question.",
+      "Two shared sides do not force congruence when a side changes from a leg to a hypotenuse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side-role classification is the essential geometric step; fourth powers then remove all radicals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p16",
+    "problemId": "amc10b-2019-p16",
+    "finalAnswer": "$\\boxed{2:3}$ (choice **A**)",
+    "shortExplanation": "Normalize the two given lengths and use exact coordinates for the line and two circle conditions.",
+    "detailedSteps": [
+      "Scale the figure so that $AC=CD=4$ and $DE=EB=3$. Set $C=(0,0)$, $A=(4,0)$, and $B=(0,b)$, with $b>3$. Then $E=(0,b-3)$. Write $D=(x,y)$, where $x>0$ and $x/4+y/b=1$.",
+      "The equation $DE=3$ becomes $x^2+(3-bx/4)^2=9$. Cancelling its zero root gives $x=24b/(16+b^2)$.",
+      "The condition $CD=4$ gives $x^2+b^2(1-x/4)^2=16$. Its two intersections with line $AB$ have horizontal coordinates $4$ and $4(b^2-16)/(b^2+16)$. Since $D$ is an interior point rather than $A$, it uses the second one.",
+      "Equate these two formulas for $x$: $24b=4(b^2-16)$. The positive solution of $b^2-6b-16=0$ is $b=8$. Hence $D=(12/5,16/5)$.",
+      "The fraction of the way from $A$ to $B$ is $AD/AB=1-x/4=2/5$. Thus $AD:DB=2:3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "A line intersecting a circle"
+    ],
+    "commonMistakes": [
+      "The circle centered at $C$ also passes through $A$; the second line-circle intersection is the required interior point $D$.",
+      "The parameter $b=-2$ is not a possible side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keeping the two geometric constraints separate produces two simple expressions for the same coordinate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p17",
+    "problemId": "amc10b-2019-p17",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice **C**)",
+    "shortExplanation": "Compute the tie probability, then split the remaining probability by symmetry.",
+    "detailedSteps": [
+      "The balls land in the same bin with probability $\\sum_{k\\ge1}(2^{-k})^2=\\sum_{k\\ge1}4^{-k}=1/3$.",
+      "The probabilities that red is higher and that green is higher agree by exchanging the colors. They divide the remaining probability $2/3$ equally, giving $1/3$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Symmetry and equal outcomes"
+    ],
+    "commonMistakes": [
+      "Symmetry does not give probability $1/2$ because ties have positive probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal probability is a geometric series.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p18",
+    "problemId": "amc10b-2019-p18",
+    "finalAnswer": "$\\boxed{\\frac65}$ (choice **C**)",
+    "shortExplanation": "Write the limiting high and low turning points as a two-step fixed cycle.",
+    "detailedSteps": [
+      "Let $U$ be the turning point nearer the gym and $L$ the one nearer home. Walking three quarters of the way toward the gym sends $L$ to $U=L/4+3/2$. Walking toward home sends $U$ to $L=U/4$.",
+      "Solving gives $U=8/5$ and $L=2/5$, so the limiting distance between turning points is $6/5=1\\tfrac15$.",
+      "These values are actual limits: a complete outward-and-return update sends a low turning point $t$ to $t/16+3/8$. Its error from $2/5$ shrinks by a factor of $1/16$ on each cycle."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "An attracting two-cycle"
+    ],
+    "commonMistakes": [
+      "The walker moves a fraction of the remaining distance, not a fixed distance on each leg.",
+      "The individual turning points form two subsequences with different limits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The contraction check justifies using the fixed-cycle equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p19",
+    "problemId": "amc10b-2019-p19",
+    "finalAnswer": "$\\boxed{117}$ (choice **C**)",
+    "shortExplanation": "Count all possible exponent sums, then exclude the four cases where equal factors are forced.",
+    "detailedSteps": [
+      "The divisors are $2^a5^b$ with $0\\le a,b\\le5$. A product of two divisors has the form $2^u5^v$, where each exponent lies from $0$ to $10$, giving $121$ possible exponent pairs before imposing distinctness.",
+      "For a sum of two exponents in $\\{0,\\ldots,5\\}$, only the sums $0$ and $10$ force equal summands. Every sum from $1$ through $9$ has a decomposition into unequal permitted summands.",
+      "Therefore distinct divisors are impossible only when both $u$ and $v$ are in $\\{0,10\\}$, giving four excluded corner pairs. Every other pair can be made distinct in at least one prime exponent. The count is $121-4=117$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Products of distinct divisors"
+    ],
+    "commonMistakes": [
+      "The question counts distinct product values, not pairs of divisors.",
+      "A square product can still come from two distinct divisors; only the four forced cases are excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Unique prime factorization makes distinct exponent pairs equivalent to distinct products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p20",
+    "problemId": "amc10b-2019-p20",
+    "finalAnswer": "$\\boxed{17}$ (choice **E**)",
+    "shortExplanation": "Subtract the central semicircle and the two equal side overlaps. Each side overlap can be built from one circular strip and one quarter circle.",
+    "detailedSteps": [
+      "Place $F=(0,1)$, so the large circle has radius $2$. The middle unit semicircle has center $(0,0)$ and lies wholly inside the large circle; its area is $\\pi/2$. By symmetry it remains to calculate the overlap with the left unit semicircle, centered at $(-2,0)$.",
+      "The relevant overlap lies in the rectangle $-2\\le x\\le0$, $0\\le y\\le1$. At a fixed height $y$ its left boundary is the large-circle arc and its right boundary is the right half of the small-circle arc. The small circle meets the large circle at $(-2,1)$ and $(-6/5,-3/5)$; only the first lies above the diameter. These intersections confirm the boundary order throughout the strip.",
+      "The area of the large circle in the left half of this strip is $\\pi/3+\\sqrt3/2$. Indeed, its sector between the left horizontal radius and the radius to $(-\\sqrt3,0)$ has angle $30^\\circ$ and area $\\pi/3$; the remaining right triangle has legs $1$ and $\\sqrt3$.",
+      "The right quarter of the small circle has area $\\pi/4$. These two regions cover the area-$2$ rectangle, overlapping exactly in the desired lens portion. The side overlap is therefore $$\\frac\\pi3+\\frac{\\sqrt3}{2}+\\frac\\pi4-2=\\frac{7\\pi}{12}+\\frac{\\sqrt3}{2}-2.$$",
+      "Subtracting all three excluded portions from the large circle gives $$4\\pi-\\frac\\pi2-2\\left(\\frac{7\\pi}{12}+\\frac{\\sqrt3}{2}-2\\right)=\\frac{7\\pi}{3}-\\sqrt3+4.$$ Thus the requested coefficient sum is $7+3+3+4=17$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle overlap by sectors"
+    ],
+    "commonMistakes": [
+      "The two outer semicircles are only partly inside the large circle; subtracting their entire areas is incorrect.",
+      "The radical term in the target expression is a subtraction, and its radicand is $3$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sector-and-rectangle decomposition avoids integrating the circular arcs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p21",
+    "problemId": "amc10b-2019-p21",
+    "finalAnswer": "$\\boxed{\\frac1{24}}$ (choice **B**)",
+    "shortExplanation": "Before the final repeated flip the sequence must alternate. Characterize exactly which such sequences put the second tail first.",
+    "detailedSteps": [
+      "To see a second tail before a second head, a qualifying sequence must start with $T$ and pass through the prefix $THT$. Starting with $H$ would produce a second head first, unless the process had already stopped.",
+      "Every successful terminal word consequently has the unique form $T(HT)^kHH$ with $k\\ge1$. It alternates until its final two heads and has length $2k+3$. Conversely, each of these words meets both required conditions.",
+      "The disjoint terminal events have total probability $$\\sum_{k=1}^{\\infty}2^{-(2k+3)}=\\frac{1/32}{1-1/4}=\\frac1{24}.$$"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "An alternating stopping sequence"
+    ],
+    "commonMistakes": [
+      "Sequences with two tails in a row have already stopped and cannot later be extended to a success.",
+      "The word $THH$ does not contain a second tail and must not be counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Listing terminal words makes the stopping rule explicit and reduces the probability to a geometric series.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p22",
+    "problemId": "amc10b-2019-p22",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice **B**)",
+    "shortExplanation": "Only two types of money distribution can occur, and each has the same chance of returning to equal holdings in one round.",
+    "detailedSteps": [
+      "The total remains three dollars. Starting from equal holdings, the only reachable distribution types are $(1,1,1)$ and permutations of $(2,1,0)$. From the equal state, each person gives away their dollar and can receive at most two. From $(2,1,0)$, the richest person retains one dollar and has only one other giver available; the other people also cannot finish with more than two. Thus no state of type $(3,0,0)$ can arise.",
+      "From $(1,1,1)$ there are eight equally likely transfer choices. Exactly the two directed three-cycles return everyone to one dollar, so the next-round probability of equal holdings is $2/8=1/4$.",
+      "From a fixed state $(2,1,0)$ there are four equally likely choices by the two people who can give. Exactly one restores equality: the person with two gives to the person with one, who gives to the person with none. The other choices leave a permutation of $(2,1,0)$. Again the probability is $1/4$.",
+      "Conditioning on any current reachable state therefore gives probability $1/4$ of equal holdings after the next ring. In particular, after $2019$ rings the probability is $1/4$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Simultaneous transfers and closed states"
+    ],
+    "commonMistakes": [
+      "Transfers are simultaneous. A person who starts the round with no money cannot pass along a dollar received during that round.",
+      "The state probabilities need not be multiplied over 2019 rounds; only the holdings after the final round are prescribed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identical one-step return probabilities make the large number of rounds irrelevant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p23",
+    "problemId": "amc10b-2019-p23",
+    "finalAnswer": "$\\boxed{\\frac{85\\pi}{8}}$ (choice **C**)",
+    "shortExplanation": "Equal tangent lengths locate the tangent intersection. Perpendicular radii then determine the center.",
+    "detailedSteps": [
+      "Let the tangent intersection be $T=(t,0)$. Tangent segments from the same external point have equal length, so $(t-6)^2+13^2=(t-12)^2+11^2$. This gives $t=5$.",
+      "Write the circle center as $O=(u,v)$. The radius at $A$ is perpendicular to $TA$, giving $(u-6)+13(v-13)=0$. The analogous equation at $B$ is $7(u-12)+11(v-11)=0$.",
+      "Thus $u+13v=175$ and $7u+11v=205$, so $O=(37/4,51/4)$. Its squared distance from $A$ is $(13/4)^2+(-1/4)^2=85/8$.",
+      "The circle area is therefore $85\\pi/8$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangents from a common point"
+    ],
+    "commonMistakes": [
+      "The center need not lie on the horizontal axis; the common tangent intersection does.",
+      "Equal distances from the two given points alone leave a line of possible centers. The tangent condition supplies the remaining information."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric tangent facts lead to linear equations rather than a general circle equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p24",
+    "problemId": "amc10b-2019-p24",
+    "finalAnswer": "$\\boxed{[81,242]}$ (choice **C**)",
+    "shortExplanation": "Subtract the limiting value and trap the positive error between two geometric sequences.",
+    "detailedSteps": [
+      "Put $y_n=x_n-4$. The recurrence becomes $$y_{n+1}=y_n\\frac{y_n+9}{y_n+10},\\qquad y_0=1.$$ Thus $0<y_{n+1}<y_n\\le1$.",
+      "On this range, the multiplying factor is strictly greater than $9/10$ and at most $10/11$. Induction gives $$(9/10)^n<y_n\\le(10/11)^n\\qquad(n\\ge1).$$",
+      "Since $(9/10)^4=6561/10000>1/2$, we have $y_{80}>(1/2)^{20}$. Thus the first qualifying index is at least $81$.",
+      "Also $(10/11)^8<1/2$, because $2\\cdot10^8<11^8=214358881$. Hence $y_{160}<(1/2)^{20}$, so the first qualifying index is at most $160$.",
+      "Therefore $81\\le m\\le160$, which places $m$ in the listed interval $[81,242]$. The interval bounds answer the question without needing an exact closed form for the recurrence."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Bounding a nonlinear recurrence"
+    ],
+    "commonMistakes": [
+      "The sequence approaches 4 from above; subtract 4 before estimating its rate of decrease.",
+      "The index starts at zero, while the requested first qualifying index is positive.",
+      "A numerical guess for the index alone does not establish that no earlier term qualifies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform multiplicative bounds are strong enough to identify the requested interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2019-p25",
+    "problemId": "amc10b-2019-p25",
+    "finalAnswer": "$\\boxed{65}$ (choice **C**)",
+    "shortExplanation": "Count the zeroes, then decide which gaps between them contain a second one.",
+    "detailedSteps": [
+      "If the word contains $z$ zeroes, its initial and final symbols imply that all ones lie in the $z-1$ gaps between consecutive zeroes. Each gap contains one or two ones: zero ones would create $00$, and three would create $111$.",
+      "Giving each gap one one uses $2z-1$ total symbols. To reach length $19$, exactly $20-2z$ gaps need a second one. Thus $0\\le20-2z\\le z-1$, which gives $7\\le z\\le10$.",
+      "The count is $$\\binom66+\\binom74+\\binom82+\\binom90=1+35+28+1=65.$$ Each choice determines one valid word, so nothing is counted twice."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Runs between zeroes"
+    ],
+    "commonMistakes": [
+      "The endpoints are zeroes, so there are no extra gaps before the first or after the last zero.",
+      "The gaps are distinct positions; choosing which ones contain two ones is a binomial count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Run lengths encode both forbidden-pattern conditions at once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

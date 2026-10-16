@@ -1,0 +1,611 @@
+[
+  {
+    "id": "solution-amc12a-2024-p1",
+    "problemId": "amc12a-2024-p1",
+    "finalAnswer": "$\\boxed{2}$ — choice A",
+    "shortExplanation": "Expand around 100 so that the subtraction is easy to audit.",
+    "detailedSteps": [
+      "$9901\\cdot101=990100+9901=1000001$.",
+      "$99\\cdot10101=1010100-10101=999999$.",
+      "The requested difference is $1000001-999999=2$, choice A."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Distributive property"
+    ],
+    "commonMistakes": [
+      "Keep all six digits of 999999 aligned when subtracting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short calculation where place-value accuracy matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p2",
+    "problemId": "amc12a-2024-p2",
+    "finalAnswer": "$\\boxed{246}$ — choice B",
+    "shortExplanation": "Subtract the two equal time estimates to determine the relative rates, then recover their values.",
+    "detailedSteps": [
+      "The two observations give $1.5a+800b=69$ and $1.2a+1100b=69$. Subtraction gives $0.3a=300b$, hence $a=1000b$.",
+      "Substituting into the first equation gives $2300b=69$. Thus $b=0.03$ minutes per foot and $a=30$ minutes per mile.",
+      "The new estimate is $30(4.2)+0.03(4000)=126+120=246$ minutes, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "The elevation coefficient is per foot; mixing feet and miles changes the model."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equations are simple once the two contributions retain their units.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p3",
+    "problemId": "amc12a-2024-p3",
+    "finalAnswer": "$\\boxed{21}$ — choice B",
+    "shortExplanation": "Use 99 to bound the number of summands, then exhibit an exact sum attaining the bound.",
+    "detailedSteps": [
+      "With at most 20 two-digit positive integers, the sum is at most $20\\cdot99=1980<2024$. At least 21 terms are necessary.",
+      "Twenty copies of 99 followed by 44 give $20\\cdot99+44=2024$. All 21 terms have two digits, so the minimum is 21, choice B."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Bounds"
+    ],
+    "commonMistakes": [
+      "Rounding 2024/99 up gives a necessary bound, but an exact construction is still needed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound and one example settle the optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p4",
+    "problemId": "amc12a-2024-p4",
+    "finalAnswer": "$\\boxed{23}$ — choice D",
+    "shortExplanation": "The largest prime factor forces the first possible factorial.",
+    "detailedSteps": [
+      "Factor $2024=8\\cdot253=2^3\\cdot11\\cdot23$. If $n<23$, none of the factors in $n!$ is divisible by 23, so divisibility is impossible.",
+      "For $n=23$, the factors 8, 11, and 23 already supply $2^3\\cdot11\\cdot23$. Therefore the least value is 23, choice D."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime factorization",
+      "Factorials"
+    ],
+    "commonMistakes": [
+      "A factorial must supply the full prime powers, not merely each distinct prime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime factorization gives both necessity and sufficiency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p5",
+    "problemId": "amc12a-2024-p5",
+    "finalAnswer": "$\\boxed{7}$ — choice D",
+    "shortExplanation": "Track both the sum and the number of entries after removing the sixes.",
+    "detailedSteps": [
+      "The original sum is $20\\cdot45=900$. If $k$ sixes are removed, the remaining sum is $900-6k$ and the remaining count is $20-k$.",
+      "The new mean gives $900-6k=66(20-k)$, so $60k=420$ and $k=7$.",
+      "Indeed, the 13 remaining entries sum to $900-42=858=13\\cdot66$. The answer is D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic mean"
+    ],
+    "commonMistakes": [
+      "Removing values changes the denominator as well as the numerator of the mean."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A one-variable equation handles the changing data-set size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p6",
+    "problemId": "amc12a-2024-p6",
+    "finalAnswer": "$\\boxed{3}$ — choice B",
+    "shortExplanation": "Allow two negative integers and examine the positive factor triples of 60.",
+    "detailedSteps": [
+      "The product is positive, so either all three integers are positive or exactly two are negative. Three positive integers cannot have sum 1 or 2.",
+      "For two negative integers, write the absolute values in order $u\\le v\\le w$. A positive sum is possible only if the positive integer is $w$, giving $w-u-v$.",
+      "The factor triples $(u,v,w)$ of 60 are $(1,1,60)$, $(1,2,30)$, $(1,3,20)$, $(1,4,15)$, $(1,5,12)$, $(1,6,10)$, $(2,2,15)$, $(2,3,10)$, $(2,5,6)$, and $(3,4,5)$. Their values of $w-u-v$ are respectively $58,27,16,10,6,3,11,5,-1,-2$.",
+      "The smallest positive value is 3, realized by $(-1,-6,10)$. Its product is 60, so the answer is B."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factorization",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "The integers are not required to be positive.",
+      "Choosing a smaller factor as the only positive integer cannot produce a positive sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main issue is the sign condition, followed by a finite factor list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p7",
+    "problemId": "amc12a-2024-p7",
+    "finalAnswer": "$\\boxed{2024}$ — choice D",
+    "shortExplanation": "Average the equally spaced position vectors before finding their length.",
+    "detailedSteps": [
+      "Take $B=(0,0)$, $A=(\\sqrt2,0)$, and $C=(0,\\sqrt2)$. Then $P_k=(\\sqrt2(1-k/2025),\\sqrt2 k/2025)$ for $1\\le k\\le2024$.",
+      "Since $1+2+\\cdots+2024=2024\\cdot2025/2$, both coordinates of the vector sum equal $1012\\sqrt2$.",
+      "Its length is $\\sqrt{(1012\\sqrt2)^2+(1012\\sqrt2)^2}=2024$, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Vectors",
+      "Arithmetic sequences"
+    ],
+    "commonMistakes": [
+      "The length of a sum of vectors is not the sum of their individual lengths."
+    ],
+    "alternativeMethods": [
+      "Pair $P_k$ with $P_{2025-k}$. Each pair sums to twice the vector to the hypotenuse midpoint, whose length is 1. There are 1012 such pairs."
+    ],
+    "difficultyNotes": "Symmetry removes the need to handle 2024 vectors individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p8",
+    "problemId": "amc12a-2024-p8",
+    "finalAnswer": "$\\boxed{0}$ — choice A",
+    "shortExplanation": "Each logarithm is nonpositive, and equality would force incompatible trigonometric values.",
+    "detailedSteps": [
+      "The logarithms require $0<\\sin(3\\theta)\\le1$ and $0<\\cos(2\\theta)\\le1$. Their sum is zero precisely when their positive arguments multiply to 1.",
+      "Two positive numbers no larger than 1 can have product 1 only when both equal 1. In particular, $\\cos(2\\theta)=1$.",
+      "On the specified interval this forces $\\theta=0,\\pi,2\\pi$, but at each of these $\\sin(3\\theta)=0$. These points are outside the logarithm domain. There are no solutions, choice A."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithms",
+      "Trigonometry"
+    ],
+    "commonMistakes": [
+      "Combining logarithms without checking positivity can introduce invalid solutions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The range and domain conditions are more useful than solving a high-degree trigonometric equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p9",
+    "problemId": "amc12a-2024-p9",
+    "finalAnswer": "$\\boxed{8}$ — choice E",
+    "shortExplanation": "Factor the difference of the two squares and maximize their smaller square root.",
+    "detailedSteps": [
+      "Let the nonnegative square roots be $u<v$. Subtracting the two equations gives $v^2-u^2=3773-1213=2560$, so $(v-u)(v+u)=2560$.",
+      "The factors have the same parity. Because their product is even, both must be even. Write $s=v-u$ and $t=v+u=2560/s$. Then $u=(t-s)/2$, which decreases as positive $s$ increases.",
+      "The least possible even factor is $s=2$, for which $t=1280$. Thus $u=639$, $v=641$, and $M=639^2-1213=407108$.",
+      "This value also satisfies $M+3773=641^2$. Its units digit is 8, choice E."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Difference of squares",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "The two factors must have the same parity so that the reconstructed square roots are integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring turns a seemingly unbounded search into a divisor optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p10",
+    "problemId": "amc12a-2024-p10",
+    "finalAnswer": "$\\boxed{\\frac{\\pi}{2}-2\\alpha}$ — choice C",
+    "shortExplanation": "Compute the sine and cosine of twice the first angle.",
+    "detailedSteps": [
+      "The smallest angle of the first triangle satisfies $\\sin\\alpha=3/5$ and $\\cos\\alpha=4/5$. Therefore $\\sin(2\\alpha)=24/25$ and $\\cos(2\\alpha)=7/25$.",
+      "The smallest angle of the second triangle satisfies $\\sin\\beta=7/25$ and $\\cos\\beta=24/25$. These match the sine and cosine of $\\pi/2-2\\alpha$.",
+      "Both angles lie in $(0,\\pi/2)$, so $\\beta=\\pi/2-2\\alpha$, choice C."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Trigonometry",
+      "Double-angle identities"
+    ],
+    "commonMistakes": [
+      "Use the smallest angle, which lies opposite the shortest side.",
+      "Matching a trigonometric value alone requires checking the angle range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer side lengths encode a double-angle identity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p11",
+    "problemId": "amc12a-2024-p11",
+    "finalAnswer": "$\\boxed{20}$ — choice D",
+    "shortExplanation": "Expand the base-dependent numeral and reduce modulo 8.",
+    "detailedSteps": [
+      "The numeral represents $2b^3+2b+4=2(b^3+b+2)$. Divisibility by 16 is equivalent to $b^3+b+2\\equiv0\\pmod8$.",
+      "For residues $b=0,1,\\ldots,7$, the expression has residues $2,4,4,0,6,4,0,0$. Thus the allowed classes are $b\\equiv3,6,7\\pmod8$.",
+      "In the interval from 5 through 2024, these classes contain respectively 252, 253, and 253 integers. Consequently $K=758$.",
+      "The requested digit sum is $7+5+8=20$, choice D."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Number bases",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "The numeral 2024 depends on b, but the divisor 16 is a decimal integer.",
+      "The lower endpoint removes b=3 from one valid residue class."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small residue table replaces a search through more than two thousand bases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p12",
+    "problemId": "amc12a-2024-p12",
+    "finalAnswer": "$\\boxed{21}$ — choice E",
+    "shortExplanation": "Minimize the common ratio using its reduced numerator and denominator.",
+    "detailedSteps": [
+      "Write the common ratio as $m/n>1$ in lowest terms. The terms on either side of 720 are $a=720n/m$ and $b=720m/n$. Integrality forces both $m$ and $n$ to divide 720; because they are coprime, $mn\\mid720$.",
+      "The ratio $16/15$ works: it gives $a=675$ and $b=768$. To prove minimality, suppose $1<m/n<16/15$. Since $m\\ge n+1$, we get $n>15$. Also $n(n+1)\\le mn\\le720$, so $n\\le26$.",
+      "The divisors of 720 in this range are $16,18,20,24$. The only respective integers strictly between $n$ and $16n/15$ are $17,19,21,25$. None divides 720. Thus no smaller ratio works.",
+      "The least possible $b$ is 768, whose digit sum is $7+6+8=21$, choice E."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Geometric sequences",
+      "Coprime integers"
+    ],
+    "commonMistakes": [
+      "The common ratio need not be an integer.",
+      "A nearby candidate divisor alone does not prove the minimum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A reduced rational ratio produces a short, complete minimality argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p13",
+    "problemId": "amc12a-2024-p13",
+    "finalAnswer": "$\\boxed{\\left(0,\\frac12\\right)}$ — choice D",
+    "shortExplanation": "Shift the horizontal variable until the exponential terms exchange under negation.",
+    "detailedSteps": [
+      "Put $u=x+1/2$. Then $e^{x+1}+e^{-x}-2=e^{1/2}(e^u+e^{-u})-2$, an even function of $u$.",
+      "The vertical symmetry axis is therefore $x=-1/2$. Reflecting across this line sends $x$ to $-1-x$ and leaves $y$ fixed.",
+      "The point $(-1,1/2)$ maps to $(0,1/2)$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Symmetry",
+      "Exponential functions"
+    ],
+    "commonMistakes": [
+      "Reflection in a vertical line changes only the x-coordinate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centering the exponents exposes the symmetry directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p14",
+    "problemId": "amc12a-2024-p14",
+    "finalAnswer": "$\\boxed{29}$ — choice C",
+    "shortExplanation": "Rows and columns that are arithmetic force a bilinear formula for every entry.",
+    "detailedSteps": [
+      "For fixed row $i$, each entry is affine in the column index $j$. Since the first two columns are themselves affine in $i$, their difference is also affine in $i$. Thus every entry has the form $F(i,j)=A+Bi+Cj+Dij$.",
+      "Substituting the four given entries gives $A+5B+5C+25D=0$, $A+2B+4C+8D=48$, $A+4B+3C+12D=16$, and $A+3B+C+3D=12$.",
+      "Subtracting the last equation from the second and third gives $-B+3C+5D=36$ and $B+2C+9D=4$. Hence $5C+14D=40$. Subtracting the second equation from the first and then eliminating $B$ gives $10C+32D=60$. Therefore $D=-5$, $C=22$, $B=5$, and $A=-10$.",
+      "The target is $F(1,2)=-10+5+44-10=29$, choice C."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic sequences",
+      "Systems of equations"
+    ],
+    "commonMistakes": [
+      "Different rows can have different common differences; a single global difference is not justified."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bilinear representation is the central step; the remaining work is elimination.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p15",
+    "problemId": "amc12a-2024-p15",
+    "finalAnswer": "$\\boxed{125}$ — choice D",
+    "shortExplanation": "Evaluate the polynomial at two imaginary arguments instead of finding its roots.",
+    "detailedSteps": [
+      "Let $f(x)=x^3+2x^2-x+3=(x-p)(x-q)(x-r)$. For each root $t$, $(2i-t)(-2i-t)=t^2+4$.",
+      "Hence the requested product is $f(2i)f(-2i)$. Direct evaluation gives $f(2i)=-5-10i$ and $f(-2i)=-5+10i$.",
+      "The product of these conjugates is $(-5)^2+10^2=125$, choice D."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Polynomial roots",
+      "Complex numbers"
+    ],
+    "commonMistakes": [
+      "The roots need not be real; solving the cubic is unnecessary."
+    ],
+    "alternativeMethods": [
+      "Vieta gives $p+q+r=-2$, $pq+pr+qr=-1$, and $pqr=-3$. Thus $p^2+q^2+r^2=6$ and $p^2q^2+p^2r^2+q^2r^2=-11$. Expanding the requested product gives $9+4(-11)+16(6)+64=125$."
+    ],
+    "difficultyNotes": "A symmetric product can be recovered from a convenient polynomial evaluation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p16",
+    "problemId": "amc12a-2024-p16",
+    "finalAnswer": "$\\boxed{389}$ — choice C",
+    "shortExplanation": "Temporarily distinguish the tokens, then count the ways to fill each player’s hand.",
+    "detailedSteps": [
+      "Label all 12 physical tokens. For three labeled players, the total number of equally likely allocations is $\\binom{12}{4}\\binom84=34650$.",
+      "There are $3!=6$ assignments of the red, white, and blue roles to the players. Fix one assignment. The red player needs one of the 6 black tokens, and the white player needs two of the remaining 5 black tokens. The last three black tokens go with the blue token.",
+      "This gives $6\\cdot6\\binom52=360$ favorable allocations. The different role assignments are disjoint because each color has a unique recipient.",
+      "The probability is $360/34650=4/385$. Therefore $m+n=4+385=389$, choice C."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Probability",
+      "Combinations"
+    ],
+    "commonMistakes": [
+      "Allocations described only by color counts are not equally likely.",
+      "All three designated colors must go to different players."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Labeling identical-colored tokens produces a uniform sample space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p17",
+    "problemId": "amc12a-2024-p17",
+    "finalAnswer": "$\\boxed{276}$ — choice D",
+    "shortExplanation": "Subtract two equations to obtain a product equal to the prime 13.",
+    "detailedSteps": [
+      "Subtracting $bc+a=87$ from $ab+c=100$ gives $(a-c)(b-1)=13$. Thus $b-1$ is one of $1,-1,13,-13$, so $b\\in\\{2,0,14,-12\\}$.",
+      "For each candidate, set $a-c=13/(b-1)$. Combining this with $ab+c=100$ gives $a(b+1)=100+13/(b-1)$.",
+      "For $b=2$ or 14 the resulting $a$ is not integral. For $b=0$, one obtains $(a,c)=(87,100)$, which fails $ca+b=60$. For $b=-12$, one gets $a=-9$ and $c=-8$, which satisfy all three equations.",
+      "The requested sum is $108+96+72=276$, choice D."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Diophantine equations",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "The variables are integers and can be negative.",
+      "Every candidate from a factored difference must still satisfy the remaining equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A prime difference makes the integer search exhaustive and short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p18",
+    "problemId": "amc12a-2024-p18",
+    "finalAnswer": "$\\boxed{6}$ — choice A",
+    "shortExplanation": "Track the four vertex directions from the common center; count the original card as well.",
+    "detailedSteps": [
+      "Use the source figure to orient the first card with its long sides vertical and $B$ at the upper-left corner. The angle between a diagonal and a long side is $15^\\circ$, since $\\tan15^\\circ=2-\\sqrt3=1/(2+\\sqrt3)$.",
+      "The acute angle between its diagonals is therefore $30^\\circ$. Aligning successive diagonals as pictured rotates each card clockwise by $30^\\circ$ about their common center.",
+      "Measured counterclockwise from the positive horizontal ray, the original four vertex directions are $75^\\circ,105^\\circ,255^\\circ,285^\\circ$, and $B$ has direction $105^\\circ$. A clockwise rotation that carries one of these rays to $B$ first occurs after $150^\\circ$: the $255^\\circ$ ray reaches $105^\\circ$. The other positive rotation amounts are $180^\\circ,330^\\circ,360^\\circ$.",
+      "Thus five rotations are required. Including the initial card gives six cards, choice A."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Rotations",
+      "Trigonometry"
+    ],
+    "commonMistakes": [
+      "Five rotations involve six cards.",
+      "A different vertex can reach B before the original vertex returns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source diagram is essential for the direction of rotation; all calculations refer to it rather than an invented figure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p19",
+    "problemId": "amc12a-2024-p19",
+    "finalAnswer": "$\\boxed{\\frac{39}{7}}$ — choice D",
+    "shortExplanation": "Find one diagonal and the missing side with the cosine rule, then apply Ptolemy.",
+    "detailedSteps": [
+      "In triangle $CDA$, the cosine rule gives $AC^2=3^2+5^2-2(3)(5)\\cos120^\\circ=49$. Hence $AC=7$.",
+      "Opposite angles in a cyclic quadrilateral are supplementary, so $\\angle ABC=60^\\circ$. Writing $AB=t>0$, the cosine rule in $ABC$ gives $49=t^2+9-3t$. Thus $(t-8)(t+5)=0$, and $AB=8$.",
+      "Ptolemy’s theorem gives $AC\\cdot BD=AB\\cdot CD+BC\\cdot AD=8\\cdot3+3\\cdot5=39$. Therefore $BD=39/7$.",
+      "Since $39/7<7$, this is the shorter diagonal, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Cyclic quadrilaterals",
+      "Ptolemy’s theorem"
+    ],
+    "commonMistakes": [
+      "Ptolemy pairs products of opposite sides.",
+      "Check which diagonal is shorter after calculating both."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cyclic condition supplies the missing angle and the diagonal product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p20",
+    "problemId": "amc12a-2024-p20",
+    "finalAnswer": "$\\boxed{\\left(\\frac34,\\frac78\\right]}$ — choice D",
+    "shortExplanation": "Normalize the two side distances so the area ratio becomes the product of two uniform variables.",
+    "detailedSteps": [
+      "Let $X=AP/AB$ and $Y=AQ/AC$. They are independent and uniform on $[0,1]$. Because the included angle at $A$ is shared, the triangle area ratio is $XY$.",
+      "For $0\\le X\\le1/2$, every $Y$ succeeds. For $1/2<X\\le1$, the successful fraction is $1/(2X)$. Therefore the probability is $\\frac12+\\int_{1/2}^1\\frac{1}{2x}\\,dx=\\frac{1+\\ln2}{2}$.",
+      "To locate it without a decimal approximation, use $\\ln2=\\int_1^2dt/t$. The integrand is greater than $1/2$ except at the endpoint, so $\\ln2>1/2$. Convexity of $1/t$ puts its graph strictly below the chord joining $(1,1)$ and $(2,1/2)$, so $\\ln2<3/4$.",
+      "Consequently $3/4<(1+\\ln2)/2<7/8$, which lies in the interval in choice D."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Geometric probability",
+      "Area ratios"
+    ],
+    "commonMistakes": [
+      "The area ratio is XY, not the average of the two side ratios.",
+      "Uniform side distances do not make their product uniform."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A unit-square area model reduces the problem to a single integral; the comparison argument locates the correct interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p21",
+    "problemId": "amc12a-2024-p21",
+    "finalAnswer": "$\\boxed{338551}$ — choice B",
+    "shortExplanation": "Multiply by n to turn the recurrence into consecutive odd increments.",
+    "detailedSteps": [
+      "Clearing denominators gives $na_n=(n-1)a_{n-1}+2n-1$. Put $b_n=na_n$. Since $b_1=2$ and $n^2-(n-1)^2=2n-1$, induction gives $b_n=n^2+1$.",
+      "Thus $a_n=n+1/n$, and $\\sum_{n=1}^{100}a_n^2=\\sum_{n=1}^{100}n^2+200+\\sum_{n=1}^{100}1/n^2=338550+\\sum_{n=1}^{100}1/n^2$.",
+      "The last sum is greater than 1. For $n\\ge2$, $1/n^2<1/[n(n-1)]=1/(n-1)-1/n$, so it is less than $1+1-1/100<2$.",
+      "The required integer is therefore 338551, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Recurrences",
+      "Telescoping sums"
+    ],
+    "commonMistakes": [
+      "The recurrence has a_n minus 1 in its numerator, not the previous term a_(n-1).",
+      "The small reciprocal-square contribution still changes the integer part by 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A weighted recurrence and a telescoping bound avoid lengthy rational arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p22",
+    "problemId": "amc12a-2024-p22",
+    "finalAnswer": "$\\boxed{146}$ — choice C",
+    "shortExplanation": "Describe each simple loop by the unit cells inside it, then classify the possible middle rows.",
+    "detailedSteps": [
+      "Refer to the source grid: all eight middle-row cells carry the clue 1. Mark a cell as inside or outside the loop. An edge belongs to the loop exactly when its two neighboring cells have different statuses; cells beyond the board are outside.",
+      "If every middle cell is outside, exactly one of its upper and lower neighbors must be inside. A single connected interior is then possible only by taking the entire top row or the entire bottom row. This gives 2 loops.",
+      "Otherwise, the inside middle cells must form a single consecutive block. At any transition between an inside and outside middle cell, their shared vertical edge already uses the clue 1 for both cells. Therefore each cell immediately on the outside of such a transition has both its upper and lower neighbors outside. That whole empty column separates any additional inside block or extra inside cells farther out from the main interior.",
+      "It follows that there can be at most one outside middle cell at either end. If there were two, the farther outside cell would have no horizontal boundary edge, forcing an inside upper or lower neighbor and hence a disconnected component. The block therefore has length 8, 7, 7, or 6, according as zero, only the left, only the right, or both end columns are outside.",
+      "At the two ends of an inside block, the adjacent vertical boundary already supplies the single required edge, forcing both the upper and lower cells to be inside. At each of its other $\\ell-2$ columns, exactly one upper or lower cell is inside, independently. Every such choice gives a connected interior, no hole, and a simple boundary. Thus a block of length $\\ell$ gives $2^{\\ell-2}$ loops.",
+      "The total is $2+2^6+2^5+2^5+2^4=146$, choice C."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Casework",
+      "Grid paths"
+    ],
+    "commonMistakes": [
+      "Local clue counts alone can admit disconnected loops; the interior must be connected.",
+      "The two loops entirely above or below the middle row must also be counted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key is translating an edge puzzle into inside/outside cells. The supplied exact enumerator independently checks connectivity and vertex degrees.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p23",
+    "problemId": "amc12a-2024-p23",
+    "finalAnswer": "$\\boxed{68}$ — choice B",
+    "shortExplanation": "Factor the four terms into two sums of squares of complementary tangents.",
+    "detailedSteps": [
+      "Write $t_k=\\tan(k\\pi/16)$. The expression factors as $(t_1^2+t_7^2)(t_3^2+t_5^2)$. Complementary angles give $t_7=1/t_1$ and $t_5=1/t_3$.",
+      "The identity $\\tan^2u+\\cot^2u=4/\\sin^2(2u)-2$ follows from $\\tan u+\\cot u=1/(\\sin u\\cos u)$.",
+      "Using $\\sin^2(\\pi/8)=(2-\\sqrt2)/4$ gives $t_1^2+t_7^2=14+8\\sqrt2$. Similarly $\\sin^2(3\\pi/8)=(2+\\sqrt2)/4$ gives $t_3^2+t_5^2=14-8\\sqrt2$.",
+      "The product is $(14+8\\sqrt2)(14-8\\sqrt2)=196-128=68$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Trigonometry",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "There are four specified products, not all six pairwise products of the four tangent squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring and complementary angles remove the need to evaluate individual tangents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p24",
+    "problemId": "amc12a-2024-p24",
+    "finalAnswer": "$\\boxed{15\\sqrt7}$ — choice D",
+    "shortExplanation": "A nondegenerate disphenoid requires an acute face triangle; then bound the area of all larger integer triangles.",
+    "detailedSteps": [
+      "A disphenoid has equal opposite edges. The segments joining opposite-edge midpoints are mutually perpendicular: their dot products vanish by subtracting the corresponding equal squared edge lengths. With their intersection as origin, its vertices can therefore be written $(x,y,z)$, $(x,-y,-z)$, $(-x,y,-z)$, and $(-x,-y,z)$, with $x,y,z>0$.",
+      "If the three face side lengths are $a,b,c$, then, after labeling axes, $x^2=(b^2+c^2-a^2)/8$, $y^2=(a^2+c^2-b^2)/8$, and $z^2=(a^2+b^2-c^2)/8$. These are all positive exactly when the face triangle is acute. Conversely, positive values construct such a disphenoid.",
+      "Order the distinct integer sides as $a<b<c$. Acuteness requires $a^2+b^2>c^2\\ge(b+1)^2$, so $a^2>2b+1$. Since $b\\ge a+1$, this is impossible for $a\\le3$. The first candidate is $(4,5,6)$, and it is acute because $16+25>36$.",
+      "For any other possible triple, $a\\ge4$ and $b\\ge6$: when $(a,b)=(4,5)$, the inequalities $5<c<\\sqrt{41}$ force $c=6$. The largest angle $C$ is at least $60^\\circ$ and below $90^\\circ$, so its face area satisfies $K=ab\\sin C/2\\ge ab\\sqrt3/4\\ge6\\sqrt3$. This is larger than $15\\sqrt7/4$, since $108>1575/16$.",
+      "For $(4,5,6)$, Heron’s formula gives $K=\\sqrt{(15/2)(7/2)(5/2)(3/2)}=15\\sqrt7/4$. Four congruent faces therefore have minimum total area $15\\sqrt7$, choice D."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Solid geometry",
+      "Heron’s formula",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "A valid triangular face alone is insufficient: an obtuse or right triangle cannot produce a nondegenerate disphenoid.",
+      "The requested area includes all four faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The spatial existence condition must be proved before minimizing the planar face area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2024-p25",
+    "problemId": "amc12a-2024-p25",
+    "finalAnswer": "$\\boxed{1292}$ — choice B",
+    "shortExplanation": "Reflection exchanges input and output, so count the nonsingular fractional-linear maps that are their own inverses.",
+    "detailedSteps": [
+      "Let $f(x)=(ax+b)/(cx+d)$. If $ad-bc=0$, the function is constant on its domain; its graph cannot equal its reflection in $y=x$. Thus only $ad-bc\\ne0$ can contribute.",
+      "For a nonsingular map, reflection symmetry means $f(f(x))=x$ wherever defined. Composition is represented by squaring $M=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$. Its off-diagonal entries are $b(a+d)$ and $c(a+d)$, while the diagonal entries are $a^2+bc$ and $d^2+bc$. Hence $M^2$ is a scalar matrix exactly when either $a+d=0$, or $b=c=0$ and $a=d\\ne0$. These conditions also ensure that reflected points remain in the domain: the map is its own inverse.",
+      "In the trace-zero case, choose $(a,b,c)$ freely and set $d=-a$, giving $11^3=1331$ triples before excluding $a^2+bc=0$. For $a=0$, the condition $bc=0$ has $11+11-1=21$ choices.",
+      "For $|a|=1,2,3,4,5$, count ordered pairs with $bc=-a^2$ in the allowed range. Per fixed sign of $a$, the counts are respectively $2,6,2,2,2$. For example, when $|a|=2$, the absolute factor pairs are $(1,4),(2,2),(4,1)$, each with two opposite-sign assignments. Including both signs of $a$ gives $4,12,4,4,4$ excluded triples. The total exclusion is $21+4+12+4+4+4=49$.",
+      "The trace-zero family contributes $1331-49=1282$. The remaining scalar matrices have $b=c=0$ and $a=d\\in\\{-5,\\ldots,-1,1,\\ldots,5\\}$, contributing ten copies of the identity map as distinct coefficient quadruples.",
+      "Thus the requested number of quadruples is $1282+10=1292$, choice B."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Rational functions",
+      "Symmetry",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Different scalar multiples count separately because the question asks for coefficient quadruples.",
+      "The identity maps are not part of the trace-zero family.",
+      "Singular coefficient matrices give constant graphs and must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One must handle graph domains, singular maps, and the identity family before counting integer coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

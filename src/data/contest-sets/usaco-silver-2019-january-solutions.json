@@ -1,0 +1,97 @@
+[
+  {
+    "finalAnswer": "The minimum number of grass types is $\\boxed{\\Delta+1}$, where $\\Delta$ is the maximum degree of the field tree. Count endpoint degrees and print their maximum plus one.",
+    "shortExplanation": "A field and all its neighbors need different colors, so a highest-degree field forces $\\Delta+1$ types. A rooted-tree construction always succeeds with exactly that palette, proving the lower bound is attainable.",
+    "detailedSteps": [
+      "**Identify the graph and the required conflicts.** The connected network with $N-1$ edges is a tree. Grass types are colors; different vertices at distance one or two must have different colors. The source does not require different colors at larger distances.",
+      "**Prove a necessary lower bound.** Choose a field with degree $\\Delta$. Its $\\Delta$ neighbors each conflict with that field and with every other neighbor through their common center. These $\\Delta+1$ vertices therefore need distinct colors.",
+      "**Construct a coloring that attains the bound.** Root the tree and take a palette of $\\Delta+1$ colors. Give the root any color and its children different colors excluding that one; at most $\\Delta$ choices are needed. At a nonroot vertex $v$, exclude the colors of $v$ and its parent when coloring its children. There remain $\\Delta-1$ colors, enough for its at most $\\deg(v)-1\\leq\\Delta-1$ children.",
+      "**Check every forbidden pair.** An edge has differently colored endpoints. A distance-two pair shares a middle vertex; its two endpoints are either siblings or a parent and grandchild. The construction makes the middle vertex’s parent and all its children pairwise distinct. Thus every required conflict is respected, and no extra colors are needed.",
+      "**Compute only the optimum.** Increment both endpoint degrees for each pathway. The construction is needed for the proof, but the requested output is a count, so there is no need to actually assign colors. For a single field, $\\Delta=0$ and the answer is $1$. Reading edges and counting degrees takes $O(N)$ time and $O(N)$ space; the answer is at most $N$.",
+      "**Original C++17 implementation.** The historical named input/output files are retained.\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ifstream in(\"planting.in\"); ofstream out(\"planting.out\");\n    int n; in>>n; vector<int> degree(n); int largest=0;\n    for(int i=0;i<n-1;i++){\n        int a,b; in>>a>>b; --a;--b;\n        largest=max(largest,++degree[a]);\n        largest=max(largest,++degree[b]);\n    }\n    out<<largest+1<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A largest closed neighborhood gives a clique lower bound in the distance-two conflict graph.",
+      "Rooting a tree separates the parent constraint from the sibling constraints.",
+      "An attainable lower bound determines the optimum without constructing the final assignment."
+    ],
+    "commonMistakes": [
+      "Using ordinary two-color tree coloring; it does not separate siblings at distance two.",
+      "Printing $\\Delta$ instead of $\\Delta+1$, forgetting the center field.",
+      "Ignoring the single-field case or trying a recursive traversal that is unnecessary for the degree count."
+    ],
+    "alternativeMethods": [
+      "One can implement the rooted palette construction explicitly to produce a witness coloring, although the output requires only its size.",
+      "For a small independent check, form the distance-two conflict graph, enumerate independent color-class subsets, and minimize a covering partition by subset dynamic programming. This is exponential and is not the full-size algorithm."
+    ],
+    "difficultyNotes": "The computation is short; the substantial step is proving that the largest-neighborhood lower bound is always attainable on a tree. The argument relies on the printed tree guarantee, not an arbitrary graph.",
+    "id": "solution-usaco-silver-2019-january-p1",
+    "problemId": "usaco-silver-2019-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Flood each four-connected ice component, count its cells and exposed unit edges, and print the largest area together with the smallest perimeter among components tied at that area.",
+    "shortExplanation": "Each ice cell adds one unit of area. Each of its four sides adds one unit of perimeter exactly when the adjacent position is empty or outside the grid. This also counts hole boundaries. Compare components by larger area first, then smaller perimeter.",
+    "detailedSteps": [
+      "**Visit exactly one blob at a time.** Start an iterative traversal from any unvisited ice cell. Follow only north, south, east and west ice neighbors, marking a cell when it is added to the stack. Reachability gives precisely its connected component; diagonal contact does not join blobs.",
+      "**Count its area and every boundary edge.** Each popped cell contributes $1$ to area. Examine all four unit sides. If the neighboring coordinate is outside the board or empty, increment perimeter. If it contains ice, that side is shared inside this component and contributes nothing. Each exposed side is counted once by its unique adjacent ice cell.",
+      "**Include holes without a separate water search.** The same empty-neighbor test counts the inside rim of a hole. Ice lying inside a hole but disconnected from the surrounding ring becomes another blob during a later traversal. There is no need to decide whether an empty region reaches the outer boundary.",
+      "**Apply the exact comparison rule.** Replace the current best when a component has greater area, or when its area is equal and its perimeter is smaller. The narrative mentions a perimeter-to-area ratio, but the requested output prioritizes area and uses perimeter only to break an area tie. At least one ice cell is guaranteed, so some component initializes the best pair.",
+      "**Bound the work and preserve the output shape.** Every cell is inspected a constant number of times, giving $O(N^2)$ time and space. An explicit stack avoids a recursion chain through as many as $10^6$ ice cells. Area is at most $N^2$ and perimeter at most $4N^2$, so ordinary 32-bit integers suffice under the printed bounds. Output the two integers on one line.",
+      "**Original C++17 implementation.** The historical named input/output files are retained.\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <string>\n#include <climits>\nusing namespace std;\nint main(){\n    ifstream in(\"perimeter.in\"); ofstream out(\"perimeter.out\");\n    int n; in>>n; vector<string> g(n);for(auto &row:g)in>>row;\n    vector<unsigned char> used(n*n,0);\n    int bestArea=0,bestPerimeter=INT_MAX;\n    const int dr[4]={-1,1,0,0},dc[4]={0,0,-1,1};\n    for(int r=0;r<n;r++)for(int c=0;c<n;c++){\n        int start=r*n+c;\n        if(g[r][c]!='#'||used[start])continue;\n        vector<int> stack(1,start);used[start]=1;\n        int area=0,perimeter=0;\n        while(!stack.empty()){\n            int id=stack.back();stack.pop_back();++area;\n            int x=id/n,y=id%n;\n            for(int d=0;d<4;d++){\n                int a=x+dr[d],b=y+dc[d];\n                if(a<0||a>=n||b<0||b>=n||g[a][b]=='.')++perimeter;\n                else if(!used[a*n+b]){used[a*n+b]=1;stack.push_back(a*n+b);}\n            }\n        }\n        if(area>bestArea||(area==bestArea&&perimeter<bestPerimeter)){\n            bestArea=area;bestPerimeter=perimeter;\n        }\n    }\n    out<<bestArea<<' '<<bestPerimeter<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Connected-component traversal partitions the ice without merging diagonal neighbors.",
+      "Perimeter is a count of exposed unit edges, including every inner boundary.",
+      "A lexicographic objective requires an explicit area comparison and then the correct perimeter tie direction."
+    ],
+    "commonMistakes": [
+      "Counting only edges adjacent to outside-connected water and missing holes.",
+      "Merging diagonal cells or using eight-direction connectivity.",
+      "Choosing the largest perimeter on an area tie, minimizing the ratio instead of the requested pair, or printing only the area.",
+      "Using a recursive flood fill on the full million-cell source domain."
+    ],
+    "alternativeMethods": [
+      "Union adjacent ice cells with a disjoint-set structure. For each component, either count physical boundary segments or use $P=4A-2E$, where $E$ is its number of shared cell sides. Every shared side removes two sides from the separate-square total.",
+      "A breadth-first queue can replace the explicit depth-first stack; both visit the same four-connected components and use the same boundary rule."
+    ],
+    "difficultyNotes": "The traversal is standard, but inner holes, nested disconnected blobs and the area-first tie rule must all be handled correctly. The source’s nonempty-board guarantee avoids an undefined empty result.",
+    "id": "solution-usaco-silver-2019-january-p2",
+    "problemId": "usaco-silver-2019-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Transform each peak into $[L,R]=[x-y,x+y]$. Sort by increasing $L$, then decreasing $R$. Count a mountain exactly when its $R$ is strictly greater than every previously processed right endpoint.",
+    "shortExplanation": "A peak is on or inside another mountain exactly when its transformed interval is contained in the other interval. After the stated sort, containment is equivalent to $R\\leq R_{\\max}$; strict record-high right endpoints are exactly the visible mountains.",
+    "detailedSteps": [
+      "**Derive the hiding condition from the slopes.** A mountain with peak $(u,v)$ has upper boundary $v-|x-u|$ at horizontal coordinate $x$. Because the other peak has positive height, $(x,y)$ is hidden precisely when $y\\leq v-|x-u|$. Equality is hidden too: the source includes peaks lying on the triangular boundary.",
+      "**Rewrite both sides of that inequality.** The condition $v-y\\geq|u-x|$ is equivalent to $u-v\\leq x-y$ and $x+y\\leq u+v$. With $L=x-y$ and $R=x+y$, these are exactly $L_{\\mathrm{outer}}\\leq L_{\\mathrm{inner}}$ and $R_{\\mathrm{inner}}\\leq R_{\\mathrm{outer}}$. Merely overlapping base intervals would not be enough; full containment is required.",
+      "**Sort to resolve the left-end condition and all ties.** Process intervals by increasing left endpoint and decreasing right endpoint when left endpoints tie. An earlier interval already satisfies the needed left-end inequality. A later interval with a larger left endpoint cannot contain the current one; for equal left endpoints, every larger right endpoint has already appeared.",
+      "**Use one maximum to decide visibility.** Let $R_{\\max}$ be the largest preceding right endpoint. If $R\\leq R_{\\max}$, an earlier interval covers the current one, so do not count it. If $R>R_{\\max}$, no earlier interval covers it and the sort rules exclude every later interval as well. Count it and update the maximum. Distinct source peaks imply distinct transformed pairs, since $x=(L+R)/2$ and $y=(R-L)/2$.",
+      "**Account for boundary and numeric cases.** The comparison must be strict when counting, and equal-left intervals must be ordered by decreasing right endpoint. A covering interval can remain in the maximum even if it was itself hidden; the source requires containment by any other mountain. Sorting costs $O(N\\log N)$ time and storing intervals uses $O(N)$ space. The printed transformed range fits a signed 32-bit integer, but the implementation uses `long long` conservatively and initializes the maximum below every possible right endpoint.",
+      "**Original C++17 implementation.** The historical named input/output files are retained.\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <utility>\n#include <algorithm>\n#include <climits>\nusing namespace std;\nint main(){\n    ifstream in(\"mountains.in\");ofstream out(\"mountains.out\");\n    int n;in>>n;vector<pair<long long,long long>> intervals;\n    for(int i=0;i<n;i++){\n        long long x,y;in>>x>>y;intervals.push_back({x-y,x+y});\n    }\n    sort(intervals.begin(),intervals.end(),[](auto a,auto b){\n        if(a.first!=b.first)return a.first<b.first;\n        return a.second>b.second;\n    });\n    long long furthest=LLONG_MIN;int visible=0;\n    for(auto [left,right]:intervals){\n        (void)left;\n        if(right>furthest){++visible;furthest=right;}\n    }\n    out<<visible<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The two 45-degree slope inequalities become a closed-interval containment test.",
+      "Tie ordering is part of the correctness proof, not merely a sorting preference.",
+      "A running maximum summarizes all possible earlier covers."
+    ],
+    "commonMistakes": [
+      "Treating any overlap as complete occlusion.",
+      "Counting equal right endpoints as visible even though boundary containment hides the peak.",
+      "Sorting equal left endpoints by increasing right endpoint, which can count a smaller covered triangle too early.",
+      "Removing hidden intervals from consideration without justification, or ignoring that $x-y$ can be negative."
+    ],
+    "alternativeMethods": [
+      "For small cases, test each peak directly against every other triangle using $y_i\\leq y_j-|x_i-x_j|$. This $O(N^2)$ geometric method provides an independent check without the interval transform.",
+      "A reverse sweep can sort by decreasing right endpoint, with increasing left endpoint on ties, and count strictly decreasing record-low left endpoints. It uses the symmetric containment argument."
+    ],
+    "difficultyNotes": "The main idea is the geometric equivalence, followed by careful treatment of equality and sorting ties. Distinct peak locations remove duplicate-interval ambiguity; they do not remove equal-left or equal-right endpoint cases.",
+    "id": "solution-usaco-silver-2019-january-p3",
+    "problemId": "usaco-silver-2019-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,316 @@
+[
+  {
+    "id": "solution-aime-1987-p1",
+    "problemId": "aime-1987-p1",
+    "finalAnswer": "$\\boxed{300}$",
+    "shortExplanation": "Each target digit d has d+1 ordered splits, giving 300.",
+    "detailedSteps": [
+      "With no carries, the digits of the two summands must add independently to 1,4,9,2. For a digit d there are exactly d+1 choices, from 0+d through d+0.",
+      "Allow leading zeros, since the summands may have fewer digits. The number of ordered pairs is $2\\cdot5\\cdot10\\cdot3=300$."
+    ],
+    "keyIdeas": [
+      "Independent digit splits without carries"
+    ],
+    "commonMistakes": [
+      "Dividing by 2 despite ordered pairs or excluding a zero summand."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The no-carry rule makes the digit choices independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p2",
+    "problemId": "aime-1987-p2",
+    "finalAnswer": "$\\boxed{137}$",
+    "shortExplanation": "The centers are 31 apart, so the farthest points are 137 apart.",
+    "detailedSteps": [
+      "The center displacement is $(14,18,-21)$, whose length is $\\sqrt{14^2+18^2+21^2}=31$.",
+      "The triangle inequality bounds the point-to-point distance by $19+31+87=137$. Points on the center line, directed outward away from one another, attain this bound."
+    ],
+    "keyIdeas": [
+      "A sharp distance bound between spheres"
+    ],
+    "commonMistakes": [
+      "Subtracting the radii as in a nearest-point calculation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum requires both a triangle-inequality bound and equality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p3",
+    "problemId": "aime-1987-p3",
+    "finalAnswer": "$\\boxed{182}$",
+    "shortExplanation": "The nice numbers have exactly four divisors; the first ten sum to 182.",
+    "detailedSteps": [
+      "For $n>1$ with $\\tau$ positive divisors, complementary divisor pairing gives product $n^{\\tau/2}$. The source definition of proper divisors excludes both 1 and n, so their product is $n^{\\tau/2-1}$.",
+      "Equality with n holds exactly when $\\tau=4$. Prime factorization therefore makes n either $p^3$ or $pq$ for distinct primes p,q.",
+      "The first ten are $6,8,10,14,15,21,22,26,27,33$, and their sum is 182. Checking the factorizations of all integers below 33 establishes that none was skipped."
+    ],
+    "keyIdeas": [
+      "Counting divisors in a product condition"
+    ],
+    "commonMistakes": [
+      "Using a different convention for proper divisors than the one stated in this problem."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisor-product formula converts the condition to a divisor count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p4",
+    "problemId": "aime-1987-p4",
+    "finalAnswer": "$\\boxed{480}$",
+    "shortExplanation": "The vertices are $(48,0),(60,15),(80,0),(60,-15)$, with area 480.",
+    "detailedSteps": [
+      "For $x<0$, the equality would require $|y|=|x|/4-|x-60|=-x/4-(60-x)=3x/4-60<0$, which is impossible.",
+      "For $0\\le x\\le60$, $|y|=x/4-(60-x)=5x/4-60$, nonnegative precisely when $x\\ge48$. For x>=60, $|y|=x/4-(x-60)=60-3x/4$, nonnegative precisely when $x\\le80$.",
+      "The boundary is a diamond with horizontal diagonal 32 and vertical diagonal 30. Its enclosed area is $32\\cdot30/2=480$."
+    ],
+    "keyIdeas": [
+      "Piecewise absolute values define a diamond"
+    ],
+    "commonMistakes": [
+      "Ignoring the absolute value around x/4 or extending a branch beyond its sign range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Piecewise signs reveal the enclosed polygon.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p5",
+    "problemId": "aime-1987-p5",
+    "finalAnswer": "$\\boxed{588}$",
+    "shortExplanation": "The factorization forces $x^2=4,y^2=49$, giving 588.",
+    "detailedSteps": [
+      "Rearrange to $(3x^2+1)(y^2-10)=507=3\\cdot13^2$. Both factors are positive integers, and $3x^2+1\\equiv1\\pmod3$.",
+      "Among the positive divisors of 507, only 1,13,169 have that residue. Divisor 1 gives x=0 but $y^2=517$, impossible. Divisor 169 gives $x^2=56$, impossible. Divisor 13 gives $x^2=4$ and $y^2=10+507/13=49$.",
+      "These values satisfy the original equation, and $3x^2y^2=3\\cdot4\\cdot49=588$."
+    ],
+    "keyIdeas": [
+      "Factoring an integer-square equation"
+    ],
+    "commonMistakes": [
+      "Discarding zero x without checking it or forgetting that x and y can have either sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Square constraints prune a small divisor list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p6",
+    "problemId": "aime-1987-p6",
+    "finalAnswer": "$\\boxed{193}$",
+    "shortExplanation": "The two internal horizontal segments have length 106; the rectangle width is 193.",
+    "detailedSteps": [
+      "Let $L=AB$, $t=XY=ZW$, and $h=19$. The stated perimeter chains give $AX+DW=t-h$ and $YB+CZ=t-h$. Adding the upper and lower side lengths yields $2L=4t-2h$, so $L=2t-h$.",
+      "The two central regions in the source figure are trapezoids with parallel bases t and 87. They have equal areas, so their heights are equal, each h/2. Each area is therefore $(t+87)h/4$.",
+      "Since each is one quarter of the rectangle, $(t+87)h/4=Lh/4$. Thus $L=t+87$. Combine with $L=2t-19$ to get t=106 and L=193."
+    ],
+    "keyIdeas": [
+      "Equal-area trapezoids and perimeter chains"
+    ],
+    "commonMistakes": [
+      "Assuming that X and W, or Y and Z, are vertically aligned."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram supplies trapezoids, while the perimeter equalities supply the second equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p7",
+    "problemId": "aime-1987-p7",
+    "finalAnswer": "$\\boxed{070}$",
+    "shortExplanation": "The power-of 2 choices number 7 and the power-of 5 choices number 10, giving 70 triples.",
+    "detailedSteps": [
+      "Only primes 2 and 5 can appear. For the powers of 2, let the exponents in a,b,c be A,B,C. The maxima are $\\max(A,B)=3$ and $\\max(B,C)=\\max(C,A)=4$. Consequently C=4, A,B lie in 0 through 3, and at least one is 3. There are $4^2-3^2=7$ choices.",
+      "For the powers of 5, all three pairwise maxima must be 3. At least two of the exponents equal 3; either all do, or one is chosen to be 0,1,2. This gives $1+3\\cdot3=10$ choices.",
+      "The prime-exponent choices are independent, so the number of ordered triples is $7\\cdot10=70$."
+    ],
+    "keyIdeas": [
+      "Prime exponents in three least common multiples"
+    ],
+    "commonMistakes": [
+      "Requiring both entries of an lcm pair to attain the maximum exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Least common multiples take coordinatewise maxima of prime exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p8",
+    "problemId": "aime-1987-p8",
+    "finalAnswer": "$\\boxed{112}$",
+    "shortExplanation": "At n=112 the allowed k interval is $(96,98)$; any larger n has width greater than 2.",
+    "detailedSteps": [
+      "The positive fraction forces n+k>0. Taking positive reciprocals transforms the inequalities into $6n/7<k<7n/8$. The interval has width n/56.",
+      "If n>112, that width exceeds 2, so the open interval contains at least two integers. Therefore a unique k requires n<=112.",
+      "At n=112 the interval is exactly $(96,98)$ and contains only 97. Thus the largest n is 112."
+    ],
+    "keyIdeas": [
+      "An open interval containing one integer"
+    ],
+    "commonMistakes": [
+      "Including the endpoints of a strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An interval of length exactly 2 can contain only one integer when both endpoints are integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p9",
+    "problemId": "aime-1987-p9",
+    "finalAnswer": "$\\boxed{033}$",
+    "shortExplanation": "The equal angles at P are 120 degrees; Pythagoras then gives PC=33.",
+    "detailedSteps": [
+      "Since P is interior, the three equal angles around it total 360 degrees and are each 120 degrees. Put t=PC.",
+      "The cosine rule gives $AB^2=10^2+6^2+10\\cdot6=196$, $BC^2=6^2+t^2+6t$, and $AC^2=10^2+t^2+10t$.",
+      "The right angle at B requires $AC^2=AB^2+BC^2$, yielding $100+10t=232+6t$. Thus 4 t=132 and t=33."
+    ],
+    "keyIdeas": [
+      "Three equal angles and the cosine rule"
+    ],
+    "commonMistakes": [
+      "Taking the three equal angles to be 60 degrees."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cosine rule removes the position of the interior point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p10",
+    "problemId": "aime-1987-p10",
+    "finalAnswer": "$\\boxed{120}$",
+    "shortExplanation": "The escalator speed is three fifths of Bob’s walking speed, giving 120 visible steps.",
+    "detailedSteps": [
+      "Let Bob walk at v steps per unit time and the escalator rise at e. Al walks downward at 3 v and takes time $150/(3v)$, so the fixed escalator length is $L=150-50e/v$.",
+      "Bob takes time 75/v upward, giving $L=75+75e/v$. Equating yields e/v=3/5.",
+      "Then $L=75+75(3/5)=120$. The downward net speed 3 v-e is positive, consistent with Al reaching the bottom."
+    ],
+    "keyIdeas": [
+      "Relative motion on an escalator"
+    ],
+    "commonMistakes": [
+      "Adding the escalator speed when Al moves against it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counted walking steps and fixed escalator length are different quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p11",
+    "problemId": "aime-1987-p11",
+    "finalAnswer": "$\\boxed{486}$",
+    "shortExplanation": "The longest sum has 486 terms beginning at 122.",
+    "detailedSteps": [
+      "If the k consecutive positive terms start at a, their sum gives $k(2a+k-1)=2\\cdot3^{11}$. Hence k is either $3^j$ or $2\\cdot3^j$.",
+      "Positivity of a requires $k(k-1)<2\\cdot3^{11}=354294$. Any eligible odd k is at most 243, because 729 is too large. Any eligible even k is at most 486, because 1458 is too large.",
+      "For k=486, $2a+k-1=729$, so a=122. This is positive and gives exactly the required sum; therefore the maximum is 486."
+    ],
+    "keyIdeas": [
+      "Factoring a consecutive-sum equation"
+    ],
+    "commonMistakes": [
+      "Allowing the first summand to be zero or negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Divisibility and a growth bound identify the largest length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p12",
+    "problemId": "aime-1987-p12",
+    "finalAnswer": "$\\boxed{019}$",
+    "shortExplanation": "The interval above $18^3$ is too short; the one above $19^3$ contains $19^3+1$.",
+    "detailedSteps": [
+      "For a given n, an integer m with $n<\\sqrt[3]m<n+1/1000$ exists exactly when $(n+1/1000)^3-n^3>1$. The least candidate is m=n^3+1.",
+      "The difference is $3n^2/1000+3n/10^6+1/10^9$, strictly increasing for positive n. At n=18 it equals 0.972054001, while at n=19 it equals 1.083057001.",
+      "Thus no smaller n works, and m=19^3+1 is the least eligible integer. The requested n is 19."
+    ],
+    "keyIdeas": [
+      "The first cube interval containing an integer"
+    ],
+    "commonMistakes": [
+      "Replacing the strict upper bound by a non-strict one or relying on rounded cube roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Expand the nearby cube instead of approximating a cube root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p13",
+    "problemId": "aime-1987-p13",
+    "finalAnswer": "$\\boxed{931}$",
+    "shortExplanation": "The entry at 20 must be second largest among the first 31, with the largest at 31; probability 1/930.",
+    "detailedSteps": [
+      "Before comparing position 20, the moving entry is the largest among the first 19. If the original r 20 is smaller, it moves left to 19 and is never compared again. To finish at 30, it must instead be the largest of the first 30 entries and smaller than r 31.",
+      "This condition is also sufficient: it moves through positions 21 to 30, stops when compared with the larger r 31, and subsequent comparisons leave position 30 untouched.",
+      "Among the first 31 distinct entries, every relative ordering is equally likely. The condition puts the largest at 31 and the second largest at 20, with the other 29 entries arbitrary. Its probability is $29!/31!=1/930$. Therefore p+q=931."
+    ],
+    "keyIdeas": [
+      "A tagged entry moving during one bubble pass"
+    ],
+    "commonMistakes": [
+      "Requiring r 20 to be the largest of the entire 40-entry list."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the initial prefix and the first stopping comparison affect the tagged entry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p14",
+    "problemId": "aime-1987-p14",
+    "finalAnswer": "$\\boxed{373}$",
+    "shortExplanation": "Factor each term as $g(x)g(x+6)$; all internal factors cancel, leaving 373.",
+    "detailedSteps": [
+      "The Sophie Germain identity gives $x^4+324=(x^2-6x+18)(x^2+6x+18)$. If $g(x)=x^2-6x+18$, the second factor is g(x+6).",
+      "The numerator uses x=10,22,34,46,58, while the denominator uses x=4,16,28,40,52. In the resulting products, each internal factor g(10),g(16),...,g(58) appears once above and once below.",
+      "The ratio is therefore $g(64)/g(4)=(4096-384+18)/(16-24+18)=3730/10=373$."
+    ],
+    "keyIdeas": [
+      "A quartic factorization that telescopes"
+    ],
+    "commonMistakes": [
+      "Reading the source 324 as 32 to the fourth power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognize the fourth-power identity before attempting large arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1987-p15",
+    "problemId": "aime-1987-p15",
+    "finalAnswer": "$\\boxed{462}$",
+    "shortExplanation": "The two square-area equations determine the leg sum as 462.",
+    "detailedSteps": [
+      "Let the legs be a,b, with S=a+b, P=ab, and hypotenuse c. The axis-aligned square has side $ab/(a+b)=P/S$. Since its area is 441, P=21 S.",
+      "For the other square, let t be its side and h=P/c the triangle altitude to the hypotenuse. Its side opposite the hypotenuse lies at height t, where the available width is $c(1-t/h)$. Equality with t gives $t=ch/(c+h)=Pc/(c^2+P)$.",
+      "Using $c^2=S^2-2P$ and $t^2=440$, substitute P=21 S to obtain $440=441S(S-42)/(S-21)^2$. Since $S(S-42)=(S-21)^2-441$, this yields $(S-21)^2=441^2$.",
+      "The nondegenerate triangle has S>42, so S-21=441. Thus AC+CB=S=462."
+    ],
+    "keyIdeas": [
+      "Two orientations of a square in a right triangle"
+    ],
+    "commonMistakes": [
+      "Using the same square-side formula for both diagram orientations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each orientation gives a distinct relation between the same leg sum and product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

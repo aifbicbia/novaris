@@ -1,0 +1,103 @@
+[
+  {
+    "finalAnswer": "Let $E$ mean that an unchanged outside AND block is true, and let $F$ count false operands in the two surviving boundary fragments. A requested false result is possible exactly when $E$ is false. A requested true result is possible exactly when $E$ is true or $F=0$. Preprocessing and all queries take $O(N+Q)$ time.",
+    "shortExplanation": "Separate the original expression at every OR. Only the blocks containing the two deleted endpoints can leave partial fragments. All blocks outside that range retain their values, while the two fragments join around the replacement literal. Prefix counts determine whether an outside block already forces true and whether a surviving false operand prevents the replacement from making its block true.",
+    "detailedSteps": [
+      "**1. Respect precedence.** A maximal run connected by AND is one block. It evaluates to true if every literal in that run is true. OR combines these block values, so one true block makes the whole expression true. Store the block ID for every operand position, the first and last operand of each block, a prefix count of false operands, and a prefix count of true complete blocks.",
+      "**2. Identify what survives.** For a deletion from token $l$ to token $r$, let $A$ and $B$ be their block IDs. Blocks strictly before $A$ or after $B$ are untouched. The left fragment of $A$ before $l$ and the right fragment of $B$ after $r$ remain joined by AND to the inserted literal. The OR separators between deleted blocks disappear with the deleted segment. When $A=B$, these two fragments are still disjoint; empty fragments contain no false literal.",
+      "**3. Query two counts.** Let $T_b$ count true complete blocks through block $b$, with $T_0=0$, and let $K$ be the block count. An outside true block exists exactly when $$T_{A-1}+T_K-T_B>0.$$ If $Z_i$ counts false operands through token $i$, and $s_A,e_B$ are the boundary blocks\\' first and last operands, the surviving false count is $$F=Z_{l-1}-Z_{s_A-1}+Z_{e_B}-Z_r.$$ Each count needs constant-time prefix subtraction.",
+      "**4. Prove both decisions.** Write $b$ for the replacement Boolean. The new value is $$E\\lor\\bigl(b\\land[F=0]\\bigr).$$ To obtain false, no outside block may force true; if none does, inserting false always works. To obtain true, an outside true block already suffices, or the merged block must have no surviving false operand and receive true. These conditions are necessary as well as sufficient.",
+      "**5. Keep queries independent.** Every query starts from the original expression. Never update the prefix arrays after answering it. A singleton original expression, a deletion of the whole expression, and a deletion wholly inside one AND block all use the same formulas. The printed token bound is odd $N<200000$, while $Q$ may equal $200000$. Time is $O(N+Q)$; storage is $O(N+Q)$ including the output string.",
+      "**6. Original C++17 implementation.** Read the original statement externally for its precise input format. The code below prints the required concatenated query results.\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <cstdlib>\n#include <utility>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, q;\n    cin >> n >> q;\n    vector<string> token(n + 1);\n    for (int i = 1; i <= n; ++i) cin >> token[i];\n    vector<int> id(n + 1), starts(1), ends(1), falsePrefix(n + 1);\n    int blocks = 0;\n    for (int i = 1; i <= n; i += 2) {\n        if (i == 1 || token[i - 1] == \"or\") {\n            if (i > 1) ends.push_back(i - 2);\n            starts.push_back(i);\n            ++blocks;\n        }\n        id[i] = blocks;\n    }\n    ends.push_back(n);\n    for (int i = 1; i <= n; ++i)\n        falsePrefix[i] = falsePrefix[i - 1] + (token[i] == \"false\");\n    vector<int> truePrefix(blocks + 1);\n    for (int b = 1; b <= blocks; ++b)\n        truePrefix[b] = truePrefix[b - 1] +\n            (falsePrefix[ends[b]] == falsePrefix[starts[b] - 1]);\n    string answer;\n    answer.reserve(q);\n    while (q--) {\n        int l, r;\n        string desired;\n        cin >> l >> r >> desired;\n        int a = id[l], b = id[r];\n        bool externalTrue = truePrefix[a - 1] + truePrefix[blocks] - truePrefix[b] > 0;\n        int remainingFalse = falsePrefix[l - 1] - falsePrefix[starts[a] - 1]\n            + falsePrefix[ends[b]] - falsePrefix[r];\n        bool possible = desired == \"true\" ? externalTrue || remainingFalse == 0 : !externalTrue;\n        answer += possible ? 'Y' : 'N';\n    }\n    cout << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "AND blocks turn precedence into two levels of Boolean evaluation.",
+      "A deleted interval leaves at most two partial boundary fragments.",
+      "A true outside block cannot be changed by the replacement.",
+      "False-operand and true-block prefix counts answer independent static queries."
+    ],
+    "commonMistakes": [
+      "Evaluating operators strictly left to right rather than giving AND priority.",
+      "Counting a true block that intersects the deleted interval as an untouched block.",
+      "Forgetting that a false surviving operand blocks true even after inserting true.",
+      "Applying one query permanently before answering the next."
+    ],
+    "alternativeMethods": [
+      "For a small expression, try both replacement literals and repeatedly reduce AND before OR. This direct evaluator is slower but gives a useful independent check.",
+      "Instead of counting outside true blocks, store the earliest and latest true block IDs. Their positions also reveal whether a true block lies outside the affected block interval."
+    ],
+    "difficultyNotes": "The main difficulty is preserving operator precedence across both deletion boundaries. Once the expression is partitioned correctly, every query reduces to two static counts.",
+    "id": "solution-usaco-bronze-2024-us-open-p1",
+    "problemId": "usaco-bronze-2024-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Assign cumulative fence offsets $u,v$ to the two query points. For perimeter $L$, output $$\\min\\bigl(|u-v|,L-|u-v|\\bigr).$$ A dense grid is valid for this Bronze edition\\'s coordinate limit; total time is $O(C^2+P+N)$ and storage is $O(C^2+P)$, where $C=1000$.",
+    "shortExplanation": "Walk around the supplied polygon once, assigning an offset to every integer point on its boundary. Each query then becomes a distance on a cycle: one route follows the offset difference, and the other uses the rest of the perimeter. The source coordinate bound makes unit-edge preprocessing small enough even for the maximum post count.",
+    "detailedSteps": [
+      "**1. Turn the boundary into a cycle coordinate.** Choose the first supplied post as offset zero and traverse edges in their input order. An axis-aligned edge has length equal to its Manhattan coordinate difference. The running total is distance along the fence, not distance directly across the pasture.",
+      "**2. Include interior edge points without double-counting posts.** On an edge of length $d$, assign its starting point and the next $d-1$ integer positions. Its ending post is assigned as the start of the next edge. Thus the closing origin keeps offset zero rather than a second offset $L$. Every query point is integral and lies on the fence, so this visits it. The well-behaved simple boundary guarantees a unique offset modulo $L$.",
+      "**3. Take the shorter complementary arc.** Two points with offsets $u,v$ split the closed fence into arcs of lengths $D=|u-v|$ and $L-D$. These are exactly the two permitted walks. Their minimum is the answer. Equal points give zero, and a tie gives $L/2$. Changing the origin or reversing the input order does not change either route length.",
+      "**4. Justify unit stepping from the actual bound.** All coordinates lie in the integer square from zero to $C=1000$. It has $C(C+1)$ horizontal and the same number of vertical unit edges. The non-overlapping fence cannot reuse one, so $$L\\le 2C(C+1).$$ Unit stepping is therefore bounded by the grid size, rather than an unsupported worst-case product of the number of posts and the coordinate range.",
+      "**5. State the complexity and arithmetic scope.** Initializing the dense offset table takes $O(C^2)$, reading posts takes $O(P)$, walking the boundary takes $O(L)$, and queries take $O(N)$. Together this is $O(C^2+P+N)$ time and $O(C^2+P)$ storage. The source perimeter bound is at most $2002000$; the implementation nevertheless uses signed 64-bit offsets. This preprocessing depends on the Bronze coordinate limit and should not be transferred unchanged to a variant with much larger coordinates.",
+      "**6. Original C++17 implementation.** The dense table includes posts and non-post boundary points. No official diagram or sample has been reproduced.\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <cstdlib>\n#include <utility>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n, p;\n    cin >> n >> p;\n    vector<pair<int, int>> post(p);\n    for (auto &[x, y] : post) cin >> x >> y;\n    constexpr int width = 1001;\n    vector<long long> offset(width * width, -1);\n    long long perimeter = 0;\n    for (int i = 0; i < p; ++i) {\n        auto [x, y] = post[i];\n        auto [xx, yy] = post[(i + 1) % p];\n        int dx = (xx > x) - (xx < x);\n        int dy = (yy > y) - (yy < y);\n        int length = abs(xx - x) + abs(yy - y);\n        for (int k = 0; k < length; ++k) {\n            int key = (x + k * dx) * width + y + k * dy;\n            offset[key] = perimeter + k;\n        }\n        perimeter += length;\n    }\n    while (n--) {\n        int x1, y1, x2, y2;\n        cin >> x1 >> y1 >> x2 >> y2;\n        long long difference = llabs(offset[x1 * width + y1] - offset[x2 * width + y2]);\n        cout << min(difference, perimeter - difference) << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Parameterize the fence by accumulated boundary distance.",
+      "A simple closed boundary has two complementary arcs between any two points.",
+      "Half-open edge enumeration assigns every integer boundary point once.",
+      "Non-overlapping unit grid edges bound the total preprocessing work."
+    ],
+    "commonMistakes": [
+      "Using Manhattan distance between the query points instead of distance along the fence.",
+      "Assuming each query endpoint must be an original post.",
+      "Assigning the closing origin both zero and the full perimeter.",
+      "Quoting a linear-in-post-count running time while silently walking every unit edge."
+    ],
+    "alternativeMethods": [
+      "Group vertical edges by their x-coordinate and horizontal edges by their y-coordinate, sorting interval endpoints. Binary searches can locate each point and recover its accumulated offset in a variant whose coordinate range is too large for a dense grid.",
+      "For tiny fences, construct the graph of boundary unit edges and use BFS for every query. It supplies an independent shortest-path oracle without using the perimeter-complement formula."
+    ],
+    "difficultyNotes": "The cycle-distance formula is short. The important details are interior query points, consistent handling of shared posts, and proving that dense unit stepping respects this edition's limits.",
+    "id": "solution-usaco-bronze-2024-us-open-p2",
+    "problemId": "usaco-bronze-2024-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Find the values absent from the hints. Two missing values are the endpoints; one missing value pairs with $1$. Put the smaller endpoint first, then reconstruct by the forced larger-end deletions. Reject any inconsistent or repeated assignment. The successful result is the lexicographically smallest permutation. Time and storage are $O(N)$ per case.",
+    "shortExplanation": "Every interior value is logged when it first becomes an endpoint. The only unlogged values are the original endpoints other than 1. Once those endpoints are known, each hint forces the next exposed position. Reflection preserves the hints, so choosing the smaller endpoint on the left selects the lexicographically smaller of the two possible orientations.",
+    "detailedSteps": [
+      "**1. The minimum survives.** Each operation deletes the larger of two distinct endpoints. Value $1$ can never be deleted while another value remains, so it is the final singleton. The last hint must be $1$, but this necessary condition alone is not enough to reconstruct the permutation.",
+      "**2. Recover the unordered endpoints.** Every original interior entry must first become exposed when its outer neighbor is removed. That operation logs the entry. An original endpoint other than $1$ has no outer neighbor and is eventually removed without being logged. If $1$ is an original endpoint, the final operation logs it. Therefore the missing values are exactly the original endpoints excluding $1$. There must be either two missing values, or one missing value whose other endpoint is $1$. Any other missing count is impossible.",
+      "**3. Fill positions by forced simulation.** Place the two endpoints in an otherwise empty array. Compare the currently exposed endpoints. The larger must be removed; move that end one position inward and assign the current hint to the newly exposed slot. Reject if that hint was already assigned to another slot. If the slot is already filled, as happens for the final singleton, require the hint to match it rather than rejecting a legitimate final reuse.",
+      "**4. Prove completeness and validity.** Any valid permutation has the recovered endpoints and must follow these comparisons, so every subsequent position is forced. Conversely, a successful simulation fills each slot exactly once with the values from $1$ through $N$ and reproduces every hint. It is therefore a valid permutation. A failed assignment cannot be repaired by guessing another interior value because the current hint already fixes that value.",
+      "**5. Prove lexicographic minimality.** Reversing a permutation swaps the two ends but does not change the larger-end deletion rule or the neighbor that is logged. Its hint sequence is identical. The two possible endpoint orders consequently yield reversed permutations, or both are impossible. Their first entries are distinct, so the orientation with the smaller first endpoint is lexicographically smaller regardless of its interior. Choose this orientation directly.",
+      "**6. Complexity and boundaries.** Scanning missing values, keeping used flags, and moving the two pointers take $O(N)$ time and storage. The source gives $T\\le10$ and $N\\le100000$ per case, without an additional aggregate-size promise. For $N=2$, the only valid hint is $1$ and the minimum result begins with $1$. Duplicate hints are not automatically invalid: the final singleton may have been exposed and logged earlier.",
+      "**7. Original C++17 implementation.** All hints are read before reconstruction, including when the result is impossible.\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n#include <cstdlib>\n#include <utility>\nusing namespace std;\nvector<int> reconstruct(const vector<int> &hint) {\n    int n = static_cast<int>(hint.size()) + 1;\n    vector<bool> present(n + 1), used(n + 1);\n    for (int x : hint) present[x] = true;\n    vector<int> endpoint;\n    for (int x = 1; x <= n; ++x) if (!present[x]) endpoint.push_back(x);\n    if (endpoint.size() == 1) endpoint.push_back(1);\n    if (endpoint.size() != 2 || endpoint[0] == endpoint[1]) return {};\n    sort(endpoint.begin(), endpoint.end());\n    vector<int> answer(n);\n    answer.front() = endpoint[0];\n    answer.back() = endpoint[1];\n    used[endpoint[0]] = used[endpoint[1]] = true;\n    int left = 0, right = n - 1, count = 2;\n    for (int x : hint) {\n        int position = answer[left] > answer[right] ? ++left : --right;\n        if (answer[position] != 0) {\n            if (answer[position] != x) return {};\n        } else {\n            if (used[x]) return {};\n            answer[position] = x;\n            used[x] = true;\n            ++count;\n        }\n    }\n    return count == n ? answer : vector<int>{};\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int t;\n    cin >> t;\n    while (t--) {\n        int n;\n        cin >> n;\n        vector<int> hint(n - 1);\n        for (int &x : hint) cin >> x;\n        auto answer = reconstruct(hint);\n        if (answer.empty()) cout << -1;\n        else for (int i = 0; i < n; ++i) cout << (i ? \" \" : \"\") << answer[i];\n        cout << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "The smaller endpoint survives each deletion, so 1 survives every operation.",
+      "All original interior values appear when first exposed.",
+      "Missing hint values identify the original endpoints.",
+      "Known endpoints make the entire inward reconstruction deterministic.",
+      "Reflection preserves hints and determines the lexicographically preferred orientation."
+    ],
+    "commonMistakes": [
+      "Treating every repeated hint as a repeated permutation assignment.",
+      "Choosing endpoints arbitrarily without using the set of missing values.",
+      "Assuming that a final hint of 1 is sufficient for consistency.",
+      "Returning a consistent reconstruction without proving it is lexicographically minimum."
+    ],
+    "alternativeMethods": [
+      "For very small N, enumerate permutations in lexicographic order and literally run the deletion process. The first permutation producing the hints is the exact minimum; exhaustive enumeration provides an independent oracle.",
+      "Reconstruct both endpoint orientations and compare them explicitly. The reflection argument shows why this extra reconstruction gives the same answer as choosing the smaller first endpoint."
+    ],
+    "difficultyNotes": "The reconstruction is linear after discovering what the hint set omits. The main proof obligations are that every interior entry is logged and that reflection accounts for all possible solutions.",
+    "id": "solution-usaco-bronze-2024-us-open-p3",
+    "problemId": "usaco-bronze-2024-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

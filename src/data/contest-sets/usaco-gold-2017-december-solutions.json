@@ -1,0 +1,106 @@
+[
+  {
+    "finalAnswer": "Use reverse multi-source BFS with deletable taste ranges. For every original Bessie pie, output its distance to a zero-rated receiving event, counting the initial gift, or -1 if no such event is reachable.",
+    "shortExplanation": "Start from every pie that ends the exchange immediately. A reverse BFS discovers pies that can precede an already solved pie. Store undiscovered pies in ordered sets keyed by the appropriate recipient score, so every pie is extracted at most once.",
+    "detailedSteps": [
+      "Give each physical pie its own identity, even if several pies have identical scores. Write $b(p)$ and $e(p)$ for its Bessie and Elsie scores. A Bessie-owned pie is a terminal gift exactly when $e(p)=0$; an Elsie-owned pie is terminal exactly when $b(p)=0$. Assign every terminal distance $1$, because giving that pie itself counts as one gift.",
+      "In the forward exchange, a Bessie pie $x$ may be followed by an original Elsie pie $y$ when $e(x)\\le e(y)\\le e(x)+D$. Conversely, an Elsie pie $y$ may be followed by an original Bessie pie $x$ when $b(y)\\le b(x)\\le b(y)+D$. There is no need to enumerate all such edges.",
+      "These graph edges initially ignore whether a pie has already been used. This relaxation does not change the minimum: any shortest walk to a terminal can be made simple by deleting repeated-node cycles. The two ownership classes alternate, so each deleted cycle has even length; alternation and every remaining local score constraint are preserved. A simple path uses every physical pie at most once, always from its original owner, and therefore is a legal exchange. Every legal happy exchange also supplies a graph path.",
+      "Reverse the transitions. When processing a solved Bessie pie $x$, its Elsie predecessors have Bessie scores in $[b(x)-D,b(x)]$. When processing a solved Elsie pie $y$, its Bessie predecessors have Elsie scores in $[e(y)-D,e(y)]$. Notice that the score used for a reverse query belongs to the cow who would have received the predecessor.",
+      "Keep one ordered set of undiscovered Bessie pies keyed by their Elsie scores, and one set of undiscovered Elsie pies keyed by their Bessie scores. The keys are pairs of score and physical identity, so equal scores never merge distinct pies. Remove the terminal pies from these sets and place all terminals in the BFS queue.",
+      "For a popped node $v$, use lower_bound to locate the first score in its reverse interval. Extract every remaining entry through the inclusive upper endpoint. Set its distance to $\\operatorname{dist}(v)+1$, enqueue it, and erase it from the set. The queue processes increasing distance layers. Every first discovery is therefore shortest; an erased node cannot need a later shorter distance.",
+      "After the queue empties, print the first N distances in the original Bessie input order, one per line. Undiscovered pies remain -1. An initial gift received with score zero prints 1, rather than 0. The goal is the shortest possible cooperative exchange, so the algorithm does not optimize against an adversarial choice by the other cow.",
+      "Each of the $2N$ pies enters the queue at most once and is erased at most once. Every nonempty interval extraction costs one logarithmic set operation per discovered pie, and every popped node makes one lower-bound query. Time is $O(N\\log N)$ and space is $O(N)$. Compute score-minus-$D$ in a signed 64-bit type, allowing a negative lower endpoint without clamping.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <set>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"piepie.in\");std::ofstream out(\"piepie.out\");int n;long long d;in >> n >> d;\n    std::vector<std::pair<long long,long long>> pie(2*n);for(auto& p:pie) in >> p.first >> p.second;\n    std::vector<int> distance(2*n,-1);std::queue<int> pending;\n    std::set<std::pair<long long,int>> remainingB,remainingE;\n    for(int i=0;i<2*n;++i) {\n        long long receiver=(i<n?pie[i].second:pie[i].first);\n        if(receiver==0){distance[i]=1;pending.push(i);}\n        else if(i<n) remainingB.insert({pie[i].second,i});\n        else remainingE.insert({pie[i].first,i});\n    }\n    while(!pending.empty()) {\n        int node=pending.front();pending.pop();bool fromB=node<n;\n        long long current=fromB?pie[node].first:pie[node].second;\n        auto& predecessors=fromB?remainingE:remainingB;\n        auto it=predecessors.lower_bound({current-d,-1});\n        while(it!=predecessors.end() && it->first<=current) {\n            int previous=it->second;distance[previous]=distance[node]+1;pending.push(previous);it=predecessors.erase(it);\n        }\n    }\n    for(int i=0;i<n;++i) out << distance[i] << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Solve all starting pies at once by reversing a shortest-path problem.",
+      "A shortest graph path is simple, which reconciles graph search with the no-repeated-pie rule.",
+      "Range deletion makes a potentially dense transition graph affordable."
+    ],
+    "commonMistakes": [
+      "Querying the previous owner\u2019s taste instead of the receiving cow\u2019s taste in the reverse interval.",
+      "Using a plain set of scores and losing distinct pies with equal ratings.",
+      "Counting the number of replies instead of all gifts, or treating a zero-valued receiving event as impossible.",
+      "Scanning the same already discovered interval entries repeatedly, which can become quadratic."
+    ],
+    "alternativeMethods": [
+      "Sort each ownership class by its reverse-query score and use a successor disjoint-set structure to skip deleted positions. Binary search finds each interval\u2019s first position; successor links extract each undiscovered pie once.",
+      "For tiny instances, search forward with a bit mask of used physical pies. This literal model checks the no-reuse rule directly, but its exponential state count makes it unsuitable for the full input."
+    ],
+    "difficultyNotes": "The main difficulty is proving that a shortest path remains physically realizable despite the no-reuse rule, then choosing the correct taste coordinate in each reversed transition. Equal values, both types of terminal pie, inclusive endpoints, and N output lines need separate attention.",
+    "id": "solution-usaco-gold-2017-december-p1",
+    "problemId": "usaco-gold-2017-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Root the tree and count valid subtree colorings for each root color. Sum the three states of the root modulo 1,000,000,007.",
+    "shortExplanation": "Once a barn\u2019s color is fixed, each child may use either of the other two colors. Different child subtrees then contribute independently. A three-state tree DP counts all completions while enforcing the colors already painted.",
+    "detailedSteps": [
+      "The input has $N-1$ edges and no cycles. Thus it is a connected tree: an acyclic graph with $c$ components has $N-c$ edges, so here $c=1$. Root the tree at any barn. Build a parent array and a traversal order iteratively; processing that order backward handles every child before its parent.",
+      "Let $f[u][c]$ be the number of valid colorings of the subtree rooted at $u$, with $u$ assigned color $c\\in\\{0,1,2\\}$. Convert the input color labels to these indices. A state incompatible with an already painted color has value zero.",
+      "For an allowed color at a leaf, there is exactly one coloring of its one-barn subtree. More generally, begin an allowed state with 1. Store all fixed-color constraints. Repeated equal constraints have no effect; conflicting constraints on a single barn imply zero valid completions. No assumption that a proper coloring necessarily exists is needed.",
+      "If $u$ has color $c$, a child $v$ must have a different color. It contributes $\\sum_{d\\ne c}f[v][d]$ choices. Because separate child subtrees share no vertices or cross edges, multiply these contributions: $$f[u][c]=\\prod_{v\\text{ child of }u}\\left(\\sum_{d\\ne c}f[v][d]\\right)\\pmod{10^9+7}.$$ Set incompatible states to zero before this product.",
+      "Induct on subtree size. At a leaf the states are exact. For an internal barn, every valid coloring selects one allowed child color and one coloring in that child state; the choices are independent and uniquely reconstruct the whole subtree. Conversely, every product choice satisfies the parent-child edges and all internal constraints. The recurrence therefore neither omits nor double-counts a completion.",
+      "The answer is $\\bigl(f[r][0]+f[r][1]+f[r][2]\\bigr)\\bmod(10^9+7)$ for the chosen root $r$. Adjacent barns fixed to the same color correctly produce zero. With no edges and no fixed color, all three single-barn colors are counted.",
+      "There are three states per barn and a constant amount of work per edge, giving $O(N)$ time and $O(N)$ space. An iterative traversal avoids a recursion-depth failure on a chain of $100{,}000$ barns. Reduce each child sum modulo the modulus, and multiply in 64-bit arithmetic before taking the next remainder; the product is at most $(10^9+6)^2$ and fits signed 64-bit.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"barnpainting.in\");std::ofstream out(\"barnpainting.out\");int n,k;in >> n >> k;\n    std::vector<std::vector<int>> edges(n);for(int i=0;i<n-1;++i){int u,v;in >> u >> v;--u;--v;edges[u].push_back(v);edges[v].push_back(u);}\n    std::vector<int> fixed(n,-1);bool conflict=false;\n    for(int i=0;i<k;++i){int barn,color;in >> barn >> color;--barn;--color;if(fixed[barn]!=-1 && fixed[barn]!=color) conflict=true;fixed[barn]=color;}\n    if(conflict){out << 0 << '\\n';return 0;}\n    std::vector<int> parent(n,-1),order{0};parent[0]=0;\n    for(std::size_t i=0;i<order.size();++i){int u=order[i];for(int v:edges[u]) if(v!=parent[u]){parent[v]=u;order.push_back(v);}}\n    constexpr long long mod=1000000007;\n    std::vector<std::array<long long,3>> dp(n,{0,0,0});\n    for(auto it=order.rbegin();it!=order.rend();++it) {\n        int u=*it;\n        for(int color=0;color<3;++color) {\n            if(fixed[u]!=-1 && fixed[u]!=color) continue;\n            long long ways=1;\n            for(int v:edges[u]) if(parent[v]==u){long long options=(dp[v][(color+1)%3]+dp[v][(color+2)%3])%mod;ways=ways*options%mod;}\n            dp[u][color]=ways;\n        }\n    }\n    out << (dp[0][0]+dp[0][1]+dp[0][2])%mod << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Conditioning on a parent\u2019s color separates its child subtrees.",
+      "Use a zero state to enforce already painted colors and propagate impossibility.",
+      "The tree edge count and acyclicity justify rooting one connected component."
+    ],
+    "commonMistakes": [
+      "Allowing a child to use its parent\u2019s color.",
+      "Multiplying by two per edge without accounting for fixed colors farther down the tree.",
+      "Treating an impossible fixed-color configuration as having at least one completion.",
+      "Using 32-bit multiplication or recursive traversal at the maximum chain length."
+    ],
+    "alternativeMethods": [
+      "A recursive postorder implements the same recurrence, but only use it with a recursion environment that can safely handle the full tree depth.",
+      "Enumerate all three-color assignments on tiny trees and test every edge and fixed-color record directly. This is an independent exhaustive check of the recurrence, not a practical large-input algorithm."
+    ],
+    "difficultyNotes": "The counting recurrence is compact, but its product rule depends on the absence of cross edges. Implementation quality matters at the full chain bound: traverse iteratively, honor every fixed-color constraint, and use 64-bit modular products.",
+    "id": "solution-usaco-gold-2017-december-p2",
+    "problemId": "usaco-gold-2017-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Use a positive-flavor sliding window and a monotonic maximum deque. Minimize the current maximum spice over every valid window considered; the implementation runs in O(N) time.",
+    "shortExplanation": "Extend the right endpoint, maintain the flavor sum and maximum spice, and repeatedly shrink a window whenever its flavor requirement is met. A discarded left endpoint has already formed a valid meal, and extending that earlier meal cannot lower its maximum spice.",
+    "detailedSteps": [
+      "Maintain a current contiguous window $[l,r]$, its flavor sum $F$, and a deque of bale indices with decreasing spice values. All flavors are positive. Extending the right endpoint increases the sum; advancing the left endpoint decreases it. The source guarantees that at least one nonempty qualifying interval exists.",
+      "When a new bale enters, add its flavor. Remove deque entries from the back while their spice is no larger than the new spice, then append the new index. The newer bale dominates each removed one: it is at least as spicy and will remain in the window longer. The deque front consequently holds the current maximum spice.",
+      "While $F\\ge M$, record the spice at the deque front as a candidate answer. Then subtract the flavor at $l$, remove the deque front if it is exactly that departing index, and increment $l$. Continue until the flavor sum is too small. Repeat after each new right endpoint.",
+      "Every recorded candidate is a valid contiguous meal, so the algorithm cannot report a spice smaller than the true optimum. To prove that it also finds an optimal value, take an optimal interval with endpoints L and R and consider when R enters the window.",
+      "If L was already discarded at an earlier right endpoint, the algorithm recorded a valid interval starting at L and ending before R. That interval is a subset of the optimum interval, so its maximum spice is no greater. Otherwise the current left endpoint is at most L. Positivity of flavors means every window obtained by shrinking up to L still has at least the optimum interval\u2019s flavor; the loop therefore records the window starting at L before it stops. In either case a recorded candidate is no worse than the optimum.",
+      "This proves equality with the global optimum. It also explains why a previously discarded left endpoint never needs to be restored: it already yielded a valid interval, and adding more bales cannot decrease that interval\u2019s maximum spice. Equal-spice entries can safely discard the older one because the newer equal maximum expires later.",
+      "Each bale is appended to the deque once and removed at most once, while both endpoints advance at most $N$ times. Time is $O(N)$ and space is $O(N)$, including the stored input. Use 64-bit arithmetic for the flavor sum and $M$: the total flavor is at most $10^{14}$. Although the printed individual bound allows $M\\le10^{18}$, the stated existence guarantee jointly implies $M\\le\\sum F_i\\le10^{14}$. The guarantee also ensures that the answer is set and lies between $1$ and $10^9$.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <deque>\n#include <fstream>\n#include <limits>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"hayfeast.in\");std::ofstream out(\"hayfeast.out\");int n;long long minimum;in >> n >> minimum;\n    std::vector<std::pair<long long,long long>> bale(n);for(auto& p:bale) in >> p.first >> p.second;\n    long long sum=0,answer=std::numeric_limits<long long>::max();int left=0;std::deque<int> maximum;\n    for(int right=0;right<n;++right) {\n        sum+=bale[right].first;\n        while(!maximum.empty() && bale[maximum.back()].second<=bale[right].second) maximum.pop_back();maximum.push_back(right);\n        while(sum>=minimum) {\n            answer=std::min(answer,bale[maximum.front()].second);\n            sum-=bale[left].first;if(maximum.front()==left) maximum.pop_front();++left;\n        }\n    }\n    out << answer << '\\n'; // The printed feasibility guarantee ensures at least one window was evaluated.\n}\n```"
+    ],
+    "keyIdeas": [
+      "Positive flavors make feasibility monotone as a left endpoint is removed.",
+      "A monotonic deque answers the changing window-maximum query in amortized constant time.",
+      "Subset containment proves that discarded left endpoints cannot hide a better future maximum."
+    ],
+    "commonMistakes": [
+      "Minimizing the sum of spice values instead of their maximum.",
+      "Sorting bales and losing the required original contiguous order.",
+      "Recording the newest bale\u2019s spice instead of the deque front\u2019s window maximum.",
+      "Removing a deque maximum before evaluating the current valid window, or retaining an index after it leaves the window.",
+      "Testing an impossible threshold while claiming to respect the source\u2019s qualifying-meal guarantee."
+    ],
+    "alternativeMethods": [
+      "Binary-search a candidate spice threshold $S$. Bales with spice greater than $S$ split the array into allowed blocks. A threshold is feasible exactly when some block has total flavor at least $M$, since all flavors are positive. A full scan checks feasibility in $O(N)$, giving $O(N\\log 10^9)$ time.",
+      "For a small array, enumerate every contiguous interval and compute its total flavor and largest spice. This direct $O(N^2)$ method supplies a separate literal oracle for the linear algorithm."
+    ],
+    "difficultyNotes": "The deque is only half of the argument. A complete solution must justify why shrinking every valid window preserves an optimal candidate. The proof relies on strictly positive flavors and on the fact that adding bales cannot lower a maximum.",
+    "id": "solution-usaco-gold-2017-december-p3",
+    "problemId": "usaco-gold-2017-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

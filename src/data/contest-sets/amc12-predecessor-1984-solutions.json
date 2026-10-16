@@ -1,0 +1,623 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1984-p1",
+    "problemId": "amc12-predecessor-1984-p1",
+    "finalAnswer": "$\\boxed{500}$ (choice C)",
+    "shortExplanation": "The denominator is $4\\cdot500=2000$, so the quotient is $500$.",
+    "detailedSteps": [
+      "Use $252^2-248^2=(252-248)(252+248)=4\\cdot500=2000$.",
+      "The numerator is $1000^2=1000000$. Dividing by 2000 gives 500."
+    ],
+    "keyIdeas": [
+      "Factor the difference of squares"
+    ],
+    "commonMistakes": [
+      "Subtracting the two bases before squaring instead of factoring their difference of squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nearby squared numbers are easiest to compare by their sum and difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p2",
+    "problemId": "amc12-predecessor-1984-p2",
+    "finalAnswer": "$\\boxed{\\frac{x}{y}}$ (choice B)",
+    "shortExplanation": "Both parts contain $xy-1$, leaving $x/y$. The stated domain makes this cancellation valid.",
+    "detailedSteps": [
+      "The numerator is $x-1/y=(xy-1)/y$, while the denominator is $y-1/x=(xy-1)/x$.",
+      "The source assumes $x\\ne0$, $y\\ne0$ and $y-1/x\\ne0$. The last condition means $xy-1\\ne0$, so the quotient simplifies to $((xy-1)/y)(x/(xy-1))=x/y$."
+    ],
+    "keyIdeas": [
+      "Cancel only on the original nonzero domain"
+    ],
+    "commonMistakes": [
+      "Canceling the common factor without checking that it is nonzero in the original expression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A cancellation must preserve the domain on which the original quotient is defined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p3",
+    "problemId": "amc12-predecessor-1984-p3",
+    "finalAnswer": "$\\boxed{121}$ (choice C)",
+    "shortExplanation": "The smallest allowed prime is eleven, so the smallest allowed composite is $11^2=121$.",
+    "detailedSteps": [
+      "A composite integer greater than one has at least two prime factors when counted with multiplicity. With no prime factor below ten, each is at least eleven.",
+      "Therefore the integer is at least $11\\cdot11=121$. This value itself qualifies, and it lies in $120<n\\le130$, choice C."
+    ],
+    "keyIdeas": [
+      "Use the least permitted prime factor"
+    ],
+    "commonMistakes": [
+      "Treating eleven itself as composite, or using ten even though ten has smaller prime factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum composite is the square of the minimum permitted prime.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p4",
+    "problemId": "amc12-predecessor-1984-p4",
+    "finalAnswer": "$\\boxed{7}$ (choice B)",
+    "shortExplanation": "The circle\u2019s vertical symmetry line is $6.5$ units from the rectangle\u2019s left side, making the lower chord seven units long.",
+    "detailedSteps": [
+      "Use the rectangle\u2019s left side as horizontal coordinate zero. The upper chord starts at $B$ with coordinate four and ends at $C$ with coordinate $4+5=9$. Its midpoint has coordinate $13/2$.",
+      "The perpendicular bisectors of the two parallel horizontal chords pass through the same circle center. Thus the lower chord has the same midpoint coordinate.",
+      "The actual lower left endpoint $E$ has coordinate three. Its right endpoint has coordinate $2(13/2)-3=10$, and $EF=10-3=7$."
+    ],
+    "keyIdeas": [
+      "Align the midpoints of parallel circle chords"
+    ],
+    "commonMistakes": [
+      "Assuming the two parallel chords have equal lengths instead of equal midpoint coordinates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The rectangle makes the chord directions parallel; no radius or rectangle height is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p5",
+    "problemId": "amc12-predecessor-1984-p5",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "shortExplanation": "The positive threshold is $5^{3/2}$, between eleven and twelve, so the largest integer is eleven.",
+    "detailedSteps": [
+      "For a positive candidate, $n^{200}<5^{300}$ is equivalent to $n^2<5^3=125$. Since $11^2=121<125<144=12^2$, the largest positive integer is eleven.",
+      "Negative integers may also satisfy the original even-power inequality, but none can exceed eleven. Thus eleven is the largest integer in the entire original domain."
+    ],
+    "keyIdeas": [
+      "Compare the exact positive threshold"
+    ],
+    "commonMistakes": [
+      "Rounding the real threshold upward even though the inequality is strict."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An even power allows negative inputs without changing the greatest positive solution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p6",
+    "problemId": "amc12-predecessor-1984-p6",
+    "finalAnswer": "$\\boxed{\\frac{37}{27}b}$ (choice B)",
+    "shortExplanation": "The ratios are $b:g:t=27:9:1$, so the total is $37b/27$.",
+    "detailedSteps": [
+      "The given relationships are $b=3g$ and $g=9t$, hence $b=27t$. Therefore $b+g+t=27t+9t+t=37t$.",
+      "Substituting $t=b/27$ gives the total $(37/27)b$, which is the listed expression in choice B."
+    ],
+    "keyIdeas": [
+      "Express every group in one count unit"
+    ],
+    "commonMistakes": [
+      "Adding the ratio multipliers without first expressing all counts in the same unit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using the teacher count as one ratio unit keeps both multipliers visible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p7",
+    "problemId": "amc12-predecessor-1984-p7",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "Dave covers $108000$ centimeters, and Jack covers $6000$ centimeters per minute, so Jack needs eighteen minutes.",
+    "detailedSteps": [
+      "Dave\u2019s speed is $90\\cdot75=6750$ centimeters per minute. In sixteen minutes he travels $6750\\cdot16=108000$ centimeters.",
+      "Jack\u2019s speed is $100\\cdot60=6000$ centimeters per minute. On the same route, his time is $108000/6000=18$ minutes."
+    ],
+    "keyIdeas": [
+      "Use equal distance rather than equal step count"
+    ],
+    "commonMistakes": [
+      "Comparing steps per minute alone while ignoring the different step lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distance per minute is the product of step frequency and step length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p8",
+    "problemId": "amc12-predecessor-1984-p8",
+    "finalAnswer": "$\\boxed{8+\\sqrt3}$ (choice D)",
+    "shortExplanation": "The height is three; the two side projections are three and $\\sqrt3$, giving $DC=8+\\sqrt3$.",
+    "detailedSteps": [
+      "The right side has length $3\\sqrt2$ and meets the lower base at $45^\\circ$. Its vertical and horizontal projections are both three, so the trapezoid\u2019s height is three.",
+      "The left side meets the base at $60^\\circ$. Its horizontal projection is $3/\\tan60^\\circ=\\sqrt3$.",
+      "The pictured lower base extends beyond the upper base on both sides. Therefore $DC=3+AB+\\sqrt3=3+5+\\sqrt3=8+\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Add both horizontal projections to the upper base"
+    ],
+    "commonMistakes": [
+      "Subtracting a side projection even though both actual base angles make the lower base wider."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Dropping perpendiculars separates a trapezoid into a rectangle and two right triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p9",
+    "problemId": "amc12-predecessor-1984-p9",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "The integer is $128\\cdot10^{25}$, which has twenty-eight digits.",
+    "detailedSteps": [
+      "Rewrite $4^{16}5^{25}=2^{32}5^{25}=2^7(2^{25}5^{25})=128\\cdot10^{25}$.",
+      "This is the three-digit integer 128 followed by twenty-five zeros, so it has $3+25=28$ decimal digits."
+    ],
+    "keyIdeas": [
+      "Pair factors of two and five into powers of ten"
+    ],
+    "commonMistakes": [
+      "Counting twenty-five zeros as the total digit count, or failing to double the exponent when replacing four by two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Exact powers of ten avoid numerical logarithm errors at digit boundaries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p10",
+    "problemId": "amc12-predecessor-1984-p10",
+    "finalAnswer": "$\\boxed{2-i}$ (choice B)",
+    "shortExplanation": "The two length-$\\sqrt{10}$ sides meet at $-2+i$; completing the parallelogram gives $2-i$.",
+    "detailedSteps": [
+      "Write the three points as $P=(1,2)$, $Q=(-2,1)$ and $R=(-1,-2)$. Their squared distances are $PQ^2=QR^2=10$ and $PR^2=20$. Thus $Q$ is the square vertex adjacent to both $P$ and $R$.",
+      "The fourth vertex is $S=P+R-Q=(2,-1)$, corresponding to $2-i$.",
+      "The four consecutive sides have squared length ten, and the two diagonals have squared length twenty. The two side vectors at $Q$ have dot product zero, verifying the constructed square."
+    ],
+    "keyIdeas": [
+      "Identify the right-angle vertex among the three points"
+    ],
+    "commonMistakes": [
+      "Using one of the three points as the shared adjacent vertex without checking which pair forms the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Three square vertices contain two equal sides and one diagonal, fixing their roles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p11",
+    "problemId": "amc12-predecessor-1984-p11",
+    "finalAnswer": "$\\boxed{x^{(-2)^n}}$ (choice A)",
+    "shortExplanation": "One square-and-reciprocal pair multiplies the exponent by $-2$, so after $n$ pairs it is $(-2)^n$.",
+    "detailedSteps": [
+      "A square followed by a reciprocal sends a nonzero value $u$ to $u^{-2}$. Reversing those two operations gives the same result, so either alternating starting order has the same pair map.",
+      "If the current expression is $x^e$, one pair changes it to $x^{-2e}$. Starting with exponent one, $n$ pairs give exponent $(-2)^n$. Therefore $y=x^{(-2)^n}$.",
+      "All powers involved have integer exponents, and the nonzero initial entry keeps each reciprocal defined even if that initial entry is negative."
+    ],
+    "keyIdeas": [
+      "Track how each pair of operations changes the exponent"
+    ],
+    "commonMistakes": [
+      "Replacing repeated squaring by the linear exponent $2n$, or applying only one reciprocal sign to every pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Repeated composition acts on the exponent multiplicatively.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p12",
+    "problemId": "amc12-predecessor-1984-p12",
+    "finalAnswer": "$\\boxed{9902}$ (choice B)",
+    "shortExplanation": "The initial value two plus $2(1+\\cdots+99)$ gives $9902$.",
+    "detailedSteps": [
+      "To move from $a_1$ to $a_{100}$, use the recurrence for $n=1,2,\\ldots,99$. Thus $a_{100}=2+2\\sum_{n=1}^{99}n$.",
+      "The arithmetic sum is $99\\cdot100/2=4950$. Therefore $a_{100}=2+9900=9902$."
+    ],
+    "keyIdeas": [
+      "Sum exactly the ninety-nine increments"
+    ],
+    "commonMistakes": [
+      "Including the increment for $n=100$, which would instead advance to $a_{101}$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The final index determines which increments are included.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p13",
+    "problemId": "amc12-predecessor-1984-p13",
+    "finalAnswer": "$\\boxed{\\sqrt2+\\sqrt3-\\sqrt5}$ (choice A)",
+    "shortExplanation": "The denominator times $\\sqrt2+\\sqrt3-\\sqrt5$ is exactly $2\\sqrt6$, the numerator.",
+    "detailedSteps": [
+      "Group the denominator as $(\\sqrt2+\\sqrt3)+\\sqrt5$. Multiply it by the conjugate $(\\sqrt2+\\sqrt3)-\\sqrt5$.",
+      "The product is $(\\sqrt2+\\sqrt3)^2-5=2+3+2\\sqrt6-5=2\\sqrt6$.",
+      "The original denominator is positive, so the quotient $2\\sqrt6/(\\sqrt2+\\sqrt3+\\sqrt5)$ equals $\\sqrt2+\\sqrt3-\\sqrt5$."
+    ],
+    "keyIdeas": [
+      "Use the conjugate of the combined radical term"
+    ],
+    "commonMistakes": [
+      "Negating all three radicals rather than only the last term of the grouped conjugate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining two radicals before taking a conjugate can reveal the given numerator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p14",
+    "problemId": "amc12-predecessor-1984-p14",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The logarithm of the equation gives $(\\log_{10}x)^2=1$, whose two positive roots have product one.",
+    "detailedSteps": [
+      "The original logarithm requires $x>0$. Put $u=\\log_{10}x$, so $x=10^u$. Taking base-ten logarithms of $x^{\\log_{10}x}=10$ gives $u^2=1$.",
+      "Thus $u=1$ or $u=-1$, yielding $x=10$ or $x=1/10$. Both satisfy the original equation, and their product is one. No other real value lies in the logarithm\u2019s domain and satisfies $u^2=1$."
+    ],
+    "keyIdeas": [
+      "Take logarithms on the positive original domain"
+    ],
+    "commonMistakes": [
+      "Discarding the negative logarithm value even though it corresponds to the positive root $1/10$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positive base may have a negative logarithm without leaving the real domain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p15",
+    "problemId": "amc12-predecessor-1984-p15",
+    "finalAnswer": "$\\boxed{18^\\circ}$ (choice A)",
+    "shortExplanation": "The equation is equivalent to $\\cos5x=0$, and $x=18^\\circ$ is a listed solution.",
+    "detailedSteps": [
+      "Move the left side to the right: $\\cos2x\\cos3x-\\sin2x\\sin3x=0$. The cosine addition identity makes this $\\cos(5x)=0$.",
+      "For $x=18^\\circ$, the angle $5x$ is $90^\\circ$, so the cosine is zero. This supplies the requested listed value; a full period classification is unnecessary because the question asks for one value."
+    ],
+    "keyIdeas": [
+      "Recognize the cosine of the sum of the two angles"
+    ],
+    "commonMistakes": [
+      "Using the cosine difference identity, which has a plus sign between the sine product and cosine product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The listed angle values establish degrees for this multiple-choice comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p16",
+    "problemId": "amc12-predecessor-1984-p16",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The four distinct roots form two reflected pairs, each summing to four, so their sum is eight.",
+    "detailedSteps": [
+      "The given symmetry implies $f(r)=f(4-r)$ for every real $r$. Therefore reflection $r\\mapsto4-r$ maps the four-element root set to itself.",
+      "Every nonfixed orbit consists of two roots whose sum is four. The only possible fixed root is two. It cannot belong to a four-element root set, because the other three roots could not all be partitioned into two-element orbits.",
+      "Thus there are two pairs and their total is $4+4=8$. This uses no continuity or polynomial assumption about $f$."
+    ],
+    "keyIdeas": [
+      "Pair roots by reflection about two"
+    ],
+    "commonMistakes": [
+      "Assuming the roots occur in pairs about zero rather than about the source symmetry center two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite symmetric root set can be summed without knowing the function\u2019s formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p17",
+    "problemId": "amc12-predecessor-1984-p17",
+    "finalAnswer": "$\\boxed{150}$ (choice C)",
+    "shortExplanation": "The hypotenuse segments are nine and sixteen, giving altitude twelve and triangle area $150$.",
+    "detailedSteps": [
+      "Let $AH=t>0$. The right-triangle leg theorem gives $AC^2=AH\\cdot AB=t(t+16)$. Hence $t^2+16t-225=0=(t-9)(t+25)$, and the positive length is $t=9$.",
+      "The hypotenuse is $AB=9+16=25$. The altitude satisfies $CH^2=AH\\cdot HB=9\\cdot16=144$, so $CH=12$.",
+      "The area is $AB\\cdot CH/2=25\\cdot12/2=150$. The resulting side lengths are 15,20,25, consistent with the original right triangle."
+    ],
+    "keyIdeas": [
+      "Use the leg-projection relation on the hypotenuse"
+    ],
+    "commonMistakes": [
+      "Treating the segment sixteen as the entire hypotenuse, or accepting the negative quadratic root as a length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An altitude to the hypotenuse turns the given partial segment into a quadratic length relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p18",
+    "problemId": "amc12-predecessor-1984-p18",
+    "finalAnswer": "$\\boxed{\\text{not uniquely determined}}$ (choice E)",
+    "shortExplanation": "There are four equidistant points, with different horizontal coordinates, so $x$ is not uniquely determined.",
+    "detailedSteps": [
+      "Equal distance from the coordinate axes means $|x|=|y|$, so either $y=x$ or $y=-x$. The distance to the third line is $|x+y-2|/\\sqrt2$.",
+      "On $y=x$, the condition is $|2x-2|=\\sqrt2|x|$. Squaring gives $x^2-4x+2=0$, with $x=2\\pm\\sqrt2$. Both points $(x,x)$ satisfy all three distance conditions.",
+      "On $y=-x$, the third-line distance is $\\sqrt2$, so $x=\\pm\\sqrt2$. These give the two points $(\\sqrt2,-\\sqrt2)$ and $(-\\sqrt2,\\sqrt2)$.",
+      "The original statement imposes no quadrant restriction. These four points have distinct horizontal coordinates, so the answer is not uniquely determined."
+    ],
+    "keyIdeas": [
+      "Include every angle bisector of the two axes"
+    ],
+    "commonMistakes": [
+      "Selecting only the point inside the first-quadrant triangle when the source asks about the entire plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distances are nonnegative and require absolute values in every quadrant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p19",
+    "problemId": "amc12-predecessor-1984-p19",
+    "finalAnswer": "$\\boxed{\\frac{118}{231}}$ (choice D)",
+    "shortExplanation": "There are $236$ favorable subsets among $462$, giving $118/231$.",
+    "detailedSteps": [
+      "Under the usual uniform subset model for the simultaneous random draw, all $\\binom{11}{6}=462$ selections are equally likely. There are six odd labels and five even labels.",
+      "The sum is odd precisely when the selected odd-label count is one, three or five. The favorable total is $\\binom61\\binom55+\\binom63\\binom53+\\binom65\\binom51=6+200+30=236$.",
+      "Thus the probability is $236/462=118/231$. The uniform subset reading is the standard random-draw interpretation, not an extra sentence quoted as explicit source wording."
+    ],
+    "keyIdeas": [
+      "Count subsets with an odd number of odd labels"
+    ],
+    "commonMistakes": [
+      "Assuming odd and even sums are equally likely despite the unequal odd and even label populations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parity of a sum depends only on how many odd summands it contains.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p20",
+    "problemId": "amc12-predecessor-1984-p20",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The valid roots are $2$ and $-4/3$, so there are two distinct solutions.",
+    "detailedSteps": [
+      "If $x\\ge-1/2$, then $|2x+1|=2x+1$ and the equation becomes $|x+1|=3$. Its candidates are $x=2$ and $x=-4$, but only $2$ lies in this branch.",
+      "If $x<-1/2$, then $|2x+1|=-2x-1$, giving $|3x+1|=3$. Its candidates are $x=2/3$ and $x=-4/3$, and only $-4/3$ lies in this branch.",
+      "Both surviving values satisfy the original nested expression. The branches cover every real input, so the count is exactly two."
+    ],
+    "keyIdeas": [
+      "Validate both levels of absolute-value branches"
+    ],
+    "commonMistakes": [
+      "Counting all four linear candidates without checking the inner absolute-value domain for each."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested absolute values require domain checks at the inner split as well as the outer sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p21",
+    "problemId": "amc12-predecessor-1984-p21",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The second equation forces $c=1$ and $a+b=23$, leaving the two triples $(21,2,1)$ and $(1,22,1)$.",
+    "detailedSteps": [
+      "The second equation factors as $c(a+b)=23$. Since all three integers are positive and $a+b\\ge2$, primality forces $c=1$ and $a+b=23$.",
+      "The first equation is then $b(a+1)=44$. With $a=23-b$, it becomes $b(24-b)=44$, or $(b-2)(b-22)=0$.",
+      "The two possibilities are $(a,b,c)=(21,2,1)$ and $(1,22,1)$. Both are positive and satisfy both original equations; the prime factorization and quadratic branches exclude every other triple."
+    ],
+    "keyIdeas": [
+      "Exploit the prime-valued factored equation first"
+    ],
+    "commonMistakes": [
+      "Allowing $c=23$ even though it would require two positive integers to have sum one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A prime-valued product is more restrictive than either unfactored quadratic expression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p22",
+    "problemId": "amc12-predecessor-1984-p22",
+    "finalAnswer": "$\\boxed{\\text{a parabola}}$ (choice B)",
+    "shortExplanation": "The vertex coordinates satisfy $Y=c-aX^2$, and every real $X$ occurs.",
+    "detailedSteps": [
+      "For $y=ax^2+tx+c$ with $a>0$, the vertex is $X=-t/(2a)$ and $Y=c-t^2/(4a)$. Eliminating $t=-2aX$ gives $Y=c-aX^2$.",
+      "As $t$ ranges over every real number, $X=-t/(2a)$ also ranges over every real number. Thus the locus is the entire downward-opening parabola $Y=c-aX^2$, not just part of it."
+    ],
+    "keyIdeas": [
+      "Eliminate the parameter and prove full coverage"
+    ],
+    "commonMistakes": [
+      "Stopping after obtaining a curve equation without checking whether all its points are attained by the parameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parameter elimination describes the full locus only when the parameter range covers it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p23",
+    "problemId": "amc12-predecessor-1984-p23",
+    "finalAnswer": "$\\boxed{\\tan15^\\circ}$ (choice D)",
+    "shortExplanation": "The sine sum and cosine sum share $2\\cos5^\\circ$, leaving $\\tan15^\\circ$.",
+    "detailedSteps": [
+      "Use the sum identities: $\\sin10^\\circ+\\sin20^\\circ=2\\sin15^\\circ\\cos5^\\circ$ and $\\cos10^\\circ+\\cos20^\\circ=2\\cos15^\\circ\\cos5^\\circ$.",
+      "Both canceled factors are nonzero. The ratio is therefore $\\sin15^\\circ/\\cos15^\\circ=\\tan15^\\circ$."
+    ],
+    "keyIdeas": [
+      "Cancel the common sum-to-product factor"
+    ],
+    "commonMistakes": [
+      "Distributing the quotient across the two sums to form a sum of tangents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A ratio of angle sums often simplifies using their mean and half-difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p24",
+    "problemId": "amc12-predecessor-1984-p24",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The two real-root conditions force $a\\ge4$ and $b\\ge2$; $(a,b)=(4,2)$ attains sum six.",
+    "detailedSteps": [
+      "The discriminants must be nonnegative: $a^2-8b\\ge0$ and $4b^2-4a\\ge0$. Hence $a^2\\ge8b$ and $b^2\\ge a$.",
+      "Because $a,b>0$, squaring the first inequality gives $a^4\\ge64b^2\\ge64a$. Dividing by positive $a$ yields $a^3\\ge64$, so $a\\ge4$. The second inequality now gives $b\\ge\\sqrt a\\ge2$.",
+      "Thus $a+b\\ge6$. At $a=4,b=2$, both quadratics are $x^2+4x+4=(x+2)^2$, so both have real roots and the bound is attained. The minimum is six."
+    ],
+    "keyIdeas": [
+      "Combine both discriminants into a global lower bound"
+    ],
+    "commonMistakes": [
+      "Using only one quadratic\u2019s discriminant, or obtaining a bound without constructing parameters that attain it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining constraints can yield separate sharp lower bounds for two parameters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p25",
+    "problemId": "amc12-predecessor-1984-p25",
+    "finalAnswer": "$\\boxed{\\sqrt{14}}$ (choice D)",
+    "shortExplanation": "The side sum is six and the pairwise-product sum is eleven, so the squared diagonal is fourteen.",
+    "detailedSteps": [
+      "Let the positive side lengths be $a,b,c$. The total edge length gives $4(a+b+c)=24$, hence $a+b+c=6$. The surface area gives $2(ab+bc+ca)=22$, hence $ab+bc+ca=11$.",
+      "Every space diagonal has squared length $a^2+b^2+c^2=(a+b+c)^2-2(ab+bc+ca)=36-22=14$. Thus its length is $\\sqrt{14}$ centimeters.",
+      "The conditions are consistent: side lengths one, two and three have the required edge total and surface area. Individual dimensions need not be uniquely determined for this diagonal length to be fixed."
+    ],
+    "keyIdeas": [
+      "Use symmetric sums to recover the diagonal"
+    ],
+    "commonMistakes": [
+      "Declaring the diagonal undetermined merely because the three side lengths have not been individually solved."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A geometric quantity may be determined by invariants even when the underlying dimensions are not.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p26",
+    "problemId": "amc12-predecessor-1984-p26",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "The base $BD$ is half the horizontal coordinate of A, while E\u2019s height supplies the inverse factor; the area is half of $24$.",
+    "detailedSteps": [
+      "Use the actual pictured incidence $E\\in AB$ and put $B=(0,0)$, $C=(c,0)$, $A=(a,h)$ with positive $c,h$. The midpoint is $M=(a/2,h/2)$, so its perpendicular foot is $D=(a/2,0)$.",
+      "The line $AB$ has equation $y=(h/a)x$. Since $EC$ is perpendicular to the horizontal base, $E=(c,ch/a)$.",
+      "The original triangle has area $ch/2=24$. Triangle $BED$ has base $BD=a/2$ and altitude $ch/a$, hence area $(a/2)(ch/a)/2=ch/4=12$. The pictured bounded locations and obtuse arrangement are consistent with $c<a<2c$."
+    ],
+    "keyIdeas": [
+      "Track midpoint projection and the pictured line intersection"
+    ],
+    "commonMistakes": [
+      "Using M\u2019s height as E\u2019s height, or ignoring the source figure\u2019s incidence of E on AB."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinate projection keeps the different midpoint and intersection roles separate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p27",
+    "problemId": "amc12-predecessor-1984-p27",
+    "finalAnswer": "$\\boxed{\\sqrt[3]{2}}$ (choice C)",
+    "shortExplanation": "Writing $AC=t$ leads to $t^4=2t$, so the positive length is $\\sqrt[3]{2}$.",
+    "detailedSteps": [
+      "Let $AC=t>0$ and $AB=u>0$. Since $D$ lies on $AC$ with $DC=1$, its distance from $A$ is $t-1$. The right triangle $ABD$ gives $u^2+(t-1)^2=BD^2=1$. Thus $u^2+t^2=2t$.",
+      "The original right triangle has altitude $AF$ to its hypotenuse. The leg-projection theorem gives $AC^2=BC\\cdot FC$. Because $FC=1$, we have $BC=t^2$. Pythagoras then gives $u^2+t^2=BC^2=t^4$.",
+      "Combining yields $t^4=2t$. Positive $t$ excludes zero, leaving $t^3=2$ and $t=\\sqrt[3]{2}$.",
+      "This value is between one and two, so $AD=t-1>0$, and $u^2=2t-t^2>0$. The hypotenuse is $t^2>1$, placing the altitude foot with $FC=1$ on the bounded side; all three specified unit lengths are realized."
+    ],
+    "keyIdeas": [
+      "Combine a unit cevian with the right-triangle projection theorem"
+    ],
+    "commonMistakes": [
+      "Treating the given unit projection FC as the entire hypotenuse, or retaining the zero solution of the eliminated equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two different right triangles express the same squared side sum in terms of AC.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p28",
+    "problemId": "amc12-predecessor-1984-p28",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The common squarefree part is $31$, and the two positive square-root multipliers sum to eight, giving three pairs.",
+    "detailedSteps": [
+      "Squaring once gives $1984=x+y+2\\sqrt{xy}$. Thus $\\sqrt{xy}$ is rational; the square root of an integer can be rational only if it is an integer. Consequently $xy$ is a perfect square.",
+      "Write $x=dr^2$ and $y=ds^2$ with the same squarefree positive integer $d$ and integers $0<r<s$. Then the original equation becomes $1984=d(r+s)^2$.",
+      "The prime factorization $1984=2^6\\cdot31$ forces the squarefree part $d=31$ and $r+s=8$. The possibilities are $(r,s)=(1,7),(2,6),(3,5)$.",
+      "They give $(x,y)=(31,1519),(124,1116),(279,775)$. Each satisfies the original radical sum and the strict order, so there are three distinct pairs."
+    ],
+    "keyIdeas": [
+      "Separate the common squarefree part of the radicals"
+    ],
+    "commonMistakes": [
+      "Assuming x and y must themselves be perfect squares rather than allowing a shared squarefree factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime-exponent parity describes when two square roots can combine into a single radical.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p29",
+    "problemId": "amc12-predecessor-1984-p29",
+    "finalAnswer": "$\\boxed{3+2\\sqrt2}$ (choice A)",
+    "shortExplanation": "The allowed slopes satisfy $m^2-6m+1\\le0$, so the maximum is $3+2\\sqrt2$.",
+    "detailedSteps": [
+      "The locus is the circle with center $(3,3)$ and radius $\\sqrt6$. Every point has $x\\ge3-\\sqrt6>0$, so the requested ratio $m=y/x$ is defined throughout the circle.",
+      "The line $y=mx$ meets that circle exactly when its distance from the center is at most the radius: $|3m-3|/\\sqrt{m^2+1}\\le\\sqrt6$. Squaring simplifies to $m^2-6m+1\\le0$.",
+      "Therefore $3-2\\sqrt2\\le m\\le3+2\\sqrt2$. The upper endpoint is attained because equality gives a tangent line to the actual circle. Its tangency point has $x=3(1+m)/(1+m^2)>0$ and $y=mx$, so the maximum is valid on the original domain."
+    ],
+    "keyIdeas": [
+      "Find the maximum slope through the origin tangent to the circle"
+    ],
+    "commonMistakes": [
+      "Dividing without checking whether the circle crosses x=0, or maximizing y independently of x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio of coordinates is a line slope, so its extremum occurs at a supporting tangent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1984-p30",
+    "problemId": "amc12-predecessor-1984-p30",
+    "finalAnswer": "$\\boxed{\\frac29\\sin20^\\circ}$ (choice B)",
+    "shortExplanation": "The weighted sum has magnitude $9/(2\\sin20^\\circ)$, so its reciprocal is $2\\sin20^\\circ/9$.",
+    "detailedSteps": [
+      "The given $w=\\cos40^\\circ+i\\sin40^\\circ$ is a primitive ninth root of unity, with $w^9=1$ and $w\\ne1$. Thus $w+w^2+\\cdots+w^9=0$.",
+      "Let $S=w+2w^2+\\cdots+9w^9$. Subtracting $wS$ from $S$ gives $(1-w)S=(w+w^2+\\cdots+w^9)-9w^{10}=-9w$.",
+      "Since $|w|=1$, we have $|S|=9/|1-w|$. The unit-circle chord from one to w has length $2\\sin20^\\circ$, so $|S|^{-1}=|1-w|/9=(2/9)\\sin20^\\circ$. The nonzero chord also confirms $S\\ne0$."
+    ],
+    "keyIdeas": [
+      "Shift the weighted root-of-unity sum once"
+    ],
+    "commonMistakes": [
+      "Differentiating the constraint w^9=1 as though it held for all complex w, instead of subtracting the actual finite polynomial sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A single shift turns increasing coefficients into an ordinary geometric sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

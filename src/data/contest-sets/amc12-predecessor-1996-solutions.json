@@ -1,0 +1,635 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1996-p1",
+    "problemId": "amc12-predecessor-1996-p1",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The written sum is ten too small. Changing the seven in the third addend to six repairs it.",
+    "detailedSteps": [
+      "The three addends actually sum to $2466$, ten more than the displayed total. A digit replacement changes one number by its place value times the difference of the two digits.",
+      "A units change cannot change a number by ten, and a hundreds or thousands change cannot do so either. Therefore the changed digit must be in the tens place, with change of one.",
+      "In the addends, the original tens digits are four, five and seven; each can be lowered by one. In the total, the tens digit five can be raised to six. The largest original digit among these possibilities is seven."
+    ],
+    "keyIdeas": [
+      "Track the place value of one changed digit"
+    ],
+    "commonMistakes": [
+      "Reporting the replacement digit instead of the original digit that is changed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difference determines both the required place and the size of the digit change.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p2",
+    "problemId": "amc12-predecessor-1996-p2",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The six extra dollars require three exceptional days.",
+    "detailedSteps": [
+      "Ten ordinary days would pay $10\\cdot3=30$ dollars. The actual payment exceeds this by six dollars.",
+      "Each exceptional day adds $5-3=2$ dollars above the ordinary payment. Thus the number of exceptional days is $6/2=3$."
+    ],
+    "keyIdeas": [
+      "Compare exceptional payments with the ordinary baseline"
+    ],
+    "commonMistakes": [
+      "Dividing the entire payment by five and ignoring the ordinary days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A baseline keeps the two payment types in one equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p3",
+    "problemId": "amc12-predecessor-1996-p3",
+    "finalAnswer": "$\\boxed{120}$ (choice E)",
+    "shortExplanation": "The value is $6!/6=120$.",
+    "detailedSteps": [
+      "The inner factorial is $3!=6$, so the numerator is $(3!)!=6!=720$.",
+      "The denominator is $3!=6$. Their quotient is $720/6=120$."
+    ],
+    "keyIdeas": [
+      "Evaluate the inner factorial first"
+    ],
+    "commonMistakes": [
+      "Treating the factorial of a factorial as the square of a factorial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer factorial acts on the value of the inner factorial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p4",
+    "problemId": "amc12-predecessor-1996-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "Five fixed entries are at most eight, so the median cannot exceed eight; large extra entries attain it.",
+    "detailedSteps": [
+      "The median of nine integers is the fifth smallest. The fixed entries $3,5,5,7,8$ already supply five entries at most eight.",
+      "Hence the fifth smallest entry of the full list is at most eight. Choose all three missing integers larger than nine; then the first five entries are exactly $3,5,5,7,8$, and the median is eight."
+    ],
+    "keyIdeas": [
+      "Bound the fifth entry of the sorted list"
+    ],
+    "commonMistakes": [
+      "Trying to raise the median without counting how many fixed entries already lie below it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both a bound and an example are needed for a largest possible value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p5",
+    "problemId": "amc12-predecessor-1996-p5",
+    "finalAnswer": "$\\boxed{\\frac{c+d}{a+b}}$ (choice E)",
+    "shortExplanation": "The largest fraction has the smallest denominator, which is $a+b$.",
+    "detailedSteps": [
+      "Put $T=a+b+c+d$. Each candidate is of the form $(T-u)/u=T/u-1$, where $u$ is its denominator.",
+      "This expression strictly decreases as positive $u$ increases. Among the five displayed denominators, $a+b$ is strictly the smallest because $0<a<b<c<d$.",
+      "The corresponding candidate is $(c+d)/(a+b)$, choice E."
+    ],
+    "keyIdeas": [
+      "Use the common total of numerator and denominator"
+    ],
+    "commonMistakes": [
+      "Comparing only numerators when the denominators also change."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared total turns a two-part comparison into a single denominator comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p6",
+    "problemId": "amc12-predecessor-1996-p6",
+    "finalAnswer": "$\\boxed{\\frac{10}{9}}$ (choice E)",
+    "shortExplanation": "The four values are $0,1,0,1/9$, whose sum is $10/9$.",
+    "detailedSteps": [
+      "At $x=0$, the first factor is $0^1$, so the value is zero. At $x=-1$, the factors are $(-1)^0$ and $1^2$, giving one.",
+      "At $x=-2$, the second factor is $0^1$, so the value is zero, despite the nonzero first factor $(-2)^{-1}$.",
+      "At $x=-3$, the factors are $(-3)^{-2}=1/9$ and $(-1)^0=1$. The requested sum is $0+1+0+1/9=10/9$."
+    ],
+    "keyIdeas": [
+      "Preserve the original integer exponents"
+    ],
+    "commonMistakes": [
+      "Moving a negative sign outside its powered base, or replacing a negative exponent with a negative value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "None of these substitutions involves the undefined expression zero to the zeroth power.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p7",
+    "problemId": "amc12-predecessor-1996-p7",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The possible younger ages are zero and two; only two is listed.",
+    "detailedSteps": [
+      "After removing the father’s charge, the children cost $9.45-4.95=4.50$ dollars. Dividing by $0.45$ gives a total of ten completed years.",
+      "Let the twins’ common completed age be $t$ and the youngest child’s completed age be $y$. Then $2t+y=10$, with integers $0\\le y<t$.",
+      "Substituting $y=10-2t$ into these bounds gives $t\\le5$ and $t>10/3$. Thus $(t,y)$ is either $(4,2)$ or $(5,0)$.",
+      "Two is the only one of these younger ages among the actual choices. The wording asks which listed age could occur; it does not make two the only possible age overall."
+    ],
+    "keyIdeas": [
+      "Use completed integer ages and test the listed choices"
+    ],
+    "commonMistakes": [
+      "Allowing fractional completed ages, or asserting that the unlisted zero-age branch is impossible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The birthday convention fixes an integer-age model, while the choices determine the requested selection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p8",
+    "problemId": "amc12-predecessor-1996-p8",
+    "finalAnswer": "$\\boxed{\\log_2 5}$ (choice D)",
+    "shortExplanation": "The ratio gives $2^r=5$, hence $r=\\log_2 5$.",
+    "detailedSteps": [
+      "Divide the second equation by the first. Since the first value is nonzero, this is valid and gives $15/3=(4/2)^r=2^r$.",
+      "Therefore $r=\\log_2 5$. Substitution also gives $k=3/5$, which satisfies both original equations."
+    ],
+    "keyIdeas": [
+      "Divide the equations to remove the common coefficient"
+    ],
+    "commonMistakes": [
+      "Dividing the bases and forgetting that their shared exponent remains."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Taking a ratio is the shortest way to eliminate a common multiplicative parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p9",
+    "problemId": "amc12-predecessor-1996-p9",
+    "finalAnswer": "$\\boxed{\\sqrt{34}}$ (choice B)",
+    "shortExplanation": "Because $AD$ is perpendicular to the plane of $PAB$, $PD^2=PA^2+AD^2=34$.",
+    "detailedSteps": [
+      "The two perpendicular planes meet along $AB$. Within the square plane, $AD$ is perpendicular to $AB$, so $AD$ is perpendicular to the other plane, containing $PAB$.",
+      "In particular $AD\\perp AP$. The square gives $AD=AB=5$, and the given triangle gives $AP=3$.",
+      "Right triangle $PAD$ therefore yields $PD=\\sqrt{3^2+5^2}=\\sqrt{34}$."
+    ],
+    "keyIdeas": [
+      "Find a line perpendicular to the entire triangle plane"
+    ],
+    "commonMistakes": [
+      "Assuming an unmarked right angle in the larger spatial diagram instead of using the perpendicular-plane condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square supplies the perpendicular direction as well as the needed length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p10",
+    "problemId": "amc12-predecessor-1996-p10",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "The number of segments is $\\binom82=28$.",
+    "detailedSteps": [
+      "A cube has eight vertices. Any two different vertices specify one line segment, and reversing the order does not create another segment.",
+      "Thus the total is $8\\cdot7/2=28$. It also splits into twelve edges, twelve face diagonals and four body diagonals."
+    ],
+    "keyIdeas": [
+      "Choose an unordered pair of distinct vertices"
+    ],
+    "commonMistakes": [
+      "Counting only edges, or counting both orders of the same endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoints may belong to any two cube vertices, not just neighboring ones.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p11",
+    "problemId": "amc12-predecessor-1996-p11",
+    "finalAnswer": "$\\boxed{\\pi}$ (choice D)",
+    "shortExplanation": "The union is the annulus from radius two to radius $\\sqrt5$, with area $\\pi$.",
+    "detailedSteps": [
+      "At a tangency midpoint $M$, let $t$ be signed distance along the tangent from $M$. The half-length is one, so $-1\\le t\\le1$.",
+      "The radius to $M$ is perpendicular to the tangent. The squared distance from the center to that segment point is therefore $2^2+t^2$, covering the entire interval from four to five.",
+      "Rotating this construction around the center gives every point with radius between two and $\\sqrt5$, and no other point. Its area is $\\pi((\\sqrt5)^2-2^2)=\\pi$."
+    ],
+    "keyIdeas": [
+      "Describe every radius swept by a tangent segment"
+    ],
+    "commonMistakes": [
+      "Using the outer disk’s area without removing the inner disk, or treating the union as just a circumference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint condition fixes the inner radius and both endpoint distances.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p12",
+    "problemId": "amc12-predecessor-1996-p12",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The only odd starting value is $105$, whose digit sum is six.",
+    "detailedSteps": [
+      "For an odd input, the output is even because the rule adds three. Hence an output of $27$ must come from an even input $54$.",
+      "An odd starting value $k$ first produces the even value $k+3$, then the value $(k+3)/2$. This second output must be $54$, giving $k=105$.",
+      "Directly, the three outputs are $108,54,27$. The starting digits sum to $1+0+5=6$."
+    ],
+    "keyIdeas": [
+      "Reverse the parity rule one step at a time"
+    ],
+    "commonMistakes": [
+      "Applying the same branch at every step without checking the new value’s parity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parity of the target removes a branch immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p13",
+    "problemId": "amc12-predecessor-1996-p13",
+    "finalAnswer": "$\\boxed{\\frac{hm}{m-1}}$ (choice D)",
+    "shortExplanation": "The faster runner covers $hm/(m-1)$ meters.",
+    "detailedSteps": [
+      "Let Sunny’s speed be $v>0$. Moonbeam’s speed is $mv$, so the gap closes at speed $(m-1)v$, which is positive.",
+      "The catch time is $h/((m-1)v)$. Multiplying by Moonbeam’s speed gives $mv\\cdot h/((m-1)v)=hm/(m-1)$."
+    ],
+    "keyIdeas": [
+      "Use the relative speed to find the catch time"
+    ],
+    "commonMistakes": [
+      "Dividing by the faster speed alone instead of the difference of the speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unknown absolute speed cancels, leaving only the speed ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p14",
+    "problemId": "amc12-predecessor-1996-p14",
+    "finalAnswer": "$\\boxed{400}$ (choice C)",
+    "shortExplanation": "Each of the two places contributes $200$, for a total of $400$.",
+    "detailedSteps": [
+      "Count the strings from $00$ through $99$. In each decimal place, each digit occurs ten times. The nonzero even digits sum to $2+4+6+8=20$.",
+      "Each place contributes $10\\cdot20=200$, so the two places contribute $400$. Zero digits contribute zero.",
+      "Changing the range from $00$ through $99$ to the requested one through $100$ removes zero and adds $100$; both have even-digit sum zero. The total remains $400$."
+    ],
+    "keyIdeas": [
+      "Count even digits by decimal place"
+    ],
+    "commonMistakes": [
+      "Summing only the even integers rather than the even digits inside every integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complete decimal block handles repeated digit occurrences uniformly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p15",
+    "problemId": "amc12-predecessor-1996-p15",
+    "finalAnswer": "$\\boxed{\\frac mn}$ (choice B)",
+    "shortExplanation": "The two areas are $WH/(4n)$ and $WH/(4m)$, so their ratio is $m/n$.",
+    "detailedSteps": [
+      "Let the rectangle have width $W$ and height $H$. On an $n$-divided horizontal side, one base is $W/n$, and the center is at perpendicular distance $H/2$.",
+      "Triangle $A$ therefore has area $\\tfrac12(W/n)(H/2)=WH/(4n)$. On an $m$-divided vertical side, the corresponding area of $B$ is $\\tfrac12(H/m)(W/2)=WH/(4m)$.",
+      "Dividing the first area by the second gives $m/n$, independent of the dimensions or the chosen side segment."
+    ],
+    "keyIdeas": [
+      "Use the half-side altitude of a center-based triangle"
+    ],
+    "commonMistakes": [
+      "Inverting the requested ratio, or using the full rectangle height as the center’s altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both areas share the same rectangle-area factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p16",
+    "problemId": "amc12-predecessor-1996-p16",
+    "finalAnswer": "$\\boxed{\\frac8{15}}$ (choice D)",
+    "shortExplanation": "Of fifteen ordered triples satisfying the sum condition, eight contain a two.",
+    "detailedSteps": [
+      "Under the usual independent fair-toss model, each ordered triple has the same probability. If the first two results sum to $s\\le6$, the third is fixed at $s$.",
+      "There are $1+2+3+4+5=15$ such ordered triples. Four have a two first, and four have a two second; the triple $(2,2,4)$ is counted in both lists, leaving seven.",
+      "The only remaining way to have a two is a third result of two, namely $(1,1,2)$. This adds one, giving conditional probability $8/15$."
+    ],
+    "keyIdeas": [
+      "Restrict the equally likely outcomes before counting the event"
+    ],
+    "commonMistakes": [
+      "Using the full $216$ outcomes as the denominator after conditioning, or double-counting the two leading twos."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Order matters in the two leading throws even though only their sum fixes the third.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p17",
+    "problemId": "amc12-predecessor-1996-p17",
+    "finalAnswer": "$\\boxed{150\\text{ (closest choice)}}$ (choice E)",
+    "shortExplanation": "The exact area is $108\\sqrt3-36\\approx151.06$, closest to $150$.",
+    "detailedSteps": [
+      "Use coordinates $A=(0,0),B=(W,0),C=(W,H),D=(0,H)$. The first trisector toward $E$ makes $30^\\circ$ with the downward vertical side. Thus $BE/H=\\tan30^\\circ=1/\\sqrt3$, so $H=6\\sqrt3$.",
+      "The other trisector toward $F$ makes $30^\\circ$ below the leftward horizontal side. Hence $(H-AF)/W=\\tan30^\\circ$, giving $W=\\sqrt3(H-2)=18-2\\sqrt3$.",
+      "The rectangle’s area is $WH=108\\sqrt3-36\\approx151.06$. Its nearest listed area is $150$. The derived dimensions satisfy $W>6$ and $H>2$, confirming that the points lie on the specified sides."
+    ],
+    "keyIdeas": [
+      "Translate each angle trisector into a slope"
+    ],
+    "commonMistakes": [
+      "Assigning both trisectors the same slope, or ignoring the given offsets from different corners."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary trisector directions determine the two dimensions separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p18",
+    "problemId": "amc12-predecessor-1996-p18",
+    "finalAnswer": "$\\boxed{2\\sqrt2}$ (choice D)",
+    "shortExplanation": "The upper tangent has equation $x+2\\sqrt2y=8$, giving $y=2\\sqrt2$ at the intercept.",
+    "detailedSteps": [
+      "The circles are externally tangent since their center distance is three, the sum of their radii. Their common internal tangent is the vertical line through their touching point on the $x$-axis, so its contacts fail the first-quadrant condition.",
+      "For an external tangent above both centers, write its equation as $n_xx+n_yy=c$, with a unit upward normal. Its two distance conditions give $c-2n_x=2$ and $c-5n_x=1$. Subtracting yields $n_x=1/3$.",
+      "The positive unit-normal component is $n_y=2\\sqrt2/3$, and $c=8/3$. Thus the line is $x+2\\sqrt2y=8$, and its $y$-intercept is $8/(2\\sqrt2)=2\\sqrt2$.",
+      "The actual contact points are $(8/3,4\\sqrt2/3)$ and $(16/3,2\\sqrt2/3)$, both in the first quadrant. The reflected external tangent has negative contact heights and is excluded. The exact intercept equals choice D."
+    ],
+    "keyIdeas": [
+      "Express a common tangent with a unit normal"
+    ],
+    "commonMistakes": [
+      "Keeping a lower or internal tangent that violates the stated locations of both contacts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The contact-quadrant condition selects one of the common tangents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p19",
+    "problemId": "amc12-predecessor-1996-p19",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice D)",
+    "shortExplanation": "The circumradius ratio is $\\cos30^\\circ$, so the area ratio is $3/4$.",
+    "detailedSteps": [
+      "A regular hexagon’s consecutive radius vectors make an angle of $60^\\circ$. Their midpoint lies on the angle bisector, at radius $R\\cos30^\\circ=R\\sqrt3/2$.",
+      "The six side midpoints form another regular hexagon. Since similar polygons’ areas scale as the square of the length ratio, its area ratio is $(\\sqrt3/2)^2=3/4$."
+    ],
+    "keyIdeas": [
+      "Compare the two regular hexagons’ circumradii"
+    ],
+    "commonMistakes": [
+      "Using the radius ratio itself as an area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Regularity makes the midpoint polygon similar to the original one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p20",
+    "problemId": "amc12-predecessor-1996-p20",
+    "finalAnswer": "$\\boxed{10\\sqrt3+\\frac{5\\pi}{3}}$ (choice C)",
+    "shortExplanation": "Two tangent segments contribute $10\\sqrt3$, and the intervening arc contributes $5\\pi/3$.",
+    "detailedSteps": [
+      "The endpoints lie on opposite rays from the center $(6,8)$, each at distance ten. The obstacle has radius five, and the direct segment passes through its interior.",
+      "A shortest allowed path is straight wherever it is outside the boundary: replacing a sufficiently small bent portion there by its chord shortens it. Along the obstacle it follows a boundary arc; between two boundary contacts, every outside curve has length at least five times the change in polar angle, with equality on the circle.",
+      "The straight incoming and outgoing portions meet the boundary tangentially. A non-tangent corner can be shortened by a local change of contact point, while a chord going through the disk is forbidden. Thus a minimizing route consists of a tangent, the shorter connecting boundary arc and a tangent, on either side of the circle.",
+      "Each tangent has length $\\sqrt{10^2-5^2}=5\\sqrt3$. Its radius makes angle $\\arccos(5/10)=\\pi/3$ with the corresponding endpoint ray. The two endpoint rays differ by $\\pi$, leaving boundary angle $\\pi-2\\pi/3=\\pi/3$.",
+      "The total is $2(5\\sqrt3)+5(\\pi/3)=10\\sqrt3+5\\pi/3$. The two symmetric sides give equal minima; the longer boundary arc cannot shorten the route."
+    ],
+    "keyIdeas": [
+      "Use tangents and the shorter boundary arc around the obstacle"
+    ],
+    "commonMistakes": [
+      "Adding a semicircle to two tangents without locating their actual contact angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangent-and-arc construction needs a shortest-path justification as well as a length calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p21",
+    "problemId": "amc12-predecessor-1996-p21",
+    "finalAnswer": "$\\boxed{135^\\circ}$ (choice D)",
+    "shortExplanation": "The two requested angles sum to $135^\\circ$, independently of the apex angle.",
+    "detailedSteps": [
+      "Put $\\alpha=\\angle BAC$. The perpendicular intersection lies on both bounded segments, so $0<\\alpha<90^\\circ$. In isosceles triangle $ABC$, the angle at $C$ is $(180^\\circ-\\alpha)/2=90^\\circ-\\alpha/2$.",
+      "Right triangle $ABE$ has angle at $B$ equal to $90^\\circ-\\alpha$. Since $E$ lies on $BD$, this is also $\\angle ABD$.",
+      "The equality $AB=BD$ makes triangle $ABD$ isosceles with apex $B$. Its angle at $D$ is $[180^\\circ-(90^\\circ-\\alpha)]/2=45^\\circ+\\alpha/2$.",
+      "The sum is $(90^\\circ-\\alpha/2)+(45^\\circ+\\alpha/2)=135^\\circ$."
+    ],
+    "keyIdeas": [
+      "Use the shared side equality in both isosceles triangles"
+    ],
+    "commonMistakes": [
+      "Using the equality of sides to equate the wrong pair of triangle angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The variable apex contribution cancels only after both isosceles relationships are used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p22",
+    "problemId": "amc12-predecessor-1996-p22",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice B)",
+    "shortExplanation": "Exactly one of the three pairings joins both diagonals, so the probability is $1/3$.",
+    "detailedSteps": [
+      "Fix any four distinct selected points in their cyclic order. Of the three ways to pair them into two segments, one pairs opposite vertices and gives intersecting diagonals; the other two pair neighboring vertices and do not intersect.",
+      "The stated equal likelihood of labelled quadruples gives each pairing the same number of label assignments. In fact, eight of the twenty-four assignments put $AB$ and $CD$ on the two diagonals.",
+      "The probability is therefore $8/24=1/3$ for every four-point selection, and hence for the overall selection."
+    ],
+    "keyIdeas": [
+      "Classify the three pairings of four cyclic points"
+    ],
+    "commonMistakes": [
+      "Treating every chord pair as crossing, or forgetting that the positions are distinct."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The number of available circle points cancels because the pairing probability is constant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p23",
+    "problemId": "amc12-predecessor-1996-p23",
+    "finalAnswer": "$\\boxed{784}$ (choice B)",
+    "shortExplanation": "The surface area is $35^2-21^2=784$.",
+    "detailedSteps": [
+      "Let the positive side lengths be $a,b,c$. The twelve-edge total gives $4(a+b+c)=140$, so $a+b+c=35$.",
+      "The space diagonal gives $a^2+b^2+c^2=21^2=441$. Expanding $(a+b+c)^2$ shows that the surface area $2(ab+bc+ca)$ is $35^2-441=784$.",
+      "The positive dimensions $14,14,7$ satisfy both given conditions, confirming feasibility."
+    ],
+    "keyIdeas": [
+      "Expand the square of the side-length sum"
+    ],
+    "commonMistakes": [
+      "Using a face diagonal instead of the distance between opposite corners."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetric identities determine the requested area without determining every dimension.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p24",
+    "problemId": "amc12-predecessor-1996-p24",
+    "finalAnswer": "$\\boxed{2419}$ (choice B)",
+    "shortExplanation": "There are forty-nine ones among the first $1234$ entries, giving sum $2419$.",
+    "detailedSteps": [
+      "The first one is in position one, and each later one is separated from the preceding one by a block with one more two. Thus the $j$th one is in position $1+2+\\cdots+j=j(j+1)/2$.",
+      "The forty-ninth one is in position $49\\cdot50/2=1225$, while the fiftieth is in position $50\\cdot51/2=1275$. Exactly forty-nine ones occur in the first $1234$ positions.",
+      "If every term were two, the sum would be $2468$. Each actual one lowers that sum by one, so the required sum is $2468-49=2419$."
+    ],
+    "keyIdeas": [
+      "Locate the ones at triangular positions"
+    ],
+    "commonMistakes": [
+      "Misreading the phrase about the number of twos as a square, or using the end of a block rather than the position of its following one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A baseline of all twos makes only the exceptional positions matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p25",
+    "problemId": "amc12-predecessor-1996-p25",
+    "finalAnswer": "$\\boxed{73}$ (choice B)",
+    "shortExplanation": "The constraint is a radius-eight circle centered at $(7,3)$; the linear expression has maximum $73$.",
+    "detailedSteps": [
+      "Rearrange the original equality to obtain $(x-7)^2+(y-3)^2=64$. Put $u=x-7$ and $v=y-3$.",
+      "Then $3x+4y=33+3u+4v$. Cauchy’s inequality gives $3u+4v\\le\\sqrt{3^2+4^2}\\sqrt{u^2+v^2}=5\\cdot8=40$.",
+      "Equality occurs at $(u,v)=(24/5,32/5)$, so $(x,y)=(59/5,47/5)$ satisfies the original equality and gives $33+40=73$."
+    ],
+    "keyIdeas": [
+      "Complete the square and maximize a linear projection"
+    ],
+    "commonMistakes": [
+      "Finding a bound without checking that its equality case satisfies the original constraint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center contributes a constant, and the radius controls the maximal directional displacement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p26",
+    "problemId": "amc12-predecessor-1996-p26",
+    "finalAnswer": "$\\boxed{21}$ (choice B)",
+    "shortExplanation": "The smallest positive color counts are $11,2,3,5$, totaling $21$.",
+    "detailedSteps": [
+      "Let the positive color counts be $r,w,b,g$. Under the customary uniform draw without replacement, all four-element marble subsets are equally likely. The four event multiplicities are $\\binom r4$, $w\\binom r3$, $wb\\binom r2$, and $wbgr$.",
+      "Because all four colors are present, the last event has positive multiplicity. Equality therefore forces $r\\ge4$. Comparing successive multiplicities gives $w=(r-3)/4$, $b=(r-2)/3$, and $g=(r-1)/2$.",
+      "Integrality requires $r\\equiv3\\pmod4$, $r\\equiv2\\pmod3$, and $r\\equiv1\\pmod2$. The first two combine to $r\\equiv11\\pmod{12}$, which also satisfies the third condition.",
+      "The smallest permitted red count is eleven, giving $(r,w,b,g)=(11,2,3,5)$. These give four equal multiplicities of $330$ and total $21$. Each of the four count formulas increases with $r$, so any larger admissible red count gives a larger urn."
+    ],
+    "keyIdeas": [
+      "Compare event multiplicities in the same sample space"
+    ],
+    "commonMistakes": [
+      "Including zero counts for colors stated to be present, or comparing ordered draws against unordered event counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four events share one denominator; their numerators supply both the ratios and a global minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p27",
+    "problemId": "amc12-predecessor-1996-p27",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "Only height five is possible, and its horizontal disk contains thirteen lattice points.",
+    "detailedSteps": [
+      "The first ball permits $9/2\\le z\\le33/2$, and the second permits $-7/2\\le z\\le11/2$. Their overlap contains only the integer height $z=5$.",
+      "At that height the first inequality gives $x^2+y^2\\le36-(5-21/2)^2=23/4$. The second gives $x^2+y^2\\le81/4-(5-1)^2=17/4$.",
+      "Since $x^2+y^2$ is an integer, the combined condition is $x^2+y^2\\le4$. For $x=-2,-1,0,1,2$, the allowed counts of $y$ are respectively $1,3,5,3,1$. Their sum is thirteen."
+    ],
+    "keyIdeas": [
+      "Restrict the integer height before counting the horizontal lattice"
+    ],
+    "commonMistakes": [
+      "Counting lattice points inside a projected disk without first finding the allowed integer heights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The thin vertical overlap reduces a spatial count to one small planar count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p28",
+    "problemId": "amc12-predecessor-1996-p28",
+    "finalAnswer": "$\\boxed{2.1\\text{ (closest choice)}}$ (choice C)",
+    "shortExplanation": "The perpendicular distance is $6\\sqrt{2/17}\\approx2.058$, closest to $2.1$.",
+    "detailedSteps": [
+      "Place $D$ at the origin and the three adjacent vertices at $(4,0,0),(0,4,0),(0,0,3)$. The plane through them is $x/4+y/4+z/3=1$.",
+      "The distance from the origin is the absolute constant divided by the norm of the normal: $1/\\sqrt{1/16+1/16+1/9}=\\sqrt{72/17}=6\\sqrt{2/17}$.",
+      "This is approximately $2.058$, so the closest actual choice is $2.1$. Permuting the three box directions does not change the normal’s norm."
+    ],
+    "keyIdeas": [
+      "Write the plane through the three intercepts"
+    ],
+    "commonMistakes": [
+      "Using the distance to a vertex, or the plane’s intercept sum, instead of the perpendicular distance."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinate intercepts directly supply the plane and its perpendicular direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p29",
+    "problemId": "amc12-predecessor-1996-p29",
+    "finalAnswer": "$\\boxed{35}$ (choice C)",
+    "shortExplanation": "The equations force exponents five and three, and the divisor count of $6n$ is $35$.",
+    "detailedSteps": [
+      "Write $n=2^a3^bm$ with $\\gcd(m,6)=1$, and put $t=d(m)$. The source conditions become $(a+2)(b+1)t=28$ and $(a+1)(b+2)t=30$.",
+      "The positive integer $t$ divides both twenty-eight and thirty, so $t$ is one or two. Subtracting the equations gives $(b-a)t=-2$.",
+      "If $t=1$, then $b=a-2$ and $(a+2)(a-1)=28$, or $(a-5)(a+6)=0$. Nonnegative exponents require $a=5,b=3$.",
+      "If $t=2$, then $b=a-1$ and $(a+2)a=14$. For nonnegative integers, this product jumps from eight at $a=2$ to fifteen at $a=3$, so this case is impossible.",
+      "Thus $d(6n)=(a+2)(b+2)t=7\\cdot5=35$. The example $n=2^5 3^3$ realizes both original divisor counts."
+    ],
+    "keyIdeas": [
+      "Separate the exponents of two and three from the remaining factor"
+    ],
+    "commonMistakes": [
+      "Assuming the remaining factor is absent before proving its divisor count, or adding divisor counts instead of multiplying exponent factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the two product equations turns the factor classification into two short cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1996-p30",
+    "problemId": "amc12-predecessor-1996-p30",
+    "finalAnswer": "$\\boxed{409}$ (choice E)",
+    "shortExplanation": "The dividing chord is $360/49$, so the requested numerator-plus-denominator is $409$.",
+    "detailedSteps": [
+      "Let $\\alpha,\\beta$ be the minor central angles for chord lengths three and five. Each consecutive arc is either its corresponding minor arc or its major complement. At most one consecutive arc can be major, since two would already exceed a full circle.",
+      "If a length-three edge used a major arc, the total of all six arcs would be $(2\\pi-\\alpha)+2\\alpha+3\\beta=2\\pi+\\alpha+3\\beta>2\\pi$. A major length-five edge likewise gives $2\\pi+3\\alpha+\\beta>2\\pi$. Thus all six arcs are minor, and $3\\alpha+3\\beta=2\\pi$.",
+      "Put $\\theta=\\alpha/2$. Then $\\beta/2=\\pi/3-\\theta$, and the chord-length ratio gives $5/3=\\sin(\\pi/3-\\theta)/\\sin\\theta=(\\sqrt3/2)\\cot\\theta-1/2$. Hence $\\cot\\theta=13/(3\\sqrt3)$ and $\\sin^2\\theta=27/196$.",
+      "The dividing chord spans the three consecutive length-three sides, so its length is $2R\\sin3\\theta$. Since $2R\\sin\\theta=3$, the triple-angle identity gives $2R\\sin3\\theta=3(3-4\\sin^2\\theta)=3(3-108/196)=360/49$.",
+      "The fraction is reduced because $\\gcd(360,49)=1$. Its numerator and denominator sum to $360+49=409$. Equal successive arcs also make the opposite sides of each of the two resulting quadrilaterals parallel, as required for the stated trapezoids."
+    ],
+    "keyIdeas": [
+      "Relate the two chord lengths through their half-central angles"
+    ],
+    "commonMistakes": [
+      "Choosing a major-arc branch without checking all six arcs, or using the radius in place of the dividing chord."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The full cyclic arc sum removes branch ambiguity before the triple-angle calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

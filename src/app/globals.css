@@ -1,0 +1,448 @@
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+@source "../lib";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #15253d;
+  --muted: #586477;
+  --border: #dedfdc;
+  --gold: #a57529;
+  --gold-soft: #f5edda;
+  --blue: #24558a;
+  --navy: #142b49;
+  --paper: #ffffff;
+  --soft-blue: #edf2f7;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-editorial: Georgia, "Times New Roman", serif;
+  --content-width: 80rem;
+  --reading-width: 50rem;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+  --section-space: clamp(2rem, 5vw, 3.5rem);
+  --control-radius: 0.25rem;
+  --control-height: 2.75rem;
+  --motion-quick: 120ms;
+  --focus-ring: #24558a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-gold: var(--gold);
+  --color-gold-dark: #79551e;
+  --color-gold-soft: var(--gold-soft);
+  --color-blue: var(--blue);
+  --color-navy: var(--navy);
+  --color-paper: var(--paper);
+  --color-soft-blue: var(--soft-blue);
+  --font-sans: var(--font-body);
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: 6rem;
+  /* Keep the scrollbar from changing the reading column width when a modal
+     navigation drawer opens on desktop browsers. */
+  scrollbar-gutter: stable;
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  /* A long source URL or legacy TeX token must never widen a phone viewport.
+     Math blocks and code retain their own intentional horizontal scrollers. */
+  overflow-x: clip;
+}
+main,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+div {
+  min-width: 0;
+}
+img,
+svg,
+canvas,
+video {
+  max-width: 100%;
+}
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p,
+a,
+li,
+dd,
+dt {
+  overflow-wrap: break-word;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+a {
+  text-underline-offset: 4px;
+}
+button,
+summary,
+select {
+  cursor: pointer;
+}
+:where(a, button, summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+:where(button):disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+::selection {
+  background: var(--gold-soft);
+  color: var(--navy);
+}
+@layer components {
+  .font-display {
+    font-family: var(--font-editorial);
+    letter-spacing: -0.025em;
+  }
+  .page-shell {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem) var(--gutter) var(--section-space);
+  }
+  .soft-card {
+    border: 1px solid var(--border);
+    border-radius: var(--control-radius);
+    background: var(--paper);
+    min-width: 0;
+  }
+  .eyebrow {
+    color: #79551e;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .text-link {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+  }
+  .text-link:hover {
+    text-decoration-color: currentColor;
+  }
+  .button-primary,
+  .button-secondary {
+    display: inline-flex;
+    min-height: var(--control-height);
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 1px solid var(--navy);
+    border-radius: var(--control-radius);
+    padding: 0.65rem 1.1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color var(--motion-quick), background-color var(--motion-quick), border-color var(--motion-quick);
+    line-height: 1.4;
+    text-align: center;
+  }
+  .button-primary {
+    background: var(--navy);
+    color: white;
+  }
+  .button-primary:hover {
+    background: #244261;
+  }
+  .button-secondary {
+    background: var(--paper);
+    border-color: var(--border);
+    color: var(--navy);
+  }
+  .button-secondary:hover {
+    background: var(--soft-blue);
+    border-color: var(--blue);
+  }
+  .field {
+    display: block;
+    width: 100%;
+    min-height: var(--control-height);
+    border: 1px solid #87929f;
+    border-radius: var(--control-radius);
+    background: var(--paper);
+    padding: 0.6rem 0.75rem;
+    color: var(--navy);
+    font-size: 0.875rem;
+  }
+  .field:focus {
+    border-color: var(--blue);
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: var(--control-radius);
+    min-height: 2rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.75rem;
+    color: var(--blue);
+    background: var(--paper);
+  }
+  a.tag:hover {
+    border-color: var(--blue);
+    background: var(--soft-blue);
+  }
+  .section-rule {
+    border-top: 1px solid var(--border);
+    padding-top: 1.75rem;
+  }
+  .skip-link {
+    position: fixed;
+    z-index: 60;
+    top: 0.75rem;
+    left: 1rem;
+    transform: translateY(-180%);
+    background: var(--navy);
+    color: white;
+    padding: 0.75rem 1rem;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+  .study-section {
+    border-top: 1px solid var(--border);
+    padding-block: clamp(1.5rem, 3vw, 2rem);
+    scroll-margin-top: 1rem;
+  }
+  .study-section h2 {
+    font-family: var(--font-editorial);
+    font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+    line-height: 1.3;
+    color: var(--navy);
+  }
+  .reveal {
+    border-block: 1px solid var(--border);
+    background: #faf8f1;
+    padding: 1.15rem 1.25rem;
+  }
+  .reveal summary {
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .reveal[open] summary {
+    margin-bottom: 1rem;
+  }
+}
+
+.markdown-math {
+  color: var(--foreground);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.markdown-math > * + * {
+  margin-top: 1rem;
+}
+.markdown-math p {
+  /* Keep short closing lines and punctuation with the mathematical prose. */
+  text-wrap: pretty;
+}
+.markdown-math ul,
+.markdown-math ol {
+  padding-left: 1.4rem;
+}
+.markdown-math ul {
+  list-style: disc;
+}
+.markdown-math ol {
+  list-style: decimal;
+}
+.markdown-math li + li {
+  margin-top: 0.5rem;
+}
+.markdown-math h2,
+.markdown-math h3 {
+  font-family: var(--font-editorial);
+  font-size: 1.4rem;
+}
+.markdown-math .katex {
+  color: inherit;
+  font-size: 1.06em;
+}
+.markdown-math .katex-display {
+  max-width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0.1rem;
+  -webkit-overflow-scrolling: touch;
+}
+.markdown-math pre {
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--soft-blue);
+  padding: 1rem;
+}
+.markdown-math :where(pre, p, .katex-display):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+.markdown-math img {
+  display: block;
+  margin: 1.5rem auto;
+  max-height: 460px;
+  object-fit: contain;
+}
+.markdown-math .problem-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 0.85rem 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem 0;
+  list-style: none;
+  border-block: 1px solid var(--border);
+}
+.markdown-math .problem-choices > li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  min-width: 0;
+  margin: 0;
+}
+.problem-choice-label {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.markdown-math .problem-choices-long {
+  grid-template-columns: 1fr;
+}
+.problem-choices .markdown-math {
+  /* Leave room for glyph overhang; shrink-wrapping radicals creates false scrollbars. */
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+.figure-unavailable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-block: 1.5rem;
+  padding: 1rem;
+  border-left: 2px solid var(--gold);
+  background: var(--gold-soft);
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.problem-figure {
+  display: block;
+  margin-block: 1.5rem;
+  text-align: center;
+}
+.solution-steps > li::marker {
+  color: var(--muted);
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+}
+.markdown-math .problem-figure img {
+  margin: 0 auto 0.5rem;
+  /* Tall graph-choice sheets should stay readable instead of shrinking to a
+     fixed height. Width remains bounded by the reading column. */
+  max-height: none;
+}
+.problem-figure-credit {
+  display: block;
+  margin: 0.5rem auto 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+@layer components {
+  @media (min-width: 640px) {
+    .page-shell {
+      padding-inline: 2rem;
+      padding-top: 2.5rem;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media print {
+  body {
+    background: white;
+  }
+  .site-header,
+  .site-footer,
+  .no-print {
+    display: none !important;
+  }
+  .page-shell {
+    padding: 0;
+  }
+  details > :not(summary) {
+    display: block !important;
+  }
+}
+
+/* Mixed prose can also contain a single unbreakable inline formula. Keep its
+   overflow inside the reading paragraph, including at narrow phone widths. */
+.markdown-math p:has(> .katex) {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.15rem;
+}
+
+/* Native disclosures remain usable before hydration and with JavaScript disabled. */
+details > summary .disclosure-open { display: none; }
+details[open] > summary .disclosure-closed { display: none; }
+details[open] > summary .disclosure-open { display: inline; }
+
+@layer components {
+  .site-container { width: 100%; max-width: var(--content-width); margin-inline: auto; padding-inline: var(--gutter); }
+  .page-heading { font-family: var(--font-editorial); font-size: clamp(2rem, 3.5vw, 2.875rem); line-height: 1.15; letter-spacing: -0.025em; color: var(--navy); }
+  .section-heading { font-family: var(--font-editorial); font-size: clamp(1.5rem, 2.5vw, 1.85rem); line-height: 1.25; letter-spacing: -0.02em; color: var(--navy); }
+  .section-intro { max-width: 62ch; color: var(--muted); line-height: 1.7; }
+  .editorial-section { border-top: 1px solid var(--border); padding-block: var(--section-space); scroll-margin-top: 6rem; }
+  .field-label { display: block; margin-bottom: 0.4rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+  .status-label { display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); border-radius: var(--control-radius); padding: 0.15rem 0.5rem; font-size: 0.7rem; line-height: 1.5; color: var(--muted); background: var(--paper); }
+  .reading-column { max-width: var(--reading-width); }
+  .navigation-link { display: flex; min-height: var(--control-height); align-items: center; border-bottom: 2px solid transparent; font-size: 0.875rem; color: var(--muted); }
+  .navigation-link:hover { color: var(--navy); }
+  .navigation-link[aria-current="page"] { color: var(--navy); font-weight: 600; border-color: var(--gold); }
+  .navigation-menu { position: fixed; inset: 0 0 0 auto; margin: 0; width: min(100%, 25rem); max-width: 100%; height: 100dvh; max-height: 100%; overflow-y: auto; overscroll-behavior: contain; padding-block: 1.25rem calc(1.25rem + env(safe-area-inset-bottom)); padding-inline: max(1.25rem, env(safe-area-inset-left)) max(1.25rem, env(safe-area-inset-right)); border: 0; border-left: 1px solid var(--border); background: var(--paper); color: var(--navy); }
+  .navigation-menu::backdrop { background: rgb(20 43 73 / 35%); }
+  .navigation-menu .navigation-link { min-height: 3.25rem; font-size: 1rem; }
+}
+@media (forced-colors: active) {
+  .tag, .status-label, .button-primary, .button-secondary, .field { border: 1px solid ButtonText; }
+}

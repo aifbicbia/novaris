@@ -1,0 +1,521 @@
+[
+  {
+    "id": "solution-amc10b-2021-p1",
+    "problemId": "amc10b-2021-p1",
+    "finalAnswer": "$\\boxed{11110}$ (choice E)",
+    "shortExplanation": "Every column totals ten.",
+    "detailedSteps": [
+      "Each digit 1,2,3,4 appears once in each decimal position. Thus the sum is $(1+2+3+4)(1000+100+10+1)=10\\cdot1111=11110$."
+    ],
+    "keyIdeas": [
+      "A constant column sum"
+    ],
+    "commonMistakes": [
+      "Losing a carry when adding the four numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rotating the digits balances all four positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p2",
+    "problemId": "amc10b-2021-p2",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The shaded area is ten minus four.",
+    "detailedSteps": [
+      "The actual diagram has common base endpoints (1,0),(5,0), of length 4. The outer apex is (3,5), and the unshaded triangular notch has apex (3,2).",
+      "The shaded area is $\\tfrac12\\cdot4\\cdot5-\\tfrac12\\cdot4\\cdot2=6$."
+    ],
+    "keyIdeas": [
+      "Subtract two triangles sharing a base"
+    ],
+    "commonMistakes": [
+      "Counting the entire large triangle without removing the notch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal bases let the heights be subtracted directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p3",
+    "problemId": "amc10b-2021-p3",
+    "finalAnswer": "$\\boxed{4041}$ (choice E)",
+    "shortExplanation": "The numerator is the difference of consecutive squares.",
+    "detailedSteps": [
+      "The difference is $(2021^2-2020^2)/(2020\\cdot2021)=4041/(2020\\cdot2021)$.",
+      "The numerator is congruent to 1 modulo 2020 and to minus 1 modulo 2021, so it has no common prime factor with the denominator. Hence p=4041."
+    ],
+    "keyIdeas": [
+      "Consecutive denominators remain coprime"
+    ],
+    "commonMistakes": [
+      "Assuming a large numerator must cancel with a large denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Consecutive integers simplify the numerator and its coprimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p4",
+    "problemId": "amc10b-2021-p4",
+    "finalAnswer": "$\\boxed{60}$ (choice C)",
+    "shortExplanation": "The initial gap can be six or ten.",
+    "detailedSteps": [
+      "The Minneapolis-minus-St. Louis difference changes from N to $N-5-3=N-8$. Its final absolute value is 2.",
+      "Thus $N-8=2$ or $N-8=-2$, giving N=10 or N=6. Both are positive initial warmer gaps, and their product is 60."
+    ],
+    "keyIdeas": [
+      "A signed temperature difference"
+    ],
+    "commonMistakes": [
+      "Keeping only the case where Minneapolis remains warmer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A final difference does not specify which city is warmer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p5",
+    "problemId": "amc10b-2021-p5",
+    "finalAnswer": "$\\boxed{4^{3032}}$ (choice E)",
+    "shortExplanation": "The resulting binary exponent is 6064.",
+    "detailedSteps": [
+      "We have $8^{2022}/4=2^{6066-2}=2^{6064}=4^{3032}$."
+    ],
+    "keyIdeas": [
+      "Convert to powers of two"
+    ],
+    "commonMistakes": [
+      "Subtracting four from the original exponent rather than dividing the number by four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common base avoids handling huge integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p6",
+    "problemId": "amc10b-2021-p6",
+    "finalAnswer": "$\\boxed{58}$ (choice B)",
+    "shortExplanation": "The minimum is two to the forty-sixth times three to the forty-second.",
+    "detailedSteps": [
+      "Because $2021=43\\cdot47$ with both factors prime, a number having 2021 divisors has either one prime exponent 2020 or two prime exponents 42 and 46.",
+      "For a fixed exponent pattern, the smallest primes give the minimum; placing the larger exponent on the smaller prime further reduces it. The two candidates are $2^{2020}$ and $2^{46}3^{42}$.",
+      "The second is smaller: $3^{42}<4^{42}=2^{84}$ gives $2^{46}3^{42}<2^{130}<2^{2020}$. It equals $16\\cdot6^{42}$, with 6 not dividing 16. Thus m+k=16+42=58."
+    ],
+    "keyIdeas": [
+      "Minimize a number with a prescribed divisor count"
+    ],
+    "commonMistakes": [
+      "Using 2021 as a prime exponent or attaching the larger exponent to three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisor count is a product of one more than each exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p7",
+    "problemId": "amc10b-2021-p7",
+    "finalAnswer": "$\\boxed{11}$ (choice C)",
+    "shortExplanation": "Eleven distinct integer sums occur.",
+    "detailedSteps": [
+      "Write a special fraction as $(15-b)/b=15/b-1$, where $1\\le b\\le14$. For an unordered denominator pair b,d, an integer sum occurs exactly when $bd$ divides $15(b+d)$.",
+      "Checking b from 1 through 14 and d from b through 14 gives the following denominator pairs and sums: (1,1):28; (1,3):18; (1,5):16; (2,2):13; (2,6):8; (2,10):7; (3,3):8; (3,5):6; (4,12):3; (5,5):4; (6,6):3; (6,10):2; (10,10):1.",
+      "These are all thirteen successful unordered pairs. The repeated sums 8 and 3 leave eleven distinct integer values. The finite divisibility test permits equal fractions, as required."
+    ],
+    "keyIdeas": [
+      "A finite exact fraction search"
+    ],
+    "commonMistakes": [
+      "Counting denominator pairs without checking whether their sums are integers, or forbidding equal fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator range is small enough for a complete transparent search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p8",
+    "problemId": "amc10b-2021-p8",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The largest prime factor is 127.",
+    "detailedSteps": [
+      "$16383=128^2-1=(128-1)(128+1)=127\\cdot129=127\\cdot3\\cdot43$.",
+      "The factors 43 and 127 are prime: neither is divisible by any prime at most its square root. The largest is 127, whose digit sum is $1+2+7=10$."
+    ],
+    "keyIdeas": [
+      "Factor a difference of squares"
+    ],
+    "commonMistakes": [
+      "Taking the digit sum of 16383 instead of its largest prime divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The neighboring power of two suggests a difference of squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p9",
+    "problemId": "amc10b-2021-p9",
+    "finalAnswer": "$\\boxed{\\frac7{27}}$ (choice C)",
+    "shortExplanation": "The red magical fraction is seven twenty-sevenths.",
+    "detailedSteps": [
+      "Let the blue magical fraction be t, making the red magical fraction 2t. Weighting by the red and blue population fractions gives $(2/7)(2t)+(5/7)t=1/6$.",
+      "Thus $9t/7=1/6$, so $t=7/54$ and the requested red fraction is $2t=7/27$."
+    ],
+    "keyIdeas": [
+      "Weight the two magical fractions"
+    ],
+    "commonMistakes": [
+      "Doubling the overall magical fraction rather than the blue magical fraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two color groups have different population weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p10",
+    "problemId": "amc10b-2021-p10",
+    "finalAnswer": "$\\boxed{27}$ (choice A)",
+    "shortExplanation": "Bob must hold two and Alice twenty-five.",
+    "detailedSteps": [
+      "Alice initially cannot decide the comparison, so her number lies in 2 through 39. Knowing this, Bob can decide only with a number in the set {1,2,39,40}: at the lower two values Alice must be larger, and at the upper two Bob must be larger.",
+      "The only prime in this set is 2. The number $200+a$, with Alice number a between 2 and 39 and different from 2, must be a square. The only square in this interval is $225=15^2$.",
+      "Hence a=25, and their sum is $25+2=27$. Every statement in the exchange is then satisfied."
+    ],
+    "keyIdeas": [
+      "Knowledge restricts hidden numbers"
+    ],
+    "commonMistakes": [
+      "Ignoring how Alice’s first statement removes the endpoints from Bob’s possible opponent values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The information changes Bob’s comparison range before he answers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p11",
+    "problemId": "amc10b-2021-p11",
+    "finalAnswer": "$\\boxed{3\\sqrt3-\\pi}$ (choice B)",
+    "shortExplanation": "Six circular caps are removed from the hexagon.",
+    "detailedSteps": [
+      "The circumradius of the side-one regular hexagon is 1, and each side subtends 60 degrees. Each circular cap outside that side has area $\\pi/6-\\sqrt3/4$.",
+      "Reflection puts that cap inside the hexagon. The six inward caps have disjoint interiors, so the remaining area is $3\\sqrt3/2-6(\\pi/6-\\sqrt3/4)=3\\sqrt3-\\pi$.",
+      "To check disjointness, the maximum inward cap depth is $1-\\sqrt3/2$. Each cap lies in the triangle formed by its side and the center: its radius-one reflected arc stays inside the two rays to its endpoints. Those six triangles have disjoint interiors."
+    ],
+    "keyIdeas": [
+      "Subtract reflected circular segments"
+    ],
+    "commonMistakes": [
+      "Subtracting the six full sectors rather than their circular segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflection preserves each small circular segment area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p12",
+    "problemId": "amc10b-2021-p12",
+    "finalAnswer": "$\\boxed{x=z,\\ y=x+1}$ (choice D)",
+    "shortExplanation": "Two equal values and a third one unit away give one.",
+    "detailedSteps": [
+      "The expression equals $\\tfrac12[(x-y)^2+(y-z)^2+(z-x)^2]$. Under choice D, set x=z=t and y=t+1; the three squared differences are 1,1,0, so the result is 1 for every integer t.",
+      "The other alternatives do not guarantee this: A permits (2,0,0), giving 4; B and C give three consecutive integers, giving 3; E permits (2,0,-1), giving 7. Thus only D is sufficient."
+    ],
+    "keyIdeas": [
+      "Rewrite as squared differences"
+    ],
+    "commonMistakes": [
+      "Showing one example for a condition instead of proving it always works."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The expression depends only on differences, not absolute values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p13",
+    "problemId": "amc10b-2021-p13",
+    "finalAnswer": "$\\boxed{\\frac{81}{4}}$ (choice B)",
+    "shortExplanation": "The triangle has base nine halves and height nine.",
+    "detailedSteps": [
+      "Let w(y) be the horizontal triangle width at height y above the base. Similar triangles make w linear. The actual stacked squares give $w(3)=3$ and $w(5)=2$.",
+      "Therefore $w(y)=9/2-y/2$. Its zero occurs at height 9, and the base width is 9/2. The area is $\\tfrac12(9)(9/2)=81/4=20\\tfrac14$."
+    ],
+    "keyIdeas": [
+      "Triangle widths decrease linearly"
+    ],
+    "commonMistakes": [
+      "Using the square side ratio as the ratio of the entire triangle heights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The squares supply two height-width pairs on the same triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p14",
+    "problemId": "amc10b-2021-p14",
+    "finalAnswer": "$\\boxed{\\frac{59}{64}}$ (choice C)",
+    "shortExplanation": "The failure probability is five sixty-fourths.",
+    "detailedSteps": [
+      "A die face is odd with probability 1/2, has exactly one factor of two (face 2 or 6) with probability 1/3, and has two factors of two (face 4) with probability 1/6.",
+      "A product fails divisibility by four precisely when all six faces are odd, or exactly one face has one factor of two and all others are odd. The failure probability is $(1/2)^6+6(1/3)(1/2)^5=5/64$.",
+      "The required probability is $1-5/64=59/64$."
+    ],
+    "keyIdeas": [
+      "Count insufficient powers of two"
+    ],
+    "commonMistakes": [
+      "Requiring a face four, although two faces with a single factor of two also suffice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product needs two factors of two, wherever they arise.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p15",
+    "problemId": "amc10b-2021-p15",
+    "finalAnswer": "$\\boxed{117}$ (choice D)",
+    "shortExplanation": "The square side squared is the larger quadratic root.",
+    "detailedSteps": [
+      "Put $A=(0,0),B=(s,0),C=(s,s),P=(0,p)$, with $0\\le p\\le s$. Since BP=6+7=13, we have $s^2+p^2=169$.",
+      "The point R is six thirteenths of the way from B to P, so $R=(7s/13,6p/13)$. Perpendicularity gives $(C-R)\\cdot(P-B)=0$, which simplifies to $sp=78$.",
+      "Thus $s^2p^2=6084$, and s squared and p squared are roots of $X^2-169X+6084=0$. These roots are 117 and 52. Since p is at most s, the square area is 117.",
+      "The construction is attainable: take $s=\\sqrt{117}$, $p=\\sqrt{52}$ and $Q=(s-p,0)$; Q lies on AB and CQ is perpendicular to BP through the stated R."
+    ],
+    "keyIdeas": [
+      "Perpendicular vectors in a square"
+    ],
+    "commonMistakes": [
+      "Selecting the smaller root without enforcing P on the side AD."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates turn the right angle into a product relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p16",
+    "problemId": "amc10b-2021-p16",
+    "finalAnswer": "$\\boxed{\\frac{11}{5}}$ (choice D)",
+    "shortExplanation": "The expected fixed count is two point two.",
+    "detailedSteps": [
+      "Fix Chris’s chosen edge by circular symmetry. Silva chooses that same edge with probability 1/5, restoring all five balls. She chooses one of two adjacent edges with probability 2/5, producing a three-cycle and leaving two fixed balls.",
+      "The remaining two edges are disjoint from Chris’s edge; those swaps move four balls and leave one fixed ball. The expectation is $(5+2\\cdot2+2\\cdot1)/5=11/5=2.2$."
+    ],
+    "keyIdeas": [
+      "Classify the second circular transposition"
+    ],
+    "commonMistakes": [
+      "Treating the shared-vertex case as two disjoint swaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the overlap type of the two chosen edges matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p17",
+    "problemId": "amc10b-2021-p17",
+    "finalAnswer": "$\\boxed{2x-3y=0}$ (choice D)",
+    "shortExplanation": "The mirror slope is two thirds.",
+    "detailedSteps": [
+      "Reflection of P=(-1,4) across the line with normal (5,-1) gives $P\\prime=P-2(P\\cdot(5,-1))(5,-1)/26=(32/13,43/13)$.",
+      "The second mirror is the perpendicular bisector of P prime and P double prime=(4,1). Their midpoint is (42/13,28/13), lying on the origin-based line of slope 2/3.",
+      "The joining vector is (20/13,-30/13), perpendicular to that line. Therefore the mirror equation is $2x-3y=0$, distinct from the original mirror."
+    ],
+    "keyIdeas": [
+      "The second mirror bisects two position vectors"
+    ],
+    "commonMistakes": [
+      "Using the angle bisector perpendicular to the actual midpoint line, which would send P prime to the negative target."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflection fixes the midpoint and reverses the connecting normal direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p18",
+    "problemId": "amc10b-2021-p18",
+    "finalAnswer": "$\\boxed{147}$ (choice E)",
+    "shortExplanation": "Alternating outer tips and inner corners determine the union area.",
+    "detailedSteps": [
+      "The twelve square corners appear every 30 degrees at distance $3\\sqrt2$ from the common center. Between neighboring tips, the two exposed square edges meet at an inward corner at distance $2\\sqrt3$ from the center.",
+      "For example, take the unrotated tip (3,3) and the clockwise-30-degree tip $(3(\\sqrt3+1)/2,3(\\sqrt3-1)/2)$. Their intervening exposed edges meet at $ (3,\\sqrt3) $. Rotating this boundary pair through multiples of 30 degrees describes all 24 polygon vertices.",
+      "Each consecutive radius pair subtends 15 degrees. The union area is $24\\cdot\\tfrac12(3\\sqrt2)(2\\sqrt3)\\sin15^\\circ=108-36\\sqrt3$.",
+      "The radicand 3 is squarefree, so a+b+c=108+36+3=147."
+    ],
+    "keyIdeas": [
+      "A twenty-four-vertex rotational boundary"
+    ],
+    "commonMistakes": [
+      "Taking the convex hull of the sheets and filling the twelve inward notches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The repeated rotation makes twelve congruent boundary sections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p19",
+    "problemId": "amc10b-2021-p19",
+    "finalAnswer": "$\\boxed{8}$ (choice A)",
+    "shortExplanation": "The five leading digits are two, one, one, three, one.",
+    "detailedSteps": [
+      "Write $N=(7/9)(10^{313}-1)$, so $10^{312}<N<10^{313}$. For root orders r=2,3,4,5,6, the relevant decimal exponents e=floor(312/r) are 156,104,78,62,52.",
+      "Test successive leading digits by $(d10^e)^r\\le N<((d+1)10^e)^r$. Direct integer comparison gives d=2,1,1,3,1 respectively: the scaled leading powers are bounded by 4 and 9; 1 and 8; 1 and 16; 243 and 1024; 1 and 64.",
+      "Their sum is $2+1+1+3+1=8$. These comparisons use the full finite integer, so no rounded logarithm or root is needed."
+    ],
+    "keyIdeas": [
+      "Bracket leading digits by exact integer powers"
+    ],
+    "commonMistakes": [
+      "Using the same decimal exponent for all five roots or rounding a cube root up to two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Leading digits can be found without computing the roots themselves.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p20",
+    "problemId": "amc10b-2021-p20",
+    "finalAnswer": "$\\boxed{\\frac{41}{144}}$ (choice C)",
+    "shortExplanation": "Symmetry reduces the conditional probability to a maximum distribution.",
+    "detailedSteps": [
+      "Only players tied for the highest first roll can eventually win, so the winner’s first roll is that round’s maximum M. Given M=5, the four identities are still symmetric under the complete tie-breaking rule, giving each a conditional win probability 1/4.",
+      "Hugo also has unconditional win probability 1/4. Consequently $P(\\text{Hugo first rolls }5\\mid\\text{Hugo wins})=P(M=5)$.",
+      "This is $(5/6)^4-(4/6)^4=(625-256)/1296=41/144$. The tie process terminates almost surely because each unresolved tie has a fixed positive chance of a unique maximum."
+    ],
+    "keyIdeas": [
+      "The winner’s first roll equals the first-round maximum"
+    ],
+    "commonMistakes": [
+      "Ignoring ties or conditioning on Hugo’s initial roll without weighting his eventual chance of victory."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Player symmetry remains valid even after conditioning on a symmetric first-round event.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p21",
+    "problemId": "amc10b-2021-p21",
+    "finalAnswer": "$\\boxed{68}$ (choice E)",
+    "shortExplanation": "The six polygon pairs contribute ten, ten, ten, twelve, twelve, fourteen.",
+    "detailedSteps": [
+      "For n<m, each vertex of the regular n-gon lies outside the regular m-gon, because the only points of the latter on the circle are its own distinct vertices. The midpoint of any n-gon side is at radius $r\\cos(\\pi/n)<r\\cos(\\pi/m)$ and hence inside the m-gon’s incircle.",
+      "Thus every side of the smaller polygon enters and leaves the larger convex polygon exactly once, producing 2n side crossings. No crossing is a vertex, and the stipulated lack of triple intersections makes all such points distinct.",
+      "The six pairs give $2(5+5+5+6+6+7)=68$ intersection points."
+    ],
+    "keyIdeas": [
+      "Every smaller side crosses the larger polygon twice"
+    ],
+    "commonMistakes": [
+      "Assuming arbitrary inscribed polygons have the same crossing count without using their regularity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint lies inside the larger polygon even though its endpoints lie outside.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p22",
+    "problemId": "amc10b-2021-p22",
+    "finalAnswer": "$\\boxed{197}$ (choice B)",
+    "shortExplanation": "Valid sizes are zero or one away from a multiple of nine.",
+    "detailedSteps": [
+      "Using the square of a sum, $S_n=\\tfrac12[(n(n+1)/2)^2-n(n+1)(2n+1)/6]=n(n-1)(n+1)(3n+2)/24$.",
+      "The factor 3n+2 is not divisible by 3, and the product of three consecutive integers contains exactly one multiple of 3. Since the denominator contributes one factor of 3, divisibility of S by 3 requires that multiple to be divisible by 9. Thus $n\\equiv0,1,8\\pmod9$.",
+      "For n at least 2, the ten smallest qualifying values are 8,9,10,17,18,19,26,27,28,35. Their sum is 197."
+    ],
+    "keyIdeas": [
+      "A divisor criterion modulo nine"
+    ],
+    "commonMistakes": [
+      "Checking divisibility of the unreduced numerator by three without accounting for the denominator 24."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the factor of three in the denominator affects the modular test.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p23",
+    "problemId": "amc10b-2021-p23",
+    "finalAnswer": "$\\boxed{\\frac{253}{256}}$ (choice D)",
+    "shortExplanation": "Only twelve of the 1024 colorings avoid such a triangle.",
+    "detailedSteps": [
+      "In a coloring with no monochromatic triangle, a vertex cannot have three edges of one color: the three opposite endpoints would have to have all connecting edges of the other color, themselves forming a monochromatic triangle.",
+      "Each vertex has four incident edges, so it has exactly two red and two blue edges. The red graph is therefore a disjoint union of cycles, with no three-cycle; on five vertices it must be a five-cycle. Its complement is also a five-cycle and avoids monochromatic triangles.",
+      "There are $5!/10=12$ labeled undirected five-cycles, out of $2^{10}=1024$ equally likely colorings. The required probability is $1-12/1024=253/256$."
+    ],
+    "keyIdeas": [
+      "Avoiding monochromatic triangles forces two five-cycles"
+    ],
+    "commonMistakes": [
+      "Multiplying separate triangle probabilities even though triangles share edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement of a five-cycle is another five-cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p24",
+    "problemId": "amc10b-2021-p24",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "Averaging fixed colorings over 24 rotations gives seven.",
+    "detailedSteps": [
+      "Choose the four white cube positions among eight corner positions, giving 70 labeled constructions. Burnside’s counting principle averages the number unchanged by each of the 24 orientation-preserving cube rotations.",
+      "The identity fixes 70. The six quarter-turns about face axes have two four-cycles and fix 2 colorings each. The three face-axis half-turns have four two-cycles and fix 6 each.",
+      "The eight third-turns about body diagonals have two fixed vertices and two three-cycles; choosing one fixed vertex and one three-cycle gives 4 fixed colorings each. The six half-turns about opposite edge midpoints have four two-cycles and fix 6 each.",
+      "The orbit count is $(70+6\\cdot2+3\\cdot6+8\\cdot4+6\\cdot6)/24=168/24=7$. Reflections and exchanging the two colors are not additional identifications."
+    ],
+    "keyIdeas": [
+      "Rotation orbits of four marked cube vertices"
+    ],
+    "commonMistakes": [
+      "Dividing 70 by 24 without accounting for constructions with rotational symmetry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cube rotations have five distinct position-cycle types.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2021-p25",
+    "problemId": "amc10b-2021-p25",
+    "finalAnswer": "$\\boxed{67}$ (choice E)",
+    "shortExplanation": "The two areas are nine fifths and five thirds.",
+    "detailedSteps": [
+      "Use coordinates with the outer square’s bottom-left corner at the origin. Let the long direction of the 1-by-3 rectangle be u=(c,-s), with c,s positive and $c^2+s^2=1$. Its lower-left corner is (0,3s), upper-left shared corner X is (s,3s+c), and upper-right corner is (3c+s,c), so the outer side is L=3c+s.",
+      "The unit square’s next vertex on the left boundary is X+(-s,c), and its next vertex on the top is (c,4s+2c). Therefore $4s+2c=L=3c+s$, giving c=3s, hence $s=1/\\sqrt{10},c=3/\\sqrt{10}$ and $L=\\sqrt{10}$.",
+      "Multiply all coordinates by $\\sqrt{10}$. Then X=(1,6), the unit square’s bottom-right corner Y=(4,7), and the outer square has side 10. Let the common vertex Z of R and the upper long side be $Z=(1+3t,6-t)$, with $0<t<3$.",
+      "From Y to the top boundary, R has vector $v=(9-3t,3)$, because its translate starting at Z reaches the right boundary. Its other vector is $h=Z-Y=(3t-3,-t-1)$. Orthogonality gives $h\\cdot v=0$, or $3t^2-11t+10=0$.",
+      "The roots are t=2 and t=5/3. Both give all four R vertices inside the outer square and in the depicted unoccupied region. Since the coordinate scaling multiplies area by 10, the actual R area is $|h\\times v|/10$, respectively 9/5 and 5/3.",
+      "The roots exhaust the geometric possibilities. Their sum is $9/5+5/3=52/15$, in lowest terms, so m+n=52+15=67."
+    ],
+    "keyIdeas": [
+      "Two feasible rectangle branches in the actual diagram"
+    ],
+    "commonMistakes": [
+      "Keeping only the branch that resembles the drawing or forgetting to undo the coordinate area scaling."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer boundary first fixes the tilt, leaving a quadratic for the remaining rectangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

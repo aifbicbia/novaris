@@ -1,0 +1,552 @@
+[
+  {
+    "id": "solution-amc12a-2023-p1",
+    "problemId": "amc12a-2023-p1",
+    "finalAnswer": "$\\boxed{27}$ (choice E)",
+    "shortExplanation": "The two distances are in the same ratio as the speeds.",
+    "detailedSteps": [
+      "At the meeting time, the distances ridden have ratio $18:12=3:2$. They add to $45$ miles.",
+      "Alicia therefore covers $\\frac35\\cdot45=27$ miles from the starting city."
+    ],
+    "keyIdeas": [
+      "Distance ratios",
+      "Constant speed"
+    ],
+    "commonMistakes": [
+      "Using the difference of the speeds would model travel in the same direction."
+    ],
+    "difficultyNotes": "Relative motion.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p2",
+    "problemId": "amc12a-2023-p2",
+    "finalAnswer": "$\\boxed{\\frac95}$ (choice A)",
+    "shortExplanation": "Compare the extra pizza with the extra fruit.",
+    "detailedSteps": [
+      "The difference in pizza amounts is $\\frac34-\\frac13=\\frac5{12}$ of a pizza. This balances $3$ cups of fruit, weighing $\\frac34$ pound.",
+      "A whole pizza consequently weighs $\\frac34\\div\\frac5{12}=\\frac95$ pounds."
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "The three extra cups weigh three quarters of a pound, not three pounds."
+    ],
+    "difficultyNotes": "Balance equations.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p3",
+    "problemId": "amc12a-2023-p3",
+    "finalAnswer": "$\\boxed{8}$ (choice A)",
+    "shortExplanation": "Count possible square roots instead of scanning the squares.",
+    "detailedSteps": [
+      "If $5$ divides $r^2$, then $5$ divides the integer $r$. Also, $44^2<2023<45^2$, so $1\\le r\\le44$.",
+      "The allowed roots are $5,10,\\ldots,40$, giving $8$ distinct squares."
+    ],
+    "keyIdeas": [
+      "Prime divisibility",
+      "Integer bounds"
+    ],
+    "commonMistakes": [
+      "The next square, 2025, is already above the strict limit."
+    ],
+    "difficultyNotes": "Squares divisible by a prime.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p4",
+    "problemId": "amc12a-2023-p4",
+    "finalAnswer": "$\\boxed{18}$ (choice E)",
+    "shortExplanation": "Collect the factors into one power of ten.",
+    "detailedSteps": [
+      "Rewrite the product as $(8\\cdot25\\cdot15)^5=3000^5=243\\cdot10^{15}$.",
+      "The three digits of $243$ are followed by $15$ zeros. The total length is $18$."
+    ],
+    "keyIdeas": [
+      "Exponent laws",
+      "Place value"
+    ],
+    "commonMistakes": [
+      "A number between consecutive powers of ten has one more digit than the smaller exponent."
+    ],
+    "difficultyNotes": "Decimal length.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p5",
+    "problemId": "amc12a-2023-p5",
+    "finalAnswer": "$\\boxed{\\frac{49}{216}}$ (choice B)",
+    "shortExplanation": "Partition by the roll on which the total first reaches three.",
+    "detailedSteps": [
+      "Positive die values make the total strictly increase. It can reach $3$ on roll one, two, or three; reaching it on roll four is impossible.",
+      "The successful initial strings are $(3)$, $(1,2)$, $(2,1)$, and $(1,1,1)$. All later rolls may be arbitrary.",
+      "The resulting probability is $\\frac16+\\frac2{36}+\\frac1{216}=\\frac{49}{216}$."
+    ],
+    "keyIdeas": [
+      "Disjoint events",
+      "Stopping times"
+    ],
+    "commonMistakes": [
+      "Requiring the total after four rolls to equal three would exclude every outcome."
+    ],
+    "difficultyNotes": "First hitting a running total.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p6",
+    "problemId": "amc12a-2023-p6",
+    "finalAnswer": "$\\boxed{4\\sqrt5}$ (choice D)",
+    "shortExplanation": "Center the two horizontal coordinates at the midpoint.",
+    "detailedSteps": [
+      "Write the two positive horizontal coordinates as $6-h$ and $6+h$, where $h>0$. The vertical midpoint condition gives $\\log_2(6-h)+\\log_2(6+h)=4$.",
+      "Thus $(6-h)(6+h)=16$, so $h^2=20$. Their positive difference is $2h=4\\sqrt5$. Both coordinates are positive because $2\\sqrt5<6$."
+    ],
+    "keyIdeas": [
+      "Logarithm product rule",
+      "Symmetric coordinates"
+    ],
+    "commonMistakes": [
+      "The midpoint condition averages logarithms, not their arguments."
+    ],
+    "difficultyNotes": "Logarithms and midpoint.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p7",
+    "problemId": "amc12a-2023-p7",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "Keep a parity ledger for the four fixed year digits.",
+    "detailedSteps": [
+      "The year contributes odd counts of $0$ and $3$ and even counts of every other digit. The month and day must therefore contribute one $0$, one $3$, and a repeated pair of some digit.",
+      "Checking the valid month strings gives: January $13,31$; February $23$; March $11,22$; October $13,31$; November $03,30$. No other month permits a valid day.",
+      "These are $2+1+2+2+2=9$ dates."
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Finite case analysis"
+    ],
+    "commonMistakes": [
+      "Months and days use two digits, including leading zeros."
+    ],
+    "difficultyNotes": "Parity of calendar digits.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p8",
+    "problemId": "amc12a-2023-p8",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "Compare the two changes using the old average and the old number of quizzes.",
+    "detailedSteps": [
+      "Let $n$ be the old number of quizzes and $m$ their average. The first condition gives $11-m=n+1$.",
+      "The second condition gives $3(11-m)=2(n+3)$. Substituting the first equation yields $3n+3=2n+6$, hence $n=3$.",
+      "Therefore $m=11-(n+1)=7$."
+    ],
+    "keyIdeas": [
+      "Weighted averages",
+      "Elimination"
+    ],
+    "commonMistakes": [
+      "The denominator increases when new quiz scores are added."
+    ],
+    "difficultyNotes": "Updating an average.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p9",
+    "problemId": "amc12a-2023-p9",
+    "finalAnswer": "$\\boxed{2-\\sqrt3}$ (choice C)",
+    "shortExplanation": "Recover the sum and difference of the triangle legs.",
+    "detailedSteps": [
+      "Let the shorter and longer legs be $u$ and $v$. Along an outer side, $u+v=\\sqrt3$. The hypotenuse is an inner side, so $u^2+v^2=2$.",
+      "These imply $2uv=1$ and $(v-u)^2=1$. Hence $v-u=1$.",
+      "The ratio is $u/v=(\\sqrt3-1)/(\\sqrt3+1)=2-\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Rationalization"
+    ],
+    "commonMistakes": [
+      "The small triangle hypotenuse belongs to the inner square."
+    ],
+    "difficultyNotes": "Nested squares.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p10",
+    "problemId": "amc12a-2023-p10",
+    "finalAnswer": "$\\boxed{36}$ (choice D)",
+    "shortExplanation": "Divide the squared equation by a positive square.",
+    "detailedSteps": [
+      "Set $t=x/y>0$. The second condition becomes $(1-t)^2=4$, whose only positive solution is $t=3$.",
+      "Now $x=3y$ and $y^3=9y^2$. Dividing by $y^2>0$ gives $y=9$, $x=27$, and $x+y=36$."
+    ],
+    "keyIdeas": [
+      "Positivity",
+      "Substitution"
+    ],
+    "commonMistakes": [
+      "The other square-root branch gives a negative ratio."
+    ],
+    "difficultyNotes": "Positive real solutions.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p11",
+    "problemId": "amc12a-2023-p11",
+    "finalAnswer": "$\\boxed{45}$ (choice C)",
+    "shortExplanation": "Use the dot product and determinant of direction vectors.",
+    "detailedSteps": [
+      "Direction vectors for the lines are $(1,2)$ and $(3,1)$. Their dot product is $5$, and the magnitude of their determinant is also $5$.",
+      "The acute angle $\\theta$ therefore satisfies $\\tan\\theta=5/5=1$. Thus $\\theta=45^\\circ$."
+    ],
+    "keyIdeas": [
+      "Direction vectors",
+      "Dot product",
+      "Determinant"
+    ],
+    "commonMistakes": [
+      "Subtracting slopes does not give the angle."
+    ],
+    "difficultyNotes": "Angle between lines.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p12",
+    "problemId": "amc12a-2023-p12",
+    "finalAnswer": "$\\boxed{3159}$ (choice D)",
+    "shortExplanation": "Subtract twice the sum of the odd cubes from the full sum.",
+    "detailedSteps": [
+      "For a shorter calculation, pair consecutive terms: $(2k)^3-(2k-1)^3=12k^2-6k+1$. There are nine pairs.",
+      "The sum is $12\\cdot\\frac{9\\cdot10\\cdot19}{6}-6\\cdot\\frac{9\\cdot10}{2}+9=3159$."
+    ],
+    "keyIdeas": [
+      "Polynomial expansion",
+      "Sums of powers"
+    ],
+    "commonMistakes": [
+      "There are nine pairs, and every odd cube has a minus sign."
+    ],
+    "difficultyNotes": "Alternating cube sum.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p13",
+    "problemId": "amc12a-2023-p13",
+    "finalAnswer": "$\\boxed{36}$ (choice B)",
+    "shortExplanation": "Use both the win ratio and the unavoidable wins within one group.",
+    "detailedSteps": [
+      "Let the left-handed group have $l$ players, so the total is $3l$. Total games are $G=3l(3l-1)/2$. The win ratio is $7:5$, so right-handed players win $5G/12$ games and $12$ divides $G$.",
+      "The $2l$ right-handed players necessarily win all $\\binom{2l}{2}=l(2l-1)$ games among themselves. Thus $l(2l-1)\\le5l(3l-1)/8$, giving $l\\le3$.",
+      "Testing $l=1,2,3$ gives $G=3,15,36$, and only $36$ is divisible by $12$. It is attainable: the right-handed group wins its $15$ internal games and loses all $18$ cross-group games; the left-handed group wins $21$ games in total."
+    ],
+    "keyIdeas": [
+      "Tournament counting",
+      "Divisibility",
+      "Feasibility"
+    ],
+    "commonMistakes": [
+      "The winning ratio alone does not bound the number of players."
+    ],
+    "difficultyNotes": "Round-robin win constraints.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p14",
+    "problemId": "amc12a-2023-p14",
+    "finalAnswer": "$\\boxed{7}$ (choice E)",
+    "shortExplanation": "Separate zero before restricting the modulus.",
+    "detailedSteps": [
+      "The value $z=0$ works. For $z\\ne0$, write $z=re^{i\\theta}$. Comparing moduli in $z^5=\\overline z$ gives $r^5=r$, hence $r=1$.",
+      "Comparing arguments gives $6\\theta\\equiv0\\pmod{2\\pi}$. There are six distinct unit-circle solutions, and each satisfies the equation.",
+      "Including zero gives $7$ solutions."
+    ],
+    "keyIdeas": [
+      "Polar form",
+      "Roots of unity"
+    ],
+    "commonMistakes": [
+      "Dividing by z at the start loses the zero solution."
+    ],
+    "difficultyNotes": "Conjugation and roots of unity.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p15",
+    "problemId": "amc12a-2023-p15",
+    "finalAnswer": "$\\boxed{\\arccos\\frac56}$ (choice A)",
+    "shortExplanation": "Add the horizontal projections of all path segments.",
+    "detailedSteps": [
+      "Each segment of length $s$ advances horizontally by $s\\cos\\theta$. All horizontal advances are positive and add to the field length $100$.",
+      "Thus the total path length $L$ satisfies $L\\cos\\theta=100$. Setting $L=120$ gives $\\cos\\theta=5/6$, so $\\theta=\\arccos(5/6)$. The possibly shorter final segment obeys the same projection rule."
+    ],
+    "keyIdeas": [
+      "Orthogonal projection",
+      "Trigonometry"
+    ],
+    "commonMistakes": [
+      "Assuming four equal segments would impose a condition absent from the problem."
+    ],
+    "difficultyNotes": "Projection of a path.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p16",
+    "problemId": "amc12a-2023-p16",
+    "finalAnswer": "$\\boxed{21}$ (choice B)",
+    "shortExplanation": "Complete the square and apply the triangle inequality.",
+    "detailedSteps": [
+      "Put $w=z+\\frac12$. The condition is $|w^2+\\frac34|=4$. Then $|w|^2=|w^2|\\le4+\\frac34=\\frac{19}{4}$.",
+      "Since the shift is real, $\\operatorname{Im}z=\\operatorname{Im}w\\le|w|\\le\\sqrt{19}/2$. Equality is attained at $w=i\\sqrt{19}/2$, for which $w^2+3/4=-4$.",
+      "Therefore $m=19$, $n=2$, and $m+n=21$."
+    ],
+    "keyIdeas": [
+      "Triangle inequality",
+      "Completing the square",
+      "Equality conditions"
+    ],
+    "commonMistakes": [
+      "An upper bound is insufficient without a point attaining it."
+    ],
+    "difficultyNotes": "Complex modulus bound.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p17",
+    "problemId": "amc12a-2023-p17",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice E)",
+    "shortExplanation": "Group the successful paths by the number of jumps.",
+    "detailedSteps": [
+      "A successful path is a composition of $10$ into positive integers. Every such path has probability $2^{-10}$, because the jump lengths sum to $10$.",
+      "For $k$ jumps there are $\\binom9{k-1}$ compositions. Summing over $k=1,\\ldots,10$ gives $2^9$ compositions.",
+      "The paths are disjoint, and an overshoot cannot return. The required probability is $2^9/2^{10}=1/2$."
+    ],
+    "keyIdeas": [
+      "Compositions",
+      "Binomial theorem"
+    ],
+    "commonMistakes": [
+      "Paths with different numbers of jumps still have the same probability here."
+    ],
+    "difficultyNotes": "Random compositions.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p18",
+    "problemId": "amc12a-2023-p18",
+    "finalAnswer": "$\\boxed{\\frac3{28}}$ (choice D)",
+    "shortExplanation": "Place the centers symmetrically and translate tangency into distances.",
+    "detailedSteps": [
+      "Place the unit-circle centers at $(-1/4,0)$ and $(1/4,0)$. A circle inside both has radius at most $1-1/4=3/4$, by the triangle inequality between the two centers. The centered circle attains this radius.",
+      "The fourth circle has center on the perpendicular bisector of the unit centers. If its radius is $r$, its vertical distance from the origin is $3/4+r$.",
+      "Internal tangency to either unit circle gives $\\frac1{16}+(\\frac34+r)^2=(1-r)^2$. Cancellation yields $7r/2=3/8$, hence $r=3/28$."
+    ],
+    "keyIdeas": [
+      "Circle tangency",
+      "Symmetric coordinates"
+    ],
+    "commonMistakes": [
+      "Internal tangency subtracts radii; external tangency adds them."
+    ],
+    "difficultyNotes": "Three tangent circles.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p19",
+    "problemId": "amc12a-2023-p19",
+    "finalAnswer": "$\\boxed{1}$ (choice C)",
+    "shortExplanation": "Use logarithms to turn the unknown bases into linear terms.",
+    "detailedSteps": [
+      "Let $t=\\log_{2023}x$, $a=\\log_{2023}7$, and $b=\\log_{2023}289$. Since $7\\cdot289=2023$, we have $a+b=1$ and $a,b>0$.",
+      "Changing bases gives $1/((t+a)(t+b))=1/(t+1)$, with $t\\ne-a,-b,-1$. Thus $t^2=1-ab$.",
+      "There are two real roots $t=\\pm\\sqrt{1-ab}$. Neither equals an excluded value: equality with $-a$ or $-b$ would force $a=1$ or $b=1$, and equality with $-1$ would force $ab=0$.",
+      "The corresponding positive values of $x$ are reciprocal, so their product is $1$."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Vieta relations",
+      "Domain restrictions"
+    ],
+    "commonMistakes": [
+      "Clearing logarithmic denominators requires checking that none are zero."
+    ],
+    "difficultyNotes": "Logarithm domain and reciprocal roots.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p20",
+    "problemId": "amc12a-2023-p20",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "Track only the row sums instead of every entry.",
+    "detailedSteps": [
+      "Let $S_n$ be the sum of row $n$. The adjacent pairs from row $n-1$ sum to $2S_{n-1}-2$; the new interior entries add $n-2$, and the two boundary entries add $2$.",
+      "Therefore $S_n=2S_{n-1}+n-2$. With $S_1=1$, induction gives $S_n=2^n-n$.",
+      "The powers of two repeat modulo $10$ with period four. Since $2023\\equiv3\\pmod4$, the units digit of $S_{2023}$ is $8-3=5$."
+    ],
+    "keyIdeas": [
+      "Recurrences",
+      "Modular arithmetic",
+      "Induction"
+    ],
+    "commonMistakes": [
+      "Interior entries have an extra one, so ordinary Pascal row sums do not apply."
+    ],
+    "difficultyNotes": "Row-sum recurrence.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p21",
+    "problemId": "amc12a-2023-p21",
+    "finalAnswer": "$\\boxed{\\frac7{22}}$ (choice A)",
+    "shortExplanation": "Fix the middle vertex and count the two remaining vertices by distance.",
+    "detailedSteps": [
+      "From any vertex $R$ of the icosahedron, five vertices are one edge away, five are two edges away, and the opposite vertex is three edges away. This follows from the two pentagonal rings around opposite vertices.",
+      "For ordered distinct choices $(Q,S)$, there are $11\\cdot10=110$ possibilities. The favorable distance pairs $(2,1),(3,1),(3,2)$ contribute $5\\cdot5+1\\cdot5+1\\cdot5=35$.",
+      "The probability is $35/110=7/22$."
+    ],
+    "keyIdeas": [
+      "Graph distance",
+      "Vertex symmetry",
+      "Ordered counting"
+    ],
+    "commonMistakes": [
+      "Q and S must be distinct; sampling with replacement gives a different denominator."
+    ],
+    "difficultyNotes": "Distances in the icosahedron graph.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p22",
+    "problemId": "amc12a-2023-p22",
+    "finalAnswer": "$\\boxed{96}$ (choice B)",
+    "shortExplanation": "Compute the function only at divisors of the target.",
+    "detailedSteps": [
+      "The term with $d=1$ is $f(n)$, so $f(n)=1-\\sum_{d\\mid n,\\ d>1}d f(n/d)$. This also proves uniqueness, since the other arguments are smaller.",
+      "Factor $2023=7\\cdot17^2$. Successive use of the recurrence gives $f(1)=1$, $f(7)=-6$, $f(17)=-16$, $f(119)=96$, and $f(289)=-16$.",
+      "Finally, $f(2023)=1-[7(-16)+17(96)+119(-16)+289(-6)+2023]=96$."
+    ],
+    "keyIdeas": [
+      "Divisors",
+      "Recursive definitions",
+      "Prime factorization"
+    ],
+    "commonMistakes": [
+      "The coefficient is d while the argument is n/d; interchanging only one changes the recurrence."
+    ],
+    "difficultyNotes": "Divisor recurrence.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p23",
+    "problemId": "amc12a-2023-p23",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Find a lower bound whose equality conditions determine both variables.",
+    "detailedSteps": [
+      "For positive $a,b$, AM-GM gives $1+2a\\ge2\\sqrt{2a}$, $2+2b\\ge4\\sqrt b$, and $2a+b\\ge2\\sqrt{2ab}$.",
+      "Multiplying gives a lower bound of $32ab$, exactly the required right side. Equality in the product forces equality in all three positive-factor inequalities.",
+      "The equalities are $1=2a$, $1=b$, and $2a=b$. They hold simultaneously only at $(a,b)=(1/2,1)$, which indeed satisfies the equation. There is exactly one pair."
+    ],
+    "keyIdeas": [
+      "AM-GM",
+      "Simultaneous equality"
+    ],
+    "commonMistakes": [
+      "Equality must hold in every factor, not just one of the inequalities."
+    ],
+    "difficultyNotes": "Equality in AM-GM.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p24",
+    "problemId": "amc12a-2023-p24",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "Record when each element first appears.",
+    "detailedSteps": [
+      "Fix a sequence length $n$. Each of the ten elements can first appear at one of the $n$ positions, or never appear. Once it appears, inclusion forces it to remain.",
+      "These $n+1$ choices are independent, giving $(n+1)^{10}$ sequences. Thus $K=\\sum_{j=2}^{11}j^{10}$.",
+      "The ten bases cover all residues modulo $10$. The last digits of their tenth powers are $0,1,4,9,6,5,6,9,4,1$, summing to $45$. Therefore $K\\equiv5\\pmod{10}$."
+    ],
+    "keyIdeas": [
+      "Bijections",
+      "Nested sets",
+      "Last digits"
+    ],
+    "commonMistakes": [
+      "Equal consecutive sets and empty sets are allowed, so first-appearance times may be skipped."
+    ],
+    "difficultyNotes": "Chains of subsets.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2023-p25",
+    "problemId": "amc12a-2023-p25",
+    "finalAnswer": "$\\boxed{-1}$ (choice C)",
+    "shortExplanation": "Read the highest imaginary coefficient in a complex power.",
+    "detailedSteps": [
+      "For $t=\\tan x$, the tangent of $2023x$ equals the ratio of the imaginary and real parts of $(1+it)^{2023}$ wherever these expressions are defined.",
+      "The real part has constant term $1$. The coefficient of $t^{2023}$ in the imaginary part is the imaginary part of $i^{2023}$.",
+      "Since $2023\\equiv3\\pmod4$, we have $i^{2023}=-i$, and the requested coefficient is $-1$. The stated uniqueness identifies these coefficients with the sequence in the question."
+    ],
+    "keyIdeas": [
+      "De Moivre formula",
+      "Binomial theorem"
+    ],
+    "commonMistakes": [
+      "The sign depends on the exponent modulo four, not merely on its being odd."
+    ],
+    "difficultyNotes": "Multiple-angle coefficients.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

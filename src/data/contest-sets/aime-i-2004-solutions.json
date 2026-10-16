@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-i-2004-p1",
+    "problemId": "aime-i-2004-p1",
+    "finalAnswer": "$\\boxed{217}$",
+    "shortExplanation": "The seven possible remainders are 28 through 34.",
+    "detailedSteps": [
+      "If the leading digit is a, the number is $1000a+100(a-1)+10(a-2)+(a-3)=1111a-123$. The digits are valid exactly for $a=3,4,\\ldots,9$.",
+      "Since $1111\\equiv1\\pmod{37}$ and $123\\equiv12\\pmod{37}$, the residue is $a-12$ modulo $37$, or $a+25$ for this range. Thus the distinct remainders are 28 through 34, whose sum is $7(28+34)/2=217$."
+    ],
+    "keyIdeas": [
+      "The leading digit determines the residue"
+    ],
+    "commonMistakes": [
+      "Including a digit below zero or summing repeated residues unnecessarily."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The place-value sum 1111 is one more than a multiple of 37.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p2",
+    "problemId": "aime-i-2004-p2",
+    "finalAnswer": "$\\boxed{201}$",
+    "shortExplanation": "The valid cardinality is 201.",
+    "detailedSteps": [
+      "Set A has average 2. For $m$ consecutive integers its greatest element is $2+(m-1)/2=(m+3)/2$. Set B has average one-half and $2m$ consecutive integers, so its greatest element is $1/2+(2m-1)/2=m$.",
+      "The difference condition becomes $|3-m|/2=99$, giving $m=201$ or $m=-195$. Cardinality must be positive, so $m=201$.",
+      "This is attainable: A is the integers from $-98$ through $102$ and B is those from $-200$ through $201$. Their respective sizes and sums are 201,402 and 402,201, and their greatest elements differ by 99."
+    ],
+    "keyIdeas": [
+      "Use the average to recover each greatest element"
+    ],
+    "commonMistakes": [
+      "Assuming the consecutive integers must all be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The average of a consecutive block is the midpoint of its endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p3",
+    "problemId": "aime-i-2004-p3",
+    "finalAnswer": "$\\boxed{241}$",
+    "shortExplanation": "There are 241 pairs that are neither edges nor face diagonals.",
+    "detailedSteps": [
+      "There are $\\binom{26}{2}=325$ vertex pairs. Sixty are edges. A triangular face has no nonedge vertex pair, and each of the twelve quadrilateral faces has two diagonals, giving 24 face diagonals.",
+      "No such face diagonal is counted twice: two distinct faces of a convex polyhedron meet, if at all, in an edge or a vertex; a diagonal through a face interior cannot lie in another face. The edges and these face diagonals are also disjoint categories.",
+      "The remaining pairs are exactly the source\u2019s space diagonals, so their number is $325-60-24=241$."
+    ],
+    "keyIdeas": [
+      "Partition all pairs of vertices"
+    ],
+    "commonMistakes": [
+      "Subtracting every pair on every face and counting shared edges twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convex face intersections prevent shared face diagonals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p4",
+    "problemId": "aime-i-2004-p4",
+    "finalAnswer": "$\\boxed{086}$",
+    "shortExplanation": "The enclosed area is $4-\\pi$, which rounds to 0.86.",
+    "detailedSteps": [
+      "At one corner of the square, put the adjacent sides on the axes. An eligible segment has endpoints $(a,0),(0,b)$ with $a^2+b^2=4$. Its midpoint $(a/2,b/2)$ therefore lies on the unit quarter-circle centered at this corner, and every point of that arc arises this way.",
+      "The four corner arcs join at the side midpoints and enclose the central region of the square outside the four unit quarter-disks. The disks have disjoint interiors, so this area is $4-4(\\pi/4)=4-\\pi$.",
+      "Its value is approximately 0.858407, which rounds to $k=0.86$. Thus $100k=86$."
+    ],
+    "keyIdeas": [
+      "The midpoint loci are unit quarter-circles"
+    ],
+    "commonMistakes": [
+      "Scaling the radius by the segment length instead of by the midpoint factor one-half."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint transformation halves both endpoint coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p5",
+    "problemId": "aime-i-2004-p5",
+    "finalAnswer": "$\\boxed{849}$",
+    "shortExplanation": "Beta can attain 349 points out of 500.",
+    "detailedSteps": [
+      "Let Beta\u2019s positive integer scores be p and q, and the first day\u2019s attempted total be t. The strict daily bounds give $t>15p/8$ and $500-t>10q/7$. Adding yields $15p/8+10q/7<500$.",
+      "For the integer total $T=p+q$, the left side is $10T/7+25p/56$, which is at least $10T/7+25/56$ because p is positive. Consequently $T<350-5/16=349.6875$, so $T\\le349$.",
+      "Choose $p=1,q=348,t=2$. The daily ratios are 1/2, less than 160/300, and 348/498, less than 140/200. The first day\u2019s attempted total is not 300, and both scores are positive. Thus the bound 349 is attained.",
+      "The reduced two-day ratio is $349/500$, giving $m+n=349+500=849$. The argument also covers any allowed nonintegral attempted totals."
+    ],
+    "keyIdeas": [
+      "Bound the integral total by weighted daily score costs"
+    ],
+    "commonMistakes": [
+      "Maximizing each day separately without accounting for the fixed combined attempted total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small first-day workload permits a large overall ratio while both daily ratios remain smaller.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p6",
+    "problemId": "aime-i-2004-p6",
+    "finalAnswer": "$\\boxed{882}$",
+    "shortExplanation": "There are 1050 alternating strings before removing 168 leading-zero strings.",
+    "detailedSteps": [
+      "For four distinct chosen digits, replace them by ranks 1,2,3,4. The rank orders satisfying the required up-down-up pattern are 1324,1423,2314,2413,3412, exactly five.",
+      "Thus there are $5\\binom{10}{4}=1050$ digit strings if a leading zero is permitted. For a chosen set containing zero, it is the smallest rank; exactly the first two listed orders put it first. There are $\\binom93$ such digit sets.",
+      "The invalid count is $2\\binom93=168$, leaving $1050-168=882$ four-digit integers. All remaining strings have nonzero leading digits and are in the required range."
+    ],
+    "keyIdeas": [
+      "Five alternating orders occur for any four chosen digits"
+    ],
+    "commonMistakes": [
+      "Allowing a leading zero or using the reversed alternating pattern."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relative ranks separate the order pattern from the choice of digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p7",
+    "problemId": "aime-i-2004-p7",
+    "finalAnswer": "$\\boxed{588}$",
+    "shortExplanation": "The coefficient of $x^2$ is $-588$.",
+    "detailedSteps": [
+      "Write the fifteen linear coefficients as $a_j=(-1)^j j$, for $j=1,2,\\ldots,15$. Their sum is $-8$, while their squares sum to $15\\cdot16\\cdot31/6=1240$.",
+      "The coefficient of x squared chooses the linear term from two different factors. Therefore $C=\\sum_{i<j}a_i a_j=[(\\sum a_i)^2-\\sum a_i^2]/2=(64-1240)/2=-588$.",
+      "The requested absolute value is 588."
+    ],
+    "keyIdeas": [
+      "Use the squared sum of the linear coefficients"
+    ],
+    "commonMistakes": [
+      "Using the sum of squares rather than the sum of pairwise products."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring a sum counts every pair product twice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p8",
+    "problemId": "aime-i-2004-p8",
+    "finalAnswer": "$\\boxed{199}$",
+    "shortExplanation": "There are 199 allowed turning angles.",
+    "detailedSteps": [
+      "Let the common counterclockwise turn be \u03b4, strictly between zero and 180\u00b0, and identify side vectors with complex numbers. Equal side lengths and equal turns make the vectors $v,vq,\\ldots,vq^{n-1}$, where $q=e^{i\\delta}$. Closure gives $1+q+\\cdots+q^{n-1}=0$, hence $q^n=1$ and $\\delta=2\\pi k/n$ with integer $1\\le k<n/2$.",
+      "The successive vertex sums lie on one circle and advance by this same angle. They give n distinct vertices exactly when k is relatively prime to n; otherwise a vertex repeats before the path is complete, contrary to the no-three-collinear condition on its points. Thus the path joins every kth vertex of a regular n-gon.",
+      "The case $k=1$ is a convex polygon and has no crossing, so it is excluded. For every coprime $k$ with $2\\le k<n/2$, the chords joining polygon indices $0$ to $k$ and $1$ to $k+1$ have interlaced endpoints and cross. Rotation makes the same true for every side, so these cases satisfy all the star conditions. Points on the circle also ensure that no three are collinear.",
+      "Different k in this range have different turn angles, so yield nonsimilar stars. Reflection and reversal do not add a new class. For $n=1000$, the coprime residues occur in pairs $k$ and $1000-k$, one below 500; neither 0 nor 500 is coprime.",
+      "There are $\\varphi(1000)=1000(1-1/2)(1-1/5)=400$ coprime residues. Removing $k=1$ from their lower half gives $400/2-1=199$."
+    ],
+    "keyIdeas": [
+      "Classify the stars by a coprime winding step"
+    ],
+    "commonMistakes": [
+      "Including the convex polygon or counting winding steps that repeat vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Constant turns and equal lengths force the usual regular polygon winding construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p9",
+    "problemId": "aime-i-2004-p9",
+    "finalAnswer": "$\\boxed{035}$",
+    "shortExplanation": "The minimum small-triangle area is $3/32$.",
+    "detailedSteps": [
+      "To leave a trapezoid when a triangle is cut, the cut must be parallel to one of its sides; the small triangle is then similar to the original 3-4-5 triangle. In a rectangle, a triangular piece leaving a quadrilateral trapezoid must have one cut endpoint at a rectangle vertex and the other on an opposite side. Its remaining trapezoid has two right angles.",
+      "Thus the triangle\u2019s trapezoid must also have two right angles, forcing its cut to be parallel to a leg. Let the original triangle legs be p horizontally and q vertically, with $(p,q)=(3,4)$ or $(4,3)$, and let \u03bb be the small triangle\u2019s scale. The remaining trapezoid has parallel sides $q$ and $\\lambda q$, separated by $p(1-\\lambda)$.",
+      "Let the rectangle\u2019s dimensions be W horizontally and H vertically, with $(W,H)=(6,7)$ or $(7,6)$. If its triangular corner has vertical leg t, its remaining trapezoid has parallel sides $H$ and $H-t$, separated by W. Similarity matches the longer bases, giving scale $H/q$. Matching the separation gives $W=(H/q)p(1-\\lambda)$, so $\\lambda=1-Wq/(Hp)$.",
+      "The shorter-base equation gives $t=H(1-\\lambda)=Wq/p$, so the two small right triangles are indeed similar. The choices with $p=3,q=4$ give negative $\\lambda$ and are impossible. With $p=4,q=3$, the rectangle orientations give $\\lambda=5/14$ and $\\lambda=1/8$.",
+      "The original triangle has area 6. The two possible small-triangle areas are $6(5/14)^2=75/98$ and $6(1/8)^2=3/32$. Both cuts are interior because the selected scales lie in $(0,1)$; they attain the matched trapezoids and triangles.",
+      "The minimum is 3/32, in reduced form, and $m+n=3+32=35$."
+    ],
+    "keyIdeas": [
+      "Classify both cuts before matching the trapezoid dimensions"
+    ],
+    "commonMistakes": [
+      "Matching the triangles without checking the trapezoids or assuming one rectangle orientation suffices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two right angles of the rectangle\u2019s trapezoid restrict the original cut to a leg.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p10",
+    "problemId": "aime-i-2004-p10",
+    "finalAnswer": "$\\boxed{817}$",
+    "shortExplanation": "The safe center area is 375 out of 442.",
+    "detailedSteps": [
+      "Put the rectangle corners at $(0,0),(36,0),(36,15),(0,15)$. The unit circle is fully inside exactly when its center lies in $1\\le x\\le35$, $1\\le y\\le14$, a rectangle of area $34\\cdot13=442$.",
+      "The diagonal AC has equation $5x-12y=0$, so its distance from a center is $|5x-12y|/13$. The orthogonal projection onto the diagonal is on the actual segment for every permitted center, since its parameter $(36x+15y)/1521$ is strictly between zero and one. Thus avoiding the diagonal requires $|5x-12y|>13$.",
+      "The safe region below the diagonal strip is a triangle with vertices $(5,1),(35,1),(35,27/2)$. Its area is $30(25/2)/2=375/2$. Central symmetry gives an equal triangle above the strip.",
+      "Tangency boundaries have zero area. For uniform placement of the allowed center, the probability is $375/442$. This is reduced, giving $m+n=375+442=817$."
+    ],
+    "keyIdeas": [
+      "Use the allowable center rectangle and diagonal-distance strip"
+    ],
+    "commonMistakes": [
+      "Using the full 15-by 36 rectangle as the center space or measuring distance to an infinite line without checking the segment projection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Shrinking the rectangle by the radius handles containment before the probability calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p11",
+    "problemId": "aime-i-2004-p11",
+    "finalAnswer": "$\\boxed{512}$",
+    "shortExplanation": "The small cone\u2019s linear scale is $5/8$.",
+    "detailedSteps": [
+      "The full cone has slant height 5, lateral area $15\\pi$, base area $9\\pi$, and volume $12\\pi$. Let the small cone\u2019s linear scale be t, strictly between zero and one.",
+      "The painted area on the small cone is $15\\pi t^2$; the newly cut base is unpainted. The frustum retains the rest of the original painted surface, $24\\pi-15\\pi t^2$. The two volumes are $12\\pi t^3$ and $12\\pi(1-t^3)$.",
+      "Equating the ratios gives $15t^2/(24-15t^2)=t^3/(1-t^3)$. Cross multiplication cancels the terms in t to the fifth power, leaving $15t^2=24t^3$, so $t=5/8$.",
+      "The shared ratio is $t^3/(1-t^3)=125/387$, which is reduced. Hence $m+n=125+387=512$."
+    ],
+    "keyIdeas": [
+      "Only the original cone surface remains painted"
+    ],
+    "commonMistakes": [
+      "Counting the new cut disks as painted surfaces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The quadratic painted scale and cubic volume scale leave a linear equation after cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p12",
+    "problemId": "aime-i-2004-p12",
+    "finalAnswer": "$\\boxed{014}$",
+    "shortExplanation": "The area is the product $\\frac23\\cdot\\frac56=\\frac59$.",
+    "detailedSteps": [
+      "For a base b greater than one, the floor of $\\log_b(1/u)$ equals an even value $2j$ exactly for $b^{-(2j+1)}<u\\le b^{-2j}$. Its interval length is $(1-1/b)b^{-2j}$, for $j=0,1,2,\\ldots$.",
+      "The total length is $(1-1/b)/(1-b^{-2})=b/(b+1)$. Thus the allowed x-set has length $2/3$, and the allowed y-set has length $5/6$.",
+      "The conditions separate by coordinate, so the area of their Cartesian product is $(2/3)(5/6)=5/9$. Endpoints do not change area. The reduced fraction gives $m+n=5+9=14$."
+    ],
+    "keyIdeas": [
+      "Sum the alternating logarithmic intervals in each coordinate"
+    ],
+    "commonMistakes": [
+      "Treating even logarithm floors as half the unit interval despite the geometrically shrinking lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform spacing on a logarithmic scale is not uniform spacing of the original coordinate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p13",
+    "problemId": "aime-i-2004-p13",
+    "finalAnswer": "$\\boxed{482}$",
+    "shortExplanation": "The five smallest argument fractions sum to $159/323$.",
+    "detailedSteps": [
+      "For x different from one, multiply the polynomial by $(x-1)^2$. The result is $(x^{18}-1)^2-x^{17}(x-1)^2=x^{36}-x^{19}-x^{17}+1=(x^{17}-1)(x^{19}-1)$.",
+      "The two factors share only the root one, because 17 and 19 are relatively prime. Cancelling its two factors leaves precisely the nontrivial 17th and 19th roots of unity, all simple, giving 16 plus 18 equal to 34 roots. One itself is not a root of P, since $P(1)=323$.",
+      "Their positive argument fractions are $j/17$ for $j=1,\\ldots,16$ and $k/19$ for $k=1,\\ldots,18$. The five smallest, in order, are $1/19,1/17,2/19,2/17,3/19$; direct cross multiplication also puts 3/19 before 3/17.",
+      "The sum is $6/19+3/17=159/323$. Its numerator and denominator are coprime, so $m+n=159+323=482$."
+    ],
+    "keyIdeas": [
+      "Factor after multiplying by the squared geometric-sum denominator"
+    ],
+    "commonMistakes": [
+      "Treating the apparent x 1 denominator as an extra root or ordering the two root families separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The neighboring exponents 17 and 19 split the roots into two interleaving families.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p14",
+    "problemId": "aime-i-2004-p14",
+    "finalAnswer": "$\\boxed{813}$",
+    "shortExplanation": "The contact length is $20-5\\sqrt{30}/3$.",
+    "detailedSteps": [
+      "The end of the rope is four feet outside the cylinder, so its horizontal distance from the axis is 12. The horizontal projection of the free tangent segment has length $\\sqrt{12^2-8^2}=4\\sqrt5$.",
+      "Unroll the contacted cylinder surface and the vertical tangent plane containing the free segment into one plane. A taut shortest rope becomes straight in this developed plane; its slope above the horizontal is constant across the contact point. The total vertical rise is 4 and the total rope length 20, so its total horizontal developed length is $\\sqrt{20^2-4^2}=8\\sqrt6$.",
+      "The cylinder-contact portion has horizontal developed length $8\\sqrt6-4\\sqrt5$. Its actual length is obtained by the same ratio $20/(8\\sqrt6)$, hence $20-(20\\cdot4\\sqrt5)/(8\\sqrt6)=20-5\\sqrt{30}/3$.",
+      "This is $(60-\\sqrt{750})/3$, with prime denominator $c=3$. Thus $a=60,b=750,c=3$ and $a+b+c=813$. The contact horizontal arc is positive and less than half the tower circumference, so the described tangent-and-wrap path is attainable."
+    ],
+    "keyIdeas": [
+      "Unfold the cylindrical contact and tangent free segment"
+    ],
+    "commonMistakes": [
+      "Subtracting the horizontal tangent length directly from the three-dimensional rope length or forcing the contacted rope to be horizontal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Unfolding preserves rope length and makes its inclination uniform.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2004-p15",
+    "problemId": "aime-i-2004-p15",
+    "finalAnswer": "$\\boxed{511}$",
+    "shortExplanation": "There are 260608 starting integers with d(x) equal to 20.",
+    "detailedSteps": [
+      "Because d counts the initial term, $d(x)=20$ means exactly nineteen transitions before first reaching one. Reverse such a path. For y greater than one, its possible predecessors are $10y$ and $y-1$; the latter is allowed only if it is greater than one and not divisible by ten. The first reverse step from one is necessarily to 10, since staying at one is forbidden by the first-hit condition.",
+      "Write a multiplication predecessor as M and a decrement predecessor as D. Every reverse path begins with M and is a sequence of blocks $MD^j$. After any multiplication, at most nine decrements are allowed: the ninth produces a number ending in one, from which a further decrement would be divisible by ten and would not map forward by addition. In the first block only eight are allowed, because a ninth would return to one.",
+      "Conversely every such block sequence gives a valid reverse path of positive integers greater than one after its first step. Different paths of the same length cannot end at the same integer, since the forward map is deterministic. We may therefore count these paths by their block lengths.",
+      "Let $F_n$ count compositions of n with parts 1 through 10, with $F_0=1$ and negative-index values zero. Then $F_n=\\sum_{j=1}^{10}F_{n-j}$. For $n=1,\\ldots,10$ the values are $1,2,4,8,16,32,64,128,256,512$. For $n=11,\\ldots,19$ the recurrence gives $1023,2045,4088,8172,16336,32656,65280,130496,260864$.",
+      "The first block cannot have length 10. Removing those compositions subtracts $F_9=256$, so the requested count is $m=F_{19}-F_9=260864-256=260608=2^9\\cdot509$.",
+      "The integer 509 is prime: none of the primes 2,3,5,7,11,13,17,19 at most its square root divides it. The distinct prime factors of m are 2 and 509, whose sum is 511."
+    ],
+    "keyIdeas": [
+      "Reverse first-hit paths into bounded compositions"
+    ],
+    "commonMistakes": [
+      "Including the fixed-point stay at one, allowing a decrement from a number ending in one, or confusing twenty terms with twenty transitions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reverse map has a digit-limited decrement run after each multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

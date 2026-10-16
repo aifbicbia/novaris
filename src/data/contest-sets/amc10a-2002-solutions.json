@@ -1,0 +1,506 @@
+[
+  {
+    "id": "solution-amc10a-2002-p1",
+    "problemId": "amc10a-2002-p1",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "Cancel $10^{2000}$ to obtain $101/20=5.05$.",
+    "detailedSteps": [
+      "The numerator is $10^{2000}(1+100)$ and the denominator is $10^{2000}(10+10)$. Their ratio is $101/20=5.05$, closest to the listed number $5$."
+    ],
+    "keyIdeas": [
+      "Factoring a common power"
+    ],
+    "commonMistakes": [
+      "Comparing the exponents without factoring their common power."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Huge powers disappear after cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p2",
+    "problemId": "amc10a-2002-p2",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "The three fractions are $1/6$, $4/3$, and $9/2$.",
+    "detailedSteps": [
+      "Substitute $a=2,b=12,c=9$: $2/12+12/9+9/2=(1+8+27)/6=6$."
+    ],
+    "keyIdeas": [
+      "Substitution into a defined operation"
+    ],
+    "commonMistakes": [
+      "Reversing the numerator and denominator of one term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Follow the cyclic order of the definition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p3",
+    "problemId": "amc10a-2002-p3",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The five possible parenthesizations yield only $256$ and $65536$.",
+    "detailedSteps": [
+      "There are five full parenthesizations of four ordered entries. The forms $((2^2)^2)^2$, $(2^{(2^2)})^2$, and $(2^2)^{(2^2)}$ all equal $256$.",
+      "The remaining forms $2^{((2^2)^2)}$ and $2^{(2^{(2^2)})}$ both equal $65536$. Thus only one value differs from the standard value."
+    ],
+    "keyIdeas": [
+      "Parenthesizations of exponentiation"
+    ],
+    "commonMistakes": [
+      "Counting different evaluation orders even when they give the same number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinct expressions need not have distinct values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p4",
+    "problemId": "amc10a-2002-p4",
+    "finalAnswer": "$\\boxed{\\text{infinitely many}}$ (choice E)",
+    "shortExplanation": "The choice $n=1$ works for every positive integer $m$.",
+    "detailedSteps": [
+      "For $n=1$, the inequality becomes $m\\le m+1$, which is always true. Since there are infinitely many positive integers $m$, the requested count is infinite."
+    ],
+    "keyIdeas": [
+      "A universal witness"
+    ],
+    "commonMistakes": [
+      "Assuming both variables must be at least 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Existence can be proved by one explicit choice for each m.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p5",
+    "problemId": "amc10a-2002-p5",
+    "finalAnswer": "$\\boxed{2\\pi}$ (choice C)",
+    "shortExplanation": "The outer circle has radius $3$, and the seven unit circles have total area $7\\pi$.",
+    "detailedSteps": [
+      "The six surrounding centers are distance $2$ from the central center. They are equally spaced by the neighboring tangencies; their common circumcenter is also the outer circle center. Internal tangency then gives outer radius $2+1=3$.",
+      "The shaded area is everything inside the large circle but outside the seven mutually nonoverlapping small circles: $9\\pi-7\\pi=2\\pi$."
+    ],
+    "keyIdeas": [
+      "Area outside a circle packing"
+    ],
+    "commonMistakes": [
+      "Using diameter 3 rather than radius 3 for the outer circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangency pattern fixes the large radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p6",
+    "problemId": "amc10a-2002-p6",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "The original number is $138$, whose correct calculation gives $15$.",
+    "detailedSteps": [
+      "If the original number is $x$, the performed calculation gives $(x-9)/3=43$, hence $x=138$.",
+      "The intended result is $(138-3)/9=135/9=15$."
+    ],
+    "keyIdeas": [
+      "Undoing an incorrect calculation"
+    ],
+    "commonMistakes": [
+      "Applying the intended operation to 43 instead of recovering the original input."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Undo the actual steps before applying the requested steps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p7",
+    "problemId": "amc10a-2002-p7",
+    "finalAnswer": "$\\boxed{\\frac49}$ (choice A)",
+    "shortExplanation": "The radius ratio is $2/3$, so the area ratio is $4/9$.",
+    "detailedSteps": [
+      "Equal arc lengths imply $45r_A=30r_B$, after canceling the common degree-to-radian factor. Therefore $r_A/r_B=2/3$.",
+      "Circle areas are proportional to squared radii, giving $A_A/A_B=(2/3)^2=4/9$."
+    ],
+    "keyIdeas": [
+      "Equal arc lengths"
+    ],
+    "commonMistakes": [
+      "Using the radius ratio as the area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First compare radii, then square for areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p8",
+    "problemId": "amc10a-2002-p8",
+    "finalAnswer": "$\\boxed{B=W}$ (choice A)",
+    "shortExplanation": "The twelve white squares occupy the same total area as the blue triangles.",
+    "detailedSteps": [
+      "Use the intact center-square diagram in the linked source. Let $d$ be a diagonal of a small white square. The outer square has side $4d$, and the central red square has side $2d$.",
+      "Each of the twelve white squares has area $d^2/2$, so $W=6d^2$. Subtracting the white and red areas from the whole gives $B=16d^2-6d^2-4d^2=6d^2$. Hence $B=W$."
+    ],
+    "keyIdeas": [
+      "Areas in a geometric flag"
+    ],
+    "commonMistakes": [
+      "Using a redrawn figure in which a white square overlaps the central square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the twelve small squares and compare the two square scales.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p9",
+    "problemId": "amc10a-2002-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "The equations combine to give $A+B+C=9$.",
+    "detailedSteps": [
+      "Dividing by $1001$ gives $C-2A=4$ and $B+3A=5$. Adding these equations yields $A+B+C=9$. The average is $9/3=3$."
+    ],
+    "keyIdeas": [
+      "Adding linear relations"
+    ],
+    "commonMistakes": [
+      "Trying to determine A, B, and C separately when only their sum is fixed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A requested combination may be determined even when individual values are not.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p10",
+    "problemId": "amc10a-2002-p10",
+    "finalAnswer": "$\\boxed{\\frac72}$ (choice A)",
+    "shortExplanation": "The equation factors as $(2x+3)(2x-10)=0$.",
+    "detailedSteps": [
+      "Factor out $2x+3$ to get $(2x+3)((x-4)+(x-6))=(2x+3)(2x-10)$.",
+      "The roots are $-3/2$ and $5$, whose sum is $7/2$."
+    ],
+    "keyIdeas": [
+      "Factoring a common binomial"
+    ],
+    "commonMistakes": [
+      "Dividing by 2x+3 and losing one root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring preserves every root without division by a variable factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p11",
+    "problemId": "amc10a-2002-p11",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "Twelve disks cannot hold the files; a packing into thirteen disks is explicit.",
+    "detailedSteps": [
+      "All file sizes are multiples of $0.1$ MB, so no disk can hold more than $1.4$ MB. Each of the three $0.8$ MB files must be on a different disk, and each such disk holds at most $1.2$ MB.",
+      "Twelve disks could therefore store at most $3(1.2)+9(1.4)=16.2$ MB, less than the required $3(0.8)+12(0.7)+15(0.4)=16.8$ MB.",
+      "Thirteen suffice: use three disks containing $0.8+0.4$, six containing $0.7+0.7$, and four containing $0.4+0.4+0.4$. These store all thirty files."
+    ],
+    "keyIdeas": [
+      "Packing with indivisible files"
+    ],
+    "commonMistakes": [
+      "Dividing total data size by nominal capacity without checking indivisibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound plus a matching construction proves optimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p12",
+    "problemId": "amc10a-2002-p12",
+    "finalAnswer": "$\\boxed{48}$ (choice B)",
+    "shortExplanation": "The trip is $12$ miles, and the on-time journey lasts $15$ minutes.",
+    "detailedSteps": [
+      "Let the distance be $d$ miles. The travel times differ by six minutes, so $d/40-d/60=1/10$, giving $d=12$.",
+      "The two trip times are $18$ and $12$ minutes. The desired arrival lies halfway between them, requiring $15$ minutes or $1/4$ hour. The speed is $12/(1/4)=48$ mph."
+    ],
+    "keyIdeas": [
+      "Travel-time midpoint"
+    ],
+    "commonMistakes": [
+      "Taking the arithmetic mean of 40 and 60."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal differences in arrival time correspond to the midpoint of times.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p13",
+    "problemId": "amc10a-2002-p13",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "The shortest altitude is opposite the longest side, of length $25$.",
+    "detailedSteps": [
+      "Since $15^2+20^2=25^2$, the triangle is right and has area $15\\cdot20/2=150$.",
+      "An altitude to a side of length $b$ is $300/b$, so the smallest occurs for $b=25$ and equals $12$."
+    ],
+    "keyIdeas": [
+      "Altitude from constant area"
+    ],
+    "commonMistakes": [
+      "Choosing the altitude to the shortest side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "For a fixed area, base and altitude are inversely proportional.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p14",
+    "problemId": "amc10a-2002-p14",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The roots must be $2$ and $61$, giving exactly one possible constant term.",
+    "detailedSteps": [
+      "The roots sum to $63$, an odd number. Therefore one of the primes is even, and the only even prime is $2$. The other root is $61$, which is prime.",
+      "The constant term must be their product $122$. Thus there is exactly one possible value of $k$."
+    ],
+    "keyIdeas": [
+      "Parity of prime roots"
+    ],
+    "commonMistakes": [
+      "Treating 1 as a prime number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Odd sum forces the unique even prime to appear.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p15",
+    "problemId": "amc10a-2002-p15",
+    "finalAnswer": "$\\boxed{190}$ (choice E)",
+    "shortExplanation": "The units digits must be $1,3,7,9$; the other four digits occupy the tens places.",
+    "detailedSteps": [
+      "A two-digit prime cannot end in an even digit or $5$. Therefore all four units digits are $1,3,7,9$, and the tens digits are $2,4,5,6$.",
+      "The total is $10(2+4+5+6)+(1+3+7+9)=190$. The arrangement $23,41,59,67$ confirms that such primes can be formed."
+    ],
+    "keyIdeas": [
+      "Digit positions in two-digit primes"
+    ],
+    "commonMistakes": [
+      "Searching for a unique arrangement instead of an invariant sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total depends only on which digits occupy each place.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p16",
+    "problemId": "amc10a-2002-p16",
+    "finalAnswer": "$\\boxed{-\\frac{10}{3}}$ (choice B)",
+    "shortExplanation": "Writing every expression as $t$ gives $t=4t-5$.",
+    "detailedSteps": [
+      "Let the common value be $t$. Then $a=t-1$, $b=t-2$, $c=t-3$, and $d=t-4$, so their sum is $4t-10$.",
+      "The last expression is their sum plus $5$, hence $t=4t-5$ and $t=5/3$. The requested sum is $t-5=-10/3$."
+    ],
+    "keyIdeas": [
+      "A common value in chained equalities"
+    ],
+    "commonMistakes": [
+      "Equating the sum to the common value without the added 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One auxiliary variable replaces four unknowns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p17",
+    "problemId": "amc10a-2002-p17",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice D)",
+    "shortExplanation": "The first cup ends with $2$ ounces of cream and $3$ ounces of coffee.",
+    "detailedSteps": [
+      "After the first transfer, the first cup has $2$ ounces of coffee, while the second has $2$ ounces of coffee and $4$ of cream.",
+      "Transferring half of the thoroughly mixed second cup returns $1$ ounce of coffee and $2$ of cream. The first cup now contains $5$ ounces, of which $2$ are cream, giving $2/5$."
+    ],
+    "keyIdeas": [
+      "Tracking a mixed-liquid transfer"
+    ],
+    "commonMistakes": [
+      "Assuming the cups still contain equal volumes after the second transfer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Half a homogeneous mixture contains half of each component.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p18",
+    "problemId": "amc10a-2002-p18",
+    "finalAnswer": "$\\boxed{90}$ (choice D)",
+    "shortExplanation": "The corner, edge, and face-center dice contribute minima $48$, $36$, and $6$.",
+    "detailedSteps": [
+      "Eight corner dice each expose three mutually adjacent faces. The least possible sum is $1+2+3=6$; these faces meet at a vertex because none is opposite another.",
+      "Twelve edge dice expose two adjacent faces, whose least sum is $1+2=3$. Six face-center dice expose one face, with minimum $1$. The central die exposes none.",
+      "Each die can be oriented independently before gluing. The total minimum is $8\\cdot6+12\\cdot3+6\\cdot1=90$."
+    ],
+    "keyIdeas": [
+      "Visible faces of independent dice"
+    ],
+    "commonMistakes": [
+      "Minimizing each exposed face separately even when faces share the same die."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classify dice by the number of visible faces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p19",
+    "problemId": "amc10a-2002-p19",
+    "finalAnswer": "$\\boxed{3\\pi}$ (choice E)",
+    "shortExplanation": "The reachable region consists of a radius-$2$ sector and two additional radius-$1$ sectors.",
+    "detailedSteps": [
+      "At the tethered vertex, the hexagon occupies an interior angle of $120^\\circ$, leaving an unobstructed $240^\\circ$ sector of radius $2$. Its area is $8\\pi/3$.",
+      "The rope can wrap around either adjacent vertex after using one yard along a side. At each such vertex, one yard remains, sweeping an additional $60^\\circ$ sector of area $\\pi/6$. These sectors lie beyond the two boundaries of the initial sector and do not overlap.",
+      "At a vertex two sides away, the rope is exhausted, so there is no further positive-area region. The total is $8\\pi/3+2(\\pi/6)=3\\pi$."
+    ],
+    "keyIdeas": [
+      "A tether wrapping around a polygon"
+    ],
+    "commonMistakes": [
+      "Counting only the sector centered at the tethered vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for exactly how much rope remains after each wrap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p20",
+    "problemId": "amc10a-2002-p20",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice D)",
+    "shortExplanation": "Similarity gives $HC=AG/3$ and $JE=AG/5$.",
+    "detailedSteps": [
+      "In triangle $DAG$, the parallel segment $CH$ cuts off similar triangle $DCH$. Thus $HC/AG=DC/DA=1/3$.",
+      "In triangle $FAG$, the parallel segment $EJ$ gives $JE/AG=FE/FA=1/5$. Dividing the two relations yields $HC/JE=(1/3)/(1/5)=5/3$."
+    ],
+    "keyIdeas": [
+      "Parallel segments and similar triangles"
+    ],
+    "commonMistakes": [
+      "Using distances measured from the wrong triangle vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both similarities compare their segment to the same length AG.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p21",
+    "problemId": "amc10a-2002-p21",
+    "finalAnswer": "$\\boxed{14}$ (choice D)",
+    "shortExplanation": "A mean-based bound rules out values above $15$, and the value $15$ cannot give median $8$.",
+    "detailedSteps": [
+      "Let the maximum be $M$. Since the range is $8$, every other entry is at least $M-8$. The sum is $64$, so $64\\ge M+7(M-8)$, giving $M\\le15$.",
+      "If $M=15$, equality in that bound forces the other seven entries all to be $7$. The median and mode would then be $7$, contradicting the requirements.",
+      "The multiset $6,6,6,8,8,8,8,14$ has sum $64$, median $8$, unique mode $8$, and range $8$. Hence the largest achievable entry is $14$."
+    ],
+    "keyIdeas": [
+      "Bounding an extreme under statistics constraints"
+    ],
+    "commonMistakes": [
+      "Giving a candidate collection without proving that a larger maximum is impossible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound and a valid example establish the optimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p22",
+    "problemId": "amc10a-2002-p22",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "Two operations reduce $k^2$ tiles to $(k-1)^2$ tiles.",
+    "detailedSteps": [
+      "With $N$ tiles, exactly $\\lfloor\\sqrt N\\rfloor$ labels are perfect squares, leaving $N-\\lfloor\\sqrt N\\rfloor$ tiles.",
+      "Starting at $k^2$ for $k\\ge2$, the first operation leaves $k^2-k$. This lies from $(k-1)^2$ through $k^2-1$, so the next operation removes $k-1$ tiles and leaves $(k-1)^2$.",
+      "From $10^2$ to $1^2$ there are nine such reductions, requiring $2\\cdot9=18$ operations."
+    ],
+    "keyIdeas": [
+      "Square-count recurrence"
+    ],
+    "commonMistakes": [
+      "Removing only the original square labels despite renumbering after every round."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Consecutive square counts reveal the two-step pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p23",
+    "problemId": "amc10a-2002-p23",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "The common altitude is $8$; a perimeter equation then gives $AB=9$.",
+    "detailedSteps": [
+      "The perpendicular from $E$ bisects $BC$, so its height is $\\sqrt{10^2-6^2}=8$. Let $AB=CD=x$ and put $t=x+6$, half the outer base.",
+      "The outer triangle has base $2t$ and equal legs $\\sqrt{t^2+64}$. Its perimeter is twice $12+10+10=32$, so $t+\\sqrt{t^2+64}=32$.",
+      "Squaring $\\sqrt{t^2+64}=32-t$ gives $64=1024-64t$, hence $t=15$ and $x=9$. The resulting legs are 17, confirming the perimeter 64."
+    ],
+    "keyIdeas": [
+      "Nested isosceles triangles"
+    ],
+    "commonMistakes": [
+      "Doubling the height because the perimeter doubles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The triangles share an altitude but need not be similar.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p24",
+    "problemId": "amc10a-2002-p24",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice A)",
+    "shortExplanation": "The average sum of Tina's two numbers is $6$, leaving an average of four larger choices for Sergio.",
+    "detailedSteps": [
+      "For a chosen pair with sum $s$, Sergio has $10-s$ successful choices, since all possible sums lie from $3$ through $9$.",
+      "Each number from $1$ through $5$ appears in four of the ten pairs. Thus the mean pair sum is $4(1+2+3+4+5)/10=6$.",
+      "Averaging $(10-s)/10$ gives $(10-6)/10=2/5$."
+    ],
+    "keyIdeas": [
+      "Averaging conditional probabilities"
+    ],
+    "commonMistakes": [
+      "Including equality as a success or assuming the possible pair sums are equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Linearity allows the pair sums to be averaged with their true frequencies.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2002-p25",
+    "problemId": "amc10a-2002-p25",
+    "finalAnswer": "$\\boxed{210}$ (choice C)",
+    "shortExplanation": "The common height is $60/13$, giving area $210$.",
+    "detailedSteps": [
+      "The base difference is $52-39=13$. Let the signed horizontal projection of the length-$5$ leg be $x$; the other projection is $13-x$. If the height is $h$, then $x^2+h^2=25$ and $(13-x)^2+h^2=144$.",
+      "Subtracting yields $169-26x=119$, so $x=25/13$. Then $h^2=25-(25/13)^2=3600/169$, giving $h=60/13$.",
+      "The area is $\\tfrac12(52+39)(60/13)=210$."
+    ],
+    "keyIdeas": [
+      "Trapezoid height from side projections"
+    ],
+    "commonMistakes": [
+      "Treating either slanted leg as the height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting squared distances eliminates the height first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

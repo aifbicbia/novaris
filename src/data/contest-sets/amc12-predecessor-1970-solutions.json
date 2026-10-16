@@ -1,0 +1,719 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1970-p1",
+    "problemId": "amc12-predecessor-1970-p1",
+    "finalAnswer": "$\\boxed{3+2\\sqrt2}$ (choice E)",
+    "shortExplanation": "The two outer squarings leave $(1+\\sqrt2)^2=3+2\\sqrt2$.",
+    "detailedSteps": [
+      "The innermost root is $\\sqrt1=1$, so the next root is $\\sqrt{1+1}=\\sqrt2$. The full quantity is $\\sqrt{1+\\sqrt2}$.",
+      "Its square is $1+\\sqrt2$, and its fourth power is $(1+\\sqrt2)^2=3+2\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Evaluate nested principal roots from the inside out"
+    ],
+    "commonMistakes": [
+      "Taking a fourth power before respecting the nested parentheses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two successive squarings remove the outer root without expanding a complicated radical.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p2",
+    "problemId": "amc12-predecessor-1970-p2",
+    "finalAnswer": "$\\boxed{\\frac4\\pi}$ (choice A)",
+    "shortExplanation": "The circle radius is $2s/\\pi$, so its area divided by the square area is $4/\\pi$.",
+    "detailedSteps": [
+      "Let the square side be $s>0$ and the circle radius be $r>0$. Equal perimeters give $4s=2\\pi r$, hence $r=2s/\\pi$.",
+      "The requested area ratio is $\\pi r^2/s^2=\\pi(2s/\\pi)^2/s^2=4/\\pi$."
+    ],
+    "keyIdeas": [
+      "Use the common perimeter to relate the two length scales"
+    ],
+    "commonMistakes": [
+      "Using equal radii or equal diameters in place of the given equal perimeters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common scale cancels, so the ratio is independent of the size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p3",
+    "problemId": "amc12-predecessor-1970-p3",
+    "finalAnswer": "$\\boxed{\\frac{x}{x-1}}$ (choice C)",
+    "shortExplanation": "Since $2^{-p}=1/(x-1)$, we have $y=1+1/(x-1)=x/(x-1)$.",
+    "detailedSteps": [
+      "The equation for $x$ gives $x-1=2^p$, which is positive and therefore nonzero.",
+      "Thus $y=1+2^{-p}=1+1/(x-1)=x/(x-1)$."
+    ],
+    "keyIdeas": [
+      "Replace an opposite exponent by a reciprocal"
+    ],
+    "commonMistakes": [
+      "Treating a negative exponent as a negative value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Eliminate the shared exponential expression before trying to solve for the exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p4",
+    "problemId": "amc12-predecessor-1970-p4",
+    "finalAnswer": "$\\boxed{\\text{choice B}}$",
+    "shortExplanation": "The sum is $3k^2+2$, always two modulo three; taking $k=5$ gives $77$, divisible by eleven.",
+    "detailedSteps": [
+      "Write the consecutive integers as $k-1,k,k+1$. Their squared sum is $(k-1)^2+k^2+(k+1)^2=3k^2+2$, which is never divisible by three.",
+      "For $k=5$, the value is $77=7\\cdot11$, so a member is divisible by eleven.",
+      "The remaining universal exclusions fail: $k=2$ gives fourteen, divisible by two and seven, and $k=1$ gives five. Therefore B is the only valid claim."
+    ],
+    "keyIdeas": [
+      "Center three consecutive integers at one variable"
+    ],
+    "commonMistakes": [
+      "Inferring a divisibility pattern from a few small values instead of simplifying the general sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A general residue proof establishes the exclusion; one explicit value establishes existence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p5",
+    "problemId": "amc12-predecessor-1970-p5",
+    "finalAnswer": "$\\boxed{0}$ (choice D)",
+    "shortExplanation": "The numerator is $i^4+i^2=1-1=0$, and $1+i\\ne0$.",
+    "detailedSteps": [
+      "Using $i^2=-1$ gives $i^4=1$. The numerator at $i$ is therefore zero.",
+      "The denominator is $i+1$, which is nonzero. Consequently $f(i)=0$."
+    ],
+    "keyIdeas": [
+      "Check the complex denominator before cancelling the numerator"
+    ],
+    "commonMistakes": [
+      "Cancelling without checking that the denominator does not vanish."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The periodic powers of $i$ make direct substitution sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p6",
+    "problemId": "amc12-predecessor-1970-p6",
+    "finalAnswer": "$\\boxed{-16}$ (choice B)",
+    "shortExplanation": "The expression is $(x+4)^2-16$, with minimum $-16$ at $x=-4$.",
+    "detailedSteps": [
+      "Complete the square: $x^2+8x=(x+4)^2-16$.",
+      "For real $x$, the square is nonnegative. The lower bound $-16$ is attained when $x=-4$."
+    ],
+    "keyIdeas": [
+      "Complete the square and exhibit equality"
+    ],
+    "commonMistakes": [
+      "Finding a lower bound without checking that a real input attains it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completing the square gives both the global bound and its equality condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p7",
+    "problemId": "amc12-predecessor-1970-p7",
+    "finalAnswer": "$\\boxed{\\frac{s(2-\\sqrt3)}2}$ (choice E)",
+    "shortExplanation": "The intersection is $s\\sqrt3/2$ from $AB$, leaving $s(2-\\sqrt3)/2$ to $CD$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(s,0)$ and the opposite side $CD$ on $y=s$. Both radii give $AX=BX=s$, and $AB=s$, so triangle $ABX$ is equilateral.",
+      "The intersection inside the square has coordinates $(s/2,s\\sqrt3/2)$. The other circle intersection lies outside the square.",
+      "Its perpendicular distance to $CD$ is $s-s\\sqrt3/2=s(2-\\sqrt3)/2$."
+    ],
+    "keyIdeas": [
+      "Use the two equal radii to locate an equilateral apex"
+    ],
+    "commonMistakes": [
+      "Reporting the distance from the opposite side rather than subtracting it from the square height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The required interior branch follows from the actual square, not a measured drawing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p8",
+    "problemId": "amc12-predecessor-1970-p8",
+    "finalAnswer": "$\\boxed{\\frac{2b}3}$ (choice B)",
+    "shortExplanation": "Because $225=15^2$ and $8=2^3$, $a=2\\log_2(15)/3=2b/3$.",
+    "detailedSteps": [
+      "Change base: $a=\\log_8(225)=\\log_2(15^2)/\\log_2(8)$.",
+      "The numerator is $2\\log_2(15)=2b$ and the denominator is three, so $a=2b/3$."
+    ],
+    "keyIdeas": [
+      "Express both logarithms in base two"
+    ],
+    "commonMistakes": [
+      "Changing the logarithm argument without also accounting for its base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The perfect square and perfect cube make the base conversion exact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p9",
+    "problemId": "amc12-predecessor-1970-p9",
+    "finalAnswer": "$\\boxed{70}$ (choice C)",
+    "shortExplanation": "The fractional positions differ by $3/7-2/5=1/35$, so the whole segment has length seventy.",
+    "detailedSteps": [
+      "Let $AB=L$. On the same side of the midpoint, the two positions are $2L/5$ and $3L/7$ from one endpoint. If they lie in the other half, the reflected positions are $3L/5$ and $4L/7$.",
+      "In either case their separation is $L/35$. Since this is two, $L=70$."
+    ],
+    "keyIdeas": [
+      "Use the same-half condition to choose consistent segment ratios"
+    ],
+    "commonMistakes": [
+      "Using one ratio measured from the left and the other measured from the right."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same-half condition rules out the mixed orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p10",
+    "problemId": "amc12-predecessor-1970-p10",
+    "finalAnswer": "$\\boxed{57}$ (choice D)",
+    "shortExplanation": "The decimal equals $53/110$, whose denominator exceeds its numerator by fifty-seven.",
+    "detailedSteps": [
+      "The initial digit contributes $4/10$. The repeating block contributes $81/1000+(81/1000)10^{-2}+\\cdots= (81/1000)/(1-1/100)$.",
+      "Thus $F=2/5+9/110=53/110$. The fraction is reduced because fifty-three is coprime to 110, and $110-53=57$."
+    ],
+    "keyIdeas": [
+      "Separate the nonrepeating digit from the repeating block"
+    ],
+    "commonMistakes": [
+      "Starting the repeating block one decimal place too early."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A geometric series keeps the nonrepeating prefix in the correct position.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p11",
+    "problemId": "amc12-predecessor-1970-p11",
+    "finalAnswer": "$\\boxed{0}$ (choice E)",
+    "shortExplanation": "The two roots give $h=6$, $k=4$, so $|2h-3k|=0$.",
+    "detailedSteps": [
+      "The factor $x-1$ gives $2-h+k=0$, or $k=h-2$. The factor $x+2$ gives $-16+2h+k=0$.",
+      "Substitution yields $3h-18=0$, so $h=6$ and $k=4$. Therefore $|2h-3k|=|12-12|=0$."
+    ],
+    "keyIdeas": [
+      "Substitute each specified root into the cubic"
+    ],
+    "commonMistakes": [
+      "Using two as the root of the factor $x+2$."
+    ],
+    "alternativeMethods": [
+      "The missing quadratic coefficient means the three roots sum to zero; the third root is one. Thus the polynomial is $2(x+2)(x-1)^2$."
+    ],
+    "difficultyNotes": "Two factor conditions determine the two unknown coefficients directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p12",
+    "problemId": "amc12-predecessor-1970-p12",
+    "finalAnswer": "$\\boxed{8r^2}$ (choice C)",
+    "shortExplanation": "The diagonal midpoint lies on the horizontal center line, forcing width $4r$ and area $8r^2$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$, $B=(w,0)$ and $D=(0,h)$, with positive side lengths. Tangency to $AB$ and $CD$ gives $h=2r$, while tangency to $AD$ puts the center at $(r,r)$.",
+      "The midpoint of $AC$ is $(w/2,r)$. Its distance from the center is $r$, so $(w/2-r)^2=r^2$.",
+      "This gives $w=0$ or $w=4r$. A rectangle is nondegenerate, so the width is $4r$ and the area is $(4r)(2r)=8r^2$."
+    ],
+    "keyIdeas": [
+      "Use tangencies to set the center and rectangle height"
+    ],
+    "commonMistakes": [
+      "Keeping the zero-width algebraic branch as a rectangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A geometric nondegeneracy condition selects the valid branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p13",
+    "problemId": "amc12-predecessor-1970-p13",
+    "finalAnswer": "$\\boxed{(a\\ast b)^n=a\\ast(bn)}$ (choice D)",
+    "shortExplanation": "The power-of-a-power law gives $(a^b)^n=a^{bn}$ for positive inputs.",
+    "detailedSteps": [
+      "By definition, $(a\\ast b)^n=(a^b)^n=a^{bn}=a\\ast(bn)$, so D is always valid.",
+      "The other laws need not hold. Commutativity fails at $a=2,b=3$ because $2^3\\ne3^2$. Associativity fails at $a=2,b=3,c=2$ because $2^{3^2}\\ne(2^3)^2$.",
+      "For C, use $a=2,b=3,n=2$: $a\\ast(b^n)=2^9$, whereas $(a\\ast n)\\ast b=(2^2)^3=2^6$."
+    ],
+    "keyIdeas": [
+      "Translate the custom operation into ordinary exponentiation"
+    ],
+    "commonMistakes": [
+      "Assuming a newly defined operation inherits the associative law of multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One general exponent identity proves D, and explicit admissible inputs reject the remaining choices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p14",
+    "problemId": "amc12-predecessor-1970-p14",
+    "finalAnswer": "$\\boxed{\\sqrt{4q+1}}$ (choice A)",
+    "shortExplanation": "The roots differ by $\\sqrt{p^2-4q}=1$; positivity gives $p=\\sqrt{4q+1}$.",
+    "detailedSteps": [
+      "The quadratic formula gives roots $(-p\\pm\\sqrt{p^2-4q})/2$. Their separation is $\\sqrt{p^2-4q}$.",
+      "The given separation gives $p^2-4q=1$. Since $p>0$, the required value is $p=\\sqrt{4q+1}$."
+    ],
+    "keyIdeas": [
+      "Relate the root separation to the discriminant"
+    ],
+    "commonMistakes": [
+      "Retaining the negative square-root branch despite the positive coefficient condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root difference isolates the discriminant without needing either root individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p15",
+    "problemId": "amc12-predecessor-1970-p15",
+    "finalAnswer": "$\\boxed{x-4y+13=0}$ (choice E)",
+    "shortExplanation": "The first trisector is $(-1,3)$; the line through it and $(3,4)$ has slope one fourth.",
+    "detailedSteps": [
+      "The endpoint displacement from $(-4,5)$ to $(5,-1)$ is $(9,-6)$. Adding one third and two thirds gives $(-1,3)$ and $(2,1)$.",
+      "The line through $(-1,3)$ and $(3,4)$ is $y-3=(x+1)/4$, or $x-4y+13=0$. This is choice E."
+    ],
+    "keyIdeas": [
+      "Calculate the actual trisection coordinates"
+    ],
+    "commonMistakes": [
+      "Trisecting the horizontal coordinate while forgetting to trisect the vertical displacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Affine interpolation supplies both coordinates in the same proportion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p16",
+    "problemId": "amc12-predecessor-1970-p16",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The successive values are $F(4)=2$, $F(5)=3$ and $F(6)=7$.",
+    "detailedSteps": [
+      "With $n=3$, $F(4)=(F(3)F(2)+1)/F(1)=2$. Then $F(5)=(2\\cdot1+1)/1=3$.",
+      "Finally $F(6)=(F(5)F(4)+1)/F(3)=(3\\cdot2+1)/1=7$."
+    ],
+    "keyIdeas": [
+      "Evaluate the recurrence in its stated order"
+    ],
+    "commonMistakes": [
+      "Updating the denominator to the wrong earlier index."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only three steps are needed; writing the indexes prevents a recurrence shift.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p17",
+    "problemId": "amc12-predecessor-1970-p17",
+    "finalAnswer": "$\\boxed{\\text{none of A--D}}$ (choice E)",
+    "shortExplanation": "The hypotheses imply $p>q$, but each of A–D has a valid counterexample.",
+    "detailedSteps": [
+      "Since $r>0$, dividing $pr>qr$ by $r$ gives $p>q$. Also $p,q$ are nonzero.",
+      "Use $r=1,p=2,q=1$. A would require $-2>-1$, B would require $-2>1$, and D would require $1<1/2$; all are false.",
+      "For C, use $r=1,p=1,q=-2$. This satisfies the hypotheses but would require $1>2$, which is false. Therefore none of the four claims is universal."
+    ],
+    "keyIdeas": [
+      "Test universal inequalities with admissible signed inputs"
+    ],
+    "commonMistakes": [
+      "Dividing an inequality by an unspecified signed variable without reversing its direction when necessary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Different choices may require different counterexamples; every witness must satisfy all the hypotheses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p18",
+    "problemId": "amc12-predecessor-1970-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The roots are $\\sqrt2+1$ and $\\sqrt2-1$, so their difference is two.",
+    "detailedSteps": [
+      "We have $3+2\\sqrt2=(\\sqrt2+1)^2$ and $3-2\\sqrt2=(\\sqrt2-1)^2$.",
+      "Both $\\sqrt2+1$ and $\\sqrt2-1$ are positive, so they are the principal roots. Subtracting gives two."
+    ],
+    "keyIdeas": [
+      "Identify the positive square roots of the conjugate radicands"
+    ],
+    "commonMistakes": [
+      "Using $1-\\sqrt2$ as a principal square root even though it is negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign check is essential when taking a square root of a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p19",
+    "problemId": "amc12-predecessor-1970-p19",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The two sums give $a=15(1-r)=3(1+r)$, hence $r=2/3$ and $a=5$.",
+    "detailedSteps": [
+      "Let the first term be $a$. Since $|r|<1$, the ordinary sum gives $a/(1-r)=15$. The squared terms form a convergent series of ratio $r^2$, giving $a^2/(1-r^2)=45$.",
+      "Using the first equation in the second yields $15a/(1+r)=45$, so $a=3(1+r)$. The first equation also gives $a=15(1-r)$.",
+      "Equating gives $18r=12$, hence $r=2/3$ and $a=5$. These values satisfy the convergence condition and both original sums."
+    ],
+    "keyIdeas": [
+      "Compare the series with the series of squared terms"
+    ],
+    "commonMistakes": [
+      "Squaring the whole series sum instead of summing the individual squared terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two geometric series have different common ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p20",
+    "problemId": "amc12-predecessor-1970-p20",
+    "finalAnswer": "$\\boxed{MH=MK}$ (choice A)",
+    "shortExplanation": "The midpoint of $BC$ has horizontal coordinate midway between $H$ and $K$, so its distances to those feet are equal.",
+    "detailedSteps": [
+      "Take $HK$ as the horizontal axis. Write $B=(b,u)$ and $C=(c,v)$, so their perpendicular feet are $H=(b,0)$ and $K=(c,0)$.",
+      "Then $M=((b+c)/2,(u+v)/2)$. Its squared distances to the feet are both $(b-c)^2/4+(u+v)^2/4$. Thus $MH=MK$ always, regardless of which side of the axis either point lies on."
+    ],
+    "keyIdeas": [
+      "Use the midpoint on the perpendicular bisector of the two feet"
+    ],
+    "commonMistakes": [
+      "Assuming that $B$ and $C$ must lie on the same side of the line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Signed coordinates include all allowed configurations in one calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p21",
+    "problemId": "amc12-predecessor-1970-p21",
+    "finalAnswer": "$\\boxed{0.34\\text{ inches}}$ (choice B)",
+    "shortExplanation": "The new radius is $15(450/440)$ inches, an increase of $15/44\\approx0.34$ inches.",
+    "detailedSteps": [
+      "For the same actual distance, the number of wheel revolutions is inversely proportional to radius. The instrument readings are proportional to that number, so $440/450=15/R$, where $R$ is the new radius.",
+      "Hence $R=15\\cdot450/440$, and $R-15=15/44\\approx0.340909$ inches. Rounding to the nearest hundredth gives $0.34$ inches."
+    ],
+    "keyIdeas": [
+      "Use the inverse relation between tire radius and recorded revolutions"
+    ],
+    "commonMistakes": [
+      "Making radius proportional to the instrument reading rather than inversely proportional."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Larger tires require fewer revolutions for the unchanged route.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p22",
+    "problemId": "amc12-predecessor-1970-p22",
+    "finalAnswer": "$\\boxed{300}$ (choice A)",
+    "shortExplanation": "The difference is $4n^2+n=150$, giving $n=6$; the first twenty-four integers sum to 300.",
+    "detailedSteps": [
+      "The difference of the sums is $3n(3n+1)/2-n(n+1)/2=4n^2+n$. Thus $4n^2+n-150=0$.",
+      "This factors as $(n-6)(4n+25)=0$. The positive integer root is $n=6$.",
+      "Therefore the requested sum is $24\\cdot25/2=300$."
+    ],
+    "keyIdeas": [
+      "Simplify the difference of the two arithmetic sums"
+    ],
+    "commonMistakes": [
+      "Summing only the extra $2n$ terms as though they started at one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract the two complete sums before solving the integer equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p23",
+    "problemId": "amc12-predecessor-1970-p23",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The factorial contains eight factors of two and four of three, allowing exactly four factors of twelve.",
+    "detailedSteps": [
+      "A trailing base-twelve zero corresponds to a factor $12=2^2\\cdot3$. In $10!$, the exponent of two is $5+2+1=8$, and the exponent of three is $3+1=4$.",
+      "The number of complete factors of twelve is $\\min(\\lfloor8/2\\rfloor,4)=4$. The remaining factor is not divisible by twelve, so there are exactly four trailing zeros."
+    ],
+    "keyIdeas": [
+      "Count factors of the whole base, not just one prime"
+    ],
+    "commonMistakes": [
+      "Counting factors of three without also verifying the required pairs of factors of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime valuations handle a composite numeral base directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p24",
+    "problemId": "amc12-predecessor-1970-p24",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Equal perimeters make the triangle side twice the hexagon side, so the area ratio is $6/4=3/2$.",
+    "detailedSteps": [
+      "If the hexagon side is $h$, its perimeter is $6h$. The equal-perimeter equilateral triangle therefore has side $2h$.",
+      "The hexagon consists of six equilateral triangles of side $h$, while the larger triangle has four times the area of one such triangle. Thus the hexagon area is $3/2$ times two, or three."
+    ],
+    "keyIdeas": [
+      "Decompose the regular hexagon into six equilateral triangles"
+    ],
+    "commonMistakes": [
+      "Using the same side length for both polygons despite their different numbers of sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similar triangle areas scale with the square of the side length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p25",
+    "problemId": "amc12-predecessor-1970-p25",
+    "finalAnswer": "$\\boxed{-6\\lfloor-W\\rfloor}$ (choice E)",
+    "shortExplanation": "The charge is $6\\lceil W\\rceil=-6\\lfloor-W\\rfloor$.",
+    "detailedSteps": [
+      "A positive weight of $W$ ounces requires $\\lceil W\\rceil$ charged ounces, since any positive fractional ounce begins another charged unit.",
+      "The identity $\\lceil W\\rceil=-\\lfloor-W\\rfloor$ gives the required expression. At an integer weight this charges exactly that many ounces, with no extra unit."
+    ],
+    "keyIdeas": [
+      "Express a charge per started ounce using a ceiling"
+    ],
+    "commonMistakes": [
+      "Using $\\lfloor W\\rfloor+1$ at integer weights, where it overcharges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer boundary distinguishes ceiling from floor plus one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p26",
+    "problemId": "amc12-predecessor-1970-p26",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "All four cross-pair line intersections are the same point $(2,3)$, giving one distinct common point.",
+    "detailedSteps": [
+      "The first graph is the union of $x+y=5$ and $2x-3y=-5$. The second is the union of $x-y=-1$ and $3x+2y=12$.",
+      "The point $(2,3)$ satisfies all four equations. Every line from the first graph has a different slope from every line in the second, so each of the four cross-pairs has a unique intersection.",
+      "Consequently every common point is $(2,3)$, giving exactly one. The actual historical sources list six choices A–F for this item; one is choice B."
+    ],
+    "keyIdeas": [
+      "Treat each product equation as a union of two lines"
+    ],
+    "commonMistakes": [
+      "Counting four line-pair intersections without removing coincident points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinct geometric points are counted once, even when several algebraic pairs produce them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p27",
+    "problemId": "amc12-predecessor-1970-p27",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The area is $rs$, while the perimeter is $2s$, so the inradius is two.",
+    "detailedSteps": [
+      "Let $s>0$ be the semiperimeter and $r$ the inradius. Joining the incenter to the vertices partitions the triangle into three triangles whose common altitude is $r$, giving area $rs$.",
+      "The numerical area equals the perimeter, so $rs=2s$. Dividing by the positive $s$ yields $r=2$."
+    ],
+    "keyIdeas": [
+      "Use the inradius area identity"
+    ],
+    "commonMistakes": [
+      "Using the full perimeter in the area identity instead of the semiperimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The incenter partition gives the needed identity for every nondegenerate triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p28",
+    "problemId": "amc12-predecessor-1970-p28",
+    "finalAnswer": "$\\boxed{\\sqrt{17}}$ (choice A)",
+    "shortExplanation": "The two given side squares add to five times $AB^2$, so $AB^2=17$.",
+    "detailedSteps": [
+      "Put the centroid at the origin. Let the position vectors of $A,B$ be $u,v$; then $C=-u-v$. The perpendicular medians imply $u\\cdot v=0$.",
+      "Thus $AC^2=|2u+v|^2=4|u|^2+|v|^2=36$, and $BC^2=|u+2v|^2=|u|^2+4|v|^2=49$.",
+      "Adding gives $85=5(|u|^2+|v|^2)=5|u-v|^2=5AB^2$. Hence $AB=\\sqrt{17}$. The individual squared lengths $|u|^2=19/3$ and $|v|^2=32/3$ are positive, so this describes a valid nondegenerate configuration."
+    ],
+    "keyIdeas": [
+      "Put the centroid at the origin and use perpendicular median vectors"
+    ],
+    "commonMistakes": [
+      "Using the full median length as a centroid-to-vertex length without accounting for the ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centroid vectors encode the two-to-one median relation automatically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p29",
+    "problemId": "amc12-predecessor-1970-p29",
+    "finalAnswer": "$\\boxed{10{:}15}$ (choice D)",
+    "shortExplanation": "The angle difference condition gives $t=15$ minutes after ten.",
+    "detailedSteps": [
+      "Let $0<t<60$ be the current minutes after ten. Measured clockwise from twelve, the minute hand six minutes later has angle $6(t+6)$ degrees. The hour hand three minutes earlier has angle $300+(t-3)/2$ degrees.",
+      "Opposite positions require $6(t+6)-[300+(t-3)/2]\\equiv180\\pmod{360}$. This simplifies to $11t/2\\equiv165/2\\pmod{360}$.",
+      "Thus $t=15+(720/11)k$ for an integer $k$. Only $k=0$ lies in $(0,60)$, so the current time is $10{:}15$."
+    ],
+    "keyIdeas": [
+      "Compare the future minute angle with the earlier hour angle"
+    ],
+    "commonMistakes": [
+      "Keeping the hour hand fixed at ten while it actually advances half a degree per minute."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The time interval selects a unique solution of the angular congruence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p30",
+    "problemId": "amc12-predecessor-1970-p30",
+    "finalAnswer": "$\\boxed{a+b}$ (choice E)",
+    "shortExplanation": "The double-angle relation makes the extra length of the longer base exactly $a$, so $AB=a+b$.",
+    "detailedSteps": [
+      "Rotate the actual convex trapezoid so $AB$ is horizontal, with the parallel side $DC$ above it and directed the same way. Write $\\angle B=\\beta$, so $\\angle D=2\\beta$ and $0<\\beta<\\pi/2$.",
+      "The height is $h=a\\sin(2\\beta)$. From $A$ to $D$, the horizontal projection is $-a\\cos(2\\beta)$. From $C$ to $B$, the rightward horizontal projection is $h\\cot\\beta$.",
+      "Therefore $AB=-a\\cos(2\\beta)+b+h\\cot\\beta$. Since $h\\cot\\beta=a\\sin(2\\beta)\\cot\\beta=2a\\cos^2\\beta=a(1+\\cos2\\beta)$, the cosine terms cancel and $AB=a+b$."
+    ],
+    "keyIdeas": [
+      "Resolve the two slanted sides into horizontal projections"
+    ],
+    "commonMistakes": [
+      "Reading lengths or angles from the proportions of the illustrative drawing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The argument covers acute and obtuse directions of $AD$ using signed projections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p31",
+    "problemId": "amc12-predecessor-1970-p31",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice B)",
+    "shortExplanation": "There are fifteen admissible numbers and three divisible by eleven, giving probability one fifth.",
+    "detailedSteps": [
+      "Write each digit as $9-e_i$. The required sum forty-three means $e_1+\\cdots+e_5=2$, with nonnegative integers $e_i$. All fifteen weak compositions are valid five-digit numbers because no digit drops below seven.",
+      "The alternating digit difference is $11-2(e_1+e_3+e_5)$. Since the parenthesized sum is zero, one or two, the only multiple of eleven occurs when it is zero.",
+      "Thus the full deficit two must lie in the two even positions. There are three possibilities: $(2,0),(1,1),(0,2)$. The probability is $3/15=1/5$."
+    ],
+    "keyIdeas": [
+      "Count small digit deficits instead of large digit sums"
+    ],
+    "commonMistakes": [
+      "Counting digit multisets rather than the distinct numbers in the uniformly chosen set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Digit deficits make both the sample-space count and the divisibility test short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p32",
+    "problemId": "amc12-predecessor-1970-p32",
+    "finalAnswer": "$\\boxed{480}$ (choice C)",
+    "shortExplanation": "The second meeting takes three times the first meeting time, so $3(C/2-100)=C-60$, giving $C=480$.",
+    "detailedSteps": [
+      "Let the circumference be $C$. Since the runners start at opposite points and move oppositely, their combined distance at the first meeting is $C/2$. Runner B has travelled 100, so runner A has travelled $C/2-100$.",
+      "At the second meeting their combined distance is $3C/2$. Constant speeds imply this occurs at three times the first meeting time, so A has travelled $3(C/2-100)$.",
+      "The stated position of A gives $3(C/2-100)=C-60$, hence $C=480$. Then their first distances are 140 and 100; a speed ratio $7{:}5$ attains the two meetings and A has travelled 420 at the second."
+    ],
+    "keyIdeas": [
+      "Use the combined distance travelled between successive meetings"
+    ],
+    "commonMistakes": [
+      "Using a full circumference rather than a half circumference for the first meeting."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The initial diametrically opposite positions determine the first relative sweep.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p33",
+    "problemId": "amc12-predecessor-1970-p33",
+    "finalAnswer": "$\\boxed{180001}$ (choice A)",
+    "shortExplanation": "The four-digit block contributes 180000, and the numeral 10000 contributes one more.",
+    "detailedSteps": [
+      "Consider all strings from 0000 through 9999. In each of the four positions, each digit occurs exactly 1000 times, so the total digit sum is $4\\cdot1000(0+1+\\cdots+9)=180000$.",
+      "Leading zeros do not change digit sums, and the extra numeral zero contributes nothing. Thus this also counts the numbers one through 9999. Adding the digit sum one of 10000 gives 180001."
+    ],
+    "keyIdeas": [
+      "Pad the numbers to make each digit position uniform"
+    ],
+    "commonMistakes": [
+      "Treating 10000 as part of the uniform four-position block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adding zero and padding with leading zeros creates a uniform counting space without changing the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p34",
+    "problemId": "amc12-predecessor-1970-p34",
+    "finalAnswer": "$\\boxed{98}$ (choice C)",
+    "shortExplanation": "The greatest common divisor of the differences 392 and 1078 is 98.",
+    "detailedSteps": [
+      "Any divisor leaving the same remainder on all three integers must divide $13903-13511=392$ and $14589-13511=1078$. Conversely, a divisor of those two differences gives equal remainders.",
+      "Euclid’s algorithm gives $1078=2\\cdot392+294$ and $392=294+98$, while $294=3\\cdot98$. Hence the greatest possible divisor is 98."
+    ],
+    "keyIdeas": [
+      "Equal remainders are equivalent to divisibility of differences"
+    ],
+    "commonMistakes": [
+      "Taking the greatest common divisor of the original numbers instead of their differences."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common remainder cancels when two congruences are subtracted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1970-p35",
+    "problemId": "amc12-predecessor-1970-p35",
+    "finalAnswer": "$\\boxed{\\frac{aq^2-bp^2}{2(bp-aq)}}$ (choice D)",
+    "shortExplanation": "The two pension increases give $2(bp-aq)P=aq^2-bp^2$, determining the original pension $P$.",
+    "detailedSteps": [
+      "Write the original pension as $P=k\\sqrt t$, with positive scale $k$. The hypothetical pensions satisfy $P+p=k\\sqrt{t+a}$ and $P+q=k\\sqrt{t+b}$.",
+      "Squaring and subtracting $P^2$ gives $2Pp+p^2=k^2a$ and $2Pq+q^2=k^2b$. Multiply the first by $b$ and the second by $a$ to eliminate $k^2$.",
+      "The result is $2P(bp-aq)=aq^2-bp^2$. The denominator is nonzero: if $bp=aq$, these same equations give $aq^2=bp^2$. Positive $a,b,p,q$ would then force $p=q$ and $a=b$, contrary to the stated unequal extra service periods.",
+      "Therefore $P=(aq^2-bp^2)/[2(bp-aq)]$, choice D."
+    ],
+    "keyIdeas": [
+      "Eliminate the common proportionality constant after squaring"
+    ],
+    "commonMistakes": [
+      "Assuming the pension increases linearly with years of service rather than with their square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring preserves the actual positive pension quantities, and eliminating the scale avoids solving for the original service time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

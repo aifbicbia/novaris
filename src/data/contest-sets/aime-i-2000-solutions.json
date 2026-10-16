@@ -1,0 +1,327 @@
+[
+  {
+    "id": "solution-aime-i-2000-p1",
+    "problemId": "aime-i-2000-p1",
+    "finalAnswer": "$\\boxed{008}$",
+    "shortExplanation": "Both factors can avoid zero only in the split into $2^n$ and $5^n$; this fails first at $n=8$.",
+    "detailedSteps": [
+      "Every positive divisor of $10^n$ has the form $2^a5^b$, with $0\\le a,b\\le n$. If a and b are both positive, that divisor ends in zero. For both complementary factors to avoid this, each must omit one prime; the only possibility is the pair $2^n,5^n$. A factor equal to one leaves its complement $10^n$, which already contains zero.",
+      "For n 1 through 7, the pairs are $(2,5),(4,25),(8,125),(16,625),(32,3125),(64,15625),(128,78125)$. Both entries in each pair avoid zero, so every smaller positive n fails the required universal condition.",
+      "For n 8, the only potentially zero-free split has factors 256 and 390625; the latter contains zero. Every other split has a factor divisible by ten. Therefore every factorization at n 8 satisfies the condition, proving the least n is 8."
+    ],
+    "keyIdeas": [
+      "Zero-free complementary factors of a power of ten"
+    ],
+    "commonMistakes": [
+      "Testing one factorization without establishing that every other factorization has a zero-ending factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime support identifies the only factor pair requiring a digit check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p2",
+    "problemId": "aime-i-2000-p2",
+    "finalAnswer": "$\\boxed{021}$",
+    "shortExplanation": "The integer reflection coordinates give $u(u+3v)=451$, forcing $(u,v)=(11,10)$.",
+    "detailedSteps": [
+      "The reflection sequence gives vertices $(u,v),(v,u),(-v,u),(-v,-u),(v,-u)$ in the source order. The signed shoelace sum is $2u^2+6uv$, so the area is $u^2+3uv=u(u+3v)$.",
+      "Thus u is a divisor of 451, whose positive divisors are 1,11,41,451. Since $0<v<u$, the other factor satisfies $u<u+3v<4u$. The divisor 1 would need the other factor 451, outside this interval;41 and 451 have other factors smaller than themselves.",
+      "The remaining possibility is $u=11,u+3v=41$, giving $v=10$, which meets the strict conditions. Hence $u+v=21$."
+    ],
+    "keyIdeas": [
+      "The reflected pentagon\u2019s shoelace determinant"
+    ],
+    "commonMistakes": [
+      "Reflecting each new point from A instead of from the preceding point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area equation and strict coordinate order isolate one divisor pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p3",
+    "problemId": "aime-i-2000-p3",
+    "finalAnswer": "$\\boxed{667}$",
+    "shortExplanation": "The coefficient ratio is $666a/b$, so coprimality gives $a=1,b=666$.",
+    "detailedSteps": [
+      "The coefficient of $x^j$ is $\\binom{2000}{j}a^j b^{2000-j}$. Thus the ratio of the x-cubed coefficient to the x-squared coefficient is $[\\binom{2000}{3}/\\binom{2000}{2}](a/b)=(1998/3)(a/b)=666a/b$.",
+      "Equality of the two positive coefficients forces $b=666a$. Their gcd is therefore a, so the source coprimality gives $a=1,b=666$. The requested sum is 667."
+    ],
+    "keyIdeas": [
+      "The ratio of adjacent binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Comparing the exponents instead of the full coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio cancels the enormous common powers immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p4",
+    "problemId": "aime-i-2000-p4",
+    "finalAnswer": "$\\boxed{260}$",
+    "shortExplanation": "The diagram forces width-to-height ratio 69:61, giving perimeter 260.",
+    "detailedSteps": [
+      "Use the source diagram to name the two adjacent middle squares: let f be the side of the one on the left and g the side of the one on the right. The top-middle square has side $e=f+g$, and the top-left square has side $c=e+f=2f+g$. The tiny square just below their middle join has side $i=f-g$.",
+      "The bottom-left square has side $a=c+f+i=4f$. The small square immediately above the bottom-right square has side $h=c+e-a=2g-f$. Its top is level with the tiny square\u2019s top, so the bottom-right square has side $b=a+i-h=6f-3g$.",
+      "The height on the left is $H=a+c=6f+g$. Consequently the top-right square has side $d=H-b=4g$. The bottom boundary gives $W=a+b=10f-3g$, while the top boundary gives $W=c+e+d=3f+6g$.",
+      "Equating these widths yields $7f=9g$, so write $f=9t,g=7t$ for t positive. The nine square sides are then $2t,5t,7t,9t,16t,25t,28t,33t,36t$, and $W=69t,H=61t$. All stated source adjacencies have positive lengths and are consistent.",
+      "Since W and H are integers and $\\gcd(69,61)=1$, Bezout\u2019s identity implies t is an integer. Their gcd is then t, so the source coprimality forces $t=1$. Thus the perimeter is $2(69+61)=260$."
+    ],
+    "keyIdeas": [
+      "Square-adjacency equations determine the rectangle ratio"
+    ],
+    "commonMistakes": [
+      "Inferring side lengths from the drawing\u2019s apparent scale instead of enforcing its square adjacencies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Shared endpoints along the top and bottom boundaries give the decisive scale ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p5",
+    "problemId": "aime-i-2000-p5",
+    "finalAnswer": "$\\boxed{026}$",
+    "shortExplanation": "Both feasible box configurations give white-white probability 1/25.",
+    "detailedSteps": [
+      "Let the box totals be a,b with $a+b=25$, and their black counts be r,s. The equation $rs/(ab)=27/50$ implies $50\\mid ab$, since 27 and 50 are coprime. Both colors occur in each box, so each total is at least 2.",
+      "Because $ab\\le156$, its only possible multiples of 50 are 50,100,150. The equation $a(25-a)=50$ has discriminant 425 and no integer roots. The other two cases give unordered totals $(5,20)$ and $(10,15)$.",
+      "For totals $(5,20)$, the black product is 54. Under $1\\le r\\le4,1\\le s\\le19$, the sole factor pair is $(3,18)$. The white counts are $(2,2)$, giving probability $4/100=1/25$.",
+      "For totals $(10,15)$, the black product is 81. The color restrictions force black counts $(9,9)$, leaving white counts $(1,6)$ and probability $6/150=1/25$. Thus all feasible configurations give $m+n=1+25=26$."
+    ],
+    "keyIdeas": [
+      "Two possible box-size pairs give the same white probability"
+    ],
+    "commonMistakes": [
+      "Using the black probability alone to assume equal black proportions in the two boxes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reduced probability denominator restricts the box-size product before the color counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p6",
+    "problemId": "aime-i-2000-p6",
+    "finalAnswer": "$\\boxed{997}$",
+    "shortExplanation": "The pairs are $(k^2,(k+2)^2)$ for $k=1,2,\\ldots,997$.",
+    "detailedSteps": [
+      "The mean condition is $x+y-2\\sqrt{xy}=4$, or $(\\sqrt y-\\sqrt x)^2=4$. Since y exceeds x, it gives $\\sqrt y=\\sqrt x+2$, hence $y=x+4\\sqrt x+4$.",
+      "Thus $\\sqrt x=(y-x-4)/4$ is rational. The square root of an integer is rational only when it is an integer, so put $\\sqrt x=k\\ge1$. Then $x=k^2,y=(k+2)^2$.",
+      "The strict bound $y<10^6$ is $k+2<1000$, giving $1\\le k\\le997$. Each such pair meets the original mean condition, so the total is 997."
+    ],
+    "keyIdeas": [
+      "The square-root difference is exactly two"
+    ],
+    "commonMistakes": [
+      "Including y equal to one million or allowing the reversed order of a pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A prescribed mean gap fixes the difference of the two square roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p7",
+    "problemId": "aime-i-2000-p7",
+    "finalAnswer": "$\\boxed{005}$",
+    "shortExplanation": "The solution is $(1/5,24,5/24)$, giving the target 1/4.",
+    "detailedSteps": [
+      "From $xyz=1$, we have $1/z=xy$. Therefore the source equation $x+1/z=5$ becomes $x(1+y)=5$, giving $y=5/x-1$.",
+      "Substitution into $y+1/x=29$ gives $6/x-1=29$, hence $x=1/5$ and $y=24$. The product condition then yields $z=5/24$.",
+      "All three values are positive and satisfy the source equations. The requested expression is $z+1/y=5/24+1/24=1/4$, so $m+n=5$."
+    ],
+    "keyIdeas": [
+      "The product condition eliminates reciprocal variables"
+    ],
+    "commonMistakes": [
+      "Replacing 1/z by x+y instead of xy."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product condition turns the reciprocals into products of the other variables.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p8",
+    "problemId": "aime-i-2000-p8",
+    "finalAnswer": "$\\boxed{052}$",
+    "shortExplanation": "The depth is $12-3\\sqrt[3]{37}$.",
+    "detailedSteps": [
+      "With the point down, the liquid forms a cone similar to the full container, with height ratio $9/12=3/4$. It therefore occupies volume fraction $27/64$.",
+      "After inversion, the unfilled top portion is a similar cone of volume fraction $1-27/64=37/64$. If its height is h, then $(h/12)^3=37/64$, so $h=3\\sqrt[3]{37}$.",
+      "The liquid depth measured upward from the flat base is $12-h=12-3\\sqrt[3]{37}$. The integer 37 is prime and hence cube-free, giving $m+n+p=12+3+37=52$."
+    ],
+    "keyIdeas": [
+      "The inverted cone\u2019s empty volume fixes its depth"
+    ],
+    "commonMistakes": [
+      "Using the liquid\u2019s volume fraction rather than the empty top cone\u2019s fraction after inversion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity cubes the height ratio in both orientations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p9",
+    "problemId": "aime-i-2000-p9",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The y values are 20 and 5.",
+    "detailedSteps": [
+      "Put $X=\\log_{10}x,Y=\\log_{10}y,Z=\\log_{10}z$, and $L=\\log_{10}2>0$. The first two equations become $X+Y-XY=1-L$ and $Y+Z-YZ=1-L$; the third is $X+Z-XZ=0$.",
+      "Set $p=X-1,q=Y-1,r=Z-1$. These equations are $pq=L,qr=L,pr=1$. Because L is positive, q is nonzero, so p equals r. Then $p^2=1$.",
+      "If $p=r=1$, then $q=L$ and $Y=1+L$, giving $y=20$. If $p=r=-1$, then $q=-L$ and $Y=1-L$, giving $y=5$. The corresponding x,z are both 100 or both 1, and direct substitution verifies each full solution.",
+      "The logarithmic change is bijective on the required positive variables, so these exhaust the solutions. Their y sum is 25."
+    ],
+    "keyIdeas": [
+      "Shifted logarithms turn the system into three products"
+    ],
+    "commonMistakes": [
+      "Cancelling q before showing that it is nonzero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A unit shift exposes the symmetric product structure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p10",
+    "problemId": "aime-i-2000-p10",
+    "finalAnswer": "$\\boxed{173}$",
+    "shortExplanation": "The fiftieth entry is $75/98$.",
+    "detailedSteps": [
+      "Let $S=x_1+\\cdots+x_{100}$. The source condition is $x_k=S-x_k-k$, hence $2x_k=S-k$.",
+      "Summing over k gives $2S=100S-5050$, so $S=2525/49$. Therefore $x_{50}=(S-50)/2=75/98$.",
+      "The fraction is reduced, giving $m+n=75+98=173$. The formula for every $x_k$ sums back to S and meets every original relation, so it defines a consistent sequence."
+    ],
+    "keyIdeas": [
+      "The total sum solves all one-against-rest equations"
+    ],
+    "commonMistakes": [
+      "Forgetting to exclude $x_k$ from the sum of the other entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Summing the relations determines the common total before individual terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p11",
+    "problemId": "aime-i-2000-p11",
+    "finalAnswer": "$\\boxed{248}$",
+    "shortExplanation": "The fraction sum is $2480437/1000$, so $S/10$ has floor 248.",
+    "detailedSteps": [
+      "A divisor of 1000 has only the primes 2 and 5, each with exponent 0 through 3. Coprimality says each prime may have a positive exponent in the numerator or denominator, but not both. Reduced fractions are unique, so summing ordered admissible $(a,b)$ pairs counts each source number once.",
+      "The contribution for prime p is $1+p+p^2+p^3+p^{-1}+p^{-2}+p^{-3}$. The two prime choices are independent, so S is the product of these contributions.",
+      "For $p=2$ the sum is $127/8$; for $p=5$ it is $19531/125$. Thus $S=2480437/1000$ and $S/10=2480437/10000=248.0437$. Its greatest integer is 248."
+    ],
+    "keyIdeas": [
+      "Prime-by-prime sums over reduced divisor fractions"
+    ],
+    "commonMistakes": [
+      "Summing unreduced divisor pairs that share a prime factor, or reading S/10 as a radical."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coprimality makes each prime\u2019s numerator/denominator placement independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p12",
+    "problemId": "aime-i-2000-p12",
+    "finalAnswer": "$\\boxed{177}$",
+    "shortExplanation": "There are 177 residue-orbits under $r\\mapsto46-r$ modulo 352.",
+    "detailedSteps": [
+      "Composing the source reflections gives periods $2158-398=1760$ and $3214-398=2816$. Since $5(1760)-3(2816)=352$, f also has period 352. The reflection $x\\mapsto398-x$ acts on integer residues modulo 352 as $r\\mapsto46-r$.",
+      "The fixed residues solve $2r\\equiv46\\pmod{352}$, giving $r=23$ and $r=199$. The other 350 residues pair into 175 two-element orbits. Hence at most $2+175=177$ distinct values can occur. The list 0 through 999 includes every residue, so the bound applies to the full list.",
+      "For attainment, define $f(x)$ to be the distance from $x-23$ to the nearest multiple of 352. This has period 352 and is unchanged by each source reflection, because $398-46,2158-46,3214-46$ are multiples of 352.",
+      "On integer arguments its values are exactly 0 through 176, all appearing among one complete residue block. Thus 177 different values are possible, proving the maximum."
+    ],
+    "keyIdeas": [
+      "Two translations and one reflection identify integer orbits"
+    ],
+    "commonMistakes": [
+      "Counting only period classes without imposing the reflection pairing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit invariant function proves that the orbit upper bound is attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p13",
+    "problemId": "aime-i-2000-p13",
+    "finalAnswer": "$\\boxed{731}$",
+    "shortExplanation": "The reachable region has area $700/31$ square miles.",
+    "detailedSteps": [
+      "Use the highway crossing as the origin. Any route to a point off the highways has a last highway point $(a,0)$ or $(0,a)$. Reaching that point takes at least $|a|/50$ hours because no available speed exceeds 50; the remaining prairie path takes at least its straight-line distance divided by 14. Driving directly to that last point and then straight across the prairie attains these lower bounds. Therefore minimizing such two-leg routes is globally sufficient.",
+      "By sign and axis symmetry, first consider $x\\ge y\\ge0$. For an exit $(a,0)$, the minimum of $a/50+\\sqrt{(x-a)^2+y^2}/14$ has $x-a=7y/24$, which is feasible since $x\\ge y$. Substitution gives minimum time $(7x+24y)/350$ hours. When $y=0$, simply driving to x gives the same formula.",
+      "For an exit on the vertical highway, an interior minimum, when feasible, gives $(24x+7y)/350$, which is at least the horizontal-road time because $x\\ge y$. If its interior minimum is infeasible, its best route leaves at the origin; that direct prairie route is also among the candidates already minimized on the horizontal road. Negative exits or exits beyond the target coordinate only increase both relevant distances.",
+      "Six minutes is 1/10 hour, so this sector\u2019s reachable region is $x\\ge y\\ge0$ and $7x+24y\\le35$. It is the triangle with vertices $(0,0),(5,0),(35/31,35/31)$, of area $175/62$. Reflection across the diagonal supplies the other half of the first quadrant; the four quadrants give eight such triangles.",
+      "The total area is $8(175/62)=700/31$, reduced, giving $m+n=731$. This proof allows arbitrary earlier highway and prairie segments through the last-exit lower bound."
+    ],
+    "keyIdeas": [
+      "The last highway exit gives the globally fastest route"
+    ],
+    "commonMistakes": [
+      "Assuming a road-then-prairie route is optimal without ruling out routes with multiple highway visits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last highway departure reduces all possible paths to one variable without losing optimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p14",
+    "problemId": "aime-i-2000-p14",
+    "finalAnswer": "$\\boxed{571}$",
+    "shortExplanation": "The angles are 80 and 140 degrees, so $r=4/7$.",
+    "detailedSteps": [
+      "Scale the common length $AP=PQ=QB=BC$ to one and put $AB=AC=b$. Let the apex angle be alpha. The source positive ratio requires angle APQ to be positive, so Q cannot equal A; hence $b>1$, and P,Q are interior points of their sides.",
+      "Triangle APQ has equal sides AP,PQ and equal base angles at A,Q, both alpha. Thus $\\angle APQ=180^\\circ-2\\alpha$ and $AQ=2\\cos\\alpha=b-1$. In triangle ABC, $1=2b\\sin(\\alpha/2)$. Because b exceeds one, $0<\\alpha<60^\\circ$.",
+      "Put $u=2\\sin(\\alpha/2)=1/b$. The relation $b-1=2\\cos\\alpha=2-u^2$ gives $u^3-3u+1=0$. The triple-angle sine formula turns this into $2\\sin(3\\alpha/2)=1$.",
+      "Since $0<3\\alpha/2<90^\\circ$, the unique solution is $3\\alpha/2=30^\\circ$, so $\\alpha=20^\\circ$. The base angle ACB is 80 degrees and APQ is 140 degrees. Thus $r=80/140=4/7$, and $\\lfloor1000r\\rfloor=571$.",
+      "Taking $b=1/(2\\sin10^\\circ)$ and placing P at distance one from A and Q at distance one from B realizes both segment conditions; the derived cosine equation confirms $PQ=1$."
+    ],
+    "keyIdeas": [
+      "The two isosceles triangles force a twenty-degree apex"
+    ],
+    "commonMistakes": [
+      "Treating triangle APQ as having its apex angle at A rather than at P."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The smaller isosceles triangle and the whole triangle express the same side length in two ways.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2000-p15",
+    "problemId": "aime-i-2000-p15",
+    "finalAnswer": "$\\boxed{927}$",
+    "shortExplanation": "The 1999th removed original position is 928, so 927 cards were above it.",
+    "detailedSteps": [
+      "Let T(n) be the original one-based position of the second-to-last card removed from a stack of n cards under the source remove-then-rotate process. The two-card process gives $T(2)=1$. For three cards the removal order is $1,3,2$, so $T(3)=3$.",
+      "If $n=2m$ with $m\\ge2$, the first pass removes all odd positions, leaving $2,4,\\ldots,2m$ in that order. Thus $T(2m)=2T(m)$.",
+      "If $n=2m+1$ with $m\\ge2$, the first pass removes all odd positions, including the bottom card. The ensuing required rotation moves the surviving position 2 to the back, leaving $4,6,\\ldots,2m,2$. Hence $T(2m+1)=2((T(m)\\bmod m)+1)$. This wrap is essential when $T(m)=m$.",
+      "Applying these recurrences gives $T(7)=2,T(15)=6,T(31)=14,T(62)=28,T(125)=58,T(250)=116,T(500)=232,T(1000)=464,T(2000)=928$.",
+      "The table labels are assigned in increasing order of removal, so label 1999 is precisely this penultimate removed card. Its original position 928 means 927 cards lay above it."
+    ],
+    "keyIdeas": [
+      "Tracking the penultimate card-removal position through each pass"
+    ],
+    "commonMistakes": [
+      "Applying a survivor-only Josephus formula to the penultimate removal or omitting the rotation after the last odd card."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An odd-size pass changes the starting point of the even survivors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

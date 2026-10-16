@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc12a-2021-fall-p1",
+    "problemId": "amc12a-2021-fall-p1",
+    "finalAnswer": "$\\boxed{49}$ (choice C)",
+    "shortExplanation": "Ninety-one is seven times thirteen.",
+    "detailedSteps": [
+      "The numerator is $91^2=(7\\cdot13)^2$ and the denominator is $13^2$. Cancelling gives $7^2=49$."
+    ],
+    "keyIdeas": [
+      "Cancel a common square factor"
+    ],
+    "commonMistakes": [
+      "Squaring only one part of the difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor the difference before multiplying large numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p2",
+    "problemId": "amc12a-2021-fall-p2",
+    "finalAnswer": "$\\boxed{20}$ (choice E)",
+    "shortExplanation": "The alternative card has dimensions four by five.",
+    "detailedSteps": [
+      "Reducing the four-inch side gives $3\\cdot6=18$, so that is the change in the first scenario. Reducing the other side instead gives $4\\cdot5=20$ square inches."
+    ],
+    "keyIdeas": [
+      "Identify which rectangle side was shortened"
+    ],
+    "commonMistakes": [
+      "Applying the second change to the already shortened card."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each scenario begins with the same original card.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p3",
+    "problemId": "amc12a-2021-fall-p3",
+    "finalAnswer": "$\\boxed{\\frac{15}{4}}$ (choice B)",
+    "shortExplanation": "The routes take twelve minutes and eight and a quarter minutes.",
+    "detailedSteps": [
+      "Route A takes $60(6/30)=12$ minutes. Route B takes $60[(9/2)/40+(1/2)/20]=33/4$ minutes.",
+      "The saving is $12-33/4=15/4$ minutes."
+    ],
+    "keyIdeas": [
+      "Split a journey into two speed zones"
+    ],
+    "commonMistakes": [
+      "Using the arithmetic mean of the two speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Time is distance divided by the speed for that stretch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p4",
+    "problemId": "amc12a-2021-fall-p4",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "Only the final digit nine yields a prime.",
+    "detailedSteps": [
+      "An even final digit makes the number even, and a final digit five makes it divisible by five. Among the remaining digits, one and seven give digit sums divisible by three. The digit three gives $202103=11\\cdot18373$.",
+      "The remaining candidate is $202109$. Trial division by every prime up to its square root, which is below 450, gives no divisor. Thus its final digit nine is the unique answer."
+    ],
+    "keyIdeas": [
+      "Eliminate composite final digits"
+    ],
+    "commonMistakes": [
+      "Checking only divisibility by two and five."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated uniqueness can also guide elimination, but the surviving primality was explicitly checked.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p5",
+    "problemId": "amc12a-2021-fall-p5",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "One gap measures one hundred thirty-two feet.",
+    "detailedSteps": [
+      "The first through forty-first poles determine forty gaps, so each gap is $5280/40=132$ feet. The two step lengths are $132/44=3$ and $132/12=11$ feet, differing by eight feet."
+    ],
+    "keyIdeas": [
+      "Count intervals between telephone poles"
+    ],
+    "commonMistakes": [
+      "Dividing by the number of poles rather than the number of gaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint poles do not create an extra interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p6",
+    "problemId": "amc12a-2021-fall-p6",
+    "finalAnswer": "$\\boxed{170}$ (choice D)",
+    "shortExplanation": "The equal-leg triangle has ten-degree base angles.",
+    "detailedSteps": [
+      "The original figure places E beyond the CD line away from A, while F lies between A and D. The rays DC and DF form a right angle. With the stated exterior placement, the smaller angle $\\angle FDE$ is $360^\\circ-110^\\circ-90^\\circ=160^\\circ$.",
+      "Because $DE=DF$, both base angles of triangle DFE are ten degrees. Rays FA and FD point in opposite directions, so $\\angle AFE=180^\\circ-10^\\circ=170^\\circ$."
+    ],
+    "keyIdeas": [
+      "Use the exterior orientation before an isosceles angle calculation"
+    ],
+    "commonMistakes": [
+      "Using the supplementary twenty-degree angle at D without matching the source half-plane."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exterior placement decides which angle is inside triangle DFE.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p7",
+    "problemId": "amc12a-2021-fall-p7",
+    "finalAnswer": "$\\boxed{-13.5}$ (choice B)",
+    "shortExplanation": "The student-weighted mean is thirty-three and a half.",
+    "detailedSteps": [
+      "Teachers sample the five classes equally, so $t=100/5=20$. A random student samples a class of size n with probability n over one hundred.",
+      "Thus $s=(50^2+20^2+20^2+5^2+5^2)/100=33.5$, and $t-s=-13.5$."
+    ],
+    "keyIdeas": [
+      "Students sample classes in proportion to their enrollment"
+    ],
+    "commonMistakes": [
+      "Giving each class the same weight when sampling students."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Larger classes appear more often in a student sample.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p8",
+    "problemId": "amc12a-2021-fall-p8",
+    "finalAnswer": "$\\boxed{74}$ (choice D)",
+    "shortExplanation": "The extension adds one factor two and one factor thirty-seven.",
+    "detailedSteps": [
+      "The initial least common multiple already contains every needed prime power from ten through thirty, including $2^4,3^3,5^2$ and all primes through twenty-nine.",
+      "Among the added integers thirty-two through forty, thirty-two requires one extra factor two and thirty-seven introduces a new prime. Every other prime power is already present, so $N/M=2\\cdot37=74$. The prime thirty-one is not in the added list."
+    ],
+    "keyIdeas": [
+      "Identify only new prime powers in an extended least common multiple"
+    ],
+    "commonMistakes": [
+      "Extending the range through every integer up to forty and incorrectly including thirty-one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the explicitly omitted integer before comparing prime powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p9",
+    "problemId": "amc12a-2021-fall-p9",
+    "finalAnswer": "$\\boxed{576}$ (choice E)",
+    "shortExplanation": "The logarithm of x is twice the logarithm of twenty-four.",
+    "detailedSteps": [
+      "Write the three positive edge lengths as a,b,c. The equality $abc=2(ab+ac+bc)$ becomes $1=2(1/a+1/b+1/c)$.",
+      "By change of base, the reciprocal sum is $(\\ln2+\\ln3+\\ln4)/\\ln x=\\ln24/\\ln x$. Hence $\\ln x=2\\ln24$, so $x=24^2=576$."
+    ],
+    "keyIdeas": [
+      "Divide the prism equation by its positive volume"
+    ],
+    "commonMistakes": [
+      "Adding logarithms with different bases directly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positive edge lengths imply x exceeds one, so the division is valid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p10",
+    "problemId": "amc12a-2021-fall-p10",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "The alternating nonzero-digit sum is minus two.",
+    "detailedSteps": [
+      "Since $9\\equiv-1\\pmod5$, consecutive place values alternate signs. Reading from the units digit gives $N\\equiv2-5+6-7+2=-2\\equiv3\\pmod5$."
+    ],
+    "keyIdeas": [
+      "Alternate the base-nine digits modulo five"
+    ],
+    "commonMistakes": [
+      "Treating the written digits as a decimal number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Zero digits retain their place positions even though they contribute nothing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p11",
+    "problemId": "amc12a-2021-fall-p11",
+    "finalAnswer": "$\\boxed{8\\sqrt6}$ (choice E)",
+    "shortExplanation": "The large chord half-length has square ninety-six.",
+    "detailedSteps": [
+      "Let a be half the larger chord length and d its line distance from the common center. The portion inside the smaller circle has length a, so its half-length is a over two.",
+      "Thus $a^2=19^2-d^2$ and $a^2/4=17^2-d^2$. Subtracting gives $3a^2/4=72$, hence $a^2=96$. The full chord length is $2a=8\\sqrt6$."
+    ],
+    "keyIdeas": [
+      "Compare two chord half-lengths on the same line"
+    ],
+    "commonMistakes": [
+      "Halving the distance of the chord line from the center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chord is symmetric about the perpendicular from the center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p12",
+    "problemId": "amc12a-2021-fall-p12",
+    "finalAnswer": "$\\boxed{167}$ (choice C)",
+    "shortExplanation": "The valid indices are four modulo six.",
+    "detailedSteps": [
+      "The term with y exponent k has coefficient $\\binom{1000}{k}2^{(1000-k)/3}3^{k/2}$. A nonzero integer binomial factor cannot remove a fractional prime exponent.",
+      "The coefficient is rational exactly when k is even and $1000-k$ is divisible by three. These conditions give $k\\equiv4\\pmod6$. The indices are $4,10,\\ldots,1000$, numbering $(1000-4)/6+1=167$."
+    ],
+    "keyIdeas": [
+      "Require integral prime exponents in each binomial coefficient"
+    ],
+    "commonMistakes": [
+      "Counting a rational coefficient when only one of its two radical factors is rational."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Unique prime factorization prevents cancellation between the two different radicals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p13",
+    "problemId": "amc12a-2021-fall-p13",
+    "finalAnswer": "$\\boxed{\\frac{1+\\sqrt5}{2}}$ (choice A)",
+    "shortExplanation": "Normalize each line equation by its normal length.",
+    "detailedSteps": [
+      "A point $(1,k)$ on the acute bisector lies between the two positive-slope rays, so $1<k<3$. Its distances to the two lines are $(k-1)/\\sqrt2$ and $(3-k)/\\sqrt{10}$.",
+      "Equating them gives $\\sqrt5(k-1)=3-k$, hence $k=(3+\\sqrt5)/(1+\\sqrt5)=(1+\\sqrt5)/2$."
+    ],
+    "keyIdeas": [
+      "Equal perpendicular distances to the two boundary lines"
+    ],
+    "commonMistakes": [
+      "Averaging the slopes instead of the angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The other sign in the distance equation describes the perpendicular bisector line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p14",
+    "problemId": "amc12a-2021-fall-p14",
+    "finalAnswer": "$\\boxed{12\\sqrt3}$ (choice E)",
+    "shortExplanation": "The area equals square root three times the side squared over two.",
+    "detailedSteps": [
+      "Let every side have length s. Each thirty-degree tip is an isosceles triangle with base $2s\\sin15^\\circ$ and area $s^2\\sin30^\\circ/2=s^2/4$. The three bases form equilateral triangle BDF inside the displayed hexagon.",
+      "The central area is $\\sqrt3(2s\\sin15^\\circ)^2/4=\\sqrt3s^2(2-\\sqrt3)/4$. Adding the three tips simplifies the total to $\\sqrt3s^2/2$.",
+      "Equating it to $6\\sqrt3$ gives $s^2=12$, so the perimeter is $6s=12\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Split the concave hexagon into a central triangle and three tips"
+    ],
+    "commonMistakes": [
+      "Treating the concave hexagon as a regular hexagon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three nonadjacent acute angles make the inner triangle equilateral.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p15",
+    "problemId": "amc12a-2021-fall-p15",
+    "finalAnswer": "$\\boxed{208}$ (choice D)",
+    "shortExplanation": "The quadratic coefficient becomes minus forty-eight, and the constant becomes two hundred fifty-six.",
+    "detailedSteps": [
+      "The original polynomial has real coefficients, so conjugating all its roots leaves their multiset unchanged. The new root multiset is therefore obtained by multiplying the old roots by $4i$.",
+      "The pairwise product sum is multiplied by $(4i)^2$, giving $B=3(-16)=-48$. The four-root product is multiplied by $(4i)^4$, giving $D=256$. Thus $B+D=208$."
+    ],
+    "keyIdeas": [
+      "Scale symmetric root sums after conjugation"
+    ],
+    "commonMistakes": [
+      "Ignoring the exponent on the scaling factor for each symmetric sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conjugation preserves this root multiset because the original coefficients are real.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p16",
+    "problemId": "amc12a-2021-fall-p16",
+    "finalAnswer": "$\\boxed{191}$ (choice B)",
+    "shortExplanation": "Isolating one brand A computer leaves one hundred ninety possible edges.",
+    "detailedSteps": [
+      "All allowable cables form the complete bipartite graph with parts twenty and ten, with two hundred edges. Just before the final cable, the graph is disconnected. If a component contains a brand A computers and b brand B computers, at least $a(10-b)+b(20-a)$ edges across its cut are absent.",
+      "Every nontrivial cut has at least ten crossing edges: for b zero or ten this is immediate, and for $1\\le b\\le9$ the linear expression in a has minimum at an endpoint, at least twenty. Hence a disconnected graph has at most one hundred ninety edges, and the last cable raises the total to at most one hundred ninety-one.",
+      "This is attained by installing all cables among nineteen brand A and ten brand B computers while leaving the remaining brand A computer isolated, then adding its first cable. The network becomes connected exactly at that last cable."
+    ],
+    "keyIdeas": [
+      "Keep a bipartite graph disconnected until the last edge"
+    ],
+    "commonMistakes": [
+      "Using the minimum number needed for a connected graph rather than the latest possible stopping time."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The final edge is added to a graph that must still be disconnected.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p17",
+    "problemId": "amc12a-2021-fall-p17",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "Both coefficients are at most four.",
+    "detailedSteps": [
+      "Neither quadratic has two distinct real roots exactly when $b^2\\le4c$ and $c^2\\le4b$. Combining them gives $b^4\\le16c^2\\le64b$, so $b\\le4$; by symmetry c is also at most four.",
+      "The valid ordered pairs are $(1,1),(1,2),(2,1),(2,2),(3,3),(4,4)$. There are six."
+    ],
+    "keyIdeas": [
+      "Allow zero discriminants in both equations"
+    ],
+    "commonMistakes": [
+      "Replacing the nonpositive discriminant condition with a strictly negative one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A repeated real root is allowed by the wording.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p18",
+    "problemId": "amc12a-2021-fall-p18",
+    "finalAnswer": "$\\boxed{16}$ (choice E)",
+    "shortExplanation": "Choose the two exceptional bins before comparing factorials.",
+    "detailedSteps": [
+      "There are $5\\cdot4=20$ choices for the bins with three and five balls. For each choice the assignment count is $20!/(3!5!(4!)^3)$. The all-four count is $20!/(4!)^5$.",
+      "The common probability denominator $5^{20}$ cancels, leaving $p/q=20(4!)^2/(3!5!)=20(4/5)=16$."
+    ],
+    "keyIdeas": [
+      "Cancel multinomial probabilities in a ratio"
+    ],
+    "commonMistakes": [
+      "Forgetting that the two exceptional bins have distinct occupancy counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The other three bins are already individually identified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p19",
+    "problemId": "amc12a-2021-fall-p19",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "The first supplementary-angle solution lies between twelve and thirteen.",
+    "detailedSteps": [
+      "In degrees, equal sines require $x^2-x=360k$ or $x^2+x=180+360k$ for an integer k. For $x>1$, the first family starts at k one, giving $(1+\\sqrt{1441})/2$; k zero gives only zero and one.",
+      "The second family starts at k zero, giving $(\\sqrt{721}-1)/2$. Both positive-root families increase with k, and the second initial value is the smaller. It lies strictly between twelve and thirteen because $12^2+12<180<13^2+13$. Rounding upward gives thirteen."
+    ],
+    "keyIdeas": [
+      "Compare both families of equal-sine angles"
+    ],
+    "commonMistakes": [
+      "Considering only angles congruent modulo three hundred sixty degrees."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Supplementary angles provide the earliest valid solution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p20",
+    "problemId": "amc12a-2021-fall-p20",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "shortExplanation": "Ten starting integers enter the fixed point twelve.",
+    "detailedSteps": [
+      "For inputs at most fifty the possible divisor counts are $1,2,3,4,5,6,8,9,10$, so the first outputs are $2,4,6,8,10,12,16,18,20$. Their later paths are $2\\to4\\to6\\to8$, $10\\to8$, $16\\to10\\to8$, and $18,20\\to12$. Both eight and twelve are fixed points.",
+      "Therefore the fiftieth output is twelve precisely when the initial divisor count is six, nine or ten. The corresponding integers are $12,18,20,28,32,36,44,45,48,50$, ten in total. The paths stabilize long before fifty iterations."
+    ],
+    "keyIdeas": [
+      "Trace the finite divisor-count dynamics"
+    ],
+    "commonMistakes": [
+      "Assuming the first output must already equal twelve."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Some first outputs eighteen and twenty also enter the twelve fixed point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p21",
+    "problemId": "amc12a-2021-fall-p21",
+    "finalAnswer": "$\\boxed{3\\sqrt{35}}$ (choice C)",
+    "shortExplanation": "The two perpendicular heights add to square root thirty-five.",
+    "detailedSteps": [
+      "Put $A=(0,0),C=(6,0),X=(3,0),Y=(4,0)$. The actual figure has B and D on opposite sides of AC, so write $B=(4,b),D=(3,-d)$ with b,d positive.",
+      "Parallel BC and AD give $d=3b/2$. Equal legs AB and CD give $16+b^2=9+d^2$, hence $b^2=28/5$. Consequently $b=2\\sqrt{35}/5$ and $d=3\\sqrt{35}/5$.",
+      "The two triangles with common base AC have total area $6(b+d)/2=3\\sqrt{35}$."
+    ],
+    "keyIdeas": [
+      "Use the diagonal as a coordinate axis"
+    ],
+    "commonMistakes": [
+      "Using one height for both triangles across the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The labels along the diagonal determine the horizontal coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p22",
+    "problemId": "amc12a-2021-fall-p22",
+    "finalAnswer": "$\\boxed{148}$ (choice D)",
+    "shortExplanation": "There are one hundred sixty candidate boards and twelve impossible ones.",
+    "detailedSteps": [
+      "Carl has exactly three Os at his third move, so they occupy one of the eight winning lines. Azar has exactly three Xs in the remaining six cells, giving $8\\binom63=160$ candidate boards.",
+      "The game would already have stopped if those three Xs formed a line. When the O line is a row or column, exactly two disjoint parallel lines are available for X; there are six such O lines. Neither O diagonal has a disjoint winning line. Thus twelve candidates must be removed.",
+      "Every remaining board is attainable: choose any ordering of its X cells and O cells. No earlier two-symbol placement can win, the final X triple is nonwinning, and the third O completes its line. The count is $160-12=148$."
+    ],
+    "keyIdeas": [
+      "Count final boards and remove an earlier winning X line"
+    ],
+    "commonMistakes": [
+      "Counting move sequences rather than distinct final boards, or allowing an X win on the preceding move."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the board appearance is requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p23",
+    "problemId": "amc12a-2021-fall-p23",
+    "finalAnswer": "$\\boxed{\\frac5{16}}$ (choice A)",
+    "shortExplanation": "A completed square makes the extremal root sum immediate.",
+    "detailedSteps": [
+      "Write $p(x)=(x-h)^2+k$, whose range is $[k,\\infty)$. Exactly three solutions of $p(p(x))=0$ require two distinct real roots of p: the smaller must equal k and have one preimage, while the larger lies above k and has two. No other range arrangement produces three.",
+      "The equation $p(k)=0$ gives $(h-k)^2=-k$. Set $u=h-k>0$; positivity follows because the other root $2h-k$ must exceed k. Then $k=-u^2$ and $h=u-u^2$.",
+      "The root sum is $2h=2u-2u^2=1/2-2(u-1/2)^2$, uniquely maximized at $u=1/2$. This gives $h=1/4,k=-1/4$ and $\\widetilde p(1)=(1-1/4)^2-1/4=5/16$."
+    ],
+    "keyIdeas": [
+      "A vertex value must equal the smaller root"
+    ],
+    "commonMistakes": [
+      "Maximizing the coefficient without imposing the exact count of composite roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One tangent preimage and one pair of symmetric preimages are necessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p24",
+    "problemId": "amc12a-2021-fall-p24",
+    "finalAnswer": "$\\boxed{84}$ (choice E)",
+    "shortExplanation": "Two nonconstant progressions and the constant progression are feasible.",
+    "detailedSteps": [
+      "Let the common side-length difference be d, with $0\\le d<6$. Write $CD=18-id,AD=18-jd,BC=18-kd$, where i,j,k are a permutation of one,two,three.",
+      "Place $A=(0,0),B=(18,0),D=(AD/2,\\sqrt3\\,AD/2)$ and $C=D+(CD,0)$. The angle and parallel-base conditions are built in. Squaring BC gives $BC^2=(18-CD)^2-(18-CD)AD+AD^2$.",
+      "For positive d this becomes $d=18(2j+i-2k)/(i^2+ij+j^2-k^2)$. All six orders give only two valid cases: $(i,j,k,d)=(3,1,2,2)$, with other sides twelve,sixteen,fourteen; and $(3,2,1,5)$, with other sides three,eight,thirteen. Both coordinate trapezoids are convex.",
+      "The case d zero is also an arithmetic progression, giving a convex rhombus with all sides eighteen. Thus the possible a values are $3,8,12,13,14,16,18$, whose sum is eighty-four."
+    ],
+    "keyIdeas": [
+      "Enumerate the arithmetic-progression side orders"
+    ],
+    "commonMistakes": [
+      "Omitting the constant arithmetic progression or accepting a nonpositive side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source does not require the progression difference to be positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2021-fall-p25",
+    "problemId": "amc12a-2021-fall-p25",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "The ordered-distinct count is m cubed minus six m squared plus eleven m minus six.",
+    "detailedSteps": [
+      "Regard the values one through m as residues modulo m. Without distinctness, the first three entries determine the fourth, giving $m^3$ ordered solutions. There are six possible pair-equality events, each with $m^2$ solutions because a remaining singleton has coefficient one.",
+      "Among the fifteen pairs of equality events, twelve merge three entries and three form two pairs. Each gives m solutions; in the two-pair case, division by two is valid because m is odd. This contributes $15m$.",
+      "Among the twenty triples of equality events, four are triangles on three labels and still give m solutions. The remaining sixteen connect all four labels. All-equal tuples obey $4a=0\\pmod m$, which has one solution because m is odd. Thus this level subtracts $4m+16$.",
+      "Every set of four,five or six equality events connects all labels, contributing respectively $15,-6,+1$. Therefore $D(m)=m^3-6m^2+15m-4m-16+15-6+1=m^3-6m^2+11m-6$, so $c_1=11$."
+    ],
+    "keyIdeas": [
+      "Use equality-pattern inclusion and exclusion modulo an odd integer"
+    ],
+    "commonMistakes": [
+      "Assuming that two is invertible for an even modulus, or counting unordered tuples without restoring their order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Oddness makes every two-pair and all-equal congruence count uniform.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

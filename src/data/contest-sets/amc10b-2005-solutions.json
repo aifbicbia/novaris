@@ -1,0 +1,504 @@
+[
+  {
+    "id": "solution-amc10b-2005-p1",
+    "problemId": "amc10b-2005-p1",
+    "finalAnswer": "$\\boxed{100}$ (choice A)",
+    "shortExplanation": "The troop earns $500$ dollars after spending $400$.",
+    "detailedSteps": [
+      "Buying 1000 bars in groups of 5 costs $(1000/5)\\cdot2=400$ dollars. Selling them in pairs for one dollar yields $1000/2=500$ dollars.",
+      "The profit is $500-400=100$ dollars."
+    ],
+    "keyIdeas": [
+      "Revenue minus purchase cost"
+    ],
+    "commonMistakes": [
+      "Reporting total sales rather than profit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert both prices to the same quantity before subtracting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p2",
+    "problemId": "amc10b-2005-p2",
+    "finalAnswer": "$\\boxed{20}$ (choice D)",
+    "shortExplanation": "The statement gives $x^2/100=4$.",
+    "detailedSteps": [
+      "The quantity x percent of x is $(x/100)x$. Thus $x^2=400$, and the given positivity selects $x=20$."
+    ],
+    "keyIdeas": [
+      "A percentage of the same variable"
+    ],
+    "commonMistakes": [
+      "Treating x percent as x rather than x/100."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the percent conversion before solving the quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p3",
+    "problemId": "amc10b-2005-p3",
+    "finalAnswer": "$\\boxed{\\frac49}$ (choice D)",
+    "shortExplanation": "Each day leaves two thirds of the amount present at its start.",
+    "detailedSteps": [
+      "After the first day, $2/3$ of the original gallon remains. The second day leaves $2/3$ of that, giving $(2/3)^2=4/9$ for the third day."
+    ],
+    "keyIdeas": [
+      "Two successive fractional reductions"
+    ],
+    "commonMistakes": [
+      "Subtracting one third of the original amount on both days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second fraction is applied to the remaining amount.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p4",
+    "problemId": "amc10b-2005-p4",
+    "finalAnswer": "$\\boxed{13\\sqrt2}$ (choice D)",
+    "shortExplanation": "Both inner operations equal 13.",
+    "detailedSteps": [
+      "The squares remove the signs: $5\\diamond12=\\sqrt{25+144}=13$ and $(-12)\\diamond(-5)=\\sqrt{144+25}=13$.",
+      "The outer operation is $13\\diamond13=\\sqrt{169+169}=13\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Nested Euclidean-norm operation"
+    ],
+    "commonMistakes": [
+      "Adding the two inner results instead of applying the operation again."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Evaluate the inner operations first and preserve the definition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p5",
+    "problemId": "amc10b-2005-p5",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice C)",
+    "shortExplanation": "Buying all the CDs costs three fifths of the money.",
+    "detailedSteps": [
+      "The CDs have equal prices. If one third of them costs one fifth of the money, all of them cost three times as much, or $3/5$.",
+      "The remaining fraction is $1-3/5=2/5$."
+    ],
+    "keyIdeas": [
+      "Scaling a partial purchase"
+    ],
+    "commonMistakes": [
+      "Multiplying 1/3 by 1/5 rather than scaling from the partial purchase to the whole."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal unit prices make cost proportional to quantity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p6",
+    "problemId": "amc10b-2005-p6",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "She needs 18 A grades among the 20 remaining quizzes.",
+    "detailedSteps": [
+      "At least 80 percent of 50 means at least 40 A grades. Having earned 22, she still needs $40-22=18$.",
+      "There are $50-30=20$ quizzes left, so at most $20-18=2$ can have a lower grade."
+    ],
+    "keyIdeas": [
+      "A remaining allowance of non-A grades"
+    ],
+    "commonMistakes": [
+      "Applying 80 percent only to the remaining quizzes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The target applies to the full year.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p7",
+    "problemId": "amc10b-2005-p7",
+    "finalAnswer": "$\\boxed{\\frac\\pi8}$ (choice B)",
+    "shortExplanation": "If the outer square has side s, the final circle has radius $s/(2\\sqrt2)$.",
+    "detailedSteps": [
+      "The first circle has diameter s. The inner square has diagonal s, so its side is $s/\\sqrt2$.",
+      "The final circle has radius half that side, $s/(2\\sqrt2)$, and area $\\pi s^2/8$. Dividing by the outer-square area $s^2$ gives $\\pi/8$."
+    ],
+    "keyIdeas": [
+      "Two nested square-circle steps"
+    ],
+    "commonMistakes": [
+      "Using the inner square diagonal as its side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep side lengths and diagonals distinct at each nesting step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p8",
+    "problemId": "amc10b-2005-p8",
+    "finalAnswer": "$\\boxed{80-20\\pi}$ (choice A)",
+    "shortExplanation": "Each tile has shaded area $1-\\pi/4$.",
+    "detailedSteps": [
+      "The four white quarter circles together have the area of one radius-$1/2$ disk, $\\pi/4$. They overlap only at boundary points.",
+      "There are $8\\cdot10=80$ unit tiles. Their shaded total is $80(1-\\pi/4)=80-20\\pi$ square feet."
+    ],
+    "keyIdeas": [
+      "Area repeated across square tiles"
+    ],
+    "commonMistakes": [
+      "Using radius 1 for the white pieces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combine the four equal sectors before scaling to the floor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p9",
+    "problemId": "amc10b-2005-p9",
+    "finalAnswer": "$\\boxed{\\frac59}$ (choice D)",
+    "shortExplanation": "An odd sum comes from odd-even or even-odd outcomes.",
+    "detailedSteps": [
+      "The first die is odd with probability $2/3$ and even with probability $1/3$. The second is even with probability $2/3$ and odd with probability $1/3$.",
+      "Independence gives $(2/3)(2/3)+(1/3)(1/3)=5/9$."
+    ],
+    "keyIdeas": [
+      "Opposite parities on two nonstandard dice"
+    ],
+    "commonMistakes": [
+      "Assuming a fair die must have equally likely odd and even results."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Fairness concerns faces; repeated labels change the parity probabilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p10",
+    "problemId": "amc10b-2005-p10",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "The altitude has square 48, and the farther right-triangle base is 4.",
+    "detailedSteps": [
+      "Let H be the midpoint of AB. Then $AH=BH=1$, and $CH^2=7^2-1^2=48$.",
+      "Since D lies beyond B, $HD>0$ and $HD^2=CD^2-CH^2=64-48=16$. Thus $HD=4$, and $BD=HD-HB=4-1=3$."
+    ],
+    "keyIdeas": [
+      "A line extension beyond an isosceles base"
+    ],
+    "commonMistakes": [
+      "Adding HB to HD even though B lies between H and D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the common altitude in two right triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p11",
+    "problemId": "amc10b-2005-p11",
+    "finalAnswer": "$\\boxed{250}$ (choice E)",
+    "shortExplanation": "After the first term, the sequence cycles through $133,55,250$.",
+    "detailedSteps": [
+      "The first transitions are $2005\\to133\\to55\\to250\\to133$, since the new term is the sum of cubed digits.",
+      "The cycle begins at term 2 and has length 3. The index offset is $2005-2=2003\\equiv2\\pmod3$, so term 2005 is the third cycle entry,250."
+    ],
+    "keyIdeas": [
+      "A short digit-cube cycle"
+    ],
+    "commonMistakes": [
+      "Taking the remainder of 2005 without accounting for the one-term preperiod."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Locate the start of a cycle before reducing the index.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p12",
+    "problemId": "amc10b-2005-p12",
+    "finalAnswer": "$\\boxed{\\left(\\frac16\\right)^{10}}$ (choice E)",
+    "shortExplanation": "Exactly one die must show 2,3,or 5, with all the others showing 1.",
+    "detailedSteps": [
+      "A prime product permits only one factor greater than 1, and that factor must be prime. Choose its die in 12 ways and its value in 3 ways.",
+      "The favorable count is 36 among $6^{12}$ labeled outcomes. Hence the probability is $36/6^{12}=1/6^{10}$."
+    ],
+    "keyIdeas": [
+      "Exactly one prime factor on twelve dice"
+    ],
+    "commonMistakes": [
+      "Allowing two prime faces, whose product would be composite."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product is prime only when every other integer factor is 1.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p13",
+    "problemId": "amc10b-2005-p13",
+    "finalAnswer": "$\\boxed{835}$ (choice C)",
+    "shortExplanation": "Add the multiples of 3 and 4, then remove both copies of each multiple of 12.",
+    "detailedSteps": [
+      "The two initial counts are $\\lfloor2005/3\\rfloor=668$ and $\\lfloor2005/4\\rfloor=501$. Their overlap consists of $\\lfloor2005/12\\rfloor=167$ multiples of 12.",
+      "Because the overlap should be excluded entirely, subtract it twice: $668+501-2\\cdot167=835$."
+    ],
+    "keyIdeas": [
+      "Counting exclusive multiples"
+    ],
+    "commonMistakes": [
+      "Subtracting the overlap only once, which would keep multiples of 12 in the union."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is an exclusive-or count, not an ordinary union count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p14",
+    "problemId": "amc10b-2005-p14",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{2}}$ (choice C)",
+    "shortExplanation": "The base CD has length 2, while M has height $\\sqrt3/2$ above line BD.",
+    "detailedSteps": [
+      "The equilateral triangle of side 2 has altitude $\\sqrt3$. Since M is halfway from A to C, its perpendicular height above BC is half this, $\\sqrt3/2$.",
+      "C is the midpoint of BD, so $CD=BC=2$. Triangle CDM has area $\\tfrac12\\cdot2\\cdot\\sqrt3/2=\\sqrt3/2$."
+    ],
+    "keyIdeas": [
+      "A midpoint altitude above an extended base"
+    ],
+    "commonMistakes": [
+      "Using the full altitude of A for the midpoint M."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extending the base does not change the line from which height is measured.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p15",
+    "problemId": "amc10b-2005-p15",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice D)",
+    "shortExplanation": "Thirteen pairs contain a twenty-dollar bill, and one additional pair consists of the two tens.",
+    "detailedSteps": [
+      "The eight physical bills give $\\binom82=28$ equally likely unordered pairs. Pairs containing at least one twenty number $28-\\binom62=13$.",
+      "Without a twenty, the only qualifying pair is the two ten-dollar bills. Thus 14 pairs succeed, giving $14/28=1/2$."
+    ],
+    "keyIdeas": [
+      "High-value pairs of distinct bills"
+    ],
+    "commonMistakes": [
+      "Treating the four denominations as equally likely pair types."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal-valued bills remain separate objects in the sample space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p16",
+    "problemId": "amc10b-2005-p16",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "Doubling the roots doubles their sum and quadruples their product.",
+    "detailedSteps": [
+      "The second equation has root sum $-p$ and product m. Its doubled roots therefore have sum $-2p$ and product $4m$.",
+      "Comparing with the first equation yields $m=2p$ and $n=4m=8p$. Since $p\\ne0$, the ratio $n/p=8$."
+    ],
+    "keyIdeas": [
+      "Scaling quadratic roots"
+    ],
+    "commonMistakes": [
+      "Doubling the product instead of multiplying it by 4."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scaling each of two roots scales their product quadratically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p17",
+    "problemId": "amc10b-2005-p17",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice B)",
+    "shortExplanation": "Raising through the chain gives $4^{abcd}=8$.",
+    "detailedSteps": [
+      "Using the supplied equalities in sequence, $4^{abcd}=5^{bcd}=6^{cd}=7^d=8$.",
+      "Since $4^{3/2}=8$ and the exponential function with base 4 is one-to-one, $abcd=3/2$."
+    ],
+    "keyIdeas": [
+      "Telescoping a chain of exponential relations"
+    ],
+    "commonMistakes": [
+      "Multiplying the bases and right-hand sides directly without handling the exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nested exponentiation connects the chain without computing each exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p18",
+    "problemId": "amc10b-2005-p18",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "Choose seven of the eight allowed digits; their order is then forced.",
+    "detailedSteps": [
+      "The allowed digits are 2 through 9, eight in all. A seven-digit strictly increasing sequence is determined by which one of these digits is omitted.",
+      "There are 8 choices for that omitted digit, so 8 telephone numbers. The fixed 555 prefix does not change the count."
+    ],
+    "keyIdeas": [
+      "An increasing digit subset"
+    ],
+    "commonMistakes": [
+      "Permuting the seven chosen digits despite the increasing-order requirement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An ordering restriction can turn a permutation problem into a subset problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p19",
+    "problemId": "amc10b-2005-p19",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The mean is 86 and the median is 85.",
+    "detailedSteps": [
+      "The remaining percentage is $100-10-25-20-15=30$. The weighted mean is $0.10(70)+0.25(80)+0.20(85)+0.15(90)+0.30(95)=86$.",
+      "The cumulative proportion rises from 35 percent below 85 to 55 percent at or below 85, so the median is 85. Their difference is 1."
+    ],
+    "keyIdeas": [
+      "Weighted mean and cumulative median"
+    ],
+    "commonMistakes": [
+      "Averaging the five distinct scores without weighting their frequencies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use frequencies for the mean and cumulative frequencies for the median.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p20",
+    "problemId": "amc10b-2005-p20",
+    "finalAnswer": "$\\boxed{53332.8}$ (choice C)",
+    "shortExplanation": "Every place has average digit $24/5=4.8$.",
+    "detailedSteps": [
+      "Across all $5!$ permutations, each digit appears equally often in every position. The average digit in each place is $(1+3+5+7+8)/5=24/5$.",
+      "The mean number is therefore $(24/5)(10000+1000+100+10+1)=(24/5)11111=53332.8$."
+    ],
+    "keyIdeas": [
+      "Symmetry of digit positions"
+    ],
+    "commonMistakes": [
+      "Assuming the mean must itself be an integer or one of the permitted numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positional symmetry avoids summing the numbers individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p21",
+    "problemId": "amc10b-2005-p21",
+    "finalAnswer": "$\\boxed{162}$ (choice A)",
+    "shortExplanation": "The favorable counts are 10 for p and $\\binom{10}{2}\\binom42^2=1620$ for q.",
+    "detailedSteps": [
+      "Both probabilities use the same sample space of $\\binom{40}{4}$ unordered selections of physical slips. For p, choose the common number in 10 ways; its four slips are then forced.",
+      "For q, choose the two distinct numbers in $\\binom{10}{2}=45$ ways, then two of the four slips for each in $\\binom42^2=36$ ways.",
+      "The denominator cancels, so $q/p=45\\cdot36/10=162$."
+    ],
+    "keyIdeas": [
+      "Comparing favorable counts with a common denominator"
+    ],
+    "commonMistakes": [
+      "Ordering the two selected numbers and thereby counting each two-pair outcome twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Comparing probabilities can be simpler than calculating them separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p22",
+    "problemId": "amc10b-2005-p22",
+    "finalAnswer": "$\\boxed{16}$ (choice C)",
+    "shortExplanation": "The condition fails exactly when $n+1$ is an odd prime.",
+    "detailedSteps": [
+      "The required divisibility is equivalent to $n+1$ dividing $2(n-1)!$. Put $m=n+1$, so $2\\le m\\le25$. If m is an odd prime, it divides none of the factors in $2(m-2)!$, so it fails.",
+      "The cases $m=2$ and $m=4$ work directly. For a composite nonsquare $m$, write $m=ab$ with $2\\le a<b\\le m-2$; both distinct factors occur in $(m-2)!$. For a square $m=t^2$ with $t\\ge3$, the distinct factors $t$ and $2t$ also lie between $2$ and $m-2$. Their product is $2m$, so again $m$ divides $(m-2)!$.",
+      "There are eight odd primes at most 25: $3,5,7,11,13,17,19,23$. They account for eight failures among 24 possible n, leaving 16 successes."
+    ],
+    "keyIdeas": [
+      "Divisibility by a triangular number"
+    ],
+    "commonMistakes": [
+      "Using a prime-divisibility argument without checking small composite exceptions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancel the n factor before analyzing which integers divide the remaining factorial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p23",
+    "problemId": "amc10b-2005-p23",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The midsegment length is the average of the two bases.",
+    "detailedSteps": [
+      "Write $AB=a$, $DC=b$, and $EF=(a+b)/2=m$. The two smaller trapezoids have equal height, so their area ratio is $(a+m)/(m+b)=2$.",
+      "Substituting m gives $3a+b=2a+6b$, hence $a=5b$. Therefore $AB/DC=5$."
+    ],
+    "keyIdeas": [
+      "Two trapezoids of equal height"
+    ],
+    "commonMistakes": [
+      "Assuming an area ratio 2 means the bases have ratio 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both bases of each subtrapezoid contribute to its area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p24",
+    "problemId": "amc10b-2005-p24",
+    "finalAnswer": "$\\boxed{154}$ (choice E)",
+    "shortExplanation": "The only pair is $x=65$, $y=56$, giving $m=33$.",
+    "detailedSteps": [
+      "Write $x=10a+b$ and $y=10b+a$ with nonzero digits and $a>b$. Then $m^2=99(a^2-b^2)=9\\cdot11(a-b)(a+b)$.",
+      "For this to be a square, 11 divides $(a-b)(a+b)$. Since $1\\le a-b\\le8$, it must divide a+b. The digit bounds force $a+b=11$. Hence $m^2=33^2(a-b)$, so a-b is a positive square at most 8:1 or 4.",
+      "The sum $a+b=11$ is odd, so $a-b$ must be odd. Thus $a-b=1$, giving $a=6$ and $b=5$. Therefore $x=65$, $y=56$, and $m=33$, whose sum is $154$."
+    ],
+    "keyIdeas": [
+      "A square difference of reversed digits"
+    ],
+    "commonMistakes": [
+      "Allowing a zero leading digit after reversal or omitting the parity constraint on digit sum and difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime exponents, digit bounds, and parity successively force the digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2005-p25",
+    "problemId": "amc10b-2005-p25",
+    "finalAnswer": "$\\boxed{62}$ (choice C)",
+    "shortExplanation": "The numbers 25 through 100 form 38 disjoint pairs summing to 125.",
+    "detailedSteps": [
+      "The forbidden pairs are $(25,100),(26,99),\\ldots,(62,63)$. A valid subset contains at most one element of each of these 38 pairs.",
+      "The 24 numbers 1 through 24 have no partner in the allowed range. Thus the subset size is at most $38+24=62$.",
+      "The set of integers 1 through 62 attains 62 elements, since its two largest distinct elements sum to 123, below 125. Hence the maximum is 62."
+    ],
+    "keyIdeas": [
+      "Disjoint forbidden-sum pairs"
+    ],
+    "commonMistakes": [
+      "Applying the pairing bound to 1 through 24 even though their complements exceed 100."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A disjoint pairing provides the upper bound; an explicit set proves sharpness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

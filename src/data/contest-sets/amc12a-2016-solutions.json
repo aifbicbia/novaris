@@ -1,0 +1,554 @@
+[
+  {
+    "id": "solution-amc12a-2016-p1",
+    "problemId": "amc12a-2016-p1",
+    "finalAnswer": "$\\boxed{100}$ (choice B)",
+    "shortExplanation": "Cancel the common factorial before performing any large multiplication.",
+    "detailedSteps": [
+      "Factor $10!$ from the numerator, then cancel $9!$: $$\\frac{11!-10!}{9!}=\\frac{10!(11-1)}{9!}=10\\cdot10=100.$$"
+    ],
+    "keyIdeas": [
+      "Factorial identities",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "Dividing a difference by $9!$ requires dividing both terms."
+    ],
+    "difficultyNotes": "Factorials.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p2",
+    "problemId": "amc12a-2016-p2",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "Express every term as a power of ten.",
+    "detailedSteps": [
+      "The left side becomes $10^x(10^2)^{2x}=10^{5x}$, and the right side is $(10^3)^5=10^{15}$. Equal powers of the same base give $5x=15$, so $x=3$."
+    ],
+    "keyIdeas": [
+      "Common bases",
+      "Exponent rules"
+    ],
+    "commonMistakes": [
+      "The exponent on $100$ contributes $4x$, not $2x$, after changing the base."
+    ],
+    "difficultyNotes": "Exponent rules.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p3",
+    "problemId": "amc12a-2016-p3",
+    "finalAnswer": "$\\boxed{-\\frac{1}{40}}$ (choice B)",
+    "shortExplanation": "Compute the floor of the negative quotient before substituting into the definition.",
+    "detailedSteps": [
+      "The quotient is $(3/8)/(-2/5)=-15/16$, whose floor is $-1$. Therefore $$\\operatorname{rem}\\left(\\frac38,-\\frac25\\right)=\\frac38-\\left(-\\frac25\\right)(-1)=-\\frac1{40}.$$"
+    ],
+    "keyIdeas": [
+      "Floor function",
+      "Signed fractions"
+    ],
+    "commonMistakes": [
+      "The floor of $-15/16$ is $-1$; truncation toward zero would give the wrong result."
+    ],
+    "difficultyNotes": "Floor and remainder.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p4",
+    "problemId": "amc12a-2016-p4",
+    "finalAnswer": "$\\boxed{90}$ (choice D)",
+    "shortExplanation": "The mean determines the only candidate; check its median and mode.",
+    "detailedSteps": [
+      "The six fixed entries sum to $540$. Requiring the mean to equal $x$ gives $(540+x)/7=x$, hence $x=90$.",
+      "The sorted data are $40,50,60,90,90,100,200$. Their middle entry and unique most frequent entry are both $90$, so the candidate meets all three requirements."
+    ],
+    "keyIdeas": [
+      "Mean equation",
+      "Checking constraints"
+    ],
+    "commonMistakes": [
+      "Satisfying the mean alone is insufficient until the median and mode are checked."
+    ],
+    "difficultyNotes": "Mean median and mode.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p5",
+    "problemId": "amc12a-2016-p5",
+    "finalAnswer": "$\\boxed{\\text{Even counterexample}}$ (choice E)",
+    "shortExplanation": "A counterexample keeps the hypothesis and makes the claimed conclusion false.",
+    "detailedSteps": [
+      "The conjecture applies to even integers greater than $2$. To refute it, one would need an even integer greater than $2$ for which no pair of primes has that sum.",
+      "This is choice E. Expressing an integer as a sum of nonprimes does not rule out a different representation using primes."
+    ],
+    "keyIdeas": [
+      "Quantifiers",
+      "Counterexamples"
+    ],
+    "commonMistakes": [
+      "A number outside the stated domain cannot disprove the conjecture."
+    ],
+    "difficultyNotes": "Negating a universal claim.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p6",
+    "problemId": "amc12a-2016-p6",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "Use the formula for the sum of consecutive positive integers.",
+    "detailedSteps": [
+      "The total gives $N(N+1)/2=2016$, or $N(N+1)=4032$. Since $63\\cdot64=4032$, we have $N=63$.",
+      "The triangular sums strictly increase for positive $N$, so this solution is unique. The requested digit sum is $6+3=9$."
+    ],
+    "keyIdeas": [
+      "Arithmetic series",
+      "Digit sums"
+    ],
+    "commonMistakes": [
+      "The requested answer is the digit sum of the number of rows, not the number of rows itself."
+    ],
+    "difficultyNotes": "Triangular numbers.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p7",
+    "problemId": "amc12a-2016-p7",
+    "finalAnswer": "$\\boxed{\\text{Three lines}}$ (choice D)",
+    "shortExplanation": "Factor the equation without canceling a factor that may be zero.",
+    "detailedSteps": [
+      "Moving everything to one side gives $$(x^2-y^2)(x+y+1)=(x-y)(x+y)(x+y+1)=0.$$",
+      "The graph is the union of $y=x$, $y=-x$, and $y=-x-1$. The latter two are distinct parallel lines, so the three lines do not share one common point. This is choice D."
+    ],
+    "keyIdeas": [
+      "Zero product property",
+      "Union of graphs"
+    ],
+    "commonMistakes": [
+      "Canceling $x+y+1$ would discard an entire line of solutions."
+    ],
+    "difficultyNotes": "Factoring a plane equation.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p8",
+    "problemId": "amc12a-2016-p8",
+    "finalAnswer": "$\\boxed{\\frac{13}{2}}$ (choice D)",
+    "shortExplanation": "Use central symmetry to locate the crossing, then split the shaded regions into triangles.",
+    "detailedSteps": [
+      "Place the rectangle at $0\\le x\\le8$, $0\\le y\\le5$. The two drawn segments join $(1,5)$ to $(7,0)$ and $(0,4)$ to $(8,1)$. Each pair of endpoints has midpoint $O=(4,5/2)$, so the segments meet there.",
+      "The upper-left shaded quadrilateral has two unit edges along the top and left sides. Joining its corner $(0,5)$ to $O$ splits it into triangles of areas $\\tfrac12\\cdot1\\cdot\\tfrac52$ and $\\tfrac12\\cdot1\\cdot4$.",
+      "The other shaded region is its half-turn image. Their total area is $2(5/4+2)=13/2$."
+    ],
+    "keyIdeas": [
+      "Central symmetry",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "The crossing is the rectangle center because both segments have that midpoint, not merely because the sketch looks symmetric."
+    ],
+    "difficultyNotes": "Symmetry and area.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p9",
+    "problemId": "amc12a-2016-p9",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "Express the gap between two corner squares in two ways.",
+    "detailedSteps": [
+      "Let the common side length be $s$. The horizontal gap between the inner corners of the two upper corner squares is $1-2s$. Those same points are midpoints of adjacent sides of the middle square.",
+      "The segment joining adjacent side midpoints is half a diagonal, so its length is $s/\\sqrt2$. Thus $1-2s=s/\\sqrt2$, giving $$s=\\frac{\\sqrt2}{2\\sqrt2+1}=\\frac{4-\\sqrt2}{7}.$$",
+      "Therefore $a=4$, $b=7$, and $a+b=11$."
+    ],
+    "keyIdeas": [
+      "Midpoint theorem",
+      "Rationalizing denominators"
+    ],
+    "commonMistakes": [
+      "The gap joins side midpoints of the central square; its length is not the full side length."
+    ],
+    "difficultyNotes": "Congruent squares.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p10",
+    "problemId": "amc12a-2016-p10",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "The sum of all occupied seat numbers stays fixed.",
+    "detailedSteps": [
+      "Bea changes her seat number by $+2$ and Ceci by $-1$, while the exchange of Dee and Edie changes their combined seat sum by $0$. Therefore the remaining seat for Ada must have a number one less than her original seat.",
+      "Her new seat is an end seat, numbered $1$ or $5$. Her original seat would therefore be $2$ or $6$. Only $2$ is in the row."
+    ],
+    "keyIdeas": [
+      "Invariants",
+      "Eliminating impossible cases"
+    ],
+    "commonMistakes": [
+      "Consider the total effect of both individual moves; following just one friend does not determine Ada's seat."
+    ],
+    "difficultyNotes": "Invariant seat sum.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p11",
+    "problemId": "amc12a-2016-p11",
+    "finalAnswer": "$\\boxed{64}$ (choice E)",
+    "shortExplanation": "Count talent memberships and compare them with the number of students.",
+    "detailedSteps": [
+      "The numbers of students who can sing, dance, and act are $58$, $35$, and $71$, totaling $164$ talent memberships.",
+      "Every student contributes at least one membership, and nobody contributes three. Thus each student with two talents contributes exactly one membership beyond the baseline of $100$. There are $164-100=64$ such students."
+    ],
+    "keyIdeas": [
+      "Double counting",
+      "Set memberships"
+    ],
+    "commonMistakes": [
+      "The given numbers describe students who lack each talent, so take their complements first."
+    ],
+    "difficultyNotes": "Counting memberships.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p12",
+    "problemId": "amc12a-2016-p12",
+    "finalAnswer": "$\\boxed{2:1}$ (choice C)",
+    "shortExplanation": "Combine the angle-bisector theorem with the incenter's equal distances to the sides.",
+    "detailedSteps": [
+      "The angle-bisector theorem gives $BD:DC=AB:AC=3:4$. Since $BC=7$, this yields $BD=3$.",
+      "The intersection $F$ of the two internal angle bisectors is the incenter. If its perpendicular distance to each side is $r$, then $[ABF]=6r/2$ and $[BDF]=3r/2$, so their area ratio is $2:1$.",
+      "These triangles also have bases $AF$ and $FD$ on the same line $AD$ and share the altitude from $B$. Hence $AF:FD=2:1$."
+    ],
+    "keyIdeas": [
+      "Angle-bisector theorem",
+      "Incenter",
+      "Area ratios"
+    ],
+    "commonMistakes": [
+      "Equal distances from the incenter apply to the lines containing the triangle sides, not to the vertices."
+    ],
+    "difficultyNotes": "Angle bisectors and area ratios.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p13",
+    "problemId": "amc12a-2016-p13",
+    "finalAnswer": "$\\boxed{12}$ (choice A)",
+    "shortExplanation": "Count the favorable positions of the red ball exactly, including both endpoints.",
+    "detailedSteps": [
+      "Write $N=5m$. The number $j$ of green balls to the left of the red ball is uniform on $0,1,\\ldots,5m$. The event occurs when $j\\le2m$ or $j\\ge3m$. These disjoint ranges contain $4m+2$ positions.",
+      "Therefore $$P(N)=\\frac{4m+2}{5m+1}=\\frac45+\\frac{6}{5(N+1)}.$$",
+      "Since $321/400=4/5+1/400$, the strict inequality requires $N+1>480$. The least multiple of $5$ is $N=480$, whose digit sum is $12$."
+    ],
+    "keyIdeas": [
+      "Uniform insertion positions",
+      "Boundary counting"
+    ],
+    "commonMistakes": [
+      "There are $N+1$ positions for the red ball. The word at least includes the endpoints of both favorable ranges."
+    ],
+    "difficultyNotes": "Uniform positions and strict inequalities.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p14",
+    "problemId": "amc12a-2016-p14",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Fix the vertex labeled one and classify the label at the opposite vertex.",
+    "detailedSteps": [
+      "Opposite faces partition the labels, whose sum is $36$. Thus each face must sum to $18$. Rotate a labeling so that $1$ is at vertex $(0,0,0)$, and call its three neighbors $a,b,c$, in the positive coordinate directions. Let the opposite vertex have label $g$.",
+      "The labels at $(1,1,0)$, $(1,0,1)$, and $(0,1,1)$ must be $17-a-b$, $17-a-c$, and $17-b-c$. Summing all eight labels gives $a+b+c=16+g$. Consequently the three labels opposite $a,b,c$ are respectively $a+1-g$, $b+1-g$, and $c+1-g$.",
+      "The six labels other than $1,g$ therefore split into three pairs with common difference $g-1$, with $a,b,c$ the larger members. For $g=2$, the only pairing is $(3,4),(5,6),(7,8)$. For $g=3$, it is $(2,4),(5,7),(6,8)$. For $g=5$, it is $(2,6),(3,7),(4,8)$. In each case the larger members sum to $16+g$, so all six face conditions hold.",
+      "The other values fail: when $g=4,6,7$, respectively the labels $7,4,3$ have no possible partner at the required difference. For $g=8$, no pair of available labels differs by $7$.",
+      "For each of the three valid values of $g$, assign the larger labels to the three ordered neighbors in $3!=6$ ways. The rotations fixing the vertex labeled $1$ are precisely the three cyclic rotations around its body diagonal. They act without fixed labelings because all labels are distinct. Thus each case contributes $6/3=2$ arrangements, for a total of $6$."
+    ],
+    "keyIdeas": [
+      "Face-sum constraints",
+      "Finite classification",
+      "Rotational symmetry"
+    ],
+    "commonMistakes": [
+      "Reflections are not allowed. Dividing by all six permutations of the three neighboring directions would incorrectly identify reflected labelings."
+    ],
+    "difficultyNotes": "Cube labelings up to rotation.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p15",
+    "problemId": "amc12a-2016-p15",
+    "finalAnswer": "$\\boxed{\\sqrt6-\\sqrt2}$ (choice D)",
+    "shortExplanation": "Use the radii for the vertical coordinates and tangency for the horizontal gaps.",
+    "detailedSteps": [
+      "Take the common tangent as the horizontal axis and place $P=(0,1)$. Since $PQ=3$ and the vertical difference is $1$, the horizontal difference is $\\sqrt{3^2-1}=2\\sqrt2$. Thus $Q=(2\\sqrt2,2)$.",
+      "Similarly, $QR=5$ and its vertical difference is $1$, so its horizontal difference is $2\\sqrt6$. The specified order of the tangency points gives $R=(2\\sqrt2+2\\sqrt6,3)$.",
+      "The determinant of $\\overrightarrow{PQ}$ and $\\overrightarrow{PR}$ gives the area $$\\frac12\\left|4\\sqrt2-(2\\sqrt2+2\\sqrt6)\\right|=\\sqrt6-\\sqrt2.$$"
+    ],
+    "keyIdeas": [
+      "External tangency",
+      "Pythagorean theorem",
+      "Determinant area"
+    ],
+    "commonMistakes": [
+      "The center distances equal sums of radii, while their vertical differences equal differences of radii."
+    ],
+    "difficultyNotes": "Tangent circles and coordinates.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p16",
+    "problemId": "amc12a-2016-p16",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "Use a single logarithmic parameter and keep track of excluded bases.",
+    "detailedSteps": [
+      "Let $t=\\log_3x$. The four graph heights are $t$, $1/t$, $-t$, and $-1/t$, with the reciprocal expressions defined only for $t\\ne0$.",
+      "For nonzero $t$, the equalities $t=1/t$ and $-t=-1/t$ require $t=\\pm1$. They give the four distinct points $(3,1),(3,-1),(1/3,1),(1/3,-1)$. The cross-sign reciprocal equalities require $t^2=-1$ and give no real points; $1/t=-1/t$ is impossible.",
+      "The two fixed-base graphs also meet when $t=-t=0$, giving $(1,0)$. The other two graphs are undefined there. Therefore there are $4+1=5$ points."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Domain restrictions",
+      "Distinct intersections"
+    ],
+    "commonMistakes": [
+      "Pairwise graph intersections must be counted as distinct points, and base $1$ is not permitted in the variable-base logarithms."
+    ],
+    "difficultyNotes": "Logarithmic graph intersections.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p17",
+    "problemId": "amc12a-2016-p17",
+    "finalAnswer": "$\\boxed{\\frac{2+\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "Normalize the original square and locate two adjacent triangle centers.",
+    "detailedSteps": [
+      "Let the square be $[0,1]^2$. An outward equilateral triangle on the bottom edge has center $E=(1/2,-\\sqrt3/6)$; the one on the right edge has center $F=(1+\\sqrt3/6,1/2)$. The center lies one-third of the triangle's altitude from its base.",
+      "A quarter-turn about the square's center sends each new center to the next, so $EFGH$ is a square. Its area is its squared side length: $$EF^2=2\\left(\\frac12+\\frac{\\sqrt3}{6}\\right)^2=\\frac{2+\\sqrt3}{3}.$$",
+      "The original square has area $1$, so this is also the required ratio."
+    ],
+    "keyIdeas": [
+      "Equilateral-triangle centers",
+      "Rotational symmetry",
+      "Coordinate distance"
+    ],
+    "commonMistakes": [
+      "Use the triangle center, not its outermost vertex; its distance from the base is one-third of the altitude."
+    ],
+    "difficultyNotes": "Centers of equilateral triangles.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p18",
+    "problemId": "amc12a-2016-p18",
+    "finalAnswer": "$\\boxed{325}$ (choice D)",
+    "shortExplanation": "The small prime factorization of the divisor count severely restricts the exponents.",
+    "detailedSteps": [
+      "Let the exponents of $2,5,11$ in $n$ be $a,b,c$. In $110n^3$, these primes contribute factors $3a+2$, $3b+2$, and $3c+2$ to the divisor count. Each factor is at least $2$.",
+      "The total divisor count is $110=2\\cdot5\\cdot11$, which has only three prime factors counted with multiplicity. Hence the three displayed factors must be $2,5,11$ in some order, and no other prime can divide $n$. Therefore the corresponding exponents are $0,1,3$ in some order.",
+      "In $81n^4$, the prime $3$ has exponent $4$, while the exponents at $2,5,11$ are $0,4,12$ in some order. Its divisor count is $(4+1)(0+1)(4+1)(12+1)=325$."
+    ],
+    "keyIdeas": [
+      "Divisor function",
+      "Prime-exponent constraints"
+    ],
+    "commonMistakes": [
+      "The multiplier $81$ introduces a new prime factor because the previous divisor-count argument excludes $3$ from $n$."
+    ],
+    "difficultyNotes": "Divisor counts and exponents.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p19",
+    "problemId": "amc12a-2016-p19",
+    "finalAnswer": "$\\boxed{151}$ (choice B)",
+    "shortExplanation": "Reflect each path after its first visit to four.",
+    "detailedSteps": [
+      "Among the $2^8$ equally likely walks, there are $\\binom86=28$ ending at $4$, $\\binom87=8$ ending at $6$, and one ending at $8$. All of these visit $4$.",
+      "Reflecting every step after the first visit to $4$ pairs a walk that visits $4$ and ends below $4$ with one ending above $4$. The reflection is reversible, and the possible final positions above $4$ are $6$ and $8$. Thus there are another $8+1=9$ successful walks ending below $4$.",
+      "The desired probability is $(28+9+9)/256=23/128$. Its reduced numerator and denominator sum to $151$."
+    ],
+    "keyIdeas": [
+      "Random walks",
+      "Reflection bijection"
+    ],
+    "commonMistakes": [
+      "Ending below $4$ does not mean that the walk never visited $4$ earlier."
+    ],
+    "difficultyNotes": "Reflection principle.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p20",
+    "problemId": "amc12a-2016-p20",
+    "finalAnswer": "$\\boxed{109}$ (choice A)",
+    "shortExplanation": "Use the identities to determine the operation before solving the equation.",
+    "detailedSteps": [
+      "In $a\\diamond(b\\diamond c)=(a\\diamond b)c$, set $c=b$. Because $b\\diamond b=1$, this gives $a\\diamond1=(a\\diamond b)b$.",
+      "Now set $b=a$. The right side is $a$, so $a\\diamond1=a$. Substituting back yields $a\\diamond b=a/b$ for nonzero $a,b$. This division operation also satisfies both original identities.",
+      "The required equation becomes $2016/(6/x)=100$, or $336x=100$. Hence $x=25/84$ in lowest terms, and $25+84=109$."
+    ],
+    "keyIdeas": [
+      "Functional identities",
+      "Strategic substitutions"
+    ],
+    "commonMistakes": [
+      "The operation is not associative; respect the parentheses when simplifying the original equation."
+    ],
+    "difficultyNotes": "Determining an operation.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p21",
+    "problemId": "amc12a-2016-p21",
+    "finalAnswer": "$\\boxed{500}$ (choice E)",
+    "shortExplanation": "Relate the fourth chord to three equal minor central angles.",
+    "detailedSteps": [
+      "Write $R=200\\sqrt2$ and let $\\theta$ be the minor central angle for a chord of length $200$. Then $\\sin(\\theta/2)=200/(2R)=1/(2\\sqrt2)$.",
+      "The three given sides occur consecutively around the quadrilateral. Their arcs between consecutive vertices must all be minor arcs: if one used the major arc $2\\pi-\\theta$, the other two arcs would add at least $2\\theta$, exceeding a full circle.",
+      "The remaining arc has angle $2\\pi-3\\theta$, so the fourth chord has length $2R\\sin(3\\theta/2)$. Put $s=1/(2\\sqrt2)$ and apply the triple-angle identity: $$2R(3s-4s^3)=400\\sqrt2\\cdot\\frac{5}{4\\sqrt2}=500.$$"
+    ],
+    "keyIdeas": [
+      "Chord formula",
+      "Cyclic order",
+      "Triple-angle identity"
+    ],
+    "commonMistakes": [
+      "The fourth chord does not subtend the same angle as the first three; account for the full circle and the remaining arc."
+    ],
+    "difficultyNotes": "Equal chords and triple angles.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p22",
+    "problemId": "amc12a-2016-p22",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "Count choices independently at each prime.",
+    "detailedSteps": [
+      "The given least common multiples factor as $72=2^3 3^2$, $600=2^3\\cdot3\\cdot5^2$, and $900=2^2 3^2 5^2$. No other prime can occur in $x,y,z$.",
+      "For the prime $2$, the exponent in $x$ must be $3$, and the exponents in $y,z$ are at most $2$ with maximum exactly $2$. This gives $3^2-2^2=5$ choices.",
+      "For the prime $3$, the exponent in $y$ must be $2$, and those in $x,z$ are at most $1$ with maximum $1$. This gives $2^2-1^2=3$ choices.",
+      "For the prime $5$, the exponents in $x,y$ are zero and that in $z$ is $2$, giving one choice. Multiplying the independent counts gives $5\\cdot3\\cdot1=15$."
+    ],
+    "keyIdeas": [
+      "Least common multiples",
+      "Independent prime exponents"
+    ],
+    "commonMistakes": [
+      "An exponent in a least common multiple is a maximum, not a sum."
+    ],
+    "difficultyNotes": "Prime exponents in least common multiples.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p23",
+    "problemId": "amc12a-2016-p23",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice C)",
+    "shortExplanation": "Compute the volume where one number is at least the sum of the other two.",
+    "detailedSteps": [
+      "For independent uniform $x,y,z$ in the unit interval, one failure event is $z\\ge x+y$. For fixed $x,y$ with $x+y\\le1$, the available interval of $z$ has length $1-x-y$. Its probability is $$\\int_0^1\\int_0^{1-x}(1-x-y)\\,dy\\,dx=\\frac16.$$",
+      "There are three symmetric failure events, according to which variable is at least the sum of the other two. They overlap only on sets of volume zero. Degenerate triangles also have probability zero, so the probability of positive area is $1-3/6=1/2$."
+    ],
+    "keyIdeas": [
+      "Geometric probability",
+      "Triangle inequalities",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "These are three independently chosen side lengths; the broken-stick model describes a different probability experiment."
+    ],
+    "difficultyNotes": "Triangle inequalities and volume.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p24",
+    "problemId": "amc12a-2016-p24",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "Show the roots are positive, then compare their product and sum.",
+    "detailedSteps": [
+      "Let the three real roots be $r,s,t$. Vieta's formulas give $r+s+t=a$, $rs+rt+st=b$, and $rst=a$, with $a,b>0$. None of the roots is zero.",
+      "If two roots were negative, write them as $-u,-v$ with $u,v>0$ and the third as $w>0$. Positive sum would require $w>u+v$, but then $b=uv-w(u+v)<0$, a contradiction. Because the product is positive, these and the all-positive case exhaust the possible signs. Thus all three roots are positive.",
+      "AM-GM now gives $a=rst\\le((r+s+t)/3)^3=a^3/27$. Dividing by $a>0$ yields $a\\ge3\\sqrt3$.",
+      "Equality is attained when all three roots equal $\\sqrt3$, since $$(x-\\sqrt3)^3=x^3-3\\sqrt3x^2+9x-3\\sqrt3.$$ Therefore the smallest possible $a$ is $3\\sqrt3$. Equality in AM-GM forces these same three equal roots, so $b$ is uniquely $9$."
+    ],
+    "keyIdeas": [
+      "Vieta's formulas",
+      "Signs of roots",
+      "AM-GM equality"
+    ],
+    "commonMistakes": [
+      "Real roots need not be positive in general. Establish their signs before applying AM-GM."
+    ],
+    "difficultyNotes": "Real roots and AM-GM.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2016-p25",
+    "problemId": "amc12a-2016-p25",
+    "finalAnswer": "$\\boxed{8064}$ (choice E)",
+    "shortExplanation": "Locate the first skipped integer for every even digit count, then add the resulting decimal patterns.",
+    "detailedSteps": [
+      "For $k=2m$, set $M=10^m$ and $N=M^2$. Bernardo begins with $M^2$, and after erasing the last $2m$ digits the displayed values are $q_r=\\lfloor r^2/N\\rfloor$, starting at $r=M$ with $q_M=1$.",
+      "For $M\\le r<N/2$, the increment in the unrounded quantities is $(2r+1)/N<1$, so consecutive displayed values differ by at most $1$. In particular, no positive integer is skipped before reaching $r=N/2$.",
+      "Write $r=N/2+j$, where $j\\ge0$. Since $N$ is divisible by $4$, $$q_r=\\frac N4+j+\\left\\lfloor\\frac{j^2}{N}\\right\\rfloor.$$ For $0\\le j<M$, the final floor is zero; at $j=M$, it becomes one. Hence the first jump of size $2$ is from $N/4+M-1$ to $N/4+M+1$, and the first missing integer is $f(2m)=N/4+M$.",
+      "There are $1008$ terms in the requested sum. Its contribution from the $N/4$ terms is $25\\sum_{j=0}^{1007}100^j$, whose decimal representation consists of $1008$ copies of the block $25$. The contribution from the $M$ terms is $\\sum_{m=1}^{1008}10^m$, whose decimal representation has $1008$ ones followed by a zero.",
+      "Adding these two integers produces no carries: the first has only digits $2,5$, and the second has only $0,1$. Their digit sums therefore add to $7\\cdot1008+1008=8064$."
+    ],
+    "keyIdeas": [
+      "Floor increments",
+      "First-gap arguments",
+      "Decimal carries"
+    ],
+    "commonMistakes": [
+      "A formula for a later gap is insufficient: prove that no earlier pair of displayed values differs by two. Also check carries before adding digit sums."
+    ],
+    "difficultyNotes": "Floors of squares and digit sums.",
+    "alternativeMethods": [],
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

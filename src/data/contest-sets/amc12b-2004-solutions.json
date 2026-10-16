@@ -1,0 +1,517 @@
+[
+  {
+    "id": "solution-amc12b-2004-p1",
+    "problemId": "amc12b-2004-p1",
+    "finalAnswer": "$\\boxed{3}$ (choice A)",
+    "shortExplanation": "Four doublings separate the first and fifth practices.",
+    "detailedSteps": [
+      "If the first count is $t$, the fifth is $2^4t=48$. Hence $t=48/16=3$."
+    ],
+    "keyIdeas": [
+      "Geometric growth"
+    ],
+    "commonMistakes": [
+      "There are four increases between five practices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count transitions before applying the growth factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p2",
+    "problemId": "amc12b-2004-p2",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "The assignment $a=3,b=2,c=1,d=0$ gives the maximum $9$.",
+    "detailedSteps": [
+      "When $b\\leq1$, the expression cannot exceed $6$: for $b=1$ the remaining two nonzero factors are at most $3,2$, and subtraction cannot increase the result.",
+      "For $b=2$, the possible bases are $0,1,3$; the largest products $ca^b$ in those cases are $0,3,9$. For $b=3$, the bases $0,1,2$ give largest products $0,2,8$.",
+      "Therefore no assignment exceeds $9$, attained with $(a,b,c,d)=(3,2,1,0)$."
+    ],
+    "keyIdeas": [
+      "Finite optimization"
+    ],
+    "commonMistakes": [
+      "Every one of 0,1,2,3 must be used exactly once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A few exponent cases establish the global maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p3",
+    "problemId": "amc12b-2004-p3",
+    "finalAnswer": "$\\boxed{8}$ (choice A)",
+    "shortExplanation": "The prime exponents are $x=y=4$.",
+    "detailedSteps": [
+      "Factor $1296=6^4=2^4 3^4$. Unique prime factorization gives $x=4$ and $y=4$, so $x+y=8$."
+    ],
+    "keyIdeas": [
+      "Unique prime factorization"
+    ],
+    "commonMistakes": [
+      "The x and y are exponents in the original expression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime factorization determines the exponents uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p4",
+    "problemId": "amc12b-2004-p4",
+    "finalAnswer": "$\\boxed{\\frac15}$ (choice B)",
+    "shortExplanation": "There are $18$ qualifying numbers among $90$.",
+    "detailedSteps": [
+      "Ten numbers have tens digit $7$, and nine two-digit numbers have ones digit $7$. The number $77$ is counted in both lists.",
+      "Thus the count is $10+9-1=18$, and the probability is $18/90=1/5$."
+    ],
+    "keyIdeas": [
+      "Digit inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Subtract the overlapping number 77 once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inclusion-exclusion handles the digit overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p5",
+    "problemId": "amc12b-2004-p5",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The original dollar amount is $140$.",
+    "detailedSteps": [
+      "The exchange gives $10d/7$ Canadian dollars. After spending $60$, the remainder equation is $10d/7-60=d$.",
+      "Hence $3d/7=60$ and $d=140$. Its digit sum is $1+4+0=5$."
+    ],
+    "keyIdeas": [
+      "Currency conversion"
+    ],
+    "commonMistakes": [
+      "The final d is a Canadian-dollar amount; the conversion applies to the initial amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the two currencies distinct in the equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p6",
+    "problemId": "amc12b-2004-p6",
+    "finalAnswer": "$\\boxed{13}$ (choice A)",
+    "shortExplanation": "The two airport-to-city segments are perpendicular, giving distance $\\sqrt{164}$.",
+    "detailedSteps": [
+      "From the airport, St. Paul lies northeast and Minneapolis northwest. These compass directions differ by a right angle.",
+      "The distance between downtowns is therefore $\\sqrt{8^2+10^2}=\\sqrt{164}\\approx12.806$, closest to $13$."
+    ],
+    "keyIdeas": [
+      "Compass directions"
+    ],
+    "commonMistakes": [
+      "The distances are legs of a right triangle, not collinear segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compass directions determine the included angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p7",
+    "problemId": "amc12b-2004-p7",
+    "finalAnswer": "$\\boxed{100+75\\pi}$ (choice B)",
+    "shortExplanation": "The common region is a quarter of the circle.",
+    "detailedSteps": [
+      "The square has area $100$, the circle has area $100\\pi$, and their intersection is a quarter disk of area $25\\pi$.",
+      "By inclusion-exclusion, the union area is $100+100\\pi-25\\pi=100+75\\pi$."
+    ],
+    "keyIdeas": [
+      "Union areas"
+    ],
+    "commonMistakes": [
+      "Adding the two areas directly counts the quarter disk twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify the overlap before adding areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p8",
+    "problemId": "amc12b-2004-p8",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "shortExplanation": "The first $r$ odd numbers sum to $r^2$.",
+    "detailedSteps": [
+      "The row sizes are $1,3,5,\\ldots,2r-1$. Their sum is $r^2=100$, so $r=10$."
+    ],
+    "keyIdeas": [
+      "Odd-number sums"
+    ],
+    "commonMistakes": [
+      "Each row increases by two cans, not by one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The display is a sum of consecutive odd numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p9",
+    "problemId": "amc12b-2004-p9",
+    "finalAnswer": "$\\boxed{(3,2)}$ (choice E)",
+    "shortExplanation": "The clockwise rotation gives $(2,3)$, and reflection exchanges its coordinates.",
+    "detailedSteps": [
+      "A $90^\\circ$ clockwise rotation maps $(x,y)$ to $(y,-x)$, so $(-3,2)$ becomes $(2,3)$.",
+      "Reflection in $y=x$ exchanges coordinates, giving $C=(3,2)$."
+    ],
+    "keyIdeas": [
+      "Coordinate transformations"
+    ],
+    "commonMistakes": [
+      "Clockwise and counterclockwise rotations have opposite signs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the transformations in the stated order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p10",
+    "problemId": "amc12b-2004-p10",
+    "finalAnswer": "$\\boxed{\\pi a^2}$ (choice A)",
+    "shortExplanation": "The tangent segment satisfies $a^2=b^2-c^2$.",
+    "detailedSteps": [
+      "The radius $OZ$ is perpendicular to tangent $XZ$. Thus the right triangle $OXZ$ gives $b^2=a^2+c^2$.",
+      "The annulus area is $\\pi(b^2-c^2)=\\pi a^2$."
+    ],
+    "keyIdeas": [
+      "Tangent-radius triangles"
+    ],
+    "commonMistakes": [
+      "Use the tangent length a, not the gap between the circles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangent triangle contains the exact difference of squared radii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p11",
+    "problemId": "amc12b-2004-p11",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "The five perfect scores force at least thirteen students.",
+    "detailedSteps": [
+      "With $n$ students, the total is at least $5(100)+60(n-5)=60n+200$. Its required value is $76n$.",
+      "Therefore $16n\\geq200$, so $n\\geq13$. This is attainable with five scores of $100$, one of $68$ and seven of $60$: the total is $988=13(76)$."
+    ],
+    "keyIdeas": [
+      "Mean bounds"
+    ],
+    "commonMistakes": [
+      "A lower bound needs a score list that attains the smallest integer class size."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum allowed score turns the average into an inequality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p12",
+    "problemId": "amc12b-2004-p12",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "Even-indexed terms equal $2004-n$, so the requested term is zero.",
+    "detailedSteps": [
+      "The recurrence is $u_n=u_{n-3}+u_{n-2}-u_{n-1}$. The first three terms match the formulas $u_n=2000+n$ for odd $n$, and $u_n=2004-n$ for even $n$.",
+      "Substituting those formulas into the recurrence verifies them for each parity, so induction extends them to every index.",
+      "Since $2004$ is even, $u_{2004}=2004-2004=0$."
+    ],
+    "keyIdeas": [
+      "Alternating recurrence formulas"
+    ],
+    "commonMistakes": [
+      "Preserve which of the preceding three terms is subtracted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The recurrence has a simple alternating linear pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p13",
+    "problemId": "amc12b-2004-p13",
+    "finalAnswer": "$\\boxed{-2}$ (choice A)",
+    "shortExplanation": "Composing the two formulas forces $a=b=-1$.",
+    "detailedSteps": [
+      "The identity $f(f^{-1}(x))=x$ gives $abx+a^2+b=x$. Therefore $ab=1$ and $b=-a^2$.",
+      "Substitution yields $-a^3=1$. The unique real solution is $a=-1$, hence $b=-1$ and $a+b=-2$."
+    ],
+    "keyIdeas": [
+      "Inverse linear functions"
+    ],
+    "commonMistakes": [
+      "An inverse must satisfy the identity for all x, not just a sample value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare the coefficient and constant term separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p14",
+    "problemId": "amc12b-2004-p14",
+    "finalAnswer": "$\\boxed{\\frac{240}{13}}$ (choice D)",
+    "shortExplanation": "Subtract two smaller right triangles from the $5$-$12$-$13$ triangle.",
+    "detailedSteps": [
+      "The original triangle is right at $C$ and has area $30$. Since $CM=4$ and $CN=4$, we have $AM=1$ and $BN=8$.",
+      "Both $AMJ$ and $BNK$ are similar to $ABC$. Their hypotenuse ratios to $AB=13$ are $1/13$ and $8/13$, so their areas are $30/169$ and $1920/169$.",
+      "The pentagon is the remainder: $30-30/169-1920/169=240/13$."
+    ],
+    "keyIdeas": [
+      "Similar triangle area subtraction"
+    ],
+    "commonMistakes": [
+      "Area scales with the square of the length ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two removed triangles share the original acute angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p15",
+    "problemId": "amc12b-2004-p15",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "The ages are $31$ and $13$.",
+    "detailedSteps": [
+      "Write the ages as $10a+b$ and $10b+a$. The future-age equation gives $10a+b+5=2(10b+a+5)$, or $8a-19b=5$.",
+      "Modulo $8$, this requires $b\\equiv1\\pmod8$. The digit $b=9$ would force $a=22$, impossible; $b=1$ gives $a=3$.",
+      "The age difference is $31-13=18$."
+    ],
+    "keyIdeas": [
+      "Reversed age digits"
+    ],
+    "commonMistakes": [
+      "Five years must be added to both ages before doubling."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A digit congruence makes the possibilities very small.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p16",
+    "problemId": "amc12b-2004-p16",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The fixed points lie on $y=x$, which meets the radius-five circle twice.",
+    "detailedSteps": [
+      "For $z=x+iy$, we have $i\\overline z=y+ix$. Equality with $z$ requires $x=y$.",
+      "The modulus condition becomes $2x^2=25$, giving $x=\\pm5/\\sqrt2$. Thus there are two values of $z$."
+    ],
+    "keyIdeas": [
+      "Complex conjugation"
+    ],
+    "commonMistakes": [
+      "Conjugation changes the sign of the imaginary component before multiplication by i."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate real and imaginary parts before applying the magnitude condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p17",
+    "problemId": "amc12b-2004-p17",
+    "finalAnswer": "$\\boxed{-256}$ (choice A)",
+    "shortExplanation": "The product of the three roots is $2^5=32$.",
+    "detailedSteps": [
+      "The sum of their base-two logarithms is the logarithm of their product. Thus the root product is $32$.",
+      "For the given cubic, Vieta gives root product $-a/8$. Hence $-a/8=32$, so $a=-256$."
+    ],
+    "keyIdeas": [
+      "Vieta's product formula"
+    ],
+    "commonMistakes": [
+      "The product of cubic roots has the negative constant-to-leading-coefficient sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the constant and leading coefficients are needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p18",
+    "problemId": "amc12b-2004-p18",
+    "finalAnswer": "$\\boxed{5\\sqrt2}$ (choice E)",
+    "shortExplanation": "The endpoints are $(1/2,7/2)$ and $(-1/2,-7/2)$.",
+    "detailedSteps": [
+      "If one endpoint is $(t,u)$, the midpoint condition makes the other $(-t,-u)$. The two parabola equations add to $0=8t^2-2$, so $t^2=1/4$.",
+      "In either equation, $u=7t$. The endpoints are therefore the stated opposite pair.",
+      "Their distance is $\\sqrt{1^2+7^2}=\\sqrt{50}=5\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Opposite points on a parabola"
+    ],
+    "commonMistakes": [
+      "Opposite endpoints must both lie on the parabola."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adding the two equations removes the odd-degree term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p19",
+    "problemId": "amc12b-2004-p19",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The axial cross section is a tangential trapezoid, whose equal legs have length $20$.",
+    "detailedSteps": [
+      "Let the sphere radius be $r$. Tangency to both horizontal bases makes the frustum height $2r$. The axial cross section has bases $36$ and $4$, with an incircle of radius $r$.",
+      "In a quadrilateral tangent to a circle, opposite side sums agree. Thus the two equal legs sum to $40$, and each leg has length $20$.",
+      "Each leg has horizontal displacement $18-2=16$ and vertical displacement $2r$, giving $16^2+(2r)^2=20^2$. Hence $r=6$."
+    ],
+    "keyIdeas": [
+      "A sphere inscribed in a frustum"
+    ],
+    "commonMistakes": [
+      "Use diameters for the trapezoid bases and radii for the half-section displacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An axial section turns the sphere into an incircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p20",
+    "problemId": "amc12b-2004-p20",
+    "finalAnswer": "$\\boxed{\\frac5{16}}$ (choice B)",
+    "shortExplanation": "Exactly twenty of the sixty-four face colorings work.",
+    "detailedSteps": [
+      "All $2^6=64$ colorings are equally likely. With zero or six red faces, both colorings work. With one or five red faces, all twelve colorings work by placing the lone minority face horizontally.",
+      "With two red faces, they must be opposite so that both can be horizontal; there are three such pairs. With four red faces, the two blue faces must likewise be opposite, giving three more. Three red faces cannot supply four equal vertical faces.",
+      "The total is $2+12+3+3=20$, so the probability is $20/64=5/16$."
+    ],
+    "keyIdeas": [
+      "Opposite cube faces"
+    ],
+    "commonMistakes": [
+      "Different possible base placements may work for the same coloring; count colorings once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classifying by minority-face count avoids overlapping orientation events.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p21",
+    "problemId": "amc12b-2004-p21",
+    "finalAnswer": "$\\boxed{\\frac72}$ (choice C)",
+    "shortExplanation": "The two extreme slopes are roots of $80t^2-280t+199=0$.",
+    "detailedSteps": [
+      "On a line $y=tx$, the ellipse equation becomes $(2+t+3t^2)x^2-(11+20t)x+40=0$.",
+      "The line meets the ellipse when its discriminant is nonnegative: $-80t^2+280t-199\\geq0$. Its limiting slopes are the two roots of $80t^2-280t+199=0$. Both slopes and the corresponding tangent x-coordinates are positive.",
+      "Vieta gives their sum $a+b=280/80=7/2$."
+    ],
+    "keyIdeas": [
+      "Tangent slopes of an ellipse"
+    ],
+    "commonMistakes": [
+      "Use lines through the origin because the optimized quantity is y/x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extremal ratios correspond to tangency.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p22",
+    "problemId": "amc12b-2004-p22",
+    "finalAnswer": "$\\boxed{35}$ (choice C)",
+    "shortExplanation": "The possible lower-left entries are $5,10,20$.",
+    "detailedSteps": [
+      "Let the common line product be $K$. The diagonal through the fixed corners gives $K=100e$. The other diagonal and the middle row/column therefore give $cg=df=bh=100$.",
+      "The product of all nine entries is both $K^3=(100e)^3$ and $100^4e$, using the four opposite pairs. Positivity permits cancellation, giving $e^2=100$, so $e=10$ and $K=1000$.",
+      "All entries are then determined by $g$: $b=g/5$, $c=100/g$, $d=20/g$, $f=5g$, and $h=500/g$. Integrality requires $g$ to divide $20$ and be a multiple of $5$.",
+      "The values $5,10,20$ satisfy every line product, and their sum is $35$."
+    ],
+    "keyIdeas": [
+      "Multiplicative magic squares"
+    ],
+    "commonMistakes": [
+      "All rows, columns and both diagonals must share the product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite pairs first determine the center, then one corner controls the others.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p23",
+    "problemId": "amc12b-2004-p23",
+    "finalAnswer": "$\\boxed{250500}$ (choice C)",
+    "shortExplanation": "There are $251000$ positive-product choices, excluding $500$ choices with two further integer roots.",
+    "detailedSteps": [
+      "Let the integer root be $r$, and the other roots be $s,t$ with $r=s+t$. Vieta gives $r+s+t=2004$, so $r=1002$ and $s+t=1002$.",
+      "The factorization is $(x-1002)(x^2-1002x+p)$, where $p=st$ is an integer because the original coefficient of $x$ is $p+1002^2$. The constant term is $n=-1002p$.",
+      "Two distinct positive roots of the quadratic require $1\\leq p<1002^2/4=251001$, giving $251000$ choices.",
+      "The roots are integers exactly when they equal $501\\pm k$ for some $k=1,\\ldots,500$. These exclude $500$ distinct products $p=251001-k^2$. Every remaining product gives two distinct positive noninteger roots, neither equal to $1002$.",
+      "Thus there are $251000-500=250500$ distinct constant terms."
+    ],
+    "keyIdeas": [
+      "Integer polynomial roots"
+    ],
+    "commonMistakes": [
+      "Exclude perfect-square discriminants as well as repeated or nonpositive roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root-sum condition isolates one fixed integer root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p24",
+    "problemId": "amc12b-2004-p24",
+    "finalAnswer": "$\\boxed{\\frac{50}{3}}$ (choice B)",
+    "shortExplanation": "The progression conditions give $\\tan\\angle DBE=1$ and $\\tan\\angle DBC=1/3$.",
+    "detailedSteps": [
+      "Put $\\theta=\\angle DBE$ and $\\phi=\\angle DBC$. The source diagram has $E$ beyond $C$, so $0<\\phi<\\theta<\\pi/2$ and the other angles are $\\theta-\\phi$ and $\\theta+\\phi$.",
+      "Write $u=\\tan\\theta$ and $v=\\tan\\phi$. The geometric progression says $u^2=\\tan(\\theta-\\phi)\\tan(\\theta+\\phi)=(u^2-v^2)/(1-u^2v^2)$. The factors must be positive, so $\\theta+\\phi<\\pi/2$ and the denominators are nonzero.",
+      "Rearranging gives $v^2(u^4-1)=0$. Since $u,v>0$, $u=1$, hence $\\theta=45^\\circ$.",
+      "The cotangent arithmetic progression now gives $2(1+v)/(1-v)=1+1/v$. Cancelling the positive factor $1+v$ yields $2v=1-v$, so $v=1/3$.",
+      "Because $BE=10$, we have $BD=10\\cos45^\\circ=5\\sqrt2$ and $DC=BD/3$. Therefore $[ABC]=BD\\cdot DC=50/3$."
+    ],
+    "keyIdeas": [
+      "Trigonometric progression constraints"
+    ],
+    "commonMistakes": [
+      "The altitude angle is half the apex angle; preserve the stated progression order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two progression identities determine both shape and scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2004-p25",
+    "problemId": "amc12b-2004-p25",
+    "finalAnswer": "$\\boxed{195}$ (choice B)",
+    "shortExplanation": "Each decimal decade with four powers contributes exactly one leading-four power.",
+    "detailedSteps": [
+      "The given information implies $10^{603}\\leq2^{2004}<2\\cdot10^{603}$. Thus $2^{2003}<10^{603}$, and the set contains all powers of two in the $603$ decades $[10^k,10^{k+1})$, $0\\leq k\\leq602$.",
+      "In one decade, let its first power be $a10^k$, with $1\\leq a<2$. The powers there are $a,2a,4a$ times $10^k$, and additionally $8a10^k$ exactly when $a<5/4$. Thus each decade has three or four powers.",
+      "A leading-four power occurs exactly when $4\\leq4a<5$, equivalently $a<5/4$. It occurs once, precisely in the four-power decades.",
+      "If $q$ decades contain four powers, counting the $2004$ elements gives $2004=3(603-q)+4q=1809+q$. Therefore $q=195$."
+    ],
+    "keyIdeas": [
+      "Leading digits of powers"
+    ],
+    "commonMistakes": [
+      "There are 603 occupied decades, because the endpoint power with 604 digits is excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A decade count avoids approximate logarithms or a leading-digit heuristic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,511 @@
+[
+  {
+    "id": "solution-amc12b-2002-p1",
+    "problemId": "amc12b-2002-p1",
+    "finalAnswer": "$\\boxed{0}$ (choice A)",
+    "shortExplanation": "The mean is $123456789$, so zero is absent.",
+    "detailedSteps": [
+      "Write each number as $10^k-1$, for $1\\leq k\\leq9$. Their sum is $1111111101$.",
+      "Dividing by $9$ gives $M=123456789$, whose digits are precisely $1$ through $9$."
+    ],
+    "keyIdeas": [
+      "Place value"
+    ],
+    "commonMistakes": [
+      "Do not average the number of digits instead of the nine numerical values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A direct calculation is sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p2",
+    "problemId": "amc12b-2002-p2",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "shortExplanation": "Cancel the two terms containing $4x$; the expression becomes $3x-1$.",
+    "detailedSteps": [
+      "Factor $3x-2$ from the first two terms to obtain $(3x-2)((4x+1)-4x)+1=3x-1$.",
+      "At $x=4$, this is $12-1=11$."
+    ],
+    "keyIdeas": [
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "The final $+1$ lies outside the subtracted product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring prevents unnecessary expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p3",
+    "problemId": "amc12b-2002-p3",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Only $n=3$ works, since the expression is $(n-1)(n-2)$.",
+    "detailedSteps": [
+      "For $n=1$ and $n=2$ the value is $0$, which is not prime. For $n=3$ it is $2$.",
+      "For every $n\\geq4$, both $n-1$ and $n-2$ exceed $1$, so their product is composite."
+    ],
+    "keyIdeas": [
+      "Prime factorization"
+    ],
+    "commonMistakes": [
+      "Zero and one are not prime numbers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factorization turns an unbounded search into three cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p4",
+    "problemId": "amc12b-2002-p4",
+    "finalAnswer": "$\\boxed{n>84}$ (choice E)",
+    "shortExplanation": "The integer sum forces $n=42$; the stated lower bound is false.",
+    "detailedSteps": [
+      "The first three fractions sum to $41/42$. Since $0<1/n\\leq1$, the total lies strictly between $0$ and $2$.",
+      "The only possible integer is $1$, so $1/n=1/42$ and $n=42$. This is divisible by $2,3,6,7$ but does not exceed $84$."
+    ],
+    "keyIdeas": [
+      "Unit fractions"
+    ],
+    "commonMistakes": [
+      "Determine the only possible integer before clearing denominators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bound identifies the integer sum uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p5",
+    "problemId": "amc12b-2002-p5",
+    "finalAnswer": "$\\boxed{108}$ (choice D)",
+    "shortExplanation": "The middle angle is the mean of the five angles.",
+    "detailedSteps": [
+      "An arithmetic sequence of five terms has total $5x$, where $x$ is its middle term.",
+      "The interior angles of a pentagon sum to $(5-2)180^\\circ=540^\\circ$, giving $x=108^\\circ$."
+    ],
+    "keyIdeas": [
+      "Polygon angle sums"
+    ],
+    "commonMistakes": [
+      "Use the interior-angle sum, not the exterior-angle sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common difference is irrelevant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p6",
+    "problemId": "amc12b-2002-p6",
+    "finalAnswer": "$\\boxed{(1,-2)}$ (choice C)",
+    "shortExplanation": "The product of the roots forces $a=1$, and their sum then gives $b=-2$.",
+    "detailedSteps": [
+      "Because the roots are $a,b$, Vieta gives $a+b=-a$ and $ab=b$.",
+      "The condition $b\\ne0$ permits division in the second equation, yielding $a=1$. The first equation then gives $b=-2$."
+    ],
+    "keyIdeas": [
+      "Vieta's formulas"
+    ],
+    "commonMistakes": [
+      "Use the nonzero condition when dividing by b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two root-coefficient identities solve the system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p7",
+    "problemId": "amc12b-2002-p7",
+    "finalAnswer": "$\\boxed{77}$ (choice B)",
+    "shortExplanation": "The three integers are $4,5,6$.",
+    "detailedSteps": [
+      "Let the integers be $k-1,k,k+1$ with $k\\geq2$. Their product equals $k(k^2-1)$ and their sum is $3k$.",
+      "The condition is $k(k^2-1)=24k$, so $k^2=25$ and $k=5$. Their squared sum is $16+25+36=77$."
+    ],
+    "keyIdeas": [
+      "Consecutive integers"
+    ],
+    "commonMistakes": [
+      "The middle integer must be positive, so the negative root is inadmissible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centering the triple simplifies both sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p8",
+    "problemId": "amc12b-2002-p8",
+    "finalAnswer": "$\\boxed{\\text{Thursday}}$ (choice D)",
+    "shortExplanation": "All possible August starting days place Thursday among the three extra weekdays.",
+    "detailedSteps": [
+      "A 31-day month contains four complete weeks and three extra consecutive weekdays. For July to have five Mondays, July must start on Saturday, Sunday, or Monday.",
+      "August starts three weekdays later: Tuesday, Wednesday, or Thursday. Its three extra weekdays are therefore Tuesday–Thursday, Wednesday–Friday, or Thursday–Saturday.",
+      "Thursday belongs to all three lists, and none of the other offered weekdays does."
+    ],
+    "keyIdeas": [
+      "Calendar residues"
+    ],
+    "commonMistakes": [
+      "A 31-day month advances the next starting weekday by three, not by one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same argument works without knowing the year.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p9",
+    "problemId": "amc12b-2002-p9",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice C)",
+    "shortExplanation": "The arithmetic increment equals the first term, making the last term four times the first.",
+    "detailedSteps": [
+      "Write the terms as $a,a+r,a+2r,a+3r$ with $r>0$. The geometric condition on $a,b,d$ gives $(a+r)^2=a(a+3r)$.",
+      "Expansion reduces this to $r(r-a)=0$. Since $r>0$, $r=a$, and $a/d=a/(4a)=1/4$."
+    ],
+    "keyIdeas": [
+      "Arithmetic and geometric sequences"
+    ],
+    "commonMistakes": [
+      "The geometric triple omits the third arithmetic term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The scale cancels from the requested ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p10",
+    "problemId": "amc12b-2002-p10",
+    "finalAnswer": "$\\boxed{13}$ (choice A)",
+    "shortExplanation": "The possible sums are $12,15,\\ldots,48$.",
+    "detailedSteps": [
+      "Express the entries as $1+3i$ for $i=0,1,\\ldots,6$. A three-element sum is $3+3(i+j+k)$ with $i<j<k$.",
+      "The smallest index sum is $0+1+2=3$ and the largest is $4+5+6=15$. Every intermediate integer occurs: start at $(0,1,2)$ and repeatedly increment an index while keeping the indices distinct until $(4,5,6)$ is reached.",
+      "Each such increment increases the index sum by one. Thus there are $15-3+1=13$ different sums."
+    ],
+    "keyIdeas": [
+      "Distinct sums"
+    ],
+    "commonMistakes": [
+      "There are 35 triples, but several triples share the same sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count numerical outcomes rather than selections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p11",
+    "problemId": "amc12b-2002-p11",
+    "finalAnswer": "$\\boxed{17}$ (choice E)",
+    "shortExplanation": "The only possible pair is $A=5,B=2$, producing the prime sum $17$.",
+    "detailedSteps": [
+      "Since $A-B>0$, $A>B$. If both primes were odd, $A+B$ would be even and greater than $2$, contradicting primality. Thus $B=2$.",
+      "Now $A-2,A,A+2$ are three odd primes. One is divisible by $3$, so that one must equal $3$. The only feasible placement is $A-2=3$, yielding $A=5$.",
+      "The four primes are $5,2,3,7$, with sum $17$."
+    ],
+    "keyIdeas": [
+      "Parity and primes"
+    ],
+    "commonMistakes": [
+      "An even integer is prime only when it equals 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity reduces the question to three consecutive odd numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p12",
+    "problemId": "amc12b-2002-p12",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The valid integers are $0,10,16,18$.",
+    "detailedSteps": [
+      "The fraction can be nonnegative only for $0\\leq n<20$; $n=20$ is undefined. Put $d=20-n$.",
+      "If $n/(20-n)=k^2$, then $20/d=k^2+1$, so $k^2+1$ must be a positive divisor of $20$.",
+      "Among $1,2,4,5,10,20$, exactly $1,2,5,10$ are one more than an integer square. They give $n=0,10,16,18$."
+    ],
+    "keyIdeas": [
+      "Square rational values"
+    ],
+    "commonMistakes": [
+      "Zero is allowed because n is an integer, not a positive integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sign bound makes the integer search finite.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p13",
+    "problemId": "amc12b-2002-p13",
+    "finalAnswer": "$\\boxed{225}$ (choice B)",
+    "shortExplanation": "The sum is $9$ times an odd integer; the first feasible odd square factor is $25$.",
+    "detailedSteps": [
+      "If the first term is $n\\geq1$, the sum is $18n+153=9(2n+17)$.",
+      "For this to be square, $2n+17$ must be an odd square at least $19$. The least such square is $25$, giving $n=4$ and sum $225$."
+    ],
+    "keyIdeas": [
+      "Squares and consecutive sums"
+    ],
+    "commonMistakes": [
+      "The initial integer must be positive, so the smaller odd squares cannot work."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extracting the fixed square factor exposes the minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p14",
+    "problemId": "amc12b-2002-p14",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "Six pairs of circles can each contribute two different intersection points.",
+    "detailedSteps": [
+      "Each pair of distinct circles intersects in at most two points. Four circles have $\\binom42=6$ pairs, giving an upper bound of $12$.",
+      "To attain it, take four unit circles with distinct nearby centers and perturb the centers slightly so that no three circles share a point. Every pair then intersects twice, and all twelve points are different."
+    ],
+    "keyIdeas": [
+      "Circle intersections"
+    ],
+    "commonMistakes": [
+      "Triple intersections reduce the number of distinct points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum requires both an upper bound and a construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p15",
+    "problemId": "amc12b-2002-p15",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The final three-digit block must be $125$ times the leading digit.",
+    "detailedSteps": [
+      "Write $N=1000a+b$, where $1\\leq a\\leq9$ and $100\\leq b\\leq999$. The condition is $b=N/9$.",
+      "Thus $8b=1000a$, or $b=125a$. Exactly $a=1,2,\\ldots,7$ keeps $b$ three-digit, so there are seven numbers."
+    ],
+    "keyIdeas": [
+      "Decimal truncation"
+    ],
+    "commonMistakes": [
+      "The remaining block must still be a three-digit number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One linear digit equation determines the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p16",
+    "problemId": "amc12b-2002-p16",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice C)",
+    "shortExplanation": "The chance that neither roll is divisible by $3$ is $1/2$.",
+    "detailedSteps": [
+      "On the eight-sided die, six faces are not divisible by $3$. On the six-sided die, four faces are not divisible by $3$.",
+      "The product fails to be a multiple of $3$ exactly when neither factor is. Independence gives probability $(6/8)(4/6)=1/2$, so the desired complement is also $1/2$."
+    ],
+    "keyIdeas": [
+      "Complementary counting"
+    ],
+    "commonMistakes": [
+      "Adding the two divisibility probabilities double-counts rolls where both are multiples of 3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement is shorter than inclusion-exclusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p17",
+    "problemId": "amc12b-2002-p17",
+    "finalAnswer": "$\\boxed{\\text{Beth}}$ (choice B)",
+    "shortExplanation": "Beth needs $3/2$ time units, while Andy and Carlos each need $2$.",
+    "detailedSteps": [
+      "Choose lawn areas in the ratio Andy:Beth:Carlos=$6:3:2$. The mower rates have ratio $3:2:1$.",
+      "Time equals area divided by rate, so the respective times are $2,3/2,2$. Beth finishes first."
+    ],
+    "keyIdeas": [
+      "Rates and work"
+    ],
+    "commonMistakes": [
+      "The fastest mower can still have the largest lawn."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare work divided by speed, not speed alone.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p18",
+    "problemId": "amc12b-2002-p18",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice C)",
+    "shortExplanation": "The perpendicular bisector cuts off area $1/2$ from a rectangle of area $2$.",
+    "detailedSteps": [
+      "For $P=(x,y)$, compare squared distances. The inequality is $x^2+y^2<(x-3)^2+(y-1)^2$, which simplifies to $3x+y<5$.",
+      "For each $0\\leq y\\leq1$, the excluded horizontal width is $2-(5-y)/3=(1+y)/3$. Its area is $\\int_0^1(1+y)/3\\,dy=1/2$.",
+      "The allowed area is $2-1/2=3/2$, so its probability is $(3/2)/2=3/4$. The bisector itself has area zero."
+    ],
+    "keyIdeas": [
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "The excluded region is a trapezoid, not a right triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring distances eliminates square roots without changing the comparison.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p19",
+    "problemId": "amc12b-2002-p19",
+    "finalAnswer": "$\\boxed{720}$ (choice D)",
+    "shortExplanation": "The three pair products are $72,80,90$, and their product is $(abc)^2$.",
+    "detailedSteps": [
+      "Adding the first two equations and subtracting the third gives $2ab=152+162-170=144$. Similarly, $ac=80$ and $bc=90$.",
+      "Multiply: $(abc)^2=72\\cdot80\\cdot90=518400$. Positivity gives $abc=720$."
+    ],
+    "keyIdeas": [
+      "Symmetric pair products"
+    ],
+    "commonMistakes": [
+      "The square root is positive because all three variables are positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pair products avoid solving three nonlinear equations separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p20",
+    "problemId": "amc12b-2002-p20",
+    "finalAnswer": "$\\boxed{26}$ (choice B)",
+    "shortExplanation": "Adding the two squared median equations gives the squared hypotenuse.",
+    "detailedSteps": [
+      "Put $OX=a,OY=b$. By the Pythagorean theorem, $a^2+b^2/4=19^2$ and $a^2/4+b^2=22^2$.",
+      "Adding gives $\\tfrac54(a^2+b^2)=361+484=845$, hence $a^2+b^2=676$. Therefore $XY=26$."
+    ],
+    "keyIdeas": [
+      "Median lengths in a right triangle"
+    ],
+    "commonMistakes": [
+      "The half-leg must be squared, so its coefficient is 1/4."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Adding the equations eliminates the need to find each leg explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p21",
+    "problemId": "amc12b-2002-p21",
+    "finalAnswer": "$\\boxed{448}$ (choice A)",
+    "shortExplanation": "The three nonzero cases occur $10,12,13$ times, respectively.",
+    "detailedSteps": [
+      "The first case requires a multiple of $13\\cdot14=182$. There are $\\lfloor2001/182\\rfloor=10$ such multiples.",
+      "The other cases similarly have $\\lfloor2001/154\\rfloor=12$ and $\\lfloor2001/143\\rfloor=13$ occurrences. If two cases overlapped, $11,13,14$ would all divide $n$, requiring $2002\\mid n$. Since $1\\leq n<2002$, the cases are disjoint.",
+      "The sum is $11\\cdot10+13\\cdot12+14\\cdot13=448$."
+    ],
+    "keyIdeas": [
+      "Weighted divisibility counts"
+    ],
+    "commonMistakes": [
+      "The conditions are positive divisibility statements. Their disjointness follows from the upper bound, so prove it before adding weighted counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The upper limit is one less than the common multiple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p22",
+    "problemId": "amc12b-2002-p22",
+    "finalAnswer": "$\\boxed{-1}$ (choice B)",
+    "shortExplanation": "The difference becomes the logarithm of $1/2002$ to base $2002$.",
+    "detailedSteps": [
+      "By change of base, $1/\\log_n2002=\\log_{2002}n$. Thus sums become logarithms of products.",
+      "Consequently $b-c=\\log_{2002}\\!\\left(\\frac{2\\cdot3\\cdot4\\cdot5}{10\\cdot11\\cdot12\\cdot13\\cdot14}\\right)=\\log_{2002}(1/2002)=-1$."
+    ],
+    "keyIdeas": [
+      "Change of logarithm base"
+    ],
+    "commonMistakes": [
+      "A reciprocal logarithm swaps its base and argument."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chosen factors conceal the base 2002.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p23",
+    "problemId": "amc12b-2002-p23",
+    "finalAnswer": "$\\boxed{\\sqrt2}$ (choice C)",
+    "shortExplanation": "Equating the median and opposite side lengths gives $5BC^2=10$.",
+    "detailedSteps": [
+      "Write $BC=s$ and let $M$ be its midpoint. The median formula gives $AM^2=(2AB^2+2AC^2-BC^2)/4=(10-s^2)/4$.",
+      "Since $AM=s$, we get $4s^2=10-s^2$, so $s^2=2$ and $BC=\\sqrt2$. This also satisfies the triangle inequality $1<s<3$."
+    ],
+    "keyIdeas": [
+      "Apollonius's theorem"
+    ],
+    "commonMistakes": [
+      "The median formula includes twice each adjacent squared side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One standard identity handles a median without an angle calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p24",
+    "problemId": "amc12b-2002-p24",
+    "finalAnswer": "$\\boxed{4(36+\\sqrt{113})}$ (choice E)",
+    "shortExplanation": "The given area attains the maximum possible sum of the four triangle areas, forcing four right angles at $P$.",
+    "detailedSteps": [
+      "Join $P$ to all four vertices. Because $P$ is interior, the quadrilateral area is the sum of these four triangle areas.",
+      "Each triangle area is at most half the product of its two sides from $P$. Their sum is at most $(24\\cdot32+32\\cdot28+28\\cdot45+45\\cdot24)/2=2002$.",
+      "The area equals this bound. Every sine factor must therefore equal $1$, so consecutive segments from $P$ are perpendicular.",
+      "Pythagoras gives $AB=40$, $BC=4\\sqrt{113}$, $CD=53$, and $DA=51$. The perimeter is $144+4\\sqrt{113}=4(36+\\sqrt{113})$."
+    ],
+    "keyIdeas": [
+      "Area equality and right triangles"
+    ],
+    "commonMistakes": [
+      "Attaining the sum of upper bounds forces equality in every individual bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area condition is an equality case, not merely a constraint to estimate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2002-p25",
+    "problemId": "amc12b-2002-p25",
+    "finalAnswer": "$\\boxed{25}$ (choice E)",
+    "shortExplanation": "Translating the center produces a radius-four disk, half of which meets the second inequality.",
+    "detailedSteps": [
+      "Complete the square: $f(x)=(x+3)^2-8$. Put $u=x+3,v=y+3$; translation preserves area.",
+      "The first inequality becomes $u^2+v^2\\leq16$, a disk of radius $4$. The second becomes $u^2\\leq v^2$, or $|u|\\leq|v|$.",
+      "The lines $v=u$ and $v=-u$ divide the disk into four equal sectors. The vertical pair satisfies the condition, so the area is $8\\pi\\approx25.133$, closest to $25$."
+    ],
+    "keyIdeas": [
+      "Quadratic regions"
+    ],
+    "commonMistakes": [
+      "The difference inequality compares squared shifted coordinates, not the original coordinates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A translation and symmetry are more efficient than direct integration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

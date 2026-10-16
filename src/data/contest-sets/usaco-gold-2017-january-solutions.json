@@ -1,0 +1,114 @@
+[
+  {
+    "finalAnswer": "Count strictly taller cows on each side with two Fenwick sweeps over compressed height ranks. A cow is unbalanced exactly when $\\max(L_i,R_i)>2\\min(L_i,R_i)$. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "The height rank lets a prefix-count structure count shorter or equal cows among those already scanned. Subtract from the scanned population to get taller cows. Two scan directions give the left and right counts, which can be compared with an exact strict integer inequality.",
+    "detailedSteps": [
+      "**Keep the original photo order.** $L_i$ and $R_i$ refer to positions on either side of cow $i$, not to a rearranged height order. Sort a copy of the heights solely to assign ranks; leave the actual sequence unchanged. The source guarantees all heights are distinct, allows height zero, and bounds heights by $10^9$.",
+      "**Compress ranks and maintain counts.** Map the sorted heights to one-based ranks. A Fenwick tree stores the number of previously scanned cows at each rank. Its prefix sum through the current rank counts scanned cows that are no taller than the current cow. Subtracting this from the total number scanned gives exactly the number strictly taller.",
+      "**Sweep from the left.** Before inserting cow $i$, the tree contains precisely the cows to its left. Query its taller count and save $L_i$, then insert its rank. The initially empty tree and this update prove the invariant by induction. Querying before insertion prevents the current cow from entering her own side population.",
+      "**Sweep from the right independently.** Clear the tree and scan in the opposite direction. Before each insertion, the stored population is precisely the cows to the right, so the same prefix subtraction gives $R_i$. A fresh tree is essential; the two passes must not mix populations.",
+      "**Use the printed strict factor test.** Compare $\\max(L_i,R_i)$ with $2\\min(L_i,R_i)$ using integers. Equality is balanced. If one side is zero and the other positive, the cow is unbalanced; if both sides are zero, she is balanced. Avoid division, which is undefined for a zero side and can round a ratio incorrectly.",
+      "**Complexity, bounds and output.** Sorting and two Fenwick passes take $O(N\\log N)$ time with $O(N)$ arrays. The actual source has $N\\le100000$, so counts and doubled counts fit ordinary integers; the implementation stores heights as `long long`. Read `bphoto.in` and write the number of unbalanced cows as one integer in `bphoto.out`. A one-cow photo correctly outputs zero.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"bphoto.in\");std::ofstream out(\"bphoto.out\");int n;in >> n;std::vector<long long> height(n),values;for(auto& x:height) in >> x;values=height;std::sort(values.begin(),values.end());\n    std::vector<int> rank(n),left(n),right(n),tree(n+1,0);for(int i=0;i<n;++i) rank[i]=static_cast<int>(std::lower_bound(values.begin(),values.end(),height[i])-values.begin())+1;\n    auto add=[&](int at){for(;at<=n;at+=at&-at) ++tree[at];};\n    auto sum=[&](int at){int count=0;for(;at>0;at-=at&-at) count+=tree[at];return count;};\n    for(int i=0;i<n;++i){left[i]=i-sum(rank[i]);add(rank[i]);}\n    std::fill(tree.begin(),tree.end(),0);\n    for(int i=n-1;i>=0;--i){right[i]=n-1-i-sum(rank[i]);add(rank[i]);}\n    int answer=0;for(int i=0;i<n;++i) if(std::max(left[i],right[i])>2*std::min(left[i],right[i])) ++answer;\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compress height values without sorting the original photo sequence.",
+      "Scanned population minus the rank prefix counts strictly taller cows.",
+      "Use two separate sweeps for the left and right populations.",
+      "The factor-of-two condition is strict and must handle zero counts."
+    ],
+    "commonMistakes": [
+      "Reordering the actual cows by height and losing their left/right positions.",
+      "Counting shorter cows or using a height rather than a population count in the comparison.",
+      "Failing to clear the Fenwick tree between passes.",
+      "Using greater-than-or-equal at the exact factor-two boundary.",
+      "Dividing by a zero side count or assuming heights are positive instead of nonnegative.",
+      "Updating a Fenwick tree at rank zero."
+    ],
+    "alternativeMethods": [
+      "For small photos, directly scan every other cow on each side and count heights strictly greater than the current height. This quadratic literal oracle avoids coordinate compression and Fenwick state.",
+      "Process cows by decreasing height and maintain a position-based order-statistics structure containing only already processed taller cows. This gives the same asymptotic complexity with a different sweep direction."
+    ],
+    "difficultyNotes": "Advanced counting by rank. The important details are preserving the photo order, interpreting strict taller counts, and comparing the exact factor boundary without division.",
+    "id": "solution-usaco-gold-2017-january-p1",
+    "problemId": "usaco-gold-2017-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Use dynamic programming on the game prefix, the exact number of gesture switches used, and the current gesture. Either keep that gesture or switch from one of the other two, then add the current win. Maximize over all switch counts up to $K$. Time is $O(N(K+1))$ and space is $O(N+K+1)$ for the supplied implementation, which stores the input gestures.",
+    "shortExplanation": "A fixed current gesture and switch count summarize every relevant choice from earlier games. Remember the best win count for each such state, update it using the next opponent gesture, and take the best state within the allowed switch budget.",
+    "detailedSteps": [
+      "**Apply the actual game rules.** Hoof beats scissors, scissors beats paper, and paper beats hoof; matching gestures tie and do not score a win. With the implementation\u2019s encoding $H=0$, $P=1$, $S=2$, the winning response to opponent gesture $o$ is $(o+1)\\bmod3$. The Gold source permits up to $20$ switches, rather than the different one-switch Silver problem.",
+      "**Define an exact switch state.** After some games, let $D[j][g]$ be the largest number of wins using exactly $j$ actual changes between consecutive gestures and ending with gesture $g$. An unreachable state receives a negative sentinel. The final answer will maximize over $0\\le j\\le K$, since the source gives an at-most budget.",
+      "**Choose the initial gesture for free.** Initialize directly after the first game. Each of the three initial gestures is available with zero switches and its corresponding zero-or-one first-game score. All positive-switch states are unreachable. This avoids charging a fictitious switch before the first gesture is ever played.",
+      "**Keep or change for the next game.** For current gesture $g$ and switch count $j$, keeping $g$ uses the previous $D[j][g]$. Changing from a different gesture $h$ uses $D[j-1][h]$ when $j>0$. Take the best predecessor and add one exactly if $g$ defeats the new opponent gesture:\n\n$$D_{\\mathrm{new}}[j][g]=\\max\\!\\left(D_{\\mathrm{old}}[j][g],\\max_{h\\ne g}D_{\\mathrm{old}}[j-1][h]\\right)+\\mathbf1_{\\{g\\text{ wins this game}\\}}.$$\n\nOmit the switch term when $j=0$, and do not increment an unreachable sentinel.",
+      "**Prove completeness and feasibility.** Any valid gesture word either keeps its last gesture or changes from a different one on the next game; these are precisely the transitions above. Conversely, every reachable transition extends a valid earlier word with exactly its recorded switch count. Induction from the free first gesture proves that every state value is optimal. Taking the maximum over all $j\\le K$ and final gestures gives exactly the permitted maximum wins.",
+      "**Roll the game dimension.** Build each new game\u2019s states from a separate old array, reset the new array to unreachable values, and swap after the game. In-place updates could incorrectly perform several changes within one game. There are three gestures and at most $K+1$ budget levels, so time is $O(N(K+1))$ and the DP state space is $O(K+1)$, including the important $K=0$ case. The supplied C++ also stores the $N$ opponent gestures, so its total storage is $O(N+K+1)$.",
+      "**Respect the real bounds and files.** $1\\le N\\le100000$ and $0\\le K\\le20$. A budget larger than the number of gaps between games does not manufacture more changes; those exact-count states simply stay unreachable. Wins are at most $N$, so integer scores suffice. Read `hps.in` and write one maximum-win integer to `hps.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"hps.in\");std::ofstream out(\"hps.out\");int n,k;in >> n >> k;std::vector<int> opponent(n);\n    for(auto& x:opponent){char c;in >> c;x=(c=='H'?0:c=='P'?1:2);}\n    const int impossible=-1000000;\n    std::vector<std::array<int,3>> old(k+1,{impossible,impossible,impossible}),next=old;\n    for(int mine=0;mine<3;++mine) old[0][mine]=(((opponent[0]+1)%3==mine)?1:0);\n    for(int game=1;game<n;++game) {\n        int gesture=opponent[game];\n        for(auto& row:next) row={impossible,impossible,impossible};\n        for(int switches=0;switches<=k;++switches) for(int mine=0;mine<3;++mine) {\n            int best=old[switches][mine];\n            if(switches>0) for(int previous=0;previous<3;++previous) if(previous!=mine) best=std::max(best,old[switches-1][previous]);\n            if(best!=impossible) next[switches][mine]=best+(((gesture+1)%3==mine)?1:0);\n        }\n        old.swap(next);\n    }\n    int answer=0;for(const auto& row:old) answer=std::max(answer,*std::max_element(row.begin(),row.end()));out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Remember the current gesture and exact switches in each prefix state.",
+      "Choosing the first gesture is free; initialize after the first game.",
+      "Switch only from a different gesture and use a separate new-game array.",
+      "Maximize across all budget levels because the allowed count is at most $K$."
+    ],
+    "commonMistakes": [
+      "Reusing a one-switch split formula for this Gold budget.",
+      "Treating a tie as a win or reversing the cyclic winning rules.",
+      "Charging the initial gesture as a switch.",
+      "Requiring exactly $K$ changes even when fewer are best or feasible.",
+      "Updating the game states in place and allowing several changes within one game.",
+      "Adding a win to an unreachable sentinel and treating it as reachable."
+    ],
+    "alternativeMethods": [
+      "For short opponent sequences, enumerate all complete three-gesture words, count their actual adjacent changes, and score them using a literal win table. This global oracle does not use a switch-budget recurrence.",
+      "A segment-based formulation partitions the games into at most $K+1$ constant-gesture runs. Directly enumerating their boundaries is exponential and is useful only on small instances.",
+      "The opponent gestures can be processed as a stream after reading the first game, reducing total storage to the rolling $O(K+1)$ states. The supplied code retains the input sequence for straightforward initialization."
+    ],
+    "difficultyNotes": "Advanced finite-state optimization. Accurate initialization, exact-count states and the final at-most maximum are as important as the recurrence.",
+    "id": "solution-usaco-gold-2017-january-p2",
+    "problemId": "usaco-gold-2017-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Run breadth-first search on the pair of possible position-and-heading states, applying each forward/left/right command to both hypotheses. A hypothesis that reaches the goal becomes absorbing. The first state with both hypotheses at the goal gives the shortest common instruction count. Time and space are $O(N^4)$.",
+    "shortExplanation": "The command sequence must work whether Bessie initially faces up or right. Simulate both possibilities under the same commands rather than choosing one. Their joint state is deterministic, and every command costs one instruction, so ordinary breadth-first search finds the shortest robust sequence.",
+    "detailedSteps": [
+      "**Interpret the text grid correctly.** Input lists the top row first. The lower-left start is the first character of the last row, and the upper-right goal is the last character of the first row. `E` cells are passable and `H` cells block forward movement. Track a position and one of four headings for each possible initial orientation.",
+      "**Construct one-hypothesis transitions.** A left or right instruction changes heading by a quarter turn. Forward advances one cell in the current heading only if the destination is inside the board and empty; otherwise it leaves the position unchanged but still consumes the instruction. Once a hypothesis reaches the goal, all future commands, including turns, leave it there. Normalize its heading to one canonical value because it no longer affects behavior.",
+      "**Apply the same command to both possibilities.** Start with two lower-left poses, one facing up and one right. A joint state is their ordered pair. For each of the three commands, apply the corresponding one-hypothesis transition to each component. These represent alternative states of one uncertain Bessie, not two physical cows: their hypothetical positions may coincide and do not block each other.",
+      "**Prove the graph represents every common word.** Any instruction word determines exactly one joint walk, since both component transitions are deterministic. Conversely, the command labels of any joint walk form an instruction word whose two outcomes are its components. Thus a word succeeds for either initial heading exactly when the final joint state has both components at the absorbing goal.",
+      "**Use BFS for minimum instructions.** Every joint edge represents one instruction, so process unvisited states in increasing breadth-first distance. Mark when enqueuing, and stop when the joint goal is dequeued. All shorter words have already been considered, proving that this distance is the shortest sequence that works for both initial headings. One hypothesis may finish earlier and wait while the other continues.",
+      "**Use the printed path guarantee honestly.** The source guarantees empty start and goal cells and an empty-cell path between them. Guide one known simulated hypothesis to the goal along such a path. The other stays in the same empty connected component; after the first becomes absorbing, guide the remaining simulated pose to the goal. The combined predetermined commands work for both cases, so a solution exists on every valid source input. The defensive unreachable branch in the code is not an extra source output case.",
+      "**Complexity and historical files.** There are at most $4N^2$ one-hypothesis poses and $(4N^2)^2=16N^4$ joint states, each with three outgoing commands. Precompute the individual transitions in $O(N^2)$ work, then BFS in $O(N^4)$ time and space. The genuine bound $N\\le20$ gives at most $2560000$ encoded joint states. Read `cownav.in` and write one minimum common-command length to `cownav.out`; do not solve only one of the initial headings.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <string>\n#include <vector>\nint main() {\n    std::ifstream in(\"cownav.in\");std::ofstream out(\"cownav.out\");int n;in >> n;std::vector<std::string> board(n);for(auto& row:board) in >> row;\n    const int poses=4*n*n,goal=n-1,finished=4*goal;\n    const int dr[4]={-1,0,1,0},dc[4]={0,1,0,-1};\n    std::vector<std::array<int,3>> transition(poses);\n    for(int p=0;p<poses;++p) {\n        int cell=p/4,d=p%4,r=cell/n,c=cell%n;\n        if(cell==goal){transition[p]={finished,finished,finished};continue;}\n        transition[p][1]=4*cell+(d+3)%4;transition[p][2]=4*cell+(d+1)%4;\n        int rr=r+dr[d],cc=c+dc[d];transition[p][0]=p;\n        if(rr>=0&&rr<n&&cc>=0&&cc<n&&board[rr][cc]=='E') {int to=rr*n+cc;transition[p][0]=(to==goal?finished:4*to+d);}\n    }\n    int up=4*((n-1)*n),right=up+1,start=up*poses+right,target=finished*poses+finished;\n    std::vector<int> distance(poses*poses,-1),pending;pending.reserve(poses*poses);distance[start]=0;pending.push_back(start);\n    for(std::size_t head=0;head<pending.size();++head) {\n        int state=pending[head];if(state==target){out << distance[state] << '\\n';return 0;}\n        int a=state/poses,b=state%poses;\n        for(int command=0;command<3;++command) {int next=transition[a][command]*poses+transition[b][command];if(distance[next]==-1){distance[next]=distance[state]+1;pending.push_back(next);}}\n    }\n    out << -1 << '\\n'; // Defensive only: the source path guarantee and absorbing goal imply a solution.\n}\n```"
+    ],
+    "keyIdeas": [
+      "Control both possible initial orientations with one shared command word.",
+      "A joint deterministic state graph captures every possible instruction sequence.",
+      "Blocked forward instructions still consume one step.",
+      "The goal absorbs every later command, allowing one hypothesis to wait.",
+      "The source\u2019s empty-path guarantee proves a robust word exists."
+    ],
+    "commonMistakes": [
+      "Treating the first input row as the bottom row.",
+      "Searching only the up-facing or only the right-facing start.",
+      "Letting a hypothesis move or rotate after reaching the goal.",
+      "Making a blocked forward instruction free instead of consuming it.",
+      "Treating the two hypotheses as physical cows that cannot share a cell.",
+      "Collapsing the two headings before either reaches the absorbing goal."
+    ],
+    "alternativeMethods": [
+      "On tiny boards, enumerate complete command words by increasing length and physically simulate each initial heading separately. A first successful word proves optimality after all shorter words are exhausted. A board without a witness within a chosen search cap is outside that bounded oracle\u2019s scope, not evidence that the source\u2019s guaranteed solution does not exist.",
+      "A tuple-based product BFS offers simpler indexing than the flattened C++ state array, at the cost of additional storage overhead."
+    ],
+    "difficultyNotes": "Advanced product-state search. Correct geometry, blocked-command behavior and full goal absorption are essential. Independent tiny word enumeration and separately proved maximum-board constructions check the model rather than merely repeating its implementation.",
+    "id": "solution-usaco-gold-2017-january-p3",
+    "problemId": "usaco-gold-2017-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

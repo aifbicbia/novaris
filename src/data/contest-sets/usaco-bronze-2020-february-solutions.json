@@ -1,0 +1,87 @@
+[
+  {
+    "finalAnswer": "For each possible right-angle vertex, multiply its longest available horizontal leg by its longest available vertical leg. Output the largest product; it is twice the maximum area.",
+    "shortExplanation": "Every allowed triangle has a right angle where its horizontal and vertical sides meet. At that corner, the two leg choices can be maximized independently.",
+    "detailedSteps": [
+      "**Fix a corner.** For post $i$, scan all other posts. Let $H_i$ be the largest $|x_j-x_i|$ among posts with $y_j=y_i$, and let $V_i$ be the largest $|y_j-y_i|$ among posts with $x_j=x_i$. A missing leg gives length zero.",
+      "**Bound and attain the area.** An allowed triangle with corner $i$ has doubled area equal to its horizontal leg times its vertical leg, so it is at most $H_iV_i$. When both maxima are positive, choose a post attaining each. They are different posts: a single post sharing both coordinates with the corner would contradict distinctness and positive leg length. These choices therefore form a valid triangle attaining $H_iV_i$.",
+      "**Cover all valid triangles.** The horizontal and vertical sides of any triangle share a vertex, which must be one of the posts considered as a corner. Taking the maximum product over all corners cannot miss an allowed triangle. The source guarantees that at least one valid triangle exists, so at least one product is positive.",
+      "**Use the requested doubled area.** The product is already twice the area; do not divide it by two. Coordinate differences are at most $20000$, so the product is at most $400000000$. Integer arithmetic suffices, and the implementation uses 64-bit values throughout. The scan costs $O(N^2)$ time and $O(N)$ memory for the input points. It reads triangles.in and writes triangles.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <vector>\n\nstruct FencePoint { long long x, y; };\n\nlong long largestTwiceArea(const std::vector<FencePoint>& posts) {\n    long long answer = 0;\n    for (const FencePoint& corner : posts) {\n        long long horizontal = 0, vertical = 0;\n        for (const FencePoint& other : posts) {\n            if (other.y == corner.y)\n                horizontal = std::max(horizontal, std::llabs(other.x - corner.x));\n            if (other.x == corner.x)\n                vertical = std::max(vertical, std::llabs(other.y - corner.y));\n        }\n        answer = std::max(answer, horizontal * vertical);\n    }\n    return answer;\n}\n\nint main() {\n    std::ifstream in(\"triangles.in\");\n    std::ofstream out(\"triangles.out\");\n    int n;\n    in >> n;\n    std::vector<FencePoint> posts(n);\n    for (auto& point : posts) in >> point.x >> point.y;\n    out << largestTwiceArea(posts) << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Choose the shared vertex of the perpendicular sides.",
+      "Independent longest-leg choices give a matching upper bound and construction."
+    ],
+    "commonMistakes": [
+      "Printing area rather than twice the area.",
+      "Using a diagonal side as a leg or forgetting absolute differences.",
+      "Confusing this Bronze maximum-area task with the different same-name Silver task."
+    ],
+    "alternativeMethods": [
+      "Enumerate all triples of distinct posts, check that a horizontal side and a vertical side are present, and evaluate the doubled area by a determinant. This $O(N^3)$ method also fits $N\\le100$ and is a useful independent checker."
+    ],
+    "difficultyNotes": "A short geometric optimization. The proof needs to justify that the two maximum leg choices form a real triangle.",
+    "id": "solution-usaco-bronze-2020-february-p1",
+    "problemId": "usaco-bronze-2020-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Output the number of maximal contiguous runs of positions where $A_i\\ne B_i$.",
+    "shortExplanation": "Flipping each mismatch run corrects it in one operation. An interval toggle can remove at most two mismatch boundaries, which proves that fewer operations cannot suffice.",
+    "detailedSteps": [
+      "**Mark mismatches.** Let $d_i=1$ when the desired and actual breeds differ, and $d_i=0$ otherwise. Since there are exactly two breeds, toggling a substring toggles precisely those mismatch bits. Count positions whose bit is one and whose preceding bit is zero, treating the position before the string as zero.",
+      "**Construct a solution.** If there are $r$ maximal one-runs, flip each corresponding substring once. Every mismatch is toggled exactly once and no matching position changes, so this uses $r$ operations and produces the desired string.",
+      "**Prove the lower bound, including overlapping operations.** Pad the mismatch string with $d_0=d_{N+1}=0$ and define boundary bits $$e_i=d_i\\oplus d_{i-1}\\qquad(1\\le i\\le N+1).$$ Each one-run has two boundaries, so initially there are $2r$ one-valued boundary bits. A flip on positions $l,\\ldots,u$ toggles only $e_l$ and $e_{u+1}$: interior boundaries have both neighboring mismatch bits toggled and do not change. One operation can therefore reduce the boundary count by at most two. Reaching the all-zero target requires at least $r$ operations, even if intervals overlap or temporarily disturb correct positions. The construction attains this bound.",
+      "**Count without editing the strings.** Keep a Boolean for whether the previous position was a mismatch. Increment the answer only at a new mismatch run. If the strings already agree, the result is zero; runs at either endpoint are counted normally. The program takes $O(N)$ time and $O(N)$ memory for the two strings, with $O(1)$ additional state. It reads breedflip.in and writes breedflip.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <string>\n\nint minimumBreedFlips(const std::string& wanted, const std::string& actual) {\n    int answer = 0;\n    bool previousMismatch = false;\n    for (std::size_t i = 0; i < wanted.size(); ++i) {\n        bool mismatch = wanted[i] != actual[i];\n        if (mismatch && !previousMismatch) ++answer;\n        previousMismatch = mismatch;\n    }\n    return answer;\n}\n\nint main() {\n    std::ifstream in(\"breedflip.in\");\n    std::ofstream out(\"breedflip.out\");\n    int n;\n    std::string wanted, actual;\n    in >> n >> wanted >> actual;\n    out << minimumBreedFlips(wanted, actual) << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compare positions rather than rearranging cows.",
+      "Boundary parity gives a lower bound valid for arbitrary interval flips."
+    ],
+    "commonMistakes": [
+      "Counting every mismatched position rather than every run.",
+      "Merging separated runs while forgetting that the matching gap would also toggle.",
+      "Reversing the order of a substring instead of toggling its breeds."
+    ],
+    "alternativeMethods": [
+      "The answer is also half the number of changes between adjacent bits in the zero-padded mismatch string. Scanning the starts of one-runs avoids needing to divide a boundary count."
+    ],
+    "difficultyNotes": "The implementation is introductory. The boundary argument explains why overlapping flips cannot improve the run-by-run construction.",
+    "id": "solution-usaco-bronze-2020-february-p2",
+    "problemId": "usaco-bronze-2020-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Build the old-position map $p$ for one ordered pair of reversals. At zero-based final position $i$, output $p^K(i)+1$, computing the power by repeated squaring.",
+    "shortExplanation": "Both reversals together form one fixed permutation. Its binary powers replace up to a billion literal repetitions.",
+    "detailedSteps": [
+      "**Build the combined map in the correct order.** Begin with indices $0,\\ldots,N-1$, reverse the source interval $A$ first, then interval $B$. The resulting value $p(i)$ tells which old position supplies the label at new position $i$. This is a source-position map, rather than a cow’s destination map. One-based inclusive interval $[l,u]$ becomes the C++ half-open range from begin()+l-1 to begin()+u.",
+      "**Justify repeated composition.** For any old line $L$, one complete process gives $$L^\\prime_i=L_{p(i)}.$$ A second process gives $L_{p(p(i))}$, and induction gives $L_{p^K(i)}$ after $K$ repetitions. The initial label at index $j$ is $j+1$, so the required label is $p^K(i)+1$. Reversal bijections and their compositions keep every index in range.",
+      "**Use binary powers.** Maintain an identity result map and a current power map. At bit $j$, the power is $p^{2^j}$. If that bit of $K$ is set, compose it into the result by answer[i]=power[answer[i]]. Both maps are powers of the same permutation, so the exponents add. Then square with next[i]=power[power[i]], using a separate vector so partial updates cannot corrupt composition. Divide the remaining exponent by two and continue. The invariant proves that the final result is exactly $p^K$.",
+      "**Respect the original bounds and output.** The source gives strict endpoints $l<u$ for both intervals; together they require at least two positions even though the separate bound on $N$ starts at one. There are at most 30 exponent bits for $K\\le10^9$, giving $O(N\\log K)$ time and $O(N)$ memory. Convert indices to labels only at the end, then print one label per line. Read swap.in and write swap.out. This is the two-reversal Bronze task, not the different Silver task.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <numeric>\n#include <vector>\n\nstd::vector<int> finalSwapOrder(int n, long long repeats,\n                              int a1, int a2, int b1, int b2) {\n    std::vector<int> power(n), answer(n);\n    std::iota(power.begin(), power.end(), 0);\n    std::iota(answer.begin(), answer.end(), 0);\n    std::reverse(power.begin() + a1 - 1, power.begin() + a2);\n    std::reverse(power.begin() + b1 - 1, power.begin() + b2);\n    while (repeats > 0) {\n        if (repeats & 1LL) {\n            for (int i = 0; i < n; ++i) answer[i] = power[answer[i]];\n        }\n        std::vector<int> next(n);\n        for (int i = 0; i < n; ++i) next[i] = power[power[i]];\n        power.swap(next);\n        repeats /= 2;\n    }\n    for (int& label : answer) ++label;\n    return answer;\n}\n\nint main() {\n    std::ifstream in(\"swap.in\");\n    std::ofstream out(\"swap.out\");\n    int n, a1, a2, b1, b2;\n    long long repeats;\n    in >> n >> repeats >> a1 >> a2 >> b1 >> b2;\n    for (int label : finalSwapOrder(n, repeats, a1, a2, b1, b2))\n        out << label << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Combine ordered operations into one permutation before exponentiating.",
+      "Distinguish a source-position map from a destination map.",
+      "Use a separate vector when squaring a map."
+    ],
+    "commonMistakes": [
+      "Applying the intervals in the opposite order.",
+      "Taking powers of the two reversals separately rather than of their combined process.",
+      "Printing zero-based indices or printing all labels on one line."
+    ],
+    "alternativeMethods": [
+      "Decompose the combined permutation into cycles. For each position, move forward by $K$ modulo its cycle length. This gives $O(N)$ time after constructing the map and provides another way to avoid literal repetition. Keep the same source-position convention when converting the cycles into output labels."
+    ],
+    "difficultyNotes": "A compact permutation-power implementation. Direction, interval endpoints and the order of composition matter more than the exponent size.",
+    "id": "solution-usaco-bronze-2020-february-p3",
+    "problemId": "usaco-bronze-2020-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

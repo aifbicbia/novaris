@@ -1,0 +1,547 @@
+[
+  {
+    "id": "solution-amc12b-2017-p1",
+    "problemId": "amc12b-2017-p1",
+    "finalAnswer": "$\\boxed{25}$ (choice **E**)",
+    "shortExplanation": "Set the faster-growing collection equal to twice the other collection.",
+    "detailedSteps": [
+      "After $m$ months the collections have $30+2m$ and $10+6m$ books. The required relation is $10+6m=2(30+2m)$.",
+      "This simplifies to $2m=50$, so $m=25$. At that time the collection sizes are $80$ and $160$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Linear growth"
+    ],
+    "commonMistakes": [
+      "Doubling the first collection doubles both its initial amount and its monthly growth term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The comparison is with a collection that is itself growing, so both growth terms must remain in the equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p2",
+    "problemId": "amc12b-2017-p2",
+    "finalAnswer": "$\\boxed{y+z}$ (choice **E**)",
+    "shortExplanation": "Combine the lower bounds for y and z.",
+    "detailedSteps": [
+      "Since $y>-1$ and $z>1$, adding the strict inequalities gives $y+z>0$.",
+      "The other expressions are not forced positive. For example, $x=1/10$, $y=-1/4$, and $z=3/2$ satisfy all the bounds, while $y+x^2$, $y+xz$, $y+y^2$, and $y+2y^2$ are all negative."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Strict bounds"
+    ],
+    "commonMistakes": [
+      "A term that contains a square can still be negative after another term is added."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A universal claim needs a bound valid throughout the interval. A single carefully chosen example can disprove each competing claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p3",
+    "problemId": "amc12b-2017-p3",
+    "finalAnswer": "$\\boxed{2}$ (choice **D**)",
+    "shortExplanation": "The given ratio forces the two variables to be equal.",
+    "detailedSteps": [
+      "Multiplication by the nonzero denominator gives $3x+y=-2x+6y$, hence $5x=5y$ and $x=y$.",
+      "Because this common value is nonzero, the requested ratio becomes $(x+3x)/(3x-x)=4x/(2x)=2$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Simplifying a rational constraint"
+    ],
+    "commonMistakes": [
+      "Do not equate numerator and denominator separately; first cross-multiply the entire equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rational condition may hide a simple linear relation between its variables, eliminating the need to solve for either variable individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p4",
+    "problemId": "amc12b-2017-p4",
+    "finalAnswer": "$\\boxed{2.8}$ (choice **C**)",
+    "shortExplanation": "The distance cycled equals the distance walked.",
+    "detailedSteps": [
+      "Let each of the two distances be $d$ kilometers. The total time in hours gives $d/17+d/5=44/60$.",
+      "Hence $d(22/85)=11/15$, so $d=17/6\\approx2.833$. The walking distance rounds to $2.8$ kilometers."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Equal-distance travel"
+    ],
+    "commonMistakes": [
+      "Equal distances do not mean equal travel times; the walking portion takes much longer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal-distance condition determines which quantities can share a variable; it does not justify averaging the two speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p5",
+    "problemId": "amc12b-2017-p5",
+    "finalAnswer": "$\\boxed{1}$ (choice **B**)",
+    "shortExplanation": "Compute both outlier cutoffs before checking the data.",
+    "detailedSteps": [
+      "The interquartile range is $43-33=10$, so the lower and upper fences are $33-1.5(10)=18$ and $43+1.5(10)=58$.",
+      "Only the data value $6$ lies outside these fences. All other values are between $19$ and $57$, so there is exactly one outlier."
+    ],
+    "keyIdeas": [
+      "Statistics",
+      "Interquartile outlier fences"
+    ],
+    "commonMistakes": [
+      "An outlier is compared with a quartile plus or minus 1.5 times the interquartile range, not with the median."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The quartiles are already supplied; the task is to apply the stated outlier rule, not choose a quartile convention.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p6",
+    "problemId": "amc12b-2017-p6",
+    "finalAnswer": "$\\boxed{8}$ (choice **D**)",
+    "shortExplanation": "Use the midpoint and half-length of the diameter.",
+    "detailedSteps": [
+      "The circle center is $(4,3)$ and its radius is $\\sqrt{8^2+6^2}/2=5$. Thus its equation is $(x-4)^2+(y-3)^2=25$.",
+      "On the $x$-axis, $y=0$, giving $(x-4)^2=16$. The intersections have $x=0$ and $x=8$, so the second one has coordinate $8$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle diameter and coordinates"
+    ],
+    "commonMistakes": [
+      "The radius is half the distance between the given endpoints; the full distance is the diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diameter endpoints provide both the center and the radius without solving a general circle equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p7",
+    "problemId": "amc12b-2017-p7",
+    "finalAnswer": "$\\boxed{\\pi}$ (choice **B**)",
+    "shortExplanation": "Evenness of cosine halves the evident period, and the maxima prove minimality.",
+    "detailedSteps": [
+      "Since $\\sin(x+\\pi)=-\\sin x$ and cosine is even, $\\cos(\\sin(x+\\pi))=\\cos(\\sin x)$. Thus $\\pi$ is a period.",
+      "If $T>0$ is any period, evaluation at $x=0$ gives $\\cos(\\sin T)=1$. Because $-1\\le\\sin T\\le1$, this is possible only when $\\sin T=0$. Hence $T$ must be a positive integer multiple of $\\pi$.",
+      "Therefore the least positive period is $\\pi$."
+    ],
+    "keyIdeas": [
+      "Trigonometry",
+      "Least period of a composition"
+    ],
+    "commonMistakes": [
+      "Showing that pi is a period does not by itself show that no smaller positive period works."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use one strategically chosen input to restrict every possible period, after finding a period that works.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p8",
+    "problemId": "amc12b-2017-p8",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt5-1}{2}}$ (choice **C**)",
+    "shortExplanation": "Square the ratio condition and eliminate the diagonal.",
+    "detailedSteps": [
+      "Let the side lengths be $a<b$ and let the diagonal be $c$. Define $t=(a/b)^2$. The given condition $a/b=b/c$ implies $t=b^2/c^2$.",
+      "Since $c^2=a^2+b^2$, we have $t=1/(t+1)$. Therefore $t^2+t-1=0$, and the positive root is $t=(\\sqrt5-1)/2$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "A ratio and the Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "The requested value is the square of the side ratio, so do not take an additional square root at the end."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solving directly for the requested squared ratio avoids an unnecessary radical at the end.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p9",
+    "problemId": "amc12b-2017-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice **A**)",
+    "shortExplanation": "Subtract the circle equations to cancel their quadratic terms.",
+    "detailedSteps": [
+      "The two equations expand to $x^2+y^2+20x+8y-53=0$ and $x^2+y^2-6x-18y+25=0$.",
+      "Every common point therefore satisfies $26x+26y-78=0$, or $x+y=3$. This is the line through the two intersections, so $c=3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "The radical axis of two circles"
+    ],
+    "commonMistakes": [
+      "The second radius is the square root of 65, so its squared value in the circle equation is 65."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The quadratic terms cancel because both circles have the same coefficients of the squared coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p10",
+    "problemId": "amc12b-2017-p10",
+    "finalAnswer": "$\\boxed{25\\%}$ (choice **D**)",
+    "shortExplanation": "Restrict the denominator to the students who say they dislike dancing.",
+    "detailedSteps": [
+      "Imagine 100 students. Of the 60 who like dancing, $60(0.20)=12$ say they dislike it. Of the 40 who dislike it, $40(0.90)=36$ say they dislike it.",
+      "Thus $12+36=48$ students make that statement, and $12$ of them actually like dancing. The requested fraction is $12/48=1/4=25\\%$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Conditional proportions"
+    ],
+    "commonMistakes": [
+      "The 12 students must be divided by the 48 making the specified statement, not by all 100 students."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small population table makes the distinction between an actual preference and a reported preference explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p11",
+    "problemId": "amc12b-2017-p11",
+    "finalAnswer": "$\\boxed{1524}$ (choice **B**)",
+    "shortExplanation": "A set of distinct digits determines its increasing or decreasing order.",
+    "detailedSteps": [
+      "An increasing positive numeral cannot contain zero, so its digits are a nonempty subset of $\\{1,\\ldots,9\\}$. This gives $2^9-1=511$ numbers.",
+      "A decreasing positive numeral may use zero. Every subset of $\\{0,\\ldots,9\\}$ except the empty set and $\\{0\\}$ gives exactly one such numeral, for $2^{10}-2=1022$ numbers.",
+      "The nine one-digit positive numbers occur in both counts, and no longer numeral can be both strictly increasing and strictly decreasing. The total is $511+1022-9=1524$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Digit subsets and inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Zero may occur at the end of a decreasing numeral, but it cannot lead an increasing positive numeral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Strict ordering makes every digit subset determine a unique numeral; the overlap consists only of one-digit numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p12",
+    "problemId": "amc12b-2017-p12",
+    "finalAnswer": "$\\boxed{2\\sqrt2+\\sqrt6}$ (choice **D**)",
+    "shortExplanation": "Select the five roots strictly in the right half-plane.",
+    "detailedSteps": [
+      "The twelve roots have modulus $64^{1/12}=\\sqrt2$ and arguments $k\\pi/6$, for $k=0,\\ldots,11$. Positive real part selects arguments $0,\\pm\\pi/6,\\pm\\pi/3$. The roots at $\\pm\\pi/2$ are excluded.",
+      "Conjugate pairs cancel the imaginary parts, so the sum is $\\sqrt2\\bigl(1+2\\cos(\\pi/6)+2\\cos(\\pi/3)\\bigr)=\\sqrt2(2+\\sqrt3)=2\\sqrt2+\\sqrt6$."
+    ],
+    "keyIdeas": [
+      "Complex Numbers",
+      "Roots of unity and conjugate pairs"
+    ],
+    "commonMistakes": [
+      "Positive real part is a strict condition; the purely imaginary roots do not qualify."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conjugate symmetry turns a complex sum into a short real trigonometric sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p13",
+    "problemId": "amc12b-2017-p13",
+    "finalAnswer": "$\\boxed{12}$ (choice **D**)",
+    "shortExplanation": "Fix the unique green disk and account for its remaining reflection symmetry.",
+    "detailedSteps": [
+      "The figure has two distinct kinds of position: three corner disks and three disks at side midpoints. Symmetries never exchange these kinds. Within either kind, rotation lets us fix the green disk at one chosen position.",
+      "Once green is fixed, the remaining symmetry is a single reflection. It exchanges two pairs of the remaining disks and fixes the fifth. There are $\\binom52=10$ choices for the two red disks; the other three are blue.",
+      "Exactly two red choices are unchanged by reflection: either exchanged pair can be the red pair. The other eight choices form four pairs of equivalent colorings. Thus each green-position kind gives $2+8/2=6$ colorings, for $6+6=12$ altogether."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Colorings under triangular symmetry"
+    ],
+    "commonMistakes": [
+      "Dividing all labeled colorings by six is invalid because some colorings have reflection symmetry and therefore smaller orbits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique green disk reduces the symmetry problem to two position types, each with one remaining reflection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p14",
+    "problemId": "amc12b-2017-p14",
+    "finalAnswer": "$\\boxed{\\frac{44\\pi}{3}}$ (choice **E**)",
+    "shortExplanation": "Add the two solid volumes after converting diameters to radii.",
+    "detailedSteps": [
+      "The frustum has radii $1$ and $2$ and height $4$. Its volume is $\\frac{\\pi(4)}3(1^2+1\\cdot2+2^2)=28\\pi/3$.",
+      "The cone on top has radius $2$ and height $4$, so its volume is $\\pi(2^2)(4)/3=16\\pi/3$. The total is $44\\pi/3$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Cone and frustum volumes"
+    ],
+    "commonMistakes": [
+      "The stated base widths are diameters. Using them directly as radii multiplies the volume by four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Treat the frustum and the top cone as separate solids; their shared base contributes no extra volume.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p15",
+    "problemId": "amc12b-2017-p15",
+    "finalAnswer": "$\\boxed{37:1}$ (choice **E**)",
+    "shortExplanation": "Express the extended vertices in a basis formed by two original sides.",
+    "detailedSteps": [
+      "Take $A$ as the origin and write $B=u$, $C=v$. The extension conditions give $B^{\\prime}=4u$, $C^{\\prime}=4v-3u$, and $A^{\\prime}=-3v$.",
+      "Two sides of the new triangle, starting at $A^{\\prime}$, are $4u+3v$ and $-3u+7v$. Their determinant is $(4\\cdot7-3(-3))\\det(u,v)=37\\det(u,v)$.",
+      "Both triangle areas are half the corresponding absolute determinant, so their ratio is $37:1$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Determinants and area ratios"
+    ],
+    "commonMistakes": [
+      "An extension three times the side length makes the full directed displacement four times that side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Directed-vector coordinates preserve area ratios, so the computation does not require the original triangle to be drawn at a convenient angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p16",
+    "problemId": "amc12b-2017-p16",
+    "finalAnswer": "$\\boxed{\\frac1{19}}$ (choice **B**)",
+    "shortExplanation": "Only the exponent of two determines whether a divisor is odd.",
+    "detailedSteps": [
+      "The exponent of two in $21!$ is $\\lfloor21/2\\rfloor+\\lfloor21/4\\rfloor+\\lfloor21/8\\rfloor+\\lfloor21/16\\rfloor=10+5+2+1=18$.",
+      "In a uniformly chosen divisor, the exponent of two can be any of $0,1,\\ldots,18$. Each choice pairs with exactly the same number of choices for the other prime exponents.",
+      "A divisor is odd precisely when the exponent of two is zero, so the probability is $1/19$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime exponents in divisors"
+    ],
+    "commonMistakes": [
+      "The 21 integers multiplied in the factorial do not correspond to 21 equally likely exponents of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniform selection among divisors becomes uniform independent selection of the allowed prime exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p17",
+    "problemId": "amc12b-2017-p17",
+    "finalAnswer": "$\\boxed{\\frac2{81}\\text{ greater in Game A}}$ (choice **D**)",
+    "shortExplanation": "Calculate each winning probability from its exact event definition.",
+    "detailedSteps": [
+      "Game A is won by three heads or three tails, so $P(A)=(2/3)^3+(1/3)^3=1/3=27/81$.",
+      "For a given pair of tosses, the chance of equal outcomes is $(2/3)^2+(1/3)^2=5/9$. The two pairs in Game B are independent, giving $P(B)=(5/9)^2=25/81$.",
+      "Thus Game A has the greater winning probability, by $27/81-25/81=2/81$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Independent biased-coin events"
+    ],
+    "commonMistakes": [
+      "Game B allows HH followed by TT or TT followed by HH; it does not require all four tosses to agree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate each game into its actual winning events before comparing their probabilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p18",
+    "problemId": "amc12b-2017-p18",
+    "finalAnswer": "$\\boxed{\\frac{140}{37}}$ (choice **D**)",
+    "shortExplanation": "Solve for the second intersection, then use AB as a horizontal base.",
+    "detailedSteps": [
+      "Choose $A=(0,0)$, $B=(4,0)$, $D=(7,0)$, and $E=(7,5)$. Reflecting below the axis would give the same area. The circle equation is $(x-2)^2+y^2=4$, and line $AE$ is $y=5x/7$.",
+      "Substitution gives $x^2+(25/49)x^2-4x=0$. Besides $A$, the intersection has $x=98/37$ and $y=70/37$.",
+      "Therefore $[ABC]=\\tfrac12(4)(70/37)=140/37$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "A line intersecting a circle"
+    ],
+    "commonMistakes": [
+      "The line has one already-known intersection at A; select the other root when finding C."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Placing the known intersection at the origin makes one algebraic root immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p19",
+    "problemId": "amc12b-2017-p19",
+    "finalAnswer": "$\\boxed{9}$ (choice **C**)",
+    "shortExplanation": "Use the last digit modulo five and the digit sum modulo nine.",
+    "detailedSteps": [
+      "The concatenated number ends in $44$, so it is congruent to $4$ modulo $5$.",
+      "Modulo $9$, each block contributes the same residue as the integer in that block, because $10\\equiv1\\pmod9$. Thus the number is congruent to $1+2+\\cdots+44=990\\equiv0\\pmod9$.",
+      "The multiples of nine from $0$ to $44$ are $0,9,18,27,36$. Only $9$ is congruent to $4$ modulo five, so the remainder modulo $45$ is $9$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Combining congruences"
+    ],
+    "commonMistakes": [
+      "The value 990 is congruent to the digit sum modulo nine; it need not equal the literal digit sum of the concatenation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Working modulo coprime factors avoids carrying out arithmetic on the entire concatenated integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p20",
+    "problemId": "amc12b-2017-p20",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice **D**)",
+    "shortExplanation": "Partition the unit interval by the integer part of the logarithm.",
+    "detailedSteps": [
+      "For each integer $k\\ge1$, the condition $\\lfloor\\log_2 x\\rfloor=-k$ corresponds to $2^{-k}\\le x<2^{-k+1}$, an interval of length $2^{-k}$. Endpoints have probability zero.",
+      "Independence makes the probability that both numbers fall in this particular interval $2^{-2k}=4^{-k}$. The disjoint possibilities therefore total $\\sum_{k=1}^{\\infty}4^{-k}=(1/4)/(1-1/4)=1/3$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Geometric series of interval probabilities"
+    ],
+    "commonMistakes": [
+      "The intervals have different lengths; their possible floor values are not equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The continuous problem reduces to a countable partition whose interval lengths form a geometric sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p21",
+    "problemId": "amc12b-2017-p21",
+    "finalAnswer": "$\\boxed{100}$ (choice **E**)",
+    "shortExplanation": "The sixth and seventh averages force the first six scores to total 570.",
+    "detailedSteps": [
+      "Subtract $95$ from every score and call the resulting distinct integers $t_1,\\ldots,t_7$. They belong to $\\{-4,-3,\\ldots,5\\}$, and $t_7=0$. Let $S=t_1+\\cdots+t_6$.",
+      "The sixth average makes $S$ divisible by $6$, while the seventh average makes the same $S$ divisible by $7$. Thus $42$ divides $S$. The six distinct nonzero shifted scores have sum between $-4-3-2-1+1+2=-7$ and $-1+1+2+3+4+5=14$. The only possible multiple of $42$ is $S=0$.",
+      "The first five shifted scores have sum $-t_6$, which is divisible by $5$ because their average is integral. Among the allowed shifted scores, the only multiples of five are $0$ and $5$. Distinctness excludes $0$, already used by the seventh score. Hence $t_6=5$, and the sixth score is $100$.",
+      "The conditions are attainable: the scores $91,93,92,96,98,100,95$ have successive averages $91,92,92,93,94,95,95$, all integers."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Integer averages and divisibility"
+    ],
+    "commonMistakes": [
+      "The scores are distinct, so the seventh score cannot reappear on the sixth test. This removes the otherwise possible shifted value zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The last two integer averages are much more restrictive than the earlier ones, so start at the end of the score sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p22",
+    "problemId": "amc12b-2017-p22",
+    "finalAnswer": "$\\boxed{\\frac5{192}}$ (choice **B**)",
+    "shortExplanation": "Represent each round by an arrow from the giver to the receiver.",
+    "detailedSteps": [
+      "There are $4\\cdot3=12$ equally likely ordered giver-receiver pairs per round, so there are $12^4$ equally likely four-round transfer sequences. The two white balls do not change the probabilities of these pairs. Starting with four coins ensures every prescribed transfer is possible.",
+      "Everyone finishes with four coins exactly when every vertex has equal numbers of incoming and outgoing arrows. Such a directed multigraph decomposes into cycles. With four arrows and no loops, it consists either of two two-cycles or of one four-cycle using all four players.",
+      "If the two two-cycles use the same pair of players, there are $\\binom42=6$ choices of pair and $4!/(2!2!)=6$ orders of the two arrows in each direction, giving $36$ sequences. If they use two distinct pairs, choose those pairs in $\\binom62=15$ ways; all four directed arrows are then distinct, giving $15\\cdot4!=360$ sequences. This includes both intersecting and disjoint pairs.",
+      "There are $(4-1)!=6$ directed four-cycles on the four players, each allowing $4!$ orders of its arrows, giving $144$ more sequences. Therefore the probability is $(36+360+144)/12^4=540/20736=5/192$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Balanced directed transfers"
+    ],
+    "commonMistakes": [
+      "A balanced outcome need not consist of transfers between disjoint pairs; two cycles can share a player, and a directed four-cycle is another possibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classifying balanced transfer graphs by their cycles is what makes the finite count complete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p23",
+    "problemId": "amc12b-2017-p23",
+    "finalAnswer": "$\\boxed{\\frac{24}{5}}$ (choice **D**)",
+    "shortExplanation": "Subtract the parabola through the three specified points.",
+    "detailedSteps": [
+      "Since $f(x)-x^2$ vanishes at $2,3,4$ and has degree three, write $f(x)=x^2+k(x-2)(x-3)(x-4)$ with $k\\ne0$. Its leading two coefficients are $k$ and $1-9k$.",
+      "For any of the three secant lines, subtracting the line from $f$ does not change these two coefficients. Thus the three intersection abscissas sum to $-(1-9k)/k=9-1/k$.",
+      "After subtracting the two known abscissas for each secant, the third abscissas are $4-1/k$, $3-1/k$, and $2-1/k$. Their sum is $9-3/k=24$, giving $k=-1/5$.",
+      "Finally $f(0)=k(-2)(-3)(-4)=-24k=24/5$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Polynomial interpolation and Vieta’s formulas"
+    ],
+    "commonMistakes": [
+      "The third intersections belong to three different line equations, but all those cubic equations have the same leading two coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the known interpolating parabola exposes a one-parameter family of cubics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p24",
+    "problemId": "amc12b-2017-p24",
+    "finalAnswer": "$\\boxed{2+\\sqrt5}$ (choice **D**)",
+    "shortExplanation": "Normalize BC and identify three equal-area triangles around E.",
+    "detailedSteps": [
+      "Set $BC=1$ and $AB=r>1$. Take $B=(0,0)$, $C=(1,0)$, and $A=(0,r)$. The ordered similarity $ABC\\sim BCD$ gives $CD=1/r$, so $D=(1,1/r)$.",
+      "From $ABC\\sim CEB$, the angle at $E$ is right and $CE/EB=r$. Since $CB=1$ is the hypotenuse, $EB^2=1/(1+r^2)$. Writing $E=(x,y)$, perpendicularity gives $x^2+y^2=x$, hence $x=EB^2=1/(1+r^2)$ and the interior choice is $y=r/(1+r^2)$.",
+      "Let $K=[BCE]=r/(2(1+r^2))$. The other two small triangles have areas $[ABE]=rx/2=K$ and $[CDE]=(1-x)/(2r)=K$. Thus the quadrilateral is partitioned into $AED$ and three triangles of area $K$.",
+      "The given ratio yields $[ABCD]=20K$. Its trapezoid area is $(r+1/r)/2$, so $(r+1/r)/2=10r/(1+r^2)$. Equivalently $(r^2+1)^2=20r^2$, giving $r+1/r=2\\sqrt5$.",
+      "Solving $r^2-2\\sqrt5r+1=0$ gives $r=\\sqrt5\\pm2$. Only $r=2+\\sqrt5$ exceeds one."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similarity and area decomposition"
+    ],
+    "commonMistakes": [
+      "The order of the similarity notation matters: AB corresponds to BC in the first pair and to CE in the second pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The area ratio becomes manageable once the three surrounding triangles are shown to have equal area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2017-p25",
+    "problemId": "amc12b-2017-p25",
+    "finalAnswer": "$\\boxed{557}$ (choice **D**)",
+    "shortExplanation": "Express both averages in terms of the total number of teams.",
+    "detailedSteps": [
+      "Let $T>0$ be the number of distinct teams. A fixed team is contained in a uniformly chosen $k$-person subset with probability $\\binom{k}{5}/\\binom{n}{5}$. By summing team indicators, the average number of complete teams is $T\\binom{k}{5}/\\binom{n}{5}$.",
+      "The two averages are reciprocals exactly when $T^2\\binom95\\binom85/\\binom n5^2=1$. Since $\\binom95\\binom85=126\\cdot56=84^2$, this requires $T=\\binom n5/84$. Such a selection of distinct teams is possible precisely when $84$ divides $\\binom n5$: choose any that many of the available teams.",
+      "To count the allowed $n$, use $\\binom n5=n(n-1)(n-2)(n-3)(n-4)/120$. A factor of $7$ survives exactly when $n\\bmod7$ is one of $0,1,2,3,4$. At least one factor of $3$ survives exactly when $n\\bmod9$ is neither $5$ nor $8$: those two residues put only a single factor of three into the five-term numerator, which is canceled by the denominator.",
+      "The denominator contains $2^3$, so divisibility by $4$ requires at least five factors of two in the numerator. For even $n$, this occurs exactly when $n\\bmod8$ is $0,2,$ or $4$. For odd $n$, it occurs exactly when $n\\bmod16$ is $1$ or $3$. Together the permitted residues modulo $16$ are $0,1,2,3,4,8,10,12$.",
+      "The moduli $7,9,16$ are pairwise coprime. Thus each block of $1008=7\\cdot9\\cdot16$ consecutive integers contains exactly $5\\cdot7\\cdot8=280$ qualifying residue classes. The range $0$ through $2015$ contains $560$. Of the integers $0$ through $8$, exactly $0,1,2,3,4$ satisfy the residue conditions and must be removed. Both $2016$ and $2017$ satisfy them and must be added. The answer is $560-5+2=557$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Double-counting averages and modular divisibility"
+    ],
+    "commonMistakes": [
+      "The teams need not include every five-person subset. The integer T is free to vary, so the condition is divisibility of the total number of possible teams, not a fixed team count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main transition is from averages over subsets to divisibility of a binomial coefficient; periodic counting comes afterward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

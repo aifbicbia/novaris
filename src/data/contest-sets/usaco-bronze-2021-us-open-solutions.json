@@ -1,0 +1,94 @@
+[
+  {
+    "id": "solution-usaco-bronze-2021-us-open-p1",
+    "problemId": "usaco-bronze-2021-us-open-p1",
+    "finalAnswer": "Let $h$ be the current h-index, $g$ the number of papers with at least $h+1$ citations, and $q$ the number with exactly $h$ citations. Output $h+1$ if $h<N$ and $g+\\min(q,L)\\ge h+1$; otherwise output $h$.",
+    "shortExplanation": "A paper can gain only one citation from the survey. Count the papers already reaching the next index and the papers that can reach it with one citation. The index can increase by at most one.",
+    "detailedSteps": [
+      "Sort the citation counts in decreasing order. The current index is the largest $h$ for which the first $h$ papers each have at least $h$ citations. In zero-based indexing, check whether the count at position $i$ is at least $i+1$.",
+      "To reach index $h+1$, papers already at or above $h+1$ need no new citation. A paper with exactly $h$ citations needs one, while a paper below $h$ cannot reach the target because the survey may cite it only once. Thus exactly $g+\\min(q,L)$ papers can qualify for this target. The inequality in the answer is both necessary and sufficient: cite enough distinct papers in the $q$ group to supply the shortfall.",
+      "An index of $h+2$ would require at least $h+2$ papers whose old counts were at least $h+1$, since each gains at most one citation. Those old counts would already give index at least $h+1$, contradicting the definition of $h$. Therefore the only possibilities are $h$ and $h+1$. If $h=N$, the index is already as large as the existing collection permits.",
+      "Sorting takes $O(N\\log N)$ time; the remaining scans are linear. Storage is $O(N)$. The source allows $N,L,c_i\\le100000$, with zero allowed for $L$ and citation counts; all counts and indices fit `int`.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <functional>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, limit;\n    in >> n >> limit;\n    vector<int> citations(n);\n    for (int i = 0; i < n; ++i) in >> citations[i];\n    sort(citations.begin(), citations.end(), greater<int>());\n    int h = 0;\n    for (int i = 0; i < n; ++i)\n        if (citations[i] >= i + 1) h = i + 1;\n    int already = 0, oneAway = 0;\n    for (int value : citations) {\n        if (value >= h + 1) ++already;\n        else if (value == h) ++oneAway;\n    }\n    if (h < n && already + min(oneAway, limit) >= h + 1) ++h;\n    out << h << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The one-citation-per-paper restriction limits the increase to one.",
+      "For the next index, only papers already qualifying or exactly one citation away matter."
+    ],
+    "commonMistakes": [
+      "Treating the survey as permission to give several citations to the same paper.",
+      "Assuming the index must increase whenever the citation limit is positive. Enough distinct papers must reach the same threshold.",
+      "Missing zero-citation collections or the case where the current index already equals the number of papers."
+    ],
+    "alternativeMethods": [
+      "For a candidate target $t$, count papers with at least $t$ citations and papers with exactly $t-1$ citations. This gives a feasibility test, but proving the one-step bound reduces the task to checking only the current index and its successor."
+    ],
+    "difficultyNotes": "The central proof is the one-step bound. Once it is established, a sort and two counts decide the answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-us-open-p2",
+    "problemId": "usaco-bronze-2021-us-open-p2",
+    "finalAnswer": "Split each author list at alphabetical descents. Mark an author in a later group as more senior than every author in an earlier group. Keep `?` for pairs never separated and `B` on the diagonal, using the original member-list order.",
+    "shortExplanation": "Equal contributions must appear alphabetically. An alphabetical descent therefore proves a strict drop in contribution, making all authors before that boundary more junior than all authors after it.",
+    "detailedSteps": [
+      "Keep a map from each member name to its position in the original input list. Initialize an output matrix with `?` off the diagonal and `B` on the diagonal.",
+      "For each paper, start a new group whenever the preceding name is alphabetically greater than the next name. These groups are the maximal increasing alphabetical runs. A descent cannot lie inside a group of equal contributors, so contribution strictly decreases across every such boundary.",
+      "For any two authors in different runs of that paper, the earlier author contributed strictly more. A more senior member never contributes more than a junior member, so the later author is definitely more senior. Write `0` from the earlier member to the later member and `1` in the reverse matrix entry.",
+      "To show the remaining question marks are justified, consider two members never separated by a run boundary in any paper. They share a run in every paper and have identical forced comparisons to all other members: any outside run is before both or after both, and any member in their run has no forced comparison to either. Swapping their seniority positions in a consistent total order preserves all forced comparisons. Both relative orders are possible.",
+      "Every total seniority order satisfying the cross-run comparisons can realize the papers: assign equal effort within each run and successively less effort to later runs. Therefore the forced comparisons capture all information. An unmarked pair cannot become distinguishable through a chain, so extra transitive closure is unnecessary. Print every row in the original member-list order.",
+      "There are $O(N^2)$ author-position pairs per paper and $K$ papers, giving $O(KN^2)$ time. The matrix and name data use $O(N^2)$ space. Here $K,N\\le100$, and lowercase member identifiers contain at most ten characters. The output contains all $N^2$ matrix characters.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int papers, n;\n    in >> papers >> n;\n    map<string, int> index;\n    for (int i = 0; i < n; ++i) {\n        string name;\n        in >> name;\n        index[name] = i;\n    }\n    vector<string> answer(n, string(n, '?'));\n    for (int i = 0; i < n; ++i) answer[i][i] = 'B';\n    for (int paper = 0; paper < papers; ++paper) {\n        vector<string> names(n);\n        vector<int> authors(n), group(n, 0);\n        for (int i = 0; i < n; ++i) {\n            in >> names[i];\n            authors[i] = index.at(names[i]);\n            if (i > 0)\n                group[i] = group[i - 1] + (names[i - 1] > names[i]);\n        }\n        for (int i = 0; i < n; ++i) {\n            for (int j = i + 1; j < n; ++j) {\n                if (group[i] != group[j]) {\n                    answer[authors[i]][authors[j]] = '0';\n                    answer[authors[j]][authors[i]] = '1';\n                }\n            }\n        }\n    }\n    for (const string& row : answer) out << row << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Alphabetical descents certify unequal contribution; increasing alphabetical order by itself does not certify equal or unequal effort.",
+      "The paper order runs from more contribution to less, so a forced later author is more senior.",
+      "Pairs sharing every run have the same constraint neighbors, which proves that their relative order remains unknown."
+    ],
+    "commonMistakes": [
+      "Marking every later author as senior, even when the two names lie in one increasing run.",
+      "Reversing `0` and `1`: a later author across a descent is senior.",
+      "Sorting the original name list before printing the matrix, which changes the required row and column indexing.",
+      "Forgetting `B` on each diagonal entry or printing only one side of a known comparison."
+    ],
+    "alternativeMethods": [
+      "Instead of assigning run numbers, for each starting author scan later authors while tracking whether an alphabetical descent has occurred. Once it has, every later author has a forced seniority relation to the starting author. The complexity is the same."
+    ],
+    "difficultyNotes": "Finding descents is straightforward. The important completeness argument is proving why the remaining question marks cannot be resolved from the publications.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-us-open-p3",
+    "problemId": "usaco-bronze-2021-us-open-p3",
+    "finalAnswer": "Add one for each grass cell with at least three adjacent cows, then add the number of distinct unordered cow pairs supplied by grass cells with exactly two adjacent cows.",
+    "shortExplanation": "A grass cell with at least three adjacent cows can use an opposite pair whose meeting point is unique. Two-neighbor cells offer only one pair, so duplicate pairs among them must be counted once.",
+    "detailedSteps": [
+      "For each grass cell, collect the cows in its four orthogonally adjacent cells. Fewer than two cows cannot form a friendship there. A cell with exactly two cows offers exactly their unordered pair; insert that pair into a set, normalizing the order of the two cow identifiers.",
+      "A grass cell with at least three adjacent cows has an opposite pair: among any three of the four directions, either north and south are both present or east and west are both present. Assign such an opposite pair to the cell and count one friendship.",
+      "An opposite pair consists of two cows two grid steps apart on a straight line. Their midpoint is the only cell adjacent to both. Consequently the pair assigned to a cell with at least three neighbors cannot be assigned at any other grass cell, including a cell with exactly two neighbors. These flexible cells all contribute independently.",
+      "Among exactly-two-neighbor cells, one pair may be offered more than once, but it can become friends only once. This gives an upper bound of one friendship per distinct offered pair. The bound is attainable: choose one representative grass cell for each pair. Different pairs cannot choose the same exactly-two-neighbor cell because it offers only one pair.",
+      "Together, these assignments achieve one friendship per flexible cell plus one per distinct exactly-two-neighbor pair, and no solution can exceed those two bounds. This proves optimality. A cow may participate in many different pairs; the single-use resources are the grass cell and the unordered pair.",
+      "Number a cow by its cell identifier $rM+c$. With $D$ exactly-two-neighbor candidate pairs, the balanced set gives $O(NM+D\\log(D+1))$ time and $O(NM)$ space including the grid. Since $D\\le NM$ and $N,M\\le1000$, this is bounded by $O(NM\\log(NM+1))$, and at most one million cell identifiers or counted friendships fit `int`.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <set>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, m;\n    in >> n >> m;\n    vector<string> grid(n);\n    for (int r = 0; r < n; ++r) in >> grid[r];\n    const int dr[4] = {-1, 1, 0, 0};\n    const int dc[4] = {0, 0, -1, 1};\n    set<pair<int, int> > pairs;\n    int flexible = 0;\n    for (int r = 0; r < n; ++r) {\n        for (int c = 0; c < m; ++c) {\n            if (grid[r][c] != 'G') continue;\n            int cows[4], count = 0;\n            for (int d = 0; d < 4; ++d) {\n                int nr = r + dr[d], nc = c + dc[d];\n                if (nr >= 0 && nr < n && nc >= 0 && nc < m && grid[nr][nc] == 'C')\n                    cows[count++] = nr * m + nc;\n            }\n            if (count >= 3) ++flexible;\n            else if (count == 2) {\n                if (cows[0] > cows[1]) swap(cows[0], cows[1]);\n                pairs.insert(make_pair(cows[0], cows[1]));\n            }\n        }\n    }\n    out << flexible + static_cast<int>(pairs.size()) << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Two diagonal cows can share two possible meeting cells, so unordered pairs must be deduplicated.",
+      "Opposite cows have a unique midpoint meeting cell.",
+      "At least three neighboring cows guarantee an opposite pair, allowing those cells to contribute independently."
+    ],
+    "commonMistakes": [
+      "Counting every grass cell with two cows without checking whether its cow pair was already counted.",
+      "Allowing more than one friendship at the same grass cell.",
+      "Removing a cow after its first friendship; the source permits one cow to make several friends.",
+      "Using diagonal adjacency to the grass cell, or storing the same unordered pair in both identifier orders."
+    ],
+    "alternativeMethods": [
+      "A bipartite graph with grass cells on one side and unordered cow pairs on the other models the task as maximum matching. This is useful as an independent small-grid check, but the opposite-pair property gives a simpler production algorithm at the million-cell bound."
+    ],
+    "difficultyNotes": "The geometry supplies the optimal construction. Pair normalization and deduplication then make the implementation direct.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

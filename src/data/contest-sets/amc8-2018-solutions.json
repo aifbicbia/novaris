@@ -1,0 +1,773 @@
+[
+  {
+    "id": "solution-amc8-2018-p1",
+    "problemId": "amc8-2018-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(14)}$",
+    "shortExplanation": "**Idea:** A $1:20$ model has one twentieth of the real height.",
+    "detailedSteps": [
+      "The scale ratio $1:20$ means every $20$ real feet becomes $1$ model foot.",
+      "[\n\\frac{289}{20}=14.45\n]",
+      "The nearest whole number is $14$.",
+      "Final Answer: (\\boxed{\\text{A }(14)})"
+    ],
+    "keyIdeas": [
+      "Scale factor",
+      "Division",
+      "Rounding"
+    ],
+    "commonMistakes": [
+      "Do not multiply by $20$; the replica is smaller.",
+      "Round after dividing."
+    ],
+    "alternativeMethods": [
+      "Since $20\\cdot14=280$ and $20\\cdot15=300$, $289$ is closer to $280$."
+    ],
+    "difficultyNotes": "A direct scale-ratio calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p2",
+    "problemId": "amc8-2018-p2",
+    "finalAnswer": "$\\boxed{\\text{D }(7)}$",
+    "shortExplanation": "**Idea:** Rewrite each factor as $\\frac{n+1}{n}$ so adjacent terms cancel.",
+    "detailedSteps": [
+      "Each factor satisfies",
+      "[\n1+\\frac1n=\\frac{n+1}{n}.\n]",
+      "The product becomes",
+      "[\n\\frac21\\cdot\\frac32\\cdot\\frac43\\cdot\\frac54\\cdot\\frac65\\cdot\\frac76.\n]",
+      "Everything in the middle cancels, leaving",
+      "[\n7.\n]",
+      "Final Answer: (\\boxed{\\text{D }(7)})"
+    ],
+    "keyIdeas": [
+      "Telescoping product",
+      "Fractions",
+      "Cancellation"
+    ],
+    "commonMistakes": [
+      "Do not include an extra $1+\\frac17$ factor.",
+      "This is a product, not a sum."
+    ],
+    "alternativeMethods": [
+      "Multiply successively: the partial products become $2,3,4,5,6,7$."
+    ],
+    "difficultyNotes": "The cancellation pattern is the whole problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p3",
+    "problemId": "amc8-2018-p3",
+    "finalAnswer": "$\\boxed{\\text{D }(Dan)}$",
+    "shortExplanation": "**Idea:** Simulate only the counts that eliminate someone.",
+    "detailedSteps": [
+      "The elimination counts are the first numbers that are multiples of $7$ or contain $7$:",
+      "[\n7,14,17,21,27.\n]",
+      "Tracking the circle after each removal gives",
+      "[\n\\text{Arn},\\ \\text{Cyd},\\ \\text{Fon},\\ \\text{Bob},\\ \\text{Eve}\n]",
+      "as the eliminated students. The last student left is Dan.",
+      "Final Answer: (\\boxed{\\text{D }(\\text{Dan})})"
+    ],
+    "keyIdeas": [
+      "Simulation",
+      "Multiples of 7",
+      "Circular order"
+    ],
+    "commonMistakes": [
+      "Counting continues from the next remaining student after someone leaves.",
+      "Numbers such as $17$ count because they contain the digit $7$."
+    ],
+    "alternativeMethods": [
+      "Use a small table with columns for count, student, and whether the student leaves."
+    ],
+    "difficultyNotes": "Careful bookkeeping is the key.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p4",
+    "problemId": "amc8-2018-p4",
+    "finalAnswer": "$\\boxed{\\text{C }(13)}$",
+    "shortExplanation": "**Idea:** Enclose the figure in a rectangle and subtract the outside pieces.",
+    "detailedSteps": [
+      "The figure fits inside a $5\\times5$ rectangle, whose area is",
+      "[\n5\\cdot5=25.\n]",
+      "The outside right triangles and small rectangular pieces together have area $12$.",
+      "Therefore the figure has area",
+      "[\n25-12=13.\n]",
+      "Final Answer: (\\boxed{\\text{C }(13)})"
+    ],
+    "keyIdeas": [
+      "Grid area",
+      "Complementary area",
+      "Right triangles"
+    ],
+    "commonMistakes": [
+      "Slanted boundary pieces are half-squares, not whole squares.",
+      "Choose a rectangle that tightly contains the figure."
+    ],
+    "alternativeMethods": [
+      "The shoelace formula on the grid vertices also gives area $13$."
+    ],
+    "difficultyNotes": "A grid geometry problem where subtraction is cleaner than direct counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p5",
+    "problemId": "amc8-2018-p5",
+    "finalAnswer": "$\\boxed{\\text{E }(1010)}$",
+    "shortExplanation": "**Idea:** Pair each odd number with the following even number.",
+    "detailedSteps": [
+      "Group the expression as",
+      "[\n(1-2)+(3-4)+\\cdots+(2017-2018)+2019.\n]",
+      "There are $1009$ pairs, each equal to $-1$, so the paired part is $-1009$.",
+      "Then",
+      "[\n2019-1009=1010.\n]",
+      "Final Answer: (\\boxed{\\text{E }(1010)})"
+    ],
+    "keyIdeas": [
+      "Pairing",
+      "Odd and even numbers",
+      "Arithmetic series"
+    ],
+    "commonMistakes": [
+      "Do not forget the unpaired final term $2019$."
+    ],
+    "alternativeMethods": [
+      "Use sums: $1010^2-1009\\cdot1010=1010$."
+    ],
+    "difficultyNotes": "A long expression collapses by pairing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p6",
+    "problemId": "amc8-2018-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(80)}$",
+    "shortExplanation": "**Idea:** The highway is five times as far but is traveled three times as fast.",
+    "detailedSteps": [
+      "The highway time is",
+      "[\n30\\cdot\\frac{50}{10}\\cdot\\frac13=50\\text{ minutes}.\n]",
+      "The entire trip takes",
+      "[\n30+50=80\\text{ minutes}.\n]",
+      "Final Answer: (\\boxed{\\text{C }(80)})"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Distance ratios",
+      "Time ratios"
+    ],
+    "commonMistakes": [
+      "Do not simply triple or divide the $30$ minutes; the highway distance is also different."
+    ],
+    "alternativeMethods": [
+      "Coastal speed is $20$ mph, highway speed is $60$ mph, and $50$ highway miles take $50$ minutes."
+    ],
+    "difficultyNotes": "A distance-rate-time ratio problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p7",
+    "problemId": "amc8-2018-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(3)}$",
+    "shortExplanation": "**Idea:** First find the missing digit using divisibility by $9$.",
+    "detailedSteps": [
+      "The digit sum is",
+      "[\n2+0+1+8+U=11+U.\n]",
+      "For divisibility by $9$, we need $11+U=18$, so $U=7$.",
+      "Now reduce $20187$ modulo $8$. The last three digits are enough:",
+      "[\n187=8\\cdot23+3.\n]",
+      "Final Answer: (\\boxed{\\text{B }(3)})"
+    ],
+    "keyIdeas": [
+      "Divisibility by 9",
+      "Modulo 8",
+      "Last three digits"
+    ],
+    "commonMistakes": [
+      "The answer is not $U$; it asks for the remainder upon division by $8$."
+    ],
+    "alternativeMethods": [
+      "Compute $20187=8\\cdot2523+3$ directly."
+    ],
+    "difficultyNotes": "Combines two common divisibility facts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p8",
+    "problemId": "amc8-2018-p8",
+    "finalAnswer": "$\\boxed{\\text{C }(4.36)}$",
+    "shortExplanation": "**Idea:** Use a weighted average from the bar heights.",
+    "detailedSteps": [
+      "The counts for $1$ through $7$ days are",
+      "[\n1,3,2,6,8,3,2.\n]",
+      "There are",
+      "[\n1+3+2+6+8+3+2=25\n]",
+      "students total, and the total number of reported exercise days is",
+      "[\n1\\cdot1+2\\cdot3+3\\cdot2+4\\cdot6+5\\cdot8+6\\cdot3+7\\cdot2=109.\n]",
+      "Thus the mean is",
+      "[\n\\frac{109}{25}=4.36.\n]",
+      "Final Answer: (\\boxed{\\text{C }(4.36)})"
+    ],
+    "keyIdeas": [
+      "Frequency table",
+      "Weighted average",
+      "Bar graph"
+    ],
+    "commonMistakes": [
+      "Do not average the labels $1,2,ldots,7$ without using the bar heights."
+    ],
+    "alternativeMethods": [
+      "Turn the graph into a frequency table first, then compute the mean."
+    ],
+    "difficultyNotes": "A straightforward data interpretation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p9",
+    "problemId": "amc8-2018-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(87)}$",
+    "shortExplanation": "**Idea:** Count the one-foot border tiles, then tile the remaining inside rectangle with $2\\times2$ tiles.",
+    "detailedSteps": [
+      "The one-foot border uses",
+      "[\n2\\cdot16+2\\cdot12-4=52\n]",
+      "tiles; the $4$ subtracts the corners counted twice.",
+      "Removing the border leaves an inside rectangle of dimensions",
+      "[\n(16-2)\\times(12-2)=14\\times10.\n]",
+      "Its area is $140$, so it uses",
+      "[\n\\frac{140}{4}=35\n]",
+      "two-foot by two-foot tiles. The total number of tiles is",
+      "[\n52+35=87.\n]",
+      "Final Answer: (\\boxed{\\text{B }(87)})"
+    ],
+    "keyIdeas": [
+      "Border counting",
+      "Area",
+      "Tile size"
+    ],
+    "commonMistakes": [
+      "The corner border tiles should not be counted twice.",
+      "A two-foot by two-foot tile covers $4$ square feet."
+    ],
+    "alternativeMethods": [
+      "Count all one-foot grid squares on the border, then divide the remaining area by $4$."
+    ],
+    "difficultyNotes": "A rectangle tiling problem with a common corner-counting trap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p10",
+    "problemId": "amc8-2018-p10",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{12}{7}\\right)}$",
+    "shortExplanation": "**Idea:** Average the reciprocals, then take the reciprocal.",
+    "detailedSteps": [
+      "The reciprocals are",
+      "[\n1,\\quad \\frac12,\\quad \\frac14.\n]",
+      "Their average is",
+      "[\n\\frac{1+\\frac12+\\frac14}{3}=\\frac{\\frac74}{3}=\\frac7{12}.\n]",
+      "The harmonic mean is",
+      "[\n\\frac{12}{7}.\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac{12}{7}\\right)})"
+    ],
+    "keyIdeas": [
+      "Reciprocals",
+      "Mean",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Do not compute the ordinary mean $\\frac{1+2+4}{3}$."
+    ],
+    "alternativeMethods": [
+      "Use the formula $\\frac{3}{1+1/2+1/4}=\\frac{12}{7}$."
+    ],
+    "difficultyNotes": "A definition-based fraction calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p11",
+    "problemId": "amc8-2018-p11",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{7}{15}\\right)}$",
+    "shortExplanation": "**Idea:** Count all possible pairs of seats for Abby and Bridget, then count adjacent seat pairs.",
+    "detailedSteps": [
+      "The two named students occupy an unordered pair of seats. There are",
+      "[\n\\binom62=15\n]",
+      "possible pairs.",
+      "In the $2\\times3$ layout, there are $4$ horizontal adjacent pairs and $3$ vertical adjacent pairs, for",
+      "[\n4+3=7\n]",
+      "adjacent pairs. Therefore the probability is",
+      "[\n\\frac7{15}.\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac7{15}\\right)})"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Grid adjacency",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Diagonal seats are not adjacent in the same row or column.",
+      "Do not double-count Abby-Bridget and Bridget-Abby as different seat pairs."
+    ],
+    "alternativeMethods": [
+      "Fix Abby in each type of seat and average the number of adjacent spots for Bridget."
+    ],
+    "difficultyNotes": "Small counting with a simple seating grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p12",
+    "problemId": "amc8-2018-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(6:00)}$",
+    "shortExplanation": "**Idea:** The car clock shows $35$ minutes for every $30$ actual minutes.",
+    "detailedSteps": [
+      "The rate conversion is",
+      "[\n35\\text{ car minutes}=30\\text{ actual minutes}.\n]",
+      "From noon to $7:00$ is $420$ car-clock minutes. The actual elapsed time is",
+      "[\n420\\cdot\\frac{30}{35}=360\\text{ minutes}=6\\text{ hours}.\n]",
+      "Six hours after noon is $6:00$.",
+      "Final Answer: (\\boxed{\\text{B }(6{:}00)})"
+    ],
+    "keyIdeas": [
+      "Clock rate",
+      "Ratios",
+      "Elapsed time"
+    ],
+    "commonMistakes": [
+      "Do not subtract only $5$ minutes once; the clock gains time continuously at a constant rate."
+    ],
+    "alternativeMethods": [
+      "The car clock runs $\\frac76$ as fast as real time, so real time is $\\frac67$ of car-clock time."
+    ],
+    "difficultyNotes": "A proportional reasoning problem about a fast clock.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p13",
+    "problemId": "amc8-2018-p13",
+    "finalAnswer": "$\\boxed{\\text{A }(4)}$",
+    "shortExplanation": "**Idea:** Let the first four equal scores be $x$, then use the average to constrain the final score.",
+    "detailedSteps": [
+      "Let the first four scores be $x$ and the last score be $y$. The total score is",
+      "[\n5\\cdot82=410,\n]",
+      "so",
+      "[\n4x+y=410,\\qquad y=410-4x.\n]",
+      "Since the last score is higher than the first four,",
+      "[\n410-4x>x\\quad\\Rightarrow\\quad x<82.\n]",
+      "Since the last score is at most $100$,",
+      "[\n410-4x\\le100\\quad\\Rightarrow\\quad x\\ge78.\n]",
+      "Thus $x$ can be $78,79,80,81$, giving four possible last scores.",
+      "Final Answer: (\\boxed{\\text{A }(4)})"
+    ],
+    "keyIdeas": [
+      "Average",
+      "Integer bounds",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "The last score must be higher, not equal.",
+      "Remember the score cannot exceed $100$."
+    ],
+    "alternativeMethods": [
+      "Try possible first-four scores near $82$ and compute the last score from the total $410$."
+    ],
+    "difficultyNotes": "Averages plus integer restrictions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p14",
+    "problemId": "amc8-2018-p14",
+    "finalAnswer": "$\\boxed{\\text{D }(18)}$",
+    "shortExplanation": "**Idea:** Make the leftmost digit as large as possible while preserving the required digit product.",
+    "detailedSteps": [
+      "Factor the product:",
+      "[\n120=2^3\\cdot3\\cdot5.\n]",
+      "A leading digit $9$ is impossible because it needs two factors of $3$. The largest possible leading digit is $8$.",
+      "After choosing $8$, the remaining product is",
+      "[\n\\frac{120}{8}=15=5\\cdot3.\n]",
+      "The largest remaining digits are $5,3,1,1$, so",
+      "[\nN=85311.\n]",
+      "The digit sum is",
+      "[\n8+5+3+1+1=18.\n]",
+      "Final Answer: (\\boxed{\\text{D }(18)})"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Digits",
+      "Largest number"
+    ],
+    "commonMistakes": [
+      "A zero digit would make the product $0$.",
+      "Maximize digits from left to right."
+    ],
+    "alternativeMethods": [
+      "Test possible first digits from $9$ down until the remaining product can be made from four digits."
+    ],
+    "difficultyNotes": "A digit-product optimization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p15",
+    "problemId": "amc8-2018-p15",
+    "finalAnswer": "$\\boxed{\\text{D }(1)}$",
+    "shortExplanation": "**Idea:** The large radius is twice a small radius, so the large area is twice the combined small-circle area.",
+    "detailedSteps": [
+      "Let each small circle have radius $r$. The two small circles have combined area",
+      "[\n2\\pi r^2=1.\n]",
+      "The large circle has radius $2r$, so its area is",
+      "[\n\\pi(2r)^2=4\\pi r^2=2(2\\pi r^2)=2.\n]",
+      "The shaded area is the large circle minus the two small circles:",
+      "[\n2-1=1.\n]",
+      "Final Answer: (\\boxed{\\text{D }(1)})"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Radius scaling",
+      "Subtraction"
+    ],
+    "commonMistakes": [
+      "Area scales with the square of the radius.",
+      "The given area is the combined area of both small circles."
+    ],
+    "alternativeMethods": [
+      "Since the large radius is twice a small radius, one small circle has one-fourth the large area; two small circles have half the large area."
+    ],
+    "difficultyNotes": "A clean scaling-area problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p16",
+    "problemId": "amc8-2018-p16",
+    "finalAnswer": "$\\boxed{\\text{C }(5760)}$",
+    "shortExplanation": "**Idea:** Treat the Arabic books as one block and the Spanish books as one block.",
+    "detailedSteps": [
+      "The Arabic block, Spanish block, and three German books make",
+      "[\n1+1+3=5\n]",
+      "objects to arrange. These can be arranged in $5!$ ways.",
+      "Inside the blocks, the Arabic books can be ordered in $2!$ ways and the Spanish books in $4!$ ways.",
+      "Thus the total is",
+      "[\n5!\\cdot2!\\cdot4!=120\\cdot2\\cdot24=5760.\n]",
+      "Final Answer: (\\boxed{\\text{C }(5760)})"
+    ],
+    "keyIdeas": [
+      "Blocks",
+      "Factorials",
+      "Permutations"
+    ],
+    "commonMistakes": [
+      "The German books are not required to stay together.",
+      "The books are different, so internal order matters."
+    ],
+    "alternativeMethods": [
+      "Arrange five units first, then multiply by the arrangements inside each required block."
+    ],
+    "difficultyNotes": "A standard block-permutation problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p17",
+    "problemId": "amc8-2018-p17",
+    "finalAnswer": "$\\boxed{\\text{A }(704)}$",
+    "shortExplanation": "**Idea:** Since Ella is five times as fast, Bella covers one sixth of the total distance.",
+    "detailedSteps": [
+      "Their speeds are in the ratio",
+      "[\n\\text{Bella} : \\text{Ella}=1:5.\n]",
+      "So Bella covers $\\frac16$ of the distance before they meet. Her distance is",
+      "[\n\\frac16\\cdot10560=1760\\text{ feet}.\n]",
+      "Each step covers $2\\frac12=\\frac52$ feet, so the number of steps is",
+      "[\n\\frac{1760}{5/2}=1760\\cdot\\frac25=704.\n]",
+      "Final Answer: (\\boxed{\\text{A }(704)})"
+    ],
+    "keyIdeas": [
+      "Relative speed",
+      "Distance ratio",
+      "Mixed numbers"
+    ],
+    "commonMistakes": [
+      "Bella does not cover half the distance because Ella is faster.",
+      "Convert $2\\frac12$ to $\\frac52$ before dividing."
+    ],
+    "alternativeMethods": [
+      "Use combined speed units: in the same time, the two cover $1+5=6$ equal speed-parts of distance."
+    ],
+    "difficultyNotes": "A ratio version of a meeting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p18",
+    "problemId": "amc8-2018-p18",
+    "finalAnswer": "$\\boxed{\\text{E }(42)}$",
+    "shortExplanation": "**Idea:** Prime factorize and use the divisor-count formula.",
+    "detailedSteps": [
+      "Factor the number:",
+      "[\n23{,}232=2^6\\cdot3\\cdot11^2.\n]",
+      "A divisor has the form $2^a3^b11^c$, where",
+      "[\na=0,1,\\ldots,6;\\quad b=0,1;\\quad c=0,1,2.\n]",
+      "The number of choices is",
+      "[\n7\\cdot2\\cdot3=42.\n]",
+      "Final Answer: (\\boxed{\\text{E }(42)})"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Divisor formula",
+      "Exponents"
+    ],
+    "commonMistakes": [
+      "Use exponent plus one for each prime factor.",
+      "Do not miss the factor $11^2=121$."
+    ],
+    "alternativeMethods": [
+      "$23{,}232=64\\cdot363=2^6\\cdot3\\cdot11^2$."
+    ],
+    "difficultyNotes": "A direct divisor-count application.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p19",
+    "problemId": "amc8-2018-p19",
+    "finalAnswer": "$\\boxed{\\text{C }(8)}$",
+    "shortExplanation": "**Idea:** Treat $+$ as $1$ and $-$ as $-1$; the rule becomes multiplication.",
+    "detailedSteps": [
+      "Let the bottom signs be $a,b,c,d$, each equal to $1$ or $-1$. The next rows become",
+      "[\nab,bc,cd\n]",
+      "then",
+      "[\nac,bd,\n]",
+      "and the top is",
+      "[\nabcd.\n]",
+      "The top is $+$ exactly when the product is $1$, which means an even number of bottom signs are negative.",
+      "The number of such rows is",
+      "[\n\\binom40+\\binom42+\\binom44=1+6+1=8.\n]",
+      "Final Answer: (\\boxed{\\text{C }(8)})"
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Sign multiplication",
+      "Case counting"
+    ],
+    "commonMistakes": [
+      "A plus at the top does not require every bottom sign to be plus.",
+      "Keep track of the rule row by row if simulating."
+    ],
+    "alternativeMethods": [
+      "Half of all $2^4=16$ bottom rows have product $+1$, so the answer is $8$."
+    ],
+    "difficultyNotes": "A parity argument avoids long casework.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p20",
+    "problemId": "amc8-2018-p20",
+    "finalAnswer": "$\\boxed{\\text{A }\\left(\\frac{4}{9}\\right)}$",
+    "shortExplanation": "**Idea:** Subtract two similar corner triangles from the whole triangle.",
+    "detailedSteps": [
+      "Since $AE=1$ and $EB=2$,",
+      "[\n\\frac{AE}{AB}=\\frac13,\\qquad \\frac{BE}{BA}=\\frac23.\n]",
+      "Triangle $ADE$ is similar to $ABC$ with scale factor $\\frac13$, so its area ratio is $\\frac19$.",
+      "Triangle $BEF$ is similar to $BAC$ with scale factor $\\frac23$, so its area ratio is $\\frac49$.",
+      "The quadrilateral $CDEF$ is what remains:",
+      "[\n1-\\frac19-\\frac49=\\frac49.\n]",
+      "Final Answer: (\\boxed{\\text{A }\\left(\\frac49\\right)})"
+    ],
+    "keyIdeas": [
+      "Similar triangles",
+      "Area ratios",
+      "Complementary area"
+    ],
+    "commonMistakes": [
+      "Area ratios use the square of the length ratio.",
+      "Subtract both small triangles, not just $ADE$."
+    ],
+    "alternativeMethods": [
+      "Use coordinates and compute the quadrilateral area directly."
+    ],
+    "difficultyNotes": "A classic \\parallel-lines and similar-triangles problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p21",
+    "problemId": "amc8-2018-p21",
+    "finalAnswer": "$\\boxed{\\text{E }(5)}$",
+    "shortExplanation": "**Idea:** Combine the first two congruences, then impose the condition modulo $11$.",
+    "detailedSteps": [
+      "The first two conditions imply",
+      "[\nn\\equiv14\\pmod{18},\n]",
+      "because $14$ is $2\\pmod6$ and $5\\pmod9$.",
+      "Write $n=18k+14$. Modulo $11$,",
+      "[\n18k+14\\equiv7k+3\\equiv7\\pmod{11}.\n]",
+      "So",
+      "[\n7k\\equiv4\\pmod{11}.\n]",
+      "Since $7^{-1}\\equiv8\\pmod{11}$,",
+      "[\nk\\equiv8\\cdot4\\equiv10\\pmod{11}.\n]",
+      "Thus",
+      "[\nn=198t+194.\n]",
+      "The three-digit values are $194,392,590,788,986$, so there are $5$.",
+      "Final Answer: (\\boxed{\\text{E }(5)})"
+    ],
+    "keyIdeas": [
+      "Congruences",
+      "Modular inverse",
+      "Arithmetic progressions"
+    ],
+    "commonMistakes": [
+      "The moduli $6$ and $9$ are not relatively prime, so combine them carefully.",
+      "Count only three-digit values."
+    ],
+    "alternativeMethods": [
+      "List numbers congruent to $14$ modulo $18$ and observe the period $198$ after applying the modulo $11$ condition."
+    ],
+    "difficultyNotes": "A manageable Chinese-remainder-style problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p22",
+    "problemId": "amc8-2018-p22",
+    "finalAnswer": "$\\boxed{\\text{B }(108)}$",
+    "shortExplanation": "**Idea:** Find what fraction of the square is quadrilateral $AFED$.",
+    "detailedSteps": [
+      "Use a unit square with",
+      "[\nA=(0,1),\\quad B=(1,1),\\quad C=(1,0),\\quad D=(0,0),\\quad E=\\left(\\frac12,0\\right).\n]",
+      "The diagonal $AC$ is $y=1-x$, and line $BE$ is $y=2x-1$. Their intersection is",
+      "[\nF=\\left(\\frac23,\\frac13\\right).\n]",
+      "The shoelace formula on $A,F,E,D$ gives area $\\frac5{12}$ of the square.",
+      "Thus",
+      "[\n\\frac5{12}[ABCD]=45.\n]",
+      "So",
+      "[\n[ABCD]=45\\cdot\\frac{12}{5}=108.\n]",
+      "Final Answer: (\\boxed{\\text{B }(108)})"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Shoelace formula",
+      "Area fractions"
+    ],
+    "commonMistakes": [
+      "Point $E$ is the midpoint of $CD$.",
+      "The given area is a fraction of the square area, not the full area."
+    ],
+    "alternativeMethods": [
+      "Compute the areas of complementary triangles instead of using shoelace."
+    ],
+    "difficultyNotes": "Coordinates make the fraction exact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p23",
+    "problemId": "amc8-2018-p23",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac{5}{7}\\right)}$",
+    "shortExplanation": "**Idea:** Count the complement: choose three vertices with no adjacent pair.",
+    "detailedSteps": [
+      "There are",
+      "[\n\\binom83=56\n]",
+      "ways to choose three vertices.",
+      "The number of ways to choose $3$ non-adjacent vertices on a cycle of $8$ vertices is",
+      "[\n\\frac{8}{8-3}\\binom{8-3}{3}=\\frac85\\binom53=16.\n]",
+      "So the number with at least one adjacent pair is",
+      "[\n56-16=40.\n]",
+      "The probability is",
+      "[\n\\frac{40}{56}=\\frac57.\n]",
+      "Final Answer: (\\boxed{\\text{D }\\left(\\frac57\\right)})"
+    ],
+    "keyIdeas": [
+      "Complement counting",
+      "Non-adjacent selections",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The event says at least one side, so direct counting can double-count triangles with two octagon sides.",
+      "Use unordered choices of vertices."
+    ],
+    "alternativeMethods": [
+      "Count possible gaps between selected vertices around the octagon."
+    ],
+    "difficultyNotes": "Complement counting avoids overlapping cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p24",
+    "problemId": "amc8-2018-p24",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{3}{2}\\right)}$",
+    "shortExplanation": "**Idea:** The cross-section has perpendicular diagonals of lengths $\\sqrt3$ and $\\sqrt2$ in a unit cube.",
+    "detailedSteps": [
+      "Use coordinates in a unit cube with",
+      "[\nC=(0,0,0),\\quad E=(1,1,1),\\quad I=\\left(0,1,\\frac12\\right),\\quad J=\\left(1,0,\\frac12\\right).\n]",
+      "The diagonals are $EC$ and $JI$, with vectors",
+      "[\n(1,1,1),\\qquad (1,-1,0).\n]",
+      "Their dot product is $0$, so they are perpendicular. Their lengths are",
+      "[\n\\sqrt3\\quad\\text{and}\\quad\\sqrt2.\n]",
+      "The cross-section area is",
+      "[\nR=\\frac12\\sqrt3\\sqrt2=\\frac{\\sqrt6}{2},\n]",
+      "because a cube face has area $1$. Therefore",
+      "[\nR^2=\\frac64=\\frac32.\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac32\\right)})"
+    ],
+    "keyIdeas": [
+      "3D coordinates",
+      "Perpendicular diagonals",
+      "Area ratio"
+    ],
+    "commonMistakes": [
+      "The cross-section is not a face of the cube.",
+      "Remember that $R$ is already a ratio to face area; for side length $1$, the face area is $1$."
+    ],
+    "alternativeMethods": [
+      "Split quadrilateral $EJCI$ into two congruent triangles along diagonal $EC$."
+    ],
+    "difficultyNotes": "Spatial geometry becomes clean with coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2018-p25",
+    "problemId": "amc8-2018-p25",
+    "finalAnswer": "$\\boxed{\\text{E }(58)}$",
+    "shortExplanation": "**Idea:** Find the first and last integer cube roots in the inclusive interval.",
+    "detailedSteps": [
+      "The lower bound is",
+      "[\n2^8+1=257.\n]",
+      "Since",
+      "[\n6^3=216<257<343=7^3,\n]",
+      "the first cube counted is $7^3$.",
+      "The upper bound is",
+      "[\n2^{18}+1=262145.\n]",
+      "Also",
+      "[\n64^3=(2^6)^3=2^{18}=262144,\n]",
+      "so the last cube counted is $64^3$.",
+      "The number of integer cube bases from $7$ through $64$ is",
+      "[\n64-7+1=58.\n]",
+      "Final Answer: (\\boxed{\\text{E }(58)})"
+    ],
+    "keyIdeas": [
+      "Perfect cubes",
+      "Powers of 2",
+      "Inclusive counting"
+    ],
+    "commonMistakes": [
+      "The interval is inclusive, and $64^3=2^{18}$ is below $2^{18}+1$.",
+      "The first valid cube is $7^3$, not $6^3$."
+    ],
+    "alternativeMethods": [
+      "Use powers of two to recognize the top cube immediately."
+    ],
+    "difficultyNotes": "A boundary counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

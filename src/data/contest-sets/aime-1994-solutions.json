@@ -1,0 +1,331 @@
+[
+  {
+    "id": "solution-aime-1994-p1",
+    "problemId": "aime-1994-p1",
+    "finalAnswer": "$\\boxed{063}$",
+    "shortExplanation": "The 1994th qualifying square root is 2992, giving remainder 063.",
+    "detailedSteps": [
+      "A square is one modulo 3 exactly when its positive root is not divisible by 3. Excluding root 1, which gives zero, the roots are $2,4,5,7,8,\\ldots$.",
+      "In each pair, roots number $2j-1$ and $2j$ are $3j-1$ and $3j+1$. Thus root number 1994 is $3(997)+1=2992$.",
+      "The term is $2992^2-1=8952063$, whose remainder modulo 1000 is 063."
+    ],
+    "keyIdeas": [
+      "Square roots in two residue classes"
+    ],
+    "commonMistakes": [
+      "Including the zero term arising from square root 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting roots avoids enumerating the much larger sequence terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p2",
+    "problemId": "aime-1994-p2",
+    "finalAnswer": "$\\boxed{312}$",
+    "shortExplanation": "The side length is $8+\\sqrt{304}$, so the requested sum is 312.",
+    "detailedSteps": [
+      "Put the large circle center at the origin, with the tangency point P at $(0,-20)$. The other end Q of the diameter is $(0,-10)$, so CD lies on $y=-10$.",
+      "The smaller disk lies below this tangent line. Since it is outside the square, the square extends upward. If its side is s, AB lies on $y=s-10$; its midpoint is on the vertical diameter because AB is a horizontal chord.",
+      "Therefore each endpoint satisfies $(s/2)^2+(s-10)^2=400$. This simplifies to $5s^2-80s-1200=0$.",
+      "The positive root is $s=8+4\\sqrt{19}=8+\\sqrt{304}$. The negative root is inadmissible. Thus $m+n=8+304=312$."
+    ],
+    "keyIdeas": [
+      "A square supported by a chord and a tangent"
+    ],
+    "commonMistakes": [
+      "Placing the square on the smaller-circle side of the tangent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chord midpoint fixes the square horizontal position.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p3",
+    "problemId": "aime-1994-p3",
+    "finalAnswer": "$\\boxed{561}$",
+    "shortExplanation": "The value at 94 is 4561, giving remainder 561.",
+    "detailedSteps": [
+      "The function $g(x)=x(x+1)/2$ satisfies $g(x)+g(x-1)=x^2$. Let $h=f-g$; then $h(x)=-h(x-1)$.",
+      "At 19, $h(19)=94-190=-96$. Advancing 75 integer steps reverses the sign, so $h(94)=96$.",
+      "Consequently $f(94)=94(95)/2+96=4561$, with remainder 561 modulo 1000. The values of f at noninteger inputs are irrelevant to this integer recurrence."
+    ],
+    "keyIdeas": [
+      "An alternating deviation from a particular solution"
+    ],
+    "commonMistakes": [
+      "Assuming the particular quadratic is the unique function satisfying the relation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A homogeneous alternating term accounts for the supplied initial value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p4",
+    "problemId": "aime-1994-p4",
+    "finalAnswer": "$\\boxed{312}$",
+    "shortExplanation": "The sum through 255 is 1538; another 57 terms of value 8 give 1994.",
+    "detailedSteps": [
+      "For $2^j\\le k<2^{j+1}$, the summand is j. Thus the complete blocks through 255 contribute $\\sum_{j=0}^7j2^j=1538$.",
+      "The desired sum lies in the next block because the sum through 511 is 4098. Within that block it is $1538+8(n-255)$.",
+      "Equating to 1994 gives $n-255=57$, hence $n=312$. Direct substitution gives 1994, and the sum is strictly increasing for all n at least 2, so this is unique."
+    ],
+    "keyIdeas": [
+      "Blocks of constant binary logarithm"
+    ],
+    "commonMistakes": [
+      "Counting 256 as part of the block with logarithm floor 7."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The summands change only at powers of two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p5",
+    "problemId": "aime-1994-p5",
+    "finalAnswer": "$\\boxed{103}$",
+    "shortExplanation": "The total is $46^3-1=3^3\\cdot5\\cdot7\\cdot103$.",
+    "detailedSteps": [
+      "Pad every number from 0 through 999 to three digits. Give a zero digit weight 1 and each other digit its own value. For a positive number the product of these weights is exactly its nonzero-digit product.",
+      "The sum over all 1000 strings is $(1+1+2+\\cdots+9)^3=46^3$. The all-zero string contributes 1 and must be removed, so $S=46^3-1$.",
+      "Factor as $(46-1)(46^2+46+1)=45(2163)=3^3\\cdot5\\cdot7\\cdot103$. Thus the largest prime factor is 103."
+    ],
+    "keyIdeas": [
+      "Digit-product factorization by independent places"
+    ],
+    "commonMistakes": [
+      "Assigning zero weight to a zero digit even though the definition omits that digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Leading zero padding works because omitted digits have multiplicative weight one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p6",
+    "problemId": "aime-1994-p6",
+    "finalAnswer": "$\\boxed{660}$",
+    "shortExplanation": "Each orientation contributes 330 small equilateral triangles.",
+    "detailedSteps": [
+      "Take one line from each family, with indices i,j,k in the specified interval. The two sloping lines meet at height $j+k$. Their intersections with $y=i$ are horizontally separated by $2|i-j-k|/\\sqrt3$.",
+      "A triangle of the required side length therefore occurs exactly when $|i-j-k|=1$. These triangles contain no additional line in their interiors: adjacent horizontal levels differ by 1 and adjacent sloping intercepts by 2, the precise spacings of this triangular grid.",
+      "The number of ordered pairs $(j,k)$ with sum s is $21-|s|$ for $-20\\le s\\le20$. For $i=j+k+1$ to lie in range, s runs from-11 through 9, giving $\\sum_{s=-11}^{9}(21-|s|)=441-66-45=330$.",
+      "The case $i=j+k-1$ has the symmetric sum 330. Each triangle determines its three supporting lines uniquely, so the total is 660."
+    ],
+    "keyIdeas": [
+      "Counting unit cells by three line-family indices"
+    ],
+    "commonMistakes": [
+      "Counting every three-line intersection as a small triangle without imposing its side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two signs distinguish the upward and downward triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p7",
+    "problemId": "aime-1994-p7",
+    "finalAnswer": "$\\boxed{072}$",
+    "shortExplanation": "There are 60 admissible secants and 12 admissible tangents.",
+    "detailedSteps": [
+      "The circle has twelve integer points: all sign choices of $(1,7),(7,1),(5,5)$. A line intersects the circle at at most two points, so a qualifying line is either a tangent at one of them or a secant through two of them.",
+      "Of the $\\binom{12}{2}=66$ pairs, six are antipodal. Their lines pass through the origin and cannot be written $ax+by=1$. Each of the other sixty pairs gives a distinct line avoiding the origin and hence a unique coefficient pair $(a,b)$.",
+      "The twelve tangent lines also avoid the origin; the tangent at $(u,v)$ is $ux+vy=50$, giving $(a,b)=(u/50,v/50)$. Every intersection is the specified integer point.",
+      "These cases exhaust all lines with at least one solution and no noninteger solutions. The required count is $60+12=72$."
+    ],
+    "keyIdeas": [
+      "Integer secants and tangents to a circle"
+    ],
+    "commonMistakes": [
+      "Counting a line with just one integer intersection when its second intersection is noninteger."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The condition applies to every real intersection, not merely to one intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p8",
+    "problemId": "aime-1994-p8",
+    "finalAnswer": "$\\boxed{315}$",
+    "shortExplanation": "The two mirror-image placements both give $ab=315$.",
+    "detailedSteps": [
+      "The vectors $(a,11)$ and $(b,37)$ have equal length and an angle of sixty degrees. One is the rotation of the other by either positive or negative sixty degrees.",
+      "For the positive rotation, $37=(\\sqrt3/2)a+11/2$, so $a=21\\sqrt3$. Its horizontal coordinate is $b=a/2-11\\sqrt3/2=5\\sqrt3$.",
+      "For the negative rotation, both a and b change sign. Thus in either placement $ab=(21\\sqrt3)(5\\sqrt3)=315$."
+    ],
+    "keyIdeas": [
+      "Rotating one radius by sixty degrees"
+    ],
+    "commonMistakes": [
+      "Assuming both horizontal coordinates are positive without accounting for the reflected placement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Orientation changes the individual coordinates but not their product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p9",
+    "problemId": "aime-1994-p9",
+    "finalAnswer": "$\\boxed{394}$",
+    "shortExplanation": "There are 243 successful positional matchings among 10395 equally likely matchings.",
+    "detailedSteps": [
+      "Ignore pair names and record which two draw positions contain each matched pair. Each perfect matching of twelve positions is equally likely, since each has the same number of assignments of the six pair names and internal tile orders. There are $11\\cdot9\\cdot7\\cdot5\\cdot3\\cdot1=10395$ such matchings.",
+      "The hand size is the number of pairs currently opened but not closed. Success requires this number never exceed two. Split a successful matching into excursions from hand size zero back to zero.",
+      "An excursion containing k pairs starts by opening one pair. Before its final closure, it has k-1 repetitions of opening a second pair and closing one of the two current pairs, with two choices for that closure. Thus an excursion of size k has $2^{k-1}$ matchings.",
+      "Let $F_n$ count successful matchings on 2 n positions, with $F_0=1$. The first-excursion decomposition gives $F_n=\\sum_{k=1}^n2^{k-1}F_{n-k}$. Therefore $F_1=1$ and, for $n\\ge2$, $F_n=F_{n-1}+2F_{n-1}=3F_{n-1}$.",
+      "It follows that $F_6=3^5=243$. The probability is $243/10395=9/385$, so $p+q=394$."
+    ],
+    "keyIdeas": [
+      "Perfect matchings whose open-pair count stays below three"
+    ],
+    "commonMistakes": [
+      "Treating named-pair sequences as equally likely after forgetting that each pair has two tiles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every draw sequence induces an equally weighted positional matching.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p10",
+    "problemId": "aime-1994-p10",
+    "finalAnswer": "$\\boxed{450}$",
+    "shortExplanation": "The reduced cosine is $29/421$, giving 450.",
+    "detailedSteps": [
+      "Write $BC=tm$ and $AB=tn$, where m,n are the coprime integers in the cosine. Since both side lengths are integers, t is an integer. The third side is $t\\sqrt{n^2-m^2}$; its integrality forces $n^2-m^2=\\ell^2$ for an integer ell.",
+      "The projection identity gives $BD=BC^2/AB=tm^2/n=29^3$. Since m and n are coprime, $m^2$ divides $29^3$, leaving $m=1$ or 29.",
+      "The case m=1 would require $(n-\\ell)(n+\\ell)=1$, impossible with a positive third side. For m=29, the factorization is $(n-\\ell)(n+\\ell)=841$.",
+      "The positive factor pairs are $(1,841)$ and $(29,29)$. The latter gives ell zero. The former yields $n=421,\\ell=420$, with m and n coprime.",
+      "The scale $t=29n$ realizes all integer sides and the prescribed projection. Hence the cosine is $29/421$, and $m+n=450$."
+    ],
+    "keyIdeas": [
+      "An altitude projection forces a prime-square leg"
+    ],
+    "commonMistakes": [
+      "Assuming the given projection is itself an integer side of the right triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reduced cosine extracts a primitive Pythagorean ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p11",
+    "problemId": "aime-1994-p11",
+    "finalAnswer": "$\\boxed{465}$",
+    "shortExplanation": "Only six multiples of three are missing between the minimum and maximum heights.",
+    "detailedSteps": [
+      "Let b bricks contribute 10 inches and c contribute 19 inches; the other 94-b-c contribute 4. The height is $376+3t$, where $t=2b+5c$, with $b,c\\ge0$ and $b+c\\le94$.",
+      "If c is even, write $c=2j$. Then $t=2z$ and z runs through every integer in $[5j,94+3j]$, for $0\\le j\\le47$. Successive intervals overlap or touch through the interval at j=46, so their union is $[0,232]\\cup\\{235\\}$.",
+      "If c is odd, write $c=2j+1$. Then $t=5+2z$ with z in $[5j,93+3j]$, for $0\\le j\\le46$. These intervals have union $[0,228]\\cup[230,231]$.",
+      "Thus among $0\\le t\\le470$, precisely $1,3,463,466,468,469$ are missing. The number of attainable heights is $471-6=465$."
+    ],
+    "keyIdeas": [
+      "Overlapping arithmetic intervals of attainable heights"
+    ],
+    "commonMistakes": [
+      "Counting orientation combinations rather than distinct heights, or assuming every multiple of three occurs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Splitting by parity makes each family a consecutive interval after rescaling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p12",
+    "problemId": "aime-1994-p12",
+    "finalAnswer": "$\\boxed{702}$",
+    "shortExplanation": "The largest feasible grid is 18 by 39, with 702 plots.",
+    "detailedSteps": [
+      "Let u and v be the counts of equal squares along the 24-meter and 52-meter edges. Their ratio is $u/v=24/52=6/13$, so $u=6k,v=13k$ for a positive integer k; the square side is $4/k$.",
+      "The existing outer fence needs no replacement. The internal grid uses $(u-1)52+(v-1)24=624k-76$ meters of new fence.",
+      "The bound $624k-76\\le1994$ gives $k\\le3$. At k=3 the required length is 1796; at k=4 it is 2420 and exceeds the supply.",
+      "The plot count is $uv=78k^2$, which is largest at k=3, giving 702."
+    ],
+    "keyIdeas": [
+      "Grid dimensions forced by the field aspect ratio"
+    ],
+    "commonMistakes": [
+      "Including the already fenced outer boundary in the internal fence requirement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square side need not be an integer; the grid counts must be integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p13",
+    "problemId": "aime-1994-p13",
+    "finalAnswer": "$\\boxed{850}$",
+    "shortExplanation": "The five conjugate pairs each contribute a squared reciprocal modulus; their total is 850.",
+    "detailedSteps": [
+      "Zero is not a root. For a root x, put $z=13-1/x$. The equation gives $z^{10}=-1$. Thus the ten reciprocal roots are $1/x=13-z$, as z ranges over the ten equally spaced roots of minus one.",
+      "For $z=e^{i\\theta}$, $|1/x|^2=|13-z|^2=170-26\\cos\\theta$. The ten cosines sum to zero because the ten z values sum to zero.",
+      "The sum over all ten roots is 1700. Conjugate roots have equal squared reciprocal modulus, so the requested sum over five conjugate pairs is half of this, namely 850."
+    ],
+    "keyIdeas": [
+      "Reciprocal roots on a translated unit circle"
+    ],
+    "commonMistakes": [
+      "Summing over both roots in each conjugate pair when the requested expression has one term per pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal substitution turns the root set into a translated regular decagon.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p14",
+    "problemId": "aime-1994-p14",
+    "finalAnswer": "$\\boxed{071}$",
+    "shortExplanation": "The ray meets seventy further unit mirror segments after the initial contact.",
+    "detailedSteps": [
+      "Scale the common mirror length to 1 and put B at the origin, C at $(1,0)$, with BA making angle beta above BC. The source figure measures alpha from the mirror line. After its first reflection, the ray has direction $\\pi-\\alpha$.",
+      "Unfold each later reflection by reflecting the wedge instead of the ray. The successive mirror copies are radial segments of length 1 at polar angles $k\\beta$, for positive integers k. The unfolded ray is the straight line $x\\sin\\alpha+y\\cos\\alpha=\\sin\\alpha$.",
+      "At polar angle theta, its intersection has radius $r=\\sin\\alpha/\\sin(\\alpha+\\theta)$. Along the forward ray theta increases from zero toward $\\pi-\\alpha$. The intersection is on a finite mirror exactly when $r\\le1$, equivalently $0\\le\\theta\\le\\pi-2\\alpha$.",
+      "In degrees, the last allowable mirror index is $\\left\\lfloor(180-39.88)/1.994\\right\\rfloor=70$, since $70(1.994)=139.58<140.12<141.574=71(1.994)$.",
+      "Count these seventy further contacts and the initial reflection at C to obtain 71. After the next radial crossing lies beyond the mirror endpoint, the physical ray escapes the wedge through its open end."
+    ],
+    "keyIdeas": [
+      "Unfolding reflections across finite equal mirrors"
+    ],
+    "commonMistakes": [
+      "Continuing to count intersections with the infinite supporting lines after the ray passes a segment endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal mirror lengths turn the endpoint test into a radial cutoff.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1994-p15",
+    "problemId": "aime-1994-p15",
+    "finalAnswer": "$\\boxed{597}$",
+    "shortExplanation": "The fold region has area $270\\pi-324\\sqrt3$, giving 597.",
+    "detailedSteps": [
+      "Put $B=(0,0),A=(36,0),C=(0,36\\sqrt3)$, and let $P=(x,y)$ be an interior point. Its crease for a vertex is the perpendicular bisector of the segment joining that vertex to P, restricted to the triangular paper. Boundaries and vertices have zero area and do not affect the requested area.",
+      "The A and B creases meet at the circumcenter of ABP, whose coordinates are $(18,(x^2+y^2-36x)/(2y))$. On the line $x=18$, the paper has vertical range $[0,18\\sqrt3]$. Since every point of the triangle satisfies $x^2+y^2\\le36x+36\\sqrt3y$, this circumcenter is in the paper exactly when $x^2+y^2\\ge36x$. Thus avoiding this crease intersection requires P to be inside the disk with diameter AB.",
+      "Similarly the B and C creases meet inside the paper exactly when $x^2+y^2\\ge36\\sqrt3y$. Avoiding their intersection requires P inside the disk with diameter BC.",
+      "The A and C creases never meet inside the paper for interior P. The triangle lies in the disk with diameter AC, so angle APC is obtuse. The circumcenter of APC is then across AC from P, outside the triangular paper. Consequently the fold region is precisely the intersection of the two preceding disks, up to its boundary. The lens lies in the triangle. To verify this, put $w=x^2+y^2$. When $y\\le x/\\sqrt3$, $x+y/\\sqrt3\\le w/(\\sqrt3y)\\le36$ by the BC disk inequality. When $y\\ge x/\\sqrt3$, $x+y/\\sqrt3\\le w/x\\le36$ by the AB disk inequality. Both disks also lie in the nonnegative coordinate half-planes.",
+      "The disk centers are $(18,0)$ and $(0,18\\sqrt3)$, with radii 18 and $18\\sqrt3$ and center distance 36. Their intersection points are B and $(27,9\\sqrt3)$. The lens subtends 120 degrees at the first center and 60 degrees at the second.",
+      "Subtracting the two isosceles triangles from their sectors gives area $108\\pi-81\\sqrt3+162\\pi-243\\sqrt3=270\\pi-324\\sqrt3$. Here 3 is squarefree, so $q+r+s=270+324+3=597$."
+    ],
+    "keyIdeas": [
+      "A fold region as the overlap of two diameter disks"
+    ],
+    "commonMistakes": [
+      "Treating infinite crease lines as if intersections outside the triangular paper also disqualify P."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right angle makes the hypotenuse-crease pair irrelevant to the interior region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

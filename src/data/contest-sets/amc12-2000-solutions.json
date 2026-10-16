@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc12-2000-p1",
+    "problemId": "amc12-2000-p1",
+    "finalAnswer": "$\\boxed{671}$ (choice E)",
+    "shortExplanation": "Factor allocation leaves only four unordered triples.",
+    "detailedSteps": [
+      "The prime factorization is $2001=3\\cdot23\\cdot29$. If all three factors exceed $1$, they must be $3,23,29$, giving a sum of $55$.",
+      "If one factor is $1$, the other two form one of the pairs $(3,667),(23,87),(29,69)$. Their three-factor sums are $671,111,99$. The largest is $671$."
+    ],
+    "keyIdeas": [
+      "Distinct factor triples"
+    ],
+    "commonMistakes": [
+      "Allowing two factors equal to 1 despite distinctness."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinctness matters before the factors are optimized.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p2",
+    "problemId": "amc12-2000-p2",
+    "finalAnswer": "$\\boxed{2000^{2001}}$ (choice A)",
+    "shortExplanation": "Multiplying by one more copy of the base raises the exponent by one.",
+    "detailedSteps": [
+      "The product is $2000^1\\cdot2000^{2000}=2000^{1+2000}=2000^{2001}$."
+    ],
+    "keyIdeas": [
+      "Same-base exponent multiplication"
+    ],
+    "commonMistakes": [
+      "Multiplying exponents instead of adding them."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is a single exponent-law step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p3",
+    "problemId": "amc12-2000-p3",
+    "finalAnswer": "$\\boxed{50}$ (choice B)",
+    "shortExplanation": "Two reductions leave $16/25$ of the original count.",
+    "detailedSteps": [
+      "Let $N$ be the starting number. Each day retains $4/5$, so $N(4/5)^2=32$. Therefore $N=32(25/16)=50$."
+    ],
+    "keyIdeas": [
+      "Successive percentage factors"
+    ],
+    "commonMistakes": [
+      "Subtracting 40 percent of the initial count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second percentage has a new reference amount.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p4",
+    "problemId": "amc12-2000-p4",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Track first appearances of all ten units digits.",
+    "detailedSteps": [
+      "Adding consecutive units digits modulo $10$ gives $1,1,2,3,5,8,3,1,4,5,9,4,3,7,0,7,7,4,1,5,6$.",
+      "Every digit except $6$ has appeared by the fifteenth term. No new digit appears in terms $16$–$20$, and term $21$ introduces $6$."
+    ],
+    "keyIdeas": [
+      "First occurrence in a modular recurrence"
+    ],
+    "commonMistakes": [
+      "Tracking only digits listed among the options."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite first-occurrence list gives a complete conclusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p5",
+    "problemId": "amc12-2000-p5",
+    "finalAnswer": "$\\boxed{2-2p}$ (choice C)",
+    "shortExplanation": "The inequality selects the negative branch of $x-2$.",
+    "detailedSteps": [
+      "Since $x<2$, the equation becomes $p=2-x$. Hence $x=2-p$ and $x-p=2-2p$."
+    ],
+    "keyIdeas": [
+      "Absolute-value branch selection"
+    ],
+    "commonMistakes": [
+      "Using p=x-2 when x<2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the given sign before dropping the absolute value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p6",
+    "problemId": "amc12-2000-p6",
+    "finalAnswer": "$\\boxed{119}$ (choice C)",
+    "shortExplanation": "The pair $11,13$ gives the listed value $119$.",
+    "detailedSteps": [
+      "The eligible primes are $5,7,11,13,17$. For $11$ and $13$, the expression is $11\\cdot13-11-13=119$.",
+      "The ten pair values are $23,39,47,63,59,71,95,119,159,191$. Only $119$ is among the proposed values."
+    ],
+    "keyIdeas": [
+      "Enumerating allowed prime pairs"
+    ],
+    "commonMistakes": [
+      "Including composite integers from the interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The short list makes the option association exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p7",
+    "problemId": "amc12-2000-p7",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "The exponent must be a positive divisor of $6$.",
+    "detailedSteps": [
+      "Write $\\log_b729=n$, so $b^n=3^6$. A valid integer base must be a power of $3$: $b=3^k$, where $kn=6$.",
+      "The possible exponents $k$ are $1,2,3,6$, yielding bases $3,9,27,729$. There are $4$. Base $1$ is not a logarithm base."
+    ],
+    "keyIdeas": [
+      "Integral logarithm bases"
+    ],
+    "commonMistakes": [
+      "Counting b=1 as a permitted base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime factorization enforces the integrality condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p8",
+    "problemId": "amc12-2000-p8",
+    "finalAnswer": "$\\boxed{20201}$ (choice C)",
+    "shortExplanation": "Layer $k$ adds $4k$ cells to the initial cell.",
+    "detailedSteps": [
+      "The illustrated figures consist of lattice cells with $|i|+|j|\\le n$. The cells at distance exactly $k>0$ number $4k$.",
+      "Thus stage $100$ contains $1+4\\sum_{k=1}^{100}k=1+2(100)(101)=20201$ cells."
+    ],
+    "keyIdeas": [
+      "Diamond layers"
+    ],
+    "commonMistakes": [
+      "Using numerical extrapolation without checking the illustrated pattern."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The picture determines the layer rule.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p9",
+    "problemId": "amc12-2000-p9",
+    "finalAnswer": "$\\boxed{80}$ (choice C)",
+    "shortExplanation": "Divisibility after four entries first restricts the last score.",
+    "detailedSteps": [
+      "The total is $400$. If $s$ is the last score, $400-s$ must be divisible by $4$, so the last score can only be $76$ or $80$.",
+      "If it were $76$, the first four would total $324$. Their fourth entry would have to be divisible by $3$ so that the first three also had an integral mean. None of $71,80,82,91$ has that property.",
+      "The order $76,82,91,71,80$ has integral running means $76,79,83,80,80$, proving that the remaining possibility works."
+    ],
+    "keyIdeas": [
+      "Divisibility of successive partial totals"
+    ],
+    "commonMistakes": [
+      "Checking only the final mean."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Necessity and a valid order together settle the answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p10",
+    "problemId": "amc12-2000-p10",
+    "finalAnswer": "$\\boxed{(1,3,3)}$ (choice E)",
+    "shortExplanation": "Apply the three operations in their specified order.",
+    "detailedSteps": [
+      "Reflection in the $xy$-plane gives $(1,2,-3)$. A half-turn about the $x$-axis negates both other coordinates, giving $(1,-2,3)$.",
+      "Adding $5$ to the $y$-coordinate gives $(1,3,3)$."
+    ],
+    "keyIdeas": [
+      "Composing spatial transformations"
+    ],
+    "commonMistakes": [
+      "Negating the x-coordinate in a rotation about the x-axis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The axis of rotation stays fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p11",
+    "problemId": "amc12-2000-p11",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "shortExplanation": "The numerator becomes $2ab$ after using the constraint.",
+    "detailedSteps": [
+      "Because $a,b\\ne0$, combine the expression as $\\dfrac{a^2+b^2-(ab)^2}{ab}$.",
+      "The given relation yields $(ab)^2=(a-b)^2=a^2-2ab+b^2$. The numerator is therefore $2ab$, so the expression equals $2$."
+    ],
+    "keyIdeas": [
+      "Using a squared relation"
+    ],
+    "commonMistakes": [
+      "Replacing (ab)^2 by a^2-b^2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring the constraint exposes the cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p12",
+    "problemId": "amc12-2000-p12",
+    "finalAnswer": "$\\boxed{112}$ (choice E)",
+    "shortExplanation": "The objective equals a three-factor product minus $13$.",
+    "detailedSteps": [
+      "Expanding gives $AMC+AM+MC+CA=(A+1)(M+1)(C+1)-13$. The three positive factors sum to $15$.",
+      "AM–GM bounds their product by $5^3=125$. Equality occurs at $A=M=C=4$, which satisfies the integer conditions. The maximum is $125-13=112$."
+    ],
+    "keyIdeas": [
+      "A symmetric product after shifting"
+    ],
+    "commonMistakes": [
+      "Maximizing the triple product while ignoring the pair terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sharp bound is attained by an allowed integer triple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p13",
+    "problemId": "amc12-2000-p13",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The family size is an integer strictly between $4$ and $6$.",
+    "detailedSteps": [
+      "Let the total milk and coffee be $M,C>0$ and let $n$ be the family size. Then $M+C=8n$ and $M/4+C/6=8$.",
+      "Positivity implies $(M+C)/6<8<(M+C)/4$. Substituting $8n$ gives $4<n<6$, hence $n=5$."
+    ],
+    "keyIdeas": [
+      "Strict mixture bounds"
+    ],
+    "commonMistakes": [
+      "Allowing an endpoint by treating one ingredient as zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero ingredient condition makes the inequalities strict.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p14",
+    "problemId": "amc12-2000-p14",
+    "finalAnswer": "$\\boxed{20}$ (choice E)",
+    "shortExplanation": "The only allowable extra entries are $3$ and $17$.",
+    "detailedSteps": [
+      "The mode is always $2$, and the mean is $(25+x)/7$. For $x\\le2$, the median is also $2$, preventing a nonconstant progression.",
+      "For $2<x<4$, the median is $x$ and the mean is larger. The progression equation $2x=2+(25+x)/7$ gives $x=3$.",
+      "For $x\\ge4$, the median is $4$ and the mean is larger. Then $8=2+(25+x)/7$, giving $x=17$. Both work, so their sum is $20$."
+    ],
+    "keyIdeas": [
+      "Piecewise median and arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Keeping the median fixed as x varies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Determine the ordering before writing the progression equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p15",
+    "problemId": "amc12-2000-p15",
+    "finalAnswer": "$\\boxed{-\\frac19}$ (choice B)",
+    "shortExplanation": "To evaluate $f(3z)$, the given parameter must be $9z$.",
+    "detailedSteps": [
+      "Substituting $x=9z$ gives $f(3z)=81z^2+9z+1$. The equation becomes $81z^2+9z-6=0$.",
+      "Its positive discriminant gives two real roots, whose sum by Viète is $-9/81=-1/9$."
+    ],
+    "keyIdeas": [
+      "Rescaling a functional input"
+    ],
+    "commonMistakes": [
+      "Substituting x=3z and evaluating f(z)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Match the input argument carefully.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p16",
+    "problemId": "amc12-2000-p16",
+    "finalAnswer": "$\\boxed{555}$ (choice D)",
+    "shortExplanation": "The equal labels occur along five regularly spaced cells.",
+    "detailedSteps": [
+      "Using zero-based row $r$ and column $c$, the labels are $17r+c+1$ and $13c+r+1$. Equality requires $16r=12c$, or $4r=3c$.",
+      "Thus $r=3k,c=4k$ for $k=0,1,2,3,4$. The labels are $1,56,111,166,221$, totaling $555$."
+    ],
+    "keyIdeas": [
+      "Matching row-major and column-major labels"
+    ],
+    "commonMistakes": [
+      "Using one-based indices without adjusting the constants."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer line is truncated by the board dimensions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p17",
+    "problemId": "amc12-2000-p17",
+    "finalAnswer": "$\\boxed{\\frac{1}{1+\\sin\\theta}}$ (choice D)",
+    "shortExplanation": "The angle bisector splits the unit radius in the ratio of the adjacent sides.",
+    "detailedSteps": [
+      "Triangle $OAB$ is right at $A$, so $OB=\\sec\\theta$ and $AB=\\tan\\theta$. The angle-bisector theorem gives $OC/CA=OB/BA=1/\\sin\\theta$.",
+      "Because $OC+CA=1$, we obtain $OC=1/(1+\\sin\\theta)$."
+    ],
+    "keyIdeas": [
+      "Angle-bisector theorem with tangent lengths"
+    ],
+    "commonMistakes": [
+      "Reversing the adjacent-side ratio in the bisector theorem."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The radius and tangent are perpendicular.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p18",
+    "problemId": "amc12-2000-p18",
+    "finalAnswer": "$\\boxed{\\text{Thursday}}$ (choice A)",
+    "shortExplanation": "The equal weekdays force year $N$ to be a leap year.",
+    "detailedSteps": [
+      "From day $300$ of year $N$ to day $200$ of year $N+1$, the elapsed time is the length of year $N$ minus $100$. It is $265$ or $266$; only $266$ is divisible by $7$.",
+      "The preceding year is common. From its day $100$ to day $300$ of year $N$ is $365-100+300=565\\equiv5\\pmod7$ days.",
+      "Five days before Tuesday is Thursday."
+    ],
+    "keyIdeas": [
+      "Leap-year weekday shifts"
+    ],
+    "commonMistakes": [
+      "Using the following year’s length for the first interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count elapsed days across the correct boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p19",
+    "problemId": "amc12-2000-p19",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The tiny base $DE$ is half a unit long.",
+    "detailedSteps": [
+      "The angle-bisector theorem gives $BE:EC=13:15$, so $BE=14(13/28)=13/2$. The midpoint has $BD=7$, hence $DE=1/2$.",
+      "Heron’s formula gives $[ABC]=\\sqrt{21\\cdot8\\cdot7\\cdot6}=84$, so the altitude to $BC$ is $12$. Thus $[ADE]=(1/2)(1/2)(12)=3$."
+    ],
+    "keyIdeas": [
+      "Angle-bisector ratio and shared altitude"
+    ],
+    "commonMistakes": [
+      "Using DE as half of BC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two subtriangles share the altitude to BC.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p20",
+    "problemId": "amc12-2000-p20",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Elimination fixes the three positive variables.",
+    "detailedSteps": [
+      "From $y+1/z=1$, we have $y=(z-1)/z$. Then $x=(3z-4)/(z-1)$. Positivity requires $z>4/3$.",
+      "Substitution in $z+1/x=7/3$ yields $9z^2-30z+25=(3z-5)^2=0$, so $z=5/3$. Consequently $y=2/5$ and $x=3/2$.",
+      "The product is $(3/2)(2/5)(5/3)=1$."
+    ],
+    "keyIdeas": [
+      "Eliminating positive reciprocal variables"
+    ],
+    "commonMistakes": [
+      "Dropping the positivity condition while multiplying denominators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "All original equations must be checked after elimination.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p21",
+    "problemId": "amc12-2000-p21",
+    "finalAnswer": "$\\boxed{\\frac{1}{4m}}$ (choice D)",
+    "shortExplanation": "The two area ratios have product $1/4$.",
+    "detailedSteps": [
+      "Let the square side be $s$, and let the extra horizontal and vertical leg lengths be $u,v$. The hypotenuse passes through $(s,s)$ and the intercepts $(s+u,0),(0,s+v)$, so $s/(s+u)+s/(s+v)=1$. This simplifies to $uv=s^2$.",
+      "The two small triangle areas are $su/2$ and $sv/2$. Dividing by $s^2$ gives ratios $u/(2s)$ and $v/(2s)$, whose product is $1/4$. If the first is $m$, the other is $1/(4m)$."
+    ],
+    "keyIdeas": [
+      "Similarity around an inscribed square"
+    ],
+    "commonMistakes": [
+      "Assuming the two small triangles have equal area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square condition links the two leftover leg lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p22",
+    "problemId": "amc12-2000-p22",
+    "finalAnswer": "$\\boxed{\\text{Product of the non-real zeros}}$ (choice C)",
+    "shortExplanation": "The conjugate-pair product is positive and below $2$, while every other offered quantity exceeds $3$.",
+    "detailedSteps": [
+      "The graph shows exactly two real roots $r_1\\in(1,3)$ and $r_2\\in(3,4)$, with $4<P(0)<6$. The remaining two roots are a conjugate pair $z,\\overline z$.",
+      "Because the polynomial is monic, $r_1r_2|z|^2=P(0)$. Hence $0<|z|^2<6/3=2$.",
+      "The graph also shows $P(-1)>3$ and $P(1)>3$. The product of all zeros is $P(0)>4$, the sum of coefficients is $P(1)>3$, and $r_1+r_2>4$. The smallest is therefore the product of the non-real zeros."
+    ],
+    "keyIdeas": [
+      "Viète with graph-derived bounds"
+    ],
+    "commonMistakes": [
+      "Reading the product of all roots as their sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only coarse graph bounds are needed; exact root values are unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p23",
+    "problemId": "amc12-2000-p23",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice B)",
+    "shortExplanation": "Exactly four six-element tickets have an integral logarithm sum.",
+    "detailedSteps": [
+      "The logarithm sum is integral precisely when the product is a power of $10$. Every selected number can therefore have only prime factors $2$ and $5$. The candidates are $1,2,4,5,8,10,16,20,25,32,40$.",
+      "Define the excess of a number as its exponent of $2$ minus its exponent of $5$. Only $5$ and $25$ have negative excess, namely $-1$ and $-2$. Only $1$ and $10$ have zero excess. Both negative-excess numbers are needed: otherwise six choices require at least three positive excesses, whose smallest possible sum is $1+1+2=4$, exceeding the available negative total.",
+      "With $5$ and $25$ chosen, the positive excesses must sum to $3$. The other four numbers must include both zero-excess numbers; three positive excesses would already sum to at least $4$. The final two numbers must have excesses $1$ and $2$: choose one of $2,20$ and one of $4,40$. This gives exactly $2\\cdot2=4$ tickets.",
+      "All ordinary lottery tickets are equally likely, so conditional on the winning ticket having this property, each of these four is equally likely. The probability is $1/4$."
+    ],
+    "keyIdeas": [
+      "Prime exponents in lottery products"
+    ],
+    "commonMistakes": [
+      "Allowing repeated numbers or treating logarithms as independent choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complete finite candidate list is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p24",
+    "problemId": "amc12-2000-p24",
+    "finalAnswer": "$\\boxed{27}$ (choice D)",
+    "shortExplanation": "The small circle has radius $3/8$ of $AB$.",
+    "detailedSteps": [
+      "Let $AB=s$. Since $AC$ and $BC$ are arcs of radius $s$, their intersection forms an equilateral triangle, and arc $BC$ subtends $\\pi/3$. Thus its length is $s\\pi/3=12$.",
+      "By symmetry the inner circle’s center is $(s/2,r)$ when $AB$ lies on the horizontal axis. Internal tangency to the radius-$s$ circle about $A$ requires $\\sqrt{s^2/4+r^2}=s-r$.",
+      "Squaring gives $r=3s/8$. Its circumference is $2\\pi r=(3\\pi s/4)=(9/4)(12)=27$."
+    ],
+    "keyIdeas": [
+      "Internal tangency in a circular-arc region"
+    ],
+    "commonMistakes": [
+      "Using external rather than internal tangency."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The arcs and base force a symmetric center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2000-p25",
+    "problemId": "amc12-2000-p25",
+    "finalAnswer": "$\\boxed{1680}$ (choice E)",
+    "shortExplanation": "Each distinct coloring is represented by $24$ assignments to fixed faces.",
+    "detailedSteps": [
+      "There are $8!$ assignments of the eight distinct colors to labeled faces. An octahedron has $24$ rotations: choose the target of one face in $8$ ways and the target of one of its vertices in $3$ ways.",
+      "No nonidentity rotation fixes a coloring with eight distinct colors, since it would move a face to a different color. Thus each rotation class has $24$ assignments, and the number is $8!/24=1680$."
+    ],
+    "keyIdeas": [
+      "Rotational symmetry of an octahedron"
+    ],
+    "commonMistakes": [
+      "Dividing by reflections, which are not allowed rotations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinct colors make the rotational action free.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

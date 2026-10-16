@@ -1,0 +1,105 @@
+[
+  {
+    "finalAnswer": "Sort the sizes and print the largest contiguous window whose largest-minus-smallest size is at most $K$. The reference uses two pointers after sorting.",
+    "shortExplanation": "The range of selected sizes determines whether every pair is allowed. Once sizes are sorted, filling in all diamonds between a valid smallest and largest diamond preserves validity, so an optimal selection is a sorted window.",
+    "detailedSteps": [
+      "For a nonempty selection, every pair differs by at most $K$ exactly when its largest size minus its smallest is at most $K$. Sorting does not merge equal sizes: every diamond remains a separate selectable item.",
+      "If a valid subset has some smallest and largest diamonds in the sorted order, include all intervening items. Their sizes lie between those extremes, so validity remains and the count cannot decrease. An optimum therefore exists among contiguous sorted windows.",
+      "Scan the right endpoint from left to right. While $a_r-a_l>K$, advance the left endpoint. After these advances, $l$ is the earliest possible start of a valid window ending at $r$, so this endpoint\u2019s best count is $r-l+1$.",
+      "A left endpoint discarded earlier can never become valid as the right endpoint grows: the largest size only increases. Thus the left pointer also advances monotonically. The earliest surviving start gives the longest valid window for each right endpoint; taking the largest recorded count covers an optimal window.",
+      "The comparison must be strictly greater than $K$ when shrinking, because equality is permitted. When $K=0$, the algorithm retains whole runs of equal sizes. This is the one-case Bronze objective, rather than the different same-name Silver task.",
+      "Sorting takes $O(N\\log N)$ time; both pointers make at most $N$ advances, so the scan is $O(N)$. The size array uses $O(N)$ space. The actual bounds are $N\\le1000$, positive sizes at most $10{,}000$, and $0\\le K\\le10{,}000$. Counts and differences fit ordinary integers. Read diamond.in and write diamond.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"diamond.in\");\n    std::ofstream out(\"diamond.out\");\n    int n, tolerance;\n    in >> n >> tolerance;\n    std::vector<int> sizes(n);\n    for (int &size : sizes) in >> size;\n    std::sort(sizes.begin(), sizes.end());\n    int left = 0, best = 0;\n    for (int right = 0; right < n; ++right) {\n        while (sizes[right] - sizes[left] > tolerance) ++left;\n        best = std::max(best, right - left + 1);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Pairwise closeness is equivalent to a range bound.",
+      "Adding sorted items inside the chosen extremes cannot hurt.",
+      "Monotone endpoints find each longest feasible window without rescanning."
+    ],
+    "commonMistakes": [
+      "Using a strict less-than condition and rejecting two sizes that differ by exactly K.",
+      "Deduplicating sizes and losing distinct equal-sized diamonds.",
+      "Checking only adjacent differences, which does not control the full range.",
+      "Using the different two-display-case Silver objective."
+    ],
+    "alternativeMethods": [
+      "For each diamond size $s$ as a possible minimum, count all items in $[s,s+K]$. An optimal minimum is one of the items, so this direct method is correct in $O(N^2)$ time. For small checks, enumerate all subsets and test every selected pair; this avoids using the sorted-window property at all."
+    ],
+    "difficultyNotes": "Introductory range reasoning with an intermediate two-pointer implementation. The important details are duplicate items and the inclusive K boundary.",
+    "id": "solution-usaco-bronze-2016-us-open-p1",
+    "problemId": "usaco-bronze-2016-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print the increasing one-based indices of the two pieces with valid translations that are disjoint and cover the target exactly. Precompute legal unsigned masks, then search for each footprint\u2019s exact target complement.",
+    "shortExplanation": "A correct piece placement cannot contain a filled cell outside the target. Once the first valid footprint is fixed, the second must cover precisely the target cells still missing. Precomputed placement sets make that complement check exact.",
+    "detailedSteps": [
+      "Extract every filled cell of each piece. Translate all of its cells by one common row offset and one common column offset, including disconnected clumps. Do not rotate or reflect a piece. Only filled cells must stay inside the original board; blank padding may extend outside.",
+      "For a nonempty piece, any one filled cell must move from a coordinate in $0,\\ldots,N-1$ to another in that range. Hence both translation offsets lie in $[-(N-1),N-1]$. Enumerate this range on each axis. Every valid translation is included; an empty footprint, if present, is already represented by the zero translation.",
+      "Reject a translation if any filled cell leaves the board or lands on a blank target cell. Such a placement cannot occur in an exact reconstruction. Keep every other translated footprint and remove duplicate footprints.",
+      "Encode cell $(r,c)$ by the unsigned bit at position $rN+c$. The source gives $N\\le8$, so every position is between 0 and 63. Use an unsigned 64-bit mask: the top bit is valid, and no shift by 64 is performed. The reference stores each piece\u2019s footprints in an ordered set.",
+      "Try every pair of distinct piece indices $i<j$. For each valid mask $A$ of piece $i$, look for $T\\mathbin{\\mathrm{XOR}}A$ in piece $j$\u2019s placement set, where $T$ is the target mask. Since $A$ is a subset of $T$, this XOR is exactly the uncovered target.",
+      "A match gives legal translations, zero overlap and exact target coverage, so it is a realizable reconstruction. Conversely, in any correct reconstruction its first footprint is among the enumerated placements, and the second footprint must equal that uncovered target. Therefore the search finds the unique source-guaranteed index pair. It prints one-based indices in increasing order; uniqueness of the translations themselves is not required.",
+      "Precomputation takes $O(KN^4)$ time to inspect all translations and cells. Ordered-set lookup across the pairs adds $O(K^2N^2\\log N)$ time. Placement sets and original cells use $O(KN^2)$ space. These word-mask bounds use the actual at-most-64-cell source grid. For $N=8,K=10$, the loose bounds are 144,000 cell checks and 10,125 placement lookups. Preserve bcs.in and bcs.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <cstdint>\n#include <fstream>\n#include <set>\n#include <string>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"bcs.in\");\n    std::ofstream out(\"bcs.out\");\n    int n, k;\n    in >> n >> k;\n    std::vector<std::string> target(n);\n    for (std::string &row : target) in >> row;\n    std::uint64_t targetMask = 0;\n    for (int r = 0; r < n; ++r)\n        for (int c = 0; c < n; ++c)\n            if (target[r][c] == '#') targetMask |= std::uint64_t{1} << (r * n + c);\n    std::vector<std::set<std::uint64_t>> placements(k);\n    for (int piece = 0; piece < k; ++piece) {\n        std::vector<std::pair<int, int>> cells;\n        for (int r = 0; r < n; ++r) {\n            std::string row;\n            in >> row;\n            for (int c = 0; c < n; ++c) if (row[c] == '#') cells.push_back({r, c});\n        }\n        for (int dr = 1 - n; dr < n; ++dr) {\n            for (int dc = 1 - n; dc < n; ++dc) {\n                bool valid = true;\n                std::uint64_t mask = 0;\n                for (const auto &[r, c] : cells) {\n                    const int rr = r + dr, cc = c + dc;\n                    if (rr < 0 || rr >= n || cc < 0 || cc >= n || target[rr][cc] != '#') {\n                        valid = false;\n                        break;\n                    }\n                    mask |= std::uint64_t{1} << (rr * n + cc);\n                }\n                if (valid) placements[piece].insert(mask);\n            }\n        }\n    }\n    for (int i = 0; i < k; ++i) {\n        for (int j = i + 1; j < k; ++j) {\n            for (std::uint64_t first : placements[i]) {\n                if (placements[j].count(targetMask ^ first)) {\n                    out << i + 1 << ' ' << j + 1 << '\\n';\n                    return 0;\n                }\n            }\n        }\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "A valid individual placement is a subset of the original filled shape.",
+      "One placed footprint uniquely determines its required complement.",
+      "Unsigned masks are safe because the actual grid has at most 64 cells.",
+      "Disconnected clumps remain one rigid piece."
+    ],
+    "commonMistakes": [
+      "Rotating or flipping a shape when only translation is allowed.",
+      "Clipping a filled cell that shifted outside the board.",
+      "Rejecting a shift merely because a blank border goes outside.",
+      "Moving disconnected clumps independently.",
+      "Using a signed bit shift at position 63 or forming a shift by 64.",
+      "Accepting overlap just because the combined union covers the target."
+    ],
+    "alternativeMethods": [
+      "Use coordinate sets or Boolean grids for every legal translation and directly test both disjointness and union for each pair of placements. This avoids bit operations. An independent way to generate translations is to align one chosen filled cell of a piece with each target cell, then move all remaining cells by the same offset; every valid nonempty placement appears through that anchor alignment."
+    ],
+    "difficultyNotes": "Advanced exhaustive geometry and representation reasoning. The grid is small, but completeness of translations, blank padding, disconnected shapes, overlap and the unsigned high bit all need careful treatment.",
+    "id": "solution-usaco-bronze-2016-us-open-p2",
+    "problemId": "usaco-bronze-2016-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Try removing the distinct cow indices attaining the original minimum x, maximum x, minimum y and maximum y. Recompute each remaining bounding box and print the smallest area; at most four deletion scans are needed.",
+    "shortExplanation": "Deleting an ordinary interior cow cannot change any side of the tight rectangle. Only a uniquely attaining extreme can move a side inward, and every such cow is among the four selected extreme indices.",
+    "detailedSteps": [
+      "For any remaining herd, its smallest axis-aligned enclosing rectangle has width $x_{\\max}-x_{\\min}$ and height $y_{\\max}-y_{\\min}$. Every enclosing rectangle must span those extremes, and the bounding box attains them. Cows are points and may lie on the boundary, so there is no extra unit added to either dimension.",
+      "Scan the original herd and record one cow index attaining each of the four extrema. Put those indices into a set, since a corner cow can attain more than one extreme.",
+      "For each candidate index, omit that cow and scan every other point to find the four remaining bounds. Multiply the width and height, and update the smallest area. Each evaluated result corresponds to removing exactly one actual cow.",
+      "Suppose some deletion changes an extent. Its removed cow must have been the unique cow attaining that original extreme; otherwise another cow would keep the same bound. Every uniquely attaining cow is necessarily in our recorded set, regardless of which index was chosen for a tied extreme.",
+      "A noncandidate deletion therefore leaves the entire original bounding box unchanged. A candidate deletion cannot increase that box, because its remaining herd is a subset. The smallest candidate result is consequently no larger than any noncandidate result, and every improving deletion is represented. This proves global optimality even when no deletion improves the area.",
+      "The source has $3\\le N\\le50{,}000$. At most four complete scans plus the initial scan take $O(N)$ time, and storing the points takes $O(N)$ space. A quadratic all-deletions scan is unnecessary at this actual Bronze limit.",
+      "Coordinates are between 1 and 40,000. The largest possible area is $39{,}999^2=1{,}599{,}920{,}001$, which fits signed 32-bit storage; the reference nevertheless performs products in 64-bit arithmetic. A collinear remainder has area zero and is explicitly allowed. Read reduce.in and write reduce.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <limits>\n#include <set>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"reduce.in\");\n    std::ofstream out(\"reduce.out\");\n    int n;\n    in >> n;\n    std::vector<std::pair<long long, long long>> points(n);\n    for (auto &[x, y] : points) in >> x >> y;\n    int minX = 0, maxX = 0, minY = 0, maxY = 0;\n    for (int i = 1; i < n; ++i) {\n        if (points[i].first < points[minX].first) minX = i;\n        if (points[i].first > points[maxX].first) maxX = i;\n        if (points[i].second < points[minY].second) minY = i;\n        if (points[i].second > points[maxY].second) maxY = i;\n    }\n    const std::set<int> candidates{minX, maxX, minY, maxY};\n    long long best = std::numeric_limits<long long>::max();\n    for (int removed : candidates) {\n        long long loX = 40001, hiX = 0, loY = 40001, hiY = 0;\n        for (int i = 0; i < n; ++i) {\n            if (i == removed) continue;\n            loX = std::min(loX, points[i].first);\n            hiX = std::max(hiX, points[i].first);\n            loY = std::min(loY, points[i].second);\n            hiY = std::max(hiY, points[i].second);\n        }\n        best = std::min(best, (hiX - loX) * (hiY - loY));\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A tight rectangle is determined by four coordinate extrema.",
+      "Only deleting a unique extreme can shrink an extent.",
+      "Candidate deletions attain real solutions and dominate all noncandidate deletions.",
+      "Point geometry allows zero width or height."
+    ],
+    "commonMistakes": [
+      "Treating point coordinates as occupied unit squares and adding one to widths.",
+      "Assuming a tied extreme disappears after removing just one of its cows.",
+      "Trying every deletion with a full scan despite the 50,000-point bound.",
+      "Forbidding zero area even though the source permits it.",
+      "Removing more than one cow because one cow appears in several extreme roles."
+    ],
+    "alternativeMethods": [
+      "For small test inputs, remove each cow in turn and directly recompute the remaining bounding box. This quadratic search is a useful independent checker of the candidate lemma. An even more literal small oracle enumerates rectangles using remaining coordinates and tests whether each contains all remaining points."
+    ],
+    "difficultyNotes": "Intermediate extremal reasoning. The large Bronze bound makes the four-candidate proof useful; ties and zero-area geometry are the main correctness details.",
+    "id": "solution-usaco-bronze-2016-us-open-p3",
+    "problemId": "usaco-bronze-2016-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

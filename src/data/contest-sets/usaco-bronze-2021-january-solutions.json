@@ -1,0 +1,94 @@
+[
+  {
+    "id": "solution-usaco-bronze-2021-january-p1",
+    "problemId": "usaco-bronze-2021-january-p1",
+    "finalAnswer": "Count one initial alphabet repetition, then add one whenever consecutive heard letters fail to advance in the given alphabet.",
+    "shortExplanation": "A single repetition presents letters in increasing alphabet rank. A repeated letter or a decrease in rank must start another repetition. Cutting at exactly those transitions realizes the heard string, so every counted break is necessary and sufficient.",
+    "detailedSteps": [
+      "**Record the supplied order.** Give each letter a rank from $0$ through $25$ using the input permutation. The Bronze problem supplies this order; it is not the usual alphabet unless the input says so.",
+      "**Count forced breaks.** Start the answer at one because the heard string is nonempty. For each adjacent pair, add one if the new letter's rank is at most the previous letter's rank. One complete repetition cannot contain that pair in order: each letter appears only once, and its ranks strictly increase.",
+      "**Show that these breaks suffice.** Split the heard string immediately after every nonincreasing transition. Each resulting block has strictly increasing ranks, so it is a subsequence of one complete alphabet repetition. Ignore the other letters in that repetition. One repetition per block produces exactly the required observations, meeting the lower bound.",
+      "**Complexity and input.** Building the rank table and scanning a heard string of length $L$ takes $O(26+L)$ time and $O(26)$ auxiliary space. The answer is at most $L\\le1000$. Read from stdin and print the count to stdout.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    string alphabet, heard;\n    in >> alphabet >> heard;\n    array<int, 26> rank{};\n    for (int i = 0; i < 26; ++i) rank[alphabet[i] - 'a'] = i;\n    int repetitions = 1;\n    for (int i = 1; i < static_cast<int>(heard.size()); ++i)\n        if (rank[heard[i] - 'a'] <= rank[heard[i - 1] - 'a'])\n            ++repetitions;\n    out << repetitions << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A heard string may be a subsequence of the complete humming.",
+      "Every nonincreasing adjacent rank pair forces a new cycle.",
+      "Increasing blocks give a construction attaining the lower bound."
+    ],
+    "commonMistakes": [
+      "Comparing ordinary letter codes instead of ranks in the supplied permutation.",
+      "Using a strict decrease test and missing consecutive copies of the same letter.",
+      "Counting only full sets of heard letters; unobserved letters may occur anywhere."
+    ],
+    "alternativeMethods": [
+      "For a small independent check, write repeated copies of the full alphabet and locate the heard letters in order. The repetition containing the last match gives the count. This literal stream search does not compare adjacent ranks."
+    ],
+    "difficultyNotes": "The scan is short. The proof depends on understanding that missing letters are allowed, while equal letters cannot appear twice in the same repetition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-january-p2",
+    "problemId": "usaco-bronze-2021-january-p2",
+    "finalAnswer": "Try group counts from N down to 1 and accept the first count whose required odd cows and total parity can both be satisfied.",
+    "shortExplanation": "For $G$ groups, let $m=\\lfloor G/2\\rfloor$ be the odd groups and $r=\\lceil G/2\\rceil$ the even groups. With $O$ odd cows and $E$ even cows, feasibility is exactly $O\\ge m+2\\max(0,r-E)$ and $O-m$ even. These conditions also give a way to use every cow.",
+    "detailedSteps": [
+      "**Keep only parity.** Count $E$ even breed IDs and $O$ odd breed IDs. Actual ID sizes do not affect group-sum parity. All cows must still be used, and every group must be nonempty.",
+      "**Fix a candidate group count.** Since the first group is even, $G$ groups require $r=\\lceil G/2\\rceil$ even groups and $m=\\lfloor G/2\\rfloor$ odd groups.",
+      "**Derive the resource bound.** Each odd group needs at least one odd cow. An even group needs either an even cow or at least two odd cows. At most $E$ even groups can have an even cow, so feasibility requires $O\\ge m+2\\max(0,r-E)$.",
+      "**Check the total parity.** The parity of all cows together is $O\\bmod2$. The parity of all groups together is $m\\bmod2$. Because no cow may be dropped, these must agree: $O-m$ is even.",
+      "**Construct a grouping.** Give each odd group one odd cow. Give $\\min(E,r)$ even groups one even cow each, and every remaining even group two odd cows. The bound supplies these cows. The leftover odd count is nonnegative and even, so add leftovers in pairs to an existing group. Add all leftover even cows to any group. These additions preserve parity, and every group was already nonempty. Thus the two conditions are sufficient as well as necessary.",
+      "**Maximize and implement.** Try $G=N,N-1,\\ldots,1$ and stop at the first feasible value. There cannot be more than $N$ nonempty groups, and the source guarantees a feasible grouping. Counting IDs and checking candidates takes $O(N)$ time and $O(1)$ auxiliary space. Use stdin and stdout.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n, odd = 0;\n    in >> n;\n    for (int i = 0, id; i < n; ++i) {\n        in >> id;\n        odd += id % 2;\n    }\n    int even = n - odd;\n    for (int groups = n; groups >= 1; --groups) {\n        int oddGroups = groups / 2;\n        int evenGroups = (groups + 1) / 2;\n        int oddNeeded = oddGroups + 2 * max(0, evenGroups - even);\n        if (odd >= oddNeeded && (odd - oddGroups) % 2 == 0) {\n            out << groups << '\\n';\n            return;\n        }\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Odd groups need odd cows; an even group can use one even cow or two odd cows.",
+      "Using every cow imposes a separate total-parity condition.",
+      "A necessary resource bound becomes exact when paired leftovers can be absorbed."
+    ],
+    "commonMistakes": [
+      "Leaving unused odd cows outside the photo.",
+      "Starting with an odd-sum group instead of an even-sum group.",
+      "Assuming every finished group has only one or two cows; paired leftovers may enlarge a group."
+    ],
+    "alternativeMethods": [
+      "For small inputs, exhaust all nonempty subsets of the remaining labelled cows as the next group, keep those with the required parity, and recurse with the opposite parity. The best complete partition is an independent check, although it is too expensive for the full $N=1000$ bound."
+    ],
+    "difficultyNotes": "The main subtlety is using all cows. The resource inequality alone can accept a count with the wrong total parity; the constructive argument explains the additional condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-january-p3",
+    "problemId": "usaco-bronze-2021-january-p3",
+    "finalAnswer": "Place cows from tallest to shortest and multiply the remaining eligible-stall counts. Return zero if any cow has no available eligible stall.",
+    "shortExplanation": "When a cow is processed, every previously placed cow was at least as tall. Its occupied stall is therefore also eligible for the current cow. If $C_i$ stalls fit the current cow and $i$ cows were placed, exactly $C_i-i$ choices remain, independent of the earlier choices.",
+    "detailedSteps": [
+      "**Fix a cow order.** Sort cow heights from largest to smallest. Keep cows and stalls as distinct indexed objects even when their numerical heights are equal.",
+      "**Count the next choices.** For the cow at index $i$, starting at zero, count $C_i$ original stalls whose capacities are at least that height. Equality is permitted. All $i$ previously occupied stalls belong to this eligible set because they hold cows no shorter than the current one. The number of available choices is exactly $C_i-i$.",
+      "**Apply the product rule.** Every partial assignment has the same number $C_i-i$ of extensions. Multiplying these counts over the fixed cow order counts each labelled complete assignment once. Equal heights do not justify dividing by a factorial.",
+      "**Handle impossibility.** If $C_i-i\\le0$, the first $i+1$ cows need more distinct eligible stalls than exist. The answer is zero. Stop before multiplying a negative factor.",
+      "**Use a safe integer type.** There are at most $N!$ labelled assignments. The maximum is $20!=2432902008176640000$, which fits a signed 64-bit integer but exceeds a 32-bit integer. Store and multiply the answer in a C++ long long. Each partial product is also bounded by $N!$.",
+      "**Complexity and input.** Scan all capacities for each cow. The total time is $O(N^2+N\\log N)$, and storage is $O(N)$, easily within the source bound $N\\le20$. Read from stdin and print the count to stdout.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <functional>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<int> cows(n), stalls(n);\n    for (int& height : cows) in >> height;\n    for (int& capacity : stalls) in >> capacity;\n    sort(cows.begin(), cows.end(), greater<int>());\n    long long ways = 1;\n    for (int i = 0; i < n; ++i) {\n        int eligible = 0;\n        for (int capacity : stalls) eligible += capacity >= cows[i];\n        int choices = eligible - i;\n        if (choices <= 0) {\n            ways = 0;\n            break;\n        }\n        ways *= choices;\n    }\n    out << ways << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Tall-to-short processing creates nested eligible-stall sets.",
+      "The number of extensions depends only on how many cows were already placed.",
+      "Cow and stall identities remain distinct when their heights match."
+    ],
+    "commonMistakes": [
+      "Using a strict height comparison and excluding a cow that exactly fits.",
+      "Treating equal-height cows as indistinguishable.",
+      "Multiplying negative choice counts instead of returning zero.",
+      "Storing a potentially factorial-sized answer in a 32-bit integer."
+    ],
+    "alternativeMethods": [
+      "Sort stalls from smallest capacity to largest. At stall index $i$, count cows no taller than that capacity and subtract $i$ already assigned cows. Those cow sets are nested too, so the same product rule works in the opposite direction."
+    ],
+    "difficultyNotes": "The product is simple once nested eligibility is proved. Correctly counting labelled objects and using 64-bit arithmetic are essential, especially for twenty mutually compatible cows and stalls.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

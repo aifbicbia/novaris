@@ -1,0 +1,532 @@
+[
+  {
+    "id": "solution-fma-2020-a-p1",
+    "problemId": "fma-2020-a-p1",
+    "finalAnswer": "$\\boxed{\\sqrt{6gh}}$ (choice E)",
+    "shortExplanation": "The ball must leave the ground with enough energy to rise twice its launch height. Before the bounce it has twice that energy.",
+    "detailedSteps": [
+      "Let the downward launch speed be $v_0$. Energy just before impact is $K_-=\\tfrac12mv_0^2+mgh$.",
+      "The bounce retains half of this energy, while the subsequent rise requires $K_+=mg(2h)$. Thus $\\tfrac12(\\tfrac12mv_0^2+mgh)=2mgh$.",
+      "Solving gives $v_0^2=6gh$, so $v_0=\\sqrt{6gh}$."
+    ],
+    "keyIdeas": [
+      "Track energy on both sides of the bounce."
+    ],
+    "commonMistakes": [
+      "Losing half of kinetic energy multiplies speed by $1/\\sqrt2$, not by $1/2$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short conservation-of-energy calculation suffices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p2",
+    "problemId": "fma-2020-a-p2",
+    "finalAnswer": "$\\boxed{Q}$ (choice E)",
+    "shortExplanation": "Both contact points are stationary instantaneously. The ball rotates about their connecting line, and Q is farthest from that line.",
+    "detailedSteps": [
+      "No slipping gives $\\mathbf v_A=\\mathbf v_B=0$. For a rigid ball, $\\mathbf v_B-\\mathbf v_A=\\boldsymbol\\Omega\\times(\\mathbf r_B-\\mathbf r_A)$, so the instantaneous rotation axis is the line $AB$.",
+      "In the right-angle cross section, this axis is $R/\\sqrt2$ below the center $O$. Speed equals $|\\Omega|$ times distance from the axis.",
+      "The distances of $Q$, $O$, and $P$ from $AB$ are $R+R/\\sqrt2$, $R/\\sqrt2$, and $R-R/\\sqrt2$, respectively. The contacts have zero speed. Therefore $Q$ is fastest."
+    ],
+    "keyIdeas": [
+      "Use all stationary contact points to identify the instantaneous axis."
+    ],
+    "commonMistakes": [
+      "The lowest marked point is not the rotation axis for two-plane contact."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three-dimensional rolling constraint becomes a distance comparison in the displayed cross section.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p3",
+    "problemId": "fma-2020-a-p3",
+    "finalAnswer": "$\\boxed{2^{1/3}L}$ (choice B)",
+    "shortExplanation": "The contact area and pressure each grow linearly with penetration. Resistance grows quadratically, so stopping work grows as the cube of the depth.",
+    "detailedSteps": [
+      "For a constant-angle wedge of fixed width, contact area is proportional to penetration $x$. The stated force per contact area is also proportional to $x$. Fixed angle factors do not change this scaling.",
+      "The resistive force therefore has the form $F(x)=Cx^2$. Work to depth $L$ is $E=\\int_0^L Cx^2\\,dx=CL^3/3$.",
+      "For depth $L_2$ with twice the energy, $(L_2/L)^3=2$. Hence $L_2=2^{1/3}L$."
+    ],
+    "keyIdeas": [
+      "Distinguish pressure, total force, and work."
+    ],
+    "commonMistakes": [
+      "Doubling energy does not double the stopping depth when resistance grows with penetration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The wedge angle enters the constant of proportionality and cancels from the depth ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p4",
+    "problemId": "fma-2020-a-p4",
+    "finalAnswer": "$\\boxed{\\frac{m\\omega^2d}{\\sqrt2}}$ (choice B)",
+    "shortExplanation": "Each rod needs an inward force on its center. At a corner, the joint force has two equal perpendicular components.",
+    "detailedSteps": [
+      "Each rod center is a distance $d$ from the square center. Its required inward resultant is $m\\omega^2d$. By symmetry, the two joints provide equal inward-normal components $t=m\\omega^2d/2$.",
+      "Consider the top-right corner. The force on the top rod has components $(+t,-t)$. The opposite force on the right rod has components $(-t,+t)$; its horizontal component supplies half of that rod's inward resultant.",
+      "These assignments give zero torque about each rod center and equal-and-opposite joint forces. The magnitude is $\\sqrt{t^2+t^2}=m\\omega^2d/\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Apply force balance to each rod and Newton's third law at a joint."
+    ],
+    "commonMistakes": [
+      "Using only the inward-normal component omits the equally large component along the adjacent rod."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The joint is massless in this ideal construction; each rod, rather than the whole square, supplies the useful free-body diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p5",
+    "problemId": "fma-2020-a-p5",
+    "finalAnswer": "$\\boxed{\\omega=\\sqrt{g/L}\\ \\text{(resonance model)}}$ (choice A)",
+    "shortExplanation": "For small oscillations with suitable coherent forcing, shaking at the natural frequency produces resonant growth. This is the intended resonance answer.",
+    "detailedSteps": [
+      "For small angular motion, let $x$ be the pendulum displacement relative to the box and $X$ the box displacement. Then $\\ddot x+\\omega_0^2x=-\\ddot X$, where $\\omega_0=\\sqrt{g/L}$.",
+      "With $X=A\\cos(\\omega t)$, the forcing has frequency $\\omega$. At $\\omega=\\omega_0$, a particular solution is $x_p=(A\\omega_0t/2)\\sin(\\omega_0t)$, whose envelope grows over coherent cycles.",
+      "Thus the usual resonance prescription is $\\omega=\\sqrt{g/L}$. The exact final amplitude over an arbitrary fixed finite time also depends on the initial phase and forcing phase; the printed wording does not specify them."
+    ],
+    "keyIdeas": [
+      "Identify the natural frequency and the frequency of the applied acceleration."
+    ],
+    "commonMistakes": [
+      "Resonance does not prove a phase-independent optimum for every finite duration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This explanation uses the intended small-angle, coherent resonance model. For a finite-time example with $\\omega_0=1$, initial $x=A$, initial $\\dot x=0$, and forcing duration $2\\pi$, the final free amplitude at $\\omega=1.2$ exceeds that at exact resonance; our frozen independent check records this scope explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p6",
+    "problemId": "fma-2020-a-p6",
+    "finalAnswer": "$\\boxed{1.01r_0}$ (choice B)",
+    "shortExplanation": "The central force conserves angular momentum. For an approximately circular orbit, the product of stellar mass and orbital radius stays constant.",
+    "detailedSteps": [
+      "Let $j$ be the planet's angular momentum per unit mass. A central stellar force has zero torque, so $j$ is conserved.",
+      "Circular balance gives $v^2=GM/r$, hence $j^2=(rv)^2=GMr$. The slow, nearly circular evolution keeps $Mr$ constant.",
+      "With $M_f=0.99M_i$, $r_f=r_0/0.99=1.010101\\ldots r_0$, closest to $1.01r_0$."
+    ],
+    "keyIdeas": [
+      "Combine a conserved quantity with the evolving circular-orbit relation."
+    ],
+    "commonMistakes": [
+      "A weaker gravitational force expands this orbit; it does not shrink the radius by one percent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The problem explicitly supplies the slow circular approximation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p7",
+    "problemId": "fma-2020-a-p7",
+    "finalAnswer": "$\\boxed{\\mathrm{I,\\ II,\\ III}\\ \\text{(small-throw model)}}$ (choice E)",
+    "shortExplanation": "In the usual first-order relative-orbit model, radial throws return after one orbital period, while an out-of-plane throw also returns to the station.",
+    "detailedSteps": [
+      "Facing the direction of travel with Earth to the left makes left and right radial directions. Up is perpendicular to the orbital plane. Let the station's orbital angular frequency be $n$.",
+      "Let $x$ point radially outward and $y$ forward. The first-order rotating-frame equations are $$\\ddot x-2n\\dot y-3n^2x=0,\\qquad \\ddot y+2n\\dot x=0.$$ For a purely radial relative launch speed $u$, with zero initial relative positions and tangential velocity, their solution is $x=(u/n)\\sin(nt)$ and $y=(2u/n)(\\cos(nt)-1)$. Both return to zero after $2\\pi/n$, for either sign of $u$.",
+      "For a small normal launch speed $w$, $z=(w/n)\\sin(nt)$ while $x=y=0$. It returns after $\\pi/n$. Therefore all three return in this linear approximation.",
+      "An exact finite throw changes orbital energy by an amount quadratic in its speed and changes the orbital period. Consequently this is an approximate return model, not a universal exact collision claim for unspecified throw speeds."
+    ],
+    "keyIdeas": [
+      "Resolve the throws into radial and out-of-plane components.",
+      "State the accuracy of the relative-orbit approximation."
+    ],
+    "commonMistakes": [
+      "A return to the original point in the trash's own orbit need not coincide exactly with the station's return."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The printed problem does not state a throw-speed scale. The standard small-throw interpretation is explicit here, and an independent exact-period counterexample is retained in the audit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p8",
+    "problemId": "fma-2020-a-p8",
+    "finalAnswer": "$\\boxed{a\\propto x}$ (choice C)",
+    "shortExplanation": "The time derivative requires the chain rule. A velocity proportional to position gives acceleration proportional to position as well.",
+    "detailedSteps": [
+      "The plotted line has the form $v=cx$ with $c>0$.",
+      "Then $a=dv/dt=(dv/dx)(dx/dt)=cv=c^2x$. This is an increasing line through the origin, graph C."
+    ],
+    "keyIdeas": [
+      "Use $a=v\\,dv/dx$ for a velocity-position graph."
+    ],
+    "commonMistakes": [
+      "The slope $dv/dx$ is not acceleration by itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit trajectory $x=x_0e^{ct}$ verifies the same result.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p9",
+    "problemId": "fma-2020-a-p9",
+    "finalAnswer": "$\\boxed{mg}$ (choice B)",
+    "shortExplanation": "The hanging block fixes the string tension. Frictionless contact preserves that tension throughout the string.",
+    "detailedSteps": [
+      "The original hanging block is stationary, so the tension balancing its weight is $T=mg$. With a massless string and frictionless pulley/contact, this tension is the same at the fixed end.",
+      "As a consistency check, the newly suspended mass is supported by two equal tensions. Horizontal balance gives equal angles $\\theta$, and vertical balance gives $2T\\sin\\theta=mg$, or $\\theta=30^\\circ$."
+    ],
+    "keyIdeas": [
+      "Start with the single hanging block and then check the suspended mass."
+    ],
+    "commonMistakes": [
+      "The newly added weight does not make the tension $2mg$; the supporting string changes direction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original setup and the before/after diagrams span source pages 4 and 5.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p10",
+    "problemId": "fma-2020-a-p10",
+    "finalAnswer": "$\\boxed{0.15L\\ \\text{approximately}}$ (choice A)",
+    "shortExplanation": "The two sloping segments need more string than the original horizontal segment. That extra length comes from raising the hanging block.",
+    "detailedSteps": [
+      "From the common force balance, each string segment makes $30^\\circ$ with the horizontal. Their combined horizontal projection remains $L$.",
+      "The new combined length is $L/\\cos30^\\circ=2L/\\sqrt3$. Thus the increase is $(2/\\sqrt3-1)L$.",
+      "Total string length is fixed, so the vertical segment shortens by this amount. The block rises $0.154700\\ldots L$, approximately $0.15L$."
+    ],
+    "keyIdeas": [
+      "Conserve the full string length, not a horizontal projection."
+    ],
+    "commonMistakes": [
+      "The vertical hanging block rises while the newly added mass lowers the middle of the string."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the shared original setup on page 4 as well as the question and diagrams on page 5.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p11",
+    "problemId": "fma-2020-a-p11",
+    "finalAnswer": "$\\boxed{13000\\,\\mathrm{kg}\\ \\text{approximately}}$ (choice C)",
+    "shortExplanation": "Breaking tension equals tensile strength times cross-sectional area. Divide that force by g to find the supported mass.",
+    "detailedSteps": [
+      "The diameter is $0.02\\,\\mathrm m$, so $A=\\pi(0.01\\,\\mathrm m)^2$. The strength is $415\\times10^6\\,\\mathrm{N/m^2}$.",
+      "The limiting mass is $m_{\\max}=\\sigma A/g=(415\\times10^6)\\pi(0.01)^2/10=13037.6\\ldots\\,\\mathrm{kg}$, closest to $13000\\,\\mathrm{kg}$."
+    ],
+    "keyIdeas": [
+      "Convert stress to force with area."
+    ],
+    "commonMistakes": [
+      "Use radius in $\\pi r^2$; the stated length is the diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rod self-weight is explicitly negligible, so its length does not enter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p12",
+    "problemId": "fma-2020-a-p12",
+    "finalAnswer": "$\\boxed{\\frac{3L}{10}}$ (choice D)",
+    "shortExplanation": "For a massless rod with one point mass, the effective pendulum length is the distance from the pivot. Doubling period quadruples that distance.",
+    "detailedSteps": [
+      "Let the distance from the first pivot be $x$. Its period is $T=2\\pi\\sqrt{x/g}$. From the other end, the distance is $L-x$ and the period is $2T$.",
+      "Thus $L-x=4x$, giving $x=L/5$. Its distance from the center is $L/2-L/5=3L/10$."
+    ],
+    "keyIdeas": [
+      "Compare squared periods before solving for position."
+    ],
+    "commonMistakes": [
+      "The second pendulum length is $L-x$, not the center offset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The point-mass model makes the otherwise physical-pendulum calculation particularly short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p13",
+    "problemId": "fma-2020-a-p13",
+    "finalAnswer": "$\\boxed{L_z\\ \\text{remains constant}}$ (choice C)",
+    "shortExplanation": "Gravity and frictionless normal forces have no torque component about a vertical axis. This remains true when the pen lands.",
+    "detailedSteps": [
+      "For a vertical force $\\mathbf F$, the vertical torque component is $\\tau_z=xF_y-yF_x=0$. Gravity and the frictionless floor's normal force are vertical.",
+      "Any forces between the ballerina and the pen are internal to the stated combined system. With friction ignored, there is no external vertical-axis torque, so $L_z$ stays constant.",
+      "The landing impulse is vertical as well and therefore does not change $L_z$. Other components of angular momentum may change under gravity."
+    ],
+    "keyIdeas": [
+      "Use the requested torque component and the stated combined system."
+    ],
+    "commonMistakes": [
+      "Landing alone does not remove vertical angular momentum when there is no friction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conservation applies to the vertical component throughout the flight and landing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p14",
+    "problemId": "fma-2020-a-p14",
+    "finalAnswer": "$\\boxed{\\text{graph B, corrected model}}$ (choice B) — corrected model; the official erratum historically credited A–E.",
+    "shortExplanation": "The printed inequality is erroneous. Under the corrected usual relation, the lower block has a steeper acceleration branch with an upward jump. Official historical scoring credited every letter for the misprinted question.",
+    "detailedSteps": [
+      "The actual paper prints $\\mu_s<\\mu_k$ and says both blocks start at rest. That wording must not be silently changed. The official correction identifies this inequality as a typo and credits A through E for the historical printed question.",
+      "For the intended corrected model $\\mu_s>\\mu_k$, sticking gives the common acceleration $a=F/(2m)$. The upper block needs friction $F/2$, so sticking ends at $F_s=2\\mu_smg$.",
+      "After rightward slip of the lower block, the upper block receives friction $\\mu_kmg$ and the lower block has $$a_{\\rm lower}=\\frac Fm-\\mu_kg.$$",
+      "At the threshold, the sticking branch tends to $\\mu_sg$ while the slipping branch starts at $(2\\mu_s-\\mu_k)g$. Their difference is $(\\mu_s-\\mu_k)g>0$. The slope also doubles from $1/(2m)$ to $1/m$, identifying graph B.",
+      "For the literal printed inequality, the interval $2\\mu_smg<F<2\\mu_kmg$ cannot start ordinary rightward slip from rest: sticking needs excessive static friction, but assumed rightward slip gives relative acceleration $F/m-2\\mu_kg<0$. This is why B is a corrected-model explanation, not a unique solution of the printed conditions."
+    ],
+    "keyIdeas": [
+      "Separate the literal printed model, the corrected physical model, and the official scoring rule.",
+      "Check relative acceleration as well as each individual block."
+    ],
+    "commonMistakes": [
+      "Do not swap the inequality without saying so.",
+      "Official credit for every letter does not make every graph physically correct under one specified model."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The linked official v2 answer document gives the correction and historical all-option credit on page 9. The original inequality and our pre-key inconsistency proof remain preserved. Choice B is the representative answer for the corrected model; A, B, C, D, and E were all historically accepted.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p15",
+    "problemId": "fma-2020-a-p15",
+    "finalAnswer": "$\\boxed{(\\rho_1h_1+\\rho_2h_2)g}$ (choice A)",
+    "shortExplanation": "Add the pressure increases through the two liquid depths. The changing vessel area does not change hydrostatic pressure at a fixed depth.",
+    "detailedSteps": [
+      "The free surface has zero gauge pressure. Crossing the upper layer adds $\\rho_1gh_1$.",
+      "Crossing the lower layer adds $\\rho_2gh_2$. The bottom gauge pressure is therefore $(\\rho_1h_1+\\rho_2h_2)g$."
+    ],
+    "keyIdeas": [
+      "Integrate $dp/dz=\\rho g$ through each layer."
+    ],
+    "commonMistakes": [
+      "Do not multiply a layer's pressure contribution by its cross-sectional area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The statement is on page 6 and the vessel figure and choices are on page 7.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p16",
+    "problemId": "fma-2020-a-p16",
+    "finalAnswer": "$\\boxed{h\\propto r^{-1}}$ (choice D)",
+    "shortExplanation": "Released surface energy scales as radius squared, while the merged mass scales as radius cubed. The attainable height therefore scales inversely with radius.",
+    "detailedSteps": [
+      "Volume conservation gives merged radius $r_f=2^{1/3}r$. The lost surface area is $8\\pi r^2-4\\pi r_f^2=4\\pi r^2(2-2^{2/3})$.",
+      "With surface-energy coefficient $\\gamma$, the available energy is $\\gamma\\Delta A\\propto r^2$. The total mass is $(8\\pi/3)\\rho r^3$.",
+      "At 100 percent conversion, $mgh=\\gamma\\Delta A$, so $$h=\\frac{3\\gamma}{2\\rho g}\\bigl(2-2^{2/3}\\bigr)\\frac1r.$$"
+    ],
+    "keyIdeas": [
+      "Use volume conservation before computing surface-area loss."
+    ],
+    "commonMistakes": [
+      "The two droplets' combined mass must be used in $mgh$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conversion-efficiency assumption is explicitly supplied; only the radius scaling is requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p17",
+    "problemId": "fma-2020-a-p17",
+    "finalAnswer": "$\\boxed{5001+10t\\,\\mathrm N}$ (choice B)",
+    "shortExplanation": "The scale supports the accumulated water and also stops newly arriving water. These contribute a growing weight and a constant impact force.",
+    "detailedSteps": [
+      "The collection rate is $\\dot m=\\rho A\\dot h=1000(1)(0.001)=1\\,\\mathrm{kg/s}$.",
+      "Stopping rain arriving at $1\\,\\mathrm{m/s}$ requires the constant force $\\dot mv=1\\,\\mathrm N$. Water retained after time $t$ adds weight $\\dot mgt=10t\\,\\mathrm N$.",
+      "Adding both to the initial reading gives $5000+1+10t=5001+10t\\,\\mathrm N$ for $t>0$."
+    ],
+    "keyIdeas": [
+      "Include incoming momentum as well as accumulated mass."
+    ],
+    "commonMistakes": [
+      "The impact force is constant; only the retained-water weight grows with time."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated hat coverage ensures that the collection area is one square meter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p18",
+    "problemId": "fma-2020-a-p18",
+    "finalAnswer": "$\\boxed{\\frac25Mv^2}$ (choice D)",
+    "shortExplanation": "Conserve angular momentum about the pivot during the impact, then use the increased moment of inertia to find the final kinetic energy.",
+    "detailedSteps": [
+      "Use the diagram's stationary target-mass interpretation. Initial angular momentum is $H_i=MLv$. The pivot force has no moment about the pivot.",
+      "After sticking, $I_f=ML^2+M(L/2)^2=5ML^2/4$, so $\\omega_f=H_i/I_f=4v/(5L)$.",
+      "Therefore $K_f=\\tfrac12I_f\\omega_f^2=2Mv^2/5$, less than the initial $Mv^2/2$."
+    ],
+    "keyIdeas": [
+      "Choose the pivot as the angular-momentum reference point."
+    ],
+    "commonMistakes": [
+      "Linear momentum need not be conserved because the pivot can supply an impulse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The target's rest is represented by the figure rather than a separately printed velocity condition; the figure is on page 8.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p19",
+    "problemId": "fma-2020-a-p19",
+    "finalAnswer": "$\\boxed{6\\omega r}$ (choice E)",
+    "shortExplanation": "Each cylinder layer raises the plate speed by twice its rotational rim speed. The displayed stack has three layers.",
+    "detailedSteps": [
+      "For a clockwise cylinder with center speed $V$, the bottom and top contact speeds are $V-\\omega r$ and $V+\\omega r$.",
+      "No slip equates these to the adjacent plate speeds, so $v_{\\rm upper}-v_{\\rm lower}=2\\omega r$.",
+      "Starting from the fixed floor, the three layers give successive plate speeds $2\\omega r$, $4\\omega r$, and $6\\omega r$."
+    ],
+    "keyIdeas": [
+      "Apply no slip at both contacts of each cylinder."
+    ],
+    "commonMistakes": [
+      "The cylinder center speed is not the top contact speed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count the three rolling layers in the actual source figure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p20",
+    "problemId": "fma-2020-a-p20",
+    "finalAnswer": "$\\boxed{\\overline P>Av_0(v_0+v)^2}$ (choice B)",
+    "shortExplanation": "Wind fluctuations increase the mean square of relative speed. The extra variance increases the average drag work removed from the car.",
+    "detailedSteps": [
+      "Let instantaneous wind speed be $w$, with mean $v$. In the ground frame the car's drag-work rate is $P=Av_0(v_0+w)^2$.",
+      "Average the square: $$\\overline P=Av_0\\left[(v_0+v)^2+\\operatorname{Var}(w)\\right].$$",
+      "Nonzero fluctuations have positive variance, giving a strict excess over $Av_0(v_0+v)^2$. Constant wind would give equality."
+    ],
+    "keyIdeas": [
+      "Average the nonlinear expression before substituting the mean."
+    ],
+    "commonMistakes": [
+      "Averaging wind speed first discards the positive variance term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The calculation specifies work removed from the car in the ground frame, the baseline used in the offered choices; nonzero fluctuations and positive driving speed give the strict inequality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p21",
+    "problemId": "fma-2020-a-p21",
+    "finalAnswer": "$\\boxed{\\frac{mgR}{h}\\cos\\!\\left(\\frac\\pi N\\right)}$ (choice C) — B is also officially accepted.",
+    "shortExplanation": "Tipping first occurs about the nearest edge of the regular support polygon. Choices B and C are exactly equivalent, and the official scoring accepts both.",
+    "detailedSteps": [
+      "The feet form a regular $N$-gon of circumradius $R$. Its nearest edge is a distance $R\\cos(\\pi/N)$ from the center's vertical projection.",
+      "Apply the horizontal force at tabletop height $h$ perpendicular to that edge. At the tipping threshold, $Fh=mgR\\cos(\\pi/N)$, so $$F_{\\min}=\\frac{mgR}{h}\\cos\\left(\\frac\\pi N\\right).$$",
+      "The printed B expression is identical because $\\sin((N-2)\\pi/(2N))=\\sin(\\pi/2-\\pi/N)=\\cos(\\pi/N)$. Thus both B and C represent this threshold; the official v2 answer document explicitly accepts both."
+    ],
+    "keyIdeas": [
+      "Use the edge of the support polygon as the tipping axis.",
+      "Check algebraically equivalent choices before assigning a unique letter."
+    ],
+    "commonMistakes": [
+      "The smallest lever arm is the polygon apothem, not its circumradius.",
+      "Do not reject B merely because C is a more familiar form."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choice C is the representative answer here; B is also officially accepted. The usual model applies the force to the tabletop; a different force-application height changes the lever arm. The statement is on page 8, options on page 9, and official dual-credit explanation on answer-document page 13.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p22",
+    "problemId": "fma-2020-a-p22",
+    "finalAnswer": "$\\boxed{\\Delta\\mathbf P,\\ \\Delta K\\ \\text{are frame-independent}}$ (choice A)",
+    "shortExplanation": "An isolated collision conserves total momentum. That makes the kinetic-energy change, although not the kinetic energy itself, independent of inertial frame.",
+    "detailedSteps": [
+      "For the conventional isolated two-mass collision, $\\Delta\\mathbf P=0$. Under a boost $\\mathbf u$, $\\mathbf P^\\prime=\\mathbf P-M\\mathbf u$, so $\\Delta\\mathbf P^\\prime=\\Delta\\mathbf P$.",
+      "Kinetic energy transforms as $K^\\prime=K-\\mathbf u\\cdot\\mathbf P+M|\\mathbf u|^2/2$. Subtracting before from after gives $\\Delta K^\\prime=\\Delta K-\\mathbf u\\cdot\\Delta\\mathbf P=\\Delta K$.",
+      "This applies to inelastic as well as elastic collisions. A net external impulse would be a different model."
+    ],
+    "keyIdeas": [
+      "Transform changes, rather than just the individual energies."
+    ],
+    "commonMistakes": [
+      "Frame dependence of $K$ does not imply frame dependence of $\\Delta K$ when total momentum is conserved."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two colliding masses are treated as the isolated system during the collision.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p23",
+    "problemId": "fma-2020-a-p23",
+    "finalAnswer": "$\\boxed{\\delta k_T=0.2\\,\\delta k_S}$ (choice C)",
+    "shortExplanation": "Both force and extension become five times larger, while absolute measurement errors stay the same. The first-order sensitivity of the calculated spring constant falls by five.",
+    "detailedSteps": [
+      "Hooke's law gives $k=F/x$, where $x=\\Delta x$. A small signed measurement perturbation satisfies $d k\\simeq dF/x-F\\,dx/x^2$. This signed change is used to compute the positive uncertainty scale.",
+      "Tiffany's force and extension are $(5F,5x)$. Each error coefficient becomes one fifth of Steve's: $1/(5x)$ and $-(5F)/(5x)^2$.",
+      "With the same absolute-error scales and covariance, the uncertainty is one fifth as large: $\\delta k_T=0.2\\,\\delta k_S$."
+    ],
+    "keyIdeas": [
+      "Scale the sensitivity coefficients of the ratio."
+    ],
+    "commonMistakes": [
+      "The spring constant stays unchanged even though its measurement uncertainty decreases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is the usual first-order small-error propagation model, not a claim about exact intervals with large finite measurement errors. It does not require independent errors when their covariance remains fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p24",
+    "problemId": "fma-2020-a-p24",
+    "finalAnswer": "$\\boxed{h=\\frac{mg}{k}}$ (choice D)",
+    "shortExplanation": "Gravity shifts the equilibrium of this isotropic spring oscillator downward. The center of its circular motion is that shifted equilibrium.",
+    "detailedSteps": [
+      "Take the negligible-radius bearing axis as the origin and upward as positive. The zero-rest-length spring exerts $-k\\mathbf r$, so $m\\ddot{\\mathbf r}=-k\\mathbf r-mg\\,\\hat{\\mathbf y}$.",
+      "Define $\\mathbf r_{\\rm eq}=-(mg/k)\\hat{\\mathbf y}$. Then $m\\ddot{\\mathbf r}=-k(\\mathbf r-\\mathbf r_{\\rm eq})$, an isotropic oscillator about this point.",
+      "The stipulated circular orbit is centered at $\\mathbf r_{\\rm eq}$ and has angular frequency $\\sqrt{k/m}$. Its center is $mg/k$ below the pole, independent of $R$."
+    ],
+    "keyIdeas": [
+      "Combine the constant gravity term with the linear vector spring force."
+    ],
+    "commonMistakes": [
+      "The spring length varies around a circle centered below its attachment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated negligible pole radius and rest length justify the vector force. A circle that actually surrounds the pole has $R>mg/k$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2020-a-p25",
+    "problemId": "fma-2020-a-p25",
+    "finalAnswer": "$\\boxed{k_1-k_2>\\frac{mg}{\\ell_0}\\ \\text{(positive linear stiffness)}}$ (choice C)",
+    "shortExplanation": "The stretched upper spring supplies horizontal restoring force, while the compressed lower spring supplies a destabilizing contribution. Compare their transverse stiffnesses.",
+    "detailedSteps": [
+      "Let equilibrium lie a distance $y$ below the box midpoint. The actual figure labels the upper spring $k_1$ and lower spring $k_2$. Vertical balance gives $(k_1+k_2)y=mg$, with $0<y<\\ell_0$ for the displayed internal equilibrium.",
+      "For small horizontal displacement $x$, the spring lengths remain $\\ell_0+y$ and $\\ell_0-y$ to first order. The horizontal force is $$F_x=-\\left(\\frac{k_1y}{\\ell_0+y}-\\frac{k_2y}{\\ell_0-y}\\right)x+O(x^3).$$",
+      "The linear stiffness simplifies to $$K_x=\\frac{y\\,[\\ell_0(k_1-k_2)-mg]}{\\ell_0^2-y^2}.$$ Its denominator and $y$ are positive, so a positive linear restoring force requires $k_1-k_2>mg/\\ell_0$.",
+      "At equality the linear stiffness vanishes. That case requires higher-order analysis; it should not be described as having a negative restoring stiffness."
+    ],
+    "keyIdeas": [
+      "Account for the sign difference between spring tension and compression.",
+      "Determine the loaded equilibrium before linearizing."
+    ],
+    "commonMistakes": [
+      "The condition $k_1>k_2$ alone does not ensure enough horizontal restoring stiffness."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The offered strict condition is sufficient for positive linear stability. At the equality boundary, the relaxed potential has a positive quartic term, so a nonlinear stability interpretation can include a marginal case. Our audit and exact-force checker preserve this distinction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

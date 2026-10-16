@@ -1,0 +1,600 @@
+[
+  {
+    "id": "solution-fma-2014-p1",
+    "problemId": "fma-2014-p1",
+    "finalAnswer": "$\\boxed{\\text{angular momentum down; acceleration right}}$ (choice E)",
+    "shortExplanation": "The turn is clockwise when viewed from above, so angular momentum points down. The acceleration points toward the center, on the driver's right.",
+    "detailedSteps": [
+      "At constant speed the acceleration is centripetal: it points toward the center of the circular path, which is on the right of the car.",
+      "Angular momentum about the center is $\\mathbf L=\\mathbf r\\times m\\mathbf v$. Viewed from above, a right turn follows a clockwise orbit.",
+      "The right-hand rule gives a downward angular-momentum vector. The required pair is therefore down and right."
+    ],
+    "keyIdeas": [
+      "Separate the axial angular-momentum direction from the radial acceleration direction."
+    ],
+    "commonMistakes": [
+      "Making angular momentum point toward the center, or choosing its direction from the steering force."
+    ],
+    "alternativeMethods": [
+      "Imagine driving north while the center is east. The outward radius points west; west crossed with north points down."
+    ],
+    "difficultyNotes": "Use an ordinary right-handed spatial frame; forward, right and up do not form one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p2",
+    "problemId": "fma-2014-p2",
+    "finalAnswer": "$\\boxed{\\text{steeply downward and left, vector E}}$ (choice E)",
+    "shortExplanation": "Static friction acts uphill on the rolling ball. Its reaction adds a downhill component to the force on the plane, making the total force steeper than the inward normal.",
+    "detailedSteps": [
+      "Let the slope angle be $\\theta$ and write the ball's moment of inertia as $I=\\beta mr^2$, where $\\beta>0$. Rolling dynamics give $a=g\\sin\\theta/(1+\\beta)$ and uphill friction $f=\\beta mg\\sin\\theta/(1+\\beta)$.",
+      "The normal force on the ball is $N=mg\\cos\\theta$. The ball exerts the opposite normal force and opposite friction force on the plane.",
+      "With right and up positive, that reaction has components $F_x=-N\\sin\\theta+f\\cos\\theta$ and $F_y=-N\\cos\\theta-f\\sin\\theta$.",
+      "For the approximately $45^\\circ$ slope in the source drawing, $F_x=-mg/[2(1+\\beta)]$ and $F_y=-mg(1+2\\beta)/[2(1+\\beta)]$. Both are negative, and the downward component is larger. This selects the steep downward-left vector E."
+    ],
+    "keyIdeas": [
+      "Include both normal contact and static friction.",
+      "Use Newton's third law after finding the forces on the ball."
+    ],
+    "commonMistakes": [
+      "Reporting the force of the plane on the ball, or treating the total contact force as purely normal."
+    ],
+    "alternativeMethods": [
+      "Find the net contact force on the ball as its mass times acceleration minus its weight, then reverse that vector."
+    ],
+    "difficultyNotes": "The exact angle depends on the moment of inertia; the direction category is the same for a rolling ball with positive rotational inertia.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p3",
+    "problemId": "fma-2014-p3",
+    "finalAnswer": "$\\boxed{1.5\\,\\mathrm{L}}$ (choice D)",
+    "shortExplanation": "The added force equals the extra buoyancy from submerging the remaining fifth of the volume. That gives a total volume of $1.5\\,\\mathrm{L}$.",
+    "detailedSteps": [
+      "Initially, the displaced volume is $0.80V$. Force balance therefore gives the object's weight as $0.80\\rho gV$.",
+      "At complete submersion, buoyancy is $\\rho gV$. The required extra downward force is the difference: $3\\,\\mathrm N=0.20\\rho gV$.",
+      "Using $\\rho=1000\\,\\mathrm{kg/m^3}$ and the exam convention $g=10\\,\\mathrm{m/s^2}$, $V=3/(0.20\\times1000\\times10)=0.0015\\,\\mathrm{m^3}=1.5\\,\\mathrm L$."
+    ],
+    "keyIdeas": [
+      "Compare buoyancy before and after full submersion."
+    ],
+    "commonMistakes": [
+      "Using the added force as the entire weight of the object, or failing to convert cubic metres into litres."
+    ],
+    "alternativeMethods": [
+      "The initial flotation implies $\\rho_{\\rm object}=0.80\\rho$. Thus $3=(\\rho-\\rho_{\\rm object})gV$, giving the same result."
+    ],
+    "difficultyNotes": "Use quasistatic force balance and neglect surface tension and compression of the object.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p4",
+    "problemId": "fma-2014-p4",
+    "finalAnswer": "$\\boxed{N_1=2,\\quad N_2=2,\\quad N_3=3}$ (choice C)",
+    "shortExplanation": "Two fragments have opposite momenta and a fixed split of kinetic energy. Three zero-sum momenta fit in a plane, but need not lie on a line.",
+    "detailedSteps": [
+      "With no external impulse, the fragment momenta satisfy $\\sum_i\\mathbf p_i=0$. For two fragments, $\\mathbf p_2=-\\mathbf p_1$.",
+      "Their kinetic energies obey $K_1/K_2=m_2/m_1$. Knowing their masses and $K_1+K_2$ fixes both energies, so $N_1=2$. With three fragments, different momentum triangles can have the same total energy and different individual energies.",
+      "Two opposite momenta must lie on one line. Three momenta can form a noncollinear closed triangle, so the largest guaranteed number for a line is two.",
+      "For three fragments, $\\mathbf p_3=-\\mathbf p_1-\\mathbf p_2$, placing all momenta in the plane spanned by the first two. Four can use three independent spatial directions. Thus $N_2=2$ and $N_3=3$."
+    ],
+    "keyIdeas": [
+      "Momentum conservation limits the dimension of the vector span.",
+      "Equal momentum magnitudes do not imply equal energies for unequal masses."
+    ],
+    "commonMistakes": [
+      "Assuming that zero total momentum makes every fragment velocity vanish, or makes every explosion collinear."
+    ],
+    "alternativeMethods": [
+      "A closed momentum polygon illustrates the possibilities: a two-edge polygon is a line, a three-edge polygon is a triangle, and four edges can close in three dimensions."
+    ],
+    "difficultyNotes": "The first claim concerns energy magnitudes; the other two concern geometric directions of the velocity vectors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p5",
+    "problemId": "fma-2014-p5",
+    "finalAnswer": "$\\boxed{18.4^\\circ}$ (choice C)",
+    "shortExplanation": "The supporting force must combine vertical weight support with inward centripetal acceleration, giving a lean angle of $\\arctan(1/3)\\approx18.4^\\circ$.",
+    "detailedSteps": [
+      "The vertical supporting component is $mg$, while its inward component is $mv^2/R$.",
+      "For steady balance, the resultant passes through the center of mass. With the stated small height compared with the track radius, its angle from vertical satisfies $\\tan\\theta=v^2/(Rg)$.",
+      "Substitute $v=10\\,\\mathrm{m/s}$, $R=30\\,\\mathrm m$ and $g=10\\,\\mathrm{m/s^2}$: $\\tan\\theta=1/3$, so $\\theta=18.4^\\circ$."
+    ],
+    "keyIdeas": [
+      "Compare inward and vertical support components."
+    ],
+    "commonMistakes": [
+      "Using the angle from horizontal instead of from vertical, or replacing centripetal acceleration with speed."
+    ],
+    "alternativeMethods": [
+      "Balance torques about the contact point using weight and the inertial force in a frame rotating with the rider."
+    ],
+    "difficultyNotes": "The lean is inward; the small-height premise permits using the track radius for the center-of-mass motion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p6",
+    "problemId": "fma-2014-p6",
+    "finalAnswer": "$\\boxed{50\\,\\mathrm m\\ \\text{approximately}}$ (choice B)",
+    "shortExplanation": "Internal collisions cannot change the center-of-mass speed. It moves $50\\,\\mathrm m$ in a minute, and the block can differ from that displacement by only a few metres.",
+    "detailedSteps": [
+      "The initial horizontal momentum is $2\\times5=10\\,\\mathrm{kg\\,m/s}$. The total mass is $12\\,\\mathrm{kg}$, so $V_{\\rm cm}=10/12=5/6\\,\\mathrm{m/s}$.",
+      "Without external horizontal forces, the center of mass travels $(5/6)(60)=50\\,\\mathrm m$. Restitution affects relative motion and energy, but preserves this momentum.",
+      "Let $q$ locate the block relative to the box. Its displacement is $\\Delta x_b=\\Delta X_{\\rm cm}+(10/12)\\Delta q$. Because the box is $5\\,\\mathrm m$ wide, $|\\Delta q|\\le5\\,\\mathrm m$.",
+      "Thus the block's displacement differs from $50\\,\\mathrm m$ by at most $25/6\\,\\mathrm m$. The nearest listed value is $50\\,\\mathrm m$."
+    ],
+    "keyIdeas": [
+      "Use conservation of total momentum.",
+      "Bound the relative coordinate instead of tracking every bounce."
+    ],
+    "commonMistakes": [
+      "Multiplying the block's initial speed by the full minute, or assuming inelastic collisions remove total momentum."
+    ],
+    "alternativeMethods": [
+      "An event-by-event collision calculation using the stated restitution confirms a displacement within the same narrow interval."
+    ],
+    "difficultyNotes": "The precise initial location and bounce phase affect the small correction, but do not change the nearest answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p7",
+    "problemId": "fma-2014-p7",
+    "finalAnswer": "$\\boxed{25.0\\,\\mathrm g}$ (choice C)",
+    "shortExplanation": "The stick's center of mass is twice as far from the pivot as the added mass, so its mass is half of $50.0\\,\\mathrm g$.",
+    "detailedSteps": [
+      "The uniform stick's center of mass is at $50.0\\,\\mathrm{cm}$ from the indicated end. Relative to the pivot at $30.0\\,\\mathrm{cm}$, its lever arm is $20.0\\,\\mathrm{cm}$.",
+      "The added mass at $20.0\\,\\mathrm{cm}$ is on the other side of the pivot, with lever arm $10.0\\,\\mathrm{cm}$.",
+      "Zero net torque requires $m_sg(20.0)=(50.0\\,\\mathrm g)g(10.0)$, giving $m_s=25.0\\,\\mathrm g$."
+    ],
+    "keyIdeas": [
+      "Measure both lever arms from the pivot."
+    ],
+    "commonMistakes": [
+      "Using the positions from the end directly as torque lever arms."
+    ],
+    "alternativeMethods": [
+      "The combined center of mass must coincide with the pivot; its weighted-average position gives the same mass."
+    ],
+    "difficultyNotes": "Gravity cancels because both torques are produced by weights in the same field.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p8",
+    "problemId": "fma-2014-p8",
+    "finalAnswer": "$\\boxed{T_0/\\sqrt2}$ (choice D)",
+    "shortExplanation": "Halving a uniform spring doubles its stiffness. Gravity shifts the equilibrium on the incline, leaving the period at $T_0/\\sqrt2$.",
+    "detailedSteps": [
+      "Two equal half-springs in series reproduce the original spring, so $1/k=1/k_h+1/k_h$, giving $k_h=2k$.",
+      "Along the frictionless incline, gravity contributes a constant force. Measured from the new equilibrium, the equation is $M\\ddot x=-2kx$.",
+      "The new period is $2\\pi\\sqrt{M/(2k)}$. Since $T_0=2\\pi\\sqrt{M/k}$, the ratio is $T/T_0=1/\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Spring stiffness is inversely proportional to length for a uniform spring.",
+      "Constant gravity changes equilibrium rather than frequency."
+    ],
+    "commonMistakes": [
+      "Replacing the spring force constant with its component along the incline, or halving the period instead of dividing it by a square root."
+    ],
+    "alternativeMethods": [
+      "The frequency grows by the square root of the stiffness ratio, giving a factor of $\\sqrt2$."
+    ],
+    "difficultyNotes": "Use a uniform ideal spring with negligible spring mass, Hooke's law and frictionless motion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p9",
+    "problemId": "fma-2014-p9",
+    "finalAnswer": "$\\boxed{3.50\\,\\mathrm{m/s}}$ (choice C)",
+    "shortExplanation": "The force-time area through seven seconds is $12.5\\,\\mathrm{N\\,s}$. Dividing by the mass and adding the initial velocity gives $3.50\\,\\mathrm{m/s}$.",
+    "detailedSteps": [
+      "From zero to three seconds, the triangular area is $J_1=\\tfrac12(3)(3)=4.5\\,\\mathrm{N\\,s}$.",
+      "From three to seven seconds, the trapezoidal area is $J_2=\\tfrac12(3+1)(4)=8.0\\,\\mathrm{N\\,s}$.",
+      "The impulse is $12.5\\,\\mathrm{N\\,s}$, so $v(7)=1.0+12.5/5.0=3.50\\,\\mathrm{m/s}$."
+    ],
+    "keyIdeas": [
+      "Integrate force to obtain momentum change."
+    ],
+    "commonMistakes": [
+      "Including the interval from seven to eight seconds, or forgetting the initial positive velocity."
+    ],
+    "alternativeMethods": [
+      "Integrate the two linear force expressions separately and use $m\\Delta v=\\int F\\,dt$."
+    ],
+    "difficultyNotes": "The vertical graph axis measures force rather than acceleration; the division by mass is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p10",
+    "problemId": "fma-2014-p10",
+    "finalAnswer": "$\\boxed{2.00\\,\\mathrm s}$ (choice E)",
+    "shortExplanation": "The centripetal limit corresponds to an angular speed of $9.00\\,\\mathrm{rad/s}$, reached two seconds after the start.",
+    "detailedSteps": [
+      "The radial acceleration is $a_c=r\\omega^2$. At the limit, $3.00\\omega^2=2.43\\times10^2$, so $\\omega=9.00\\,\\mathrm{rad/s}$.",
+      "The angular speed grows as $\\omega(t)=1.00+4.00t$.",
+      "Solving $1.00+4.00t=9.00$ gives $t=2.00\\,\\mathrm s$. This is the time to the threshold; any further acceleration exceeds it."
+    ],
+    "keyIdeas": [
+      "Convert the centripetal threshold into an angular-speed threshold."
+    ],
+    "commonMistakes": [
+      "Adding tangential acceleration to the specified centripetal limit, or forgetting the initial angular speed."
+    ],
+    "alternativeMethods": [
+      "Use the radial string tension $m r\\omega^2$; the car mass cancels from the specified acceleration criterion."
+    ],
+    "difficultyNotes": "The source explicitly states a centripetal threshold, rather than a threshold on total acceleration magnitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p11",
+    "problemId": "fma-2014-p11",
+    "finalAnswer": "$\\boxed{\\text{graph E}}$ (choice E)",
+    "shortExplanation": "Kinetic and spring potential energies are nonnegative and add to a constant, so the graph is a descending straight segment in the first quadrant.",
+    "detailedSteps": [
+      "Choose zero potential at the spring equilibrium. Then $U=\\tfrac12kx^2\\ge0$ and $K=\\tfrac12mv^2\\ge0$.",
+      "Without friction, $K+U=E$, where $E$ is fixed by the release displacement.",
+      "Therefore $K=E-U$, with slope $-1$ and positive intercepts. The oscillator repeatedly retraces this segment, matching graph E."
+    ],
+    "keyIdeas": [
+      "Plot one energy against the other using their conserved sum."
+    ],
+    "commonMistakes": [
+      "Plotting the phase-space ellipse of position and velocity instead of the two energies."
+    ],
+    "alternativeMethods": [
+      "Substitute sinusoidal oscillator position and velocity: the squared sine and cosine factors sum to one."
+    ],
+    "difficultyNotes": "The potential-energy zero used in the source options is the ordinary spring equilibrium reference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p12",
+    "problemId": "fma-2014-p12",
+    "finalAnswer": "$\\boxed{\\alpha=1}$ (choice E)",
+    "shortExplanation": "Once the helicopter reaches terminal speed, each extra metre of height adds the same flight time, so the height exponent is one.",
+    "detailedSteps": [
+      "In the stated rapidly terminal regime, the leading flight time is $T\\approx h/v_t$.",
+      "For a given helicopter and air density, its terminal speed does not depend on the height from which it is dropped.",
+      "Consequently $T\\propto h$, giving $\\alpha=1$ in the proposed power law."
+    ],
+    "keyIdeas": [
+      "Use the terminal-speed premise to determine the height dependence."
+    ],
+    "commonMistakes": [
+      "Using the free-fall scaling $T\\propto\\sqrt h$, which applies before drag establishes terminal motion."
+    ],
+    "alternativeMethods": [
+      "Compare two sufficiently tall drops: doubling the distance at the same terminal speed doubles the leading flight time."
+    ],
+    "difficultyNotes": "The short acceleration transient is neglected as directed by the problem; dimensions alone do not fix the height exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p13",
+    "problemId": "fma-2014-p13",
+    "finalAnswer": "$\\boxed{\\beta=1}$ (choice D)",
+    "shortExplanation": "Matching mass and time dimensions fixes the density and weight exponents. Combining the length equation with the terminal-height scaling gives a rotor-radius exponent of one.",
+    "detailedSteps": [
+      "In $T=k h^\\alpha r^\\beta\\rho^\\delta W^\\omega$, density has units $\\mathrm{M\\,L^{-3}}$ and weight has units $\\mathrm{M\\,L\\,T^{-2}}$. The constant $k$ is dimensionless.",
+      "Mass dimensions give $\\delta+\\omega=0$; time dimensions give $-2\\omega=1$. Thus $\\omega=-1/2$ and $\\delta=1/2$.",
+      "Length dimensions require $\\alpha+\\beta-3\\delta+\\omega=0$, or $\\alpha+\\beta=2$.",
+      "Using $\\alpha=1$ from the terminal-motion premise yields $\\beta=1$, and the time scales as $hr\\sqrt{\\rho/W}$."
+    ],
+    "keyIdeas": [
+      "Treat weight as force, rather than mass.",
+      "Use the physical height scaling in addition to dimensions."
+    ],
+    "commonMistakes": [
+      "Assuming all four exponents can be fixed by three dimensional equations without the terminal-motion information."
+    ],
+    "alternativeMethods": [
+      "A quadratic-drag model $W=C\\rho r^2v_t^2$ gives $v_t\\propto\\sqrt{W/\\rho}/r$, leading directly to $T\\propto hr\\sqrt{\\rho/W}$."
+    ],
+    "difficultyNotes": "Only the exponents are required; the numerical dimensionless constant does not affect them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p14",
+    "problemId": "fma-2014-p14",
+    "finalAnswer": "$\\boxed{\\frac{I}{MR^2+I}}$ (choice D)",
+    "shortExplanation": "In the intended spin-up from rest, tension drives both center-of-mass motion and rotation. Their kinetic-energy ratio is $I/(MR^2+I)$.",
+    "detailedSteps": [
+      "Use the intended initially resting disk model. The source does not separately state initial translational or angular velocities; arbitrary pre-existing motion would make the requested ratio depend on those velocities.",
+      "The center acceleration is $a=T/M$ and the angular acceleration is $\\gamma=TR/I$. After time $t$ from rest, $v=Tt/M$ and $\\omega=TRt/I$.",
+      "The energies are $K_{\\rm tr}=T^2t^2/(2M)$ and $K_{\\rm rot}=T^2R^2t^2/(2I)$.",
+      "Dividing the translational energy by their sum gives $K_{\\rm tr}/K_{\\rm total}=I/(I+MR^2)$."
+    ],
+    "keyIdeas": [
+      "Use separate linear and angular equations.",
+      "A freely sliding disk need not satisfy a rolling constraint."
+    ],
+    "commonMistakes": [
+      "Imposing $v=R\\omega$ on a frictionless sliding disk, or treating the center displacement as the entire cord-end displacement."
+    ],
+    "alternativeMethods": [
+      "From rest, $\\omega/v=MR/I$. Substitute this ratio into $K_{\\rm rot}/K_{\\rm tr}=I\\omega^2/(Mv^2)$ before taking the desired fraction."
+    ],
+    "difficultyNotes": "The result assumes spin-up from rest or compatible initial speed ratios. That necessary model qualification is explicit because the initial state is not fully written in the source.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p15",
+    "problemId": "fma-2014-p15",
+    "finalAnswer": "$\\boxed{\\frac{2P}{mg}}$ (choice A)",
+    "shortExplanation": "At sustained speed the power must balance the rate of increase of gravitational energy, giving $v=2P/(mg)$ on a thirty-degree incline.",
+    "detailedSteps": [
+      "At constant uphill speed, the necessary traction is $F=mg\\sin30^\\circ=mg/2$.",
+      "The lossless transmission delivers the engine's stated power to the wheels, so $P=Fv$.",
+      "Therefore $v=P/(mg/2)=2P/(mg)$. The sufficiently large static-friction coefficient permits this traction without slipping."
+    ],
+    "keyIdeas": [
+      "Use power as force times speed.",
+      "A transmission trades torque for rotational speed while preserving power."
+    ],
+    "commonMistakes": [
+      "Multiplying independent maximum torque and maximum angular speed as if they necessarily occur at the same engine operating point."
+    ],
+    "alternativeMethods": [
+      "The gravitational energy rises at rate $mg\\dot h=mgv\\sin30^\\circ$; set this equal to the available power."
+    ],
+    "difficultyNotes": "Use the supplied constant power and a feasible transmission operating point; neglect losses and air resistance as stated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p16",
+    "problemId": "fma-2014-p16",
+    "finalAnswer": "$\\boxed{\\frac{1-\\alpha}{1+\\alpha}\\le r_1\\le\\frac{1}{1+\\alpha}}$ (choice B)",
+    "shortExplanation": "Restitution ranges from zero to one. With the first object heavier, its speed ranges from the elastic value to the common speed of a fully inelastic collision.",
+    "detailedSteps": [
+      "Write the coefficient of restitution as $0\\le e\\le1$. Momentum gives $v_1+\\alpha v_2=v_0$, and separation after impact gives $v_2-v_1=e v_0$.",
+      "Solving yields $r_1=v_1/v_0=(1-\\alpha e)/(1+\\alpha)$. Because $0<\\alpha<1$, this velocity stays positive, so it also gives the speed ratio.",
+      "The largest value occurs at $e=0$: $r_1=1/(1+\\alpha)$. The smallest occurs at $e=1$: $r_1=(1-\\alpha)/(1+\\alpha)$.",
+      "Option A also gives a true but looser upper bound. The cover asks for the best response; B gives the tight bounds attained by the allowed endpoint collisions."
+    ],
+    "keyIdeas": [
+      "Combine momentum with the separating relative speed."
+    ],
+    "commonMistakes": [
+      "Using the lighter object's elastic speed formula for the first object, or allowing an approaching post-collision state."
+    ],
+    "alternativeMethods": [
+      "Evaluate the completely elastic and completely inelastic endpoints; intermediate restitution continuously interpolates between them."
+    ],
+    "difficultyNotes": "The allowed collisions are passive, and the no-passing condition selects nonnegative separation restitution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p17",
+    "problemId": "fma-2014-p17",
+    "finalAnswer": "$\\boxed{g_0/8}$ (choice C)",
+    "shortExplanation": "The same cloud mass occupies eight times the volume. At the original radius, the enclosed mass and gravitational acceleration are both reduced to one eighth.",
+    "detailedSteps": [
+      "Mass conservation in an expansion from $R_0$ to $2R_0$ gives the new density $\\rho=\\rho_0/8$.",
+      "The queried point at radius $R_0$ is now inside the cloud. Its enclosed mass is $(4\\pi/3)(\\rho_0/8)R_0^3$, which is one eighth of the original whole-cloud mass.",
+      "By spherical symmetry, exterior shells exert zero net force there. The field is $GM_{\\rm enclosed}/R_0^2=g_0/8$."
+    ],
+    "keyIdeas": [
+      "Identify whether the observation point is inside or outside the expanded cloud."
+    ],
+    "commonMistakes": [
+      "Evaluating the field at the new outer surface $2R_0$, rather than at the specified original radius."
+    ],
+    "alternativeMethods": [
+      "Inside a uniform sphere, $g(r)=4\\pi G\\rho r/3$. At fixed $r=R_0$, the density reduction directly gives the field reduction."
+    ],
+    "difficultyNotes": "Uniform spherical density and conservation of total cloud mass are the required assumptions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p18",
+    "problemId": "fma-2014-p18",
+    "finalAnswer": "$\\boxed{40\\,\\mathrm N}$ (choice B)",
+    "shortExplanation": "The two rope segments pull the pulley down, while one end pulls the frame up. The frame therefore carries one net downward tension, so the top scale increases by ten newtons.",
+    "detailedSteps": [
+      "Let the frame's weight be $W$. With an ideal pulley and massless rope, both segments carry tension $T_B$.",
+      "The pulley contributes a downward force $2T_B$ to the frame, and the attached rope end contributes an upward force $T_B$. Their net contribution is downward $T_B$.",
+      "Equilibrium requires $T_A=W+T_B$. The original readings give $W=30-20=10\\,\\mathrm N$.",
+      "When $T_B$ becomes $30\\,\\mathrm N$, the top reading is $T_A=10+30=40\\,\\mathrm N$."
+    ],
+    "keyIdeas": [
+      "Include the force at the rope attachment as well as the pulley axle."
+    ],
+    "commonMistakes": [
+      "Adding both pulley tensions while omitting the upward force of the anchored end."
+    ],
+    "alternativeMethods": [
+      "Enclose the frame, pulley and internal rope in one force-balance system; the external downward loads are the weight and the lower pull."
+    ],
+    "difficultyNotes": "The readings describe quasistatic equilibrium with an ideal freely turning pulley.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p19",
+    "problemId": "fma-2014-p19",
+    "finalAnswer": "$\\boxed{\\text{straight backward cable, diagram B}}$ (choice B)",
+    "shortExplanation": "Uniform weight and drag per unit length give the same force ratio below every point of the cable. A flexible cable aligns with that resultant and hangs as a straight backward line.",
+    "detailedSteps": [
+      "Work in the frame translating with the helicopter. Use uniform airflow, a uniform flexible cable, a free lower end and the same local drag law along its length.",
+      "If the cable length below a point is $\\ell$, its lower portion has weight $w\\ell$ and backward drag $d\\ell$, for fixed force densities $w$ and $d$ in the straight configuration.",
+      "The supporting tension must balance both, so the horizontal-to-vertical tension ratio is $d/w$, independent of $\\ell$. A perfectly flexible cable has its tangent parallel to tension.",
+      "The angle is therefore constant along the cable. It forms a straight line trailing the rightward-moving helicopter, matching diagram B."
+    ],
+    "keyIdeas": [
+      "Balance forces on the entire portion below a cut.",
+      "Uniform distributed force ratios produce a constant tangent angle."
+    ],
+    "commonMistakes": [
+      "Drawing a curved cable merely because drag is present, without an end mass or varying load ratio to change the angle."
+    ],
+    "alternativeMethods": [
+      "Scale the length of a lower cable segment: both weight and drag scale equally, so its resultant direction is unchanged."
+    ],
+    "difficultyNotes": "The straight solution uses the intended uniform-airflow distributed-drag model. The source does not provide a drag coefficient, and the answer needs only the shape. Spatially uniform airflow is an intended model assumption rather than an explicit printed condition; a varying wind profile or attached end load can produce a curved cable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p20",
+    "problemId": "fma-2014-p20",
+    "finalAnswer": "$\\boxed{\\frac{M\\sqrt{gR}}{2T}}$ (choice B)",
+    "shortExplanation": "The two rockets supply total torque $2TR$. Accelerating the rim mass to angular speed $\\sqrt{g/R}$ takes $M\\sqrt{gR}/(2T)$.",
+    "detailedSteps": [
+      "With essentially all mass at the rim, the moment of inertia is $I=MR^2$. Two appropriately oriented tangential thrusts give total torque $2TR$.",
+      "The constant angular acceleration is $\\gamma=2TR/(MR^2)=2T/(MR)$.",
+      "The desired rim acceleration satisfies $\\omega^2R=g$, so $\\omega=\\sqrt{g/R}$. From rest, $t=\\omega/\\gamma=M\\sqrt{gR}/(2T)$."
+    ],
+    "keyIdeas": [
+      "Use the rim moment of inertia rather than the solid-disk value.",
+      "Both rocket torques contribute to spin-up."
+    ],
+    "commonMistakes": [
+      "Counting only one rocket, or using $g$ as the tangential acceleration."
+    ],
+    "alternativeMethods": [
+      "Set the integrated angular impulse $2TRt$ equal to the final angular momentum $MR^2\\sqrt{g/R}$."
+    ],
+    "difficultyNotes": "Treat thrust and station mass as constant, with negligible propellant mass loss over the spin-up.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p21",
+    "problemId": "fma-2014-p21",
+    "finalAnswer": "$\\boxed{\\frac{47}{48}}$ (choice A)",
+    "shortExplanation": "Removing the central disk reduces pulley inertia slightly. Applying the Atwood acceleration formula to both pulleys gives $a_A/a_B=47/48$.",
+    "detailedSteps": [
+      "Let $m_p=M+m$ be the mass of pulley A. Its moment of inertia is $I_A=m_pR^2/2$.",
+      "The removed disk has one quarter of its mass and radius $R/2$, so its moment of inertia is $m_pR^2/32$. Hence $I_B=15m_pR^2/32$.",
+      "Combining the two box equations with the pulley torque equation gives $a=(M-m)g/(M+m+I/R^2)$.",
+      "The numerator is common to the systems. Therefore $a_A/a_B=(m_p+15m_p/32)/(m_p+m_p/2)=47/48$. The lighter-inertia pulley B accelerates slightly faster."
+    ],
+    "keyIdeas": [
+      "Subtract the removed part's inertia, including its smaller radius.",
+      "Rotating pulley inertia enters as an effective mass $I/R^2$."
+    ],
+    "commonMistakes": [
+      "Removing one quarter of the inertia simply because one quarter of the mass is removed."
+    ],
+    "alternativeMethods": [
+      "Integrate the annulus moment of inertia directly using concentric rings, then insert it into the same acceleration equation."
+    ],
+    "difficultyNotes": "The rope is massless and does not slip; the axle is ideal, so the angular acceleration is $a/R$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p22",
+    "problemId": "fma-2014-p22",
+    "finalAnswer": "$\\boxed{\\text{the orbital period remains constant}}$ (choice E)",
+    "shortExplanation": "The circular period at fixed separation depends on the sum of the masses. Transferring matter between the bodies preserves that sum, so the period remains constant.",
+    "detailedSteps": [
+      "For two bodies with separation $R$, their common angular frequency satisfies $\\Omega^2=G(M+m)/R^3$. Thus the period is $2\\pi\\sqrt{R^3/[G(M+m)]}$.",
+      "After transfer, the masses are $M+\\delta m$ and $m-\\delta m$. Their sum is exactly unchanged, and the source stipulates the same circular separation.",
+      "The mass product changes by $\\delta m(m-M)-(\\delta m)^2<0$. Thus the gravitational-force magnitude decreases, rather than increasing or staying fixed.",
+      "The point-mass orbital angular momentum is $[Mm/(M+m)]\\sqrt{G(M+m)R}$, which also decreases for the prescribed circular states. The period is the quantity that remains constant."
+    ],
+    "keyIdeas": [
+      "Use total mass for the circular two-body period.",
+      "Distinguish the mass sum from the mass product."
+    ],
+    "commonMistakes": [
+      "Assuming the force or orbital angular momentum depends only on total mass, or applying angular-momentum conservation without accounting for how the transfer maintains the specified circular orbits."
+    ],
+    "alternativeMethods": [
+      "The relative-coordinate equation is $\\ddot{\\mathbf R}=-G(M+m)\\mathbf R/R^3$; its circular frequency immediately gives the unchanged period."
+    ],
+    "difficultyNotes": "The period result is exact for circular point-mass orbits and fixed separation; it does not require discarding the smaller mass.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p23",
+    "problemId": "fma-2014-p23",
+    "finalAnswer": "$\\boxed{455\\,\\mathrm{N\\,s}\\ \\text{approximately}}$ (choice A)",
+    "shortExplanation": "The stated exit speed is relative to the recoiling astronaut. Momentum conservation gives her an impulse of about $455\\,\\mathrm{N\\,s}$.",
+    "detailedSteps": [
+      "Use the initial common rest frame, and let $u_a$ and $u_b$ be the final astronaut and ball velocities along the firing line. Then $100u_a+10u_b=0$.",
+      "The relative-speed condition is $u_b-u_a=50\\,\\mathrm{m/s}$. Solving gives $u_a=-50/11\\,\\mathrm{m/s}$ and $u_b=500/11\\,\\mathrm{m/s}$.",
+      "The astronaut's impulse magnitude is $100|u_a|=5000/11\\,\\mathrm{N\\,s}=454.5\\,\\mathrm{N\\,s}$, approximately $455\\,\\mathrm{N\\,s}$."
+    ],
+    "keyIdeas": [
+      "Use the relative exit speed together with total momentum."
+    ],
+    "commonMistakes": [
+      "Giving the ball a speed of $50\\,\\mathrm{m/s}$ in the initial rest frame and ignoring astronaut recoil."
+    ],
+    "alternativeMethods": [
+      "The impulse magnitude is the reduced mass times relative speed: $J=[100\\times10/(100+10)]50$."
+    ],
+    "difficultyNotes": "Impulse and the relative-speed change are independent of any initial uniform translation of the system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p24",
+    "problemId": "fma-2014-p24",
+    "finalAnswer": "$\\boxed{27.0^\\circ}$ (choice C)",
+    "shortExplanation": "The fixed recoil changes the astronaut's velocity by $50/11\\,\\mathrm{m/s}$. A tangent construction in velocity space gives a maximum turning angle of about $27.0^\\circ$.",
+    "detailedSteps": [
+      "From the recoil calculation, the astronaut's velocity change has magnitude $u=50/11\\,\\mathrm{m/s}$, with its direction controlled by the launch direction.",
+      "The initial velocity has magnitude $V=10\\,\\mathrm{m/s}$. All possible final-velocity endpoints lie on a circle of radius $u$ centered at the endpoint of the initial velocity vector.",
+      "Since $u<V$, the largest angle from the original direction occurs where a ray from the velocity-space origin is tangent to this circle. The right triangle gives $\\sin\\phi=u/V=5/11$.",
+      "Thus $\\phi=\\arcsin(5/11)=27.04^\\circ$, selecting $27.0^\\circ$."
+    ],
+    "keyIdeas": [
+      "Optimize the direction of a fixed-magnitude velocity change."
+    ],
+    "commonMistakes": [
+      "Assuming a perpendicular recoil gives the maximum turning angle, or using the relative ball speed as the astronaut's recoil speed."
+    ],
+    "alternativeMethods": [
+      "Write the final velocity as $(V+u\\cos\\theta,u\\sin\\theta)$ and maximize its angle. Differentiation gives the tangent condition $\\cos\\theta=-u/V$."
+    ],
+    "difficultyNotes": "A reversal is impossible here because the recoil speed is smaller than the original speed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2014-p25",
+    "problemId": "fma-2014-p25",
+    "finalAnswer": "$\\boxed{\\frac{h_1\\sin\\theta}{\\mu_k\\cos\\theta+\\sin\\theta}}$ (choice A)",
+    "shortExplanation": "The first ramp supplies kinetic energy $mgh_1$. On the second ramp that energy pays for both the height gain and friction over a distance $h_2/\\sin\\theta$.",
+    "detailedSteps": [
+      "The first ramp is frictionless, so the kinetic energy at its bottom is $mgh_1$.",
+      "On the upward second ramp, the normal force is $mg\\cos\\theta$, and the kinetic-friction magnitude is $\\mu_kmg\\cos\\theta$. Reaching height $h_2$ requires an along-ramp distance $h_2/\\sin\\theta$.",
+      "At the first stopping point, energy balance gives $mgh_1=mgh_2+\\mu_kmg\\cos\\theta\\,h_2/\\sin\\theta$.",
+      "Solving yields $h_2=h_1\\sin\\theta/(\\sin\\theta+\\mu_k\\cos\\theta)$. This is at most $h_1$ and becomes $h_1$ when friction vanishes."
+    ],
+    "keyIdeas": [
+      "Use distance along the ramp when calculating frictional work."
+    ],
+    "commonMistakes": [
+      "Using the vertical rise as the frictional path length, or applying friction on the first ramp."
+    ],
+    "alternativeMethods": [
+      "The initial uphill speed obeys $v^2=2gh_1$ and the uphill deceleration magnitude is $g(\\sin\\theta+\\mu_k\\cos\\theta)$. Find the stopping distance and multiply it by $\\sin\\theta$."
+    ],
+    "difficultyNotes": "Use $0<\\theta<90^\\circ$ and $\\mu_k\\ge0$. The question asks for the first maximum height, rather than whether static friction holds the block there afterward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

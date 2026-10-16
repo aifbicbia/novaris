@@ -1,0 +1,107 @@
+[
+  {
+    "finalAnswer": "Give equal values stable sorted ranks. For each cut $k$, let $c_k$ count ranks at least $k$ among the first $k$ original positions. The actual number of prints is $$\\boxed{\\max\\left(\\{1\\}\\cup\\{c_k:1\\le k<N\\}\\right)}.$$ A Fenwick tree evaluates the cuts after one stable sort.",
+    "shortExplanation": "Each value threshold turns the two sweeps into a binary sorting process. One complete round replaces its first misplaced one and last misplaced zero by correctly placed bits, removing exactly one wrong-side pair. The largest cut imbalance determines when every threshold is sorted; the program always prints at least once.",
+    "detailedSteps": [
+      "**Preserve equal-value order.** Sort pairs $(A_i,i)$ and assign distinct ranks $r_i=0,\\ldots,N-1$. The original comparisons never exchange equal values, so these stable ranks follow exactly the same swaps. The numeric array is sorted precisely when these ranks are increasing. Arbitrary ranks for tied values would invent swaps absent from the source.",
+      "**Project one rank threshold.** For fixed $k$, replace ranks below $k$ by zero and all other ranks by one. There are exactly $k$ zeros. Adjacent compare-exchanges commute with this replacement, since they are minimum/maximum operations. Define $$c_k=\\#\\{i<k:r_i\\ge k\\}.$$ The same count measures zeros lying outside the first $k$ positions.",
+      "**Prove the full-round effect.** An unsorted binary array has a middle substring beginning in one and ending in zero, between an initial zero run and a final one run. The forward sweep removes that first one and carries it to the end of the middle. The backward sweep then removes the last zero and carries it to the beginning. Their combined effect changes only the original first misplaced one into zero and the last misplaced zero into one; every interior position retains its bit. Thus $c_k$ falls by exactly one whenever it is positive and stays zero afterward.",
+      "**Recover the stopping time.** After $r$ full rounds the threshold imbalance is $\\max(0,c_k-r)$. A rank inversion exists if and only if some threshold remains unsorted. Therefore the largest initial $c_k$ is the required number of rounds for an unsorted input. The sortedness check runs after both sweeps, so no extra confirmation round follows. A sorted input, including $N=1$, still executes and prints once; initialize the answer to one.",
+      "**Count all cuts efficiently.** Insert original ranks from left to right into a Fenwick tree. After inserting the first $k$ elements, its prefix query for ranks below $k$ returns the count of ranks on the correct side. Hence $$c_k=k-\\operatorname{count}(r<k).$$ Update the answer with this difference. The harmless final cut $k=N$ contributes zero. Sorting and queries take $O(N\\log N)$ time and $O(N)$ space.",
+      "**Check the actual algorithm and boundaries.** Direct simulation of both sweeps and the final scan supplies an independent small-input check. Stable ties, sorted arrays and a singleton are essential. The initial forward-only code in the source has a different stopping behavior; applying its maximum-displacement formula to the modified program would solve another task.",
+      "**Original C++17 implementation.** The historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <utility>\n#include <vector>\nusing namespace std;\nstruct Fenwick {\n    vector<int> tree;\n    explicit Fenwick(int n) : tree(n + 1, 0) {}\n    void add(int i) { for (; i < static_cast<int>(tree.size()); i += i & -i) ++tree[i]; }\n    int sum(int i) const { int s = 0; for (; i > 0; i -= i & -i) s += tree[i]; return s; }\n};\nvoid solve(istream& in, ostream& out) {\n    int n; if (!(in >> n)) return;\n    vector<pair<int,int>> a(n);\n    for (int i = 0; i < n; ++i) { in >> a[i].first; a[i].second = i; }\n    sort(a.begin(), a.end());\n    vector<int> rank(n);\n    for (int r = 0; r < n; ++r) rank[a[r].second] = r;\n    Fenwick bit(n); int answer = 1;\n    for (int k = 1; k <= n; ++k) {\n        bit.add(rank[k - 1] + 1);\n        answer = max(answer, k - bit.sum(k));\n    }\n    out << answer << '\\n';\n}\nint main() {\n    if (FILE* f = fopen(\"sort.in\", \"r\")) { fclose(f); freopen(\"sort.in\", \"r\", stdin); freopen(\"sort.out\", \"w\", stdout); }\n    ios::sync_with_stdio(false); cin.tie(nullptr); solve(cin, cout); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Thresholding commutes with compare-exchanges and reduces a numerical sorting question to binary arrays.",
+      "A complete bidirectional round fixes one wrong-side pair for each threshold.",
+      "Stable ranks respect equal values that the actual program never swaps.",
+      "The post-sweep sortedness scan and the unconditional first print determine the boundary cases."
+    ],
+    "commonMistakes": [
+      "Using the forward-only bubble-sort formula for the modified two-sweep program.",
+      "Adding an extra confirmation round after the post-sweep check has already found the array sorted.",
+      "Returning zero for an already sorted array or a singleton.",
+      "Assigning tied values arbitrary ranks instead of keeping their original order.",
+      "Replacing the number of wrong-side elements by the greatest displacement of one element."
+    ],
+    "alternativeMethods": [
+      "An order-statistic tree can maintain the rank counts instead of a Fenwick tree. Stable sorting is still required.",
+      "A literal implementation of the two sweeps is a useful small-input oracle, but reversed large arrays require quadratically many comparisons and exceed the intended limits."
+    ],
+    "difficultyNotes": "The main work is proving what one full bidirectional sweep does. The binary projection gives a global stopping-time argument; the Fenwick implementation then only evaluates the proved cut counts.",
+    "id": "solution-usaco-gold-2018-us-open-p1",
+    "problemId": "usaco-gold-2018-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Find the largest acyclic prefix $X$ of the observation lists by binary search. Then output the complete lexicographically smallest topological ordering of that prefix, choosing the smallest available cow at every step. The answer is a permutation of all $N$ cows, not just $X$.",
+    "shortExplanation": "Each ordered list contributes edges between consecutive cows. Feasible prefixes form an initial interval because adding observations can only add constraints. After locating its endpoint, a minimum-heap topological sort gives the smallest first possible cow, then the smallest second possible cow, and so on.",
+    "detailedSteps": [
+      "**Represent exactly one prefix.** For each of the first $x$ lists, add a directed edge from every listed cow to the next one. These adjacent comparisons imply the entire list by transitivity without constraining unrelated cows. Preserve repeated edges consistently in both adjacency lists and indegrees.",
+      "**Test whether an ordering exists.** Repeatedly remove an indegree-zero cow and decrease its outgoing neighbors\\' indegrees. Count isolated cows too. Removing all $N$ cows proves feasibility. If a nonempty graph remains with every vertex having positive indegree, following incoming edges must eventually repeat a vertex and reveal a directed cycle. Such a cycle cannot appear in any valid order.",
+      "**Maximize the prioritized prefix.** Removing observations cannot create a cycle, so feasibility is monotone in $x$. Binary search $0\\le x\\le M$, retaining a feasible midpoint as the new lower bound and discarding an infeasible midpoint and everything above it. The upper-middle convention avoids stalling when the bounds are adjacent.",
+      "**Build the smallest complete permutation.** Rebuild the graph for the largest feasible prefix. Put every indegree-zero cow into a minimum heap. Remove the smallest, output it, and insert newly available cows. Any valid continuation must choose an indegree-zero cow first, and choosing the smallest minimizes the first position where two continuations can differ. Repeating this argument proves lexicographic minimality of the entire output.",
+      "**Keep the two objectives separate.** First maximize the satisfied prefix; only then minimize the full permutation among that prefix\\'s orders. There is no need to impose a separate violation of the next list: if an order satisfied that next observation as well, the longer prefix would be feasible, contradicting maximality. Print all $N$ cow numbers, including those absent from every list.",
+      "**Account for the input size.** Let $S$ be the sum of listed lengths. Building and checking one prefix costs $O(N+M+S)$; the final heap costs $O(N\\log N+M+S)$. Total time is $O((N+M+S)\\log(M+1)+N\\log N)$ and space is $O(N+M+S)$. An iterative graph traversal safely handles a chain of one hundred thousand cows.",
+      "**Original C++17 implementation.** The historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <cstdio>\n#include <functional>\n#include <iostream>\n#include <queue>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, m; if (!(in >> n >> m)) return;\n    vector<vector<int>> observations(m);\n    for (auto& list : observations) { int length; in >> length; list.resize(length); for (int& x : list) { in >> x; --x; } }\n    auto graph = [&](int prefix, vector<vector<int>>& adj, vector<int>& degree) {\n        adj.assign(n, {}); degree.assign(n, 0);\n        for (int i = 0; i < prefix; ++i)\n            for (int j = 1; j < static_cast<int>(observations[i].size()); ++j) {\n                int u = observations[i][j - 1], v = observations[i][j];\n                adj[u].push_back(v); ++degree[v];\n            }\n    };\n    auto feasible = [&](int prefix) {\n        vector<vector<int>> adj; vector<int> degree; graph(prefix, adj, degree);\n        queue<int> available;\n        for (int u = 0; u < n; ++u) if (degree[u] == 0) available.push(u);\n        int visited = 0;\n        while (!available.empty()) {\n            int u = available.front(); available.pop(); ++visited;\n            for (int v : adj[u]) if (--degree[v] == 0) available.push(v);\n        }\n        return visited == n;\n    };\n    int lo = 0, hi = m;\n    while (lo < hi) { int mid = lo + (hi - lo + 1) / 2; if (feasible(mid)) lo = mid; else hi = mid - 1; }\n    vector<vector<int>> adj; vector<int> degree; graph(lo, adj, degree);\n    priority_queue<int, vector<int>, greater<int>> available;\n    for (int u = 0; u < n; ++u) if (degree[u] == 0) available.push(u);\n    int emitted = 0;\n    while (!available.empty()) {\n        int u = available.top(); available.pop();\n        if (emitted++) out << ' ';\n        out << u + 1;\n        for (int v : adj[u]) if (--degree[v] == 0) available.push(v);\n    }\n    out << '\\n';\n}\nint main() {\n    if (FILE* f = fopen(\"milkorder.in\", \"r\")) { fclose(f); freopen(\"milkorder.in\", \"r\", stdin); freopen(\"milkorder.out\", \"w\", stdout); }\n    ios::sync_with_stdio(false); cin.tie(nullptr); solve(cin, cout); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Adjacent list comparisons capture the full relative order through transitivity.",
+      "Adding prioritized observations produces a monotone acyclicity test.",
+      "A minimum heap turns a feasible topological ordering into the lexicographically smallest one.",
+      "The output certificate contains every cow, including unconstrained vertices."
+    ],
+    "commonMistakes": [
+      "Maximizing the number of arbitrary observations satisfied instead of a prioritized prefix.",
+      "Accepting an incomplete topological traversal that leaves a cycle unprocessed.",
+      "Using a FIFO queue for the final ordering and losing the lexicographic objective.",
+      "Counting repeated edges in indegrees but removing only one of them.",
+      "Printing the prefix length or only cows participating in constraints."
+    ],
+    "alternativeMethods": [
+      "Incremental cycle detection can process observations in priority order, but maintaining the required guarantees is more involved than binary-searching rebuilt graphs.",
+      "For a tiny independent check, enumerate all complete permutations, test the original lists directly and compare their satisfied-prefix lengths before their lexicographic order."
+    ],
+    "difficultyNotes": "Cycle detection settles feasibility, while the priority prefix and the final lexicographic permutation require two additional arguments. A complete solution must retain both objectives and the full output shape.",
+    "id": "solution-usaco-gold-2018-us-open-p2",
+    "problemId": "usaco-gold-2018-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Binary-search the greatest integer $v$ for which a subset of total weight at least $W$ satisfies $$\\sum_i(1000t_i-vw_i)\\ge0.$$ A clipped-weight 0/1 dynamic program tests that condition using exact integers. The resulting $v$ is the required floor of the best scaled aggregate ratio.",
+    "shortExplanation": "For an integer target, multiplying the ratio inequality by the positive total weight turns it into an additive score. Dynamic programming maximizes that score while tracking weight up to the required threshold. This avoids rounding errors and correctly allows a heavier combination to outperform the best individually eligible cow.",
+    "detailedSteps": [
+      "**Use the requested integer objective.** For a subset with total talent $T$ and positive total weight $Q$, $$\\left\\lfloor\\frac{1000T}{Q}\\right\\rfloor\\ge v\\quad\\Longleftrightarrow\\quad1000T-vQ\\ge0.$$ Give each cow the transformed score $g_i=1000t_i-vw_i$. The weight constraint remains $Q\\ge W$; the transformation changes only the objective.",
+      "**Define an exact clipped state.** Let $dp[s]$ be the largest transformed sum among subsets of processed cows with $s=\\min(W,Q)$. Initialize $dp[0]=0$ and all other states unreachable. Once a subset reaches $W$, any additional weight preserves eligibility, so saturated weights can share one state. Among equal states, a lower transformed score cannot improve any future continuation.",
+      "**Process each cow at most once.** Copy the old layer to a new layer to represent skipping the cow. For every reachable old state, update $$next[\\min(W,s+w_i)]\\gets\\max\\bigl(next[\\min(W,s+w_i)],dp[s]+g_i\\bigr).$$ Read only the old layer throughout the update. This proves the invariant by separating subsets that contain the latest cow from those that do not, and prevents reuse at the saturated state.",
+      "**Test and search the threshold.** A target $v$ is feasible precisely when $dp[W]\\ge0$. Increasing $v$ reduces every eligible subset\\'s transformed sum, making feasibility monotone. Each individual talent-to-weight ratio is at most $1000$, so the scaled optimum is at most $10^6$. Binary-search the largest feasible integer in $[0,10^6]$; zero is feasible because all cows together meet the source weight guarantee.",
+      "**Keep full weights and safe arithmetic.** Clip only the state index. The score $1000t_i-vw_i$ must use the full original weight, even when a single cow is much heavier than $W$. Signed 64-bit integers safely hold every score and sum within the printed bounds. Never add a score to the unreachable sentinel, and never round a floating-point ratio to guess the floor.",
+      "**Verify complexity and identity.** Each feasibility check takes $O(NW)$ time and $O(W)$ auxiliary space, and at most twenty checks cover the search interval. Input storage adds $O(N)$. Equal input rows are still different cows, each selectable at most once. Exhaustively enumerating actual subsets and evaluating $1000T\\mathbin{//}Q$ gives a separate exact small-instance oracle.",
+      "**Original C++17 implementation.** The historical named files are supported; standard input/output is also available.\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <limits>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, required; if (!(in >> n >> required)) return;\n    vector<pair<int,int>> cows(n);\n    for (auto& cow : cows) in >> cow.first >> cow.second;\n    auto feasible = [&](int threshold) {\n        const long long unreachable = numeric_limits<long long>::lowest() / 4;\n        vector<long long> dp(required + 1, unreachable); dp[0] = 0;\n        for (auto [weight, talent] : cows) {\n            vector<long long> next = dp;\n            long long gain = 1000LL * talent - 1LL * threshold * weight;\n            for (int s = 0; s <= required; ++s) if (dp[s] != unreachable) {\n                int destination = min(required, s + weight);\n                next[destination] = max(next[destination], dp[s] + gain);\n            }\n            dp.swap(next);\n        }\n        return dp[required] >= 0;\n    };\n    int lo = 0, hi = 1000000;\n    while (lo < hi) { int mid = lo + (hi - lo + 1) / 2; if (feasible(mid)) lo = mid; else hi = mid - 1; }\n    out << lo << '\\n';\n}\nint main() {\n    if (FILE* f = fopen(\"talent.in\", \"r\")) { fclose(f); freopen(\"talent.in\", \"r\", stdin); freopen(\"talent.out\", \"w\", stdout); }\n    ios::sync_with_stdio(false); cin.tie(nullptr); solve(cin, cout); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "An integer ratio threshold becomes a sum of transformed cow scores.",
+      "Saturating the weight state preserves eligibility without clipping the actual score penalty.",
+      "Separate dynamic-program layers enforce the 0/1 selection rule.",
+      "Monotonicity and integer bounds deliver the exact floor without floating-point error."
+    ],
+    "commonMistakes": [
+      "Choosing the best individual cow without enforcing the total weight of the team.",
+      "Clipping a cow's weight inside its transformed score and overstating its ratio.",
+      "Updating a saturated state repeatedly in one layer and reusing a cow.",
+      "Rounding the final scaled ratio instead of taking its floor.",
+      "Treating identical input rows as one cow or adding to an unreachable sentinel."
+    ],
+    "alternativeMethods": [
+      "For a small instance, enumerate every subset and compare exact integer floors or cross-multiplied rational ratios. This is exponential in N but independent of the threshold dynamic program.",
+      "When the total weight is small, a dynamic program over the full, unsaturated total weight can maximize talent and evaluate every eligible ratio afterward. The printed weight bound makes that approach unsuitable for large general inputs."
+    ],
+    "difficultyNotes": "The ratio itself is nonadditive. An integer threshold exposes an additive condition, but the clipped state needs a dominance proof and the implementation must retain each cow's full weight in its score.",
+    "id": "solution-usaco-gold-2018-us-open-p3",
+    "problemId": "usaco-gold-2018-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

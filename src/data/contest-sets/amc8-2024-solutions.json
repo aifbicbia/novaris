@@ -1,0 +1,728 @@
+[
+  {
+    "id": "solution-amc8-2024-p1",
+    "problemId": "amc8-2024-p1",
+    "finalAnswer": "$\\boxed{\\text{B }(2)}$",
+    "shortExplanation": "**Idea:** Only the units digit matters, so reduce the subtraction modulo $10$.",
+    "detailedSteps": [
+      "The units digit of every number in the expression is $2$, so we may work modulo $10$.",
+      "There is one positive term and five subtracted terms with units digit $2$:\n\n[\n2-2-2-2-2-2=-8\n]",
+      "A number congruent to $-8$ modulo $10$ has units digit $2$:\n\n[\n-8 \\equiv 2 \\pmod{10}\n]",
+      "Final Answer: (\\boxed{\\text{B }(2)})"
+    ],
+    "keyIdeas": [
+      "Units digit",
+      "Modular arithmetic",
+      "Subtraction"
+    ],
+    "commonMistakes": [
+      "Do not subtract the full numbers when the question asks only for the units digit.",
+      "Remember that a negative residue still has a positive units digit modulo $10$."
+    ],
+    "alternativeMethods": [
+      "Group the five subtracted units digits: $5\\cdot 2=10$, so the subtracted part has units digit $0$, leaving the original units digit $2$."
+    ],
+    "difficultyNotes": "Introductory units-digit problem; the cleanest solution is to ignore all non-units digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p2",
+    "problemId": "amc8-2024-p2",
+    "finalAnswer": "$\\boxed{\\text{C }(6.54)}$",
+    "shortExplanation": "**Idea:** Simplify each fraction before adding the decimals.",
+    "detailedSteps": [
+      "Reduce the three fractions separately:\n\n[\n\\frac{44}{11}=4\n]\n\n[\n\\frac{110}{44}=\\frac{5}{2}=2.5\n]\n\n[\n\\frac{44}{1100}=\\frac{1}{25}=0.04\n]",
+      "Now add the simplified values:\n\n[\n4+2.5+0.04=6.54\n]",
+      "Final Answer: (\\boxed{\\text{C }(6.54)})"
+    ],
+    "keyIdeas": [
+      "Fraction simplification",
+      "Decimal addition",
+      "Equivalent forms"
+    ],
+    "commonMistakes": [
+      "Do not force every term over a common denominator when simple cancellation is available.",
+      "Be careful that $\\frac{44}{1100}=0.04$, not $0.4$."
+    ],
+    "alternativeMethods": [
+      "Use a common denominator of $1100$:\n\n[\n\\frac{4400}{1100}+\\frac{2750}{1100}+\\frac{44}{1100}=\\frac{7194}{1100}=6.54\n]"
+    ],
+    "difficultyNotes": "Introductory arithmetic; the main skill is recognizing easy reductions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p3",
+    "problemId": "amc8-2024-p3",
+    "finalAnswer": "$\\boxed{\\text{E }(52)}$",
+    "shortExplanation": "**Idea:** The visible gray area is the outer gray ring plus the inner gray ring.",
+    "detailedSteps": [
+      "Compute the larger visible gray ring by subtracting the $9\\times 9$ square from the $10\\times 10$ square:\n\n[\n10^2-9^2=100-81=19\n]",
+      "Compute the smaller visible gray ring by subtracting the $4\\times 4$ square from the $7\\times 7$ square:\n\n[\n7^2-4^2=49-16=33\n]",
+      "Add the two visible gray regions:\n\n[\n19+33=52\n]",
+      "Final Answer: (\\boxed{\\text{E }(52)})"
+    ],
+    "keyIdeas": [
+      "Area subtraction",
+      "Nested squares",
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Do not add the full areas of the gray squares; parts of them are covered by smaller squares.",
+      "Keep track of which colors are visible after the squares overlap."
+    ],
+    "alternativeMethods": [
+      "Use difference of squares directly:\n\n[\n10^2-9^2+7^2-4^2=(10-9)(10+9)+(7-4)(7+4)=19+33=52\n]"
+    ],
+    "difficultyNotes": "Introductory geometry; visualizing only the exposed regions is the key step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p4",
+    "problemId": "amc8-2024-p4",
+    "finalAnswer": "$\\boxed{\\text{E }(9)}$",
+    "shortExplanation": "**Idea:** Compare the full sum $1+2+\\cdots+9$ with the nearest smaller square.",
+    "detailedSteps": [
+      "The full sum is:\n\n[\n1+2+3+4+5+6+7+8+9=45\n]",
+      "After one number is left out, the sum must be a square less than $45$.",
+      "The largest square less than $45$ is:\n\n[\n6^2=36\n]",
+      "So the missing number is:\n\n[\n45-36=9\n]",
+      "Final Answer: (\\boxed{\\text{E }(9)})"
+    ],
+    "keyIdeas": [
+      "Arithmetic sums",
+      "Perfect squares",
+      "Missing value"
+    ],
+    "commonMistakes": [
+      "Do not choose the square number; the problem asks for the number left out.",
+      "The square must be less than the original sum because a positive number was omitted."
+    ],
+    "alternativeMethods": [
+      "Check the answer choices by subtracting from $45$; only $45-9=36$ is a perfect square."
+    ],
+    "difficultyNotes": "Introductory number sense; the nearest-square observation makes it fast.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p5",
+    "problemId": "amc8-2024-p5",
+    "finalAnswer": "$\\boxed{\\text{B }(6)}$",
+    "shortExplanation": "**Idea:** Test which listed sums can come from two dice whose product is divisible by $6$.",
+    "detailedSteps": [
+      "For a product to be a multiple of $6$, the two dice must collectively supply a factor of $2$ and a factor of $3$.",
+      "Several listed sums are possible:\n\n[\n2+3=5, \\quad 1+6=7, \\quad 2+6=8, \\quad 3+6=9\n]",
+      "Each of these pairs has product divisible by $6$.",
+      "Now check sum $6$. The possible unordered pairs are:\n\n[\n(1,5),\\ (2,4),\\ (3,3)\n]",
+      "Their products are:\n\n[\n5,\\ 8,\\ 9\n]\n\nNone is divisible by $6$.",
+      "Final Answer: (\\boxed{\\text{B }(6)})"
+    ],
+    "keyIdeas": [
+      "Divisibility by 6",
+      "Dice cases",
+      "Elimination"
+    ],
+    "commonMistakes": [
+      "Do not check only whether the sum is divisible by $6$; the condition is on the product.",
+      "Remember that dice outcomes are limited to the integers $1$ through $6$."
+    ],
+    "alternativeMethods": [
+      "List all unordered dice pairs with product divisible by $6$: $(1,6),(2,3),(2,6),(3,4),(3,6),(4,6),(5,6),(6,6)$; their sums do not include $6$."
+    ],
+    "difficultyNotes": "Introductory counting and divisibility; a short case check is reliable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p6",
+    "problemId": "amc8-2024-p6",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Add the labeled pieces in each route from the source diagram, then choose the least total.",
+    "detailedSteps": [
+      "Because this problem depends on a diagram, Novaris keeps the official figure linked at the source rather than reproducing it locally.",
+      "Use the labels in the source diagram and compute the total length of each answer-choice route.",
+      "The comparison is a direct sum check:\n\n[\n\\text{route length}=\\text{piece}_1+\\text{piece}_2+\\cdots\n]",
+      "After each route total is computed, the route in choice $D$ has the smallest total.",
+      "Final Answer: (\\boxed{\\text{D}})"
+    ],
+    "keyIdeas": [
+      "Geometric comparison",
+      "Shortest path principle",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "Do not rely only on the apparent area enclosed by a path; compare the actual path lengths.",
+      "Curved or detoured pieces can make a path longer even if its endpoints look close."
+    ],
+    "alternativeMethods": [
+      "Mark equal or shared pieces on the source figure first, then compare only the pieces that differ between the routes."
+    ],
+    "difficultyNotes": "Introductory visual geometry; the challenge is making qualitative length comparisons carefully.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p7",
+    "problemId": "amc8-2024-p7",
+    "finalAnswer": "$\\boxed{\\text{E }(5)}$",
+    "shortExplanation": "**Idea:** The large tiles cover area in multiples of $4$, so the number of unit tiles is constrained modulo $4$.",
+    "detailedSteps": [
+      "The rectangle has area:\n\n[\n3\\cdot 7=21\n]",
+      "Both larger tile types cover $4$ unit squares, so if $c$ is the number of $1\\times 1$ tiles, then:\n\n[\n4a+4b+c=21\n]",
+      "Reducing modulo $4$ gives:\n\n[\nc\\equiv 21\\equiv 1 \\pmod{4}\n]",
+      "Among the answer choices, this leaves only:\n\n[\nc=1 \\quad \\text{or} \\quad c=5\n]",
+      "The value $c=1$ is impossible by a column coloring check: alternating columns gives $12$ squares of one color and $9$ of the other, while every larger tile covers the two colors equally.",
+      "So at least $5$ unit tiles are needed, and the source diagram admits such a tiling.",
+      "Final Answer: (\\boxed{\\text{E }(5)})"
+    ],
+    "keyIdeas": [
+      "Area modulo 4",
+      "Coloring invariant",
+      "Tiling"
+    ],
+    "commonMistakes": [
+      "Do not assume that the smallest area remainder is automatically tileable.",
+      "The modulo condition narrows the answer choices, but the coloring argument rules out $1$."
+    ],
+    "alternativeMethods": [
+      "After ruling out $1$, construct two $2\\times2$ tiles and two $1\\times4$ tiles to cover $16$ squares, leaving $5$ unit squares."
+    ],
+    "difficultyNotes": "Introductory but subtle; it introduces the idea that area alone may not prove tileability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p8",
+    "problemId": "amc8-2024-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(6)}$",
+    "shortExplanation": "**Idea:** Branch through the two allowed operations for three days and count distinct final values.",
+    "detailedSteps": [
+      "Start with $2$. After one day, the possible amounts are:\n\n[\n2+3=5, \\qquad 2\\cdot 2=4\n]",
+      "After two days, the possible amounts are:\n\n[\n5+3=8,\\quad 5\\cdot 2=10,\\quad 4+3=7,\\quad 4\\cdot 2=8\n]",
+      "So the distinct second-day amounts are:\n\n[\n7,8,10\n]",
+      "After the third day, these give:\n\n[\n7+3=10,\\quad 7\\cdot2=14\n]\n\n[\n8+3=11,\\quad 8\\cdot2=16\n]\n\n[\n10+3=13,\\quad 10\\cdot2=20\n]",
+      "The distinct final amounts are:\n\n[\n10,11,13,14,16,20\n]",
+      "There are $6$ possible final amounts.",
+      "Final Answer: (\\boxed{\\text{D }(6)})"
+    ],
+    "keyIdeas": [
+      "Branching",
+      "Distinct outcomes",
+      "Operations"
+    ],
+    "commonMistakes": [
+      "Do not count operation sequences instead of final amounts; different sequences can lead to the same amount.",
+      "Make sure there are exactly three operation days."
+    ],
+    "alternativeMethods": [
+      "Draw a small binary tree and merge duplicate nodes after each day; this avoids double-counting repeated values."
+    ],
+    "difficultyNotes": "Introductory counting; duplicate outcomes are the only trap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p9",
+    "problemId": "amc8-2024-p9",
+    "finalAnswer": "$\\boxed{\\text{E }(28)}$",
+    "shortExplanation": "**Idea:** Convert the color relationships into a ratio, then choose the total that is a multiple of that ratio sum.",
+    "detailedSteps": [
+      "Let the number of red marbles be $x$. Then the number of green marbles is $2x$.",
+      "The number of blue marbles is twice the number of green marbles, so it is $4x$.",
+      "The total number of marbles is therefore:\n\n[\nx+2x+4x=7x\n]",
+      "Thus the total must be a multiple of $7$.",
+      "Among the choices, the possible total is:\n\n[\n28=7\\cdot 4\n]",
+      "Final Answer: (\\boxed{\\text{E }(28)})"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Multiples",
+      "Variable setup"
+    ],
+    "commonMistakes": [
+      "Do not set green equal to $x$ unless you handle the half-red condition carefully.",
+      "The total must be an integer multiple of $7$, not merely close to one."
+    ],
+    "alternativeMethods": [
+      "Let green be $g$. Then the total is $\\frac{g}{2}+g+2g=\\frac{7g}{2}$, so the total is still forced to be a multiple of $7$."
+    ],
+    "difficultyNotes": "Intermediate ratio problem; choosing a convenient variable keeps the arithmetic clean.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p10",
+    "problemId": "amc8-2024-p10",
+    "finalAnswer": "$\\boxed{\\text{B }(414)}$",
+    "shortExplanation": "**Idea:** Use the linear yearly increase for the $50$ years from 1980 to 2030.",
+    "detailedSteps": [
+      "The number of years is:\n\n[\n2030-1980=50\n]",
+      "The expected increase is:\n\n[\n50\\cdot 1.515=75.75\n]",
+      "Add this to the initial level:\n\n[\n338+75.75=413.75\n]",
+      "Round to the nearest integer:\n\n[\n413.75\\approx 414\n]",
+      "Final Answer: (\\boxed{\\text{B }(414)})"
+    ],
+    "keyIdeas": [
+      "Linear model",
+      "Unit rate",
+      "Rounding"
+    ],
+    "commonMistakes": [
+      "Do not count 1980 and 2030 as $51$ full yearly intervals; the difference is $50$ years.",
+      "Round after adding, not before multiplying."
+    ],
+    "alternativeMethods": [
+      "Estimate first: $1.515\\approx1.5$, so the increase is about $75$, making the answer near $413$ or $414$."
+    ],
+    "difficultyNotes": "Intermediate modeling; most errors come from the year difference or premature rounding.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p11",
+    "problemId": "amc8-2024-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(11)}$",
+    "shortExplanation": "**Idea:** Use the horizontal base and solve for the vertical height from the area.",
+    "detailedSteps": [
+      "The base from $A(5,7)$ to $B(11,7)$ is horizontal and has length:\n\n[\n11-5=6\n]",
+      "Let $h$ be the height of the triangle above this base. The area formula gives:\n\n[\n\\frac{1}{2}\\cdot 6\\cdot h=12\n]",
+      "So:\n\n[\n3h=12 \\quad \\Rightarrow \\quad h=4\n]",
+      "Since the base lies on the line $y=7$ and $C$ is above it, the $y$-coordinate is:\n\n[\ny=7+4=11\n]",
+      "Final Answer: (\\boxed{\\text{D }(11)})"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Triangle area",
+      "Height"
+    ],
+    "commonMistakes": [
+      "The height is vertical distance from the line $y=7$, not the slanted side length.",
+      "Use $y>7$ to choose $11$, not the lower value that a symmetric equation might produce."
+    ],
+    "alternativeMethods": [
+      "Shoelace gives $\\frac12|6y-42|=12$, so $|6y-42|=24$ and $y=11$ because $y>7$."
+    ],
+    "difficultyNotes": "Intermediate coordinate geometry; recognizing the horizontal base makes the solution short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p12",
+    "problemId": "amc8-2024-p12",
+    "finalAnswer": "$\\boxed{\\text{E }(26)}$",
+    "shortExplanation": "**Idea:** Let the first tank have $x$ guppies and write the other tanks in terms of $x$.",
+    "detailedSteps": [
+      "Let the first tank have $x$ guppies. Then the four tank counts are:\n\n[\nx,\\quad x+1,\\quad x+3,\\quad x+6\n]",
+      "Their total is $90$, so:\n\n[\nx+(x+1)+(x+3)+(x+6)=90\n]",
+      "Simplify:\n\n[\n4x+10=90\n]\n\n[\n4x=80\n]\n\n[\nx=20\n]",
+      "The fourth tank has:\n\n[\nx+6=20+6=26\n]",
+      "Final Answer: (\\boxed{\\text{E }(26)})"
+    ],
+    "keyIdeas": [
+      "Linear equations",
+      "Consecutive increases",
+      "Systems"
+    ],
+    "commonMistakes": [
+      "The third tank is $x+3$, not $x+2$, because the increases accumulate.",
+      "The fourth tank is $x+6$, not $x+3$."
+    ],
+    "alternativeMethods": [
+      "Start from the extra counts $0,1,3,6$, which add to $10$; the remaining $80$ guppies are split evenly among four tanks, giving base count $20$."
+    ],
+    "difficultyNotes": "Intermediate algebra; the cumulative differences are the main point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p13",
+    "problemId": "amc8-2024-p13",
+    "finalAnswer": "$\\boxed{\\text{B }(5)}$",
+    "shortExplanation": "**Idea:** A valid six-hop path has three up hops and three down hops, never going below the ground.",
+    "detailedSteps": [
+      "To end back on the ground after $6$ hops, there must be exactly three up hops and three down hops.",
+      "Without the ground restriction, there are:\n\n[\n\\binom{6}{3}=20\n]\n\nways to arrange these hops.",
+      "For such a small case, list only paths that never dip below ground:\n\n[\nUUUDDD,\\quad UUDUDD,\\quad UUDDUD,\\quad UDUUDD,\\quad UDUDUD\n]",
+      "There are $5$ valid sequences.",
+      "Final Answer: (\\boxed{\\text{B }(5)})"
+    ],
+    "keyIdeas": [
+      "Catalan paths",
+      "Nonnegative height",
+      "Case listing"
+    ],
+    "commonMistakes": [
+      "Do not count all $\\binom{6}{3}$ arrangements; many go below the ground.",
+      "The first hop must be up and the last hop must be down."
+    ],
+    "alternativeMethods": [
+      "This is the third Catalan number:\n\n[\nC_3=\\frac{1}{4}\\binom{6}{3}=5\n]"
+    ],
+    "difficultyNotes": "Intermediate counting; this is a first encounter with Catalan-style restrictions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p14",
+    "problemId": "amc8-2024-p14",
+    "finalAnswer": "$\\boxed{\\text{A }(28)}$",
+    "shortExplanation": "**Idea:** Build the shortest route step by step, keeping the best known distance to each town.",
+    "detailedSteps": [
+      "From $A$, the route through $X$ reaches $M$ in:\n\n[\nA\\to X\\to M: \\quad 5+2=7\n]\n\nwhich is shorter than the direct $A\\to M$ route of $8$.",
+      "From $M$ to $C$, going through $Y$ is shorter than going directly:\n\n[\nM\\to Y\\to C: \\quad 6+5=11<14\n]",
+      "From $Y$ to $Z$, going through $C$ is shorter than the direct route:\n\n[\nY\\to C\\to Z: \\quad 5+10=15<17\n]",
+      "So the best route is:\n\n[\nA\\to X\\to M\\to Y\\to C\\to Z\n]",
+      "Its total length is:\n\n[\n5+2+6+5+10=28\n]",
+      "Final Answer: (\\boxed{\\text{A }(28)})"
+    ],
+    "keyIdeas": [
+      "Shortest path",
+      "Local comparison",
+      "Graph weights"
+    ],
+    "commonMistakes": [
+      "Do not choose a path by number of arrows; choose by total distance.",
+      "A direct edge may be longer than a two-step route through another town."
+    ],
+    "alternativeMethods": [
+      "Run a small Dijkstra table from $A$: best distances are $X=5$, $M=7$, $Y=13$, $C=18$, and $Z=28$."
+    ],
+    "difficultyNotes": "Intermediate graph problem; organized comparison prevents missing a shorter detour.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p15",
+    "problemId": "amc8-2024-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(1107)}$",
+    "shortExplanation": "**Idea:** A repeated three-digit block is $1001$ times the original block.",
+    "detailedSteps": [
+      "Let $\\overline{FLY}$ and $\\overline{BUG}$ be the corresponding three-digit numbers.",
+      "Repeating a three-digit block twice gives:\n\n[\n\\overline{FLYFLY}=1001\\overline{FLY}\n]\n\nand\n\n[\n\\overline{BUGBUG}=1001\\overline{BUG}\n]",
+      "The equation becomes:\n\n[\n8\\cdot1001\\overline{FLY}=1001\\overline{BUG}\n]",
+      "Divide by $1001$:\n\n[\n8\\overline{FLY}=\\overline{BUG}\n]",
+      "To keep $\\overline{BUG}$ three digits, we need $8\\overline{FLY}\\le 999$, so $\\overline{FLY}\\le124$.",
+      "Try the largest three-digit values with distinct digits. The value $124$ fails because $8\\cdot124=992$ repeats a digit, but:\n\n[\n8\\cdot123=984\n]",
+      "All six digits in $123$ and $984$ are distinct, so this is maximal.",
+      "Therefore:\n\n[\n\\overline{FLY}+\\overline{BUG}=123+984=1107\n]",
+      "Final Answer: (\\boxed{\\text{C }(1107)})"
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Repeated blocks",
+      "Cryptarithms"
+    ],
+    "commonMistakes": [
+      "Do not multiply only $FLY$ visually; first justify why the repeated six-digit number factors by $1001$.",
+      "Check that all represented digits are distinct."
+    ],
+    "alternativeMethods": [
+      "Work downward from $124$: $124\\mapsto 992$ is invalid, and the next candidate $123\\mapsto984$ works."
+    ],
+    "difficultyNotes": "Intermediate number theory; the $1001$ factor is the central simplifying observation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p16",
+    "problemId": "amc8-2024-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(11)}$",
+    "shortExplanation": "**Idea:** Put the multiples of $3$ into as few rows and columns as possible.",
+    "detailedSteps": [
+      "There are $27$ multiples of $3$ among the numbers $1$ through $81$.",
+      "A row or column has product divisible by $3$ exactly when it contains at least one multiple of $3$.",
+      "If the multiples of $3$ occupy cells inside an $a\\times b$ rectangle, then at least $a+b$ rows and columns are affected, and we need:\n\n[\nab\\ge 27\n]",
+      "We want to minimize $a+b$. If $a+b\\le10$, the product $ab$ is at most $5\\cdot5=25$, which is too small.",
+      "A $4\\times7$ rectangle has:\n\n[\n4\\cdot7=28\\ge27\n]\n\nand affects:\n\n[\n4+7=11\n]\n\nrows and columns.",
+      "So the least possible number is $11$.",
+      "Final Answer: (\\boxed{\\text{D }(11)})"
+    ],
+    "keyIdeas": [
+      "Multiples of 3",
+      "Grid placement",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "Do not count the numbers divisible by $3$ as the answer; they are placed inside rows and columns.",
+      "A $5\\times5$ block affects only $10$ rows and columns but has room for just $25$ multiples, not $27$."
+    ],
+    "alternativeMethods": [
+      "Place $25$ multiples in a $5\\times5$ block and the remaining $2$ in one new column inside existing rows; this also gives $5+6=11$ affected rows and columns."
+    ],
+    "difficultyNotes": "Intermediate combinatorics; it is a packing problem disguised as a divisibility question.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p17",
+    "problemId": "amc8-2024-p17",
+    "finalAnswer": "$\\boxed{\\text{E }(32)}$",
+    "shortExplanation": "**Idea:** Place one king by square type, then count safe squares for the other king.",
+    "detailedSteps": [
+      "The white and black kings are different, so we may choose a position for the first king and then count positions for the second.",
+      "If the first king is in a corner, it attacks $3$ squares, leaving:\n\n[\n9-1-3=5\n]\n\nsafe squares for the other king. There are $4$ corners, contributing:\n\n[\n4\\cdot5=20\n]",
+      "If the first king is on a non-corner edge square, it attacks $5$ squares, leaving:\n\n[\n9-1-5=3\n]\n\nsafe squares. There are $4$ such edge squares, contributing:\n\n[\n4\\cdot3=12\n]",
+      "If the first king is in the center, it attacks all other squares, contributing $0$.",
+      "Total valid placements:\n\n[\n20+12=32\n]",
+      "Final Answer: (\\boxed{\\text{E }(32)})"
+    ],
+    "keyIdeas": [
+      "Casework",
+      "Non-attacking kings",
+      "Ordered placements"
+    ],
+    "commonMistakes": [
+      "Do not divide by $2$ because the two kings have different colors.",
+      "The center square contributes no valid placements for the other king."
+    ],
+    "alternativeMethods": [
+      "Use complement counting on the $8$ non-center squares: start from $8P2=56$ ordered placements and subtract $24$ adjacent ordered placements to get $32$."
+    ],
+    "difficultyNotes": "Advanced AMC 8 counting; ordered versus unordered placements is the common trap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p18",
+    "problemId": "amc8-2024-p18",
+    "finalAnswer": "$\\boxed{\\text{A }(108^\\circ)}$",
+    "shortExplanation": "**Idea:** Set the shaded area equal to half the total area.",
+    "detailedSteps": [
+      "The total area of the largest circle is:\n\n[\n9\\pi\n]",
+      "Since shaded and unshaded areas are equal, the shaded area is:\n\n[\n\\frac{9\\pi}{2}=4.5\\pi\n]",
+      "The fully shaded inner ring has area:\n\n[\n\\pi(2^2)-\\pi(1^2)=4\\pi-\\pi=3\\pi\n]",
+      "So the shaded sector of the outer ring must have area:\n\n[\n4.5\\pi-3\\pi=1.5\\pi\n]",
+      "The full outer ring has area:\n\n[\n\\pi(3^2)-\\pi(2^2)=9\\pi-4\\pi=5\\pi\n]",
+      "If the central angle is $x$, then:\n\n[\n\\frac{x}{360}\\cdot5\\pi=1.5\\pi\n]",
+      "Solve:\n\n[\n\\frac{x}{360}=\\frac{1.5}{5}=\\frac{3}{10}\n]\n\n[\nx=108\n]",
+      "Final Answer: (\\boxed{\\text{A }(108^\\circ)})"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Annuli",
+      "Sector area"
+    ],
+    "commonMistakes": [
+      "Do not set the outer sector equal to half the whole circle; the inner shaded ring already contributes area.",
+      "Use the area of the outer ring, $5\\pi$, for the sector, not the area of the full radius-$3$ circle."
+    ],
+    "alternativeMethods": [
+      "Write equality directly:\n\n[\n3\\pi+\\frac{x}{360}(5\\pi)=\\pi+\\frac{360-x}{360}(5\\pi)\n]\n\nwhich also gives $x=108$."
+    ],
+    "difficultyNotes": "Advanced geometry; the clean solution separates the annulus from the sector.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p19",
+    "problemId": "amc8-2024-p19",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{4}{15}\\right)}$",
+    "shortExplanation": "**Idea:** Minimize the overlap between red pairs and high-top pairs.",
+    "detailedSteps": [
+      "There are:\n\n[\n\\frac{3}{5}\\cdot15=9\n]\n\nred pairs, so there are $6$ white pairs.",
+      "There are:\n\n[\n\\frac{2}{3}\\cdot15=10\n]\n\nhigh-top pairs.",
+      "To make the number of red high-tops as small as possible, make as many high-tops white as possible.",
+      "At most $6$ high-top pairs can be white, because there are only $6$ white pairs total.",
+      "Therefore at least:\n\n[\n10-6=4\n]\n\nhigh-top pairs must be red.",
+      "The least possible fraction is:\n\n[\n\\frac{4}{15}\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac{4}{15}\\right)})"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Minimum overlap",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "Do not multiply the fractions $\\frac35$ and $\\frac23$ as if color and style were independent.",
+      "To minimize red high-tops, maximize white high-tops first."
+    ],
+    "alternativeMethods": [
+      "Use inclusion-exclusion: two subsets of sizes $9$ and $10$ inside a $15$-element set must overlap in at least $9+10-15=4$ elements."
+    ],
+    "difficultyNotes": "Advanced counting; this is a minimum-overlap problem, not a probability independence problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p20",
+    "problemId": "amc8-2024-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(3)}$",
+    "shortExplanation": "**Idea:** From vertex $P$, the compatible vertices are the three opposite face-diagonal vertices.",
+    "detailedSteps": [
+      "An equilateral triangle in a cube with vertices at cube corners must use edges that are face diagonals of the cube.",
+      "From $P$, the vertices connected to $P$ by face diagonals are exactly three vertices: $R$, $T$, and $V$.",
+      "Any two of these three vertices together with $P$ form an equilateral triangle, because all three sides are face diagonals of congruent square faces.",
+      "So the number of triangles is:\n\n[\n\\binom{3}{2}=3\n]",
+      "Final Answer: (\\boxed{\\text{D }(3)})"
+    ],
+    "keyIdeas": [
+      "Cube geometry",
+      "Face diagonals",
+      "Combinations"
+    ],
+    "commonMistakes": [
+      "Do not count cube edges from $P$; those are too short to form the equilateral triangles here.",
+      "Do not count orderings of the same two vertices as different triangles."
+    ],
+    "alternativeMethods": [
+      "List the triangles explicitly: $\\triangle PRT$, $\\triangle PRV$, and $\\triangle PTV$."
+    ],
+    "difficultyNotes": "Advanced spatial geometry; identifying face diagonals is the decisive observation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p21",
+    "problemId": "amc8-2024-p21",
+    "finalAnswer": "$\\boxed{\\text{E }(24)}$",
+    "shortExplanation": "**Idea:** Write the initial ratio as $3y:y$ and track the net color changes.",
+    "detailedSteps": [
+      "Let the initial number of yellow frogs be $y$, so the initial number of green frogs is $3y$.",
+      "After the movement, the green side gains a net $2$ frogs and the yellow side loses a net $2$ frogs:\n\n[\nG_{new}=3y+2,\\qquad Y_{new}=y-2\n]",
+      "The new ratio is $4:1$, so:\n\n[\n\\frac{3y+2}{y-2}=4\n]",
+      "Solve:\n\n[\n3y+2=4y-8\n]\n\n[\ny=10\n]",
+      "Then:\n\n[\nG_{new}=3(10)+2=32,\\qquad Y_{new}=10-2=8\n]",
+      "The difference is:\n\n[\n32-8=24\n]",
+      "Final Answer: (\\boxed{\\text{E }(24)})"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Linear equations",
+      "Net change"
+    ],
+    "commonMistakes": [
+      "The green count changes by net $+2$, not by $-3$; five yellow frogs become green while three green frogs become yellow.",
+      "The question asks for the final difference, not the total number of frogs."
+    ],
+    "alternativeMethods": [
+      "The green fraction changes from $\\frac34$ to $\\frac45$, an increase of $\\frac1{20}$ of the total; that increase equals $2$ frogs, so the total is $40$ and the final difference is $\\frac35\\cdot40=24$."
+    ],
+    "difficultyNotes": "Advanced ratio problem; tracking net movement prevents sign mistakes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p22",
+    "problemId": "amc8-2024-p22",
+    "finalAnswer": "$\\boxed{\\text{B }(600)}$",
+    "shortExplanation": "**Idea:** Equate the annulus area of the rolled tape to length times thickness.",
+    "detailedSteps": [
+      "The outer radius is $2$ inches and the inner radius is $1$ inch.",
+      "The cross-sectional area of the tape is the annulus area:\n\n[\n\\pi(2^2)-\\pi(1^2)=4\\pi-\\pi=3\\pi\n]",
+      "If the unrolled tape has length $L$ and thickness $0.015$, then the same cross-sectional area is:\n\n[\n0.015L\n]",
+      "So:\n\n[\n0.015L=3\\pi\n]\n\n[\nL=\\frac{3\\pi}{0.015}=200\\pi\n]",
+      "Approximate:\n\n[\n200\\pi\\approx 628\n]",
+      "Rounded to the nearest $100$ inches, this is $600$.",
+      "Final Answer: (\\boxed{\\text{B }(600)})"
+    ],
+    "keyIdeas": [
+      "Annulus area",
+      "Measurement",
+      "Approximation"
+    ],
+    "commonMistakes": [
+      "Use radii $2$ and $1$, not diameters $4$ and $2$, in the area formula.",
+      "Round only at the end to the nearest $100$ inches."
+    ],
+    "alternativeMethods": [
+      "Think of about $\\frac{1}{0.015}=\\frac{200}{3}$ layers with average circumference $3\\pi$, giving $\\frac{200}{3}\\cdot3\\pi=200\\pi$."
+    ],
+    "difficultyNotes": "Advanced measurement problem; area conservation is the cleanest approach.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p23",
+    "problemId": "amc8-2024-p23",
+    "finalAnswer": "$\\boxed{\\text{C }(7000)}$",
+    "shortExplanation": "**Idea:** A segment with horizontal change $a$ and vertical change $b$ crosses $a+b-\\gcd(a,b)$ grid cells.",
+    "detailedSteps": [
+      "The horizontal and vertical changes are:\n\n[\n5000-2000=3000\n]\n\n[\n8000-3000=5000\n]",
+      "For a segment from one lattice point to another, the number of grid cells crossed is:\n\n[\n\\Delta x+\\Delta y-\\gcd(\\Delta x,\\Delta y)\n]",
+      "Here:\n\n[\n\\gcd(3000,5000)=1000\n]",
+      "Therefore the number of cells is:\n\n[\n3000+5000-1000=7000\n]",
+      "Final Answer: (\\boxed{\\text{C }(7000)})"
+    ],
+    "keyIdeas": [
+      "Grid paths",
+      "Greatest common divisor",
+      "Lattice points"
+    ],
+    "commonMistakes": [
+      "Do not use $3000+5000$ without subtracting repeated crossings at lattice points.",
+      "The starting coordinates do not matter after taking horizontal and vertical differences."
+    ],
+    "alternativeMethods": [
+      "Reduce the direction vector to $(3,5)$, which crosses $3+5-1=7$ cells per primitive segment; there are $1000$ such segments, so $7000$ cells."
+    ],
+    "difficultyNotes": "Advanced grid geometry; the gcd correction is the key theorem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p24",
+    "problemId": "amc8-2024-p24",
+    "finalAnswer": "$\\boxed{\\text{B }(5)}$",
+    "shortExplanation": "**Idea:** Treat the artwork as two overlapping right isosceles triangles.",
+    "detailedSteps": [
+      "A right isosceles triangle whose vertical height is $8$ has area:\n\n[\n8^2=64\n]",
+      "A right isosceles triangle whose vertical height is $12$ has area:\n\n[\n12^2=144\n]",
+      "Adding these counts the overlap twice, so:\n\n[\n64+144-\\text{overlap}=183\n]",
+      "Thus:\n\n[\n\\text{overlap}=208-183=25\n]",
+      "The overlap is also a right isosceles triangle with vertical height $h$, so its area is $h^2$.",
+      "Therefore:\n\n[\nh^2=25\n]\n\n[\nh=5\n]",
+      "Final Answer: (\\boxed{\\text{B }(5)})"
+    ],
+    "keyIdeas": [
+      "Overlapping area",
+      "Right isosceles triangles",
+      "Area subtraction"
+    ],
+    "commonMistakes": [
+      "Do not add the two large triangle areas without subtracting the overlap.",
+      "The area of a $45^\\circ-45^\\circ-90^\\circ$ mountain triangle with height $s$ is $s^2$, not $\\frac12s^2$."
+    ],
+    "alternativeMethods": [
+      "Let the overlap height be $h$ from the start and write:\n\n[\n8^2+12^2-h^2=183\n]\n\nthen solve $h=5$."
+    ],
+    "difficultyNotes": "Advanced area problem; extending the two mountains into full right isosceles triangles reveals the structure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2024-p25",
+    "problemId": "amc8-2024-p25",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac{20}{33}\\right)}$",
+    "shortExplanation": "**Idea:** Count the complementary seat patterns where no row has two adjacent empty seats.",
+    "detailedSteps": [
+      "After $8$ passengers sit, there are $4$ empty seats among $12$ seats.",
+      "All choices of empty seats are equally likely, so the total number of empty-seat patterns is:\n\n[\n\\binom{12}{4}=495\n]",
+      "Count the bad patterns where the couple cannot sit together, meaning no row has adjacent empty seats.",
+      "In a row of $3$ seats, the possible numbers of empty seats with no adjacent empty pair are counted by:\n\n[\n1+3x+x^2\n]\n\nwhere $x$ marks an empty seat.",
+      "For four rows, the bad patterns are the coefficient of $x^4$ in:\n\n[\n(1+3x+x^2)^4\n]",
+      "Compute that coefficient by cases:\n\n[\n\\binom{4}{4}3^4+\\binom{4}{1}\\binom{3}{2}3^2=81+108=189\n]\n\nand also the case with two rows contributing $x^2$ each:\n\n[\n\\binom{4}{2}=6\n]",
+      "So the bad total is:\n\n[\n189+6=195\n]",
+      "The desired number of patterns is:\n\n[\n495-195=300\n]",
+      "Therefore the probability is:\n\n[\n\\frac{300}{495}=\\frac{20}{33}\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac{20}{33}\\right)})"
+    ],
+    "keyIdeas": [
+      "Complement counting",
+      "Generating functions",
+      "Seat arrangements"
+    ],
+    "commonMistakes": [
+      "Count empty seats, not occupied passengers; the couple cares about where the four empty seats are.",
+      "Rows with two empty end seats have no adjacent empty pair, so they are bad patterns, not good ones."
+    ],
+    "alternativeMethods": [
+      "Do row casework by occupancy patterns: bad distributions of occupied seats are $(3,3,1,1)$, $(3,2,2,1)$, and $(2,2,2,2)$, which give $6+108+81=195$ bad patterns."
+    ],
+    "difficultyNotes": "Advanced probability; complement counting keeps the row adjacency condition manageable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

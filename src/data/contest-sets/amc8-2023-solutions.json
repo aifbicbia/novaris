@@ -1,0 +1,719 @@
+[
+  {
+    "id": "solution-amc8-2023-p1",
+    "problemId": "amc8-2023-p1",
+    "finalAnswer": "$\\boxed{\\text{D }(18)}$",
+    "shortExplanation": "**Idea:** Use order of operations before subtracting.",
+    "detailedSteps": [
+      "Evaluate the multiplication first:\n\n[\n8\\times4+2=32+2=34\n]",
+      "Evaluate the second parenthesis the same way:\n\n[\n8+4\\times2=8+8=16\n]",
+      "Now subtract:\n\n[\n34-16=18\n]",
+      "Final Answer: (\\boxed{\\text{D }(18)})"
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Do not compute from left to right without doing multiplication first.",
+      "Keep each parenthesis separate before subtracting."
+    ],
+    "alternativeMethods": [
+      "Rewrite the expression as $(32+2)-(8+8)$, then compare the two totals."
+    ],
+    "difficultyNotes": "Introductory arithmetic; the only trap is operation order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p2",
+    "problemId": "amc8-2023-p2",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Unfolding mirrors the cut across both fold lines.",
+    "detailedSteps": [
+      "The paper is folded twice, so the final small square represents one quarter of the original square.",
+      "A diagonal cut on the folded quarter is reflected across one fold line, then reflected again across the other fold line.",
+      "The four reflected cuts meet symmetrically around the center, forming a diamond-shaped hole.",
+      "The matching figure is choice $E$.",
+      "Final Answer: (\\boxed{\\text{E}})"
+    ],
+    "keyIdeas": [
+      "Symmetry",
+      "Paper folding",
+      "Reflection"
+    ],
+    "commonMistakes": [
+      "Do not draw only one copy of the cut; each fold doubles the visible cuts after unfolding.",
+      "The cut is inside the folded square, so the result is a hole, not a missing corner."
+    ],
+    "alternativeMethods": [
+      "Mark the cut segment and reflect it first horizontally and then vertically; the four copies form the same diamond."
+    ],
+    "difficultyNotes": "Introductory visual geometry; tracking both reflections is the main skill.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p3",
+    "problemId": "amc8-2023-p3",
+    "finalAnswer": "$\\boxed{\\text{B }(23)}$",
+    "shortExplanation": "**Idea:** Substitute the given temperature and wind speed into the formula.",
+    "detailedSteps": [
+      "The formula is:\n\n[\n\\text{wind chill}=\\text{air temperature}-0.7\\cdot\\text{wind speed}\n]",
+      "Substitute $36$ for temperature and $18$ for wind speed:\n\n[\n36-0.7\\cdot18=36-12.6=23.4\n]",
+      "The closest listed value is $23$.",
+      "Final Answer: (\\boxed{\\text{B }(23)})"
+    ],
+    "keyIdeas": [
+      "Substitution",
+      "Decimals",
+      "Estimation"
+    ],
+    "commonMistakes": [
+      "Do not multiply $36$ by $0.7$; the formula subtracts $0.7$ times the wind speed.",
+      "Use the closest answer choice, since the result is not an integer."
+    ],
+    "alternativeMethods": [
+      "Estimate $0.7\\cdot18\\approx 13$, so $36-13\\approx 23$."
+    ],
+    "difficultyNotes": "Introductory formula evaluation with a small rounding step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p4",
+    "problemId": "amc8-2023-p4",
+    "finalAnswer": "$\\boxed{\\text{D }(3)}$",
+    "shortExplanation": "**Idea:** Continue the square spiral only on the requested diagonal.",
+    "detailedSteps": [
+      "Assign coordinates with $1$ at $(0,0)$, then follow the spiral shown in the diagram.",
+      "The shaded diagonal through the square containing $7$ contains the four values:\n\n[\n19,\\ 23,\\ 39,\\ 47\n]",
+      "Now check which are prime:\n\n[\n19,\\ 23,\\ 47\\text{ are prime, while }39=3\\cdot13\n]",
+      "Thus $3$ of the four numbers are prime.",
+      "Final Answer: (\\boxed{\\text{D }(3)})"
+    ],
+    "keyIdeas": [
+      "Spiral patterns",
+      "Prime numbers",
+      "Coordinate tracking"
+    ],
+    "commonMistakes": [
+      "Do not count the number $7$ itself; the problem asks about the four shaded squares.",
+      "Check $39$ carefully, since it is odd but composite."
+    ],
+    "alternativeMethods": [
+      "Fill only the outer layers that intersect the shaded diagonal instead of completing the entire $7\\times7$ grid."
+    ],
+    "difficultyNotes": "Intermediate pattern problem; accuracy matters more than speed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p5",
+    "problemId": "amc8-2023-p5",
+    "finalAnswer": "$\\boxed{\\text{B }(1500)}$",
+    "shortExplanation": "**Idea:** Use the sample trout ratio as the lake trout ratio.",
+    "detailedSteps": [
+      "In the sample, the fraction of fish that are trout is:\n\n[\n\\frac{30}{180}=\\frac{1}{6}\n]",
+      "The lake has $250$ trout, and trout are $\\frac16$ of all fish.",
+      "If $T$ is the total number of fish, then:\n\n[\n\\frac{1}{6}T=250\n]",
+      "So:\n\n[\nT=250\\cdot6=1500\n]",
+      "Final Answer: (\\boxed{\\text{B }(1500)})"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Sampling",
+      "Proportions"
+    ],
+    "commonMistakes": [
+      "Do not use $180$ as the lake total; it is only the sample size.",
+      "The ratio is trout to all fish, not trout to non-trout fish."
+    ],
+    "alternativeMethods": [
+      "Set up $30/180=250/T$ and cross multiply to get $30T=45000$, so $T=1500$."
+    ],
+    "difficultyNotes": "Introductory proportion problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p6",
+    "problemId": "amc8-2023-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(9)}$",
+    "shortExplanation": "**Idea:** Put the largest useful digit in the base with exponent $2$.",
+    "detailedSteps": [
+      "The expression has two powers multiplied together, using the digits $2,0,2,3$ once each.",
+      "A factor with exponent $0$ becomes $1$, so it is useful to save one digit as a zero exponent.",
+      "The best choice is:\n\n[\n3^2\\cdot2^0=9\\cdot1=9\n]",
+      "Other natural attempts, such as $2^3\\cdot2^0=8$, are smaller.",
+      "Final Answer: (\\boxed{\\text{C }(9)})"
+    ],
+    "keyIdeas": [
+      "Exponents",
+      "Optimization",
+      "Zero exponent"
+    ],
+    "commonMistakes": [
+      "Do not use $0$ as a base unless forced; it makes an entire factor zero.",
+      "Compare $3^2=9$ with $2^3=8$."
+    ],
+    "alternativeMethods": [
+      "List the sensible nonzero powers: $3^2$, $2^3$, and $2^2$; the largest product with the remaining zero exponent is $9$."
+    ],
+    "difficultyNotes": "Introductory exponent optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p7",
+    "problemId": "amc8-2023-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(1)}$",
+    "shortExplanation": "**Idea:** Write equations for the two lines and test the rectangle edges.",
+    "detailedSteps": [
+      "The line through $A(0,0)$ and $B(3,1)$ has equation:\n\n[\ny=\\frac{x}{3}\n]",
+      "The rectangle has $15\\le x\\le16$ and $3\\le y\\le5$.",
+      "On the first line, $x=15$ gives $y=5$, so $(15,5)$ is on the rectangle.",
+      "The line through $C(0,10)$ and $D(2,9)$ has slope $-\\frac12$, so:\n\n[\ny=10-\\frac{x}{2}\n]",
+      "At $x=15$ or $16$, this line has $y<3$, and at $y=3$ or $5$ it has $x<15$, so it misses the rectangle.",
+      "Only one point on the rectangle lies on at least one of the lines.",
+      "Final Answer: (\\boxed{\\text{B }(1)})"
+    ],
+    "keyIdeas": [
+      "Line equations",
+      "Coordinate geometry",
+      "Boundary checking"
+    ],
+    "commonMistakes": [
+      "Check the rectangle boundary, not just the four vertices.",
+      "The second line looks near the rectangle in the diagram, but its equation shows it misses."
+    ],
+    "alternativeMethods": [
+      "Use slopes and intercepts visually: the first line reaches the upper-left corner of the rectangle, while the second line is below it near $x=15$."
+    ],
+    "difficultyNotes": "Intermediate coordinate problem; organized edge testing keeps it short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p8",
+    "problemId": "amc8-2023-p8",
+    "finalAnswer": "$\\boxed{\\text{A }(000101)}$",
+    "shortExplanation": "**Idea:** In each round, the four players create exactly two wins.",
+    "detailedSteps": [
+      "Read each column as one round with two matches, so each column must contain exactly two $1$s total.",
+      "The known entries by column have win counts:\n\n[\n2,\\ 2,\\ 2,\\ 1,\\ 2,\\ 1\n]",
+      "Therefore Tiyo must have losses in columns $1,2,3,5$ and wins in columns $4,6$.",
+      "So Tiyo's record is:\n\n[\n000101\n]",
+      "Final Answer: (\\boxed{\\text{A }(000101)})"
+    ],
+    "keyIdeas": [
+      "Tournament records",
+      "Column sums",
+      "Complement counting"
+    ],
+    "commonMistakes": [
+      "Do not count only total wins by player; the order of results matters.",
+      "Each round has exactly two winners, not three or one."
+    ],
+    "alternativeMethods": [
+      "Fill Tiyo's result column by column: if the other three players have only one win, Tiyo must have a win; otherwise Tiyo has a loss."
+    ],
+    "difficultyNotes": "Intermediate table-reading problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p9",
+    "problemId": "amc8-2023-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(8)}$",
+    "shortExplanation": "**Idea:** Count the time intervals where the graph lies between the two horizontal levels.",
+    "detailedSteps": [
+      "Draw or imagine horizontal lines at elevations $4$ and $7$.",
+      "From the graph, Malaika is between these elevations for about $2$ seconds on the way down, $4$ seconds while climbing, and $2$ seconds on the final descent.",
+      "Add the intervals:\n\n[\n2+4+2=8\n]",
+      "Final Answer: (\\boxed{\\text{B }(8)})"
+    ],
+    "keyIdeas": [
+      "Graph reading",
+      "Intervals",
+      "Time accumulation"
+    ],
+    "commonMistakes": [
+      "Do not count time below $4$ meters or above $7$ meters.",
+      "The graph may enter the range more than once."
+    ],
+    "alternativeMethods": [
+      "Mark the four crossings with the levels $4$ and $7$, then subtract the corresponding time coordinates."
+    ],
+    "difficultyNotes": "Introductory graph interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p10",
+    "problemId": "amc8-2023-p10",
+    "finalAnswer": "$\\boxed{\\text{D }\\left(\\frac13\\right)}$",
+    "shortExplanation": "**Idea:** Track the fraction remaining after each person or animal eats.",
+    "detailedSteps": [
+      "After Harold eats $\\frac14$ of the pie, the remaining fraction is:\n\n[\n1-\\frac14=\\frac34\n]",
+      "The moose eats $\\frac13$ of the remainder, so it leaves $\\frac23$ of $\\frac34$:\n\n[\n\\frac23\\cdot\\frac34=\\frac12\n]",
+      "The porcupine eats $\\frac13$ of what remains, leaving $\\frac23$ of $\\frac12$:\n\n[\n\\frac23\\cdot\\frac12=\\frac13\n]",
+      "Final Answer: (\\boxed{\\text{D }\\left(\\frac13\\right)})"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Successive remaining amounts"
+    ],
+    "commonMistakes": [
+      "Each animal eats a fraction of what remains, not a fraction of the original pie.",
+      "Use $\\frac23$ to represent the part left after someone eats $\\frac13$."
+    ],
+    "alternativeMethods": [
+      "Start with $12$ equal pieces: Harold leaves $9$, the moose leaves $6$, and the porcupine leaves $4$, so $4/12=1/3$."
+    ],
+    "difficultyNotes": "Introductory fraction process problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p11",
+    "problemId": "amc8-2023-p11",
+    "finalAnswer": "$\\boxed{\\text{C }(60000)}$",
+    "shortExplanation": "**Idea:** Convert about $6.5$ months into hours and divide distance by time.",
+    "detailedSteps": [
+      "Approximate $6.5$ months as:\n\n[\n6.5\\cdot30=195\\text{ days}\n]",
+      "Convert days to hours:\n\n[\n195\\cdot24=4680\\text{ hours}\n]",
+      "Now estimate the speed:\n\n[\n\\frac{292{,}526{,}838}{4680}\\approx 62{,}500\n]",
+      "The closest choice is $60{,}000$.",
+      "Final Answer: (\\boxed{\\text{C }(60000)})"
+    ],
+    "keyIdeas": [
+      "Average speed",
+      "Unit conversion",
+      "Estimation"
+    ],
+    "commonMistakes": [
+      "Do not divide by days when the answer choices are in miles per hour.",
+      "A rough estimate is enough because the choices are far apart."
+    ],
+    "alternativeMethods": [
+      "Use $200$ days as a quick estimate: $200\\cdot24=4800$ hours, and $292$ million divided by $4800$ is about $61{,}000$."
+    ],
+    "difficultyNotes": "Introductory estimation problem with large numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p12",
+    "problemId": "amc8-2023-p12",
+    "finalAnswer": "$\\boxed{\\text{B }\\left(\\frac{11}{36}\\right)}$",
+    "shortExplanation": "**Idea:** Measure all shaded pieces in units of the smallest circle area.",
+    "detailedSteps": [
+      "From the grid, the large circle has radius $3$, so its area is:\n\n[\n9\\pi\n]",
+      "The main shaded circle has radius $2$, but it contains two unshaded circles of radius $1$:\n\n[\n4\\pi-2\\pi=2\\pi\n]",
+      "The three small shaded circles each have radius $\\frac12$, so together they add:\n\n[\n3\\cdot\\pi\\left(\\frac12\\right)^2=\\frac34\\pi\n]",
+      "Total shaded area is:\n\n[\n2\\pi+\\frac34\\pi=\\frac{11}{4}\\pi\n]",
+      "Divide by the large circle area:\n\n[\n\\frac{\\frac{11}{4}\\pi}{9\\pi}=\\frac{11}{36}\n]",
+      "Final Answer: (\\boxed{\\text{B }\\left(\\frac{11}{36}\\right)})"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Area subtraction",
+      "Scale from grid"
+    ],
+    "commonMistakes": [
+      "Do not include the two white circles inside the large shaded circle.",
+      "The three small shaded circles have radius $\\frac12$, not radius $1$."
+    ],
+    "alternativeMethods": [
+      "Work in units of $\\pi/4$: the big circle has area $36$ units and the shaded area has $11$ units."
+    ],
+    "difficultyNotes": "Intermediate geometry; the grid gives the radii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p13",
+    "problemId": "amc8-2023-p13",
+    "finalAnswer": "$\\boxed{\\text{D }(48)}$",
+    "shortExplanation": "**Idea:** Express the third water station and first repair station as fractions of the race length.",
+    "detailedSteps": [
+      "With $7$ water stations evenly spaced between start and finish, the third water station is at:\n\n[\n\\frac{3}{8}L\n]",
+      "With $2$ repair stations evenly spaced, the first repair station is at:\n\n[\n\\frac13L\n]",
+      "The difference is $2$ miles:\n\n[\n\\frac38L-\\frac13L=2\n]",
+      "Compute the fraction:\n\n[\n\\frac{9-8}{24}L=\\frac1{24}L=2\n]",
+      "Thus:\n\n[\nL=48\n]",
+      "Final Answer: (\\boxed{\\text{D }(48)})"
+    ],
+    "keyIdeas": [
+      "Even spacing",
+      "Fractions of a length",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Seven interior stations divide the route into eight equal intervals.",
+      "Two repair stations divide the route into three equal intervals."
+    ],
+    "alternativeMethods": [
+      "Let the water interval be $w$ and the repair interval be $r$; then $8w=3r=L$ and $3w-r=2$, giving $L=48$."
+    ],
+    "difficultyNotes": "Intermediate spacing problem; the interval count is the key.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p14",
+    "problemId": "amc8-2023-p14",
+    "finalAnswer": "$\\boxed{\\text{E }(55)}$",
+    "shortExplanation": "**Idea:** Maximize the stamp count by using as many low-value stamps as possible while hitting $710$ cents.",
+    "detailedSteps": [
+      "Let $x,y,z$ be the numbers of $5$-cent, $10$-cent, and $25$-cent stamps.",
+      "In units of $5$ cents, the equation is:\n\n[\nx+2y+5z=142\n]",
+      "We want to maximize:\n\n[\nx+y+z\n]",
+      "Try $55$ stamps. Compared with $55$ stamps worth $5$ cents each, the extra value needed is:\n\n[\n142-55=87\n]\n\nso:\n\n[\ny+4z=87\n]",
+      "Choose $z=17$ and $y=19$, which gives $y+4z=19+68=87$.",
+      "Then $x=55-17-19=19$, and all counts are at most $20$.",
+      "Thus $55$ stamps is attainable.",
+      "Final Answer: (\\boxed{\\text{E }(55)})"
+    ],
+    "keyIdeas": [
+      "Integer equations",
+      "Optimization",
+      "Stamp values"
+    ],
+    "commonMistakes": [
+      "Do not ignore the limit of $20$ stamps of each type.",
+      "Maximizing stamps means favoring low denominations, not high denominations."
+    ],
+    "alternativeMethods": [
+      "Start with $20$ five-cent and $20$ ten-cent stamps, then solve for enough $25$-cent stamps and adjust to reach exactly $710$ cents."
+    ],
+    "difficultyNotes": "Intermediate integer optimization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p15",
+    "problemId": "amc8-2023-p15",
+    "finalAnswer": "$\\boxed{\\text{B }(4.2)}$",
+    "shortExplanation": "**Idea:** After the detour begins, Viswam must cover $7$ blocks in the usual time for $5$ blocks.",
+    "detailedSteps": [
+      "His usual route is $10$ blocks and $\\frac12$ mile, so one block is:\n\n[\n\\frac{1/2}{10}=\\frac1{20}\\text{ mile}\n]",
+      "After $5$ blocks, he normally has $5$ minutes left.",
+      "The detour makes the next one-block segment become $3$ blocks, so he must walk:\n\n[\n3+4=7\\text{ blocks}\n]",
+      "That distance is:\n\n[\n7\\cdot\\frac1{20}=\\frac7{20}=0.35\\text{ mile}\n]",
+      "He must walk this in $5$ minutes, or $\\frac1{12}$ hour:\n\n[\n\\frac{0.35}{1/12}=4.2\n]",
+      "Final Answer: (\\boxed{\\text{B }(4.2)})"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Time remaining",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "The detour adds two extra blocks, but from the detour point he must still walk seven blocks total.",
+      "Convert $5$ minutes to hours before finding miles per hour."
+    ],
+    "alternativeMethods": [
+      "His usual speed is $3$ mph; after the detour begins he must walk $7/5$ times as fast, so $3\\cdot\\frac75=4.2$ mph."
+    ],
+    "difficultyNotes": "Intermediate rate problem with a careful remaining-distance step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p16",
+    "problemId": "amc8-2023-p16",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** The $P,Q,R$ pattern repeats with period $3$ across rows and columns.",
+    "detailedSteps": [
+      "From the displayed pattern, $Q$ appears when the row and column have the same residue modulo $3$.",
+      "Among the numbers $1$ through $20$, the residue counts modulo $3$ are:\n\n[\n7,\\ 7,\\ 6\n]",
+      "So the number of $Q$s is:\n\n[\n7^2+7^2+6^2=49+49+36=134\n]",
+      "The remaining $400-134=266$ entries are split between $P$ and $R$ as $133$ and $133$.",
+      "Thus the completed table has:\n\n[\n133\\text{ Ps},\\ 134\\text{ Qs},\\ 133\\text{ Rs}\n]",
+      "Final Answer: (\\boxed{\\text{C}})"
+    ],
+    "keyIdeas": [
+      "Periodicity",
+      "Modulo 3",
+      "Grid counting"
+    ],
+    "commonMistakes": [
+      "Do not assume each letter appears exactly $400/3$ times; $400$ is not divisible by $3$.",
+      "Count residues among $20$ rows and columns, not just one visible block."
+    ],
+    "alternativeMethods": [
+      "Tile the grid by $3\\times3$ blocks: each full block has three of each letter, then count the remaining rows and columns."
+    ],
+    "difficultyNotes": "Intermediate counting problem; modular organization prevents a long table.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p17",
+    "problemId": "amc8-2023-p17",
+    "finalAnswer": "$\\boxed{\\text{A }(1)}$",
+    "shortExplanation": "**Idea:** The strip of faces wraps around the octahedron, placing face $1$ next to the exposed side of $Q$.",
+    "detailedSteps": [
+      "Think of the six alternating triangles in the long strip as wrapping around the octahedron.",
+      "When the strip closes, the free edge at the end containing $Q$ meets the free edge at the beginning containing face $1$.",
+      "The two remaining attached triangles, $2$ and $7$, close the other open parts of the octahedron.",
+      "Therefore the face shown to the right of $Q$ is face $1$.",
+      "Final Answer: (\\boxed{\\text{A }(1)})"
+    ],
+    "keyIdeas": [
+      "Polyhedron nets",
+      "Octahedron folding",
+      "Edge matching"
+    ],
+    "commonMistakes": [
+      "Do not assume only faces already touching $Q$ in the flat net can touch it after folding.",
+      "The endpoints of a net strip can meet when the solid closes."
+    ],
+    "alternativeMethods": [
+      "Trace the boundary edges of the net: the right free edge of $Q$ pairs with the left free edge of face $1$."
+    ],
+    "difficultyNotes": "Advanced spatial-visualization problem; using edge matching is safer than guessing from the flat picture.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p18",
+    "problemId": "amc8-2023-p18",
+    "finalAnswer": "$\\boxed{\\text{D }(411)}$",
+    "shortExplanation": "**Idea:** Use mostly $+5$ jumps, then fix the remainder with $-3$ jumps.",
+    "detailedSteps": [
+      "Let Greta make $r$ right jumps and $l$ left jumps. Then:\n\n[\n5r-3l=2023\n]",
+      "To minimize total jumps, start with the smallest possible $r$ near:\n\n[\n\\frac{2023}{5}\\approx405\n]",
+      "The equation requires:\n\n[\n5r\\equiv2023\\pmod3\n]",
+      "Since $5\\equiv2\\pmod3$ and $2023\\equiv1\\pmod3$, we need $r\\equiv2\\pmod3$.",
+      "The smallest $r\\ge405$ with this property is $407$.",
+      "Then:\n\n[\n5\\cdot407-2023=12=3\\cdot4\n]\n\nso $l=4$.",
+      "The total number of jumps is:\n\n[\n407+4=411\n]",
+      "Final Answer: (\\boxed{\\text{D }(411)})"
+    ],
+    "keyIdeas": [
+      "Linear combinations",
+      "Modulo arithmetic",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "Do not round $2023/5$ and stop; the remainder must be reachable using jumps of $3$.",
+      "A left jump still counts as a jump."
+    ],
+    "alternativeMethods": [
+      "Check answer choices by solving whether $5r-3l=2023$ can have $r+l$ equal to that choice; $411$ is the first possible total."
+    ],
+    "difficultyNotes": "Intermediate number theory problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p19",
+    "problemId": "amc8-2023-p19",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(5:12\\right)}$",
+    "shortExplanation": "**Idea:** Similar equilateral triangles have areas proportional to the square of side length.",
+    "detailedSteps": [
+      "Let the area of the large equilateral triangle be $A$.",
+      "The inner side length is $\\frac23$ of the large side length, so its area is:\n\n[\n\\left(\\frac23\\right)^2A=\\frac49A\n]",
+      "The region outside the inner triangle has area:\n\n[\nA-\\frac49A=\\frac59A\n]",
+      "This region is split into three congruent trapezoids, so one trapezoid has area:\n\n[\n\\frac13\\cdot\\frac59A=\\frac5{27}A\n]",
+      "Now compare one trapezoid to the inner triangle:\n\n[\n\\frac{\\frac5{27}A}{\\frac49A}=\\frac5{12}\n]",
+      "Final Answer: (\\boxed{\\text{C }(5:12)})"
+    ],
+    "keyIdeas": [
+      "Similar figures",
+      "Area ratios",
+      "Equilateral triangles"
+    ],
+    "commonMistakes": [
+      "Area scales by the square of the side ratio, not by the side ratio itself.",
+      "Remember to divide the outer region by $3$."
+    ],
+    "alternativeMethods": [
+      "Use side length $3$ for the large triangle and $2$ for the inner triangle; areas are proportional to $9$ and $4$."
+    ],
+    "difficultyNotes": "Intermediate geometry ratio problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p20",
+    "problemId": "amc8-2023-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(60)}$",
+    "shortExplanation": "**Idea:** Doubling the range forces a new maximum, while the median and mode limit the other inserted number.",
+    "detailedSteps": [
+      "The original list has range:\n\n[\n28-3=25\n]",
+      "Doubling the range gives new range $50$. Since the minimum should stay $3$, the largest possible new maximum is:\n\n[\n3+50=53\n]",
+      "So one inserted number should be $53$.",
+      "The seven-number list must still have median $8$, so the other inserted number must be at most $8$.",
+      "If the other number were $8$, then both $3$ and $8$ would occur twice, so the mode would no longer be uniquely $3$.",
+      "The largest safe choice is therefore $7$.",
+      "The maximum sum is:\n\n[\n53+7=60\n]",
+      "Final Answer: (\\boxed{\\text{D }(60)})"
+    ],
+    "keyIdeas": [
+      "Range",
+      "Median",
+      "Mode"
+    ],
+    "commonMistakes": [
+      "Do not choose $8$ as the second inserted number; it creates a tie for the mode.",
+      "The median is the fourth number after two values are inserted."
+    ],
+    "alternativeMethods": [
+      "Try to maximize the larger inserted number first, then check the largest possible smaller inserted number that keeps the median and mode unchanged."
+    ],
+    "difficultyNotes": "Advanced statistics puzzle; the mode condition is the subtle point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p21",
+    "problemId": "amc8-2023-p21",
+    "finalAnswer": "$\\boxed{\\text{C }(2)}$",
+    "shortExplanation": "**Idea:** Each group must sum to $15$, then count disjoint triples.",
+    "detailedSteps": [
+      "The total sum is:\n\n[\n1+2+\\cdots+9=45\n]",
+      "Three equal groups must each have sum:\n\n[\n45\\div3=15\n]",
+      "The possible partitions into three disjoint triples are:\n\n[\n\\{1,5,9\\},\\{2,6,7\\},\\{3,4,8\\}\n]\n\nand\n\n[\n\\{1,6,8\\},\\{2,4,9\\},\\{3,5,7\\}\n]",
+      "There are exactly $2$ ways.",
+      "Final Answer: (\\boxed{\\text{C }(2)})"
+    ],
+    "keyIdeas": [
+      "Equal-sum partitions",
+      "Casework",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Do not count the same three groups in different orders as different ways.",
+      "Every number from $1$ through $9$ must be used exactly once."
+    ],
+    "alternativeMethods": [
+      "List all triples summing to $15$, then select compatible triples with no repeated numbers."
+    ],
+    "difficultyNotes": "Advanced AMC 8 counting problem; avoiding duplicate counts is important.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p22",
+    "problemId": "amc8-2023-p22",
+    "finalAnswer": "$\\boxed{\\text{D }(5)}$",
+    "shortExplanation": "**Idea:** Write the sixth term in terms of the first two terms.",
+    "detailedSteps": [
+      "Let the first two terms be $a$ and $b$.",
+      "Then the sequence begins:\n\n[\na,\\ b,\\ ab,\\ ab^2,\\ a^2b^3,\\ a^3b^5\n]",
+      "The sixth term is:\n\n[\na^3b^5=4000=2^5\\cdot5^3\n]",
+      "Since $b^5$ must divide $4000$, the only possible value with positive integers is $b=2$.",
+      "Then:\n\n[\na^3\\cdot2^5=2^5\\cdot5^3\n]\n\nso:\n\n[\na^3=5^3\n]",
+      "Thus $a=5$.",
+      "Final Answer: (\\boxed{\\text{D }(5)})"
+    ],
+    "keyIdeas": [
+      "Recursive sequences",
+      "Prime factorization",
+      "Exponent tracking"
+    ],
+    "commonMistakes": [
+      "Do not try to build the sequence forward by guessing many pairs.",
+      "Track powers of $a$ and $b$ carefully through multiplication."
+    ],
+    "alternativeMethods": [
+      "Work backward from the sixth term and use the fact that every earlier term is a positive integer."
+    ],
+    "difficultyNotes": "Advanced sequence problem; exponent bookkeeping is the clean method.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p23",
+    "problemId": "amc8-2023-p23",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac1{64}\\right)}$",
+    "shortExplanation": "**Idea:** A fixed $2\\times2$ square needs four specific tile orientations, and there are four possible locations.",
+    "detailedSteps": [
+      "Choose one particular $2\\times2$ block. To make a large gray diamond in it, all four of its tiles must have specified orientations.",
+      "Each tile has probability $\\frac14$ of being the needed orientation, so one fixed block has probability:\n\n[\n\\left(\\frac14\\right)^4=\\frac1{256}\n]",
+      "A $3\\times3$ grid contains four smaller $2\\times2$ blocks.",
+      "Two different $2\\times2$ blocks cannot both form the required diamond, because they would force conflicting orientations on shared tiles.",
+      "So the events are disjoint, and the probability is:\n\n[\n4\\cdot\\frac1{256}=\\frac1{64}\n]",
+      "Final Answer: (\\boxed{\\text{C }\\left(\\frac1{64}\\right)})"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Disjoint events",
+      "Tile orientations"
+    ],
+    "commonMistakes": [
+      "Do not stop at $1/256$; there are four possible $2\\times2$ locations.",
+      "Do not multiply by extra arrangements; each diamond location determines the four orientations."
+    ],
+    "alternativeMethods": [
+      "Count favorable tilings: each diamond location fixes four cells and leaves five cells arbitrary, giving $4\\cdot4^5$ favorable tilings out of $4^9$."
+    ],
+    "difficultyNotes": "Advanced probability problem; recognizing disjoint locations is the key.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p24",
+    "problemId": "amc8-2023-p24",
+    "finalAnswer": "$\\boxed{\\text{A }(14.6)}$",
+    "shortExplanation": "**Idea:** Similar triangle areas are proportional to squared heights.",
+    "detailedSteps": [
+      "Use the total height $h$ as the scale for the whole triangle.",
+      "In the left figure, the shaded region is the whole triangle minus the unshaded top triangle of height $11$, so its area is proportional to:\n\n[\nh^2-11^2\n]",
+      "In the right figure, the shaded region is the top triangle above a height-$5$ unshaded bottom portion, so its height is $h-5$ and its area is proportional to:\n\n[\n(h-5)^2\n]",
+      "The shaded areas are equal:\n\n[\nh^2-121=(h-5)^2\n]",
+      "Expand and solve:\n\n[\nh^2-121=h^2-10h+25\n]\n\n[\n10h=146\n]\n\n[\nh=14.6\n]",
+      "Final Answer: (\\boxed{\\text{A }(14.6)})"
+    ],
+    "keyIdeas": [
+      "Similar triangles",
+      "Area scaling",
+      "Quadratic cancellation"
+    ],
+    "commonMistakes": [
+      "Area scales with height squared, not height.",
+      "In the right figure, the shaded top triangle has height $h-5$, not $5$."
+    ],
+    "alternativeMethods": [
+      "Normalize the full triangle area to $h^2$ and compare only the squared heights of similar triangles."
+    ],
+    "difficultyNotes": "Advanced geometry problem with a clean equation after identifying the similar triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2023-p25",
+    "problemId": "amc8-2023-p25",
+    "finalAnswer": "$\\boxed{\\text{A }(8)}$",
+    "shortExplanation": "**Idea:** Use the arithmetic sequence constraints to force the common difference.",
+    "detailedSteps": [
+      "Let the common difference be $d$. Then:\n\n[\na_2=a_1+d,\\qquad a_{15}=a_1+14d=a_2+13d\n]",
+      "Since $13\\le a_2\\le20$ and $241\\le a_{15}\\le250$, we need:\n\n[\n241\\le a_2+13d\\le250\n]",
+      "If $d=17$, then choosing $a_2=20$ gives:\n\n[\na_{15}=20+13\\cdot17=241\n]",
+      "This also gives:\n\n[\na_1=20-17=3\n]\n\nwhich satisfies $1\\le a_1\\le10$.",
+      "Larger $d$ would make $a_1=a_2-d$ too small, while smaller $d$ would make $a_{15}$ too small.",
+      "Now compute:\n\n[\na_{14}=a_1+13d=3+13\\cdot17=224\n]",
+      "The sum of the digits of $224$ is:\n\n[\n2+2+4=8\n]",
+      "Final Answer: (\\boxed{\\text{A }(8)})"
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences",
+      "Inequalities",
+      "Digit sum"
+    ],
+    "commonMistakes": [
+      "Do not use $a_{15}=a_1+15d$; the fifteenth term is $a_1+14d$.",
+      "Both $a_1$ and $a_2$ constraints must be satisfied."
+    ],
+    "alternativeMethods": [
+      "Test possible common differences near $(241-20)/13=17$; only $d=17$ works with all three constraints."
+    ],
+    "difficultyNotes": "Advanced sequence problem; bounding the common difference makes it short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

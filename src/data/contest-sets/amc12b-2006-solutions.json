@@ -1,0 +1,502 @@
+[
+  {
+    "id": "solution-amc12b-2006-p1",
+    "problemId": "amc12b-2006-p1",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "Each adjacent pair sums to zero.",
+    "detailedSteps": [
+      "Group the terms as $((-1)^1+(-1)^2)+\\cdots+((-1)^{2005}+(-1)^{2006})$. Each of the $1003$ pairs equals $-1+1=0$, so the sum is $0$."
+    ],
+    "keyIdeas": [
+      "Alternating signs"
+    ],
+    "commonMistakes": [
+      "The upper exponent is even, so no unpaired term remains."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pair consecutive opposite signs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p2",
+    "problemId": "amc12b-2006-p2",
+    "finalAnswer": "$\\boxed{-72}$ (choice A)",
+    "shortExplanation": "The inner operation equals $-9$, so the outer one equals $9-81$.",
+    "detailedSteps": [
+      "The operation gives $4\\spadesuit5=(4+5)(4-5)=-9$. Thus $3\\spadesuit(-9)=(3-9)(3+9)=-72$."
+    ],
+    "keyIdeas": [
+      "Nested operations"
+    ],
+    "commonMistakes": [
+      "Evaluate the inner operation before the outer operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A nested definition requires two substitutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p3",
+    "problemId": "amc12b-2006-p3",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "Twice the losing score is $34-14$.",
+    "detailedSteps": [
+      "If the Panthers scored $p$, the Cougars scored $p+14$. Therefore $2p+14=34$, giving $p=10$."
+    ],
+    "keyIdeas": [
+      "Sum and difference"
+    ],
+    "commonMistakes": [
+      "Subtract the margin from the total, then divide by two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the score margin to eliminate one unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p4",
+    "problemId": "amc12b-2006-p4",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The change is $1.05$, or $5.25\\%$ of $20$.",
+    "detailedSteps": [
+      "The five prices total $18.95$, leaving $20-18.95=1.05$ dollars. The percentage is $100(1.05/20)=5.25\\%$, closest to $5\\%$."
+    ],
+    "keyIdeas": [
+      "Change as a percent"
+    ],
+    "commonMistakes": [
+      "Divide the change by the bill, rather than by the item cost."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compute the change before finding its percentage.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p5",
+    "problemId": "amc12b-2006-p5",
+    "finalAnswer": "$\\boxed{30}$ (choice A)",
+    "shortExplanation": "The one-mile gap closes at two miles per hour.",
+    "detailedSteps": [
+      "The closing speed is $5-3=2$ miles per hour. A one-mile gap takes $1/2$ hour, which is $30$ minutes."
+    ],
+    "keyIdeas": [
+      "Relative speed"
+    ],
+    "commonMistakes": [
+      "Both people walk in the same direction, so subtract their speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed gap divided by closing speed gives elapsed time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p6",
+    "problemId": "amc12b-2006-p6",
+    "finalAnswer": "$\\boxed{137}$ (choice B)",
+    "shortExplanation": "Two hundred grams is one third of the whole batch.",
+    "detailedSteps": [
+      "The total mass is $100+100+400=600$ grams and the total calories are $25+386=411$. A $200$-gram portion therefore has $411/3=137$ calories."
+    ],
+    "keyIdeas": [
+      "Mixture calories"
+    ],
+    "commonMistakes": [
+      "Water adds mass even though it adds no calories."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Calories scale with the portion mass of a uniform mixture.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p7",
+    "problemId": "amc12b-2006-p7",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "Two choices of driver leave $3!$ seat assignments.",
+    "detailedSteps": [
+      "Choose either parent for the driver seat, then assign the other three distinct people to the three remaining seats in $3!=6$ ways. There are $2\\cdot6=12$ arrangements."
+    ],
+    "keyIdeas": [
+      "Restricted seating"
+    ],
+    "commonMistakes": [
+      "The three nondriver seats are distinct."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Fix the restricted seat first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p8",
+    "problemId": "amc12b-2006-p8",
+    "finalAnswer": "$\\boxed{\\frac94}$ (choice E)",
+    "shortExplanation": "The constants are $a=1/2$ and $b=7/4$.",
+    "detailedSteps": [
+      "Substituting $(1,2)$ gives $a=1-2/4=1/2$ and $b=2-1/4=7/4$. Their sum is $9/4$."
+    ],
+    "keyIdeas": [
+      "Point substitution"
+    ],
+    "commonMistakes": [
+      "Keep the roles of x and y distinct in the two equations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An intersection point satisfies both line equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p9",
+    "problemId": "amc12b-2006-p9",
+    "finalAnswer": "$\\boxed{34}$ (choice B)",
+    "shortExplanation": "Choose two smaller nonzero digits before each possible even final digit.",
+    "detailedSteps": [
+      "If the final digit is $d\\in\\{2,4,6,8\\}$, the earlier digits are a two-element subset of $1,\\ldots,d-1$, and their increasing order is forced.",
+      "The count is $\\binom12+\\binom32+\\binom52+\\binom72=0+3+10+21=34$."
+    ],
+    "keyIdeas": [
+      "Increasing digits"
+    ],
+    "commonMistakes": [
+      "Zero cannot be the first digit of a three-digit integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The final even digit determines the available earlier digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p10",
+    "problemId": "amc12b-2006-p10",
+    "finalAnswer": "$\\boxed{43}$ (choice A)",
+    "shortExplanation": "The largest possible short side is $7$.",
+    "detailedSteps": [
+      "Write the side lengths as $t,3t,15$. The strict triangle inequalities reduce to $2t<15<4t$. Hence the integer $t$ is one of $4,5,6,7$.",
+      "The perimeter $4t+15$ is maximized at $t=7$, giving $43$."
+    ],
+    "keyIdeas": [
+      "Strict triangle inequalities"
+    ],
+    "commonMistakes": [
+      "A degenerate equality is not a triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A perimeter maximum follows from the largest feasible integer side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p11",
+    "problemId": "amc12b-2006-p11",
+    "finalAnswer": "$\\boxed{\\frac76}$ (choice E)",
+    "shortExplanation": "Joe keeps $2$ ounces of cream; JoAnn keeps $12/7$.",
+    "detailedSteps": [
+      "Joe adds his two ounces of cream after drinking, so he retains all $2$. JoAnn first mixes $2$ ounces of cream into $14$ ounces of liquid.",
+      "After drinking $2$ ounces of the mixture, JoAnn retains $12/14$ of its cream: $2(12/14)=12/7$. The requested ratio is $2/(12/7)=7/6$."
+    ],
+    "keyIdeas": [
+      "Well-mixed proportions"
+    ],
+    "commonMistakes": [
+      "Drinking a stirred mixture removes coffee and cream in the same proportion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The order of adding and drinking changes the retained cream.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p12",
+    "problemId": "amc12b-2006-p12",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The vertex conditions force $ap=-2$ and $b=4$.",
+    "detailedSteps": [
+      "The y-intercept gives $c=-p$. Since the vertex x-coordinate is $p$, we have $b=-2ap$. Substituting the vertex height gives $p=ap^2+bp-p=-ap^2-p$.",
+      "Because $p\\ne0$, this yields $ap=-2$, so $b=-2ap=4$."
+    ],
+    "keyIdeas": [
+      "Parabola vertex equations"
+    ],
+    "commonMistakes": [
+      "Use both the vertex height and its horizontal coordinate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero parameter allows one cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p13",
+    "problemId": "amc12b-2006-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The smaller-to-larger linear scale is $1/\\sqrt3$.",
+    "detailedSteps": [
+      "Let the larger rhombus side be $s$. Its $60$-degree angle makes the short diagonal $BD=s$. In the depicted smaller similar rhombus, $BD$ is the long diagonal.",
+      "A $60$-degree rhombus of side $t$ has long diagonal $\\sqrt3t$, so $t=s/\\sqrt3$. Areas scale by $1/3$, giving $24/3=8$."
+    ],
+    "keyIdeas": [
+      "Similar rhombus diagonals"
+    ],
+    "commonMistakes": [
+      "The same segment is a short diagonal in one rhombus and a long diagonal in the other."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the diagonal correspondence in the actual figure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p14",
+    "problemId": "amc12b-2006-p14",
+    "finalAnswer": "$\\boxed{\\frac{33}{20}}$ (choice D)",
+    "shortExplanation": "Only $N=11,B=2,J=3$ satisfies the positive integer conditions.",
+    "detailedSteps": [
+      "In cents, $N(4B+5J)=253=11\\cdot23$. Since $N>1$, its possibilities are $11,23,253$. For $N=253$, the unit cost is too small; for $N=23$, the equation $4B+5J=11$ has no positive integer solution.",
+      "For $N=11$, $4B+5J=23$ forces $J\\equiv3\\pmod4$. Positivity bounds $J\\le3$, giving $J=3,B=2$. The jam costs $11\\cdot3\\cdot5=165$ cents, or $33/20$ dollars."
+    ],
+    "keyIdeas": [
+      "Cost divisors"
+    ],
+    "commonMistakes": [
+      "The requested cost is the jam portion across all sandwiches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor the total to restrict possible batch sizes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p15",
+    "problemId": "amc12b-2006-p15",
+    "finalAnswer": "$\\boxed{24\\sqrt2}$ (choice B)",
+    "shortExplanation": "The half-hexagon area is $12\\sqrt2$.",
+    "detailedSteps": [
+      "Place $O=(0,0)$ and $P=(6,0)$. For the upper tangent unit normal $n$, tangency gives $6n_x=2-4$, hence $n=(-1/3,2\\sqrt2/3)$.",
+      "Thus $A=(-2/3,4\\sqrt2/3)$ and $D=(14/3,8\\sqrt2/3)$. The upper quadrilateral $OADP$ has shoelace area $12\\sqrt2$.",
+      "The lower quadrilateral is its reflection, so hexagon $AOBCPD$ has area $24\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "A common tangent polygon"
+    ],
+    "commonMistakes": [
+      "The polygon includes both centers; it is not just the trapezoid joining the tangent points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common tangent determines the shared normal direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p16",
+    "problemId": "amc12b-2006-p16",
+    "finalAnswer": "$\\boxed{25\\sqrt3}$ (choice C)",
+    "shortExplanation": "The two-step diagonal has squared length $3s^2=50$.",
+    "detailedSteps": [
+      "If the side length is $s$, the diagonal $AC$ has length $\\sqrt3s$. Its squared length from the coordinates is $7^2+1^2=50$.",
+      "The six equilateral triangles have total area $6(\\sqrt3s^2/4)=(\\sqrt3/2)\\cdot50=25\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "A regular hexagon diagonal"
+    ],
+    "commonMistakes": [
+      "A and C have one intervening vertex; they are not opposite vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relate a diagonal to the common side before computing area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p17",
+    "problemId": "amc12b-2006-p17",
+    "finalAnswer": "$\\boxed{\\frac8{63}}$ (choice C)",
+    "shortExplanation": "The favorable weight is $56$ out of $21^2$.",
+    "detailedSteps": [
+      "The probability of face $i$ is $i/21$. The ordered pairs summing to seven contribute $\\sum_{i=1}^6 i(7-i)/21^2=(6+10+12+12+10+6)/441=8/63$."
+    ],
+    "keyIdeas": [
+      "Weighted dice"
+    ],
+    "commonMistakes": [
+      "The die faces are not equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the face weights on each independent die.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p18",
+    "problemId": "amc12b-2006-p18",
+    "finalAnswer": "$\\boxed{121}$ (choice B)",
+    "shortExplanation": "Possible endpoints have even Manhattan distance at most $10$.",
+    "detailedSteps": [
+      "A ten-step walk ends at a point satisfying $|x|+|y|\\le10$ and even $x+y$. Conversely, every such point is reachable: use a shortest walk, then add two-step backtracks.",
+      "There is one origin and $4r$ points at positive Manhattan distance $r$. The count is $1+4(2+4+6+8+10)=121$."
+    ],
+    "keyIdeas": [
+      "Lattice distance and parity"
+    ],
+    "commonMistakes": [
+      "Count endpoints, not walks, and retain the parity restriction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Shortest distance and parity characterize all reachable endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p19",
+    "problemId": "amc12b-2006-p19",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The only compatible plate is $5544$, which omits divisibility by age $5$.",
+    "detailedSteps": [
+      "The eight distinct integer ages are eight of $1,\\ldots,9$, including $9$. If the missing age is $5,7,$ or $8$, their least common multiple is respectively $504,360,$ or $1260$. For every other possible missing age it is $2520$.",
+      "Among four-digit multiples of $2520$ or $1260$, none has exactly two occurrences of each of two distinct digits. A multiple of $360$ with that digit pattern must use $0$ and $9$ (it ends in zero and is divisible by nine), but neither $9090$ nor $9900$ is a multiple of $360$.",
+      "Checking the four-digit multiples of $504$, from $2\\cdot504$ through $19\\cdot504$, leaves only $5544$ with that pattern. It is divisible by $1,2,3,4,6,7,8,9$, and its last two digits give the father age $44$. The absent child age is $5$."
+    ],
+    "keyIdeas": [
+      "Ages and repeated digits"
+    ],
+    "commonMistakes": [
+      "The eight distinct ages omit only one integer below the oldest age."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Least common multiples restrict the plate to a small finite set.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p20",
+    "problemId": "amc12b-2006-p20",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice C)",
+    "shortExplanation": "Each decade contributes its first $3/2$ units in the decade scale.",
+    "detailedSteps": [
+      "On $10^{-k}\\le x<10^{1-k}$, with $k\\ge1$, we have $\\lfloor\\log_{10}x\\rfloor=-k$. The same floor for $4x$ requires $x<10^{1-k}/4=(5/2)10^{-k}$.",
+      "The favorable interval length is $(3/2)10^{-k}$. Summing the geometric series gives $(3/2)\\sum_{k\\ge1}10^{-k}=(3/2)(1/9)=1/6$. Endpoints have probability zero."
+    ],
+    "keyIdeas": [
+      "Logarithm floor intervals"
+    ],
+    "commonMistakes": [
+      "Uniformity is in x, not in its logarithm."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Partition the original uniform interval by powers of ten.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p21",
+    "problemId": "amc12b-2006-p21",
+    "finalAnswer": "$\\boxed{8\\sqrt{1003}}$ (choice C)",
+    "shortExplanation": "The ellipse minor semiaxis satisfies $b^2=1003$.",
+    "detailedSteps": [
+      "Let the rectangle sides be $u,v$, with $uv=2006$. At vertex $A$, the sum of distances to the two foci is $u+v=2a$. The focal half-distance satisfies $c^2=(u^2+v^2)/4$.",
+      "Therefore $b^2=a^2-c^2=uv/2=1003$. The ellipse area gives $ab=2006$, so $a=2\\sqrt{1003}$. The rectangle perimeter is $2(u+v)=4a=8\\sqrt{1003}$."
+    ],
+    "keyIdeas": [
+      "An ellipse through rectangle vertices"
+    ],
+    "commonMistakes": [
+      "The given ellipse area includes pi; cancel it before using ab."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The focal-distance definition links the rectangle to the semimajor axis.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p22",
+    "problemId": "amc12b-2006-p22",
+    "finalAnswer": "$\\boxed{492}$ (choice B)",
+    "shortExplanation": "The separate base-five floor bounds sum to $492$, and all are attained.",
+    "detailedSteps": [
+      "Each factorial has at least as many factors of two as five, so $n=v_5(a!)+v_5(b!)+v_5(c!)$. For any divisor $d$, $\\lfloor a/d\\rfloor+\\lfloor b/d\\rfloor+\\lfloor c/d\\rfloor\\ge\\lfloor2006/d\\rfloor-2$.",
+      "Using $d=5,25,125,625$ gives $n\\ge399+78+14+1=492$; higher powers exceed 2006 and contribute zero.",
+      "The positive triple $(624,624,758)$ attains these four sums, so the lower bound is sharp and the minimum is $492$."
+    ],
+    "keyIdeas": [
+      "Factorial trailing zeros"
+    ],
+    "commonMistakes": [
+      "Minimize the sum of factorial valuations, not the valuation of 2006!."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Bound every base-five level and provide one simultaneous witness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p23",
+    "problemId": "amc12b-2006-p23",
+    "finalAnswer": "$\\boxed{127}$ (choice E)",
+    "shortExplanation": "The valid squared leg length is $85+42\\sqrt2$.",
+    "detailedSteps": [
+      "Use $C=(0,0),A=(s,0),B=(0,s),P=(x,y)$. Subtracting $PC^2=36$ from the other two distances gives $s^2-2sx=85$ and $s^2-2sy=13$.",
+      "Thus $x+y=s-49/s$ and $x-y=-36/s$. Substitution into $2(x^2+y^2)=72$ yields $s^4-170s^2+3697=0$.",
+      "The roots are $s^2=85\\pm42\\sqrt2$. Because $P$ is inside the triangle, $x>0$, forcing $s^2>85$ and selecting the plus sign.",
+      "The source writes $s=\\sqrt{a+b\\sqrt2}$, so $a=85,b=42$ and $a+b=127$. The resulting x,y are positive and have $x+y<s$, as required."
+    ],
+    "keyIdeas": [
+      "Three distances in a right triangle"
+    ],
+    "commonMistakes": [
+      "Read both nested radical bars and enforce the interior-point condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract squared distances before solving the remaining quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p24",
+    "problemId": "amc12b-2006-p24",
+    "finalAnswer": "$\\boxed{\\frac{\\pi^2}{6}}$ (choice C)",
+    "shortExplanation": "The condition reduces to a diagonal strip below $x+y=2\\pi/3$.",
+    "detailedSteps": [
+      "Put $U=\\cos(x-y)$ and $V=\\cos(x+y)$. The expression $E=\\sin^2x-\\sin x\\sin y+\\sin^2y$ satisfies $4E-3=(1-2U)(1+2V)$.",
+      "Within the given square, $1-2U\\le0$ exactly when $|x-y|\\le\\pi/3$, and $1+2V\\ge0$ exactly when $x+y\\le2\\pi/3$. Opposite signs give $E\\le3/4$. The reverse sign combination can occur only at boundary intersections, because $(x+y)+|x-y|=2\\max(x,y)\\le\\pi$.",
+      "The region is therefore the square minus two triangles where $|x-y|>\\pi/3$ and one triangle where $x+y>2\\pi/3$. Their interiors are disjoint. The first two each have legs $\\pi/6$; the third has legs $\\pi/3$.",
+      "The area is $\\pi^2/4-2(\\pi^2/72)-\\pi^2/18=\\pi^2/6$."
+    ],
+    "keyIdeas": [
+      "Factoring a region boundary"
+    ],
+    "commonMistakes": [
+      "Check the second sign branch rather than assuming one factor has a fixed sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A trigonometric factorization turns curved-looking constraints into straight boundaries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2006-p25",
+    "problemId": "amc12b-2006-p25",
+    "finalAnswer": "$\\boxed{324}$ (choice B)",
+    "shortExplanation": "The successful starting values are precisely the odd numbers coprime to $999$.",
+    "detailedSteps": [
+      "The gcd of consecutive terms is invariant, because $\\gcd(u,v)=\\gcd(v,|u-v|)$. If $a_{2006}=1$, the initial gcd must be one.",
+      "For a positive unequal pair, its maximum decreases by at least one within two updates: if $u>v$, the next pair $(v,u-v)$ already has smaller maximum; if $u<v$, the pair after two updates is $(v-u,u)$. An equal pair or a zero leads immediately to the three-cycle $(d,d,0)$. Starting at maximum 999, the sequence reaches such a cycle well before term 2006 (at most $2\\cdot998=1996$ updates to maximum1 when the gcd is one).",
+      "Modulo two, absolute difference equals addition, so parity repeats every three terms. Since $2006\\equiv2\\pmod3$ and $a_1=999$ is odd, $a_{2006}$ has the parity of $a_2$. In the gcd-one terminal cycle, its terms are 0 or 1. Thus $a_{2006}=1$ exactly when $a_2$ is odd and $\\gcd(999,a_2)=1$.",
+      "As $999=3^3\\cdot37$, there are $\\varphi(999)=999(1-1/3)(1-1/37)=648$ coprime residues between 1 and 998. The pairing $b\\leftrightarrow999-b$ exchanges odd and even residues, so half, $324$, are odd. The allowed value zero is not coprime and contributes nothing."
+    ],
+    "keyIdeas": [
+      "Difference recurrence invariants"
+    ],
+    "commonMistakes": [
+      "A gcd condition alone does not fix which phase of the zero/one cycle occurs at term 2006."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combine Euclidean descent with a three-period parity invariant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

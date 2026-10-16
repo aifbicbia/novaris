@@ -1,0 +1,103 @@
+[
+  {
+    "finalAnswer": "Binary-search the smallest stage size whose min-heap simulation finishes every cow by the time limit.",
+    "shortExplanation": "For a fixed stage size, a min-heap tells us when the next stage position becomes free. Assign cows in their required order. More positions cannot delay a cow, so feasibility is monotone and the first feasible size can be found by binary search.",
+    "detailedSteps": [
+      "For a proposed capacity $K$, initialize a min-heap with $K$ zero availability times. For each cow, remove the smallest time $t$ and insert $t+d(i)$. This starts the first $K$ cows at time zero and every later cow at the next vacancy, in the required order. Equal heap times represent simultaneous vacancies.",
+      "Inductively, the heap always contains the next-free time of every position. Thus the simulated finish of each cow is its actual finish. If any finish exceeds $T_{\\max}$, reject this capacity immediately; otherwise all cows finish by the limit. Finishing exactly at $T_{\\max}$ is permitted.",
+      "To justify monotonicity, compare $M\\ge K$ positions after assigning the same cows. Maintain that the smallest $K$ sorted availability times with $M$ positions are componentwise no larger than the $K$-position list; this is initially true because all times are zero.",
+      "At the next assignment, the smaller earliest availability gives a finish no larger. The larger stage still contains its former second through $K$th availability values plus this new finish. These can be paired with the smaller stage’s remaining values and new finish, with every paired value no larger. Sorting preserves this order, and taking the smallest $K$ from the larger stage can only improve it. The invariant persists. Consequently every cow finishes no later with more positions, so completion time is nonincreasing rather than necessarily strictly decreasing.",
+      "Binary-search $K\\in[1,N]$. The upper endpoint is feasible by the source guarantee. If the midpoint is infeasible, discard it and all smaller sizes; if feasible, retain it as the upper endpoint. When the bounds meet, they identify the first feasible capacity.",
+      "A check costs $O(N\\log K+K)$ time and uses a heap of $K$ entries. With $O(\\log N)$ checks, the worst-case total is $O(N\\log^2N)$ time and $O(N)$ storage including the durations. Use 64-bit finish times.",
+      "The C++17 implementation uses the historical cowdance.in and cowdance.out files.\n\n```cpp\n#include <functional>\n#include <fstream>\n#include <queue>\n#include <vector>\nbool feasible(const std::vector<long long> &duration, int k, long long limit) {\n    std::priority_queue<long long, std::vector<long long>, std::greater<long long>> finish;\n    for (int i = 0; i < k; ++i) finish.push(0);\n    for (long long d : duration) {\n        long long end = finish.top() + d;\n        finish.pop();\n        if (end > limit) return false;\n        finish.push(end);\n    }\n    return true;\n}\nint main() {\n    std::ifstream in(\"cowdance.in\");\n    std::ofstream out(\"cowdance.out\");\n    int n;\n    long long limit;\n    if (!(in >> n >> limit)) return 1;\n    std::vector<long long> duration(n);\n    for (auto &d : duration) in >> d;\n    int lo = 1, hi = n;\n    while (lo < hi) {\n        int mid = lo + (hi - lo) / 2;\n        if (feasible(duration, mid, limit)) hi = mid;\n        else lo = mid + 1;\n    }\n    out << lo << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Simulate required-order starts with a min-heap of free times.",
+      "Feasibility uses an inclusive finish-time bound.",
+      "Prove the nonincreasing completion-time property before binary search.",
+      "The guaranteed feasible full stage gives the initial upper endpoint."
+    ],
+    "commonMistakes": [
+      "Sorting the durations changes the required appearance order.",
+      "Rejecting equality with the time limit excludes valid capacities.",
+      "Keeping only the most recently assigned finish loses other available stage positions.",
+      "Assuming completion time decreases strictly with every extra position is unnecessary and can be false.",
+      "Returning a feasible midpoint instead of the first feasible capacity misses the minimum."
+    ],
+    "alternativeMethods": [
+      "For small $N$, store all $K$ availability times in an array and scan for the minimum before each assignment. The same simulation is correct but a check costs $O(NK)$ rather than heap time. It is useful as a separate small-case verifier."
+    ],
+    "difficultyNotes": "An intermediate Silver scheduling and binary-search problem. The source supplies an upper time bound and guarantees that the full stage works; positivity of the time limit follows from that guarantee and the positive durations. Simultaneous completions, exact time-limit equality and the full 10,000-cow domain are covered by execution checks.",
+    "id": "solution-usaco-silver-2017-january-p1",
+    "problemId": "usaco-silver-2017-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Maximize the sum of the largest opponent-gesture frequencies on the two sides of a split.",
+    "shortExplanation": "With a fixed gesture, Bessie wins against exactly one of H, P and S. For each possible switch position, choose the winning countergesture for the most frequent opponent gesture in each block. Taking the best split gives the maximum with at most one change.",
+    "detailedSteps": [
+      "Choose a split after $k$ games, where $0\\le k\\le N$. Let $L_g(k)$ and $R_g(k)$ count opponent gesture $g$ before and after the split. For a block with a fixed Bessie gesture, the best win count is its largest opponent frequency: choose the gesture that defeats that category.",
+      "The best score for this split is therefore $\\max_g L_g(k)+\\max_g R_g(k)$. Each candidate is legal because both blocks use fixed gestures and the boundary creates at most one change. Equal block gestures and empty blocks also satisfy the rule.",
+      "Conversely, every legal strategy consists of at most two fixed-gesture blocks for some split. Its score in each block cannot exceed that block’s maximum frequency. The maximum candidate over all splits is therefore both attainable and an upper bound on every legal strategy.",
+      "Start with all opponent counts on the right and zeros on the left. Evaluate the empty-left split, then move each game’s category from right to left and evaluate again. This maintains the exact two-block counts and includes the empty-right split. Empty blocks contribute zero.",
+      "Each split needs only two maxima over three categories, so total time is $O(N)$. This implementation stores the game sequence and uses $O(N)$ memory; the counters themselves require only constant space.",
+      "The following C++17 code uses hps.in and hps.out. Its counts describe FJ’s gestures; a maximum represents Bessie’s winning countergesture, not a matching gesture that would tie.\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <vector>\nint kind(char ch) { return ch == 'H' ? 0 : ch == 'P' ? 1 : 2; }\nint main() {\n    std::ifstream in(\"hps.in\");\n    std::ofstream out(\"hps.out\");\n    int n;\n    if (!(in >> n)) return 1;\n    std::vector<int> game(n);\n    std::array<int, 3> left{0, 0, 0}, right{0, 0, 0};\n    for (int &g : game) {\n        char ch;\n        in >> ch;\n        g = kind(ch);\n        ++right[g];\n    }\n    int best = *std::max_element(right.begin(), right.end());\n    for (int g : game) {\n        ++left[g];\n        --right[g];\n        int candidate = *std::max_element(left.begin(), left.end())\n                      + *std::max_element(right.begin(), right.end());\n        best = std::max(best, candidate);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "One change partitions the games into two contiguous fixed-gesture blocks.",
+      "A fixed winning countergesture scores one opponent category’s frequency.",
+      "Move counts across a split to evaluate every location in linear time.",
+      "At most one change includes no-change strategies and empty blocks."
+    ],
+    "commonMistakes": [
+      "Choosing the same gesture as the frequent opponent category produces ties rather than wins.",
+      "Counting ties as victories changes the objective.",
+      "Treating the rule as exactly one change can discard a best constant gesture.",
+      "Choosing a different winning gesture in every game violates the one-change restriction.",
+      "Skipping endpoint splits obscures the no-change case."
+    ],
+    "alternativeMethods": [
+      "Use a dynamic program indexed by the current concrete gesture and whether a change has been used. Each game adds its actual cyclic win outcome; either keep the gesture or, once, change it. This also runs in $O(N)$ time with constant state storage and can be checked independently of frequency splits."
+    ],
+    "difficultyNotes": "An intermediate Silver prefix/suffix counting exercise. The essential modeling point is that a frequent opponent gesture determines its winning countergesture. Executable checks enumerate concrete legal strategies before comparing the frequency formula, and test the full 100,000-game domain.",
+    "id": "solution-usaco-silver-2017-january-p2",
+    "problemId": "usaco-silver-2017-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Trace the queried one-based index backward through the doublings until it identifies a character of the initial string.",
+    "shortExplanation": "A doubling preserves the old string as its first half. The second half is a one-character right rotation, so each index there can be mapped to its earlier position. Undo the doublings without constructing the enormous string.",
+    "detailedSteps": [
+      "Let a construction stage contain a string of length $L$. Its next stage consists of that string followed by its right rotation: old position $L$ appears first in the second half, followed by old positions $1,2,\\ldots,L-1$. Further operations preserve the current prefix, so any stage long enough for the query has the correct character.",
+      "For a one-based index $n$ in the doubled stage, the previous-stage index is $n$ if $n\\le L$, is $L$ if $n=L+1$, and is $n-L-1$ if $n>L+1$. The special second-half boundary is essential: its character is the old last character, not index zero.",
+      "Start with the initial length $m$ and double a length variable until it reaches or exceeds $N$. Repeatedly halve that construction length. Whenever the target is in the second half, apply the mapping above; otherwise retain its index.",
+      "The invariant is that the requested character equals the character at the current index of the current ancestor string, with $1\\le n\\le\\text{length}$. The mapping preserves this invariant and halves the length. Eventually the ancestor is the initial string, so output its character at zero-based array index $n-1$.",
+      "There are $O(\\log(N/m+1))$ levels. Including the initial input, time is $O(m+\\log(N/m+1))$ and storage is $O(m)$, with constant index state. If doubling is needed, the first construction length reaching or exceeding $N$ is strictly less than $2N\\le2\\cdot10^{18}$. If $N\\le m$, the initial length $m\\le30$ already suffices. All stored lengths fit a signed 64-bit integer. No expanded string is stored.",
+      "This C++17 implementation preserves cowcode.in and cowcode.out and writes exactly one uppercase character.\n\n```cpp\n#include <fstream>\n#include <string>\nint main() {\n    std::ifstream in(\"cowcode.in\");\n    std::ofstream out(\"cowcode.out\");\n    std::string initial;\n    long long index;\n    if (!(in >> initial >> index)) return 1;\n    long long length = static_cast<long long>(initial.size());\n    const long long base = length;\n    while (length < index) length *= 2;\n    while (length > base) {\n        long long half = length / 2;\n        if (index > half) {\n            if (index == half + 1) index = half;\n            else index -= half + 1;\n        }\n        length = half;\n    }\n    out << initial[static_cast<std::size_t>(index - 1)] << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Each earlier string remains a prefix of every later stage.",
+      "Undo a right rotation by mapping an index into the previous whole string.",
+      "Treat the first character of the rotated half separately.",
+      "Use 64-bit positions and shrink the construction level rather than expand the text."
+    ],
+    "commonMistakes": [
+      "A left rotation gives a different string and different index mapping.",
+      "Subtracting L+1 at every right-half index yields zero at the wrap boundary.",
+      "Rotating only the original short word fails because the entire current string is rotated.",
+      "Mixing one-based query positions with zero-based array indices creates boundary errors.",
+      "Materializing a string through the maximum index is impossible within practical memory.",
+      "Using a 32-bit index cannot represent the source maximum."
+    ],
+    "alternativeMethods": [
+      "Represent the forward construction as a persistent string tree with generic concatenation and substring-view nodes. Express each right rotation as the last-character slice followed by the prefix slice, and navigate that tree to the queried character. This provides an independent verifier for huge positions while storing only the construction history."
+    ],
+    "difficultyNotes": "An advanced Silver indexing problem with a short logarithmic implementation. Nonempty initial text and a positive query index follow the defined infinite code and one-based character request; they are not described as separately printed lower bounds. The original source includes a short expansion walkthrough. Verification also constructs many literal expansions and uses an independent forward string tree through the maximum index.",
+    "id": "solution-usaco-silver-2017-january-p3",
+    "problemId": "usaco-silver-2017-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

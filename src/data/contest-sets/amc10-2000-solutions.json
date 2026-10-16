@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc10-2000-p1",
+    "problemId": "amc10-2000-p1",
+    "finalAnswer": "$\\boxed{671}$ (choice E)",
+    "shortExplanation": "The factorization $2001=3\\cdot23\\cdot29$ permits the triple $1,3,667$.",
+    "detailedSteps": [
+      "If none of the three positive factors is $1$, each must receive one of the three prime factors, giving $3,23,29$ and sum $55$.",
+      "If one factor is $1$, distinctness excludes a second $1$. The unordered remaining pairs are $(3,667),(23,87),(29,69)$, whose sums with $1$ are $671,111,99$. The maximum is $671$."
+    ],
+    "keyIdeas": [
+      "Maximizing a distinct-factor sum"
+    ],
+    "commonMistakes": [
+      "Allowing the repeated-factor triple 1,1,2001."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The distinctness restriction rules out the otherwise largest pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p2",
+    "problemId": "amc10-2000-p2",
+    "finalAnswer": "$\\boxed{2000^{2001}}$ (choice A)",
+    "shortExplanation": "The leading factor contributes one more to the exponent.",
+    "detailedSteps": [
+      "Writing $2000$ as $2000^1$ gives $2000^1\\cdot2000^{2000}=2000^{2001}$."
+    ],
+    "keyIdeas": [
+      "Multiplying powers with the same base"
+    ],
+    "commonMistakes": [
+      "Multiplying the exponents when multiplying powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Same-base multiplication adds exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p3",
+    "problemId": "amc10-2000-p3",
+    "finalAnswer": "$\\boxed{50}$ (choice B)",
+    "shortExplanation": "Two days leave $(4/5)^2$ of the initial amount.",
+    "detailedSteps": [
+      "If the initial count is $N$, then $N(4/5)^2=32$. Thus $N=32\\cdot25/16=50$."
+    ],
+    "keyIdeas": [
+      "Repeated percentage decrease"
+    ],
+    "commonMistakes": [
+      "Subtracting 40 percent of the initial amount for the two days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each percentage uses the amount present on that day.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p4",
+    "problemId": "amc10-2000-p4",
+    "finalAnswer": "$\\boxed{7.42}$ (choice D)",
+    "shortExplanation": "The difference between the bills is one December-sized usage charge.",
+    "detailedSteps": [
+      "Let $F$ be the monthly fee and $U$ the December usage charge. Then $F+U=12.48$ and $F+2U=17.54$.",
+      "Subtraction gives $U=5.06$, and hence $F=12.48-5.06=7.42$ dollars."
+    ],
+    "keyIdeas": [
+      "Fixed and variable charges"
+    ],
+    "commonMistakes": [
+      "Doubling the fixed fee along with usage."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only one component of the bill doubles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p5",
+    "problemId": "amc10-2000-p5",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Only the perimeter varies as the vertex slides along the parallel line.",
+    "detailedSteps": [
+      "The midpoint segment has fixed length $MN=AB/2$. The large triangle has fixed base $AB$ and fixed altitude, so its area is constant.",
+      "Triangle $PMN$ is similar to $PAB$ with scale $1/2$, so its area is one quarter of the large area. The trapezoid occupies the remaining three quarters and also has constant area.",
+      "The sum $PA+PB$ varies as $P$ moves along the line, so the perimeter is the sole quantity that changes."
+    ],
+    "keyIdeas": [
+      "Invariants under parallel motion"
+    ],
+    "commonMistakes": [
+      "Assuming constant area implies constant perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Midpoint similarity fixes both length and area ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p6",
+    "problemId": "amc10-2000-p6",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "The digit $6$ first appears in the twenty-first term, after every other digit has appeared.",
+    "detailedSteps": [
+      "Compute each new units digit by adding the previous two modulo $10$. Through term $21$ the digits are $1,1,2,3,5,8,3,1,4,5,9,4,3,7,0,7,7,4,1,5,6$.",
+      "By term $15$ all digits except $6$ have appeared. Terms $16$ through $20$ introduce none, and term $21$ introduces $6$."
+    ],
+    "keyIdeas": [
+      "First appearances in a modular recurrence"
+    ],
+    "commonMistakes": [
+      "Searching only among the listed answer choices instead of tracking all ten digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The finite first-appearance list certifies which digit is last.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p7",
+    "problemId": "amc10-2000-p7",
+    "finalAnswer": "$\\boxed{2+\\frac{4\\sqrt3}{3}}$ (choice B)",
+    "shortExplanation": "The three sides of the requested triangle are $2$, $2/\\sqrt3$, and $2/\\sqrt3$.",
+    "detailedSteps": [
+      "Take $D=(0,0)$ and $A=(0,1)$, with $AB$ horizontal. The rays $DP$ and $DB$ make angles $60^\\circ$ and $30^\\circ$ with the horizontal.",
+      "Their intersections with $y=1$ give $P=(1/\\sqrt3,1)$ and $B=(\\sqrt3,1)$. Thus $DP=2/\\sqrt3$, $DB=2$, and $PB=\\sqrt3-1/\\sqrt3=2/\\sqrt3$.",
+      "The perimeter is $2+4/\\sqrt3=2+4\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "A trisected right angle"
+    ],
+    "commonMistakes": [
+      "Swapping the two trisecting rays and placing P beyond B."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source figure fixes the order of the two rays.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p8",
+    "problemId": "amc10-2000-p8",
+    "finalAnswer": "$\\boxed{F=2S}$ (choice D)",
+    "shortExplanation": "Equal participant counts imply that the freshman population is twice the sophomore population.",
+    "detailedSteps": [
+      "Let $F,S$ be the freshman and sophomore populations. The condition is $(2/5)F=(4/5)S$. Multiplying by $5/2$ gives $F=2S$, which is statement D."
+    ],
+    "keyIdeas": [
+      "Equal partial populations"
+    ],
+    "commonMistakes": [
+      "Reversing the population ratio because the participation fractions are different."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A smaller participation fraction requires a larger underlying population.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p9",
+    "problemId": "amc10-2000-p9",
+    "finalAnswer": "$\\boxed{2-2p}$ (choice C)",
+    "shortExplanation": "Because $x<2$, the equation says $p=2-x$.",
+    "detailedSteps": [
+      "Rearrange $p=2-x$ to obtain $x=2-p$. Subtracting $p$ yields $x-p=2-2p$."
+    ],
+    "keyIdeas": [
+      "Choosing the correct absolute-value branch"
+    ],
+    "commonMistakes": [
+      "Replacing|x-2| byx-2 despite the given inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the sign information before removing the absolute value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p10",
+    "problemId": "amc10-2000-p10",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "Both variable sides lie strictly between $2$ and $10$, so their difference is below $8$.",
+    "detailedSteps": [
+      "Positive-area triangles require $|6-4|<x<6+4$, hence $2<x<10$, and similarly $2<y<10$. Therefore $|x-y|<8$.",
+      "Every $0<d<8$ is attainable: choose $x=6+d/2$ and $y=6-d/2$, both inside $(2,10)$. Consequently the smallest positive unattainable value is $8$."
+    ],
+    "keyIdeas": [
+      "Strict triangle inequalities"
+    ],
+    "commonMistakes": [
+      "Including degenerate triangles with a side equal to 2 or 10."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An upper bound alone does not show all smaller values are attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p11",
+    "problemId": "amc10-2000-p11",
+    "finalAnswer": "$\\boxed{119}$ (choice C)",
+    "shortExplanation": "The primes $11$ and $13$ give $143-24=119$.",
+    "detailedSteps": [
+      "The allowed primes are $5,7,11,13,17$. Selecting $11$ and $13$ yields $11\\cdot13-(11+13)=119$, which is one of the choices.",
+      "Checking the other pairs gives $23,39,47,63,59,71,95,159,191$; none equals another listed choice."
+    ],
+    "keyIdeas": [
+      "Prime-pair evaluation"
+    ],
+    "commonMistakes": [
+      "Using composite numbers that lie in the stated interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One valid pair establishes the listed attainable value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p12",
+    "problemId": "amc10-2000-p12",
+    "finalAnswer": "$\\boxed{20201}$ (choice C)",
+    "shortExplanation": "Figure $n$ contains $1+4(1+2+\\cdots+n)$ unit squares.",
+    "detailedSteps": [
+      "The source figures add a new diamond-shaped layer with $4k$ cells at stage $k$. Equivalently, figure $n$ consists of lattice cells satisfying $|i|+|j|\\le n$.",
+      "The count at stage $100$ is $1+4\\cdot100\\cdot101/2=20201$."
+    ],
+    "keyIdeas": [
+      "Successive diamond-shaped layers"
+    ],
+    "commonMistakes": [
+      "Extrapolating a numerical sequence without using the geometric layer pattern."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each of the four sides contributes k new cells to layer k.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p13",
+    "problemId": "amc10-2000-p13",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The five yellow pegs must occupy the sloping diagonal; the remaining colors are then forced in turn.",
+    "detailedSteps": [
+      "Index the rows from top to bottom with lengths $1,2,3,4,5$, and the columns from left to right. Five yellow pegs require one in every row and every column. The top row forces its yellow into column 1; each succeeding row then forces its yellow into the next new column.",
+      "Remove these diagonal positions. The remaining board has row lengths $0,1,2,3,4$. The four red pegs likewise occupy its sloping diagonal. Repeating this argument forces the three green, two blue, and one orange pegs.",
+      "The resulting placement has no repeated color in any row or column, and every step was forced. Thus there is exactly one placement."
+    ],
+    "keyIdeas": [
+      "Forced colors on a triangular board"
+    ],
+    "commonMistakes": [
+      "Treating equal-colored pegs as distinguishable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the most frequent color before the less frequent colors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p14",
+    "problemId": "amc10-2000-p14",
+    "finalAnswer": "$\\boxed{80}$ (choice C)",
+    "shortExplanation": "The first four scores must total a multiple of 4, forcing the omitted score to be $80$.",
+    "detailedSteps": [
+      "The total score is $400$. If the last score is $s$, then the average after four entries is $(400-s)/4$, so $s$ must be divisible by $4$. Of the choices, only $76$ and $80$ qualify.",
+      "If $s=76$, the first four sum to $324$. Their first three must sum to a multiple of $3$, which would require the fourth score to be divisible by $3$. None of the remaining scores $71,80,82,91$ is.",
+      "The choice $s=80$ is attainable, for example with order $76,82,91,71,80$, whose successive averages are $76,79,83,80,80$."
+    ],
+    "keyIdeas": [
+      "Divisibility of partial sums"
+    ],
+    "commonMistakes": [
+      "Stopping after the four-score divisibility condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A necessary condition should be paired with a valid order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p15",
+    "problemId": "amc10-2000-p15",
+    "finalAnswer": "$\\boxed{2}$ (choice E)",
+    "shortExplanation": "The relation implies $a/b+b/a=ab+2$.",
+    "detailedSteps": [
+      "Square $a-b=ab$ to get $a^2+b^2-2ab=a^2b^2$. Division by the nonzero product $ab$ gives $a/b+b/a-2=ab$.",
+      "Therefore $a/b+b/a-ab=2$."
+    ],
+    "keyIdeas": [
+      "Squaring a given relation"
+    ],
+    "commonMistakes": [
+      "Dividing before using the nonzero assumptions or losing the cross term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square introduces exactly the two quotients that are requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p16",
+    "problemId": "amc10-2000-p16",
+    "finalAnswer": "$\\boxed{\\frac{5\\sqrt5}{3}}$ (choice B)",
+    "shortExplanation": "With $A=(0,0)$, the intersection is $E=(10/3,5/3)$.",
+    "detailedSteps": [
+      "Read the grid coordinates as $A=(0,0)$, $B=(6,3)$, $C=(4,1)$, and $D=(2,3)$, measuring the second coordinate downward.",
+      "Line $AB$ is $y=x/2$, and line $CD$ is $y=5-x$. They intersect at $x=10/3$, $y=5/3$.",
+      "Thus $AE=\\sqrt{(10/3)^2+(5/3)^2}=5\\sqrt5/3$."
+    ],
+    "keyIdeas": [
+      "Intersection on a unit lattice"
+    ],
+    "commonMistakes": [
+      "Reading the slope from apparent pixel lengths instead of counting lattice intervals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The grid makes coordinate geometry direct.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p17",
+    "problemId": "amc10-2000-p17",
+    "finalAnswer": "$\\boxed{7.45}$ (choice D)",
+    "shortExplanation": "Only exchanging a penny changes the value, increasing it by $124$ cents.",
+    "detailedSteps": [
+      "Quarter-to-nickel and nickel-to-penny exchanges preserve value. A penny-to-quarter exchange replaces $1$ cent by $125$, increasing the total by $124$. Every reachable total is therefore $1\\pmod{124}$.",
+      "Among the listed totals, only $745=1+6\\cdot124$ has that residue. It is reachable: exchange the starting penny, change one resulting quarter into five nickels, change one nickel into five pennies, and exchange those five pennies for quarters.",
+      "The final coins are $29$ quarters and four nickels, worth $725+20=745$ cents."
+    ],
+    "keyIdeas": [
+      "A value invariant modulo 124"
+    ],
+    "commonMistakes": [
+      "Using the invariant as a sufficient condition without establishing reachability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short construction completes the modular argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p18",
+    "problemId": "amc10-2000-p18",
+    "finalAnswer": "$\\boxed{39}$ (choice C)",
+    "shortExplanation": "The visible region has area $36+\\pi$, which rounds to $39$.",
+    "detailedSteps": [
+      "Inside the square, only the central square of side $5-2=3$ is farther than one kilometer from the boundary. The visible interior area is $25-9=16$.",
+      "Outside, four strips of area $5\\cdot1$ and four quarter-disks of radius 1 contribute $20+\\pi$. The full visible area is $16+20+\\pi=36+\\pi\\approx39.14$, rounding to $39$."
+    ],
+    "keyIdeas": [
+      "A fixed-width neighborhood of a boundary"
+    ],
+    "commonMistakes": [
+      "Counting the entire original square as visible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The walk is along the boundary, so an invisible central region remains.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p19",
+    "problemId": "amc10-2000-p19",
+    "finalAnswer": "$\\boxed{\\frac1{4m}}$ (choice D)",
+    "shortExplanation": "If the small triangles have extra leg lengths $u,v$ beside a square of side $s$, then $uv=s^2$.",
+    "detailedSteps": [
+      "The hypotenuse passes through the outer corner of the square. The two small right triangles are similar, with leg pairs $(s,u)$ and $(v,s)$, giving $u/s=s/v$, or $uv=s^2$.",
+      "The first triangle-to-square area ratio is $m=su/(2s^2)=u/(2s)$. The other ratio is $v/(2s)$. Their product is $uv/(4s^2)=1/4$, so the other ratio is $1/(4m)$."
+    ],
+    "keyIdeas": [
+      "Two complementary similar right triangles"
+    ],
+    "commonMistakes": [
+      "Equating the two area ratios merely because the triangles are similar."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity links the two extra leg lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p20",
+    "problemId": "amc10-2000-p20",
+    "finalAnswer": "$\\boxed{69}$ (choice C)",
+    "shortExplanation": "The expression is $(A+1)(M+1)(C+1)-11$, maximized at shifted values $4,4,5$.",
+    "detailedSteps": [
+      "Expanding gives $(A+1)(M+1)(C+1)=AMC+AM+MC+CA+(A+M+C)+1$. Since the sum is $10$, the requested expression equals that product minus $11$.",
+      "The three positive integer factors sum to $13$. If two differ by at least 2, replacing them by values one closer together raises their product while preserving the sum and third factor. Thus a maximum has factors $4,4,5$.",
+      "The maximum is $4\\cdot4\\cdot5-11=69$, attained at $(A,M,C)=(3,3,4)$."
+    ],
+    "keyIdeas": [
+      "Balancing shifted integer factors"
+    ],
+    "commonMistakes": [
+      "Balancing the original cubic and quadratic terms separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shifted product makes the balancing principle applicable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p21",
+    "problemId": "amc10-2000-p21",
+    "finalAnswer": "$\\boxed{\\text{II only}}$ (choice B)",
+    "shortExplanation": "The stated creepy alligator is necessarily a ferocious creepy crawler.",
+    "detailedSteps": [
+      "There exists an object that is both a creepy crawler and an alligator. Since every alligator is ferocious, this object proves statement II.",
+      "Statement I can fail if another alligator is not a creepy crawler. Statement III can fail if every alligator is a creepy crawler. Both scenarios satisfy the original assumptions, so neither additional statement is forced."
+    ],
+    "keyIdeas": [
+      "Existence under set inclusion"
+    ],
+    "commonMistakes": [
+      "Changing some into all."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A witness proves an existential conclusion; countermodels disprove necessity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p22",
+    "problemId": "amc10-2000-p22",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The family size lies strictly between $4$ and $6$, so it is $5$.",
+    "detailedSteps": [
+      "Let the total amounts of milk and coffee be $M,C>0$. Angela drinks $M/4+C/6=8$ ounces, while the family total is $M+C=8n$.",
+      "Because both totals are positive, $(M+C)/6<M/4+C/6<(M+C)/4$. Thus $8n/6<8<8n/4$, giving $4<n<6$. The integer $n$ must be $5$."
+    ],
+    "keyIdeas": [
+      "Strict bounds from a mixture"
+    ],
+    "commonMistakes": [
+      "Allowing zero milk or coffee, which would admit an endpoint family size."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity makes the bounding inequalities strict.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p23",
+    "problemId": "amc10-2000-p23",
+    "finalAnswer": "$\\boxed{20}$ (choice E)",
+    "shortExplanation": "The only possible values of $x$ are $3$ and $17$.",
+    "detailedSteps": [
+      "The mode is always $2$, and the mean is $(25+x)/7$. If $x\\le2$, the median is also $2$, making a nonconstant three-term arithmetic progression impossible.",
+      "For $2<x<4$, the median is $x$, and the mean exceeds $x$. The progression condition is $2x=2+(25+x)/7$, giving $x=3$.",
+      "For $x\\ge4$, the median is $4$ and the mean exceeds $4$. The condition becomes $2\\cdot4=2+(25+x)/7$, giving $x=17$. Both values work, and their sum is $20$."
+    ],
+    "keyIdeas": [
+      "Piecewise median and arithmetic progression"
+    ],
+    "commonMistakes": [
+      "Assuming the median is 4 for every real x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ordering of x determines the median before the progression equation is written.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p24",
+    "problemId": "amc10-2000-p24",
+    "finalAnswer": "$\\boxed{-\\frac19}$ (choice B)",
+    "shortExplanation": "Set $x=9z$ so that the given input $x/3$ becomes $3z$.",
+    "detailedSteps": [
+      "The identity gives $f(3z)=(9z)^2+9z+1$. Setting this equal to $7$ yields $81z^2+9z-6=0$.",
+      "The sum of the two roots is $-9/81=-1/9$. The discriminant is positive, so both roots are real values of the requested type."
+    ],
+    "keyIdeas": [
+      "Rescaling the input of a function"
+    ],
+    "commonMistakes": [
+      "Substituting x=3z and thereby evaluating f(z) instead."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Match the function input carefully before applying the formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2000-p25",
+    "problemId": "amc10-2000-p25",
+    "finalAnswer": "$\\boxed{\\text{Thursday}}$ (choice A)",
+    "shortExplanation": "Year $N$ must be leap, so year $N-1$ is common; the requested day is Thursday.",
+    "detailedSteps": [
+      "From day 300 of year $N$ to day 200 of year $N+1$, the elapsed days equal the length of year $N$ minus 100. This is $265$ or $266$. Only $266$ is divisible by 7, so year $N$ is leap.",
+      "The preceding year is then a common year. From day 100 of year $N-1$ to day 300 of year $N$ the elapsed time is $365-100+300=565\\equiv5\\pmod7$.",
+      "The earlier day is five days before Tuesday, which is Thursday."
+    ],
+    "keyIdeas": [
+      "Weekday shifts and leap years"
+    ],
+    "commonMistakes": [
+      "Using the length of year N+1 for the first interval."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count elapsed days across the correct year boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

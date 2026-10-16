@@ -1,0 +1,381 @@
+[
+  {
+    "id": "solution-aime-ii-2024-p1",
+    "problemId": "aime-ii-2024-p1",
+    "finalAnswer": "$\\boxed{73}$",
+    "shortExplanation": "Count ownerships of the three items other than the candy everyone owns.",
+    "detailedSteps": [
+      "Ignore the universally owned candy. Residents with exactly two, three, or four of the original items now own exactly one, two, or three of the remaining items, respectively.",
+      "The total number of these ownerships is $195+367+562=1124$. If $t$ residents own all four original items, the same total is $437+2(234)+3t$.",
+      "Thus $3t=1124-437-468=219$, and $t=73$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "Owning exactly three of all four items means owning only two of the non-candy items."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing the common item makes the counting weights immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p2",
+    "problemId": "aime-ii-2024-p2",
+    "finalAnswer": "$\\boxed{236}$",
+    "shortExplanation": "Use the mode to limit repetitions, then use the missing median to require an even list length.",
+    "detailedSteps": [
+      "The median could not be absent from an odd-length list, so the number of entries is even. The value 9 must occur at least twice, and the sum condition allows at most three occurrences.",
+      "If there are three 9s, the other entries sum to 3. They are either $(3)$, $(1,2)$, or $(1,1,1)$. The first gives median 9, the second an odd list length, and the third a tie for the mode. None works.",
+      "There are therefore exactly two 9s. The other entries sum to 12 and are all distinct, since a repeated different value would tie the frequency of 9. Their count is positive and even; it can only be two or four because six distinct positive integers already sum to at least 21.",
+      "With two other entries, the distinct positive pairs summing to 12, excluding 9, are $(1,11),(2,10),(4,8),(5,7)$. The first two give median 9, the third gives $8.5$, and the last gives the missing integer median 8.",
+      "With four other entries, the only distinct positive quadruples summing to 12 are $(1,2,3,6)$ and $(1,2,4,5)$. After appending the two 9s, both have median $4.5$.",
+      "The unique list is therefore $(5,7,9,9)$, and its sum of squares is $25+49+81+81=236$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Casework",
+      "Mean and median"
+    ],
+    "commonMistakes": [
+      "A mode must be unique; another value cannot occur just as often as 9.",
+      "The median can be absent only when it is the average of two distinct middle entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completeness requires checking both possible multiplicities of 9 and both possible lengths of the remaining list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p3",
+    "problemId": "aime-ii-2024-p3",
+    "finalAnswer": "$\\boxed{45}$",
+    "shortExplanation": "The row sum forces complementary digits; the column sum then fixes the top-row digit sum.",
+    "detailedSteps": [
+      "Write the top digits as $a,b,c$ and the bottom digits as $d,e,f$. In adding the rows, the units sum must be 9: a value of 19 is impossible for two digits. There is no carry, so likewise $b+e=9$ and $a+d=9$.",
+      "Let $S=a+b+c$. The sum of the bottom digits is $27-S$. Adding the three vertical two-digit numerals gives $10S+(27-S)=99$, hence $S=8$.",
+      "Every nonnegative triple $(a,b,c)$ summing to 8 consists of valid digits, and its complementary bottom digits are uniquely determined. The number of triples is $\\binom{8+3-1}{3-1}=\\binom{10}{2}=45$. Leading zeros are allowed by the source example."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Number bases",
+      "Stars and bars"
+    ],
+    "commonMistakes": [
+      "The source example allows a leading zero; excluding it changes the count.",
+      "Check that no carry is possible before claiming digitwise complementation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "After resolving carries, the grid is a standard weak-composition count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p4",
+    "problemId": "aime-ii-2024-p4",
+    "finalAnswer": "$\\boxed{33}$",
+    "shortExplanation": "Turn the multiplicative equations into a linear system in three logarithms.",
+    "detailedSteps": [
+      "Let $u=\\log_2x$, $v=\\log_2y$, and $w=\\log_2z$. Then $u-v-w=1/2$, $v-u-w=1/3$, and $w-u-v=1/4$.",
+      "Adding gives $u+v+w=-13/12$. Combining this sum with each equation yields $u=-7/24$, $v=-3/8$, and $w=-5/12$.",
+      "The desired absolute logarithm is $|4u+3v+2w|=|-25/8|=25/8$. The numerator and denominator are coprime, so their sum is $25+8=33$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithms",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Apply the absolute value after combining the logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positive-variable assumption makes every logarithm valid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p5",
+    "problemId": "aime-ii-2024-p5",
+    "finalAnswer": "$\\boxed{80}$",
+    "shortExplanation": "View the hexagon as a large triangle with three similar corner triangles removed.",
+    "detailedSteps": [
+      "Let the triangle formed by the three alternating side lines have side lengths $a,b,c$, and let the common hexagon side length be $s$. Opposite hexagon sides are parallel, so each removed corner triangle is similar to the large triangle.",
+      "On the triangle side of length $a$, the middle retained segment has length $s$. The two removed end segments have lengths $as/b$ and $as/c$, because their corner triangles have respective parallel bases of length $s$ against large-triangle sides $b$ and $c$.",
+      "Therefore $a=s+as/b+as/c$. Dividing by $a$ gives $1=s(1/a+1/b+1/c)$.",
+      "For the given three side lengths, $1/200+1/240+1/300=(6+5+4)/1200=1/80$. Thus $s=80$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similar triangles",
+      "Parallel lines"
+    ],
+    "commonMistakes": [
+      "Equilateral does not mean regular; do not impose 120-degree angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel opposite sides, rather than equal angles, justify the similarity ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p6",
+    "problemId": "aime-ii-2024-p6",
+    "finalAnswer": "$\\boxed{55}$",
+    "shortExplanation": "Count sets separately according to their maximum element.",
+    "detailedSteps": [
+      "For a fixed maximum $a$, the set must include $a$, may independently include or omit each of $1,\\ldots,a-1$, and cannot contain anything larger. There are exactly $2^{a-1}$ such sets.",
+      "Different maxima give disjoint families, so $\\sum_{a\\in A}2^{a-1}=2024$. The uniqueness of binary expansion determines $A$.",
+      "Compute $2024=1024+512+256+128+64+32+8$. The exponents are $10,9,8,7,6,5,3$, so $A=\\{11,10,9,8,7,6,4\\}$.",
+      "The sum of these elements is $11+10+9+8+7+6+4=55$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Subsets",
+      "Binary representation"
+    ],
+    "commonMistakes": [
+      "The element a corresponds to exponent a minus 1.",
+      "The counted sets are nonempty because their maximum is required."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A disjoint maximum-element count turns the problem into binary place values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p7",
+    "problemId": "aime-ii-2024-p7",
+    "finalAnswer": "$\\boxed{699}$",
+    "shortExplanation": "Use one common residue to determine every digit modulo 7.",
+    "detailedSteps": [
+      "Write $N=1000a+100b+10c+d$ and let $t\\equiv N\\pmod7$. Replacing each digit by 1 requires $6(a-1)\\equiv2(b-1)\\equiv3(c-1)\\equiv d-1\\equiv t\\pmod7$.",
+      "Inverting the coefficients gives $a\\equiv1+6t$, $b\\equiv1+4t$, $c\\equiv1+5t$, and $d\\equiv1+t\\pmod7$. Substituting these into $N\\equiv6a+2b+3c+d$ gives $t\\equiv5+4t$, or $t\\equiv3\\pmod7$.",
+      "Therefore $a\\equiv5$, $b\\equiv6$, $c\\equiv2$, and $d\\equiv4\\pmod7$. Among digits, the first, second, and fourth are forced to be 5, 6, and 4. The third can be 2 or 9, so the greatest number is 5694.",
+      "The four replacements are 1694, 5194, 5614, and 5691; each is divisible by 7. Division by 1000 gives $Q=5$, $R=694$, and $Q+R=699$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular arithmetic",
+      "Digits"
+    ],
+    "commonMistakes": [
+      "Replacing a digit subtracts the old digit minus 1 times its place value.",
+      "A residue can represent two digits; maximize only after applying all congruences."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The number’s own residue links the four replacement conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p8",
+    "problemId": "aime-ii-2024-p8",
+    "finalAnswer": "$\\boxed{127}$",
+    "shortExplanation": "Take an axial cross-section and use the line between the two circle centers.",
+    "detailedSteps": [
+      "In a plane through the torus axis and sphere center, one tube circle has radius 3 and center $C$ at horizontal distance 6 from the axis. The sphere appears as a radius-11 circle centered at $O$ on that axis.",
+      "For internal tangency, $OC=11-3=8$. The contact point lies on the ray from $O$ through $C$, at distance 11 from $O$. Its horizontal distance from the axis is therefore $r_i=11\\cdot6/8=33/4$.",
+      "For external tangency, $OC=11+3=14$. The same center-line calculation gives $r_o=11\\cdot6/14=33/7$. Rotating each contact point about the axis gives the corresponding contact circle.",
+      "Thus $r_i-r_o=33/4-33/7=99/28$, already reduced. The requested sum is $99+28=127$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangency",
+      "Similar triangles"
+    ],
+    "commonMistakes": [
+      "The contact-circle radius is a horizontal projection, not the tube radius.",
+      "Internal and external tangencies use the difference and sum of the two radii, respectively."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The surface problem reduces to two tangent-circle cross-sections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p9",
+    "problemId": "aime-ii-2024-p9",
+    "finalAnswer": "$\\boxed{902}$",
+    "shortExplanation": "Maximality determines every cell once the row and column colors are chosen.",
+    "detailedSteps": [
+      "No row can be empty in a maximal arrangement: if any chip exists, place a matching chip in its column in the empty row; if no chip exists, any first chip is allowed. The same argument rules out an empty column.",
+      "Each row and column therefore has a uniquely defined color. A cell where the two colors differ must be empty; a cell where they agree must be filled, because otherwise one more chip could be added. Thus each valid row/column color assignment determines exactly one maximal grid.",
+      "If both colors occur among rows, both must occur among columns, and conversely. There are $2^5-2=30$ mixed row colorings and 30 mixed column colorings, giving 900 arrangements.",
+      "The remaining possibilities have every row and every column white, or every row and every column black. The total is $900+2=902$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Bijections",
+      "Maximality"
+    ],
+    "commonMistakes": [
+      "Maximal means no legal addition remains; it does not mean the largest possible number of occupied cells.",
+      "An empty row or column violates maximality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The global maximality condition converts a three-state cell problem into two binary color assignments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p10",
+    "problemId": "aime-ii-2024-p10",
+    "finalAnswer": "$\\boxed{468}$",
+    "shortExplanation": "Find the squared distance from the vertex to the incenter, then convert it to the side product.",
+    "detailedSteps": [
+      "Euler’s incenter–circumcenter identity gives $OI^2=R(R-2r)=13(13-12)=13$. Since $IA\\perp OI$, the right triangle $AIO$ gives $AI^2=OA^2-OI^2=169-13=156$.",
+      "For completeness, write $a=BC$, $b=CA$, $c=AB$, and $s=(a+b+c)/2$. The right triangle from $I$ to a tangency point on a side through $A$ gives $AI^2=(s-a)^2+r^2$.",
+      "Put $u=s-a$, $v=s-b$, and $w=s-c$, so $a=v+w$, $b=u+w$, $c=u+v$, and $s=u+v+w$. Heron’s formula gives $r^2=uvw/s$. It follows by expansion that $bc-AI^2=uv+uw+vw-uvw/s=abc/s$.",
+      "Finally $abc=4R\\Delta$ and $\\Delta=rs$, so $abc/s=4Rr$. Therefore $AB\\cdot AC=AI^2+4Rr=156+4(13)(6)=468$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Incenter",
+      "Circumcenter",
+      "Heron’s formula"
+    ],
+    "commonMistakes": [
+      "The right angle is at I, so OA is the hypotenuse in triangle AIO.",
+      "The product asks for the two sides adjacent to A."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side-product identity is proved in the solution so that the center-distance calculation connects directly to the answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p11",
+    "problemId": "aime-ii-2024-p11",
+    "finalAnswer": "$\\boxed{601}$",
+    "shortExplanation": "Shift all three variables by their average to expose a zero product.",
+    "detailedSteps": [
+      "Let $q=ab+bc+ca$ and $r=abc$. Expanding $(a+b+c)q$ shows that the six-term expression is $300q-3r$. Thus the second condition is equivalent to $100q-r=2000000$.",
+      "Now expand $(a-100)(b-100)(c-100)=r-100q+10000(a+b+c)-1000000$. Using the sum 300, this is $r-100q+2000000=0$.",
+      "Therefore at least one of $a,b,c$ equals 100; conversely, with their sum fixed at 300, this condition implies the required cubic equation.",
+      "If $a=100$, the nonnegative pair $(b,c)$ sums to 200, giving 201 ordered possibilities. The same holds for the other two coordinates. Any intersection of two such families forces $(100,100,100)$.",
+      "Inclusion–exclusion gives $3\\cdot201-3+1=601$ triples."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Symmetric polynomials",
+      "Inclusion–exclusion"
+    ],
+    "commonMistakes": [
+      "The triples are ordered.",
+      "The triple (100,100,100) belongs to all three families and should count once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centering a symmetric expression at the mean gives a complete algebraic characterization of the solutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p12",
+    "problemId": "aime-ii-2024-p12",
+    "finalAnswer": "$\\boxed{23}$",
+    "shortExplanation": "The unique segment occurs where the intercept-family equation has a minimum, giving the astroid contact point.",
+    "detailedSteps": [
+      "Parameterize a unit segment’s endpoints as $(\\cos\\theta,0)$ and $(0,\\sin\\theta)$, where $0<\\theta<\\pi/2$. An interior point $(x,y)$ lies on it exactly when $h(\\theta)=x\\sec\\theta+y\\csc\\theta=1$.",
+      "For fixed $x,y>0$, the function $h$ tends to infinity at both ends and is strictly convex: both secant and cosecant have positive second derivatives on this interval. Thus it has a unique minimum. A point on one segment lies on no other segment exactly when that minimum equals 1; otherwise there is a second crossing of the level 1.",
+      "For the given segment, the intercepts are $\\alpha=1/2$ and $\\beta=\\sqrt3/2$. At its parameter value, $h=1$ and $h^{\\prime}=0$ give $x/\\alpha+y/\\beta=1$ and $x\\beta/\\alpha^2=y\\alpha/\\beta^2$.",
+      "The derivative equation gives $x:y=\\alpha^3:\\beta^3$. Since $\\alpha^2+\\beta^2=1$, substituting into the line equation yields $C=(\\alpha^3,\\beta^3)=(1/8,3\\sqrt3/8)$.",
+      "Therefore $OC^2=1/64+27/64=7/16$, and $p+q=23$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinate geometry",
+      "Envelopes",
+      "Convexity"
+    ],
+    "commonMistakes": [
+      "The requested point is generally not the midpoint of the segment.",
+      "Finding a stationary contact point is not enough without explaining why it is the unique one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The convexity argument establishes uniqueness as well as computing the point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p13",
+    "problemId": "aime-ii-2024-p13",
+    "finalAnswer": "$\\boxed{321}$",
+    "shortExplanation": "Factor the quadratic over the Gaussian integers and use the polynomial with all thirteenth roots of unity.",
+    "detailedSteps": [
+      "Because 13 is prime and $\\omega\\ne1$, the values $\\omega^k$ for $0\\le k\\le12$ are all the thirteenth roots of unity. Factor $z^2-2z+2=(z-(1+i))(z-(1-i))$.",
+      "For any $t$, $\\prod_{k=0}^{12}(t-\\omega^k)=t^{13}-1$. The two products of reversed factors each contribute a minus sign, which cancel. Hence the requested product is $((1+i)^{13}-1)((1-i)^{13}-1)$.",
+      "Now $(1+i)^4=-4$, so $(1+i)^{12}=-64$ and $(1+i)^{13}=-64-64i$. Its conjugate is $(1-i)^{13}=-64+64i$.",
+      "The product is $(-65-64i)(-65+64i)=65^2+64^2=8321$. Its remainder modulo 1000 is 321."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Roots of unity",
+      "Complex numbers"
+    ],
+    "commonMistakes": [
+      "The product includes k=0.",
+      "Reversing the order inside each factor changes the sign of an odd-degree product; here the two signs cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root-of-unity product becomes a norm of a Gaussian integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p14",
+    "problemId": "aime-ii-2024-p14",
+    "finalAnswer": "$\\boxed{211}$",
+    "shortExplanation": "Express the number as a square and count the roots of s(s−1) modulo b−1.",
+    "detailedSteps": [
+      "Let the two digits be $a$ and $c$, with $1\\le a\\le b-1$ and $0\\le c\\le b-1$. Put $s=a+c=\\sqrt n$. Then $s^2=ab+c=a(b-1)+s$, so $a=s(s-1)/(b-1)$.",
+      "Because $b\\le n<b^2$, a valid square root satisfies $2\\le s\\le b-1$. Conversely, any integer in this interval with $(b-1)\\mid s(s-1)$ gives an integer $a\\ge1$ and $a<s$, and then $c=s-a$ is a valid digit. Thus these square roots count the desired numbers exactly.",
+      "Write $b-1$ as a product of prime powers involving $k$ distinct primes. Since $s$ and $s-1$ are coprime, each prime power must divide exactly one of them. The Chinese remainder theorem gives $2^k$ residue classes modulo $b-1$ solving $s(s-1)\\equiv0$.",
+      "The interval $1\\le s\\le b-1$ represents each class once, and only $s=1$ must be removed. Hence there are $2^k-1$ valid numbers. More than ten requires $k\\ge4$. The exceptional base $b=2$ gives none and cannot qualify.",
+      "The smallest integer with four distinct prime factors is $2\\cdot3\\cdot5\\cdot7=210$. Thus the least base is $b=211$, where the count is $2^4-1=15$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Number bases",
+      "Chinese remainder theorem"
+    ],
+    "commonMistakes": [
+      "The residue 0 is represented by s=b−1 and is valid; only the representative s=1 is removed.",
+      "Repeated powers of one prime do not increase the number of independent CRT choices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is a bijection between valid two-digit squares and solutions of one modular equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2024-p15",
+    "problemId": "aime-ii-2024-p15",
+    "finalAnswer": "$\\boxed{315}$",
+    "shortExplanation": "Classify the six perpendicular direction pairs, then count two parallel supports in each direction.",
+    "detailedSteps": [
+      "Scale the circumcircle to radius 1 and take vertices at angles $k\\pi/6$. A chord joining vertices $i$ and $j$ has normal direction $(i+j)\\pi/12$ modulo $\\pi$. Thus there are 12 possible side directions, forming six perpendicular pairs. A $30^\\circ$ rotation groups these pairs into two classes of three; it suffices to count one representative of each class.",
+      "For axes through opposite vertices, the horizontal and vertical chord-support coordinates are each $-\\sqrt3/2,-1/2,0,1/2,\\sqrt3/2$. Choosing two x-coordinates and two y-coordinates would give $\\binom52^2=100$ rectangles. A corner lies on both actual chord segments exactly when $x^2+y^2\\le1$: on each support line, the unit circle’s intersection is precisely its vertex-to-vertex chord.",
+      "An x-coordinate pair has maximum absolute value $\\sqrt3/2$ in $\\binom52-\\binom32=7$ ways. The only invalid choices have this large maximum in both directions, giving $7^2=49$ exclusions. This orientation class therefore has $100-49=51$ rectangles.",
+      "Rotate the coordinate axes by $15^\\circ$. The six support coordinates in either direction are $\\pm A,\\pm B,\\pm C$, where $A=\\cos15^\\circ$, $B=\\cos45^\\circ$, and $C=\\cos75^\\circ$. The numbers of coordinate pairs with respective maximum absolute values $C,B,A$ are $1,\\binom42-1=5,\\binom62-\\binom42=9$.",
+      "Here $A^2+C^2=1$, $2B^2=1$, and $C<B<A$. Thus the allowed pairs of maxima are $(C,C)$, $(C,B)$, $(B,C)$, $(B,B)$, $(C,A)$, and $(A,C)$. Their counts sum to $1+5+5+25+9+9=54$.",
+      "Every rectangle has exactly one perpendicular direction pair, and both orientation classes occur three times. Therefore the total is $3(51+54)=315$. The vertices may be intersections of diagonals, as the source figure illustrates."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Coordinate geometry",
+      "Polygon diagonals",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "The rectangle’s vertices need not be vertices of the dodecagon.",
+      "Intersections of support lines beyond the chord endpoints do not make valid rectangles.",
+      "Each rectangle is counted by its one pair of perpendicular directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The support-line method counts diagonal-intersection rectangles while explicitly excluding corners outside the actual segments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

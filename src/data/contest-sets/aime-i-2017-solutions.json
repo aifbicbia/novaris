@@ -1,0 +1,345 @@
+[
+  {
+    "id": "solution-aime-i-2017-p1",
+    "problemId": "aime-i-2017-p1",
+    "finalAnswer": "$\\boxed{390}$",
+    "shortExplanation": "Subtract collinear triples from the unrestricted choice of three boundary points.",
+    "detailedSteps": [
+      "There are $\\binom{15}{3}=455$ choices of three distinct designated points. A triple has zero area exactly when its points are collinear.",
+      "Including the endpoints, the three sides contain $5$, $6$, and $7$ designated points. Their collinear triples number $\\binom53+\\binom63+\\binom73=10+20+35=65$. No triple is counted twice, and a line that does not coincide with a side meets the boundary of this convex triangle in at most two points.",
+      "The required number is $455-65=390$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Counting nondegenerate triangles"
+    ],
+    "commonMistakes": [
+      "Include the triangle vertices in the number of points on each side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convexity justifies why there are no additional collinear triples to subtract.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p2",
+    "problemId": "aime-i-2017-p2",
+    "finalAnswer": "$\\boxed{62}$",
+    "shortExplanation": "Equal remainders force each divisor to divide the corresponding pairwise differences.",
+    "detailedSteps": [
+      "The first divisor must divide both $787-702=85$ and $855-702=153$. Their greatest common divisor is $17$. A positive remainder rules out divisor $1$, so $m=17$ and $r=702\\bmod17=5$.",
+      "Similarly, $n$ divides $722-412=310$ and $815-412=403$, whose greatest common divisor is $31$. Hence $n=31$ and $s=412\\bmod31=9$. These remainders are positive and distinct.",
+      "The requested sum is $17+31+5+9=62$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Common remainders and greatest common divisors"
+    ],
+    "commonMistakes": [
+      "A common remainder does not make the original numbers divisible by the divisor; their differences are divisible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gcd values are prime, so the positive-remainder requirement leaves a unique divisor in each case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p3",
+    "problemId": "aime-i-2017-p3",
+    "finalAnswer": "$\\boxed{69}$",
+    "shortExplanation": "Group the triangular-number units digits into blocks of twenty.",
+    "detailedSteps": [
+      "Let $T_n=n(n+1)/2$. The difference $T_{n+20}-T_n=20n+210$ is divisible by $10$, so the units-digit sequence has period $20$.",
+      "The first ten digits are $1,3,6,0,5,1,8,6,5,5$, with sum $40$. The next ten are $6,8,1,5,0,6,3,1,0,0$, with sum $30$. Thus one complete block sums to $70$, while its first $17$ entries sum to $69$.",
+      "Since $2017=100\\cdot20+17$, the entire sum is $100\\cdot70+69=7069$. Its remainder modulo $1000$ is $69$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Periodic last digits"
+    ],
+    "commonMistakes": [
+      "The units digits have period twenty, not ten.",
+      "Sum the units digits themselves rather than taking the units digit of the full sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A proven period makes the long sum a short arithmetic calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p4",
+    "problemId": "aime-i-2017-p4",
+    "finalAnswer": "$\\boxed{803}$",
+    "shortExplanation": "The apex lies above the base circumcenter because its distances to all three base vertices are equal.",
+    "detailedSteps": [
+      "The altitude of the isosceles base triangle is $\\sqrt{20^2-12^2}=16$, so its area is $\\Delta=24\\cdot16/2=192$.",
+      "The circumradius of the base is $R=(20\\cdot20\\cdot24)/(4\\Delta)=25/2$. The perpendicular projection of the apex is the circumcenter, so the pyramid height satisfies $h^2=25^2-R^2=1875/4$. Therefore $h=25\\sqrt3/2$.",
+      "The volume is $\\Delta h/3=800\\sqrt3$. Its squarefree radical part is $3$, and the requested sum is $800+3=803$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Pyramid height and circumradius"
+    ],
+    "commonMistakes": [
+      "Equal lateral edges put the apex above the circumcenter, which need not equal the centroid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The base circumradius is the natural horizontal distance in the height calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p5",
+    "problemId": "aime-i-2017-p5",
+    "finalAnswer": "$\\boxed{321}$",
+    "shortExplanation": "Clear the fractional place values, then use small moduli to determine the digits.",
+    "detailedSteps": [
+      "All digits belong to $\\{1,2,\\ldots,7\\}$ because they appear in base eight. Equating the two representations gives $8a+b+c/8+d/64=13b+b/12+a/144$. Multiplication by $576$ yields $$4604a+72c+9d=6960b.$$",
+      "Modulo $8$, this says $4a+d\\equiv0$. Since $d$ is nonzero, $a$ must be odd and $d=4$. Modulo $3$, the same equation forces $a$ to be a multiple of $3$. Thus $a=3$.",
+      "Substituting $a=3,d=4$ and dividing by $24$ gives $577+3c=290b$. For $1\\le c\\le7$, the left side lies from $580$ to $598$. The only multiple of $290$ in this interval is $580$, giving $b=2,c=1$.",
+      "The decimal integer formed by $a,b,c$ is therefore $321$. The two original fractions both equal $26+3/16$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Positional notation in two bases"
+    ],
+    "commonMistakes": [
+      "Fractional digits have weights 1/base and 1/base squared, not decimal place values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonzero-digit condition makes the modular exclusions particularly strong.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p6",
+    "problemId": "aime-i-2017-p6",
+    "finalAnswer": "$\\boxed{48}$",
+    "shortExplanation": "A chord misses the triangle exactly when both endpoints fall in the same boundary arc.",
+    "detailedSteps": [
+      "The triangle partitions its circumcircle into arcs of degree measures $2x,2x,360-4x$. Boundary coincidences have probability zero. A chord with both endpoints in one such arc stays in the cap outside the triangle; endpoints in different arcs force an intersection with the triangle.",
+      "Put $t=x/180$, where $0<t<1/2$. The three arc probabilities are $t,t,1-2t$. The nonintersection probability is therefore $2t^2+(1-2t)^2=1-14/25=11/25$.",
+      "Rearranging gives $75t^2-50t+7=0$, with roots $t=1/5$ and $t=7/15$. Both are geometrically valid, giving $x=36^\\circ$ and $x=84^\\circ$. Their difference is $48$ degrees."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Random chords and circular arcs"
+    ],
+    "commonMistakes": [
+      "The probability of choosing two endpoints in the same arc is the square of that arc fraction.",
+      "Both quadratic roots produce valid isosceles triangles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint sampling rule is explicit, so the arc-based probability model is unambiguous.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p7",
+    "problemId": "aime-i-2017-p7",
+    "finalAnswer": "$\\boxed{564}$",
+    "shortExplanation": "Group terms by the sum of the two indices and apply Vandermonde twice.",
+    "detailedSteps": [
+      "Set $k=a+b$. For each $0\\le k\\le6$, the sum over $a,b$ is $$\\binom6k\\sum_{a=0}^k\\binom6a\\binom6{k-a}=\\binom6k\\binom{12}k.$$ The inner identity counts choosing $k$ objects from two separate groups of six.",
+      "Using $\\binom6k=\\binom6{6-k}$, summing over $k$ counts choosing six objects from groups of sizes six and twelve. Hence $S=\\binom{18}{6}=18564$.",
+      "The remainder modulo $1000$ is $564$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Binomial convolution"
+    ],
+    "commonMistakes": [
+      "The binomial factor indexed by a+b is constant only after the sum is grouped by k=a+b."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A convolution identity reduces a triangular double sum to a single binomial coefficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p8",
+    "problemId": "aime-i-2017-p8",
+    "finalAnswer": "$\\boxed{41}$",
+    "shortExplanation": "Convert the chord bound into a bound on the difference of the two independently sampled angles.",
+    "detailedSteps": [
+      "The two right-angle conditions put $Q,R$ on the same semicircle with diameter $OP$, whose radius is $100$. The central angle between them is $2|a-b|$, so $QR=200\\sin|a-b|$.",
+      "Because $|a-b|<75^\\circ$, the sine is increasing in the relevant interval. Thus $QR\\le100$ is equivalent to $|a-b|\\le30^\\circ$.",
+      "The pair $(a,b)$ is uniform in a square of side $75$. The complement of this diagonal strip consists of two right triangles with legs $45$, whose combined area is $45^2$. The probability is $1-45^2/75^2=16/25$, so the required sum is $41$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Chord lengths and geometric probability"
+    ],
+    "commonMistakes": [
+      "The difference of the two sampled angles is an inscribed angle, half the associated central angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The continuous probability becomes a ratio of elementary planar areas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p9",
+    "problemId": "aime-i-2017-p9",
+    "finalAnswer": "$\\boxed{45}$",
+    "shortExplanation": "Reduce the recurrence modulo 99 before trying to handle its rapidly growing terms.",
+    "detailedSteps": [
+      "Since $100\\equiv1\\pmod{99}$, repeated substitution gives $$a_n\\equiv\\sum_{j=10}^n j=\\frac{n(n+1)}2-45\\pmod{99}.$$ Multiplication by $2$ is reversible modulo $99$, so we need $n(n+1)\\equiv90\\pmod{99}$.",
+      "Modulo $9$, consecutive integers are coprime, so $9\\mid n(n+1)$ requires $n\\equiv0$ or $8$. Modulo $11$, the equation factors as $(n-1)(n+2)\\equiv0$, giving $n\\equiv1$ or $9$.",
+      "The four combinations give residue classes $9,45,53,89$ modulo $99$. In the class $9$, the first value greater than $10$ is $108$; among all four classes the least allowed index is therefore $45$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Recurrences modulo a composite"
+    ],
+    "commonMistakes": [
+      "The initial term is 10, so the modular sum begins at 10, not at 1.",
+      "For modulus 9, coprimality of consecutive integers ensures the full factor of 9 lies in one term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Modular arithmetic keeps every term small and exposes the minimal index.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p10",
+    "problemId": "aime-i-2017-p10",
+    "finalAnswer": "$\\boxed{56}$",
+    "shortExplanation": "The reality condition describes the circle through the three given complex points; maximize height on that circle.",
+    "detailedSteps": [
+      "For $z\\ne z_3$, the expression is a cross ratio. Its being real means the directed angle between $z-z_2$ and $z-z_3$ matches, modulo $180^\\circ$, the corresponding angle at $z_1$. Since the three fixed points are not collinear, this is their circumcircle, with $z_3$ excluded. The point $z_2$, where the numerator vanishes, also belongs to the locus.",
+      "Let the circle center be $(h,k)$. The first two points have the same real coordinate and heights $83,39$, so their perpendicular bisector is $k=61$. Equating the squared distances from $(h,61)$ to $(18,83)$ and $(78,99)$ gives $(h-18)^2+22^2=(h-78)^2+38^2$, hence $h=56$.",
+      "The radius squared is $38^2+22^2=1928$. The highest point is $(56,61+\\sqrt{1928})$, which is not the excluded point $(78,99)$. Thus the required real part is $56$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complex cross ratios and circles"
+    ],
+    "commonMistakes": [
+      "A real cross ratio permits either sign; restricting it to positive values would discard part of the circle.",
+      "The denominator excludes z_3, so check that the maximizing point is still allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The imaginary-part maximum is a simple top-of-circle question once the locus is identified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p11",
+    "problemId": "aime-i-2017-p11",
+    "finalAnswer": "$\\boxed{360}$",
+    "shortExplanation": "The row containing 5 must have one smaller and one larger companion; that condition automatically balances the other row medians.",
+    "detailedSteps": [
+      "If the median of the three row medians is $5$, then one row has median $5$. Its two companions must consist of one of the four smaller numbers and one of the four larger numbers.",
+      "Choose this row in $3$ ways, choose its two companions in $4\\cdot4$ ways, and arrange its three entries in $3!$ ways. The remaining six entries can be placed in the other six positions in $6!$ ways.",
+      "Those six entries consist of three numbers below $5$ and three above. The remaining rows cannot both have a majority below $5$, since that would require at least four smaller numbers; similarly they cannot both have a majority above. Their medians therefore lie on opposite sides of $5$, so every counted arrangement qualifies.",
+      "Thus $Q=3\\cdot16\\cdot6\\cdot720=207360$, whose remainder modulo $1000$ is $360$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Median of row medians"
+    ],
+    "commonMistakes": [
+      "The remaining rows need no extra balancing factor; the three-small, three-large count already forces opposite medians."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A necessary local condition on the row containing 5 turns out to be sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p12",
+    "problemId": "aime-i-2017-p12",
+    "finalAnswer": "$\\boxed{252}$",
+    "shortExplanation": "Split according to whether 2 is present, and express each case using small independent exclusions.",
+    "detailedSteps": [
+      "The element $1$ cannot occur because $1\\cdot1=1$. Among the other elements, the only product relations staying at most $10$ are $2^2=4$, $2\\cdot3=6$, $2\\cdot4=8$, $2\\cdot5=10$, and $3^2=9$. This list is exhaustive: factors both at least $4$ already have product at least $16$.",
+      "If $2$ is absent, the only exclusion is that $3$ and $9$ cannot both occur. They have three allowable membership patterns, while the six elements $4,5,6,7,8,10$ are free. This gives $3\\cdot2^6=192$ subsets.",
+      "If $2$ is present, $4$ is absent. For $\\{3,6,9\\}$ there are five possibilities: include $3$ alone, or omit it and choose any subset of $\\{6,9\\}$. For $\\{5,10\\}$ there are three possibilities, since they cannot both occur. The elements $7,8$ are free. This gives $5\\cdot3\\cdot2^2=60$ subsets.",
+      "The total is $192+60=252$, with the empty set already included in the first case."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Product-free subsets"
+    ],
+    "commonMistakes": [
+      "The factors a and b may be equal, so relations such as 3 squared equals 9 must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Listing all small products prevents hidden dependencies in the subset count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p13",
+    "problemId": "aime-i-2017-p13",
+    "finalAnswer": "$\\boxed{59}$",
+    "shortExplanation": "Find the last integer whose next larger cube is beyond the permitted multiplicative interval.",
+    "detailedSteps": [
+      "If $k^3\\le n<(k+1)^3$, the first cube strictly greater than $n$ is $(k+1)^3$. This interval contains a bad value of $n$ exactly when $mk^3<(k+1)^3$, or $m<(1+1/k)^3$. The ratio on the right strictly decreases as $k$ increases.",
+      "For $m=2$, the last possible cube interval has $k=3$, because $64/27>2$ but $125/64<2$. Within that interval, failure means $2n<64$, so the last bad integer is $31$ and $Q(2)=32$.",
+      "For $m=3$, the last possible interval has $k=2$, because $27/8>3$ but $64/27<3$. Its last bad integer satisfies $3n<27$, so it is $8$, giving $Q(3)=9$. For $m=4,5,6,7$, only the interval starting at $1$ can fail, and its only bad integer is $1$; hence each corresponding $Q(m)=2$.",
+      "For $m\\ge8$, even the largest consecutive-cube ratio is at most $8$, so every positive $n$ succeeds and $Q(m)=1$. Therefore the sum is $32+9+4\\cdot2+2010\\cdot1=2059$, whose remainder is $59$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Gaps between consecutive cubes"
+    ],
+    "commonMistakes": [
+      "A cube equal to n is excluded by the strict lower inequality; the next cube must be used.",
+      "Q(m) is one more than the last failure, not merely the first successful n."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The decreasing ratio of consecutive cubes proves that the failure search terminates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p14",
+    "problemId": "aime-i-2017-p14",
+    "finalAnswer": "$\\boxed{896}$",
+    "shortExplanation": "Reduce the nested equation to a monotone scalar equation, then evaluate the resulting power modulo 1000.",
+    "detailedSteps": [
+      "Exponentiating the outermost logarithm and combining the inner logarithms gives $\\log_a(24\\log_a2)=128+a^{128}$. Put $c=128\\log_2a>0$. Then $a^{128}=2^c$ and $\\log_a2=128/c$, so the equation becomes $$\\log_2(3072/c)=c+\\frac{c2^c}{128}.$$",
+      "The left side is strictly decreasing for $c>0$, while the right side is strictly increasing. The value $c=6$ gives $9$ on each side and is therefore the unique solution. Thus $a=2^{3/64}$. All logarithm arguments in the original equation are positive at this value.",
+      "The second equation gives $\\log_a x=a^{256}=4096$, so $x=a^{4096}=2^{192}$. Modulo $125$, repeated squaring gives $2^{10}\\equiv24$, $2^{20}\\equiv76$, $2^{40}\\equiv26$, and $2^{80}\\equiv51$. Hence $2^{192}\\equiv2^{92}\\equiv51\\cdot24\\cdot4\\equiv21\\pmod{125}$.",
+      "Also $x\\equiv0\\pmod8$. Among the eight numbers $21+125t$ for $0\\le t\\le7$, only $t=7$ gives a multiple of $8$. The remainder modulo $1000$ is therefore $896$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Nested logarithms and modular exponentiation"
+    ],
+    "commonMistakes": [
+      "Prove uniqueness of the logarithmic base; finding one convenient value alone is insufficient.",
+      "The modular exponent reduction modulo 125 uses Euler’s theorem, whereas the modulo-8 condition is immediate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity controls the nested logarithms without numerical approximation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2017-p15",
+    "problemId": "aime-i-2017-p15",
+    "finalAnswer": "$\\boxed{145}$",
+    "shortExplanation": "Parametrize the two vertices on the perpendicular legs; the third vertex gives a linear constraint, so Cauchy-Schwarz supplies the minimum.",
+    "detailedSteps": [
+      "Place the right triangle at $(0,0)$, $(5,0)$, and $(0,2\\sqrt3)$. Let the two leg vertices of the equilateral triangle be $U=(u,0)$ and $V=(0,v)$. Its side squared is $s^2=u^2+v^2$. The third vertex in the first quadrant is $$W=\\left(\\frac{u+\\sqrt3v}{2},\\frac{v+\\sqrt3u}{2}\\right).$$ The other equilateral orientation cannot have both coordinates nonnegative unless the triangle degenerates.",
+      "The hypotenuse equation is $x/5+y/(2\\sqrt3)=1$. Substituting $W$ gives $7u+11v/\\sqrt3=20$. Cauchy-Schwarz therefore yields $$400\\le\\left(49+\\frac{121}{3}\\right)(u^2+v^2)=\\frac{268}{3}s^2,$$ so $s^2\\ge300/67$.",
+      "Equality holds at $u=105/67$ and $v=55\\sqrt3/67$. These lie strictly on their respective side segments. The resulting third vertex is $W=(135/67,80\\sqrt3/67)$, which lies on the hypotenuse segment, so the lower bound is attained by a valid inscribed triangle.",
+      "The smallest area is $\\sqrt3s^2/4=75\\sqrt3/67$. The coefficient fraction is reduced and the radical is squarefree, giving $75+67+3=145$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Inscribed equilateral triangle optimization"
+    ],
+    "commonMistakes": [
+      "A lower bound on side length is not enough; the equality point must lie on all three actual side segments.",
+      "Choose the third equilateral vertex inside the first quadrant."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An exact feasibility check is essential in an inscribed-figure minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

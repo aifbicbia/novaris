@@ -1,0 +1,686 @@
+[
+  {
+    "id": "solution-amc8-2020-p1",
+    "problemId": "amc8-2020-p1",
+    "finalAnswer": "$\\boxed{\\text{E }(24)}$",
+    "shortExplanation": "**Idea:** Build the recipe ratio from lemon juice to sugar to water.",
+    "detailedSteps": [
+      "Sugar is twice the lemon juice, so",
+      "[\n2\\cdot3=6\n]",
+      "cups of sugar are needed.",
+      "Water is four times the sugar:",
+      "[\n4\\cdot6=24\n]",
+      "Final Answer: (\\boxed{\\text{E }(24)})"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Multiplication"
+    ],
+    "commonMistakes": [
+      "Do not make water four times the lemon juice; it is four times the sugar."
+    ],
+    "alternativeMethods": [
+      "Write lemon:sugar:water as $1:2:8$."
+    ],
+    "difficultyNotes": "Introductory ratio chain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p2",
+    "problemId": "amc8-2020-p2",
+    "finalAnswer": "$\\boxed{\\text{C }(15)}$",
+    "shortExplanation": "**Idea:** Find the equal share, then compare it to the $40 earner.",
+    "detailedSteps": [
+      "The total earnings are",
+      "[\n15+20+25+40=100\n]",
+      "Split equally among $4$ friends, each person should end with",
+      "[\n100\\div4=25\n]",
+      "The friend who earned $40$ gives away",
+      "[\n40-25=15\n]",
+      "Final Answer: (\\boxed{\\text{C }(15)})"
+    ],
+    "keyIdeas": [
+      "Equal sharing",
+      "Subtraction"
+    ],
+    "commonMistakes": [
+      "Do not divide $40$ by $4$; split the total earnings."
+    ],
+    "alternativeMethods": [
+      "Compute how much each friend should finish with."
+    ],
+    "difficultyNotes": "Introductory arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p3",
+    "problemId": "amc8-2020-p3",
+    "finalAnswer": "$\\boxed{\\text{D }(1920)}$",
+    "shortExplanation": "**Idea:** Multiply area, plants per area, and strawberries per plant.",
+    "detailedSteps": [
+      "The garden area is",
+      "[\n6\\cdot8=48\n]",
+      "square feet.",
+      "Carrie plants",
+      "[\n48\\cdot4=192\n]",
+      "strawberry plants.",
+      "Each plant averages $10$ strawberries, so she expects",
+      "[\n192\\cdot10=1920\n]",
+      "Final Answer: (\\boxed{\\text{D }(1920)})"
+    ],
+    "keyIdeas": [
+      "Area",
+      "Rates"
+    ],
+    "commonMistakes": [
+      "Do not stop after counting plants; the question asks for strawberries."
+    ],
+    "alternativeMethods": [
+      "Combine the three factors as $6\\cdot8\\cdot4\\cdot10$."
+    ],
+    "difficultyNotes": "Introductory multi-step multiplication.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p4",
+    "problemId": "amc8-2020-p4",
+    "finalAnswer": "$\\boxed{\\text{B }(37)}$",
+    "shortExplanation": "**Idea:** Each new band adds six more dots than the previous band.",
+    "detailedSteps": [
+      "The shown totals are $1$, $7$, and $19$.",
+      "The added bands contribute",
+      "[\n6,\\quad12\n]",
+      "dots, so the next band contributes $18$ dots.",
+      "Thus the next total is",
+      "[\n19+18=37\n]",
+      "Final Answer: (\\boxed{\\text{B }(37)})"
+    ],
+    "keyIdeas": [
+      "Patterns",
+      "Hexagonal numbers"
+    ],
+    "commonMistakes": [
+      "Do not add a constant difference; the differences themselves increase."
+    ],
+    "alternativeMethods": [
+      "Use the centered hexagonal number pattern $1+6(1+2+\\cdots+k)$."
+    ],
+    "difficultyNotes": "Intermediate pattern recognition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p5",
+    "problemId": "amc8-2020-p5",
+    "finalAnswer": "$\\boxed{\\text{C }(15)}$",
+    "shortExplanation": "**Idea:** Divide the filled fraction equally among five cups.",
+    "detailedSteps": [
+      "The pitcher is $\\frac34$ full.",
+      "Each of $5$ cups gets",
+      "[\n\\frac34\\div5=\\frac{3}{20}\n]",
+      "of the full pitcher capacity.",
+      "Convert to percent:",
+      "[\n\\frac{3}{20}=15\\%\n]",
+      "Final Answer: (\\boxed{\\text{C }(15)})"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Percent"
+    ],
+    "commonMistakes": [
+      "Do not divide $100\\%$ by $5$; only $75\\%$ of the pitcher was filled."
+    ],
+    "alternativeMethods": [
+      "Use $75\\%\\div5=15\\%$."
+    ],
+    "difficultyNotes": "Introductory fraction-percent conversion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p6",
+    "problemId": "amc8-2020-p6",
+    "finalAnswer": "$\\boxed{\\text{A }(Aaron)}$",
+    "shortExplanation": "**Idea:** Use the order constraints to place the riders.",
+    "detailedSteps": [
+      "Maren is in car $5$. Aaron is directly behind Sharon, so the pair Sharon-Aaron must be consecutive.",
+      "Darren must be in front of Aaron, and Karen must have at least one person between herself and Darren.",
+      "The only arrangement satisfying all conditions puts Aaron in car $3$.",
+      "Final Answer: (\\boxed{\\text{A }(Aaron)})"
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Ordering"
+    ],
+    "commonMistakes": [
+      "Do not interpret “behind” as anywhere behind; Aaron is directly behind Sharon."
+    ],
+    "alternativeMethods": [
+      "Test possible consecutive Sharon-Aaron pairs."
+    ],
+    "difficultyNotes": "Introductory logic puzzle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p7",
+    "problemId": "amc8-2020-p7",
+    "finalAnswer": "$\\boxed{\\text{C }(15)}$",
+    "shortExplanation": "**Idea:** The number must begin with $23$.",
+    "detailedSteps": [
+      "The number is between $2020$ and $2400$, and its digits increase left to right.",
+      "Since it starts with $2$, the hundreds digit must be $3$ for the number to stay below $2400$.",
+      "Choose the last two digits from $4,5,6,7,8,9$ in increasing order:",
+      "[\n\\binom62=15\n]",
+      "Final Answer: (\\boxed{\\text{C }(15)})"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Digit order"
+    ],
+    "commonMistakes": [
+      "Do not arrange the last two digits after choosing them; increasing order fixes the order."
+    ],
+    "alternativeMethods": [
+      "List the possible endings after the fixed prefix $23$."
+    ],
+    "difficultyNotes": "Intermediate counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p8",
+    "problemId": "amc8-2020-p8",
+    "finalAnswer": "$\\boxed{\\text{C }(8072)}$",
+    "shortExplanation": "**Idea:** Maximize nickels and minimize nickels.",
+    "detailedSteps": [
+      "For the greatest value, Ricardo has $2019$ nickels and $1$ penny:",
+      "[\n2019\\cdot5+1=10096\n]",
+      "For the least value, he has $1$ nickel and $2019$ pennies:",
+      "[\n5+2019=2024\n]",
+      "The difference is",
+      "[\n10096-2024=8072\n]",
+      "Final Answer: (\\boxed{\\text{C }(8072)})"
+    ],
+    "keyIdeas": [
+      "Extreme values",
+      "Coins"
+    ],
+    "commonMistakes": [
+      "At least one coin of each type is required."
+    ],
+    "alternativeMethods": [
+      "Change each penny into a nickel; each change adds $4$ cents, and $2018$ coins can change."
+    ],
+    "difficultyNotes": "Intermediate arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p9",
+    "problemId": "amc8-2020-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(20)}$",
+    "shortExplanation": "**Idea:** Count cubes with exactly two iced faces.",
+    "detailedSteps": [
+      "On the top face edges, excluding corners, there are",
+      "[\n4(4-2)=8\n]",
+      "cubes with top icing and one side icing.",
+      "On the vertical side edges below the top, there are $4$ bottom corner cubes and $8$ middle edge cubes with two side faces iced.",
+      "Thus the total is",
+      "[\n8+4+8=20\n]",
+      "Final Answer: (\\boxed{\\text{D }(20)})"
+    ],
+    "keyIdeas": [
+      "Surface counting",
+      "Cubes"
+    ],
+    "commonMistakes": [
+      "Do not count top corner cubes; they have icing on three faces."
+    ],
+    "alternativeMethods": [
+      "Separate top-edge cubes from vertical-edge cubes."
+    ],
+    "difficultyNotes": "Intermediate spatial counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p10",
+    "problemId": "amc8-2020-p10",
+    "finalAnswer": "$\\boxed{\\text{C }(12)}$",
+    "shortExplanation": "**Idea:** Subtract arrangements where the Steelie and Tiger are adjacent.",
+    "detailedSteps": [
+      "There are $4!=24$ total arrangements.",
+      "If Steelie and Tiger are adjacent, treat them as one block. The block can be ordered in $2$ ways, and the three objects can be arranged in $3!$ ways:",
+      "[\n2\\cdot3!=12\n]",
+      "Valid arrangements:",
+      "[\n24-12=12\n]",
+      "Final Answer: (\\boxed{\\text{C }(12)})"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Complement counting"
+    ],
+    "commonMistakes": [
+      "Do not forget the two possible orders inside the adjacent block."
+    ],
+    "alternativeMethods": [
+      "Directly place Aggie and Bumblebee first, then put Steelie and Tiger in nonadjacent slots."
+    ],
+    "difficultyNotes": "Intermediate combinatorics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p11",
+    "problemId": "amc8-2020-p11",
+    "finalAnswer": "$\\boxed{\\text{E }(24)}$",
+    "shortExplanation": "**Idea:** Compute each average speed from distance and time.",
+    "detailedSteps": [
+      "Both students travel $6$ miles.",
+      "Naomi reaches the beach in $10$ minutes, so her speed is",
+      "[\n6\\div\\frac{10}{60}=36\n]",
+      "mph. Maya reaches the beach in $30$ minutes, so her speed is",
+      "[\n6\\div\\frac{30}{60}=12\n]",
+      "mph. The difference is $24$ mph.",
+      "Final Answer: (\\boxed{\\text{E }(24)})"
+    ],
+    "keyIdeas": [
+      "Graphs",
+      "Average speed"
+    ],
+    "commonMistakes": [
+      "Convert minutes to hours before dividing."
+    ],
+    "alternativeMethods": [
+      "Read the endpoint times from the graph."
+    ],
+    "difficultyNotes": "Intermediate graph reading.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p12",
+    "problemId": "amc8-2020-p12",
+    "finalAnswer": "$\\boxed{\\text{A }(10)}$",
+    "shortExplanation": "**Idea:** Simplify the factorial equation.",
+    "detailedSteps": [
+      "Start with",
+      "[\n5!\\cdot9!=12\\cdot N!\n]",
+      "Since $5!=120$, divide by $12$ to get",
+      "[\nN!=10\\cdot9!\n]",
+      "But $10\\cdot9!=10!$, so",
+      "[\nN=10\n]",
+      "Final Answer: (\\boxed{\\text{A }(10)})"
+    ],
+    "keyIdeas": [
+      "Factorials",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Do not multiply out the factorials; compare them structurally."
+    ],
+    "alternativeMethods": [
+      "Use $10!=10\\cdot9!$."
+    ],
+    "difficultyNotes": "Intermediate factorial simplification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p13",
+    "problemId": "amc8-2020-p13",
+    "finalAnswer": "$\\boxed{\\text{B }(9)}$",
+    "shortExplanation": "**Idea:** Set up the new purple-sock fraction.",
+    "detailedSteps": [
+      "Let $x$ be the number of purple socks added.",
+      "Then",
+      "[\n\\frac{18+x}{36+x}=\\frac35\n]",
+      "Solve:",
+      "[\n5(18+x)=3(36+x)\\Rightarrow90+5x=108+3x\\Rightarrow x=9\n]",
+      "Final Answer: (\\boxed{\\text{B }(9)})"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "Do not leave the total number of socks at $36$ after adding socks."
+    ],
+    "alternativeMethods": [
+      "Convert $60\\%$ to $3/5$."
+    ],
+    "difficultyNotes": "Intermediate algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p14",
+    "problemId": "amc8-2020-p14",
+    "finalAnswer": "$\\boxed{\\text{D }(95000)}$",
+    "shortExplanation": "**Idea:** Use average times number of cities.",
+    "detailedSteps": [
+      "The dashed line marks an average population of about $4750$.",
+      "There are $20$ cities, so the total population is closest to",
+      "[\n20\\cdot4750=95000\n]",
+      "Final Answer: (\\boxed{\\text{D }(95000)})"
+    ],
+    "keyIdeas": [
+      "Average",
+      "Bar chart"
+    ],
+    "commonMistakes": [
+      "Do not estimate each bar separately when the average is given."
+    ],
+    "alternativeMethods": [
+      "Use total = average $\\times$ count."
+    ],
+    "difficultyNotes": "Intermediate data interpretation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p15",
+    "problemId": "amc8-2020-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(75)}$",
+    "shortExplanation": "**Idea:** Solve the percent equation for $y/x$.",
+    "detailedSteps": [
+      "The equation is",
+      "[\n0.15x=0.20y\n]",
+      "So",
+      "[\n\\frac{y}{x}=\\frac{0.15}{0.20}=\\frac34\n]",
+      "Thus $y$ is $75\\%$ of $x$.",
+      "Final Answer: (\\boxed{\\text{C }(75)})"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Proportions"
+    ],
+    "commonMistakes": [
+      "Do not answer $133\\frac13\\%$; that would be $x$ as a percent of $y$."
+    ],
+    "alternativeMethods": [
+      "Use fractions: $15x=20y$."
+    ],
+    "difficultyNotes": "Intermediate percent equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p16",
+    "problemId": "amc8-2020-p16",
+    "finalAnswer": "$\\boxed{\\text{E }(5)}$",
+    "shortExplanation": "**Idea:** Add all five line sums and count repeated letters.",
+    "detailedSteps": [
+      "From the diagram, the five line sums are $A+B+C$, $B+F$, $C+D+E$, $B+D$, and $A+F+E$.",
+      "Their total is $47$.",
+      "All six letters sum to",
+      "[\n1+2+3+4+5+6=21\n]",
+      "In the five line sums every letter is counted twice except $B$, which is counted three times. Therefore",
+      "[\n2\\cdot21+B=47\\Rightarrow B=5\n]",
+      "Final Answer: (\\boxed{\\text{E }(5)})"
+    ],
+    "keyIdeas": [
+      "Line sums",
+      "Counting multiplicity"
+    ],
+    "commonMistakes": [
+      "Do not try all $6!$ labelings; use how often each point is counted."
+    ],
+    "alternativeMethods": [
+      "Sum all displayed line totals at once."
+    ],
+    "difficultyNotes": "Advanced but elegant counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p17",
+    "problemId": "amc8-2020-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(7)}$",
+    "shortExplanation": "**Idea:** List divisors of $2020$ and test their divisor counts.",
+    "detailedSteps": [
+      "Factor",
+      "[\n2020=2^2\\cdot5\\cdot101\n]",
+      "The divisors with at most $3$ factors are $1$, the primes $2,5,101$, and $4$.",
+      "There are $12$ divisors total, so the number with more than $3$ factors is",
+      "[\n12-5=7\n]",
+      "Final Answer: (\\boxed{\\text{B }(7)})"
+    ],
+    "keyIdeas": [
+      "Divisor counting",
+      "Prime factorization"
+    ],
+    "commonMistakes": [
+      "Do not count factors of $2020$ and factors of each factor as the same thing."
+    ],
+    "alternativeMethods": [
+      "List the divisors and mark which have $1$, $2$, or $3$ divisors."
+    ],
+    "difficultyNotes": "Intermediate number theory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p18",
+    "problemId": "amc8-2020-p18",
+    "finalAnswer": "$\\boxed{\\text{A }(240)}$",
+    "shortExplanation": "**Idea:** Find the rectangle height from the semicircle radius.",
+    "detailedSteps": [
+      "The diameter is",
+      "[\nFD+DA+AE=9+16+9=34\n]",
+      "so the radius is $17$. The rectangle has half-width $8$.",
+      "The height is",
+      "[\n\\sqrt{17^2-8^2}=\\sqrt{289-64}=15\n]",
+      "Therefore the area is",
+      "[\n16\\cdot15=240\n]",
+      "Final Answer: (\\boxed{\\text{A }(240)})"
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Area"
+    ],
+    "commonMistakes": [
+      "Do not use $16$ as the height; it is the rectangle width."
+    ],
+    "alternativeMethods": [
+      "Use the right triangle from the center to the top corner."
+    ],
+    "difficultyNotes": "Intermediate geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p19",
+    "problemId": "amc8-2020-p19",
+    "finalAnswer": "$\\boxed{\\text{B }(4)}$",
+    "shortExplanation": "**Idea:** Represent a five-digit flippy number as $ababa$.",
+    "detailedSteps": [
+      "A five-digit flippy number has form $ababa$ with $a\\ne b$ and $a\\ne0$.",
+      "Divisibility by $5$ forces $a=5$.",
+      "The digit sum is $5+b+5+b+5=15+2b$, which must be divisible by $3$.",
+      "So $b$ can be $0,3,6,9$, giving $4$ numbers.",
+      "Final Answer: (\\boxed{\\text{B }(4)})"
+    ],
+    "keyIdeas": [
+      "Divisibility by 15",
+      "Alternating digits"
+    ],
+    "commonMistakes": [
+      "Do not exclude $b=0$; zero is allowed in non-leading positions."
+    ],
+    "alternativeMethods": [
+      "Use divisibility by $5$ first, then divisibility by $3$."
+    ],
+    "difficultyNotes": "Advanced number theory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p20",
+    "problemId": "amc8-2020-p20",
+    "finalAnswer": "$\\boxed{\\text{B }(24.2)}$",
+    "shortExplanation": "**Idea:** Use the integer and doubling constraints.",
+    "detailedSteps": [
+      "The second tree is $11$ inches. The first and third trees must be twice it, so both are $22$ inches.",
+      "For the fourth tree, possible values are $11$ and $44$. Testing the next tree and the answer choices gives the consistent sequence",
+      "[\n22,11,22,44,22\n]",
+      "The average is",
+      "[\n\\frac{22+11+22+44+22}{5}=\\frac{121}{5}=24.2\n]",
+      "Final Answer: (\\boxed{\\text{B }(24.2)})"
+    ],
+    "keyIdeas": [
+      "Doubling chains",
+      "Averages"
+    ],
+    "commonMistakes": [
+      "Do not use non-integer tree heights; the scientist recorded integers."
+    ],
+    "alternativeMethods": [
+      "Work outward from the known height $11$."
+    ],
+    "difficultyNotes": "Advanced constraint problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p21",
+    "problemId": "amc8-2020-p21",
+    "finalAnswer": "$\\boxed{\\text{A }(28)}$",
+    "shortExplanation": "**Idea:** Count paths with the edge restriction.",
+    "detailedSteps": [
+      "A king moves from $P$ to a white square in the next row above at each step, shifting one column left or right.",
+      "Ignoring edges, reaching $Q$ would require $4$ moves one way and $3$ the other, giving $\\binom74=35$ paths.",
+      "The board edge blocks $7$ of these paths, leaving",
+      "[\n35-7=28\n]",
+      "Final Answer: (\\boxed{\\text{A }(28)})"
+    ],
+    "keyIdeas": [
+      "Lattice paths",
+      "Boundary restriction"
+    ],
+    "commonMistakes": [
+      "Do not count paths that step off the board."
+    ],
+    "alternativeMethods": [
+      "Use a small dynamic-programming row count from $P$ upward."
+    ],
+    "difficultyNotes": "Advanced path counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p22",
+    "problemId": "amc8-2020-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(83)}$",
+    "shortExplanation": "**Idea:** Work backward from $1$.",
+    "detailedSteps": [
+      "A number can reach $y$ in one machine use from $2y$, and also from $(y-1)/3$ when that value is a positive odd integer.",
+      "Starting from $1$ and working backward six steps gives:",
+      "[\n1\\leftarrow2\\leftarrow4\\leftarrow{1,8}\\leftarrow{2,16}\\leftarrow{4,5,32}\\leftarrow{1,8,10,64}\n]",
+      "The possible starting values are $1,8,10,64$, and their sum is",
+      "[\n1+8+10+64=83\n]",
+      "Final Answer: (\\boxed{\\text{E }(83)})"
+    ],
+    "keyIdeas": [
+      "Reverse iteration",
+      "Collatz-style rule"
+    ],
+    "commonMistakes": [
+      "Do not include numbers that reach $1$ earlier than six uses."
+    ],
+    "alternativeMethods": [
+      "Build a reverse tree level by level."
+    ],
+    "difficultyNotes": "Advanced number theory logic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p23",
+    "problemId": "amc8-2020-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(150)}$",
+    "shortExplanation": "**Idea:** Use inclusion-exclusion on award assignments.",
+    "detailedSteps": [
+      "Without restrictions, each of the $5$ distinct awards can go to any of $3$ students, so there are $3^5=243$ assignments.",
+      "Subtract assignments where at least one student receives no award. If a chosen student gets none, the awards go to the other two students in $2^5$ ways.",
+      "By inclusion-exclusion, the number where all three students get at least one award is",
+      "[\n3^5-3\\cdot2^5+3=243-96+3=150\n]",
+      "Final Answer: (\\boxed{\\text{B }(150)})"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Distributing distinct objects"
+    ],
+    "commonMistakes": [
+      "Do not divide by $3!$; the students are distinct."
+    ],
+    "alternativeMethods": [
+      "Equivalently, distribute as $3+1+1$ or $2+2+1$ awards and count cases."
+    ],
+    "difficultyNotes": "Advanced combinatorics.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p24",
+    "problemId": "amc8-2020-p24",
+    "finalAnswer": "$\\boxed{\\text{A }\\left(\\frac6{25}\\right)}$",
+    "shortExplanation": "**Idea:** Write the gray-area fraction in terms of $d/s$.",
+    "detailedSteps": [
+      "For $n=24$, the gray area is",
+      "[\n(24s)^2\n]",
+      "and the whole square has side length $24s+25d$.",
+      "The gray fraction is $64\\%=16/25$, so",
+      "[\n\\frac{24s}{24s+25d}=\\frac45\n]",
+      "Cross multiply:",
+      "[\n120s=96s+100d\\Rightarrow24s=100d\\Rightarrow\\frac ds=\\frac6{25}\n]",
+      "Final Answer: (\\boxed{\\text{A }\\left(\\frac6{25}\\right)})"
+    ],
+    "keyIdeas": [
+      "Area ratios",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Use side-length ratio after taking the square root of the area ratio."
+    ],
+    "alternativeMethods": [
+      "Let $r=d/s$ and solve $24/(24+25r)=4/5$."
+    ],
+    "difficultyNotes": "Advanced geometry algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2020-p25",
+    "problemId": "amc8-2020-p25",
+    "finalAnswer": "$\\boxed{\\text{A }(651)}$",
+    "shortExplanation": "**Idea:** Use the rectangle dimensions to solve for the small square.",
+    "detailedSteps": [
+      "Let the side lengths of $S_1$ and $S_3$ be $a$, and let the side length of $S_2$ be $b$. The congruent rectangles force $S_1$ and $S_3$ to have the same side length.",
+      "From the diagram, the total width and height are",
+      "[\n2a+b=3322,\\qquad2a-b=2020\n]",
+      "Subtract the equations:",
+      "[\n2b=3322-2020=1302\n]",
+      "so",
+      "[\nb=651\n]",
+      "Final Answer: (\\boxed{\\text{A }(651)})"
+    ],
+    "keyIdeas": [
+      "Systems of equations",
+      "Rectangle decomposition"
+    ],
+    "commonMistakes": [
+      "Do not assume $S_2$ has the same side length as the other squares."
+    ],
+    "alternativeMethods": [
+      "Add and subtract the width-height equations."
+    ],
+    "difficultyNotes": "Advanced geometric algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

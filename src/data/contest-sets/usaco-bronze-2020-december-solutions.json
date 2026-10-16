@@ -1,0 +1,89 @@
+[
+  {
+    "id": "solution-usaco-bronze-2020-december-p1",
+    "problemId": "usaco-bronze-2020-december-p1",
+    "finalAnswer": "Sort the seven values, then output $s_0$, $s_1$, and $s_6-s_0-s_1$ as $A$, $B$, and $C$.",
+    "shortExplanation": "Positivity makes the two smallest values $A$ and $B$, while the largest is $A+B+C$. Subtracting the first two from the largest recovers $C$.",
+    "detailedSteps": [
+      "Read all seven values and sort them in nondecreasing order, retaining duplicates. Write the resulting sequence as $s_0,\\ldots,s_6$.",
+      "Because $A\\le B\\le C$ and all three numbers are positive, $A$ is a smallest value. After one occurrence of $A$ is removed, $B$ is no greater than $C$ or any sum containing two or three numbers. Thus $s_0=A$ and $s_1=B$, even when some values coincide.",
+      "The total $A+B+C$ is strictly larger than every proper nonempty sum: a missing positive term increases the sum when added. Hence $s_6=A+B+C$ and $C=s_6-s_0-s_1$. These identities recover the ordered triple guaranteed by the input.",
+      "The number of values is fixed at seven, so sorting and storing them take $O(1)$ time and $O(1)$ space. Every supplied value, including the total, is at most $10^9$. The implementation uses `long long` for the subtraction.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    vector<long long> a(7);\n    for (int i = 0; i < 7; ++i) in >> a[i];\n    sort(a.begin(), a.end());\n    out << a[0] << ' ' << a[1] << ' ' << a[6] - a[0] - a[1] << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The ordering and positivity identify extremal subset sums.",
+      "Preserve multiplicity when $A=B$ or when a single value equals another sum."
+    ],
+    "commonMistakes": [
+      "Taking the third sorted value as $C$. The value $A+B$ can come before $C$.",
+      "Removing repeated values, which loses information from the seven-element multiset."
+    ],
+    "alternativeMethods": [
+      "Enumerate candidate ordered triples from the input values and compare all seven generated sums with the input multiset. This works at the fixed input size, but the extremal identities give a shorter proof and implementation."
+    ],
+    "difficultyNotes": "The main step is proving which sorted positions are guaranteed; the implementation is a small fixed-size sort.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2020-december-p2",
+    "problemId": "usaco-bronze-2020-december-p2",
+    "finalAnswer": "Enumerate every inclusive interval and count it once when some contained flower satisfies $p_k\\,(j-i+1)=\\sum_{t=i}^{j}p_t$.",
+    "shortExplanation": "Each photo is one contiguous interval. Compare the interval sum with a candidate flower\u2019s petal count times the interval length to test the exact average without division.",
+    "detailedSteps": [
+      "Choose a left endpoint and extend the right endpoint one flower at a time, updating the interval sum. For zero-based endpoints `left` and `right`, the length is `right - left + 1`.",
+      "For the current interval, scan its flowers. A flower with $p_k$ petals has the exact average precisely when $p_k L=S$, where $L$ is the interval length and $S$ its sum. On the first equality, increment the answer and stop this scan.",
+      "The endpoint loops visit each nonempty contiguous interval exactly once. Within that interval, the scan considers every possible average flower. The multiplication equality is equivalent to the required exact average, so an interval is counted if and only if it qualifies. Breaking after the first match ensures a photo with several matching flowers is still counted once.",
+      "There are $O(N^2)$ intervals and at most $N$ flowers to inspect per interval, giving $O(N^3)$ time and $O(N)$ space. The source limit is $N\\le100$. Both $S$ and $p_kL$ are at most $100000$, and the answer is at most $N(N+1)/2\\le5050$, so `int` suffices.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<int> p(n);\n    for (int i = 0; i < n; ++i) in >> p[i];\n    int answer = 0;\n    for (int left = 0; left < n; ++left) {\n        int sum = 0;\n        for (int right = left; right < n; ++right) {\n            sum += p[right];\n            int length = right - left + 1;\n            for (int k = left; k <= right; ++k) {\n                if (p[k] * length == sum) {\n                    ++answer;\n                    break;\n                }\n            }\n        }\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Enumerate the objects being counted: contiguous photos, rather than individual matching flowers.",
+      "Use an integer multiplication equality to express an exact average."
+    ],
+    "commonMistakes": [
+      "Using integer division to compute a rounded-down average and accepting a flower that does not equal the exact average.",
+      "Counting every matching flower instead of counting its photo once.",
+      "Leaving out one endpoint or forgetting length-one photos, which always qualify."
+    ],
+    "alternativeMethods": [
+      "A prefix-sum array computes every interval sum in $O(1)$, followed by the same contained-flower scan. This also takes $O(N^3)$ overall and $O(N)$ space."
+    ],
+    "difficultyNotes": "The limits allow direct interval enumeration. Exact arithmetic and counting each photo once are the key details.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2020-december-p3",
+    "problemId": "usaco-bronze-2020-december-p3",
+    "finalAnswer": "Process possible stopping events by their later arrival time. Output each cow\u2019s first stopping time, or `Infinity` if none is assigned.",
+    "shortExplanation": "A north path and an east path can intersect once. The cow arriving later stops there only if the earlier cow really ate the crossing cell. Processing these events in time order lets earlier stops decide that condition.",
+    "detailedSteps": [
+      "Only perpendicular paths can meet, because all starting $x$-coordinates and all starting $y$-coordinates are distinct. For an east cow $e$ and north cow $n$, their crossing is $(x_n,y_e)$. It lies forward on both paths only when $x_n>x_e$ and $y_e>y_n$. The arrival times are $d_e=x_n-x_e$ and $d_n=y_e-y_n$.",
+      "If $d_e=d_n$, both cows arrive on fresh grass simultaneously and continue, so create no stopping event. Otherwise make an event whose victim is the later cow, blocker is the earlier cow, stopping time is the later arrival, and required blocker time is the earlier arrival. Sort all events by stopping time.",
+      "Initially every stop time is infinite. For an event with earlier time $b$ and later time $a$, assign the victim\u2019s stop time to $a$ exactly when the victim is still unstopped and the blocker\u2019s stop time is strictly greater than $b$. A blocker that stops at $b$ does not eat that cell, so the inequality must be strict. A cow that stops later still leaves its previously eaten rut.",
+      "For correctness, induct through the event times. Any blocker stopping by $b<a$ has already had that earlier stop processed; therefore the blocker condition exactly says that it ate the crossing. A still-unstopped victim has no valid earlier stopping event and reaches the crossing, so accepting the event gives its genuine first stop. Conversely, any first stop must come from an earlier perpendicular rut, and its crossing generated exactly such an event. Events with the same later time can be processed in any order, since their blocker conditions depend only on strictly earlier times. Thus the algorithm finds all finite first stops; a cow with no accepted event continues forever.",
+      "A cow stopping at time $t$ has eaten one new cell at each time $0,1,\\ldots,t-1$, so it eats exactly $t$ cells. Print those values in original input order. This Bronze task asks for eaten lengths, rather than the number of other cows eventually blocked in the same-title Silver task.",
+      "At most $O(N^2)$ crossing events are created. Sorting takes $O(N^2\\log N)$ time and the event list uses $O(N^2)$ space. Here $N\\le50$ and every finite relevant coordinate difference is at most $10^9$. Use `long long` and a sentinel $2^{60}$ for infinity.",
+      "Original C++11 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nstruct Cow { char direction; long long x, y; };\nstruct Event { long long late, early; int blocker, victim; };\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<Cow> cows(n);\n    for (int i = 0; i < n; ++i)\n        in >> cows[i].direction >> cows[i].x >> cows[i].y;\n    vector<Event> events;\n    for (int e = 0; e < n; ++e) {\n        if (cows[e].direction != 'E') continue;\n        for (int north = 0; north < n; ++north) {\n            if (cows[north].direction != 'N') continue;\n            long long eastTime = cows[north].x - cows[e].x;\n            long long northTime = cows[e].y - cows[north].y;\n            if (eastTime <= 0 || northTime <= 0) continue;\n            if (eastTime < northTime)\n                events.push_back({northTime, eastTime, e, north});\n            else if (northTime < eastTime)\n                events.push_back({eastTime, northTime, north, e});\n        }\n    }\n    sort(events.begin(), events.end(), [](const Event& a, const Event& b) {\n        return a.late < b.late;\n    });\n    const long long infinity = (1LL << 60);\n    vector<long long> stop(n, infinity);\n    for (const Event& event : events) {\n        if (stop[event.victim] == infinity && stop[event.blocker] > event.early)\n            stop[event.victim] = event.late;\n    }\n    for (int i = 0; i < n; ++i) {\n        if (stop[i] == infinity) out << \"Infinity\\n\";\n        else out << stop[i] << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A stopping event has two times: when the blocker eats the cell and when the victim reaches it.",
+      "A rut remains after its cow stops; only whether the crossing was actually eaten matters.",
+      "Chronological processing makes all earlier stopping decisions available."
+    ],
+    "commonMistakes": [
+      "Stopping one cow when two cows reach the crossing at the same time; the source says both continue.",
+      "Using a non-strict blocker test. A cow stopping at the crossing does not eat that cell.",
+      "Deleting the rut of a cow after it stops, or letting a stopped cow create grass consumption beyond its stopping position.",
+      "Returning transitive blame counts from the Silver version instead of the Bronze eaten lengths."
+    ],
+    "alternativeMethods": [
+      "A literal hour-by-hour grass simulation is useful for checking small coordinates, but the coordinate bound of one billion makes it unsuitable as the full solution."
+    ],
+    "difficultyNotes": "The event model avoids simulating a large coordinate range. Its correctness depends on the distinction between stopping at a cell and having eaten it earlier.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

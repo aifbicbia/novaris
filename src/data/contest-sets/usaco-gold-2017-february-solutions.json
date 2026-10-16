@@ -1,0 +1,111 @@
+[
+  {
+    "finalAnswer": "Find a shortest path on states $(r,c,s)$, where $s$ is the number of moves modulo three. Each move costs $T$, plus the destination\u2019s grass cost when the new phase is zero. Start at $(0,0,0)$ with cost zero and minimize over the three phases at the house. Time is $O(N^2\\log N)$ and space is $O(N^2)$.",
+    "shortExplanation": "Reaching the same field after different numbers of moves can lead to different future meal costs. Remembering the move count modulo three makes the cost of the next step depend only on the current state. Dijkstra\u2019s algorithm then finds the least travel time, including useful detours.",
+    "detailedSteps": [
+      "**Keep the phase of the meal schedule.** After $m$ moves, Bessie has visited $m$ new fields counting repeated arrivals, because her starting field is excluded. She eats on arrivals numbered $3,6,9,\\ldots$. Thus store the remainder $s=m\\bmod3$ together with the row and column. A field alone is insufficient to describe the future cost.",
+      "**Build the exact step cost.** From $(r,c,s)$, move to any north, east, south or west neighbor inside the farm. Set $s'=(s+1)\\bmod3$. The added time is\n\n$$T+\\begin{cases}g[r'][c'],&s'=0,\\\\0,&s'\\ne0.\\end{cases}$$\n\nGrass is charged at the destination after every third move. If that destination is the house, the charge still applies. Initialize the starting state at zero without eating its grass.",
+      "**Establish equivalence with the physical walk.** Any farm route determines a unique sequence of phase states and the edge costs reproduce all its road crossings and required meals. Conversely, every path in the phase graph describes permitted farm moves with exactly those costs. Therefore the desired minimum is precisely the shortest state-graph distance to any phase of the house.",
+      "**Use a nonnegative shortest-path algorithm.** The source allows $T=0$, while every grass cost is positive, so every state edge has nonnegative weight. Dijkstra\u2019s minimum tentative state cannot later acquire a cheaper path: the first edge of such a path leaving the already finalized states would already have relaxed a no-larger tentative value. Zero-cost edges do not invalidate this argument. Store a min-priority queue, discard stale entries, and relax only strict improvements.",
+      "**Allow detours and any finishing phase.** A longer walk can arrive at the house between meals and avoid a large grass charge there. Restricting the route to a monotone geometric path can therefore fail. After processing the graph, take the minimum of the three distances at the southeast corner; the source does not require a particular final phase.",
+      "**Complexity, bounds and files.** There are $3N^2$ states and at most four outgoing edges per state. The heap implementation takes $O(N^2\\log N)$ time and $O(N^2)$ space. The actual source has $3\\le N\\le100$, $0\\le T\\le10^6$, and grass times from one through $100000$. A monotone route gives a feasible upper bound of $198T+66\\cdot100000\\le204600000$; `long long` safely handles costs and the unreachable sentinel. Read `visitfj.in` and write one minimum-time integer to `visitfj.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <functional>\n#include <limits>\n#include <queue>\n#include <tuple>\n#include <vector>\nint main() {\n    std::ifstream in(\"visitfj.in\");std::ofstream out(\"visitfj.out\");\n    int n;long long t;in >> n >> t;std::vector<std::vector<long long>> grass(n,std::vector<long long>(n));for(auto& row:grass) for(auto& x:row) in >> x;\n    const long long inf=std::numeric_limits<long long>::max()/4;\n    std::vector<std::vector<std::array<long long,3>>> dist(n,std::vector<std::array<long long,3>>(n,{inf,inf,inf}));\n    using State=std::tuple<long long,int,int,int>;\n    std::priority_queue<State,std::vector<State>,std::greater<State>> queue;\n    dist[0][0][0]=0;queue.push({0,0,0,0});const int dr[4]={1,-1,0,0},dc[4]={0,0,1,-1};\n    while(!queue.empty()) {\n        auto [cost,r,c,phase]=queue.top();queue.pop();if(cost!=dist[r][c][phase]) continue;\n        for(int direction=0;direction<4;++direction) {\n            int rr=r+dr[direction],cc=c+dc[direction];if(rr<0||rr>=n||cc<0||cc>=n) continue;\n            int next=(phase+1)%3;long long value=cost+t+(next==0?grass[rr][cc]:0);\n            if(value<dist[rr][cc][next]) {dist[rr][cc][next]=value;queue.push({value,rr,cc,next});}\n        }\n    }\n    out << *std::min_element(dist[n-1][n-1].begin(),dist[n-1][n-1].end()) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Augment position with moves modulo three to make future costs state-dependent.",
+      "Charge the destination on every third arrival, including the final field when appropriate.",
+      "All costs are nonnegative even when road crossing time is zero.",
+      "A detour may avoid an expensive meal, so consider the complete state graph."
+    ],
+    "commonMistakes": [
+      "Charging grass at the initial northwest field.",
+      "Paying every field\u2019s grass cost instead of every third arrival.",
+      "Omitting a required meal at the house.",
+      "Keeping one distance per field and losing the meal phase.",
+      "Forbidding revisits or assuming a monotone path must be optimal.",
+      "Assuming $T$ is strictly positive despite the printed zero lower bound."
+    ],
+    "alternativeMethods": [
+      "For tiny farms, minimize the cost of every literal walk length from one through $3N^2-1$, charging meals from the actual step number. A repeated state cycle can be removed without increasing nonnegative cost, so some optimum has at most this many moves. This exact-length enumeration is an independent oracle without a shortest-path heap.",
+      "One may group three consecutive moves into transitions between meal states and handle a final one- or two-step suffix separately. The explicit phase graph avoids exceptional suffix handling."
+    ],
+    "difficultyNotes": "Advanced state modeling. The difficult part is retaining the meal phase and allowing beneficial detours; Dijkstra is standard once those conditions are represented.",
+    "id": "solution-usaco-gold-2017-february-p1",
+    "problemId": "usaco-gold-2017-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Let $D[i][j]$ be the maximum number of friendly noncrossing pairs between the first $i$ fields on one side and the first $j$ on the other. Take the maximum of $D[i-1][j]$, $D[i][j-1]$, and $D[i-1][j-1]+1$ when $|a_i-b_j|\\le4$. The answer is $D[N][N]$, computed in $O(N^2)$ time and $O(N)$ space with rolling rows.",
+    "shortExplanation": "Noncrossing crosswalks match endpoints in increasing order on both sides. This turns the geometric question into an ordered matching problem: skip either last field, or pair the two last fields if their breeds are friendly.",
+    "detailedSteps": [
+      "**Translate geometry into endpoint order.** A crosswalk joining positions $i$ and $j$ can coexist with another joining $i'>i$ and $j'$ only if $j'>j$. Reversed orders force the paths to cross, and equal positions would reuse an endpoint. Conversely, strictly increasing endpoint pairs can be connected without intersections. Preserve each side\u2019s supplied order rather than sorting by breed ID.",
+      "**Define the prefix optimum.** Let $D[i][j]$ be the largest cardinality of a friendly increasing matching within the first $i$ and $j$ fields. Empty-prefix values are zero. Friendliness depends on the actual breed IDs: $|a_i-b_j|\\le4$, with equality allowed.",
+      "**Consider a last-to-last match.** If positions $i$ and $j$ are paired, all other endpoints precede them on both sides. When their breeds are friendly, this gives the feasible candidate $D[i-1][j-1]+1$. The smaller-prefix optimum can be extended by this last pair without crossings or reused endpoints.",
+      "**Show that skipping covers every other case.** If the last two fields are not paired together, an increasing matching cannot use both in two different pairs: the pair using $i$ would lead to some $j'<j$, while the pair using $j$ would start at some $i'<i$, reversing the endpoint orders. At least one last field must be unused. The matching is therefore included in either $D[i-1][j]$ or $D[i][j-1]$.",
+      "**Prove and evaluate the recurrence.** The three cases cover every optimum, and each candidate constructs a valid matching. Induction on the prefix lengths proves\n\n$$D[i][j]=\\max\\left(D[i-1][j],D[i][j-1],D[i-1][j-1]+1\\text{ if friendly}\\right).$$\n\nThe conditional candidate is omitted for an unfriendly pair. The final prefixes contain every field, so $D[N][N]$ is the required maximum.",
+      "**Roll the rows safely.** Each entry uses the previous row\u2019s same column and diagonal, plus the current row\u2019s preceding column. Reset column zero to zero on each row, fill columns increasingly, and swap the two arrays afterward. This retains every dependency in $O(N)$ memory, while $N^2$ entries take $O(N^2)$ time.",
+      "**Bounds and historical output.** The source has $1\\le N\\le1000$ and each side is a permutation of the IDs $1,\\ldots,N$. At most $N$ pairs can be chosen, so ordinary integer counts suffice. Endpoint exclusivity is enforced by consuming both indices for a match. Read `nocross.in` and write one maximum crosswalk count to `nocross.out`. This is a breed matching problem, distinct from other divisions\u2019 same-title tasks.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"nocross.in\");std::ofstream out(\"nocross.out\");\n    int n;in >> n;std::vector<int> a(n),b(n);for(auto& x:a) in >> x;for(auto& x:b) in >> x;\n    std::vector<int> previous(n+1,0),current(n+1,0);\n    for(int i=1;i<=n;++i) {\n        current[0]=0;\n        for(int j=1;j<=n;++j) {\n            current[j]=std::max(previous[j],current[j-1]);\n            if(std::abs(a[i-1]-b[j-1])<=4) current[j]=std::max(current[j],previous[j-1]+1);\n        }\n        previous.swap(current);\n    }\n    out << previous[n] << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Noncrossing endpoint pairs are strictly increasing in both supplied orders.",
+      "If the last endpoints are used separately, the two edges would cross.",
+      "Use prefix matching with an inclusive breed-difference compatibility test.",
+      "Rolling rows preserve the diagonal and left dependencies."
+    ],
+    "commonMistakes": [
+      "Sorting the two permutations and destroying the source\u2019s geometric order.",
+      "Treating only equal breed IDs as friendly.",
+      "Using a strict difference less than four.",
+      "Matching one field to several opposite fields.",
+      "Adding a friendly last pair to a state that already uses one of its endpoints.",
+      "Overwriting the previous-row diagonal before it is read."
+    ],
+    "alternativeMethods": [
+      "For small permutations, enumerate each possible matching size and all pairs of ordered endpoint subsets. Pair the selected endpoints in order and test every actual breed difference. This literal global enumeration independently checks the prefix recurrence.",
+      "A full $N\\times N$ table has the same time complexity and simpler indexing when memory reduction is unnecessary."
+    ],
+    "difficultyNotes": "Advanced ordered matching. The key completeness argument is why every solution without the last-to-last pair must skip at least one last field.",
+    "id": "solution-usaco-gold-2017-february-p2",
+    "problemId": "usaco-gold-2017-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Scan the $2N$ circular endpoints. Keep a Fenwick tree marking the first endpoint of each cow whose second endpoint has not appeared. When cow $a$ closes, count the still-open first endpoints strictly after $a$\u2019s first endpoint, add that count, and remove $a$\u2019s mark. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "Two cows must cross exactly when their endpoint pairs alternate around the circle. At the earlier closing endpoint of such a pair, the other cow is still open and started inside the first cow\u2019s interval. This counts every crossing pair exactly once.",
+    "detailedSteps": [
+      "**Characterize a forced crossing.** Two pairs of distinct circular endpoints force an interior intersection precisely when their endpoints alternate. One cow\u2019s connecting arc separates the two boundary arcs between its endpoints; alternating endpoints of the other cow lie on opposite sides. Nonalternating pairs can be drawn as disjoint straight chords. Entry-versus-exit labels do not affect this endpoint condition.",
+      "**Maintain open first endpoints.** Choose the source\u2019s clockwise starting point and assign positions $1,\\ldots,2N$. When a cow first appears, record that position and put a one there in a Fenwick tree. Its mark remains until its second appearance. The tree therefore represents exactly the first endpoints of currently open cows, preserving identities separately in a first-position array.",
+      "**Count when a cow closes.** Suppose cow $a$ first appeared at $s$ and now closes at $p$. An open cow $b$ whose first endpoint is between $s$ and $p$ has endpoint order\n\n$$a_1<b_1<a_2<b_2.$$\n\nIt crosses $a$. Query the number of open first endpoints in that strict interval as `prefix(p-1) - prefix(s)`, then remove the mark at $s$.",
+      "**Prove there are neither misses nor double counts.** For each alternating pair, exactly one cow closes first. At that event, the other cow\u2019s first endpoint lies strictly inside the first cow\u2019s scanned interval and is still marked, so the pair is counted. At the later closing event, the earlier cow\u2019s mark is gone. Nested endpoint pairs have already closed the inner cow before the outer closes, and separated pairs have no relevant open mark, so neither contributes.",
+      "**Handle the circular start and count pairs.** Rotating the list does not change whether two pairs alternate, although it can change which one closes first. The argument still assigns each pair to exactly one event for any chosen start. Count cow pairs, not distinct geometric meeting points; several paths may meet at one point while many different pairs cross.",
+      "**Complexity, bounds and files.** Each cow causes one Fenwick insertion, one interval query and one removal, all $O(\\log N)$, with $O(N)$ storage. The genuine source bound is $N\\le50000$ and each ID from one through $N$ appears exactly twice. The answer is at most $N(N-1)/2=1249975000$; the accompanying original C++ uses `long long` for accumulation. Fenwick indices begin at one. Read `circlecross.in` and write one crossing-pair count to `circlecross.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"circlecross.in\");std::ofstream out(\"circlecross.out\");\n    int n;in >> n;std::vector<int> first(n,-1),tree(2*n+1,0);\n    auto add=[&](int index,int delta){for(;index<=2*n;index+=index&-index) tree[index]+=delta;};\n    auto sum=[&](int index){int result=0;for(;index>0;index-=index&-index) result+=tree[index];return result;};\n    long long answer=0;\n    for(int position=1;position<=2*n;++position) {\n        int cow;in >> cow;--cow;\n        if(first[cow]==-1) {first[cow]=position;add(position,1);}\n        else {answer+=sum(position-1)-sum(first[cow]);add(first[cow],-1);}\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Circular endpoint alternation, rather than the directions of entry and exit, determines a forced crossing.",
+      "Keep only first endpoints of currently open cows.",
+      "Count a pair at its earlier closing event, then remove the closed cow.",
+      "Fenwick prefix differences count a strict endpoint interval efficiently."
+    ],
+    "commonMistakes": [
+      "Counting nested endpoint pairs as crossings.",
+      "Leaving closed cows marked and counting pairs again.",
+      "Counting the current cow\u2019s own first endpoint.",
+      "Counting intersection locations instead of unordered cow pairs.",
+      "Treating the sequence as a fixed set of three named cows or a grid-road task.",
+      "Updating a Fenwick tree at index zero, which never advances."
+    ],
+    "alternativeMethods": [
+      "For tiny sequences, place the boundary points in order on a strictly convex polygon and test each pair of straight chords for a proper intersection using exact integer orientation determinants. This provides a geometric oracle without the endpoint alternation formula or active Fenwick state.",
+      "A balanced order-statistics tree of open first positions can answer the same interval-count queries, while a direct list scan is suitable only for small inputs."
+    ],
+    "difficultyNotes": "Advanced sweep counting with a topological condition. The important argument is why the first closing event counts each alternating pair once and excludes every nested pair.",
+    "id": "solution-usaco-gold-2017-february-p3",
+    "problemId": "usaco-gold-2017-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "solution-aime-i-2008-p1",
+    "problemId": "aime-i-2008-p1",
+    "finalAnswer": "$\\boxed{252}$",
+    "shortExplanation": "The original party has 580 students and 232 dancers.",
+    "detailedSteps": [
+      "Let $N$ be the original number of students. The girls number $0.60N$ before and after the additional boys arrive, so $0.60N=0.58(N+20)$. Thus $0.02N=11.6$, giving $N=580$.",
+      "The original dancers number $0.40\\cdot580=232$. All twenty newcomers dance, so the new number of dancers is $232+20=252$."
+    ],
+    "keyIdeas": [
+      "Keep the number of girls fixed while the total increases"
+    ],
+    "commonMistakes": [
+      "Applying the original percentage of dancers to the enlarged party."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The girls provide a fixed quantity relating the two totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p2",
+    "problemId": "aime-i-2008-p2",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The altitude is 25.",
+    "detailedSteps": [
+      "The triangle must point into the square to have positive common area. Let $h$ be its altitude. If $h\\le10$, its whole area is at most fifty, so the given common area forces $h>10$.",
+      "Because the triangle is isosceles on the square\u2019s side, its horizontal slice at distance $y$ from the base is centered at the base midpoint and has width $10(1-y/h)$. For $0\\le y\\le10$, this slice lies inside the square.",
+      "The common area is therefore $\\int_0^{10}10(1-y/h)\\,dy=100-500/h$. Equating this to eighty gives $500/h=20$, hence $h=25$. This value satisfies the required $h>10$."
+    ],
+    "keyIdeas": [
+      "Integrate the narrowing horizontal slices of the triangle"
+    ],
+    "commonMistakes": [
+      "Equating the whole triangle\u2019s area to the overlap, despite the apex lying beyond the square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An area larger than fifty determines which altitude regime applies.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p3",
+    "problemId": "aime-i-2008-p3",
+    "finalAnswer": "$\\boxed{314}$",
+    "shortExplanation": "The three rates are $15$, $8$ and $5$.",
+    "detailedSteps": [
+      "Let $b,j,s$ be the biking, jogging and swimming rates. The two distances give $2b+3j+4s=74$ and $4b+2j+3s=91$. Twice the first equation minus the second gives $4j+5s=57$.",
+      "Thus $0\\le s\\le11$ and $s\\equiv1\\pmod4$. Moreover, the first equation forces $j$ even. Reducing $4j+5s=57$ modulo eight then gives $s\\equiv5\\pmod8$. The only admissible value is $s=5$.",
+      "Now $j=(57-25)/4=8$ and $b=(74-24-20)/2=15$. Both original equations hold. The sum of squares is $15^2+8^2+5^2=314$."
+    ],
+    "keyIdeas": [
+      "Use positivity and congruences to isolate the integral rates"
+    ],
+    "commonMistakes": [
+      "Solving the two linear equations without imposing the integral and nonnegative rate restrictions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer restrictions resolve the otherwise underdetermined linear system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p4",
+    "problemId": "aime-i-2008-p4",
+    "finalAnswer": "$\\boxed{080}$",
+    "shortExplanation": "The unique positive solution is $x=18,y=62$.",
+    "detailedSteps": [
+      "Complete the square to obtain $y^2-(x+42)^2=244$. Thus $(y-x-42)(y+x+42)=244$. Both factors are positive, and they have the same parity.",
+      "The positive factor pairs of 244 with the smaller factor first are $(1,244),(2,122),(4,61)$. Only $(2,122)$ has equal parity. Therefore $y=62$ and $x+42=60$, giving $x=18$.",
+      "Both integers are positive and satisfy the original equation. Their sum is $x+y=80$."
+    ],
+    "keyIdeas": [
+      "Factor the difference between two squares"
+    ],
+    "commonMistakes": [
+      "Using a factor pair of opposite parity and thereby obtaining half-integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completing the square turns uniqueness into a finite parity check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p5",
+    "problemId": "aime-i-2008-p5",
+    "finalAnswer": "$\\boxed{014}$",
+    "shortExplanation": "The height-to-radius ratio is $12\\sqrt2$.",
+    "detailedSteps": [
+      "Let $\\ell=\\sqrt{r^2+h^2}$ be the slant length. Unrolling the lateral surface produces a sector of radius $\\ell$ and arc length $2\\pi r$. Consequently one complete rotation of the cone advances its contact generator around the vertex through angle $2\\pi r/\\ell$.",
+      "After the first seventeen complete rotations that return it to its original position, the generator has made some positive integral number $k$ of full circuits. Hence $17r/\\ell=k$. Since $0<r/\\ell<1$, we have $1\\le k\\le16$, and $\\ell/r=17/k$. The first-return condition is consistent with the coprimality of $k$ and seventeen.",
+      "The prescribed form $h/r=m\\sqrt n$ makes $(\\ell/r)^2=1+m^2n$ an integer. Thus $289/k^2$ is an integer, so $k^2$ divides $17^2$. Among the allowed $k$, only $k=1$ works.",
+      "It follows that $h/r=\\sqrt{17^2-1}=\\sqrt{288}=12\\sqrt2$. This indeed first closes after seventeen rotations, so $m+n=12+2=14$."
+    ],
+    "keyIdeas": [
+      "Compare the cone\u2019s circumference with its slant radius"
+    ],
+    "commonMistakes": [
+      "Treating seventeen cone rotations as seventeen complete circuits around the fixed vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The required squarefree-radical form supplies a strong divisibility restriction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p6",
+    "problemId": "aime-i-2008-p6",
+    "finalAnswer": "$\\boxed{017}$",
+    "shortExplanation": "Exactly seventeen array entries are divisible by sixty-seven.",
+    "detailedSteps": [
+      "Number rows by $r$, starting with $r=0$, and positions within a row by $j=0,\\ldots,49-r$. The entry is $2^r(2j+r+1)$. This holds in the top row and is preserved by adding adjacent entries.",
+      "Because sixty-seven is odd, it divides this entry exactly when it divides $2j+r+1$. This factor lies between one and ninety-nine, so it must equal sixty-seven.",
+      "The equation gives $j=(66-r)/2$, requiring $r$ even. The upper position bound $j\\le49-r$ gives $r\\le32$. Thus the allowed rows are $0,2,4,\\ldots,32$, each contributing one entry, for a total of seventeen."
+    ],
+    "keyIdeas": [
+      "Track the arithmetic progression through each addition row"
+    ],
+    "commonMistakes": [
+      "Assuming the rapidly growing entries can only have one factor of sixty-seven because of their size."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The power of two is invertible modulo sixty-seven.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p7",
+    "problemId": "aime-i-2008-p7",
+    "finalAnswer": "$\\boxed{708}$",
+    "shortExplanation": "There are 292 blocks containing squares and 708 empty blocks.",
+    "detailedSteps": [
+      "The squares below one hundred thousand are $k^2$ for $0\\le k\\le316$. The block containing $k^2$ has index $\\lfloor k^2/100\\rfloor$.",
+      "For $0\\le k\\le50$, consecutive squares differ by at most ninety-nine. Their block indices therefore never skip an integer; they start at zero and end at twenty-five. Thus they occupy all twenty-six blocks indexed zero through twenty-five.",
+      "For $50\\le k<316$, consecutive squares differ by at least one hundred one. Each of the additional squares with $51\\le k\\le316$ occupies a new block, different from every earlier one. There are 266 such squares.",
+      "The number of occupied blocks is $26+266=292$, so the other $1000-292=708$ blocks contain no perfect square."
+    ],
+    "keyIdeas": [
+      "Separate the early covered blocks from the later distinct square blocks"
+    ],
+    "commonMistakes": [
+      "Counting one occupied block per square even when small squares share a block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The threshold at fifty changes the behavior of consecutive square gaps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p8",
+    "problemId": "aime-i-2008-p8",
+    "finalAnswer": "$\\boxed{047}$",
+    "shortExplanation": "The last angle has tangent one over forty-seven.",
+    "detailedSteps": [
+      "The sum of the first two angles has tangent $(1/3+1/4)/(1-1/12)=7/11$. Adding the third gives tangent $(7/11+1/5)/(1-7/55)=23/24$.",
+      "All three angles are positive, and their sum is less than $\\pi/4$: the successive addition denominators are positive, and the final tangent $23/24$ is less than one in the first quadrant.",
+      "The remaining angle has tangent $(1-23/24)/(1+23/24)=1/47$. It equals $\\arctan(1/n)$ in the required positive-angle branch, so $n=47$."
+    ],
+    "keyIdeas": [
+      "Apply the tangent addition formula before solving for the last angle"
+    ],
+    "commonMistakes": [
+      "Using tangent equalities without checking the angle branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positive angles and positive addition denominators keep the sum in the first quadrant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p9",
+    "problemId": "aime-i-2008-p9",
+    "finalAnswer": "$\\boxed{190}$",
+    "shortExplanation": "The reduced probability is $190/2187$.",
+    "detailedSteps": [
+      "Each randomly chosen flat orientation gives height three, four or six with probability one third. Let $x,y,z$ count those heights among all ten crates. Then $x+y+z=10$ and $3x+4y+6z=41$, so $y+3z=11$.",
+      "The nonnegative triples are $(x,y,z)=(1,8,1),(3,5,2),(5,2,3)$. Their numbers of ordered orientation sequences are $10!/(1!8!1!)=90$, $10!/(3!5!2!)=2520$, and $10!/(5!2!3!)=2520$.",
+      "There are $3^{10}$ equally likely height sequences, giving probability $5130/59049=190/2187$. Since 190 is not divisible by three, the fraction is reduced, and the requested numerator is 190."
+    ],
+    "keyIdeas": [
+      "Count the three height multisets that total forty-one"
+    ],
+    "commonMistakes": [
+      "Counting height multisets equally instead of weighting their possible crate orders."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Random orientation applies to each crate, including the one on the floor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p10",
+    "problemId": "aime-i-2008-p10",
+    "finalAnswer": "$\\boxed{032}$",
+    "shortExplanation": "The required distance is $25\\sqrt7$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$ and $D=(d,0)$. With base angles sixty degrees, write $B=(u,\\sqrt3u)$ and $C=(d-u,\\sqrt3u)$, where $d>2u>0$. The diagonal condition is $(d-u)^2+3u^2=2100$.",
+      "Rearrange this as $2100=3d^2/4+4(u-d/4)^2$. Hence $d\\le\\sqrt{2800}=20\\sqrt7$. On the other hand, the reverse triangle inequality for E,A,D gives $d\\ge ED-EA=30\\sqrt7-10\\sqrt7=20\\sqrt7$.",
+      "Both bounds are equalities. Thus $d=20\\sqrt7$, $u=d/4=5\\sqrt7$, and $E,A,D$ are collinear with A between E and D. Therefore $E=(-10\\sqrt7,0)$ and the foot from C is $F=(15\\sqrt7,0)$.",
+      "It follows that $EF=25\\sqrt7$, giving $m+n=25+7=32$. These coordinates satisfy both distances from E and the diagonal length, so the forced configuration exists."
+    ],
+    "keyIdeas": [
+      "The distance constraints force two sharp bounds to be equalities"
+    ],
+    "commonMistakes": [
+      "Assuming that E lies inside the trapezoid, even though its two distances force it outside."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining a diagonal upper bound with a distance lower bound avoids solving a general circle intersection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p11",
+    "problemId": "aime-i-2008-p11",
+    "finalAnswer": "$\\boxed{172}$",
+    "shortExplanation": "The length-fourteen coefficient is 172.",
+    "detailedSteps": [
+      "A nonempty valid A run has generating function $U=x^2/(1-x^2)$, and a nonempty valid B run has $V=x/(1-x^2)$. Valid strings alternate these runs.",
+      "Summing alternating run patterns, including the empty string, gives $F=(1+U)(1+V)/(1-UV)$. In this expansion a positive even number of runs contributes the two choices of starting letter, and an odd number contributes the corresponding starting-and-ending-letter choices.",
+      "Simplification yields $F=(1+x-x^2)/(1-2x^2-x^3+x^4)$. If $c_n$ is the coefficient of $x^n$, then $c_0,c_1,c_2,c_3=1,1,1,3$, and for $n\\ge4$ we have $c_n=2c_{n-2}+c_{n-3}-c_{n-4}$.",
+      "The coefficients from $c_4$ through $c_{14}$ are $2,6,6,11,16,22,37,49,80,113,172$. Therefore the requested number is 172."
+    ],
+    "keyIdeas": [
+      "Use generating functions for alternating valid runs"
+    ],
+    "commonMistakes": [
+      "Allowing an even B run at the end of a string or treating arbitrary pairs of B letters as valid chunks."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Maximal runs have to alternate, so their generating functions combine with a short rational expression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p12",
+    "problemId": "aime-i-2008-p12",
+    "finalAnswer": "$\\boxed{375}$",
+    "shortExplanation": "A one-hour interval can contain exactly 3,750 arrivals.",
+    "detailedSteps": [
+      "For a positive speed v in kilometers per hour, let $k=\\lceil v/15\\rceil$. The bumper gap is k car lengths, so consecutive fronts are separated by $4(k+1)$ meters. The arrival rate is $q=1000v/[4(k+1)]\\le3750k/(k+1)<3750$ cars per hour.",
+      "If 3,751 cars passed within one hour, the time from the first front to the last would include 3,750 equal arrival intervals. Their total duration would be $3750/q>1$ hour, impossible. Thus every phase of the traffic stream permits at most 3,750 counted cars.",
+      "For attainment, take $k=3750$ and $v=15k=56250$. Then $q=3750^2/3751>3749$, and 3,750 consecutive arrivals span $3749/q<1$ hour. Position the first arrival a sufficiently small positive time after the start, so that the last occurs before the end. All gaps equal the required $4k$ meters.",
+      "Hence the maximum actual whole count is $M=3750$, and its quotient upon division by ten is 375. The count includes the possible phase advantage over the continuous one-hour flow rate."
+    ],
+    "keyIdeas": [
+      "Bound arrival spacing and construct an actual one-hour window"
+    ],
+    "commonMistakes": [
+      "Taking the floor of the steady flow rate without considering the first and last arrival positions in the counting window."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source allows any speed, and its discrete one-hour count requires an attainment argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p13",
+    "problemId": "aime-i-2008-p13",
+    "finalAnswer": "$\\boxed{040}$",
+    "shortExplanation": "The additional common zero is $(5/19,16/19)$.",
+    "detailedSteps": [
+      "The five prescribed axis zeros give $a_0=a_3=a_5=0$, $a_6=-a_1$ and $a_9=-a_2$. The two zeros at $(1,1)$ and $(1,-1)$ further give $a_8=0$ and $a_7=-a_4$.",
+      "The zero at $(2,2)$ yields $-6a_1-6a_2-4a_4=0$, so $a_4=-3(a_1+a_2)/2$. Consequently the entire family can be written as $2p(x,y)=a_1x(1-x)(2+2x-3y)+a_2y(2-2y^2-3x+3x^2)$, with $a_1,a_2$ arbitrary.",
+      "At a common zero with positive x,y and a reduced nonintegral x, neither x nor $1-x$ vanishes. The first coefficient therefore gives $y=2(1+x)/3$. The second gives $1-y^2-3x/2+3x^2/2=0$.",
+      "Substitute the expression for y to obtain $19x^2-43x+10=0$, whose roots are $2$ and $5/19$. The integer root cannot satisfy the reduced-denominator condition $c>1$. Thus $x=5/19$ and $y=16/19$.",
+      "Both coefficient expressions vanish at this point, proving that every polynomial in the family vanishes there. The requested sum is $a+b+c=5+16+19=40$."
+    ],
+    "keyIdeas": [
+      "Reduce the polynomial family to two independent coefficients"
+    ],
+    "commonMistakes": [
+      "Checking the proposed point in just one polynomial rather than in both independent members of the family."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The family has two free coefficients; their common-zero equations identify the universal point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p14",
+    "problemId": "aime-i-2008-p14",
+    "finalAnswer": "$\\boxed{432}$",
+    "shortExplanation": "The maximum squared distance is 432.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(18,0)$ and the circle center at $O=(9,0)$. Choose the tangent line\u2019s unit normal as $\\mathbf n=(q,s)$ with $q>0$ and $q^2+s^2=1$. Since its x-intercept $C$ lies left of A, its equation is $\\mathbf n\\cdot X=d$ with $d<0$.",
+      "Tangency gives $9q-d=9$, hence $d=9(q-1)$ and $0<q<1$. The perpendicular foot from A is $P=d\\mathbf n$. Therefore $BP^2=18^2-36dq+d^2=81(5+2q-3q^2)$.",
+      "Complete the square: $BP^2=432-243(q-1/3)^2\\le432$. Equality occurs at $q=1/3$, for which the tangent\u2019s x-intercept is $C=(d/q,0)=(-18,0)$, satisfying the required extension.",
+      "This tangent exists because C is outside the circle. Thus the bound is attained and $m^2=432$."
+    ],
+    "keyIdeas": [
+      "Parameterize the tangent by its unit normal"
+    ],
+    "commonMistakes": [
+      "Maximizing a distance to the tangency point rather than to the perpendicular foot from A."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A unit-normal parameter makes the squared distance a concave quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2008-p15",
+    "problemId": "aime-i-2008-p15",
+    "finalAnswer": "$\\boxed{871}$",
+    "shortExplanation": "The tray height is the fourth root of 867.",
+    "detailedSteps": [
+      "Use the actual figure\u2019s edge distance $a=\\sqrt{17}$. At one corner put the edge cut points at $(a,0)$ and $(0,a)$, and the inward cut vertex at $(t,t)$. The two cut vectors have equal squared lengths $a^2-2at+2t^2$ and dot product $2t^2-2at$. Their sixty-degree angle gives $2t^2-2at-a^2=0$.",
+      "The inward positive solution is $t=a(1+\\sqrt3)/2>a$. The base fold lines form a square of side $100-2t$. Each wall has slant height $t$, lower edge length $100-2t$ and upper edge length $100-2a$.",
+      "When adjacent cut edges are joined, the upper edges form a concentric square. Its side exceeds the base side by $2(t-a)$, so each wall moves outward horizontally by $\\delta=t-a$ from bottom to top. Equivalently, at a corner the joined top vertex has horizontal offset $(-\\delta,-\\delta)$ from the base vertex; the two adjacent wall folds impose these two equal components.",
+      "If $H$ is the perpendicular height, a wall\u2019s cross-section perpendicular to its fold line gives $H^2+\\delta^2=t^2$. Thus $H^2=t^2-(t-a)^2=2at-a^2=a^2\\sqrt3=17\\sqrt3$. All dimensions are positive, so these folds give an actual outward-sloping tray.",
+      "Hence $H^4=17^2\\cdot3=867$, and $H=\\sqrt[4]{867}=3^{1/4}17^{1/2}$. To express $H=m^{1/n}$ with positive integers $m,n$, the prime exponents force $n$ to be a multiple of four. The condition $m<1000$ then forces $n=4$ and $m=867$, because larger multiples give $m\\ge867^2$. Therefore $m+n=871$."
+    ],
+    "keyIdeas": [
+      "Match the folded wall\u2019s slant height with its outward displacement"
+    ],
+    "commonMistakes": [
+      "Reading the source\u2019s square-root edge distance as seventeen or equating the wall\u2019s slant height with the tray\u2019s perpendicular height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The longer upper edges force a horizontal outward component, which must be removed from the slant height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

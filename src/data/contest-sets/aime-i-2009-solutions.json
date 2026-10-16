@@ -1,0 +1,327 @@
+[
+  {
+    "id": "solution-aime-i-2009-p1",
+    "problemId": "aime-i-2009-p1",
+    "finalAnswer": "$\\boxed{840}$",
+    "shortExplanation": "The extreme numbers are 964 and 124.",
+    "detailedSteps": [
+      "For digits $a,b,c$ in geometric order, $b^2=ac$. All digits must be nonzero: $a$ is nonzero because the number has three digits, and a zero $b$ would force $c=0$, violating distinctness.",
+      "The largest possible leading digit is nine. Then $b^2=9c$, so $b=3$ or $6$ after excluding the repeated-nine case. These give 931 and 964, with 964 the larger. A number beginning with a smaller digit cannot exceed it.",
+      "The smallest possible leading digit is one. Then $c=b^2$, and distinct positive decimal digits allow $b=2$ or $3$. The numbers are 124 and 139, with 124 smaller. Thus the difference is $964-124=840$."
+    ],
+    "keyIdeas": [
+      "Use the middle-digit square condition"
+    ],
+    "commonMistakes": [
+      "Allowing repeated zeroes or confusing an arithmetic digit pattern with a geometric one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The extreme leading digits already admit valid numbers, so only their possible middle digits need examination.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p2",
+    "problemId": "aime-i-2009-p2",
+    "finalAnswer": "$\\boxed{697}$",
+    "shortExplanation": "The real part is $-656$ and $n=697$.",
+    "detailedSteps": [
+      "Write $z=x+164i$. Clearing the denominator gives $x+164i=4i(x+n+164i)=-656+4(x+n)i$.",
+      "The real parts imply $x=-656$, and the imaginary parts imply $x+n=41$. Hence $n=41+656=697$. The resulting denominator is $41+164i$, which is nonzero, so the original fraction is defined."
+    ],
+    "keyIdeas": [
+      "Compare real and imaginary parts after clearing the denominator"
+    ],
+    "commonMistakes": [
+      "Forgetting that multiplying the imaginary part by four i produces a negative real number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Clearing a nonzero complex denominator reduces the equation to two real linear equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p3",
+    "problemId": "aime-i-2009-p3",
+    "finalAnswer": "$\\boxed{011}$",
+    "shortExplanation": "The heads probability is $5/6$.",
+    "detailedSteps": [
+      "The two probabilities are $\\binom83p^3(1-p)^5$ and $\\binom85p^5(1-p)^3$. Their binomial coefficients agree, and both $p$ and $1-p$ are positive.",
+      "The prescribed ratio therefore becomes $[(1-p)/p]^2=1/25$. Positivity selects $(1-p)/p=1/5$, giving $p=5/6$. This is reduced, so $m+n=5+6=11$."
+    ],
+    "keyIdeas": [
+      "Cancel the equal binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Taking the negative square root despite both coin probabilities being positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary head counts make the binomial coefficients cancel.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p4",
+    "problemId": "aime-i-2009-p4",
+    "finalAnswer": "$\\boxed{177}$",
+    "shortExplanation": "The reciprocal diagonal fraction is 177.",
+    "detailedSteps": [
+      "Use the independent vectors $\\overrightarrow{AB}$ and $\\overrightarrow{AD}$ as coordinates with A at the origin. Then $C=(1,1)$, $M=(17/1000,0)$ and $N=(0,17/2009)$.",
+      "The intercept equation of MN is $1000x/17+2009y/17=1$. A point on AC has $x=y=t$, so $3009t/17=1$.",
+      "Thus $AP/AC=t=17/3009$, and the requested ratio is $AC/AP=3009/17=177$. The value $t$ lies strictly between zero and one, as required by the intersection."
+    ],
+    "keyIdeas": [
+      "Use affine coordinates along the two parallelogram sides"
+    ],
+    "commonMistakes": [
+      "Using the fraction along one side as the fraction along the diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Affine coordinates preserve ratios and intersections without imposing an unintended rectangular shape.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p5",
+    "problemId": "aime-i-2009-p5",
+    "finalAnswer": "$\\boxed{072}$",
+    "shortExplanation": "The reflection makes $AM=CP$.",
+    "detailedSteps": [
+      "Take $C$ as the vector origin, and write $A$ and $B$ as vectors $a$ and $b$. Since $AC:BC=450:300=3:2$, the angle-bisector theorem gives $AL:LB=3:2$ and $L=(2a+3b)/5$. Also $K=a/2$.",
+      "Write $P=tL=B+s(K-B)$. Comparing independent $a$ and $b$ coefficients gives $2t/5=s/2$ and $3t/5=1-s$. Hence $t=5/7$, $s=4/7$, and $P=(2a+3b)/7$.",
+      "Because $K$ is the midpoint of $PM$, $M=2K-P=a-P$. Therefore $\\overrightarrow{AM}=-P$, so $AM=CP=180$. Since $CP/CL=5/7$, we have $LP/CP=2/5$.",
+      "It follows that $LP=(2/5)180=72$. All intersection parameters lie within the relevant segments; $M$ is allowed to lie on the full line $BK$."
+    ],
+    "keyIdeas": [
+      "Reflect the intersection across the midpoint of AC"
+    ],
+    "commonMistakes": [
+      "Assuming that M lies between B and K even though the source permits the entire line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint reflection turns the supplied length into a distance along the angle bisector.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p6",
+    "problemId": "aime-i-2009-p6",
+    "finalAnswer": "$\\boxed{412}$",
+    "shortExplanation": "The positive integral output count is 412.",
+    "detailedSteps": [
+      "For $x\\ge1$, put $k=\\lfloor x\\rfloor$. On the interval $k\\le x<k+1$, the outputs $x^k$ fill $[k^k,(k+1)^k)$. The intervals for different positive $k$ are disjoint.",
+      "For $k=1$ the only integral output is one. For $k=2$ the outputs are the five integers from four through eight; for $k=3$, the thirty-seven integers from twenty-seven through sixty-three; for $k=4$, the 369 integers from 256 through 624. For $k\\ge5$, the lower endpoint is already at least 3125.",
+      "For $0<x<1$, the exponent is zero and the output is again one. Negative $x$ adds no positive integral output: an odd negative floor gives a negative value, while an even negative floor is at most minus two and gives a positive value strictly below one, because then $|x|>1$. The value at zero is unnecessary because one is already obtained at $x=1$.",
+      "Thus the number of distinct positive integers below one thousand is $1+5+37+369=412$. The strict upper endpoints are excluded because the floor changes there."
+    ],
+    "keyIdeas": [
+      "Separate the real x values by their floor"
+    ],
+    "commonMistakes": [
+      "Reading the source as a product of x with its floor, rather than x raised to its floor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual source has an exponent; negative arguments must also be excluded carefully.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p7",
+    "problemId": "aime-i-2009-p7",
+    "finalAnswer": "$\\boxed{041}$",
+    "shortExplanation": "The first later integral term has index 41.",
+    "detailedSteps": [
+      "Rearrange the actual exponential relation as $5^{a_{n+1}-a_n}=1+1/(n+2/3)=(3n+5)/(3n+2)$.",
+      "Multiplying from $n=1$ through $k-1$ telescopes to $5^{a_k-a_1}=(3k+2)/5$. Since $a_1=1$, this gives $5^{a_k}=3k+2$.",
+      "For $k>1$, an integral $a_k=j$ must satisfy $j\\ge2$ and $k=(5^j-2)/3$. This $k$ is integral exactly when $j$ is odd, since $5\\equiv-1\\pmod3$. The smallest allowable exponent is $j=3$.",
+      "Therefore $k=(125-2)/3=41$, and all earlier indices greater than one have nonintegral terms."
+    ],
+    "keyIdeas": [
+      "Multiply the exponential recurrence to telescope"
+    ],
+    "commonMistakes": [
+      "Interpreting the five as a linear multiplier instead of the base of the exponential in the source."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The offset two thirds makes consecutive exponential ratios cancel.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p8",
+    "problemId": "aime-i-2009-p8",
+    "finalAnswer": "$\\boxed{398}$",
+    "shortExplanation": "The sum of differences is 16,398.",
+    "detailedSteps": [
+      "A positive difference has the form $2^j-2^i=2^i(2^{j-i}-1)$ with $0\\le i<j\\le10$. Its exact power-of-two factor determines $i$, and the remaining odd factor determines $j$. Thus all pair differences are distinct.",
+      "The term $2^k$ occurs positively in $k$ differences and negatively in $10-k$ differences. Therefore $N=\\sum_{k=0}^{10}(2k-10)2^k$.",
+      "Using $\\sum_{k=0}^{10}2^k=2047$ and $\\sum_{k=0}^{10}k2^k=18434$, we obtain $N=2\\cdot18434-10\\cdot2047=16398$. Its remainder upon division by one thousand is 398."
+    ],
+    "keyIdeas": [
+      "Each power has a known net coefficient in the difference sum"
+    ],
+    "commonMistakes": [
+      "Subtracting each pair in both directions or assuming possible equal differences without checking their odd factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two-adic factor makes the difference representation unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p9",
+    "problemId": "aime-i-2009-p9",
+    "finalAnswer": "$\\boxed{420}$",
+    "shortExplanation": "Thirty-five digit orders combine with twelve length triples.",
+    "detailedSteps": [
+      "Concatenating the ordered prices $A,B,C$ gives a seven-digit string with four ones and three threes. There are $7!/(4!3!)=35$ distinct strings.",
+      "The three price lengths are positive and total seven, with each at most four because every price is below ten thousand. There are $\\binom62=15$ positive ordered compositions of seven into three parts. The only violations are the three permutations of $(5,1,1)$, so twelve remain.",
+      "Every allowed digit string and length triple uniquely determines the ordered prices, with no leading zero issue. Conversely the prices recover both the string and its cuts. Hence the total is $35\\cdot12=420$."
+    ],
+    "keyIdeas": [
+      "Order the seven digits and choose the three price lengths"
+    ],
+    "commonMistakes": [
+      "Forgetting the four-digit price limit or dividing by permutations of the ordered prices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Concatenation supplies a bijection between price guesses and digit strings with length cuts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p10",
+    "problemId": "aime-i-2009-p10",
+    "finalAnswer": "$\\boxed{346}$",
+    "shortExplanation": "The nationality arrangements number 346.",
+    "detailedSteps": [
+      "Read chairs clockwise, which is the next person to the left for inward-facing committee members. The prohibited transitions are M to E, V to M and E to V. Thus whenever nationality changes, it must follow $M\\to V\\to E\\to M$.",
+      "The word starts with M in chair one and ends with E in chair fifteen. The closing transition E to M is allowed, and the linear word therefore consists of $r$ successive groups of an M run, a V run and an E run, for some $1\\le r\\le5$.",
+      "For each nationality, distributing five people among its $r$ nonempty runs gives $\\binom4{r-1}$ choices. The nationality words consequently number $\\sum_{r=1}^5\\binom4{r-1}^3=1+64+216+64+1=346$.",
+      "After fixing a nationality word, the five distinct members of each nationality can be assigned in $5!$ ways. This gives the supplied factor $(5!)^3$, so $N=346$. Numbered chairs require no quotient by rotations."
+    ],
+    "keyIdeas": [
+      "Count positive runs in the forced clockwise nationality cycle"
+    ],
+    "commonMistakes": [
+      "Reversing the directed left-neighbor rule or removing rotations when the chairs are numbered."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The local exclusions force the global order of runs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p11",
+    "problemId": "aime-i-2009-p11",
+    "finalAnswer": "$\\boxed{600}$",
+    "shortExplanation": "Two parity classes each contribute 300 triangles.",
+    "detailedSteps": [
+      "The nonnegative integer points are $P_x=(x,2009-41x)$ for $x=0,1,\\ldots,49$, giving fifty points. For distinct $x$ and $u$, the determinant area is $[OP_xP_u]=2009|x-u|/2$.",
+      "This area is positive, and since 2009 is odd, it is integral exactly when $x$ and $u$ have the same parity. There are twenty-five even indices and twenty-five odd indices.",
+      "A triangle is determined by an unordered pair of distinct points, so the count is $\\binom{25}2+\\binom{25}2=600$."
+    ],
+    "keyIdeas": [
+      "The determinant area is integral exactly for matching x parity"
+    ],
+    "commonMistakes": [
+      "Counting ordered point pairs and thus counting each geometric triangle twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The affine-line terms cancel in the determinant, leaving a single parity condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p12",
+    "problemId": "aime-i-2009-p12",
+    "finalAnswer": "$\\boxed{011}$",
+    "shortExplanation": "The perimeter-to-base ratio is $8/3$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $B=(37,0)$, since the right triangle has hypotenuse $\\sqrt{12^2+35^2}=37$. Then $D=(144/37,0)$ and $C=(144/37,420/37)$. The circle center is $(144/37,210/37)$ with radius $210/37$.",
+      "The line AB is already tangent at D. The other tangent through A has equation $y=(-1680/649)x$, and the other tangent through B has $y=(-420/1189)(x-37)$. These follow by equating the perpendicular distance from the center to each line with the radius.",
+      "The two nonbase tangents intersect at $I=(-649/111,560/37)$. Its negative x-coordinate makes it outside ABC. Using AB with a nonbase tangent would put I at A or B; using AB for both would make ABI degenerate. Neither gives the required outside vertex of a triangle, so this is the required I.",
+      "Pythagoras gives $AI=\\sqrt{649^2+1680^2}/111=1801/111$ and $BI=\\sqrt{4756^2+1680^2}/111=5044/111$. Hence $(AB+AI+BI)/AB=(37+6845/111)/37=8/3$.",
+      "The fraction is reduced, and $m+n=8+3=11$. Both tangent equations and the outside condition have been checked, as well as the lengths."
+    ],
+    "keyIdeas": [
+      "Find the intersection of the two tangents other than AB"
+    ],
+    "commonMistakes": [
+      "Using the two given triangle legs as tangents to the diameter circle without verifying their distances from its center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangent circle has radius half the altitude, so the second tangent lines can be solved exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p13",
+    "problemId": "aime-i-2009-p13",
+    "finalAnswer": "$\\boxed{090}$",
+    "shortExplanation": "Every allowed infinite sequence alternates a factor pair of 2009.",
+    "detailedSteps": [
+      "Put $d_n=a_n-a_{n+2}$. The recurrence gives $a_n+2009=a_{n+2}(1+a_{n+1})$, so $d_n=a_{n+1}a_{n+2}-2009$. Applying the next recurrence therefore gives $d_{n+1}=d_n/(1+a_{n+2})$.",
+      "Every $d_n$ is an integer, and positivity of the terms makes the denominator at least two. Thus $|d_{n+1}|\\le|d_n|/2$. A nonzero initial integer difference would eventually have magnitude strictly between zero and one, impossible. Consequently $d_1=0$, and then every $d_n$ is zero.",
+      "The sequence is therefore two-periodic. Substituting $a_3=a_1$ in the first recurrence gives $a_1a_2=2009=7^2\\cdot41$. Conversely every positive integral factor pair yields a valid alternating infinite sequence.",
+      "The unordered positive factor pairs are $(1,2009),(7,287),(41,49)$. Their minimum sum is $41+49=90$, attained by alternating these two values."
+    ],
+    "keyIdeas": [
+      "Integer two-step differences cannot shrink indefinitely"
+    ],
+    "commonMistakes": [
+      "Checking only the first few terms for integrality instead of imposing the infinite sequence condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An integral difference shrinking by at least a factor of two forces exact periodicity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p14",
+    "problemId": "aime-i-2009-p14",
+    "finalAnswer": "$\\boxed{905}$",
+    "shortExplanation": "The minimum second moment is 905.",
+    "detailedSteps": [
+      "Let $n_j$ count entries equal to $j$. The total count and first moment give $n_1+n_2+n_3+n_4=350$ and $n_2+2n_3+3n_4=163$. The fourth moment minus the count gives $15n_2+80n_3+255n_4=4395$.",
+      "Subtract fifteen times the first-moment excess to obtain $50n_3+210n_4=1950$, or $5n_3+21n_4=195$. Hence $n_4=5t$, $n_3=39-21t$, $n_2=85+27t$ and $n_1=226-11t$.",
+      "Nonnegative integral counts force $t=0$ or $1$. The second moment is $S_2=350+3n_2+8n_3+15n_4=917-12t$, so its minimum is 905 at $t=1$.",
+      "The counts $(n_1,n_2,n_3,n_4)=(215,112,18,5)$ are all nonnegative and give the required moments, proving attainment."
+    ],
+    "keyIdeas": [
+      "Eliminate two moment constraints into a short integer family"
+    ],
+    "commonMistakes": [
+      "Minimizing over real counts rather than over actual integral multiplicities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence reduces the feasible counts to two possibilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2009-p15",
+    "problemId": "aime-i-2009-p15",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The maximum area is $98-49\\sqrt3$.",
+    "detailedSteps": [
+      "Write $\\alpha=\\angle BAD$ and $\\beta=\\angle DAC$. The cosine law gives $\\cos\\angle BAC=(10^2+16^2-14^2)/(2\\cdot10\\cdot16)=1/2$, so $\\alpha+\\beta=60^\\circ$.",
+      "The incenter angle theorem in ABD gives $\\angle BI_BD=90^\\circ+\\alpha/2$. Its circumcircle has center below BC: with $B=(0,0)$ and $D=(d,0)$, its equation is $x^2+y^2-dx+d\\tan(\\alpha/2)y=0$. For $y>0$ this forces $0<x<d$. The second circle\u2019s equation is $x^2+y^2-(14+d)x+14d+(14-d)\\tan(\\beta/2)y=0$, so its points above BC satisfy $d<x<14$. Thus the two circles have no common point above BC; their only common point on BC is D, and P lies below BC.",
+      "The cyclic quadrilateral $BI_BDP$ now gives $\\angle BPD=90^\\circ-\\alpha/2$. The other circle gives $\\angle DPC=90^\\circ-\\beta/2$. Since D is between B and C, these two angles add to $\\angle BPC=150^\\circ$.",
+      "With fixed chord $BC=14$ and this obtuse angle, P lies on the minor arc below BC of the circle of radius $14/(2\\sin150^\\circ)=14$, whose center is $(7,7\\sqrt3)$. Its largest depth below BC is $14-7\\sqrt3$, at the arc midpoint $(7,7\\sqrt3-14)$. Thus $[BPC]\\le7(14-7\\sqrt3)=98-49\\sqrt3$.",
+      "To prove attainment as $D$ varies, put $p=\\tan(\\alpha/2)$, $q=\\tan(\\beta/2)$ and $k=((14-d)q-dp)/14$. Subtracting the two circle equations gives $x=d+ky$, and substitution gives the second intersection $y=-d(14-d)(p+q)/[14(1+k^2)]$, $x=d+ky$. These expressions are continuous for $0<d<14$.",
+      "As $d$ approaches zero, $p$ approaches zero and $P$ approaches $B$. As $d$ approaches fourteen, $q$ approaches zero and $P$ approaches $C$. The continuous x-coordinate therefore takes the value seven at an interior $D$. The fixed lower arc then forces P to be its deepest midpoint, so the bound is attained by an admissible configuration.",
+      "The radical three is squarefree. Consequently $a+b+c=98+49+3=150$. The argument proves both the universal area bound and an actual interior-D maximizer."
+    ],
+    "keyIdeas": [
+      "The second circle intersection sees BC under a fixed angle"
+    ],
+    "commonMistakes": [
+      "Finding the arc-height bound without proving that varying D reaches the arc midpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total apex angle fixes the intersection angle even while the two subtriangles change.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

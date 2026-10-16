@@ -1,0 +1,331 @@
+[
+  {
+    "id": "solution-aime-ii-2004-p1",
+    "problemId": "aime-ii-2004-p1",
+    "finalAnswer": "$\\boxed{592}$",
+    "shortExplanation": "The area ratio is $(8\\pi+3\\sqrt3)/(4\\pi-3\\sqrt3)$.",
+    "detailedSteps": [
+      "Scale the radius to one. The chord is one-half from the center, so its half-angle has cosine one-half and the smaller sector’s central angle is 120°. The sector area is π/3, and its triangle area is $\\tfrac12\\sin120^\\circ=\\sqrt3/4$.",
+      "The smaller segment has area $\\pi/3-\\sqrt3/4$, while the larger has $2\\pi/3+\\sqrt3/4$. Multiplying numerator and denominator of their ratio by 12 gives $(8\\pi+3\\sqrt3)/(4\\pi-3\\sqrt3)$.",
+      "Thus $(a,b,c,d,e,f)=(8,3,3,4,3,3)$, with the required coprimality and squarefree radicals. Their product is 2592, whose remainder modulo 1000 is 592."
+    ],
+    "keyIdeas": [
+      "Subtract the chord triangle from its circular sector"
+    ],
+    "commonMistakes": [
+      "Using the sector alone for the small region or reversing the larger-to-smaller ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The perpendicular midpoint condition fixes the central angle independently of the circle radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p2",
+    "problemId": "aime-ii-2004-p2",
+    "finalAnswer": "$\\boxed{441}$",
+    "shortExplanation": "The probability is 118/323.",
+    "detailedSteps": [
+      "Terry’s red-red and blue-blue probabilities are each $\\binom{10}{2}/\\binom{20}{2}=45/190$. Given either of these, Mary matches with probability $\\binom82/\\binom{18}{2}=28/153$.",
+      "Terry’s mixed-pair probability is $10\\cdot10/190=100/190$. This leaves nine of each color, so Mary matches with probability 81/153.",
+      "Adding the disjoint cases gives $(2\\cdot45\\cdot28+100\\cdot81)/(190\\cdot153)=118/323$. The fraction is reduced, so $m+n=118+323=441$."
+    ],
+    "keyIdeas": [
+      "Condition on the first unordered color pair"
+    ],
+    "commonMistakes": [
+      "Using independent draws from the original jar for Mary or distinguishing the two orders of a mixed pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conditional second draw uses the remaining eighteen candies.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p3",
+    "problemId": "aime-ii-2004-p3",
+    "finalAnswer": "$\\boxed{384}$",
+    "shortExplanation": "The minimum block dimensions are 4 by 8 by 12.",
+    "detailedSteps": [
+      "Let the block dimensions be positive integers a,b,c. The three visible faces meet at one corner; a small cube is hidden exactly when it lies in none of the three boundary layers on those faces. The hidden count is $(a-1)(b-1)(c-1)=231$.",
+      "Put $u=a-1,v=b-1,w=c-1$ and order them increasingly. Their product is $231=3\\cdot7\\cdot11$. The complete unordered positive triples are $(1,1,231),(1,3,77),(1,7,33),(1,11,21),(3,7,11)$.",
+      "The corresponding total cube counts $(u+1)(v+1)(w+1)$ are 928,624,544,528,384. Thus the smallest is 384, attained by $a=4,b=8,c=12$; its hidden count is $3\\cdot7\\cdot11=231$."
+    ],
+    "keyIdeas": [
+      "The hidden cubes factor into three reduced dimensions"
+    ],
+    "commonMistakes": [
+      "Subtracting all six boundary layers when only three faces are viewed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Visibility removes just one coordinate layer in each direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p4",
+    "problemId": "aime-ii-2004-p4",
+    "finalAnswer": "$\\boxed{927}$",
+    "shortExplanation": "The counts by length are 9, 90, 252, 576.",
+    "detailedSteps": [
+      "For a fixed length ℓ from 1 through 4, there are nine one-digit-type numbers, one for each repeated nonzero digit.",
+      "For exactly two nonzero digit types, choose the pair in $\\binom92=36$ ways. There are $2^\\ell-2$ strings using both. For a pair consisting of zero and one nonzero digit, there are nine choices; the first digit must be nonzero, and the remaining positions give $2^{\\ell-1}-1$ choices after excluding the string with no zero.",
+      "The length count is therefore $9+36(2^\\ell-2)+9(2^{\\ell-1}-1)$. For $\\ell=1,2,3,4$ it is 9, 90, 252, 576. Their sum is 927."
+    ],
+    "keyIdeas": [
+      "Separate digit pairs containing zero"
+    ],
+    "commonMistakes": [
+      "Counting strings with leading zero as numbers of the chosen length or requiring exactly two types instead of at most two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One-type numbers must be added separately from the two-type cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p5",
+    "problemId": "aime-ii-2004-p5",
+    "finalAnswer": "$\\boxed{766}$",
+    "shortExplanation": "The final quarter needs 1566 workers in all.",
+    "detailedSteps": [
+      "Take the planned time for one quarter of the job as one unit. Each quarter requires 1000 worker-time units. The first three quarters take $1+1000/900+1000/800=1+10/9+5/4=121/36$ time units.",
+      "The full deadline is four units, leaving $4-121/36=23/36$ for the final quarter. If W workers finish it on time, $1000/W\\le23/36$, so $W\\ge36000/23$.",
+      "The least integer W is 1566: 1565 is too small, whereas 1566 suffices. There are 800 workers still present, so the minimum number added is $1566-800=766$."
+    ],
+    "keyIdeas": [
+      "Compute the remaining time in planned quarter units"
+    ],
+    "commonMistakes": [
+      "Using the number laid off as the number to replace without accounting for the time already lost."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The remaining workforce is determined by the remaining time, not just the original workforce.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p6",
+    "problemId": "aime-ii-2004-p6",
+    "finalAnswer": "$\\boxed{408}$",
+    "shortExplanation": "The smallest taken piles are 88,104,216.",
+    "detailedSteps": [
+      "The first taken pile must be 8 a bananas, since its keeper receives 6 a and each other monkey a. The second must be 8 b, giving 2 b to its keeper and 3 b to each other. The final pile must be 24 c, giving 2 c to the third monkey and 11 c to each other. Here a,b,c are positive integers.",
+      "The final monkey totals are $6a+3b+11c$, $a+2b+11c$, and $a+3b+2c$. Requiring ratios 3:2:1 gives $a+4b=7c$ from the last two totals, and $3a-6b+5c=0$ from the first and third.",
+      "Substitution yields $b=13c/9$ and $a=11c/9$. Integrality forces c to be a positive multiple of nine, so the smallest choice is $c=9,a=11,b=13$.",
+      "The total pile is $8(11)+8(13)+24(9)=408$. The final totals are 204,136,68, and every individual share is an integer, proving attainment."
+    ],
+    "keyIdeas": [
+      "Integral sharing gives three allocation variables"
+    ],
+    "commonMistakes": [
+      "Applying the kept fractions to the entire remaining pile instead of to each monkey’s chosen portion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The separate sharing denominators make the integrality constraints explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p7",
+    "problemId": "aime-ii-2004-p7",
+    "finalAnswer": "$\\boxed{293}$",
+    "shortExplanation": "The rectangle height is $70/3$ and its perimeter is $290/3$.",
+    "detailedSteps": [
+      "The actual diagram gives $AB=25$. Put $A=(0,0),B=(25,0),C=(25,h),D=(0,h)$. Then $E=(8,0)$ and, since $CF=3$, $F=(22,h)$. Write the folded image $B^\\prime=(0,t)$ on AD.",
+      "E lies on the reflection crease, so its distance to $B^\\prime$ equals $EB=17$. Thus $8^2+t^2=17^2$, and the on-edge condition selects $t=15$.",
+      "F also lies on the crease, giving $FB^2=FB^{\\prime2}$, or $3^2+h^2=22^2+(h-15)^2$. Simplifying gives $30h=700$, so $h=70/3$.",
+      "This is consistent with the fold: $B^\\prime$ is on AD, and EF has slope 5/3, perpendicular to $BB^\\prime$’s slope $-3/5$. The equal-distance equations make EF the perpendicular bisector, so it really reflects B to $B^\\prime$.",
+      "The perimeter is $2(25+70/3)=290/3$, in reduced form. Hence $m+n=290+3=293$."
+    ],
+    "keyIdeas": [
+      "Every point on a crease is equidistant from a point and its reflection"
+    ],
+    "commonMistakes": [
+      "Treating the crease as the segment joining B to its image instead of as their perpendicular bisector."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two equidistant crease points determine the reflection line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p8",
+    "problemId": "aime-ii-2004-p8",
+    "finalAnswer": "$\\boxed{054}$",
+    "shortExplanation": "There are 54 possible exponent triples.",
+    "detailedSteps": [
+      "The source integer factors as $2004=2^2\\cdot3\\cdot167$. Thus every divisor of $2004^{2004}$ has form $2^a3^b167^c$, with $0\\le a\\le4008$ and $0\\le b,c\\le2004$. Its number of positive divisors is $(a+1)(b+1)(c+1)$.",
+      "The required count is 2004, so distribute the prime powers in $2004=2^2\\cdot3\\cdot167$ among the three labeled factors $a+1,b+1,c+1$. The two identical factors of two can be distributed in $\\binom42=6$ ways, and each of the other primes has three choices.",
+      "This gives $6\\cdot3\\cdot3=54$. Every factor is at most 2004, so all resulting exponent bounds are satisfied. Unique factorization ensures that each distribution corresponds to one distinct divisor."
+    ],
+    "keyIdeas": [
+      "Distribute the factors of the divisor count"
+    ],
+    "commonMistakes": [
+      "Counting divisors of 2004 instead of divisors whose own divisor count is 2004."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The prime exponent distributions refer to the divisor-count factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p9",
+    "problemId": "aime-ii-2004-p9",
+    "finalAnswer": "$\\boxed{973}$",
+    "shortExplanation": "The greatest term below 1000 is $a_{16}=957$.",
+    "detailedSteps": [
+      "Let $a_2=r$ and $d=r-1\\ge0$. The geometric and arithmetic rules give, by induction, $a_{2j-1}=[1+(j-1)d]^2$ and $a_{2j}=[1+(j-1)d][1+jd]$. The first geometric triple verifies the formulas at $j=1$; the arithmetic rule supplies the next product, and the geometric rule supplies the next square.",
+      "The given sum becomes $(1+4d)^2+(1+4d)(1+5d)=(1+4d)(2+9d)=646$. This expression increases strictly for integer d at least zero. At $d=4$ it equals $17\\cdot38=646$, so $d=4$ is the unique choice.",
+      "The sequence is consequently strictly increasing. Near the threshold, $a_{15}=29^2=841$, $a_{16}=29\\cdot33=957$, and $a_{17}=33^2=1089$. Thus the greatest term below 1000 is $a_{16}$.",
+      "The requested sum is $16+957=973$."
+    ],
+    "keyIdeas": [
+      "The alternating conditions give square and adjacent-product terms"
+    ],
+    "commonMistakes": [
+      "Assuming a single common geometric ratio for the entire sequence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd terms are squares of an arithmetic progression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p10",
+    "problemId": "aime-ii-2004-p10",
+    "finalAnswer": "$\\boxed{913}$",
+    "shortExplanation": "There are 133 favorable pairs out of 780.",
+    "detailedSteps": [
+      "The numbers in S are exactly $2^i+2^j$ with $0\\le j<i\\le39$, each with a unique pair of one-positions. There are $\\binom{40}{2}=780$ such integers.",
+      "Since two is invertible modulo nine, divisibility is equivalent to $2^{i-j}+1\\equiv0\\pmod9$. The powers of two modulo nine have period six, with the value minus one at exponents congruent to three modulo six.",
+      "The possible differences are 3,9,15,21,27,33,39, and a difference d occurs in 40 minus d pairs. The favorable count is $37+31+25+19+13+7+1=133$.",
+      "The probability 133/780 is reduced, giving $p+q=133+780=913$. The endpoint $2^{40}$ itself has only one binary one and is not in S."
+    ],
+    "keyIdeas": [
+      "Two binary ones reduce divisibility to an exponent difference"
+    ],
+    "commonMistakes": [
+      "Counting arbitrary two-one binary strings longer than forty positions or using the modulo-three period instead of modulo nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common power of two can be canceled modulo nine.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p11",
+    "problemId": "aime-ii-2004-p11",
+    "finalAnswer": "$\\boxed{625}$",
+    "shortExplanation": "The shortest unfolded chord has length 625.",
+    "detailedSteps": [
+      "The cone slant height is $\\sqrt{600^2+(200\\sqrt7)^2}=800$. Its lateral surface unrolls to a radius 800 sector with angle $2\\pi(600/800)=3\\pi/2$. An azimuthal separation of π therefore becomes an unfolded angle 3π/4.",
+      "The two endpoint distances from the cone vertex are $125$ and $375\\sqrt2$. In either direction around the cone, their nearest unfolded copies subtend 135°. The straight segment between these copies has squared length $125^2+(375\\sqrt2)^2-2(125)(375\\sqrt2)\\cos135^\\circ=390625$, hence length 625.",
+      "This chord stays inside the 135° wedge and the radius 800 disk, because the wedge and disk are convex and both endpoint radii are less than 800. It therefore unfolds a valid surface path.",
+      "Other lifts have angular magnitude at least 405°. Any such path crosses the ray π from its starting ray. If the radius at that crossing is t, its length is at least $125+t+|375\\sqrt2-t|\\ge125+375\\sqrt2>625$. A path through the apex has the same larger bound.",
+      "Even if the base is included as surface, any path reaching the rim already travels at least 800 minus 125 equal to 675 from the starting point, so it cannot improve the chord. Thus the global least distance is 625."
+    ],
+    "keyIdeas": [
+      "Unroll the cone and compare the possible angular lifts"
+    ],
+    "commonMistakes": [
+      "Using the physical 180° separation as the angle on the flattened sector or choosing a short chord that represents an impossible extra winding."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cone’s radius-to-slant ratio rescales angular separation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p12",
+    "problemId": "aime-ii-2004-p12",
+    "finalAnswer": "$\\boxed{134}$",
+    "shortExplanation": "The radius is $(-60+48\\sqrt3)/23$.",
+    "detailedSteps": [
+      "Place $A=(-3,0),B=(3,0),D=(-2,h),C=(2,h)$, where the leg lengths give $h=\\sqrt{25-1}=2\\sqrt6$. Let the sought circle have radius r positive and center inside the trapezoid.",
+      "Its tangencies to each equal-radius pair must be external. It cannot enclose a vertex circle, since then that vertex would be strictly inside a circle contained in the trapezoid. If it were inside one of the lower radius 3 circles and externally tangent to the other, the center distances would be 3 minus r and 3 plus r; since $AB=6$, equality in the triangle inequality would put its center on AB, incompatible with positive-radius containment. Being inside both is impossible because their disks have disjoint interiors. The same argument applies to the upper radius 2 pair with $CD=4$.",
+      "Equal external distances to A and B force the center to be $(0,y)$. The two tangency equations are $9+y^2=(r+3)^2$ and $4+(h-y)^2=(r+2)^2$, so $y^2=r^2+6r$ and $(h-y)^2=r^2+4r$.",
+      "Subtraction gives $hy=12+r$. Substituting $y=(12+r)/(2\\sqrt6)$ into the first equation yields $23r^2+120r-144=0$. Its unique positive root is $r=(-60+48\\sqrt3)/23$.",
+      "This circle is contained in the trapezoid. The increasing quadratic changes sign between 1 and 101/100, giving $1<r<101/100$. Also $489/100<h<49/10$, so $53/20<y<267/100$. Thus both base distances, y and h minus y, exceed r: the latter is greater than 111/50. The distances to the two sloping side lines are $(3h-y)/5>12/5$, again greater than r. The squared equations then realize all four external tangencies.",
+      "The source coefficients are $k=60,m=48,n=3,p=23$, with squarefree n and coprime k,p. Their sum is 134."
+    ],
+    "keyIdeas": [
+      "External tangency and symmetry determine one positive radius"
+    ],
+    "commonMistakes": [
+      "Assuming symmetry without first excluding internal tangencies or accepting a solution whose circle is not inside the trapezoid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two vertex-circle pairs touch along the trapezoid bases, ruling out internal tangency branches.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p13",
+    "problemId": "aime-ii-2004-p13",
+    "finalAnswer": "$\\boxed{484}$",
+    "shortExplanation": "The triangle-area ratio is 49/435.",
+    "detailedSteps": [
+      "Put B at the origin and use the independent vectors A and C for its neighbors. The source gives $|A|=3$, $|C|=5$, and the angle between them 120°, so $|C-A|=7$. From AD parallel BC, write $D=A+tC$.",
+      "From CE parallel AB, write $E=C+uA$. The condition DE parallel AC makes $E-D=(u-1)A+(1-t)C$ a multiple of C minus A; independence of A,C forces $u=t$. Thus $E=tA+C$ and $E-D=(1-t)(C-A)$.",
+      "The length $DE=15$ gives $|1-t|=15/7$, so $t=22/7$ or $t=-8/7$. Convexity places D on the same side of the line AB as C; because D’s perpendicular component is t times C’s, t is positive. This selects $t=22/7$.",
+      "The area determinant for EBD is $|E\\mathbin\\times D|=|(tA+C)\\mathbin\\times(A+tC)|=(t^2-1)|A\\mathbin\\times C|$. The ABC determinant magnitude is $|A\\mathbin\\times C|$.",
+      "Therefore the ratio is $1/(t^2-1)=49/(484-49)=49/435$. It is reduced, giving $m+n=49+435=484$. The selected parameter produces a convex pentagon and satisfies all three parallels and all given lengths."
+    ],
+    "keyIdeas": [
+      "Parallel lines express the remaining vertices in one parameter"
+    ],
+    "commonMistakes": [
+      "Keeping the negative length-equation branch, whose D lies across AB from the other pentagon vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parallel conditions give a linear vector model before lengths or areas are evaluated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p14",
+    "problemId": "aime-ii-2004-p14",
+    "finalAnswer": "$\\boxed{108}$",
+    "shortExplanation": "There are 108 possible digit counts.",
+    "detailedSteps": [
+      "Divide the target expression by seven. A summand with ℓ sevens becomes the ℓ-digit repunit. Since 1111 exceeds 1000, every summand has length at most three. Let x,y,z count the length-one, length-two and length-three summands; then $x+11y+111z=1000$.",
+      "The original digit count is $n=x+2y+3z=1000-9y-108z=1000-9s$, where $s=y+12z$. The nonnegative integer z is 0 through 9, and for a fixed z the allowed y values are 0 through $\\lfloor(1000-111z)/11\\rfloor$.",
+      "Thus the intervals of attainable s for z 0 through 8 are respectively $[0,90],[12,92],[24,94],[36,96],[48,98],[60,100],[72,102],[84,104],[96,106]$, all inclusive integer intervals. They overlap and cover every integer 0 through 106. For $z=9$ there is just $s=108$, since $y=0$ and $x=1$.",
+      "There are 107 plus one equal to 108 distinct s values, and each gives a different n. Every listed choice gives nonnegative counts of summands and therefore an actual insertion of plus signs. The requested count is 108."
+    ],
+    "keyIdeas": [
+      "Classify the number of seven digits by repunit counts"
+    ],
+    "commonMistakes": [
+      "Counting arrangements of plus signs instead of distinct total digit lengths, or including a four-digit summand larger than the target."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The quantity y plus 12 z encodes exactly how much the digit count falls below 1000.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2004-p15",
+    "problemId": "aime-ii-2004-p15",
+    "finalAnswer": "$\\boxed{593}$",
+    "shortExplanation": "The target square ends with 593 squares below it.",
+    "detailedSteps": [
+      "Use zero-based positions along the strip and let r be the number of squares below the target in its current column. Initially its position is 941 and $r=0$. If a strip has L columns each of thickness t, a target in its left half keeps its position and r when the right half folds onto it.",
+      "For a target in the right half, its new position is L minus one minus its old position. Its old stack is inverted and placed above the left stack, so the new bottom-count is $t+(t-1-r)=2t-1-r$. After either case the thickness doubles and the column count halves.",
+      "Applying these exact rules through the ten folds gives successive pairs $(\\text{position},r)$: $(82,1),(82,1),(82,1),(45,14),(18,17),(13,46),(2,81),(2,81),(1,430),(0,593)$. The thicknesses after these folds are 2,4,8,…,1024.",
+      "In the final single-column stack, r is precisely the number of unit squares below the originally 942nd square. The answer is 593."
+    ],
+    "keyIdeas": [
+      "Track the column and bottom-count through each reflected stack"
+    ],
+    "commonMistakes": [
+      "Mirroring horizontal positions without also reversing the vertical layer order, or counting the target square itself among those below it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Right-half folding reflects both the column order and the stack order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

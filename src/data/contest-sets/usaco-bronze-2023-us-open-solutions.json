@@ -1,0 +1,101 @@
+[
+  {
+    "finalAnswer": "Print the number of attainable excitement levels, then every level in increasing order.",
+    "shortExplanation": "Separate the unknown letters into runs between fixed senders and free end runs. Interior runs give a parity interval; a free end supplies consecutive values and removes the parity gaps.",
+    "detailedSteps": [
+      "An edge contributes one excitement point exactly when its two completed letters are equal. Between consecutive fixed letters, let $L$ be the number of edges and let $\\delta$ be 1 when the endpoints differ, otherwise 0.",
+      "The number of flips must have parity $\\delta$. Hence the equal-edge counts in this section are exactly $((L-\\delta)\\bmod2), ((L-\\delta)\\bmod2)+2,\\ldots,L-\\delta$. To realize any listed count, choose the corresponding number of flip edges and propagate the starting letter; the ending letter is then correct.",
+      "Add the minimum and maximum contributions of every interior section. Independent step-two intervals sum to every value of the resulting parity between those bounds, because their integer indices have every possible sum.",
+      "A prefix or suffix of unknown letters has only one fixed endpoint. It can contribute any integer from zero to its number of edges. Let $f$ be the total length of those two tails. If $f>0$, the intervals added to consecutive parity values meet or touch, so every integer from the interior minimum to the interior maximum plus $f$ is possible. Otherwise retain step 2.",
+      "If all letters are unknown, there is no fixed endpoint: every value from $0$ through $N-1$ is possible. This also handles $N=1$, whose only level is zero.",
+      "Print the exact size of the resulting progression and then all its values, without duplicates and in increasing order. Fixed adjacent pairs are length-one sections and are counted once.",
+      "The scan and complete output take $O(N)$ time. Stored fixed indices use $O(N)$ space, and every count is between $0$ and $N-1$.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\nvoid solve() {\n    int n;\n    string s;\n    cin >> n >> s;\n    vector<int> fixed;\n    for (int j = 0; j < n; ++j) if (s[j] != 'F') fixed.push_back(j);\n    int low = 0, high = 0, step = 1;\n    if (fixed.empty()) {\n        high = n - 1;\n    } else {\n        int freeEdges = fixed.front() + n - 1 - fixed.back();\n        high = freeEdges;\n        step = freeEdges ? 1 : 2;\n        for (int j = 1; j < (int)fixed.size(); ++j) {\n            int length = fixed[j] - fixed[j - 1];\n            int different = s[fixed[j]] != s[fixed[j - 1]];\n            low += (length - different) % 2;\n            high += length - different;\n        }\n    }\n    cout << (high - low) / step + 1 << '\\n';\n    for (int value = low; value <= high; value += step) cout << value << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve();\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Count flips to establish the endpoint parity.",
+      "Unknown sections have independent choices.",
+      "A free endpoint supplies both parities."
+    ],
+    "commonMistakes": [
+      "Reporting only the minimum and maximum while omitting intermediate levels.",
+      "Keeping parity gaps when a free end allows consecutive values.",
+      "Counting an unknown character rather than adjacent equal edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main challenge is proving exactly which counts are attainable, including the all-unknown and free-end cases.",
+    "id": "solution-usaco-bronze-2023-us-open-p1",
+    "problemId": "usaco-bronze-2023-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each instance, print the maximum word count and any complete valid sequence attaining it.",
+    "shortExplanation": "Choose how many transitive sentences to build. For that choice, take the largest feasible number of intransitive sentences, pair as many sentences as possible, and use remaining nouns as comma-separated objects.",
+    "detailedSteps": [
+      "Count the available nouns $n$, transitive verbs $t$, intransitive verbs $i$, and conjunctions $j$. Let $C$ and $P$ be the supplied comma and period limits. With $x$ intransitive and $y$ transitive atomic sentences, the initial noun requirement is $x+2y$.",
+      "For $s=x+y$ atomic sentences, at most $z=\\min(j,\\lfloor s/2\\rfloor)$ disjoint pairs can be joined. Each join adds one word and saves a period without using another noun or verb, so maximal pairing is optimal for fixed $x,y$.",
+      "The period condition is $s-z\\le P$. It is equivalent to $s\\le P+j$ and $s\\le2P$, so define the sentence capacity $L=\\min(P+j,2P)$. A compound may contain exactly two atomic sentences; it cannot be joined again.",
+      "Enumerate every feasible $y$. For each one, take $x=\\min(i,n-2y,L-y)$. Increasing a feasible $x$ by one adds two baseline words, removes at most one extra object noun, and cannot reduce the number of joins. Thus the largest feasible $x$ is best for this $y$.",
+      "If $y>0$, append $r=\\min(C,n-x-2y)$ additional nouns to one transitive object list. Each extra noun needs one comma. If $y=0$, set $r=0$ because an intransitive sentence cannot have object nouns. The total is $W=2x+3y+z+r$. Select the best feasible choice.",
+      "These resource inequalities bound every valid output. Conversely, construct $x$ noun-plus-intransitive sentences and $y$ noun-plus-transitive-plus-object sentences, add the $r$ objects to one transitive sentence, and join $z$ disjoint pairs. The same inequalities guarantee enough bank occurrences, commas and periods, proving that the maximum is attainable.",
+      "Attach each comma or period directly to its preceding word, put one space between consecutive words, and leave no leading or trailing spaces. Take each word from its actual bank occurrence, even when spellings repeat. End each single or paired unit with one period.",
+      "Output exactly two lines per instance. When the maximum is zero, the second line is empty. Any optimal arrangement is accepted; matching the sample wording or order is unnecessary.",
+      "Optimization and construction take $O(N)$ time plus output characters and $O(N)$ storage per instance. There are at most $N$ used words. The full original $T$-instance packet is processed, without assuming an extra bound on the sum of its $N$ values.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\nvoid solve() {\n    int tests;\n    cin >> tests;\n    while (tests--) {\n        int n, commas, periods;\n        cin >> n >> commas >> periods;\n        vector<string> nouns, transitive, intransitive, conjunctions;\n        for (int j = 0; j < n; ++j) {\n            string word, type;\n            cin >> word >> type;\n            if (type == \"noun\") nouns.push_back(word);\n            else if (type == \"transitive-verb\") transitive.push_back(word);\n            else if (type == \"intransitive-verb\") intransitive.push_back(word);\n            else conjunctions.push_back(word);\n        }\n        int capacity = min(periods + (int)conjunctions.size(), 2 * periods);\n        int best = 0, chosenX = 0, chosenY = 0, chosenJoins = 0, chosenExtra = 0;\n        for (int y = 0; y <= (int)transitive.size() && 2 * y <= (int)nouns.size() && y <= capacity; ++y) {\n            int x = min((int)intransitive.size(), min((int)nouns.size() - 2 * y, capacity - y));\n            int joins = min((int)conjunctions.size(), (x + y) / 2);\n            int extra = y ? min(commas, (int)nouns.size() - x - 2 * y) : 0;\n            int value = 2 * x + 3 * y + joins + extra;\n            if (value > best) {\n                best = value; chosenX = x; chosenY = y;\n                chosenJoins = joins; chosenExtra = extra;\n            }\n        }\n        vector<string> sentences;\n        int ni = 0;\n        for (int j = 0; j < chosenX; ++j) {\n            sentences.push_back(nouns[ni++] + \" \" + intransitive[j]);\n        }\n        for (int j = 0; j < chosenY; ++j) {\n            string subject = nouns[ni++];\n            string object = nouns[ni++];\n            string sentence = subject + \" \" + transitive[j] + \" \" + object;\n            if (j == 0) for (int k = 0; k < chosenExtra; ++k) sentence += \", \" + nouns[ni++];\n            sentences.push_back(sentence);\n        }\n        string output;\n        int at = 0;\n        for (int j = 0; j < chosenJoins; ++j) {\n            if (!output.empty()) output += \" \";\n            output += sentences[at] + \" \" + conjunctions[j] + \" \" + sentences[at + 1] + \".\";\n            at += 2;\n        }\n        while (at < (int)sentences.size()) {\n            if (!output.empty()) output += \" \";\n            output += sentences[at++] + \".\";\n        }\n        cout << best << '\\n' << output << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve();\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Pairing saves periods and uses available conjunction words.",
+      "For fixed transitive count, the score grows with the feasible intransitive count.",
+      "Extra nouns need a transitive object list and one comma each.",
+      "Prove both a resource upper bound and a complete grammatical construction."
+    ],
+    "commonMistakes": [
+      "Chaining three sentences through two conjunctions.",
+      "Using spare nouns as objects when there is no transitive sentence.",
+      "Printing a correct score with an invalid or suboptimal sequence.",
+      "Adding spaces after the final word, or omitting the empty output line for a zero optimum."
+    ],
+    "alternativeMethods": [
+      "A slower resource-count method enumerates every feasible pair $(x,y)$, then considers its legal join range and extra object nouns. It gives the same optimum in $O(N^2)$ time and is useful as a separate check."
+    ],
+    "difficultyNotes": "The optimization and the complete output grammar both matter. Correct punctuation, duplicate-word multiplicities and the two-line empty case are part of the solution.",
+    "id": "solution-usaco-bronze-2023-us-open-p2",
+    "problemId": "usaco-bronze-2023-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print every cow label in its final physical position, starting at position zero.",
+    "shortExplanation": "Follow the shifting active positions with a moving coordinate frame. One minute becomes a fixed permutation; raise it to the requested time using its cycles, then convert positions back to the circle.",
+    "detailedSteps": [
+      "After $u$ minutes, represent a physical position $p$ by the relative coordinate $q=(p-u)\\bmod N$. The active positions are then always the original list $A$ in this frame.",
+      "Let $R$ send each active position to the next active position cyclically and fix every other position. The cow rotation applies $R$. The active frame then shifts by one while the other cows do not move, so the fixed relative transition is $F(q)=(R(q)-1)\\bmod N$.",
+      "Both operations are permutations, so $F$ is a permutation. By induction, a cow initially labeled $v$ has relative position $F^T(v)$ after $T$ minutes. The subtraction in $F$ is a coordinate change, not an extra physical shift of the cows.",
+      "Decompose $F$ into disjoint cycles in forward transition order. On a cycle of length $\\ell$, applying $F$ exactly $T$ times advances the cycle index by $T\\bmod\\ell$. Visit each position once.",
+      "For each cow, add $T$ modulo $N$ to its final relative position to recover its actual circle position, and write the original cow label there. Because cycle shifts and the frame conversion are bijections, all output positions receive exactly one cow.",
+      "The active labels retain their cyclic order when they wrap across zero. With $K=1$ the cow rotation changes nothing, and with $K=N$ every cow advances one physical position per minute. Both are covered by the same transformation.",
+      "The algorithm takes $O(N)$ time and $O(N)$ space. It reduces the potentially $10^9$ minutes modulo cycle lengths rather than simulating them. Use 64-bit arithmetic for the minute and position addition.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve() {\n    int n, k;\n    long long minutes;\n    cin >> n >> k >> minutes;\n    vector<int> active(k), next(n), answer(n);\n    for (int &position : active) cin >> position;\n    for (int j = 0; j < n; ++j) next[j] = (j + n - 1) % n;\n    for (int j = 0; j < k; ++j) next[active[j]] = (active[(j + 1) % k] + n - 1) % n;\n    vector<bool> seen(n, false);\n    for (int start = 0; start < n; ++start) {\n        if (seen[start]) continue;\n        vector<int> cycle;\n        int at = start;\n        do {\n            seen[at] = true;\n            cycle.push_back(at);\n            at = next[at];\n        } while (at != start);\n        int shift = (int)(minutes % cycle.size());\n        for (int j = 0; j < (int)cycle.size(); ++j) {\n            int finalRelative = cycle[(j + shift) % cycle.size()];\n            int finalPosition = (int)((finalRelative + minutes) % n);\n            answer[finalPosition] = cycle[j];\n        }\n    }\n    for (int j = 0; j < n; ++j) cout << (j ? \" \" : \"\") << answer[j];\n    cout << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve();\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A coordinate frame can make a changing operation constant.",
+      "Compose the rotation with the frame shift in the correct order.",
+      "Permutation cycles compute large powers directly."
+    ],
+    "commonMistakes": [
+      "Physically shifting all cows after the rotation.",
+      "Applying active moves in place instead of simultaneously.",
+      "Forgetting to convert relative coordinates back to physical positions.",
+      "Reversing the direction of the cycle shift."
+    ],
+    "alternativeMethods": [
+      "Binary lifting of the same fixed permutation is another correct approach: preprocess powers of $F$ and apply the bits of $T$, using $O(N\\log T)$ time and space. Cycle decomposition avoids that extra logarithmic factor."
+    ],
+    "difficultyNotes": "The difficult step is separating physical cow movement from the changing active-position frame. Once the fixed permutation is established, its cycles give the complete answer.",
+    "id": "solution-usaco-bronze-2023-us-open-p3",
+    "problemId": "usaco-bronze-2023-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

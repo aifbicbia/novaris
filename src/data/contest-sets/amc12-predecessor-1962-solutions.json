@@ -1,0 +1,825 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1962-p1",
+    "problemId": "amc12-predecessor-1962-p1",
+    "finalAnswer": "$\\boxed{\\frac{15}{8}}$ (choice D)",
+    "shortExplanation": "The numerator is one, and the denominator is $8/15$.",
+    "detailedSteps": [
+      "For every real y, $1^{4y-1}=1$. The denominator is $5^{-1}+3^{-1}=1/5+1/3=8/15$.",
+      "Thus the entire quotient equals $1/(8/15)=15/8$."
+    ],
+    "keyIdeas": [
+      "Evaluate negative exponents before combining fractions"
+    ],
+    "commonMistakes": [
+      "Reading the power of one as multiplication by its exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parentheses and exponent placement determine what is being simplified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p2",
+    "problemId": "amc12-predecessor-1962-p2",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt3}{6}}$ (choice A)",
+    "shortExplanation": "The two terms are $2\\sqrt3/3$ and $\\sqrt3/2$, whose difference is $\\sqrt3/6$.",
+    "detailedSteps": [
+      "Rationalizing gives $\\sqrt{4/3}=2\\sqrt3/3$, while $\\sqrt{3/4}=\\sqrt3/2$.",
+      "The difference is $\\sqrt3(2/3-1/2)=\\sqrt3/6$, which is positive."
+    ],
+    "keyIdeas": [
+      "Express both radicals with a common factor"
+    ],
+    "commonMistakes": [
+      "Subtracting the radicands before taking the square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common radical reduces the calculation to rational subtraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p3",
+    "problemId": "amc12-predecessor-1962-p3",
+    "finalAnswer": "$\\boxed{0}$ (choice B)",
+    "shortExplanation": "The common difference is two, so $x+2=2$ and $x=0$.",
+    "detailedSteps": [
+      "The first difference is $(x+1)-(x-1)=2$. The second is $(2x+3)-(x+1)=x+2$.",
+      "An arithmetic progression requires these to be equal, giving $x=0$. The actual terms are then minus one, one and three."
+    ],
+    "keyIdeas": [
+      "Equate successive differences"
+    ],
+    "commonMistakes": [
+      "Assuming the terms themselves must have a constant ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The stated order fixes which differences to compare.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p4",
+    "problemId": "amc12-predecessor-1962-p4",
+    "finalAnswer": "$\\boxed{\\frac53}$ (choice B)",
+    "shortExplanation": "Writing both sides as powers of two gives $3x=5$.",
+    "detailedSteps": [
+      "The equation becomes $(2^3)^x=2^5$, or $2^{3x}=2^5$.",
+      "Powers of two are strictly increasing, so their exponents agree: $3x=5$, hence $x=5/3$."
+    ],
+    "keyIdeas": [
+      "Use a common exponential base"
+    ],
+    "commonMistakes": [
+      "Dividing 32 by eight instead of matching exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common base avoids approximate logarithms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p5",
+    "problemId": "amc12-predecessor-1962-p5",
+    "finalAnswer": "$\\boxed{\\pi}$ (choice C)",
+    "shortExplanation": "Both circumference and diameter scale with the new radius, so their ratio remains pi.",
+    "detailedSteps": [
+      "If the original radius is r, the new circumference is $2\\pi(r+1)$ and the new diameter is $2(r+1)$.",
+      "Dividing cancels the same positive radius factor, leaving pi."
+    ],
+    "keyIdeas": [
+      "Use the universal circumference-to-diameter ratio"
+    ],
+    "commonMistakes": [
+      "Comparing the new circumference with the old diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio is independent of the circle’s size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p6",
+    "problemId": "amc12-predecessor-1962-p6",
+    "finalAnswer": "$\\boxed{\\frac{9\\sqrt2}{2}}$ (choice D)",
+    "shortExplanation": "The triangle side is six, so the square side is $9/2$ and its diagonal is $9\\sqrt2/2$.",
+    "detailedSteps": [
+      "For equilateral side t, the area is $\\sqrt3t^2/4=9\\sqrt3$. Thus $t^2=36$, and the positive side is six.",
+      "The common perimeter is eighteen. The square side is $18/4=9/2$, so its diagonal is $9\\sqrt2/2$ inches."
+    ],
+    "keyIdeas": [
+      "Recover the triangle side before using equal perimeters"
+    ],
+    "commonMistakes": [
+      "Equating the side lengths when only the perimeters are equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity formulas use lengths, while the given area uses squared lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p7",
+    "problemId": "amc12-predecessor-1962-p7",
+    "finalAnswer": "$\\boxed{\\frac{180^\\circ-A}{2}}$ (choice C)",
+    "shortExplanation": "The two exterior half-angles leave $90^\\circ-A/2$ at D.",
+    "detailedSteps": [
+      "The exterior bisectors meet at the excenter opposite A. In triangle BDC, the angles at B and C are $(180^\\circ-B)/2$ and $(180^\\circ-C)/2$.",
+      "The remaining angle is $180^\\circ-(180^\\circ-B)/2-(180^\\circ-C)/2=(B+C)/2$.",
+      "Since $B+C=180^\\circ-A$, this equals $(180^\\circ-A)/2$."
+    ],
+    "keyIdeas": [
+      "Sum the angles in the excenter triangle"
+    ],
+    "commonMistakes": [
+      "Using the incenter formula for two interior bisectors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The word exterior changes which half-angles are used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p8",
+    "problemId": "amc12-predecessor-1962-p8",
+    "finalAnswer": "$\\boxed{1-\\frac1{n^2}}$ (choice D)",
+    "shortExplanation": "The sum is $n-1/n$, so its mean is $1-1/n^2$.",
+    "detailedSteps": [
+      "The n minus one unchanged terms contribute $n-1$. Adding the exceptional term gives $(n-1)+(1-1/n)=n-1/n$.",
+      "Divide by n to obtain the mean $1-1/n^2$. The count n is an integer greater than one."
+    ],
+    "keyIdeas": [
+      "Divide the full sum by the number of terms"
+    ],
+    "commonMistakes": [
+      "Returning the sum rather than the mean."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small deficit is divided by n a second time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p9",
+    "problemId": "amc12-predecessor-1962-p9",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The five factors are $x$, $x-1$, $x+1$, $x^2+1$ and $x^4+1$.",
+    "detailedSteps": [
+      "Repeated differences of squares give $x^9-x=x(x^8-1)=x(x-1)(x+1)(x^2+1)(x^4+1)$.",
+      "The quadratic has no real roots. The quartic has no rational linear root; any monic integer quadratic factorization must have the form $(x^2+ux+v)(x^2-ux+w)$ with integers and $vw=1$.",
+      "Thus v and w are both one or both minus one. Its quadratic coefficient would require $u^2=2$ or $u^2=-2$, impossible for an integer. By the monic form of Gauss’s lemma, no remaining factorization over integer coefficients exists.",
+      "Therefore there are exactly five nonconstant factors, up to unit signs. Factors involving irrational coefficients are outside the required domain."
+    ],
+    "keyIdeas": [
+      "Factor over the required integer coefficient domain"
+    ],
+    "commonMistakes": [
+      "Splitting the quartic using irrational coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coefficient domain is essential to the factor count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p10",
+    "problemId": "amc12-predecessor-1962-p10",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The outward speed is 45 miles per hour, while the whole-trip speed is forty.",
+    "detailedSteps": [
+      "The outward time is $10/3$ hours, so its speed is $150/(10/3)=45$. The return time is $25/6$ hours.",
+      "The whole trip covers 300 miles in $10/3+25/6=15/2$ hours, giving $300/(15/2)=40$. The requested excess is five miles per hour."
+    ],
+    "keyIdeas": [
+      "Use total distance over total time"
+    ],
+    "commonMistakes": [
+      "Taking the unweighted arithmetic mean of the two speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal distances do not give equal time weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p11",
+    "problemId": "amc12-predecessor-1962-p11",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The roots are $(p-1)/2$ and $(p+1)/2$, separated by one.",
+    "detailedSteps": [
+      "Multiplying the equation by four and completing the square gives $(2x-p)^2=1$.",
+      "The two real roots are $x=(p-1)/2$ and $x=(p+1)/2$. Their difference is one for every real p."
+    ],
+    "keyIdeas": [
+      "Complete the square with the parameter retained"
+    ],
+    "commonMistakes": [
+      "Treating a parameter-dependent root as a parameter-dependent separation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The square completion shows the discriminant is always positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p12",
+    "problemId": "amc12-predecessor-1962-p12",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The final three coefficients are fifteen, minus six and one, summing to ten.",
+    "detailedSteps": [
+      "Expand in powers of $1/a$, with $a\\ne0$: $(1-1/a)^6=1-6/a+15/a^2-20/a^3+15/a^4-6/a^5+1/a^6$.",
+      "The final three coefficients are 15, minus six and one. Their sum is $15-6+1=10$."
+    ],
+    "keyIdeas": [
+      "Keep the alternating signs of binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Adding unsigned binomial coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coefficients are numbers; powers of a are not included in their sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p13",
+    "problemId": "amc12-predecessor-1962-p13",
+    "finalAnswer": "$\\boxed{30}$ (choice B)",
+    "shortExplanation": "The relation is $R=2S/T$, so the new S is thirty.",
+    "detailedSteps": [
+      "Write $R=kS/T$. The first data give $k=RT/S=[(4/3)(9/14)]/(3/7)=2$.",
+      "Therefore $S=RT/2=\\sqrt{48}\\sqrt{75}/2=\\sqrt{3600}/2=30$. Both radicals are positive."
+    ],
+    "keyIdeas": [
+      "Determine the constant of joint variation"
+    ],
+    "commonMistakes": [
+      "Multiplying by the variation constant instead of dividing by it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct and inverse variation are combined in one equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p14",
+    "problemId": "amc12-predecessor-1962-p14",
+    "finalAnswer": "$\\boxed{2.4}$ (choice B)",
+    "shortExplanation": "The first term is four and the ratio is minus two thirds, so the sum is $12/5$.",
+    "detailedSteps": [
+      "The common ratio is $(-8/3)/4=-2/3$, whose absolute value is less than one.",
+      "The infinite sum is $4/[1-(-2/3)]=12/5=2.4$. Convergence justifies the limiting sum."
+    ],
+    "keyIdeas": [
+      "Use the convergent signed geometric ratio"
+    ],
+    "commonMistakes": [
+      "Using two thirds as the ratio and losing the alternating signs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absolute value of the ratio determines convergence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p15",
+    "problemId": "amc12-predecessor-1962-p15",
+    "finalAnswer": "$\\boxed{\\text{a straight line}}$ (choice D)",
+    "shortExplanation": "The centroid is a fixed translate of one third of C, so it follows a straight line.",
+    "detailedSteps": [
+      "In vector notation, $G=(A+B+C)/3$. The two base vertices are fixed.",
+      "If $C=C_0+tv$ follows a straight line with $v\\ne0$, then $G=(A+B+C_0)/3+t(v/3)$. This is also a straight line, parallel to the path of C.",
+      "Any position making the triangle degenerate is excluded; it does not change the supporting line of the centroid locus."
+    ],
+    "keyIdeas": [
+      "Use the centroid as an affine average"
+    ],
+    "commonMistakes": [
+      "Assuming the centroid stays fixed when only the base is fixed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An affine map takes a line to a line when its direction remains nonzero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p16",
+    "problemId": "amc12-predecessor-1962-p16",
+    "finalAnswer": "$\\boxed{\\frac{135}{2}}$ (choice C)",
+    "shortExplanation": "The original diagonal squared is forty; the new area is $12\\cdot225/40=135/2$.",
+    "detailedSteps": [
+      "The original rectangle has sides two and six, giving squared diagonal $2^2+6^2=40$.",
+      "The similar rectangle has diagonal fifteen, so the squared linear scale is $15^2/40=225/40$. Its area is $12(225/40)=135/2$ square inches."
+    ],
+    "keyIdeas": [
+      "Square the diagonal scale factor to scale area"
+    ],
+    "commonMistakes": [
+      "Scaling area by the unsquared length ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A squared diagonal is enough; no radical needs to be approximated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p17",
+    "problemId": "amc12-predecessor-1962-p17",
+    "finalAnswer": "$\\boxed{\\frac{2b}{3}}$ (choice B)",
+    "shortExplanation": "The numerator doubles and the base exponent triples, so $a=2b/3$.",
+    "detailedSteps": [
+      "Use $225=15^2$ and $8=2^3$. Then $a=\\ln(15^2)/\\ln(2^3)=2\\ln15/(3\\ln2)$.",
+      "Since $b=\\ln15/\\ln2$, it follows that $a=2b/3$."
+    ],
+    "keyIdeas": [
+      "Change both logarithms to base two"
+    ],
+    "commonMistakes": [
+      "Changing the logarithm’s argument without also changing its base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Powers in the argument and base contribute different factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p18",
+    "problemId": "amc12-predecessor-1962-p18",
+    "finalAnswer": "$\\boxed{3r^2}$ (choice A)",
+    "shortExplanation": "Each central triangle has area $r^2/4$, so all twelve have area $3r^2$.",
+    "detailedSteps": [
+      "Adjacent vertices subtend $360^\\circ/12=30^\\circ$ at the circle center.",
+      "Each isosceles central triangle has area $\\frac12r^2\\sin30^\\circ=r^2/4$. Summing twelve equal triangles gives $3r^2$."
+    ],
+    "keyIdeas": [
+      "Divide the polygon into twelve central triangles"
+    ],
+    "commonMistakes": [
+      "Using a sixty-degree central angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circumradius is the pair of equal sides in each central triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p19",
+    "problemId": "amc12-predecessor-1962-p19",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "The coefficients are one, minus six and five, summing to zero.",
+    "detailedSteps": [
+      "The point at zero gives $c=5$. The other two points give $a-b=7$ and $4a+2b=-8$.",
+      "The second relation reduces to $2a+b=-4$. Adding it to the first gives $3a=3$, so $a=1$ and $b=-6$.",
+      "Hence $a+b+c=1-6+5=0$. All three original points satisfy this polynomial."
+    ],
+    "keyIdeas": [
+      "Substitute the three points before evaluating at one"
+    ],
+    "commonMistakes": [
+      "Returning one of the given y-values rather than the value at x equal to one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requested sum is the polynomial’s value at one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p20",
+    "problemId": "amc12-predecessor-1962-p20",
+    "finalAnswer": "$\\boxed{108^\\circ}$ (choice A)",
+    "shortExplanation": "The five angles sum to 540 degrees, making the middle angle 108 degrees.",
+    "detailedSteps": [
+      "The interior-angle sum of a pentagon is $180^\\circ(5-2)=540^\\circ$.",
+      "In a five-term arithmetic progression, the middle term equals the mean. Thus one angle is $540^\\circ/5=108^\\circ$, regardless of the common difference."
+    ],
+    "keyIdeas": [
+      "Identify the middle angle of an odd progression"
+    ],
+    "commonMistakes": [
+      "Assuming the progression must have nonzero difference or using the exterior-angle sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An odd arithmetic progression contains its own average.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p21",
+    "problemId": "amc12-predecessor-1962-p21",
+    "finalAnswer": "$\\boxed{26}$ (choice E)",
+    "shortExplanation": "The conjugate roots have product thirteen, and the leading coefficient is two, giving $s=26$.",
+    "detailedSteps": [
+      "Real coefficients make $3-2i$ the other root. Their product is $(3+2i)(3-2i)=9+4=13$.",
+      "By Vieta, the product of the roots is $s/2$. Therefore $s=26$. The resulting polynomial is $2x^2-12x+26$."
+    ],
+    "keyIdeas": [
+      "Pair complex roots in a real polynomial"
+    ],
+    "commonMistakes": [
+      "Forgetting the leading coefficient when using the product of roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conjugation fixes the second root without solving again.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p22",
+    "problemId": "amc12-predecessor-1962-p22",
+    "finalAnswer": "$\\boxed{b>2}$ (choice D)",
+    "shortExplanation": "The numeral represents $(b+1)^2$ for every legal integer base greater than two.",
+    "detailedSteps": [
+      "Expand the numeral as $b^2+2b+1=(b+1)^2$.",
+      "An integer base must be positive and larger than every digit. Since the digit two occurs, the legal bases are exactly integers $b>2$. The expansion is an integer square for all of them."
+    ],
+    "keyIdeas": [
+      "Respect legal digits when expanding a base numeral"
+    ],
+    "commonMistakes": [
+      "Including base two even though its digit two is illegal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The algebraic square identity and the digit restriction are both needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p23",
+    "problemId": "amc12-predecessor-1962-p23",
+    "finalAnswer": "$\\boxed{\\text{none of the listed claims}}$ (choice E)",
+    "shortExplanation": "The data always determine BC and then DB, even when an altitude foot lies outside its side.",
+    "detailedSteps": [
+      "From the area, $AB\\cdot CD=BC\\cdot AE$. The three known positive lengths therefore determine $BC=AB\\cdot CD/AE$.",
+      "Triangle BCD is right, possibly with D on an extension of AB. Its length satisfies $DB^2=BC^2-CD^2$, so $DB=\\sqrt{BC^2-CD^2}$. This also includes $DB=0$ when B is a right angle.",
+      "Thus DB is determined for every feasible triangle. No restriction to an acute A, acute B or acute triangle is necessary, and the claim of insufficient information is false."
+    ],
+    "keyIdeas": [
+      "Equate the two expressions for the triangle’s area"
+    ],
+    "commonMistakes": [
+      "Treating an external altitude foot as invalidating the Pythagorean length relation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Lengths remain positive even when directed side projections change sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p24",
+    "problemId": "amc12-predecessor-1962-p24",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice A)",
+    "shortExplanation": "The positive solution of $(3x-2)(x+3)=0$ is $x=2/3$ hours.",
+    "detailedSteps": [
+      "The actual solo times are $x+6$, $x+1$ and $2x$, with $x>0$. Adding their rates gives $1/(x+6)+1/(x+1)+1/(2x)=1/x$.",
+      "Thus $1/(x+6)+1/(x+1)=1/(2x)$. Clearing positive denominators yields $3x^2+7x-6=0$, or $(3x-2)(x+3)=0$.",
+      "Only $x=2/3$ is a positive time. Its three rates are $3/20$, $3/5$ and $3/4$, summing to $3/2=1/x$."
+    ],
+    "keyIdeas": [
+      "Convert each solo time to a work rate"
+    ],
+    "commonMistakes": [
+      "Reading the additional time for R as x instead of a total of twice x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Physical positivity excludes the negative algebraic root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p25",
+    "problemId": "amc12-predecessor-1962-p25",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The center is three feet from AD, with radius five feet.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $D=(0,8)$ and BC on $x=8$. A circle through A and D has center $(h,4)$ and squared radius $h^2+16$.",
+      "Tangency to BC gives squared radius $(8-h)^2$. Equality yields $h^2+16=64-16h+h^2$, so $h=3$.",
+      "The radius is $\\sqrt{3^2+4^2}=5$. The tangency point $(8,4)$ lies on the actual side BC."
+    ],
+    "keyIdeas": [
+      "Use the chord’s perpendicular bisector and tangency distance"
+    ],
+    "commonMistakes": [
+      "Assuming the center is the square’s center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring the tangency distance is safe after checking the resulting positive radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p26",
+    "problemId": "amc12-predecessor-1962-p26",
+    "finalAnswer": "$\\boxed{\\frac{16}{3}}$ (choice E)",
+    "shortExplanation": "The expression is $16/3-3(x-4/3)^2$, maximized at $x=4/3$.",
+    "detailedSteps": [
+      "Complete the square: $8x-3x^2=16/3-3(x-4/3)^2$.",
+      "The squared term is nonnegative for every real x. The upper bound $16/3$ is attained when $x=4/3$, proving it is the maximum."
+    ],
+    "keyIdeas": [
+      "Complete the square and retain the equality case"
+    ],
+    "commonMistakes": [
+      "Returning the maximizing input instead of the maximum value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Attainment makes this an actual maximum rather than only an upper bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p27",
+    "problemId": "amc12-predecessor-1962-p27",
+    "finalAnswer": "$\\boxed{\\text{all three}}$ (choice E)",
+    "shortExplanation": "Maximum is commutative and associative, and minimum distributes over maximum.",
+    "detailedSteps": [
+      "The first law is symmetry of $\\max(a,b)$. The second holds because either grouping gives $\\max(a,b,c)$.",
+      "For the third, interchange b and c if necessary so $b\\le c$. Then $\\max(b,c)=c$ and $\\min(a,b)\\le\\min(a,c)$.",
+      "Consequently both sides equal $\\min(a,c)$. This proves the law for all real values, including ties."
+    ],
+    "keyIdeas": [
+      "Apply maximum and minimum laws in a total order"
+    ],
+    "commonMistakes": [
+      "Assuming a familiar arithmetic distribution rule instead of proving the order relation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A two-case ordering argument covers infinitely many inputs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p28",
+    "problemId": "amc12-predecessor-1962-p28",
+    "finalAnswer": "$\\boxed{10\\text{ or }100}$ (choice D)",
+    "shortExplanation": "The logarithm of x must be one or two, giving x equal to ten or one hundred.",
+    "detailedSteps": [
+      "The original logarithm requires $x>0$. Set $t=\\log_{10}x$, so $x=10^t$. Both sides of the equation are then positive.",
+      "Taking base-ten logarithms gives $t^2=3t-2$. Thus $(t-1)(t-2)=0$, so $t=1$ or $t=2$.",
+      "The corresponding values are ten and one hundred. Each satisfies the original equation, and the reversible positive-domain transformations exclude further roots."
+    ],
+    "keyIdeas": [
+      "Take logarithms on the positive domain"
+    ],
+    "commonMistakes": [
+      "Allowing nonpositive x or treating the logarithmic exponent as an ordinary multiplier."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponential substitution makes the solution set exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p29",
+    "problemId": "amc12-predecessor-1962-p29",
+    "finalAnswer": "$\\boxed{-2<x<\\frac32}$ (choice A)",
+    "shortExplanation": "The product $(2x-3)(x+2)$ is negative exactly between its roots.",
+    "detailedSteps": [
+      "Move six to the left and factor: $2x^2+x-6=(2x-3)(x+2)$.",
+      "The leading coefficient is positive, so the expression is negative for $-2<x<3/2$. The two endpoints give equality and are excluded."
+    ],
+    "keyIdeas": [
+      "Use the sign of the factored quadratic"
+    ],
+    "commonMistakes": [
+      "Including the roots in a strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The root order determines the middle interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p30",
+    "problemId": "amc12-predecessor-1962-p30",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "The conjunction is false in the three cases where at least one statement is false.",
+    "detailedSteps": [
+      "The negation of p and q both being true is $\\neg(p\\land q)$.",
+      "It is false in case one and true in cases two, three and four. Exactly three listed cases therefore imply the negation."
+    ],
+    "keyIdeas": [
+      "Negate a conjunction with a truth table"
+    ],
+    "commonMistakes": [
+      "Replacing the negation with both statements being false."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One false component already makes a conjunction false.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p31",
+    "problemId": "amc12-predecessor-1962-p31",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The side-count pairs are four and three, eight and four, and twenty and five.",
+    "detailedSteps": [
+      "Let n be the side count of the polygon with the larger angle and m that of the smaller. The angle ratio gives $2(1-2/n)=3(1-2/m)$.",
+      "Rearranging yields $n=4m/(6-m)$. A polygon has integer side count at least three, and positivity forces $m<6$.",
+      "For $m=3,4,5$, the corresponding n are 4, 8, 20, all valid. These exhaust all possibilities, giving three pairs. Side length does not affect a regular polygon’s angle.",
+      "The modern reprint adds unit side lengths; the primary publication omits that qualifier. Either reading gives these same three realizable pairs."
+    ],
+    "keyIdeas": [
+      "Bound the smaller polygon’s side count"
+    ],
+    "commonMistakes": [
+      "Searching unbounded side counts without bounding m first."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The rational side-count equation gives a finite classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p32",
+    "problemId": "amc12-predecessor-1962-p32",
+    "finalAnswer": "$\\boxed{\\frac{n^2+3n}{4}}$ (choice E)",
+    "shortExplanation": "The kth term is $(k+1)/2$, and the sum is $n(n+3)/4$.",
+    "detailedSteps": [
+      "Starting at one and adding one half each time gives $x_k=1+(k-1)/2=(k+1)/2$.",
+      "Therefore $\\sum_{k=1}^n x_k=[n(n+1)/2+n]/2=n(n+3)/4$. This includes the case $n=1$."
+    ],
+    "keyIdeas": [
+      "Sum the arithmetic sequence defined by the recurrence"
+    ],
+    "commonMistakes": [
+      "Dropping the initial term or using n increments instead of n minus one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A first-term check catches most indexing mistakes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p33",
+    "problemId": "amc12-predecessor-1962-p33",
+    "finalAnswer": "$\\boxed{[-4,-1]\\cup[3,6]}$ (choice A)",
+    "shortExplanation": "The distance from one must lie between two and five, giving the two closed intervals.",
+    "detailedSteps": [
+      "The bound $|x-1|\\le5$ gives $-4\\le x\\le6$. The lower bound $|x-1|\\ge2$ gives $x\\le-1$ or $x\\ge3$.",
+      "Intersect these conditions to obtain $[-4,-1]\\cup[3,6]$. All four endpoints are included by the weak inequalities."
+    ],
+    "keyIdeas": [
+      "Combine an outer bound with an excluded middle interval"
+    ],
+    "commonMistakes": [
+      "Keeping the entire outer interval and forgetting the lower bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both absolute-value bounds must hold simultaneously.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p34",
+    "problemId": "amc12-predecessor-1962-p34",
+    "finalAnswer": "$\\boxed{\\text{all real }K}$ (choice E)",
+    "shortExplanation": "At zero, x is zero; every nonzero K gives a positive quadratic discriminant.",
+    "detailedSteps": [
+      "If $K=0$, the equation becomes $x=0$, which has a real solution.",
+      "For $K\\ne0$, rearrange it as $K^2x^2-(3K^2+1)x+2K^2=0$. Its discriminant is $(3K^2+1)^2-8K^4=K^4+6K^2+1>0$.",
+      "Thus every nonzero real K gives two real roots, and zero also gives a real root. All real K are allowed."
+    ],
+    "keyIdeas": [
+      "Handle the zero coefficient separately"
+    ],
+    "commonMistakes": [
+      "Applying the quadratic formula at K equal to zero and losing that case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parameter can lower the equation’s degree without removing all solutions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p35",
+    "problemId": "amc12-predecessor-1962-p35",
+    "finalAnswer": "$\\boxed{40}$ (choice B)",
+    "shortExplanation": "The hands move through 220 degrees of relative angle at $11/2$ degrees per minute, taking forty minutes.",
+    "detailedSteps": [
+      "At t minutes after six, the minute hand is at $6t$ degrees and the hour hand at $180+t/2$. Their signed difference is $11t/2-180$.",
+      "For $0<t<60$, a smaller angle of 110 degrees occurs at differences minus 110 and plus 110. The times are $t_1=140/11$ and $t_2=580/11$ minutes.",
+      "The later time minus the earlier is $440/11=40$ minutes. Both lie between six and seven."
+    ],
+    "keyIdeas": [
+      "Use the two signed positions of the same smaller angle"
+    ],
+    "commonMistakes": [
+      "Holding the hour hand fixed or using the same signed angle twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two observations occur on opposite sides of the hand crossing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p36",
+    "problemId": "amc12-predecessor-1962-p36",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The only possibilities are $(x,y)=(6,3)$ and $(12,3)$.",
+    "detailedSteps": [
+      "Put $u=x-9$. The equation becomes $u^2-1=2^y$. Its left side is an integer, so negative integer y cannot work. At $y=0$, it would require $u^2=2$, impossible.",
+      "For $y\\ge1$, u must be odd and $|u|\\ge3$. Factor $(|u|-1)(|u|+1)=2^y$. Both positive factors must be powers of two and differ by two.",
+      "If they are $2^a$ and $2^b$ with $1\\le a<b$, then $2^a(2^{b-a}-1)=2$. The odd factor forces $a=1$, $b=2$. Thus $|u|=3$ and $y=3$.",
+      "The two values $u=-3,3$ give x equal to six and twelve. Both satisfy the original equation, so there are exactly two integer pairs."
+    ],
+    "keyIdeas": [
+      "Factor two neighboring integers into powers of two"
+    ],
+    "commonMistakes": [
+      "Assuming the exponent is positive without excluding zero and negative integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The proof gives completeness beyond any finite search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p37",
+    "problemId": "amc12-predecessor-1962-p37",
+    "finalAnswer": "$\\boxed{\\frac58}$ (choice D)",
+    "shortExplanation": "The area is $5/8-(t-1/2)^2/2$, maximized at the two side midpoints.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(1,0)$, $C=(1,1)$ and $D=(0,1)$. The equal side distances give $E=(t,0)$ and $F=(0,t)$ with $0\\le t\\le1$.",
+      "The coordinate area of polygon CDFE is $(1+t-t^2)/2=5/8-(t-1/2)^2/2$.",
+      "The maximum is $5/8$, attained at $t=1/2$, which lies on both actual sides."
+    ],
+    "keyIdeas": [
+      "Express the quadrilateral area as a concave quadratic"
+    ],
+    "commonMistakes": [
+      "Maximizing a complementary triangle instead of the named quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the allowed side parameter proves attainment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p38",
+    "problemId": "amc12-predecessor-1962-p38",
+    "finalAnswer": "$\\boxed{7}$ (choice B)",
+    "shortExplanation": "The only original population is $49^2=2401$, a multiple of seven.",
+    "detailedSteps": [
+      "Write the original population as $a^2$, with $a\\ge0$ an integer. The first increase gives $b^2-a^2=99$, and the second gives $c^2-a^2=200$.",
+      "Positive factor pairs of 99 with equal parity are $(1,99)$, $(3,33)$ and $(9,11)$. From $(b-a,b+a)$ they give $a=49,15,1$, respectively.",
+      "Only the first makes $a^2+200$ a square: $2401+200=2601=51^2$. The other totals 425 and 201 are not squares.",
+      "Also $2401+100=2501=50^2+1$. Thus the original population is 2401, divisible by seven and by none of the other listed numbers."
+    ],
+    "keyIdeas": [
+      "Factor the two square differences with exact positivity"
+    ],
+    "commonMistakes": [
+      "Checking the first increase without also checking the final square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Finite factorization proves the population is uniquely determined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p39",
+    "problemId": "amc12-predecessor-1962-p39",
+    "finalAnswer": "$\\boxed{3\\sqrt6}$ (choice C)",
+    "shortExplanation": "The two area-compatible median lengths are six and $3\\sqrt6$; unequal sides exclude six.",
+    "detailedSteps": [
+      "Let G be the centroid. It divides the two known medians in ratio two to one, so $GA=2$ and $GB=4$. Triangle AGB has one third of the full triangle’s area, namely $\\sqrt{15}$.",
+      "If $\\theta=\\angle AGB$, its area gives $4\\sin\\theta=\\sqrt{15}$. Hence $\\sin\\theta=\\sqrt{15}/4$ and $\\cos\\theta=\\pm1/4$.",
+      "With G as the vector origin, $A+B+C=0$. Therefore $GC^2=|A+B|^2=2^2+4^2+2\\cdot2\\cdot4\\cos\\theta=20\\pm4$.",
+      "The third median has length $3GC/2$, giving six or $3\\sqrt6$. The six branch makes two medians equal. By Apollonius’s formula, the difference of two squared medians is three quarters of the opposite difference of squared sides, so two sides would be equal, contrary to the condition.",
+      "The remaining branch is realized by centroid coordinates $A=(2,0)$, $B=(1,\\sqrt{15})$, $C=(-3,-\\sqrt{15})$. Its side squares are 16, 40, 76, all distinct; the area is $3\\sqrt{15}$ and the medians are the required lengths. Thus $3\\sqrt6$ is the valid answer."
+    ],
+    "keyIdeas": [
+      "Use centroid vectors and exclude the equal-side branch"
+    ],
+    "commonMistakes": [
+      "Discarding an area-compatible branch without using the unequal-side condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The actual primary question page includes an editorial hint diagram; this solution uses a separate centroid-vector derivation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1962-p40",
+    "problemId": "amc12-predecessor-1962-p40",
+    "finalAnswer": "$\\boxed{\\frac{10}{81}}$ (choice B)",
+    "shortExplanation": "Multiplying the sum by ten and subtracting leaves a geometric sum, giving $10/81$.",
+    "detailedSteps": [
+      "The series converges absolutely: $n\\le2^n$ for positive integers n, so $n/10^n\\le(1/5)^n$.",
+      "Let its sum be S. Then $10S=1+2/10+3/10^2+\\cdots$. Subtracting S gives $9S=1+1/10+1/10^2+\\cdots=10/9$.",
+      "Therefore $S=10/81$. Absolute convergence justifies the shift and subtraction."
+    ],
+    "keyIdeas": [
+      "Subtract two absolutely convergent shifted series"
+    ],
+    "commonMistakes": [
+      "Adding only a geometric series and ignoring the changing numerators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Justify convergence before manipulating an infinite sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,509 @@
+[
+  {
+    "id": "solution-amc10a-2006-p1",
+    "problemId": "amc10a-2006-p1",
+    "finalAnswer": "$\\boxed{31}$ (choice A)",
+    "shortExplanation": "The two purchases cost $15$ and $16$ dollars.",
+    "detailedSteps": [
+      "Price times quantity gives $3\\cdot5=15$ dollars for the sandwiches and $2\\cdot8=16$ dollars for the sodas.",
+      "Add the costs: $15+16=31$ dollars."
+    ],
+    "keyIdeas": [
+      "Cost totals"
+    ],
+    "commonMistakes": [
+      "Adding quantities before applying their different unit prices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short computation with two unit prices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p2",
+    "problemId": "amc10a-2006-p2",
+    "finalAnswer": "$\\boxed{h}$ (choice C)",
+    "shortExplanation": "The second operation subtracts $h^3-h$ from $h^3$, leaving $h$.",
+    "detailedSteps": [
+      "Evaluate inside first: $h\\otimes h=h^3-h$.",
+      "For the outer operation the first input is still $h$, so $h\\otimes(h^3-h)=h^3-(h^3-h)=h$."
+    ],
+    "keyIdeas": [
+      "Nested defined operations"
+    ],
+    "commonMistakes": [
+      "Cubing the second input in the outer operation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the order of nested evaluation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p3",
+    "problemId": "amc10a-2006-p3",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "Each of the five ratio units is $6$ years, and Mary has three units.",
+    "detailedSteps": [
+      "Alice's age corresponds to five equal units, so one unit is $30/5=6$ years.",
+      "Mary is $3\\cdot6=18$ years old."
+    ],
+    "keyIdeas": [
+      "Ratio scaling"
+    ],
+    "commonMistakes": [
+      "Reversing the ratio of the two people."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the same scale factor for both ratio entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p4",
+    "problemId": "amc10a-2006-p4",
+    "finalAnswer": "$\\boxed{23}$ (choice E)",
+    "shortExplanation": "The display $9{:}59$ reaches the greatest sum, $9+5+9=23$.",
+    "detailedSteps": [
+      "The largest digit sum of an hour from $1$ through $12$ is $9$, attained by hour $9$. For minutes from $00$ through $59$, the largest tens digit is $5$ and the largest units digit is $9$.",
+      "The maxima are simultaneously attained at $9{:}59$, giving sum $9+5+9=23$. The am/pm marker contributes no digits."
+    ],
+    "keyIdeas": [
+      "Digit maxima"
+    ],
+    "commonMistakes": [
+      "Using hour 23 even though am/pm means a 12-hour display."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Maxima must be simultaneously attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p5",
+    "problemId": "amc10a-2006-p5",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Dave pays for five base slices and all the anchovies, whereas Doug pays for three base slices.",
+    "detailedSteps": [
+      "The plain pizza costs $8$ for eight slices, so the base cost is $1$ per slice. Dave's five slices cost $5$ before toppings; all anchovies were on his slices, adding $2$.",
+      "Dave pays $7$ and Doug pays $3$, a difference of $4$ dollars."
+    ],
+    "keyIdeas": [
+      "Apportioning costs"
+    ],
+    "commonMistakes": [
+      "Splitting the topping charge equally even though Dave ate all of it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Attribute the extra charge to the slices that carry it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p6",
+    "problemId": "amc10a-2006-p6",
+    "finalAnswer": "$\\boxed{\\frac27}$ (choice B)",
+    "shortExplanation": "Take the real seventh root first, then remove the excluded zero solution.",
+    "detailedSteps": [
+      "The equation is $((7x)^2)^7=(14x)^7$. The map $t\\mapsto t^7$ is injective on the real numbers, so $(7x)^2=14x$.",
+      "Thus $49x^2=14x$. Since $x\\ne0$, division by $7x$ yields $7x=2$, or $x=2/7$."
+    ],
+    "keyIdeas": [
+      "Equal odd powers"
+    ],
+    "commonMistakes": [
+      "Taking an even root and introducing an unnecessary sign ambiguity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The real odd root is unambiguous.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p7",
+    "problemId": "amc10a-2006-p7",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The reassembled square has side $12$; the option $y=6$ gives two matching L-shaped pieces that tile it.",
+    "detailedSteps": [
+      "The square area is $8\\cdot18=144$, so its side is $12$. Congruence of the two step-shaped pieces puts their horizontal cut at half-height, $4$, and makes the top and bottom cut positions add to $18$. Thus their longer horizontal edge has length $(18+y)/2$.",
+      "In a two-piece square assembly these orthogonal piece edges are parallel to the square sides: a piece at a square corner fixes that orientation, and the matching shared edges fix the other. Hence no horizontal piece edge can exceed $12$. This gives $(18+y)/2\\le12$, so $y\\le6$; among the supplied choices only $6$ remains.",
+      "Existence can be checked explicitly. For $y=6$, one piece consists of a $12\\times4$ rectangle with a $6\\times4$ rectangle above its left half. Its rotated mate fits above it: a $6\\times4$ block fills the middle-right gap and a $12\\times4$ block forms the top strip. Together they make a $12\\times12$ square."
+    ],
+    "keyIdeas": [
+      "Area-preserving dissection"
+    ],
+    "commonMistakes": [
+      "Using the original rectangle perimeter after the pieces are rearranged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use area, congruence, and an explicit assembly; a picture alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p8",
+    "problemId": "amc10a-2006-p8",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "Subtracting the common output makes $2$ and $4$ the roots.",
+    "detailedSteps": [
+      "The polynomial $y-3=x^2+bx+c-3$ is monic and vanishes at $x=2$ and $x=4$. Therefore $y-3=(x-2)(x-4)=x^2-6x+8$.",
+      "Comparing constant terms gives $c-3=8$, so $c=11$."
+    ],
+    "keyIdeas": [
+      "Quadratic roots after translation"
+    ],
+    "commonMistakes": [
+      "Treating the points as roots of y instead of y-3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Translate the common height to create known roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p9",
+    "problemId": "amc10a-2006-p9",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The valid runs have lengths $2$, $3$, and $5$.",
+    "detailedSteps": [
+      "For $k$ consecutive positive integers starting at $a$, the sum is $k(2a+k-1)/2=15$. Since $1+2+\\cdots+6=21>15$, only $2\\le k\\le5$ need testing.",
+      "The formula gives $a=7$ for $k=2$, $a=4$ for $k=3$, no integer $a$ for $k=4$, and $a=1$ for $k=5$. The three runs are $7+8$, $4+5+6$, and $1+2+3+4+5$."
+    ],
+    "keyIdeas": [
+      "Consecutive sum lengths"
+    ],
+    "commonMistakes": [
+      "Including a single-term run or starting at zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Bound the run length before enumerating.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p10",
+    "problemId": "amc10a-2006-p10",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "The outer square root can be any integer from $0$ through $10$, each determining one distinct real $x$.",
+    "detailedSteps": [
+      "Let $k=\\sqrt{120-\\sqrt x}$. Real square roots imply $0\\le k\\le\\sqrt{120}$, so integer $k$ must be one of $0,1,\\ldots,10$.",
+      "For every one of these values, $\\sqrt x=120-k^2\\ge0$, yielding the unique value $x=(120-k^2)^2$. These eleven values are distinct because $120-k^2$ decreases strictly over this range."
+    ],
+    "keyIdeas": [
+      "Integer values of nested radicals"
+    ],
+    "commonMistakes": [
+      "Requiring x itself to be an integer or omitting k=0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Introduce the outer integer before squaring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p11",
+    "problemId": "amc10a-2006-p11",
+    "finalAnswer": "$\\boxed{\\text{two lines}}$ (choice C)",
+    "shortExplanation": "The equation reduces to $xy=0$, the union of the two coordinate axes.",
+    "detailedSteps": [
+      "Expand the left side and cancel the common squares: $(x+y)^2-x^2-y^2=2xy=0$.",
+      "A product is zero precisely when $x=0$ or $y=0$. These are two intersecting lines, so choice C describes the graph."
+    ],
+    "keyIdeas": [
+      "Factoring a locus"
+    ],
+    "commonMistakes": [
+      "Interpreting the equation as only the point where both factors vanish."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor the difference of the two sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p12",
+    "problemId": "amc10a-2006-p12",
+    "finalAnswer": "$\\boxed{\\text{II, by }4\\pi}$ (choice C)",
+    "shortExplanation": "Both positions allow the same semicircle, but arrangement II adds a quarter-circle of radius $4$.",
+    "detailedSteps": [
+      "In arrangement I the attachment is $8$ feet from either corner of that side. The $8$-foot rope reaches the corners with no length left to wrap, so the area is a semicircle of radius $8$: $32\\pi$.",
+      "In arrangement II the nearer corner is $4$ feet away. After wrapping there, the remaining $8-4=4$ feet adds a quarter-circle outside the adjacent side. The farther corner is $12$ feet away and cannot be reached.",
+      "The extra area is $\\tfrac14\\pi(4^2)=4\\pi$, making II the larger arrangement."
+    ],
+    "keyIdeas": [
+      "Rope wrapping around a corner"
+    ],
+    "commonMistakes": [
+      "Adding a full circle or allowing the rope to pass through the shed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only rope left after reaching a corner can sweep behind it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p13",
+    "problemId": "amc10a-2006-p13",
+    "finalAnswer": "$\\boxed{60}$ (choice D)",
+    "shortExplanation": "Three of the $36$ ordered die-roll pairs win, so the win probability is $1/12$.",
+    "detailedSteps": [
+      "Imagine two rolls are generated even when the first is odd. This does not change the outcome. The winning ordered pairs are $(2,2),(4,4),(6,6)$ out of $6^2=36$ equally likely pairs.",
+      "If the winning payment is $W$, fairness as defined in the question gives $W/12=5$. Hence $W=60$ dollars."
+    ],
+    "keyIdeas": [
+      "Fair-game expectation"
+    ],
+    "commonMistakes": [
+      "Using 1/6 while forgetting the first roll must be even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the precise fairness convention stated in the source.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p14",
+    "problemId": "amc10a-2006-p14",
+    "finalAnswer": "$\\boxed{173}$ (choice B)",
+    "shortExplanation": "The diameters sum to $207$, and the $17$ links each overlap by $2$ centimeters.",
+    "detailedSteps": [
+      "There are $20-3+1=18$ rings. The sum of their outside diameters is $(20+3)\\cdot18/2=207$.",
+      "At each connection, the one-centimeter thickness of each of the two linked rings produces a two-centimeter overlap in the vertical span. There are 17 connections, so the total length is $207-17\\cdot2=173$ centimeters."
+    ],
+    "keyIdeas": [
+      "Overlaps in a chain"
+    ],
+    "commonMistakes": [
+      "Subtracting two centimeters per ring rather than per connection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count joins, not rings, for the overlap correction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p15",
+    "problemId": "amc10a-2006-p15",
+    "finalAnswer": "$\\boxed{47}$ (choice D)",
+    "shortExplanation": "Both runners have angular speed $5$ radians per minute, so their relative angle grows at $10$ radians per minute.",
+    "detailedSteps": [
+      "Odell's angular speed is $250/50=5$ and Kershaw's is $300/60=5$ radians per minute. Opposite directions give a relative speed of $10$.",
+      "They align again after each relative revolution of $2\\pi$, hence every $\\pi/5$ minutes. In 30 minutes the number of encounters after the start is $\\lfloor150/\\pi\\rfloor=47$, since $47<150/\\pi<48$."
+    ],
+    "keyIdeas": [
+      "Relative angular speed"
+    ],
+    "commonMistakes": [
+      "Adding linear speeds while ignoring the different lane radii."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convert each speed to angular units first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p16",
+    "problemId": "amc10a-2006-p16",
+    "finalAnswer": "$\\boxed{16\\sqrt2}$ (choice D)",
+    "shortExplanation": "The radii and center separation determine the apex half-angle; the triangle then has height $8$ and base $4\\sqrt2$.",
+    "detailedSteps": [
+      "Let $\\theta$ be half the apex angle. A circle of radius $r$ tangent to both equal sides has its center on the angle bisector, at distance $r/\\sin\\theta$ from the apex.",
+      "The two centers differ in distance by $(2-1)/\\sin\\theta$. External tangency makes this separation $1+2=3$, so $\\sin\\theta=1/3$ and $\\tan\\theta=1/(2\\sqrt2)$.",
+      "The larger center is $2/(1/3)=6$ below the apex, and the base is another radius 2 below it. The triangle height is 8 and the half-base is $8\\tan\\theta=2\\sqrt2$. Its area is $\\tfrac12(4\\sqrt2)(8)=16\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Two circles in an angle"
+    ],
+    "commonMistakes": [
+      "Using the sum of the center-to-apex distances instead of their difference."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tangency converts radius ratio to an apex-angle condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p17",
+    "problemId": "amc10a-2006-p17",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice A)",
+    "shortExplanation": "The four vertices form a diamond with horizontal and vertical diagonals both of length $1$.",
+    "detailedSteps": [
+      "Take $A=(0,0)$, $D=(3,0)$, $H=(0,2)$, and $E=(3,2)$. The trisection points are $B=(1,0)$, $C=(2,0)$, $G=(1,2)$, and $F=(2,2)$.",
+      "The boundary lines of the central quadrilateral are $AF:y=x$, $BE:y=x-1$, $HC:y=2-x$, and $GD:y=3-x$. Their successive intersections are $W=(3/2,3/2)$, $X=(1,1)$, $Y=(3/2,1/2)$, and $Z=(2,1)$.",
+      "The perpendicular diagonals $WY$ and $XZ$ both have length 1, so the area is $\\tfrac12\\cdot1\\cdot1=1/2$."
+    ],
+    "keyIdeas": [
+      "Line intersections in a rectangle"
+    ],
+    "commonMistakes": [
+      "Confusing the extra rectangle diagonals with the four boundary lines of WXYZ."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Carefully identify the four lines bounding the labeled quadrilateral.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p18",
+    "problemId": "amc10a-2006-p18",
+    "finalAnswer": "$\\boxed{5\\cdot10^4\\cdot26^2}$ (choice C)",
+    "shortExplanation": "Treat the two letters as a block in one of five positions.",
+    "detailedSteps": [
+      "The consecutive letter positions can start at positions $1,2,3,4,$ or $5$, giving five choices. Once their positions are fixed, the two letters have $26^2$ ordered choices and the four digits have $10^4$ choices.",
+      "The character types identify the chosen letter position uniquely, so no outcomes overlap. Multiply to obtain $5\\cdot10^4\\cdot26^2$."
+    ],
+    "keyIdeas": [
+      "Adjacent-block counting"
+    ],
+    "commonMistakes": [
+      "Multiplying by 2! when the ordered letter choices already distinguish the two letters."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The adjacent letters form one positional block.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p19",
+    "problemId": "amc10a-2006-p19",
+    "finalAnswer": "$\\boxed{59}$ (choice C)",
+    "shortExplanation": "The middle angle must be $60^\\circ$, and the positive integer difference may be $1$ through $59$.",
+    "detailedSteps": [
+      "Write the increasing angles as $a-d,a,a+d$, where $d$ is a positive integer because the angles are distinct. Their sum is $3a=180$, so $a=60$.",
+      "Positivity requires $60-d>0$, giving $d=1,\\ldots,59$. Each choice gives a different sorted angle triple and therefore a different similarity class."
+    ],
+    "keyIdeas": [
+      "Arithmetic progression of angles"
+    ],
+    "commonMistakes": [
+      "Counting the same triangle multiple times by ordering its angles differently."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity classes are determined by sorted angle triples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p20",
+    "problemId": "amc10a-2006-p20",
+    "finalAnswer": "$\\boxed{1}$ (choice E)",
+    "shortExplanation": "Six integers occupy only five residue classes, so two must share a remainder.",
+    "detailedSteps": [
+      "Assign every selected integer its residue modulo 5. There are only five possible residues but six chosen integers.",
+      "Two therefore have equal residues, making their difference divisible by 5. The event happens for every allowed selection, so its probability is 1."
+    ],
+    "keyIdeas": [
+      "Pigeonhole principle modulo five"
+    ],
+    "commonMistakes": [
+      "Trying to calculate pair probabilities as if these events were independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A certainty follows from the pigeonhole principle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p21",
+    "problemId": "amc10a-2006-p21",
+    "finalAnswer": "$\\boxed{5416}$ (choice E)",
+    "shortExplanation": "Subtract the four-digit integers that avoid both target digits.",
+    "detailedSteps": [
+      "There are $9000$ four-digit positive integers. To avoid both 2 and 3, the first digit has $7$ choices among $1$ through $9$, and each later digit has $8$ choices including zero.",
+      "The complement has $7\\cdot8^3=3584$ members. Therefore the requested count is $9000-3584=5416$."
+    ],
+    "keyIdeas": [
+      "Complementary digit counting"
+    ],
+    "commonMistakes": [
+      "Allowing leading zero or double-counting numbers that contain both 2 and 3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement avoids inclusion-exclusion overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p22",
+    "problemId": "amc10a-2006-p22",
+    "finalAnswer": "$\\boxed{30}$ (choice C)",
+    "shortExplanation": "All possible net payments are multiples of $30$, and a $30$ payment can actually be made.",
+    "detailedSteps": [
+      "A net transaction is an integer combination of $300$ and $210$, so it is divisible by their greatest common divisor, $30$. This rules out all smaller positive debts.",
+      "The lower bound is attained by giving three goats worth $630$ and receiving two pigs worth $600$ as change. The net payment is $30$."
+    ],
+    "keyIdeas": [
+      "Greatest common divisor and exchange"
+    ],
+    "commonMistakes": [
+      "Restricting all coefficients to be nonnegative even though change may be received."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove both a lower bound and a realizing exchange.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p23",
+    "problemId": "amc10a-2006-p23",
+    "finalAnswer": "$\\boxed{\\frac{44}{3}}$ (choice B)",
+    "shortExplanation": "The smaller tangent segment is $4$; the larger is $8/3$ times as long.",
+    "detailedSteps": [
+      "Radius $AC$ is perpendicular to the common tangent, so triangle $ACE$ is right with hypotenuse $AE=5$ and leg $AC=3$. Thus $CE=\\sqrt{5^2-3^2}=4$.",
+      "Triangles $ACE$ and $BDE$ are similar: both have a right angle, and their angles at $E$ are vertical angles. The ratio of corresponding radii is $8/3$, giving $DE=(8/3)4=32/3$.",
+      "The internal tangent has $E$ between its contact points, so $CD=CE+DE=4+32/3=44/3$."
+    ],
+    "keyIdeas": [
+      "Similar tangent triangles"
+    ],
+    "commonMistakes": [
+      "Subtracting the tangent segments even though E lies between C and D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The word internal determines whether tangent segments add.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p24",
+    "problemId": "amc10a-2006-p24",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice B)",
+    "shortExplanation": "The equatorial square has area $1/2$ and each pyramid has height $1/2$.",
+    "detailedSteps": [
+      "Four face centers at the cube's mid-height form a square whose diagonals are each 1. Hence its area is $1\\cdot1/2=1/2$.",
+      "The top and bottom face centers are each $1/2$ from this square. The octahedron is the union of the two resulting pyramids, with volume $2\\cdot\\tfrac13\\cdot\\tfrac12\\cdot\\tfrac12=1/6$."
+    ],
+    "keyIdeas": [
+      "Octahedron as two pyramids"
+    ],
+    "commonMistakes": [
+      "Using the cube side as the height of each pyramid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use volume, not the analogous surface-area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2006-p25",
+    "problemId": "amc10a-2006-p25",
+    "finalAnswer": "$\\boxed{\\frac{2}{243}}$ (choice C)",
+    "shortExplanation": "There are $18$ ways to visit all eight vertices once, out of $3^7$ equally likely seven-step walks.",
+    "detailedSteps": [
+      "Label cube vertices by binary triples, where adjacent vertices differ in one coordinate. Fix the start as $000$. A successful path has 3 choices for its first step and 2 choices for its second step, since it cannot immediately return. By relabeling coordinates, fix those steps as $000,100,110$.",
+      "The third new vertex is either $010$ or $111$. If it is $010$, the next vertex must be $011$. There are then exactly two completions: $001,101,111$ or $111,101,001$.",
+      "If the third new vertex is $111$, choosing $011$ next fails: going then to $010$ traps the path immediately, while going to $001$ and then $101$ leaves $010$ unreachable. Choosing $101$ instead forces the successful completion $001,011,010$. Thus there are exactly three completions for each fixed initial pair of edges.",
+      "The total is $3\\cdot2\\cdot3=18$ successful paths. Every seven-step walk has probability $3^{-7}$, so the required probability is $18/3^7=2/243$."
+    ],
+    "keyIdeas": [
+      "Hamiltonian paths on a cube"
+    ],
+    "commonMistakes": [
+      "Counting only nonbacktracking walks without also excluding other revisits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A complete branch analysis is needed; forbidding immediate reversal is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

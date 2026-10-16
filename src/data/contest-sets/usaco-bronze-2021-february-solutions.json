@@ -1,0 +1,97 @@
+[
+  {
+    "id": "solution-usaco-bronze-2021-february-p1",
+    "problemId": "usaco-bronze-2021-february-p1",
+    "finalAnswer": "Determine each cow's relative birth-year offset in input order, then print the absolute value of Elsie's offset.",
+    "shortExplanation": "Set Bessie's year to relative offset zero. Each line references a known cow, so the nearest strictly previous or next year of the requested animal determines the new cow uniquely. A matching animal still requires a full twelve-year move.",
+    "detailedSteps": [
+      "**Choose a relative origin.** Store Bessie's offset as $0$ and give the twelve animals ranks $0$ through $11$ in the supplied order, starting with Ox. These offsets measure differences; no actual calendar birth date is needed.",
+      "**Normalize the reference rank.** For a known offset $y$, use $((y\\bmod12)+12)\\bmod12$ in C++ so a negative year still produces a rank between $0$ and $11$.",
+      "**Find the strict nearest year.** If the target animal has rank $a$ and the reference rank is $r$, the next-year distance is $(a-r+12)\\bmod12$. The previous-year distance is $(r-a+12)\\bmod12$. Replace a zero distance with $12$, then add or subtract that distance from the reference offset.",
+      "**Prove the input-order calculation.** Each chosen distance is the unique value in $1,\\ldots,12$ that reaches the target animal in the stated direction. Every other matching year is another twelve-year cycle away. The source guarantees that the reference is already known, so induction over the lines determines each new cow correctly. Output the absolute value of Elsie's offset.",
+      "**Complexity and bounds.** An ordered name map gives $O(N\\log N)$ time and $O(N)$ storage. A chain has at most $N$ steps, each of size at most $12$, so all relative offsets have magnitude at most $12N\\le1200$. Read the eight-word records from stdin and print the year difference to stdout.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    const vector<string> animals = {\"Ox\", \"Tiger\", \"Rabbit\", \"Dragon\",\n        \"Snake\", \"Horse\", \"Goat\", \"Monkey\", \"Rooster\", \"Dog\", \"Pig\", \"Rat\"};\n    map<string, int> offset;\n    offset[\"Bessie\"] = 0;\n    int n;\n    in >> n;\n    for (int i = 0; i < n; ++i) {\n        string name, born, wordIn, direction, animal, year, from, reference;\n        in >> name >> born >> wordIn >> direction >> animal >> year >> from >> reference;\n        int target = static_cast<int>(find(animals.begin(), animals.end(), animal) - animals.begin());\n        int base = offset.at(reference);\n        int baseRank = (base % 12 + 12) % 12;\n        int distance = direction == \"next\" ? (target - baseRank + 12) % 12\n                                           : (baseRank - target + 12) % 12;\n        if (distance == 0) distance = 12;\n        offset[name] = base + (direction == \"next\" ? distance : -distance);\n    }\n    out << abs(offset.at(\"Elsie\")) << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A relative origin is sufficient for a birth-year difference.",
+      "The zodiac repeats every twelve years.",
+      "Strict previous/next means a zero modular distance becomes twelve.",
+      "Earlier references make the input itself a valid calculation order."
+    ],
+    "commonMistakes": [
+      "Using zero years when the requested animal matches the reference animal.",
+      "Using C++'s negative remainder directly as an animal index.",
+      "Printing a signed offset instead of the absolute year difference."
+    ],
+    "alternativeMethods": [
+      "Move one year at a time in the indicated direction until the desired animal appears. At most twelve moves are needed per record. This direct timeline walk is a simple independent check of the modular formulas."
+    ],
+    "difficultyNotes": "Careful interpretation of strictly earlier or later years matters more than the data structure. Negative offsets and repeated animals are the main boundary cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-february-p2",
+    "problemId": "usaco-bronze-2021-february-p2",
+    "finalAnswer": "Maintain the occupied cells and replace the comfortable contributions of the new cow and its occupied cardinal neighbors after each insertion.",
+    "shortExplanation": "Only the new cell and its four neighboring cells can change when a cow is inserted. Subtract the old contributions of occupied neighbors, insert the cow, and add the new contributions of these affected cows. A contribution is one exactly when the cow has three neighbors.",
+    "detailedSteps": [
+      "**Represent the occupied cells.** Keep a set of integer coordinate pairs. A cow's degree is the number of its four horizontal or vertical neighbors in that set. Comfortable means degree exactly $3$; degree $4$ is not comfortable.",
+      "**Find every affected cow.** Inserting a cell $p$ can alter only its own degree and the degrees of occupied cardinal neighbors of $p$. Any other cow sees the same four occupied-or-empty neighbors as before. There are at most five affected cows.",
+      "**Replace their contributions.** Before inserting $p$, subtract one for each occupied neighbor currently having degree $3$. The new cell contributes nothing yet. Insert $p$, then recompute the degrees of $p$ and those same occupied neighbors and add their new degree-$3$ contributions.",
+      "**Prove the running total.** Initially the occupied set and comfortable count are empty. At every insertion all changed contributions are replaced exactly, and all unchanged contributions stay counted. Induction gives the correct total after each prefix. Input cells are distinct, and only the specified cows are inserted.",
+      "**Use the full source bound.** There may be $100000$ insertions. An ordered set makes each lookup $O(\\log N)$; the constant number of affected cells gives $O(N\\log N)$ total time and $O(N)$ memory. Neighbor coordinates outside $0,\\ldots,1000$ are naturally absent from the set. Read from stdin and print one count per insertion.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <iostream>\n#include <set>\n#include <utility>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    using Cell = pair<int, int>;\n    const int dx[4] = {1, -1, 0, 0};\n    const int dy[4] = {0, 0, 1, -1};\n    set<Cell> occupied;\n    auto degree = [&](Cell p) {\n        int result = 0;\n        for (int d = 0; d < 4; ++d)\n            result += occupied.count({p.first + dx[d], p.second + dy[d]});\n        return result;\n    };\n    int n, comfortable = 0;\n    in >> n;\n    for (int i = 0; i < n; ++i) {\n        Cell p;\n        in >> p.first >> p.second;\n        vector<Cell> affected = {p};\n        for (int d = 0; d < 4; ++d) {\n            Cell q = {p.first + dx[d], p.second + dy[d]};\n            if (occupied.count(q)) {\n                comfortable -= degree(q) == 3;\n                affected.push_back(q);\n            }\n        }\n        occupied.insert(p);\n        for (Cell q : affected) comfortable += degree(q) == 3;\n        out << comfortable << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A single insertion changes at most five occupied-cell contributions.",
+      "Exactly three neighbors must be distinguished from four.",
+      "Subtract old values before changing the occupied set.",
+      "An ordered coordinate set avoids array-boundary assumptions."
+    ],
+    "commonMistakes": [
+      "Counting cows with at least three neighbors.",
+      "Updating only the newly inserted cow and missing old neighbors.",
+      "Creating extra cows that the Bronze input did not insert.",
+      "Rescanning the entire pasture after every insertion at the full 100000-cow bound."
+    ],
+    "alternativeMethods": [
+      "An offline check can use insertion times. A cow with fewer than three neighbors in the final configuration never becomes comfortable. Otherwise, sort its existing neighbors' arrival times. Its comfortable interval starts at the later of its own arrival and the third neighbor's arrival, and ends just before the fourth neighbor arrives, or at the final prefix if only three neighbors exist. Add all nonempty intervals to a difference array and take prefix sums."
+    ],
+    "difficultyNotes": "The local change is small even when the whole pasture is large. Tests should include a cow changing from two neighbors to three and then to four, plus cells on the coordinate boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2021-february-p3",
+    "problemId": "usaco-bronze-2021-february-p3",
+    "finalAnswer": "Accumulate twice the signed polygon area with east as positive x and north as positive y. Print CW for a negative sum and CCW for a positive sum.",
+    "shortExplanation": "For consecutive vertices, add $x_i y_{i+1}-x_{i+1}y_i$. A counterclockwise simple grid boundary gives a positive sum; reversing the boundary makes it negative. The source guarantees a simple closed fence with nonzero enclosed area.",
+    "detailedSteps": [
+      "**Fix the coordinate convention.** Start at $(0,0)$. East increases $x$, west decreases $x$, north increases $y$, and south decreases $y$. Each character gives one unit step.",
+      "**Accumulate the boundary sum.** When moving from $(x,y)$ to $(x',y')$, add $xy'-x'y$. The path's final step returns to the origin, so all boundary edges are included. Only the current vertex and running sum are needed.",
+      "**Explain the positive sign.** The enclosed lattice region consists of unit squares. Each square traversed counterclockwise has cross-product sum $2$. In the sum over all enclosed squares, shared internal edges cancel because they are traversed in opposite directions. What remains is the outer boundary with the interior on its left, so its sum is twice the positive enclosed area.",
+      "**Choose the output.** Reversing a boundary negates every edge contribution. The interior-on-right clockwise traversal therefore has a negative sum, and the interior-on-left counterclockwise traversal has a positive sum. The source's simple closed path excludes zero-area or self-crossing cases; no separate guessed convention is needed.",
+      "**Complexity and integers.** Scan each path once. Time is $O(L)$ for a path of length $L$, with $O(1)$ numerical workspace and $O(L)$ space for its input string. Here $L\\le100$, so coordinates stay within $[-100,100]$ and each unit-edge contribution has magnitude at most $100$. A long long is safely sufficient. Use stdin and output one CW or CCW line per path.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int paths;\n    in >> paths;\n    while (paths--) {\n        string path;\n        in >> path;\n        long long x = 0, y = 0, signedTwiceArea = 0;\n        for (char direction : path) {\n            long long nextX = x, nextY = y;\n            if (direction == 'N') ++nextY;\n            if (direction == 'E') ++nextX;\n            if (direction == 'S') --nextY;\n            if (direction == 'W') --nextX;\n            signedTwiceArea += x * nextY - nextX * y;\n            x = nextX;\n            y = nextY;\n        }\n        out << (signedTwiceArea < 0 ? \"CW\" : \"CCW\") << '\\n';\n    }\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The sign depends on a consistent Cartesian coordinate convention.",
+      "Oppositely directed internal square edges cancel.",
+      "A simple closed source path has positive enclosed area.",
+      "Reversing the traversal reverses the signed sum."
+    ],
+    "commonMistakes": [
+      "Using screen coordinates with north decreasing y while retaining the Cartesian sign rule.",
+      "Forgetting the edge that closes the path.",
+      "Treating a self-crossing or repeated-vertex walk as a valid source test.",
+      "Using unsigned area, which loses the traversal direction."
+    ],
+    "alternativeMethods": [
+      "A geometric check can cast a horizontal ray from the centers of the two unit cells adjacent to the first edge. Exactly one is inside the simple polygon. If the left cell is inside, the traversal is CCW; if the right cell is inside, it is CW. Doubled integer coordinates make this ray test exact."
+    ],
+    "difficultyNotes": "The arithmetic is short, but its orientation convention needs a proof. The simple-boundary guarantee is essential; signed area does not describe arbitrary self-crossing walks in the same way.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

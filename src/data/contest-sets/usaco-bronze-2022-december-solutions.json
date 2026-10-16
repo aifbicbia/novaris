@@ -1,0 +1,99 @@
+[
+  {
+    "finalAnswer": "Sort the willingness caps, maximize tuition times the number of attending cows, and keep the smallest tuition in a revenue tie.",
+    "shortExplanation": "A price between two willingness caps can be raised to the next cap without losing customers. Only observed caps need to be tried. After sorting, the number of cows accepting each candidate follows from its first position.",
+    "detailedSteps": [
+      "An optimum occurs at an observed willingness cap. With at least one attending cow, raising a price to the next cap increases revenue without changing attendance. A price above every cap earns zero and cannot be optimal.",
+      "Sort the caps increasingly. At the first occurrence of cap $p$ at zero-based index $i$, exactly $N-i$ cows will pay that price, including every cow whose cap equals $p$.",
+      "Evaluate the revenue $p(N-i)$. Skip later copies of the same cap: they represent the same tuition and would undercount cows willing to pay it.",
+      "Visit candidates in increasing order and replace the answer only when revenue strictly increases. The first candidate achieving the final maximum is therefore the smallest optimal tuition.",
+      "Use 64-bit multiplication: the joint maximum can earn $10^5\\cdot10^6=10^{11}$. Sorting takes $O(N\\log N)$ time and the cap array uses $O(N)$ space.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <utility>\n#include <vector>\n\nstd::pair<long long, int> read_and_solve_college() {\n    int n;\n    std::cin >> n;\n    std::vector<int> maximum(n);\n    for (int i = 0; i < n; ++i) std::cin >> maximum[i];\n    std::sort(maximum.begin(), maximum.end());\n    long long best_money = -1;\n    int best_tuition = 0;\n    for (int i = 0; i < n; ++i) {\n        if (i > 0 && maximum[i] == maximum[i - 1]) continue;\n        const long long money = static_cast<long long>(maximum[i]) * (n - i);\n        if (money > best_money) {\n            best_money = money;\n            best_tuition = maximum[i];\n        }\n    }\n    return std::make_pair(best_money, best_tuition);\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    const std::pair<long long, int> result = read_and_solve_college();\n    std::cout << result.first << ' ' << result.second << '\\n';\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Revenue changes its attendance count only at willingness caps.",
+      "Equal-cap cows all attend at that tuition.",
+      "Ascending candidate order resolves the required smallest-price tie."
+    ],
+    "commonMistakes": [
+      "Forming the revenue product in a 32-bit type can overflow before assignment to a wider variable.",
+      "Choosing the larger tuition when revenues tie violates the output rule.",
+      "Trying only the maximum willingness misses a potentially better lower price.",
+      "A later duplicate cap does not mean fewer equal-cap cows attend."
+    ],
+    "alternativeMethods": [
+      "A frequency array can count willing cows while sweeping every integer tuition from 1 through the largest cap. This is the independent native oracle; it uses the printed cap bound rather than sorting."
+    ],
+    "difficultyNotes": "The main observation is that only willingness caps can be optimal. Care is then needed with equal caps, revenue ties and multiplication size.",
+    "id": "solution-usaco-bronze-2022-december-p1",
+    "problemId": "usaco-bronze-2022-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Scan left to right, placing each needed patch as far right as possible; resolve the final-position collision by moving the second patch left once.",
+    "shortExplanation": "For each breed, the rightmost patch that feeds its first uncovered cow reaches furthest into the remaining line. This minimizes that breed's patch count. The two greedy counts can be realized together with one patch per position.",
+    "detailedSteps": [
+      "Use zero-based positions $0$ through $N-1$. Track how far the latest patch of each breed covers. Skip a cow when she is already covered by her own breed's grass.",
+      "For an uncovered cow at $i$, propose $p=\\min(N-1,i+K)$. Any patch feeding her has center at most $i+K$. Moving such a patch right to $p$ cannot lose a future same-breed cow: its left endpoint is at or before $i$, and its right endpoint is at least as far right. This exchange proves the greedy patch count is optimal for each breed separately.",
+      "Unclipped proposed centers strictly increase as the scan advances, so they cannot collide. A collision is possible only when both breeds propose the final position $N-1$. It cannot happen for $K=0$, when every proposed center is its own cow's distinct position.",
+      "When the final position is occupied, put the second patch at $N-2$. Here $K\\ge1$, so it still feeds the current cow and reaches the end: $N-2+K\\ge N-1$. Both possible final centers therefore cover every remaining cow of that breed.",
+      "The shifted position is free. An earlier patch there of the current breed would already cover the current cow. An earlier patch there of the other breed would prevent that breed from later needing its patch at the final position. If both final patches had already been placed, both breeds would already cover the remaining line. Each possibility contradicts this new uncovered cow or collision.",
+      "Each breed needs at least its independent greedy minimum, and one patch can feed only one breed. Their sum is a lower bound. The collision-free construction feeds every cow and uses exactly that sum, so it is globally optimal. Any valid optimal arrangement may be printed.",
+      "Across all cases the scan takes $O(\\sum N)$ time. Processing one case at a time uses $O(\\max N)$ working space, including its answer string.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\n\nstruct FeedResult {\n    int count;\n    std::string patches;\n};\n\nFeedResult solve_feeding_case(int n, int k, const std::string& breed) {\n    FeedResult answer = {0, std::string(n, '.')};\n    int covered_until[2] = {-1, -1};\n    for (int i = 0; i < n; ++i) {\n        const int type = breed[i] == 'G' ? 0 : 1;\n        if (i <= covered_until[type]) continue;\n        int position = std::min(n - 1, i + k);\n        if (answer.patches[position] != '.') --position;\n        answer.patches[position] = breed[i];\n        covered_until[type] = std::min(n - 1, position + k);\n        ++answer.count;\n    }\n    return answer;\n}\n\nvoid read_and_solve_feeding() {\n    int tests;\n    std::cin >> tests;\n    while (tests--) {\n        int n, k;\n        std::string breed;\n        std::cin >> n >> k >> breed;\n        const FeedResult answer = solve_feeding_case(n, k, breed);\n        std::cout << answer.count << '\\n' << answer.patches << '\\n';\n    }\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    read_and_solve_feeding();\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Cover the first uncovered cow of each breed with maximum reach to the right.",
+      "The independent breed minima add to a global lower bound.",
+      "Only clipping at the end can cause a collision; a one-position shift preserves final coverage."
+    ],
+    "commonMistakes": [
+      "A G patch cannot feed an H cow, even when the distance is small.",
+      "The two breeds cannot occupy the same patch position.",
+      "Always shifting a colliding center without proving coverage can break the distance constraint.",
+      "Comparing the entire answer string with a sample string rejects other valid optimal arrangements."
+    ],
+    "alternativeMethods": [
+      "An optimality check can select same-breed cows more than $2K$ apart. No single patch can feed two selected cows, so their number is a physical lower bound. A returned configuration that meets this bound is optimal; this is a certificate, not a claim of a different large-input algorithm."
+    ],
+    "difficultyNotes": "The individual-breed greedy choice is straightforward. The essential extra argument proves that combining the breeds preserves optimality and that the final collision shift is always safe.",
+    "id": "solution-usaco-bronze-2022-december-p2",
+    "problemId": "usaco-bronze-2022-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Repeatedly remove a nonempty one-variable group with a common output; accept a constant remainder and reject a mixed remainder with no removable group.",
+    "shortExplanation": "The first effective rule of a valid program must match a nonempty group whose observations all have the same output. Such a rule can be placed first and its matching rows removed without changing whether the rest is representable.",
+    "detailedSteps": [
+      "If all remaining observations have one output, a constant final else return represents them. Otherwise consider each literal $b[j]=v$, for $v\\in\\{0,1\\}$.",
+      "A literal is usable only when it matches at least one remaining row and all matching rows share one output. It becomes an if rule returning that output. Remove every row satisfying it; the other rows will skip this rule.",
+      "Why must a usable group exist for a nonconstant valid set? Skip rules that match no remaining observation. The first rule that matches any observation returns one constant bit for every matching row, so its group must be nonempty and monochromatic.",
+      "Why is any usable choice safe? If a consistent program already exists, it remains consistent after observations are removed. Conversely, prefixing the chosen rule to a program for the remainder handles every removed row and lets every retained row continue. Removal therefore preserves the existence decision in both directions.",
+      "Each removal deletes at least one row. Continue until a constant or empty remainder is representable. If labels are mixed but no nonempty monochromatic literal exists, no first effective rule is possible, so output LIE; otherwise output OK.",
+      "Identical input rows with conflicting labels are impossible for a deterministic program. Consistent duplicates are harmless, and the printed samples contain duplicates; the implementation does not assume uniqueness.",
+      "At most $M$ iterations examine $2N$ groups of at most $M$ rows. This takes $O(NM^2)$ time per case and $O(NM)$ input storage. Total time is $O(\\sum NM^2)$ over the given cases.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\n\nbool has_consistent_program(int n, const std::vector<std::string>& inputs,\n                            const std::vector<int>& outputs) {\n    const int m = static_cast<int>(inputs.size());\n    std::vector<bool> active(m, true);\n    int remaining = m;\n    while (remaining > 0) {\n        int common = -1;\n        bool constant = true;\n        for (int row = 0; row < m; ++row) {\n            if (!active[row]) continue;\n            if (common == -1) common = outputs[row];\n            else if (common != outputs[row]) constant = false;\n        }\n        if (constant) return true;\n        bool removed = false;\n        for (int bit = 0; bit < n && !removed; ++bit) {\n            for (int value = 0; value <= 1 && !removed; ++value) {\n                int label = -1;\n                bool pure = true;\n                for (int row = 0; row < m; ++row) {\n                    if (!active[row] || inputs[row][bit] - '0' != value) continue;\n                    if (label == -1) label = outputs[row];\n                    else if (label != outputs[row]) pure = false;\n                }\n                if (label == -1 || !pure) continue;\n                for (int row = 0; row < m; ++row) {\n                    if (active[row] && inputs[row][bit] - '0' == value) {\n                        active[row] = false;\n                        --remaining;\n                    }\n                }\n                removed = true;\n            }\n        }\n        if (!removed) return false;\n    }\n    return true;\n}\n\nvoid read_and_solve_reverse() {\n    int tests;\n    std::cin >> tests;\n    while (tests--) {\n        int n, m;\n        std::cin >> n >> m;\n        std::vector<std::string> inputs(m);\n        std::vector<int> outputs(m);\n        for (int row = 0; row < m; ++row) std::cin >> inputs[row] >> outputs[row];\n        std::cout << (has_consistent_program(n, inputs, outputs) ? \"OK\" : \"LIE\") << '\\n';\n    }\n}\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(NULL);\n    read_and_solve_reverse();\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A first effective one-variable rule has a monochromatic matched group.",
+      "Removing any complete usable group preserves representability.",
+      "The absence of a possible first rule proves impossibility."
+    ],
+    "commonMistakes": [
+      "An empty literal group is not progress and must not be selected.",
+      "A matching group must contain one common label, not merely a majority label.",
+      "Checking only duplicate-input consistency is insufficient: a deterministic table can still be impossible for this restricted program form.",
+      "All rows matching a selected literal must be removed, because they would all return at that rule."
+    ],
+    "alternativeMethods": [
+      "For small N, enumerate complete truth tables of one-variable decision-list programs and test every observation against each table. The independent oracle uses this exhaustive syntax method for N at most 3; it is too large for the full N bound."
+    ],
+    "difficultyNotes": "The important proof is that an arbitrary removable group is safe. Both restriction of an existing program and prefixing a new first rule are needed to establish that equivalence.",
+    "id": "solution-usaco-bronze-2022-december-p3",
+    "problemId": "usaco-bronze-2022-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

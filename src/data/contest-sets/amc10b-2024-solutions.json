@@ -1,0 +1,591 @@
+[
+  {
+    "id": "solution-amc10b-2024-p1",
+    "problemId": "amc10b-2024-p1",
+    "finalAnswer": "$\\boxed{2022}$ (choice **B**)",
+    "shortExplanation": "Separate the people on either side from the person whose position is given.",
+    "detailedSteps": [
+      "There are $1013-1=1012$ people strictly to the left and $1010-1=1009$ strictly to the right.",
+      "Including the person between these groups gives $1012+1+1009=2022$. The answer is **B**."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Inclusive counting"
+    ],
+    "commonMistakes": [
+      "Adding both position numbers counts the same person twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The only adjustment is for the overlap in the two inclusive counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p2",
+    "problemId": "amc10b-2024-p2",
+    "finalAnswer": "$\\boxed{0}$ (choice **B**)",
+    "shortExplanation": "Extract the shared factorial and compare the remaining factors.",
+    "detailedSteps": [
+      "Factor the expression as $7!\\bigl(10\\cdot9\\cdot8-6!\\bigr)$.",
+      "Both $10\\cdot9\\cdot8$ and $6!$ equal $720$, so the remaining factor is zero. The value is $0$, choice **B**."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Factorials"
+    ],
+    "commonMistakes": [
+      "A factorial applies to every positive integer through its argument; it is not the argument itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring avoids computing the two large equal products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p3",
+    "problemId": "amc10b-2024-p3",
+    "finalAnswer": "$\\boxed{21}$ (choice **E**)",
+    "shortExplanation": "Locate the positive bound between consecutive integers, then count both signs and zero.",
+    "detailedSteps": [
+      "The inequality is equivalent to $|x|\\le 7\\pi/2$. Since $10<7\\pi/2<11$, the permissible integers run from $-10$ through $10$.",
+      "This gives $10+1+10=21$ integers, choice **E**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Absolute-value inequalities"
+    ],
+    "commonMistakes": [
+      "Do not round the bound up to 11; both 11 and -11 violate the inequality.",
+      "Zero is one of the allowed integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The bound is close to 11, so the direction of the inequality matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p4",
+    "problemId": "amc10b-2024-p4",
+    "finalAnswer": "$\\boxed{\\text{bin D}}$ (choice **D**)",
+    "shortExplanation": "Find the numbered batch containing the ball before applying the five-bin cycle.",
+    "detailedSteps": [
+      "After batch $k$, the number of deposited balls is $1+2+\\cdots+k=k(k+1)/2$.",
+      "The first $63$ batches contain $63\\cdot64/2=2016$ balls; the first $64$ contain $64\\cdot65/2=2080$. Thus ball $2024$ is in batch $64$.",
+      "Batch numbers congruent to $1,2,3,4,0$ modulo $5$ go to bins A, B, C, D, E respectively. Since $64$ leaves remainder $4$, the bin is D, choice **D**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Triangular numbers"
+    ],
+    "commonMistakes": [
+      "The bins cycle by batch number, not by the number printed on the ball."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Triangular numbers translate the growing batches into one interval lookup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p5",
+    "problemId": "amc10b-2024-p5",
+    "finalAnswer": "$\\boxed{15}$ (choice **B**)",
+    "shortExplanation": "For a fixed number of sign changes, negating the largest available terms decreases the total most.",
+    "detailedSteps": [
+      "The original total is the sum of the first $50$ positive odd integers, $50^2=2500$. Changing $+t$ to $-t$ decreases this total by $2t$.",
+      "For $k$ sign changes, the largest possible sum of changed terms is $99+97+\\cdots+(101-2k)=k(100-k)$. The new total can be negative only when this sum exceeds $1250$.",
+      "For $k=14$ the maximum is $14\\cdot86=1204$, which is insufficient. For $k=15$ it is $15\\cdot85=1275$, which gives $2500-2(1275)=-50$.",
+      "Thus 15 changes are necessary and achievable, choice **B**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Extremal sums"
+    ],
+    "commonMistakes": [
+      "Changing a sign subtracts twice the original term.",
+      "A total of zero would not satisfy the requirement that the expression be negative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound and an explicit achieving choice are both needed to prove the minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p6",
+    "problemId": "amc10b-2024-p6",
+    "finalAnswer": "$\\boxed{180}$ (choice **B**)",
+    "shortExplanation": "The best integer factor pair is as close as possible to the square root of the area.",
+    "detailedSteps": [
+      "The pair $44\\cdot46=2024$ gives perimeter $2(44+46)=180$.",
+      "For any positive side lengths $u,v$, $(u+v)^2\\ge4uv=8096$. Since $89^2=7921<8096$, an integer value of $u+v$ is at least $90$.",
+      "The pair above attains that lower bound, so the least perimeter is $180$, choice **B**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factor pairs"
+    ],
+    "commonMistakes": [
+      "Minimizing the perimeter is equivalent to minimizing the sum of the side lengths, subject to their product being 2024.",
+      "The equal-sided real optimum need not have integer sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer lower bound proves optimality without listing every divisor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p7",
+    "problemId": "amc10b-2024-p7",
+    "finalAnswer": "$\\boxed{0}$ (choice **A**)",
+    "shortExplanation": "A small factor already contains the divisor, so the large exponent need not be evaluated.",
+    "detailedSteps": [
+      "Factor the sum as $7^{2024}(1+7+7^2)=57\\cdot7^{2024}$.",
+      "Since $57=3\\cdot19$, the sum is divisible by $19$. The remainder is $0$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factoring modulo an integer"
+    ],
+    "commonMistakes": [
+      "Reducing each large power separately adds unnecessary work; first inspect the common factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The decisive observation is the factor 57.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p8",
+    "problemId": "amc10b-2024-p8",
+    "finalAnswer": "$\\boxed{6}$ (choice **D**)",
+    "shortExplanation": "Pair complementary divisors and track only the final digit.",
+    "detailedSteps": [
+      "The positive divisors of $42$ pair as $(1,42),(2,21),(3,14),(6,7)$. Each pair has product $42$.",
+      "The complete divisor product is therefore $42^4$. Its units digit equals the units digit of $2^4=16$, namely $6$, choice **D**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisor products"
+    ],
+    "commonMistakes": [
+      "Include both 1 and 42 among the positive divisors.",
+      "There are four complementary pairs, not eight."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing is simpler and less error-prone than multiplying all eight divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p9",
+    "problemId": "amc10b-2024-p9",
+    "finalAnswer": "$\\boxed{-5}$ (choice **A**)",
+    "shortExplanation": "Expand the square of the sum to connect the given means with the pairwise products.",
+    "detailedSteps": [
+      "The stated means give $a+b+c=0$ and $a^2+b^2+c^2=30$.",
+      "Expanding $(a+b+c)^2$ yields $0=30+2(ab+ac+bc)$, so $ab+ac+bc=-15$.",
+      "The requested mean is $-15/3=-5$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Symmetric identities"
+    ],
+    "commonMistakes": [
+      "A mean of 10 for three squared terms means their sum is 30.",
+      "The question asks for the mean of the pairwise products, not their sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One symmetric identity determines the answer without finding a, b, and c.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p10",
+    "problemId": "amc10b-2024-p10",
+    "finalAnswer": "$\\boxed{5:4}$ (choice **A**)",
+    "shortExplanation": "Use the midpoint to find a 1:2 division of the diagonal, then subtract small triangle areas.",
+    "detailedSteps": [
+      "Write $[PQR]$ for a triangle area and let the parallelogram have area $S$. Triangles $AEF$ and $CBF$ are similar: their bases $AE$ and $CB$ are parallel, and their other sides lie on the same two lines. Since $AE=CB/2$, we have $AF:FC=1:2$.",
+      "Triangles $ABF$ and $BCF$ share an altitude to $AC$, so their areas have ratio $1:2$. Together they form $ABC$, of area $S/2$. Hence $[BCF]=S/3$ and $[ABF]=S/6$.",
+      "The similarity scale gives $[AEF]=[CBF]/4=S/12$. Triangle $ACD$ has area $S/2$, and removing $AEF$ leaves quadrilateral $CDEF$ of area $5S/12$.",
+      "The requested ratio is $(5S/12):(S/3)=5:4$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area ratios"
+    ],
+    "commonMistakes": [
+      "Similar-triangle areas scale by the square of the side ratio.",
+      "The quadrilateral lies inside triangle ACD; subtract AEF from that triangle, not from the entire parallelogram."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The midpoint supplies both a linear ratio and its corresponding area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p11",
+    "problemId": "amc10b-2024-p11",
+    "finalAnswer": "$\\boxed{15}$ (choice **C**)",
+    "shortExplanation": "Use equal areas to relate the two unknown segments, then impose the right angle.",
+    "detailedSteps": [
+      "Use coordinates $X=(0,0)$, $W=(0,4)$, $Y=(8,0)$, $Z=(8,4)$, $M=(t,0)$, and $A=(8,s)$, following the labeled source figure.",
+      "Equal areas give $[WXM]=2t=4(4-s)=[WAZ]$, so $s=4-t/2$.",
+      "The vectors from $M$ to $W$ and $A$ are $(-t,4)$ and $(8-t,s)$. Their dot product is zero, giving $t(8-t)=4s=16-2t$, hence $(t-2)(t-8)=0$.",
+      "The root $t=8$ forces $s=0$ and $M=A=Y$, so the stated angle would be undefined. Therefore $t=2$ and $s=3$.",
+      "The three outside triangles have areas $[WXM]=4$, $[WAZ]=4$, and $[MYA]=(8-2)3/2=9$. Subtracting from the rectangle gives $[WMA]=32-4-4-9=15$, choice **C**."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Perpendicularity and area"
+    ],
+    "commonMistakes": [
+      "Reject the algebraic root where M and A coincide; it does not define the required angle.",
+      "The right angle is at M, so the two vectors must both start at M."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometry produces a quadratic with a degenerate extra root; interpreting both roots is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p12",
+    "problemId": "amc10b-2024-p12",
+    "finalAnswer": "$\\boxed{9}$ (choice **A**)",
+    "shortExplanation": "Represent each student by a distinct subset of a common language set.",
+    "detailedSteps": [
+      "If there are $n$ languages and each student speaks $k$ of them, the language profiles are $k$-element subsets. Two different subsets of the same size each contain an element absent from the other, so the condition is exactly that all $100$ profiles are different.",
+      "There are $\\binom nk$ possible profiles. For $n\\le8$, the largest possible count is $\\binom84=70<100$; the binomial coefficients increase up to the middle because $\\binom n{k+1}/\\binom nk=(n-k)/(k+1)$.",
+      "For $n=9$, there are $\\binom94=126$ four-language profiles. Choose any $100$ distinct ones. This constructs a valid assignment with nine languages, and proves the minimum is $9$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Equal-size subsets"
+    ],
+    "commonMistakes": [
+      "Distinct language profiles suffice because their sizes are equal; assigning just one unique language per student is not minimal.",
+      "Count subsets rather than ordered lists of languages."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The count must both rule out eight languages and construct a feasible assignment with nine.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p13",
+    "problemId": "amc10b-2024-p13",
+    "finalAnswer": "$\\boxed{595}$ (choice **B**)",
+    "shortExplanation": "The radical equation forces both integers to have squarefree part 7, reducing the problem to two integers whose sum is 13.",
+    "detailedSteps": [
+      "Factor $1183=7\\cdot13^2$. Rearranging and squaring gives $2\\sqrt{1183x}=1183+x-y$, so $\\sqrt{1183x}$ is rational. A rational square root of an integer is an integer, and the prime exponents then force $x=7a^2$ for a positive integer $a$. Similarly $y=7b^2$.",
+      "The original equation becomes $a+b=13$, and $x+y=7(a^2+b^2)$.",
+      "For a fixed sum, the sum of squares is minimized by the closest pair of positive integers. Thus $\\{a,b\\}=\\{6,7\\}$, giving $x+y=7(36+49)=595$, choice **B**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Squarefree parts"
+    ],
+    "commonMistakes": [
+      "Squaring does not give x+y=1183; the cross term is nonzero.",
+      "The real lower bound at a=b=6.5 is unavailable because a and b must be integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identifying the squarefree part turns an irrational equation into an integer optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p14",
+    "problemId": "amc10b-2024-p14",
+    "finalAnswer": "$\\boxed{71}$ (choice **B**)",
+    "shortExplanation": "The target is an annulus that fits entirely inside the diamond-shaped board.",
+    "detailedSteps": [
+      "Writing $r^2=x^2+y^2$, the target condition is $18\\le r^2\\le32$. Its area is therefore $\\pi(32-18)=14\\pi$.",
+      "The whole target is inside the board: for $r^2\\le32$, $(|x|+|y|)^2\\le2(x^2+y^2)\\le64$, so $|x|+|y|\\le8$.",
+      "The board has perpendicular diagonals of length $16$ and $16$, and area $16\\cdot16/2=128$. The probability is $14\\pi/128=7\\pi/64$.",
+      "The coprime numerator and denominator are $7$ and $64$, so their sum is $71$, choice **B**."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "Use the difference of squared radii for annulus area.",
+      "Check containment before dividing the entire annulus area by the board area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer circle is tangent to the four sides of the board, so no circular segments must be removed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p15",
+    "problemId": "amc10b-2024-p15",
+    "finalAnswer": "$\\boxed{3}$ (choice **C**)",
+    "shortExplanation": "The median must be one of four integers; combine each median case with the possible endpoints of the range.",
+    "detailedSteps": [
+      "The six fixed entries sum to $24.8$. Their second-smallest and second-largest values show that the median of the full nine-entry list lies in $[2.2,6.2]$, so its integer possibilities are $3,4,5,6$. An integer mean requires the total $24.8+x+y+z$ to be a multiple of $9$.",
+      "If the median is $3$, the three added entries must all be at most $3$, and $z=3$. The maximum of the full list is $7$, so its range forces $x=0$. The total is $27.8+y$, with $0\\le y\\le3$, which contains no multiple of $9$.",
+      "If the median is $6$, all three added entries must be at least $6$, with $x=6$. The minimum is $1$, so $z=8$. The total is $38.8+y$ for $6\\le y\\le8$; its only possible multiple of $9$ is $45$, giving $y=6.2$. This yields $(6,6.2,8)$.",
+      "For median $d=4$ or $5$, exactly three fixed entries are below $d$ and three above it. Hence $y=d$. The range condition has three exhaustive forms: (i) $x=0$ and $d\\le z\\le7$; (ii) $0<x<1$ and $z=x+7$; (iii) $z=8$ and $1\\le x\\le d$.",
+      "In case (i), the total is $24.8+d+z$. For $d=4$ its interval is $[32.8,35.8]$, containing no multiple of $9$; for $d=5$ the interval is $[34.8,36.8]$, yielding only $36$ and thus $(x,y,z)=(0,5,6.2)$.",
+      "In case (ii), the total is $31.8+d+2x$. For $d=4$, the only multiple of $9$ in $(35.8,37.8)$ is $36$, yielding $(0.1,4,7.1)$. For $d=5$, the interval $(36.8,38.8)$ contains none.",
+      "In case (iii), the total lies in $[37.8,40.8]$ for $d=4$ or $[38.8,42.8]$ for $d=5$; neither interval contains a multiple of $9$. The three listed triples all satisfy the original requirements, so the answer is $3$, choice **C**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Mean median and range"
+    ],
+    "commonMistakes": [
+      "The added numbers are real, so fractional endpoints such as 0.1 and 7.1 must be considered.",
+      "The range of the existing six numbers is 6, so at least one endpoint must move.",
+      "A finite grid search alone does not prove that no other real triples exist."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The challenge is an exhaustive real-variable case split; the endpoint and median constraints reduce it to short intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p16",
+    "problemId": "amc10b-2024-p16",
+    "finalAnswer": "$\\boxed{1010}$ (choice **A**)",
+    "shortExplanation": "Bound how quickly one operation can remove even entries, then construct a sequence reaching the bound.",
+    "detailedSteps": [
+      "Initially there are $1012$ even entries. Any operation removes at most three even entries net: if all four selected entries are even, their sum and product are even, leaving one even entry; if at most three are even, no more than three can disappear.",
+      "Eliminating every even entry therefore needs at least $\\lceil1012/3\\rceil=338$ operations. Each operation decreases the total number of entries by three, so at most $2024-3(338)=1010$ can remain.",
+      "To attain this, repeat $337$ times: select three even entries and one odd entry, and replace them by their sum, which is odd. This removes $1011$ even entries while preserving the count of odd entries.",
+      "One even and $1012$ odd entries remain. Add that even entry to three odd entries and replace the four by their odd sum. All $1010$ remaining entries are now odd. The maximum is $1010$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Parity and invariants"
+    ],
+    "commonMistakes": [
+      "Four even entries cannot all disappear in one operation because their replacement is still even.",
+      "An upper bound alone is insufficient; the allowed operations must attain it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track the number of even entries, not the sizes of the values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p17",
+    "problemId": "amc10b-2024-p17",
+    "finalAnswer": "$\\boxed{431}$ (choice **D**)",
+    "shortExplanation": "Choose the tied group, if any, and regard that group as one item in the finishing order.",
+    "detailedSteps": [
+      "With no tie there are $5!=120$ finish orders.",
+      "If exactly $k$ snails tie, where $2\\le k\\le5$, choose them in $\\binom5k$ ways. Order their tied block together with the $5-k$ single snails in $(6-k)!$ ways.",
+      "The counts for $k=2,3,4,5$ are respectively $10\\cdot24=240$, $10\\cdot6=60$, $5\\cdot2=10$, and $1$.",
+      "Adding the disjoint cases gives $120+240+60+10+1=431$, choice **D**."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Ordered partitions"
+    ],
+    "commonMistakes": [
+      "Do not permute the snails inside a tie.",
+      "At most one tie allows a tie involving more than two snails, as well as the no-tie case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Treating the tied group as a block avoids complications from skipped rank numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p18",
+    "problemId": "amc10b-2024-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice **B**)",
+    "shortExplanation": "Separate multiples of five from the units modulo 125.",
+    "detailedSteps": [
+      "If $5\\mid a$, then $125\\mid a^{100}$, so the remainder is $0$.",
+      "Otherwise $\\gcd(a,125)=1$. Euler's theorem applies with $\\varphi(125)=125-25=100$, giving $a^{100}\\equiv1\\pmod{125}$.",
+      "Both outcomes occur, for example at $a=5$ and $a=1$. Thus there are exactly $2$ remainders, choice **B**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Powers modulo prime powers"
+    ],
+    "commonMistakes": [
+      "Euler's theorem applies only to integers coprime to 125; multiples of five need a separate case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent equals the number of invertible residue classes modulo 125.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p19",
+    "problemId": "amc10b-2024-p19",
+    "finalAnswer": "$\\boxed{6}$ (choice **C**)",
+    "shortExplanation": "A rational-slope line with one lattice point has infinitely many; an irrational-slope line has at most one.",
+    "detailedSteps": [
+      "For zero slope, $y=0$ has infinitely many lattice points and $y=1/2$ has none. A horizontal line cannot contain exactly one or exactly two lattice points. Thus two entries in that row are possible.",
+      "For nonzero rational slope $p/q$ in lowest terms, a lattice point $(u,v)$ produces all lattice points $(u+kq,v+kp)$ for integer $k$. Zero is also possible, for example on $y=x+1/2$. Hence this row also has exactly two possible entries: zero and more than two.",
+      "Two different lattice points on a nonvertical line would give a rational slope. Thus an irrational-slope line has at most one lattice point. The lines $y=\\sqrt2x$ and $y=\\sqrt2x+1/2$ show that exactly one and zero are both attainable.",
+      "The total number of possible entries is $2+2+2=6$, choice **C**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Lattice points on lines"
+    ],
+    "commonMistakes": [
+      "The question concerns the entire line, not a bounded segment or the portion drawn on a graph.",
+      "An irrational slope does not rule out one lattice point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The distinction between finite visible samples and the entire infinite line is central.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p20",
+    "problemId": "amc10b-2024-p20",
+    "finalAnswer": "$\\boxed{60}$ (choice **A**)",
+    "shortExplanation": "Count changes between left and right shoes; every such boundary forces the two shoes to be a matched pair.",
+    "detailedSteps": [
+      "Write only L or R for each shoe. Whenever the letter changes, the adjacent shoes must be mates. An interior run cannot have length one, because that shoe would have to be the mate of both neighboring shoes.",
+      "With one letter change, the two possible patterns are LLLRRR and RRRLLL. Choose the pair at the boundary in $3$ ways, then order the other two left shoes and the other two right shoes independently: $3\\cdot2!\\cdot2!=12$ arrangements per pattern, or $24$.",
+      "With two changes, the three runs have an L-R-L or R-L-R structure. The middle run uses all three shoes of its handedness. The two end runs have lengths 1 and 2 in either order, giving four patterns. The two boundary pairs can be assigned in $3\\cdot2=6$ ways, and the remaining shoes are then forced. This contributes $24$.",
+      "With three changes, the two interior runs must each have length 2 and the end runs length 1. There are two patterns, LRRLLR and RLLRRL. Each has three disjoint boundaries, to which the pairs can be assigned in $3!=6$ ways, contributing $12$.",
+      "Four changes would require at least $1+2+2+2+1=8$ shoes, so no further cases exist. The total is $24+24+12=60$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Runs and adjacency restrictions"
+    ],
+    "commonMistakes": [
+      "Same-handed neighboring shoes are unrestricted; only opposite-handed neighbors must match.",
+      "A shoe cannot simultaneously be paired with two distinct neighboring shoes.",
+      "The order inside a forced pair is already fixed by the L/R pattern."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Run lengths organize the adjacency constraints into an exhaustive three-case count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p21",
+    "problemId": "amc10b-2024-p21",
+    "finalAnswer": "$\\boxed{\\frac{10}{9}}$ (choice **C**)",
+    "shortExplanation": "Use center coordinates to capture both possible positions of the third circle.",
+    "detailedSteps": [
+      "For tangent circles of radii $u,v$ resting on a line, the horizontal distance between centers is $\\sqrt{(u+v)^2-(u-v)^2}=2\\sqrt{uv}$. Thus the given centers may be placed at $(0,1)$ and $(1,1/4)$.",
+      "Let the new circle have center $(t,r)$ and radius $r>0$. Tangency to the first circle gives $t^2+(r-1)^2=(r+1)^2$, hence $t^2=4r$. Tangency to the second gives $(t-1)^2=r$.",
+      "Eliminating $r$ yields $4(t-1)^2=t^2$, or $3t^2-8t+4=0$. Therefore $t=2$ or $t=2/3$, giving $r=1$ or $r=1/9$.",
+      "Both positive radii satisfy the distance equations and yield externally tangent, nonoverlapping circles on the floor. Their sum is $1+1/9=10/9$, choice **C**."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tangent circles"
+    ],
+    "commonMistakes": [
+      "The third pipe can lie beyond the smaller pipe as well as in the gap between the two given pipes.",
+      "Use the sum of the radii for external tangency."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Solving for the center position automatically includes the two geometric configurations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p22",
+    "problemId": "amc10b-2024-p22",
+    "finalAnswer": "$\\boxed{5}$ (choice **A**)",
+    "shortExplanation": "Count the role assignments with unlabeled committees, then extract only the exponent of three.",
+    "detailedSteps": [
+      "For temporarily labeled committees, arrange the $16$ people into four consecutive groups. In each group put the chair first, the secretary second, and the two ordinary members last. Only swapping those last two leaves the assignment unchanged, so there are $16!/(2!)^4$ assignments.",
+      "The committees are indistinguishable, so divide by $4!$. The desired count is $N=16!/(2^4\\cdot4!)$.",
+      "The exponent of $3$ in $16!$ is $\\lfloor16/3\\rfloor+\\lfloor16/9\\rfloor=5+1=6$, while its exponent in $4!$ is $1$. The power of two in the denominator contributes none.",
+      "Thus $v_3(N)=6-1=5$, choice **A**."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Prime valuations"
+    ],
+    "commonMistakes": [
+      "Divide by 4! because the committees are not labeled.",
+      "The chair and secretary are distinct roles, so they cannot be swapped without changing the assignment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A role-slot count makes the symmetry factors clear before applying prime valuations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p23",
+    "problemId": "amc10b-2024-p23",
+    "finalAnswer": "$\\boxed{319}$ (choice **B**)",
+    "shortExplanation": "Use the doubling identity to express each quotient as a sum of two nearby Fibonacci numbers.",
+    "detailedSteps": [
+      "Set $F_0=0$. The addition identity $F_{m+n}=F_{m-1}F_n+F_mF_{n+1}$ follows by induction on $n$ from the Fibonacci recurrence. Taking $m=n$ gives $F_{2n}/F_n=F_{n-1}+F_{n+1}$.",
+      "The required sum is therefore $\\sum_{n=1}^{10}F_{n-1}+\\sum_{n=1}^{10}F_{n+1}$.",
+      "The recurrence also gives $F_j=F_{j+2}-F_{j+1}$, so these sums telescope: $\\sum_{j=0}^{9}F_j=F_{11}-1$ and $\\sum_{j=2}^{11}F_j=F_{13}-2$.",
+      "Since $F_{11}=89$ and $F_{13}=233$, the sum is $89-1+233-2=319$, choice **B**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Fibonacci identities"
+    ],
+    "commonMistakes": [
+      "The numerator index is twice the denominator index; these are not ratios of consecutive terms.",
+      "Keep the endpoint corrections when telescoping, including F0=0."
+    ],
+    "alternativeMethods": [
+      "Compute the ten quotients directly from the recurrence: $1,3,4,7,11,18,29,47,76,123$. Their sum is $319$."
+    ],
+    "difficultyNotes": "The doubling identity reduces large Fibonacci ratios to two short sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p24",
+    "problemId": "amc10b-2024-p24",
+    "finalAnswer": "$\\boxed{4}$ (choice **E**)",
+    "shortExplanation": "Combine the fractions over denominator eight and treat even and odd arguments separately.",
+    "detailedSteps": [
+      "The numerator over a common denominator is $8P(m)=4m+2m^2+m^4+m^8$.",
+      "If $m=2k$, the first two terms are $8k+8k^2$ and the last two are multiples of $16$, so the numerator is divisible by $8$.",
+      "If $m$ is odd, then $m^2\\equiv m^4\\equiv m^8\\equiv1\\pmod8$ and $4m\\equiv4\\pmod8$. The numerator is congruent to $4+2+1+1=8\\equiv0\\pmod8$.",
+      "Thus $P(m)$ is an integer for every integer $m$, including all four listed arguments. The count is $4$, choice **E**."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Divisibility of polynomial values"
+    ],
+    "commonMistakes": [
+      "The individual fractions need not be integers; divisibility must be checked after combining them.",
+      "Odd squares are 1 modulo 8, which is stronger than merely being odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A parity split proves a stronger statement than the four cases requested.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2024-p25",
+    "problemId": "amc10b-2024-p25",
+    "finalAnswer": "$\\boxed{92}$ (choice **E**)",
+    "shortExplanation": "Read the three axis lengths from the source diagram and solve the resulting linear system.",
+    "detailedSteps": [
+      "In the original arrangement the width, height, and depth are $3a,3b,3c$. In the new arrangement, the labels in the source figure give width $2b$, height $2c$, and depth $7a$.",
+      "The unit increases therefore give $2b=3a+1$, $2c=3b+1$, and $7a=3c+1$.",
+      "From the first two equations, $b=(3a+1)/2$ and $c=(9a+5)/4$. Substituting into the third gives $28a=27a+19$, hence $a=19$, $b=29$, and $c=44$.",
+      "These are positive integers and pairwise coprime. The original dimensions are $(57,87,132)$ and the new dimensions are $(58,88,133)$, confirming all three unit increases.",
+      "The requested sum is $19+29+44=92$, choice **E**."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Geometric systems of equations"
+    ],
+    "commonMistakes": [
+      "The bricks change orientation: the new width, height, and depth do not use the same edge labels as before.",
+      "The factors 3, 2, and 7 count bricks along an axis, rather than giving physical lengths by themselves."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Accurately translating the source figure is more important than the subsequent algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

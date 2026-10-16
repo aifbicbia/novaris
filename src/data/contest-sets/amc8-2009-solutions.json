@@ -1,0 +1,650 @@
+[
+  {
+    "id": "solution-amc8-2009-p1",
+    "problemId": "amc8-2009-p1",
+    "finalAnswer": "$\\boxed{\\text{E }(14)}$",
+    "shortExplanation": "**Idea:** Work backward from the apples Bridget kept and gave to Cassie.",
+    "detailedSteps": [
+      "After giving Cassie $3$ apples and keeping $4$, Bridget had $3+4=7$ apples left.",
+      "Those $7$ apples were half of the original bag, because she had already given the other half to Ann.",
+      "So the original number of apples was $2cdot7=14$.",
+      "Final Answer: ($\\boxed{\\text{E }(14)}$)"
+    ],
+    "keyIdeas": [
+      "Working backward",
+      "Halves"
+    ],
+    "commonMistakes": [
+      "Do not forget that the $7$ apples remaining are only half of the original amount."
+    ],
+    "alternativeMethods": [
+      "Let the original number be $x$. Then $x/2-3=4$, so $x=14$."
+    ],
+    "difficultyNotes": "A short working-backward problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p2",
+    "problemId": "amc8-2009-p2",
+    "finalAnswer": "$\\boxed{\\text{D }(49)}$",
+    "shortExplanation": "**Idea:** Scale the sports-car-to-sedan ratio from 4 sports cars to 28 sports cars.",
+    "detailedSteps": [
+      "The ratio is $4$ sports cars to $7$ sedans.",
+      "Since $28=7cdot4$, the number of sedans is scaled by the same factor: $7cdot7=49$.",
+      "Final Answer: ($\\boxed{\\text{D }(49)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Scaling"
+    ],
+    "commonMistakes": [
+      "Scale both parts of the ratio by the same factor."
+    ],
+    "alternativeMethods": [
+      "Set up $4/7=28/s$, giving $s=49$."
+    ],
+    "difficultyNotes": "A direct ratio scaling problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p3",
+    "problemId": "amc8-2009-p3",
+    "finalAnswer": "$\\boxed{\\text{C }(6)}$",
+    "shortExplanation": "**Idea:** The graph shows $1$ mile every $5$ minutes.",
+    "detailedSteps": [
+      "From the graph, Suzanna rides $1$ mile in $5$ minutes.",
+      "A half hour is $30$ minutes, which is $30/5=6$ groups of five minutes.",
+      "At the same constant speed, she rides $6$ miles.",
+      "Final Answer: ($\\boxed{\\text{C }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Constant rate",
+      "Graph reading"
+    ],
+    "commonMistakes": [
+      "Use $30$ minutes for a half hour, not $20$ minutes from the last labeled graph point."
+    ],
+    "alternativeMethods": [
+      "Use the slope: $1/5$ mile per minute, so $30\\cdot\\frac15=6$."
+    ],
+    "difficultyNotes": "A direct proportional graph problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p4",
+    "problemId": "amc8-2009-p4",
+    "finalAnswer": "$\\boxed{\\text{B }(\\text{figure B})}$",
+    "shortExplanation": "**Idea:** Compare how the five pieces can tile each candidate figure without gaps or overlaps.",
+    "detailedSteps": [
+      "Each candidate figure has the same total area, so area alone cannot decide the answer.",
+      "A constructive tiling check works for figures A, C, D, and E using the five given pieces.",
+      "Figure B forces an incompatible notch placement, leaving no way to place the remaining piece cleanly.",
+      "Therefore figure B is the one that cannot be formed.",
+      "Final Answer: ($\\boxed{\\text{B }(\\text{figure B})}$)"
+    ],
+    "keyIdeas": [
+      "Spatial reasoning",
+      "Tiling"
+    ],
+    "commonMistakes": [
+      "Do not compare only total area; all five candidate figures are designed to have the same area."
+    ],
+    "alternativeMethods": [
+      "Mark forced corners first, then test where the longest remaining piece can fit."
+    ],
+    "difficultyNotes": "A visual tiling problem; the answer depends on shape compatibility rather than computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p5",
+    "problemId": "amc8-2009-p5",
+    "finalAnswer": "$\\boxed{\\text{D }(68)}$",
+    "shortExplanation": "**Idea:** Continue the recursive sequence by adding the previous three terms.",
+    "detailedSteps": [
+      "The sequence begins $1,2,3$.",
+      "The fourth term is $1+2+3=6$.",
+      "The fifth term is $2+3+6=11$, the sixth is $3+6+11=20$, and the seventh is $6+11+20=37$.",
+      "The eighth term is $11+20+37=68$.",
+      "Final Answer: ($\\boxed{\\text{D }(68)}$)"
+    ],
+    "keyIdeas": [
+      "Recursive sequence",
+      "Careful term counting"
+    ],
+    "commonMistakes": [
+      "Do not stop at the seventh term; the question asks for the eighth."
+    ],
+    "alternativeMethods": [
+      "Make a small table with term number and value to avoid losing track."
+    ],
+    "difficultyNotes": "The arithmetic is simple, but indexing matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p6",
+    "problemId": "amc8-2009-p6",
+    "finalAnswer": "$\\boxed{\\text{A }(40)}$",
+    "shortExplanation": "**Idea:** Together the hoses supply $4cdot2.5=10$ gallons per minute.",
+    "detailedSteps": [
+      "Together the hoses supply $4cdot2.5=10$ gallons per minute.",
+      "The time is $24000/10=2400$ minutes.",
+      "Convert to hours: $2400/60=40$.",
+      "Final Answer: ($\\boxed{\\text{A }(40)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Minutes to hours"
+    ],
+    "commonMistakes": [
+      "Remember there are four hoses."
+    ],
+    "alternativeMethods": [
+      "A unit conversion rate problem."
+    ],
+    "difficultyNotes": "A unit conversion rate problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p7",
+    "problemId": "amc8-2009-p7",
+    "finalAnswer": "$\\boxed{\\text{C }(4.5)}$",
+    "shortExplanation": "**Idea:** Use the vertical side $CD$ as the base. Its length is $3$ miles.",
+    "detailedSteps": [
+      "Use the vertical side $CD$ as the base. Its length is $3$ miles.",
+      "The perpendicular distance from $A$ to the railroad line is also $3$ miles.",
+      "Thus the area is $\\frac12cdot3cdot3=4.5$.",
+      "Final Answer: ($\\boxed{\\text{C }(4.5)}$)"
+    ],
+    "keyIdeas": [
+      "Triangle area",
+      "Perpendicular height"
+    ],
+    "commonMistakes": [
+      "Use the perpendicular height, not the slanted side."
+    ],
+    "alternativeMethods": [
+      "The diagram is a base-height area problem."
+    ],
+    "difficultyNotes": "The diagram is a base-height area problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p8",
+    "problemId": "amc8-2009-p8",
+    "finalAnswer": "$\\boxed{\\text{B }(99)}$",
+    "shortExplanation": "**Idea:** The volume is multiplied by $1.10$ from the length change.",
+    "detailedSteps": [
+      "The volume is multiplied by $1.10$ from the length change.",
+      "It is multiplied by $0.90$ from the width change.",
+      "The product is $1.10cdot0.90=0.99$, so the new volume is $99\\%$ of the original.",
+      "Final Answer: ($\\boxed{\\text{B }(99)}$)"
+    ],
+    "keyIdeas": [
+      "Successive percent changes"
+    ],
+    "commonMistakes": [
+      "A 10 percent increase and 10 percent decrease do not cancel exactly."
+    ],
+    "alternativeMethods": [
+      "Use multiplicative factors."
+    ],
+    "difficultyNotes": "Use multiplicative factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p9",
+    "problemId": "amc8-2009-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(23)}$",
+    "shortExplanation": "**Idea:** The total side count before joining is $3+4+5+6+7+8=33$.",
+    "detailedSteps": [
+      "The total side count before joining is $3+4+5+6+7+8=33$.",
+      "There are $5$ shared sides between neighboring polygons.",
+      "Each shared side removes two boundary sides, so subtract $2cdot5=10$.",
+      "The boundary has $33-10=23$ sides.",
+      "Final Answer: ($\\boxed{\\text{B }(23)}$)"
+    ],
+    "keyIdeas": [
+      "Perimeter counting",
+      "Shared sides"
+    ],
+    "commonMistakes": [
+      "A shared side removes two sides from the outside boundary."
+    ],
+    "alternativeMethods": [
+      "Count before and after gluing."
+    ],
+    "difficultyNotes": "Count before and after gluing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p10",
+    "problemId": "amc8-2009-p10",
+    "finalAnswer": "$\\boxed{\\text{D }(9/16)}$",
+    "shortExplanation": "**Idea:** Removing the border leaves a $6\\times6$ center.",
+    "detailedSteps": [
+      "Removing the border leaves a $6\\times6$ center.",
+      "The center area is $36$ unit squares.",
+      "The whole board has $8\\times8=64$ unit squares.",
+      "The fraction is $36/64=9/16$.",
+      "Final Answer: ($\\boxed{\\text{D }(9/16)}$)"
+    ],
+    "keyIdeas": [
+      "Area fraction",
+      "Grid counting"
+    ],
+    "commonMistakes": [
+      "The border has thickness one square."
+    ],
+    "alternativeMethods": [
+      "Count center squares directly."
+    ],
+    "difficultyNotes": "Count center squares directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p11",
+    "problemId": "amc8-2009-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(4)}$",
+    "shortExplanation": "**Idea:** Use the whole-number pencil price as a common divisor of 143 and 195 cents.",
+    "detailedSteps": [
+      "The pencil price is a whole number of cents dividing both $143$ and $195$.",
+      "The greatest common divisor is $13$, so each pencil costs $13$ cents.",
+      "The seventh graders numbered $143/13=11$, and the sixth graders numbered $195/13=15$.",
+      "The difference is $15-11=4$.",
+      "Final Answer: ($\\boxed{\\text{D }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Greatest common divisor",
+      "Unit price"
+    ],
+    "commonMistakes": [
+      "Work in cents, not dollars.",
+      "The sixth-grade count is not all 30 students; only some bought pencils."
+    ],
+    "alternativeMethods": [
+      "Try whole-cent factors of $143$ and check which also divides $195$."
+    ],
+    "difficultyNotes": "A divisibility/unit-price problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p12",
+    "problemId": "amc8-2009-p12",
+    "finalAnswer": "$\\boxed{\\text{D }(7/9)}$",
+    "shortExplanation": "**Idea:** There are $3cdot3=9$ equally likely sums.",
+    "detailedSteps": [
+      "There are $3cdot3=9$ equally likely sums.",
+      "The sums are $3,5,7,5,7,9,7,9,11$.",
+      "Only the two $9$ sums are not prime.",
+      "So $7$ of $9$ outcomes work.",
+      "Final Answer: ($\\boxed{\\text{D }(7/9)}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Prime sums"
+    ],
+    "commonMistakes": [
+      "The number 1 is not involved; 9 is composite."
+    ],
+    "alternativeMethods": [
+      "List the small outcome table."
+    ],
+    "difficultyNotes": "List the small outcome table.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p13",
+    "problemId": "amc8-2009-p13",
+    "finalAnswer": "$\\boxed{\\text{B }(1/3)}$",
+    "shortExplanation": "**Idea:** There are $3!=6$ total arrangements.",
+    "detailedSteps": [
+      "There are $3!=6$ total arrangements.",
+      "A number is divisible by $5$ only if its units digit is $5$.",
+      "With $5$ fixed at the end, the other two digits can be arranged in $2!=2$ ways.",
+      "The fraction is $2/6=1/3$.",
+      "Final Answer: ($\\boxed{\\text{B }(1/3)}$)"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Divisibility"
+    ],
+    "commonMistakes": [
+      "Only the last digit matters for divisibility by 5."
+    ],
+    "alternativeMethods": [
+      "Fix the units digit first."
+    ],
+    "difficultyNotes": "Fix the units digit first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p14",
+    "problemId": "amc8-2009-p14",
+    "finalAnswer": "$\\boxed{\\text{B }(48)}$",
+    "shortExplanation": "**Idea:** Let the one-way distance be $d$.",
+    "detailedSteps": [
+      "Let the one-way distance be $d$.",
+      "The total distance is $2d$.",
+      "The total time is $d/60+d/40=d/24$.",
+      "Average speed is $2d/(d/24)=48$ miles per hour.",
+      "Final Answer: ($\\boxed{\\text{B }(48)}$)"
+    ],
+    "keyIdeas": [
+      "Average speed",
+      "Equal distances"
+    ],
+    "commonMistakes": [
+      "Do not average $60$ and $40$ directly."
+    ],
+    "alternativeMethods": [
+      "Use total distance divided by total time."
+    ],
+    "difficultyNotes": "Use total distance divided by total time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p15",
+    "problemId": "amc8-2009-p15",
+    "finalAnswer": "$\\boxed{\\text{D }(8\\frac{3}{4})}$",
+    "shortExplanation": "**Idea:** Determine which ingredient runs out first when the recipe is scaled.",
+    "detailedSteps": [
+      "The recipe uses $4$ cups of milk for $5$ servings.",
+      "Jordan has $7$ cups of milk, so milk allows $5\\cdot\\frac{7}{4}=\\frac{35}{4}=8\\frac{3}{4}$ servings.",
+      "Chocolate allows $5\\cdot\\frac{5}{2}=12.5$ servings, and sugar allows many more than that.",
+      "So milk is the limiting ingredient.",
+      "Final Answer: ($\\boxed{\\text{D }(8\\frac{3}{4})}$)"
+    ],
+    "keyIdeas": [
+      "Scaling recipes",
+      "Limiting ingredient"
+    ],
+    "commonMistakes": [
+      "Check every ingredient; the ingredient with the smallest allowed serving count determines the answer."
+    ],
+    "alternativeMethods": [
+      "Use a scale factor of $7/4$ from the milk amount, then apply it to $5$ servings."
+    ],
+    "difficultyNotes": "A proportional reasoning problem with several possible constraints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p16",
+    "problemId": "amc8-2009-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(21)}$",
+    "shortExplanation": "**Idea:** Factor triples of digits with product $24$.",
+    "detailedSteps": [
+      "Factor triples of digits with product $24$.",
+      "The unordered triples are $(1,3,8),(1,4,6),(2,2,6),(2,3,4)$.",
+      "Their permutations give $6+6+3+6=21$ numbers.",
+      "Final Answer: ($\\boxed{\\text{D }(21)}$)"
+    ],
+    "keyIdeas": [
+      "Factor triples",
+      "Permutations with repeats"
+    ],
+    "commonMistakes": [
+      "Do not include a digit 0 because then the product would be 0."
+    ],
+    "alternativeMethods": [
+      "Classify by unordered digit triples."
+    ],
+    "difficultyNotes": "Classify by unordered digit triples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p17",
+    "problemId": "amc8-2009-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(85)}$",
+    "shortExplanation": "**Idea:** Factor $360=2^3cdot3^2cdot5$.",
+    "detailedSteps": [
+      "Factor $360=2^3cdot3^2cdot5$.",
+      "For a square, exponents must be even, so multiply by $2cdot5=10$. Thus $x=10$.",
+      "For a cube, exponents must be multiples of $3$. We need one more factor of $3$ and two more factors of $5$, so $y=3cdot25=75$.",
+      "Therefore $x+y=10+75=85$.",
+      "Final Answer: ($\\boxed{\\text{B }(85)}$)"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Perfect powers"
+    ],
+    "commonMistakes": [
+      "Treat square and cube requirements separately."
+    ],
+    "alternativeMethods": [
+      "Use exponent parity and divisibility by 3."
+    ],
+    "difficultyNotes": "Use exponent parity and divisibility by 3.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p18",
+    "problemId": "amc8-2009-p18",
+    "finalAnswer": "$\\boxed{\\text{C }(64)}$",
+    "shortExplanation": "**Idea:** On the $15\\times15$ floor, the black strips occur in $7$ rows and $7$ columns.",
+    "detailedSteps": [
+      "On the $15\\times15$ floor, the black strips occur in $7$ rows and $7$ columns.",
+      "Black tiles are counted by $7cdot15+7cdot15-7cdot7=161$.",
+      "Total tiles are $15^2=225$.",
+      "White tiles: $225-161=64$.",
+      "Final Answer: ($\\boxed{\\text{C }(64)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion",
+      "Grid patterns"
+    ],
+    "commonMistakes": [
+      "Subtract the row-column intersections once."
+    ],
+    "alternativeMethods": [
+      "Count black first, then subtract from total."
+    ],
+    "difficultyNotes": "Count black first, then subtract from total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p19",
+    "problemId": "amc8-2009-p19",
+    "finalAnswer": "$\\boxed{\\text{D }(165)}$",
+    "shortExplanation": "**Idea:** If $70^circ$ is the vertex angle, the other two angles are $(180-70)/2=55^circ$.",
+    "detailedSteps": [
+      "If $70^circ$ is the vertex angle, the other two angles are $(180-70)/2=55^circ$.",
+      "If $70^circ$ is a base angle, the other base angle is $70^circ$ and the vertex angle is $40^circ$.",
+      "The possible angle measures are $70,55,40$.",
+      "Their sum is $165$.",
+      "Final Answer: ($\\boxed{\\text{D }(165)}$)"
+    ],
+    "keyIdeas": [
+      "Isosceles triangles",
+      "Angle sum"
+    ],
+    "commonMistakes": [
+      "Consider both cases: 70 as vertex angle and as base angle."
+    ],
+    "alternativeMethods": [
+      "Casework on which angle is 70 degrees."
+    ],
+    "difficultyNotes": "Casework on which angle is 70 degrees.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p20",
+    "problemId": "amc8-2009-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(8)}$",
+    "shortExplanation": "**Idea:** Classify triangles by their three squared side lengths.",
+    "detailedSteps": [
+      "Classify triangles by their three squared side lengths.",
+      "The possible triples are $1,1,2$; $1,2,5$; $1,4,5$; $1,5,10$; $1,9,10$; $2,2,4$; $2,4,10$; and $2,5,9$.",
+      "There are $8$ different triples, so there are $8$ noncongruent triangles.",
+      "Final Answer: ($\\boxed{\\text{D }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Distance classification",
+      "Congruence"
+    ],
+    "commonMistakes": [
+      "Do not count location separately; congruent triangles count once."
+    ],
+    "alternativeMethods": [
+      "Use squared side lengths to avoid square roots."
+    ],
+    "difficultyNotes": "Use squared side lengths to avoid square roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p21",
+    "problemId": "amc8-2009-p21",
+    "finalAnswer": "$\\boxed{\\text{D }(\\frac{15}{8})}$",
+    "shortExplanation": "**Idea:** Both averages come from the same total sum of all entries.",
+    "detailedSteps": [
+      "Let $T$ be the sum of all entries in the array.",
+      "Andy averages the $40$ row sums, so $A=\\frac{T}{40}$.",
+      "Bethany averages the $75$ column sums, so $B=\\frac{T}{75}$.",
+      "Therefore $\\frac{A}{B}=\\frac{T/40}{T/75}=\\frac{75}{40}=\\frac{15}{8}$.",
+      "Final Answer: ($\\boxed{\\text{D }(\\frac{15}{8})}$)"
+    ],
+    "keyIdeas": [
+      "Total sum",
+      "Averages",
+      "Ratio simplification"
+    ],
+    "commonMistakes": [
+      "Do not assume the row average and column average are equal; they divide the same total by different numbers."
+    ],
+    "alternativeMethods": [
+      "Test with every entry equal to $1$: each row sum is $75$ and each column sum is $40$, so $A/B=75/40$."
+    ],
+    "difficultyNotes": "Use one total to avoid unnecessary information about the individual entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p22",
+    "problemId": "amc8-2009-p22",
+    "finalAnswer": "$\\boxed{\\text{D }(728)}$",
+    "shortExplanation": "**Idea:** Count allowable three-digit strings from 000 through 999 and remove 000.",
+    "detailedSteps": [
+      "Represent numbers from $1$ to $999$ as three-digit strings, allowing leading zeros.",
+      "Each digit can be any of $0,2,3,4,5,6,7,8,9$, so there are $9^3=729$ strings with no digit $1$.",
+      "One of these is $000$, which does not represent a number between $1$ and $1000$.",
+      "So there are $729-1=728$ numbers.",
+      "Final Answer: ($\\boxed{\\text{D }(728)}$)"
+    ],
+    "keyIdeas": [
+      "Complementary counting",
+      "Place value"
+    ],
+    "commonMistakes": [
+      "Do not include 1000, since it contains a 1.",
+      "Remember to remove 000."
+    ],
+    "alternativeMethods": [
+      "Count by cases for one-, two-, and three-digit numbers: $8+8cdot9+8cdot9cdot9=728$."
+    ],
+    "difficultyNotes": "A digit-counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p23",
+    "problemId": "amc8-2009-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(28)}$",
+    "shortExplanation": "**Idea:** Translate the jelly bean distribution into a quadratic in the number of girls.",
+    "detailedSteps": [
+      "Let $g$ be the number of girls, so the number of boys is $g+2$.",
+      "The boys receive $(g+2)^2$ jelly beans, and the girls receive $g^2$ jelly beans.",
+      "She gives away $400-6=394$ jelly beans, so $g^2+(g+2)^2=394$.",
+      "This gives $2g^2+4g+4=394$, or $g^2+2g-195=0$.",
+      "Factor: $(g+15)(g-13)=0$, so $g=13$.",
+      "There are $15$ boys and $13$ girls, for $28$ students.",
+      "Final Answer: ($\\boxed{\\text{B }(28)}$)"
+    ],
+    "keyIdeas": [
+      "Quadratic modeling",
+      "Counting distribution"
+    ],
+    "commonMistakes": [
+      "Each boy gets the number of boys, not the number of girls.",
+      "Subtract the 6 leftover jelly beans before writing the equation."
+    ],
+    "alternativeMethods": [
+      "Test the answer choices: if the total is 28, then girls and boys are 13 and 15, and $13^2+15^2=394$."
+    ],
+    "difficultyNotes": "A quadratic word problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p24",
+    "problemId": "amc8-2009-p24",
+    "finalAnswer": "$\\boxed{\\text{E }(9)}$",
+    "shortExplanation": "**Idea:** The equations are $AB+CA=DA$ and $AB-CA=A$.",
+    "detailedSteps": [
+      "The equations are $AB+CA=DA$ and $AB-CA=A$.",
+      "From subtraction: $10A+B-(10C+A)=A$, so $8A+B=10C$.",
+      "From addition: $10A+B+10C+A=10D+A$, so $10A+B+10C=10D$.",
+      "The last equation forces $B=0$, so $8A=10C$, or $4A=5C$.",
+      "Thus $A=5$ and $C=4$, giving $D=A+C=9$.",
+      "Final Answer: ($\\boxed{\\text{E }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Cryptarithms",
+      "Column arithmetic"
+    ],
+    "commonMistakes": [
+      "Digits must be different, and $B$ can be zero because it is not a leading digit."
+    ],
+    "alternativeMethods": [
+      "Turn each two-digit number into algebra."
+    ],
+    "difficultyNotes": "Turn each two-digit number into algebra.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2009-p25",
+    "problemId": "amc8-2009-p25",
+    "finalAnswer": "$\\boxed{\\text{E }(11)}$",
+    "shortExplanation": "**Idea:** The fourth height is $1-\\frac12-\\frac13-\\frac1{17}=\\frac{11}{102}$.",
+    "detailedSteps": [
+      "The fourth height is $1-\\frac12-\\frac13-\\frac1{17}=\\frac{11}{102}$.",
+      "Before gluing, the total surface area of the four slabs is $4cdot2+4(1)=12$, because their heights add to $1$.",
+      "The glued contact areas are $\\frac{11}{102}$, $\\frac13$, and $\\frac1{17}$. Their sum is $\\frac{51}{102}=\\frac12$.",
+      "Each glued area removes two exposed faces, so subtract $2cdot\\frac12=1$.",
+      "Surface area is $12-1=11$.",
+      "Final Answer: ($\\boxed{\\text{E }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Surface area",
+      "Glued faces"
+    ],
+    "commonMistakes": [
+      "Subtract both hidden faces at each glued contact."
+    ],
+    "alternativeMethods": [
+      "Use total height to simplify the unglued surface area."
+    ],
+    "difficultyNotes": "Use total height to simplify the unglued surface area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

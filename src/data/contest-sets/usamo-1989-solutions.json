@@ -1,0 +1,146 @@
+[
+  {
+    "id": "solution-usamo-1989-p1",
+    "problemId": "usamo-1989-p1",
+    "finalAnswer": "$\\boxed{a=1989,\\ b=1989,\\ c=1990,\\ d=3978}$.",
+    "shortExplanation": "Reverse the order of the finite harmonic sums. Dividing the resulting formula for each inner sum by its denominator makes the final sum another shifted harmonic sum.",
+    "detailedSteps": [
+      "Write $S_n=\\sum_{j=1}^{n}1/j$. In $T_n=\\sum_{k=1}^{n}S_k$, the term $1/j$ occurs once for each $k=j,j+1,\\ldots,n$, hence $n+1-j$ times. Therefore $$T_n=\\sum_{j=1}^{n}\\frac{n+1-j}{j}=(n+1)S_n-n.$$",
+      "Since $S_{n+1}=S_n+1/(n+1)$, this is also $T_n=(n+1)S_{n+1}-(n+1)$. In particular, $$T_{1988}=1989S_{1989}-1989.$$",
+      "Apply the same identity to each term of $U_n$: $T_k/(k+1)=S_{k+1}-1$. Consequently $$U_n=\\sum_{k=1}^{n}(S_{k+1}-1)=T_{n+1}-S_1-n=T_{n+1}-n-1.$$",
+      "Using $T_{n+1}=(n+2)S_{n+1}-(n+1)$ gives $$U_n=(n+2)S_{n+1}-2(n+1),\\qquad U_{1988}=1990S_{1989}-3978.$$",
+      "Thus the displayed four integers satisfy both required identities. They are all positive and less than $10^6$, as required. The problem asks for suitable integers; these formulas establish their existence without requiring a separate uniqueness argument."
+    ],
+    "keyIdeas": [
+      "Count the multiplicity of a summand before evaluating a double sum.",
+      "Shift the harmonic index so that the divided inner sum simplifies."
+    ],
+    "commonMistakes": [
+      "Counting $1/j$ only $n-j$ times rather than $n+1-j$ times.",
+      "Forgetting to remove $S_1=1$ when replacing $S_2+\\cdots+S_{n+1}$ by $T_{n+1}-1$."
+    ],
+    "alternativeMethods": [
+      "Induction proves $T_n=(n+1)S_n-n$ directly. Summing $T_k/(k+1)=S_{k+1}-1$ then finishes the calculation."
+    ],
+    "difficultyNotes": "The numbers are large, but no decimal approximation is needed. A finite-sum identity resolves both parts exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usamo-1989-p2",
+    "problemId": "usamo-1989-p2",
+    "finalAnswer": "Six scheduled games with twelve distinct players always exist.",
+    "shortExplanation": "There must be at least six connected components in the schedule graph. Each contains a game, and games chosen from different components cannot share players.",
+    "detailedSteps": [
+      "Represent each club member by a vertex and each scheduled game by an edge joining its two players. If a pair plays more than once, retain parallel edges; the proof does not require all games to involve different pairs.",
+      "A connected component containing $v$ vertices needs at least $v-1$ edges: starting from one vertex, each edge used to reach a new vertex adds at most one vertex. Equivalently, every connected component contains a spanning tree.",
+      "Let there be $c$ components, with vertex counts $v_1,\\ldots,v_c$. Since there are exactly $20$ vertices and $14$ scheduled edges, $$14\\ge\\sum_{j=1}^{c}(v_j-1)=20-c,$$ so $c\\ge6$.",
+      "Every member plays at least once, so there are no isolated vertices. Each component therefore contains an actual scheduled edge. Choose one such edge from each of six different components.",
+      "Different components have disjoint vertex sets. The six selected edges thus have twelve distinct endpoints, giving precisely the required six games."
+    ],
+    "keyIdeas": [
+      "Count components from the lower bound on edges in a connected graph.",
+      "Choose objects from disjoint components to obtain disjoint participants."
+    ],
+    "commonMistakes": [
+      "Assuming the schedule graph is connected or is a forest.",
+      "Choosing arbitrary games without ensuring their endpoints are distinct.",
+      "Overlooking that the no-isolated-member condition ensures every component has an edge."
+    ],
+    "alternativeMethods": [
+      "Remove edges lying on cycles until a spanning forest remains. A forest on $20$ vertices with $c$ components has $20-c$ edges; removing edges cannot make its edge count exceed the original $14$."
+    ],
+    "difficultyNotes": "The useful graph invariant is the number of components. A maximum-matching theorem is unnecessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usamo-1989-p3",
+    "problemId": "usamo-1989-p3",
+    "finalAnswer": "There is a zero $a+bi$ of $P$ with $\\boxed{(a^2+b^2+1)^2<4b^2+1}$.",
+    "shortExplanation": "At $i$, real-root factors have modulus at least one. Pair each nonreal root with its conjugate; one pair must have modulus below one, which is exactly the desired inequality.",
+    "detailedSteps": [
+      "Because $P$ is monic, the fundamental theorem of algebra factors it into terms $z-r$ for real roots and quadratic factors $(z-a-bi)(z-a+bi)$ for nonreal conjugate pairs. Roots are counted with multiplicity. Real coefficients ensure that conjugate roots occur together.",
+      "At $z=i$, a real root $r$ contributes $|i-r|=\\sqrt{1+r^2}\\ge1$. A conjugate pair contributes the nonnegative modulus $|(i-a-bi)(i-a+bi)|$.",
+      "The square of the latter contribution is $$\\begin{aligned}|(i-a-bi)(i-a+bi)|^2&=[a^2+(1-b)^2][a^2+(1+b)^2]\\\\&=(a^2+b^2+1)^2-4b^2.\\end{aligned}$$",
+      "The product of all these moduli equals $|P(i)|<1$. If every conjugate-pair contribution were at least one, the product would be at least one, because all real-root contributions already are. Thus a conjugate pair must have contribution strictly less than one.",
+      "For that pair, $P(a+bi)=0$ and $(a^2+b^2+1)^2-4b^2<1$, which rearranges to the required inequality. If the pair contribution is zero, the conclusion still holds; repeated roots also cause no exception."
+    ],
+    "keyIdeas": [
+      "Use conjugate pairs to preserve the real-coefficient structure.",
+      "Turn a product below one into a small factor.",
+      "Square a conjugate-pair modulus to obtain a real algebraic inequality."
+    ],
+    "commonMistakes": [
+      "Discarding the monic leading coefficient without checking it.",
+      "Claiming an arbitrary individual root near one side of the complex plane suffices, without using its conjugate.",
+      "Treating the zero-product case as an exception."
+    ],
+    "alternativeMethods": [
+      "Writing a pair factor as $(z-a)^2+b^2$ gives, at $i$, the complex number $(a^2+b^2-1)-2ai$. Its squared modulus $(a^2+b^2-1)^2+4a^2$ equals the same expression used above."
+    ],
+    "difficultyNotes": "The key step is structural: real factors and conjugate-pair factors play different roles. The calculation alone does not establish that a suitable pair exists.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usamo-1989-p4",
+    "problemId": "usamo-1989-p4",
+    "finalAnswer": "Line $IO$ meets the interiors of both $AB$ and $BC$.",
+    "shortExplanation": "The incenter weights the vertices by side lengths; the circumcenter adds the cosine of each opposite angle. Their strict cosine order determines which two barycentric coordinates vanish along the line.",
+    "detailedSteps": [
+      "Put $a=BC$, $b=CA$, $c=AB$, and $p=a+b+c$. The given inequalities say $a>b>c$, so the opposite angles satisfy $A>B>C$. Since the triangle is acute, $$0<\\cos A<\\cos B<\\cos C.$$",
+      "Use normalized barycentric coordinates: a point $(\\lambda_A,\\lambda_B,\\lambda_C)$ represents $\\lambda_A A+\\lambda_B B+\\lambda_C C$, with coordinate sum one. Positive coordinates with one coordinate zero describe the interior of the opposite side.",
+      "The incenter has equal distances from all three sides, so its three subtriangle areas are proportional to $a,b,c$. Therefore $I=(a,b,c)/p$. The circumcenter lies inside an acute triangle. If the circumradius is $R$, its distance from $BC$ is $\\sqrt{R^2-a^2/4}=R\\cos A$. The analogous distances give area ratios $a\\cos A:b\\cos B:c\\cos C$. Hence $$O=\\frac{(a\\cos A,b\\cos B,c\\cos C)}{D},\\qquad D=a\\cos A+b\\cos B+c\\cos C.$$",
+      "The number $D/p$ is a positive weighted mean, so $\\cos A<D/p<\\cos C$. In particular, $D-p\\cos A>0$ and $p\\cos C-D>0$. The unequal cosine values also imply $O\\ne I$.",
+      "Parametrize the line by $X(t)=I+t(O-I)$. At $$t_+=\\frac{D}{D-p\\cos A},$$ its normalized coordinates are $$X(t_+)=\\left(0,\\frac{b(\\cos B-\\cos A)}{D-p\\cos A},\\frac{c(\\cos C-\\cos A)}{D-p\\cos A}\\right).$$ Both remaining coordinates are strictly positive and their sum is one. Thus $X(t_+)$ lies inside $BC$.",
+      "In the opposite direction, take $$t_-=-\\frac{D}{p\\cos C-D}.$$ Then $$X(t_-)=\\left(\\frac{a(\\cos C-\\cos A)}{p\\cos C-D},\\frac{b(\\cos C-\\cos B)}{p\\cos C-D},0\\right).$$ Again the two displayed coordinates are positive and sum to one, so $X(t_-)$ lies inside $AB$. Both points are on $IO$, proving the required segment intersections."
+    ],
+    "keyIdeas": [
+      "Use barycentric area ratios for the two centers.",
+      "Track a line through its three affine coordinates.",
+      "Strict side inequalities turn coordinate nonnegativity into interior intersections."
+    ],
+    "commonMistakes": [
+      "Proving intersection only with the infinite supporting lines, rather than with the requested segments.",
+      "Using circumcenter area ratios for an obtuse triangle without signed areas.",
+      "Ignoring the possibility of coincident centers before defining the line; the strict cosine order excludes it here."
+    ],
+    "alternativeMethods": [
+      "Place one side on a coordinate axis, compute the two centers from perpendicular bisectors and angle-bisector weights, then solve the two line-side intersections. The barycentric proof packages the same affine calculation without long coordinates."
+    ],
+    "difficultyNotes": "The geometry proof requires the positivity of both nonzero side coordinates. That is the step that distinguishes segment intersections from intersections with extensions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usamo-1989-p5",
+    "problemId": "usamo-1989-p5",
+    "finalAnswer": "$\\boxed{u<v}$.",
+    "shortExplanation": "First prove that every permitted real solution is positive. Then $F(9/10)=9$ places $u$ below $9/10$, where the polynomial defining $v$ is strictly smaller than the polynomial defining $u$.",
+    "detailedSteps": [
+      "Define $F(x)=x+x^2+\\cdots+x^8+10x^9$ and $G(x)=x+x^2+\\cdots+x^{10}+10x^{11}$. The given equations are $F(u)=G(v)=8$. We must consider all real solutions, including possible negative ones.",
+      "For $x=-t$ with $0<t\\le1$, each adjacent pair satisfies $(-t)^{2j-1}+(-t)^{2j}=t^{2j-1}(t-1)\\le0$. The final odd-power term is strictly negative, so $F(-t)<0$ and $G(-t)<0$.",
+      "For $t>1$, each of the four pairs in $F(-t)$ is less than $t^8$, and each of the five pairs in $G(-t)$ is less than $t^{10}$. Therefore $$F(-t)<4t^8-10t^9<0,\\qquad G(-t)<5t^{10}-10t^{11}<0.$$ At zero both polynomials vanish. Thus $u,v>0$.",
+      "On $[0,\\infty)$, each polynomial is continuous and strictly increasing: all its terms are increasing and its first-power term is strictly increasing. Since $F(0)=G(0)=0$ while $F(1)=18$ and $G(1)=20$, each equation has exactly one real solution, in $(0,1)$.",
+      "At $q=9/10$, a geometric sum gives $$F(q)=\\frac{q(1-q^8)}{1-q}+10q^9=9(1-q^8)+9q^8=9.$$ Consequently $0<u<9/10$.",
+      "Now factor the difference: $$G(x)-F(x)=x^9(10x^2+x-9)=x^9(x+1)(10x-9).$$ At $x=u$ this is strictly negative, so $G(u)<F(u)=8=G(v)$. Strict increase of $G$ therefore implies $u<v$."
+    ],
+    "keyIdeas": [
+      "Exclude negative roots before using positive-axis monotonicity.",
+      "Choose an exact comparison point where a geometric sum cancels.",
+      "Compare the defining polynomials at one root instead of solving either equation."
+    ],
+    "commonMistakes": [
+      "Assuming the real roots are positive without proving it.",
+      "Inferring root order directly from the degrees.",
+      "Approximating both roots numerically and treating the approximation as a proof."
+    ],
+    "alternativeMethods": [
+      "Once positivity is established, derivatives give $F\\prime(x)>0$ and $G\\prime(x)>0$ for $x\\ge0$. The same exact threshold and factored-difference argument finish the comparison."
+    ],
+    "difficultyNotes": "The root comparison is short after the domain is justified. The negative-axis exclusion is essential because the original variables are real, not explicitly positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "solution-usaco-bronze-2011-december-p1",
+    "problemId": "usaco-bronze-2011-december-p1",
+    "finalAnswer": "Write the minimum number of transferred bales to haybales.out.",
+    "shortExplanation": "Compute the common target height from the conserved total. Each bale above that height must leave its pile; adding those surpluses gives the minimum number of moves.",
+    "detailedSteps": [
+      "The source says the piles were initially equal and the cows only moved bales between piles. Their conserved total is therefore divisible by N. The equal target is an integer; no rounding rule is needed.",
+      "Let $T=\\sum_i a_i$ and $t=T/N$. Every pile with $a_i>t$ must lose at least $a_i-t$ bales. Thus $S=\\sum_i\\max(0,a_i-t)$ is a lower bound on the number moved.",
+      "Conservation gives $\\sum_i\\max(0,a_i-t)=\\sum_i\\max(0,t-a_i)$. Transfer surplus bales directly into deficient piles. Each transferred bale reduces the remaining surplus by one, so exactly $S$ moves achieve the target.",
+      "Read the heights once, compute $t$, and sum positive surpluses. The algorithm takes $O(N)$ time and $O(N)$ stored heights. With $N\\le10000$ and each height at most $10000$, the total is at most $10^8$; the code uses 64-bit integers.",
+      "Read haybales.in and write one integer line to haybales.out. Already equal piles, including a single pile, require zero moves.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; if (!(in >> n)) return;\n    vector<long long> a(n); long long total = 0;\n    for (auto& x : a) { in >> x; total += x; }\n    long long target = total / n, moves = 0;\n    for (long long x : a) if (x > target) moves += x - target;\n    out << moves << '\\n';\n}\nint main() {\n    ifstream in(\"haybales.in\"); ofstream out(\"haybales.out\");\n    solve(in, out); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Conservation fixes the equal target.",
+      "Every surplus bale must move, and matching deficits attains that lower bound."
+    ],
+    "commonMistakes": [
+      "Dividing the total with an invented rounding rule for inputs outside the restoration guarantee.",
+      "Adding both surpluses and deficits, which counts each transferred bale twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conserved equal-height target and a matching lower bound make this a linear scan.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2011-december-p2",
+    "problemId": "usaco-bronze-2011-december-p2",
+    "finalAnswer": "Write the intended order of all N cow IDs, one per line, to photo.out.",
+    "shortExplanation": "For any two IDs, at least three photographs preserve their intended relative order. Sort the IDs using that majority comparison.",
+    "detailedSteps": [
+      "All five photos begin from the same intended lineup. Each photo has at most one active mover, and a cow can be an active mover in at most one photo. Being shifted by another cow does not count as actively moving.",
+      "Fix two different IDs a and b. Removing and reinserting a third cow cannot change their relative order. Only a photograph whose active mover is a or b can reverse this pair.",
+      "Those two cows act at most once each, so at most two photographs can reverse their pair. At least three of the five preserve it. Therefore $a$ belongs before $b$ exactly when at least three photos place $a$ before $b$.",
+      "Store the position of each ID in each photo. Sort IDs 1 through N using the five-photo majority comparison. Under the source guarantee this comparator equals the actual intended order for every pair, so it is transitive and satisfies the sorting contract.",
+      "Any different proposed lineup reverses at least one pair whose majority is fixed. The reconstructed order is therefore unique. This reasoning concerns relative order, not average positions or the most common absolute position.",
+      "Each comparison needs five fixed lookups. Sorting takes $O(N\\log N)$ time, and the five position tables use $O(N)$ memory. Read all $5N$ IDs from photo.in and output all $N$ IDs, one per line, to photo.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <numeric>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; if (!(in >> n)) return;\n    array<vector<int>, 5> pos;\n    for (int k = 0; k < 5; ++k) {\n        pos[k].resize(n + 1);\n        for (int j = 0, id; j < n; ++j) { in >> id; pos[k][id] = j; }\n    }\n    vector<int> order(n); iota(order.begin(), order.end(), 1);\n    sort(order.begin(), order.end(), [&](int a, int b) {\n        int before = 0;\n        for (int k = 0; k < 5; ++k) before += pos[k][a] < pos[k][b];\n        return before >= 3;\n    });\n    for (int id : order) out << id << '\\n';\n}\nint main() {\n    ifstream in(\"photo.in\"); ofstream out(\"photo.out\");\n    solve(in, out); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A third cow moving cannot reverse a fixed pair.",
+      "Two distinct active movers can affect a pair in at most two of five photos.",
+      "The majority comparator equals a genuine total order under the source contract."
+    ],
+    "commonMistakes": [
+      "Averaging absolute positions rather than recovering pairwise order.",
+      "Treating passive shifts as new active moves.",
+      "Using a majority comparator without explaining why it is transitive here."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The key step is proving three reliable observations for every pair; the implementation is then a normal sort.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2011-december-p3",
+    "problemId": "usaco-bronze-2011-december-p3",
+    "finalAnswer": "Write the largest carry-free group size to escape.out.",
+    "shortExplanation": "Search include-or-skip choices while keeping the selected group carry-free. Reject a new weight when one decimal column would reach ten, and retain the largest valid group.",
+    "detailedSteps": [
+      "A group is permitted when its weights add without any decimal carry. No separate numeric raft-capacity limit is given. Identical weights still belong to different cows.",
+      "For each decimal position, add the original digits of the selected weights. The group is carry-free exactly when each column total is at most $9$: otherwise that column or an earlier column produces a carry.",
+      "Search the include-or-skip choices in input order. Maintain the selected count and its ordinary sum. Because the current group is carry-free, the digits of that sum equal the raw column totals.",
+      "Before including the next weight, compare corresponding digits of the sum and weight. Reject inclusion if any pair totals at least ten. Nonnegative digits make a failed column permanent under further additions, so no feasible superset is lost. Always consider skipping the cow too.",
+      "Keep the largest feasible count found. At index $i$, prune only if $c+(N-i)\\le\\text{best}$, since even selecting every remaining cow cannot improve the answer. Every feasible subset is visited or safely bounded by an equally large known group.",
+      "The unpruned search has at most $2^{N+1}-1$ states and examines at most nine decimal positions per inclusion test, giving $O(9\\cdot2^N)$ time and $O(N)$ recursion space. Here $N\\le20$ and $w_i\\le10^8$; ordinary totals are at most $2\\cdot10^9$, and the code uses 64-bit integers.",
+      "Read escape.in and write only the optimal group size to escape.out. The selected weights themselves are not requested. A single cow is always feasible.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nusing namespace std;\nbool noCarry(long long a, long long b) {\n    while (a || b) {\n        if (a % 10 + b % 10 >= 10) return false;\n        a /= 10; b /= 10;\n    }\n    return true;\n}\nvoid search(const vector<long long>& w, int index, int count, long long sum, int& best) {\n    best = max(best, count);\n    if (count + static_cast<int>(w.size()) - index <= best) return;\n    if (index == static_cast<int>(w.size())) return;\n    if (noCarry(sum, w[index])) search(w, index + 1, count + 1, sum + w[index], best);\n    search(w, index + 1, count, sum, best);\n}\nvoid solve(istream& in, ostream& out) {\n    int n; if (!(in >> n)) return;\n    vector<long long> w(n); for (auto& x : w) in >> x;\n    int best = 0; search(w, 0, 0, 0, best); out << best << '\\n';\n}\nint main() {\n    ifstream in(\"escape.in\"); ofstream out(\"escape.out\");\n    solve(in, out); return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Raw digit-column totals characterize carries.",
+      "Include-or-skip search covers all subsets.",
+      "An optimistic remaining-count bound safely prunes the search."
+    ],
+    "commonMistakes": [
+      "Checking only whether the numeric total is below some capacity.",
+      "Deduplicating cows of equal weight.",
+      "Skipping exclusion branches or pruning without a valid upper bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small N supports subset search, but carry testing must reflect separate decimal columns and pruning must preserve optimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

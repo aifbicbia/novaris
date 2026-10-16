@@ -1,0 +1,508 @@
+[
+  {
+    "id": "solution-amc12-2001-p1",
+    "problemId": "amc12-2001-p1",
+    "finalAnswer": "$\\boxed{2S+12}$ (choice E)",
+    "shortExplanation": "The two additions contribute $6$ before the doubling.",
+    "detailedSteps": [
+      "If the original numbers are $u,v$, their new sum is $2(u+3)+2(v+3)=2(u+v)+12=2S+12$."
+    ],
+    "keyIdeas": [
+      "Distributing an affine change"
+    ],
+    "commonMistakes": [
+      "Adding 3 just once to the total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The operation is applied separately to both entries.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p2",
+    "problemId": "amc12-2001-p2",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "The tens digit cancels because it is nonzero.",
+    "detailedSteps": [
+      "Write the number as $10a+b$, with $a\\ne0$. The condition is $10a+b=ab+a+b$, so $9a=ab$. Division by $a$ gives $b=9$."
+    ],
+    "keyIdeas": [
+      "A digit equation"
+    ],
+    "commonMistakes": [
+      "Allowing a zero tens digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit restriction justifies cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p3",
+    "problemId": "amc12-2001-p3",
+    "finalAnswer": "$\\boxed{32000}$ (choice B)",
+    "shortExplanation": "The $p$-dependent terms cancel from the tax equation.",
+    "detailedSteps": [
+      "The effective rate is above $p$, so the income $I$ exceeds $28000$. In percentage-scaled units, the tax equation is $28000p+(I-28000)(p+2)=I(p+0.25)$.",
+      "Canceling $pI$ gives $2I-56000=I/4$, so $(7/4)I=56000$ and $I=32000$."
+    ],
+    "keyIdeas": [
+      "Marginal and effective tax rates"
+    ],
+    "commonMistakes": [
+      "Applying the higher rate to the entire income."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the bracket amount from the excess income.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p4",
+    "problemId": "amc12-2001-p4",
+    "finalAnswer": "$\\boxed{30}$ (choice D)",
+    "shortExplanation": "Express the extremes in terms of the mean.",
+    "detailedSteps": [
+      "Let the mean be $m$. The least and greatest entries are $m-10$ and $m+15$, while the middle entry is $5$.",
+      "Their sum must be $3m$, so $(m-10)+5+(m+15)=3m$. Thus $m=10$ and the total is $30$. The entries $0,5,25$ have the required order."
+    ],
+    "keyIdeas": [
+      "Mean and extreme offsets"
+    ],
+    "commonMistakes": [
+      "Treating the median as the mean."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Checking the order confirms the algebraic solution is allowed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p5",
+    "problemId": "amc12-2001-p5",
+    "finalAnswer": "$\\boxed{\\frac{10000!}{2^{5000}\\cdot5000!}}$ (choice D)",
+    "shortExplanation": "Divide the factorial by the product of its even factors.",
+    "detailedSteps": [
+      "The product $10000!$ includes every desired odd factor and all even factors $2,4,\\ldots,10000$.",
+      "The even-factor product is $2^{5000}(1\\cdot2\\cdots5000)=2^{5000}5000!$. Dividing removes exactly the even factors."
+    ],
+    "keyIdeas": [
+      "Separating even factors from a factorial"
+    ],
+    "commonMistakes": [
+      "Dividing by 5000! without removing the 5000 factors of 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint 10000 belongs to the even factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p6",
+    "problemId": "amc12-2001-p6",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "Only the blocks $642$ and $9753$ leave three digits summing to $9$.",
+    "detailedSteps": [
+      "The decreasing even block can be $864,642,$ or $420$. The decreasing four-odd block can be $9753$ or $7531$.",
+      "The sums of the three unused digits for these six pairings are respectively $3,11,9,17,15,23$. Only $642$ with $9753$ leaves $8,1,0$, giving the first block $810$ and $A=8$."
+    ],
+    "keyIdeas": [
+      "Consecutive digit blocks and complements"
+    ],
+    "commonMistakes": [
+      "Treating zero as forbidden in all positions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinctness makes the complementary digits determined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p7",
+    "problemId": "amc12-2001-p7",
+    "finalAnswer": "$\\boxed{782}$ (choice A)",
+    "shortExplanation": "The full price must be the integer divisor $23$.",
+    "detailedSteps": [
+      "Let $p$ be the full price and $F$ the number of full-price tickets. Doubling the revenue gives $p(140+F)=4002$.",
+      "There must be $0\\le F\\le140$, so $4002/280\\le p\\le4002/140$. The only integer divisor of $4002=2\\cdot3\\cdot23\\cdot29$ in this interval is $23$.",
+      "Then $140+F=174$, so $F=34$. Full-price revenue is $34\\cdot23=782$."
+    ],
+    "keyIdeas": [
+      "A divisor constraint from ticket revenue"
+    ],
+    "commonMistakes": [
+      "Assuming the half price must itself be a whole number of dollars."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the full-price integer condition after eliminating the half-price count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p8",
+    "problemId": "amc12-2001-p8",
+    "finalAnswer": "$\\boxed{\\text{Slant height }10\\text{ and radius }7}$ (choice C)",
+    "shortExplanation": "The sector radius becomes the slant height and its arc becomes the base circumference.",
+    "detailedSteps": [
+      "The arc length is $(252/360)(2\\pi\\cdot10)=14\\pi$, so the base radius is $7$.",
+      "The slant height remains $10$, rather than the vertical height. The source diagram with slant height $10$ and base radius $7$ is choice C."
+    ],
+    "keyIdeas": [
+      "Rolling a circular sector into a cone"
+    ],
+    "commonMistakes": [
+      "Reading the sector radius as the vertical height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Inspect the location of each dimension label in the answer diagrams.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p9",
+    "problemId": "amc12-2001-p9",
+    "finalAnswer": "$\\boxed{\\frac52}$ (choice C)",
+    "shortExplanation": "Use the input ratio $600/500=6/5$.",
+    "detailedSteps": [
+      "Choose $x=500,y=6/5$ in the identity. Then $f(600)=f(500)/(6/5)=3(5/6)=5/2$."
+    ],
+    "keyIdeas": [
+      "Scaling a functional equation"
+    ],
+    "commonMistakes": [
+      "Multiplying the value by the input ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One direct substitution avoids unnecessary reconstruction of the whole function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p10",
+    "problemId": "amc12-2001-p10",
+    "finalAnswer": "$\\boxed{\\text{56 percent}}$ (choice D)",
+    "shortExplanation": "Pentagons occupy $5/9$ of a $3$-by-$3$ repeating patch.",
+    "detailedSteps": [
+      "Scale each illustrated square to side $1$. A period of the pattern has area $9$ and contains four unit-square tiles.",
+      "The rest of that patch belongs to the pentagons, so their area fraction is $(9-4)/9=5/9$. This is about $55.56\\%$, closest to $56\\%$."
+    ],
+    "keyIdeas": [
+      "Area of a repeating tiling patch"
+    ],
+    "commonMistakes": [
+      "Counting tiles instead of adding their areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Different tile shapes need not have equal area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p11",
+    "problemId": "amc12-2001-p11",
+    "finalAnswer": "$\\boxed{\\frac35}$ (choice D)",
+    "shortExplanation": "White finishes first exactly when the final chip in a full random order is red.",
+    "detailedSteps": [
+      "Imagine drawing all five chips, even after the stopping time. The last white appears before the last red precisely when the final chip of this full order is red.",
+      "In that case both whites have already been drawn while at least one red remains, so the actual last drawn chip is white. The final chip is red with probability $3/5$."
+    ],
+    "keyIdeas": [
+      "Completing one color in a random order"
+    ],
+    "commonMistakes": [
+      "Equating the answer with the probability the first chip is white."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A full permutation gives a simpler description of the stopping event.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p12",
+    "problemId": "amc12-2001-p12",
+    "finalAnswer": "$\\boxed{801}$ (choice B)",
+    "shortExplanation": "Count multiples of $3$ or $4$, then remove those divisible by $5$.",
+    "detailedSteps": [
+      "The first count is $\\lfloor2001/3\\rfloor+\\lfloor2001/4\\rfloor-\\lfloor2001/12\\rfloor=667+500-166=1001$.",
+      "Among these, multiples of $5$ are multiples of $15$ or $20$, totaling $133+100-33=200$. Subtraction gives $801$."
+    ],
+    "keyIdeas": [
+      "Inclusion–exclusion with an exclusion"
+    ],
+    "commonMistakes": [
+      "Subtracting every multiple of 5, including numbers outside the first union."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply inclusion–exclusion separately to the excluded part.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p13",
+    "problemId": "amc12-2001-p13",
+    "finalAnswer": "$\\boxed{2k}$ (choice E)",
+    "shortExplanation": "The two function values at any common input sum to $2k$.",
+    "detailedSteps": [
+      "Reflection sends $y$ to $2k-y$, so the two quadratic expressions sum identically to $2k$.",
+      "Setting $x=1$ in this sum yields $a+b+c+d+e+f=2k$."
+    ],
+    "keyIdeas": [
+      "Reflection about a horizontal line"
+    ],
+    "commonMistakes": [
+      "Reflecting about the x-axis rather than y=k."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coefficient sums are function values at 1.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p14",
+    "problemId": "amc12-2001-p14",
+    "finalAnswer": "$\\boxed{66}$ (choice D)",
+    "shortExplanation": "Pair-based construction counts each all-polygon triangle three times.",
+    "detailedSteps": [
+      "Each of the $\\binom92=36$ pairs supports two equilateral triangles in the plane, for $72$ pair-and-side constructions.",
+      "Exactly three equilateral triangles have all three vertices among the polygon vertices: their index sets are $\\{1,4,7\\}$, $\\{2,5,8\\}$ and $\\{3,6,9\\}$. Each was counted three times instead of once.",
+      "Subtract $2$ extra counts per such triangle: $72-2(3)=66$."
+    ],
+    "keyIdeas": [
+      "Correcting repeated pair counts"
+    ],
+    "commonMistakes": [
+      "Counting only equilateral triangles whose three vertices belong to the polygon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The requirement is at least two polygon vertices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p15",
+    "problemId": "amc12-2001-p15",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Two neighboring faces unfold to a rhombus with endpoint distance $1$.",
+    "detailedSteps": [
+      "Call the opposite edges $AB$ and $CD$. Unfold faces $ABC$ and $BCD$ across $BC$. With $B=(0,0),C=(1,0)$, their third vertices are $A=(1/2,\\sqrt3/2)$ and $D=(1/2,-\\sqrt3/2)$. The two midpoints become $(1/4,\\sqrt3/4)$ and $(3/4,-\\sqrt3/4)$, distance $1$. The joining segment crosses $BC$, so this length is attainable.",
+      "For the lower bound, a shortest path need not enter any face twice: the part between two visits could be replaced by a straight segment in that convex face. Thus it crosses a chain of two, three or four distinct faces.",
+      "Unfolding those finite chains gives endpoint distances $1$ for every two-face and three-face chain; the four-face chains give either $1$ or $\\sqrt3$. Each path length is at least its unfolded endpoint distance. Therefore no path is shorter than $1$."
+    ],
+    "keyIdeas": [
+      "Unfolding a tetrahedron geodesic"
+    ],
+    "commonMistakes": [
+      "Using the spatial straight-line distance, which passes through the tetrahedron."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An attainable unfolded segment and a lower bound both establish shortest length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p16",
+    "problemId": "amc12-2001-p16",
+    "finalAnswer": "$\\boxed{\\frac{16!}{2^8}}$ (choice D)",
+    "shortExplanation": "Each sock/shoe pair removes half of all labeled orders.",
+    "detailedSteps": [
+      "There are $16!$ orders of the sixteen distinct items. For each leg, swapping the positions of its sock and shoe reverses that pair’s order.",
+      "The eight pair swaps partition all orders into classes of size $2^8$, containing exactly one order with every sock before its corresponding shoe. Hence the count is $16!/2^8$."
+    ],
+    "keyIdeas": [
+      "Independent precedence constraints"
+    ],
+    "commonMistakes": [
+      "Putting all socks on before any shoe, which unnecessarily restricts the order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The eight precedence constraints act on distinct pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p17",
+    "problemId": "amc12-2001-p17",
+    "finalAnswer": "$\\boxed{\\frac{5}{16}}$ (choice C)",
+    "shortExplanation": "The favorable region is the semicircle on diameter $AB$ lying inside the pentagon.",
+    "detailedSteps": [
+      "Thales’ theorem identifies the disk on diameter $AB$ as the locus of obtuse $\\angle APB$. Here $AB^2=4^2+(-2)^2=20$, so that disk has radius $\\sqrt5$.",
+      "The pentagon lies on one side of $AB$, and its other four sides contain the entire semicircle on that side. Thus the favorable area is $\\pi(\\sqrt5)^2/2=5\\pi/2$.",
+      "The pentagon area is $4(2\\pi+1)-(1/2)(4)(2)=8\\pi$. The probability is $(5\\pi/2)/(8\\pi)=5/16$."
+    ],
+    "keyIdeas": [
+      "An obtuse-angle locus inside a polygon"
+    ],
+    "commonMistakes": [
+      "Using the entire disk, including the half outside the pentagon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The locus must be intersected with the sampling region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p18",
+    "problemId": "amc12-2001-p18",
+    "finalAnswer": "$\\boxed{\\frac49}$ (choice D)",
+    "shortExplanation": "Horizontal separations are twice the geometric means of the radii.",
+    "detailedSteps": [
+      "For two tangent circles of radii $u,v$ resting on the same line, the horizontal center separation $h$ satisfies $h^2=(u+v)^2-(u-v)^2=4uv$.",
+      "The centers of the radius-$1$ and radius-$4$ circles are horizontally $4$ apart. The middle radius-$r$ circle contributes separations $2\\sqrt r$ and $4\\sqrt r$, giving $6\\sqrt r=4$. Therefore $r=4/9$."
+    ],
+    "keyIdeas": [
+      "Circle tangency above a common line"
+    ],
+    "commonMistakes": [
+      "Using center-to-center distances as horizontal separations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source figure selects the circle in the gap between the others.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p19",
+    "problemId": "amc12-2001-p19",
+    "finalAnswer": "$\\boxed{-11}$ (choice A)",
+    "shortExplanation": "The constant coefficient fixes the common value as $-2$.",
+    "detailedSteps": [
+      "The y-intercept gives $c=2$, so the product of the three roots is $-c=-2$. Their mean is $-a/3$, hence $a=6$.",
+      "The coefficient sum is $1+a+b+c=-2$, giving $1+6+b+2=-2$ and $b=-11$."
+    ],
+    "keyIdeas": [
+      "Viète and coefficient evaluation"
+    ],
+    "commonMistakes": [
+      "Using c rather than -c for the product of cubic roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the sign in the cubic product formula.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p20",
+    "problemId": "amc12-2001-p20",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The original diagonals must be perpendicular and have equal length.",
+    "detailedSteps": [
+      "The midpoint quadrilateral has adjacent sides parallel to $AC$ and $BD$, with half their lengths. It is a square precisely when these diagonal vectors are perpendicular and equally long.",
+      "Here $AC=(2,-6)$. A perpendicular equal-length vector is $(6,2)$ or $(-6,-2)$. Starting at $B=(1,1)$ yields $D=(7,3)$ or $(-5,-1)$. Only $(7,3)$ is in the first quadrant, so the coordinate sum is $10$."
+    ],
+    "keyIdeas": [
+      "Varignon square and diagonals"
+    ],
+    "commonMistakes": [
+      "Requiring the original quadrilateral itself to be a square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first-quadrant condition chooses the allowed diagonal direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p21",
+    "problemId": "amc12-2001-p21",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "shortExplanation": "The shared shifted factors constrain the variables to a small divisor list.",
+    "detailedSteps": [
+      "The equations factor as $(a+1)(b+1)=525$, $(b+1)(c+1)=147$, and $(c+1)(d+1)=105$.",
+      "Thus $b+1$ is one of $3,7,21$, the divisors above $1$ of $\\gcd(525,147)=21$. For $3$, the resulting $c+1=49$ cannot divide $105$. For $7$, the tuple is $(74,6,20,4)$, whose product is $35520$, not $8!$.",
+      "For $21$, the tuple is $(24,20,6,14)$, with product $40320=8!$. Hence $a-d=24-14=10$."
+    ],
+    "keyIdeas": [
+      "Factoring pairwise shifted products"
+    ],
+    "commonMistakes": [
+      "Forgetting to subtract 1 from the shifted factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product condition distinguishes the remaining integral candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p22",
+    "problemId": "amc12-2001-p22",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "Scale to a unit rectangle and find the two intersections.",
+    "detailedSteps": [
+      "Use $A=(0,0),B=(1,0),C=(1,1),D=(0,1)$. Then $E=(1/2,1),F=(1/3,0),G=(2/3,0)$ and $AC$ is $y=x$.",
+      "The lines $EF$ and $EG$ have equations $y=6x-2$ and $y=-6x+4$. Their intersections with $AC$ are $H=(2/5,2/5)$ and $J=(4/7,4/7)$.",
+      "The determinant formula gives $[EHJ]=3/70$ in the unit rectangle. Area ratios are unchanged by this scaling, so the actual area is $70(3/70)=3$."
+    ],
+    "keyIdeas": [
+      "Affine coordinates in a rectangle"
+    ],
+    "commonMistakes": [
+      "Assuming H and J divide the diagonal into equal thirds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the shape-independent area ratio from the stated total area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p23",
+    "problemId": "amc12-2001-p23",
+    "finalAnswer": "$\\boxed{\\frac{1+i\\sqrt{11}}{2}}$ (choice A)",
+    "shortExplanation": "The non-real pair must have integral sum and integral product.",
+    "detailedSteps": [
+      "Dividing the monic integer polynomial by its two monic integer-root factors leaves a monic quadratic with integer coefficients. Its non-real roots are conjugates.",
+      "For $\\alpha=(1+i\\sqrt{11})/2$, the pair has sum $1$ and product $3$, so its quadratic is $x^2-x+3$. For example, $x(x-1)(x^2-x+3)$ supplies a valid quartic with two real integer roots.",
+      "The other proposed conjugate pairs have products $1/2,5/4,5/4,7/2$, respectively, so they cannot be the roots of the required integer quadratic."
+    ],
+    "keyIdeas": [
+      "An integer quadratic factor"
+    ],
+    "commonMistakes": [
+      "Testing only the real part while ignoring the conjugate product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monic division by integer linear factors preserves integer coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p24",
+    "problemId": "amc12-2001-p24",
+    "finalAnswer": "$\\boxed{75^\\circ}$ (choice D)",
+    "shortExplanation": "Normalize $BD=1$, giving $BC=3$, then use the $15$-degree angle.",
+    "detailedSteps": [
+      "Put $B=(0,0),D=(1,0),C=(3,0)$ and $A=(t,t)$ with $t>0$, because the angle at $B$ is $45^\\circ$. The dot product for vectors $AB=(-t,-t)$ and $AD=(1-t,-t)$ is $2t^2-t$. Since their angle is $15^\\circ$, it is positive.",
+      "The cross-product magnitude is $t$, so $\\tan15^\\circ=1/(2t-1)=2-\\sqrt3$. Thus $t=(3+\\sqrt3)/2$.",
+      "At $C$, $\\tan\\angle ACB=t/(3-t)=2+\\sqrt3=\\tan75^\\circ$. The angle is acute because $t<3$, giving $75^\\circ$."
+    ],
+    "keyIdeas": [
+      "A coordinate angle equation"
+    ],
+    "commonMistakes": [
+      "Selecting an obtuse branch when using a tangent equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The signs of the dot products determine the correct angle branches.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-2001-p25",
+    "problemId": "amc12-2001-p25",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Every sequence repeats after five terms, so four distinct equations suffice.",
+    "detailedSteps": [
+      "The neighbor relation rearranges as $a_{n+1}=(a_n+1)/a_{n-1}$. Starting with $x,2000$ gives the cycle $x,2000,2001/x,(x+2001)/(2000x),(x+1)/2000,x,2000,\\ldots$. All these terms are positive for $x>0$.",
+      "The second position cannot equal $2001$. The other four positions give respectively $x=2001$, $x=1$, $x=2001/4001999$, and $x=4001999$.",
+      "These four positive values are distinct and exhaust the cycle, so the answer is $4$."
+    ],
+    "keyIdeas": [
+      "A five-term positive recurrence cycle"
+    ],
+    "commonMistakes": [
+      "Generating only the first three terms or failing to prove periodicity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity ensures every division is valid and the cycle persists.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

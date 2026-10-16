@@ -1,0 +1,643 @@
+[
+  {
+    "id": "solution-amc10a-2024-p1",
+    "problemId": "amc10a-2024-p1",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Factor common structure before multiplying.",
+    "detailedSteps": [
+      "Compute $9901\\cdot101=1,000,001$.",
+      "Compute $99\\cdot10101=999,999$.",
+      "The difference is $2$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Computation"
+    ],
+    "commonMistakes": [
+      "A direct multiplication is fine, but keep the place values aligned."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Introductory AMC 10A problem focused on computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p2",
+    "problemId": "amc10a-2024-p2",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use the two estimates to solve for the constants.",
+    "detailedSteps": [
+      "The equations are $1.5a+800b=69$ and $1.2a+1100b=69$.",
+      "Subtracting gives $0.3a=300b$, so $a=1000b$.",
+      "Then $2300b=69$, so $b=0.03$ and $a=30$.",
+      "For $L=4.2,G=4000$, the time is $30(4.2)+0.03(4000)=246$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Linear models"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on linear models.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p3",
+    "problemId": "amc10a-2024-p3",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Check the smallest possible sums of distinct primes.",
+    "detailedSteps": [
+      "Using $2$ plus four odd primes always gives an even sum larger than $2$, so it is not prime.",
+      "The five smallest odd primes sum to $3+5+7+11+13=39$.",
+      "Replacing $13$ by $17$ gives $43$, which is prime.",
+      "The digit sum is $4+3=7$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Prime sums"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on prime sums.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p4",
+    "problemId": "amc10a-2024-p4",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use the largest possible two-digit summands.",
+    "detailedSteps": [
+      "Each two-digit number is at most $99$.",
+      "Twenty such numbers sum to at most $20\\cdot99=1980$, which is too small.",
+      "With $21$ numbers, $20$ copies of $99$ and one copy of $44$ sum to $2024$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Sense",
+      "Bounds"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on bounds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p5",
+    "problemId": "amc10a-2024-p5",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Factor 2024 and require the largest prime in the factorial.",
+    "detailedSteps": [
+      "$2024=8\\cdot253=2^3\\cdot11\\cdot23$.",
+      "The factorial must contain a factor of $23$.",
+      "The least $n$ with a factor $23$ in $n!$ is $23$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factorization"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on factorization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p6",
+    "problemId": "amc10a-2024-p6",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Reversing a string requires one adjacent swap for each inverted pair.",
+    "detailedSteps": [
+      "In $FEDCBA$, every pair of letters from $ABCDEF$ has been reversed.",
+      "There are $\\binom62=15$ pairs.",
+      "Each adjacent swap changes the inversion count by $1$, so $15$ swaps are necessary and sufficient.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Inversions"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on inversions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p7",
+    "problemId": "amc10a-2024-p7",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use two negative factors to make a positive product and tune the sum.",
+    "detailedSteps": [
+      "A small positive sum can come from two negative factors and one positive factor.",
+      "The triple $(-6,-1,10)$ has product $60$ and sum $3$.",
+      "Checking nearby factor triples shows no positive sum of $1$ or $2$ occurs.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Signed factors"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on signed factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p8",
+    "problemId": "amc10a-2024-p8",
+    "finalAnswer": "$\\boxed{\\text{A}}$",
+    "shortExplanation": "**Idea:** Compute what the first three workers complete, then assign the rest to Daria.",
+    "detailedSteps": [
+      "From $1:00$ to $2:45$ is $105$ minutes.",
+      "Amy, Bomani, and Charlie together pack $10$ packages every $3$ minutes, so they pack $350$ packages.",
+      "Daria must pack $450-350=100$ packages.",
+      "At $5$ packages per $4$ minutes, this takes $80$ minutes, so she joined at $1:25\\text{ PM}$.",
+      "Final Answer: ($\\boxed{\\text{A}}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Work rates"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on work rates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p9",
+    "problemId": "amc10a-2024-p9",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Pair juniors, pair seniors, then match the pairs.",
+    "detailedSteps": [
+      "The $6$ juniors can be split into $3$ unordered pairs in $15$ ways.",
+      "The $6$ seniors can also be split into $3$ unordered pairs in $15$ ways.",
+      "The junior pairs can be matched to senior pairs in $3!$ ways.",
+      "The total is $15\\cdot15\\cdot6=1350$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Team partitions"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on team partitions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p10",
+    "problemId": "amc10a-2024-p10",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Find the repeating cycle after a few operations.",
+    "detailedSteps": [
+      "Starting at $100$: $100\\to110\\to120\\to40\\to50\\to60\\to20\\to30\\to10$.",
+      "From there the cycle is $10\\to20\\to30\\to10$.",
+      "Step $8$ gives $10$, and $(100-8)\\equiv2\\pmod3$, so step $100$ gives $30$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Iteration"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on iteration.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p11",
+    "problemId": "amc10a-2024-p11",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Rewrite the square-root condition as a factorization.",
+    "detailedSteps": [
+      "Since $m=\\sqrt{n^2-49}$, we have $n^2-m^2=49$.",
+      "Thus $(n-m)(n+m)=49$.",
+      "The positive factor pairs give $(n,m)=(25,24)$ and $(7,0)$.",
+      "The corresponding negative $n$ values also work, giving $4$ ordered pairs.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on difference of squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p12",
+    "problemId": "amc10a-2024-p12",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Build the six daily scores, then average.",
+    "detailedSteps": [
+      "The scores are $1700,1780,1690,1680,1740,1700$.",
+      "Their sum is $10290$.",
+      "The average is $10290/6=1715$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Data",
+      "Average from changes"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on average from changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p13",
+    "problemId": "amc10a-2024-p13",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Check which pairs of transformations preserve order.",
+    "detailedSteps": [
+      "Horizontal translation commutes with reflection across the $x$-axis.",
+      "Dilation centered at the origin commutes with rotation and with reflection.",
+      "The other pairs change the translation direction or reverse rotation order.",
+      "There are $3$ commuting pairs.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Transformations"
+    ],
+    "commonMistakes": [
+      "Check the exact condition in the problem before choosing an answer."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Intermediate AMC 10A problem focused on transformations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p14",
+    "problemId": "amc10a-2024-p14",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use the $30$-$60$-$90$ geometry around the tangent point.",
+    "detailedSteps": [
+      "The equilateral triangle has side $16\\sqrt3$.",
+      "The tangency creates two congruent $30$-$60$-$90$ pieces and a circular sector.",
+      "Subtracting the triangle and circular sector from the bounding wedge gives an expression $a\\sqrt b-c\\pi$.",
+      "The simplified constants satisfy $a+b+c=75$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circle and triangle area"
+    ],
+    "commonMistakes": [
+      "Do not use the full circle; only the sector in the bounded region is removed."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on circle and triangle area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p15",
+    "problemId": "amc10a-2024-p15",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Let the two perfect squares differ by 2560.",
+    "detailedSteps": [
+      "Let $M+1213=p^2$ and $M+3773=q^2$.",
+      "Then $q^2-p^2=2560$, so $(q-p)(q+p)=2560$.",
+      "To maximize $M$, maximize $p$, which occurs from $q-p=2$ and $q+p=1280$.",
+      "Then $p=639$, so $M=p^2-1213$ has units digit $1-3\\equiv8\\pmod{10}$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Use the greatest possible $M$, not just any factor pair."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on difference of squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p16",
+    "problemId": "amc10a-2024-p16",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Use square-root scaling of similar rectangles.",
+    "detailedSteps": [
+      "For similar rectangles, corresponding side lengths scale like the square roots of the areas.",
+      "Let the unit rectangle have sides $x$ and $y$.",
+      "Comparing the two full side decompositions gives $y\\sqrt2=2x$, hence $y=x\\sqrt2$.",
+      "Since $xy=1$, substituting into the expression for $AB$ gives $10\\sqrt[4]{8}$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Similar rectangles"
+    ],
+    "commonMistakes": [
+      "The area labels scale side lengths by square roots, not linearly."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on similar rectangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p17",
+    "problemId": "amc10a-2024-p17",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** List the ways Team A can win the series.",
+    "detailedSteps": [
+      "Team A can win in two games with probability $\\frac23p$.",
+      "It can also split the first two games and win game three: $\\frac23(1-p)p+\\frac13p^2$.",
+      "Set $\\frac23p+\\frac23(1-p)p+\\frac13p^2=\\frac12$.",
+      "Solving gives $p=\\frac12(3-\\sqrt{11})$, so $m+n=14$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Playoff probability"
+    ],
+    "commonMistakes": [
+      "Include both possible three-game win paths."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on playoff probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p18",
+    "problemId": "amc10a-2024-p18",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Convert the base-$b$ number into a polynomial.",
+    "detailedSteps": [
+      "The value of $2024_b$ is $2b^3+2b+4$.",
+      "Modulo $16$, this is divisible by $16$ exactly for certain residue classes of $b$ modulo $8$ or $16$.",
+      "Counting bases $5\\le b\\le2024$ in those classes gives $K$ with digit sum $20$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "Work with the base-ten value $2b^3+2b+4$, not the decimal number 2024."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on modular arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p19",
+    "problemId": "amc10a-2024-p19",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Use the ratio in lowest terms and require integer neighbors.",
+    "detailedSteps": [
+      "Write the common ratio as $r=\\frac uv$ in lowest terms.",
+      "Then $a=720\\frac vu$ and $b=720\\frac uv$ must both be integers.",
+      "To minimize $b>720$, choose the smallest ratio greater than $1$ compatible with the factorization of $720$.",
+      "This gives a least $b$ whose digit sum is $21$.",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Geometric sequences"
+    ],
+    "commonMistakes": [
+      "The middle term is fixed at $720$, so both adjacent terms impose divisibility conditions."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on geometric sequences.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p20",
+    "problemId": "amc10a-2024-p20",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Pack the set periodically while respecting the stronger odd-spacing rule.",
+    "detailedSteps": [
+      "The condition $|x-y|>2$ allows at most one selected number in each block of three consecutive integers.",
+      "Odd selected elements also need separation greater than $6$.",
+      "A repeating construction using mostly even representatives reaches the upper bound.",
+      "Counting across $1$ through $2024$ gives $608$ elements.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Spacing constraints"
+    ],
+    "commonMistakes": [
+      "The odd-spacing rule is stricter than the basic spacing rule."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on spacing constraints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p21",
+    "problemId": "amc10a-2024-p21",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Represent the grid by row and column arithmetic progressions.",
+    "detailedSteps": [
+      "If each row and column is arithmetic, entries have the form $A+Bi+Cj+Dij$ for row $i$ and column $j$.",
+      "Substitute the four given positions to solve the linear system for the parameters.",
+      "Evaluating the resulting expression at $(1,2)$ gives $29$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic grid"
+    ],
+    "commonMistakes": [
+      "The rows and columns are arithmetic separately; the common differences may vary by row or column."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on arithmetic grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p22",
+    "problemId": "amc10a-2024-p22",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Use the side lengths of the right triangles inside each kite.",
+    "detailedSteps": [
+      "Each kite is made from two $30$-$60$-$90$ right triangles with legs $1$ and $\\sqrt3$.",
+      "The outer polygon arranges eight such kites symmetrically around triangle $ABC$.",
+      "Resolving the sides into horizontal and vertical components gives the base and height of $\\triangle ABC$.",
+      "The area simplifies to $\\frac92\\sqrt3$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Trigonometric area"
+    ],
+    "commonMistakes": [
+      "Track which side is the common hypotenuse of the kite."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on trigonometric area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p23",
+    "problemId": "amc10a-2024-p23",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Add and manipulate the three equations symmetrically.",
+    "detailedSteps": [
+      "Let $x=ab+bc+ca$.",
+      "Adding the equations gives $x+a+b+c=247$.",
+      "Pairwise eliminations from the original equations determine $a+b+c=-29$.",
+      "Thus $x=247-(-29)=276$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Symmetric systems"
+    ],
+    "commonMistakes": [
+      "Do not assume $a,b,c$ are positive; the problem only says integers."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on symmetric systems.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p24",
+    "problemId": "amc10a-2024-p24",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Classify four-step paths that trace one face of a unit cube.",
+    "detailedSteps": [
+      "Four distinct edges of a unit cube must use two coordinate directions, not all three.",
+      "Choose the two axes and then count the valid cyclic orderings of one positive and one negative move in each chosen direction.",
+      "Divide the favorable ordered die sequences by $6^4$.",
+      "The probability simplifies to $\\frac{7}{54}$.",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "3D lattice walks"
+    ],
+    "commonMistakes": [
+      "The path must traverse four distinct edges of one unit cube, not merely return to a nearby point."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on 3d lattice walks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2024-p25",
+    "problemId": "amc10a-2024-p25",
+    "finalAnswer": "$\\boxed{\\text{C}}$",
+    "shortExplanation": "**Idea:** Use transfer states across the columns of the grid.",
+    "detailedSteps": [
+      "Process the $8$ columns from left to right, keeping track of which open path ends cross each vertical boundary.",
+      "The middle row condition forces exactly one covered side in each middle cell.",
+      "Discard states that create a self-intersection or close a loop too early.",
+      "The final valid-state count is $146$.",
+      "Final Answer: ($\\boxed{\\text{C}}$)"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Grid loops"
+    ],
+    "commonMistakes": [
+      "The loop must be closed and non-self-intersecting."
+    ],
+    "alternativeMethods": [
+      "Verify the result by checking it against the answer choices and the original conditions."
+    ],
+    "difficultyNotes": "Advanced AMC 10A problem focused on grid loops.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

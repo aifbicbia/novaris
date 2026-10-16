@@ -1,0 +1,344 @@
+[
+  {
+    "id": "solution-aime-i-2026-p1",
+    "problemId": "aime-i-2026-p1",
+    "finalAnswer": "$\\boxed{277}$",
+    "shortExplanation": "The distance is 252 over 25 miles.",
+    "detailedSteps": [
+      "Let v be Patrick’s speed and t the elapsed time from his departure until the common arrival. Tanya travels at $v+2$ for $t-1$ hours, and José at $v+9$ for $t-2$ hours. Thus $vt=(v+2)(t-1)=(v+9)(t-2)$.",
+      "The first equality gives $v=2t-2$, and the second gives $2v=9t-18$. Substitution yields $t=14/5$ and $v=18/5$. In particular, all three travel times are positive.",
+      "The distance is $vt=(18/5)(14/5)=252/25$. This fraction is reduced, so $m+n=277$."
+    ],
+    "keyIdeas": [
+      "Equal arrival times with staggered departures"
+    ],
+    "commonMistakes": [
+      "Giving José a speed only seven miles per hour above Patrick’s rather than above Tanya’s."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two equal-distance equations eliminate the common distance immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p2",
+    "problemId": "aime-i-2026-p2",
+    "finalAnswer": "$\\boxed{062}$",
+    "shortExplanation": "There are 62 palindromes.",
+    "detailedSteps": [
+      "An even-length palindrome has an even digit sum, so every requested palindrome has odd length. Let its middle digit be c. The remaining digits come in equal pairs, so $c\\in\\{1,3,5,7,9\\}$ and the sum of the digits on its left is $h=(13-c)/2$.",
+      "The possible half sums are six, five, four, three and two. An ordered list of positive digits summing to h is a composition of h; each entry is at most six and therefore automatically a valid nonzero digit.",
+      "There are $2^{h-1}$ compositions of a positive integer h, since each of the $h-1$ gaps between h unit marks may or may not be cut. Every composition, followed by its prescribed center and reversed half, gives a unique palindrome.",
+      "The total is $2^5+2^4+2^3+2^2+2^1=62$. A one-digit palindrome cannot have digit sum thirteen, so none was omitted."
+    ],
+    "keyIdeas": [
+      "Use the central digit and compositions of the half-digit sum"
+    ],
+    "commonMistakes": [
+      "Counting even-length palindromes or treating different half lengths as the same composition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small half sum makes the usual upper bound of nine on a digit automatic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p3",
+    "problemId": "aime-i-2026-p3",
+    "finalAnswer": "$\\boxed{079}$",
+    "shortExplanation": "The allowable area ratio is 29 over 50.",
+    "detailedSteps": [
+      "Place the common disk center at the origin in the plane $z=0$. If the contact point P has radial distance rho, the smaller sphere’s center is $(x,y,42)$, with $x^2+y^2=\\rho^2$. Its center is at distance $\\sqrt{\\rho^2+42^2}$ from the origin.",
+      "The farthest point of this sphere from the origin is at distance $\\sqrt{\\rho^2+42^2}+42$. The entire sphere lies above the disk plane because its bottom height is zero. Consequently it is contained in the hemisphere exactly when $\\sqrt{\\rho^2+42^2}+42\\le200$.",
+      "This condition is $\\rho^2\\le158^2-42^2=23200$. Thus T is the concentric disk of squared radius 23200, which is smaller than the original squared radius 40000.",
+      "The area ratio is $23200/40000=29/50$, giving $p+q=79$."
+    ],
+    "keyIdeas": [
+      "Use the farthest point of the smaller sphere from the common center"
+    ],
+    "commonMistakes": [
+      "Subtracting the sphere radius horizontally while ignoring its center’s height above the disk."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Containment in the full ball and nonnegative height together give containment in the hemisphere.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p4",
+    "problemId": "aime-i-2026-p4",
+    "finalAnswer": "$\\boxed{070}$",
+    "shortExplanation": "Exactly 70 integers are representable.",
+    "detailedSteps": [
+      "The identity $a+b+ab+1=(a+1)(b+1)$ shows that N is represented exactly when $N+1$ has two unequal factors that are both at least two.",
+      "There are twenty-six primes from two through 101. Hence among the 100 integers from two through 101, seventy-four are composite. A prime square cannot use unequal factors greater than one, so the four squares $4,9,25,49$ must be excluded.",
+      "Every other composite k in this range has a prime divisor p with $k/p\\ge p$; equality would make k a prime square. Thus $p$ and $k/p$ are unequal factors at least two, and setting $a=p-1$, $b=k/p-1$ represents $N=k-1$.",
+      "There are therefore $74-4=70$ represented integers. Any integer produced by positive a,b is positive, so the absence of an explicit lower bound in the requested range creates no additional cases."
+    ],
+    "keyIdeas": [
+      "Factor one more than the represented integer"
+    ],
+    "commonMistakes": [
+      "Excluding every perfect square even though composite squares such as sixteen have unequal factor pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The distinctness restriction removes prime squares only.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p5",
+    "problemId": "aime-i-2026-p5",
+    "finalAnswer": "$\\boxed{065}$",
+    "shortExplanation": "The cosine is 29 over 36.",
+    "detailedSteps": [
+      "Identify the plane with the complex numbers and put $A=0$, $B=1$. Write $z=e^{i\\theta}$. The counterclockwise rotation of A about B gives $A^\\prime=1-z$.",
+      "The vector from $A^\\prime$ to B is z. Rotating it clockwise by theta multiplies it by $\\overline z$, so the vector to $B^\\prime$ is one. Thus $B^\\prime=2-z$.",
+      "Therefore $(AB^\\prime)^2=|2-z|^2=5-4\\cos\\theta$. Setting this equal to $16/9$ gives $\\cos\\theta=29/36$. This lies strictly between zero and one, as required by the acute-angle condition.",
+      "The reduced numerator and denominator sum to $29+36=65$."
+    ],
+    "keyIdeas": [
+      "Write both rotations in complex coordinates"
+    ],
+    "commonMistakes": [
+      "Rotating the second point about B or the original A instead of the new point A prime."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The opposite rotations cancel in the vector used for the second step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p6",
+    "problemId": "aime-i-2026-p6",
+    "finalAnswer": "$\\boxed{441}$",
+    "shortExplanation": "The product of the two roots is 2026 to the twentieth power.",
+    "detailedSteps": [
+      "For positive x, put $t=\\log_{2026}x$. The actual equation has a twentieth root on the left. Taking base 2026 logarithms gives $t^2/20=\\log_{2026}26+t$, or $t^2-20t-20\\log_{2026}26=0$.",
+      "The constant term is negative, so this quadratic has two distinct real roots. The map $x=2026^t$ is a bijection from real t to positive x, so these give exactly the two positive solutions of the original equation.",
+      "By the quadratic root sum, $t_1+t_2=20$. Their product in the original variable is $P=2026^{t_1}2026^{t_2}=2026^{20}$.",
+      "Now $2026=2\\cdot1013$, and 1013 is prime: none of the primes two, three, five, seven, eleven, thirteen, seventeen, nineteen, twenty-three, twenty-nine or thirty-one divides it. Thus $P=2^{20}1013^{20}$ has $(20+1)(20+1)=441$ positive divisors."
+    ],
+    "keyIdeas": [
+      "Take logarithms of the twentieth-root equation"
+    ],
+    "commonMistakes": [
+      "Reading the small twentieth-root index as multiplication by twenty."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sum of logarithmic roots becomes a product of the original positive roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p7",
+    "problemId": "aime-i-2026-p7",
+    "finalAnswer": "$\\boxed{396}$",
+    "shortExplanation": "There are 396 functions.",
+    "detailedSteps": [
+      "An onto map from the six-element set to itself is a permutation. Its sixth iterate fixes every element exactly when each cycle length divides six, so the only allowed lengths are one, two, three and six.",
+      "With no three-cycle or six-cycle, the permutation is an involution. The counts with zero, one, two or three transpositions are $1,15,45,15$, summing to 76.",
+      "With exactly one three-cycle, choose its elements in $\\binom63$ ways and their cyclic order in two ways. The remaining three elements form one of four involutions, giving $\\binom63\\cdot2\\cdot4=160$.",
+      "With two three-cycles, divide into two unordered triples and order each cycle, giving $(\\binom63/2)\\cdot2^2=40$. A single six-cycle has $5!=120$ cyclic orders.",
+      "These cases are disjoint and exhaustive, so the total is $76+160+40+120=396$."
+    ],
+    "keyIdeas": [
+      "Count permutations whose cycle lengths divide six"
+    ],
+    "commonMistakes": [
+      "Allowing cycles of length four or five merely because their lengths are at most six."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The iteration condition becomes a divisibility condition on every cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p8",
+    "problemId": "aime-i-2026-p8",
+    "finalAnswer": "$\\boxed{244}$",
+    "shortExplanation": "The divisor count is 26244.",
+    "detailedSteps": [
+      "Factor $17017=7\\cdot11\\cdot13\\cdot17$. Every divisor of $17017^{17}$ has a unique expression $7^a11^b13^c17^d$ with each exponent from zero through seventeen.",
+      "Modulo twelve these prime factors are $7,11,1,5$. Each of the first, second and fourth residues has square one, so their exponents matter only through parity; the exponent c has no effect.",
+      "The products of the three parity choices yield residue five exactly for $(a,b,d)$ even-even-odd or odd-odd-even. To see completeness, the eight parity products are $1,7,11,5,5,11,7,1$.",
+      "Each specified parity has nine allowed exponents, and c has eighteen choices. Thus $N=2\\cdot9^3\\cdot18=26244$, whose remainder modulo 1000 is 244."
+    ],
+    "keyIdeas": [
+      "Reduce prime-power divisor exponents by parity modulo twelve"
+    ],
+    "commonMistakes": [
+      "Using a seventeenth root rather than the seventeenth power, or overlooking the prime factor thirteen’s unrestricted exponent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Three order-two residues reduce the divisor condition to eight parity patterns.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p9",
+    "problemId": "aime-i-2026-p9",
+    "finalAnswer": "$\\boxed{029}$",
+    "shortExplanation": "The conditional probability is nine over twenty.",
+    "detailedSteps": [
+      "Record the six successive top faces as $f_1,\\ldots,f_6$. These face sequences are equally likely. Sticker two remains visible exactly when $f_3,f_4,f_5,f_6$ avoid $f_2$; sticker four remains visible exactly when $f_5,f_6$ also avoid $f_4$. Sticker six is always visible.",
+      "There are six choices each for $f_1,f_2$, five each for $f_3,f_4$, and four each for $f_5,f_6$. Since $f_4\\ne f_2$, the last two restrictions concern two distinct faces. Thus the conditioning event has $6^2\\cdot5^2\\cdot4^2=14400$ sequences.",
+      "Exactly one blank face means exactly five different faces were hit in six rolls. There is then precisely one repeated pair of positions, with all other positions on distinct faces. The earlier repeated position must be odd, since an even-numbered sticker may not be covered.",
+      "If the earlier position is one, three or five, the later position has respectively five, three or one choices. This gives nine possible repeated pairs. For each, assign five distinct faces to the resulting five position groups in $6\\cdot5\\cdot4\\cdot3\\cdot2=720$ ways. Every such assignment satisfies the conditioning event.",
+      "The conditional probability is $(9\\cdot720)/14400=9/20$ in lowest terms, giving $m+n=29$."
+    ],
+    "keyIdeas": [
+      "Count the conditioned face sequences and their unique repeated pair"
+    ],
+    "commonMistakes": [
+      "Conditioning only on the even stickers having been placed, rather than remaining visible after later rolls."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "With five occupied faces, the entire collision pattern is one uniquely determined pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p10",
+    "problemId": "aime-i-2026-p10",
+    "finalAnswer": "$\\boxed{156}$",
+    "shortExplanation": "The hexagon area is 155.7.",
+    "detailedSteps": [
+      "Place $B=(0,0)$ and $C=(14,0)$. The side lengths give $A=(5,12)$, and equal distances to the three vertices give the circumcenter $O=(7,33/8)$.",
+      "The vector from A to C is $(9,-12)$. A rotation making it vertical has cosine and sine $(4/5,-3/5)$ or $(-4/5,3/5)$. Applying the first rotation about O gives $A^\\prime=(81/8,93/8)$, $B^\\prime=(-43/40,201/40)$ and $C^\\prime=(81/8,-27/8)$.",
+      "For an oriented line from $B^\\prime$ to $C^\\prime$, the cross products with the vectors to $A^\\prime$ and to B are respectively $168$ and $-189/4$. They have opposite signs, so this rotation satisfies the specified side condition.",
+      "The other rotation gives $A^\\prime=(31/8,-27/8)$, $B^\\prime=(603/40,129/40)$ and $C^\\prime=(31/8,93/8)$. Its corresponding cross products are $168$ and $651/4$, both positive, so it is excluded.",
+      "For the valid rotation, the six successive edge turns in the order $A,A^\\prime,C,C^\\prime,B,B^\\prime$ are all negative, and these six distinct points lie on the common circumcircle. Thus this is the stated convex hexagon in cyclic order. The shoelace formula gives area $\\tfrac12\\left|\\sum x_i y_{i+1}-y_i x_{i+1}\\right|=1557/10=155.7$.",
+      "The unique closest integer is 156."
+    ],
+    "keyIdeas": [
+      "Choose the correct circumcenter rotation and apply the shoelace formula"
+    ],
+    "commonMistakes": [
+      "Selecting the other perpendicular rotation without checking which side of the rotated line contains B."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The side condition selects one of the two rotations that make the required edge perpendicular.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p11",
+    "problemId": "aime-i-2026-p11",
+    "finalAnswer": "$\\boxed{896}$",
+    "shortExplanation": "The maximum adjacent-difference sum is 3896.",
+    "detailedSteps": [
+      "For any two entries a,b, the triangle inequality gives $|a-b|\\le|a-32.5|+|b-32.5|$. Summing over grid edges yields $M\\le\\sum_v d(v)|a_v-32.5|$, where a cell’s degree d is its number of neighbors.",
+      "The grid has thirty-six interior cells of degree four, twenty-four noncorner boundary cells of degree three, and four corner cells of degree two. To maximize this bound, assign the largest absolute deviations to degree four, the next largest to degree three, and the smallest to degree two. Swapping two entries assigned in the opposite order never decreases the sum, which proves this ordering bound.",
+      "The degree-four numbers are one through eighteen and forty-seven through sixty-four. Their deviations total 828. The degree-three numbers are nineteen through thirty and thirty-five through forty-six, totaling 192. The four remaining numbers thirty-one through thirty-four have total deviation four.",
+      "Therefore $M\\le4\\cdot828+3\\cdot192+2\\cdot4=3896$. To attain it, color the grid as a checkerboard. Each color has eighteen interior cells, twelve noncorner boundary cells and two corners.",
+      "Put numbers one through eighteen in the first color’s interior cells, nineteen through thirty on its boundary cells, and thirty-one and thirty-two in its corners. Put forty-seven through sixty-four, thirty-five through forty-six, and thirty-three and thirty-four in the respective classes of the other color.",
+      "Every neighboring pair then has one entry at most thirty-two and one at least thirty-three, so every edge attains equality in the initial triangle inequality. The degree assignment also attains the ordering bound. Hence the maximum is 3896 and its requested remainder is 896."
+    ],
+    "keyIdeas": [
+      "Bound each edge by deviations from the middle value and attain equality"
+    ],
+    "commonMistakes": [
+      "Giving an arrangement with a large sum without proving a matching upper bound for every arrangement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A checkerboard simultaneously makes every edge cross the midpoint and permits the optimal degree allocation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p12",
+    "problemId": "aime-i-2026-p12",
+    "finalAnswer": "$\\boxed{161}$",
+    "shortExplanation": "The fourth radius is 122 over 39.",
+    "detailedSteps": [
+      "Use the plane $P:z=0$ and contact coordinates $A=(0,0)$, $B=(6,0)$, $C=(0,4)$. A sphere of radius r above P has center $(x,y,r)$. Orient a unit normal $(u,v,w)$ to the second plane so all four centers are on its positive side, and write its equation as $ux+vy+wz=d$.",
+      "Tangency on that common side gives $ux+vy+wr-d=r$, or $ux+vy-d=(1-w)r$. We have $w\\ne1$: otherwise unit length forces $u=v=0$, and the tangencies force $d=0$, making the second plane identical to P.",
+      "It follows that radius is an affine function of the contact coordinates. The three specified radii at A,B,C uniquely give $r(x,y)=1+x/6+y/2$.",
+      "The centroid is $G=(2,4/3)$, and BC has equation $2x+3y=12$. Reflecting G across this line gives $D=G+\\frac{2(12-2G_x-3G_y)}{2^2+3^2}(2,3)=(42/13,124/39)$.",
+      "Therefore the required radius is $1+(42/13)/6+(124/39)/2=122/39$. These conditions are attainable: take $T:6x+18y-13z=-36$. Its normal has length twenty-three, and for every listed center the positive signed distance is $(6x+18y-13r+36)/23=r$. Thus all four spheres really are tangent and on the same side of this distinct plane.",
+      "The fraction is reduced, so $m+n=122+39=161$."
+    ],
+    "keyIdeas": [
+      "Common same-side tangency makes the radius affine in the contact coordinates"
+    ],
+    "commonMistakes": [
+      "Assuming the spheres are mutually tangent or disjoint, neither of which is required by the source."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same-side requirement supplies one consistent sign in all four distance equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p13",
+    "problemId": "aime-i-2026-p13",
+    "finalAnswer": "$\\boxed{039}$",
+    "shortExplanation": "Exactly 39 of the sums are multiples of 503.",
+    "detailedSteps": [
+      "Work with coefficients modulo 503 and reduce exponents using $x^{502}=1$. The coefficient of $x^r$ in the reduced polynomial $(1+x)^{10000}$ is precisely $S_r$ modulo 503, since every exponent congruent to r modulo 502 folds into that coefficient.",
+      "Because 503 is prime, all its intermediate binomial coefficients vanish modulo 503. Thus $(1+x)^{503}=1+x^{503}$, which becomes $1+x$ after exponent reduction.",
+      "Write $10000=503\\cdot19+443$. In this quotient ring, $(1+x)^{10000}=((1+x)^{503})^{19}(1+x)^{443}=(1+x)^{462}$.",
+      "This polynomial has degree 462, below 502, so $S_r\\equiv\\binom{462}{r}$ for r from zero through 462, and $S_r\\equiv0$ for r from 463 through 501. None of the former coefficients is divisible by 503, because all factorial factors in $462!/(r!(462-r)!)$ are nonzero in the field modulo 503.",
+      "Consequently exactly $501-463+1=39$ of the sums are multiples of 503."
+    ],
+    "keyIdeas": [
+      "Fold the binomial polynomial modulo the exponent period over the prime field"
+    ],
+    "commonMistakes": [
+      "Reducing binomial indices modulo 503 rather than folding them using the actual index period 502."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent period is one less than the coefficient-field characteristic, making the prime-power substitution especially short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p14",
+    "problemId": "aime-i-2026-p14",
+    "finalAnswer": "$\\boxed{681}$",
+    "shortExplanation": "The squared perimeter is 676 square root five.",
+    "detailedSteps": [
+      "Every interior angle of the equiangular pentagon is 108 degrees, so consecutive oriented side vectors turn by 72 degrees. Let the successive positive side lengths be $s_0,\\ldots,s_4$, and put $S=\\sum s_i^2=308$, $U=\\sum s_i s_{i+1}$ and $V=\\sum s_i s_{i+2}$, with indices modulo five.",
+      "A diagonal is the sum of two consecutive edge vectors. Summing its squared length over all five diagonals gives $800=2S+2\\cos72^\\circ\\,U$, hence $2\\cos72^\\circ\\,U=184$.",
+      "The five edge vectors sum to zero because the polygon closes. Squaring that vector sum gives $0=S+2\\cos72^\\circ\\,U+2\\cos144^\\circ\\,V$. The ten unordered pairs of edges consist precisely of the five adjacent and five nonadjacent pairs used here.",
+      "Using $\\cos72^\\circ=(\\sqrt5-1)/4$ and $\\cos144^\\circ=-(\\sqrt5+1)/4$, these equations yield $U=92(\\sqrt5+1)$ and $V=246(\\sqrt5-1)$.",
+      "The square of the perimeter is $S+2U+2V=308+184(\\sqrt5+1)+492(\\sqrt5-1)=676\\sqrt5$. Since five is squarefree, the requested sum is $676+5=681$."
+    ],
+    "keyIdeas": [
+      "Relate squared sides, diagonals and the closed edge-vector sum"
+    ],
+    "commonMistakes": [
+      "Treating the equiangular pentagon as regular, which would impose an extra equal-side condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagonal square sum determines adjacent side products, while closure determines the remaining products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2026-p15",
+    "problemId": "aime-i-2026-p15",
+    "finalAnswer": "$\\boxed{083}$",
+    "shortExplanation": "There are 83 partitions.",
+    "detailedSteps": [
+      "First consider a rectangle with $2m$ rows and $2n$ columns, where $0<m\\le n$, tiled by exactly m cell loops. Use the two sets of cells $(i,i)$ and $(i,2n-1-i)$ for $0\\le i<2m$. A rectangular cell loop meets either set in at most two cells: along such a diagonal, only the first and last cells within its bounding rectangle can belong to its border. Therefore m is a lower bound for the number of loops, and a partition using m loops makes every loop cover exactly two cells of each set. The bound is attainable using horizontal two-row loops.",
+      "Let L be the loop containing the upper-left corner, with bounding rectangle h rows by w columns. Its bounding rectangle contains $u=\\min(h,w)$ cells of the first diagonal set and $v=h+w-2n$ of the second. Saturation forces $v\\ge2$. Since L itself covers two cells of each set, its interior contains $u-2$ first-diagonal cells, while its exterior contains $2m-v$ second-diagonal cells.",
+      "Any other loop lies wholly in the interior or exterior of L: its connected cell border cannot cross L’s occupied separating border. Hence the number of loops is at least $1+\\lceil(u-2)/2\\rceil+\\lceil(2m-v)/2\\rceil\\ge m+(u-v)/2$. But $u-v=2n-\\max(h,w)\\ge0$. Since there are only m loops, equality forces $\\max(h,w)=2n$. Thus L spans the full width, or, only when $m=n$, the full height. Its other dimension must be even; an odd dimension makes the two ceiling terms sum to one more than m.",
+      "Let $F(m,n)$ count these minimum-loop partitions of a $2m$ by $2n$ rectangle, with $F(m,n)=F(n,m)$ and $F(0,n)=1$ for the empty rectangle. If the upper-left loop spans the width and has height $2j$, removing it leaves its $(2j-2)$ by $(2n-2)$ interior and the $(2m-2j)$ by $2n$ rectangle below. They must respectively use $j-1$ and $m-j$ loops, attaining their own diagonal lower bounds. Conversely, any two such partitions together with L give a valid partition, so this split has $F(j-1,n-1)F(m-j,n)$ choices.",
+      "For $m<n$, only full-width corner loops are possible, giving $F(m,n)=\\sum_{j=1}^{m}F(j-1,n-1)F(m-j,n)$. For a square, the reflected full-height cases contribute equally, while the single full outer loop must be counted only once. Therefore $F(m,m)=F(m-1,m-1)+2\\sum_{j=1}^{m-1}F(j-1,m-1)F(m-j,m)$. Every partition has a unique corner loop and unique two remaining subpartitions, so these recurrences omit and duplicate none.",
+      "Evaluation starts with $F(1,n)=1$. For $n\\ge3$, $F(2,n)=2$, whereas $F(2,2)=3$. For $n\\ge4$, $F(3,n)=2+1+2=5$, whereas $F(3,3)=3+2(2+1)=9$. Thus $F(4,5)=5+2+2+5=14$ and $F(4,4)=9+2(5+2+2)=27$.",
+      "Finally the requested count is $F(5,5)=27+2(14+5+2\\cdot2+5)=83$. The five horizontal-type corner heights yield fourteen, five, four, five and twenty-seven completions; the first four have distinct reflected vertical-type counterparts, providing the same total."
+    ],
+    "keyIdeas": [
+      "Use two saturated diagonal bounds to force a recursive corner ring"
+    ],
+    "commonMistakes": [
+      "Assuming every loop has a nonempty interior, or treating the same unordered partition as different because its loops were listed in another order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two diagonal sets force every loop to be extremal, which sharply restricts the corner geometry before counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

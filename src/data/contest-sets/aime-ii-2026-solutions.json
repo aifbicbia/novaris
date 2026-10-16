@@ -1,0 +1,353 @@
+[
+  {
+    "id": "solution-aime-ii-2026-p1",
+    "problemId": "aime-ii-2026-p1",
+    "finalAnswer": "$\\boxed{178}$",
+    "shortExplanation": "The four tenth terms sum to 178.",
+    "detailedSteps": [
+      "Let d be the common difference. Since the sequence consists of integers and begins at four, d is an integer. Both larger specified terms occur later, so d is positive and divides both $24-4=20$ and $34-4=30$.",
+      "Thus d is a positive divisor of ten: one, two, five or ten. Conversely, each of these differences includes both required terms.",
+      "The tenth term is $4+9d$. Summing over the four possibilities gives $4\\cdot4+9(1+2+5+10)=178$."
+    ],
+    "keyIdeas": [
+      "The common difference divides both offsets"
+    ],
+    "commonMistakes": [
+      "Treating the positions of twenty-four and thirty-four as consecutive indices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positions of the two prescribed terms need not be specified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p2",
+    "problemId": "aime-ii-2026-p2",
+    "finalAnswer": "$\\boxed{243}$",
+    "shortExplanation": "There are 59049 paths, whose square root is 243.",
+    "detailedSteps": [
+      "At a column, the bug arrives at its lower or upper vertex. Before leaving that column, it may use its vertical segment once or leave immediately. It cannot return after moving right.",
+      "From a lower arrival, there is one way to reach the next lower vertex: take the lower horizontal segment. There are two ways to reach the next upper vertex: take the diagonal, or move vertically up and then horizontally right.",
+      "From an upper arrival, there is also one way to reach the next lower vertex: move vertically down and then horizontally right. There are two ways to reach the next upper vertex: move horizontally right, or move vertically down and then diagonally right.",
+      "If b and t count arrivals at a column before its vertical segment is used, the next column has counts $(b+t,2(b+t))$. The initial arrival counts at column zero are $(1,0)$. After ten rightward transitions their sum is $3^{10}$.",
+      "At the last column, a lower arrival finishes with its vertical segment, while an upper arrival stops. Each gives exactly one completion, so $N=3^{10}=59049$ and $\\sqrt N=3^5=243$."
+    ],
+    "keyIdeas": [
+      "Process each column before the next rightward step"
+    ],
+    "commonMistakes": [
+      "Counting the optional initial vertical move twice, or using a vertical segment in both directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The direction rule makes every visited column a local counting decision.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p3",
+    "problemId": "aime-ii-2026-p3",
+    "finalAnswer": "$\\boxed{503}$",
+    "shortExplanation": "The allowed side lengths form an arithmetic progression with 503 terms.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $E=(0,20)$ and $B=(L,0)$, where $L=AB$. Since B, C and D lie on the same side of AE, choose that side to be the positive x half-plane. The right angles give $D=(K,20)$ with $0<K<L$.",
+      "The forty-five-degree internal angle at B and $BC=14\\sqrt2$ give $C=(L-14,14)$ or $(L-14,-14)$. At D, the ray toward E points left, so its forty-five-degree angle forces C to lie to the left of D.",
+      "For the lower candidate C, this gives $K=L-14+34=L+20$, contrary to $K<L$. Therefore $C=(L-14,14)$ and $K=L-14+6=L-8$. The positive-side condition is exactly $L>14$. These coordinates give the required simple nonconvex pentagon.",
+      "The trapezoid ABDE has area $20L-80$. The triangular indentation BCD has area $\\tfrac12|(-8)(14)-20(-14)|=84$. The pentagon area is therefore $20L-164$.",
+      "This area is a multiple of sixteen precisely when $4L-4\\equiv0\\pmod{16}$, or $L\\equiv1\\pmod4$. With $14<L<2026$, the integers are $17,21,\\ldots,2025$, giving $(2025-17)/4+1=503$."
+    ],
+    "keyIdeas": [
+      "Use the angles to determine the indentation coordinates"
+    ],
+    "commonMistakes": [
+      "Using the other sign of the vertical displacement without checking DE is shorter than AB."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle restrictions determine the indentation before the divisibility condition is used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p4",
+    "problemId": "aime-ii-2026-p4",
+    "finalAnswer": "$\\boxed{279}$",
+    "shortExplanation": "There are 279 fixed numerals.",
+    "detailedSteps": [
+      "Every one-digit positive numeral has the same value in any valid base, contributing nine possibilities.",
+      "For a numeral with at least two digits, its leading coefficient is positive. If its least valid base b is below ten, replacing the positional powers of ten by the smaller powers of b strictly decreases its value. Equality therefore holds exactly when $b=10$, meaning the numeral contains a nine.",
+      "Among the ninety two-digit numbers, $8\\cdot9=72$ contain no nine. Among the nine hundred three-digit numbers, $8\\cdot9^2=648$ contain no nine.",
+      "The count is $9+(90-72)+(900-648)=279$."
+    ],
+    "keyIdeas": [
+      "A smaller base strictly reduces every multi-digit numeral"
+    ],
+    "commonMistakes": [
+      "Requiring a nine even in one-digit numerals."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity of the leading digit supplies the strict inequality for more than one digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p5",
+    "problemId": "aime-ii-2026-p5",
+    "finalAnswer": "$\\boxed{190}$",
+    "shortExplanation": "The five least urn sizes sum to 190.",
+    "detailedSteps": [
+      "Let R and B be the red and blue counts. The common denominator cancels, leaving $\\binom R4\\binom B3=\\binom R5\\binom B2$. Since both counts are at least seven, all factors are positive.",
+      "Dividing yields $5(B-2)=3(R-4)$, or $3R-5B=2$. Reduction modulo three gives $B\\equiv2\\pmod3$, so write $B=3t+2$ and $R=5t+4$.",
+      "The two lower bounds require $t\\ge2$. Conversely, every such integer t gives the required probability equality. Thus $n=8t+6$, and the five least values are $22,30,38,46,54$. Their sum is 190."
+    ],
+    "keyIdeas": [
+      "Compare the two hypergeometric counts by a ratio"
+    ],
+    "commonMistakes": [
+      "Using independent draws instead of sampling without replacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio of adjacent binomial coefficients reduces the probability equation to a linear Diophantine equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p6",
+    "problemId": "aime-ii-2026-p6",
+    "finalAnswer": "$\\boxed{050}$",
+    "shortExplanation": "The two distinct radii are nine and forty-one.",
+    "detailedSteps": [
+      "Put $t=x-4$. The parabola point is $(4+t,t^2/2-2)$, so its squared distance from the prescribed center is $D(t)=t^2+(t^2/2-41)^2$.",
+      "At a tangency, the radius vector is perpendicular to the parabola tangent. Equivalently $D^\\prime(t)=t(t^2-80)=0$. This gives $t=0$ or $t^2=80$, and exhausts all possible points.",
+      "At zero the radius is forty-one. At either nonzero point it is $\\sqrt{80+(-1)^2}=9$. Each stationary point has a nonzero radius and the required common tangent, so both radii really occur.",
+      "The question sums distinct radius values, not tangency points. The sum is $41+9=50$."
+    ],
+    "keyIdeas": [
+      "Tangency occurs at stationary distances from the circle center"
+    ],
+    "commonMistakes": [
+      "Counting radius nine twice because it occurs at two different tangency points."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tangency need not mean the circle avoids crossing the parabola elsewhere.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p7",
+    "problemId": "aime-ii-2026-p7",
+    "finalAnswer": "$\\boxed{754}$",
+    "shortExplanation": "The probability is seven over fifty-four.",
+    "detailedSteps": [
+      "Each roll awards Alice, Bob or Carol a coin with probability one-third each. Let X and Y count Alice and Bob coins before the first Carol coin. Success is $X\\ge2$ and $Y\\ge2$.",
+      "Ignore Bob outcomes when considering X. The remaining Alice and Carol outcomes are equally likely, so $\\Pr(X\\le1)=1/2+1/4=3/4$. The same holds for Y.",
+      "For both counts to be at most one, the sequence before the first Carol coin is empty, one Alice, one Bob, Alice then Bob, or Bob then Alice. Their combined probability is $1/3+2/9+2/27=17/27$.",
+      "Inclusion-exclusion gives $1-3/4-3/4+17/27=7/54$. It is reduced, and $100m+n=700+54=754$."
+    ],
+    "keyIdeas": [
+      "Use inclusion-exclusion before the first Carol coin"
+    ],
+    "commonMistakes": [
+      "Stopping when Alice or Bob reaches two coins before ensuring the other has also reached two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Ignoring irrelevant outcomes turns each individual failure event into a two-player geometric process.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p8",
+    "problemId": "aime-ii-2026-p8",
+    "finalAnswer": "$\\boxed{245}$",
+    "shortExplanation": "The minimum equal side is 245.",
+    "detailedSteps": [
+      "Write $AB=BC=s$, $AC=b$ and $AI=CI=t$. All three are positive integers, with $b<2s$. The altitude has square $h^2=s^2-b^2/4$, and the inradius is $r=bh/(2s+b)$.",
+      "In coordinates with the base centered on the origin, $t^2=b^2/4+r^2=b^2s/(2s+b)$. Put $q=t/b$. Then $q^2=s/(2s+b)$ and $1/2<q<1/\\sqrt2$.",
+      "The given perimeter ratio becomes $(2s+b)/(2t+b)=1/((1-2q^2)(2q+1))=125/6$. Thus $(1-2q^2)(2q+1)=6/125$.",
+      "On the stated interval the derivative of the left side is $2-4q-12q^2<0$, so there is at most one solution. Direct substitution gives $q=7/10$, which lies in the interval.",
+      "Hence $s/b=q^2/(1-2q^2)=49/2$ and $t/b=7/10$. Integrality of t requires b to be a multiple of ten. The smallest choice is $b=10$, $t=7$, $s=245$.",
+      "These lengths give a nondegenerate isosceles triangle and the actual incenter-distance identity; their perimeters are 500 and 24, with ratio $125:6$. Thus the minimum is attained."
+    ],
+    "keyIdeas": [
+      "Relate the incenter distance to the equal side and base"
+    ],
+    "commonMistakes": [
+      "Assuming the altitude or the inradius must also be an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalizing by the base isolates a single strictly monotone equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p9",
+    "problemId": "aime-ii-2026-p9",
+    "finalAnswer": "$\\boxed{669}$",
+    "shortExplanation": "The requested remainder is 669.",
+    "detailedSteps": [
+      "For each positive k, $1/(10^k-1)=\\sum_{j\\ge1}10^{-kj}$. All terms are positive, so regrouping by the exponent gives $S=\\sum_{n\\ge1}d(n)10^{-n}$, where d(n) is the number of positive divisors of n.",
+      "After multiplication by $10^{100}$, the terms through n equal to one hundred give the integer $J=\\sum_{n=1}^{100}d(n)10^{100-n}$. The remaining tail is $T=\\sum_{j\\ge1}d(100+j)10^{-j}$.",
+      "The first three tail contributions are $2/10+8/100+2/1000=141/500$. For the rest use $d(100+j)\\le100+j$. The exact bound is $\\sum_{j\\ge4}(100+j)10^{-j}=100/9000+4/9000+1/81000$, so $0<T<1$.",
+      "There is therefore no carry into J, and the requested floor equals J. Modulo one thousand, only n equal to ninety-eight, ninety-nine and one hundred contribute. Their divisor counts are six, six and nine, respectively.",
+      "The remainder is $100\\cdot6+10\\cdot6+9=669$."
+    ],
+    "keyIdeas": [
+      "Expand the denominators and control the possible decimal carry"
+    ],
+    "commonMistakes": [
+      "Reading divisor counts directly as decimal digits without first ruling out a carry from the infinite tail."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The regrouped series exposes the last three integer places, but the tail estimate is essential.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p10",
+    "problemId": "aime-ii-2026-p10",
+    "finalAnswer": "$\\boxed{340}$",
+    "shortExplanation": "The greatest possible base length is 340.",
+    "detailedSteps": [
+      "The angle bisector theorem gives $BD:CD=200:225=8:9$. Since both segments are integers and eight and nine are coprime, write $BD=8k$ and $CD=9k$ for a positive integer k. The triangle inequality gives $25<17k<425$, hence $2\\le k\\le24$.",
+      "The tangent-secant theorem at B gives $BD^2=BA\\cdot BE=200(200-AE)$. Similarly, at C it gives $CD^2=225(225-AF)$. Therefore $AE=200-8k^2/25$ and $AF=225-9k^2/25$.",
+      "The required integrality implies $25\\mid k^2$, hence $5\\mid k$. Positivity and the triangle interval leave $k=5,10,15,20$. The maximum candidate gives $BC=17\\cdot20=340$.",
+      "This candidate is attainable. A triangle with sides 200,225,340 is nondegenerate. Its angle bisector splits the base into 160 and 180. There is a unique circle through A with its center on the perpendicular to BC at D: solving equality of its distances to A and D determines that center.",
+      "Its positive powers at B and C give $BE=160^2/200=128$ and $CF=180^2/225=144$. These are strictly shorter than BA and CA, so the other intersections lie on the specified segments, with $AE=72$ and $AF=81$. All four required lengths are positive integers."
+    ],
+    "keyIdeas": [
+      "Use the angle bisector ratio and tangent-secant powers"
+    ],
+    "commonMistakes": [
+      "Obtaining integral candidate lengths without checking the intersections lie on the segments or the triangle exists."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer angle-bisector segments parameterize every possible base in one step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p11",
+    "problemId": "aime-ii-2026-p11",
+    "finalAnswer": "$\\boxed{132}$",
+    "shortExplanation": "The greatest possible integer is 132.",
+    "detailedSteps": [
+      "Fix nonzero square roots a,b,c of the three cubic roots. Their eight possible signed sums give all possible values of $\\alpha+\\beta+\\gamma$. None of a,b,c is zero because their squared product is 400.",
+      "If two signed sums coincide and differ in only one sign, a square root would vanish. If they differ in two signs, two square roots agree up to sign; then all sums lie in $\\{\\pm2a\\pm c,\\pm c\\}$, which has at most six values. Exactly seven therefore requires a collision differing in all three signs.",
+      "After changing the initial choices of signs, this collision says $a+b+c=0$. Vieta gives $a^2+b^2+c^2=n/6$, so $ab+bc+ca=-n/12$. Also $a^2b^2+b^2c^2+c^2a^2=n-11$.",
+      "Squaring the pair sum and using $a+b+c=0$ yields $(ab+bc+ca)^2=n-11$. Hence $n^2=144(n-11)$, with integer possibilities twelve and 132. No greater n can qualify.",
+      "For $n=132$, use $a=4$, $b=-2+i$, $c=-2-i$. Their squares are $16,3-4i,3+4i$, the roots of $(x-16)(x^2-6x+25)=x^3-22x^2+121x-400$.",
+      "The signed sums are exactly $0$, $\\pm8$, $\\pm(4+2i)$ and $\\pm(4-2i)$. These seven values are distinct. Thus 132 meets the requirement and is the greatest possible integer."
+    ],
+    "keyIdeas": [
+      "A unique collision among eight signed square-root sums forces a zero sum"
+    ],
+    "commonMistakes": [
+      "Assuming the square roots are real, or proving a repeated signed sum without checking there are exactly seven distinct values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A collision classification proves necessity before an explicit complex construction establishes attainment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p12",
+    "problemId": "aime-ii-2026-p12",
+    "finalAnswer": "$\\boxed{223}$",
+    "shortExplanation": "The center separation is 175 over 48.",
+    "detailedSteps": [
+      "The edges of lengths ten and eighteen must be opposite: every face contains one of them. Take their endpoints as $A=(-5,0,0)$, $B=(5,0,0)$, $C=(0,-9,h)$ and $D=(0,9,h)$. The four other squared lengths equal 250, so $25+81+h^2=250$ and $h=12$.",
+      "This model is forced up to rigid motion: both C and D are equidistant from A and B, so they lie in the perpendicular-bisector plane of AB; the equal distances then make AB perpendicular to CD and to the line joining their midpoints.",
+      "The circumcenter is $S=(0,0,z)$ by symmetry. Equating its squared distances to A and C gives $25+z^2=81+(12-z)^2$, hence $z=25/3$.",
+      "The faces with base ten have altitude fifteen and area 75. Those with base eighteen have altitude thirteen and area 117. The insphere center is the face-area-weighted average of the opposite vertices, since the four pyramids have the common inradius as height.",
+      "Thus $R=(0,0,12(75+75)/(117+117+75+75))=(0,0,75/16)$. It lies inside the tetrahedron. Its distances to the two face-plane families are $3(75/16)/5$ and $(1080-90(75/16))/234$, both $45/16$, confirming all four tangencies.",
+      "Therefore $RS=25/3-75/16=175/48$. It is reduced, so $m+n=175+48=223$."
+    ],
+    "keyIdeas": [
+      "Model the two unequal edges as opposite edges"
+    ],
+    "commonMistakes": [
+      "Treating the tetrahedron as regular or using vertex averages for the insphere center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two reflection symmetries put both centers on the line joining the unequal-edge midpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p13",
+    "problemId": "aime-ii-2026-p13",
+    "finalAnswer": "$\\boxed{107}$",
+    "shortExplanation": "The least possible size is 107.",
+    "detailedSteps": [
+      "Construct a bipartite graph whose first part is S and whose second part consists of integers outside S adjacent to an element of S. Connect two integers when they differ by one. A cousin is precisely the chosen set of second-part vertices used in a matching covering S.",
+      "This graph is a finite subgraph of the integer line, so every component is an alternating path. If a component has k vertices from S, it has either $k-1$, k or $k+1$ vertices in the other part. The first case prevents a matching; a set with 4040 cousins cannot have such a component.",
+      "In the balanced case, all k second-part vertices are required, giving one possible selected set. In the $k+1$ case, the path begins and ends in the other part. Any one of those vertices can be omitted; the two remaining path pieces each have a unique perfect matching. Thus the component gives exactly $k+1$ possible selected sets.",
+      "Choices in disjoint components are independent. Therefore the number of cousins is a product of factors f, where a contributing factor f uses $f-1$ elements of S; balanced components only increase the size without changing the count.",
+      "Splitting a composite factor $f=uv$ into u and v lowers its element cost, since $(uv-1)-((u-1)+(v-1))=(u-1)(v-1)>0$. Consequently the minimum cost for any fixed product is the sum of prime factors minus one, counted with multiplicity.",
+      "Now $4040=2^3\\cdot5\\cdot101$, giving the lower bound $3(2-1)+(5-1)+(101-1)=107$.",
+      "For attainment, take $\\{0,2,\\ldots,198\\}$, $\\{1000,1002,1004,1006\\}$ and the three singletons $\\{2000\\}$, $\\{2010\\}$, $\\{2020\\}$. Their neighbor graphs are separate paths and give $101\\cdot5\\cdot2^3=4040$ cousins. This set has exactly 107 elements."
+    ],
+    "keyIdeas": [
+      "Factor the cousin count through alternating path components"
+    ],
+    "commonMistakes": [
+      "Counting matchings instead of distinct cousin sets, or allowing a paired neighbor that already belongs to S."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The graph components explain both the multiplicative count and its optimal prime-factor decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p14",
+    "problemId": "aime-ii-2026-p14",
+    "finalAnswer": "$\\boxed{157}$",
+    "shortExplanation": "There are 157 sequences.",
+    "detailedSteps": [
+      "The parity of the running result always equals the parity of the ordinary partial sum: subtracting an even term changes neither parity. Every odd term is added. An even term is subtracted exactly when an odd number of odd terms has already appeared.",
+      "To have ordinary sum twelve and final result zero, the total of added terms must be six and the total of subtracted terms must be six. In particular, the number of odd terms is even; it is $2k$ with $k=1,2,3$. There must be some odd terms for subtraction to occur.",
+      "The $2k$ ordered odd terms separate the sequence into $2k+1$ runs of even terms. There are k subtracted runs and $k+1$ added runs, including the initial and final runs. Runs may be empty.",
+      "Divide even terms by two. One run of arbitrary positive parts has generating function $H(x)=1+\\sum_{j\\ge1}2^{j-1}x^j=(1-x)/(1-2x)$. The subtracted total six gives the factor $[x^3]H(x)^k$.",
+      "Write each odd term as $1+2u$ with nonnegative u. After the $2k$ initial units, the remaining added half-units total $3-k$. The $2k$ choices of u and the $k+1$ added even runs therefore give $[x^{3-k}](1-x)^{-2k}H(x)^{k+1}$.",
+      "For $k=1,2,3$, the subtracted coefficients are respectively four, twelve and twenty-five. The added coefficients are respectively twelve, seven and one. For example, $[x^2](1-2x)^{-2}=12$ and $[x](1-x)^{-1}(1-2x)^{-3}=7$.",
+      "All sequences belong to exactly one such group, and the runs and odd terms reconstruct them uniquely. The count is $4\\cdot12+12\\cdot7+25\\cdot1=157$."
+    ],
+    "keyIdeas": [
+      "Group compositions by the number of odd terms and signs of even runs"
+    ],
+    "commonMistakes": [
+      "Deciding whether to subtract from the parity of the preceding term instead of the current accumulated result."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keeping both the ordinary total and the signed total makes the parity-based operation manageable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2026-p15",
+    "problemId": "aime-ii-2026-p15",
+    "finalAnswer": "$\\boxed{393}$",
+    "shortExplanation": "The complete count is 393.",
+    "detailedSteps": [
+      "Work modulo three, replacing the value three by zero and two by minus one. The seven triples of indices are $L_i=\\{i,i+1,i+3\\}$ with indices modulo seven. Directly listing them shows every pair of indices is in exactly one triple. These are the seven lines of the Fano incidence system; any two lines meet once.",
+      "Let z,u,v be the counts of zero, plus one and minus one. The linear condition is $u-v\\equiv0\\pmod3$, with $z+u+v=7$. The possible nonzero support sizes are zero, two, three, four, five, six and seven. Negating every entry preserves both zero conditions and exchanges u with v.",
+      "An empty support gives one tuple. For support size two, there is one entry of each sign. No line product is nonzero, giving $\\binom72\\cdot2=42$ tuples.",
+      "For support size three, all three signs agree. The cubic vanishes exactly when the support is not one of the seven lines. There are $\\binom73-7=28$ supports for each of the two signs, giving 56.",
+      "For support size four, there are two of each sign. A four-set contains at most one line, since two lines have a five-element union. Exactly twenty-eight four-sets contain a line: choose the line in seven ways and its extra point in four ways, with no duplication. The other seven contain none. Only these line-free supports work, giving $7\\binom42=42$.",
+      "For support size five, the signs are four of one kind and one of the other. Removing two points removes five lines, leaving two lines on the support. The sum of their products vanishes exactly when their products have opposite signs. The exceptional sign must therefore be in exactly one of these two lines, which gives four choices. There are $\\binom72$ supports and two sign patterns, giving $21\\cdot4\\cdot2=168$.",
+      "For support size six, six identical signs do not work, since the four surviving line products sum to plus or minus four. The remaining case has three of each sign. Each of the six points is on two of the four surviving lines, so these points can be viewed as the six edges joining four line-vertices: their incidence graph is the complete graph on four vertices.",
+      "Mark the three edges whose entries are minus one. A line product is negative exactly when its vertex has odd marked degree. Three marked edges form a triangle, a star or a path through all four vertices. The numbers of negative products are respectively zero, four and two. Only two negatives make the sum of the four products zero modulo three.",
+      "There are twelve such paths: order the four vertices and identify a path with its reversal, giving $4!/2=12$. With seven choices of the omitted point, this contributes $7\\cdot12=84$.",
+      "For support size seven, the sign counts are five and two. In the case of two negative entries, four lines contain exactly one of them: each point lies on three lines and their common line is counted twice. The product sum is $7-2\\cdot4=-1$, which is not zero modulo three. Negation excludes the other pattern as well.",
+      "The disjoint cases total $1+42+56+42+168+84=393$. Each zero residue corresponds to the allowed original entry three, so there is no extra multiplicity."
+    ],
+    "keyIdeas": [
+      "Classify nonzero supports using the seven cyclic triple lines"
+    ],
+    "commonMistakes": [
+      "Treating cyclic rotations as the same tuple, or omitting triples that wrap around the seventh index."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The pair-incidence structure turns a large-looking cubic condition into a short complete support classification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

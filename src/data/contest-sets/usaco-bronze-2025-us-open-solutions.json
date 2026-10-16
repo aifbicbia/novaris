@@ -1,0 +1,106 @@
+[
+  {
+    "finalAnswer": "If $c$ symbols beat both of the opponent symbols, the number of winning ordered hoof pairs is $$\\boxed{N^2-(N-c)^2}.$$ The C++17 program reconstructs the outcome table and computes this count for every game.",
+    "shortExplanation": "A guaranteed win needs one available symbol that defeats either opponent choice. Count the common winning symbols, then subtract the ordered pairs containing none of them from all possible pairs.",
+    "detailedSteps": [
+      "**1. Reconstruct both directions.** The triangular input reports the outcome of the row symbol against the column symbol. When the row wins, the reversed pairing loses; when the row loses, the reversed pairing wins. A draw remains a draw. Fill both matrix entries and retain the required diagonal draws.",
+      "**2. Express a guaranteed win.** For the opponent pair $(a,b)$, a final selected symbol must defeat both possible responses. Seeing both displayed hooves does not mean seeing which final response will be chosen. Thus one of our two displayed symbols must belong to $$C=\\{x:x\\text{ beats }a\\text{ and }x\\text{ beats }b\\}.$$ Having different responses to the two opponent choices is insufficient when neither one guarantees a win. Draws do not count as wins.",
+      "**3. Count ordered pairs by their complement.** Write $c=|C|$. There are $N^2$ choices of left and right hoof symbols, with equality allowed. A pair fails the condition exactly when both hooves lie outside $C$, giving $(N-c)^2$ failures. Therefore the answer is $N^2-(N-c)^2$. This also handles pairs with both hooves in $C$ without double counting.",
+      "**4. Prove necessity and sufficiency.** If a displayed hoof belongs to $C$, selecting it defeats either opponent response, so the win is guaranteed. If neither belongs to $C$, each final symbol we might select has some opponent response that defeats it or draws. There is then no final choice guaranteeing a strict win. These two implications establish the exact counting condition, including an empty set $C$ or an opponent pair of two equal symbols.",
+      "**5. Implement each query.** Scan all symbols and increment $c$ precisely when both relevant matrix entries are `W`. Evaluate the complement formula with integer products and print one answer per game. Every query uses the same reconstructed matrix.",
+      "**6. Complexity and bounds.** Reading and reconstructing the table takes $O(N^2)$ time and memory. Scanning $N$ symbols for each of $M$ queries gives $O(N^2+MN)$ time overall, within the printed $N,M\\le3000$. At most $N^2\\le9{,}000{,}000$ ordered pairs exist; the implementation nevertheless uses `long long` arithmetic for both products. The official source grants this task a three-second time limit.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n, m;\n    if (!(std::cin >> n >> m)) return 0;\n    std::vector<std::string> chart(n, std::string(n, 'D'));\n    for (int i = 0; i < n; ++i) {\n        std::string row;\n        std::cin >> row;\n        for (int j = 0; j <= i; ++j) {\n            chart[i][j] = row[j];\n            chart[j][i] = (row[j] == 'W' ? 'L' : row[j] == 'L' ? 'W' : 'D');\n        }\n    }\n    while (m--) {\n        int a, b;\n        std::cin >> a >> b;\n        --a; --b;\n        long long common = 0;\n        for (int x = 0; x < n; ++x)\n            if (chart[x][a] == 'W' && chart[x][b] == 'W') ++common;\n        std::cout << 1LL*n*n-(n-common)*(n-common) << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Preserve the direction of an outcome when expanding a triangular table.",
+      "A guaranteed final choice must beat both displayed opponent symbols.",
+      "Count ordered pairs with at least one useful element through the complement."
+    ],
+    "commonMistakes": [
+      "Treating a draw as a win.",
+      "Allowing a different final response after learning the final opponent choice.",
+      "Counting unordered pairs instead of ordered left/right choices.",
+      "Adding the counts for useful left and right hooves without subtracting pairs counted twice.",
+      "Copying a win into the reversed matrix entry instead of a loss."
+    ],
+    "alternativeMethods": [
+      "Store the symbols that beat each opponent symbol as bitsets. The intersection of two such sets gives $C$, and a population count gives $c$. The same proof and formula apply; ordinary matrix scans already satisfy these source limits."
+    ],
+    "difficultyNotes": "Intermediate. The important distinction is between displaying two symbols and guaranteeing a win with one final choice. The full chart format, original sample and game explanation remain at the official link.",
+    "id": "solution-usaco-bronze-2025-us-open-p1",
+    "problemId": "usaco-bronze-2025-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Let $H$ be the largest available height and $f_h$ the frequency of height $h$. The longest valid photo has $$\\boxed{1+2\\left|\\{h<H:f_h\\ge2\\}\\right|}.$$ Count lower heights with at least two cows and use one tallest cow as the center.",
+    "shortExplanation": "A symmetric photo with unequal neighbors has one central peak. Every smaller chosen height appears once on each side, and the heights on either side are distinct. Use all available pairs below the tallest cow.",
+    "detailedSteps": [
+      "**1. Derive the shape of a valid photo.** The nondecreasing side must be strictly increasing because adjacent heights cannot be equal; the nonincreasing side is similarly strictly decreasing. An even-length symmetric photo would have two equal adjacent central heights, which is forbidden. Hence a valid nonempty photo has odd length and one central peak.",
+      "**2. Bound the number of pairs.** Every height other than the central peak appears as a mirrored pair, once on each side. Strict increase allows a height at most once on the left, so more than two copies cannot help. For a peak of height $p$, the eligible pair heights are exactly those $h<p$ having frequency at least two. Thus every photo with that peak has length at most $1+2|\\{h<p:f_h\\ge2\\}|$.",
+      "**3. Choose the tallest available peak.** Let $H$ be the maximum input height. Increasing the peak to $H$ preserves every pair that could be used with a smaller peak and may admit more. Therefore no smaller peak can give a larger answer. Multiple copies of $H$ cannot form an additional pair because a still taller center would be required.",
+      "**4. Construct a photo attaining the bound.** List all eligible heights below $H$ in increasing order, place one cow of height $H$ next, then repeat those eligible heights in decreasing order. Each mirrored pair is available, neighbors have different heights, and the resulting sequence satisfies symmetry and both monotonic sides. Consequently the upper bound is attainable and is the optimum. If there are no pairs, the singleton tallest cow supplies the valid answer $1$.",
+      "**5. Count directly.** Create a frequency array indexed by heights $1$ through $N$ while tracking the largest height. Initialize the answer to one, then add two for each smaller height whose count is at least two. The input ordering is irrelevant because rearrangement is explicitly allowed.",
+      "**6. Respect the actual multi-case limits.** Each case takes $O(N)$ time and $O(N)$ working memory. Reusing the frequency array case by case gives $O(\\sum N)$ total time. The source allows $T\\le10^5$, individual $N\\le10^5$, and explicitly bounds $\\sum N\\le10^6$. No collection of all cases is needed. The resulting photo length never exceeds $N$, so `int` suffices.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <iostream>\n#include <vector>\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int t;\n    std::cin >> t;\n    while (t--) {\n        int n;\n        std::cin >> n;\n        std::vector<int> count(n+1);\n        int peak = 0;\n        for (int i = 0; i < n; ++i) {\n            int h;\n            std::cin >> h;\n            ++count[h];\n            if (h > peak) peak = h;\n        }\n        int answer = 1;\n        for (int h = 1; h < peak; ++h)\n            if (count[h] >= 2) answer += 2;\n        std::cout << answer << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Symmetry and unequal neighbors force an odd length and one peak.",
+      "Strict monotonic sides allow only one mirrored pair per smaller height.",
+      "The largest available peak maximizes the set of eligible pairs.",
+      "An explicit ascending-center-descending construction proves attainability."
+    ],
+    "commonMistakes": [
+      "Using every copy of a repeated height.",
+      "Pairing the largest height despite lacking a taller center.",
+      "Considering only the original cow order when rearrangement is allowed.",
+      "Assuming all symmetric sequences also satisfy the monotonic and adjacency conditions.",
+      "Omitting the central cow when no lower pair is available."
+    ],
+    "alternativeMethods": [
+      "Sort the heights, count the sizes of equal-height groups, and add a mirrored pair for each group below the maximum that contains at least two cows. This takes $O(N\\log N)$ per case; bounded integer heights make frequency counting sufficient."
+    ],
+    "difficultyNotes": "Intermediate. The result follows from proving the exact shape of every legal photo, then constructing one with the maximum length. The original statement and examples are available externally.",
+    "id": "solution-usaco-bronze-2025-us-open-p2",
+    "problemId": "usaco-bronze-2025-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each query and each possible repeated character, use its latest occurrence as $k$ and the earliest different character as $i$. Test the repeated-character occurrences immediately around $(i+k)/2$ as $j$. The largest valid product $(j-i)(k-j)$ is the answer, or $-1$ if none exists; use 64-bit products.",
+    "shortExplanation": "For a fixed repeated character, moving the first endpoint earlier and the last endpoint later can only help. Once those endpoints are fixed, the product is greatest at the middle, so only the nearest eligible positions on either side need testing.",
+    "detailedSteps": [
+      "**1. Fix the two matching characters.** In a valid triplet, the characters at $j$ and $k$ agree with some character $c$, while the character at $i$ differs from $c$. Process every one of the 26 lowercase possibilities for $c$ separately.",
+      "**2. Optimize the endpoints.** Let $i$ be the earliest non-$c$ position within the query range, and let $k$ be the latest $c$ position. Starting from any valid triplet for this $c$, replacing its first index by $i$ increases or preserves $j-i$; replacing its last index by $k$ increases or preserves $k-j$. Both replacements remain valid. Thus the best triplet for $c$ always uses these two endpoints. If no such endpoints or no room for an interior index exist, skip this character.",
+      "**3. Optimize the middle index.** With endpoints fixed, $$ (j-i)(k-j)=\\frac{(k-i)^2-(2j-i-k)^2}{4}. $$ Therefore an eligible occurrence of $c$ closest to the midpoint $(i+k)/2$ maximizes the product. In its sorted occurrence list, find the first position at or above $\\lceil(i+k)/2\\rceil$ and check it and its predecessor. They bracket the midpoint; all other occurrences on each side are farther away. Require $i<j<k$ when checking either candidate, so the endpoints themselves are never accepted.",
+      "**4. Find the first endpoint cheaply.** Precompute `next_change[l]`, the first index after $l$ with a different character, or $N$ if the run extends to the end. If the first character in the query differs from $c$, then $i=l$. Otherwise, all positions in its initial constant run equal $c$, so `next_change[l]` is precisely the earliest possible non-$c$ index. Compute these run boundaries with a backwards scan.",
+      "**5. Find the last endpoint and handle missing triples.** Store sorted position lists for each character. An upper-bound search at the right query endpoint followed by one step backwards yields $k$. Empty lists or a search with no prior occurrence are skipped. Retain an answer initialized to $-1$ and update it only for strictly interior middle indices. If a midpoint bracket lies beyond an endpoint, no farther occurrence on that side can be a valid better candidate.",
+      "**6. Implement consistent indices.** Convert the input bounds from one-based to zero-based once. Search using the inclusive right bound and perform all products using the same index convention. Check all characters, since the best matching character depends on the query.",
+      "**7. Complexity and overflow.** Preprocessing takes $O(N)$ time and space; the occurrence lists contain $N$ total entries. Each query makes a constant number of binary searches for each of 26 characters, so total time is $O(N+26Q\\log N)$ and memory is $O(N)$. The source gives $N\\le10^5$, $Q\\le3\\cdot10^4$. A product can reach $\\lfloor(N-1)^2/4\\rfloor=2{,}499{,}950{,}000$ at the largest input, exceeding a signed 32-bit integer. Promote multiplication before it happens with `1LL` and store the result in `long long`.",
+      "**C++17 reference implementation.**\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <iostream>\n#include <string>\n#include <vector>\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    int n, q;\n    if (!(std::cin >> n >> q)) return 0;\n    std::string s;\n    std::cin >> s;\n    std::array<std::vector<int>,26> positions;\n    for (int i = 0; i < n; ++i) positions[s[i]-'a'].push_back(i);\n    std::vector<int> next_change(n,n);\n    for (int i = n-2; i >= 0; --i)\n        next_change[i] = (s[i] != s[i+1] ? i+1 : next_change[i+1]);\n    while (q--) {\n        int left, right;\n        std::cin >> left >> right;\n        --left; --right;\n        long long answer = -1;\n        for (int c = 0; c < 26; ++c) {\n            const auto& p = positions[c];\n            if (p.empty()) continue;\n            int first = (s[left]-'a' == c ? next_change[left] : left);\n            if (first > right) continue;\n            auto after = std::upper_bound(p.begin(),p.end(),right);\n            if (after == p.begin()) continue;\n            int last = *(after-1);\n            if (last-first < 2) continue;\n            int target = (first+last+1)/2;\n            auto near = std::lower_bound(p.begin(),p.end(),target);\n            auto consider = [&](int middle) {\n                if (first < middle && middle < last)\n                    answer = std::max(answer,1LL*(middle-first)*(last-middle));\n            };\n            if (near != p.end()) consider(*near);\n            if (near != p.begin()) consider(*(near-1));\n        }\n        std::cout << answer << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Fix a matching character and extend the endpoints monotonically.",
+      "A quadratic product is maximized by proximity to its midpoint.",
+      "Sorted occurrence lists reduce candidate searches to two nearby positions.",
+      "Run boundaries locate the first different character in constant time.",
+      "Promote multiplication before a 32-bit overflow can occur."
+    ],
+    "commonMistakes": [
+      "Choosing the first index with the same character as the other two.",
+      "Testing a midpoint position without checking its character.",
+      "Allowing $j=i$ or $j=k$.",
+      "Missing the occurrence immediately below the midpoint.",
+      "Assigning a 32-bit product to `long long` only after overflow has happened.",
+      "Returning zero when no valid triplet exists instead of $-1$."
+    ],
+    "alternativeMethods": [
+      "Precompute nearest previous and next occurrences for every character and position. These tables can supply the last endpoint and both midpoint neighbors in constant time per character, giving $O(26N+26Q)$ time with $O(26N)$ memory. Position lists provide a smaller representation."
+    ],
+    "difficultyNotes": "Advanced. A full proof needs both the endpoint replacement argument and the midpoint candidate argument. The original geometric interpretation and query examples remain at the official source; no copied diagram is needed.",
+    "id": "solution-usaco-bronze-2025-us-open-p3",
+    "problemId": "usaco-bronze-2025-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

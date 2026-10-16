@@ -1,0 +1,325 @@
+[
+  {
+    "id": "solution-aime-i-2001-p1",
+    "problemId": "aime-i-2001-p1",
+    "finalAnswer": "$\\boxed{630}$",
+    "shortExplanation": "The fourteen qualifying integers sum to 630.",
+    "detailedSteps": [
+      "Write the integer as $10a+b$, with $1\\le a\\le9$ and $0\\le b\\le9$. A zero units digit cannot divide a positive integer, so $b\\ge1$. Divisibility by a is equivalent to $a\\mid b$, and divisibility by b is equivalent to $b\\mid10a$.",
+      "Testing the possible positive multiples $b$ of each $a$ gives the complete lists: $11,12,15$ for $a=1$; $22,24$ for $a=2$; $33,36$ for $a=3$; $44,48$ for $a=4$; and $55,66,77,88,99$ for $a=5,6,7,8,9$, respectively.",
+      "Their sum is $11+12+15+22+24+33+36+44+48+55+66+77+88+99=630$."
+    ],
+    "keyIdeas": [
+      "Digit divisibility gives a finite exhaustive list"
+    ],
+    "commonMistakes": [
+      "Allowing a zero digit as a divisor or overlooking that both digits must divide the same integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two remainder conditions make the enumeration transparent and exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p2",
+    "problemId": "aime-i-2001-p2",
+    "finalAnswer": "$\\boxed{651}$",
+    "shortExplanation": "The set has 49 elements and mean 651.",
+    "detailedSteps": [
+      "Let S have k elements and mean M. Neither 1 nor 2001 is already in S: adding an existing member would leave its mean unchanged, contradicting the specified nonzero change.",
+      "Therefore $(kM+1)/(k+1)=M-13$ and $(kM+2001)/(k+1)=M+27$. Rearranging gives $M=1+13(k+1)=2001-27(k+1)$.",
+      "Hence $40(k+1)=2000$, so $k=49$ and $M=1+13(50)=651$. The distinct-number condition is consistent, for example with S consisting of all integers 627 through 675. Its mean is 651, and neither added number is in S."
+    ],
+    "keyIdeas": [
+      "Both changes in mean determine the set size"
+    ],
+    "commonMistakes": [
+      "Increasing the cardinality without first excluding the possibility that the added number is already in the set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two mean changes share the same new cardinality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p3",
+    "problemId": "aime-i-2001-p3",
+    "finalAnswer": "$\\boxed{500}$",
+    "shortExplanation": "The leading odd-degree terms cancel, leaving degree 2000 and root sum 500.",
+    "detailedSteps": [
+      "Expand $x^{2001}+(1/2-x)^{2001}$. The $x^{2001}$ terms cancel because 2001 is odd. The coefficient of $x^{2000}$ is $2001/2$, which is nonzero, so the resulting polynomial has degree 2000.",
+      "The next coefficient is $-\\binom{2001}{2}/4$. Vieta\u2019s formula, counting all real and non-real roots, gives sum $[\\binom{2001}{2}/4]/(2001/2)=2000/4=500$.",
+      "The given absence of multiple roots permits interpreting this sum as the sum of the distinct roots as well."
+    ],
+    "keyIdeas": [
+      "Cancellation changes the degree before Vieta is applied"
+    ],
+    "commonMistakes": [
+      "Applying Vieta to degree 2001 despite the cancellation of its leading coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A degree check is essential before reading the coefficient ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p4",
+    "problemId": "aime-i-2001-p4",
+    "finalAnswer": "$\\boxed{291}$",
+    "shortExplanation": "The area is $216+72\\sqrt3$.",
+    "detailedSteps": [
+      "Angle C is 75 degrees. Since AT bisects the 60-degree angle A, triangle ACT has angles 30,75,75 degrees. Thus AC equals AT, so $AC=24$.",
+      "Triangle ABT has angles 30,45,105 degrees. The sine rule gives $AB=24\\sin105^\\circ/\\sin45^\\circ=12(\\sqrt3+1)$.",
+      "Therefore the full area is $\\tfrac12(24)[12(\\sqrt3+1)]\\sin60^\\circ=216+72\\sqrt3$. Since 3 is squarefree, the requested sum is $216+72+3=291$."
+    ],
+    "keyIdeas": [
+      "The angle bisector creates an isosceles smaller triangle"
+    ],
+    "commonMistakes": [
+      "Using the area of triangle ABT instead of the entire original triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal angles in ACT recover a full side from the given bisector.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p5",
+    "problemId": "aime-i-2001-p5",
+    "finalAnswer": "$\\boxed{937}$",
+    "shortExplanation": "The side squared is $768/169$.",
+    "detailedSteps": [
+      "An equilateral triangle\u2019s altitude is also its symmetry axis. The given altitude line must pass through one vertex on the y-axis. The ellipse meets that axis only at $(0,1)$ and $(0,-1)$. If the altitude came from $(0,-1)$ while $(0,1)$ were another vertex, the third vertex would have to share $y=1$; the ellipse has only one point with $y=1$, giving degeneracy. Thus the altitude comes from the given top vertex.",
+      "The other vertices have coordinates $(x,y)$ and $(-x,y)$ with x positive. The height of an equilateral triangle with base length 2 x is $\\sqrt3x$, so $1-y=\\sqrt3x$. Substituting $x^2=(1-y)^2/3$ in the ellipse gives $13y^2-2y-11=0$.",
+      "The root $y=1$ is degenerate; the other root is $y=-11/13$. Then $x=8\\sqrt3/13$ and the side length is $2x=16\\sqrt3/13=\\sqrt{768/169}$.",
+      "The numerator and denominator are relatively prime, so $m+n=768+169=937$. These coordinates satisfy the ellipse and produce three equal positive side lengths."
+    ],
+    "keyIdeas": [
+      "The altitude symmetry reduces the ellipse intersection to a quadratic"
+    ],
+    "commonMistakes": [
+      "Keeping the degenerate root or assuming which vertex emits the specified altitude without checking the ellipse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The only two axis intersections settle the altitude placement before solving.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p6",
+    "problemId": "aime-i-2001-p6",
+    "finalAnswer": "$\\boxed{079}$",
+    "shortExplanation": "There are 126 favorable sequences out of 1296.",
+    "detailedSteps": [
+      "A nondecreasing four-roll sequence is uniquely determined by the multiplicities of the six possible die values. These are six nonnegative integers summing to four, hence $\\binom{4+6-1}{6-1}=\\binom94=126$ possibilities.",
+      "All $6^4=1296$ ordered roll sequences have equal probability. The requested probability is $126/1296=7/72$, giving $m+n=79$."
+    ],
+    "keyIdeas": [
+      "Nondecreasing rolls correspond to multisets"
+    ],
+    "commonMistakes": [
+      "Treating unordered multisets as equally likely rather than counting their single nondecreasing ordered sequence."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each multiset contributes exactly one allowed sequence in the original ordered sample space.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p7",
+    "problemId": "aime-i-2001-p7",
+    "finalAnswer": "$\\boxed{923}$",
+    "shortExplanation": "The parallel segment has length $860/63$.",
+    "detailedSteps": [
+      "Let the area be \u0394, the altitude from A be H, the inradius be r, and the semiperimeter be s. Here $s=(21+22+20)/2=63/2$, $H=2\\Delta/20$, and $r=\\Delta/s$. Thus $r/H=20/63$.",
+      "The incenter is distance r from BC, so DE is the parallel section at height r above BC. Similarity of ADE and ABC gives scale $(H-r)/H=43/63$. Consequently $DE=20(43/63)=860/63$.",
+      "The fraction is reduced, giving $m+n=860+63=923$. Since $0<r/H<1$, this section meets the two sides internally as required."
+    ],
+    "keyIdeas": [
+      "The incircle radius determines the similar-triangle scale"
+    ],
+    "commonMistakes": [
+      "Scaling by r/H instead of by the distance from the apex to the parallel section."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area cancels from the ratio of inradius to altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p8",
+    "problemId": "aime-i-2001-p8",
+    "finalAnswer": "$\\boxed{315}$",
+    "shortExplanation": "The largest possible double has base-seven digits 630 and value 315.",
+    "detailedSteps": [
+      "Let the base-seven digits be $d_i\\in\\{0,1,\\ldots,6\\}$. The defining relation is $\\sum_i d_i(10^i-2\\cdot7^i)=0$. The coefficients for $i=0,1,2,3$ are respectively $-1,-4,2,314$.",
+      "All coefficients from $i=3$ onward are at least 314 and increase: if $c_i=10^i-2\\cdot7^i$, then $c_{i+1}=7c_i+3\\cdot10^i$. But the two negative contributions have total magnitude at most $6+4(6)=30$. Hence every digit at a position $i\\ge3$ must vanish.",
+      "The remaining equation is $d_0+4d_1=2d_2$. The integer\u2019s value is $N=49d_2+7d_1+d_0=51d_2+3d_1$. Since $d_2\\le6$ and $4d_1\\le2d_2\\le12$, we have $d_1\\le3$, giving $N\\le306+9=315$.",
+      "The bound is attained by $d_2=6,d_1=3,d_0=0$: the base-seven numeral 630 equals 315, while the same decimal numeral is 630, exactly twice 315."
+    ],
+    "keyIdeas": [
+      "Large digit positions force a positive excess"
+    ],
+    "commonMistakes": [
+      "Searching a bounded range without proving that longer base-seven numerals cannot work."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The negative low-position capacity excludes all longer representations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p9",
+    "problemId": "aime-i-2001-p9",
+    "finalAnswer": "$\\boxed{061}$",
+    "shortExplanation": "The central-to-full area ratio is $16/45$.",
+    "detailedSteps": [
+      "The corner triangles ADF, BDE, and CEF have area ratios $p(1-r)$, $q(1-p)$, and $r(1-q)$, respectively: their two incident side fractions multiply because their included angle is unchanged.",
+      "Thus the central ratio is $1-(p+q+r)+(pq+qr+rp)$. The supplied two sums give $pq+qr+rp=[(2/3)^2-2/5]/2=1/45$.",
+      "The ratio is therefore $1-2/3+1/45=16/45$. This is reduced, so $m+n=61$. Positivity and sum 2/3 put each side fraction strictly between zero and one, justifying the disjoint three-corner decomposition."
+    ],
+    "keyIdeas": [
+      "Three corner areas determine the central area"
+    ],
+    "commonMistakes": [
+      "Reading the printed fractions as whole numbers or reversing the CF fraction when computing the corner at A."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The answer depends on the symmetric sums rather than the individual fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p10",
+    "problemId": "aime-i-2001-p10",
+    "finalAnswer": "$\\boxed{200}$",
+    "shortExplanation": "The favorable pair probability is $23/177$.",
+    "detailedSteps": [
+      "There are $3\\cdot4\\cdot5=60$ lattice points. Two points have an integer midpoint precisely when they have the same parity in each coordinate. Its coordinate bounds then hold automatically by averaging.",
+      "The x parity counts are 2 and 1, the y counts 2 and 2, and the z counts 3 and 2. Thus the eight parity-class sizes are 12,12,8,8,6,6,4,4.",
+      "The number of favorable unordered distinct pairs is $2[\\binom{12}{2}+\\binom82+\\binom62+\\binom42]=230$. There are $\\binom{60}{2}=1770$ pairs, so the probability is $230/1770=23/177$, and $m+n=200$."
+    ],
+    "keyIdeas": [
+      "Integer midpoints require matching coordinate parity"
+    ],
+    "commonMistakes": [
+      "Including pairs of identical points or requiring the two endpoints themselves to be even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The eight parity classes encode all three midpoint integrality conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p11",
+    "problemId": "aime-i-2001-p11",
+    "finalAnswer": "$\\boxed{149}$",
+    "shortExplanation": "The smallest allowed column count is 149.",
+    "detailedSteps": [
+      "Write the selected column in row i as $c_i$. Then $x_i=(i-1)N+c_i$ and $y_i=5c_i+i-5$. The first two equalities give $c_1=5c_2-3$ and $N+c_2=5c_1-4$. Consequently $c_2=(N+19)/24$, $c_1=(5N+23)/24$, and integrality requires $N\\equiv5\\pmod{24}$.",
+      "The last three equalities give $2N+c_3=5c_4-1$, $3N+c_4=5c_5$, and $4N+c_5=5c_3-2$. Solving this cycle yields $c_3=(117N+51)/124$, $c_4=(73N+35)/124$, and $c_5=(89N+7)/124$.",
+      "Integrality of the first of these requires $7N\\equiv51\\pmod{124}$, hence $N\\equiv25\\pmod{124}$; that congruence also makes the other two numerators divisible by 124.",
+      "Put $N=25+124t$. The mod 24 condition becomes $1+4t\\equiv5\\pmod{24}$, so $t\\equiv1\\pmod6$. Thus $N=149+744s$ for an integer s, whose least positive value is 149.",
+      "At $N=149$ the five columns are 32,7,141,88,107, all between 1 and 149. Substitution satisfies every source equality, so the necessary least positive value is attainable."
+    ],
+    "keyIdeas": [
+      "Row-column equations reduce to two congruences"
+    ],
+    "commonMistakes": [
+      "Satisfying the congruences without checking that the reconstructed columns lie inside the array."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two permutation cycles produce independent integrality constraints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p12",
+    "problemId": "aime-i-2001-p12",
+    "finalAnswer": "$\\boxed{005}$",
+    "shortExplanation": "The radius is two-thirds.",
+    "detailedSteps": [
+      "Tangency to the three coordinate-plane faces puts the center at $(r,r,r)$ with r positive. The opposite face has equation $2x+3y+6z=12$, and its normal has length 7.",
+      "The center lies on the interior side, so its distance from that plane is $(12-11r)/7$. Tangency gives $(12-11r)/7=r$, whence $r=2/3$.",
+      "This center lies inside all four half-spaces. Its foot on the opposite plane is $(r,r,r)+(r/7)(2,3,6)$; all coordinates are positive and satisfy the plane equation, so the foot lies in the actual triangular face. The feet on the coordinate planes also lie within their triangular faces.",
+      "Thus the sphere is inscribed in the tetrahedron, and the reduced fraction gives $m+n=2+3=5$."
+    ],
+    "keyIdeas": [
+      "Distances to the four face planes determine the inradius"
+    ],
+    "commonMistakes": [
+      "Measuring distance to a face plane without ensuring that the tangency point lies in the face."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right tetrahedron gives three equal center coordinates immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p13",
+    "problemId": "aime-i-2001-p13",
+    "finalAnswer": "$\\boxed{174}$",
+    "shortExplanation": "The third chord is $-9+\\sqrt{165}$ centimeters.",
+    "detailedSteps": [
+      "Let $\\theta=d/2$ degrees and $c=\\cos\\theta$. A positive arc with d less than 120 gives $0<\\theta<60$, hence $1/2<c<1$. The chord formula and first chord length 22 give second chord $44c$ and third chord $22(4c^2-1)$.",
+      "The second chord is 20 longer than the third, so $44c-22(4c^2-1)=20$, or $44c^2-22c-1=0$. Its roots are $(11\\pm\\sqrt{165})/44$. The negative root is inadmissible; the positive root is strictly between one-half and one.",
+      "The third chord is the second minus 20, namely $44c-20=-9+\\sqrt{165}$. The selected angle meets the source bound and all chord lengths are positive, so this solution is attainable.",
+      "Therefore $m+n=9+165=174$."
+    ],
+    "keyIdeas": [
+      "Chord ratios become a quadratic in the half-angle cosine"
+    ],
+    "commonMistakes": [
+      "Using a supplementary branch outside the stated arc bound or confusing the second and third chord lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The identities for sin twice and three times the half-angle eliminate the radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p14",
+    "problemId": "aime-i-2001-p14",
+    "finalAnswer": "$\\boxed{351}$",
+    "shortExplanation": "There are 351 allowed delivery patterns.",
+    "detailedSteps": [
+      "Write a 1 for a delivery and a 0 for no delivery. The conditions forbid 11 and 000. If there are k deliveries, the k minus one internal zero gaps have lengths one or two, and the leading and trailing zero runs have lengths $a,b\\in\\{0,1,2\\}$.",
+      "There are 19 minus k zeros. After allocating one to every internal gap and the endpoint runs, the number of doubled internal gaps must be $t=(19-k)-(k-1)-a-b=20-2k-a-b$. For fixed k,a,b the count is $\\binom{k-1}{t}$, interpreted as zero unless $0\\le t\\le k-1$.",
+      "The conditions imply $19\\ge2k-1$ and $19\\le3k+1$, so $6\\le k\\le10$. Summing over $a,b\\in\\{0,1,2\\}$ gives counts 7,113,183,47,1 for $k=6,7,8,9,10$, respectively.",
+      "The total is $7+113+183+47+1=351$. Each pattern has one unique delivery count, endpoint runs and subset of doubled gaps, so no arrangement is omitted or counted twice."
+    ],
+    "keyIdeas": [
+      "Endpoint zero runs and doubled internal gaps count every pattern"
+    ],
+    "commonMistakes": [
+      "Restricting only internal zero runs while allowing three zeros at a street endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gap representation includes both endpoints explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2001-p15",
+    "problemId": "aime-i-2001-p15",
+    "finalAnswer": "$\\boxed{085}$",
+    "shortExplanation": "There are 60 favorable cyclic face orders among 5040.",
+    "detailedSteps": [
+      "Index an octahedron\u2019s faces by three signs: a face selects one vertex on each coordinate axis. Two faces share an edge precisely when their sign triples differ in one position. Allowed consecutive labels therefore differ in two or three positions.",
+      "Partition the eight sign triples by parity. Each parity class forms a complete graph on four vertices using distance-two edges. The distance-three edges join complementary triples and form a perfect matching between the two classes. An allowed cyclic assignment of labels is a Hamiltonian cycle in this graph.",
+      "An undirected Hamiltonian cycle must use a positive even number of matching edges. There are only four, so it uses either two or four. With two matching edges, choose them in $\\binom42=6$ ways. In each complete four-vertex class, the cycle must traverse a spanning path between the selected endpoints; its two internal vertices can occur in either order. This gives $6(2)(2)=24$ cycles.",
+      "With all four matching edges used, every vertex has exactly one internal cycle edge. Those internal edges form a perfect matching in each four-vertex class, with three choices apiece. Identifying complementary vertices across the classes, equal matchings produce two disjoint four-cycles, while any two different matchings produce a single eight-cycle. Thus there are $3(2)=6$ more Hamiltonian cycles.",
+      "There are 30 undirected cycles in total. Fix the face receiving label 1; every cycle has two traversal directions, giving 60 favorable assignments of labels 2 through 8 among $7!=5040$. The probability is $60/5040=1/84$, so $m+n=85$."
+    ],
+    "keyIdeas": [
+      "The allowed face graph is two complete graphs joined by a matching"
+    ],
+    "commonMistakes": [
+      "Counting disjoint four-cycles as favorable or omitting the wraparound condition for labels 8 and 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cube face-adjacency graph has an especially simple complement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

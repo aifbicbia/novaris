@@ -1,0 +1,107 @@
+[
+  {
+    "finalAnswer": "Sweep the shift endpoints to compute total covered time $T$ and each guard\u2019s exclusively covered time $E_i$. The answer is $T-\\min_i E_i$, including zero when the only guard must be fired. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "Removing one guard loses exactly the time during which that guard was the sole person on duty. All multiply covered time survives. A sweep counts those exclusive lengths, so fire a guard with the smallest loss.",
+    "detailedSteps": [
+      "**Partition time at the endpoints.** Create a start event and an end event for each shift, keeping the guard\u2019s identity. Sort all $2N$ events. Between consecutive endpoints the set of working guards is constant. Endpoint points have zero duration, so treating shifts as half-open intervals preserves the covered length.",
+      "**Measure before processing the next event.** Let the previous event time be $s$ and the next be $t$. The active set describes the whole segment from $s$ to $t$. If it is nonempty, add $t-s$ to the total $T$. If it contains exactly guard $i$, also add $t-s$ to $E_i$. Only then insert the starting guard or erase the ending guard. The source\u2019s distinct endpoints make event ties unnecessary.",
+      "**Identify the loss from firing someone.** A segment with at least two guards remains covered after any single deletion. A segment with only guard $i$ disappears precisely when $i$ is fired. Summing these disjoint segments proves that the remaining union after firing $i$ has length\n\n$$T-E_i.$$\n\nEvery guard must be considered, including a completely redundant guard with $E_i=0$.",
+      "**Choose the best deletion.** Since $T$ is fixed, maximizing $T-E_i$ is equivalent to minimizing $E_i$. Exactly one guard is removed. When $N=1$, the sole exclusive length equals $T$, yielding the required zero rather than retaining that guard.",
+      "**Maintain the sweep invariant.** Immediately before each event, the active set contains exactly the guards covering the preceding segment. Applying that event gives the correct active set for the next segment. Induction therefore accounts for every covered segment and every exclusive contribution exactly once. The deletion formula then proves optimality.",
+      "**Complexity, bounds and files.** Sorting and balanced-set updates take $O(N\\log N)$ time; the events, active set and exclusive lengths occupy $O(N)$ space. $N$ can be $100000$, and the coordinates reach $10^9$; enumerate endpoints, not every time unit. Use `long long` for duration arithmetic. Read `lifeguards.in` and write one integer line to `lifeguards.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <set>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"lifeguards.in\");\n    std::ofstream out(\"lifeguards.out\");\n    int n; in >> n;\n    std::vector<std::pair<long long, int>> events;\n    for (int i=0; i<n; ++i) { long long a,b; in >> a >> b; events.push_back({a,i}); events.push_back({b,~i}); }\n    std::sort(events.begin(), events.end());\n    std::set<int> active;\n    std::vector<long long> alone(n,0);\n    long long total=0,previous=events.front().first;\n    for (const auto& e: events) {\n        const long long length=e.first-previous;\n        if (!active.empty()) total+=length;\n        if (active.size()==1) alone[*active.begin()]+=length;\n        if (e.second>=0) active.insert(e.second); else active.erase(~e.second);\n        previous=e.first;\n    }\n    out << total-*std::min_element(alone.begin(),alone.end()) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Exclusive coverage is the exact marginal loss of removing one interval.",
+      "Account for a segment using the active set before changing it at its right endpoint.",
+      "Keep guard identities so exclusive lengths accumulate for the correct deletion."
+    ],
+    "commonMistakes": [
+      "Subtracting a guard\u2019s entire shift despite overlapping protection.",
+      "Choosing the shortest shift instead of the smallest exclusive coverage.",
+      "Updating the active set before measuring the preceding segment.",
+      "Ignoring the requirement to fire the only guard when $N=1$.",
+      "Expanding the billion-unit time range rather than sweeping endpoints."
+    ],
+    "alternativeMethods": [
+      "For tiny integer-coordinate instances, explicitly remove each possible guard, materialize the remaining covered unit cells, and maximize their union size. This independently checks the sweep formula without tracking exclusive lengths."
+    ],
+    "difficultyNotes": "Intermediate interval reasoning. The crucial proof is that only singly covered segments disappear; the sweep is a direct way to measure them.",
+    "id": "solution-usaco-silver-2018-january-p1",
+    "problemId": "usaco-silver-2018-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort cow outputs, shop prices and rental offers in decreasing order. Incrementally compute the sale revenue $S(t)$ from the largest $t$ outputs, and rental prefix sums $R(j)$. Maximize $S(t)+R(\\min(R,N-t))$ for $0\\le t\\le N$. Time is $O(N\\log N+M\\log M+R\\log R)$; space is $O(N+M+R)$.",
+    "shortExplanation": "For any number of cows contributing milk sales, use the largest producers and sell to the highest-paying shops first. Rent other cows to the best available neighbors. Evaluate every split because choosing milking or renting greedily for an individual cow can miss the global optimum.",
+    "detailedSteps": [
+      "**Exchange cow identities.** Fix the number of milked cows. If a milked cow produces less than a rented cow, swap their roles. Rental income is unchanged because offers do not depend on cow identity. Available milk increases, and additional milk can be left unsold, so the maximum sale revenue cannot decrease. Thus some optimum uses a prefix of the cow outputs sorted in decreasing order.",
+      "**Optimize milk sales.** Sort shops by decreasing cents per gallon. If a lower-paying shop receives a gallon while a higher-paying shop has free capacity, transfer that gallon upward. This preserves feasibility and increases revenue unless prices tie. Repeating the exchange proves that filling the higher-price capacities first gives the maximum sale income for any available milk quantity. Partial fills are permitted by the source.",
+      "**Optimize rentals.** Rental offers are positive and each requires one cow, with no identity restrictions. For $j$ available cows, take the largest $\\min(j,R)$ rates. Define $R(j)$ here as the sum of the largest $j$ offers, with $R(0)=0$; the same letter $R$ in the input denotes the total number of offers, so implementation uses a separately named prefix array.",
+      "**Evaluate every split transparently.** For each $t$ from zero through $N$, let $S(t)$ be the optimal sale income from the largest $t$ outputs and combine it with the largest $\\min(R,N-t)$ rental offers. If there are fewer offers than the other cows, the remaining unrented cows may also be milked while their extra milk is left unsold; the computed income is still feasible. Conversely, an optimal assignment with its actual milking count is included among the evaluated splits, after the cow-identity exchanges. Hence the largest candidate is exactly optimal, not merely an upper bound.",
+      "**Reuse shop capacity across successive prefixes.** Add the next cow\u2019s milk to the previous prefix\u2019s sale computation. Retain the current shop and its unused capacity, sell as much as possible there, then advance only when it fills. Existing sold gallons remain in the highest-price slots, so appending extra milk preserves the greedy optimum. A loop iteration either consumes the current cow\u2019s milk or finishes a shop; the total filling work is $O(N+M)$ after sorting. When all shops fill, leave remaining milk unsold.",
+      "**Prove the maximum and respect integer bounds.** The preceding exchanges show that every true optimum is represented; the feasibility argument shows that every compared candidate can be achieved. Taking their maximum therefore proves correctness. Each of $N,M,R$ can be $100000$ and every output, capacity, price and offer can be $10^6$. Total milk is at most $10^{11}$, sale revenue at most $10^{17}$ and rental revenue at most $10^{11}$. These fit signed 64-bit storage; products must already be evaluated as `long long`, not overflow as 32-bit integers first.",
+      "**Complexity and historical files.** The three sorts cost $O(N\\log N+M\\log M+R\\log R)$; prefix sums and incremental filling are linear afterward. Arrays use $O(N+M+R)$ memory. Read `rental.in` and output the maximum daily income as one integer line in `rental.out`. This task has store capacity limits and partial sales, rather than an unlimited single milk price.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"rental.in\");\n    std::ofstream out(\"rental.out\");\n    int n,m,r; in >> n >> m >> r;\n    std::vector<long long> cows(n),rents(r);\n    for (auto& x:cows) in >> x;\n    std::vector<std::pair<long long,long long>> shops(m);\n    for (auto& s:shops) in >> s.second >> s.first;\n    for (auto& x:rents) in >> x;\n    std::sort(cows.begin(),cows.end(),std::greater<long long>());\n    std::sort(shops.begin(),shops.end(),std::greater<std::pair<long long,long long>>());\n    std::sort(rents.begin(),rents.end(),std::greater<long long>());\n    std::vector<long long> rentPrefix(r+1,0);\n    for(int i=0;i<r;++i) rentPrefix[i+1]=rentPrefix[i]+rents[i];\n    long long milkRevenue=0,answer=rentPrefix[std::min(n,r)];\n    int shop=0;\n    for(int t=1;t<=n;++t) {\n        long long remaining=cows[t-1];\n        while(remaining>0 && shop<m) {\n            const long long take=std::min(remaining,shops[shop].second);\n            milkRevenue+=take*shops[shop].first;\n            remaining-=take; shops[shop].second-=take;\n            if(shops[shop].second==0) ++shop;\n        }\n        answer=std::max(answer,milkRevenue+rentPrefix[std::min(n-t,r)]);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "An exchange shows that the cows contributing milk sales can be the largest producers.",
+      "Fill price-ranked shop capacity and retain its pointer across milk prefixes.",
+      "Compare every global milk/rental split, including zero sales and fully saturated shops.",
+      "Use 64-bit arithmetic for price times quantity and accumulated income."
+    ],
+    "commonMistakes": [
+      "Deciding each cow\u2019s role independently without accounting for shared shop capacity.",
+      "Treating every gallon as sellable at one fixed price.",
+      "Forbidding a partial shop fill or restarting all shops for every split.",
+      "Forgetting the all-rent or all-milk endpoint.",
+      "Overflowing a product before assigning it to a 64-bit result.",
+      "Ignoring rental requests beyond the number of available cows."
+    ],
+    "alternativeMethods": [
+      "For small inputs, enumerate every milked-cow subset. For each, use bounded knapsack to enumerate store-gallon allocations without sorting prices, then enumerate every feasible subset of rental neighbors. This literal optimization oracle checks the complete combined decision.",
+      "A prefix of cumulative shop capacities and revenues can also evaluate each milk total by binary search. It is correct but adds logarithmic work that the monotone shop pointer avoids."
+    ],
+    "difficultyNotes": "Advanced optimization with interchangeable identities. Both exchange arguments and the feasibility of splits with unused rental requests must be stated; sorting alone is not a proof.",
+    "id": "solution-usaco-silver-2018-january-p2",
+    "problemId": "usaco-silver-2018-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each query $(k,v)$, traverse from $v$ using only edges with relevance at least $k$. Print the number of other reached videos, in the original query order. Time is $O(NQ)$ and space is $O(N)$, within the genuine Silver bounds $N,Q\\le5000$.",
+    "shortExplanation": "A video\u2019s path relevance is its weakest edge. That minimum is at least the threshold exactly when every edge on the unique path meets the threshold. The suggested videos therefore form the threshold component containing the starting video, excluding the starting video itself.",
+    "detailedSteps": [
+      "**Use the genuine tree model.** The source specifies $N-1$ links and exactly one path between every pair of videos. Thus the graph is a tree. Store each undirected link in both adjacency lists with its relevance. This is the Silver instance, with $N,Q\\le5000$, rather than the larger same-title Gold task.",
+      "**Translate a bottleneck into allowed edges.** For another video $u$, its relevance to $v$ is\n\n$$\\min_{e\\text{ on the unique }v\\text{-to-}u\\text{ path}} w_e.$$\n\nThis value is at least $k$ if and only if every path edge has $w_e\\ge k$. Equality must be accepted. Removing edges with smaller weights therefore leaves exactly the component of eligible videos plus the start vertex.",
+      "**Traverse one threshold component.** Begin a queue with $v$ and mark $v$ as seen. When processing a vertex, enqueue an unseen neighbor only if that edge\u2019s weight is at least $k$. Mark the neighbor when enqueuing and increment the answer for each such newly reached vertex. Starting the count at zero excludes $v$ itself.",
+      "**Prove both directions.** Every discovered vertex is connected to $v$ by a sequence of allowed edges, so its unique tree path has bottleneck at least $k$ and it is eligible. Conversely, every eligible vertex\u2019s unique path consists entirely of allowed edges; following that path shows by induction that the traversal will discover it. Thus all and only suggested other videos are counted.",
+      "**Reset and preserve output order.** Each query has its own threshold and starting video, so use a fresh seen array and queue. Answer queries in their input order and emit exactly $Q$ rows. For $N=1$ there are no edges or other videos, and every query correctly produces zero.",
+      "**Complexity, bounds and files.** One traversal examines at most $N$ vertices and $2(N-1)$ adjacency records, so total time is $O(NQ)$. The graph, queue and seen state take $O(N)$ space; output can be streamed. At $N=Q=5000$, the worst case involves about fifty million edge-record inspections. Iterative breadth-first traversal avoids a recursive chain. Relevance and thresholds are positive integers up to $10^9$. Read `mootube.in` and write the ordered answer rows to `mootube.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <queue>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"mootube.in\");\n    std::ofstream out(\"mootube.out\");\n    int n,q; in >> n >> q;\n    std::vector<std::vector<std::pair<int,int>>> edges(n);\n    for(int i=0;i<n-1;++i) {int u,v,w; in >> u >> v >> w; --u; --v; edges[u].push_back({v,w}); edges[v].push_back({u,w});}\n    for(int i=0;i<q;++i) {\n        int k,v; in >> k >> v; --v;\n        std::vector<bool> seen(n,false); std::queue<int> pending;\n        seen[v]=true; pending.push(v); int count=0;\n        while(!pending.empty()) {\n            const int u=pending.front(); pending.pop();\n            for(const auto& edge:edges[u]) if(edge.second>=k && !seen[edge.first]) {\n                seen[edge.first]=true; pending.push(edge.first); ++count;\n            }\n        }\n        out << count << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "A minimum-edge threshold is equivalent to connectivity after deleting weak edges.",
+      "A unique tree path makes the equivalence immediate in both directions.",
+      "Exclude the starting vertex and retain all queries in source order."
+    ],
+    "commonMistakes": [
+      "Adding edge weights rather than taking the minimum along a path.",
+      "Using a strict greater-than comparison and rejecting edges exactly at the threshold.",
+      "Counting the starting video among its own suggestions.",
+      "Reusing visited state across queries with different thresholds.",
+      "Printing one aggregate answer instead of exactly $Q$ ordered rows.",
+      "Assuming the different Gold bounds and silently replacing the actual Silver source."
+    ],
+    "alternativeMethods": [
+      "For tiny trees, compute all pairwise bottleneck values by max-min Floyd closure, then count values meeting each query threshold. This provides an independent oracle without a query-specific flood.",
+      "For a larger variant, sort edges and queries by decreasing threshold and maintain disjoint-set components, restoring answer order by query index. The direct traversal already meets this Silver source\u2019s printed bounds."
+    ],
+    "difficultyNotes": "Intermediate tree connectivity. The path-minimum equivalence, inclusive threshold and exclusion of the start video are the essential details.",
+    "id": "solution-usaco-silver-2018-january-p3",
+    "problemId": "usaco-silver-2018-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,549 @@
+[
+  {
+    "id": "solution-fma-2024-p1",
+    "problemId": "fma-2024-p1",
+    "finalAnswer": "$\\boxed{10\\,\\mathrm{m}}$ (choice B)",
+    "shortExplanation": "Equal heights at one and two seconds determine the vertical launch speed, giving a hoop height of $10\\,\\mathrm{m}$.",
+    "detailedSteps": [
+      "Let $u$ be the initial vertical speed. With the exam convention $g=10\\,\\mathrm{m/s^2}$, the height is $y(t)=ut-5t^2$.",
+      "The two specified times give $u-5=2u-20$, so $u=15\\,\\mathrm{m/s}$.",
+      "Substituting $t=1\\,\\mathrm{s}$ gives $h=15-5=10\\,\\mathrm{m}$. The unknown horizontal velocity does not enter this calculation."
+    ],
+    "keyIdeas": [
+      "Use two equal-height times to eliminate the launch speed"
+    ],
+    "commonMistakes": [
+      "Treating the unknown horizontal launch speed as missing information needed for the height."
+    ],
+    "alternativeMethods": [
+      "The apex occurs midway between equal-height times, at $1.5\\,\\mathrm{s}$. Thus $u=g(1.5\\,\\mathrm{s})=15\\,\\mathrm{m/s}$, leading to the same height."
+    ],
+    "difficultyNotes": "Equality at two different times supplies the necessary second equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p2",
+    "problemId": "fma-2024-p2",
+    "finalAnswer": "$\\boxed{1.9\\,\\mathrm{rad/s}}$ (choice A)",
+    "shortExplanation": "At lift-off the wall alone supports the rider. Its horizontal component supplies the centripetal force, giving about $1.9\\,\\mathrm{rad/s}$.",
+    "detailedSteps": [
+      "The frictionless wall is tilted $30^\\circ$ from vertical, so its inward normal is $30^\\circ$ above horizontal.",
+      "At the threshold the floor reaction vanishes. If the wall reaction is $N$, then $N\\sin30^\\circ=mg$ and $N\\cos30^\\circ=m\\omega^2r$.",
+      "Dividing eliminates $N$ and $m$: $\\omega^2=(g/r)\\cot30^\\circ$. With $r=5.0\\,\\mathrm{m}$ and $g=10\\,\\mathrm{m/s^2}$, $\\omega=\\sqrt{2\\sqrt3}\\,\\mathrm{rad/s}\\approx1.86\\,\\mathrm{rad/s}$."
+    ],
+    "keyIdeas": [
+      "Resolve the inclined normal force at loss of floor contact"
+    ],
+    "commonMistakes": [
+      "Using a friction force at a wall explicitly described as frictionless, or swapping the normal components."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The wall angle is measured from vertical; draw the normal before choosing sine and cosine.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p3",
+    "problemId": "fma-2024-p3",
+    "finalAnswer": "$\\boxed{\\text{vertical and horizontal rods}}$ (choice D)",
+    "shortExplanation": "The vertical rod pulls the loaded center upward, while the horizontal rods oppose outward forces from the compressed diagonals.",
+    "detailedSteps": [
+      "Use the axial tension/compression interpretation of the thin rods in the source diagram. At joint C, the horizontal rods cannot supply an upward force, so AC must be in tension.",
+      "At joint A, the tensile vertical rod pulls downward. The diagonal rods must push upward on A to balance it, so both diagonals are in compression.",
+      "Each compressed diagonal pushes its lower endpoint outward. Because the frictionless supports supply only vertical reactions, BC and CD must pull those endpoints inward and are therefore in tension.",
+      "Thus the vertical and horizontal rods are tensile, while the diagonals are compressed."
+    ],
+    "keyIdeas": [
+      "Balance forces at the central, upper and supported joints"
+    ],
+    "commonMistakes": [
+      "Allowing a horizontal support reaction even though the ground is frictionless."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Joint-by-joint force directions determine the signs without needing numerical rod forces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p4",
+    "problemId": "fma-2024-p4",
+    "finalAnswer": "$\\boxed{\\text{graph D}}$ (choice D)",
+    "shortExplanation": "Kinetic energy follows repeated convex quadratic arcs, with smooth zeros at the top and sharp positive maxima at elastic ground impacts.",
+    "detailedSteps": [
+      "Between impacts, the velocity is $v(t)=u-gt$, so $K(t)=\\tfrac12m(u-gt)^2$. This is a convex quadratic, not a straight line.",
+      "At the highest point $v=0$, so $K=0$ and $dK/dt=mv(-g)=0$: the energy graph has a smooth minimum.",
+      "An ideal ground impact reverses velocity instantaneously without changing its magnitude. Kinetic energy remains continuous, but its time derivative switches from positive to negative.",
+      "The same quadratic arc then repeats. Among the source plots, graph D has the required smooth minima and sharp impact maxima."
+    ],
+    "keyIdeas": [
+      "Square the linearly changing vertical velocity between impacts"
+    ],
+    "commonMistakes": [
+      "Confusing the velocity-time graph with the kinetic-energy graph, or making energy vanish at the bounce."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The negligible collision duration permits a corner in the graph without a finite interval at the ground.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p5",
+    "problemId": "fma-2024-p5",
+    "finalAnswer": "$\\boxed{\\frac34mg}$ (choice C)",
+    "shortExplanation": "The normal force has an upward component $mg\\cos^230^\\circ$, so the scale reads $3mg/4$.",
+    "detailedSteps": [
+      "Perpendicular to the frictionless incline, the block has zero acceleration. The normal magnitude is therefore $N=mg\\cos30^\\circ$.",
+      "Its vertical component is $N\\cos30^\\circ=mg\\cos^230^\\circ$. By Newton's third law, the block pushes down on the ramp by this amount.",
+      "The ramp is massless, so the scale supplies an equal upward reaction. The reading is $mg(\\sqrt3/2)^2=3mg/4$."
+    ],
+    "keyIdeas": [
+      "Use the vertical component of the ramp reaction"
+    ],
+    "commonMistakes": [
+      "Equating the scale reading to the full block weight despite its downward acceleration."
+    ],
+    "alternativeMethods": [
+      "The vertical downward acceleration is $g\\sin^230^\\circ=g/4$. For the block and ramp together, the scale reaction is $m(g-g/4)=3mg/4$."
+    ],
+    "difficultyNotes": "The scale measures a vertical reaction, rather than the magnitude of the inclined normal force.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p6",
+    "problemId": "fma-2024-p6",
+    "finalAnswer": "$\\boxed{\\text{graph C}}$ (choice C)",
+    "shortExplanation": "The bucket spends more time near its turning points, producing a distribution with two peaks and a minimum at the center.",
+    "detailedSteps": [
+      "For small-amplitude oscillation, write $x=A\\sin(\\omega t)$. Then the speed at position $x$ is $|\\dot x|=\\omega\\sqrt{A^2-x^2}$.",
+      "A constant leakage rate $q$ releases mass $q\\,dt$ while the bucket moves through $dx$. Thus the deposited mass per unit horizontal distance is proportional to $1/|\\dot x|$.",
+      "The shape is consequently proportional to $1/\\sqrt{A^2-x^2}$: least near the middle and sharply peaked near both ends. These endpoint peaks are integrable, so they do not represent infinite deposited mass.",
+      "The small swing and the bucket being near the ground make flight corrections negligible at leading order. This selects source graph C."
+    ],
+    "keyIdeas": [
+      "Convert constant leakage per time into mass per position"
+    ],
+    "commonMistakes": [
+      "Assigning more water to the center merely because the bucket passes through it faster."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This is the leading small-amplitude, near-ground distribution; a high bucket would require tracking the droplets in flight.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p7",
+    "problemId": "fma-2024-p7",
+    "finalAnswer": "$\\boxed{\\text{graph C}}$ (choice C)",
+    "shortExplanation": "The rising and falling portions become concave-down square-root curves in position, while the constant-speed interval remains flat.",
+    "detailedSteps": [
+      "The source velocity-time plot has three intervals: constant positive acceleration, constant speed, and constant negative acceleration.",
+      "Use $a=dv/dt=(dv/dx)(dx/dt)=v\\,dv/dx$. On the initial accelerating segment, integration from rest gives $v^2=2ax$, so $v=\\sqrt{2ax}$.",
+      "On the final segment, measured backward from the stopping position $x_f$, $v^2=2|a|(x_f-x)$, so $v=\\sqrt{2|a|(x_f-x)}$.",
+      "Both curved branches are concave downward and have vertical tangents where velocity reaches zero. The middle branch is horizontal. Source graph C has these features."
+    ],
+    "keyIdeas": [
+      "Use acceleration as velocity times the spatial derivative of velocity"
+    ],
+    "commonMistakes": [
+      "Copying the straight edges of the velocity-time trapezoid directly into a velocity-position graph."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distance grows slowly when speed is small, which changes the slopes near both endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p8",
+    "problemId": "fma-2024-p8",
+    "finalAnswer": "$\\boxed{\\frac{v}{\\sqrt2}}$ (choice B)",
+    "shortExplanation": "At $45^\\circ$ the upper endpoint descends as fast as the lower endpoint moves sideways. The midpoint speed is $v/\\sqrt2$.",
+    "detailedSteps": [
+      "Let the bottom endpoint be $(x,0)$ and the upper endpoint be $(0,y)$. Fixed rod length gives $x^2+y^2=L^2$, hence $x\\dot x+y\\dot y=0$.",
+      "At $45^\\circ$, $x=y$, so $\\dot y=-\\dot x=-v$.",
+      "The midpoint is $(x/2,y/2)$ and its velocity is $(v/2,-v/2)$. Its speed is $\\sqrt{(v/2)^2+(v/2)^2}=v/\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Differentiate the endpoint constraint before finding midpoint velocity"
+    ],
+    "commonMistakes": [
+      "Using only the midpoint's horizontal velocity component as its total speed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric constraint determines the upper endpoint speed without needing the forces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p9",
+    "problemId": "fma-2024-p9",
+    "finalAnswer": "$\\boxed{250\\,\\mathrm{m}}$ (choice C)",
+    "shortExplanation": "Half the original kinetic energy remains after $50\\,\\mathrm{m}$ of dry road. The weaker friction on ice needs another $200\\,\\mathrm{m}$.",
+    "detailedSteps": [
+      "The initial kinetic energy per unit mass equals the work per unit mass for the all-dry stop: $K_0/m=0.8g(100\\,\\mathrm{m})$.",
+      "The first $50\\,\\mathrm{m}$ removes $0.8g(50\\,\\mathrm{m})$, leaving the same amount.",
+      "On ice, friction removes $0.2g$ joules per kilogram per metre. The remaining distance is therefore $0.8g(50)/(0.2g)=200\\,\\mathrm{m}$.",
+      "The total stopping distance is $50+200=250\\,\\mathrm{m}$."
+    ],
+    "keyIdeas": [
+      "Track the kinetic energy remaining at the ice boundary"
+    ],
+    "commonMistakes": [
+      "Using the ice coefficient for the entire road, or omitting the first dry section from the total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Work-energy avoids separately finding the initial speed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p10",
+    "problemId": "fma-2024-p10",
+    "finalAnswer": "$\\boxed{\\frac{3k\\ell}{3k-m\\omega^2}}$ (choice D)",
+    "shortExplanation": "The two springs together exert an inward force $3k(r-\\ell)$, giving $r=3k\\ell/(3k-m\\omega^2)$.",
+    "detailedSteps": [
+      "At radius $r$, the inner spring has length $r$ and extension $r-\\ell$. The outer spring has length $3\\ell-r$, so its extension from its relaxed length $2\\ell$ is $\\ell-r$.",
+      "Taking inward as positive, the first force is $k(r-\\ell)$. The outer compressed spring adds $2k(r-\\ell)$. Total inward force is $3k(r-\\ell)$.",
+      "Uniform circular motion requires $3k(r-\\ell)=m\\omega^2r$. Rearranging gives $r=3k\\ell/(3k-m\\omega^2)$.",
+      "The premise that the block stays between the walls requires $r<3\\ell$, or $m\\omega^2<2k$. Beyond that range this interior stationary configuration is unavailable."
+    ],
+    "keyIdeas": [
+      "Add both inward spring contributions and impose centripetal acceleration"
+    ],
+    "commonMistakes": [
+      "Treating both springs as stretched in the same direction, or using a plus sign in the denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The formula is conditional on the stated interior rotating equilibrium existing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p11",
+    "problemId": "fma-2024-p11",
+    "finalAnswer": "$\\boxed{2.5\\times10^4\\,\\mathrm{N}}$ (choice A)",
+    "shortExplanation": "The pressure difference acts over projected area $\\pi r^2$, requiring approximately $25000\\,\\mathrm{N}$ on each half.",
+    "detailedSteps": [
+      "Under the idealization that the sealed air's volume and temperature remain unchanged during the return, its trapped pressure stays $5.0\\times10^4\\,\\mathrm{Pa}$. The surrounding sea-level pressure is $1.0\\times10^5\\,\\mathrm{Pa}$, giving $\\Delta p=5.0\\times10^4\\,\\mathrm{Pa}$.",
+      "The axial resultant over a hemisphere is $\\Delta p$ times its circular projected area, not its curved surface area. Thus $F=\\Delta p\\,\\pi r^2$.",
+      "With $r=0.40\\,\\mathrm{m}$, $F=(5.0\\times10^4)\\pi(0.40)^2=8000\\pi\\,\\mathrm{N}\\approx2.51\\times10^4\\,\\mathrm{N}$.",
+      "This is the force applied to each hemisphere. Counting both halves does not double the individual force needed."
+    ],
+    "keyIdeas": [
+      "Use the projected area of a hemisphere"
+    ],
+    "commonMistakes": [
+      "Using the hemisphere's curved area or doubling the force because two hands pull opposite ways."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The pressure comparison assumes fixed trapped-air volume and unchanged temperature; the source does not separately state the temperature condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p12",
+    "problemId": "fma-2024-p12",
+    "finalAnswer": "$\\boxed{\\frac{GMm}{2\\sqrt2\\,d}}$ (choice A)",
+    "shortExplanation": "The unequal lower asteroid masses leave a horizontal gravitational force whose torque is $GMm/(2\\sqrt2\\,d)$.",
+    "detailedSteps": [
+      "Choose coordinates $P=(0,0)$, $C=(0,d)$, $A=(-d,-d)$ and $B=(d,-d)$. Both lower asteroids are a distance $\\sqrt2d$ from the probe.",
+      "The horizontal force from A is $-GMm/(2\\sqrt2d^2)$, while B gives $+GMm/(\\sqrt2d^2)$ because its mass is $2M$. Their sum is $GMm/(2\\sqrt2d^2)$.",
+      "The force toward the asteroid at C lies along CP and has zero moment about C. The arm from C to P is $(0,-d)$, so $\\tau_z=dF_x$.",
+      "The torque magnitude is $GMm/(2\\sqrt2d)$, counterclockwise in the source orientation."
+    ],
+    "keyIdeas": [
+      "Sum horizontal force components before taking the moment about C"
+    ],
+    "commonMistakes": [
+      "Adding full gravitational magnitudes instead of the components perpendicular to the moment arm."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The asteroid on the pivot line affects the net force but contributes no torque about that pivot.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p13",
+    "problemId": "fma-2024-p13",
+    "finalAnswer": "$\\boxed{\\text{graph B}}$ (choice B)",
+    "shortExplanation": "The tension decreases from $mg$ toward $mg/2$ as the horizontal separation increases, selecting graph B.",
+    "detailedSteps": [
+      "Let $s=\\sqrt{h^2+x^2}$ be the slanted string length. The floor block accelerates toward the pulley with magnitude $a_x=Tx/(ms)$.",
+      "At release both speeds are zero. Differentiating the fixed total string length twice gives the hanging block's downward acceleration $a_y=(x/s)a_x=Tx^2/(ms^2)$.",
+      "For the hanging block, $mg-T=ma_y=Tx^2/s^2$. Thus $T=mg(h^2+x^2)/(h^2+2x^2)$.",
+      "At $x=0$, $T=mg$; as $x$ increases it decreases smoothly, approaching $mg/2$. The initial slope is zero. Only source graph B has that behavior."
+    ],
+    "keyIdeas": [
+      "Differentiate the string constraint at the initially stationary instant"
+    ],
+    "commonMistakes": [
+      "Assuming equal block accelerations despite the slanted string segment, or taking the far-separation limit to be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The zero initial speeds remove curvature terms from the second derivative of the length constraint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p14",
+    "problemId": "fma-2024-p14",
+    "finalAnswer": "$\\boxed{60^\\circ}$ (choice C)",
+    "shortExplanation": "When bead and support momentarily share one velocity, the bead has risen $0.10\\,\\mathrm{m}$, corresponding to a $60^\\circ$ arc.",
+    "detailedSteps": [
+      "The initial horizontal momentum is $m(2\\,\\mathrm{m/s})$. With no external horizontal force, it is conserved.",
+      "At the relative turning point both masses share a common speed $V$. Hence $2mV=m(2\\,\\mathrm{m/s})$ and $V=1\\,\\mathrm{m/s}$.",
+      "Initially the kinetic energy is $\\tfrac12m(2)^2=2m$ joules. At this moment it is $\\tfrac12(2m)(1)^2=m$ joules. The lost kinetic energy becomes the bead's gravitational energy, giving $mg\\Delta y=m$ joules and $\\Delta y=0.10\\,\\mathrm{m}$.",
+      "For radius $R=0.20\\,\\mathrm{m}$, the rise through angle $\\theta$ from the bottom is $R(1-\\cos\\theta)$. Thus $\\cos\\theta=1/2$ and $\\theta=60^\\circ$."
+    ],
+    "keyIdeas": [
+      "Conserve horizontal momentum as well as total mechanical energy"
+    ],
+    "commonMistakes": [
+      "Holding the support fixed or assuming the bead is at rest in the ground frame at its relative turning point."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The wire transfers energy between bead and support; conserve energy for their combined ideal system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p15",
+    "problemId": "fma-2024-p15",
+    "finalAnswer": "$\\boxed{\\frac{\\eta}{\\sqrt{\\rho\\gamma\\ell}}}$ (choice E)",
+    "shortExplanation": "Viscosity has the same dimensions as $\\sqrt{\\rho\\gamma\\ell}$, so their ratio is dimensionless.",
+    "detailedSteps": [
+      "From $F=\\eta Av/d$, viscosity has dimensions $[\\eta]=ML^{-1}T^{-1}$.",
+      "Density has $[\\rho]=ML^{-3}$, surface tension has force per length $[\\gamma]=MT^{-2}$, and $[\\ell]=L$.",
+      "Therefore $[\\sqrt{\\rho\\gamma\\ell}]=\\sqrt{M^2L^{-2}T^{-2}}=ML^{-1}T^{-1}$. Only $\\eta/\\sqrt{\\rho\\gamma\\ell}$ has no remaining mass, length or time dimension."
+    ],
+    "keyIdeas": [
+      "Match the dimensions of viscosity to a product of density, surface tension and length"
+    ],
+    "commonMistakes": [
+      "Giving surface tension the dimensions of pressure rather than force per length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A vector of three dimensional exponents checks every candidate efficiently.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p16",
+    "problemId": "fma-2024-p16",
+    "finalAnswer": "$\\boxed{d_E}$ (choice C)",
+    "shortExplanation": "The weaker gravity reduces the launch speed but increases the flight time by the inverse factor. Each landing distance, and therefore the maximum, stays the same.",
+    "detailedSteps": [
+      "At any fixed release angle, the vertical drop while swinging is unchanged. Energy gives $v^2=2g\\Delta y$, so replacing $g$ by $g/6$ divides every launch-velocity component by $\\sqrt6$.",
+      "The same projectile trajectory is traversed if flight time is multiplied by $\\sqrt6$: both $v_xt$ and the vertical terms $v_yt-gt^2/2$ are unchanged.",
+      "The launch location is also unchanged. Therefore every admissible release angle gives the same landing position on the Moon as on Earth.",
+      "Maximizing over that identical family preserves the maximum distance: $d=d_E$."
+    ],
+    "keyIdeas": [
+      "Scale release speeds and flight times for every release angle"
+    ],
+    "commonMistakes": [
+      "Scaling the launch speed while leaving the flight time unchanged, or reoptimizing a geometrically unchanged range family."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Trajectory similarity proves the statement for the entire set of release angles, avoiding a lengthy optimization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p17",
+    "problemId": "fma-2024-p17",
+    "finalAnswer": "$\\boxed{\\frac{11mg}{6k}}$ (choice E)",
+    "shortExplanation": "The joined pulleys descend while the lower spring's upper end rises. Their combined rope constraint makes the block descend $11mg/(6k)$.",
+    "detailedSteps": [
+      "Let $T$ be the lower rope tension. The joined massless pulley assembly has two lower-rope forces totaling $2T$ downward. The two upper-rope tensions therefore each equal $T$. Doubling the block mass increases all these tensions by $\\Delta T=mg$.",
+      "The two upper springs stretch by $mg/k$ and $mg/(2k)$. The upper rope length is fixed, so the joined pulley centers descend by their average, $\\Delta y_p=3mg/(4k)$.",
+      "The $3k$ spring is anchored below. Its upper attachment moves upward by $mg/(3k)$, which is $\\Delta y_s=-mg/(3k)$ when downward is positive.",
+      "For the lower rope, $\\Delta y_s+\\Delta y_b-2\\Delta y_p=0$. Hence $\\Delta y_b=2\\Delta y_p-\\Delta y_s=3mg/(2k)+mg/(3k)=11mg/(6k)$ downward."
+    ],
+    "keyIdeas": [
+      "Combine force balance with both constant rope lengths"
+    ],
+    "commonMistakes": [
+      "Treating the top springs as a simple parallel pair, or forgetting that the lower spring is anchored to the floor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the change between static equilibria is requested; a transient oscillation amplitude is a different quantity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p18",
+    "problemId": "fma-2024-p18",
+    "finalAnswer": "$\\boxed{0.15\\sqrt{\\frac{GM}{R}}}$ (choice B)",
+    "shortExplanation": "The new periapsis speed is $\\sqrt{4GM/(3R)}$, so the required increase is approximately $0.15\\sqrt{GM/R}$.",
+    "detailedSteps": [
+      "The instantaneous tangential speed increase places the original circular-orbit point at the new periapsis. The periapsis and apoapsis distances are $R$ and $2R$, so $a=(R+2R)/2=3R/2$.",
+      "Use energy per unit mass: $v^2/2-GM/R=-GM/(2a)$. This gives $v^2=GM(2/R-1/a)=4GM/(3R)$.",
+      "The old circular speed is $v_c=\\sqrt{GM/R}$. Therefore $\\Delta v=(2/\\sqrt3-1)\\sqrt{GM/R}\\approx0.1547\\sqrt{GM/R}$, matching the listed $0.15$ coefficient."
+    ],
+    "keyIdeas": [
+      "Identify periapsis and semimajor axis after a tangential speed increase"
+    ],
+    "commonMistakes": [
+      "Using the new orbital speed itself as the requested speed increase, or using apoapsis as the semimajor axis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An instantaneous tangential burn changes energy and angular momentum while leaving the current position unchanged.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p19",
+    "problemId": "fma-2024-p19",
+    "finalAnswer": "$\\boxed{\\sqrt{\\frac{g}{3R}}}$ (choice A)",
+    "shortExplanation": "The wheel has inertia $3mR^2$ and restoring torque approximately $-mgR\\theta$, giving frequency $\\sqrt{g/(3R)}$.",
+    "detailedSteps": [
+      "The thin rim contributes $mR^2$. A uniform radial spoke of mass $\\mu$ contributes $\\mu R^2/3$ about the center. The total spoke mass is $6m$, so all spokes contribute $2mR^2$. Thus $I=3mR^2$.",
+      "The equal horizontal spokes have canceling gravitational moments. The vertical pair has a mass difference $2m$ acting at each spoke's midpoint radius $R/2$, leaving gravitational mass moment $mR$.",
+      "The restoring torque is $-mgR\\sin\\theta\\approx-mgR\\theta$. Therefore $I\\ddot\\theta=-mgR\\theta$, so $\\omega^2=mgR/I=g/(3R)$."
+    ],
+    "keyIdeas": [
+      "Calculate both the moment of inertia and the gravitational mass moment"
+    ],
+    "commonMistakes": [
+      "Treating each uniformly distributed spoke as a point mass at its outer end."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The balanced parts still contribute inertia even when they contribute no restoring torque.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p20",
+    "problemId": "fma-2024-p20",
+    "finalAnswer": "$\\boxed{2\\pi\\sqrt{\\frac{m}{2k}}}$ (choice B)",
+    "shortExplanation": "The symmetric shape mode has effective mass $4m$ and effective spring constant $8k$, so its period is $2\\pi\\sqrt{m/(2k)}$.",
+    "detailedSteps": [
+      "Place the vertices at $(\\pm a,0)$ and $(0,\\pm b)$. The four fixed-length rods impose $a^2+b^2=L^2$. At the square, $a=b=a_0$.",
+      "Write $a=a_0+q$ for a small deformation. Differentiating the constraint at the square gives $b-a_0=-q+O(q^2)$. The two diagonal extensions are consequently $2q$ and $-2q$ to first order.",
+      "The spring energy is $U=\\tfrac12k(2q)^2+\\tfrac12k(-2q)^2=4kq^2$. The four masses have speed magnitude $|\\dot q|$ to first order, giving $K=\\tfrac12(4m)\\dot q^2=2m\\dot q^2$.",
+      "Thus $m_{\\mathrm{eff}}=4m$ and $k_{\\mathrm{eff}}=8k$. The frequency is $\\omega=\\sqrt{2k/m}$, and the period is $2\\pi\\sqrt{m/(2k)}$."
+    ],
+    "keyIdeas": [
+      "Keep all four vertex kinetic energies and both diagonal spring energies"
+    ],
+    "commonMistakes": [
+      "Including only the two compressed-diagonal masses, or letting the other diagonal stay unchanged."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetric compression selects the shape mode; rigid translation and overall rotation are separate unexcited motions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p21",
+    "problemId": "fma-2024-p21",
+    "finalAnswer": "$\\boxed{\\frac{\\rho v^2A_1^3}{2A_2^2}}$ (choice D)",
+    "shortExplanation": "The narrow outlet makes the water speed about $vA_1/A_2$. The associated pressure difference gives $F\\approx\\rho v^2A_1^3/(2A_2^2)$.",
+    "detailedSteps": [
+      "Continuity gives $A_1v=A_2u$, where $u$ is the outlet speed. Hence $u=vA_1/A_2$.",
+      "For the stated steady, negligible-viscosity flow at essentially equal height, Bernoulli gives excess body pressure $p=\\tfrac12\\rho(u^2-v^2)$ above the free-outlet pressure.",
+      "The plunger force is $F=pA_1=\\tfrac12\\rho v^2A_1[(A_1/A_2)^2-1]$. Since $A_2\\ll A_1$, the last term is negligible and $F\\approx\\rho v^2A_1^3/(2A_2^2)$."
+    ],
+    "keyIdeas": [
+      "Use continuity and Bernoulli before finding plunger force"
+    ],
+    "commonMistakes": [
+      "Using the jet's momentum flux as the plunger force; the support holding the syringe supplies additional forces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The approximation discards a relative correction of order $(A_2/A_1)^2$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p22",
+    "problemId": "fma-2024-p22",
+    "finalAnswer": "$\\boxed{4\\pi G\\sigma}$ (choice D)",
+    "shortExplanation": "The inside field is zero and the outside limiting field is $4\\pi G\\sigma$, so that is the acceleration difference.",
+    "detailedSteps": [
+      "For shell radius $R$, the mass is $M=4\\pi R^2\\sigma$.",
+      "The shell theorem gives zero gravitational field everywhere strictly inside the uniform spherical shell.",
+      "Just outside, the field tends to $GM/R^2=4\\pi G\\sigma$. The magnitude difference between the two near-surface limits is therefore $4\\pi G\\sigma$."
+    ],
+    "keyIdeas": [
+      "Apply the shell theorem to the two one-sided surface limits"
+    ],
+    "commonMistakes": [
+      "Using a solid-sphere mass formula or taking an average field on the material sheet instead of the two limiting fields."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The radius cancels because shell mass grows as area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p23",
+    "problemId": "fma-2024-p23",
+    "finalAnswer": "$\\boxed{1.7\\,\\mathrm{m}}$ (choice D)",
+    "shortExplanation": "The moving-paddle restitution condition gives a rebound speed near $5.83\\,\\mathrm{m/s}$, corresponding to about $1.7\\,\\mathrm{m}$ above the impact level.",
+    "detailedSteps": [
+      "Let $e$ be the coefficient of restitution. A stationary-paddle rebound to half the drop height gives $e^2=1/2$, so $e=1/\\sqrt2$.",
+      "In a steady bounce, let $u$ be both the incoming downward speed and the outgoing upward speed. The paddle has upward speed $V=1.0\\,\\mathrm{m/s}$ at impact.",
+      "Relative to the paddle, the incoming speed is $u+V$ and the outgoing speed is $u-V$. Restitution gives $u-V=e(u+V)$.",
+      "Solving, $u=(1+e)V/(1-e)=(3+2\\sqrt2)V\\approx5.83\\,\\mathrm{m/s}$. Thus the height above the impact level is $h=u^2/(2g)\\approx1.70\\,\\mathrm{m}$."
+    ],
+    "keyIdeas": [
+      "Use collision speeds relative to the paddle and impose a steady bounce"
+    ],
+    "commonMistakes": [
+      "Setting restitution equal to the rebound-height ratio, or applying it to ground-frame rather than paddle-frame speeds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The steady bounce compares repeated impacts at the same paddle level; it does not fix an absolute height above an unspecified floor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p24",
+    "problemId": "fma-2024-p24",
+    "finalAnswer": "$\\boxed{R\\frac{\\rho_s}{\\rho_f}}$ (choice B)",
+    "shortExplanation": "The displacement at half terminal speed is a fixed multiple of mass divided by the drag coefficient, scaling as $R\\rho_s/\\rho_f$.",
+    "detailedSteps": [
+      "Write the drag force as $\\beta v^2$, with $\\beta\\propto\\rho_fR^2$. The sphere mass scales as $m\\propto\\rho_sR^3$. Because $\\rho_s\\gg\\rho_f$, buoyancy is negligible at leading order.",
+      "The terminal-speed condition is $\\beta v_t^2=mg$. The equation of motion can be written $v\\,dv/dx=g(1-v^2/v_t^2)$.",
+      "Integrating from rest gives $x=-\\frac{v_t^2}{2g}\\ln(1-v^2/v_t^2)$. At $v=v_t/2$, $x=\\frac{v_t^2}{2g}\\ln(4/3)=\\frac{m}{2\\beta}\\ln(4/3)$.",
+      "The logarithm is a dimensionless constant, so $x\\propto m/\\beta\\propto R\\rho_s/\\rho_f$."
+    ],
+    "keyIdeas": [
+      "Integrate velocity versus displacement at a fixed fraction of terminal speed"
+    ],
+    "commonMistakes": [
+      "Inferring displacement directly from the terminal-speed scaling without also accounting for the acceleration scale."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed fraction of terminal speed makes the dimensionless logarithmic factor identical in every scaled setup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-fma-2024-p25",
+    "problemId": "fma-2024-p25",
+    "finalAnswer": "$\\boxed{\\text{none of A--D}}$ (choice E)",
+    "shortExplanation": "The descent initially accelerates downward, but the diminishing winding radius later makes the yo-yo slow its downward motion. None of the listed always-downward descriptions fits.",
+    "detailedSteps": [
+      "Let $h$ be downward displacement, $r$ the effective winding radius and $M$ the total disk mass. Uniform disks have moment of inertia $I=MR^2/2$; write $\\kappa=I/M=R^2/2$. No-slip unwinding gives $v=r\\omega$.",
+      "Energy conservation gives $Mgh=\\tfrac12Mv^2+\\tfrac12I\\omega^2$, hence $v^2=2ghr^2/(r^2+\\kappa)$. Treating $r$ as constant would discard the main feature of the thick winding.",
+      "For many tightly packed turns with radial layer thickness $\\delta$, string length released is approximately $h=\\pi(R^2-r^2)/\\delta$. Thus $r^2=R^2-\\lambda h$, where $\\lambda=\\delta/\\pi$. This smooth many-turn approximation is valid away from microscopic layer changes.",
+      "Using $a=\\tfrac12\\,d(v^2)/dh$ and substituting that radius relation gives $$a=g\\frac{r^4+2\\kappa r^2-\\kappa R^2}{(r^2+\\kappa)^2}.$$",
+      "At release $r=R$, this is $2g/3$ downward. Already at $r=R/2$, well before a thin axle is reached, it is $-g/3$: acceleration points upward while the velocity remains downward.",
+      "The physical reason is that an ever smaller lever arm shifts more of the energy into rotation and eventually reduces translational speed. The acceleration cannot remain downward throughout, so the correct choice is E."
+    ],
+    "keyIdeas": [
+      "Retain the changing winding radius in the energy and no-slip equations"
+    ],
+    "commonMistakes": [
+      "Using the constant-axle-radius acceleration formula throughout, or confusing upward acceleration with upward velocity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source specifies a thick string with many turns and a thin axle. The smooth winding model exposes the robust sign change without asserting microscopic layer changes are literally continuous.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

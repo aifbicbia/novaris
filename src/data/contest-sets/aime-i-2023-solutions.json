@@ -1,0 +1,373 @@
+[
+  {
+    "id": "solution-aime-i-2023-p1",
+    "problemId": "aime-i-2023-p1",
+    "finalAnswer": "$\\boxed{191}$",
+    "shortExplanation": "Count the occupied positions of the five men, grouping the circle into opposite pairs.",
+    "detailedSteps": [
+      "The fourteen positions form seven diametrically opposite pairs. The set of five positions occupied by men is uniformly distributed among $\\binom{14}{5}=2002$ possibilities.",
+      "The required event means choosing five different opposite pairs and one position from each. Its count is $\\binom75 2^5=672$.",
+      "The probability reduces to $672/2002=48/143$, so the requested sum is $48+143=191$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Opposite pairs and probability"
+    ],
+    "commonMistakes": [
+      "Choosing opposite pairs without choosing which member of each pair holds the man misses a factor of 32.",
+      "The order of the nine women does not affect this event and cancels out."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reducing to gender-position subsets removes irrelevant permutations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p2",
+    "problemId": "aime-i-2023-p2",
+    "finalAnswer": "$\\boxed{881}$",
+    "shortExplanation": "A single logarithm substitution makes both equations elementary.",
+    "detailedSteps": [
+      "Put $u=\\log_b n$. The first equation gives $\\sqrt u=u/2$, with $u\\ge0$, hence $u(u-4)=0$.",
+      "The second equation becomes $bu=1+u$. Therefore $u=0$ is impossible, and $u=4$ forces $b=5/4$.",
+      "Now $n=b^u=(5/4)^4=625/256$. These numerator and denominator are coprime, so their sum is $881$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithmic substitution"
+    ],
+    "commonMistakes": [
+      "Squaring produces u=0, but that root must still satisfy the other equation.",
+      "The logarithm of bn is 1 plus the logarithm of n, not b plus it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second equation removes the extra root introduced by the first equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p3",
+    "problemId": "aime-i-2023-p3",
+    "finalAnswer": "$\\boxed{607}$",
+    "shortExplanation": "Count intersecting pairs of lines instead of treating every intersection as a simple crossing.",
+    "detailedSteps": [
+      "Every pair of distinct lines meets, so the total number of line pairs is $\\binom{40}{2}=780$.",
+      "A point containing exactly $k$ lines accounts for $\\binom k2$ pairs. The specified multiple intersections account for $3\\binom32+4\\binom42+5\\binom52+6\\binom62=173$ pairs.",
+      "Every remaining pair belongs to an intersection with exactly two lines. Thus there are $780-173=607$ such points."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Counting line pairs"
+    ],
+    "commonMistakes": [
+      "At a six-line intersection there are 15 pairs of lines, not six.",
+      "Subtract all pairs belonging to higher-multiplicity points, since those points are not part of the requested count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Double counting turns a geometric configuration into a short arithmetic calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p4",
+    "problemId": "aime-i-2023-p4",
+    "finalAnswer": "$\\boxed{12}$",
+    "shortExplanation": "The square condition fixes the parity of every exponent in the divisor; sum the allowed choices by multiplication.",
+    "detailedSteps": [
+      "Prime factorization gives $13!=2^{10}3^5 5^2 7\\cdot11\\cdot13$. For $13!/m$ to be an integer square, $m$ divides $13!$ and its exponent at each prime has the same parity as the corresponding exponent in $13!$.",
+      "The required sum of all such $m$ is therefore $(1+2^2+2^4+2^6+2^8+2^{10})(3+3^3+3^5)(1+5^2)7\\cdot11\\cdot13$.",
+      "The three parenthesized sums are $1365=3\\cdot5\\cdot7\\cdot13$, $273=3\\cdot7\\cdot13$, and $26=2\\cdot13$.",
+      "The total has factorization $2^1 3^2 5^1 7^3 11^1 13^4$. Adding the six exponents gives $1+2+1+3+1+4=12$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Parity of prime exponents"
+    ],
+    "commonMistakes": [
+      "The condition concerns the quotient 13!/m, so m need not itself be a square.",
+      "The question asks for prime exponents in the sum of all qualifying m, not in a single qualifying divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product of short geometric sums avoids listing the 36 admissible divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p5",
+    "problemId": "aime-i-2023-p5",
+    "finalAnswer": "$\\boxed{106}$",
+    "shortExplanation": "Use the two diagonals as coordinate axes to connect the chord products by the circle equation.",
+    "detailedSteps": [
+      "Let the circumradius be $R$ and place the perpendicular diagonals $AC$ and $BD$ on the coordinate axes through the center. Write $P=(u,v)$, so $u^2+v^2=R^2$.",
+      "Because $AC$ is a diameter, triangle $APC$ is right-angled at $P$. Equating its area from the perpendicular legs and from base $AC=2R$ gives $PA\\cdot PC=2R|v|$. Similarly $PB\\cdot PD=2R|u|$.",
+      "Squaring and adding yields $56^2+90^2=4R^2(u^2+v^2)=4R^4$. The square has area $2R^2$, so its area is $\\sqrt{56^2+90^2}=\\sqrt{11236}=106$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Products of chords"
+    ],
+    "commonMistakes": [
+      "The two products are perpendicular components of the area expression; add their squares, not the products themselves.",
+      "A square of circumradius R has area 2R²."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Thales’ theorem gives a convenient relationship between chord products and distances to the diagonals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p6",
+    "problemId": "aime-i-2023-p6",
+    "finalAnswer": "$\\boxed{51}$",
+    "shortExplanation": "Guess the more numerous remaining color; a recurrence then computes the expected score exactly.",
+    "detailedSteps": [
+      "Guessing does not change the remaining deck, so the best immediate guess also maximizes the total expected score. With $r$ red and $b$ black cards remaining, guess whichever color has the larger count.",
+      "Let $E(r,b)$ be the expected future number of correct guesses. The boundary values are $E(r,0)=r$ and $E(0,b)=b$. For $r+b>0$, conditioning on the next card gives $$E(r,b)=\\frac{\\max(r,b)}{r+b}+\\frac{rE(r-1,b)+bE(r,b-1)}{r+b},$$ with zero-coefficient terms omitted.",
+      "Using symmetry, the needed entries are $E(1,1)=3/2$, $E(1,2)=7/3$, $E(1,3)=13/4$, $E(2,2)=17/6$, and $E(2,3)=18/5$.",
+      "Thus $E(3,3)=1/2+E(2,3)=41/10$. The numerator and denominator sum to $51$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Optimal prediction and expectation"
+    ],
+    "commonMistakes": [
+      "The optimal guess adapts after each revealed card.",
+      "A correct or incorrect guess does not alter the deck distribution, so no future reward is sacrificed by choosing the currently more likely color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The state needs only the counts of the two remaining colors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p7",
+    "problemId": "aime-i-2023-p7",
+    "finalAnswer": "$\\boxed{49}$",
+    "shortExplanation": "First compare remainders for divisors of twelve, then add the condition modulo five.",
+    "detailedSteps": [
+      "The remainder modulo $4$ must differ from the remainder modulo $2$, so they differ by $2$. The remainder modulo $6$ must differ from the remainder modulo $3$, so they differ by $3$.",
+      "Checking the twelve residue classes modulo $12$ under these two constraints and the remaining distinctness conditions leaves only $n\\equiv10$ and $n\\equiv11\\pmod{12}$. Their remainder lists for divisors $2,3,4,6$ are respectively $(0,1,2,4)$ and $(1,2,3,5)$.",
+      "For the first class, the remainder modulo $5$ must be $3$, giving $n\\equiv58\\pmod{60}$. For the second class it may be $0$ or $4$, giving $n\\equiv35$ or $59\\pmod{60}$.",
+      "Below $1000$, the class $35$ contributes $17$ values, ending at $995$; the classes $58$ and $59$ contribute $16$ each. The total is $17+16+16=49$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Compatible remainders"
+    ],
+    "commonMistakes": [
+      "Remainders for 2 and 4, and for 3 and 6, are linked; they cannot be chosen independently.",
+      "The upper limit is strict: count only positive integers below 1000."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A short modular table replaces a search through all 999 integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p8",
+    "problemId": "aime-i-2023-p8",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "Recover the inradius from the parallel sides, then use coordinates to determine the acute angle.",
+    "detailedSteps": [
+      "The distances to the parallel lines $DA$ and $BC$ sum to their separation, so the altitude of the rhombus is $9+16=25$ and its inradius is $R=25/2$.",
+      "Put the incenter at the origin and $AB$ on $y=-25/2$. The distance from $P$ to $AB$ is $5$, so $P=(u,-15/2)$. Since $P$ lies on the incircle, $u^2+(15/2)^2=(25/2)^2$, giving $u=\\pm10$.",
+      "Let $\\alpha=\\angle BAD$, where $0<\\alpha<90^\\circ$. The inward unit normal to $DA$ is $(\\sin\\alpha,-\\cos\\alpha)$. Its signed distance equation gives $u\\sin\\alpha+(15/2)\\cos\\alpha=9-25/2=-7/2$. Positivity excludes $u=10$, so $20\\sin\\alpha-15\\cos\\alpha=7$.",
+      "Writing $s=\\sin\\alpha$ and using $\\cos^2\\alpha=1-s^2$ yields $625s^2-280s-176=(5s-4)(125s+44)=0$. The positive root is $s=4/5$, and $\\cos\\alpha=3/5$ satisfies the unsquared equation.",
+      "The side length is $25/\\sin\\alpha=125/4$, so the perimeter is $125$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Incircle distances"
+    ],
+    "commonMistakes": [
+      "The distances to DA and BC determine the altitude, not the side length.",
+      "Keep the acute-angle restriction when selecting signs and roots.",
+      "The coordinates of P have two possible horizontal signs; the distance to DA selects one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circle equation and one signed line distance give the angle without needing a source diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p9",
+    "problemId": "aime-i-2023-p9",
+    "finalAnswer": "$\\boxed{738}$",
+    "shortExplanation": "Factor out the known root and classify how a monic quadratic can supply exactly one other integer root.",
+    "detailedSteps": [
+      "The constant $c$ cancels: $$p(x)-p(2)=(x-2)\\bigl(x^2+(a+2)x+2a+b+4\\bigr).$$ Let the quadratic factor be $q(x)$. If a monic integer quadratic has one integer root, its other root is also an integer.",
+      "Exactly one integer root different from $2$ occurs in either of two disjoint cases: $q(x)=(x-2)(x-r)$ with $r\\ne2$, or $q(x)=(x-r)^2$ with $r\\ne2$.",
+      "In the first case coefficient comparison gives $a=-r-4$ and $b=4r+4$. The bounds on $a,b$ leave $-6\\le r\\le4$; excluding $r=2$ gives $10$ pairs.",
+      "In the second case, $a=-2r-2$ and $b=r^2+4r=(r+2)^2-4$. The bounds give $-6\\le r\\le2$; excluding $2$ gives $8$ pairs.",
+      "There are $18$ admissible pairs $(a,b)$, and each permits all $41$ values of $c$. Hence the number of polynomials is $18\\cdot41=738$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Integer roots of a cubic"
+    ],
+    "commonMistakes": [
+      "A repeated root counts as one integer value of m.",
+      "The ever-present root x=2 is excluded by the question.",
+      "The constant coefficient is unrestricted within the stated range and contributes a factor of 41."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integrality of both quadratic roots makes the two-case classification exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p10",
+    "problemId": "aime-i-2023-p10",
+    "finalAnswer": "$\\boxed{944}$",
+    "shortExplanation": "Find the value that cancels the unfloored sum, then sum the small periodic remainders.",
+    "detailedSteps": [
+      "Let $S=\\sum_{n=1}^{2023}n=2023\\cdot1012$. Since $\\sum n^2/S=(2\\cdot2023+1)/3=1349$, the sum without floors equals $S(1349-a)/5$.",
+      "Taking floors decreases that raw sum by less than $2023$. If the integer $a\\ne1349$, the raw sum has magnitude at least $S/5>409000$, so the floor sum cannot lie between $-1000$ and $1000$. Thus $a=1349$.",
+      "Now $a\\equiv4\\pmod5$. For residues $n\\equiv0,1,2,3,4\\pmod5$, the least nonnegative residues of $n^2-an$ are $0,2,1,2,0$.",
+      "There are $404$ complete blocks of five terms and three additional terms with residues $2,1,2$. The total remainder is $404\\cdot5+5=2025$. Since the raw sum is zero, $U=-2025/5=-405$.",
+      "The requested value is $a+U=1349-405=944$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Floor sums"
+    ],
+    "commonMistakes": [
+      "For negative terms, the floor is not truncation toward zero; use the nonnegative remainder formula.",
+      "After 404 complete periods, three terms remain."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A bound proves uniqueness before the periodic residue computation gives the exact sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p11",
+    "problemId": "aime-i-2023-p11",
+    "finalAnswer": "$\\boxed{235}$",
+    "shortExplanation": "Represent a subset by a binary string; exactly one adjacent pair means exactly one run of length two.",
+    "detailedSteps": [
+      "If a valid subset has $k$ elements, its selected positions form one run of length $2$ and $k-2$ runs of length $1$. Thus there are $k-1$ runs, and $k-1$ choices for the location of the length-two run in their order.",
+      "The string has $10-k$ zeroes. At least one zero is required in each of the $k-2$ internal gaps. After placing these, $12-2k$ zeroes remain to distribute among $k$ gaps, including the two end gaps.",
+      "By stars and bars, the count for this $k$ is $(k-1)\\binom{11-k}{k-1}$. Feasibility gives $2\\le k\\le6$.",
+      "The counts for $k=2,3,4,5,6$ are $9,56,105,60,5$, respectively. Their sum is $235$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Runs in binary strings"
+    ],
+    "commonMistakes": [
+      "A run of three selected consecutive integers contains two adjacent pairs and is not allowed.",
+      "Do not force a zero before the first or after the last run."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguishing the unique length-two run gives a direct count by subset size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p12",
+    "problemId": "aime-i-2023-p12",
+    "finalAnswer": "$\\boxed{75}$",
+    "shortExplanation": "Write the three equal-angle rays in coordinates; eliminating the intersection point determines the common tangent.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $B=(55,0)$, $C=(55/2,55\\sqrt3/2)$, and write $P=(x,\\sqrt3 y)$. The given side divisions give $F=(40,0)$, $E=(25/2,25\\sqrt3/2)$, and $D=(103/2,7\\sqrt3/2)$.",
+      "Let the common angle be $\\theta$ and put $k=\\tan\\theta/\\sqrt3$. The three rays point into the triangle. Rotating the side directions $FB$, $EA$, and $DC$ counterclockwise by $\\theta$, or using their dot and cross products, gives $$y=k(x-40),$$ $$-x+y+k(-x-3y+50)=0,$$ $$x+y-55+k(-x+3y+41)=0.$$",
+      "Substitute the first equation into the other two and simplify. They become $(1+3k^2)x=120k^2+10k$ and $(1+3k^2)x=120k^2+55-k$. Hence $11k=55$ and $k=5$.",
+      "The exceptional case $\\theta=90^\\circ$ cannot occur: the first ray would give $x=40$, while the other two would require $x+3y=50$ and $-x+3y+41=0$, which are incompatible at $x=40$.",
+      "For $k=5$, the intersection is $P=(1525/38,25\\sqrt3/38)$ in ordinary coordinates. It lies inside the triangle, and all three ray dot products have the positive sign corresponding to the same acute angle. Thus the requested value is $\\tan^2\\theta=3k^2=75$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Concurrent equal-angle rays"
+    ],
+    "commonMistakes": [
+      "The reference directions are EA, FB, and DC, not their opposites.",
+      "A tangent parameter excludes a right angle, so that case must be checked separately.",
+      "Concurrency of three arbitrary lines is not sufficient; the rays must point into the triangle with the specified angles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Careful signed angle equations reduce a geometry concurrency condition to a linear equation in the tangent parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p13",
+    "problemId": "aime-i-2023-p13",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The face diagonals fix all edge lengths and the magnitudes of the pairwise dot products.",
+    "detailedSteps": [
+      "Let the three edge vectors at one vertex be $u,v,w$. For a rhombus, the squared side length is one quarter of the sum of the squared diagonal lengths. Therefore $|u|^2=|v|^2=|w|^2=(21+31)/4=13$.",
+      "The face diagonals are $u+v$ and $u-v$, and their squared lengths differ by $4u\\cdot v$. Consequently every pairwise dot product has magnitude $(31-21)/4=5/2$.",
+      "Write these dot products as $h_1,h_2,h_3$. The squared volume is the Gram determinant $$V^2=13^3-13(h_1^2+h_2^2+h_3^2)+2h_1h_2h_3.$$ Each $h_i=\\pm5/2$, so the two possible values are $2197-975/4\\pm125/4$, namely $3969/2$ and $3844/2$.",
+      "Both types exist: choosing all three dot products as $5/2$ or all as $-5/2$ gives positive definite Gram matrices. Their eigenvalues are $(18,21/2,21/2)$ and $(8,31/2,31/2)$, respectively.",
+      "The ratio of the larger volume to the smaller is $\\sqrt{3969/3844}=63/62$. Thus the numerator and denominator sum to $125$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Gram determinants and volume"
+    ],
+    "commonMistakes": [
+      "A Gram determinant is the square of the volume, so take the square root when forming the requested ratio.",
+      "The signs of the pairwise dot products distinguish the two shapes even though their face diagonals agree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The determinant packages the three-dimensional geometry into a calculation using only dot products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p14",
+    "problemId": "aime-i-2023-p14",
+    "finalAnswer": "$\\boxed{608}$",
+    "shortExplanation": "The requirement of one incoming move at every state forces a twelve-step pattern, whose displacement must generate all twelve positions on a layer.",
+    "detailedSteps": [
+      "Label the two hand positions by $(i,j)\\in(\\mathbb Z/12\\mathbb Z)^2$, using $0$ for the initial position. A move increases exactly one coordinate by $1$. A valid sequence is one directed cycle through all $144$ states.",
+      "Let $e(i,j)=1$ when the chosen outgoing move increases the first coordinate, and $0$ otherwise. At state $(i,j)$, the incoming choices have indicators $e(i-1,j)$ and $1-e(i,j-1)$. Exactly one predecessor requires $e(i-1,j)=e(i,j-1)$.",
+      "Thus the move is constant along each layer $i+j\\pmod{12}$. A valid move rule is determined by a binary word of length $12$, and the same word repeats as the state moves through the layers.",
+      "If the word has $h$ first-coordinate moves, one full period displaces a state by $(h,12-h)\\equiv(h,-h)\\pmod{12}$. This translation has order $12/\\gcd(h,12)$. Hence the resulting cycle has length $12\\cdot12/\\gcd(h,12)$ and visits all $144$ states exactly when $\\gcd(h,12)=1$.",
+      "The allowable values of $h$ are $1,5,7,11$. The initial state fixes the first layer, so no rotation factor is needed. The number of sequences is $\\binom{12}{1}+\\binom{12}{5}+\\binom{12}{7}+\\binom{12}{11}=1608$.",
+      "The requested remainder upon division by $1000$ is $608$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Cycles on a modular grid"
+    ],
+    "commonMistakes": [
+      "The two hands are distinct coordinates, even when they point to the same number.",
+      "Do not multiply by 12 for possible starting layers; the initial hand positions already fix the start.",
+      "Returning after 144 moves is not enough unless all intermediate states are distinct."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The one-predecessor condition is the key structural constraint; checking only the total number of moves would overcount.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2023-p15",
+    "problemId": "aime-i-2023-p15",
+    "finalAnswer": "$\\boxed{349}$",
+    "shortExplanation": "Reduce the search to a rigorously bounded set of integer pairs, and test the exact triangle inequality.",
+    "detailedSteps": [
+      "Write $z=a+bi$. Then $p=a^2+b^2$, and $z^3=A+Bi$ with $A=a(a^2-3b^2)$ and $B=b(3a^2-b^2)$. Multiplication by a unit and conjugation change only the signs or order of $A,B$, so existence can be tested using $a\\ge b\\ge0$ and the side candidates $p,|A|,|B|$.",
+      "For $p>1$, $A^2+B^2=p^3$, so $|A|+|B|\\ge p^{3/2}>p$. The remaining triangle requirement is exactly $\\bigl||A|-|B|\\bigr|<p$; it also excludes a zero component.",
+      "The pair $(a,b)=(18,5)$ gives $p=349$, $A=4482$, and $B=4735$. Since $4735-4482=253<349<4482+4735$, it forms a triangle. The number $349$ has no prime divisor among $2,3,5,7,11,13,17$, so it is prime.",
+      "To prove maximality, any larger candidate has $350\\le a^2+b^2\\le999$, so $14\\le a\\le31$. The case $a=b$ gives composite $p=2a^2$, and $b=0$ gives a square. It remains to check $1\\le b<a$ and $b\\le\\lfloor\\sqrt{999-a^2}\\rfloor$.",
+      "An exhaustive integer check of the exact inequality in this finite range leaves only the pairs $(19,5),(22,6),(23,6),(26,7),(27,7),(29,8),(30,8)$. Their values of $a^2+b^2$ are $386,520,565,725,778,905,964$, respectively. Every value is even or divisible by $5$, hence composite.",
+      "The finite upper-range check can be reproduced with the following Python code. It prints exactly the seven pairs listed above; each surviving norm is composite.\n\n```python\ncandidates = []\nfor a in range(14, 32):\n    for b in range(1, a):\n        p = a*a + b*b\n        real = a*(a*a - 3*b*b)\n        imag = b*(3*a*a - b*b)\n        if 349 < p < 1000 and abs(abs(real) - abs(imag)) < p:\n            candidates.append((a, b, p))\nprint(candidates)\nassert all(p % 2 == 0 or p % 5 == 0 for a, b, p in candidates)\n```",
+      "Therefore the largest admissible prime is $349$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Gaussian integers and triangle inequalities"
+    ],
+    "commonMistakes": [
+      "The real and imaginary parts used as side lengths must be positive; the unit/conjugation symmetry justifies the absolute-value reduction.",
+      "The strict triangle inequality excludes degenerate triangles.",
+      "Finding one working prime is not a proof that it is the largest; the upper range must be exhausted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "This solution includes a finite exhaustive arithmetic proof of maximality, with the exact bounds and complete surviving candidate list supplied for reproduction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

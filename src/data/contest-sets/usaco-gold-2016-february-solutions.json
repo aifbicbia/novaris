@@ -1,0 +1,103 @@
+[
+  {
+    "finalAnswer": "Cut the circle immediately after a minimum cumulative surplus, then fill rooms clockwise with the earliest waiting cows. Sum the squares of their traveled distances.",
+    "shortExplanation": "A minimum-surplus cut makes every forward prefix contain enough cows for its rooms. Some optimum has no cow crossing this cut. On the resulting line, assigning older waiting cows first minimizes the convex squared-distance cost.",
+    "detailedSteps": [
+      "Let $c_i$ be the arrivals at room $i$. There are exactly $n$ cows and $n$ target rooms. Define the cumulative surplus $$S_i=\\sum_{j=1}^{i}(c_j-1),\\qquad S_0=S_n=0.$$ Choose a minimum of these values and start immediately after it. Every prefix in the rotated order has nonnegative surplus, so there is always a cow available when the next room is filled.",
+      "To justify this cut globally, let $f_i$ count cow paths crossing the clockwise wall after room $i$. Conservation gives $f_i-f_{i-1}=c_i-1$, hence $f_i=S_i+C$ for one constant. We next show that an optimum has at least one wall with zero flow, so its flow vector is $f_i=S_i-\\min S$. Every minimum-surplus wall is then unused by that optimum.",
+      "No cow needs a full extra circuit: the shorter clockwise path reaches the same destination with less energy. If paths nevertheless covered every wall, take an inclusion-minimal cover by these proper clockwise arcs. Its starts and ends occur in matching cyclic order, with consecutive arcs overlapping or touching. Rotate their destinations backward: each selected cow stops at the preceding arc's endpoint, which lies earlier on its own path. Destinations remain distinct, every selected path shortens, and all other cows are unchanged. This strictly lowers the squared energy, contradicting optimality. Thus some wall is unused.",
+      "On the line obtained from the chosen unused wall, add each room's arriving cows to a queue and assign the next room the oldest waiting cow. The surplus condition guarantees that the queue is nonempty. At the end, exactly n cows have been assigned, with no crossing of the cut.",
+      "Why FIFO? Suppose an older origin $a$ is assigned to a later room $y$, while a younger origin $b\\ge a$ is assigned to an earlier room $x$, with $b\\le x\\le y$. Exchanging their destinations is feasible, and the old cost minus the new cost is $$ (y-a)^2+(x-b)^2-(x-a)^2-(y-b)^2=2(b-a)(y-x)\\ge0.$$ Removing inversions therefore produces FIFO without increasing cost. Since a global optimum respects this cut, FIFO attains the global minimum.",
+      "Store each queued cow's origin in the rotated order. When it is placed at position $p$, add $(p-\\text{origin})^2$ using 64-bit arithmetic. There are only $n$ queue insertions and removals because the arrival counts sum to $n$. The algorithm takes $O(n)$ time and $O(n)$ space, reading `cbarn.in` and writing one energy value to `cbarn.out`.",
+      "Original C++17 implementation:\n\n```cpp\n#include <cstdio>\n#include <deque>\n#include <iostream>\n#include <vector>\nint main() {\n    std::freopen(\"cbarn.in\",\"r\",stdin);\n    std::freopen(\"cbarn.out\",\"w\",stdout);\n    std::ios::sync_with_stdio(false);std::cin.tie(nullptr);\n    int n;if(!(std::cin>>n))return 0;\n    std::vector<int> count(n);\n    int balance=0,minimum=0,start=0;\n    for(int i=0;i<n;++i){std::cin>>count[i];balance+=count[i]-1;if(balance<minimum){minimum=balance;start=(i+1)%n;}}\n    std::deque<int> waiting;\n    long long energy=0;\n    for(int position=0;position<n;++position){\n        for(int cows=count[(start+position)%n];cows>0;--cows)waiting.push_back(position);\n        const long long distance=position-waiting.front();waiting.pop_front();\n        energy+=distance*distance;\n    }\n    std::cout<<energy<<'\\n';return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Cumulative surplus identifies a feasible cut with zero optimal flow.",
+      "Shortening a circular arc cover rules out unnecessary circulation.",
+      "An exchange argument proves FIFO optimal for squared distances."
+    ],
+    "commonMistakes": [
+      "Choosing a maximum surplus instead of a minimum, which can leave an empty queue before a room is filled.",
+      "Using linear distance rather than its square.",
+      "Taking the newest cow first without checking the convex-cost exchange.",
+      "Assuming each arrival count has a smaller bound from another division, or accumulating the energy in 32 bits."
+    ],
+    "alternativeMethods": [
+      "For a small instance, assign the individual origin cows to all target rooms using a subset matching DP with literal modular squared costs. This provides a separate global oracle without assuming the cut or FIFO rule.",
+      "Trying every possible cut with a queue is a useful small-case check, but the minimum-surplus argument avoids quadratic work."
+    ],
+    "difficultyNotes": "Feasibility of a rotated scan is only part of the proof. The zero-flow argument connects the chosen cut to a global optimum, and the FIFO exchange handles the squared objective after the circle is opened.",
+    "id": "solution-usaco-gold-2016-february-p1",
+    "problemId": "usaco-gold-2016-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Try every possible starting open door. For each rotation, partition all rooms into exactly k nonempty consecutive segments and minimize the sum of demand-weighted distances from each segment's first room.",
+    "shortExplanation": "Cows can choose their entry door freely, so each room is served by the closest open door preceding it clockwise. Consecutive open doors split the circle into segments. A prefix dynamic program optimizes those segments, and trying all rotations includes every door choice.",
+    "detailedSteps": [
+      "This problem uses linear distance and prescribed room demands, rather than the preceding problem's fixed arrival distribution and squared energy. For any selected set of doors, a cow should use the nearest preceding open door clockwise: it cannot gain by entering at a more distant one, and there is no entry-capacity constraint.",
+      "Fix one open door as the first room of a rotation. A segment from rotated room $l$ through $r$ is served by the door at $l$, with cost $$C(l,r)=\\sum_{t=l}^{r}r_t(t-l).$$ Extend the right endpoint for each start to precompute all costs in $O(n^2)$ time. The first room of each segment contributes zero distance.",
+      "Let $D(j,i)$ be the minimum cost for the first $i$ rotated rooms with exactly $j$ open doors. Set $D(0,0)=0$ and the other zero-door states to infinity. Choosing the final segment's start gives $$D(j,i)=\\min_{j-1\\le l<i}\\bigl(D(j-1,l)+C(l,i-1)\\bigr).$$ Every segment is nonempty, so its start is a different door.",
+      "Each k-door choice containing the rotation's first door produces exactly one segment partition. Conversely, every such partition specifies k distinct doors and feasible entry choices. Costs add over disjoint segments. An optimal final segment leaves an optimal prefix for its split, proving the recurrence and the attainability of its result.",
+      "Repeat for every rotation and take the smallest result. Every global door choice has an open door that can be used as one of these starting points, so no optimum is missed. Keep only the preceding and current DP rows, along with the segment-cost table.",
+      "The total complexity is $O(kn^3)$ time and $O(n^2)$ space, feasible for $n\\le100$ and $k\\le7$. Demand-weighted totals need 64-bit arithmetic. Read `cbarn2.in` and write the single minimum distance to `cbarn2.out`.",
+      "A physical choice of k distinct doors among n rooms also requires k ≤ n; the separate printed numeric ranges do not repeat this joint condition. When k=n, opening every door gives zero travel. The code's k>n branch is explicitly an all-available-doors extension, not a claim that an impossible exact-k choice has a minimum. Those extension tests are separated from source-model verification.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <limits>\n#include <vector>\nint main(){\n    std::freopen(\"cbarn2.in\",\"r\",stdin);\n    std::freopen(\"cbarn2.out\",\"w\",stdout);\n    std::ios::sync_with_stdio(false);std::cin.tie(nullptr);\n    int n,k;if(!(std::cin>>n>>k))return 0;\n    std::vector<long long> demand(n);for(auto& r:demand)std::cin>>r;\n    // k==n is exact. k>n is an explicitly separate all-doors extension,\n    // not a claim that more than n distinct physical doors can be chosen.\n    if(k>=n){std::cout<<0<<'\\n';return 0;}\n    constexpr long long inf=std::numeric_limits<long long>::max()/4;\n    long long answer=inf;\n    for(int start=0;start<n;++start){\n        std::vector<std::vector<long long>> cost(n,std::vector<long long>(n));\n        for(int left=0;left<n;++left){\n            long long total=0;\n            for(int right=left;right<n;++right){total+=demand[(start+right)%n]*(right-left);cost[left][right]=total;}\n        }\n        std::vector<long long> previous(n+1,inf);previous[0]=0;\n        for(int doors=1;doors<=k;++doors){\n            std::vector<long long> current(n+1,inf);\n            for(int rooms=doors;rooms<=n;++rooms)for(int last=doors-1;last<rooms;++last){\n                if(previous[last]!=inf)current[rooms]=std::min(current[rooms],previous[last]+cost[last][rooms-1]);\n            }\n            previous.swap(current);\n        }\n        answer=std::min(answer,previous[n]);\n    }\n    std::cout<<answer<<'\\n';return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Serve each room from its nearest preceding open door.",
+      "Rotate at an open door to turn the circle into a segment partition.",
+      "Demand-weighted interval costs and exact-door-count prefix DP."
+    ],
+    "commonMistakes": [
+      "Squaring distances or fixing the cows' original entry positions as in the preceding task.",
+      "Allowing empty segments, counting fewer than k distinct doors, or forgetting to include the starting door.",
+      "Trying only one rotation without a justification.",
+      "Using 32-bit totals or treating k>n as a feasible exact-door selection."
+    ],
+    "alternativeMethods": [
+      "Enumerate every k-element subset of doors on a small circle and directly compute each room's closest preceding entry distance. This is an independent literal oracle.",
+      "Prefix sums of demands and index-weighted demands evaluate $C(l,r)$ in constant time; the same DP recurrence then applies."
+    ],
+    "difficultyNotes": "The objective and input model differ substantially from Circular Barn. The small n permits all rotations; the main correctness issue is the exact correspondence between door choices and nonempty segments.",
+    "id": "solution-usaco-gold-2016-february-p2",
+    "problemId": "usaco-gold-2016-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Find a minimum spanning tree of the region-adjacency grid. Process entire column-width and row-height edge groups in increasing weight, multiplying each weight by its exact component-rank increment.",
+    "shortExplanation": "Every removable shared fence is an edge connecting two regions, so minimum connectivity is an MST problem. All up/down edges in one column have the same width, and all left/right edges in one row have the same height. Their Kruskal contributions can be counted without building millions of region vertices.",
+    "detailedSteps": [
+      "Sort the physical vertical-cut positions with 0 and A to obtain the column widths; similarly obtain row heights from horizontal cuts with 0 and B. There are C=n+1 columns and R=m+1 rows. An up/down region edge costs its column width, while a left/right region edge costs its row height.",
+      "Any collection of removed shared fences that connects all regions contains a spanning tree. Positive lengths mean deleting extra cycle edges cannot increase the removal cost. Kruskal's algorithm finds a minimum tree: whenever it selects an edge between current components, a tree lacking that edge can exchange a no-cheaper edge across the same components for it.",
+      "Process all widths and heights as sorted weight groups. A column group is a chain through R regions, and a row group is a chain through C regions. Before either orientation has been processed, groups of the other orientation are separate chains. Each column then accepts R−1 edges, and each row accepts C−1 edges. The first column still accepts R−1 even if rows have already been processed; the first row similarly accepts C−1.",
+      "Once $i>0$ columns and $j>0$ rows have been processed, their strips form one connected cross: every processed row meets every processed column. Each of the remaining $(C-i)(R-j)$ regions is still isolated. A new column has $j$ vertices already in the cross and $R-j$ isolated ones, so its chain adds exactly $R-j$ independent edges. A new row similarly adds $C-i$ edges.",
+      "Merge the sorted width and height lists. For a width, use R−1 accepted edges if i=0 or j=0, and R−j otherwise, then increment i. For a height, use C−1 if either count is zero, and C−i otherwise, then increment j. Equal-weight groups may be processed in either order. This counts exactly the edges Kruskal accepts while preserving the physical grid's component structure.",
+      "Thus every contribution belongs to a legal minimum spanning tree, and the rank counts account for connecting all regions. The rule also handles a missing fence orientation, no fences at all, and late groups whose accepted-edge count is zero. Sorting widths does not assume their physical columns occur in that order; the count depends only on how many strips have been processed.",
+      "Time is $O(n\\log n+m\\log m)$ and space is $O(n+m)$. Multiply weights and counts in 64 bits before adding them. Read `fencedin.in` and write one minimum removed length to `fencedin.out`.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <vector>\nint main(){\n    std::freopen(\"fencedin.in\",\"r\",stdin);\n    std::freopen(\"fencedin.out\",\"w\",stdout);\n    std::ios::sync_with_stdio(false);std::cin.tie(nullptr);\n    long long a,b;int n,m;if(!(std::cin>>a>>b>>n>>m))return 0;\n    std::vector<long long> x{0,a},y{0,b};\n    for(int i=0;i<n;++i){long long coordinate;std::cin>>coordinate;x.push_back(coordinate);}\n    for(int i=0;i<m;++i){long long coordinate;std::cin>>coordinate;y.push_back(coordinate);}\n    std::sort(x.begin(),x.end());std::sort(y.begin(),y.end());\n    std::vector<long long> width,height;\n    for(std::size_t i=1;i<x.size();++i)width.push_back(x[i]-x[i-1]);\n    for(std::size_t i=1;i<y.size();++i)height.push_back(y[i]-y[i-1]);\n    std::sort(width.begin(),width.end());std::sort(height.begin(),height.end());\n    const int columns=n+1,rows=m+1;\n    int i=0,j=0;long long answer=0;\n    while(i<columns||j<rows){\n        if(j==rows||(i<columns&&width[i]<=height[j])){\n            const long long accepted=(i==0||j==0)?rows-1:rows-j;\n            answer+=width[i]*accepted;++i;\n        }else{\n            const long long accepted=(i==0||j==0)?columns-1:columns-i;\n            answer+=height[j]*accepted;++j;\n        }\n    }\n    std::cout<<answer<<'\\n';return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Minimum removed fencing is a region-graph MST.",
+      "Repeated edge weights can be processed by full strip groups.",
+      "After both orientations appear, a connected cross and isolated cells determine each rank increment."
+    ],
+    "commonMistakes": [
+      "Using a column width for left/right adjacency instead of up/down adjacency.",
+      "Forgetting boundary strips or assuming the input cut positions are sorted.",
+      "Using the cross-component formula before the first row and column have both appeared.",
+      "Multiplying in 32 bits, overlooking zero-fence cases, or confusing this Gold instance with another division's limits."
+    ],
+    "alternativeMethods": [
+      "Construct every region vertex and shared-wall edge and run ordinary Prim or Kruskal. It directly checks small layouts, though the collapsed method avoids the large graph at the full limits.",
+      "A sorted-gap formula can initialize the first width and height contributions separately, then merge the remaining groups. The explicit first-group cases above make the component-count proof easier to audit."
+    ],
+    "difficultyNotes": "The underlying graph may contain over four million regions, but its edge groups have a special repeated-weight structure. The stated region count requires distinct horizontal cuts as well as vertical cuts. Boundary positions and both zero-count cases remain part of the same proof.",
+    "id": "solution-usaco-gold-2016-february-p3",
+    "problemId": "usaco-gold-2016-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

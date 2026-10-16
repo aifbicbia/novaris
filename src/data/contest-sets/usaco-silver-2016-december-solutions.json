@@ -1,0 +1,99 @@
+[
+  {
+    "finalAnswer": "For every query, subtract the lower-bound index of its left endpoint from the upper-bound index of its right endpoint.",
+    "shortExplanation": "Sort the haybale positions once. Two binary searches locate the first position inside the interval and the first position beyond it; the difference is the number of included haybales.",
+    "detailedSteps": [
+      "Let the sorted positions be $x_0<x_1<\\cdots<x_{N-1}$. For a query $[A,B]$, define $L$ as the first index with $x_L\\ge A$, and $R$ as the first index with $x_R>B$. Either index is $N$ if its boundary does not occur.",
+      "Positions before $L$ are less than $A$, while positions before $R$ are at most $B$. Thus precisely the indices $L,L+1,\\ldots,R-1$ lie in the closed interval, and the answer is $R-L$. The same argument gives zero when no position is included.",
+      "Use lower_bound for the left boundary and upper_bound for the right boundary. This directly handles both inclusive endpoints without subtracting one from A or adding one to B. Stream one answer per query, preserving query order.",
+      "Sorting costs $O(N\\log N)$ and the $Q$ queries cost $O(Q\\log N)$, for total $O(N\\log N+Q\\log N)$ time and $O(N)$ storage. The required output is exactly $Q$ lines.",
+      "This C++17 implementation uses the historical haybales.in and haybales.out interface.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"haybales.in\");\n    std::ofstream out(\"haybales.out\");\n    int n, q;\n    if (!(in >> n >> q)) return 1;\n    std::vector<long long> x(n);\n    for (auto &v : x) in >> v;\n    std::sort(x.begin(), x.end());\n    for (int i = 0; i < q; ++i) {\n        long long a, b;\n        in >> a >> b;\n        auto left = std::lower_bound(x.begin(), x.end(), a);\n        auto right = std::upper_bound(x.begin(), x.end(), b);\n        out << right - left << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Sorted boundary indices turn inclusive range counting into an index difference.",
+      "The two searches use different inequalities: first at least A, first greater than B.",
+      "Sort once and reuse the array for every query."
+    ],
+    "commonMistakes": [
+      "Using lower_bound for both endpoints excludes a haybale exactly at B.",
+      "Counting only existing endpoint positions fails when A or B is absent.",
+      "Scanning all haybales for every query exceeds the intended limits.",
+      "Writing one total instead of one answer for each query loses the required output order."
+    ],
+    "alternativeMethods": [
+      "Sort query-boundary events and sweep through the sorted haybales. Record counts with $x<A$ and $x\\le B$ separately, then subtract them in the original query order. This takes $O((N+Q)\\log(N+Q))$ time."
+    ],
+    "difficultyNotes": "An introductory Silver range-query exercise. The central issue is inclusive endpoints and the two different binary-search boundaries. Coordinates zero and one billion, empty results and the full 100,000-query output are covered by executable checks.",
+    "id": "solution-usaco-silver-2016-december-p1",
+    "problemId": "usaco-silver-2016-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Add the number of earlier cities with the reversed prefix/state pair, excluding cities whose prefix equals their own state.",
+    "shortExplanation": "A city with prefix a and state b can match exactly the earlier records with prefix b and state a. If a equals b, every such match would be within the same state and is forbidden. Counting matches as each city arrives counts every valid unordered pair once.",
+    "detailedSteps": [
+      "Encode each two-letter uppercase string as $26u+v$, with $u,v\\in\\{0,\\ldots,25\\}$. There are $26^2=676$ possible codes, including fictitious state codes. Retain city multiplicity; full names can differ while producing the same prefix.",
+      "For the current city, let $(a,b)$ denote its prefix and state. If $a=b$, discard it: a reverse partner would also have state $a$, contrary to the different-state condition. If $a\\ne b$, any partner must have type $(b,a)$, whose state is automatically different.",
+      "Maintain $\\mathrm{count}[u][v]$ for eligible cities already processed. Add $\\mathrm{count}[b][a]$ to the answer, then increment $\\mathrm{count}[a][b]$. The table invariant holds initially and after every insertion. Each special unordered pair contributes when its later city is processed, so it contributes exactly once.",
+      "The fixed table contains $26^4=456{,}976$ entries. Including initialization, time is $O(N+26^4)$ under the printed name-length bound; storage is $O(26^4)$. The answer can exceed 32-bit range: two groups of $100{,}000$ cities with reversed types produce $10^{10}$ pairs when their full names are distinct. Use a 64-bit accumulator.",
+      "The following C++17 implementation reads citystate.in and writes one integer to citystate.out.\n\n```cpp\n#include <fstream>\n#include <string>\n#include <vector>\nint code(const std::string &s) {\n    return 26 * (s[0] - 'A') + (s[1] - 'A');\n}\nint main() {\n    std::ifstream in(\"citystate.in\");\n    std::ofstream out(\"citystate.out\");\n    int n;\n    if (!(in >> n)) return 1;\n    std::vector<std::vector<long long>> count(676, std::vector<long long>(676));\n    long long answer = 0;\n    for (int i = 0; i < n; ++i) {\n        std::string city, state;\n        in >> city >> state;\n        int a = code(city), b = code(state);\n        if (a == b) continue;\n        answer += count[b][a];\n        ++count[a][b];\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Reduce each record to its city prefix and state code.",
+      "Reverse the two fields to identify a partner.",
+      "Exclude diagonal types because the states must differ.",
+      "Streaming insertion counts each unordered pair once while preserving multiplicities."
+    ],
+    "commonMistakes": [
+      "Counting diagonal types adds forbidden same-state pairs.",
+      "Restricting state codes to real USA abbreviations contradicts the source.",
+      "Counting each type only once loses pairs between different cities sharing a prefix.",
+      "Summing both directions without dividing by two double-counts unordered pairs.",
+      "A 32-bit answer can overflow even on source-valid distinct full names."
+    ],
+    "alternativeMethods": [
+      "Build the entire off-diagonal frequency table first. Sum $\\mathrm{count}[a][b]\\mathrm{count}[b][a]$ only over $a<b$; each reversed type pair then appears once."
+    ],
+    "difficultyNotes": "An introductory Silver counting problem whose main pitfalls are same-state exclusions, multiplicity and 64-bit arithmetic. The large executable count construction uses distinct full names, rather than illegally repeating one city name within one state.",
+    "id": "solution-usaco-silver-2016-december-p2",
+    "problemId": "usaco-silver-2016-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Build the directed transmission graph, search from each cow, and take the largest number of reached cows, including the source.",
+    "shortExplanation": "Transmission depends on the sender\u2019s radius, so the graph is directed. A broadcast reaches exactly the cows connected to its origin by a directed path. A fresh graph search from each possible origin finds the maximum.",
+    "detailedSteps": [
+      "Add a directed edge $i\\to j$ when $(x_i-x_j)^2+(y_i-y_j)^2\\le p_i^2$. Equality is allowed. Test the reverse direction separately, using $p_j$; the two cows need not have equal ranges. Squared distances avoid a square root.",
+      "For each starting cow, mark it and begin a fresh iterative search. When a marked cow is processed, mark and enqueue every unseen outgoing neighbor. Every marked cow has a legal transmission path from the source. Conversely, if a reachable cow were unmarked, the first unmarked vertex on a path would have a processed marked predecessor and would have been discovered. Thus the search finds exactly the broadcast recipients.",
+      "Count the starting cow even if it is isolated. Reset the visited set for each origin and take the largest search count. This includes multihop relays and counts each cow once despite cycles.",
+      "The source bounds $N\\le200$ and coordinates by $25{,}000$, so squared distances are at most $1{,}250{,}000{,}000$. It prints no separate numeric power bound or numeric type. Read a finite nonnegative decimal power token exactly, including optional base-ten exponent, instead of first converting it to a floating-point value. Any radius at least $35{,}356$ covers the entire printed coordinate box; a smaller-than-one radius reaches only coincident integer positions. These are geometry-derived classifications, not input limits.",
+      "For remaining radii, normalize the literal decimal to $p=q/10^s$ and compare the integer squared distance $d^2$ exactly by $d^2 10^{2s}\\le q^2$. The code squares decimal integer strings with elementary carries and compares lengths and digits, so large powers and close decimal boundaries do not overflow or round into a different edge. Let $L_i$ be each power token length: parsing and squaring cost $O(\\sum_i L_i^2)$ in the worst case, with $O(N^2\\max_i L_i)$ edge-comparison work. Graph searches still cost $O(N^3)$ and graph storage $O(N^2)$; token storage adds $O(\\sum_i L_i)$. Under ordinary bounded-width integer inputs, the graph-search bound dominates.",
+      "Reviewed C++17 numerical-input correction, preserving the original directed-search algorithm and moocast.in/moocast.out:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\n#include <cassert>\n#include <cctype>\n#include <string>\nusing namespace std;\nstring independent_decimal_square(const string& value) {\n    const size_t length = value.size();\n    vector<int> digits(2 * length + 2);\n    for (size_t i = 0; i < length; ++i) {\n        int carry = 0;\n        for (size_t j = 0; j < length; ++j) {\n            const int v = digits[i + j] + (value[length - 1 - i] - '0') * (value[length - 1 - j] - '0') + carry;\n            digits[i + j] = v % 10; carry = v / 10;\n        }\n        size_t pos = i + length;\n        while (carry) { const int v = digits[pos] + carry; digits[pos] = v % 10; carry = v / 10; ++pos; }\n    }\n    while (digits.size() > 1 && digits.back() == 0) digits.pop_back();\n    string result; for (auto i = digits.rbegin(); i != digits.rend(); ++i) result.push_back(static_cast<char>('0' + *i));\n    return result;\n}\nstruct IndependentRadius {\n    int kind; // -1 negative,0 coincident-only,1 exact finite decimal square,2 above all possible distances\n    string square;\n    size_t denominator_zeros;\n    bool includes(long long squared_distance) const {\n        if (kind == -1) return false;\n        if (squared_distance == 0 || kind == 2) return true;\n        if (kind == 0) return false;\n        string threshold = to_string(squared_distance);\n        threshold.append(denominator_zeros, '0');\n        return threshold.size() < square.size() || (threshold.size() == square.size() && threshold <= square);\n    }\n};\nIndependentRadius independent_radius(const string& token) {\n    size_t pos = 0; bool negative = false;\n    if (token[pos] == '+' || token[pos] == '-') { negative = token[pos] == '-'; ++pos; }\n    const size_t exponent_pos = token.find_first_of(\"eE\", pos);\n    const size_t end = exponent_pos == string::npos ? token.size() : exponent_pos;\n    string coefficient; long long fractional_digits = 0; bool fraction = false;\n    for (; pos < end; ++pos) {\n        if (token[pos] == '.') { assert(!fraction); fraction = true; continue; }\n        assert(isdigit(static_cast<unsigned char>(token[pos])));\n        coefficient.push_back(token[pos]); if (fraction) ++fractional_digits;\n    }\n    assert(!coefficient.empty());\n    long long exponent = 0;\n    if (exponent_pos != string::npos) {\n        pos = exponent_pos + 1; bool minus = false;\n        if (token[pos] == '+' || token[pos] == '-') { minus = token[pos] == '-'; ++pos; }\n        assert(pos < token.size()); const long long cap = static_cast<long long>(token.size()) + 100;\n        for (; pos < token.size(); ++pos) { assert(isdigit(static_cast<unsigned char>(token[pos]))); const int digit = token[pos] - '0'; exponent = exponent > (cap - digit) / 10 ? cap : exponent * 10 + digit; }\n        if (minus) exponent = -exponent;\n    }\n    const size_t first = coefficient.find_first_not_of('0');\n    if (first == string::npos) return {0, \"0\", 0};\n    if (negative) return {-1, \"0\", 0};\n    coefficient.erase(0, first);\n    long long scale = fractional_digits - exponent;\n    while (coefficient.back() == '0') { coefficient.pop_back(); --scale; }\n    const long long integer_digits = static_cast<long long>(coefficient.size()) - scale;\n    if (integer_digits < 1) return {0, \"0\", 0};\n    if (integer_digits > 5) return {2, \"0\", 0};\n    int whole = 0;\n    for (long long i = 0; i < integer_digits; ++i) whole = 10 * whole + (i < static_cast<long long>(coefficient.size()) ? coefficient[static_cast<size_t>(i)] - '0' : 0);\n    if (whole >= 35356) return {2, \"0\", 0};\n    string square = independent_decimal_square(coefficient);\n    if (scale < 0) { square.append(static_cast<size_t>(-2 * scale), '0'); return {1, square, 0}; }\n    return {1, square, static_cast<size_t>(2 * scale)};\n}\nstruct Cow { long long x, y; IndependentRadius radius; };\nint main() {\n    std::ifstream in(\"moocast.in\");\n    std::ofstream out(\"moocast.out\");\n    int n;\n    if (!(in >> n)) return 1;\n    std::vector<Cow> cows(n);\n    for (auto &c : cows) {\n        std::string power;\n        if (!(in >> c.x >> c.y >> power)) return 1;\n        c.radius = independent_radius(power);\n        if (c.radius.kind < 0) return 1; // Physical radii are nonnegative; no printed numeric limit is assumed.\n    }\n    std::vector<std::vector<int>> edges(n);\n    for (int i = 0; i < n; ++i) {\n        for (int j = 0; j < n; ++j) {\n            long long dx = cows[i].x - cows[j].x;\n            long long dy = cows[i].y - cows[j].y;\n            long long distance2 = dx * dx + dy * dy;\n            if (i != j && cows[i].radius.includes(distance2))\n                edges[i].push_back(j);\n        }\n    }\n    int best = 0;\n    for (int start = 0; start < n; ++start) {\n        std::vector<bool> seen(n, false);\n        std::vector<int> stack{start};\n        seen[start] = true;\n        int reached = 1;\n        while (!stack.empty()) {\n            int v = stack.back();\n            stack.pop_back();\n            for (int next : edges[v]) {\n                if (!seen[next]) {\n                    seen[next] = true;\n                    ++reached;\n                    stack.push_back(next);\n                }\n            }\n        }\n        best = std::max(best, reached);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Directed reachability models sender-dependent transmission.",
+      "A path represents any number of message relays.",
+      "Mark the source and reset the visited set for every candidate origin.",
+      "Compare the literal decimal radius exactly and use only coordinate-derived safe classifications."
+    ],
+    "commonMistakes": [
+      "Treating a one-way transmission as an undirected edge adds recipients that cannot actually be reached.",
+      "Counting only immediate neighbors ignores relays.",
+      "Using p as a squared radius changes the physical distance condition.",
+      "Sharing visited marks between starting cows produces incorrect counts.",
+      "Excluding the originating cow gives the wrong answer for an isolated broadcast.",
+      "Assuming a power upper bound that is absent from the original statement obscures the real source conditions.",
+      "Converting a very large power token or a decimal near a transmission boundary to floating point can reject or misclassify a legal radius."
+    ],
+    "alternativeMethods": [
+      "Initialize a Boolean directed adjacency matrix with a true diagonal and apply Floyd transitive closure: $R_{ij}\\gets R_{ij}\\lor(R_{ik}\\land R_{kj})$. The largest true-entry count in a row is the answer, in $O(N^3)$ time and $O(N^2)$ space."
+    ],
+    "difficultyNotes": "A directed reachability exercise: include the origin, reset visited marks for each start, and use the sender\u2019s radius with an inclusive distance boundary. Coincident cows may communicate even with zero radius. The printed coordinate box gives a safe covering threshold, but the source does not separately specify power bounds or a numeric type. Exact finite decimal tokens, including optional base-ten exponents, preserve close distance boundaries; their lengths contribute to the parsing, comparison and storage costs.",
+    "id": "solution-usaco-silver-2016-december-p3",
+    "problemId": "usaco-silver-2016-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

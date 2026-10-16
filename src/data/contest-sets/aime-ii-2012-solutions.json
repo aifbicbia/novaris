@@ -1,0 +1,330 @@
+[
+  {
+    "id": "solution-aime-ii-2012-p1",
+    "problemId": "aime-ii-2012-p1",
+    "finalAnswer": "$\\boxed{034}$",
+    "shortExplanation": "The first coordinate runs through $1,4,7,\\ldots,100$.",
+    "detailedSteps": [
+      "Dividing the equation by four gives $5m+3n=503$. Reduction modulo three yields $m\\equiv1\\pmod3$. Positivity of $n$ requires $m\\le100$, while $m$ is also positive.",
+      "Thus $m$ can be any of $1,4,7,\\ldots,100$. Each produces a unique positive integer $n=(503-5m)/3$. There are $(100-1)/3+1=34$ ordered pairs."
+    ],
+    "keyIdeas": [
+      "Apply the congruence and positive bounds"
+    ],
+    "commonMistakes": [
+      "Allowing either coordinate to be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The congruence makes the count a single arithmetic progression.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p2",
+    "problemId": "aime-ii-2012-p2",
+    "finalAnswer": "$\\boxed{363}$",
+    "shortExplanation": "For a nonzero common ratio, $a_9=363$. A zero-ratio convention would instead give zero.",
+    "detailedSteps": [
+      "Let $r$ be the common ratio. The source equality is $27r^{14}=99r^{10}$. Under the usual common-term-ratio interpretation, $r\\ne0$, so division gives $r^4=99/27=11/3$.",
+      "Then $a_9=27r^8=27(11/3)^2=363$. This is independent of which real sign, or complex fourth root, realizes the nonzero ratio.",
+      "Under a broader multiplication-recurrence convention allowing $r=0$, both specified later terms are zero and $a_9=0$ also satisfies that reading. The inspected statement does not explicitly say nonzero. The calculation above uses the standard definition in which consecutive-term quotients are defined at every index; [OpenStax’s key terms](https://openstax.org/books/calculus-volume-2/pages/5-key-terms) document that convention. This terminology interpretation is not an organizer clarification, and the broader zero branch remains recorded."
+    ],
+    "keyIdeas": [
+      "Eliminate a nonzero common ratio using the index difference"
+    ],
+    "commonMistakes": [
+      "Dividing by a power of the common ratio without stating the nonzero-ratio convention."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The index difference determines the fourth power of the ratio; the source convention is explicitly qualified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p3",
+    "problemId": "aime-ii-2012-p3",
+    "finalAnswer": "$\\boxed{088}$",
+    "shortExplanation": "The two gender-distribution types contribute $64$ and $24$.",
+    "detailedSteps": [
+      "Each department contributes two professors. Let its number of men be zero, one or two. The three department counts must sum to three, so their unordered types are $(1,1,1)$ and $(0,1,2)$.",
+      "For type $(1,1,1)$, each department chooses one of its two men and one of its two women, giving $4^3=64$ committees.",
+      "For type $(0,1,2)$, assign these three distinct counts to the departments in $3!=6$ ways. The all-woman and all-man pairs are forced; the mixed department has four choices. This gives $6\\cdot4=24$ more, for a total of $88$."
+    ],
+    "keyIdeas": [
+      "Classify the department gender counts"
+    ],
+    "commonMistakes": [
+      "Choosing three men and three women without enforcing two professors from every department."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The department gender counts give a complete disjoint case split.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p4",
+    "problemId": "aime-ii-2012-p4",
+    "finalAnswer": "$\\boxed{061}$",
+    "shortExplanation": "The length, width and southern offset have ratio $30:7:24$.",
+    "detailedSteps": [
+      "Let the field length be $L$, its width be $W$, the distance from $D$ to the southeast corner be $d$, and the common travel time be $t>0$. Ana first reaches $D$ after distance $2L+W-d$; Bob travels $W+d$; Cao travels $\\sqrt{W^2+d^2}$.",
+      "The rates therefore give $2L+W-d=(43/5)t$, $W+d=(31/5)t$ and $W^2+d^2=25t^2$. Subtracting the first two equations yields $L-d=(6/5)t$.",
+      "Put $u=W/t$ and $v=d/t$. Then $u+v=31/5$ and $u^2+v^2=25$, so $uv=168/25$. Their unordered values are $7/5$ and $24/5$.",
+      "If $u=24/5$ and $v=7/5$, then $L/t=13/5<W/t$, contrary to the given longer horizontal side. Thus $W/t=7/5$, $d/t=24/5$ and $L/t=6$.",
+      "Hence $L:W:d=30:7:24$. Here $0<d<L$, so all three paths actually reach the stated side point for the first time. The first two integers are relatively prime, and their required sum is $61$."
+    ],
+    "keyIdeas": [
+      "Use equal-time path lengths and the longer-side condition"
+    ],
+    "commonMistakes": [
+      "Keeping the quadratic branch in which the west-running side is the shorter side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two speed equations and the straight-line distance give two branches, one excluded by the source orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p5",
+    "problemId": "aime-ii-2012-p5",
+    "finalAnswer": "$\\boxed{750}$",
+    "shortExplanation": "The pyramid height is ten.",
+    "detailedSteps": [
+      "In the actual net, each triangular face has base fifteen and altitude $(40-15)/2=25/2$. The four congruent faces have equal edges to the apex, so after folding the apex projects to the center of the square base.",
+      "The distance from that center to a base-edge midpoint is $15/2$. A right triangle with vertical height $h$ and face altitude $25/2$ gives $h^2=(25/2)^2-(15/2)^2=100$. Thus $h=10$.",
+      "The volume is one third of base area times height: $V=(1/3)\\cdot15^2\\cdot10=750$."
+    ],
+    "keyIdeas": [
+      "Distinguish the face altitude from the vertical height"
+    ],
+    "commonMistakes": [
+      "Using the sloping face altitude as the vertical pyramid height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The net preserves face dimensions while folding changes the relation between face and vertical heights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p6",
+    "problemId": "aime-ii-2012-p6",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The fourth power is $-375+500i$.",
+    "detailedSteps": [
+      "Factor the difference as $(1+2i)z^3-z^5=z^3(1+2i-z^2)$. Since $|z|=5$, its magnitude is $125|1+2i-z^2|$, with $|z^2|=25$.",
+      "The farthest point of the radius-twenty-five circle from $1+2i$ is the point in its opposite direction. Therefore $z^2=-25(1+2i)/\\sqrt5$. Equality in the triangle inequality proves this maximum.",
+      "Squaring gives $z^4=125(1+2i)^2=125(-3+4i)=-375+500i$. The upper-half-plane condition selects one of the two square roots of $z^2$, and does not change this fourth power. Hence $c+d=125$."
+    ],
+    "keyIdeas": [
+      "Maximize a point-to-circle distance"
+    ],
+    "commonMistakes": [
+      "Maximizing the distance by aligning $z^2$ with $1+2i$ instead of placing it in the opposite direction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring out the fixed-modulus cubic reduces the optimization to a circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p7",
+    "problemId": "aime-ii-2012-p7",
+    "finalAnswer": "$\\boxed{032}$",
+    "shortExplanation": "The thousandth number is $7032$.",
+    "detailedSteps": [
+      "Among the integers below $2^{12}$, exactly $\\binom{12}{8}=495$ have eight ones. Among those below $2^{13}$ there are $\\binom{13}{8}=1287$. Thus the target has leading bit $2^{12}$, and is rank $1000-495=505$ among the lower twelve-bit strings with seven ones.",
+      "Within those strings, the block with bit eleven zero has $\\binom{11}{7}=330$ members. The target has bit eleven one and remaining rank $175$, now with six ones to place. The bit-ten-zero block has $\\binom{10}{6}=210$ members, so bit ten is zero.",
+      "The bit-nine-zero block has $\\binom96=84$ members, so bit nine is one and the remaining rank is $91$. The bit-eight-zero block has $\\binom85=56$ members, so bit eight is one and the remaining rank is $35$.",
+      "The bit-seven-zero block has $\\binom74=35$ members. The target is its last member, so bit seven is zero and the four remaining ones occupy bits six, five, four and three.",
+      "Therefore $N=2^{12}+2^{11}+2^9+2^8+2^6+2^5+2^4+2^3=7032$. The requested remainder is $32$. Direct enumeration confirms exactly $999$ eligible positive integers precede it."
+    ],
+    "keyIdeas": [
+      "Unrank the fixed-weight binary strings"
+    ],
+    "commonMistakes": [
+      "Treating a rank equal to the size of a zero-leading block as belonging to the following block."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Numeric ordering of equal-length binary strings agrees with lexicographic ordering from the highest bit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p8",
+    "problemId": "aime-ii-2012-p8",
+    "finalAnswer": "$\\boxed{040}$",
+    "shortExplanation": "The two possible product moduli squared are forty and $1440$.",
+    "detailedSteps": [
+      "Let $t=zw$, which is nonzero because the source equations contain division by both variables. Multiplying the first equation by $w$ and the second by $z$ gives $t+20i=(5+i)w$ and $t+12i=(-4+10i)z$.",
+      "Multiply these equations to obtain $(t+20i)(t+12i)=(-30+46i)t$. Thus $t^2+(30-14i)t-240=0$.",
+      "The discriminant is $1664-840i=(42-10i)^2$. The quadratic roots are $t=6+2i$ and $t=-36+12i$, whose squared moduli are respectively forty and $1440$.",
+      "Both roots give nonzero original variables through $w=(t+20i)/(5+i)$ and $z=(t+12i)/(-4+10i)$, and direct substitution recovers both source equations. Hence the least possible value is $40$."
+    ],
+    "keyIdeas": [
+      "Reduce the product to a quadratic and check both roots"
+    ],
+    "commonMistakes": [
+      "Choosing the smaller-looking real part without computing both complex moduli or reconstructing the source variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product variable reduces two rational complex equations to one finite branch calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p9",
+    "problemId": "aime-ii-2012-p9",
+    "finalAnswer": "$\\boxed{107}$",
+    "shortExplanation": "The required sum is $49/58$.",
+    "detailedSteps": [
+      "Let $u=\\sin^2y$. The given ratios yield $\\sin^2x=9u$ and $\\cos^2x=(1-u)/4$. Their sum is one, so $9u+(1-u)/4=1$, giving $u=3/35$.",
+      "Thus $\\sin^2x=27/35$, $\\cos^2x=8/35$ and $\\cos^2y=32/35$. The source ratios, with their actual signs, give $\\sin2x/\\sin2y=3\\cdot(1/2)=3/2$.",
+      "Also $\\cos2x/\\cos2y=(8/35-27/35)/(32/35-3/35)=-19/29$. Hence the total is $3/2-19/29=49/58$, in lowest terms. The requested sum is $107$."
+    ],
+    "keyIdeas": [
+      "Find the squared sine values before doubling"
+    ],
+    "commonMistakes": [
+      "Inferring the doubled sine ratio by squaring the original sine ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two original ratios and the unit-circle identity determine the squared values uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p10",
+    "problemId": "aime-ii-2012-p10",
+    "finalAnswer": "$\\boxed{496}$",
+    "shortExplanation": "The intervals contribute $1+2+\\cdots+31=496$ integers.",
+    "detailedSteps": [
+      "Put $k=\\lfloor x\\rfloor$. A positive value of $n$ requires $k\\ge1$. Since $k\\le x<k+1$, the relation $n=kx$ is equivalent to $k^2\\le n<k^2+k$.",
+      "For each positive integer $k$, the eligible integers are $k^2,k^2+1,\\ldots,k^2+k-1$, exactly $k$ values. These intervals are disjoint, since their upper endpoint is below $(k+1)^2$.",
+      "For $n<1000$ the possible $k$ are one through thirty-one. The last interval ends at $31^2+30=991$, so none is truncated. Thus there are $\\sum_{k=1}^{31}k=496$ such integers. Conversely each counted $n$ yields $x=n/k$ in the required floor interval."
+    ],
+    "keyIdeas": [
+      "Translate a floor equation into disjoint integer intervals"
+    ],
+    "commonMistakes": [
+      "Including the excluded upper endpoint $k(k+1)$, where $\\lfloor x\\rfloor$ becomes $k+1$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The floor value partitions the problem into short, disjoint intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p11",
+    "problemId": "aime-ii-2012-p11",
+    "finalAnswer": "$\\boxed{008}$",
+    "shortExplanation": "The valid starting value is $5/3$.",
+    "detailedSteps": [
+      "Write $f(x)=(6x-7)/(9x+3)$. The corresponding matrix is $M=\\begin{pmatrix}6&-7\\\\9&3\\end{pmatrix}$. Its cube is $-729I$, so three compositions return the original value wherever the successive denominators are defined.",
+      "A direct second composition gives $f_2(x)=(-3x-7)/(9x-6)$. Since $1001\\equiv2\\pmod3$, the source equation reduces to $(-3x-7)/(9x-6)=x-3$.",
+      "Clearing the permitted denominator yields $9x^2-30x+25=(3x-5)^2=0$, so $x=5/3$. Its actual orbit is $5/3\\mapsto1/6\\mapsto-4/3\\mapsto5/3$. None of these values makes the next denominator zero, so all $1001$ compositions exist.",
+      "The last iterate is $-4/3=5/3-3$, as required. The reduced numerator and denominator sum to $5+3=8$."
+    ],
+    "keyIdeas": [
+      "Use the three-period fractional transformation"
+    ],
+    "commonMistakes": [
+      "Using the formal period identity without checking that the entire orbit avoids the poles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite composition period replaces the long iteration, with explicit domain verification.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p12",
+    "problemId": "aime-ii-2012-p12",
+    "finalAnswer": "$\\boxed{958}$",
+    "shortExplanation": "A full period contains ninety-six eligible residues.",
+    "detailedSteps": [
+      "An integer is $p$-safe exactly when its residue modulo $p$ lies in $3,4,\\ldots,p-3$. Thus there are two eligible residues modulo seven, six modulo eleven and eight modulo thirteen.",
+      "The moduli are pairwise relatively prime, so the Chinese remainder theorem gives $2\\cdot6\\cdot8=96$ safe residues in every period of length $7\\cdot11\\cdot13=1001$.",
+      "Ten full periods cover the integers one through $10010$, with $960$ eligible integers. Remove the last ten integers, $10001$ through $10010$. Their residues modulo $1001$ are $992$ through $1001$.",
+      "Safety is preserved by replacing a residue $r$ with $1001-r$, since every source modulus divides $1001$. The removed interval therefore corresponds to zero through nine. Only three and four are simultaneously safe there, corresponding to removed integers $10007$ and $10006$.",
+      "Exactly two eligible integers were removed. The required count is $960-2=958$. Direct testing of all ten thousand integers confirms the period and the endpoint correction."
+    ],
+    "keyIdeas": [
+      "Count safe residues in a full CRT period"
+    ],
+    "commonMistakes": [
+      "Multiplying the residue density by 10000 without accounting for the incomplete last period."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "CRT handles complete periods; reflection makes the short final correction easy to count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p13",
+    "problemId": "aime-ii-2012-p13",
+    "finalAnswer": "$\\boxed{677}$",
+    "shortExplanation": "The four squared distances sum to $677$.",
+    "detailedSteps": [
+      "Let $R=\\sqrt{111}$ and $\\rho=\\sqrt{11}$. Place $A=(0,0)$, $B=(R,0)$ and $C=(R/2,\\sqrt3R/2)$. Each $D_j$ satisfies $|D_j|=R$ and $|D_j-B|=\\rho$. Subtracting the squared-distance equations gives its x-coordinate $x=(2R^2-\\rho^2)/(2R)=211/(2R)$.",
+      "The two distinct possibilities are $D_1=(x,y)$ and $D_2=(x,-y)$, with $y>0$. For each, the two equilateral third vertices are obtained by rotating the vector $D_j$ by $60^\\circ$ and by $-60^\\circ$ about $A$.",
+      "The sum of those two rotated vectors equals $D_j$, since their sine contributions cancel and $2\\cos60^\\circ=1$. Consequently the four vectors $E_k$ sum to $D_1+D_2=(2x,0)$, and every one has squared norm $R^2$.",
+      "Therefore $\\sum_k|C-E_k|^2=4|C|^2+\\sum_k|E_k|^2-2C\\cdot\\sum_kE_k=8R^2-2Rx$. This equals $8\\cdot111-211=677$.",
+      "The two circle intersections and both rotations give four distinct vertices in this configuration. Their distances to $A$ and their respective $D_j$ are all $R$, so the four triangles satisfy the actual congruence condition."
+    ],
+    "keyIdeas": [
+      "Sum the rotated vertex vectors"
+    ],
+    "commonMistakes": [
+      "Reading the source square-root lengths as 111 and 11, or losing one orientation of an equilateral third vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The individual distances can be avoided by summing the rotated vertex vectors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p14",
+    "problemId": "aime-ii-2012-p14",
+    "finalAnswer": "$\\boxed{016}$",
+    "shortExplanation": "There are $30016$ handshaking graphs.",
+    "detailedSteps": [
+      "Treat people as labeled vertices and handshakes as undirected edges. Every vertex has degree two, so each connected component is a cycle of length at least three. The only partitions of nine into such lengths are $9$, $6+3$, $5+4$ and $3+3+3$.",
+      "On a chosen set of $k\\ge3$ people, there are $(k-1)!/2$ undirected cycles, because starting points and the two orientations do not create new edges. A single nine-cycle therefore contributes $8!/2=20160$.",
+      "The $6+3$ type contributes $\\binom93(5!/2)(2!/2)=5040$. The $5+4$ type contributes $\\binom95(4!/2)(3!/2)=4536$.",
+      "Three triangles contribute $9!/[(3!)^3\\,3!]=280$: divide by the internal orders of each triple and by the order of the three indistinguishable components.",
+      "The total is $20160+5040+4536+280=30016$, so the requested remainder is $16$. An independent enumeration of all permutation cycle covers, deduplicated by their undirected edge sets, confirms the count."
+    ],
+    "keyIdeas": [
+      "Classify the disjoint cycles in a simple degree-two graph"
+    ],
+    "commonMistakes": [
+      "Counting the two traversal directions of a cycle as distinct handshaking arrangements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Degree two forces cycles, making the component-size classification exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2012-p15",
+    "problemId": "aime-ii-2012-p15",
+    "finalAnswer": "$\\boxed{919}$",
+    "shortExplanation": "The second intersection has $AF^2=900/19$.",
+    "detailedSteps": [
+      "The cosine rule gives $\\cos A=(5^2+3^2-7^2)/(2\\cdot5\\cdot3)=-1/2$, so $A=120^\\circ$. Put $A=(0,0)$, $B=(5/2,5\\sqrt3/2)$ and $C=(3/2,-3\\sqrt3/2)$. The internal angle bisector is the positive x-axis.",
+      "The angle-bisector theorem gives $BD/DC=5/3$, hence $D=(3B+5C)/8=(15/8,0)$. A circle through the origin has equation $x^2+y^2+ux+vy=0$. Substitution of $B,C$ gives $\\omega:x^2+y^2-8x-(2/\\sqrt3)y=0$. Its second x-axis intersection is $E=(8,0)$.",
+      "The circle with diameter $DE$ is $\\gamma:x^2+y^2-(79/8)x+15=0$. Subtracting the two circle equations gives their common chord line $y=(15\\sqrt3/16)(x-8)$.",
+      "Let $u=x-8$ on this line. Substitution into $\\omega$ factors as $u[(931/256)u+49/8]=0$. The root $u=0$ is $E$; the second root is $u=-32/19$. Thus $F=(120/19,-30\\sqrt3/19)$.",
+      "Therefore $AF^2=(120/19)^2+3(30/19)^2=17100/361=900/19$. Both circle equations and $(F-D)\\cdot(F-E)=0$ verify the actual diameter-circle intersection. The fraction is reduced, giving $m+n=919$."
+    ],
+    "keyIdeas": [
+      "Subtract the two circle equations to find their common chord"
+    ],
+    "commonMistakes": [
+      "Using the external angle bisector or retaining E as the requested second intersection F."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates aligned with the internal bisector keep both circle equations and the radical axis short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

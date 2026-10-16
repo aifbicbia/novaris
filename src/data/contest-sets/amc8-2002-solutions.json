@@ -1,0 +1,638 @@
+[
+  {
+    "id": "solution-amc8-2002-p1",
+    "problemId": "amc8-2002-p1",
+    "finalAnswer": "$\\boxed{\\text{D }(5)}$",
+    "shortExplanation": "**Idea:** Maximize each pairwise intersection.",
+    "detailedSteps": [
+      "Two lines can intersect in $1$ point.",
+      "Each line can intersect the circle in at most $2$ points.",
+      "With the lines chosen so no intersections overlap, the maximum is $1+2+2=5$.",
+      "Final Answer: ($\\boxed{\\text{D }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Intersections"
+    ],
+    "commonMistakes": [
+      "Do not count intersection points that overlap; the maximum uses distinct points."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on intersections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p2",
+    "problemId": "amc8-2002-p2",
+    "finalAnswer": "$\\boxed{\\text{A }(2)}$",
+    "shortExplanation": "**Idea:** Solve $5a+2b=17$ in nonnegative integers.",
+    "detailedSteps": [
+      "Try possible numbers of $5$-dollar bills.",
+      "$a=1$ gives $2b=12$, so $b=6$.",
+      "$a=3$ gives $2b=2$, so $b=1$.",
+      "No other nonnegative $a$ works, so there are $2$ combinations.",
+      "Final Answer: ($\\boxed{\\text{A }(2)}$)"
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Linear combinations"
+    ],
+    "commonMistakes": [
+      "Order does not matter, so different arrangements of the same bills are not new combinations."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on linear combinations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p3",
+    "problemId": "amc8-2002-p3",
+    "finalAnswer": "$\\boxed{\\text{C }(5)}$",
+    "shortExplanation": "**Idea:** Use the four smallest distinct positive even integers.",
+    "detailedSteps": [
+      "The smallest possible set is $2,4,6,8$.",
+      "Their average is $(2+4+6+8)/4=20/4=5$.",
+      "Final Answer: ($\\boxed{\\text{C }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Averages",
+      "Minimum average"
+    ],
+    "commonMistakes": [
+      "The integers must be positive, even, and distinct."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on minimum average.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p4",
+    "problemId": "amc8-2002-p4",
+    "finalAnswer": "$\\boxed{\\text{B }(4)}$",
+    "shortExplanation": "**Idea:** Find the next four-digit palindrome after 2002.",
+    "detailedSteps": [
+      "The next palindrome after $2002$ is $2112$.",
+      "The product of its digits is $2\\cdot1\\cdot1\\cdot2=4$.",
+      "Final Answer: ($\\boxed{\\text{B }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Number Sense",
+      "Palindromes"
+    ],
+    "commonMistakes": [
+      "Do not look for the next palindrome number in general; it must be a year after $2002$."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on palindromes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p5",
+    "problemId": "amc8-2002-p5",
+    "finalAnswer": "$\\boxed{\\text{C }(Friday)}$",
+    "shortExplanation": "**Idea:** Reduce the number of days modulo $7$.",
+    "detailedSteps": [
+      "Since $706=7\\cdot100+6$, $706$ days later is $6$ weekdays after Saturday.",
+      "Counting forward gives Sunday, Monday, Tuesday, Wednesday, Thursday, Friday.",
+      "Final Answer: ($\\boxed{\\text{C }(Friday)}$)"
+    ],
+    "keyIdeas": [
+      "Modular Arithmetic",
+      "Days of week"
+    ],
+    "commonMistakes": [
+      "Being $706$ days old means $706$ days after birth, not including the birth day as day $1$."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on days of week.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p6",
+    "problemId": "amc8-2002-p6",
+    "finalAnswer": "$\\boxed{\\text{A }(A)}$",
+    "shortExplanation": "**Idea:** Before overflowing the volume rises; after it is full, overflow keeps the volume constant.",
+    "detailedSteps": [
+      "While the birdbath is filling, the volume increases.",
+      "Once it reaches the overflow level, extra water spills out, so the volume stays constant.",
+      "The graph that rises and then becomes horizontal is choice A.",
+      "Final Answer: ($\\boxed{\\text{A }(A)}$)"
+    ],
+    "keyIdeas": [
+      "Graphs",
+      "Volume over time"
+    ],
+    "commonMistakes": [
+      "The drain rate is relevant while water is below overflow, but overflow prevents the volume from continuing to rise after full."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on volume over time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p7",
+    "problemId": "amc8-2002-p7",
+    "finalAnswer": "$\\boxed{\\text{E }(20)}$",
+    "shortExplanation": "**Idea:** Divide candy E choices by the total number of students.",
+    "detailedSteps": [
+      "The bar heights are $6,8,4,2,5$.",
+      "The total is $6+8+4+2+5=25$.",
+      "Candy E has $5$ choices, so the percent is $5/25=20\\%$.",
+      "Final Answer: ($\\boxed{\\text{E }(20)}$)"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Bar graph"
+    ],
+    "commonMistakes": [
+      "Use the total of all bars, not just the tallest bar, as the denominator."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on bar graph.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p8",
+    "problemId": "amc8-2002-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(24)}$",
+    "shortExplanation": "**Idea:** Add the 80s entries for France and Spain.",
+    "detailedSteps": [
+      "The European countries are France and Spain.",
+      "In the 80s, France has $15$ stamps and Spain has $9$.",
+      "The total is $15+9=24$.",
+      "Final Answer: ($\\boxed{\\text{D }(24)}$)"
+    ],
+    "keyIdeas": [
+      "Data Analysis",
+      "Table reading"
+    ],
+    "commonMistakes": [
+      "Brazil and Peru are South American, not European."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on table reading.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p9",
+    "problemId": "amc8-2002-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(1.06 dollars)}$",
+    "shortExplanation": "**Idea:** Use Brazil and Peru entries from the 50s and 60s and multiply by their prices.",
+    "detailedSteps": [
+      "South American countries are Brazil and Peru.",
+      "Before the 70s means the 50s and 60s.",
+      "Brazil has $4+7=11$ stamps at $6$ cents each, costing $66$ cents.",
+      "Peru has $6+4=10$ stamps at $4$ cents each, costing $40$ cents.",
+      "The total is $106$ cents, or $1.06$.",
+      "Final Answer: ($\\boxed{\\text{B }(1.06 dollars)}$)"
+    ],
+    "keyIdeas": [
+      "Data Analysis",
+      "Table costs"
+    ],
+    "commonMistakes": [
+      "Do not include 70s stamps when the phrase says before the 70s."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on table costs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p10",
+    "problemId": "amc8-2002-p10",
+    "finalAnswer": "$\\boxed{\\text{E }(5.5 cents)}$",
+    "shortExplanation": "**Idea:** Compute total cost divided by total number of 70s stamps.",
+    "detailedSteps": [
+      "The 70s counts are Brazil $12$, France $12$, Peru $6$, Spain $13$.",
+      "The total number is $43$.",
+      "The cost is $12\\cdot6+12\\cdot6+6\\cdot4+13\\cdot5=233$ cents.",
+      "$233/43\\approx5.42$ cents, closest to $5.5$ cents.",
+      "Final Answer: ($\\boxed{\\text{E }(5.5 cents)}$)"
+    ],
+    "keyIdeas": [
+      "Data Analysis",
+      "Weighted average"
+    ],
+    "commonMistakes": [
+      "This is a weighted average; each country has a different stamp price."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on weighted average.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p11",
+    "problemId": "amc8-2002-p11",
+    "finalAnswer": "$\\boxed{\\text{C }(13)}$",
+    "shortExplanation": "**Idea:** Compare consecutive square numbers.",
+    "detailedSteps": [
+      "The sixth square uses $6^2=36$ tiles.",
+      "The seventh square uses $7^2=49$ tiles.",
+      "The difference is $49-36=13$.",
+      "Final Answer: ($\\boxed{\\text{C }(13)}$)"
+    ],
+    "keyIdeas": [
+      "Patterns",
+      "Square numbers"
+    ],
+    "commonMistakes": [
+      "The square number counts area tiles, not side length."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on square numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p12",
+    "problemId": "amc8-2002-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{1}{6})}$",
+    "shortExplanation": "**Idea:** Probabilities of all regions sum to $1$.",
+    "detailedSteps": [
+      "The known probabilities sum to $\\frac13+\\frac12=\\frac{2}{6}+\\frac{3}{6}=\\frac56$.",
+      "The remaining probability is $1-\\frac56=\\frac16$.",
+      "Final Answer: ($\\boxed{\\text{B }(\\frac{1}{6})}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Complement"
+    ],
+    "commonMistakes": [
+      "Do not average the two given probabilities."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on complement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p13",
+    "problemId": "amc8-2002-p13",
+    "finalAnswer": "$\\boxed{\\text{E }(1000)}$",
+    "shortExplanation": "**Idea:** Doubling all three dimensions multiplies volume by $2^3$.",
+    "detailedSteps": [
+      "Carrie's box has scale factor $2$ in each dimension.",
+      "Volume scales by $2\\cdot2\\cdot2=8$.",
+      "So Carrie gets about $125\\cdot8=1000$ jellybeans.",
+      "Final Answer: ($\\boxed{\\text{E }(1000)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Volume scaling"
+    ],
+    "commonMistakes": [
+      "Do not multiply by $2$ only once; volume is three-dimensional."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Introductory AMC 8 problem focused on volume scaling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p14",
+    "problemId": "amc8-2002-p14",
+    "finalAnswer": "$\\boxed{\\text{B }(44\\%)}$",
+    "shortExplanation": "**Idea:** Successive discounts multiply the remaining price.",
+    "detailedSteps": [
+      "After $30\\%$ off, the price is $70\\%$ of original.",
+      "After another $20\\%$ off, it is $80\\%$ of that sale price.",
+      "The final price is $0.70\\cdot0.80=0.56$ of original.",
+      "So the total discount is $44\\%$.",
+      "Final Answer: ($\\boxed{\\text{B }(44\\%)}$)"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Successive discounts"
+    ],
+    "commonMistakes": [
+      "The discounts add to $50\\%$ only if both are taken from the original price, which is not the case."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on successive discounts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p15",
+    "problemId": "amc8-2002-p15",
+    "finalAnswer": "$\\boxed{\\text{E }(E)}$",
+    "shortExplanation": "**Idea:** Use grid counting or break the polygons into unit triangles.",
+    "detailedSteps": [
+      "Compare each polygon by decomposing it into unit squares and half-squares on the grid.",
+      "The fifth polygon has the greatest total area among the five options.",
+      "Therefore the largest area is choice E.",
+      "Final Answer: ($\\boxed{\\text{E }(E)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area on grid"
+    ],
+    "commonMistakes": [
+      "A visually wide polygon may have less area if much of it is cut away by diagonals."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on area on grid.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p16",
+    "problemId": "amc8-2002-p16",
+    "finalAnswer": "$\\boxed{\\text{E }(X+Y=Z)}$",
+    "shortExplanation": "**Idea:** The area of a right isosceles triangle built on a side is proportional to the square of that side.",
+    "detailedSteps": [
+      "A right isosceles triangle with hypotenuse or leg based on a side has area proportional to the square of that side in this construction.",
+      "The original $3$-$4$-$5$ triangle gives the Pythagorean relation $3^2+4^2=5^2$.",
+      "Thus the areas on the two legs sum to the area on the hypotenuse.",
+      "This matches $X+Y=Z$.",
+      "Final Answer: ($\\boxed{\\text{E }(X+Y=Z)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Pythagorean area relation"
+    ],
+    "commonMistakes": [
+      "The relation is about areas, so square lengths are the natural quantities."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on pythagorean area relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p17",
+    "problemId": "amc8-2002-p17",
+    "finalAnswer": "$\\boxed{\\text{C }(7)}$",
+    "shortExplanation": "**Idea:** Write the score in terms of correct answers.",
+    "detailedSteps": [
+      "Let $c$ be the number correct. Then $10-c$ are incorrect.",
+      "The score is $5c-2(10-c)=29$.",
+      "So $5c-20+2c=29$, hence $7c=49$ and $c=7$.",
+      "Final Answer: ($\\boxed{\\text{C }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Score equations"
+    ],
+    "commonMistakes": [
+      "Incorrect answers subtract points; they are not worth zero."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on score equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p18",
+    "problemId": "amc8-2002-p18",
+    "finalAnswer": "$\\boxed{\\text{E }(2 hr)}$",
+    "shortExplanation": "**Idea:** Use total minutes needed for a nine-day average.",
+    "detailedSteps": [
+      "He needs $9\\cdot85=765$ total minutes.",
+      "The first $5$ days give $5\\cdot75=375$ minutes.",
+      "The next $3$ days give $3\\cdot90=270$ minutes.",
+      "So far he has $645$ minutes, leaving $765-645=120$ minutes, or $2$ hours.",
+      "Final Answer: ($\\boxed{\\text{E }(2 hr)}$)"
+    ],
+    "keyIdeas": [
+      "Averages",
+      "Total time"
+    ],
+    "commonMistakes": [
+      "Convert hours to minutes before averaging."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on total time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p19",
+    "problemId": "amc8-2002-p19",
+    "finalAnswer": "$\\boxed{\\text{D }(162)}$",
+    "shortExplanation": "**Idea:** Count three-digit numbers with exactly one zero.",
+    "detailedSteps": [
+      "The hundreds digit cannot be $0$, so it has $9$ choices.",
+      "If the tens digit is $0$, the units digit has $9$ nonzero choices: $9\\cdot9=81$.",
+      "If the units digit is $0$, the tens digit has $9$ nonzero choices: another $81$.",
+      "Total: $81+81=162$.",
+      "Final Answer: ($\\boxed{\\text{D }(162)}$)"
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Digit counting"
+    ],
+    "commonMistakes": [
+      "Numbers between $99$ and $999$ are three-digit numbers; $999$ itself does not contain zero."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on digit counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p20",
+    "problemId": "amc8-2002-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(3)}$",
+    "shortExplanation": "**Idea:** Use similarity and symmetry in the triangle.",
+    "detailedSteps": [
+      "Since $A$ and $B$ are midpoints on the two equal sides, segment $AB$ is parallel to $YZ$.",
+      "The small top triangle has side lengths half of the original, so its area is $1/4$ of $8$, or $2$.",
+      "The lower trapezoid has area $8-2=6$.",
+      "The shaded part is half of this symmetric lower region, so its area is $3$.",
+      "Final Answer: ($\\boxed{\\text{D }(3)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area decomposition"
+    ],
+    "commonMistakes": [
+      "Midpoint scaling changes area by the square of the scale factor."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on area decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p21",
+    "problemId": "amc8-2002-p21",
+    "finalAnswer": "$\\boxed{\\text{E }(\\frac{11}{16})}$",
+    "shortExplanation": "**Idea:** Count outcomes with $2$, $3$, or $4$ heads.",
+    "detailedSteps": [
+      "There are $2^4=16$ equally likely outcomes.",
+      "At least as many heads as tails means $2,3,$ or $4$ heads.",
+      "The count is $\\binom42+\\binom43+\\binom44=6+4+1=11$.",
+      "The probability is $11/16$.",
+      "Final Answer: ($\\boxed{\\text{E }(\\frac{11}{16})}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Binomial counting"
+    ],
+    "commonMistakes": [
+      "Exactly half heads is allowed because heads are at least as many as tails."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on binomial counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p22",
+    "problemId": "amc8-2002-p22",
+    "finalAnswer": "$\\boxed{\\text{C }(26)}$",
+    "shortExplanation": "**Idea:** Start with six separate cubes and subtract hidden shared faces.",
+    "detailedSteps": [
+      "Six separate cubes have surface area $6\\cdot6=36$.",
+      "Each shared face removes $2$ square inches from the visible area.",
+      "The arrangement has $5$ shared face pairs.",
+      "Thus the visible surface area is $36-2\\cdot5=26$.",
+      "Final Answer: ($\\boxed{\\text{C }(26)}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Surface area"
+    ],
+    "commonMistakes": [
+      "Each connection hides two faces, one from each cube."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on surface area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p23",
+    "problemId": "amc8-2002-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{4}{9})}$",
+    "shortExplanation": "**Idea:** Use the repeating square block ratio of dark tiles to all tiles.",
+    "detailedSteps": [
+      "The corner pattern extends as a repeating tile pattern across the whole floor.",
+      "Counting one full repeating block gives $4$ dark unit tiles for every $9$ unit tiles total.",
+      "Thus the fraction of darker tiles is $4/9$.",
+      "Final Answer: ($\\boxed{\\text{B }(\\frac{4}{9})}$)"
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Tiling pattern"
+    ],
+    "commonMistakes": [
+      "Do not use the incomplete corner alone; infer the full repeating pattern."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on tiling pattern.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p24",
+    "problemId": "amc8-2002-p24",
+    "finalAnswer": "$\\boxed{\\text{B }(40)}$",
+    "shortExplanation": "**Idea:** Compare juice per fruit using a convenient common number of fruits.",
+    "detailedSteps": [
+      "Use $6$ pears and $6$ oranges.",
+      "$3$ pears give $8$ ounces, so $6$ pears give $16$ ounces of pear juice.",
+      "$2$ oranges give $8$ ounces, so $6$ oranges give $24$ ounces of orange juice.",
+      "The blend has $16+24=40$ ounces total, with $16$ ounces pear juice.",
+      "The percent pear juice is $16/40=40\\%$.",
+      "Final Answer: ($\\boxed{\\text{B }(40)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Mixture percent"
+    ],
+    "commonMistakes": [
+      "Equal numbers of fruits do not produce equal ounces of juice."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Intermediate AMC 8 problem focused on mixture percent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2002-p25",
+    "problemId": "amc8-2002-p25",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{1}{4})}$",
+    "shortExplanation": "**Idea:** Let each gift be the same amount and express original amounts in terms of that gift.",
+    "detailedSteps": [
+      "Let the common gift to Ott be $x$.",
+      "Moe gave one-fifth of his money, so Moe originally had $5x$.",
+      "Loki originally had $4x$, and Nick originally had $3x$.",
+      "The total group money is $5x+4x+3x=12x$.",
+      "Ott receives $3x$, so Ott has $3x/12x=1/4$ of the group's money.",
+      "Final Answer: ($\\boxed{\\text{B }(\\frac{1}{4})}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Fraction of total"
+    ],
+    "commonMistakes": [
+      "The donors give equal amounts, not equal fractions."
+    ],
+    "alternativeMethods": [
+      "Check the answer choice by substituting or comparing it with the computed result."
+    ],
+    "difficultyNotes": "Advanced AMC 8 problem focused on fraction of total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

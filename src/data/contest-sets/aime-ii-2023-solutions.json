@@ -1,0 +1,390 @@
+[
+  {
+    "id": "solution-aime-ii-2023-p1",
+    "problemId": "aime-ii-2023-p1",
+    "finalAnswer": "$\\boxed{220}$",
+    "shortExplanation": "The mean of an arithmetic sequence is the average of its endpoints.",
+    "detailedSteps": [
+      "Let the least term be $a$, so the greatest is $2a$. The mean is $(a+2a)/2=3a/2$.",
+      "There are six terms, giving $6(3a/2)=990$. Hence $a=110$, and the greatest term is $220$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Arithmetic sequences"
+    ],
+    "commonMistakes": [
+      "The total is six times the mean, not six times the greatest term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint relation determines the mean without finding the common difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p2",
+    "problemId": "aime-ii-2023-p2",
+    "finalAnswer": "$\\boxed{585}$",
+    "shortExplanation": "List the four-digit base-eight palindromes below the limit, then compare their decimal forms.",
+    "detailedSteps": [
+      "The candidate $585=1111_8$ is a palindrome in both bases. Any larger candidate is at least $512=1000_8$ and less than $1000$, so its base-eight form has four digits and begins with 1.",
+      "A palindromic form is therefore $1cc1_8=513+72c$. The upper bound permits $c=0,1,\\ldots,6$; $c=7$ gives 1017.",
+      "The complete list is $513,585,657,729,801,873,945$. Only 585 is a decimal palindrome, so none greater than 585 works."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Number bases",
+      "Palindromes"
+    ],
+    "commonMistakes": [
+      "A decimal palindrome need not remain palindromic after conversion to another base.",
+      "Numbers below 512 cannot beat the exhibited candidate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using the best candidate to bound the base-eight length makes the search complete and short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p3",
+    "problemId": "aime-ii-2023-p3",
+    "finalAnswer": "$\\boxed{250}$",
+    "shortExplanation": "Express the three equal angles with coordinate slopes.",
+    "detailedSteps": [
+      "Set $A=(0,0)$, $B=(L,0)$, $C=(0,L)$, and $P=(u,v)$. Let the common angle be $\\theta$ and put $t=\\tan\\theta>0$. The angles at $A$ and $C$ give $v/u=t$ and $u/(L-v)=t$.",
+      "Solving yields $u=tL/(1+t^2)$ and $v=t^2L/(1+t^2)$. At $B$, the tangent of the angle between $BP$ and $BC$ is $(L-u-v)/(L-u+v)$, since $P$ is inside the triangle.",
+      "Substituting gives $t=(1-t)/(1-t+2t^2)$. Thus $(2t-1)(t^2+1)=0$, so $t=1/2$. Therefore $P=(2L/5,L/5)$.",
+      "Now $AP^2=L^2/5=100$, giving $L^2=500$. The area is $L^2/2=250$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinate geometry",
+      "Trigonometry"
+    ],
+    "commonMistakes": [
+      "At B, the required angle is measured from BC, not from BA.",
+      "The interior-point condition fixes the positive angle and slope branches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main step is expressing the angle at B as the difference between two line directions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p4",
+    "problemId": "aime-ii-2023-p4",
+    "finalAnswer": "$\\boxed{273}$",
+    "shortExplanation": "Subtract pairs of equations to separate the equal-variable and exceptional-value cases.",
+    "detailedSteps": [
+      "Subtracting the equations in pairs gives $(x-z)(y-4)=0$, $(y-x)(z-4)=0$, and $(z-y)(x-4)=0$.",
+      "If none of $x,y,z$ equals 4, these relations force $x=y=z=t$. Then $t^2+4t=60$, so $t=6$ or $t=-10$.",
+      "If one variable equals 4, the other two have sum 15 and product 44. They are 4 and 11. Conversely, every permutation of $(4,4,11)$ satisfies all three equations.",
+      "Thus the distinct possible values of $x$ are $-10,4,6,11$. Their squared sum is $100+16+36+121=273$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Casework",
+      "Factoring"
+    ],
+    "commonMistakes": [
+      "Dividing by a variable minus 4 would discard valid exceptional solutions.",
+      "Sum over distinct possible x values, not over ordered solution triples."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exceptional value 4 must be handled before any cancellation in the difference equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p5",
+    "problemId": "aime-ii-2023-p5",
+    "finalAnswer": "$\\boxed{719}$",
+    "shortExplanation": "Track the cancellation factor when the fraction is multiplied by 55.",
+    "detailedSteps": [
+      "Write $r=a/b$ with positive coprime integers $a,b$, and let $d=\\gcd(55,b)$. Since $\\gcd(a,b)=1$, the reduced form of $55r$ is $(55a/d)/(b/d)$.",
+      "The equal numerator-plus-denominator sums give $55a+b=d(a+b)$, or $(d-1)b=(55-d)a$. Here $d$ must be one of $1,5,11,55$.",
+      "The cases $d=1$ and $d=55$ would force $a=0$ or $b=0$, respectively. For $d=5$, the ratio is $a/b=2/25$; for $d=11$, it is $5/22$. Both are reduced and have the required greatest common divisor with 55.",
+      "The sum is $2/25+5/22=169/550$. Since 169 and 550 are coprime, the requested sum is $169+550=719$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Greatest common divisors",
+      "Fractions"
+    ],
+    "commonMistakes": [
+      "The cancellation factor is determined by the denominator because the original fraction is reduced.",
+      "A candidate ratio must satisfy the gcd condition used to derive it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keeping the reduction factor explicit limits the problem to four divisors of 55.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p6",
+    "problemId": "aime-ii-2023-p6",
+    "finalAnswer": "$\\boxed{35}$",
+    "shortExplanation": "Only points in the two separated arms can place their midpoint in the missing square.",
+    "detailedSteps": [
+      "Place the three unit squares at the bottom left, upper left, and bottom right of a $2\\times2$ square. A midpoint can leave the L-shaped region only by entering the missing upper-right square.",
+      "This requires one point in the upper-left square and the other in the bottom-right square. There are two ordered choices of these squares among nine equally likely ordered square pairs, for probability $2/9$.",
+      "Conditional on such a pair, the midpoint has $x>1$ exactly when the two corresponding independent unit-interval coordinates have sum greater than 1; this has probability $1/2$. The same holds for $y>1$, independently. Hence the conditional failure probability is $1/4$.",
+      "The total failure probability is $(2/9)(1/4)=1/18$, so the desired probability is $17/18$. Boundary events have probability zero. The answer is $17+18=35$."
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Complementary probability",
+      "Geometric probability"
+    ],
+    "commonMistakes": [
+      "The two arm assignments are ordered and both must be counted.",
+      "Both coordinates must enter the missing square simultaneously."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conditioning on the containing squares isolates the only nonconvex part of the region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p7",
+    "problemId": "aime-ii-2023-p7",
+    "finalAnswer": "$\\boxed{928}$",
+    "shortExplanation": "An inscribed rectangle is determined by two opposite-vertex pairs.",
+    "detailedSteps": [
+      "Every rectangle inscribed in a circle has its diagonals as diameters. Conversely, any two distinct diameters among the six opposite-vertex pairs give a rectangle.",
+      "Thus a monochromatic rectangle exists exactly when at least two opposite pairs are both red, or at least two are both blue. A valid coloring has at most one all-red pair and at most one all-blue pair.",
+      "If all six pairs are mixed, there are $2^6=64$ colorings. If exactly one pair is monochromatic, choose its position, its color, and the orientations of the other pairs: $6\\cdot2\\cdot2^5=384$.",
+      "If there is one all-red and one all-blue pair, there are $6\\cdot5\\cdot2^4=480$ colorings. These cases exhaust the possibilities, giving $64+384+480=928$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Inscribed angles",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "The vertices occupy fixed positions; rotations are not identified.",
+      "One all-red pair and one all-blue pair do not form a monochromatic rectangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The geometric diameter characterization reduces a rectangle condition to six independent vertex pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p8",
+    "problemId": "aime-ii-2023-p8",
+    "finalAnswer": "$\\boxed{24}$",
+    "shortExplanation": "Exchange the product over seventh roots of unity with a product over the three roots of a cubic.",
+    "detailedSteps": [
+      "Let $f(z)=z^3+z+1$, with roots $r_1,r_2,r_3$. Factoring $f$ and exchanging the products gives $\\prod_{k=0}^{6}f(\\omega^k)=\\prod_{j=1}^{3}\\prod_{k=0}^{6}(\\omega^k-r_j)$.",
+      "Because $\\prod_{k=0}^{6}(z-\\omega^k)=z^7-1$ and there are seven factors, the inner product is $1-r_j^7$.",
+      "For any root $r$ of $f$, the relation $r^3=-r-1$ successively gives $r^4=-r^2-r$, $r^5=-r^2+r+1$, $r^6=r^2+2r+1$, and $r^7=2r^2-1$. Thus $1-r^7=2(1-r)(1+r)$.",
+      "The required product is therefore $8\\prod_j(1-r_j)\\prod_j(1+r_j)$. The first product is $f(1)=3$, and the second is $-f(-1)=1$. The result is $8\\cdot3\\cdot1=24$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Roots of unity",
+      "Polynomial reduction",
+      "Vieta formulas"
+    ],
+    "commonMistakes": [
+      "Reversing each of seven factors introduces a minus sign.",
+      "The product includes the root 1 corresponding to k=0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Polynomial reduction avoids calculating any of the cubic roots or expanding seven complex factors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p9",
+    "problemId": "aime-ii-2023-p9",
+    "finalAnswer": "$\\boxed{33}$",
+    "shortExplanation": "Use coordinates parallel to the tangent, then use the nearer-tangent condition to select the correct height.",
+    "detailedSteps": [
+      "Choose $P=(0,0)$ and the common tangent $AB$ as $y=h$ with $h>0$. Write $X=(x,0)$ and $Y=(y,0)$, so $|x|=10$ and $|y|=14$. Both circles lie below the tangent. Their centers are $(x/2,k_x)$ and $(y/2,k_y)$, where $k_x=h/2-x^2/(8h)$ and $k_y=h/2-y^2/(8h)$. These formulas follow by equating the radius $h-k_x$ to the distance from its center to $P$, and similarly for the other circle.",
+      "Let $Q=(u,v)$. Subtracting the two circle equations gives $u=(x+y)v/(4h)$. Substitution into either circle, using $Q\\ne P$, gives $v=4h(4h^2+xy)/(16h^2+(x+y)^2)$. Consequently, $PQ=|4h^2+xy|/\\sqrt{16h^2+(x+y)^2}$.",
+      "If $x$ and $y$ have the same sign, the condition $PQ=5$ would imply $(4h^2+140)^2=25(16h^2+576)$, or $16h^4+720h^2+5200=0$, impossible for $h>0$. Thus they have opposite signs; choose $x=10$ and $y=-14$.",
+      "Now $(4h^2-140)^2=25(16h^2+16)$, so $h^4-95h^2+1200=0$. The two possibilities are $h^2=15$ and $h^2=80$.",
+      "The nearer-tangent condition distinguishes these possibilities. Reflection in the line joining the circle centers exchanges $P$ and $Q$ and also exchanges the two common external tangents. Therefore $AB$ is nearer to $P$ exactly when $\\operatorname{dist}(P,AB)<\\operatorname{dist}(Q,AB)$. As both points lie below $AB$, this says $h<h-v$, or $v<0$. The expression for $v$ then requires $h^2<35$, selecting $h^2=15$.",
+      "The tangent points have horizontal coordinates $x/2$ and $y/2$, so $AB=12$, while $XY=24$. The trapezoid area is $(12+24)\\sqrt{15}/2=18\\sqrt{15}$. Hence $m+n=18+15=33$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Coordinate geometry",
+      "Tangency",
+      "Reflection"
+    ],
+    "commonMistakes": [
+      "The points X and Y must be shown to lie on opposite sides of P.",
+      "Both positive height roots satisfy the distance equation; only the nearer tangent condition eliminates the larger one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The essential geometric issue is choosing the correct height after the algebra produces two valid tangent configurations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p10",
+    "problemId": "aime-ii-2023-p10",
+    "finalAnswer": "$\\boxed{144}$",
+    "shortExplanation": "Count residue-class patterns first, then assign the four actual integers in each residue class.",
+    "detailedSteps": [
+      "Replace each integer by its residue modulo 3. There must be four occurrences of each of the three residues, and every adjacent pair of cells must have different residues.",
+      "Each column contains two distinct residues and omits one. A residue appears four times among six columns exactly when it is omitted twice. Hence the sequence of omitted residues can be chosen in $6!/(2!2!2!)=90$ ways.",
+      "For any such sequence, there are two orientations of the first column. Each later column is then forced: if it omits the same residue, the two entries must be swapped; if it omits a different residue, the residue shared with the preceding column must move to the opposite row. The other row is then also valid. Thus there are $2\\cdot90=180$ residue patterns.",
+      "The four distinct integers of each residue can be assigned to their four positions in $4!$ ways, independently. Therefore $N=180(4!)^3=2^{11}3^5\\cdot5$.",
+      "The number of positive divisors is $(11+1)(5+1)(1+1)=144$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Graph coloring",
+      "Multinomial coefficients",
+      "Divisor counting"
+    ],
+    "commonMistakes": [
+      "Residue patterns and assignments of distinct integers are separate counts.",
+      "After fixing the first column, later orientations are forced rather than independently chosen."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Encoding each column by its missing residue makes both the balance condition and the adjacency constraint manageable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p11",
+    "problemId": "aime-ii-2023-p11",
+    "finalAnswer": "$\\boxed{81}$",
+    "shortExplanation": "Use complementary pairs, then classify the selected two-element subsets.",
+    "detailedSteps": [
+      "The 32 subsets split into 16 complementary pairs. An intersecting collection contains at most one from each pair, so a collection of size 16 contains exactly one from every pair.",
+      "Such a collection is upward closed: if it contains $X\\subseteq Y$ but omits $Y$, it must contain $Y^c$, which is disjoint from $X$. If it contains a singleton $\\{i\\}$, it therefore consists of all 16 subsets containing $i$. This gives five collections.",
+      "Now suppose no singleton is selected. The empty set is also impossible, so all five four-element subsets and the full set are selected. For each two-element subset, exactly one of it and its complementary three-element subset is selected.",
+      "View the selected two-element subsets as edges of $K_5$. They must be pairwise intersecting. This is the only remaining restriction: two triples necessarily meet, and a pair can be disjoint from a triple only when they are complements, which were never selected together.",
+      "Count the possible edge families by size. There are 1 empty family, 10 one-edge families, and $5\\binom42=30$ two-edge families. A three-edge intersecting family is either a star or a triangle, giving $5\\binom43+\\binom53=30$. A four-edge family must be a full star, giving 5. Larger families are impossible: three pairwise intersecting edges without a common vertex form a triangle, and no fourth edge can meet all three.",
+      "There are $1+10+30+30+5=76$ collections without a singleton. Including the five singleton cases gives $76+5=81$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Complementary subsets",
+      "Intersecting families",
+      "Graph interpretation"
+    ],
+    "commonMistakes": [
+      "A collection is unordered; it is not a sequence of 16 subsets.",
+      "Selecting one set per complementary pair is necessary but not alone sufficient for pairwise intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Completeness rests on classifying intersecting edge families as stars or triangles after reducing by complements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p12",
+    "problemId": "aime-ii-2023-p12",
+    "finalAnswer": "$\\boxed{247}$",
+    "shortExplanation": "Reflect the second circle intersection through the side midpoint to construct the equal-angle point.",
+    "detailedSteps": [
+      "The median formula gives $AM^2=(2\\cdot13^2+2\\cdot15^2-14^2)/4=148$. Also $MB=MC=7$.",
+      "The intersecting-chords relation at $M$ gives $MA\\cdot MP=MB\\cdot MC=49$, so $MP=49/\\sqrt{148}<AM$.",
+      "Reflect $P$ through $M$ to a point $Q_0$. It lies on segment $AM$ because $MQ_0=MP<AM$. The diagonals $PQ_0$ and $BC$ bisect each other at $M$, so $PBQ_0C$ is a parallelogram.",
+      "Opposite angles of this parallelogram give $\\angle PBQ_0=\\angle PCQ_0$. The source specifies that the required point is unique, hence $Q=Q_0$.",
+      "Therefore $AQ=AM-MQ=\\sqrt{148}-49/\\sqrt{148}=99/\\sqrt{148}$. The requested form has relatively prime $m=99$ and $n=148$, giving $m+n=247$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Power of a point",
+      "Parallelograms",
+      "Median formula"
+    ],
+    "commonMistakes": [
+      "The requested denominator is a square root; do not replace the target form by an ordinary fraction.",
+      "The reflected point must be shown to lie on the segment AM, not merely its line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reflecting through M converts the angle condition into opposite angles of a parallelogram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p13",
+    "problemId": "aime-ii-2023-p13",
+    "finalAnswer": "$\\boxed{167}$",
+    "shortExplanation": "First determine which exponents give integers, then study their final digits with a recurrence.",
+    "detailedSteps": [
+      "Put $a=\\sec A$ and $b=\\tan A$. The given relation implies $ab=2$, while $a^2-b^2=1$. Hence $u=a^2=(\\sqrt{17}+1)/2$ and $v=b^2=(\\sqrt{17}-1)/2$, with $u-v=1$ and $uv=4$.",
+      "For every odd positive integer $k$, expanding $u^k+v^k$ cancels the even powers of $\\sqrt{17}$ and leaves a positive rational multiple of $\\sqrt{17}$. Thus this sum is irrational.",
+      "If $n\\equiv2\\pmod4$, the target is $u^{n/2}+v^{n/2}$ and is irrational. If $n$ is odd, its square is $u^n+v^n+2(ab)^n=u^n+v^n+2^{n+1}$, also irrational, so the target cannot be an integer. Only $n=4j$ can qualify.",
+      "For $n=4j$, let $T_j=u^{2j}+v^{2j}$. Since $u^2+v^2=9$ and $u^2v^2=16$, these are integers given by $T_0=2$, $T_1=9$, and $T_j=9T_{j-1}-16T_{j-2}$.",
+      "Modulo 10, the values for $j=1,2,3,4,5$ are $9,9,7,9,9$. The pair of consecutive residues repeats, so the cycle $9,9,7$ continues. The last digit is 9 exactly when $3\\nmid j$.",
+      "The bound $n\\le1000$ gives $1\\le j\\le250$. There are $250-\\lfloor250/3\\rfloor=167$ eligible exponents."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Algebraic numbers",
+      "Linear recurrences",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "Checking only exponents divisible by four requires a proof that the other exponents are nonintegral.",
+      "A recurrence repeats when a whole pair of consecutive residues repeats, not just one residue."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The difficult part is excluding all nonmultiples of four before counting the periodic final digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p14",
+    "problemId": "aime-ii-2023-p14",
+    "finalAnswer": "$\\boxed{751}$",
+    "shortExplanation": "Recover the cube edge length from vertical projections, then subtract the dry corner volume.",
+    "detailedSteps": [
+      "Let the edge length be $L$ and choose orthonormal edge directions $\\mathbf e_1,\\mathbf e_2,\\mathbf e_3$ from $A$, with $AB=L\\mathbf e_1$ and $AC=L(\\mathbf e_2+\\mathbf e_3)$. The vertical direction lies in the vertical plane of $ABDC$, so its components along $\\mathbf e_2$ and $\\mathbf e_3$ are equal.",
+      "The given heights therefore make the three vertical components $2/L,4/L,4/L$. Their squared sum is 1, so $L^2=2^2+4^2+4^2=36$ and $L=6$. The whole cube has volume 216.",
+      "Using fractional edge coordinates $0\\le u,v,w\\le1$, the height above $A$ is $2u+4v+4w$. The dry region has height greater than 7. Reflecting through the cube center sends height $h$ to $10-h$, so the dry fraction equals the fraction with $2u+4v+4w<3$.",
+      "In the positive octant without upper bounds, this region is a tetrahedron with intercepts $3/2,3/4,3/4$, hence coordinate volume $27/192$. The bounds $v,w\\le1$ cut off nothing. The part with $u>1$, after translating $u$ by 1, is a tetrahedron with threshold 1 and volume $1/192$.",
+      "Thus the dry fraction is $(27-1)/192=13/96$, and the water fraction is $83/96$. The water volume is $216\\cdot83/96=747/4$, already reduced. The answer is $747+4=751$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Spatial coordinates",
+      "Projections",
+      "Tetrahedron volume"
+    ],
+    "commonMistakes": [
+      "The four given vertices include face diagonals, so their height differences are not three independent edge lengths.",
+      "The low-corner tetrahedron extends beyond u=1 and requires a subtraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The vertical-plane condition determines the equal edge projections that make the volume calculation possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2023-p15",
+    "problemId": "aime-ii-2023-p15",
+    "finalAnswer": "$\\boxed{363}$",
+    "shortExplanation": "Track the small coefficient above the residue 1 instead of the rapidly growing multiples.",
+    "detailedSteps": [
+      "Write $a_n=1+2^nk_n$. Divisibility by 23 requires $2^nk_n\\equiv-1\\pmod{23}$. The least positive multiple corresponds to the unique $k_n\\in\\{1,2,\\ldots,22\\}$ satisfying this congruence.",
+      "If $k_n$ is even, the same number is congruent to 1 modulo $2^{n+1}$ and $k_{n+1}=k_n/2$, so $a_{n+1}=a_n$. If $k_n$ is odd, the next coefficient is $(k_n+23)/2$, and $a_{n+1}=a_n+23\\cdot2^n>a_n$. Thus equality occurs exactly when $k_n$ is even.",
+      "The order of 2 modulo 23 is 11: $2^{11}\\equiv1\\pmod{23}$, and the prime number 11 has no proper divisor other than 1, while $2\\not\\equiv1$. Hence the coefficient sequence repeats every 11 terms.",
+      "Starting at $k_1=11$, one period is $11,17,20,10,5,14,7,15,19,21,22$. The even entries are at positions $3,4,6,11$.",
+      "Since $1000=90\\cdot11+10$, there are 90 full periods contributing $90\\cdot4=360$ equalities, followed by three further even entries. The answer is $363$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Modular inverses",
+      "Periodic sequences",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "The comparison at n=1000 still uses a_1001.",
+      "The final incomplete block has length 10 and omits the fourth even position."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Representing each least multiple with a coefficient between 1 and 22 reveals an eleven-term parity cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

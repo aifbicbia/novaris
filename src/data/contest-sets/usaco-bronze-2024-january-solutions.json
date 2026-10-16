@@ -1,0 +1,92 @@
+[
+  {
+    "finalAnswer": "Print each type that appears at two positions a distance of 1 or 2 apart, in increasing order. Print -1 if no type qualifies.",
+    "shortExplanation": "Two nearby equal preferences create a contiguous majority block. A block of at least two matching cows can then absorb its neighbors one at a time.",
+    "detailedSteps": [
+      "If two equal types are adjacent, they already form a block of length 2. If they are two positions apart, the intervening length-3 group has a strict majority of that type and becomes uniform.",
+      "A uniform block of length $k\\ge2$ can absorb the next neighbor: take the whole block and that neighbor as one group. Since $k>(k+1)/2$, this enlarges the block. Repeat toward both ends to convert the entire line.",
+      "Conversely, suppose type $x$ has no equal occurrences within distance 2 initially. Before the first group that creates a new $x$ occurrence, other operations can only preserve or remove existing $x$ occurrences; they remain at least 3 positions apart.",
+      "An interval of length $L\\ge2$ then contains at most $\\lceil L/3\\rceil\\le L/2$ occurrences of $x$, so it cannot have a strict $x$ majority. A singleton group cannot create an additional occurrence. Thus the first expansion is impossible, establishing necessity.",
+      "Mark a type whenever consecutive entries or entries two positions apart are equal. Scan possible type values in increasing order to print the marked ones. Values lie in $1,\\ldots,N$, so a Boolean array gives $O(N)$ time and $O(N)$ space.",
+      "An original C++17 implementation follows. It avoids trailing spaces on each result line.\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int tests;if(!(cin>>tests))return 0;\n    while(tests--){\n        int n;cin>>n;vector<int> h(n);vector<bool> works(n+1,false);\n        for(auto &v:h)cin>>v;\n        for(int i=0;i<n;++i)\n            if((i>0&&h[i]==h[i-1])||(i>1&&h[i]==h[i-2]))works[h[i]]=true;\n        bool first=true;\n        for(int v=1;v<=n;++v)if(works[v]){\n            if(!first)cout<<' ';cout<<v;first=false;\n        }\n        if(first)cout<<-1;\n        cout<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Build a majority block from a pair at distance at most two.",
+      "Prove necessity by considering the first new occurrence."
+    ],
+    "commonMistakes": [
+      "Exactly half is not a strict majority.",
+      "A type absent from the input cannot be created.",
+      "Do not output a qualifying type multiple times."
+    ],
+    "alternativeMethods": [
+      "For small inputs, construct the graph of every legal focus-group transition and test reachability of each uniform state. This provides an independent correctness oracle but is exponential."
+    ],
+    "difficultyNotes": "The short scan is justified by both an expanding-block construction and a first-expansion impossibility proof. The output is a set of possible types, not one preferred type.",
+    "id": "solution-usaco-bronze-2024-january-p1",
+    "problemId": "usaco-bronze-2024-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Simulate landings until the ball leaves the line or repeats a position-direction-power state. Count each breakable target once, using power-stamped position-direction visits.",
+    "shortExplanation": "Power never decreases. This lets a small visit array detect cycles within each power level, while a separate target flag prevents double counting.",
+    "detailedSteps": [
+      "Process the starting location before the first jump. At a target, break it if the current power is at least its threshold; count it only once. At a pad, increase power by the pad’s value and reverse direction, including when that value is zero. Then jump using the new direction and power.",
+      "Target breakage does not change the trajectory. If the same position, direction and power recur, the future trajectory repeats, and every target that cycle can break has already been encountered. Stop at that recurrence or when the position leaves the line.",
+      "Power starts at 1 and never decreases. Store the latest power seen at each of the $2N$ position-direction slots. A slot containing the current power signals a repeat at that level; overwriting smaller powers is safe because they can never occur again. This uses $O(N)$ space instead of storing every full state.",
+      "For a fixed power $k$, moves preserve the position modulo $k$. There are at most $\\lceil N/k\\rceil$ on-line positions in that residue class, each with two directions, before a cycle, a power increase or an exit. A power larger than $N$ cannot make another on-line jump.",
+      "The total visits are bounded by $O(N\\sum_{k=1}^{N}1/k)=O(N\\log N)$ across the increasing power levels. A jump-pad value can skip levels and only reduce that bound. This proves termination of the simulation without an arbitrary step limit.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n,start;if(!(cin>>n>>start))return 0;\n    vector<int> type(n),value(n);vector<long long> seen(2*n,0);\n    vector<bool> broken(n,false);\n    for(int i=0;i<n;++i)cin>>type[i]>>value[i];\n    long long position=start-1,power=1;int direction=1,answer=0;\n    while(position>=0&&position<n){\n        int key=2*position+(direction>0);\n        if(seen[key]==power)break;\n        seen[key]=power;\n        if(type[position]==0){power+=value[position];direction=-direction;}\n        else if(power>=value[position]&&!broken[position]){\n            broken[position]=true;++answer;\n        }\n        position+=direction*power;\n    }\n    cout<<answer<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Process the current landing before jumping.",
+      "Use monotone power as a visit stamp.",
+      "Count target breakage separately from trajectory states."
+    ],
+    "commonMistakes": [
+      "A zero-valued pad still reverses direction.",
+      "Apply a starting pad before the first jump.",
+      "Revisiting a broken target cannot increase the count.",
+      "Position alone is insufficient for detecting a cycle."
+    ],
+    "alternativeMethods": [
+      "A small-case oracle can store the full state, including a broken-target bitmask. Its larger state storage is unnecessary in the optimized solution because broken targets never affect motion."
+    ],
+    "difficultyNotes": "The harmonic bound accounts for repeated visits at different powers. A claim of linear simulation time without such a bound is not needed here; this implementation has O(N log N) time and O(N) space.",
+    "id": "solution-usaco-bronze-2024-january-p2",
+    "problemId": "usaco-bronze-2024-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "$\\displaystyle\\boxed{\\sum_{i=1}^{N}\\left|a_i-2a_{i-1}+a_{i-2}\\right|}$, with $a_0=a_{-1}=0$.",
+    "shortExplanation": "Each spray strength has a forced net signed count. Second differences recover those counts, and the fewest applications use only the required sign at each strength.",
+    "detailedSteps": [
+      "Index a spray by its first affected patch $i$, so its power is $N-i+1$. Let $c_i$ be the number of adding uses minus the number of removing uses at that power. Its contribution to patch $j\\ge i$ is $c_i(j-i+1)$.",
+      "To cancel every deviation, $$a_j+\\sum_{i=1}^{j}c_i(j-i+1)=0.$$ This system is lower triangular with diagonal 1, so the net signed spray counts are uniquely determined.",
+      "Take two successive differences, with missing left values set to zero. The forced count is $$c_i=-a_i+2a_{i-1}-a_{i-2}.$$ Each power needs at least $|c_i|$ applications, because its adding and removing counts must differ by $c_i$.",
+      "The lower bound is attainable: use the appropriate pesticide sign $|c_i|$ times at each power. Effects add linearly and commute, so this combination cancels every patch. Hence the minimum is $\\sum_i|c_i|$.",
+      "Stream the current value and the previous two values for $O(N)$ time and $O(1)$ extra space. Use 64-bit integers: the intermediate second difference can have magnitude up to $4\\cdot10^{15}$. The source guarantee that the final answer is at most $10^9$ also bounds every nonnegative partial sum.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <cstdlib>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n;if(!(cin>>n))return 0;\n    long long previous=0,before_previous=0,answer=0;\n    for(int i=0;i<n;++i){\n        long long current;cin>>current;\n        long long coefficient=-current+2*previous-before_previous;\n        answer+=llabs(coefficient);\n        before_previous=previous;previous=current;\n    }\n    cout<<answer<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Express operations as a triangular linear system.",
+      "Take second differences of a linear ramp.",
+      "A forced net count needs at least its absolute value in operations."
+    ],
+    "commonMistakes": [
+      "Sprays originate at the right end; the first affected index is N-L+1.",
+      "Summing absolute bacteria levels does not account for the ramp-shaped effects.",
+      "Use zero for both missing values to the left of the first patch."
+    ],
+    "alternativeMethods": [
+      "An explicit left-to-right cancellation simulation maintains the accumulated linear effect and its slope. The second-difference form eliminates these auxiliary state variables."
+    ],
+    "difficultyNotes": "The answer bound is a printed guarantee, not a property of arbitrary arrays with the same magnitude limits. The original audit compares the formula with shortest spray sequences on concrete small vectors.",
+    "id": "solution-usaco-bronze-2024-january-p3",
+    "problemId": "usaco-bronze-2024-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

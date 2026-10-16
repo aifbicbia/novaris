@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-i-2010-p1",
+    "problemId": "aime-i-2010-p1",
+    "finalAnswer": "$\\boxed{107}$",
+    "shortExplanation": "The reduced probability is $26/81$.",
+    "detailedSteps": [
+      "The factorization is $2010=2\\cdot3\\cdot5\\cdot67$. Thus its square has $3^4=81$ positive divisors, corresponding to independent prime exponents zero, one or two.",
+      "A divisor is a square exactly when all four exponents are even, giving $2^4=16$ square divisors and sixty-five nonsquare divisors. The favorable unordered pairs number $16\\cdot65=1040$.",
+      "The total number of distinct-divisor pairs is $\\binom{81}2=3240$. Hence $p=1040/3240=26/81$, which is reduced, and $m+n=26+81=107$."
+    ],
+    "keyIdeas": [
+      "Count square and nonsquare divisors separately"
+    ],
+    "commonMistakes": [
+      "Selecting with replacement or counting pairs with two square divisors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime-exponent parity makes square-divisor counting immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p2",
+    "problemId": "aime-i-2010-p2",
+    "finalAnswer": "$\\boxed{109}$",
+    "shortExplanation": "The remainder is 109.",
+    "detailedSteps": [
+      "The factor consisting of $k$ nines is $10^k-1$. For every $k\\ge3$, this is congruent to minus one modulo one thousand.",
+      "There are $999-3+1=997$ such factors, an odd number. Therefore the whole product is congruent to $9\\cdot99\\cdot(-1)^{997}=-891\\pmod{1000}$.",
+      "The least nonnegative residue is $1000-891=109$."
+    ],
+    "keyIdeas": [
+      "All factors with at least three nines are minus one modulo one thousand"
+    ],
+    "commonMistakes": [
+      "Counting 996 instead of 997 factors from the three-digit factor through the 999-digit factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only the first two factors differ from the stable residue.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p3",
+    "problemId": "aime-i-2010-p3",
+    "finalAnswer": "$\\boxed{529}$",
+    "shortExplanation": "The sum is $448/81$.",
+    "detailedSteps": [
+      "The stated positive rational value of $x+y$ and $y=3x/4$ imply $x>0$ and $y>0$. Taking the positive $x$-th root of $x^y=y^x$ gives $x^{y/x}=y$, or $x^{3/4}=3x/4$.",
+      "Dividing by $x$ yields $x^{-1/4}=3/4$, so $x=(4/3)^4=256/81$. Then $y=64/27=192/81$.",
+      "Thus $x+y=448/81$, a reduced positive fraction, and $r+s=448+81=529$. The equivalent exact relation $x^3=y^4$ verifies the exponential equality for these positive values."
+    ],
+    "keyIdeas": [
+      "Use the fixed ratio before taking a positive root"
+    ],
+    "commonMistakes": [
+      "Taking logarithms without first establishing positive bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The required positive sum establishes the domain needed for real exponentiation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p4",
+    "problemId": "aime-i-2010-p4",
+    "finalAnswer": "$\\boxed{515}$",
+    "shortExplanation": "The coincidence probability is $123/392$.",
+    "detailedSteps": [
+      "For one player, the probabilities of zero, one, two and three heads are respectively $3/28,10/28,11/28,4/28$. These come from the two-fair-coin probabilities $1/4,1/2,1/4$ combined with the third coin\u2019s probabilities $3/7,4/7$.",
+      "The two players\u2019 independent flips agree in head count with probability $(3^2+10^2+11^2+4^2)/28^2=246/784=123/392$.",
+      "This is reduced, giving $m+n=123+392=515$. Agreement of counts does not require agreement of the individual coin outcomes."
+    ],
+    "keyIdeas": [
+      "Square each possible head-count probability"
+    ],
+    "commonMistakes": [
+      "Requiring each matching coin to show the same face instead of only matching the total head count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Independent matching categories contribute the squares of their probabilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p5",
+    "problemId": "aime-i-2010-p5",
+    "finalAnswer": "$\\boxed{501}$",
+    "shortExplanation": "There are 501 possible values of $a$.",
+    "detailedSteps": [
+      "Factor the signed square sum as $(a-b)(a+b)+(c-d)(c+d)$. The strict integral inequalities make both gaps at least one, so this expression is at least $a+b+c+d=2010$.",
+      "The given equality forces $a-b=c-d=1$. Write $a=b+1$ and $c=d+1$. The sum then gives $b+d=1004$.",
+      "The remaining strict inequality $b>c=d+1$ becomes $1004-d\\ge d+2$, hence $1\\le d\\le501$. Each such $d$ yields a valid ordered quadruple, with $a=1005-d$.",
+      "These give 501 distinct values of $a$, from 504 through 1004."
+    ],
+    "keyIdeas": [
+      "Equality forces both positive integer gaps to be one"
+    ],
+    "commonMistakes": [
+      "Treating the two factored gaps as arbitrary after the lower bound is already an equality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sharp lower bound collapses the four-variable constraints to one parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p6",
+    "problemId": "aime-i-2010-p6",
+    "finalAnswer": "$\\boxed{406}$",
+    "shortExplanation": "The polynomial is $P(x)=1+\\frac95(x-1)^2$.",
+    "detailedSteps": [
+      "Put $u=x-1$. The lower and upper bounds are $1+u^2$ and $1+2u^2$. Since they agree at $u=0$, $P$ has constant term one in this coordinate.",
+      "The nonnegative quadratic $P(x)-(1+u^2)$ vanishes at $u=0$, so its linear coefficient is zero: any nonzero linear coefficient would give a negative value sufficiently close to zero on one side. Thus $P(x)=1+cu^2$ with $1\\le c\\le2$.",
+      "The value at eleven gives $1+100c=181$, so $c=9/5$. Therefore $P(16)=1+(9/5)15^2=406$. This coefficient meets both global bounds."
+    ],
+    "keyIdeas": [
+      "Both quadratic bounds meet at x one"
+    ],
+    "commonMistakes": [
+      "Using just the numerical bound at sixteen rather than the restriction for every real x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shared contact point determines the value and slope of the intermediate quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p7",
+    "problemId": "aime-i-2010-p7",
+    "finalAnswer": "$\\boxed{760}$",
+    "shortExplanation": "The ordered triples number 53,760.",
+    "detailedSteps": [
+      "The unique elements of $A\\cap B$, $B\\cap C$ and $C\\cap A$ must be distinct because the triple intersection is empty. Assign their three ordered roles in $7\\cdot6\\cdot5=210$ ways.",
+      "Each of the remaining four ground-set elements may belong to $A$ alone, $B$ alone, $C$ alone or none. It cannot belong to a pair or all three, because that would violate the already fixed intersection conditions. These choices are independent, giving $4^4=256$ possibilities.",
+      "Thus $N=210\\cdot256=53760$, with remainder 760 upon division by one thousand. The sets are ordered, so there is no division by permutations of $A,B,C$."
+    ],
+    "keyIdeas": [
+      "Choose three distinct pair-intersection elements first"
+    ],
+    "commonMistakes": [
+      "Letting one element serve two pair intersections despite the empty triple intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three special elements determine all overlap, leaving only single-set memberships.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p8",
+    "problemId": "aime-i-2010-p8",
+    "finalAnswer": "$\\boxed{132}$",
+    "shortExplanation": "The minimum radius is $\\sqrt{130}/2$.",
+    "detailedSteps": [
+      "Each floor pair $(i,j)$ with $i^2+j^2=25$ contributes the half-open cell $[i,i+1)\\times[j,j+1)$. The twelve possibilities are the sign choices of $(5,0),(0,5),(3,4),(4,3)$. Any closed disk containing these cells also contains all their closure points.",
+      "The union of the closed cells is centrally symmetric about $O=(1/2,1/2)$. For a cell\u2019s vertices, the greatest squared distance from $O$ is $(|i|+1/2)^2+(|j|+1/2)^2=25+|i|+|j|+1/2$.",
+      "The largest value is $65/2=130/4$, attained for the three-four cells. A disk centered at $O$ with radius $\\sqrt{130}/2$ contains every vertex and therefore every cell.",
+      "The closure contains the opposite vertices $(4,5)$ and $(-3,-4)$, whose distance is $\\sqrt{130}$. Any containing disk has radius at least half this distance. Thus the proposed disk is optimal and $m+n=130+2=132$."
+    ],
+    "keyIdeas": [
+      "Enclose the closures of the twelve unit cells"
+    ],
+    "commonMistakes": [
+      "Enclosing only the integer floor-pair points or ignoring limiting corners of half-open cells."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Closed-disk containment lets the open cell edges be replaced by their closures.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p9",
+    "problemId": "aime-i-2010-p9",
+    "finalAnswer": "$\\boxed{158}$",
+    "shortExplanation": "The larger cube sum is $151/7$.",
+    "detailedSteps": [
+      "Let $t=xyz$. Then $x^3=t+2$, $y^3=t+6$ and $z^3=t+20$. Multiplying gives $t^3=(t+2)(t+6)(t+20)$, which simplifies to $7t^2+43t+60=0$.",
+      "The two roots are $t=-4$ and $t=-15/7$. Each gives a real solution: take the unique real cube roots of the three displayed numbers. Their product has cube $t^3$, so its real value is exactly $t$, with no additional sign condition.",
+      "The required sum is $x^3+y^3+z^3=3t+28$. The values are sixteen and $151/7$, with the latter greater. Thus $m+n=151+7=158$."
+    ],
+    "keyIdeas": [
+      "Replace the product by one scalar parameter"
+    ],
+    "commonMistakes": [
+      "Assuming all three coordinates must be positive or discarding a negative product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cube map is one-to-one on the real line, so the scalar product equation is sufficient as well as necessary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p10",
+    "problemId": "aime-i-2010-p10",
+    "finalAnswer": "$\\boxed{202}$",
+    "shortExplanation": "The three possible thousands coefficients contribute 100, 100 and two.",
+    "detailedSteps": [
+      "Modulo ten, $a_0$ must be a multiple of ten, so write $a_0=10s$ with $0\\le s\\le9$. Dividing the original equation by ten gives $201=100a_3+10a_2+a_1+s$. The nonnegative thousands coefficient is zero, one or two.",
+      "For $a_3=0$, the condition $0\\le a_1=201-s-10a_2\\le99$ permits $a_2=11,\\ldots,20$ when $s=0$ or $1$, and $a_2=10,\\ldots,19$ when $2\\le s\\le9$. Each $s$ therefore supplies ten solutions, for 100.",
+      "For $a_3=1$, the same interval calculation permits $a_2=1,\\ldots,10$ when $s=0$ or $1$, and $a_2=0,\\ldots,9$ otherwise. This gives another 100 solutions.",
+      "For $a_3=2$, the remaining equation is $10a_2+a_1+s=1$, so $a_2=0$ and $(a_1,s)$ is $(1,0)$ or $(0,1)$. All coefficients meet their bounds. Hence $N=100+100+2=202$."
+    ],
+    "keyIdeas": [
+      "Use the last coefficient\u2019s divisibility by ten"
+    ],
+    "commonMistakes": [
+      "Treating the coefficients as decimal digits rather than integers up to ninety-nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Modulo ten reduces the final coefficient to ten choices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p11",
+    "problemId": "aime-i-2010-p11",
+    "finalAnswer": "$\\boxed{365}$",
+    "shortExplanation": "The volume is $343\\pi/(12\\sqrt{10})$.",
+    "detailedSteps": [
+      "The two upper boundaries are $y=x+2$ for $x\\le8$ and $y=18-x$ for $x\\ge8$, while the lower boundary is $y=x/3+5$. The region is the triangle with vertices $Q=(9/2,13/2)$, $P=(8,10)$ and $T=(39/4,33/4)$.",
+      "Its base $QT$ lies on the rotation axis. Its length is $L=7\\sqrt{10}/4$, and the perpendicular distance from $P$ to the axis is $h=(3\\cdot10-8-15)/\\sqrt{10}=7/\\sqrt{10}$.",
+      "The perpendicular foot divides the base at distance $14/\\sqrt{10}$ from $Q$, which is four fifths of $L$, so it is inside the base segment. Rotation produces two cones with common radius $h$ and axial heights adding to $L$.",
+      "Therefore $V=(\\pi h^2/3)L=343\\pi/(12\\sqrt{10})$. The numerator 343 and denominator coefficient 12 are coprime, and ten is squarefree. Thus $m+n+p=343+12+10=365$."
+    ],
+    "keyIdeas": [
+      "Rotate the triangular region as two cones sharing a base"
+    ],
+    "commonMistakes": [
+      "Revolving about a horizontal line or assuming the perpendicular foot lies inside the base without checking it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The boundary rotation axis passes through two vertices of the region.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p12",
+    "problemId": "aime-i-2010-p12",
+    "finalAnswer": "$\\boxed{243}$",
+    "shortExplanation": "The first unavoidable bound is 243.",
+    "detailedSteps": [
+      "For a partition up to 242, put $\\{3,\\ldots,8\\}\\cup\\{81,\\ldots,242\\}$ in one subset and $\\{9,\\ldots,80\\}$ in the other. Two small elements of the first subset have product from nine through sixty-four, in the other subset. Any product involving one of its large elements is at least 243. Two elements of the second subset have product at least eighty-one, so if their product remains in S, it is in the first subset.",
+      "Thus this partition has no same-subset equation $ab=c$. Restricting it to any smaller $m$ also avoids such an equation, so the minimum cannot be below 243.",
+      "Now consider any two-coloring through 243, and call the color of three red. Since $3\\cdot3=9$, nine must be blue; then $9\\cdot9=81$ forces eighty-one red. The product $3\\cdot81=243$ forces 243 blue.",
+      "If twenty-seven were blue, $9\\cdot27=243$ would be a blue product. Hence twenty-seven is red, but then $3\\cdot27=81$ is a red product. This contradiction proves that every partition at 243 contains a required equation.",
+      "Consequently the smallest $m$ is 243. The repeated factors in the square products are allowed by the source."
+    ],
+    "keyIdeas": [
+      "Use powers of three to force a monochromatic product"
+    ],
+    "commonMistakes": [
+      "Requiring the two factors to be distinct despite the explicit permission to repeat integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A constructive avoiding partition is as necessary as an unavoidable coloring argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p13",
+    "problemId": "aime-i-2010-p13",
+    "finalAnswer": "$\\boxed{069}$",
+    "shortExplanation": "The rectangle height is $63\\sqrt6$.",
+    "detailedSteps": [
+      "Place $A=(0,0)$ and $B=(252,0)$, with the semicircle above $AB$ and the rectangle below it. Its radius is 126. The circle equation is $x^2+y^2=252x$, while $AN=126$ gives $x^2+y^2=126^2$. Thus $N=(63,63\\sqrt3)$ and $U=(84,0)$.",
+      "The cutting line has equation $x=84-y/(3\\sqrt3)$. If the rectangle height is $h$, its intersection with $CD$ has x-coordinate $84+h/(3\\sqrt3)$. Therefore $0<h\\le504\\sqrt3$, and the left rectangular piece has area $84h+h^2/(6\\sqrt3)$.",
+      "The sector from $A$ to $N$ at center $(126,0)$ has angle sixty degrees and area $2646\\pi$. Subtract its center triangle of area $3969\\sqrt3$ and add triangle $AUN$ of area $2646\\sqrt3$. The left semicircular piece consequently has area $2646\\pi-1323\\sqrt3$. The whole semicircle has area $7938\\pi$.",
+      "The left piece cannot be two thirds of the whole combined region: its semicircle portion is less than one third of that semicircle, and its rectangle portion is at most two thirds of the rectangle because the average of its top and bottom widths is at most 168. Hence the required left-area fraction is one third.",
+      "Equating that fraction gives $2646\\pi-1323\\sqrt3+84h+h^2/(6\\sqrt3)=(7938\\pi+252h)/3$. The $\\pi$ and linear-$h$ terms cancel, leaving $h^2=23814$, so $h=63\\sqrt6$.",
+      "This height gives the intersection coordinate $84+21\\sqrt2$, inside $CD$, and realizes the one-to-two ratio. Thus $m+n=63+6=69$."
+    ],
+    "keyIdeas": [
+      "Subtract a small semicircular cap area from one third of the semicircle"
+    ],
+    "commonMistakes": [
+      "Assuming the left region is the smaller piece without ruling out the reversed area assignment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The segment geometry makes the \u03c0 terms cancel only after the correct ratio branch is established.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p14",
+    "problemId": "aime-i-2010-p14",
+    "finalAnswer": "$\\boxed{109}$",
+    "shortExplanation": "The boundary values are $f(109)=300$ and $f(110)=301$.",
+    "detailedSteps": [
+      "Each summand is nondecreasing in $n$, so $f$ is nondecreasing. It suffices to find consecutive integers at which the bound changes from satisfied to violated.",
+      "For $n=109$, products with $1\\le k\\le9$ are three-digit numbers, those with $10\\le k\\le91$ are four-digit numbers, and those with $92\\le k\\le100$ are five-digit numbers. Thus $f(109)=9\\cdot2+82\\cdot3+9\\cdot4=300$.",
+      "For $n=110$, the ranges are $1\\le k\\le9$, $10\\le k\\le90$, and $91\\le k\\le100$. Hence $f(110)=9\\cdot2+81\\cdot3+10\\cdot4=301$. By monotonicity every larger $n$ fails, so the largest allowed value is 109."
+    ],
+    "keyIdeas": [
+      "Count decimal digit ranges using exact threshold products"
+    ],
+    "commonMistakes": [
+      "Approximating logarithms near integral powers of ten and shifting a threshold incorrectly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Floor logarithms of positive integers equal their digit counts minus one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2010-p15",
+    "problemId": "aime-i-2010-p15",
+    "finalAnswer": "$\\boxed{045}$",
+    "shortExplanation": "The segment ratio is $22/23$.",
+    "detailedSteps": [
+      "Put $AM=x$, $CM=15-x$ and $BM=t$, with $0<x<15$ because both subtriangles have incircles. Their areas share the same altitude $H$ from $B$ and are $Hx/2$ and $H(15-x)/2$. Equality of inradii gives $x/(12+x+t)=(15-x)/(28-x+t)$.",
+      "Rearrangement yields $(2x-15)t=180-25x$. The case $x=15/2$ is impossible, and positivity of $t$ forces $36/5<x<15/2$.",
+      "Use $A=(0,0)$, $C=(15,0)$ and $B=(20/3,8\\sqrt{14}/3)$, determined by the original side lengths. Then $t^2=(x-20/3)^2+896/9=x^2-40x/3+144$.",
+      "Squaring the rearranged equality and substituting this expression gives $0=(2x-15)^2t^2-(180-25x)^2=(4/3)x(x-15)(3x^2-40x+132)$. The candidates are zero, fifteen, six and $22/3$. Only $22/3$ lies in the required positive-sign interval.",
+      "At $x=22/3$, the original unsquared equation gives $t=10$, and both radius fractions are $1/4$, confirming that this candidate really works. Since $CM=23/3$, the reduced ratio is $AM/CM=22/23$.",
+      "Therefore $p+q=22+23=45$. The sign restriction excludes the spurious root six produced by squaring."
+    ],
+    "keyIdeas": [
+      "Compare the two area-to-semiperimeter formulas"
+    ],
+    "commonMistakes": [
+      "Accepting the squared-equation root six even though it would require a negative BM length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common altitude cancels from the equal-inradius equation, but squaring still requires a sign check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

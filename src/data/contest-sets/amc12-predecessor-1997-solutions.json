@@ -1,0 +1,627 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1997-p1",
+    "problemId": "amc12-predecessor-1997-p1",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The partial products force $a=3$ and $b=4$, so their sum is seven.",
+    "detailedSteps": [
+      "The units-digit multiplication gives $3(20+a)=69$, hence $20+a=23$ and $a=3$.",
+      "The other partial product is $23b=92$, so $b=4$. The full product $23\\cdot43=989$ checks the layout, and $a+b=7$."
+    ],
+    "keyIdeas": [
+      "Use the two partial products"
+    ],
+    "commonMistakes": [
+      "Treating the second partial product as an unshifted contribution to the final sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The printed partial products contain more information than the final product alone.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p2",
+    "problemId": "amc12-predecessor-1997-p2",
+    "finalAnswer": "$\\boxed{44}$ (choice D)",
+    "shortExplanation": "The original diagram has width twelve and height $8+2=10$, giving perimeter forty-four.",
+    "detailedSteps": [
+      "Use the primary MAA BookVII problem diagram. Its left side rises eight units and then, after a horizontal step, rises another two. Thus the full height is $8+2=10$; the full width is twelve.",
+      "The upper staircase moves monotonically rightward and downward after reaching its top. Its horizontal segments sum to twelve, as does the bottom side. Its upward and downward vertical travel each totals ten.",
+      "The perimeter is therefore $2\\cdot12+2\\cdot10=44$. The modern LIVE redraw moves the two-unit label to a horizontal segment and the eight-unit label to the full height; that redraw would give forty and is not the original diagram used here."
+    ],
+    "keyIdeas": [
+      "Add the full horizontal and vertical travel"
+    ],
+    "commonMistakes": [
+      "Reading a misplaced label in the modern redraw as an original dimension."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The correct original diagram is linked because the dimensions are essential to the calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p3",
+    "problemId": "amc12-predecessor-1997-p3",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "Every squared term must vanish, giving $x=3,y=4,z=5$ and sum twelve.",
+    "detailedSteps": [
+      "Each term in the sum is nonnegative for real variables. Their sum can be zero only if each term is zero.",
+      "Thus $x-3=y-4=z-5=0$, and $x+y+z=3+4+5=12$."
+    ],
+    "keyIdeas": [
+      "Use the nonnegativity of real squares"
+    ],
+    "commonMistakes": [
+      "Cancelling positive squared terms against one another."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The real-variable condition is what makes the three nonnegative terms decisive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p4",
+    "problemId": "amc12-predecessor-1997-p4",
+    "finalAnswer": "$\\boxed{20\\%}$ (choice A)",
+    "shortExplanation": "The increase is one fifth of $b$, or twenty percent.",
+    "detailedSteps": [
+      "The stated percentages give $a=1.5c$ and $b=1.25c$. Their difference is $0.25c$.",
+      "Relative to $b$, the fractional increase is $(a-b)/b=0.25/1.25=1/5$, or twenty percent. The customary percentage comparison uses a positive reference quantity."
+    ],
+    "keyIdeas": [
+      "Use the comparison quantity as the percentage base"
+    ],
+    "commonMistakes": [
+      "Subtracting fifty and twenty-five percent without changing the reference base."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A percentage difference depends on which quantity is the denominator.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p5",
+    "problemId": "amc12-predecessor-1997-p5",
+    "finalAnswer": "$\\boxed{80}$ (choice C)",
+    "shortExplanation": "The small rectangle has sides sixteen and twenty-four, so its perimeter is eighty.",
+    "detailedSteps": [
+      "Let its short and long sides be $w,h$. The three upper rectangles give total width $3w$, while the two rotated lower rectangles give width $2h$. Hence $h=3w/2$.",
+      "The large rectangle has width $3w$ and height $h+w=5w/2$. Its perimeter is $2(3w+5w/2)=11w=176$, so $w=16$ and $h=24$.",
+      "The required perimeter is $2(w+h)=2(16+24)=80$."
+    ],
+    "keyIdeas": [
+      "Match both orientations of the congruent rectangles"
+    ],
+    "commonMistakes": [
+      "Dividing the large perimeter by five even though the small rectangles share internal edges."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The change of orientation fixes the small rectangle’s aspect ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p6",
+    "problemId": "amc12-predecessor-1997-p6",
+    "finalAnswer": "$\\boxed{-\\frac12}$ (choice B)",
+    "shortExplanation": "Each of the one hundred pairs sums to minus one, so the average is minus one half.",
+    "detailedSteps": [
+      "The pairs are $(1,-2),(3,-4),\\ldots,(199,-200)$. Each contributes $-1$.",
+      "The sum is $-100$ over two hundred entries, giving mean $-100/200=-1/2$."
+    ],
+    "keyIdeas": [
+      "Pair neighboring terms"
+    ],
+    "commonMistakes": [
+      "Dividing by the number of pairs rather than the number of terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing exposes a constant contribution without a long sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p7",
+    "problemId": "amc12-predecessor-1997-p7",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "Six entries can exceed thirteen, while all seven cannot.",
+    "detailedSteps": [
+      "If all seven integers exceeded thirteen, each would be at least fourteen and their total would be at least ninety-eight, contradicting the sum $-1$.",
+      "The list with six copies of fourteen and one entry $-85$ has total $84-85=-1$. Exactly six of its entries exceed thirteen, proving that the upper bound is attained."
+    ],
+    "keyIdeas": [
+      "Allow one negative entry to balance the other six"
+    ],
+    "commonMistakes": [
+      "Assuming the seven integers are all positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum requires both exclusion of a larger count and an attaining example.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p8",
+    "problemId": "amc12-predecessor-1997-p8",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "The qualifying order sizes are $23,24,45,46,47,48$, six in total.",
+    "detailedSteps": [
+      "Inside each price bracket the cost increases with the order size, so a cheaper larger order must begin at one of the price drops.",
+      "For $n\\le24$, the best larger-bracket price is $C(25)=275$, which is below $12n$ precisely for $n=23,24$. The later minimum $C(49)=490$ cannot beat a cost at most $288$.",
+      "For $25\\le n\\le48$, the next minimum is $C(49)=490$. The inequality $490<11n$ gives $n=45,46,47,48$. For $n\\ge49$, all larger orders cost more. Thus there are six values."
+    ],
+    "keyIdeas": [
+      "Check only the beginnings of cheaper price brackets"
+    ],
+    "commonMistakes": [
+      "Comparing only the two order sizes immediately on either side of a price drop."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Within-bracket monotonicity reduces an unbounded search to two boundary comparisons.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p9",
+    "problemId": "amc12-predecessor-1997-p9",
+    "finalAnswer": "$\\boxed{\\frac{11}5}$ (choice C)",
+    "shortExplanation": "The perpendicular foot is $(2/5,4/5)$, and the quadrilateral area is $11/5$.",
+    "detailedSteps": [
+      "Use $B=(0,0),C=(2,0),D=(2,2),A=(0,2)$ and $E=(1,2)$. Since $F$ lies on $BE$, it has the form $F=(t,2t)$.",
+      "The direction of $BE$ is $(1,2)$. Perpendicularity gives $(C-F)\\cdot(1,2)=2-t-4t=0$, so $t=2/5$.",
+      "Apply the shoelace formula in the actual order $C,D,E,F$. The two signed coordinate sums are $32/5$ and $2$, giving area $(32/5-2)/2=11/5$. The foot parameter lies between zero and one, as required."
+    ],
+    "keyIdeas": [
+      "Project onto the specified diagonal line"
+    ],
+    "commonMistakes": [
+      "Taking the midpoint of a line segment as the perpendicular foot without checking its slope."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates keep the foot location and the shaded area tied to the actual diagram.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p10",
+    "problemId": "amc12-predecessor-1997-p10",
+    "finalAnswer": "$\\boxed{\\frac59}$ (choice D)",
+    "shortExplanation": "The odd-sum probability is $(4\\cdot4+2\\cdot2)/36=5/9$.",
+    "detailedSteps": [
+      "The first die has four odd faces and two even faces. The second has two odd faces and four even faces.",
+      "Under the usual independent rolling model, an odd sum requires opposite parities. There are $4\\cdot4+2\\cdot2=20$ favorable face pairs among $36$ equally likely pairs, so the probability is $20/36=5/9$."
+    ],
+    "keyIdeas": [
+      "Count the odd and even faces of each modified die"
+    ],
+    "commonMistakes": [
+      "Using the ordinary die’s three-and-three parity split after its face has been changed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal face probabilities remain valid even when face numbers repeat.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p11",
+    "problemId": "amc12-predecessor-1997-p11",
+    "finalAnswer": "$\\boxed{29}$ (choice D)",
+    "shortExplanation": "The first five scores total at most eighty-four, forcing at least twenty-nine points in game ten.",
+    "detailedSteps": [
+      "Let $S$ be the total after five games. The next four scores sum to $23+14+11+20=68$. The increase in average means $(S+68)/9>S/5$, or $S<85$. Since scores are integers, $S\\le84$.",
+      "If the tenth score is $T$, the ten-game average exceeding eighteen gives $S+68+T>180$. Hence the integer total is at least $181$, and $T\\ge181-84-68=29$.",
+      "The bound is attainable with $S=84,T=29$: the nine-game average exceeds $84/5$, and the ten-game average is $181/10>18$."
+    ],
+    "keyIdeas": [
+      "Use the strict average inequality before the integer bound"
+    ],
+    "commonMistakes": [
+      "Replacing a strict average inequality by an equality and losing the integer endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Strict inequalities become sharp discrete bounds because basketball scores are integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p12",
+    "problemId": "amc12-predecessor-1997-p12",
+    "finalAnswer": "$\\boxed{(1997,0)}$ (choice E)",
+    "shortExplanation": "The $x$-intercept is negative because $m$ and $b$ have the same nonzero sign.",
+    "detailedSteps": [
+      "The condition $mb>0$ makes both parameters nonzero and of the same sign. At $y=0$, the intercept is $x=-b/m<0$.",
+      "The listed point $(1997,0)$ has a positive $x$-coordinate and therefore cannot lie on such a line. Each other listed point is realizable: the parameter pairs $(m,b)=(1,1997),(-1,-1997),(1,78),(-1,-78)$ give the first four choices respectively and all satisfy $mb>0$."
+    ],
+    "keyIdeas": [
+      "Find the sign of the x-intercept"
+    ],
+    "commonMistakes": [
+      "Assuming a positive product means the two parameters themselves must both be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sign condition eliminates the target without solving an arbitrary line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p13",
+    "problemId": "amc12-predecessor-1997-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The digit sum must be eleven, giving eight two-digit integers.",
+    "detailedSteps": [
+      "Write the number as $10a+b$, with $1\\le a\\le9$ and $0\\le b\\le9$. Adding its reversal gives $11(a+b)$.",
+      "If this is a square, eleven divides the square root, so $a+b$ is eleven times a positive square. Since $1\\le a+b\\le18$, the only possibility is $a+b=11$.",
+      "The allowed pairs are $a=2,3,\\ldots,9$, with $b=11-a$. These give eight numbers. A units digit of zero does not create another solution."
+    ],
+    "keyIdeas": [
+      "Use divisibility by eleven"
+    ],
+    "commonMistakes": [
+      "Requiring both numbers to be two-digit before checking whether a zero units digit could satisfy the square condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small digit-sum range makes the square-multiple restriction decisive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p14",
+    "problemId": "amc12-predecessor-1997-p14",
+    "finalAnswer": "$\\boxed{84}$ (choice B)",
+    "shortExplanation": "The two intervals give $x(x-39)=3780$, with the positive increasing solution $x=84$.",
+    "detailedSteps": [
+      "Let the population in nineteen ninety-six be $x$ and the common proportionality constant be $k$. The two known intervals give $x-39=60k$ and $123-60=xk$.",
+      "Eliminating $k$ yields $x(x-39)=60\\cdot63=3780$, so $x^2-39x-3780=(x-84)(x+45)=0$.",
+      "The negative root cannot be a population. The positive root $84$ lies between the surrounding populations and gives the same constant $k=3/4$ in both equations."
+    ],
+    "keyIdeas": [
+      "Use the same proportionality constant twice"
+    ],
+    "commonMistakes": [
+      "Using proportionality to the earlier population instead of the specified intervening year."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two overlapping intervals determine the missing population with one shared constant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p15",
+    "problemId": "amc12-predecessor-1997-p15",
+    "finalAnswer": "$\\boxed{64}$ (choice D)",
+    "shortExplanation": "The centroid lengths are $16/3$ and eight, giving area sixty-four.",
+    "detailedSteps": [
+      "The centroid divides each median in the ratio two to one from its vertex. Thus the two perpendicular vertex-to-centroid lengths are $BG=16/3$ and $CG=8$.",
+      "Place $G$ at the origin, $B=(0,16/3)$ and $C=(8,0)$. The centroid identity $A+B+C=0$ gives $A=(-8,-16/3)$.",
+      "The determinant of $B-A=(8,32/3)$ and $C-A=(16,16/3)$ has absolute value $128$. Half of that is the triangle area $64$."
+    ],
+    "keyIdeas": [
+      "Use the two perpendicular centroid vectors"
+    ],
+    "commonMistakes": [
+      "Using the full median lengths as the distances from the vertices to the centroid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The centroid relation turns two perpendicular medians into a complete coordinate model.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p16",
+    "problemId": "amc12-predecessor-1997-p16",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Three changes always leave some equal sums; four suitable changes make all six distinct.",
+    "detailedSteps": [
+      "Originally every row and column sums to fifteen. One changed cell adds the same amount to its row and its column. With two changes, at least one row and one column stay unchanged, so their sums remain equal.",
+      "For three changes, if neither all rows nor all columns are touched, an unchanged row and column remain equal. If all three rows are touched, each contains one changed cell. When all three columns are also touched, the row and column changes are the same three amounts. If only two columns are touched, the column containing a single altered cell has the same change as that cell’s row; if only one is touched, two columns remain equal. The case of all columns touched is symmetric. Thus three changes cannot work.",
+      "For four changes, add $1,2,4,8$ to cells $(1,1),(1,2),(2,3),(3,3)$ respectively. The row sums become $18,19,23$ and the column sums $16,17,27$, all different. Hence the minimum is four."
+    ],
+    "keyIdeas": [
+      "Track which altered cells enter each line sum"
+    ],
+    "commonMistakes": [
+      "Giving a four-change example without excluding every possible three-change arrangement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identical coefficient patterns prove equality for any chosen replacement values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p17",
+    "problemId": "amc12-predecessor-1997-p17",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "The positive intersection parameter is $1+\\sqrt5$, so $a+b=6$.",
+    "detailedSteps": [
+      "The logarithms require $k>0$, and $\\log_5(k+4)>\\log_5k$. Their vertical distance is therefore $\\log_5((k+4)/k)=1/2$.",
+      "Exponentiating gives $(k+4)/k=\\sqrt5$, so $k=4/(\\sqrt5-1)=1+\\sqrt5$. In the stated integer radical form, $a=1,b=5$ and the requested sum is six."
+    ],
+    "keyIdeas": [
+      "Turn the vertical logarithm difference into a ratio"
+    ],
+    "commonMistakes": [
+      "Squaring the logarithm difference or using an unverified negative-domain root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity of the log arguments also determines the sign of the difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p18",
+    "problemId": "amc12-predecessor-1997-p18",
+    "finalAnswer": "$\\boxed{20}$ (choice E)",
+    "shortExplanation": "The five entries are $10,16,20,32,32$, with median twenty.",
+    "detailedSteps": [
+      "Increasing one member by ten raises the mean by two, so the list has $10/2=5$ entries and original total $5\\cdot22=110$. Write it in sorted order as $10,a,m,d,e$.",
+      "The identified mode thirty-two uses the usual repeated most frequent value convention. It cannot be at or below the median: then the last three entries would be at least thirty-two, and the total would be at least $10+10+3\\cdot32=116$. Its two occurrences must therefore be $d=e=32$, leaving $a+m=36$.",
+      "Replacing the median by $m+10$ gives new median $m+10$, which cannot exceed thirty-two. Hence $m\\le22$, so $a=36-m\\ge14$ and $m-8\\le14$. When the median is replaced by $m-8$, the new median is therefore $a$.",
+      "The other stipulated median gives $a=m-4$. Combined with $a+m=36$, this yields $m=20,a=16$. The displayed five-entry list verifies its mean, unique mode and both changed medians."
+    ],
+    "keyIdeas": [
+      "Recover the list length and the two large repeated entries"
+    ],
+    "commonMistakes": [
+      "Keeping the median in its original sorted position after changing its value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ordinary mode convention is explicit; the final witness has a unique mode.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p19",
+    "problemId": "amc12-predecessor-1997-p19",
+    "finalAnswer": "$\\boxed{2.37\\text{ (approximately)}}$ (choice D)",
+    "shortExplanation": "The external tangent-circle radius is $(3+\\sqrt3)/2\\approx2.366$, rounding to $2.37$.",
+    "detailedSteps": [
+      "Use $A=(0,0),B=(1,0),C=(0,\\sqrt3)$. The hypotenuse has equation $\\sqrt3x+y=\\sqrt3$. The depicted circle is in the first quadrant beyond this line, tangent to both axes, so its center is $(r,r)$.",
+      "Its distance to the line is $[(\\sqrt3+1)r-\\sqrt3]/2$. Equating this positive signed distance to $r$ gives $(\\sqrt3-1)r=\\sqrt3$, hence $r=(3+\\sqrt3)/2$.",
+      "The smaller inside-triangle tangent circle belongs to the opposite signed-distance branch and is not the one depicted. The external contact foot lies on the stated hypotenuse segment, and the radius rounds to $2.37$."
+    ],
+    "keyIdeas": [
+      "Select the external circle shown by the original diagram"
+    ],
+    "commonMistakes": [
+      "Solving for the triangle’s incircle despite the actual pictured center being outside the triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram’s location of the center is essential to choosing the correct tangency branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p20",
+    "problemId": "amc12-predecessor-1997-p20",
+    "finalAnswer": "$\\boxed{1627384950}$ (choice A)",
+    "shortExplanation": "Only the first listed integer is congruent to fifty modulo one hundred.",
+    "detailedSteps": [
+      "For a positive integer start $s$, the sum of one hundred consecutive integers is $100s+(0+1+\\cdots+99)=100s+4950$.",
+      "Thus the total is congruent to fifty modulo one hundred and must be at least $5050$. Among the actual choices only $1627384950$ has that residue; its recovered start $(1627384950-4950)/100$ is a positive integer."
+    ],
+    "keyIdeas": [
+      "Check the residue of a hundred-term consecutive sum"
+    ],
+    "commonMistakes": [
+      "Testing divisibility by one hundred without including the sum of the offsets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence plus positivity characterizes every allowed total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p21",
+    "problemId": "amc12-predecessor-1997-p21",
+    "finalAnswer": "$\\boxed{\\frac{55}3}$ (choice C)",
+    "shortExplanation": "Only powers of two contribute, and their logarithms sum to $55/3$.",
+    "detailedSteps": [
+      "If $\\log_8n=p/q$ is rational, then $n^q=8^p=2^{3p}$. Unique prime factorization forces $n$ to be a power of two. Conversely, $n=2^k$ gives $\\log_8n=k/3$, a rational number.",
+      "The powers at most $1997$ are $2^0$ through $2^{10}$, since $1024\\le1997<2048$. Therefore the sum is $(0+1+\\cdots+10)/3=55/3$."
+    ],
+    "keyIdeas": [
+      "Characterize integer arguments with rational logarithms"
+    ],
+    "commonMistakes": [
+      "Counting only integral base-eight logarithms and missing other powers of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rational logarithms require a prime-factor argument rather than a numerical test.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p22",
+    "problemId": "amc12-predecessor-1997-p22",
+    "finalAnswer": "$\\boxed{10\\text{ dollars}}$ (choice E)",
+    "shortExplanation": "The unique nonnegative integer amounts are $21,2,9,14,10$, so Elgin has ten dollars.",
+    "detailedSteps": [
+      "Let the amounts be $A,B,C,D,E$. Each successive difference in the closed cycle has one of the signs of $19,7,5,4,11$. Their signed sum is zero. The positive and negative magnitudes therefore each sum to $46/2=23$.",
+      "Of these five magnitudes, the only subset summing to twenty-three is $19+4$, with complement $7+5+11$. To see completeness, a subset using nineteen must use four more, and without nineteen the target is the complement of that same case.",
+      "One direction gives offsets $0,-19,-12,-7,-11$ from $A$. The total equation is $5A-49=56$, so $A=21$ and the amounts are $21,2,9,14,10$. Reversing every sign gives $5A+49=56$, whose solution is not an integer.",
+      "All five recovered amounts are nonnegative integers and satisfy every original absolute difference. Thus $E=10$."
+    ],
+    "keyIdeas": [
+      "Close the cycle of signed money differences"
+    ],
+    "commonMistakes": [
+      "Choosing each difference sign independently without enforcing that the cycle closes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The closed-cycle sum greatly reduces the apparent sign ambiguity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p23",
+    "problemId": "amc12-predecessor-1997-p23",
+    "finalAnswer": "$\\boxed{\\frac56}$ (choice D)",
+    "shortExplanation": "The polyhedron is a unit cube minus a unit-leg corner tetrahedron, so its volume is $5/6$.",
+    "detailedSteps": [
+      "Use the primary MAA BookVII net, whose triangle $A$ has its right angle at the left endpoint of its base. The three unit squares fold into faces of a unit cube meeting at one vertex. The three isosceles right triangles are halves of the remaining cube faces.",
+      "One coordinate realization is the unit cube restricted by $x-y+z\\le1$. Its removed vertex is $(1,0,1)$. The new triangular face joins $(1,0,0),(1,1,1),(0,0,1)$, whose pairwise distances are all $\\sqrt2$, so it is the required equilateral face.",
+      "The removed tetrahedron has three mutually perpendicular unit edges from the missing corner and volume $1\\cdot1\\cdot1/6=1/6$. Hence the remaining volume is $1-1/6=5/6$.",
+      "This realization supplies all three unit squares, all three right triangles with legs one, and the equilateral closing face in the original net. The modern LIVE redraw reflects triangle $A$; the linked primary problem page is used instead."
+    ],
+    "keyIdeas": [
+      "Recognize the primary net as a cube with one corner removed"
+    ],
+    "commonMistakes": [
+      "Folding a reflected redraw of triangle A or treating the equilateral face as a square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source net’s orientation is essential, so the corrected primary diagram is linked.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p24",
+    "problemId": "amc12-predecessor-1997-p24",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "The ninety-seventh rising number is $24678$, which omits five.",
+    "detailedSteps": [
+      "There are $\\binom84=70$ numbers starting with one. The next block starts with two and contains $\\binom74=35$ numbers, so the desired number is twenty-seventh within that block.",
+      "Of those, $\\binom63=20$ have second digit three, and the next $\\binom53=10$ have second digit four. Thus the desired suffix is seventh among the three-digit rising choices from $5,6,7,8,9$.",
+      "Those suffixes begin $567,568,569,578,579,589,678$. The number is therefore $24678$, which contains four, six, seven and eight, and omits five."
+    ],
+    "keyIdeas": [
+      "Count lexicographic blocks of increasing digit choices"
+    ],
+    "commonMistakes": [
+      "Counting combinations without keeping their numeric order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal-length increasing numbers are ordered by their first differing digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p25",
+    "problemId": "amc12-predecessor-1997-p25",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The raised midpoint heights differ by one along their common unit direction.",
+    "detailedSteps": [
+      "Let $u$ be the unit vector along the four parallel rays. Then $A'=A+10u,C'=C+18u$, so $M=(A+C)/2+14u$. Similarly, $N=(B+D)/2+15u$.",
+      "The parallelogram identity $A+C=B+D$ cancels the original midpoint terms. Thus $M-N=-u$, whose length is one. This argument also works when the rays are oblique to the plane."
+    ],
+    "keyIdeas": [
+      "Cancel the common midpoint of the parallelogram diagonals"
+    ],
+    "commonMistakes": [
+      "Assuming the rays are perpendicular to the parallelogram instead of merely parallel to one another."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Vector addition keeps the spatial angle irrelevant to the requested distance.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p26",
+    "problemId": "amc12-predecessor-1997-p26",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "$A,B,C$ lie on the radius-three circle centered at $P$, so interior power gives $AD\\cdot CD=9-4=5$.",
+    "detailedSteps": [
+      "Put $\\theta=\\angle APB$, so $0<\\theta<180^\\circ$ and $\\angle ACB=\\theta/2$. Since $PA=PB=3$, chord $AB$ has length $6\\sin(\\theta/2)$. The extended sine rule makes the circumradius of $ABC$ equal to $AB/(2\\sin(\\theta/2))=3$.",
+      "The two possible radius-three centers through $A,B$ are $P$ and its reflection across $AB$. The actual bounded segments meet at $D$, with $D$ between $P,B$ and between $A,C$. Hence $C$ lies on the same side of $AB$ as $P$. For the reflected center, this is the minor-arc side and would give inscribed angle $180^\\circ-\\theta/2$, not the stated acute angle $\\theta/2$. Thus the correct center is $P$.",
+      "Point $D$ is inside this circle, at distance two from its center. The secant through $A,D,C$ therefore gives $AD\\cdot CD=PA^2-PD^2=3^2-2^2=5$."
+    ],
+    "keyIdeas": [
+      "Locate the circumcenter using the angle and the segment order"
+    ],
+    "commonMistakes": [
+      "Declaring P the circumcenter without ruling out the reflected-circle branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The central-angle relationship and actual segment order jointly select the circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p27",
+    "problemId": "amc12-predecessor-1997-p27",
+    "finalAnswer": "$\\boxed{24}$ (choice D)",
+    "shortExplanation": "Every function has period twenty-four; a sine example has no smaller positive period.",
+    "detailedSteps": [
+      "Fix any real $x$ and write $u_k=f(x+4k)$. The equation gives $u_{k+1}=u_k-u_{k-1}$. Starting with $u_0=a,u_1=b$, the sequence continues $b-a,-a,-b,a-b,a,b$. Thus $u_6=u_0$ for every $x$, making twenty-four a period of every such function.",
+      "The example $f(x)=\\sin(\\pi x/12)$ satisfies the original equation because the two shifts add to $2\\cos(\\pi/3)f(x)=f(x)$. Its least positive period is twenty-four.",
+      "Any common period must also be a period of this example, so no smaller positive common period exists. The answer is twenty-four."
+    ],
+    "keyIdeas": [
+      "Iterate the shift recurrence and show the bound is sharp"
+    ],
+    "commonMistakes": [
+      "Reporting a period of the recurrence without proving it is the least common positive one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No continuity is assumed for the general function; continuity is used only in a valid sharpness example.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p28",
+    "problemId": "amc12-predecessor-1997-p28",
+    "finalAnswer": "$\\boxed{12}$ (choice E)",
+    "shortExplanation": "The possible absolute sums are $20,40,116$, each producing four ordered pairs, for twelve triples.",
+    "detailedSteps": [
+      "Put $s=|a+b|\\ge0$. Then $c=19-s$ and $ab=97-|19-s|$. If $s\\le19$, the discriminant for $a,b$ is $s^2-4(78+s)=(s-2)^2-316<0$, so there are no real, and hence no integer, pairs.",
+      "For $s\\ge20$, the product is $116-s$. If $d=|a-b|$, the discriminant equation becomes $(s+2)^2-d^2=468$, or $(s+2-d)(s+2+d)=468$. Both factors are positive even integers.",
+      "Write them as $2h,2k$, with $h\\le k$ and $hk=117$. The complete factor pairs are $(1,117),(3,39),(9,13)$, giving $s=h+k-2=116,40,20$, respectively.",
+      "Each pair gives a positive difference $d=k-h$, so there are two orders for each of the sums $a+b=s$ and $a+b=-s$. They give four pairs each; $c=19-s$ is then fixed. Every reconstructed triple satisfies both original equations, for a total of twelve."
+    ],
+    "keyIdeas": [
+      "Factor the discriminant after separating the sign of c"
+    ],
+    "commonMistakes": [
+      "Discarding negative c or negative a+b, both allowed by the integer wording."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization makes the unbounded integer search finite and complete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p29",
+    "problemId": "amc12-predecessor-1997-p29",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "Seven or fewer summands fail a forced carry sequence; eight explicit periodic summands attain one.",
+    "detailedSteps": [
+      "Every summand in a sum of one is less than one and has fractional digits zero or seven. Let $k_i$ be the number of sevens in decimal column $i$. For the remaining tail, define $c_i=10^{i-1}\\bigl(1-7\\sum_{j<i}k_j10^{-j}\\bigr)$. The total-sum identity makes $c_i$ a nonnegative integer, with $c_1=1$ and $c_{i+1}=10c_i-7k_i$.",
+      "Each tail is at most $7n/9$, so for $n\\le7$ every carry is at most five. From $c_1=1$, the only permitted next step is $k_1=1,c_2=3$. From three, the only permitted step is $k_2=4,c_3=2$. From two, no integer $k_3$ leaves $20-7k_3$ between zero and five: two gives six, and three gives a negative value. Thus at least eight summands are needed.",
+      "For eight summands, repeat the six-column counts $(1,4,2,8,5,7)$. In each column give digit seven to the first $k_i$ summands and zero to the rest. Each resulting periodic number is positive, since the fourth column gives seven to all eight.",
+      "Their sum is $7(100000+4\\cdot10000+2\\cdot1000+8\\cdot100+5\\cdot10+7)/(10^6-1)=7\\cdot142857/999999=1$. This proves that the lower bound eight is attained."
+    ],
+    "keyIdeas": [
+      "Use bounded decimal tail carries and a periodic construction"
+    ],
+    "commonMistakes": [
+      "Using finite decimal endings only, or allowing a carry larger than the maximum possible infinite tail."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The infinite representations require a tail bound, while periodic digits provide an exact rational construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1997-p30",
+    "problemId": "amc12-predecessor-1997-p30",
+    "finalAnswer": "$\\boxed{26}$ (choice C)",
+    "shortExplanation": "Twenty shorter strings and six seven-digit strings qualify, totaling twenty-six.",
+    "detailedSteps": [
+      "A positive binary representation begins with one. Exactly two adjacent changes means it has the unique form $1^a0^b1^c$, with positive integers $a,b,c$.",
+      "For length $L=3,4,5,6$, every such number is at most sixty-three and hence qualifies. The number of positive triples summing to $L$ is $\\binom{L-1}2$, giving $1+3+6+10=20$.",
+      "At length seven, a first run of length one gives five possibilities, all between sixty-five and ninety-five. A first run of length two starts with eleven; to be at most the upper bound $1100001_2=97$, it must be exactly that upper-bound string, giving one more. A first run of length at least three begins with $111$ and exceeds the bound.",
+      "There are no longer strings below ninety-eight. Thus the count is $20+5+1=26$."
+    ],
+    "keyIdeas": [
+      "Count the three runs in a binary string with two changes"
+    ],
+    "commonMistakes": [
+      "Counting leading zeros as part of a positive integer’s binary representation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The length classification handles the partial final binary block without approximating its size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

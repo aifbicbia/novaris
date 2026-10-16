@@ -1,0 +1,547 @@
+[
+  {
+    "id": "solution-amc12b-2018-p1",
+    "problemId": "amc12b-2018-p1",
+    "finalAnswer": "$\\boxed{90}$ (choice **A**)",
+    "shortExplanation": "Count the pieces along each side and multiply.",
+    "detailedSteps": [
+      "Along the two sides, the cut produces $20/2=10$ pieces and $18/2=9$ pieces.",
+      "Every row contains ten pieces, and there are nine rows, giving $10\\cdot9=90$ pieces."
+    ],
+    "keyIdeas": [
+      "Arithmetic",
+      "Rectangular arrays"
+    ],
+    "commonMistakes": [
+      "Dividing the total area by a side length would mix square inches with inches. Divide by the area of one piece, or count rows and columns."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rectangular grid can be counted by rows and columns without drawing every cut.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p2",
+    "problemId": "amc12b-2018-p2",
+    "finalAnswer": "$\\boxed{67}$ (choice **D**)",
+    "shortExplanation": "Account for the distance covered during each half-hour.",
+    "detailedSteps": [
+      "The whole trip takes $3/2$ hours, so its average speed is $96/(3/2)=64$ miles per hour.",
+      "Because the three intervals have equal duration, their average speeds satisfy $(60+65+v)/3=64$. Thus $v=192-125=67$ miles per hour."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Distance and average speed"
+    ],
+    "commonMistakes": [
+      "The arithmetic mean of speeds is valid here because the time intervals are equal; it is generally invalid for equal distances."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal time intervals allow the distance equation to simplify to an arithmetic mean of the segment speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p3",
+    "problemId": "amc12b-2018-p3",
+    "finalAnswer": "$\\boxed{10}$ (choice **B**)",
+    "shortExplanation": "Find each x-intercept using the same point-slope equation.",
+    "detailedSteps": [
+      "A line of slope $m$ through $(40,30)$ has equation $y-30=m(x-40)$. Setting $y=0$ gives the x-intercept $x=40-30/m$.",
+      "The two intercepts are $40-30/2=25$ and $40-30/6=35$. Both lie on the x-axis, so their distance is $35-25=10$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Slope and intercepts"
+    ],
+    "commonMistakes": [
+      "The requested distance is between the x-intercepts, not the y-intercepts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using the shared point in both line equations is quicker than solving separately for two intercept forms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p4",
+    "problemId": "amc12b-2018-p4",
+    "finalAnswer": "$\\boxed{50\\pi}$ (choice **B**)",
+    "shortExplanation": "Bisect the chord to obtain a right triangle.",
+    "detailedSteps": [
+      "The perpendicular from the center to the chord meets its midpoint, splitting the length-ten chord into two segments of length $5$.",
+      "A radius to either endpoint is the hypotenuse of a right triangle with legs $5$ and $5$. Thus $r^2=5^2+5^2=50$, and the circle area is $50\\pi$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "A radius perpendicular to a chord"
+    ],
+    "commonMistakes": [
+      "Use half the chord, not the full chord, in the right triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A radius through a chord midpoint is perpendicular to the chord, producing the right triangle needed for the radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p5",
+    "problemId": "amc12b-2018-p5",
+    "finalAnswer": "$\\boxed{240}$ (choice **D**)",
+    "shortExplanation": "Remove the subsets that contain only composite numbers.",
+    "detailedSteps": [
+      "The eight-element set has $2^8=256$ subsets. Its four nonprime elements are $4,6,8,9$.",
+      "Exactly $2^4=16$ subsets use only those four elements. The required count is $256-16=240$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Complementary counting"
+    ],
+    "commonMistakes": [
+      "The empty set belongs to the excluded collection. It must not be added back."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary family has a particularly simple description, making subtraction shorter than casework by subset size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p6",
+    "problemId": "amc12b-2018-p6",
+    "finalAnswer": "$\\boxed{\\frac{4DS}{Q}}$ (choice **B**)",
+    "shortExplanation": "Convert the budget to quarters and multiply by cans per quarter.",
+    "detailedSteps": [
+      "The rate is $S/Q$ cans per quarter. A budget of $D$ dollars is $4D$ quarters.",
+      "Multiplying gives $(4D)(S/Q)=4DS/Q$ cans at the stated rate."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Unit rates and currency conversion"
+    ],
+    "commonMistakes": [
+      "Dividing dollars by quarters without first converting the currency loses a factor of four."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tracking the units at each conversion identifies which quantities should multiply and which should divide.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p7",
+    "problemId": "amc12b-2018-p7",
+    "finalAnswer": "$\\boxed{6}$ (choice **C**)",
+    "shortExplanation": "Change every logarithm to the same base and cancel.",
+    "detailedSteps": [
+      "By change of base, the product is $\\dfrac{\\ln7\\,\\ln9\\,\\ln11\\cdots\\ln27}{\\ln3\\,\\ln5\\,\\ln7\\cdots\\ln23}$.",
+      "All factors from $\\ln7$ through $\\ln23$ cancel, leaving $(\\ln25/\\ln5)(\\ln27/\\ln3)=2\\cdot3=6$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Telescoping products of logarithms"
+    ],
+    "commonMistakes": [
+      "The arguments are shifted by four, not two, so two factors survive in both numerator and denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Writing every logarithm in one base makes cancellation visible; inspect the factors at both ends of the product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p8",
+    "problemId": "amc12b-2018-p8",
+    "finalAnswer": "$\\boxed{50}$ (choice **C**)",
+    "shortExplanation": "The centroid follows a circle with one-third the original radius.",
+    "detailedSteps": [
+      "Put the midpoint of $AB$ at the origin, so the endpoint vectors satisfy $A+B=0$. The centroid vector is $G=(A+B+C)/3=C/3$.",
+      "The original circle has radius $12$, so the centroid locus has radius $4$. The two excluded positions do not change its enclosed area.",
+      "That area is $16\\pi\\approx50.265$, which rounds to $50$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Centroid loci"
+    ],
+    "commonMistakes": [
+      "The centroid scales distances by one-third, so it scales areas by one-ninth."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An affine description of the centroid makes the locus a scaled copy of the original circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p9",
+    "problemId": "amc12b-2018-p9",
+    "finalAnswer": "$\\boxed{1010000}$ (choice **E**)",
+    "shortExplanation": "Each integer appears one hundred times in each of the two roles.",
+    "detailedSteps": [
+      "Split the sum into the contributions of $i$ and $j$. For every fixed $i$, its contribution repeats for 100 values of $j$, and the same statement holds with the indices reversed.",
+      "The total is $100\\sum_{i=1}^{100}i+100\\sum_{j=1}^{100}j=200\\cdot(100\\cdot101/2)=1010000$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Rearranging a double sum"
+    ],
+    "commonMistakes": [
+      "There are 10000 ordered index pairs, and both terms contribute; neither factor of 100 may be omitted."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite double sum can be reorganized by counting how often each index contributes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p10",
+    "problemId": "amc12b-2018-p10",
+    "finalAnswer": "$\\boxed{225}$ (choice **D**)",
+    "shortExplanation": "Every value other than the mode can occur at most nine times.",
+    "detailedSteps": [
+      "If there are $d$ distinct values, the list can contain at most $10+9(d-1)=9d+1$ entries.",
+      "Hence $2018\\le9d+1$, giving $d\\ge\\lceil2017/9\\rceil=225$.",
+      "This bound is attainable: use one value ten times, 223 other values nine times each, and one last value once. The total is $10+223\\cdot9+1=2018$, with a unique mode."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Frequency bounds and a unique mode"
+    ],
+    "commonMistakes": [
+      "Allowing another value to occur ten times would destroy uniqueness of the mode."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "For a minimum count of distinct values, first maximize how many entries each allowed value can contribute.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p11",
+    "problemId": "amc12b-2018-p11",
+    "finalAnswer": "$\\boxed{2(w+h)^2}$ (choice **A**)",
+    "shortExplanation": "Follow the straight path from the paper center to one corner as it folds over the box.",
+    "detailedSteps": [
+      "That path crosses the midpoint of a base side. After folding, its three portions run from the bottom center to the edge, up the side, and from the top edge to the top center.",
+      "Their lengths are $w/2$, $h$, and $w/2$, so the center-to-corner distance in the sheet is $w+h$.",
+      "For a square sheet of side length $s$, its center-to-corner distance is $s/\\sqrt2$. Consequently $s=\\sqrt2(w+h)$, and the area is $s^2=2(w+h)^2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Unfolding a wrapping-paper net"
+    ],
+    "commonMistakes": [
+      "The box is rotated relative to the paper: the relevant sheet distance is half a diagonal, not half a side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The folding path determines a paper diagonal, so distinguishing sides from diagonals is the key spatial step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p12",
+    "problemId": "amc12b-2018-p12",
+    "finalAnswer": "$\\boxed{18}$ (choice **C**)",
+    "shortExplanation": "Use the angle-bisector ratio to express the third side in terms of AC.",
+    "detailedSteps": [
+      "Let $x=AC>0$. The angle-bisector theorem gives $BD/CD=AB/AC=10/x$, hence $BD=30/x$ and $BC=3+30/x$.",
+      "The inequality $BC<AB+AC$ becomes $3+30/x<10+x$, equivalent to $(x-3)(x+10)>0$, so $x>3$.",
+      "The inequality $AC<AB+BC$ becomes $(x-15)(x+2)<0$, so $x<15$. The remaining inequality reduces to $x^2-7x+30>0$, always true because its discriminant is negative.",
+      "Every $3<x<15$ therefore determines a nondegenerate triangle with the required ratio and $CD=3$. The interval endpoints sum to $3+15=18$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Angle bisectors and triangle inequalities"
+    ],
+    "commonMistakes": [
+      "The endpoints represent degenerate triangles, so the interval is open."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle-bisector relation supplies candidate lengths, but all three triangle inequalities determine whether a triangle actually exists.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p13",
+    "problemId": "amc12b-2018-p13",
+    "finalAnswer": "$\\boxed{200}$ (choice **C**)",
+    "shortExplanation": "The four centroids are a fixed midpoint quadrilateral scaled by two-thirds.",
+    "detailedSteps": [
+      "Let $M_{AB}$ be the midpoint of $AB$. The centroid of $ABP$ is $G_{AB}=(2M_{AB}+P)/3$. The same formula applies to the other three sides.",
+      "Thus the four centroids form the image of the square’s midpoint quadrilateral under a homothety centered at $P$ with ratio $2/3$. The midpoint quadrilateral has half the square’s area, namely $30^2/2=450$.",
+      "Area scales by the square of the ratio, so the answer is $450(2/3)^2=200$. The distances from $P$ to $A$ and $B$ do not affect this area."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Affine geometry of triangle centroids"
+    ],
+    "commonMistakes": [
+      "An arbitrary interior point changes the location of the centroid quadrilateral, but not its size."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The given interior point moves every centroid by the same translation, which cannot change the resulting area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p14",
+    "problemId": "amc12b-2018-p14",
+    "finalAnswer": "$\\boxed{11}$ (choice **E**)",
+    "shortExplanation": "Convert each age-multiple birthday into a divisor of a fixed age difference.",
+    "detailedSteps": [
+      "Let $d$ be Chloe’s age minus Zoe’s age. When Zoe is $z$ years old, Chloe’s age is $z+d$, a multiple of $z$ exactly when $z$ divides $d$. Thus $d$ has nine positive divisors.",
+      "Joey is one year older, so his age at such a future birthday is $z+d+1$. The stated two-digit age implies $d<99$. An integer with nine divisors has the form $p^8$ or $p^2q^2$ for distinct primes. Under $99$, the only possibility is $d=2^2\\cdot3^2=36$.",
+      "Joey’s age is $z+37$, so it is a multiple of $z$ exactly when $z$ divides $37$. After today’s $z=1$, the next possibility is $z=37$, giving Joey’s age $74$. The digit sum is $7+4=11$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Age differences and divisor counts"
+    ],
+    "commonMistakes": [
+      "It is the age difference that must be divisible by Zoe’s age, not Chloe’s present age."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The age difference stays fixed over time, converting several birthday conditions into divisors of one integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p15",
+    "problemId": "amc12b-2018-p15",
+    "finalAnswer": "$\\boxed{96}$ (choice **A**)",
+    "shortExplanation": "For any allowed outer digits, exactly three middle digits complete a multiple of three.",
+    "detailedSteps": [
+      "The hundreds digit has eight choices: $1,2,4,5,6,7,8,9$. The odd units digit has four choices: $1,5,7,9$.",
+      "The allowed tens digits are $0,1,2,4,5,6,7,8,9$. These split evenly into the three residue classes modulo $3$, with three digits in each.",
+      "For every chosen hundreds and units digit, one residue class for the tens digit makes the digit sum divisible by $3$. Therefore the count is $8\\cdot4\\cdot3=96$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Digit residues modulo three"
+    ],
+    "commonMistakes": [
+      "Zero is permitted in the tens place but not the hundreds place; the units digit must also be odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The permitted middle digits are evenly distributed among residue classes, removing the need to list individual numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p16",
+    "problemId": "amc12b-2018-p16",
+    "finalAnswer": "$\\boxed{\\frac{3\\sqrt2}{2}-\\frac32}$ (choice **B**)",
+    "shortExplanation": "The least area occurs for three consecutive vertices.",
+    "detailedSteps": [
+      "The roots lie on a regular octagon centered at $-6$ with circumradius $81^{1/8}=\\sqrt3$. Translation of the center does not affect area.",
+      "If the positive arc gaps between chosen vertices are $a,b,c$ octagon steps, then $a+b+c=8$ and the triangle area is $2R^2\\sin(a\\pi/8)\\sin(b\\pi/8)\\sin(c\\pi/8)$. Up to reordering, the possibilities are $(1,1,6)$, $(1,2,5)$, $(1,3,4)$, $(2,2,4)$, and $(2,3,3)$. Their areas are respectively $\\frac32(\\sqrt2-1)$, $\\frac32$, $\\frac{3\\sqrt2}{2}$, $3$, and $\\frac32(1+\\sqrt2)$. The first is the smallest.",
+      "For three consecutive vertices, the base joining the outer two has length $R\\sqrt2$, and the altitude from the middle vertex is $R(1-1/\\sqrt2)$. Their half-product is $\\frac{R^2}{2}(\\sqrt2-1)=\\frac{3\\sqrt2}{2}-\\frac32$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Triangles inscribed in a regular octagon"
+    ],
+    "commonMistakes": [
+      "The eighth root of 81 is sqrt(3), not 3. Also, the triangle vertices need not include the center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite classification of arc gaps proves that the visually smallest triangle is in fact minimal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p17",
+    "problemId": "amc12b-2018-p17",
+    "finalAnswer": "$\\boxed{7}$ (choice **A**)",
+    "shortExplanation": "The strict bounds force a lower bound on the denominator.",
+    "detailedSteps": [
+      "The inequalities give the positive integers $u=9p-5q\\ge1$ and $v=4q-7p\\ge1$.",
+      "Eliminating $p$ yields $q=7u+9v\\ge16$. Equality is possible when $u=v=1$, which gives $p=9$ and $q=16$.",
+      "Indeed $5/9<9/16<4/7$, so the least denominator is $16$ and $q-p=7$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Farey neighbors and the mediant"
+    ],
+    "commonMistakes": [
+      "The interval is open: either endpoint itself fails the requirement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two strict rational bounds produce positive integer remainders, which can give an exact denominator bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p18",
+    "problemId": "amc12b-2018-p18",
+    "finalAnswer": "$\\boxed{2017}$ (choice **B**)",
+    "shortExplanation": "Subtract the linear growth to reveal a six-term cycle.",
+    "detailedSteps": [
+      "Set $g(n)=f(n)-n-1$. Substituting into the recurrence gives $g(n)=g(n-1)-g(n-2)$, with $g(1)=-1$ and $g(2)=-2$.",
+      "The values are $-1,-2,-1,1,2,1$, after which the same initial pair returns. The recurrence therefore makes this block repeat every six terms.",
+      "Since $2018\\equiv2\\pmod6$, we have $g(2018)=-2$. Hence $f(2018)=2018+1-2=2017$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "A recurrence with a periodic correction"
+    ],
+    "commonMistakes": [
+      "The original function is not periodic; only its deviation from a linear function repeats."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Removing a simple growth term is often enough to expose a small periodic remainder in a recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p19",
+    "problemId": "amc12b-2018-p19",
+    "finalAnswer": "$\\boxed{340}$ (choice **C**)",
+    "shortExplanation": "Use the four-digit bound to exclude every candidate between 323 and 340.",
+    "detailedSteps": [
+      "Because $n$ is even and divisible by $323=17\\cdot19$, it must be divisible by $646$. If another divisor $d$ satisfies $324\\le d\\le339$, neither $17$ nor $19$ divides $d$.",
+      "Consequently $\\gcd(646,d)\\le2$, and $n\\ge\\operatorname{lcm}(646,d)\\ge323\\cdot324=104652$, contradicting that $n$ has four digits.",
+      "For $d=340$, however, $\\operatorname{lcm}(646,340)=6460$. This is an even four-digit number divisible by both $323$ and $340$, and the exclusion just proved leaves no divisor between them. The minimum is $340$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Least common multiples and neighboring divisors"
+    ],
+    "commonMistakes": [
+      "Two numbers being possible divisors separately is insufficient; their least common multiple must fit inside the allowed size of n."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four-digit bound turns the neighboring-divisor condition into a finite list of plausible multiples.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p20",
+    "problemId": "amc12b-2018-p20",
+    "finalAnswer": "$\\boxed{\\frac{15\\sqrt3}{32}}$ (choice **C**)",
+    "shortExplanation": "Subtract three congruent corner pieces from the smaller triangle.",
+    "detailedSteps": [
+      "Use coordinates $A=(1,0)$, $C=(-1/2,\\sqrt3/2)$, and $E=(-1/2,-\\sqrt3/2)$. The midpoint triangle has vertices $X=(3/4,\\sqrt3/4)$, $Y=(-3/4,\\sqrt3/4)$, and $Z=(0,-\\sqrt3/2)$. Its side is $3/2$, so its area is $9\\sqrt3/16$.",
+      "At $Y$, the boundary $CE$, namely $x=-1/2$, cuts the two adjacent sides at $(-1/2,\\sqrt3/4)$ and $(-1/2,0)$. The removed triangle has vertical base $\\sqrt3/4$ and perpendicular height $1/4$, hence area $\\sqrt3/32$.",
+      "Rotation through $120^\\circ$ gives the other two equal corner pieces. The intersection area is $9\\sqrt3/16-3(\\sqrt3/32)=15\\sqrt3/32$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Intersection of equilateral triangles"
+    ],
+    "commonMistakes": [
+      "The intersection is not a regular hexagon; compute its area from the actual boundaries rather than assuming equal sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A subtraction argument is efficient only after the three removed pieces have been located and their congruence justified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p21",
+    "problemId": "amc12b-2018-p21",
+    "finalAnswer": "$\\boxed{\\frac72}$ (choice **E**)",
+    "shortExplanation": "Place the right-angle vertex at the origin and solve for the tangent circle’s radius.",
+    "detailedSteps": [
+      "Choose $C=(0,0)$, $A=(12,0)$, and $B=(0,5)$. The circumcenter is the hypotenuse midpoint $O=(6,5/2)$, with circumradius $13/2$. The inradius is $(12+5-13)/2=2$, so $I=(2,2)$.",
+      "A circle tangent to both leg segments has center $M=(r,r)$. Internal tangency to the circumcircle means $OM=13/2-r$. Squaring gives $(r-6)^2+(r-5/2)^2=(13/2-r)^2$, or $r(r-4)=0$. The positive radius is $4$, so $M=(4,4)$.",
+      "The triangle area is half the absolute determinant of $M-I=(2,2)$ and $O-I=(4,1/2)$: $\\frac12|2(1/2)-2(4)|=7/2$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Circles in a right triangle"
+    ],
+    "commonMistakes": [
+      "Use internal tangency, so the center distance is the difference of the radii. The zero-radius algebraic root is not a circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangent-circle condition determines its center algebraically; its disk need not be contained in the triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p22",
+    "problemId": "amc12b-2018-p22",
+    "finalAnswer": "$\\boxed{220}$ (choice **D**)",
+    "shortExplanation": "Complement the coefficients that carry a minus sign.",
+    "detailedSteps": [
+      "Write $P(x)=ax^3+bx^2+cx+d$. The condition is $-a+b-c+d=-9$, or $a+c-b-d=9$.",
+      "Define $u=9-a$ and $v=9-c$. Then the equation becomes $u+v+b+d=9$, with each variable a nonnegative integer.",
+      "Every nonnegative solution automatically has each variable at most nine, so the digit bounds introduce no further restriction. Stars and bars gives $\\binom{12}{3}=220$ polynomials."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Bounded coefficients and stars and bars"
+    ],
+    "commonMistakes": [
+      "Leading zero coefficients are allowed because the degree is at most three."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complementing selected digits turns a signed equation into an ordinary nonnegative composition count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p23",
+    "problemId": "amc12b-2018-p23",
+    "finalAnswer": "$\\boxed{120}$ (choice **C**)",
+    "shortExplanation": "Compute the dot product of the two unit position vectors.",
+    "detailedSteps": [
+      "Rotate the longitude coordinate so that Ajay lies at longitude zero. Billy’s longitude differs by $110^\\circ+115^\\circ=225^\\circ$, and his latitude is $45^\\circ$.",
+      "Ajay’s unit position vector is $(1,0,0)$. Billy’s is $(\\cos45^\\circ\\cos225^\\circ,\\cos45^\\circ\\sin225^\\circ,\\sin45^\\circ)$.",
+      "Their dot product is $\\cos45^\\circ\\cos225^\\circ=-1/2$. Thus the central angle is $\\arccos(-1/2)=120^\\circ$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Central angles from latitude and longitude"
+    ],
+    "commonMistakes": [
+      "A longitude separation alone is not a central angle when the two latitudes differ."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Latitude and longitude describe positions on a sphere; unit vectors convert them into a central-angle calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p24",
+    "problemId": "amc12b-2018-p24",
+    "finalAnswer": "$\\boxed{199}$ (choice **C**)",
+    "shortExplanation": "Count the integer levels of a strictly increasing function on the only possible interval.",
+    "detailedSteps": [
+      "Rearrange the equation as $x^2=10000(x-\\lfloor x\\rfloor)$. Since the fractional part is in $[0,1)$, every solution lies in $(-100,100)$.",
+      "Define $h(x)=x-x^2/10000$. On that interval it is strictly increasing: for $x<y$, $h(y)-h(x)=(y-x)(1-(x+y)/10000)>0$. Its endpoint limits are $-101$ and $99$.",
+      "Each integer $k$ strictly between $-101$ and $99$ occurs exactly once as $h(x)$. Conversely, at such a point $x-k=x^2/10000\\in[0,1)$, so $k=\\lfloor x\\rfloor$ and the original equation holds.",
+      "There are $99-(-101)-1=199$ integer levels, hence $199$ real solutions."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Counting roots with a floor function"
+    ],
+    "commonMistakes": [
+      "Both endpoints are excluded: a fractional part can equal zero but cannot equal one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A monotone change of variable replaces many separate floor-function intervals with one count of integer levels.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2018-p25",
+    "problemId": "amc12b-2018-p25",
+    "finalAnswer": "$\\boxed{552}$ (choice **D**)",
+    "shortExplanation": "Relate the side length of the tangent-point triangle to the distances between the circle centers.",
+    "detailedSteps": [
+      "Let the equilateral triangle side be $s$, and orient its vertices counterclockwise. In the arrangement shown in the source figure, each center lies on the interior side of its own tangent line. Choose $P_1=(0,0)$, $P_2=(s,0)$, and $P_3=(s/2,\\sqrt3s/2)$.",
+      "The radius perpendicular to $P_1P_2$ gives $O_1=(0,4)$. The inward unit normal to $P_2P_3$ is $(-\\sqrt3/2,-1/2)$, so $O_2=(s-2\\sqrt3,-2)$.",
+      "External tangency of the radius-four circles gives $O_1O_2=8$. Hence $(s-2\\sqrt3)^2+6^2=8^2$. The positive side length is $s=2\\sqrt3+2\\sqrt7$; the other algebraic possibility is negative.",
+      "The area is $\\frac{\\sqrt3}{4}s^2=10\\sqrt3+6\\sqrt7=\\sqrt{300}+\\sqrt{252}$. Therefore $a+b=300+252=552$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Equilateral triangles and tangent-circle centers"
+    ],
+    "commonMistakes": [
+      "The normal direction must match the circle arrangement in the given figure; choosing the opposite side of each tangent line describes a different configuration."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source figure determines the normal directions to the tangent lines, so the orientation must be fixed before solving the distance equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

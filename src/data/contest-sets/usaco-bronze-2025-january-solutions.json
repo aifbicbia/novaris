@@ -1,0 +1,107 @@
+[
+  {
+    "finalAnswer": "Use minimum-cost dynamic programming on each translation chain. Add the chain minima, or return $-1$ if a chain is infeasible. With zero shift, count the non-white pixels.",
+    "shortExplanation": "A second-photo star can come only from the unique predecessor pixel. When the shift is nonzero, these predecessor links form disjoint chains. Track the least number of original stars for the two possibilities at the current pixel; the observed color determines which transitions are possible.",
+    "detailedSteps": [
+      "Write $x_v\\in\\{0,1\\}$ for an original star at pixel $v$ and $y_v\\in\\{0,1\\}$ for its appearance in the second photo. White, gray and black impose $x_v+y_v=0,1,2$, respectively. If $u$ is the in-frame predecessor, then $y_v\\le x_u$: a predecessor star may survive or disappear. With no predecessor, $y_v=0$.",
+      "First handle $A=B=0$. A white pixel has no original star; a gray pixel has a star that disappeared; a black pixel has a star that stayed. Consequently the minimum is exactly the number of gray and black pixels. This special case also avoids following a self-loop.",
+      "For a nonzero shift, a successor lies $B$ rows lower and $A$ columns farther right. Each pixel has at most one predecessor and one successor, and row plus column strictly increases along a link. The image therefore decomposes into disjoint chains. Start a chain wherever its predecessor would lie outside the image.",
+      "Let $(d_0,d_1)$ record the minimum cost of the processed chain prefix when its last original-star indicator is $0$ or $1$. Before the first pixel use $(0,\\infty)$, because no star enters from outside. Put $m=\\min(d_0,d_1)$. The next states are: white $(m,\\infty)$; gray $(d_1,m+1)$; black $(\\infty,d_1+1)$. In the code, additions to an unreachable state remain at the sentinel value.",
+      "The gray transition has two distinct explanations. An initially empty pixel needs an incoming star, so its predecessor state must be $1$ and its extra cost is $0$. An initially occupied pixel must have no incoming star, so it costs $1$ after either predecessor state; an existing predecessor star may simply disappear. Black requires both an incoming star and an original star. White requires neither appearance.",
+      "These transitions describe every allowed local configuration and no forbidden one. They can also be realized globally: a predecessor star has only this single successor, so choosing survival on one chain does not conflict with another destination. Induction along the chain proves that both state costs are the exact minima. At its end take the cheaper state; the final star may disappear or leave the frame. Sum independent chain minima, returning $-1$ if any chain has no reachable state.",
+      "Every pixel belongs to exactly one chain and is processed once. The runtime is $O(N^2)$ per test, or $O(\\sum N^2)$ overall. The stored grid uses $O(N^2)$ memory, while each chain needs only two costs. At most $N^2$ original stars are possible, so the integer sentinel in the implementation safely exceeds every feasible cost.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int t;\n    cin >> t;\n    while (t--) {\n        int n, a, b;\n        cin >> n >> a >> b;\n        vector<string> grid(n);\n        for (auto &row : grid) cin >> row;\n        if (a == 0 && b == 0) {\n            int answer = 0;\n            for (const auto &row : grid)\n                for (char c : row) answer += (c != 'W');\n            cout << answer << '\\n';\n            continue;\n        }\n        const int inf = 1000000000;\n        int answer = 0;\n        bool possible = true;\n        for (int row = 0; row < n && possible; ++row) {\n            for (int col = 0; col < n; ++col) {\n                if (row - b >= 0 && col - a >= 0) continue;\n                int d0 = 0, d1 = inf;\n                for (int x = row, y = col; x < n && y < n; x += b, y += a) {\n                    int best = min(d0, d1);\n                    char c = grid[x][y];\n                    if (c == 'W') {\n                        d0 = best;\n                        d1 = inf;\n                    } else if (c == 'G') {\n                        d0 = d1;\n                        d1 = min(inf, best + 1);\n                    } else {\n                        d0 = inf;\n                        d1 = min(inf, d1 + 1);\n                    }\n                }\n                int best = min(d0, d1);\n                if (best == inf) {\n                    possible = false;\n                    break;\n                }\n                answer += best;\n            }\n        }\n        cout << (possible ? answer : -1) << '\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Translate the superimposed colors into two binary appearance indicators.",
+      "A disappearing star makes the incoming relation an inequality rather than an equality.",
+      "A nonzero fixed translation decomposes the grid into independent directed chains.",
+      "Two-state minimum-cost DP retains all possibilities while optimizing the initial count."
+    ],
+    "commonMistakes": [
+      "Forcing every original star to survive the shift, although disappearance is allowed.",
+      "Treating every gray pixel as an original star instead of allowing an incoming one.",
+      "Allowing a black pixel with no possible in-frame predecessor.",
+      "Using the chain loop for zero shift, or confusing rightward columns with downward rows."
+    ],
+    "alternativeMethods": [
+      "One can store both DP costs at every pixel and process them in an order in which each predecessor has already been visited. A row-major order works for nonnegative nonzero shifts. Read the predecessor costs, apply the same recurrence, and sum minima only at chain ends. This also takes $O(N^2)$ time but stores more DP state.",
+      "For tiny images, enumerate each original pixel as absent, disappearing or surviving, literally build the second photo, and minimize among assignments producing the observed image. This exponential method is useful as an independent oracle, not at the full limits."
+    ],
+    "difficultyNotes": "Advanced Bronze modeling: the local DP is small, but the distinction between an original star, an incoming star and a disappeared star is essential. The zero-shift exception and image boundaries must be handled explicitly.",
+    "id": "solution-usaco-bronze-2025-january-p1",
+    "problemId": "usaco-bronze-2025-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For every value $y$ that appears at least twice, let $p_y$ be its second-last position and $D(p_y)$ the number of distinct values strictly before it. Return $\\displaystyle\\sum_y\\bigl(D(p_y)-\\mathbf{1}_{\\mathrm{freq}(y)\\ge3}\\bigr)$ using a 64-bit total.",
+    "shortExplanation": "A triple $x,y,y$ exists as a subsequence exactly when a value $x\\ne y$ occurs before the second-last $y$. Use the last two occurrences of each repeated value and count the distinct available first values in that strict prefix. Each pair $(x,y)$ contributes only once.",
+    "detailedSteps": [
+      "Removals preserve order, so the required pattern is a subsequence. The two copies of $y$ need not be adjacent, and multiple choices of their indices do not make different value triples.",
+      "Fix a repeated value $y$, and let $p_y$ be its second-last occurrence. If an $x\\ne y$ occurs strictly before $p_y$, use that occurrence followed by the second-last and last $y$: this constructs the desired triple.",
+      "Conversely, in any chosen pair of $y$ occurrences, the first occurrence is no later than $p_y$. The preceding $x$ therefore lies strictly before $p_y$ as well. Thus the strict prefix before $p_y$ describes exactly the possible first values.",
+      "During the input scan, store $D(i)$, the number of distinct values before position $i$, and keep each value’s frequency, last position and second-last position. Record the prefix count before adding the current element, so the boundary is strict.",
+      "For a fixed $y$, start with $D(p_y)$. Exclude $y$ itself precisely when it occurs before $p_y$, which is equivalent to having at least three total occurrences. Its contribution is therefore $D(p_y)-\\mathbf{1}_{\\mathrm{freq}(y)\\ge3}$. A value with fewer than two occurrences contributes nothing.",
+      "Every distinct moo determines one repeated value $y$ and one distinct first value $x$, so the contributions for different $y$ are disjoint and their sum is exact. Frequencies of $x$ do not multiply the contribution. An empty prefix correctly contributes zero.",
+      "The scan and the final pass over values take $O(N)$ time and use $O(N)$ space. Use a 64-bit accumulator. For instance, two consecutive copies of the sequence $1,2,\\ldots,k$ give $k(k-1)/2$ distinct triples, which can exceed a 32-bit total at the full limits.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> prefix(n), frequency(n + 1), last(n + 1, -1), second(n + 1, -1);\n    int distinct = 0;\n    for (int i = 0; i < n; ++i) {\n        int value;\n        cin >> value;\n        prefix[i] = distinct;\n        if (frequency[value] == 0) ++distinct;\n        ++frequency[value];\n        second[value] = last[value];\n        last[value] = i;\n    }\n    long long answer = 0;\n    for (int value = 1; value <= n; ++value) {\n        if (second[value] >= 0)\n            answer += prefix[second[value]] - (frequency[value] >= 3 ? 1 : 0);\n    }\n    cout << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Count distinct value patterns rather than index selections.",
+      "The second-last occurrence gives the latest useful boundary for the first value.",
+      "Distinct-prefix counts turn each repeated value into one constant-time contribution.",
+      "A third occurrence determines whether the repeated value must be excluded from its own prefix."
+    ],
+    "commonMistakes": [
+      "Counting only consecutive triples instead of subsequences.",
+      "Multiplying by the number of choices of matching indices.",
+      "Using the last occurrence as the prefix boundary, leaving no later copy of the repeated value.",
+      "Including the repeated value as a valid first value, or overflowing the final sum."
+    ],
+    "alternativeMethods": [
+      "Store the first occurrence of each distinct value, sort these first positions, and binary-search how many are strictly less than each $p_y$. Subtract one if the first occurrence of $y$ is also earlier. This uses the same necessary-and-sufficient boundary with $O(N\\log N)$ time.",
+      "For small arrays, enumerate all index triples and insert their valid value patterns into a set. The set removes multiplicity and gives an independent $O(N^3)$ correctness oracle."
+    ],
+    "difficultyNotes": "Intermediate Bronze counting: selecting the second-last occurrence removes a large number of duplicate subsequence choices. The strict-prefix convention and 64-bit sum are the main implementation details.",
+    "id": "solution-usaco-bronze-2025-january-p2",
+    "problemId": "usaco-bronze-2025-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Build the $N+1$ match-count bins by expanding every odd and even reversal center, updating only its two new endpoints. This computes the full histogram in $O(N^2)$ time and $O(N)$ space.",
+    "shortExplanation": "Reversal intervals sharing a center send all their common inner cows to the same positions. Enlarging such an interval changes only the two newly included endpoints. Update their old and swapped match contributions in constant time and increment the resulting histogram bin.",
+    "detailedSteps": [
+      "Let $M=\\sum_i[a_i=b_i]$ be the initial number of matching cows. A one-element reversal still counts as a distinct operation even though it leaves the lineup unchanged. Each of these operations belongs in bin $M$.",
+      "Consider enlarging $[l+1,r-1]$ to $[l,r]$ around the same center. The endpoint sum $l+r$ stays fixed, and the reversed source index of each inner position is still $l+r-i$. Every already reversed inner cow therefore remains in the same place.",
+      "The two new endpoints used to contribute $[a_l=b_l]+[a_r=b_r]$. After reversal their contribution is $[a_r=b_l]+[a_l=b_r]$. Add $\\Delta=[a_l=b_r]+[a_r=b_l]-[a_l=b_l]-[a_r=b_r]$ to the current match count. Here $[P]$ equals $1$ when $P$ is true and $0$ otherwise.",
+      "Using zero-based positions, iterate each endpoint sum $s=0,1,\\ldots,2N-2$. Start with $l=\\lfloor s/2\\rfloor$, $r=\\lceil s/2\\rceil$ and current count $M$. For an odd-length center the first interval has $l=r$, so make no score change. For an even-length center apply the endpoint update to its first two positions.",
+      "After recording the current bin, decrement $l$ and increment $r$. Apply the same update at every larger interval while its endpoints remain inside the array. The midpoint never changes, so the inner-position argument remains valid throughout the expansion.",
+      "Every permitted interval has one unique endpoint sum and is reached exactly once by its center’s expansion. No empty interval is recorded, and length-one intervals are recorded separately for each location. The running-score invariant proves that each operation increments its exact match-count bin.",
+      "There are $N(N+1)/2$ intervals, with constant work each: runtime $O(N^2)$. The input arrays and histogram use $O(N)$ memory. A useful check is that all bin counts sum to $N(N+1)/2$. At the stated maximum there are $28{,}128{,}750$ operations; a compiled implementation avoids cubic recounting.",
+      "Original reference implementation (C++17):\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int n;\n    cin >> n;\n    vector<int> a(n), b(n);\n    for (int &x : a) cin >> x;\n    for (int &x : b) cin >> x;\n    int base = 0;\n    for (int i = 0; i < n; ++i) base += (a[i] == b[i]);\n    vector<long long> histogram(n + 1);\n    for (int sum = 0; sum <= 2 * n - 2; ++sum) {\n        int left = sum / 2, right = (sum + 1) / 2;\n        int matches = base;\n        while (left >= 0 && right < n) {\n            if (left < right) {\n                matches += (a[left] == b[right]) + (a[right] == b[left])\n                         - (a[left] == b[left]) - (a[right] == b[right]);\n            }\n            ++histogram[matches];\n            --left;\n            ++right;\n        }\n    }\n    for (long long count : histogram) cout << count << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Group reversal intervals by their common center.",
+      "The destination rule for inner cows depends on the unchanged endpoint sum.",
+      "Replacing two original endpoint contributions gives a constant-time exact update.",
+      "Count endpoint pairs even when different operations produce the same lineup."
+    ],
+    "commonMistakes": [
+      "Reversing and recounting the whole array for every interval, causing cubic time.",
+      "Expanding only odd centers and missing every even-length reversal.",
+      "Removing length-one operations because they do not change the array.",
+      "Adding swapped endpoint matches without subtracting their original contributions."
+    ],
+    "alternativeMethods": [
+      "For a fixed endpoint sum, precompute prefix sums of $[a_{s-i}=b_i]$ over its valid positions. Combine an interval’s reversed-match sum with the original-match prefix sum outside it. Processing every endpoint sum gives another $O(N^2)$ approach, with additional prefix bookkeeping.",
+      "Literal reversal followed by a full match recount gives a simple $O(N^3)$ oracle for tiny arrays. It also verifies that equal resulting lineups from different endpoint pairs are counted separately."
+    ],
+    "difficultyNotes": "Intermediate Bronze: center expansion is an enumeration of operations with an exact score invariant, not a heuristic. The source recommends a compiled language for the full quadratic workload. The reference uses 64-bit histogram bins.",
+    "id": "solution-usaco-bronze-2025-january-p3",
+    "problemId": "usaco-bronze-2025-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

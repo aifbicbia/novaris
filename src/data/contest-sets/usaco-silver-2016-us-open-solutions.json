@@ -1,0 +1,106 @@
+[
+  {
+    "finalAnswer": "Search deletions of up to three current extreme cows and return the smallest remaining bounding-box area.",
+    "shortExplanation": "A removal can shrink the bounding box only by eliminating a current extreme coordinate. At least one representative of that extreme must be removed. Branch on the four current extremes, update them after each deletion, and search only three levels.",
+    "detailedSteps": [
+      "The tightest axis-aligned enclosure has area $(x_{\\max}-x_{\\min})(y_{\\max}-y_{\\min})$. Cows are points, so do not add one to either dimension. Zero area is allowed.",
+      "Sort the cow indices separately by $x$ and $y$, preserving each cow’s identity even on coordinate ties. Keep removal flags and find a remaining representative at each sorted end: minimum and maximum $x$, minimum and maximum $y$.",
+      "Evaluate the current area. If deletion budget remains, recursively remove each distinct one of these at most four representatives, then restore its flag. Recompute extremes at every level; an old interior cow may become a new extreme.",
+      "To prove completeness, suppose a deletion set $S$ could strictly improve the current area. Some bounding coordinate must change. All cows at that extreme coordinate must then disappear, including the representative chosen for that bound. Thus at least one branch candidate belongs to $S$.",
+      "Remove that candidate and repeat the argument with the remaining deletions. If the desired area is already attained at an intermediate level, it has been evaluated; otherwise another needed extreme candidate exists. Hence the search reaches an optimum without trying all interior-cow subsets.",
+      "Ties cause no problem: deleting one representative may leave the bound unchanged, but the next tied representative becomes available at the following level. Duplicate extreme identities are branched on only once.",
+      "Evaluate every depth for “up to three” removals. Since $N\\ge5$, at least two cows remain, so all extreme scans are defined. Sorting costs $O(N\\log N)$; at most $1+4+16+64$ nodes each skip at most three removed indices at each end. Total time is $O(N\\log N+4^3)$ and space is $O(N)$.",
+      "The implementation multiplies the dimensions in 64-bit arithmetic. Read `reduce.in` and write `reduce.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <limits>\n#include <numeric>\n#include <utility>\n#include <vector>\nstruct Point { int x, y; };\nint main() {\n    std::ifstream in(\"reduce.in\");\n    std::ofstream out(\"reduce.out\");\n    int n;\n    in >> n;\n    std::vector<Point> p(n);\n    for (auto& point : p) in >> point.x >> point.y;\n    std::vector<int> byX(n), byY(n);\n    std::iota(byX.begin(), byX.end(), 0);\n    std::iota(byY.begin(), byY.end(), 0);\n    std::sort(byX.begin(), byX.end(), [&](int a, int b) { return std::pair<int,int>{p[a].x,a} < std::pair<int,int>{p[b].x,b}; });\n    std::sort(byY.begin(), byY.end(), [&](int a, int b) { return std::pair<int,int>{p[a].y,a} < std::pair<int,int>{p[b].y,b}; });\n    std::vector<bool> removed(n, false);\n    long long best = std::numeric_limits<long long>::max();\n    std::function<void(int)> search = [&](int left) {\n        int lx = 0, rx = n - 1, ly = 0, ry = n - 1;\n        while (removed[byX[lx]]) ++lx;\n        while (removed[byX[rx]]) --rx;\n        while (removed[byY[ly]]) ++ly;\n        while (removed[byY[ry]]) --ry;\n        long long area = 1LL * (p[byX[rx]].x - p[byX[lx]].x) * (p[byY[ry]].y - p[byY[ly]].y);\n        best = std::min(best, area);\n        if (left == 0) return;\n        std::vector<int> candidates{byX[lx], byX[rx], byY[ly], byY[ry]};\n        std::sort(candidates.begin(), candidates.end());\n        candidates.erase(std::unique(candidates.begin(), candidates.end()), candidates.end());\n        for (int id : candidates) {\n            removed[id] = true;\n            search(left - 1);\n            removed[id] = false;\n        }\n    };\n    search(3);\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Only changes to extreme coordinates can shrink the enclosure.",
+      "Recompute extremes after each deletion.",
+      "A constant-depth branching proof replaces all deletion subsets."
+    ],
+    "commonMistakes": [
+      "Using inclusive grid-cell dimensions rather than point-coordinate differences.",
+      "Considering only the initial extremes.",
+      "Assuming one deletion always changes a tied boundary.",
+      "Losing cow identities when sorting by both coordinates.",
+      "Disallowing a zero-area enclosure."
+    ],
+    "alternativeMethods": [
+      "For a small herd, enumerate every subset of zero, one, two or three removed cows and recompute the remaining bounds directly. This independently checks the extreme-only search."
+    ],
+    "difficultyNotes": "The critical argument is that every strict improvement removes a chosen current extreme. This remains true with ties and explains why the small search is complete.",
+    "id": "solution-usaco-silver-2016-us-open-p1",
+    "problemId": "usaco-silver-2016-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "After sorting, maximize a maximal valid window plus the best valid window in the disjoint suffix after it.",
+    "shortExplanation": "Use a two-pointer scan to find every maximal single-case window. Store suffix maxima of those window lengths, then combine each first window with the best second window beginning after it. The two index ranges never share a diamond.",
+    "detailedSteps": [
+      "Sort all diamond sizes, retaining repeated sizes as separate items. For each start $i$, find the exclusive endpoint $r_i$ such that the window $[i,r_i)$ has largest possible length with size difference at most $K$. Equality is allowed.",
+      "The endpoint never moves backward as $i$ increases, so one two-pointer sweep computes all windows in $O(N)$ time. Build `suffix[i]`, the maximum valid single-window length beginning at or after $i$, with `suffix[N] = 0`.",
+      "The candidate $(r_i-i)+\\mathrm{suffix}[r_i]$ is a legal pair of cases: both windows satisfy the size tolerance, and their index ranges are disjoint. Thus it never double-counts a diamond.",
+      "These candidates also include an optimum. Let $s$ be the smallest size displayed by any optimal pair, and call its case the first case. Every item already in that case is at most $s+K$. Move every displayed item of the other case with size at most $s+K$ into the first case; its range remains valid.",
+      "Any displayed item left over was in the second original case and is larger than $s+K$, so those leftovers still form a valid case. Add every available item between $s$ and $s+K$ to the first case. This cannot reduce the total and produces a maximal sorted window; the second case now lies entirely after it.",
+      "The best suffix window is at least as large as those remaining second-case items. Therefore one candidate attains the optimum, while every candidate is legal. This proves the maximum is exact.",
+      "Sorting takes $O(N\\log N)$ time, followed by linear sweeps, with $O(N)$ space. A case can be left unused if all chosen diamonds fit in one case. Read `diamond.in` and write `diamond.out`.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"diamond.in\");\n    std::ofstream out(\"diamond.out\");\n    int n;\n    long long k;\n    in >> n >> k;\n    std::vector<long long> size(n);\n    for (auto& s : size) in >> s;\n    std::sort(size.begin(), size.end());\n    std::vector<int> end(n), length(n), suffix(n + 1, 0);\n    int right = 0;\n    for (int left = 0; left < n; ++left) {\n        while (right < n && size[right] - size[left] <= k) ++right;\n        end[left] = right;\n        length[left] = right - left;\n    }\n    for (int i = n - 1; i >= 0; --i) suffix[i] = std::max(length[i], suffix[i + 1]);\n    int best = 0;\n    for (int i = 0; i < n; ++i) best = std::max(best, length[i] + suffix[end[i]]);\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Sorted size ranges become valid windows.",
+      "Maximal first-window expansion is safe after reassignment.",
+      "Suffix maxima provide the best disjoint second case.",
+      "Multiplicity matters even when sizes are equal."
+    ],
+    "commonMistakes": [
+      "Adding the two largest window lengths even if their indices overlap.",
+      "Removing duplicate sizes from the collection.",
+      "Using a strict size-difference comparison and excluding equality.",
+      "Forcing both cases to be nonempty.",
+      "Solving the one-case variant instead of the actual pair of cases."
+    ],
+    "alternativeMethods": [
+      "For small inputs, assign each individual diamond to unshown, case one or case two, and check both ranges. A disjoint-subset dynamic program is another independent check without assuming contiguous sorted windows."
+    ],
+    "difficultyNotes": "The nonoverlap proof matters as much as the two-pointer implementation. The source requests a positive output and prints the upper N bound without a separate lower inequality; the solution treats the collection as nonempty.",
+    "id": "solution-usaco-silver-2016-us-open-p2",
+    "problemId": "usaco-silver-2016-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Activate barns in reverse closing order, union active neighbors, and output whether the active component count is one at each required forward time.",
+    "shortExplanation": "Closing a vertex can split a component, but reverse activation only adds vertices and edges. Disjoint sets handle these additions efficiently. Save each reverse result at its original index so the output begins with the initial farm.",
+    "detailedSteps": [
+      "The source requests exactly $N$ answers: the initial farm and the farm after $1,\\ldots,N-1$ closures. There is no requested empty-farm answer after the last closure.",
+      "Start the reverse process with no active barns. For $i=N-1,\\ldots,0$, activate `order[i]` and add one to the active component count.",
+      "Union the new barn with each neighbor that is already active. Decrease the component count only when two distinct roots merge. Closed neighbors are ignored; repeated edges do not decrease it again.",
+      "After this activation, the active set is exactly `order[i..N-1]`, which is the forward farm after $i$ closures. Store whether the component count equals one into `answer[i]`.",
+      "Correctness follows by induction. Before activation, disjoint sets represent the active induced graph. Adding a vertex and all its edges to active neighbors inserts exactly the newly available connectivity, so the updated sets still represent all and only open-barn paths.",
+      "Output `answer[0..N-1]` as one YES or NO per line. This handles an initially disconnected farm and a farm that becomes connected again after isolated components are removed. The singleton state is connected.",
+      "With union-by-size and path compression, time is $O((N+M)\\alpha(N))$ and space is $O(N+M)$. Use the original `closing.in` and `closing.out` files.",
+      "Original C++17 implementation with the historical named-file interface:\n\n```cpp\n#include <fstream>\n#include <numeric>\n#include <vector>\nclass DSU {\n    std::vector<int> parent, size;\npublic:\n    explicit DSU(int n) : parent(n), size(n, 1) { std::iota(parent.begin(), parent.end(), 0); }\n    int find(int a) {\n        while (parent[a] != a) { parent[a] = parent[parent[a]]; a = parent[a]; }\n        return a;\n    }\n    bool unite(int a, int b) {\n        a = find(a); b = find(b);\n        if (a == b) return false;\n        if (size[a] < size[b]) { int t = a; a = b; b = t; }\n        parent[b] = a; size[a] += size[b];\n        return true;\n    }\n};\nint main() {\n    std::ifstream in(\"closing.in\");\n    std::ofstream out(\"closing.out\");\n    int n, m;\n    in >> n >> m;\n    std::vector<std::vector<int>> adjacency(n);\n    for (int i = 0; i < m; ++i) {\n        int a, b; in >> a >> b; --a; --b;\n        adjacency[a].push_back(b); adjacency[b].push_back(a);\n    }\n    std::vector<int> order(n);\n    for (int& v : order) { in >> v; --v; }\n    DSU dsu(n);\n    std::vector<bool> active(n, false), answer(n, false);\n    int components = 0;\n    for (int i = n - 1; i >= 0; --i) {\n        int v = order[i]; active[v] = true; ++components;\n        for (int u : adjacency[v]) if (active[u] && dsu.unite(v, u)) --components;\n        answer[i] = components == 1;\n    }\n    for (bool connected : answer) out << (connected ? \"YES\" : \"NO\") << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Reverse deletions into additions.",
+      "Union only edges whose endpoints are active.",
+      "Track component count and preserve the forward-time indices."
+    ],
+    "commonMistakes": [
+      "Using ordinary union-find directly for forward vertex deletions.",
+      "Assuming the initial farm is connected.",
+      "Connecting through a barn that has already closed in the corresponding forward state.",
+      "Decrementing components for a redundant union.",
+      "Reversing the answers incorrectly or emitting an extra empty-farm line."
+    ],
+    "alternativeMethods": [
+      "At the Silver source limits, repeatedly traverse the graph of currently open barns after each forward closure. This slower method directly checks the required times and connectivity against the reverse union-find algorithm."
+    ],
+    "difficultyNotes": "The source’s N-line output convention fixes the indexing. The printed M lower bound is positive; zero-edge synthetic tests, if used, are separate robustness extensions rather than claimed source-valid examples.",
+    "id": "solution-usaco-silver-2016-us-open-p3",
+    "problemId": "usaco-silver-2016-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

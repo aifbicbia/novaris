@@ -1,0 +1,96 @@
+[
+  {
+    "finalAnswer": "Read the pile size as a decimal string. Output E when its last digit is 0, and B otherwise.",
+    "shortExplanation": "Multiples of ten are losing positions. Every legal palindrome moves away from that class, while any other positive pile can reach it by removing its final digit.",
+    "detailedSteps": [
+      "The empty pile is losing. A positive palindrome without leading zeros has equal first and last digits; its last digit is therefore nonzero. No legal removal is a multiple of ten.",
+      "From a positive pile divisible by ten, every legal move leaves a smaller pile not divisible by ten.",
+      "If the pile has final digit $r\\in\\{1,\\ldots,9\\}$, remove exactly $r$ stones. This is a legal one-digit palindrome and leaves a nonnegative multiple of ten.",
+      "Strong induction now classifies all positions: multiples of ten have only winning successors, while every other position has a losing successor. Thus Bessie wins exactly when the final digit is nonzero.",
+      "The pile can have $10^5$ decimal digits. Do not convert it to a machine integer or floating-point value. Reading a string and examining its last character takes $O(\\text{total input digits})$ time and $O(\\text{maximum input digits})$ space.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int tests;if(!(cin>>tests))return 0;\n    while(tests--){\n        string stones;cin>>stones;\n        cout<<(stones.back()=='0'?\"E\":\"B\")<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Prove a complete losing-position class by induction.",
+      "One-digit palindromes supply a move into that class.",
+      "A decimal string supports inputs far larger than 64-bit integers."
+    ],
+    "commonMistakes": [
+      "Checking only whether the entire pile is a palindrome does not determine optimal play.",
+      "A palindrome cannot have a leading zero, so it cannot end in zero.",
+      "The empty pile is the proof base case, even though the initial input is positive.",
+      "B and E are per-case program outputs, not a multiple-choice answer for the archive record."
+    ],
+    "alternativeMethods": [
+      "After an opponent moves from a multiple of ten, remove the new final digit to return to a multiple of ten. This response strategy also proves why that position class is losing. A full legal-move game DP is useful only on bounded small piles."
+    ],
+    "difficultyNotes": "The final test is short; the essential argument must cover every legal palindrome and arbitrarily large piles. Input parsing dominates the running time. The source has up to ten independent cases.",
+    "id": "solution-usaco-bronze-2024-february-p1",
+    "problemId": "usaco-bronze-2024-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Start with the total capacity. For each maximal circular direction run, subtract the smaller of M and the run capacity excluding its receiving endpoint; a uniform-direction circle loses nothing.",
+    "shortExplanation": "Opposing neighboring directions form pairs that keep their own buckets full. Each attached chain supplies extra milk for exactly the sum of its capacities, causing one liter of overflow per minute during that interval.",
+    "detailedSteps": [
+      "When all directions agree, every initially full bucket sends and receives one liter simultaneously. Its volume remains unchanged, so return $\\sum_i a_i$.",
+      "Otherwise, an adjacent R followed by L forms a two-cow cycle. Each bucket sends one liter and receives one from its partner every minute, so both remain full. Any additional milk arriving from outside the pair is lost as overflow.",
+      "In a maximal clockwise R run, the final cow belongs to such a pair; the preceding cows feed a chain into her. In a clockwise L run, the first cow is the receiving endpoint and the remaining cows feed her in reverse order.",
+      "The outermost chain cow sends continuously for her capacity in minutes. Her successor stays full while receiving those units, then sends for her own capacity in additional minutes. Induction shows that the last chain cow supplies its endpoint continuously for exactly the sum of all chain capacities.",
+      "For a run with capacity sum $A$ and receiving endpoint capacity $a_{\\rm sink}$, its loss by minute $M$ is $\\min(M,A-a_{\\rm sink})$. Use the final capacity for an R run and the first capacity for an L run. A one-cow run has no attached chain and loses zero.",
+      "Begin scanning at any circular direction change, so the array boundary cannot split one run. Process exactly $N$ cows and subtract each run contribution from the initial total. This takes $O(N)$ time and $O(N)$ memory. Use 64-bit totals: $N\\max a_i$ can reach $2\\times10^{14}$.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n;long long minutes;if(!(cin>>n>>minutes))return 0;\n    string direction;cin>>direction;\n    vector<long long> capacity(n);long long answer=0;\n    for(auto &x:capacity){cin>>x;answer+=x;}\n    int start=0;\n    while(start<n&&direction[start]==direction[(start+n-1)%n])++start;\n    if(start==n){cout<<answer<<'\\n';return 0;}\n    int used=0;\n    while(used<n){\n        int index=(start+used)%n;\n        char current=direction[index];\n        long long first=capacity[index],last=first,total=0;\n        while(used<n&&direction[(start+used)%n]==current){\n            last=capacity[(start+used)%n];total+=last;++used;\n        }\n        long long sink=current=='R'?last:first;\n        answer-=min(minutes,total-sink);\n    }\n    cout<<answer<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Simultaneous exchanges preserve a mutually feeding pair.",
+      "An initially full directed chain supplies milk for the sum of its capacities.",
+      "Rotate the scan to a direction change before grouping circular runs."
+    ],
+    "commonMistakes": [
+      "Sequential in-place transfers can pass newly received milk again within the same minute.",
+      "The receiving endpoint remains full; its own capacity must be excluded from the chain that drains into it.",
+      "An R run uses its last cow as endpoint, while an L run uses its first.",
+      "First and last array segments may belong to one circular run.",
+      "A 32-bit total can overflow even though each individual capacity fits."
+    ],
+    "alternativeMethods": [
+      "For small inputs, explicitly compute every donation from the old volume vector, apply all donations simultaneously, and then clip each bucket to capacity. This is an independent oracle, with O(NM) time rather than a full-constraint solution."
+    ],
+    "difficultyNotes": "The proof separates ordinary chain cows, which never overflow, from permanently full two-cow cycles. The chain sends continuously from the first minute, so no extra minute offset belongs in the loss formula. A one-cow circle and a two-cow circle are included by the same uniform or zero-chain rules.",
+    "id": "solution-usaco-bronze-2024-february-p2",
+    "problemId": "usaco-bronze-2024-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort c_i minus t_i in descending order. For each input pair V S, output YES exactly when the V-th largest difference is strictly greater than S.",
+    "shortExplanation": "Each farm has a latest permissible wake-up threshold. At least V farms are available exactly when the V-th largest threshold exceeds the wake-up time.",
+    "detailedSteps": [
+      "A farm is available when $t_i+S<c_i$. Rearrange this as $S<d_i$, where $d_i=c_i-t_i$. Negative and zero differences are valid values and should not be discarded.",
+      "Sort the differences in descending order $d_0\\ge d_1\\ge\\cdots\\ge d_{N-1}$. If $d_{V-1}>S$, the first $V$ farms are all available. If $d_{V-1}\\le S$, at most $V-1$ farms are available.",
+      "The input format gives each query as V followed by S. Read that order, compare the threshold at index $V-1$ using a strict greater-than test, and output YES or NO on its own line.",
+      "Preprocessing takes $O(N\\log N)$ time, and each streamed query takes $O(1)$ time, for $O(N\\log N+Q)$ overall. Store one $O(N)$ difference array. The stated times fit 32-bit arithmetic; using 64-bit values is also safe.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n,queries;if(!(cin>>n>>queries))return 0;\n    vector<long long> deadline(n);\n    for(auto &value:deadline)cin>>value;\n    for(auto &value:deadline){long long travel;cin>>travel;value-=travel;}\n    sort(deadline.rbegin(),deadline.rend());\n    while(queries--){\n        int required;long long wake;cin>>required>>wake;\n        cout<<(deadline[required-1]>wake?\"YES\":\"NO\")<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Transform a strict arrival deadline into a wake-up threshold.",
+      "Use an order statistic to answer an at-least-V query.",
+      "Repeated thresholds correspond to distinct farms and retain their multiplicities."
+    ],
+    "commonMistakes": [
+      "Arrival exactly at closing time does not count.",
+      "The query input order is V S, even though the statement discusses the wake-up time first.",
+      "The visits have separately specified arrival offsets; do not introduce a cumulative travel schedule.",
+      "Deleting duplicate differences changes the number of farms available."
+    ],
+    "alternativeMethods": [
+      "Sort differences in ascending order and use upper_bound(S) to count values strictly greater than S. This gives O(N log N+Q log N) time. A direct scan of the original c and t arrays is a separate small-case oracle."
+    ],
+    "difficultyNotes": "The rank threshold avoids rescanning all farms for every query. The proof must preserve strict closing-time behavior and count each farm independently. V ranges from one to N, so the selected index is always valid.",
+    "id": "solution-usaco-bronze-2024-february-p3",
+    "problemId": "usaco-bronze-2024-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

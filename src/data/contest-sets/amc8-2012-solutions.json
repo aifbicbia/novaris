@@ -1,0 +1,696 @@
+[
+  {
+    "id": "solution-amc8-2012-p1",
+    "problemId": "amc8-2012-p1",
+    "finalAnswer": "$\\boxed{\\text{E }(9)}$",
+    "shortExplanation": "**Idea:** Scale the recipe from $8$ hamburgers to $24$ hamburgers.",
+    "detailedSteps": [
+      "The number of hamburgers is multiplied by\n[\n\\frac{24}{8}=3.\n]",
+      "So the amount of meat must also be multiplied by $3$.",
+      "Rachelle needs\n[\n3\\cdot3=9\n]",
+      "pounds of meat.",
+      "Final Answer: ($\\boxed{\\text{E }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Proportions",
+      "Scaling"
+    ],
+    "commonMistakes": [
+      "Scale both hamburgers and meat by the same factor.",
+      "Do not add $16$ hamburgers to $3$ pounds directly."
+    ],
+    "alternativeMethods": [
+      "Find pounds per hamburger: $\\frac38$ pound each, then multiply by $24$."
+    ],
+    "difficultyNotes": "A direct proportional reasoning problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p2",
+    "problemId": "amc8-2012-p2",
+    "finalAnswer": "$\\boxed{\\text{B }(700)}$",
+    "shortExplanation": "**Idea:** Convert births and deaths into yearly counts.",
+    "detailedSteps": [
+      "A baby is born every $8$ hours, so there are $3$ births per day.",
+      "There is $1$ death per day, so the population increases by\n[\n3-1=2\n]",
+      "people per day.",
+      "Over $365$ days, the increase is\n[\n2\\cdot365=730.\n]",
+      "To the nearest hundred, this is $700$.",
+      "Final Answer: ($\\boxed{\\text{B }(700)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Rounding"
+    ],
+    "commonMistakes": [
+      "A birth every $8$ hours means $3$ births per day.",
+      "Round $730$ to the nearest hundred."
+    ],
+    "alternativeMethods": [
+      "Compute yearly births $3\\cdot365=1095$ and yearly deaths $365$, then subtract."
+    ],
+    "difficultyNotes": "A rate conversion followed by rounding.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p3",
+    "problemId": "amc8-2012-p3",
+    "finalAnswer": "$\\boxed{\\text{B }(5:21\\text{ PM})}$",
+    "shortExplanation": "**Idea:** Add the daylight duration to the correct sunrise time.",
+    "detailedSteps": [
+      "Start at 6:57 AM and add $10$ hours:\n[\n6:57\\text{ AM}+10\\text{ hours}=4:57\\text{ PM}.\n]",
+      "Then add $24$ minutes:\n[\n4:57\\text{ PM}+24\\text{ minutes}=5:21\\text{ PM}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(5:21\\text{ PM})}$)"
+    ],
+    "keyIdeas": [
+      "Elapsed time",
+      "Clock arithmetic"
+    ],
+    "commonMistakes": [
+      "Use the correct sunrise and daylight length, not the incorrect printed sunset.",
+      "Remember to convert past noon to PM."
+    ],
+    "alternativeMethods": [
+      "Convert 6:57 AM to minutes after midnight, add $624$ minutes, then convert back."
+    ],
+    "difficultyNotes": "A careful elapsed-time calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p4",
+    "problemId": "amc8-2012-p4",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac18\\right)}$",
+    "shortExplanation": "**Idea:** Peter ate one slice plus half of another slice.",
+    "detailedSteps": [
+      "Peter ate\n[\n1+\\frac12=\\frac32\n]",
+      "slices.",
+      "The pizza has $12$ slices, so his fraction of the pizza is\n[\n\\frac{3/2}{12}=\\frac{3}{24}=\\frac18.\n]",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac18\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Parts of a whole"
+    ],
+    "commonMistakes": [
+      "Peter gets only half of the shared slice.",
+      "Divide by all $12$ slices."
+    ],
+    "alternativeMethods": [
+      "One slice is $\\frac{1}{12}$ and half a slice is $\\frac{1}{24}$; their sum is $\\frac18$."
+    ],
+    "difficultyNotes": "A small fraction addition problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p5",
+    "problemId": "amc8-2012-p5",
+    "finalAnswer": "$\\boxed{\\text{E }(5)}$",
+    "shortExplanation": "**Idea:** A closed right-angle path has matching total vertical displacement.",
+    "detailedSteps": [
+      "Because the path closes, the total distance moved upward must equal the total distance moved downward.",
+      "Adding the known vertical segments on the diagram and comparing the two directions leaves the unknown side as the only missing vertical length.",
+      "The difference between the known totals is\n[\n5.\n]",
+      "Therefore\n[\nX=5.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Rectilinear figures",
+      "Vertical displacement"
+    ],
+    "commonMistakes": [
+      "The drawing is not to scale; use labels, not visual length.",
+      "Separate horizontal and vertical movements."
+    ],
+    "alternativeMethods": [
+      "Trace the boundary in one direction and write upward lengths equal to downward lengths."
+    ],
+    "difficultyNotes": "The main idea is closure of a rectilinear path.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p6",
+    "problemId": "amc8-2012-p6",
+    "finalAnswer": "$\\boxed{\\text{E }(88)}$",
+    "shortExplanation": "**Idea:** Subtract the photo area from the outside frame area.",
+    "detailedSteps": [
+      "The border is $2$ inches on each side, so the outside rectangle is\n[\n(8+4)\\text{ by }(10+4)=12\\text{ by }14.\n]",
+      "Its area is\n[\n12\\cdot14=168.\n]",
+      "The photograph area is\n[\n8\\cdot10=80.\n]",
+      "So the border area is\n[\n168-80=88.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(88)}$)"
+    ],
+    "keyIdeas": [
+      "Area subtraction",
+      "Rectangles"
+    ],
+    "commonMistakes": [
+      "Add $4$ total inches to each dimension, not $2$.",
+      "The border surrounds all four sides."
+    ],
+    "alternativeMethods": [
+      "Add four border strips and four corner squares, but subtraction is cleaner."
+    ],
+    "difficultyNotes": "Area difference is the cleanest route.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p7",
+    "problemId": "amc8-2012-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(92)}$",
+    "shortExplanation": "**Idea:** Use the maximum possible fourth score to minimize the third score.",
+    "detailedSteps": [
+      "An average of $95$ over four tests requires total points\n[\n4\\cdot95=380.\n]",
+      "The first two scores total\n[\n97+91=188.\n]",
+      "To make the third score as low as possible, use the highest possible fourth score, $100$.",
+      "Then the third score must be at least\n[\n380-188-100=92.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(92)}$)"
+    ],
+    "keyIdeas": [
+      "Average",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "The fourth test cannot exceed $100$.",
+      "Use total points, not the average of the first two tests alone."
+    ],
+    "alternativeMethods": [
+      "Let the third score be $x$ and solve $97+91+x+100=380$."
+    ],
+    "difficultyNotes": "Averages are easiest as totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p8",
+    "problemId": "amc8-2012-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(60)}$",
+    "shortExplanation": "**Idea:** Successive discounts multiply the price.",
+    "detailedSteps": [
+      "Half price means the sale price is 50 percent of the original price.",
+      "The coupon gives 20 percent off the sale price, so the customer pays 80 percent of the sale price.",
+      "The final price is\n[\n0.50\\cdot0.80=0.40\n]",
+      "of the original price.",
+      "Paying 40 percent of the original price means the discount is 60 percent.",
+      "Final Answer: ($\\boxed{\\text{D }(60)}$)"
+    ],
+    "keyIdeas": [
+      "Successive discounts",
+      "Percents"
+    ],
+    "commonMistakes": [
+      "Do not add 50 percent and 20 percent to get 70 percent.",
+      "The coupon applies to the sale price."
+    ],
+    "alternativeMethods": [
+      "Start with $100$ dollars. Half price gives $50$, then 20 percent off gives $40$."
+    ],
+    "difficultyNotes": "Percent changes multiply.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p9",
+    "problemId": "amc8-2012-p9",
+    "finalAnswer": "$\\boxed{\\text{C }(139)}$",
+    "shortExplanation": "**Idea:** Use heads for total animals and legs for animal types.",
+    "detailedSteps": [
+      "Let $b$ be the number of birds and $m$ the number of mammals.",
+      "The heads give\n[\nb+m=200.\n]",
+      "The legs give\n[\n2b+4m=522.\n]",
+      "Divide the legs equation by $2$:\n[\nb+2m=261.\n]",
+      "Subtract $b+m=200$ to get\n[\nm=61.\n]",
+      "So\n[\nb=200-61=139.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(139)}$)"
+    ],
+    "keyIdeas": [
+      "Systems of equations",
+      "Counting legs"
+    ],
+    "commonMistakes": [
+      "Birds have $2$ legs and mammals have $4$ legs.",
+      "The question asks for birds, not mammals."
+    ],
+    "alternativeMethods": [
+      "If all $200$ animals were birds, there would be $400$ legs. The extra $122$ legs come from mammals, $2$ extra each, so $61$ mammals."
+    ],
+    "difficultyNotes": "A classic heads-and-legs system.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p10",
+    "problemId": "amc8-2012-p10",
+    "finalAnswer": "$\\boxed{\\text{D }(9)}$",
+    "shortExplanation": "**Idea:** Count permutations of $2,0,1,2$ and exclude leading zero.",
+    "detailedSteps": [
+      "There are four digits with the digit $2$ repeated, so the total number of arrangements is\n[\n\\frac{4!}{2!}=12.\n]",
+      "Arrangements with leading zero are not four-digit numbers. With zero fixed first, the remaining digits $2,1,2$ can be arranged in\n[\n\\frac{3!}{2!}=3\n]",
+      "ways.",
+      "Therefore the number of valid four-digit numbers is\n[\n12-3=9.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Repeated digits"
+    ],
+    "commonMistakes": [
+      "The digit $2$ appears twice.",
+      "A number cannot start with $0$."
+    ],
+    "alternativeMethods": [
+      "Choose the first digit as $1$ or $2$, then count the remaining arrangements by cases."
+    ],
+    "difficultyNotes": "Repeated digits and leading zero are both important.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p11",
+    "problemId": "amc8-2012-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(11)}$",
+    "shortExplanation": "**Idea:** The common value must be the unique mode, $6$.",
+    "detailedSteps": [
+      "The current list already has two $6$'s, so for $6$ to remain the unique mode, the common value should be $6$.",
+      "If the mean is $6$, then the total of the seven numbers is\n[\n7\\cdot6=42.\n]",
+      "The known six numbers sum to\n[\n3+4+5+6+6+7=31.\n]",
+      "So\n[\nx=42-31=11.\n]",
+      "With $x=11$, the sorted list has median $6$ and unique mode $6$.",
+      "Final Answer: ($\\boxed{\\text{D }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Median",
+      "Mode"
+    ],
+    "commonMistakes": [
+      "Check all three statistics, not just the mean.",
+      "If $x=6$, the mean is not $6$."
+    ],
+    "alternativeMethods": [
+      "Since the median of the known list is already $6$, force the mean to be $6$ and verify the mode."
+    ],
+    "difficultyNotes": "The three statistics reinforce the same target value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p12",
+    "problemId": "amc8-2012-p12",
+    "finalAnswer": "$\\boxed{\\text{A }(1)}$",
+    "shortExplanation": "**Idea:** The units digit of powers of $3$ cycles every four powers.",
+    "detailedSteps": [
+      "Only the units digit matters, so use $13\\equiv3\\pmod{10}$.",
+      "The powers of $3$ have units digits\n[\n3,\\ 9,\\ 7,\\ 1,\n]",
+      "repeating every $4$ powers.",
+      "Since\n[\n2012\\equiv0\\pmod4,\n]",
+      "the units digit is the fourth value in the cycle, $1$.",
+      "Final Answer: ($\\boxed{\\text{A }(1)}$)"
+    ],
+    "keyIdeas": [
+      "Units digit cycles",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "Use the exponent modulo $4$.",
+      "The base $13$ has the same units digit cycle as $3$."
+    ],
+    "alternativeMethods": [
+      "Compute modulo $10$: $13^{2012}\\equiv3^{2012}\\equiv1\\pmod{10}$."
+    ],
+    "difficultyNotes": "A standard cyclic-units-digit problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p13",
+    "problemId": "amc8-2012-p13",
+    "finalAnswer": "$\\boxed{\\text{C }(4)}$",
+    "shortExplanation": "**Idea:** The pencil price must divide both payments.",
+    "detailedSteps": [
+      "Convert the payments to cents:\n[\n1.43=143,\\qquad 1.87=187.\n]",
+      "The price per pencil must be a common divisor of $143$ and $187$, and it is more than $1$ cent.",
+      "The greatest common divisor is\n[\n\\gcd(143,187)=11.\n]",
+      "So pencils cost $11$ cents each.",
+      "Sharona paid\n[\n187-143=44\n]",
+      "cents more, which is\n[\n\\frac{44}{11}=4\n]",
+      "more pencils.",
+      "Final Answer: ($\\boxed{\\text{C }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Common divisors",
+      "Unit price"
+    ],
+    "commonMistakes": [
+      "Use cents to avoid decimals.",
+      "The pencil price must divide both totals."
+    ],
+    "alternativeMethods": [
+      "Factor $143=11\\cdot13$ and $187=11\\cdot17$."
+    ],
+    "difficultyNotes": "A hidden greatest-common-divisor problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p14",
+    "problemId": "amc8-2012-p14",
+    "finalAnswer": "$\\boxed{\\text{B }(7)}$",
+    "shortExplanation": "**Idea:** A round-robin schedule with $n$ teams has $\\binom{n}{2}$ games.",
+    "detailedSteps": [
+      "If there are $n$ teams, each game is a pair of teams, so the number of games is\n[\n\\binom{n}{2}=\\frac{n(n-1)}{2}.\n]",
+      "Set this equal to $21$:\n[\n\\frac{n(n-1)}2=21.\n]",
+      "Thus\n[\nn(n-1)=42=7\\cdot6,\n]",
+      "so $n=7$.",
+      "Final Answer: ($\\boxed{\\text{B }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Round robin"
+    ],
+    "commonMistakes": [
+      "Do not count each matchup twice.",
+      "Each team plays every other team once."
+    ],
+    "alternativeMethods": [
+      "List triangular numbers: $1,3,6,10,15,21$ corresponds to $7$ teams."
+    ],
+    "difficultyNotes": "A pair-counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p15",
+    "problemId": "amc8-2012-p15",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Subtract the remainder and use the least common multiple.",
+    "detailedSteps": [
+      "If a number leaves remainder $2$ when divided by $3,4,5,$ and $6$, then the number minus $2$ is divisible by all of $3,4,5,6$.",
+      "The least common multiple is\n[\n\\operatorname{lcm}(3,4,5,6)=60.\n]",
+      "The smallest number greater than $2$ is therefore\n[\n60+2=62.\n]",
+      "This lies between $61$ and $65$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "LCM",
+      "Remainders"
+    ],
+    "commonMistakes": [
+      "The number itself is not divisible by $3,4,5,6$; the number minus $2$ is.",
+      "Use the smallest positive common multiple."
+    ],
+    "alternativeMethods": [
+      "Test $62$: it is $2$ more than $60$, so it has remainder $2$ for each divisor."
+    ],
+    "difficultyNotes": "A remainder problem built on an LCM.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p16",
+    "problemId": "amc8-2012-p16",
+    "finalAnswer": "$\\boxed{\\text{C }(87431)}$",
+    "shortExplanation": "**Idea:** To maximize the sum, put the largest digits in the highest place values.",
+    "detailedSteps": [
+      "The ten-thousands places are the most valuable, so they must contain $9$ and $8$.",
+      "The thousands places must then contain $7$ and $6$, the hundreds places $5$ and $4$, the tens places $3$ and $2$, and the ones places $1$ and $0$.",
+      "Check the choices against these allowed place-value pairs.",
+      "The number $87431$ uses\n[\n8,\\ 7,\\ 4,\\ 3,\\ 1\n]",
+      "in valid positions, so it could be one of the two numbers.",
+      "Final Answer: ($\\boxed{\\text{C }(87431)}$)"
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "The largest digits must go in the largest place values across both numbers.",
+      "Do not simply make one number as large as possible; the sum of both numbers matters."
+    ],
+    "alternativeMethods": [
+      "Build the two numbers column by column, assigning the two largest remaining digits to each place value."
+    ],
+    "difficultyNotes": "A place-value optimization question.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p17",
+    "problemId": "amc8-2012-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(4)}$",
+    "shortExplanation": "**Idea:** A side length of $3$ is too small; side length $4$ works.",
+    "detailedSteps": [
+      "A $3$ by $3$ square has area $9$, but cutting it into $10$ squares of positive integer side length would require total area at least $10$, impossible.",
+      "A $4$ by $4$ square can be cut into eight $1$ by $1$ squares and two $2$ by $2$ squares.",
+      "The total area is\n[\n8\\cdot1^2+2\\cdot2^2=8+8=16=4^2,\n]",
+      "and the total number of squares is\n[\n8+2=10.\n]",
+      "Therefore the smallest possible side length is $4$.",
+      "Final Answer: ($\\boxed{\\text{B }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Area",
+      "Constructive example"
+    ],
+    "commonMistakes": [
+      "You must prove smaller side length fails and show the chosen one works.",
+      "At least eight small squares means eight or more, not exactly all ten."
+    ],
+    "alternativeMethods": [
+      "Think in area: after eight unit squares, two remaining integer squares must fill the rest."
+    ],
+    "difficultyNotes": "A mix of impossibility and construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p18",
+    "problemId": "amc8-2012-p18",
+    "finalAnswer": "$\\boxed{\\text{A }(3127)}$",
+    "shortExplanation": "**Idea:** Use the two smallest distinct prime factors at least $50$.",
+    "detailedSteps": [
+      "The number cannot be prime and cannot be a square.",
+      "All prime factors must be at least $50$, so the smallest possible prime factors are $53$ and $59$.",
+      "Their product is\n[\n53\\cdot59=3127.\n]",
+      "This number is composite, is not a square, and has no prime factor less than $50$.",
+      "Final Answer: ($\\boxed{\\text{A }(3127)}$)"
+    ],
+    "keyIdeas": [
+      "Prime factors",
+      "Composite non-square"
+    ],
+    "commonMistakes": [
+      "Do not use $53^2$; it is a square.",
+      "The prime factors themselves must be at least $50$."
+    ],
+    "alternativeMethods": [
+      "Check choices by factoring; $3127=53\\cdot59$ is the first valid option."
+    ],
+    "difficultyNotes": "The non-square condition forces two distinct primes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p19",
+    "problemId": "amc8-2012-p19",
+    "finalAnswer": "$\\boxed{\\text{C }(9)}$",
+    "shortExplanation": "**Idea:** Translate each 'all but' statement into a color count equation.",
+    "detailedSteps": [
+      "Let the total number of marbles be $T$, and let the red, green, and blue counts be $r,g,b$.",
+      "All but $6$ are red means\n[\nT-r=6.\n]",
+      "Similarly,\n[\nT-g=8,\\qquad T-b=4.\n]",
+      "Add the three equations:\n[\n3T-(r+g+b)=6+8+4=18.\n]",
+      "Since $r+g+b=T$, this becomes\n[\n2T=18,\n]",
+      "so $T=9$.",
+      "Final Answer: ($\\boxed{\\text{C }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Systems of equations",
+      "All but wording"
+    ],
+    "commonMistakes": [
+      "'All but $6$ are red' means the non-red marbles total $6$.",
+      "Add all three color counts carefully."
+    ],
+    "alternativeMethods": [
+      "Solve directly: $g+b=6$, $r+b=8$, and $r+g=4$; adding gives $2T=18$."
+    ],
+    "difficultyNotes": "A concise system from wording.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p20",
+    "problemId": "amc8-2012-p20",
+    "finalAnswer": "$\\boxed{\\text{B}}$",
+    "shortExplanation": "**Idea:** Compare fractions by cross multiplication.",
+    "detailedSteps": [
+      "Compare $\\frac{5}{19}$ and $\\frac{7}{21}$:\n[\n5\\cdot21=105<133=7\\cdot19,\n]",
+      "so\n[\n\\frac{5}{19}<\\frac{7}{21}.\n]",
+      "Compare $\\frac{7}{21}$ and $\\frac{9}{23}$:\n[\n7\\cdot23=161<189=9\\cdot21,\n]",
+      "so\n[\n\\frac{7}{21}<\\frac{9}{23}.\n]",
+      "Thus\n[\n\\frac{5}{19}<\\frac{7}{21}<\\frac{9}{23}.\n]",
+      "Final Answer: ($\\boxed{\\text{B}}$)"
+    ],
+    "keyIdeas": [
+      "Fraction comparison",
+      "Cross multiplication"
+    ],
+    "commonMistakes": [
+      "Do not compare only denominators or numerators.",
+      "Keep the inequality direction consistent."
+    ],
+    "alternativeMethods": [
+      "Note that $\\frac{7}{21}=\\frac13$, then compare the other two fractions to $\\frac13$."
+    ],
+    "difficultyNotes": "Cross multiplication avoids decimal approximations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p21",
+    "problemId": "amc8-2012-p21",
+    "finalAnswer": "$\\boxed{\\text{D }(50)}$",
+    "shortExplanation": "**Idea:** Find the green area per face, then subtract from one face.",
+    "detailedSteps": [
+      "The cube has $6$ faces, each with area\n[\n10\\cdot10=100.\n]",
+      "The total green paint covers $300$ square feet, so each face has green area\n[\n\\frac{300}{6}=50.\n]",
+      "Each face area is $100$, so the centered white square on each face has area\n[\n100-50=50.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(50)}$)"
+    ],
+    "keyIdeas": [
+      "Surface area",
+      "Area subtraction"
+    ],
+    "commonMistakes": [
+      "Distribute the green paint over all six faces.",
+      "The question asks for one white square, not all white area."
+    ],
+    "alternativeMethods": [
+      "The total face area is $600$; green covers half, so each face is half green and half white."
+    ],
+    "difficultyNotes": "A cube surface-area calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p22",
+    "problemId": "amc8-2012-p22",
+    "finalAnswer": "$\\boxed{\\text{D }(7)}$",
+    "shortExplanation": "**Idea:** Determine which numbers can become the fifth number in the sorted set.",
+    "detailedSteps": [
+      "The fixed elements are\n[\n2,\\ 3,\\ 4,\\ 6,\\ 9,\\ 14.\n]",
+      "With $9$ distinct integers, the median is the $5$th number after sorting.",
+      "The median can be $3$ by adding three numbers below $3$.",
+      "It can also be $4,5,6,7,8,$ or $9$ by choosing added numbers so that exactly four set elements are below the median.",
+      "The value $2$ is impossible because only three new numbers can be placed below it, and values greater than $9$ are impossible because there are already at least five fixed elements below them.",
+      "So the possible median values are\n[\n3,\\ 4,\\ 5,\\ 6,\\ 7,\\ 8,\\ 9,\n]",
+      "which gives $7$ possible values.",
+      "Final Answer: ($\\boxed{\\text{D }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Median",
+      "Constructive cases"
+    ],
+    "commonMistakes": [
+      "The three added integers must be distinct from the six given integers.",
+      "The median must be the fifth element, not just any middle-looking value."
+    ],
+    "alternativeMethods": [
+      "For each proposed median, count how many fixed elements must lie below and above it, then check if three added values can fill the gaps."
+    ],
+    "difficultyNotes": "A careful median-position problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p23",
+    "problemId": "amc8-2012-p23",
+    "finalAnswer": "$\\boxed{\\text{C }(6)}$",
+    "shortExplanation": "**Idea:** Equal perimeters make the hexagon side half the triangle side.",
+    "detailedSteps": [
+      "Let the equilateral triangle have side length $s$. Its perimeter is $3s$.",
+      "If the regular hexagon has side length $h$, equal perimeters give\n[\n6h=3s,\n]",
+      "so\n[\nh=\\frac{s}{2}.\n]",
+      "A regular hexagon is made of $6$ equilateral triangles of side $h$.",
+      "Each small triangle has area $\\frac14$ of the original triangle's area, so its area is $1$.",
+      "Therefore the hexagon area is\n[\n6\\cdot1=6.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Similar triangles",
+      "Regular hexagon area"
+    ],
+    "commonMistakes": [
+      "Equal perimeter does not mean equal side length.",
+      "A regular hexagon contains six equilateral triangles."
+    ],
+    "alternativeMethods": [
+      "Use the equilateral triangle area formula; area scales by the square of side length."
+    ],
+    "difficultyNotes": "A scaling relationship handles the geometry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p24",
+    "problemId": "amc8-2012-p24",
+    "finalAnswer": "$\\boxed{\\text{A }\\left(\\frac{4-\\pi}{\\pi}\\right)}$",
+    "shortExplanation": "**Idea:** The star area is a square area minus the original circle area.",
+    "detailedSteps": [
+      "The original circle has radius $2$, so its area is\n[\n\\pi\\cdot2^2=4\\pi.\n]",
+      "The four quarter-circle arcs form the boundary of a star inside a $4$ by $4$ square.",
+      "The star area is the area of that square minus the area of the original circle:\n[\n16-4\\pi.\n]",
+      "The requested ratio is\n[\n\\frac{16-4\\pi}{4\\pi}=\\frac{4-\\pi}{\\pi}.\n]",
+      "Final Answer: ($\\boxed{\\text{A }\\left(\\frac{4-\\pi}{\\pi}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Circle area",
+      "Area complement"
+    ],
+    "commonMistakes": [
+      "Use the original circle area as the denominator.",
+      "The square side is the diameter, $4$."
+    ],
+    "alternativeMethods": [
+      "Scale by radius $2$: the surrounding square has side $4$, and the four arcs remove one full circle of area $4\\pi$."
+    ],
+    "difficultyNotes": "A visual area-complement problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2012-p25",
+    "problemId": "amc8-2012-p25",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac12\\right)}$",
+    "shortExplanation": "**Idea:** Use the two square areas to relate $a$, $b$, and $ab$.",
+    "detailedSteps": [
+      "The smaller square has area $4$, so its side length squared is $4$.",
+      "From the right triangle in the corner,\n[\na^2+b^2=4.\n]",
+      "The larger square has area $5$, and its side length is $a+b$, so\n[\n(a+b)^2=5.\n]",
+      "Expand:\n[\na^2+2ab+b^2=5.\n]",
+      "Substitute $a^2+b^2=4$:\n[\n4+2ab=5.\n]",
+      "Therefore\n[\n2ab=1,\\qquad ab=\\frac12.\n]",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac12\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Square area",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The outer square side is $a+b$.",
+      "The inner square side squared is $a^2+b^2$."
+    ],
+    "alternativeMethods": [
+      "Subtract the two square-area equations: $(a+b)^2-(a^2+b^2)=5-4$."
+    ],
+    "difficultyNotes": "A compact algebraic geometry problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

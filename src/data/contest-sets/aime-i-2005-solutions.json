@@ -1,0 +1,329 @@
+[
+  {
+    "id": "solution-aime-i-2005-p1",
+    "problemId": "aime-i-2005-p1",
+    "finalAnswer": "$\\boxed{942}$",
+    "shortExplanation": "The unoccupied area is 300π.",
+    "detailedSteps": [
+      "Let each small radius be r. Internal tangency places its center on the radius 30 minus r circle about the large center. Adjacent centers have equal chord distance 2 r; their cyclic ring therefore forms a regular hexagon.",
+      "A regular hexagon’s side equals its circumradius, so $2r=30-r$, giving $r=10$. The six small disks have disjoint interiors and are contained in the large disk.",
+      "The requested area is $K=900\\pi-6(100\\pi)=300\\pi$. Since $942<300\\pi<943$, its floor is 942."
+    ],
+    "keyIdeas": [
+      "The six tangent centers form a regular hexagon"
+    ],
+    "commonMistakes": [
+      "Using the small-circle diameter as the large radius or adding overlapping disk areas without checking tangency."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal cyclic center chords give the regular hexagon relation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p2",
+    "problemId": "aime-i-2005-p2",
+    "finalAnswer": "$\\boxed{012}$",
+    "shortExplanation": "There are twelve possible differences.",
+    "detailedSteps": [
+      "A term in the sequence has form 1 plus jk for an integer j at least zero. It equals 2005 exactly when $jk=2004$, so positive k must be a divisor of 2004.",
+      "The factorization is $2004=2^2\\cdot3\\cdot167$, with 167 prime. The number of positive divisors is $(2+1)(1+1)(1+1)=12$, and every divisor supplies the required nonnegative index j."
+    ],
+    "keyIdeas": [
+      "The common difference must divide 2004"
+    ],
+    "commonMistakes": [
+      "Counting divisors of 2005 instead of the difference from the first term."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An arithmetic sequence beginning at one turns membership into a divisibility condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p3",
+    "problemId": "aime-i-2005-p3",
+    "finalAnswer": "$\\boxed{109}$",
+    "shortExplanation": "There are 105 distinct-prime products and four prime cubes.",
+    "detailedSteps": [
+      "Three proper divisors means four positive divisors in all. Unique factorization then gives either $n=p^3$ for one prime p, or $n=pq$ for two different primes.",
+      "In the cube case, the proper divisors are 1,p,p squared. The strict bound requires p squared less than 50, giving $p\\in\\{2,3,5,7\\}$, four choices.",
+      "In the product case, the proper divisors are 1,p,q, so both different primes must be below 50. The fifteen such primes are 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47. There are $\\binom{15}{2}=105$ products.",
+      "The two forms are disjoint, so the answer is $4+105=109$. The source includes one as a proper divisor."
+    ],
+    "keyIdeas": [
+      "Four total divisors give two prime-factor forms"
+    ],
+    "commonMistakes": [
+      "Applying the less-than 50 bound to n itself or excluding the divisor one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisor-count factorization makes the classification exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p4",
+    "problemId": "aime-i-2005-p4",
+    "finalAnswer": "$\\boxed{294}$",
+    "shortExplanation": "The two possible band sizes are 30 and 294.",
+    "detailedSteps": [
+      "Let the complete square use t rows, so the band size is $N=t^2+5$. Let the rectangle have r columns and r plus seven rows, giving $N=r(r+7)$.",
+      "Then $(2r+7)^2-(2t)^2=69$, so $(2r+7-2t)(2r+7+2t)=69$. Both factors are positive, and the first is no larger than the second.",
+      "The factor pairs are 1,69 and 3,23. They give respectively $(r,t)=(14,17)$ and $(3,5)$, with band sizes 294 and 30. Both satisfy all formation requirements.",
+      "The maximum is 294."
+    ],
+    "keyIdeas": [
+      "Complete the rectangle expression to a difference of squares"
+    ],
+    "commonMistakes": [
+      "Searching arbitrary formation sizes without the factorization bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The seven-row difference supplies an odd completed square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p5",
+    "problemId": "aime-i-2005-p5",
+    "finalAnswer": "$\\boxed{630}$",
+    "shortExplanation": "The color choices 70 and orientation choices 9 multiply.",
+    "detailedSteps": [
+      "Read the stack from bottom to top and write U or D according as a coin’s engraved face points up or down. A forbidden face-to-face contact is exactly an adjacent U,D pair.",
+      "An orientation sequence with no U,D transition must have all its D entries before all its U entries. Conversely every such sequence is valid. The number of initial D entries can be 0 through 8, giving nine orientations.",
+      "Independently choose the four gold positions among the eight, in $\\binom84=70$ ways; the silver coins fill the rest. Coins of a given color are indistinguishable, and the table fixes the order of the stack.",
+      "The total is $9\\cdot70=630$."
+    ],
+    "keyIdeas": [
+      "No upward-facing coin may be immediately below a downward-facing coin"
+    ],
+    "commonMistakes": [
+      "Treating both kinds of mixed orientation as forbidden, or distinguishing the coins within a color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Avoiding one directed transition forces a single orientation cut.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p6",
+    "problemId": "aime-i-2005-p6",
+    "finalAnswer": "$\\boxed{045}$",
+    "shortExplanation": "The nonreal-root product is 1 plus $\\sqrt{2006}$.",
+    "detailedSteps": [
+      "The source equation is $(x-1)^4-1=2005$, or $(x-1)^4=2006$. Put $t=2006^{1/4}>0$. The four roots are $1+t,1-t,1+it,1-it$.",
+      "The two nonreal roots have product $(1+it)(1-it)=1+t^2=1+\\sqrt{2006}$. Since $44^2<2006<45^2$, this product is strictly between 45 and 46.",
+      "Its floor is 45."
+    ],
+    "keyIdeas": [
+      "Complete the quartic to the fourth power of x minus one"
+    ],
+    "commonMistakes": [
+      "Using the product of all four roots when only the nonreal pair is requested."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shifted binomial quartic separates the real and imaginary roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p7",
+    "problemId": "aime-i-2005-p7",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The required base length is 9 plus $\\sqrt{141}$.",
+    "detailedSteps": [
+      "Put $A=(0,0),B=(x,0)$ with x positive. The 60° angle at A and $AD=10$ put $D=(5,\\pm5\\sqrt3)$. The 60° angle at B and $BC=8$ put $C=(x-4,\\pm4\\sqrt3)$.",
+      "The vertical signs must agree. If opposite, the vertical separation alone is 9√3, whose square 243 exceeds CD squared 144. With agreeing signs, $CD^2=(x-9)^2+3=144$.",
+      "Thus $x=9\\pm\\sqrt{141}$. Since √141 exceeds 9, the minus choice is negative and cannot be a length. Therefore $AB=9+\\sqrt{141}$, giving $p+q=9+141=150$."
+    ],
+    "keyIdeas": [
+      "Resolve both vertical signs before using CD"
+    ],
+    "commonMistakes": [
+      "Assuming the signs of the two rays without checking the quadrilateral’s alternate placement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two given angles reduce the opposite-side distance to one horizontal unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p8",
+    "problemId": "aime-i-2005-p8",
+    "finalAnswer": "$\\boxed{113}$",
+    "shortExplanation": "The sum of the three x roots is 2/111.",
+    "detailedSteps": [
+      "Put $t=2^{111x}>0$. Multiplying the equation by four gives $t^3-8t^2+16t-4=0$. The map from x to t is one-to-one on the real line.",
+      "This cubic has three distinct positive roots: its signs at 0,1,2,4,8 give a root in each of (0,1), (2,4), (4,8). Degree three shows that these are all the roots.",
+      "Vieta’s formula gives their product 4. Therefore the sum of the corresponding x values is $[\\log_2t_1+\\log_2t_2+\\log_2t_3]/111=\\log_2(4)/111=2/111$.",
+      "The fraction is reduced, so $m+n=2+111=113$."
+    ],
+    "keyIdeas": [
+      "The exponential substitution gives a cubic with known root product"
+    ],
+    "commonMistakes": [
+      "Trying to add the exponential roots directly instead of their logarithms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product of positive transformed roots becomes a sum of original roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p9",
+    "problemId": "aime-i-2005-p9",
+    "finalAnswer": "$\\boxed{074}$",
+    "shortExplanation": "The probability is $5^{12}/(2^{34}3^{18})$.",
+    "detailedSteps": [
+      "The pair of unpainted adjacent faces has twelve possible placements under a uniform random cube orientation, each equally likely. At a corner of the large cube, three visible faces meet. The hidden three faces have three adjacent pairs, giving success probability 3/12 equal to 1/4.",
+      "At an edge position, two adjacent faces are visible. Among the four hidden faces there are $\\binom42=6$ pairs, of which one is opposite rather than adjacent, giving probability 5/12. At a face-center position, five faces are hidden; of their ten pairs, two are opposite, giving probability 8/12 equal to 2/3.",
+      "There are eight corners, twelve edge positions, six face centers and one interior position. Independent orientations therefore give $(1/4)^8(5/12)^{12}(2/3)^6=5^{12}/(2^{34}3^{18})$. Assigning physically different cubes adds no restriction because their coloring patterns are congruent.",
+      "The distinct primes are 5,2,3 and the exponents 12,34,18. The requested sum is $12+34+18+5+2+3=74$."
+    ],
+    "keyIdeas": [
+      "Count permitted adjacent unpainted-face pairs at each cube location"
+    ],
+    "commonMistakes": [
+      "Choosing arbitrary two unpainted faces when the source requires them to share an edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The number of visible faces distinguishes the three kinds of boundary positions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p10",
+    "problemId": "aime-i-2005-p10",
+    "finalAnswer": "$\\boxed{047}$",
+    "shortExplanation": "The possible A coordinates are (15,32) and (20,7).",
+    "detailedSteps": [
+      "The midpoint of BC is $(35/2,39/2)$. A median line of slope minus five through it has equation $q=107-5p$.",
+      "The base vector C minus B is (11,1). The area condition is $|11(q-19)-(p-12)|/2=70$, or $|11q-p-197|=140$.",
+      "Substitution gives $|980-56p|=140$, so $p=15$ or $p=20$. Their corresponding q values are 32 and 7. The sums are 47 and 27, so the largest is 47."
+    ],
+    "keyIdeas": [
+      "Intersect the median line with the two area lines"
+    ],
+    "commonMistakes": [
+      "Using the median segment length instead of the line slope, or discarding one sign of the area determinant too early."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unsigned area produces two parallel possible-vertex lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p11",
+    "problemId": "aime-i-2005-p11",
+    "finalAnswer": "$\\boxed{544}$",
+    "shortExplanation": "The maximum diameter is 32 minus $\\sqrt{512}$.",
+    "detailedSteps": [
+      "Let the semicircle have radius r and let its diameter make angle θ with the horizontal. Its horizontal span is $r(1+|\\cos\\theta|)$: one of the circle’s left/right extreme points belongs to the semicircle, while the other extreme in that direction is a diameter endpoint. The vertical span is similarly $r(1+|\\sin\\theta|)$.",
+      "To fit in the side 8 square, both spans must be at most 8. Since $\\max(|\\cos\\theta|,|\\sin\\theta|)\\ge1/\\sqrt2$, it follows that $r\\le8/(1+1/\\sqrt2)=16-8\\sqrt2$.",
+      "At a 45° diameter angle the two spans are equal to 8 at this radius. Translating the semicircle’s bounding box onto the square realizes the bound.",
+      "The largest diameter is $2r=32-16\\sqrt2=32-\\sqrt{512}$. Hence $m+n=32+512=544$."
+    ],
+    "keyIdeas": [
+      "Minimize the larger of the two semicircle bounding widths"
+    ],
+    "commonMistakes": [
+      "Assuming a horizontal diameter is optimal or bounding only the diameter endpoints rather than the entire curved semicircle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal horizontal and vertical spans are optimal for a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p12",
+    "problemId": "aime-i-2005-p12",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "There are 990 odd values and 1015 even values.",
+    "detailedSteps": [
+      "Divisors of n pair as d with n/d. All pairs have two members except when n is a square, when √n is unpaired. Thus τ(n) is odd exactly at squares.",
+      "The parity of S(n) is therefore the parity of the number of squares at most n, namely $\\lfloor\\sqrt n\\rfloor$. For each k it is constant on $k^2\\le n<(k+1)^2$, an interval of 2 k plus one integers.",
+      "The complete odd-k intervals below 2005 have $k\\in\\{1,3,\\ldots,43\\}$. Their lengths 3,7,…,87 sum to $22(3+87)/2=990$. The remaining n have even S, and their count is 2005 minus 990 equal to 1015; this includes the partial $k=44$ interval 1936 through 2005.",
+      "The requested absolute difference is $|990-1015|=25$."
+    ],
+    "keyIdeas": [
+      "Divisor-sum parity changes precisely at squares"
+    ],
+    "commonMistakes": [
+      "Assuming half of the partial final square interval belongs to each parity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Square intervals have increasing odd lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p13",
+    "problemId": "aime-i-2005-p13",
+    "finalAnswer": "$\\boxed{083}$",
+    "shortExplanation": "The counts by diagonal-step number are 0,2,18,42,20,1.",
+    "detailedSteps": [
+      "Write a diagonal step as D. With k diagonal steps there must be $m=5-k$ horizontal steps E and the same number of vertical steps N. The k diagonals create k plus one gaps before, between and after them.",
+      "Within a gap there can be only E steps, only N steps, or no steps: any mixture forces an adjacent E,N or N,E turn, forbidden by the source. Conversely these gap choices impose exactly the required rule.",
+      "For m positive, let a gaps contain positive E runs and b gaps positive N runs. Their choices and run lengths give $\\frac{(k+1)!}{a!b!(k+1-a-b)!}\\binom{m-1}{a-1}\\binom{m-1}{b-1}$, summed over positive a,b with a plus b at most k plus one. The binomial factors count positive compositions of m.",
+      "For $k=0$ through $4$ this gives respectively 0,2,18,42,20. More explicitly, $k=2$ contributes 6+6+6, $k=3$ contributes 12+12+12+6, and $k=4$ contributes 5 times 4. For $k=5$, $m=0$ gives the single all-diagonal path.",
+      "The total is $0+2+18+42+20+1=83$."
+    ],
+    "keyIdeas": [
+      "Diagonal steps separate horizontal-only and vertical-only gaps"
+    ],
+    "commonMistakes": [
+      "Forbidding a horizontal and vertical step separated by a diagonal, or counting unconstrained lattice paths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Diagonals break the path into gaps with one allowed straight direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p14",
+    "problemId": "aime-i-2005-p14",
+    "finalAnswer": "$\\boxed{936}$",
+    "shortExplanation": "The square has area 1936/10.",
+    "detailedSteps": [
+      "Use the orthogonal linear coordinates $u=x-3y$ and $v=3x+y$. For the source points A,B,C,D the u values are minus 36,minus 17,8,minus 25, and the v values are 12,39,24,minus 5.",
+      "The region $-36\\le u\\le8$, $-5\\le v\\le39$ has four perpendicular sides. Both coordinate forms have gradient length $\\sqrt{10}$ and both ranges have width 44, so the physical region is a square of side 44/√10.",
+      "A lies on its u-minimum side, C on its u-maximum side, B on its v-maximum side and D on its v-minimum side. Each point lies strictly between the endpoints of its side because its other coordinate is strictly within the corresponding range. Thus this square satisfies the source’s four different-side conditions, and the stated uniqueness identifies it as S.",
+      "Its area is $K=(44/\\sqrt{10})^2=1936/10$. Hence $10K=1936$, whose remainder modulo 1000 is 936."
+    ],
+    "keyIdeas": [
+      "Construct the unique square from two perpendicular linear forms"
+    ],
+    "commonMistakes": [
+      "Treating the four points as the vertices of the square, or ignoring whether a point lies on the actual bounded side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal ranges of orthogonal forms with equal gradient lengths define a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2005-p15",
+    "problemId": "aime-i-2005-p15",
+    "finalAnswer": "$\\boxed{038}$",
+    "shortExplanation": "The triangle area is 24√14.",
+    "detailedSteps": [
+      "Divide all source lengths by 10. Put $A=(-1,0),B=(1,0),M=(0,0),C=(x,y)$ with y positive. Write $a=|BC|,b=|AC|,t=a+b>2$ and $L^2=x^2+y^2$. The incenter is $I=(u,r)$ with $r=2y/(t+2)$. Since $b^2-a^2=4x$, its weighted x-coordinate is $u=(-a+b+2x)/(t+2)=2x/t$.",
+      "The incircle meets the median at C/3 and 2 C/3. Their midpoint C/2 is the perpendicular foot from I, so $I\\cdot C=L^2/2$. Substituting C/3 into the circle equation then gives $u^2=2L^2/9$. This forces x nonzero.",
+      "The second equation becomes $y^2/x^2=18/t^2-1$. The first, after using the incenter coordinates, becomes $y^2/x^2=(4-t)(t+2)/[t(t-2)]$. Equating them and multiplying by the positive denominator gives $(18-t^2)(t-2)=t(4-t)(t+2)$, which simplifies to $10t=36$. Thus $t=18/5$.",
+      "It follows that $y^2/x^2=7/18$. The relation a plus b equal to t is the ellipse equation $x^2/(t^2/4)+y^2/(t^2/4-1)=1$; it also follows by squaring the two distance formulas. Substituting $t=18/5$ and the displayed ratio yields $x^2=1296/625$ and $y^2=504/625$, so $y=6\\sqrt{14}/25$.",
+      "Restoring the scale, the altitude to AB is $10y=12\\sqrt{14}/5$. The triangle area is therefore $\\tfrac12(20)(12\\sqrt{14}/5)=24\\sqrt{14}$.",
+      "Attainment can be verified with actual coordinates $C=(72/5,12\\sqrt{14}/5)$, whose distances to B and A are 10 and 26. Its incenter is $(8,6\\sqrt{14}/7)$, and the points C/3 and 2 C/3 are on its incircle. Reflecting across the y-axis yields the other configuration with the same area. Since 14 is squarefree, $m+n=24+14=38$."
+    ],
+    "keyIdeas": [
+      "The median chord gives two incenter equations"
+    ],
+    "commonMistakes": [
+      "Assuming the triangle is isosceles, or treating the median chord midpoint as the incenter itself."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chord midpoint is the projection of the incenter; it need not coincide with it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

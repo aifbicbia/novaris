@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc12a-2006-p1",
+    "problemId": "amc12a-2006-p1",
+    "finalAnswer": "$\\boxed{31}$ (choice A)",
+    "shortExplanation": "The two item groups cost 15 and 16 dollars.",
+    "detailedSteps": [
+      "The total is $5(3)+8(2)=15+16=31$ dollars."
+    ],
+    "keyIdeas": [
+      "Adding two purchase totals"
+    ],
+    "commonMistakes": [
+      "Multiplying the wrong item counts and prices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep each count with its own unit price.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p2",
+    "problemId": "amc12a-2006-p2",
+    "finalAnswer": "$\\boxed{h}$ (choice C)",
+    "shortExplanation": "The two cubic terms cancel.",
+    "detailedSteps": [
+      "First $h\\otimes h=h^3-h$. Then $h\\otimes(h\\otimes h)=h^3-(h^3-h)=h$."
+    ],
+    "keyIdeas": [
+      "Substituting a nested binary operation"
+    ],
+    "commonMistakes": [
+      "Cubing the entire inner expression instead of applying the defined operand order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The definition is not symmetric in its operands.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p3",
+    "problemId": "amc12a-2006-p3",
+    "finalAnswer": "$\\boxed{18}$ (choice B)",
+    "shortExplanation": "Mary is three fifths as old as Alice.",
+    "detailedSteps": [
+      "The ratio gives Mary’s age as $30(3/5)=18$ years."
+    ],
+    "keyIdeas": [
+      "Scaling an age ratio"
+    ],
+    "commonMistakes": [
+      "Multiplying by the reciprocal ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify which person corresponds to each ratio term.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p4",
+    "problemId": "amc12a-2006-p4",
+    "finalAnswer": "$\\boxed{23}$ (choice E)",
+    "shortExplanation": "The display 9:59 has the largest possible digit sum.",
+    "detailedSteps": [
+      "Among the 12-hour labels 1 through 12, the maximum digit sum is 9, attained at 9. The minute digits have maximum sum $5+9=14$, attained at 59.",
+      "The independent hour and minute maxima can coexist, giving $9+14=23$."
+    ],
+    "keyIdeas": [
+      "Maximizing displayed digit sums"
+    ],
+    "commonMistakes": [
+      "Allowing an hour such as 19 on a 12-hour AM/PM watch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "AM and PM do not add numeric digits.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p5",
+    "problemId": "amc12a-2006-p5",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Dave pays 7 dollars and Doug 3 dollars.",
+    "detailedSteps": [
+      "The plain cost is 1 dollar per slice. Dave eats five slices and all the 2-dollar anchovy topping, paying $5+2=7$. Doug eats the remaining three plain slices, paying 3.",
+      "The difference is $7-3=4$ dollars."
+    ],
+    "keyIdeas": [
+      "Charging each person for ingredients"
+    ],
+    "commonMistakes": [
+      "Splitting the topping cost among people who did not eat it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The topping charge belongs entirely to Dave.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p6",
+    "problemId": "amc12a-2006-p6",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "A square of the preserved area has side 12.",
+    "detailedSteps": [
+      "The rectangle area is $8\\cdot18=144$, so the rearranged square side is 12. Congruence puts the step at half-height 4. If the top cut has horizontal coordinate a, the bottom one is $18-a$, so the step length is $y=18-2a$.",
+      "Each hexagon has a straight edge of length $(18-a)=(18+y)/2$. In a two-piece square tiling, each piece contributes an edge segment to the outside boundary: if one contributed none, the other would contain the whole boundary and, being a non-square hexagon with only one inward corner, could not omit a closed interior region. That boundary segment aligns one of the piece’s two perpendicular edge directions with a square side, and therefore aligns both directions. Every horizontal or vertical edge inside the square has length at most 12. Thus $(18+y)/2\\le12$, excluding every listed candidate greater than 6.",
+      "For $y=6$, $a=6$: the left piece occupies a 12-by 4 bottom rectangle plus a 6-by 4 upper rectangle. Translating the right piece 6 units left and 4 units up fills the remaining middle-right 6-by 4 rectangle and the full top 12-by 4 rectangle. This constructs a 12-by 12 square, so $y=6$ works."
+    ],
+    "keyIdeas": [
+      "A rectilinear rearrangement"
+    ],
+    "commonMistakes": [
+      "Using only area equality without confirming the rearrangement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source specifies congruent rectilinear pieces; the construction verifies the selected value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p7",
+    "problemId": "amc12a-2006-p7",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "Mary is 7.2 years old, so her next birthday is her eighth.",
+    "detailedSteps": [
+      "Let Danielle’s age be d. Sally is $0.6d$ and Mary is $1.2(0.6d)=0.72d$. Thus $2.32d=23.2$, giving $d=10$ and Mary 7.2.",
+      "At her next birthday Mary turns 8."
+    ],
+    "keyIdeas": [
+      "Three proportional ages"
+    ],
+    "commonMistakes": [
+      "Adding one to the fractional age rather than finding the next integer birthday."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The question asks for age on a birthday.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p8",
+    "problemId": "amc12a-2006-p8",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The three sequences are 7+8,4+5+6, and 1+2+3+4+5.",
+    "detailedSteps": [
+      "If the sequence starts at a and has length k≥2, its sum is $k(2a+k-1)/2=15$. Positive terms force $k\\le5$, since six positive consecutive terms sum at least 21.",
+      "Testing $k=2,3,4,5$ yields starts 7,4,noninteger,1, respectively. Thus there are three sequences."
+    ],
+    "keyIdeas": [
+      "Consecutive positive sums"
+    ],
+    "commonMistakes": [
+      "Including the one-term sequence 15."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum sum bounds the sequence length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p9",
+    "problemId": "amc12a-2006-p9",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "The prices are 7 cents and 3 cents.",
+    "detailedSteps": [
+      "Let p,e be positive integer prices, with p>e. The equation is $13p+3e=100$, so p≤7 and $p\\equiv1\\pmod3$.",
+      "The possible p values 1,4,7 give e 29,16,3. Only $p=7,e=3$ has p>e, so their combined price is 10 cents."
+    ],
+    "keyIdeas": [
+      "A cent-valued purchase equation"
+    ],
+    "commonMistakes": [
+      "Ignoring the ordering of the item prices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Congruence and the inequality eliminate the other candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p10",
+    "problemId": "amc12a-2006-p10",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "The output integer can be any value 0 through 10.",
+    "detailedSteps": [
+      "Let $\\sqrt{120-\\sqrt x}=n$. The root is nonnegative, so n≥0. Then $\\sqrt x=120-n^2\\ge0$, giving $n^2\\le120$ and therefore n≤10.",
+      "Each integer n 0 through 10 gives the distinct valid input $x=(120-n^2)^2$. Hence there are 11 real inputs."
+    ],
+    "keyIdeas": [
+      "Integer outputs of a nested square root"
+    ],
+    "commonMistakes": [
+      "Squaring without retaining nonnegativity of both roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read both nested radical bars from the source.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p11",
+    "problemId": "amc12a-2006-p11",
+    "finalAnswer": "$\\boxed{\\text{Two lines}}$ (choice C)",
+    "shortExplanation": "The equation is equivalent to $xy=0$.",
+    "detailedSteps": [
+      "Expanding and canceling $x^2+y^2$ leaves $2xy=0$. Thus either $x=0$ or $y=0$, giving both coordinate axes."
+    ],
+    "keyIdeas": [
+      "Canceling square terms"
+    ],
+    "commonMistakes": [
+      "Interpreting the sum of squares as a circle without simplifying."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A product equal to zero gives a union of two loci.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p12",
+    "problemId": "amc12a-2006-p12",
+    "finalAnswer": "$\\boxed{173}$ (choice B)",
+    "shortExplanation": "Each neighboring pair overlaps by 2 centimeters in vertical extent.",
+    "detailedSteps": [
+      "The outside diameters run from 20 down to 3, totaling $(20+3)(18)/2=207$.",
+      "At each contact, the lower ring’s top reaches one thickness above the upper ring’s inner-bottom level, so the two outside vertical extents overlap by 2 centimeters. There are 17 links.",
+      "The full hanging length is $207-17(2)=173$ centimeters."
+    ],
+    "keyIdeas": [
+      "Overlaps in a chain of thick rings"
+    ],
+    "commonMistakes": [
+      "Subtracting one thickness rather than the combined overlap of two rings."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The figure confirms outside and inside diameters 20 and 18.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p13",
+    "problemId": "amc12a-2006-p13",
+    "finalAnswer": "$\\boxed{14\\pi}$ (choice E)",
+    "shortExplanation": "The three radii are 1,2,3.",
+    "detailedSteps": [
+      "Let the radii at A,B,C be a,b,c. External tangencies give $a+b=3$, $a+c=4$, $b+c=5$.",
+      "Solving gives $a=1,b=2,c=3$. The total disk area is $\\pi(1^2+2^2+3^2)=14\\pi$."
+    ],
+    "keyIdeas": [
+      "Radius sums at external tangencies"
+    ],
+    "commonMistakes": [
+      "Using the center distances directly as radii."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "External tangent circles have center distance equal to the sum of radii.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p14",
+    "problemId": "amc12a-2006-p14",
+    "finalAnswer": "$\\boxed{30}$ (choice C)",
+    "shortExplanation": "Every settlement is divisible by 30, and 30 is attainable.",
+    "detailedSteps": [
+      "The net exchanged value is an integer combination of 300 and 210, so it is a multiple of their gcd 30.",
+      "Five pigs paid and seven goats received produce $5(300)-7(210)=30$. Thus the least positive debt is 30 dollars."
+    ],
+    "keyIdeas": [
+      "A minimum positive linear combination"
+    ],
+    "commonMistakes": [
+      "Requiring both animal counts to enter with the same sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Change permits subtraction of one animal type.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p15",
+    "problemId": "amc12a-2006-p15",
+    "finalAnswer": "$\\boxed{\\frac\\pi6}$ (choice A)",
+    "shortExplanation": "A shift ofπ/6 is possible and no smaller shift reaches cosine 1/2.",
+    "detailedSteps": [
+      "Cosine zeros occur at $x=\\pi/2+k\\pi$. The solutions of $\\cos(x+z)=1/2$ occur at $x+z=\\pm\\pi/3+2m\\pi$.",
+      "The smallest positive separation between these two angle sets is $\\pi/6$, attained by $x=3\\pi/2$ and $x+z=5\\pi/3$."
+    ],
+    "keyIdeas": [
+      "The next cosine level from a cosine zero"
+    ],
+    "commonMistakes": [
+      "Restricting x to the first cosine zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original angle may lie anywhere on the real line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p16",
+    "problemId": "amc12a-2006-p16",
+    "finalAnswer": "$\\boxed{\\frac{44}{3}}$ (choice B)",
+    "shortExplanation": "The tangent lengths from E are 4 and 32/3.",
+    "detailedSteps": [
+      "Right triangle EAC has hypotenuse $AE=5$ and radius $AC=3$, so $EC=4$.",
+      "Triangles EAC and EBD are similar, with radius ratio 3:8. Hence ED=(8/3)EC=32/3. The internal tangent has E between C and D, so $CD=4+32/3=44/3$."
+    ],
+    "keyIdeas": [
+      "Similar tangent right triangles"
+    ],
+    "commonMistakes": [
+      "Subtracting tangent lengths for an internal tangent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The viewed diagram confirms the order C,E,D.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p17",
+    "problemId": "amc12a-2006-p17",
+    "finalAnswer": "$\\boxed{\\frac59}$ (choice B)",
+    "shortExplanation": "Rationality forces $s=3$ and $sr=5$.",
+    "detailedSteps": [
+      "Put B=(0,0), A=(0,s), D=(s,s). Since D lies between B and E and ED=r along the diagonal, $E=(s+r/\\sqrt2,s+r/\\sqrt2)$.",
+      "The tangent-square identity gives $AF^2=AE^2-r^2=s^2+\\sqrt2\\,sr$. Its prescribed value is $9+5\\sqrt2$.",
+      "Because r and s are rational, comparison of rational and irrational parts gives $s^2=9$ and $sr=5$. Positive s gives $s=3,r=5/3$, so $r/s=5/9$."
+    ],
+    "keyIdeas": [
+      "Rational and irrational coefficients of a tangent length"
+    ],
+    "commonMistakes": [
+      "Reading the tangent length as 9+5√2 instead of its square root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rationality is essential for identifying the two coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p18",
+    "problemId": "amc12a-2006-p18",
+    "finalAnswer": "$\\boxed{\\{-1,1\\}}$ (choice E)",
+    "shortExplanation": "The same left side must equal both x and 1/x.",
+    "detailedSteps": [
+      "For any domain input x, its reciprocal also belongs to the domain. Applying the relation at both inputs gives $f(x)+f(1/x)=x$ and the identical sum $=1/x$.",
+      "Thus x=1/x, so $x=\\pm1$. Both may occur together by defining $f(1)=1/2$ and $f(-1)=-1/2$. The largest domain is therefore the two-point set."
+    ],
+    "keyIdeas": [
+      "Consistency after reciprocal substitution"
+    ],
+    "commonMistakes": [
+      "Forgetting to impose the equation at the reciprocal input."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Domain closure creates an additional consistency equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p19",
+    "problemId": "amc12a-2006-p19",
+    "finalAnswer": "$\\boxed{\\frac{912}{119}}$ (choice E)",
+    "shortExplanation": "The positive slope is 120/119.",
+    "detailedSteps": [
+      "For the tangent above both centers, write $h=\\sqrt{1+m^2}$. The distance conditions give $b=4-2m+4h=9-14m+9h$, so $12m-5=5h$.",
+      "Squaring gives $m(119m-120)=0$. The positive solution is $m=120/119$, with $h=169/119$, which satisfies the unsquared sign condition.",
+      "Then $b=4-240/119+676/119=912/119$. The other external tangent is horizontal, so the positive-slope condition selects this one."
+    ],
+    "keyIdeas": [
+      "Signed distances to an external tangent"
+    ],
+    "commonMistakes": [
+      "Keeping a slope introduced by squaring without checking the signed distance relation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "External tangency puts the centers on the same side of the line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p20",
+    "problemId": "amc12a-2006-p20",
+    "finalAnswer": "$\\boxed{\\frac2{243}}$ (choice C)",
+    "shortExplanation": "There are 18 valid seven-edge paths from the fixed start.",
+    "detailedSteps": [
+      "Encode a vertex by its three binary coordinates. Each step flips one coordinate, and there are 3 choices. A nonrepeating path’s first two coordinate directions must differ:3 choices followed by 2.",
+      "Fix those first directions as x,y. Continuing only to unvisited vertices gives exactly the three complete direction words $xyxzxyx$, $xyxzyxy$, and $xyzyxyz$. Every other branch terminates early at a vertex with all its neighbors visited.",
+      "Coordinate relabeling gives $3\\cdot2\\cdot3=18$ paths. Each specified seven-step sequence has probability 3^-7, so the total is $18/2187=2/243$."
+    ],
+    "keyIdeas": [
+      "Hamilton paths of a cube"
+    ],
+    "commonMistakes": [
+      "Counting paths that return to an already visited vertex."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A finite branching argument makes the enumeration complete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p21",
+    "problemId": "amc12a-2006-p21",
+    "finalAnswer": "$\\boxed{102}$ (choice E)",
+    "shortExplanation": "The two disks have radius-squared 49 and 4998.",
+    "detailedSteps": [
+      "Monotonicity of base 10 logarithms turns the first inequality into $1+x^2+y^2\\le10(x+y)$, and the second into $2+x^2+y^2\\le100(x+y)$. Each inequality itself forces x+y>0, so the logarithm domain removes no additional points.",
+      "Completing squares gives centers(5,5),(50,50) and radius-squared 49,4998, respectively.",
+      "The area ratio is $4998/49=102$."
+    ],
+    "keyIdeas": [
+      "Completing squares after a logarithm inequality"
+    ],
+    "commonMistakes": [
+      "Ignoring the different powers 10 and 100 introduced by the constants."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check the logarithm domain as well as the algebraic disk inequality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p22",
+    "problemId": "amc12a-2006-p22",
+    "finalAnswer": "$\\boxed{3\\sqrt2+\\sqrt6}$ (choice D)",
+    "shortExplanation": "Half the circumference sees three sides when the visibility half-angle is 75 degrees.",
+    "detailedSteps": [
+      "The hexagon apothem is√3. If α=arccos(√3/r), an entire side is visible precisely when the viewing direction is within α of its outward normal. The six normals are spaced 60 degrees apart.",
+      "To see three consecutive sides, the direction must lie in the common interval of three such ranges, of length $2\\alpha-120^\\circ$. There are six disjoint intervals, since α<90 degrees; if α≤60 none exists.",
+      "The required probability gives $6(2\\alpha-120^\\circ)/360^\\circ=1/2$, so $\\alpha=75^\\circ$. Thus $r=\\sqrt3/\\cos75^\\circ=3\\sqrt2+\\sqrt6$. Visibility boundary directions have probability zero."
+    ],
+    "keyIdeas": [
+      "Visibility beyond hexagon support lines"
+    ],
+    "commonMistakes": [
+      "Counting a partly visible side as an entire visible side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Convexity makes whole-side visibility a support-half-plane condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p23",
+    "problemId": "amc12a-2006-p23",
+    "finalAnswer": "$\\boxed{\\sqrt2-1}$ (choice B)",
+    "shortExplanation": "After 100 averaging steps, the result is((1+x)/2)^100.",
+    "detailedSteps": [
+      "One average of consecutive powers multiplies the shorter geometric sequence by(1+x)/2. Repeating 100 times therefore leaves the sole value $((1+x)/2)^{100}$.",
+      "Equate this to 2^-50. As x>0, taking the positive 100th root gives(1+x)/2=1/√2, hence x=√2−1."
+    ],
+    "keyIdeas": [
+      "Repeated averaging and the binomial theorem"
+    ],
+    "commonMistakes": [
+      "Replacing repeated averages by the simple average of all 101 entries."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The averaging weights form a binomial row.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p24",
+    "problemId": "amc12a-2006-p24",
+    "finalAnswer": "$\\boxed{1008016}$ (choice D)",
+    "shortExplanation": "Only even total powers of y and z survive.",
+    "detailedSteps": [
+      "A term x^i y^j z^k changes sign by(-1)^(j+k) in the second expansion. Thus it survives exactly when j+k is even; surviving coefficients are positive and cannot cancel.",
+      "Write j+k=2t for t 0 through 1003. There are 2t+1 pairs(j,k), with i fixed by the total degree.",
+      "The number of terms is $\\sum_{t=0}^{1003}(2t+1)=1004^2=1008016$."
+    ],
+    "keyIdeas": [
+      "Counting monomials surviving a sign change"
+    ],
+    "commonMistakes": [
+      "Counting every trinomial term without the parity cancellation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count exponent triples, rather than evaluating enormous coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2006-p25",
+    "problemId": "amc12a-2006-p25",
+    "finalAnswer": "$\\boxed{405}$ (choice E)",
+    "shortExplanation": "A k-element set is counted by binomial(17−2k,k).",
+    "detailedSteps": [
+      "For fixed size k, choose increasing elements a 1<...<ak from k through 15, with successive gaps at least 2. Put bi=ai−(i−1); then the bi are strictly increasing ordinary choices from k through 16−k.",
+      "This is a bijection with k-subsets of an interval of 17−2k integers, giving $\\binom{17-2k}{k}$. Feasibility requires k≤5.",
+      "Summing k 1 through 5 gives 15+78+165+126+21=405. The empty set is excluded."
+    ],
+    "keyIdeas": [
+      "Removing gaps from ordered subset entries"
+    ],
+    "commonMistakes": [
+      "Counting nonadjacent subsets without imposing the size-dependent minimum element."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The gap-removal bijection preserves the lower bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

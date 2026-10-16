@@ -1,0 +1,508 @@
+[
+  {
+    "id": "solution-amc10-2001-p1",
+    "problemId": "amc10-2001-p1",
+    "finalAnswer": "$\\boxed{11}$ (choice E)",
+    "shortExplanation": "The median gives $n=4$, and the nine offsets have average $7$.",
+    "detailedSteps": [
+      "The nine entries are already ordered, so their median is the fifth entry, $n+6$. Thus $n=4$.",
+      "The offsets sum to $0+3+4+5+6+8+10+12+15=63$, with average $7$. Adding the common shift gives mean $4+7=11$."
+    ],
+    "keyIdeas": [
+      "Mean after a common shift"
+    ],
+    "commonMistakes": [
+      "Choosing the middle offset as the average offset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common shift adds the same amount to the mean and median.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p2",
+    "problemId": "amc10-2001-p2",
+    "finalAnswer": "$\\boxed{0<x\\le2}$ (choice C)",
+    "shortExplanation": "The specified product is $-1$, so $x=1$.",
+    "detailedSteps": [
+      "The reciprocal requires $x\\ne0$. Its product with the additive inverse is $(1/x)(-x)=-1$.",
+      "Therefore $x=2-1=1$, which belongs to $0<x\\le2$, choice C."
+    ],
+    "keyIdeas": [
+      "Reciprocal times additive inverse"
+    ],
+    "commonMistakes": [
+      "Confusing additive inverse with reciprocal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product is independent of the nonzero number.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p3",
+    "problemId": "amc10-2001-p3",
+    "finalAnswer": "$\\boxed{2S+12}$ (choice E)",
+    "shortExplanation": "Each of the two numbers contributes an extra $6$ after the operations.",
+    "detailedSteps": [
+      "If the original numbers are $a,b$ with $a+b=S$, the final sum is $2(a+3)+2(b+3)=2(a+b)+12=2S+12$."
+    ],
+    "keyIdeas": [
+      "Transforming two addends"
+    ],
+    "commonMistakes": [
+      "Adding 3 only once for the pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the operation to each number before combining.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p4",
+    "problemId": "amc10-2001-p4",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "Each side contributes at most two intersections, and all six can occur.",
+    "detailedSteps": [
+      "A line meets a circle at at most two points, so the three triangle sides give at most $3\\cdot2=6$.",
+      "To attain six, take an equilateral triangle and a concentric circle whose radius is strictly between its inradius and circumradius. Each side then crosses the circle twice in its interior, giving six distinct points."
+    ],
+    "keyIdeas": [
+      "Intersections of a circle with three segments"
+    ],
+    "commonMistakes": [
+      "Counting only one intersection per side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A maximum requires both a bound and an example.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p5",
+    "problemId": "amc10-2001-p5",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "The symmetric shapes are the straight strip, T, X, U, V, and staircase W.",
+    "detailedSteps": [
+      "In the linked original arrangement, the symmetric shapes occur at row 1 column 1; row 2 columns 1,2,4; and row 3 columns 1,4. The straight strip, T, X, and U have horizontal or vertical axes; V and W have diagonal axes.",
+      "The remaining six shapes have no reflection that maps all five cells onto the same cells. A cell grid permits only horizontal, vertical, or $45^\\circ$ diagonal reflection axes; testing those directions eliminates each remaining shape.",
+      "Thus six of the twelve pentominoes have a line of symmetry."
+    ],
+    "keyIdeas": [
+      "Reflection symmetry of pentominoes"
+    ],
+    "commonMistakes": [
+      "Counting a half-turn symmetry as a line of symmetry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A diagonal line of symmetry is as valid as a horizontal or vertical one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p6",
+    "problemId": "amc10-2001-p6",
+    "finalAnswer": "$\\boxed{9}$ (choice E)",
+    "shortExplanation": "Writing the number as $10a+b$ yields $a(9-b)=0$.",
+    "detailedSteps": [
+      "For tens digit $a\\in\\{1,\\ldots,9\\}$ and units digit $b$, the condition is $10a+b=ab+a+b$.",
+      "Canceling and factoring gives $a(9-b)=0$. Since $a\\ne0$, the units digit is $b=9$."
+    ],
+    "keyIdeas": [
+      "A two-digit equation"
+    ],
+    "commonMistakes": [
+      "Allowing the tens digit to be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tens digit factors out of the equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p7",
+    "problemId": "amc10-2001-p7",
+    "finalAnswer": "$\\boxed{0.02}$ (choice C)",
+    "shortExplanation": "The equation $10000x=4/x$ gives the positive solution $x=0.02$.",
+    "detailedSteps": [
+      "Moving the decimal point four places right multiplies the positive number by $10^4$. Thus $10^4x=4/x$, or $x^2=4/10000$.",
+      "The positive root is $x=2/100=0.02$."
+    ],
+    "keyIdeas": [
+      "A decimal shift and a reciprocal"
+    ],
+    "commonMistakes": [
+      "Moving four places by a factor of 1000 or keeping the negative root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity condition selects one square root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p8",
+    "problemId": "amc10-2001-p8",
+    "finalAnswer": "$\\boxed{84}$ (choice B)",
+    "shortExplanation": "The next common workday is $\\operatorname{lcm}(3,4,6,7)=84$ school days away.",
+    "detailedSteps": [
+      "The elapsed number of school days must be divisible by all four periods. Their prime-power requirements are $2^2$, $3$, and $7$.",
+      "The least positive common multiple is $4\\cdot3\\cdot7=84$."
+    ],
+    "keyIdeas": [
+      "Least common multiple of schedules"
+    ],
+    "commonMistakes": [
+      "Multiplying every period and double-counting common factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The schedule is measured in school days, so weekends need not be modeled.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p9",
+    "problemId": "amc10-2001-p9",
+    "finalAnswer": "$\\boxed{32000}$ (choice B)",
+    "shortExplanation": "The extra two-percent tax on income above the threshold equals one quarter percent of all income.",
+    "detailedSteps": [
+      "Let the income be $I$. Since the effective rate exceeds $p\\%$, $I>28000$. Start with a base tax of $p\\%$ on all income; the additional tax is $2\\%$ of $I-28000$.",
+      "The observed effective rate gives $0.02(I-28000)=0.0025I$. Hence $8(I-28000)=I$, so $7I=224000$ and $I=32000$."
+    ],
+    "keyIdeas": [
+      "A surcharge above a threshold"
+    ],
+    "commonMistakes": [
+      "Applying the higher rate to all income."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the common base rate from the marginal surcharge.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p10",
+    "problemId": "amc10-2001-p10",
+    "finalAnswer": "$\\boxed{22}$ (choice D)",
+    "shortExplanation": "The values are $x=4$, $y=6$, and $z=12$.",
+    "detailedSteps": [
+      "Compute $x^2=(xy)(xz)/(yz)=24\\cdot48/72=16$. Positivity gives $x=4$.",
+      "Then $y=24/4=6$ and $z=48/4=12$, so $x+y+z=22$."
+    ],
+    "keyIdeas": [
+      "Recovering positive numbers from pairwise products"
+    ],
+    "commonMistakes": [
+      "Keeping a negative square root despite positive variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiply two known products and divide by the third to isolate a square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p11",
+    "problemId": "amc10-2001-p11",
+    "finalAnswer": "$\\boxed{800}$ (choice C)",
+    "shortExplanation": "The $n$th ring has $(2n+1)^2-(2n-1)^2=8n$ cells.",
+    "detailedSteps": [
+      "The square through ring $n$ has side $2n+1$ unit cells, while the square through ring $n-1$ has side $2n-1$.",
+      "The difference is $(2n+1)^2-(2n-1)^2=8n$. At $n=100$, the ring contains $800$ cells."
+    ],
+    "keyIdeas": [
+      "A square ring as a difference of areas"
+    ],
+    "commonMistakes": [
+      "Counting the whole enclosed square rather than just the outer ring."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract nested squares to avoid corner overcounting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p12",
+    "problemId": "amc10-2001-p12",
+    "finalAnswer": "$\\boxed{28}$ (choice D)",
+    "shortExplanation": "The product is always divisible by $42$, but may have only one factor of $2$.",
+    "detailedSteps": [
+      "Among three consecutive integers, at least one is even and at least one is divisible by $3$. With the stated factor $7$, their product is divisible by $2\\cdot3\\cdot7=42$. This guarantees divisibility by $6,14,21,42$.",
+      "For a counterexample to divisibility by $28$, take $n=5\\cdot6\\cdot7=210$, which is not divisible by $4$ and hence not by $28$."
+    ],
+    "keyIdeas": [
+      "Guaranteed factors of consecutive products"
+    ],
+    "commonMistakes": [
+      "Assuming three consecutive integers must include a multiple of 4."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "One missing factor of 2 distinguishes 28 from the guaranteed divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p13",
+    "problemId": "amc10-2001-p13",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The remaining leading group is $810$.",
+    "detailedSteps": [
+      "The three groups use all digits $0$ through $9$, whose total is $45$. Since $A+B+C=9$, the other groups sum to $36$.",
+      "The decreasing consecutive-even triples are $864,642,420$, with sums $18,12,6$. The decreasing consecutive-odd quadruples are $9753,7531$, with sums $24,16$. Only $12+24=36$ works.",
+      "Thus the latter groups are $642$ and $9753$, leaving $8,1,0$ for the first group. Therefore $A=8$."
+    ],
+    "keyIdeas": [
+      "Partitioning all ten digits"
+    ],
+    "commonMistakes": [
+      "Omitting zero from the ten available digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using the total digit sum sharply restricts the two groups.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p14",
+    "problemId": "amc10-2001-p14",
+    "finalAnswer": "$\\boxed{782}$ (choice A)",
+    "shortExplanation": "The full price is $23$ dollars and $34$ tickets are sold at that price.",
+    "detailedSteps": [
+      "Let $p$ be the integer full price and $f$ the number of full-price tickets. The revenue equation is $pf+(p/2)(140-f)=2001$, so $p(140+f)=4002$.",
+      "Both ticket categories occur, giving $0<f<140$ and hence $4002/280<p<4002/140$. The integer $p$ must divide $4002=2\\cdot3\\cdot23\\cdot29$. The only divisor in this interval is $23$.",
+      "Then $140+f=4002/23=174$, so $f=34$. Full-price revenue is $23\\cdot34=782$ dollars."
+    ],
+    "keyIdeas": [
+      "Integer ticket price from a factorization"
+    ],
+    "commonMistakes": [
+      "Assuming half-price tickets must cost a whole number of dollars."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The price is integral, while half the price need not be.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p15",
+    "problemId": "amc10-2001-p15",
+    "finalAnswer": "$\\boxed{12}$ (choice C)",
+    "shortExplanation": "The crosswalk area is both $15\\cdot40$ and $50d$.",
+    "detailedSteps": [
+      "The crosswalk is a parallelogram. With a curb segment as base, its area is $15\\cdot40=600$ square feet.",
+      "With a stripe of length $50$ as base, the height is the perpendicular distance $d$ between the stripes. Thus $50d=600$, giving $d=12$ feet."
+    ],
+    "keyIdeas": [
+      "Two base-height descriptions of a parallelogram"
+    ],
+    "commonMistakes": [
+      "Using the curb length 15 as the perpendicular stripe separation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Changing the base can expose the requested distance directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p16",
+    "problemId": "amc10-2001-p16",
+    "finalAnswer": "$\\boxed{30}$ (choice D)",
+    "shortExplanation": "If the mean is $m$, the numbers are $m-10$, $5$, and $m+15$.",
+    "detailedSteps": [
+      "Their sum is both $3m$ and $(m-10)+5+(m+15)=2m+10$. Hence $m=10$, and the sum is $30$.",
+      "The resulting ordered numbers are $0,5,25$, which satisfy all three stated conditions."
+    ],
+    "keyIdeas": [
+      "Mean relative to both extremes"
+    ],
+    "commonMistakes": [
+      "Replacing the mean by the median 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the corrected complete source wording that specifies 15 less than the greatest.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p17",
+    "problemId": "amc10-2001-p17",
+    "finalAnswer": "$\\boxed{\\text{radius }7\\text{, slant height }10}$ (choice C)",
+    "shortExplanation": "The sector arc becomes the base circumference, giving base radius $7$.",
+    "detailedSteps": [
+      "The sector radius becomes the cone slant height, so that length is $10$. The sector arc is $(252/360)(2\\pi\\cdot10)=14\\pi$.",
+      "This arc forms the base circumference $2\\pi r$, hence $r=7$. The option showing base radius 7 and slant height 10 is C."
+    ],
+    "keyIdeas": [
+      "A sector rolled into a cone"
+    ],
+    "commonMistakes": [
+      "Treating the sector radius as the cone vertical height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish slant height from axial height in the diagram choices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p18",
+    "problemId": "amc10-2001-p18",
+    "finalAnswer": "$\\boxed{56}$ (choice D)",
+    "shortExplanation": "A repeating $3$-by-$3$ block has four unit squares and pentagons occupying the remaining area $5$.",
+    "detailedSteps": [
+      "In the linked original diagram, choose a repeating square block centered where four pentagons meet. Take the small square side as 1. The block has side 3; its four corners are unit squares.",
+      "The four pentagons fill the rest of the block, with total area $9-4=5$. These blocks tile the plane, so the pentagon area fraction is $5/9$.",
+      "The percentage is $500/9\\approx55.56$, closest to $56$."
+    ],
+    "keyIdeas": [
+      "Area fraction in a periodic tiling"
+    ],
+    "commonMistakes": [
+      "Counting polygons instead of comparing the areas they occupy."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A repeating area cell avoids boundary effects in a finite picture.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p19",
+    "problemId": "amc10-2001-p19",
+    "finalAnswer": "$\\boxed{15}$ (choice D)",
+    "shortExplanation": "The selection is a nonnegative triple summing to $4$.",
+    "detailedSteps": [
+      "Let the three counts be $a,b,c\\ge0$ with $a+b+c=4$. Place two dividers among four markers to encode such a triple.",
+      "The number is $\\binom{6}{2}=15$. The supply is ample, so no extra upper bounds apply."
+    ],
+    "keyIdeas": [
+      "Four identical selections among three types"
+    ],
+    "commonMistakes": [
+      "Counting different orders of the same collection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The donuts are distinguished by type, not by position in an order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p20",
+    "problemId": "amc10-2001-p20",
+    "finalAnswer": "$\\boxed{2000(\\sqrt2-1)}$ (choice B)",
+    "shortExplanation": "Equating an original-side segment with a cut diagonal determines the side length.",
+    "detailedSteps": [
+      "Let each removed triangle have legs $t$. A new diagonal side has length $t\\sqrt2$, while a side left on the original square has length $2000-2t$.",
+      "Regularity requires $t\\sqrt2=2000-2t$. The common side length is $2000\\sqrt2/(2+\\sqrt2)=2000(\\sqrt2-1)$."
+    ],
+    "keyIdeas": [
+      "Equal sides of a trimmed octagon"
+    ],
+    "commonMistakes": [
+      "Making the removed triangle legs equal to the octagon side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The octagon alternates cut sides and surviving square sides.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p21",
+    "problemId": "amc10-2001-p21",
+    "finalAnswer": "$\\boxed{\\frac{30}{11}}$ (choice B)",
+    "shortExplanation": "At height $2r$, the cone radius equals $5(1-2r/12)$.",
+    "detailedSteps": [
+      "The inscribed cylinder has height equal to its diameter, $2r$, and its lower base lies in the cone base plane. Cone radius decreases linearly from 5 at the base to 0 at height 12.",
+      "At the cylinder top, tangency gives $r=5(1-2r/12)$. Thus $r=5-5r/6$, or $11r=30$, giving $r=30/11$."
+    ],
+    "keyIdeas": [
+      "Similar cross-sections of a cone"
+    ],
+    "commonMistakes": [
+      "Using 10 as the cone radius instead of its diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An axial cross-section converts the solid geometry to similar triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p22",
+    "problemId": "amc10-2001-p22",
+    "finalAnswer": "$\\boxed{46}$ (choice D)",
+    "shortExplanation": "The center is $22$ and the common line sum is $66$, so $y=26$ and $z=20$.",
+    "detailedSteps": [
+      "Equate the bottom row with the middle column: $25+z+21=24+x+z$, giving $x=22$.",
+      "In a three-by-three magic square with line sum $S$, the four lines through the center sum to $4S$. They count every noncentral entry once and the center four times. Since all entries sum to $3S$, this gives $4S=3S+3x$, hence $S=3x=66$.",
+      "The middle row yields $y=66-18-22=26$, and the bottom row gives $z=66-25-21=20$. Their sum is $46$."
+    ],
+    "keyIdeas": [
+      "Center and line sum of a magic square"
+    ],
+    "commonMistakes": [
+      "Assuming the entries are consecutive integers when the question does not say so."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center-times-three identity follows from counting the four central lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p23",
+    "problemId": "amc10-2001-p23",
+    "finalAnswer": "$\\boxed{\\frac35}$ (choice D)",
+    "shortExplanation": "White is exhausted first exactly when the final chip in a hypothetical full ordering is red.",
+    "detailedSteps": [
+      "Imagine continuing to draw all five chips after the stopping condition. This gives a uniformly random full ordering without changing which color was exhausted first.",
+      "If the final chip is red, a red chip remains after the last white is drawn, so the stopping draw is white. If the final chip is white, red is exhausted first. Thus the desired event is exactly that the fifth chip is red.",
+      "Three of the five chips are red, so the probability is $3/5$."
+    ],
+    "keyIdeas": [
+      "Extending a stopped random draw"
+    ],
+    "commonMistakes": [
+      "Assuming the stopping color has probability equal to its initial proportion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A hypothetical continuation can simplify a stopping-time event.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p24",
+    "problemId": "amc10-2001-p24",
+    "finalAnswer": "$\\boxed{\\frac{49}{4}}$ (choice B)",
+    "shortExplanation": "Pythagoras gives $(AB+CD)^2=(CD-AB)^2+49$.",
+    "detailedSteps": [
+      "Let the bases be $a<b$. The slanted side has horizontal displacement $b-a$ and vertical displacement $7$, so $BC^2=(b-a)^2+49$.",
+      "The condition $BC=a+b$ then gives $(a+b)^2-(b-a)^2=49$. The left side is $4ab$, hence $AB\\cdot CD=49/4=12.25$."
+    ],
+    "keyIdeas": [
+      "Difference of two squared base expressions"
+    ],
+    "commonMistakes": [
+      "Using the sum of bases as the horizontal displacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The product follows without finding either base individually.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10-2001-p25",
+    "problemId": "amc10-2001-p25",
+    "finalAnswer": "$\\boxed{801}$ (choice B)",
+    "shortExplanation": "There are $1001$ multiples of 3 or 4, of which $200$ are also multiples of 5.",
+    "detailedSteps": [
+      "The count divisible by $3$ or $4$ is $\\lfloor2001/3\\rfloor+\\lfloor2001/4\\rfloor-\\lfloor2001/12\\rfloor=667+500-166=1001$.",
+      "Among these, multiples of $5$ are precisely multiples of $15$ or $20$. Their count is $133+100-33=200$, using the overlap multiples of $60$.",
+      "The required result is $1001-200=801$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion with an excluded divisor"
+    ],
+    "commonMistakes": [
+      "Subtracting every multiple of 5, including numbers not in the original union."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply inclusion-exclusion separately to the allowed union and its forbidden subset.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

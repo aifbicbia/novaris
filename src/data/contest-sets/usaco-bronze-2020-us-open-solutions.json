@@ -1,0 +1,94 @@
+[
+  {
+    "finalAnswer": "Binary-search the largest spacing that permits two insertions. For each trial spacing, place the new cows at the earliest legal empty stalls while preserving all distances to the existing cows.",
+    "shortExplanation": "A spacing test is monotone. Its leftmost legal first insertion cannot make any feasible second insertion harder to fit.",
+    "detailedSteps": [
+      "**Test a proposed spacing.** For an integer $d$, every final occupied pair must be at least $d$ stalls apart. Reject the trial if two consecutive original cows are closer; their positions cannot change. For each empty stall, the nearest original cow on each side determines whether that stall is individually legal.",
+      "**Scan from the left.** Precompute the next original cow to the right of each position. Track the latest occupied position on the left, including a newly placed cow. Add a cow at the first empty stall whose distances to both neighbors are at least $d$, then continue until a second cow fits. The right-neighbor check prevents an insertion too close to an original cow that the forward scan has not reached yet.",
+      "**Prove the greedy test.** Let $a$ be the first individually legal empty stall. If some feasible pair $a'<b'$ exists, then $a\\le a'$ and $b'\\ge a'+d\\ge a+d$. Thus the same $b'$ remains a possible second stall after choosing $a$. The scan finds such a second stall whenever one exists. Conversely, the two returned stalls meet the old-new and new-new distances, while the initial old-old check covers the remaining pairs.",
+      "**Search the spacing.** Any arrangement achieving $d$ also achieves a smaller spacing, so binary search applies. The optimum is an integer between $1$ and $N-1$. At least two empty stalls make spacing one feasible. The algorithm also handles a completely empty row; placing cows at the two endpoints gives $N-1$.",
+      "**Complexity and files.** Each test takes $O(N)$ time, and binary search uses $O(\\log N)$ tests. The right-neighbor array takes $O(N)$ memory, for total $O(N\\log N)$ time and $O(N)$ space. Read socdist1.in and write socdist1.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n;\n    string stalls;\n    in >> n >> stalls;\n    vector<int> nextOriginal(n, 2 * n);\n    int nearest = 2 * n;\n    int previous = -n;\n    int oldMinimum = n;\n    for (int i = 0; i < n; ++i) {\n        if (stalls[i] == '1') {\n            oldMinimum = min(oldMinimum, i - previous);\n            previous = i;\n        }\n    }\n    for (int i = n - 1; i >= 0; --i) {\n        if (stalls[i] == '1') nearest = i;\n        nextOriginal[i] = nearest;\n    }\n    auto feasible = [&](int distance) {\n        if (oldMinimum < distance) return false;\n        int latest = -n;\n        int added = 0;\n        for (int i = 0; i < n; ++i) {\n            if (stalls[i] == '1') {\n                latest = i;\n            } else if (i - latest >= distance &&\n                       nextOriginal[i] - i >= distance) {\n                latest = i;\n                if (++added == 2) return true;\n            }\n        }\n        return false;\n    };\n    int left = 1, right = n - 1, answer = 0;\n    while (left <= right) {\n        int middle = left + (right - left) / 2;\n        if (feasible(middle)) {\n            answer = middle;\n            left = middle + 1;\n        } else {\n            right = middle - 1;\n        }\n    }\n    out << answer << '\\n';\n}\n\nint main() {\n    ifstream in(\"socdist1.in\");\n    ofstream out(\"socdist1.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A lower spacing requirement is easier to satisfy.",
+      "Check immutable original-cow distances before attempting insertions.",
+      "The earliest legal first choice preserves any feasible second choice."
+    ],
+    "commonMistakes": [
+      "Ignoring original cows to the right of a proposed insertion.",
+      "Maximizing only the new-new distance while overlooking old-old or old-new pairs.",
+      "Assuming the source guarantees an originally occupied stall."
+    ],
+    "alternativeMethods": [
+      "Analyze each gap directly. A boundary gap of length $a$ permits one new cow at spacing $a$ or two at $\\lfloor a/2\\rfloor$. An interior separation $b$ between original cows permits one at $\\lfloor b/2\\rfloor$ or two at $\\lfloor b/3\\rfloor$. Compare putting both cows in one gap with using the two largest one-cow capacities, and cap the result by the smallest original-cow separation. Handle an entirely empty row separately."
+    ],
+    "difficultyNotes": "The binary search is standard once the spacing test is proved. The important detail is checking both sides of every insertion.",
+    "id": "solution-usaco-bronze-2020-us-open-p1",
+    "problemId": "usaco-bronze-2020-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Let the smallest sick-healthy distance be delta. Count sick components joined by gaps strictly smaller than delta; each needs one original infection. If every cow is sick, the minimum is one.",
+    "shortExplanation": "The observed healthy cows bound the spread radius from above. Using the largest permitted connections merges as many sick cows as possible, minimizing the number of initial seeds.",
+    "detailedSteps": [
+      "**Find the forbidden distance.** Sort cows by position. If a healthy cow exists, let $\\delta$ be the smallest distance between a sick and a healthy cow. Validity requires $R<\\delta$, because the infection rule includes distance exactly $R$. It is enough to inspect adjacent cows with different states: every nonadjacent unlike pair contains an adjacent state boundary with no larger gap.",
+      "**Choose all allowable connections.** Coordinates are integers, but the source does not require an integer radius. The real choice $R=\\delta-\\tfrac12$ is valid and connects precisely the integer distances smaller than $\\delta$. Every connection possible for any valid $R<\\delta$ is present at this choice.",
+      "**Count components, not sick individuals.** Infection eventually fills a connected component of the within-radius graph. Every finally sick component needs an initial sick cow, and one seed in each component suffices. In one dimension, a sick run stays connected across adjacent gaps smaller than $\\delta$. A healthy cow or a gap at least $\\delta$ starts a new component.",
+      "**Why this minimizes the count.** Increasing a permissible radius can merge components but cannot split them. The selected radius realizes every allowable connection, so no other valid radius can use fewer initial seeds. If no cow is healthy, a radius covering the entire row permits one seed to infect every cow; the source guarantees that at least one cow is sick.",
+      "**Complexity and files.** Sorting costs $O(N\\log N)$, and both scans cost $O(N)$. Store $O(N)$ position/state pairs. Read socdist2.in and write socdist2.out. The implementation uses a threshold larger than the maximum coordinate span when there is no healthy cow.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <utility>\n#include <vector>\nusing namespace std;\n\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<pair<int, int>> cows(n);\n    for (auto& cow : cows) in >> cow.first >> cow.second;\n    sort(cows.begin(), cows.end());\n    int threshold = 1000001;\n    for (int i = 1; i < n; ++i) {\n        if (cows[i].second != cows[i - 1].second) {\n            threshold = min(threshold, cows[i].first - cows[i - 1].first);\n        }\n    }\n    int seeds = 0;\n    for (int i = 0; i < n; ++i) {\n        if (cows[i].second == 1 &&\n            (i == 0 || cows[i - 1].second == 0 ||\n             cows[i].first - cows[i - 1].first >= threshold)) {\n            ++seeds;\n        }\n    }\n    out << seeds << '\\n';\n}\n\nint main() {\n    ifstream in(\"socdist2.in\");\n    ofstream out(\"socdist2.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "A sick-healthy pair imposes a strict upper bound on the radius.",
+      "Complete spread is graph reachability.",
+      "One seed per sick connected component is both necessary and sufficient."
+    ],
+    "commonMistakes": [
+      "Allowing a connection at the smallest sick-healthy distance.",
+      "Counting each sick cow as an independent starting infection.",
+      "Treating the measured snapshot as an unfinished outbreak."
+    ],
+    "alternativeMethods": [
+      "Build the full distance graph at $R=\\delta-\\tfrac12$ and flood each component. Count its sick components. This $O(N^2)$ graph approach also fits the source's $N\\le1000$ and checks the sorted-gap reasoning independently."
+    ],
+    "difficultyNotes": "The strict distance boundary and the completed-spread condition matter more than the sorting implementation.",
+    "id": "solution-usaco-bronze-2020-us-open-p2",
+    "problemId": "usaco-bronze-2020-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Try each possible patient zero and every $K$ from $0$ through $T$. Simulate the events chronologically, keep hypotheses matching the full final state, and report the possible-patient count and global $K$ bounds. A valid hypothesis at $K=T$ makes the upper bound Infinity.",
+    "shortExplanation": "There are only finitely many distinct behaviors of K on the recorded interactions. Direct simulation determines which patient/K combinations explain the observations.",
+    "detailedSteps": [
+      "**Preserve the time order.** Sort the $T$ interactions by their distinct timestamps. Since infection never disappears, only a cow marked sick in the final state can be patient zero. Initialize just that cow as infected.",
+      "**Simulate one hypothesis carefully.** Maintain an infected flag and the number of hoof shakes performed since infection. At an interaction, remember both endpoints' pre-event infected flags. Each already infected cow consumes one shake even if the partner is already sick, and can transmit when its updated count is at most $K$. Compute both transmission decisions before applying the new infections.",
+      "**Handle receiving infection.** A newly infected cow starts with zero counted shakes; the receiving interaction is not one of its next $K$ shakes. Using the pre-event flags prevents this cow from being counted or treated as an old transmitter during the same interaction. The state transition therefore follows the source rule exactly, and induction over the sorted events proves the complete simulation.",
+      "**Cover all values of K.** No cow can perform more than $T$ recorded post-infection shakes. Thus $K=T$ allows every relevant transmission, and every larger $K$ gives exactly the same final state. Test $K=0,1,\\ldots,T$. If a matching hypothesis uses $K=T$, print Infinity for the upper bound; otherwise the largest valid $K$ is below $T$ and was explicitly tested.",
+      "**Aggregate the output correctly.** Count a patient only once even if several $K$ values work. Take the minimum and maximum $K$ over all valid patient hypotheses. The source guarantees a valid possibility. Each simulation takes $O(N+T)$ time, including initialization and final comparison; at most $N(T+1)$ simulations give $O(N(T+1)(N+T)+T\\log T)$ total time and $O(N+T)$ memory.",
+      "Read tracing.in and write tracing.out. The final flag comparison includes every cow, so explaining all sick cows while accidentally infecting a healthy cow is rejected.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nstruct Event {\n    int time, a, b;\n};\n\nbool consistent(int patient, int limit, int n,\n                const vector<Event>& events, const string& observed) {\n    vector<unsigned char> infected(n, 0);\n    vector<int> shakes(n, 0);\n    infected[patient] = 1;\n    for (const Event& event : events) {\n        bool wasA = infected[event.a];\n        bool wasB = infected[event.b];\n        bool sendsA = wasA && ++shakes[event.a] <= limit;\n        bool sendsB = wasB && ++shakes[event.b] <= limit;\n        if (sendsA) infected[event.b] = 1;\n        if (sendsB) infected[event.a] = 1;\n    }\n    for (int i = 0; i < n; ++i) {\n        if (infected[i] != static_cast<unsigned char>(observed[i] - '0')) {\n            return false;\n        }\n    }\n    return true;\n}\n\nvoid solve(istream& in, ostream& out) {\n    int n, t;\n    string observed;\n    in >> n >> t >> observed;\n    vector<Event> events(t);\n    for (Event& event : events) {\n        in >> event.time >> event.a >> event.b;\n        --event.a;\n        --event.b;\n    }\n    sort(events.begin(), events.end(),\n         [](const Event& a, const Event& b) { return a.time < b.time; });\n    int patients = 0, minimum = t + 1, maximum = -1;\n    bool infinity = false;\n    for (int patient = 0; patient < n; ++patient) {\n        if (observed[patient] != '1') continue;\n        bool possible = false;\n        for (int limit = 0; limit <= t; ++limit) {\n            if (consistent(patient, limit, n, events, observed)) {\n                possible = true;\n                minimum = min(minimum, limit);\n                maximum = max(maximum, limit);\n                if (limit == t) infinity = true;\n            }\n        }\n        patients += possible;\n    }\n    out << patients << ' ' << minimum << ' ';\n    if (infinity) out << \"Infinity\\n\";\n    else out << maximum << '\\n';\n}\n\nint main() {\n    ifstream in(\"tracing.in\");\n    ofstream out(\"tracing.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Simulate the exact causal order and snapshot the pre-event flags.",
+      "All post-infection shakes consume the transmission budget.",
+      "Prove the finite K cutoff before interpreting Infinity."
+    ],
+    "commonMistakes": [
+      "Skipping a shake merely because both cows are already infected.",
+      "Charging a newly infected cow for the interaction that infected her.",
+      "Counting valid patient/K pairs instead of distinct possible patients.",
+      "Guessing Infinity from a large arbitrary test value without a bound proof."
+    ],
+    "alternativeMethods": [
+      "Use remaining transmission tokens instead of an increasing shake count. Give each newly infected cow K tokens, consume a token for every later shake while tokens remain, and compute both endpoints' eligibility before updates. This equivalent representation is useful for an independent simulation checker."
+    ],
+    "difficultyNotes": "The small source bounds permit hypothesis enumeration. Correct event updates and the proof of the unbounded-K case are the main challenges.",
+    "id": "solution-usaco-bronze-2020-us-open-p3",
+    "problemId": "usaco-bronze-2020-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

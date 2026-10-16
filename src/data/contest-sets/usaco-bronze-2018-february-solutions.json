@@ -1,0 +1,103 @@
+[
+  {
+    "finalAnswer": "Return $\\min(|a-b|,\\ |a-x|+|y-b|,\\ |a-y|+|x-b|)$. These are direct hauling and the two orientations of the free teleporter. Time and space are $O(1)$.",
+    "shortExplanation": "Using the teleporter is optional and bidirectional. Compare direct travel with hauling to either endpoint, teleporting for free, and hauling from the other endpoint to the destination.",
+    "detailedSteps": [
+      "**Include direct travel.** Driving straight from $a$ to $b$ costs $|a-b|$. It is a valid option even when the teleporter lies elsewhere or would make the trip longer.",
+      "**Include both teleport orientations.** Entering at $x$ and leaving at $y$ costs $|a-x|+|y-b|$ in tractor travel. Entering at $y$ and leaving at $x$ costs $|a-y|+|x-b|$. The distance between portal endpoints contributes no hauling cost.",
+      "**Explain why these three routes suffice.** Straight walking legs are shortest between their endpoints. Any route that repeats an interesting point contains a subpath that can be removed without increasing its nonnegative hauling cost. Since the only portal endpoints are $x$ and $y$, a shortest simplified route uses the portal at most once. Without it, direct travel is optimal; with it, one of the two listed orientations is optimal. Each listed cost is attained by its explicit route.",
+      "**Handle coincidences and bounds.** All four coordinates lie from zero to $100$ and may coincide. Absolute differences handle every order, a zero-length portal, or equal start and destination. The answer is between zero and $100$ because direct travel is available. Read `teleport.in` and print the minimum in `teleport.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <cstdlib>\n#include <fstream>\nint main() {\n    std::ifstream in(\"teleport.in\");\n    std::ofstream out(\"teleport.out\");\n    int a, b, x, y;\n    in >> a >> b >> x >> y;\n    out << std::min({std::abs(a - b), std::abs(a - x) + std::abs(y - b),\n                     std::abs(a - y) + std::abs(x - b)}) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The portal has zero hauling cost and works in both directions.",
+      "Keep the no-portal route among the candidates.",
+      "Removing nonnegative cycles justifies considering a single portal use."
+    ],
+    "commonMistakes": [
+      "Adding the portal’s physical span to the tractor distance.",
+      "Testing only one direction of the teleporter.",
+      "Using signed differences instead of distances.",
+      "Assuming all coordinates are distinct or that the portal must be used."
+    ],
+    "alternativeMethods": [
+      "Represent integer road positions as a graph with unit-cost edges between neighbors and a zero-cost edge between the portal endpoints. A 0–1 shortest-path search permits arbitrary repeated travel and independently verifies the three-route minimum."
+    ],
+    "difficultyNotes": "Introductory shortest-route comparison. The main details are optional use, both directions, and interpreting the requested cost as hauling distance rather than total displacement.",
+    "id": "solution-usaco-bronze-2018-february-p1",
+    "problemId": "usaco-bronze-2018-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For $N=1$, give the sole cow one ball. Otherwise count zero-indegree cows in the nearest-neighbor passing graph, then add one for each isolated mutual pair. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "A cow with no incoming pass must receive an initial ball. Seeding every such cow covers all chains and their eventual cycles. A separate two-cow cycle with no incoming chain needs one extra ball; both cows then hold it in turn.",
+    "detailedSteps": [
+      "**Handle the single cow directly.** She cannot hold a ball unless given one, and one initial ball already satisfies the all-cows-hold objective. No target involving an absent other cow is needed for this case.",
+      "**Find the deterministic pass target.** Sort the distinct positions. A cow’s nearest other cow is her immediate neighbor on one side, because a farther cow on the same side is more distant. End cows have only one candidate neighbor. Interior cows compare left and right gaps, choosing the left neighbor when the gaps tie, as the source requires.",
+      "**Build the directed passing graph.** Give each cow one edge to that target and count each vertex’s incoming edges. A ball follows the edge repeatedly. The cows that can eventually hold balls are exactly the union of the forward paths from the initial recipients.",
+      "**Derive the first mandatory recipients.** Every cow with indegree zero must receive a ball initially: no other cow ever passes to her. Therefore their count is a lower bound and all of them must be seeded.",
+      "**Describe the eventual cycles.** A finite graph with one outgoing edge per vertex has one directed cycle in each weak component, with incoming trees attached. Edges connect adjacent sorted cows. The underlying line cannot support a simple cycle of three or more vertices, so each cycle is a mutual pair. Any noncycle cow has an acyclic upstream tree ending at some zero-indegree cow; seeding those sources therefore reaches every noncycle cow and any cycle with an attached tree.",
+      "**Account for components without a source.** A mutual pair with no attached tree has indegree one at both members and cannot receive a ball from outside its component. It needs at least one initial ball, and one is sufficient to reach both members. Add one for every mutual pair $i\\leftrightarrow j$ with both indegrees one, counting it only when $i<j$.",
+      "**Prove that the count is attainable.** Give a ball to every zero-indegree cow and to one member of each isolated pair. Their paths cover all incoming trees and all cycles, hence every cow. These recipients realize exactly the two disjoint lower-bound contributions, proving minimality.",
+      "**Complexity and files.** Sorting at most $100$ distinct positions costs $O(N\\log N)$; constructing edges and counts costs $O(N)$. Arrays use $O(N)$ space. Coordinates lie from one to $1000$. Read `hoofball.in` and print a minimum ball count from one to $N$ to `hoofball.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"hoofball.in\");\n    std::ofstream out(\"hoofball.out\");\n    int n;\n    in >> n;\n    std::vector<int> positions(n);\n    for (int &x : positions) in >> x;\n    std::sort(positions.begin(), positions.end());\n    if (n == 1) {\n        out << 1 << '\\n';\n        return 0;\n    }\n    std::vector<int> destination(n), incoming(n, 0);\n    for (int i = 0; i < n; ++i) {\n        if (i == 0) destination[i] = 1;\n        else if (i == n - 1) destination[i] = n - 2;\n        else if (positions[i] - positions[i - 1] <= positions[i + 1] - positions[i])\n            destination[i] = i - 1;\n        else destination[i] = i + 1;\n        ++incoming[destination[i]];\n    }\n    int answer = 0;\n    for (int count : incoming) if (count == 0) ++answer;\n    for (int i = 0; i < n; ++i) {\n        const int j = destination[i];\n        if (i < j && destination[j] == i && incoming[i] == 1 && incoming[j] == 1)\n            ++answer;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Static nearest-neighbor rules create a deterministic functional graph.",
+      "Zero indegree forces an initial recipient.",
+      "Only isolated cycle components need a seed beyond all source vertices.",
+      "The one-dimensional neighbor structure reduces cycles to mutual pairs."
+    ],
+    "commonMistakes": [
+      "Breaking equal-distance ties by input cow ID instead of the leftmost coordinate.",
+      "Giving one ball per component despite multiple required incoming-tree sources.",
+      "Adding an extra ball for a cycle already reached from a source chain.",
+      "Forgetting the one-cow objective or counting an isolated pair twice."
+    ],
+    "alternativeMethods": [
+      "Find each cow’s target by comparing all other distances, then compute strongly connected components. In the functional condensation graph, one seed in each component with no incoming edge is necessary and sufficient. For tiny inputs, enumerate all initial cow subsets and test the union of their full eventual paths."
+    ],
+    "difficultyNotes": "Advanced graph reasoning for a small Bronze task. The code is short after sorting, but both mandatory sources and source-free cycles must be handled to prove the global minimum.",
+    "id": "solution-usaco-bronze-2018-february-p2",
+    "problemId": "usaco-bronze-2018-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Force every known counter’s backward chain and the first day’s zero. Output `-1` on a contradiction; otherwise, with $Z$ forced zero days and $U$ still unknown days, output $Z$ and $Z+U$. Time is $O(N^2)$ and space is $O(N)$.",
+    "shortExplanation": "A counter value fixes the most recent breakout and all counters back to it. After these forced chains agree, each untouched day can either continue counting or contain an optional breakout without affecting a forced positive chain. These two choices attain the minimum and maximum.",
+    "detailedSteps": [
+      "**Use the first-day knowledge.** Number days from zero in the implementation. Initialize all forced values as unknown and set day zero to counter zero, because a breakout definitely occurred on the first logged morning. An input value `-1` means a missing entry, not a negative counter.",
+      "**Expand each known counter.** A known value $v$ on day $i$ means the latest breakout was on day $i-v$. It forces counters $0,1,\\ldots,v$ on all days from $i-v$ through $i$, with no later breakout in that interval. If $v>i$, it conflicts with the definite day-zero breakout and is impossible.",
+      "**Detect incompatible forced values.** For $j=0,\\ldots,v$, assign forced day $i-j$ the value $v-j$. If that day already has a different forced value, no event history can satisfy both requirements; output one `-1`. Consistent assignments preserve every known log entry.",
+      "**Establish the free-day structure.** Every forced positive counter has its entire preceding chain forced back to a zero. Therefore an unknown day cannot occur just before a forced positive counter. Unknown runs are followed either by a forced zero, which resets the counter, or by the end of the log.",
+      "**Bound the possible counts.** Let $Z$ be the number of forced zeros and $U$ the number of untouched days. Every forced zero is a necessary breakout; no forced positive day can be one. Thus every consistent history has at least $Z$ and at most $Z+U$ breakouts.",
+      "**Attain the minimum.** Break out only on the forced zeros and continue counting on every unknown day. Each forced positive chain begins at its required zero and has no unknown gap, so all its counter values are correct. Free runs cannot disturb a later positive chain. This yields exactly $Z$ breakouts.",
+      "**Attain the maximum.** Break out on every unknown day as well as every forced zero. No unknown day lies within a required positive chain, so these extra resets leave all known constraints intact. This yields exactly $Z+U$ breakouts and also proves that consistent propagation is sufficient for feasibility.",
+      "**Keep both output formats.** The source allows $1\\le N\\le100$ and raw known values up to $100$, including values that make the log impossible. Accept those raw inputs and return `-1` when needed. Otherwise print two space-separated integers `minimum maximum`, with $1\\le\\text{minimum}\\le\\text{maximum}\\le N$. Backward chains cost $O(N^2)$ time and the stored log and forced array cost $O(N)$ space. Use `taming.in` and `taming.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"taming.in\");\n    std::ofstream out(\"taming.out\");\n    int n;\n    in >> n;\n    std::vector<int> log(n), forced(n, -1);\n    for (int &value : log) in >> value;\n    forced[0] = 0;\n    for (int day = 0; day < n; ++day) {\n        const int value = log[day];\n        if (value < 0) continue;\n        if (value > day) {\n            out << -1 << '\\n';\n            return 0;\n        }\n        for (int back = 0; back <= value; ++back) {\n            const int index = day - back, counter = value - back;\n            if (forced[index] != -1 && forced[index] != counter) {\n                out << -1 << '\\n';\n                return 0;\n            }\n            forced[index] = counter;\n        }\n    }\n    const int necessary = std::count(forced.begin(), forced.end(), 0);\n    const int optional = std::count(forced.begin(), forced.end(), -1);\n    out << necessary << ' ' << necessary + optional << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A known days-since-breakout value fixes a complete consecutive backward chain.",
+      "The definite first breakout anchors the start of the log.",
+      "Closure of forced positive chains makes untouched days independently optional.",
+      "Constructing both extreme histories proves feasibility and both optimal bounds."
+    ],
+    "commonMistakes": [
+      "Allowing a known first-day counter other than zero.",
+      "Counting a missing entry as an automatic breakout before checking forced chains.",
+      "Failing to check conflicting counter requirements on the same day.",
+      "Rejecting an impossible log as a malformed input instead of producing its specified `-1` answer.",
+      "Printing only one integer when a consistent log requires a minimum and maximum pair."
+    ],
+    "alternativeMethods": [
+      "Keep all states consisting of the latest breakout day and the number of breakouts so far. At each day, try continuing or adding a breakout, retaining states matching the known entry. The smallest and largest surviving counts give an independent global oracle. Complete breakout-bit-pattern enumeration supplies an exact tiny-input check."
+    ],
+    "difficultyNotes": "Advanced consistency and attainability reasoning. Detecting contradictions is only half the solution: the structure of untouched days must justify why the minimum and maximum counts are both achievable.",
+    "id": "solution-usaco-bronze-2018-february-p3",
+    "problemId": "usaco-bronze-2018-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

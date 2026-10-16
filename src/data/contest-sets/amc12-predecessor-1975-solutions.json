@@ -1,0 +1,624 @@
+[
+  {
+    "id": "solution-amc12-predecessor-1975-p1",
+    "problemId": "amc12-predecessor-1975-p1",
+    "finalAnswer": "$\\boxed{\\frac45}$ (choice B)",
+    "shortExplanation": "The successive denominators are $3/2$, $4/3$ and $5/4$, so the final reciprocal is $4/5$.",
+    "detailedSteps": [
+      "Start with $2-1/2=3/2$. The next denominator is $2-1/(3/2)=4/3$.",
+      "The outer denominator is $2-1/(4/3)=5/4$. Its reciprocal is $4/5$."
+    ],
+    "keyIdeas": [
+      "Evaluate a continued fraction from its innermost denominator."
+    ],
+    "commonMistakes": [
+      "An outer numerator must wait until its entire denominator has been evaluated."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Work from the inside outward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p2",
+    "problemId": "amc12-predecessor-1975-p2",
+    "finalAnswer": "$\\boxed{m\\ne1}$ (choice D)",
+    "shortExplanation": "Subtraction gives $(1-m)x=1$, which has a real solution exactly when $m\\ne1$.",
+    "detailedSteps": [
+      "Equating the two expressions for $y$ gives $(1-m)x=1$. For $m\\ne1$, choose $x=1/(1-m)$ and $y=m/(1-m)+3$.",
+      "For $m=1$, both lines have slope $1$ but intercepts $3$ and $4$, so no common point exists."
+    ],
+    "keyIdeas": [
+      "Parallel lines with distinct intercepts cannot intersect."
+    ],
+    "commonMistakes": [
+      "Equal slopes do not imply coincident lines when the intercepts differ."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check the zero coefficient before dividing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p3",
+    "problemId": "amc12-predecessor-1975-p3",
+    "finalAnswer": "$\\boxed{\\text{none}}$ (choice A)",
+    "shortExplanation": "The supplied order conditions do not preserve products or squares for arbitrary real numbers.",
+    "detailedSteps": [
+      "For statements I and II, take $x=y=z=-2$ and $a=b=c=-1$. Every required order holds, but both claimed inequalities become $12<3$, which is false.",
+      "For statement III, take $x=-2,a=-1,y=z=1,b=c=2$. Again every order holds, but the claim becomes $-2<-4$, also false.",
+      "Thus none of the three inequalities is valid for every permitted choice."
+    ],
+    "keyIdeas": [
+      "Signed counterexamples defeat purported universal inequalities."
+    ],
+    "commonMistakes": [
+      "The problem allows negative values; positivity cannot be supplied as an extra hypothesis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A different counterexample may be used for each universal claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p4",
+    "problemId": "amc12-predecessor-1975-p4",
+    "finalAnswer": "$\\boxed{2}$ (choice A)",
+    "shortExplanation": "The first square has twice the second square\\'s area.",
+    "detailedSteps": [
+      "If the second square has side $s>0$, its diagonal is $s\\sqrt2$, the first square\\'s side.",
+      "The area ratio is $(s\\sqrt2)^2/s^2=2$."
+    ],
+    "keyIdeas": [
+      "A square diagonal is its side times the square root of two."
+    ],
+    "commonMistakes": [
+      "An area ratio is the square of the corresponding side ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only one length variable is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p5",
+    "problemId": "amc12-predecessor-1975-p5",
+    "finalAnswer": "$\\boxed{\\frac45}$ (choice B)",
+    "shortExplanation": "Equality of $9p^8q$ and $36p^7q^2$ gives $p=4q$.",
+    "detailedSteps": [
+      "The second and third terms are $9x^8y$ and $36x^7y^2$. At the specified positive values, equality gives $9p^8q=36p^7q^2$.",
+      "Dividing by $9p^7q>0$ yields $p=4q$. With $p+q=1$, this gives $p=4/5$."
+    ],
+    "keyIdeas": [
+      "Compare consecutive binomial terms and cancel nonzero factors."
+    ],
+    "commonMistakes": [
+      "Use the binomial coefficients as well as the powers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The positivity justifies cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p6",
+    "problemId": "amc12-predecessor-1975-p6",
+    "finalAnswer": "$\\boxed{80}$ (choice E)",
+    "shortExplanation": "Each of the eighty pairs contributes $1$.",
+    "detailedSteps": [
+      "For $k=1,\\ldots,80$, the paired difference is $2k-(2k-1)=1$.",
+      "The requested even sum minus odd sum is therefore $80$."
+    ],
+    "keyIdeas": [
+      "Pair each even integer with the preceding odd integer."
+    ],
+    "commonMistakes": [
+      "The actual source says eighty pairs, not eight."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing avoids separate summation formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p7",
+    "problemId": "amc12-predecessor-1975-p7",
+    "finalAnswer": "$\\boxed{\\text{no nonzero }x}$ (choice E)",
+    "shortExplanation": "The quotient is $0$ when $x>0$ and $-2$ when $x<0$, never positive.",
+    "detailedSteps": [
+      "If $x>0$, then $|x|=x$ and the numerator $|x-|x||$ is zero.",
+      "If $x<0$, then $|x|=-x$, so $|x-|x||=|2x|=-2x$. Dividing by the negative $x$ gives $-2$.",
+      "These cases exhaust the nonzero real domain, and neither gives a positive integer."
+    ],
+    "keyIdeas": [
+      "Resolve both absolute values using the sign of the denominator."
+    ],
+    "commonMistakes": [
+      "A nonnegative numerator divided by a negative number need not be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Zero is not a positive integer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p8",
+    "problemId": "amc12-predecessor-1975-p8",
+    "finalAnswer": "$\\boxed{\\text{II and IV only}}$ (choice D)",
+    "shortExplanation": "At least one shirt is not on sale; that is precisely the negation of all shirts being on sale.",
+    "detailedSteps": [
+      "The premise says the universal sale statement is false. Thus there exists a shirt not on sale, proving II. The same negation is stated directly in IV.",
+      "I and III say every shirt is not on sale. They need not hold: a store with one sale shirt and one non-sale shirt satisfies the premise while falsifying both.",
+      "Edition note: the linked published version clarifies statement I as all shirts having non-sale prices. Its footnote records the original ambiguous word order. This proof uses that explicit published clarification."
+    ],
+    "keyIdeas": [
+      "Negate a universal statement with an existential statement."
+    ],
+    "commonMistakes": [
+      "Not all shirts being on sale does not mean that no shirt is on sale."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep the scope of the negation explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p9",
+    "problemId": "amc12-predecessor-1975-p9",
+    "finalAnswer": "$\\boxed{10000}$ (choice C)",
+    "shortExplanation": "The combined progression begins and ends at $100$, so every one of its hundred terms is $100$.",
+    "detailedSteps": [
+      "Let $c_k=a_k+b_k$. This is arithmetic, with $c_1=25+75=100$ and $c_{100}=100$.",
+      "Its common difference must be $(100-100)/99=0$. Therefore the sum is $100\\cdot100=10000$."
+    ],
+    "keyIdeas": [
+      "The sum of two arithmetic progressions is another arithmetic progression."
+    ],
+    "commonMistakes": [
+      "The individual progressions need not be constant, but their sum is."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The arithmetic-series endpoint formula also gives the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p10",
+    "problemId": "amc12-predecessor-1975-p10",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The square is $10^{2k}+2\\cdot10^k+1$, where $k=4n^2+8\\ge12$.",
+    "detailedSteps": [
+      "Put $k=4n^2+8$. Expanding gives $(10^k+1)^2=10^{2k}+2\\cdot10^k+1$.",
+      "The three nonzero digits occupy distinct positions. They are $1,2,1$, so their sum is $4$."
+    ],
+    "keyIdeas": [
+      "Expand the square and locate its separated nonzero decimal digits."
+    ],
+    "commonMistakes": [
+      "The exponent determines positions, not the values of the digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No carrying occurs because the positions are distinct.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p11",
+    "problemId": "amc12-predecessor-1975-p11",
+    "finalAnswer": "$\\boxed{\\text{a circle}}$ (choice E)",
+    "shortExplanation": "The locus is the complete circle with diameter $OP$, where $O$ is the original center.",
+    "detailedSteps": [
+      "For a chord through $P$ with midpoint $M$, the center-to-midpoint line is perpendicular to the chord. Hence $OM\\perp PM$, giving $(M-O)\\cdot(M-P)=0$. This is the circle with diameter $OP$.",
+      "Conversely, each point $M$ on that circle, other than $P$, defines the line $PM$ perpendicular to $OM$. Because it passes through the interior point $P$, it cuts a genuine chord of the original circle, whose midpoint is $M$.",
+      "The endpoint $M=P$ is attained by the line through $P$ perpendicular to $OP$. The endpoint $M=O$ is attained by the diameter through $O$ and $P$. Thus no point of the locus circle is deleted."
+    ],
+    "keyIdeas": [
+      "A chord midpoint is the perpendicular projection of the center onto its chord."
+    ],
+    "commonMistakes": [
+      "A complete locus requires showing that every point is attainable, including both diameter endpoints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The interior-point hypothesis makes every line through P a chord.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p12",
+    "problemId": "amc12-predecessor-1975-p12",
+    "finalAnswer": "$\\boxed{a=3x\\text{ or }a=-2x}$ (choice B)",
+    "shortExplanation": "Substituting $b=a-x$ reduces the condition to $(a-3x)(a+2x)=0$.",
+    "detailedSteps": [
+      "Because $a\\ne b$, the difference $x$ is nonzero. Factor $a^3-b^3=x(a^2+ab+b^2)$ and cancel $x$ to obtain $a^2+ab+b^2=19x^2$.",
+      "With $b=a-x$, this becomes $3a^2-3ax+x^2=19x^2$, or $a^2-ax-6x^2=0$.",
+      "Factoring gives $(a-3x)(a+2x)=0$. Both branches satisfy the original cube equation for nonzero $x$."
+    ],
+    "keyIdeas": [
+      "Factor after using the nonzero difference of the two bases."
+    ],
+    "commonMistakes": [
+      "Choosing only one factor loses a valid branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The inequality a!=b permits cancellation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p13",
+    "problemId": "amc12-predecessor-1975-p13",
+    "finalAnswer": "$\\boxed{\\text{no negative roots; a positive root exists}}$ (choice D)",
+    "shortExplanation": "Every term is positive at a negative input, while the values at $0$ and $1$ have opposite signs.",
+    "detailedSteps": [
+      "For $x=-t$ with $t>0$, the polynomial becomes $t^6+3t^5+6t^3+t+8>0$. Therefore it has no negative root.",
+      "At $x=0$ the value is $8$, while at $x=1$ it is $-1$. Continuity gives a root in $(0,1)$, hence at least one positive root."
+    ],
+    "keyIdeas": [
+      "Combine a sign substitution with the intermediate value theorem."
+    ],
+    "commonMistakes": [
+      "The sign argument for negative inputs does not rule out positive roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The question does not require finding all positive roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p14",
+    "problemId": "amc12-predecessor-1975-p14",
+    "finalAnswer": "$\\boxed{\\text{so and so}}$ (choice E)",
+    "shortExplanation": "The stated general rule is $W=K/H$, so the requested product $HW$ equals $K$.",
+    "detailedSteps": [
+      "Let $W$ denote whatsis, $H$ whosis, $I$ is, $S$ so, and $K$ the named quantity so and so. The rule says $W=S$ whenever $H=I$ and $K=IS$, with positive parameters.",
+      "For any positive $H,K$, choose $I=H$ and $S=K/H$. The rule then gives $W=K/H$. This uses the arbitrary positive parameters in the given rule; one isolated numerical observation would not determine a general relation.",
+      "In the requested situation, $H=S$ and $K=S^2$. Thus $W=S$ and $HW=S^2=K$, namely so and so. The additional value $I=2$ does not change that product."
+    ],
+    "keyIdeas": [
+      "Replace distracting word names with universally varying positive parameters."
+    ],
+    "commonMistakes": [
+      "Read whosis=so in the target condition; do not interchange the similarly named variables."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Renaming the variables removes the linguistic distraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p15",
+    "problemId": "amc12-predecessor-1975-p15",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "The period is $1,3,2,-1,-3,-2$, whose sum is zero.",
+    "detailedSteps": [
+      "The subtraction recurrence gives the six terms $1,3,2,-1,-3,-2$, followed by $1,3$. The same consecutive pair as at the start forces the entire pattern to repeat.",
+      "Since $100=16\\cdot6+4$, sixteen full periods contribute zero. The remaining sum is $1+3+2-1=5$."
+    ],
+    "keyIdeas": [
+      "A recurrence repeats once its pair of consecutive values repeats."
+    ],
+    "commonMistakes": [
+      "Check a repeated consecutive pair before claiming a recurrence is periodic."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The period sum makes the long total short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p16",
+    "problemId": "amc12-predecessor-1975-p16",
+    "finalAnswer": "$\\boxed{\\frac83}$ (choice C)",
+    "shortExplanation": "The ratio must be $1/3$ and the first term $2$.",
+    "detailedSteps": [
+      "Write the first term as a positive integer $A$ and the ratio as $1/k$ for a positive integer $k$. Finite sum $3$ requires $k>1$.",
+      "The sum formula gives $A/(1-1/k)=3$, so $A=3-3/k$. Since $A$ is integral, $k$ divides $3$; with $k>1$, this forces $k=3$ and $A=2$.",
+      "The first two terms sum to $2+2/3=8/3$."
+    ],
+    "keyIdeas": [
+      "Convergence and integrality restrict a geometric-series ratio."
+    ],
+    "commonMistakes": [
+      "A ratio of one would make the series divergent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both convergence and the integer first term matter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p17",
+    "problemId": "amc12-predecessor-1975-p17",
+    "finalAnswer": "$\\boxed{16}$ (choice D)",
+    "shortExplanation": "There are $8+15+9=32$ trips, two per working day.",
+    "detailedSteps": [
+      "The bus counts total $8+15=23$ trips, and the train count contributes $9$ more. Therefore $2x=32$ and $x=16$.",
+      "The implications prohibit a train trip in both directions on one day. A consistent schedule has eight train-then-bus days, one bus-then-train day, and seven bus-both-ways days. It realizes every supplied count."
+    ],
+    "keyIdeas": [
+      "Count every morning and afternoon trip once."
+    ],
+    "commonMistakes": [
+      "Count trips rather than only the days on which a mode is used."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An attaining schedule verifies the implications as well as the total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p18",
+    "problemId": "amc12-predecessor-1975-p18",
+    "finalAnswer": "$\\boxed{\\frac1{300}}$ (choice D)",
+    "shortExplanation": "The three eligible numbers are $128,256,512$ out of $900$ three-digit integers.",
+    "detailedSteps": [
+      "The sample space is $100$ through $999$, containing $900$ equally likely integers. An integral $\\log_2N$ means $N=2^k$.",
+      "The three-digit powers are $2^7=128$, $2^8=256$, and $2^9=512$. The adjacent powers $64$ and $1024$ lie outside the sample space.",
+      "The probability is $3/900=1/300$."
+    ],
+    "keyIdeas": [
+      "An integer binary logarithm characterizes powers of two."
+    ],
+    "commonMistakes": [
+      "Count the inclusive sample space correctly: there are nine hundred three-digit positive integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Bounding the exponent ensures the list is complete.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p19",
+    "problemId": "amc12-predecessor-1975-p19",
+    "finalAnswer": "$\\boxed{x>0,\\ x\\ne1}$ (choice D)",
+    "shortExplanation": "The product telescopes for every admissible base $x$.",
+    "detailedSteps": [
+      "The logarithm with base $x$ requires $x>0$ and $x\\ne1$. For such $x$, $(\\log_3x)(\\log_x5)=(\\ln x/\\ln3)(\\ln5/\\ln x)=\\ln5/\\ln3$.",
+      "This is exactly $\\log_35$, so every number in that domain satisfies the equation."
+    ],
+    "keyIdeas": [
+      "Use change of base and retain the logarithm-base restriction."
+    ],
+    "commonMistakes": [
+      "The base x=1 is undefined even though x is positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check the domain before canceling logarithms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p20",
+    "problemId": "amc12-predecessor-1975-p20",
+    "finalAnswer": "$\\boxed{2\\sqrt{31}}$ (choice B)",
+    "shortExplanation": "The median identity gives $BC^2=2(4^2)+2(8^2)-4(3^2)=124$.",
+    "detailedSteps": [
+      "For a median from $A$, Apollonius\\'s identity is $4AM^2=2AB^2+2AC^2-BC^2$.",
+      "Substitution yields $BC^2=32+128-36=124$, so the positive length is $2\\sqrt{31}$.",
+      "This length is compatible with a genuine triangle: $8-4<2\\sqrt{31}<8+4$. An explicit coordinate witness in the calculation file verifies all three prescribed lengths."
+    ],
+    "keyIdeas": [
+      "Apply the median length identity with the actual side lengths."
+    ],
+    "commonMistakes": [
+      "The median is not assumed to be an altitude."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The median identity avoids a false right-triangle assumption.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p21",
+    "problemId": "amc12-predecessor-1975-p21",
+    "finalAnswer": "$\\boxed{\\text{I, II and III only}}$ (choice D)",
+    "shortExplanation": "The first three statements follow by substitution, while strict increase does not.",
+    "detailedSteps": [
+      "Setting $a=b=0$ gives $f(0)^2=f(0)$. Positivity excludes zero, so $f(0)=1$.",
+      "Setting $b=-a$ gives $f(a)f(-a)=1$, proving II. Repeated addition gives $f(3a)=f(a)^3$, proving the cube-root identity III.",
+      "The function $f(x)=1$ for every real $x$ satisfies every hypothesis but is not strictly increasing. Thus IV is not forced."
+    ],
+    "keyIdeas": [
+      "Extract identities from a positive multiplicative functional equation."
+    ],
+    "commonMistakes": [
+      "No continuity or monotonicity hypothesis is supplied."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Positivity permits reciprocal and cube-root operations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p22",
+    "problemId": "amc12-predecessor-1975-p22",
+    "finalAnswer": "$\\boxed{\\text{I, II, III and IV}}$ (choice E)",
+    "shortExplanation": "The roots must be $1,2$, with $p=3$ and $q=2$.",
+    "detailedSteps": [
+      "Let the distinct positive integer roots be $u<v$. Vieta gives $uv=q$ and $u+v=p$. Since $q$ is prime, $u=1$ and $v=q$.",
+      "If $q$ were odd, then $p=q+1$ would be an even number greater than $2$, contradicting primality. Therefore $q=2$ and $p=3$.",
+      "The root difference is $1$, one root is prime, $p^2-q=7$ is prime, and $p+q=5$ is prime. All four statements hold."
+    ],
+    "keyIdeas": [
+      "A prime product and a prime sum severely restrict integer roots."
+    ],
+    "commonMistakes": [
+      "The prime product alone does not finish the problem; also use the prime sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity makes the classification immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p23",
+    "problemId": "amc12-predecessor-1975-p23",
+    "finalAnswer": "$\\boxed{\\frac23}$ (choice C)",
+    "shortExplanation": "In a unit square, $O=(2/3,1/3)$ and the quadrilateral has area $2/3$.",
+    "detailedSteps": [
+      "Set $A=(0,0),B=(1,0),C=(1,1),D=(0,1)$. Then $M=(1/2,0)$ and $N=(1,1/2)$.",
+      "Line $AN$ is $y=x/2$, while $CM$ is $y=2x-1$. Their intersection is $O=(2/3,1/3)$.",
+      "Triangle $AOD$ has base $AD=1$ and height $2/3$, hence area $1/3$. Triangle $OCD$ similarly has area $1/3$. Together they form $AOCD$, giving area ratio $2/3$."
+    ],
+    "keyIdeas": [
+      "Normalize the square and solve two linear equations."
+    ],
+    "commonMistakes": [
+      "Use the requested four vertices in their boundary order."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scaling the square preserves the area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p24",
+    "problemId": "amc12-predecessor-1975-p24",
+    "finalAnswer": "$\\boxed{\\text{all }0^\\circ<\\theta<60^\\circ}$ (choice E)",
+    "shortExplanation": "The second intersection satisfies $EC=AB=AD$ throughout the stated interval.",
+    "detailedSteps": [
+      "Write $c=AB$, $b=AC$, and $a=BC$. The sine rule gives $b/c=\\sin2\\theta/\\sin\\theta=2\\cos\\theta$ and $a/c=\\sin3\\theta/\\sin\\theta=4\\cos^2\\theta-1$.",
+      "Put $C=(0,0),B=(a,0),A=(b\\cos\\theta,b\\sin\\theta)$. The circle centered at $A$ with radius $c$ intersects the horizontal line at $x=a$ and $x=2b\\cos\\theta-a$.",
+      "The latter coordinate is $4c\\cos^2\\theta-c(4\\cos^2\\theta-1)=c>0$. Thus $EC=c$. Also $b=2c\\cos\\theta>c$ for $0^\\circ<\\theta<60^\\circ$, so the circle meets segment $AC$ at $D$ with $AD=c$.",
+      "At $\\theta=45^\\circ$, the two horizontal roots coincide, giving $E=B$, expressly allowed by the source. Below that angle $E$ is on $BC$; above it $E$ is on the permitted extension. Every case gives $EC=AD$."
+    ],
+    "keyIdeas": [
+      "Locate the second circle intersection algebraically, including the tangent limit."
+    ],
+    "commonMistakes": [
+      "Do not exclude the tangent case E=B or the explicitly permitted extension of BC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second-intersection coordinate makes the full domain transparent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p25",
+    "problemId": "amc12-predecessor-1975-p25",
+    "finalAnswer": "$\\boxed{\\text{her son}}$ (choice B)",
+    "shortExplanation": "Only the son can be the worst player; his twin is the daughter and the best player is their uncle.",
+    "detailedSteps": [
+      "A mother cannot be the same age as her birth child. The possible twin pairs among these four are the woman with her brother, or the son with the daughter.",
+      "If the woman were worst, her twin would be her brother. The best player must then be female and distinct from her, hence her daughter, contradicting the equal-age condition. If the brother were worst, his twin would be the woman; the distinct male best player would be her son, again forcing mother and child to have equal ages.",
+      "If the daughter were worst, her twin would be the son, and the best female player would have to be the woman, another impossible equal-age pair.",
+      "If the son is worst, his twin is the daughter, and the distinct male best player can be the woman\\'s brother. This is possible: the woman may be forty, while her twin children and her much younger brother are all twenty. Thus the required worst player is her son."
+    ],
+    "keyIdeas": [
+      "Combine biological twin relations, sexes, and equal-age constraints."
+    ],
+    "commonMistakes": [
+      "An uncle can be the same age as his niece and nephew; generations do not determine ages."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Elimination requires an actual consistent remaining case.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p26",
+    "problemId": "amc12-predecessor-1975-p26",
+    "finalAnswer": "$\\boxed{MN\\parallel BC}$ (choice C)",
+    "shortExplanation": "The constructions remove the same fraction from sides $AB$ and $AC$.",
+    "detailedSteps": [
+      "Let $u=AB,v=AC,a=BC$. The angle-bisector theorem gives $BD=au/(u+v)$ and $CD=av/(u+v)$.",
+      "The circle definitions give $BM=BD$ and $CN=CD$. Therefore $AM/u=1-a/(u+v)=AN/v$.",
+      "The triangle inequality makes this common fraction positive and less than one, so $M,N$ lie properly on the two sides. The converse of the basic proportionality theorem now gives $MN\\parallel BC$."
+    ],
+    "keyIdeas": [
+      "Use the angle-bisector theorem to compare corresponding side fractions."
+    ],
+    "commonMistakes": [
+      "Compare fractions of the two sides, rather than assuming their removed lengths are equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The angle-bisector ratio supplies exactly the needed proportion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p27",
+    "problemId": "amc12-predecessor-1975-p27",
+    "finalAnswer": "$\\boxed{4\\ \\text{(none of the listed numbers)}}$ (choice E)",
+    "shortExplanation": "Vieta gives the sum of squares as $-1$, and the cubic then gives the sum of cubes as $4$.",
+    "detailedSteps": [
+      "The root sum is $p+q+r=1$ and the pair-product sum is $pq+pr+qr=1$. Thus $p^2+q^2+r^2=1^2-2=-1$.",
+      "Each root $t$ satisfies $t^3=t^2-t+2$. Summing over the three roots yields $p^3+q^3+r^3=-1-1+6=4$.",
+      "This is none of the four numerical choices, so select E. The argument also applies to nonreal roots; the source does not require them all to be real."
+    ],
+    "keyIdeas": [
+      "Use root power sums rather than solving the cubic."
+    ],
+    "commonMistakes": [
+      "Do not assume that every root of a real cubic is real."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Power sums avoid unnecessary cubic formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p28",
+    "problemId": "amc12-predecessor-1975-p28",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice A)",
+    "shortExplanation": "The midpoint condition gives $EG/GF=(AE/AC)/(AF/AB)=3/2$.",
+    "detailedSteps": [
+      "Use the primary published diagram, where $G$ is the intersection of $EF$ and $AM$. The LIVE reprint\\'s G label is shifted toward $AB$; the statement itself still specifies the intersection.",
+      "Take $A$ as the vector origin and put $AF=t>0$. Then $F=(t/12)B$ and $E=(2t/16)C=(t/8)C$. Let $f=t/12$ and $e=t/8$.",
+      "Write $G=(1-\\lambda)F+\\lambda E$. Because $G$ lies on the median from $A$ to $(B+C)/2$, its coefficients of $B$ and $C$ are equal. Hence $(1-\\lambda)f=\\lambda e$.",
+      "Therefore $EG/GF=(1-\\lambda)/\\lambda=e/f=(t/8)/(t/12)=3/2$. The positive lengths and defined lines give a nondegenerate intersection; the ratio is independent of the triangle\\'s shape."
+    ],
+    "keyIdeas": [
+      "Write the intersection point in two affine coordinate systems."
+    ],
+    "commonMistakes": [
+      "The side lengths differ, so AE=2AF does not mean the side fractions have ratio two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The median imposes equality of two affine coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p29",
+    "problemId": "amc12-predecessor-1975-p29",
+    "finalAnswer": "$\\boxed{970}$ (choice C)",
+    "shortExplanation": "The conjugate sixth powers sum to $970$, and the smaller one lies strictly between $0$ and $1$.",
+    "detailedSteps": [
+      "Since $(\\sqrt3\\pm\\sqrt2)^2=5\\pm2\\sqrt6$, cubing gives $(\\sqrt3\\pm\\sqrt2)^6=485\\pm198\\sqrt6$. Their sum is $970$.",
+      "The number $\\sqrt3-\\sqrt2$ lies in $(0,1)$, so its sixth power $\\varepsilon$ is also in $(0,1)$.",
+      "The requested power is $970-\\varepsilon$, strictly between $969$ and $970$. Its smallest strictly larger integer is $970$."
+    ],
+    "keyIdeas": [
+      "Add conjugate radical expressions to obtain a nearby integer."
+    ],
+    "commonMistakes": [
+      "A rounded decimal approximation does not prove the strict integer bounds."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The conjugate controls the ceiling without numerical uncertainty.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12-predecessor-1975-p30",
+    "problemId": "amc12-predecessor-1975-p30",
+    "finalAnswer": "$\\boxed{\\frac12}$ (choice B)",
+    "shortExplanation": "For $c=\\cos36^\\circ$, the angle identities give $\\cos72^\\circ=c-1/2$.",
+    "detailedSteps": [
+      "Because $108^\\circ=180^\\circ-72^\\circ$, we have $\\cos108^\\circ=-\\cos72^\\circ$. The triple- and double-angle identities yield $4c^3-3c=-(2c^2-1)$.",
+      "The equation factors as $(c+1)(4c^2-2c-1)=0$. Since $c>0$, $4c^2=2c+1$.",
+      "Therefore $\\cos72^\\circ=2c^2-1=c-1/2$, and the difference is $1/2$."
+    ],
+    "keyIdeas": [
+      "Relate the double and triple angles for thirty-six degrees."
+    ],
+    "commonMistakes": [
+      "Use the sign of the obtuse triple angle correctly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No memorized golden-ratio value is required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

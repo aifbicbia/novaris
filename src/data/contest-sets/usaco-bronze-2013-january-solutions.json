@@ -1,0 +1,93 @@
+[
+  {
+    "id": "solution-usaco-bronze-2013-january-p1",
+    "problemId": "usaco-bronze-2013-january-p1",
+    "finalAnswer": "Write 0 for unchanged visibility, the smallest successful fence index, or -1, to mirrors.out.",
+    "shortExplanation": "Test the unchanged layout and then each single toggle in input order. Follow nearest ray events and reject a repeated fence/heading state.",
+    "detailedSteps": [
+      "The initial gaze points east from the house. For a fixed layout, find the nearest fence or barn strictly ahead on the current row or column. Points behind the gaze do not count. Reaching the barn succeeds; finding no event means the ray escapes.",
+      "At a fence, reflect according to its slash or backslash orientation and continue from its centre. The short diagonal-centre model preserves horizontal and vertical gaze directions.",
+      "Record both the fence index and incoming direction. Repeating that state in the same layout repeats the whole future, so the barn cannot be reached later. A second visit from another direction is a different state.",
+      "Check the unchanged layout first and output 0 if it succeeds. Otherwise try toggles in original input-index order. The first success is the required smallest index; output -1 only after all permitted toggles fail.",
+      "Each layout has at most $4N$ incoming fence states. Each next-event search scans all fences and the barn, so a layout takes $O(N^2)$ time. Trying all $N+1$ layouts takes $O(N^3)$ time and $O(N)$ memory.",
+      "An internal optical cycle can be reachable from the house in this problem. Keep the cycle check; do not assume the starting gaze is an outside boundary entry into a rectangular field.",
+      "Use mirrors.in and mirrors.out. Preserve the input fence indices and write one integer. The coordinate differences and state indices fit the actual bounds; the code uses long long distances for clarity.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <limits>\n#include <vector>\nusing namespace std;\nstruct Fence { int x, y; char slope; };\nvoid solve(istream& in, ostream& out) {\n    int n, a, b; in >> n >> a >> b;\n    vector<Fence> fences(n);\n    for (Fence& f : fences) in >> f.x >> f.y >> f.slope;\n    const int slash[4] = {1, 0, 3, 2};\n    const int backslash[4] = {3, 2, 1, 0};\n    // Headings: east, north, west, south.\n    auto reaches = [&](int toggled) {\n        if (a == 0 && b == 0) return true;\n        int x = 0, y = 0, direction = 0;\n        vector<unsigned char> seen(4 * n, 0);\n        while (true) {\n            int next = -1;\n            long long closest = numeric_limits<long long>::max();\n            for (int i = 0; i <= n; ++i) {\n                int px = i == n ? a : fences[i].x;\n                int py = i == n ? b : fences[i].y;\n                long long dx = (long long)px - x, dy = (long long)py - y;\n                long long distance = -1;\n                if (direction == 0 && dy == 0 && dx > 0) distance = dx;\n                if (direction == 1 && dx == 0 && dy > 0) distance = dy;\n                if (direction == 2 && dy == 0 && dx < 0) distance = -dx;\n                if (direction == 3 && dx == 0 && dy < 0) distance = -dy;\n                if (distance > 0 && distance < closest) {\n                    closest = distance; next = i;\n                }\n            }\n            if (next == -1) return false;\n            if (next == n) return true;\n            int state = 4 * next + direction;\n            if (seen[state]) return false;\n            seen[state] = 1;\n            bool isSlash = fences[next].slope == '/';\n            if (next == toggled) isSlash = !isSlash;\n            x = fences[next].x; y = fences[next].y;\n            direction = isSlash ? slash[direction] : backslash[direction];\n        }\n    };\n    if (reaches(-1)) { out << 0 << '\\n'; return; }\n    for (int i = 0; i < n; ++i) {\n        if (reaches(i)) { out << i + 1 << '\\n'; return; }\n    }\n    out << -1 << '\\n';\n}\nint main() {\n    ifstream in(\"mirrors.in\"); ofstream out(\"mirrors.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The next event must be strictly ahead and nearest.",
+      "Repeated incoming states prove a fixed-layout cycle.",
+      "Original input order gives the smallest successful toggle."
+    ],
+    "commonMistakes": [
+      "Ignoring a barn before the next fence.",
+      "Rejecting a repeated fence without checking direction.",
+      "Returning a successful toggle before testing unchanged visibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Correct simulation needs nearest-event order, a direction-aware cycle argument and the smallest input-index toggle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2013-january-p2",
+    "problemId": "usaco-bronze-2013-january-p2",
+    "finalAnswer": "Write the total length painted at least twice to paint.out.",
+    "shortExplanation": "Convert each walk interval to endpoint changes. Sweep the disjoint gaps between sorted coordinates and add only those covered at least twice.",
+    "detailedSteps": [
+      "Convert each move from p to q into an interval between their smaller and larger coordinates. Add a +1 event at its left endpoint and a -1 event at its right endpoint. Moving left paints the same kind of interval as moving right.",
+      "Sort all endpoint events. Between consecutive distinct coordinates, the coverage count is constant because no move begins or ends inside that gap.",
+      "Before applying the changes at coordinate x, add the preceding gap length only if the old coverage count is at least two. Then combine all changes at x. Equal endpoints must be grouped together.",
+      "Every positive-length twice-painted segment belongs to exactly one gap, and every counted gap has at least two covering moves. Endpoints have zero length, so the half-open event convention changes no area.",
+      "There are $2N$ events. Sorting and sweeping take $O(N\\log N)$ time and $O(N)$ memory. Do not iterate once per travelled unit when coordinates can be large.",
+      "The bound concerns distance from the origin throughout the walk, not an individually printed movement-length limit. All covered points lie in $[-10^9,10^9]$, so the answer is at most $2\\cdot10^9$. The code uses long long for positions, differences and the sum.",
+      "Use paint.in and paint.out. The current original asks for at least two coats; counting a once-painted span would solve a different question. A zero-length interval contributes no length.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    vector<pair<long long, int> > events;\n    events.reserve(2 * n);\n    long long position = 0;\n    for (int i = 0; i < n; ++i) {\n        long long distance; char direction; in >> distance >> direction;\n        long long next = position + (direction == 'R' ? distance : -distance);\n        events.push_back(make_pair(min(position, next), 1));\n        events.push_back(make_pair(max(position, next), -1));\n        position = next;\n    }\n    sort(events.begin(), events.end());\n    long long previous = events[0].first, answer = 0;\n    int coats = 0;\n    for (size_t i = 0; i < events.size();) {\n        long long coordinate = events[i].first;\n        if (coats >= 2) answer += coordinate - previous;\n        int change = 0;\n        while (i < events.size() && events[i].first == coordinate) {\n            change += events[i].second; ++i;\n        }\n        coats += change;\n        previous = coordinate;\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ifstream in(\"paint.in\"); ofstream out(\"paint.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Coverage is constant between endpoint coordinates.",
+      "Apply the old count to the preceding gap.",
+      "The requested threshold is two coats."
+    ],
+    "commonMistakes": [
+      "Counting all painted length instead of twice-painted length.",
+      "Applying an endpoint change before counting its preceding gap.",
+      "Scanning a billion coordinates rather than endpoint gaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main step is replacing a long walk with coverage changes and handling coincident endpoints correctly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2013-january-p3",
+    "problemId": "usaco-bronze-2013-january-p3",
+    "finalAnswer": "Write the largest consistent initial statement count to truth.out.",
+    "shortExplanation": "Translate each utterance into an equal-or-opposite type relation. A parity forest detects the first prefix that has no valid assignment.",
+    "detailedSteps": [
+      "Let a cow's bit be one for truth and zero for lies. A statement must be true exactly when its speaker's bit is one. A T claim therefore requires equal speaker/target bits, while an L claim requires opposite bits.",
+      "Maintain a parent forest with each edge storing the XOR difference between a cow and its parent. Finding a root accumulates those edge differences; path compression preserves the complete relation to the root.",
+      "For roots a and b, let the accumulated differences from x and y be $p_x$ and $p_y$. A required relation $d$ needs root-edge difference $p_x\\oplus p_y\\oplus d$. Attach the smaller component under the larger with exactly that difference.",
+      "When both cows already share a root, their existing relation is fixed. Accept the statement only if it equals the new required relation. Different components can always be joined because their root truth values are still free.",
+      "By induction the forest represents exactly the processed relations and admits an assignment whenever no mismatch has occurred. Once a prefix is contradictory, later statements cannot repair it. Output one less than the first contradictory statement index, or all M if none fails.",
+      "Repeated pairs and reversed speaker/target roles are allowed. No per-type count is specified in the output assignment requirement, so do not invent a required majority or number of truth tellers.",
+      "Union by size gives depth at most $\\lfloor\\log_2 N\\rfloor$, and compression only shortens paths. A sufficient bound is $O(N+M\\log N)$ time and $O(N+M)$ space, including the actual stored statement vector.",
+      "Use truth.in and truth.out. The code reads the whole statement list before processing, even when a contradiction is early. Return the exact feasible prefix count, not the number of components.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <numeric>\n#include <vector>\nusing namespace std;\nstruct Statement { int x, y, different; };\nstruct ParityGroups {\n    vector<int> parent, size, parity;\n    explicit ParityGroups(int n) : parent(n + 1), size(n + 1, 1), parity(n + 1, 0) {\n        iota(parent.begin(), parent.end(), 0);\n    }\n    int root(int x) {\n        if (parent[x] == x) return x;\n        int oldParent = parent[x];\n        parent[x] = root(oldParent);\n        parity[x] ^= parity[oldParent];\n        return parent[x];\n    }\n    bool add(int x, int y, int different) {\n        int a = root(x), b = root(y);\n        int required = parity[x] ^ parity[y] ^ different;\n        if (a == b) return required == 0;\n        if (size[a] > size[b]) { int temp = a; a = b; b = temp; }\n        parent[a] = b;\n        parity[a] = required;\n        size[b] += size[a];\n        return true;\n    }\n};\nvoid solve(istream& in, ostream& out) {\n    int n, m; in >> n >> m;\n    vector<Statement> statements(m);\n    for (Statement& s : statements) {\n        char claim; in >> s.x >> s.y >> claim;\n        s.different = claim == 'L';\n    }\n    ParityGroups groups(n);\n    for (int i = 0; i < m; ++i) {\n        const Statement& s = statements[i];\n        if (!groups.add(s.x, s.y, s.different)) {\n            out << i << '\\n'; return;\n        }\n    }\n    out << m << '\\n';\n}\nint main() {\n    ifstream in(\"truth.in\"); ofstream out(\"truth.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "The speaker's truth type controls whether the utterance is true.",
+      "Parent-edge parity preserves relative types.",
+      "Prefix inconsistency is monotone."
+    ],
+    "commonMistakes": [
+      "Treating every claim as an objectively true statement.",
+      "Discarding parity when compressing a parent path.",
+      "Skipping repeated-pair contradictions or later input records."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Derive the relation from liar semantics, preserve path parity and return the first impossible prefix.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

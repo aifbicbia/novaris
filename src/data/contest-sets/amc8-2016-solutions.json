@@ -1,0 +1,774 @@
+[
+  {
+    "id": "solution-amc8-2016-p1",
+    "problemId": "amc8-2016-p1",
+    "finalAnswer": "$\\boxed{\\text{C }(665)}$",
+    "shortExplanation": "**Idea:** Convert hours to minutes, then add the extra minutes.",
+    "detailedSteps": [
+      "$11$ hours equals",
+      "[\n11\\cdot 60=660\n]",
+      "minutes. Including the extra $5$ minutes gives",
+      "[\n660+5=665.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(665)}$)"
+    ],
+    "keyIdeas": [
+      "Unit conversion",
+      "Hours to minutes"
+    ],
+    "commonMistakes": [
+      "Do not write $1105$ by simply joining the hour and minute numbers.",
+      "Remember that one hour is $60$ minutes, not $100$ minutes."
+    ],
+    "alternativeMethods": [
+      "Compute $10$ hours as $600$ minutes and add another $65$ minutes."
+    ],
+    "difficultyNotes": "A direct warmup about converting time units.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p2",
+    "problemId": "amc8-2016-p2",
+    "finalAnswer": "$\\boxed{\\text{A }(12)}$",
+    "shortExplanation": "**Idea:** Use $AM$ as the base and the horizontal distance to $C$ as the height.",
+    "detailedSteps": [
+      "Since $M$ is the midpoint of $AD=8$,",
+      "[\nAM=4.\n]",
+      "The distance from $C$ to the vertical line $AM$ is the width of the rectangle:",
+      "[\n6.\n]",
+      "Thus",
+      "[\n[AMC]=\\frac12\\cdot 4\\cdot 6=12.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Triangle area",
+      "Choosing a convenient base"
+    ],
+    "commonMistakes": [
+      "Do not use the full side $AD=8$ as the base of triangle $AMC$.",
+      "The height to base $AM$ is horizontal, not the slanted segment $MC$."
+    ],
+    "alternativeMethods": [
+      "Place the points at $A=(0,0)$, $M=(0,4)$, and $C=(6,8)$ and use coordinate area."
+    ],
+    "difficultyNotes": "The diagram looks busy, but one base-height pair is immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p3",
+    "problemId": "amc8-2016-p3",
+    "finalAnswer": "$\\boxed{\\text{A }(40)}$",
+    "shortExplanation": "**Idea:** The total score must be $4\\cdot70$.",
+    "detailedSteps": [
+      "The total of all four scores is",
+      "[\n4\\cdot70=280.\n]",
+      "The known three scores sum to",
+      "[\n70+80+90=240.\n]",
+      "So the remaining score is",
+      "[\n280-240=40.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(40)}$)"
+    ],
+    "keyIdeas": [
+      "Average",
+      "Total equals average times count"
+    ],
+    "commonMistakes": [
+      "Do not average the three given scores; the average is for all four students.",
+      "Use the required total before subtracting the known scores."
+    ],
+    "alternativeMethods": [
+      "The scores $80$ and $90$ are $10$ and $20$ above $70$, so the missing score must be $30$ below $70$."
+    ],
+    "difficultyNotes": "A standard average problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p4",
+    "problemId": "amc8-2016-p4",
+    "finalAnswer": "$\\boxed{\\text{B }(10)}$",
+    "shortExplanation": "**Idea:** Compare the number of minutes per mile in each situation.",
+    "detailedSteps": [
+      "As a boy, Cheenu ran $15$ miles in",
+      "[\n3\\text{ hours }30\\text{ minutes}=210\\text{ minutes}.\n]",
+      "His old pace was",
+      "[\n\\frac{210}{15}=14\n]",
+      "minutes per mile. Now he walks",
+      "[\n\\frac{4\\cdot60}{10}=24\n]",
+      "minutes per mile. The difference is",
+      "[\n24-14=10.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(10)}$)"
+    ],
+    "keyIdeas": [
+      "Unit rates",
+      "Minutes per mile"
+    ],
+    "commonMistakes": [
+      "Compare minutes per mile, not miles per hour.",
+      "Convert $3$ hours $30$ minutes to $210$ minutes."
+    ],
+    "alternativeMethods": [
+      "Find speeds first, then convert back to time per mile; the unit-rate method is shorter."
+    ],
+    "difficultyNotes": "The arithmetic is light, but the units must stay consistent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p5",
+    "problemId": "amc8-2016-p5",
+    "finalAnswer": "$\\boxed{\\text{E }(7)}$",
+    "shortExplanation": "**Idea:** The mod $10$ condition gives the units digit, and the mod $9$ condition fixes the tens digit.",
+    "detailedSteps": [
+      "Since $N$ leaves remainder $3$ when divided by $10$, $N$ has units digit $3$.",
+      "Write $N=10t+3$, where $t$ is the tens digit. Modulo $9$,",
+      "[\n10t+3\\equiv t+3\\equiv 1\\pmod 9.\n]",
+      "So",
+      "[\nt+2\\equiv0\\pmod9.\n]",
+      "The only digit $t$ that works is $7$, so $N=73$.",
+      "Finally,",
+      "[\n73=6\\cdot11+7.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Remainders",
+      "Digit arithmetic",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "The remainder modulo $10$ tells the units digit, not the whole number.",
+      "Check that the tens digit is a single digit."
+    ],
+    "alternativeMethods": [
+      "List the two-digit numbers ending in $3$: $13,23,33,43,53,63,73,83,93$, then find the one that is $1$ mod $9$."
+    ],
+    "difficultyNotes": "A clean remainder problem with one digit constraint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p6",
+    "problemId": "amc8-2016-p6",
+    "finalAnswer": "$\\boxed{\\text{B }(4)}$",
+    "shortExplanation": "**Idea:** The median of $19$ data points is the $10$th value after sorting.",
+    "detailedSteps": [
+      "The graph shows these frequencies:",
+      "[\n3:7,\\quad 4:3,\\quad 5:1,\\quad 6:4,\\quad 7:4.\n]",
+      "There are $19$ names, so the median is the",
+      "[\n\\frac{19+1}{2}=10\\text{th}\n]",
+      "value. The first $7$ values are $3$, and the next $3$ values are $4$.",
+      "Thus the $10$th value is $4$.",
+      "Final Answer: ($\\boxed{\\text{B }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Median",
+      "Reading a bar graph"
+    ],
+    "commonMistakes": [
+      "Do not average the bar heights.",
+      "For $19$ values, use the $10$th sorted value."
+    ],
+    "alternativeMethods": [
+      "Write the sorted list in grouped form: seven $3$s, three $4$s, one $5$, four $6$s, four $7$s."
+    ],
+    "difficultyNotes": "The graph carries the whole problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p7",
+    "problemId": "amc8-2016-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(2^{2017})}$",
+    "shortExplanation": "**Idea:** A positive integer power is a square exactly when each prime exponent is even.",
+    "detailedSteps": [
+      "Check the exponent structure of each choice.",
+      "$1^{2016}=1$ is a square.",
+      "$2^{2017}$ has an odd exponent, so it is not a square.",
+      "$3^{2018}$ and $5^{2020}$ have even exponents, so they are squares.",
+      "Also",
+      "[\n4^{2019}=(2^2)^{2019}=2^{4038},\n]",
+      "which is a square because $4038$ is even.",
+      "Final Answer: ($\\boxed{\\text{B }(2^{2017})}$)"
+    ],
+    "keyIdeas": [
+      "Perfect squares",
+      "Prime exponents"
+    ],
+    "commonMistakes": [
+      "Do not assume an odd outer exponent always prevents a square; $4^{2019}$ has an even prime exponent.",
+      "Handle $1^{2016}$ separately: it equals $1$."
+    ],
+    "alternativeMethods": [
+      "A number of the form $n^k$ is automatically a square if $k$ is even, and $4^{2019}$ is a square because $4$ is already a square."
+    ],
+    "difficultyNotes": "The trick is choice D, where the base is already square.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p8",
+    "problemId": "amc8-2016-p8",
+    "finalAnswer": "$\\boxed{\\text{C }(50)}$",
+    "shortExplanation": "**Idea:** Pair consecutive terms of the alternating sum.",
+    "detailedSteps": [
+      "Group the terms in pairs:",
+      "[\n(100-98)+(96-94)+\\cdots+(4-2).\n]",
+      "Each pair equals $2$.",
+      "The even numbers from $2$ to $100$ give $50$ terms, so there are $25$ pairs.",
+      "Therefore the value is",
+      "[\n25\\cdot2=50.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(50)}$)"
+    ],
+    "keyIdeas": [
+      "Pairing",
+      "Alternating sums"
+    ],
+    "commonMistakes": [
+      "Do not count only from $100$ to $90$ and miss the continuing pattern.",
+      "There are $50$ even numbers from $2$ through $100$."
+    ],
+    "alternativeMethods": [
+      "Write the positive terms and negative terms separately, then subtract their sums."
+    ],
+    "difficultyNotes": "Pairing keeps the long expression short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p9",
+    "problemId": "amc8-2016-p9",
+    "finalAnswer": "$\\boxed{\\text{B }(12)}$",
+    "shortExplanation": "**Idea:** Factor $2016$ and add each distinct prime divisor once.",
+    "detailedSteps": [
+      "Factor the number:",
+      "[\n2016=2^5\\cdot3^2\\cdot7.\n]",
+      "The distinct prime divisors are $2$, $3$, and $7$.",
+      "Their sum is",
+      "[\n2+3+7=12.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Distinct prime factors"
+    ],
+    "commonMistakes": [
+      "Do not add repeated prime factors such as five copies of $2$.",
+      "The word distinct means each prime is counted once."
+    ],
+    "alternativeMethods": [
+      "Divide successively by $2$, then by $3$, and notice the remaining factor is $7$."
+    ],
+    "difficultyNotes": "A factorization problem where 'distinct' matters.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p10",
+    "problemId": "amc8-2016-p10",
+    "finalAnswer": "$\\boxed{\\text{D }(10)}$",
+    "shortExplanation": "**Idea:** Evaluate the custom operation from the inside out.",
+    "detailedSteps": [
+      "By definition,",
+      "[\n5*x=3\\cdot5-x=15-x.\n]",
+      "Then",
+      "[\n2*(5*x)=2*(15-x)=3\\cdot2-(15-x)=6-15+x=x-9.\n]",
+      "The equation becomes",
+      "[\nx-9=1,\n]",
+      "so",
+      "[\nx=10.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(10)}$)"
+    ],
+    "keyIdeas": [
+      "Defined operations",
+      "Substitution"
+    ],
+    "commonMistakes": [
+      "The operation is not multiplication.",
+      "Keep the parentheses around $15-x$ when substituting."
+    ],
+    "alternativeMethods": [
+      "Work backward: if $2*y=1$, then $6-y=1$, so $y=5$; then $5*x=5$ gives $15-x=5$."
+    ],
+    "difficultyNotes": "The main challenge is respecting the definition twice.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p11",
+    "problemId": "amc8-2016-p11",
+    "finalAnswer": "$\\boxed{\\text{B }(7)}$",
+    "shortExplanation": "**Idea:** A two-digit number and its reverse sum to $11$ times the sum of the digits.",
+    "detailedSteps": [
+      "Let the number be $10a+b$. Its reverse is $10b+a$.",
+      "Their sum is",
+      "[\n(10a+b)+(10b+a)=11(a+b).\n]",
+      "We need",
+      "[\n11(a+b)=132,\n]",
+      "so",
+      "[\na+b=12.\n]",
+      "With $a$ a nonzero digit and $b$ a digit, the possibilities are",
+      "[\n(3,9),(4,8),(5,7),(6,6),(7,5),(8,4),(9,3),\n]",
+      "for $7$ numbers.",
+      "Final Answer: ($\\boxed{\\text{B }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Two-digit numbers",
+      "Digit reversal"
+    ],
+    "commonMistakes": [
+      "The tens digit cannot be $0$.",
+      "Count ordered digit pairs because $39$ and $93$ are different numbers."
+    ],
+    "alternativeMethods": [
+      "List two-digit numbers whose digit sum is $12$ directly."
+    ],
+    "difficultyNotes": "A digit-algebra setup makes the counting quick.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p12",
+    "problemId": "amc8-2016-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{9}{17})}$",
+    "shortExplanation": "**Idea:** Use an equal number of boys and girls that is divisible by both $3$ and $4$.",
+    "detailedSteps": [
+      "Suppose there are $12$ girls and $12$ boys.",
+      "Then the number of girls on the field trip is",
+      "[\n\\frac34\\cdot12=9,\n]",
+      "and the number of boys on the field trip is",
+      "[\n\\frac23\\cdot12=8.\n]",
+      "So the field trip has $9+8=17$ students, of whom $9$ are girls.",
+      "The desired fraction is",
+      "[\n\\frac{9}{17}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac{9}{17}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Choosing a convenient total"
+    ],
+    "commonMistakes": [
+      "The question asks for the fraction among students on the trip, not among all students.",
+      "Use the same starting number of boys and girls."
+    ],
+    "alternativeMethods": [
+      "Let there be $x$ boys and $x$ girls. The fraction is $\\frac{3x/4}{3x/4+2x/3}=\\frac{9}{17}$."
+    ],
+    "difficultyNotes": "Choosing $12$ avoids messy fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p13",
+    "problemId": "amc8-2016-p13",
+    "finalAnswer": "$\\boxed{\\text{D }(\\frac{1}{3})}$",
+    "shortExplanation": "**Idea:** The product is $0$ exactly when one selected number is $0$.",
+    "detailedSteps": [
+      "There are",
+      "[\n\\binom{6}{2}=15\n]",
+      "ways to choose two different numbers from the set.",
+      "For the product to be $0$, one of the numbers must be $0$.",
+      "The other number can be any of the remaining $5$ numbers, so there are $5$ favorable choices.",
+      "Thus the probability is",
+      "[\n\\frac{5}{15}=\\frac13.\n]",
+      "Final Answer: ($\\boxed{\\text{D }\\left(\\frac13\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Zero product"
+    ],
+    "commonMistakes": [
+      "Do not count ordered pairs if using combinations for the total.",
+      "Two different numbers are selected, so $0$ cannot be paired with itself."
+    ],
+    "alternativeMethods": [
+      "Choose the zero first, then choose one of the other five numbers."
+    ],
+    "difficultyNotes": "Short once the zero-product condition is identified.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p14",
+    "problemId": "amc8-2016-p14",
+    "finalAnswer": "$\\boxed{\\text{A }(525)}$",
+    "shortExplanation": "**Idea:** Track gallons of gas instead of time.",
+    "detailedSteps": [
+      "The full tank contains $14$ gallons.",
+      "Driving $350$ miles uses",
+      "[\n\\frac{350}{35}=10\n]",
+      "gallons, leaving $4$ gallons.",
+      "After buying $8$ gallons, Karl has",
+      "[\n4+8=12\n]",
+      "gallons. He arrives with half a tank, which is $7$ gallons, so after buying gas he used",
+      "[\n12-7=5\n]",
+      "more gallons.",
+      "Those $5$ gallons cover",
+      "[\n5\\cdot35=175\n]",
+      "miles. His total distance is",
+      "[\n350+175=525.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(525)}$)"
+    ],
+    "keyIdeas": [
+      "Rate per gallon",
+      "Inventory tracking"
+    ],
+    "commonMistakes": [
+      "Do not forget the gas left after the first $350$ miles.",
+      "Half a tank is $7$ gallons, not $14/2$ miles."
+    ],
+    "alternativeMethods": [
+      "Compute total gallons used for the whole trip: starting $14$ plus bought $8$ minus ending $7$ equals $15$ gallons, so $15\\cdot35=525$ miles."
+    ],
+    "difficultyNotes": "The alternative method is the cleanest if you track total gas used.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p15",
+    "problemId": "amc8-2016-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(32)}$",
+    "shortExplanation": "**Idea:** Factor the difference of fourth powers.",
+    "detailedSteps": [
+      "Use",
+      "[\n13^4-11^4=(13^2-11^2)(13^2+11^2).\n]",
+      "Now",
+      "[\n13^2-11^2=(13-11)(13+11)=2\\cdot24=48,\n]",
+      "and",
+      "[\n13^2+11^2=169+121=290.\n]",
+      "So",
+      "[\n13^4-11^4=48\\cdot290=(2^4\\cdot3)(2\\cdot145)=2^5\\cdot3\\cdot145.\n]",
+      "The largest power of $2$ dividing it is",
+      "[\n2^5=32.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(32)}$)"
+    ],
+    "keyIdeas": [
+      "Difference of powers",
+      "Powers of two"
+    ],
+    "commonMistakes": [
+      "Do not compute the fourth powers directly; factoring is safer.",
+      "The question asks for the largest power of $2$, not the exponent."
+    ],
+    "alternativeMethods": [
+      "Use $a^4-b^4=(a-b)(a+b)(a^2+b^2)$ immediately."
+    ],
+    "difficultyNotes": "A factorization problem that rewards avoiding large arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p16",
+    "problemId": "amc8-2016-p16",
+    "finalAnswer": "$\\boxed{\\text{D }(5)}$",
+    "shortExplanation": "**Idea:** Annie gains on Bonnie at $25\\%$ of Bonnie's speed.",
+    "detailedSteps": [
+      "Let Bonnie's speed be $v$ meters per unit time. Then Annie's speed is $1.25v$.",
+      "Annie gains ground at relative speed",
+      "[\n1.25v-v=0.25v.\n]",
+      "To pass Bonnie, Annie must gain one full lap, or $400$ meters.",
+      "The time needed is",
+      "[\n\\frac{400}{0.25v}=\\frac{1600}{v}.\n]",
+      "In that time Annie runs",
+      "[\n1.25v\\cdot\\frac{1600}{v}=2000\n]",
+      "meters, which is",
+      "[\n\\frac{2000}{400}=5\n]",
+      "laps.",
+      "Final Answer: ($\\boxed{\\text{D }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Relative speed",
+      "Lap catch-up"
+    ],
+    "commonMistakes": [
+      "Do not answer $4$ laps because Bonnie has run $4$ laps; the question asks Annie's laps.",
+      "A $25\\%$ faster runner has speed $1.25v$, not $0.25v$."
+    ],
+    "alternativeMethods": [
+      "After Bonnie runs $4$ laps, Annie runs $5$ laps because their distance ratio is $5:4$."
+    ],
+    "difficultyNotes": "The ratio shortcut is elegant: Annie completes $5$ laps while Bonnie completes $4$.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p17",
+    "problemId": "amc8-2016-p17",
+    "finalAnswer": "$\\boxed{\\text{D }(9990)}$",
+    "shortExplanation": "**Idea:** Count all four-digit passwords and subtract the forbidden ones.",
+    "detailedSteps": [
+      "Repeated digits are allowed, so there are",
+      "[\n10^4=10000\n]",
+      "total four-digit passwords.",
+      "Passwords beginning with $9,1,1$ have the form $911d$, where $d$ can be any digit.",
+      "There are $10$ such forbidden passwords.",
+      "Thus the number allowed is",
+      "[\n10000-10=9990.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(9990)}$)"
+    ],
+    "keyIdeas": [
+      "Complement counting",
+      "Passwords with repetition"
+    ],
+    "commonMistakes": [
+      "A password may begin with $0$, so there are $10$ choices for every digit.",
+      "Only passwords beginning with $911$ are banned; passwords merely containing $911$ later are not excluded."
+    ],
+    "alternativeMethods": [
+      "Count by first three digits: there are $1000$ possible starts, only one forbidden start, and $10$ choices for the last digit."
+    ],
+    "difficultyNotes": "Complement counting avoids casework.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p18",
+    "problemId": "amc8-2016-p18",
+    "finalAnswer": "$\\boxed{\\text{C }(43)}$",
+    "shortExplanation": "**Idea:** Each race eliminates exactly $5$ sprinters.",
+    "detailedSteps": [
+      "To determine one champion from $216$ sprinters, we must eliminate",
+      "[\n216-1=215\n]",
+      "sprinters.",
+      "Each race has $6$ runners and eliminates the $5$ non-winners.",
+      "Therefore the number of races needed is",
+      "[\n\\frac{215}{5}=43.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(43)}$)"
+    ],
+    "keyIdeas": [
+      "Elimination counting",
+      "Tournament logic"
+    ],
+    "commonMistakes": [
+      "Do not divide $216$ by $6$ and stop; winners must race again.",
+      "The champion is never eliminated, so only $215$ eliminations are needed."
+    ],
+    "alternativeMethods": [
+      "Think of each race as reducing the field size by $5$ until only one runner remains."
+    ],
+    "difficultyNotes": "A compact counting idea replaces a round-by-round schedule.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p19",
+    "problemId": "amc8-2016-p19",
+    "finalAnswer": "$\\boxed{\\text{E }(424)}$",
+    "shortExplanation": "**Idea:** The average of $25$ consecutive even integers is the middle term.",
+    "detailedSteps": [
+      "The average of the $25$ integers is",
+      "[\n\\frac{10000}{25}=400.\n]",
+      "With an odd number of consecutive even integers, the average is the middle term.",
+      "There are $12$ terms after the middle term, each $2$ larger than the previous one.",
+      "So the largest term is",
+      "[\n400+12\\cdot2=424.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(424)}$)"
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences",
+      "Average as middle term"
+    ],
+    "commonMistakes": [
+      "The spacing between consecutive even integers is $2$, not $1$.",
+      "With $25$ terms, there are $12$ terms on each side of the middle."
+    ],
+    "alternativeMethods": [
+      "Let the numbers be $x-24,x-22,\\ldots,x,\\ldots,x+24$; their average is $x=400$."
+    ],
+    "difficultyNotes": "A sequence symmetry problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p20",
+    "problemId": "amc8-2016-p20",
+    "finalAnswer": "$\\boxed{\\text{A }(20)}$",
+    "shortExplanation": "**Idea:** Let $b$ carry the shared factor $3$ so $a$ and $c$ can be as small as possible.",
+    "detailedSteps": [
+      "Since",
+      "[\n\\operatorname{lcm}(a,b)=12=2^2\\cdot3\n]",
+      "and",
+      "[\n\\operatorname{lcm}(b,c)=15=3\\cdot5,\n]",
+      "$b$ cannot contain a factor of $2$, because then $\\operatorname{lcm}(b,c)$ would contain $2$.",
+      "To minimize $\\operatorname{lcm}(a,c)$, let $b=3$ carry the common factor $3$.",
+      "Then choose",
+      "[\na=4,\\qquad c=5.\n]",
+      "This gives $\\operatorname{lcm}(a,b)=12$ and $\\operatorname{lcm}(b,c)=15$.",
+      "Finally,",
+      "[\n\\operatorname{lcm}(a,c)=\\operatorname{lcm}(4,5)=20.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(20)}$)"
+    ],
+    "keyIdeas": [
+      "Least common multiple",
+      "Prime factors"
+    ],
+    "commonMistakes": [
+      "Do not assume $a=12$ and $c=15$; those choices are allowed but not minimal.",
+      "Remember that $b$ must work in both LCM conditions."
+    ],
+    "alternativeMethods": [
+      "Use prime exponent tables for $2$, $3$, and $5$ to see which variable must supply each prime power."
+    ],
+    "difficultyNotes": "This is a strong AMC 8 number theory problem because it asks for a minimum under two LCM constraints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p21",
+    "problemId": "amc8-2016-p21",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{2}{5})}$",
+    "shortExplanation": "**Idea:** The reds finish first exactly when the last chip in the full order would be green.",
+    "detailedSteps": [
+      "Imagine all $5$ chips are placed in a random order.",
+      "The process stops when either the third red chip appears or the second green chip appears.",
+      "For all $3$ reds to be drawn first, the last chip in the complete order must be green.",
+      "There are $5$ equally likely positions for the final chip, and $2$ of the $5$ chips are green.",
+      "Therefore the probability is",
+      "[\n\\frac25.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac25\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Random ordering",
+      "Stopping condition"
+    ],
+    "commonMistakes": [
+      "Do not treat each color as equally likely at the stopping time.",
+      "The event depends on which color would appear last in the full random order."
+    ],
+    "alternativeMethods": [
+      "List the $\\binom52=10$ possible positions of the two green chips; in $4$ of them one green is last, giving $4/10=2/5$."
+    ],
+    "difficultyNotes": "The last-chip viewpoint makes the stopping rule much simpler.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p22",
+    "problemId": "amc8-2016-p22",
+    "finalAnswer": "$\\boxed{\\text{C }(3)}$",
+    "shortExplanation": "**Idea:** Assign coordinates and compute the two shaded triangle areas.",
+    "detailedSteps": [
+      "Use coordinates $E=(0,0)$, $F=(3,0)$, $D=(0,4)$, $C=(1,4)$, $B=(2,4)$, and $A=(3,4)$.",
+      "The two diagonals forming the middle intersection meet at",
+      "[\n(1.5,3).\n]",
+      "The left shaded triangle has vertices $(0,0)$, $(1,4)$, and $(1.5,3)$. Its area is",
+      "[\n\\frac12\\left|0(4-3)+1(3-0)+1.5(0-4)\\right|=\\frac32.\n]",
+      "The right shaded triangle is congruent, so its area is also $\\frac32$.",
+      "Total shaded area:",
+      "[\n\\frac32+\\frac32=3.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(3)}$)"
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Triangle area"
+    ],
+    "commonMistakes": [
+      "Do not count the entire crossed central region; only the two shaded wings are included.",
+      "The top side is split into three unit segments."
+    ],
+    "alternativeMethods": [
+      "Use base-height geometry on each wing instead of the coordinate area formula."
+    ],
+    "difficultyNotes": "A good diagram-area problem where coordinates remove ambiguity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p23",
+    "problemId": "amc8-2016-p23",
+    "finalAnswer": "$\\boxed{\\text{C }(120)}$",
+    "shortExplanation": "**Idea:** The two circle centers and either intersection point form an equilateral triangle.",
+    "detailedSteps": [
+      "Let the common radius be $r$. Since each center lies on the other circle,",
+      "[\nAB=r.\n]",
+      "Also $AE=r$ and $BE=r$, so $\\triangle ABE$ is equilateral.",
+      "Place $A=(0,0)$ and $B=(r,0)$. Then the outer line intersections are $C=(-r,0)$ and $D=(2r,0)$, while",
+      "[\nE=\\left(\\frac r2,\\frac{\\sqrt3 r}{2}\\right).\n]",
+      "The vectors from $E$ to $C$ and $D$ are symmetric. Their dot product gives",
+      "[\n\\cos\\angle CED=-\\frac12.\n]",
+      "Thus",
+      "[\n\\angle CED=120^\\circ.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(120)}$)"
+    ],
+    "keyIdeas": [
+      "Congruent circles",
+      "Equilateral triangle",
+      "Angle geometry"
+    ],
+    "commonMistakes": [
+      "Do not confuse $\\angle AEB=60^\\circ$ with the larger angle $\\angle CED$.",
+      "The points $C$ and $D$ are outside the segment $AB$."
+    ],
+    "alternativeMethods": [
+      "At $E$, the ray to $A$ and the ray to $B$ make $60^\\circ$; extending from $A,B$ to $C,D$ opens the angle to $120^\\circ$."
+    ],
+    "difficultyNotes": "The central trap is distinguishing the inner equilateral angle from the outer requested angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p24",
+    "problemId": "amc8-2016-p24",
+    "finalAnswer": "$\\boxed{\\text{A }(1)}$",
+    "shortExplanation": "**Idea:** Use divisibility by $5$, then by $4$, then by $3$.",
+    "detailedSteps": [
+      "Since $QRS$ is divisible by $5$ and the available digits are $1,2,3,4,5$, the last digit of $QRS$ must be",
+      "[\nS=5.\n]",
+      "The number $PQR$ is divisible by $4$, so its last two digits $QR$ must be divisible by $4$.",
+      "Using distinct digits from $1,2,3,4$, the possibilities for $QR$ are",
+      "[\n12,\\quad 24,\\quad 32.\n]",
+      "Now $RST$ is divisible by $3$, so $R+S+T=R+5+T$ must be divisible by $3$.",
+      "If $QR=12$ or $32$, then $R=2$, so $7+T$ must be divisible by $3$; no remaining digit works.",
+      "If $QR=24$, then $R=4$, and $9+T$ must be divisible by $3$, so $T=3$.",
+      "The remaining digit is",
+      "[\nP=1.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(1)}$)"
+    ],
+    "keyIdeas": [
+      "Divisibility rules",
+      "Digit constraints"
+    ],
+    "commonMistakes": [
+      "Divisibility by $4$ depends on the last two digits of $PQR$, namely $QR$.",
+      "Divisibility by $5$ forces $S=5$, not $T=5$."
+    ],
+    "alternativeMethods": [
+      "A short organized table of possible $QR$ values also solves the problem cleanly."
+    ],
+    "difficultyNotes": "The problem rewards applying constraints in the strongest order.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2016-p25",
+    "problemId": "amc8-2016-p25",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{120}{17})}$",
+    "shortExplanation": "**Idea:** The radius equals the perpendicular distance from the semicircle's center to a side of the triangle.",
+    "detailedSteps": [
+      "Place the triangle with base from $(0,0)$ to $(16,0)$ and top vertex $(8,15)$.",
+      "By symmetry, the semicircle's center is $(8,0)$ and its radius is the distance from $(8,0)$ to either slanted side.",
+      "The left side passes through $(0,0)$ and $(8,15)$, so its equation is",
+      "[\n15x-8y=0.\n]",
+      "The distance from $(8,0)$ to this line is",
+      "[\n\\frac{|15\\cdot8-8\\cdot0|}{\\sqrt{15^2+(-8)^2}}=\\frac{120}{\\sqrt{289}}=\\frac{120}{17}.\n]",
+      "Therefore the radius is",
+      "[\n\\frac{120}{17}.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac{120}{17}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Tangency",
+      "Distance from point to line",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "The semicircle is tangent to the slanted sides, so the radius is perpendicular to a side.",
+      "Do not assume the radius is half the base; the semicircle must fit inside the triangle."
+    ],
+    "alternativeMethods": [
+      "Use similar triangles: at height $r$, the triangle's half-width is $8-\\frac{8}{15}r$, and this must equal $r$."
+    ],
+    "difficultyNotes": "The coordinate distance method is concise; similar triangles are also very natural.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

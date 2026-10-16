@@ -1,0 +1,326 @@
+[
+  {
+    "id": "solution-aime-ii-2020-p1",
+    "problemId": "aime-ii-2020-p1",
+    "finalAnswer": "$\\boxed{231}$",
+    "shortExplanation": "There are twenty-one choices for one exponent and eleven for the other.",
+    "detailedSteps": [
+      "The source expression is $m^2n=20^{20}=2^{40}5^{20}$. No other prime can divide either positive integer. Write $m=2^a5^b$.",
+      "The exponents of $n$ are then forced: $n=2^{40-2a}5^{20-2b}$. Nonnegative exponents require $0\\le a\\le20$ and $0\\le b\\le10$. Every such choice gives one distinct ordered pair, so the count is $21\\cdot11=231$."
+    ],
+    "keyIdeas": [
+      "Choose the prime exponents of the squared factor"
+    ],
+    "commonMistakes": [
+      "Reading the exponent expression as the ordinary integer 2020 or forgetting that m is squared."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent bounds, rather than the size of the integers, control the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p2",
+    "problemId": "aime-ii-2020-p2",
+    "finalAnswer": "$\\boxed{171}$",
+    "shortExplanation": "The favorable area is $43/128$.",
+    "detailedSteps": [
+      "For $P=(x,y)$ and $Q=(5/8,3/8)$, the slope threshold has boundary $y=x/2+1/16$. If $x<5/8$, division by the negative horizontal difference reverses the inequality, giving $y\\le x/2+1/16$. If $x>5/8$, it gives $y\\ge x/2+1/16$.",
+      "The favorable areas are $\\int_0^{5/8}(x/2+1/16)\\,dx=35/256$ and $\\int_{5/8}^1(15/16-x/2)\\,dx=51/256$. Their sum is $43/128$, so the reduced numerator and denominator sum to 171.",
+      "The vertical line through Q and the threshold boundary have area zero. Thus the strict inequality in the separately inspected ZIML reprint and the non-strict inequality in LIVE give the same probability."
+    ],
+    "keyIdeas": [
+      "Reverse the slope inequality across the vertical line"
+    ],
+    "commonMistakes": [
+      "Using the same inequality direction on both sides of the vertical line through Q."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A denominator whose sign changes must be handled in two regions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p3",
+    "problemId": "aime-ii-2020-p3",
+    "finalAnswer": "$\\boxed{103}$",
+    "shortExplanation": "The required exponent is $3/100$.",
+    "detailedSteps": [
+      "The two bases are $2^x$ and $2^{x+3}$. Their logarithms to base two are $x$ and $x+3$, while the numerator logarithms are $20\\log_2 3$ and $2020\\log_2 3$.",
+      "The bases require $x\\ne0,-3$. Canceling the nonzero factor $\\log_2 3$ gives $20/x=2020/(x+3)$. Thus $20(x+3)=2020x$, or $x=3/100$. This value meets the base restrictions and is reduced, giving $m+n=103$."
+    ],
+    "keyIdeas": [
+      "Apply change of base to both exponential bases"
+    ],
+    "commonMistakes": [
+      "Treating the base as twice x instead of two raised to x, or overlooking forbidden logarithm bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The very large numerator powers disappear after taking logarithms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p4",
+    "problemId": "aime-ii-2020-p4",
+    "finalAnswer": "$\\boxed{108}$",
+    "shortExplanation": "The rotation is ninety degrees clockwise about $(21,-3)$.",
+    "detailedSteps": [
+      "The vector from A to B is $(0,12)$, while the vector from their images is $(12,0)$. A clockwise rotation strictly between zero and 180 degrees taking the former to the latter is $90^\\circ$. It also sends $(16,0)$ to $(0,-16)$, as required by C.",
+      "The complete map is therefore $(u,v)\\mapsto(v+24,18-u)$. Its rotation center $(h,k)$ is its fixed point, so $h-k=24$ and $h+k=18$. Hence $(h,k)=(21,-3)$ and the requested sum is $90+21-3=108$."
+    ],
+    "keyIdeas": [
+      "Identify the rotation matrix and solve for its fixed point"
+    ],
+    "commonMistakes": [
+      "Solving for a translation vector and reporting it as the center of rotation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Differences determine the rotation; the fixed-point equations determine its center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p5",
+    "problemId": "aime-ii-2020-p5",
+    "finalAnswer": "$\\boxed{151}$",
+    "shortExplanation": "The least integer is $2\\cdot4^{10}-1$.",
+    "detailedSteps": [
+      "For a nonnegative integer s below 31, its base-eight digit sum is at most nine. Indeed, write $s=8a+b$ with $0\\le b\\le7$: for $a\\le2$, $a+b\\le9$, and for $a=3$ with $s\\le30$, $b\\le6$. At $s=31=(37)_8$, the digit sum is ten, whose hexadecimal representation is A.",
+      "Thus every qualifying n must have $f(n)\\ge31$. A base-four integer with at most ten digits has digit sum at most thirty. Among eleven-digit integers, the first with digit sum 31 is $(1\\underbrace{33\\cdots3}_{10\\text{ digits}})_4=2\\cdot4^{10}-1$.",
+      "For completeness, any smaller eleven-digit integer has leading digit one and a smaller ten-digit suffix, so its suffix sum is at most 29; shorter integers also fail. The displayed integer has $f(n)=31$ and $g(n)=10$, so it qualifies. Its remainder modulo 1000 is 151."
+    ],
+    "keyIdeas": [
+      "Reach the first forbidden hexadecimal digit with minimal base-four digits"
+    ],
+    "commonMistakes": [
+      "Minimizing the intermediate digit sum without proving that no smaller original integer qualifies."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "First minimize the necessary digit-sum threshold, then minimize an integer attaining it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p6",
+    "problemId": "aime-ii-2020-p6",
+    "finalAnswer": "$\\boxed{626}$",
+    "shortExplanation": "The requested term is $101/525$.",
+    "detailedSteps": [
+      "Put $x_n=5t_n$. The recurrence becomes $x_n=(x_{n-1}+1)/x_{n-2}$, starting with $x_1=100,x_2=105$. All terms remain positive, so the divisions are valid.",
+      "For arbitrary positive initial values a,b, the next terms are $(b+1)/a$, $(a+b+1)/(ab)$ and $(a+1)/b$. The following two are exactly a and b. Since two consecutive terms determine the future, the sequence has period five.",
+      "Here $x_5=101/105$. Since $2020\\equiv0\\pmod5$, $t_{2020}=t_5=x_5/5=101/525$. The fraction is reduced, giving $p+q=626$."
+    ],
+    "keyIdeas": [
+      "Rescale the recurrence into a five-periodic sequence"
+    ],
+    "commonMistakes": [
+      "Applying the five-period pattern to the unscaled recurrence without tracking the factor five."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A suitable normalization reveals the short cycle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p7",
+    "problemId": "aime-ii-2020-p7",
+    "finalAnswer": "$\\boxed{298}$",
+    "shortExplanation": "The maximum squared radius is $225/73$.",
+    "detailedSteps": [
+      "Place the axis intersection at O, with the two cone axes along the positive x and y directions. Each base is at coordinate minus three and each apex at coordinate five. The first cone satisfies $3x+8\\sqrt{y^2+z^2}\\le15$ and $x\\ge-3$; the second satisfies $3y+8\\sqrt{x^2+z^2}\\le15$ and $y\\ge-3$.",
+      "Every supporting side plane has normal length $\\sqrt{73}$. A sphere of radius $r$ centered at $(x,y,z)$ inside both cones must therefore satisfy $r\\sqrt{73}\\le15-3x-8\\sqrt{y^2+z^2}$ and $r\\sqrt{73}\\le15-3y-8\\sqrt{x^2+z^2}$. These conditions account for all tangent side planes, rather than only one axial section.",
+      "Adding and using the square roots at least $|y|$ and $|x|$ gives $2r\\sqrt{73}\\le30-3(x+y)-8(|x|+|y|)\\le30$. The last inequality follows from $3u+8|u|\\ge0$ for every real $u$. This proves the global bound $r\\le15/\\sqrt{73}$ for any center.",
+      "A sphere centered at O attains the bound: its distance to every cone side plane is $15/\\sqrt{73}$, and its distance to each base plane is three, which is larger. Thus it lies inside both finite cones. The reduced squared radius is $225/73$, so $m+n=298$."
+    ],
+    "keyIdeas": [
+      "Bound an arbitrary sphere center with both cone inequalities"
+    ],
+    "commonMistakes": [
+      "Assuming symmetry forces the optimal center to be O without proving a bound for other centers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combining the two orthogonal cones controls all possible displacements of the sphere center.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p8",
+    "problemId": "aime-ii-2020-p8",
+    "finalAnswer": "$\\boxed{101}$",
+    "shortExplanation": "The zero sum first exceeds the threshold at $n=101$.",
+    "detailedSteps": [
+      "Let $Z_n$ be the set of real zeros. A previous zero z contributes new zeros only when $z\\ge0$, since $|x-n|=z$. It then contributes $n-z$ and $n+z$, counting a repeated value only once.",
+      "Write $T_n=n(n+1)/2$. Starting with $Z_1=\\{1\\}$, induction shows that for $n\\ge2$, $Z_n$ consists of every second integer from $n-T_{n-1}$ through $n+T_{n-1}$. Its nonnegative part runs from zero or one, according to the parity of $T_n$, through $T_n$ in steps of two. Applying $n+1\\pm z$ proves the next instance of this description.",
+      "There are $T_{n-1}+1$ distinct zeros, symmetric about n. Therefore their sum is $S_n=n(T_{n-1}+1)=n(n(n-1)/2+1)$. This formula also holds at n=1.",
+      "The sums increase with positive n. In particular, $S_{100}=495100$ and $S_{101}=510151$, so the least requested index is 101."
+    ],
+    "keyIdeas": [
+      "Describe the full zero set, including negative zeros"
+    ],
+    "commonMistakes": [
+      "Discarding negative zeros in the final sum or retaining them as inputs to an absolute value at the next stage."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only nonnegative old zeros can be inputs, but new zeros may be negative.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p9",
+    "problemId": "aime-ii-2020-p9",
+    "finalAnswer": "$\\boxed{090}$",
+    "shortExplanation": "Exactly ninety ordered seatings avoid all five old neighbor pairs.",
+    "detailedSteps": [
+      "The five old neighbor pairs form a path on six labeled people. For a chosen set of k forbidden edges, join their endpoints into blocks. If the chosen edges form c nonempty runs, there are $6-k$ blocks and each run can be oriented in two directions. Thus the number of seatings containing every chosen adjacency is $2^c(6-k)!$.",
+      "For k from zero through five, summing this quantity over all chosen edge sets gives $720,1200,768,228,32,2$. For example, each single edge gives $2\\cdot5!$, and each run of consecutive edges behaves as one reversible block.",
+      "Inclusion–exclusion gives $720-1200+768-228+32-2=90$. Opposite orientations of the entire row are different seating orders; no final division by two is appropriate."
+    ],
+    "keyIdeas": [
+      "Use inclusion–exclusion on the five forbidden adjacencies"
+    ],
+    "commonMistakes": [
+      "Treating overlapping adjacency requirements as separate blocks or identifying a seating with its reverse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Connected runs of selected path edges explain the block orientation factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p10",
+    "problemId": "aime-ii-2020-p10",
+    "finalAnswer": "$\\boxed{239}$",
+    "shortExplanation": "The valid values of n are 78 and 161.",
+    "detailedSteps": [
+      "The sum of cubes is $S=(n(n+1)/2)^2$. A remainder of 17 requires $n+5>17$, hence $n\\ge13$. Multiplying the required congruence by four gives $n^2(n+1)^2-68\\equiv0\\pmod{n+5}$.",
+      "Modulo $n+5$, $n$ is minus five, so the left side is $25\\cdot16-68=332$. Thus $n+5$ must be a divisor of 332 larger than 17. Since $332=4\\cdot83$, the only possibilities are 83,166,332, giving $n=78,161,327$.",
+      "Multiplication by four was only a necessary condition when the modulus is even. Substituting into the original cube sum gives remainder 17 for 78 and 161, but not 327. Therefore the required sum is $78+161=239$."
+    ],
+    "keyIdeas": [
+      "Reduce the cube-sum remainder to a short divisor list"
+    ],
+    "commonMistakes": [
+      "Canceling the factor four modulo an even modulus and accepting all three candidate divisors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A congruence obtained after multiplication can introduce spurious candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p11",
+    "problemId": "aime-ii-2020-p11",
+    "finalAnswer": "$\\boxed{071}$",
+    "shortExplanation": "The constant term of $R$ is $52/19$.",
+    "detailedSteps": [
+      "Let $\\alpha,\\beta,\\gamma$ be the distinct common roots of $(P+Q,P+R)$, $(P+Q,Q+R)$ and $(P+R,Q+R)$ respectively. Each sum has leading coefficient two, so $P+Q=2(x-\\alpha)(x-\\beta)$, $P+R=2(x-\\alpha)(x-\\gamma)$ and $Q+R=2(x-\\beta)(x-\\gamma)$.",
+      "Since $P=((P+Q)+(P+R)-(Q+R))/2$, its x-coefficient is $-2\\alpha=-3$, giving $\\alpha=3/2$. Its known constant together with $Q(0)=2$ gives $2\\alpha\\beta=-5$, hence $\\beta=-5/3$.",
+      "Put $r=R(0)$. The other two constant terms give $r-7=3\\gamma$ and $r+2=-10\\gamma/3$. Eliminating $\\gamma$ yields $r+2=-10(r-7)/9$, so $r=52/19$. The reduced numerator and denominator sum to 71.",
+      "This is consistent with the required distinctness: $\\gamma=-27/19$ differs from the other two roots. Recovering Q and R by subtracting P from the first two factorizations gives monic quadratics with the stated constants and with their sum equal to the third factorization."
+    ],
+    "keyIdeas": [
+      "Factor the three pairwise sums around their common roots"
+    ],
+    "commonMistakes": [
+      "Assuming the three common roots are roots of the individual polynomials instead of their pairwise sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The leading coefficients and shared roots determine the pairwise sums completely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p12",
+    "problemId": "aime-ii-2020-p12",
+    "finalAnswer": "$\\boxed{248}$",
+    "shortExplanation": "The four possible row counts contribute 165, 48, 22 and 13.",
+    "detailedSteps": [
+      "Translate the unit-square centers so that label L has coordinates $((L-1)\\bmod n,\\lfloor(L-1)/n\\rfloor)$. Square 200 in the top row forces odd $n\\ge201$. Square 2000 in the bottom row requires $(m-1)n<2000\\le mn$. With odd $m>1$, these conditions force $m\\in\\{3,5,7,9\\}$.",
+      "The centers of squares 200 and 2000 are $A=(199,0)$ and $B=(1999\\bmod n,m-1)$. Write their difference as $(u,v)$, where $v=m-1>0$. The center of square 1099 is $C=(1098\\bmod n,\\lfloor1098/n\\rfloor)$. On the line AB, the linear expression $F(x,y)=v(x-199)-uy$ is zero.",
+      "Across the open unit square centered at C, F ranges strictly between $F(C)-(v+|u|)/2$ and $F(C)+(v+|u|)/2$. Thus the infinite line meets its interior precisely when $2|F(C)|<v+|u|$. Equality touches only the boundary and must be excluded.",
+      "The complete candidate bands and failures from this exact inequality are: for $m=3$, odd n from 667 through 999, excluding 899 and 901; for $m=5$, odd n from 401 through 499, excluding 449 and 451; for $m=7$, odd n from 287 through 333, excluding 299 and 301; for $m=9$, odd n from 223 through 249, excluding 225. These finite lists follow by substituting the quotient and remainder coordinates into the displayed test; they cover every candidate satisfying the source row conditions.",
+      "The resulting counts are $167-2=165$, $50-2=48$, $24-2=22$ and $14-1=13$, totaling 248. The line is not restricted to the segment joining the two given centers."
+    ],
+    "keyIdeas": [
+      "Test whether a line crosses an open unit cell"
+    ],
+    "commonMistakes": [
+      "Allowing boundary-only contact, switching the row and column dimensions, or testing only the segment AB."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An affine linear form gives an exact and efficient open-square intersection criterion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p13",
+    "problemId": "aime-ii-2020-p13",
+    "finalAnswer": "$\\boxed{060}$",
+    "shortExplanation": "The inradius is four, giving area sixty.",
+    "detailedSteps": [
+      "Let the equal tangent lengths from vertices A through E be $a,b,c,d,e$. The side lengths give $a+b=5$, $b+c=6$, $c+d=6$, $d+e=6$ and $e+a=7$. Solving yields $(a,b,c,d,e)=(3,2,4,2,4)$.",
+      "If $r$ is the inradius and $\\delta_i$ is half the exterior angle at a vertex with tangent length $t_i$, right triangles give $\\tan\\delta_i=t_i/r$. A convex pentagon has $\\sum\\delta_i=\\pi$, with every $\\delta_i\\in(0,\\pi/2)$.",
+      "The argument of $\\prod_i(r+it_i)$ is this sum. Its imaginary part is $15r^4-252r^2+192$, so $5r^4-84r^2+64=0$. The possible squared radii are 16 and 4/5.",
+      "The real part is $r(r^4-88r^2+352)$. At $r^2=16$ it is negative, and at $r^2=4/5$ it is positive. The sum of the five positive arguments lies in $(0,5\\pi/2)$; with zero imaginary part, these signs force it to be respectively $\\pi$ and $2\\pi$. Only the first satisfies convexity, hence $r=4$.",
+      "The area of a tangential polygon is the inradius times its semiperimeter. The perimeter is 30, so the area is $4\\cdot15=60$. The radius-four tangent-line construction gives all five specified side lengths, confirming the admissible root."
+    ],
+    "keyIdeas": [
+      "Use the tangent lengths and the convex angle sum"
+    ],
+    "commonMistakes": [
+      "Accepting both positive algebraic radii without checking the total exterior angle of a convex pentagon."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The convex angle sum selects the valid root after eliminating trigonometric functions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p14",
+    "problemId": "aime-ii-2020-p14",
+    "finalAnswer": "$\\boxed{010}$",
+    "shortExplanation": "The number of solutions is $\\binom{2005}{3}$.",
+    "detailedSteps": [
+      "On an interval with integer part k, write $x=k+t$ with $0\\le t<1$. Then $f(x)=t(k+t)$ is strictly increasing from zero toward $k+1$, without attaining the latter endpoint. For any positive target y, this branch has exactly one preimage if and only if $y<k+1$.",
+      "Let $z=f(f(x))$, so $f(z)=17$. The integer part k of z can be any integer from 17 through 2019. The upper bound follows because $f(u)<u$ for every positive u; a solution therefore has $0<z<f(x)<x\\le2020$. Also x cannot equal 2020, where f is zero.",
+      "Given the unique z on branch k, a preimage $y=f(x)$ may lie on any branch with integer part $\\ell\\ge k$ up through 2019. Given that y, x may lie on any branch with integer part $j\\ge\\ell$ up through 2019. The branch endpoint criterion proves both necessity and sufficiency. None of these intermediate positive preimages is an integer.",
+      "There is consequently one solution for every weakly increasing triple $17\\le k\\le\\ell\\le j\\le2019$. There are 2003 available integers, so the count with repetition is $\\binom{2003+3-1}{3}=\\binom{2005}{3}=1341349010$. Its remainder modulo 1000 is 010."
+    ],
+    "keyIdeas": [
+      "Count the inverse branches of each fractional-part map"
+    ],
+    "commonMistakes": [
+      "Treating the map as globally increasing or including the excluded right endpoint of a branch."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer parts of the three preimages are weakly increasing and determine the solutions uniquely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2020-p15",
+    "problemId": "aime-ii-2020-p15",
+    "finalAnswer": "$\\boxed{717}$",
+    "shortExplanation": "The required squared distance is 717.",
+    "detailedSteps": [
+      "Put $T=(0,0)$, $B=(-11,h)$ and $C=(11,h)$, where $h=\\sqrt{16^2-11^2}=3\\sqrt{15}$. The circumcircle has center $(0,256/h)$ and equation $x^2+y^2-(512/h)y+256=0$: its radius to B is perpendicular to TB, and similarly at C.",
+      "Write $A=(x,y)$ and $q=TA^2=x^2+y^2$. The circle equation gives $hy=135(q+256)/512$. Its radius is $176/h$, so the sine rule gives $\\sin^2\\angle BAC=BC^2/(4R^2)=135/256$.",
+      "The points T,X,A,Y lie on the circle with diameter TA, because the projection angles at X and Y are right angles. The chord XY therefore satisfies $XY^2=q\\sin^2\\angle BAC=135q/256$. This remains valid when a projection lies outside a side segment, since the source uses the full lines.",
+      "For a direct computation of the other two distances, put $d=121(q+256)/256$. Then $AB^2=d+22x$ and $AC^2=d-22x$. Distance to a line gives $TX^2=(hx+11y)^2/(d+22x)$ and $TY^2=(hx-11y)^2/(d-22x)$.",
+      "Combining the two fractions, their denominator is $d^2-484x^2=121(q-256)^2/256$. Their numerator simplifies to $2d(121y^2-135x^2)=270d(q-256)^2/1024$, using $hy=135(q+256)/512$ and $x^2=q-y^2$. The triangle is nondegenerate, so A is neither B nor C; on this circle $q=256$ would force A to equal one of them. The cancellation is thus valid.",
+      "It follows that $TX^2+TY^2=135(q+256)/512=(XY^2+135)/2$. The given sum is consequently $(3XY^2+135)/2=1143$, yielding $XY^2=717$.",
+      "The result is attained by an acute scalene triangle. Take $q=239\\cdot256/45$, $y=h(q+256)/512$ and $x=\\sqrt{q-y^2}$. The radicand is positive; the circle, tangent lengths and actual projection sum hold. The three side squares are distinct and each is less than the sum of the other two, so all three angles are acute."
+    ],
+    "keyIdeas": [
+      "Relate the two projection distances to their connecting chord"
+    ],
+    "commonMistakes": [
+      "Assuming the projection feet are inside the side segments or canceling a factor without excluding its zero case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tangent geometry fixes the circumcircle, while the pedal circle converts XY into the angle sine.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

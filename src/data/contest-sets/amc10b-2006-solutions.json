@@ -1,0 +1,507 @@
+[
+  {
+    "id": "solution-amc10b-2006-p1",
+    "problemId": "amc10b-2006-p1",
+    "finalAnswer": "$\\boxed{0}$ (choice C)",
+    "shortExplanation": "The 2006 terms form 1003 pairs, each summing to zero.",
+    "detailedSteps": [
+      "For each $j=1,\\ldots,1003$, the consecutive terms $(-1)^{2j-1}+(-1)^{2j}$ equal $-1+1=0$. The whole sum is therefore $0$."
+    ],
+    "keyIdeas": [
+      "Pairing alternating signs"
+    ],
+    "commonMistakes": [
+      "Leaving an unmatched term even though the number of terms is even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing avoids evaluating individual powers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p2",
+    "problemId": "amc10b-2006-p2",
+    "finalAnswer": "$\\boxed{-72}$ (choice A)",
+    "shortExplanation": "The inner operation is $-9$, and the outer operation is $9-81$.",
+    "detailedSteps": [
+      "The definition gives $x\\spadesuit y=x^2-y^2$. First, $4\\spadesuit5=16-25=-9$.",
+      "Then $3\\spadesuit(-9)=3^2-(-9)^2=9-81=-72$."
+    ],
+    "keyIdeas": [
+      "A nested difference-of-squares operation"
+    ],
+    "commonMistakes": [
+      "Replacing the negative input by a negative square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the given operation again after finding the inner value.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p3",
+    "problemId": "amc10b-2006-p3",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "Subtract the winning margin from the total, then halve.",
+    "detailedSteps": [
+      "If the Panthers score p, the Cougars score $p+14$. Thus $2p+14=34$, giving $p=10$."
+    ],
+    "keyIdeas": [
+      "Recovering the smaller score"
+    ],
+    "commonMistakes": [
+      "Taking half the total without accounting for the margin."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total and difference determine the two scores.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p4",
+    "problemId": "amc10b-2006-p4",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The larger disk has nine times the area of the smaller disk.",
+    "detailedSteps": [
+      "The diameter ratio is $3:1$, so the disk-area ratio is $9:1$. Removing the smaller red disk leaves a blue annulus with eight times the red area.",
+      "Equivalently, the requested ratio is $\\bigl((3/2)^2-(1/2)^2\\bigr)/(1/2)^2=8$."
+    ],
+    "keyIdeas": [
+      "An annulus relative to its inner disk"
+    ],
+    "commonMistakes": [
+      "Using the ratio of the whole larger disk to the smaller disk."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area scales as the square of a linear dimension.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p5",
+    "problemId": "amc10b-2006-p5",
+    "finalAnswer": "$\\boxed{25}$ (choice B)",
+    "shortExplanation": "The square must have side at least $2+3=5$, and side 5 suffices.",
+    "detailedSteps": [
+      "Because the rectangles are axis-aligned and their interiors do not overlap, their interior projections must be disjoint along at least one coordinate axis. Along that axis, their combined span is at least the sum of their shorter sides, $2+3=5$.",
+      "A square of side 5 works: place the rectangles side by side with widths 2 and 3 and heights 3 and 4. Thus the minimum square area is $5^2=25$."
+    ],
+    "keyIdeas": [
+      "Packing two axis-aligned rectangles"
+    ],
+    "commonMistakes": [
+      "Using only the sum of the two areas, which does not ensure the shapes fit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A packing argument needs both a lower bound and a configuration attaining it.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p6",
+    "problemId": "amc10b-2006-p6",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Each of the four semicircular arcs has length 1.",
+    "detailedSteps": [
+      "The square side is $2/\\pi$, so each semicircle has radius $1/\\pi$. Its arc length is $\\pi(1/\\pi)=1$.",
+      "The outer boundary consists of all four such arcs, giving perimeter $4$. The straight square edges lie inside the region and are not counted."
+    ],
+    "keyIdeas": [
+      "Four semicircular boundary arcs"
+    ],
+    "commonMistakes": [
+      "Adding the internal square edges to the perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the boundary from the figure before adding lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p7",
+    "problemId": "amc10b-2006-p7",
+    "finalAnswer": "$\\boxed{-x}$ (choice A)",
+    "shortExplanation": "The expression simplifies to $\\sqrt{x^2}=|x|=-x$.",
+    "detailedSteps": [
+      "The denominator inside the radical is $1-(x-1)/x=1/x$, since $x<0$ guarantees $x\\ne0$. Thus the radicand is $x/(1/x)=x^2$.",
+      "The principal square root is nonnegative, so $\\sqrt{x^2}=|x|$. Because x is negative, this equals $-x$."
+    ],
+    "keyIdeas": [
+      "The principal square root of a square"
+    ],
+    "commonMistakes": [
+      "Writing sqrt(x squared) as x without considering its sign."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sign restriction determines which square root is represented.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p8",
+    "problemId": "amc10b-2006-p8",
+    "finalAnswer": "$\\boxed{25\\pi}$ (choice B)",
+    "shortExplanation": "The radius squared is $40+40/4=50$.",
+    "detailedSteps": [
+      "Let the square side be s, with $s^2=40$. The circle center lies at the midpoint of the square side on the diameter. A radius to an upper corner has perpendicular components $s/2$ and s.",
+      "Hence $r^2=(s/2)^2+s^2=50$. The semicircle area is $\\pi r^2/2=25\\pi$."
+    ],
+    "keyIdeas": [
+      "A radius through the top corner of an inscribed square"
+    ],
+    "commonMistakes": [
+      "Using half the square diagonal as the radius, as would apply to a square inside a full circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The flat side of the semicircle changes the center-to-corner triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p9",
+    "problemId": "amc10b-2006-p9",
+    "finalAnswer": "$\\boxed{137}$ (choice B)",
+    "shortExplanation": "The full 600-gram mixture has 411 calories; 200 grams is one third.",
+    "detailedSteps": [
+      "The lemon juice and sugar contribute $25+386=411$ calories, and the water contributes none. The total mass is $100+100+400=600$ grams.",
+      "A 200-gram portion has $200/600=1/3$ of the total, or $411/3=137$ calories."
+    ],
+    "keyIdeas": [
+      "Calories per fraction of a mixture"
+    ],
+    "commonMistakes": [
+      "Dividing by the mass of only the ingredients that contain calories."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the total mixture mass when scaling its calorie content.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p10",
+    "problemId": "amc10b-2006-p10",
+    "finalAnswer": "$\\boxed{43}$ (choice A)",
+    "shortExplanation": "The shorter variable side can be at most 7.",
+    "detailedSteps": [
+      "Write the sides as $n,3n,15$, where n is a positive integer. The nontrivial triangle inequalities are $2n<15$ and $4n>15$, so $15/4<n<15/2$.",
+      "Thus $n\\in\\{4,5,6,7\\}$. The perimeter $4n+15$ is greatest at $n=7$, giving $43$."
+    ],
+    "keyIdeas": [
+      "Integer side lengths and strict triangle inequalities"
+    ],
+    "commonMistakes": [
+      "Allowing equality in a triangle inequality or taking n = 8."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both a lower and an upper bound are needed before maximizing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p11",
+    "problemId": "amc10b-2006-p11",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Only $7!$, $8!$, and $9!$ can affect the tens digit.",
+    "detailedSteps": [
+      "Every factorial from $10!$ onward contains at least two factors of 5 and two factors of 2, so it is divisible by 100.",
+      "The remaining terms are $5040+40320+362880=408240$. Their final two digits are 40, so the tens digit is $4$."
+    ],
+    "keyIdeas": [
+      "Factorials modulo one hundred"
+    ],
+    "commonMistakes": [
+      "Discarding 7!, 8!, or 9! just because they end in zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The tens digit depends on the residue modulo 100, not merely modulo 10.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p12",
+    "problemId": "amc10b-2006-p12",
+    "finalAnswer": "$\\boxed{\\frac94}$ (choice E)",
+    "shortExplanation": "The intercept parameters are $a=1/2$ and $b=7/4$.",
+    "detailedSteps": [
+      "Substituting $(x,y)=(1,2)$ gives $a=1-2/4=1/2$ and $b=2-1/4=7/4$. Their sum is $1/2+7/4=9/4$."
+    ],
+    "keyIdeas": [
+      "Substitution at a common point"
+    ],
+    "commonMistakes": [
+      "Swapping the x and y coordinates in the first equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A known intersection point satisfies each equation separately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p13",
+    "problemId": "amc10b-2006-p13",
+    "finalAnswer": "$\\boxed{\\frac76}$ (choice E)",
+    "shortExplanation": "Joe retains 2 ounces of cream, while JoAnn retains $12/7$ ounces.",
+    "detailedSteps": [
+      "Joe adds his cream after drinking, so all 2 ounces remain. JoAnn initially has 14 ounces after adding cream, then drinks $2/14=1/7$ of the stirred mixture.",
+      "She therefore keeps $6/7$ of the original cream, or $2(6/7)=12/7$ ounces. The requested ratio is $2/(12/7)=7/6$."
+    ],
+    "keyIdeas": [
+      "Removing a fixed fraction of a mixture"
+    ],
+    "commonMistakes": [
+      "Treating the two ounces JoAnn drinks as pure coffee after she has stirred in cream."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Stirring makes the removed fraction the same for each component.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p14",
+    "problemId": "amc10b-2006-p14",
+    "finalAnswer": "$\\boxed{\\frac92}$ (choice D)",
+    "shortExplanation": "Vieta gives $ab=2$, and the new product is $ab+2+1/(ab)$.",
+    "detailedSteps": [
+      "The constant term of the first monic quadratic gives $ab=2$, so neither root is zero.",
+      "The new constant term is the product of its roots: $q=(a+1/b)(b+1/a)=ab+1+1+1/(ab)=2+2+1/2=9/2$."
+    ],
+    "keyIdeas": [
+      "The product of transformed quadratic roots"
+    ],
+    "commonMistakes": [
+      "Introducing a or b separately when their product already determines the answer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetric expressions in roots often reduce directly to Vieta relations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p15",
+    "problemId": "amc10b-2006-p15",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The small rhombus has one third the area of the large one.",
+    "detailedSteps": [
+      "Let the outer rhombus side be s. Triangle ABD has two sides s and included angle $60^\\circ$, so it is equilateral and $BD=s$.",
+      "In the similar inner rhombus, BD is the long diagonal joining its acute vertices. If its side is t, the cosine rule in triangle BFD gives $BD^2=t^2+t^2-2t^2\\cos120^\\circ=3t^2$.",
+      "Therefore $t/s=1/\\sqrt3$. Areas of similar figures scale by the square of this ratio, so the inner area is $24/3=8$."
+    ],
+    "keyIdeas": [
+      "Similar rhombi with a shared diagonal"
+    ],
+    "commonMistakes": [
+      "Using the linear similarity ratio directly as the area ratio, or treating BD as the shorter inner diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Identify the shared segment as different diagonals in the two similar shapes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p16",
+    "problemId": "amc10b-2006-p16",
+    "finalAnswer": "$\\boxed{\\text{Saturday}}$ (choice E)",
+    "shortExplanation": "Four blocks of 1461 days shift the weekday forward by 6 days.",
+    "detailedSteps": [
+      "Each interval between these consecutive leap days spans $4\\cdot365+1=1461$ days, a shift of $1461\\equiv5\\pmod7$.",
+      "From 2004 to 2020 there are four such intervals, so the total shift is $4\\cdot5=20\\equiv6\\pmod7$. Six days after Sunday is Saturday."
+    ],
+    "keyIdeas": [
+      "Weekday shifts across four leap-year cycles"
+    ],
+    "commonMistakes": [
+      "Counting 16 ordinary years and forgetting the four extra leap days."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count complete leap-day intervals to avoid endpoint ambiguity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p17",
+    "problemId": "amc10b-2006-p17",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice D)",
+    "shortExplanation": "Bob must return the color Alice sent, and two of his six balls have that color.",
+    "detailedSteps": [
+      "Condition on the color Alice transfers. Her bag now lacks that color, while Bob has two balls of it and one of every other color.",
+      "After one ball returns, the bags have identical contents exactly when its color is the transferred color. Bob chooses uniformly from six balls, two of which work, so the probability is $2/6=1/3$."
+    ],
+    "keyIdeas": [
+      "Restoring the transferred color"
+    ],
+    "commonMistakes": [
+      "Counting only the exact physical ball Alice sent; Bob can return his original ball of the same color."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Condition on the first random choice and use the symmetry of the colors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p18",
+    "problemId": "amc10b-2006-p18",
+    "finalAnswer": "$\\boxed{3}$ (choice E)",
+    "shortExplanation": "The sequence repeats every six terms, and 2006 has remainder 2 modulo 6.",
+    "detailedSteps": [
+      "Starting from 2 and 3 gives the successive terms $2,3,3/2,1/2,1/3,2/3,2,3$. The original pair recurs at terms 7 and 8.",
+      "Because each next term is determined by the previous two, this six-term pattern continues. Since $2006\\equiv2\\pmod6$, the desired term is $3$."
+    ],
+    "keyIdeas": [
+      "A six-term multiplicative recurrence cycle"
+    ],
+    "commonMistakes": [
+      "Assuming a repetition of one term alone proves a second-order recurrence repeats."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Repeating the full pair of state values establishes the period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p19",
+    "problemId": "amc10b-2006-p19",
+    "finalAnswer": "$\\boxed{\\frac\\pi3+1-\\sqrt3}$ (choice A)",
+    "shortExplanation": "The region is a $30^\\circ$ sector with a quadrilateral of area $\\sqrt3-1$ removed.",
+    "detailedSteps": [
+      "Use coordinates $O=(0,0)$, $A=(1,0)$, $B=(1,1)$, and $C=(0,1)$. Intersecting the extended sides with the radius-2 circle gives $D=(1,\\sqrt3)$ and $E=(\\sqrt3,1)$.",
+      "The rays OD and OE make angles $60^\\circ$ and $30^\\circ$ with the positive horizontal axis. Thus sector ODE has area $(30/360)\\pi\\cdot2^2=\\pi/3$.",
+      "The quadrilateral ODBE consists of triangles ODB and OBE, each of area $(\\sqrt3-1)/2$. Subtracting it from the sector leaves $\\pi/3-(\\sqrt3-1)=\\pi/3+1-\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "A circular sector minus two triangles"
+    ],
+    "commonMistakes": [
+      "Subtracting a triangle ODE instead of the quadrilateral with the inward vertex B."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shaded boundary has an inward corner, which must be retained in the subtraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p20",
+    "problemId": "amc10b-2006-p20",
+    "finalAnswer": "$\\boxed{40400}$ (choice E)",
+    "shortExplanation": "Perpendicularity determines the missing coordinate, then a determinant gives the area.",
+    "detailedSteps": [
+      "The adjacent side vectors are $\\overrightarrow{AB}=(2000,200)$ and $\\overrightarrow{AD}=(2,y+22)$. Their dot product is zero: $4000+200(y+22)=0$, so $y=-42$.",
+      "Now $\\overrightarrow{AD}=(2,-20)$. The rectangle area is the absolute determinant $|2000(-20)-200(2)|=40400$."
+    ],
+    "keyIdeas": [
+      "Perpendicular side vectors of a rectangle"
+    ],
+    "commonMistakes": [
+      "Treating the horizontal or vertical coordinate differences as side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Vectors handle a rotated rectangle without finding its angle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p21",
+    "problemId": "amc10b-2006-p21",
+    "finalAnswer": "$\\boxed{\\frac8{63}}$ (choice C)",
+    "shortExplanation": "The probability of face k is $k/21$, so sum the six ordered ways to total 7.",
+    "detailedSteps": [
+      "The weights sum to $1+2+3+4+5+6=21$. Independence gives probability $k(7-k)/21^2$ to the ordered outcome $(k,7-k)$.",
+      "Summing over $k=1,\\ldots,6$ gives $(6+10+12+12+10+6)/441=56/441=8/63$."
+    ],
+    "keyIdeas": [
+      "Weighted complementary dice outcomes"
+    ],
+    "commonMistakes": [
+      "Assigning each ordered outcome probability 1/36 despite the weighted faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalize the face weights before multiplying independent probabilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p22",
+    "problemId": "amc10b-2006-p22",
+    "finalAnswer": "$\\boxed{1.65\\text{ dollars}}$ (choice D)",
+    "shortExplanation": "The only positive integer solution is $N=11$, $B=2$, and $J=3$.",
+    "detailedSteps": [
+      "In cents, the cost condition is $N(4B+5J)=253=11\\cdot23$. Since $N>1$ and $4B+5J\\ge9$, the possible N values are 11 and 23.",
+      "For $N=23$, the equation $4B+5J=11$ permits only $J=1$ or 2, neither of which gives an integer B. For $N=11$, the equation is $4B+5J=23$. Reducing modulo 4 gives $J\\equiv3\\pmod4$; positivity forces $J=3$, then $B=2$.",
+      "The total jam cost is $5JN=5\\cdot3\\cdot11=165$ cents, or $1.65$ dollars."
+    ],
+    "keyIdeas": [
+      "Factoring the total sandwich cost"
+    ],
+    "commonMistakes": [
+      "Reporting the jam cost for one sandwich rather than for all N sandwiches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factor the total first to limit the possible batch sizes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p23",
+    "problemId": "amc10b-2006-p23",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "shortExplanation": "Splitting the quadrilateral by a diagonal gives areas $15/2$ and $21/2$.",
+    "detailedSteps": [
+      "Name the outer vertices A (lower left), B (lower right), and C (top). Let D lie on AC, E on BC, and $X=AE\\cap BD$. The given areas are $[ADX]=3$, $[ABX]=7$, and $[BEX]=7$.",
+      "Triangles ABX and BEX have the same height from B to AE, so $AX=XE$. Draw CX and write $u=[CDX]$, $v=[CEX]$. Equal bases AX and XE now give $[ACX]=[CEX]$, hence $3+u=v$.",
+      "Triangles ADX and ABX share the same height from A to BD, so $DX/BX=3/7$. Applying that ratio to triangles CDX and CBX gives $u/(7+v)=3/7$.",
+      "Substitute $v=u+3$: $7u=3(u+10)$, so $u=15/2$ and $v=21/2$. The shaded quadrilateral has area $u+v=18$."
+    ],
+    "keyIdeas": [
+      "Area ratios around intersecting cevians"
+    ],
+    "commonMistakes": [
+      "Assuming triangles with equal displayed areas have equal bases without checking that the heights agree."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Draw one auxiliary segment and use common-height ratios on both original cevians.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p24",
+    "problemId": "amc10b-2006-p24",
+    "finalAnswer": "$\\boxed{24\\sqrt2}$ (choice B)",
+    "shortExplanation": "The hexagon splits along OP into two congruent trapezoids of area $12\\sqrt2$.",
+    "detailedSteps": [
+      "The centers are 6 units apart. Radii OA and PD are both perpendicular to the upper common tangent AD, so they are parallel. Their lengths differ by 2; resolving OP along and perpendicular to AD gives $AD=\\sqrt{6^2-2^2}=4\\sqrt2$.",
+      "The upper quadrilateral AOPD is a trapezoid with parallel sides 2 and 4 and separation $4\\sqrt2$. Its area is $(2+4)(4\\sqrt2)/2=12\\sqrt2$.",
+      "The lower quadrilateral BOCP has the same area by reflection across OP. Their union is the specified concave hexagon, with total area $24\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Two trapezoids between common external tangents"
+    ],
+    "commonMistakes": [
+      "Using the center distance 6 as the separation of the parallel radii."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Splitting at the line of centers turns the concave polygon into two ordinary trapezoids.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2006-p25",
+    "problemId": "amc10b-2006-p25",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "Age 5 would force a plate number that fails both ages 7 and 8, which is impossible.",
+    "detailedSteps": [
+      "The eight distinct positive ages are eight of the integers 1 through 9, including 9. The plate number is therefore divisible by 9 and by an even age, so it is even.",
+      "If age 5 were present, the last digit would have to be 0. Because exactly two distinct digits each occur twice, the digits would be 0,0,d,d. Divisibility by 9 forces $2d$ to be a multiple of 9, hence $d=9$.",
+      "The only four-digit even arrangements ending in 0 are 9090 and 9900. Neither is divisible by 7 or by 8. They would exclude two possible ages, contradicting the presence of eight distinct ages from 1 through 9. Thus age 5 is absent.",
+      "The conditions are consistent: 5544 is divisible by $1,2,3,4,6,7,8,9$, uses two copies each of 5 and 4, and ends in a plausible parent age of 44."
+    ],
+    "keyIdeas": [
+      "Digit repetition and divisibility by eight distinct ages"
+    ],
+    "commonMistakes": [
+      "Ignoring the requirement of eight different ages or allowing a leading zero on the plate number."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A contradiction from an assumed age is much shorter than a search over all age lists.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

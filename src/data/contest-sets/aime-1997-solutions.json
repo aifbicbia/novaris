@@ -1,0 +1,323 @@
+[
+  {
+    "id": "solution-aime-1997-p1",
+    "problemId": "aime-1997-p1",
+    "finalAnswer": "$\\boxed{750}$",
+    "shortExplanation": "Exactly the odd integers and multiples of four qualify.",
+    "detailedSteps": [
+      "Squares are zero or one modulo 4, so their difference cannot be two modulo 4. Conversely every odd positive number $2k+1$ is $(k+1)^2-k^2$, and every positive multiple $4k$ is $(k+1)^2-(k-1)^2$. These use nonnegative integers in the required ranges.",
+      "There are 500 odd numbers and 250 multiples of four between 1 and 1000. The classes are disjoint, giving 750."
+    ],
+    "keyIdeas": [
+      "Classifying differences of two integer squares"
+    ],
+    "commonMistakes": [
+      "Imposing strictly positive roots despite the source allowing zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The parity of the two factors in a square difference controls the residue class.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p2",
+    "problemId": "aime-1997-p2",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The square fraction is $204/1296=17/108$.",
+    "detailedSteps": [
+      "A rectangle is determined by two of the nine horizontal lines and two of the nine vertical lines, giving $r=\\binom92^2=1296$.",
+      "For a square of side k unit cells, there are $(9-k)^2$ placements, for $1\\le k\\le8$. Hence $s=1^2+\\cdots+8^2=204$.",
+      "The reduced fraction is $204/1296=17/108$, giving $m+n=125$."
+    ],
+    "keyIdeas": [
+      "Rectangle endpoints and square side lengths"
+    ],
+    "commonMistakes": [
+      "Counting only unit-cell squares or excluding squares from the rectangle total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Line choices count all rectangle sizes at once.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p3",
+    "problemId": "aime-1997-p3",
+    "finalAnswer": "$\\boxed{126}$",
+    "shortExplanation": "The two numbers are 14 and 112, whose sum is 126.",
+    "detailedSteps": [
+      "Let a be the two-digit number and b the three-digit number. Concatenation gives $1000a+b=9ab$. Rearranging yields $(9a-1)(9b-1000)=1000$.",
+      "The factor $d=9a-1$ lies between 89 and 890 and is congruent to 8 modulo 9. The divisors of 1000 in this interval are $100,125,200,250,500$. Only 125 has the needed residue.",
+      "Thus $a=(125+1)/9=14$ and $9b-1000=1000/125=8$, so $b=112$. Both satisfy their digit lengths and $14112=9(14)(112)$. Their sum is 126."
+    ],
+    "keyIdeas": [
+      "A concatenation equation factors into divisors"
+    ],
+    "commonMistakes": [
+      "Concatenating with a factor of 100 instead of 1000."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization makes the digit restrictions decisive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p4",
+    "problemId": "aime-1997-p4",
+    "finalAnswer": "$\\boxed{017}$",
+    "shortExplanation": "The remaining positive radius is $8/9$, giving 17.",
+    "detailedSteps": [
+      "Place the radius-five centers at $(-5,0)$ and $(5,0)$. The radius-eight center must be $(0,12)$ up to reflection, since its distance to each is 13. A center tangent to both radius-five circles lies on their perpendicular bisector, say $(0,y)$.",
+      "For radius r positive, the distances give $y^2=r^2+10r$ and $|y-12|=8+r$. Thus either $y=4-r$ or $y=20+r$.",
+      "The first branch gives $(4-r)^2=r^2+10r$, so $r=8/9$. The second gives $(20+r)^2=r^2+10r$, forcing r negative and hence impossible.",
+      "The first solution has $y=28/9$ and satisfies all three external-tangency distances. Therefore $m+n=8+9=17$."
+    ],
+    "keyIdeas": [
+      "The fourth externally tangent circle in a three-circle gap"
+    ],
+    "commonMistakes": [
+      "Using an enclosing circle with internal tangencies as another positive external solution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry reduces the fourth center to one coordinate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p5",
+    "problemId": "aime-1997-p5",
+    "finalAnswer": "$\\boxed{417}$",
+    "shortExplanation": "The four-decimal values are 2679/10000 through 3095/10000.",
+    "detailedSteps": [
+      "Among fractions with numerator one or two, the neighbor immediately below $2/7$ is $1/4=2/8$, and the neighbor immediately above is $1/3=2/6$. Fractions with negative denominator cannot be closer to these positive r values.",
+      "The numbers for which $2/7$ is closest lie between its midpoints with these neighbors: $15/56<r<13/42$. The midpoint endpoints are not four-place decimals, so ties cause no exception here.",
+      "Writing $r=k/10000$ gives $2678.571\\ldots<k<3095.238\\ldots$. Thus $2679\\le k\\le3095$, with $3095-2679+1=417$ choices."
+    ],
+    "keyIdeas": [
+      "The nearest neighboring fractions bound an interval"
+    ],
+    "commonMistakes": [
+      "Using neighboring denominator values for numerator one alone and missing the two-numerator fractions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A nearest-fraction interval is bounded by midpoints of its adjacent candidates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p6",
+    "problemId": "aime-1997-p6",
+    "finalAnswer": "$\\boxed{042}$",
+    "shortExplanation": "For the large-n case the side counts obey $(n-6)(m-6)=36$.",
+    "detailedSteps": [
+      "Let m be the number of sides of the regular polygon whose consecutive vertices are $A_n,A_1,B$. The two consecutive sides have equal length. At $A_1$, the source polygon contributes angle $180^\\circ-360^\\circ/n$, and the external equilateral triangle contributes 60 degrees on the other side of $A_1A_2$.",
+      "If $n\\le6$, these cases cannot exceed a larger solution with $n=42$. For $n>6$, the smaller angle between $A_1A_n$ and $A_1B$ is $120^\\circ+360^\\circ/n$, which must equal $180^\\circ-360^\\circ/m$.",
+      "Hence $1/n+1/m=1/6$, or $(n-6)(m-6)=36$. Both factors are positive integers, so $n-6\\le36$ and $n\\le42$.",
+      "Equality is attained by $n=42,m=7$. The equal side lengths and resulting angle determine three consecutive vertices of a regular heptagon, so this is a realizable configuration."
+    ],
+    "keyIdeas": [
+      "Interior angles of two regular polygons"
+    ],
+    "commonMistakes": [
+      "Using the reflex angle at the shared vertex as a regular polygon interior angle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The largest-n branch is converted into a divisor equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p7",
+    "problemId": "aime-1997-p7",
+    "finalAnswer": "$\\boxed{198}$",
+    "shortExplanation": "The quadratic contact equation has mean root 198 minutes.",
+    "detailedSteps": [
+      "The source storm speed is $\\sqrt2/2$ toward southeast, giving east and south components $1/2$. Relative to the car, its center is $(-t/6,110-t/2)$.",
+      "The circle contact equation is $t^2/36+(110-t/2)^2=51^2$, or $(5/18)t^2-110t+9499=0$.",
+      "By Vieta\u2019s formula, half the sum of its two roots is $110/(2(5/18))=198$. The roots are real because at this time the squared distance is 1210, less than $51^2$, while at time zero it exceeds $51^2$. Both contacts occur at positive times."
+    ],
+    "keyIdeas": [
+      "The midpoint of two contact times is the closest-approach time"
+    ],
+    "commonMistakes": [
+      "Using the storm\u2019s full diagonal speed as each coordinate component."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A quadratic distance has symmetric entry and exit times about its minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p8",
+    "problemId": "aime-1997-p8",
+    "finalAnswer": "$\\boxed{090}$",
+    "shortExplanation": "Each of the six first-row patterns permits fifteen completions.",
+    "detailedSteps": [
+      "Each row must contain exactly two ones and two minus ones, so there are six possible first rows. By permuting columns, fix the first row\u2019s ones in columns 1 and 2.",
+      "If the second row repeats that pattern, the final two rows must both have ones in columns 3 and 4, giving one completion. If it uses the complementary pattern, the final two rows must be complementary to each other, giving six ordered choices.",
+      "Otherwise the second row overlaps the first in exactly one one-column; there are four such patterns. One column already has two ones, another has none, and the other two each have one. Each remaining row must use the empty column and exactly one of the singly filled columns, giving two orders.",
+      "Thus a fixed first row has $1+6+4(2)=15$ completions. The total is $6(15)=90$."
+    ],
+    "keyIdeas": [
+      "Classifying the overlap of the first two row patterns"
+    ],
+    "commonMistakes": [
+      "Counting only row-balanced arrays without enforcing the column sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The overlap size of two rows determines the remaining column capacities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p9",
+    "problemId": "aime-1997-p9",
+    "finalAnswer": "$\\boxed{233}$",
+    "shortExplanation": "The condition gives $a^2=a+1$, reducing the requested expression to 233.",
+    "detailedSteps": [
+      "The source bounds imply $\\sqrt2<a<\\sqrt3$, so $0<a^{-1}<1$. Therefore its fractional part is itself, whereas the fractional part of $a^2$ is $a^2-2$.",
+      "Thus $a^{-1}=a^2-2$, or $a^3-2a-1=0$. Factoring gives $(a+1)(a^2-a-1)=0$. Positivity excludes the first factor and the negative quadratic root, so $a=(1+\\sqrt5)/2$, which lies in the required interval.",
+      "Repeatedly reducing powers by $a^2=a+1$ gives $a^{12}=144a+89$. Also $a^{-1}=a-1$. Hence $a^{12}-144a^{-1}=144a+89-144(a-1)=233$."
+    ],
+    "keyIdeas": [
+      "A fractional-part condition forces the golden-ratio polynomial"
+    ],
+    "commonMistakes": [
+      "Taking both fractional parts to be zero or forgetting that a-squared lies between 2 and 3."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The supplied interval identifies the integer parts before any algebraic manipulation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p10",
+    "problemId": "aime-1997-p10",
+    "finalAnswer": "$\\boxed{117}$",
+    "shortExplanation": "The 351 unordered card pairs fall into groups of three pairs per set.",
+    "detailedSteps": [
+      "Choose any two distinct cards. In each attribute, if their values agree, the third card must use that common value; if they differ, it must use the remaining third value. Thus there is exactly one complementary third card.",
+      "The third card is different from both chosen cards, since the original pair differs in at least one attribute and the third uses the missing value in that attribute.",
+      "Every complementary three-card set contains three unordered pairs, and each of those pairs determines that same set. Therefore the count is $\\binom{27}{2}/3=351/3=117$."
+    ],
+    "keyIdeas": [
+      "Every two distinct cards determine a unique third"
+    ],
+    "commonMistakes": [
+      "Counting ordered triples or allowing a repeated card in a three-card set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique-completion rule converts a triple count into a pair count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p11",
+    "problemId": "aime-1997-p11",
+    "finalAnswer": "$\\boxed{241}$",
+    "shortExplanation": "The ratio is $\\cot22.5^\\circ=1+\\sqrt2$.",
+    "detailedSteps": [
+      "Pair each angle n degrees with 45-n degrees. Their cosine sum is $2\\cos22.5^\\circ\\cos(n-22.5)^\\circ$, and their sine sum is $2\\sin22.5^\\circ\\cos(n-22.5)^\\circ$.",
+      "The same positive factors appear in both sums, so their ratio is $\\cot22.5^\\circ=1+\\sqrt2$, by the half-angle formula.",
+      "Since $1.41<\\sqrt2<1.42$, $241<100(1+\\sqrt2)<242$. The required greatest integer is 241."
+    ],
+    "keyIdeas": [
+      "Symmetric angle pairs have a common direction"
+    ],
+    "commonMistakes": [
+      "Replacing the ratio of sums by the sum of individual cotangents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing around the common midpoint angle cancels all amplitudes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p12",
+    "problemId": "aime-1997-p12",
+    "finalAnswer": "$\\boxed{058}$",
+    "shortExplanation": "The excluded range value is the midpoint 58 of the two fixed points.",
+    "detailedSteps": [
+      "The determinant $ad-bc$ is nonzero because f takes the two distinct values 19 and 97. Represent f by its matrix $M=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$. The identity $f\\circ f=x$ means $M^2$ is a nonzero scalar matrix.",
+      "Cayley-Hamilton gives $M^2=(a+d)M-(ad-bc)I$. Since c is nonzero, M is not scalar, so this forces $a+d=0$.",
+      "The fixed-point equation is $cx^2+(d-a)x-b=0$. Its two roots 19 and 97 give $-(d-a)/c=116$. Substituting $d=-a$ yields $a/c=58$.",
+      "For a nonsingular fractional-linear map, the unique omitted range value is $a/c$: the equation $y=(ax+b)/(cx+d)$ solves uniquely for x when $y\\ne a/c$, whereas equality would require $ad=bc$. Thus the requested number is 58."
+    ],
+    "keyIdeas": [
+      "A nontrivial fractional-linear involution has zero trace"
+    ],
+    "commonMistakes": [
+      "Treating the two fixed points as the omitted domain or range values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The involution relation determines the sum of the numerator and denominator diagonal coefficients.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p13",
+    "problemId": "aime-1997-p13",
+    "finalAnswer": "$\\boxed{066}$",
+    "shortExplanation": "The total wire length is $64\\sqrt2$.",
+    "detailedSteps": [
+      "For $u\\ge0$, define $g(u)=||u-2|-1|$. On the four intervals $[0,1],[1,2],[2,3],[3,4]$, it is respectively $1-u,u-1,3-u,u-3$. Beyond 4 it exceeds 1.",
+      "Thus in the first quadrant the equation $g(x)+g(y)=1$ is restricted to $[0,4]^2$. In each of its sixteen unit cells, each g is linear with slope positive or negative one, and the equation traces exactly one full cell diagonal of length $\\sqrt2$.",
+      "Different cell diagonals meet only at endpoints, so the first-quadrant total is $16\\sqrt2$. Reflection in the two axes gives four identical quadrants. On either axis the locus contains only isolated points, so no wire segment is counted twice.",
+      "The full length is $64\\sqrt2$, with 2 squarefree, giving $a+b=66$."
+    ],
+    "keyIdeas": [
+      "A nested absolute-value locus is sixteen unit diagonals per quadrant"
+    ],
+    "commonMistakes": [
+      "Dropping one of the three absolute-value layers and obtaining fewer cells."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every linear piece has slope magnitude one, producing unit diagonals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p14",
+    "problemId": "aime-1997-p14",
+    "finalAnswer": "$\\boxed{582}$",
+    "shortExplanation": "There are 332 acceptable nonzero root differences among 1996 possibilities.",
+    "detailedSteps": [
+      "Fix one root by rotation and let the other differ by k steps, $1\\le k\\le1996$. Put $j=\\min(k,1997-k)$; then $|v+w|=2\\cos(\\pi j/1997)$, with $1\\le j\\le998$.",
+      "The source threshold is $\\sqrt{2+\\sqrt3}=2\\cos15^\\circ$. Cosine decreases on the relevant interval, so the inequality is equivalent to $j\\le1997/12=166+5/12$.",
+      "Thus j is 1 through 166, with two k values for each j. The probability is $332/1996=83/499$, giving $m+n=582$. The boundary is not a root separation, so there is no equality case to adjust."
+    ],
+    "keyIdeas": [
+      "Circular root separation bounds the sum modulus"
+    ],
+    "commonMistakes": [
+      "Reading the nested radical as sqrt 2 plus sqrt 3 or including the identical-root case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rotational symmetry makes a fixed first root sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1997-p15",
+    "problemId": "aime-1997-p15",
+    "finalAnswer": "$\\boxed{554}$",
+    "shortExplanation": "The maximum area is $221\\sqrt3-330$, giving 554.",
+    "detailedSteps": [
+      "Give the rectangle horizontal width 11 and vertical height 10. For an equilateral triangle of side s, any orientation can be reduced to $0\\le\\theta\\le30^\\circ$: relabeling vertices changes orientation by 120 degrees, a 180-degree turn preserves both spans, and reflection in a rectangle axis changes the orientation sign. Together these reduce the edge orientation modulo 60 degrees.",
+      "Place two vertices at $(0,0)$ and $(s\\cos\\theta,s\\sin\\theta)$ and the third at $(s\\cos(\\theta+60^\\circ),s\\sin(\\theta+60^\\circ))$. In this interval its bounding width is $s\\cos\\theta$ and its bounding height is $s\\cos(30^\\circ-\\theta)$. Translation fits it in the rectangle exactly when both spans meet the corresponding limits.",
+      "Therefore $s\\le\\min(11/\\cos\\theta,10/\\cos(30^\\circ-\\theta))$. The first bound increases with $\\theta$ and the second decreases. They cross inside the interval because the first is smaller at zero and the second smaller at 30 degrees. Their intersection is the unique maximum of the smaller bound.",
+      "The equality $11\\cos(30^\\circ-\\theta)=10\\cos\\theta$ gives $\\tan\\theta=(20-11\\sqrt3)/11$, a positive value less than $\\tan30^\\circ$. Thus $s^2=121+(20-11\\sqrt3)^2=884-440\\sqrt3$.",
+      "The area is $s^2\\sqrt3/4=221\\sqrt3-330$. The displayed coordinates have spans exactly 11 and 10 at this angle, so the bound is attained by a triangle contained in the rectangle. With 3 squarefree, $p+q+r=221+3+330=554$."
+    ],
+    "keyIdeas": [
+      "Optimizing the bounding box of an equilateral triangle"
+    ],
+    "commonMistakes": [
+      "Optimizing only triangles with a side parallel to the rectangle or giving a local stationary point without comparing all orientations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The increasing and decreasing span bounds give a global maximum and an explicit realizing triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

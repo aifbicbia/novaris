@@ -1,0 +1,92 @@
+[
+  {
+    "finalAnswer": "Simulate each cane with a monotone lower endpoint; stop when it is consumed. At most 30 canes require scanning past the first cow.",
+    "shortExplanation": "Track the height of the first uneaten piece. Most canes finish at the first cow, and every unfinished one doubles that cow’s height, which bounds the number of expensive scans.",
+    "detailedSteps": [
+      "For one cane of height $c$, let $b=0$ be its uneaten lower endpoint. A cow whose height before her turn is $h$ eats $e=\\max(0,\\min(h,c)-b)$. Then increase $b$ by $e$. The remaining interval stays suspended at its original height.",
+      "Update that cow to height $h+e$, retaining her old height when computing $e$. The source delays growth until the cane ends, but each cow visits only once; immediate updates therefore give exactly the same result. As soon as $b=c$, the rest of the cows eat nothing and the loop stops.",
+      "If the first cow cannot finish a cane, $c>h_1$ and she eats $h_1$, doubling her height. All cane heights are at most $10^9$. Starting from a positive integer height, this can occur at most 30 times; after that, the first cow finishes every remaining cane.",
+      "The work is $O(M+N\\log C_{\\max})$, rather than $O(NM)$. The implementation streams cane heights and stores only the cow heights, using $O(N)$ extra space. A final height is bounded by its initial height plus the sum of all cane heights, so use 64-bit integers.",
+      "An original C++17 implementation follows. It reads the official input format and writes one final height per line.\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n,m;if(!(cin>>n>>m))return 0;\n    vector<long long> h(n);for(auto &v:h)cin>>v;\n    for(int j=0;j<m;++j){\n        long long c,b=0;cin>>c;\n        for(int i=0;i<n&&b<c;++i){\n            long long reach=min(h[i],c),gain=max(0LL,reach-b);\n            h[i]+=gain;b+=gain;\n        }\n    }\n    for(auto v:h)cout<<v<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Keep the unconsumed interval’s lower endpoint.",
+      "Charge every full scan to a doubling of the first cow."
+    ],
+    "commonMistakes": [
+      "Do not lower the remaining cane to the ground.",
+      "Use the cow’s pre-turn height before updating her growth.",
+      "Avoid scanning all cows after the cane is gone.",
+      "32-bit heights can overflow."
+    ],
+    "alternativeMethods": [
+      "A deferred-growth simulation gives the same small-case results and is useful as an independent testing oracle. Its unoptimized worst-case running time is too large."
+    ],
+    "difficultyNotes": "The implementation is short, but a complete solution needs the amortized bound. The source’s samples, exhaustive small probes and official test files are audited separately; no online judge submission is claimed.",
+    "id": "solution-usaco-bronze-2023-december-p1",
+    "problemId": "usaco-bronze-2023-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For each infected run of length $L$, add $\\lceil L/(2T+1)\\rceil$, where $T$ is the largest time allowed by every run. Return 0 for no infected cows and 1 when all cows are infected.",
+    "shortExplanation": "Zeros limit how long the infection could have spread. Use the greatest common feasible number of nights, then cover each run with as few infection intervals as possible.",
+    "detailedSteps": [
+      "After $T$ nights, one initial infection reaches every position at distance at most $T$, clipped only at the physical ends of the line. A final zero can never lie in such an interval.",
+      "For a run of $L$ ones surrounded by zeros, a seed needs room on both sides, so $T\\le\\lfloor(L-1)/2\\rfloor$. A run touching exactly one end of the line permits $T\\le L-1$. The all-zero and all-one strings are separate immediate cases.",
+      "Take the minimum of these bounds across all runs. Time is shared by the whole line, not chosen independently for each run. Set $w=2T+1$. Each seed covers at most $w$ cows, so a run needs at least $q=\\lceil L/w\\rceil$ seeds.",
+      "This bound is attainable. In an interior run, put the first and last seed centers $T$ positions from the two zero boundaries. The admissible center span has width $L-w\\le(q-1)w$, so $q$ centers with gaps at most $w$ cover the run without crossing a zero. For a run at one physical end, start $T$ positions from its zero-side boundary and continue toward the physical end with gaps at most $w$; the last interval may be clipped there. The time bound guarantees that this placement fits.",
+      "The minimum seeds for each run are therefore $\\lceil L/w\\rceil$. This expression never increases when feasible $T$ increases, so the largest feasible shared $T$ minimizes the total. Find runs and sum the counts in $O(N)$ time; this implementation stores $O(N)$ run lengths.",
+      "An original C++17 implementation follows.\n\n```cpp\n#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int n;if(!(cin>>n))return 0;string s;cin>>s;\n    vector<int> lengths;int t=n;\n    for(int i=0;i<n;){\n        if(s[i]=='0'){++i;continue;}\n        int left=i;while(i<n&&s[i]=='1')++i;\n        int len=i-left;lengths.push_back(len);\n        if(left==0&&i==n){cout<<1<<'\\n';return 0;}\n        t=min(t,left==0||i==n?len-1:(len-1)/2);\n    }\n    int width=2*t+1,answer=0;\n    for(int len:lengths)answer+=(len+width-1)/width;\n    cout<<answer<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "An infection expands as a clipped interval.",
+      "A zero imposes a hard boundary.",
+      "Optimize one shared time before counting seeds."
+    ],
+    "commonMistakes": [
+      "Do not treat a physical line end as an uninfected cow.",
+      "Different runs cannot use different numbers of nights.",
+      "If an internal run is very short, it can force zero nights for every run."
+    ],
+    "alternativeMethods": [
+      "For small lines, enumerate every initial infection mask and evolve it night by night. This provides a structurally different correctness oracle, but is exponential."
+    ],
+    "difficultyNotes": "The main work is proving both necessity and attainability of the run bounds. The all-one string has no zero boundary; it should not be subjected to an internal-run bound.",
+    "id": "solution-usaco-bronze-2023-december-p2",
+    "problemId": "usaco-bronze-2023-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Invert the target ranks and intersect the adjacent integer inequalities. Output the smallest feasible day $d\\ge0$, or $-1$ if the interval is empty.",
+    "shortExplanation": "A target permutation specifies a strict height order. Adjacent plants alone determine that order, and each adjacent pair gives a lower or upper bound on the integer day.",
+    "detailedSteps": [
+      "Let $p[r]$ be the index with target rank $r$, where rank 0 is tallest. The request holds exactly when $H_{p[0]}(d)>H_{p[1]}(d)>\\cdots>H_{p[N-1]}(d)$. Adjacent strict comparisons are necessary and, by transitivity, sufficient.",
+      "For consecutive indices $i,j$, integer heights turn strictness into $h_i+a_i d\\ge h_j+a_j d+1$. Write $A=a_i-a_j$ and $B=h_j-h_i+1$; then $Ad\\ge B$. The extra 1 excludes ties.",
+      "If $A>0$, impose $d\\ge\\lceil B/A\\rceil$. If $A<0$, impose $d\\le\\lfloor B/A\\rfloor$. If $A=0$, this pair is possible only when $B\\le0$. Start with lower bound 0 and no upper bound, and intersect every pair’s requirement.",
+      "If any equal-rate pair is impossible, or the final lower bound exceeds the upper bound, return $-1$. Otherwise the lower bound satisfies all pairs and is the first feasible day. For a single plant there are no pair constraints, so the answer is 0.",
+      "Build the inverse permutation and inspect $N-1$ pairs in $O(N)$ time and $O(N)$ space. Use exact signed floor and ceiling division with 64-bit integers. Global binary search is inappropriate: faster lower-ranked plants can impose an upper bound, making the feasible days a bounded interval.",
+      "An original C++17 implementation follows. Its helper computes mathematical floor division for a positive divisor.\n\n```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <limits>\nusing namespace std;\nlong long floor_div(long long x,long long positive){\n    return x>=0?x/positive:-((-x+positive-1)/positive);\n}\nint main(){\n    ios::sync_with_stdio(false);cin.tie(nullptr);\n    int tests;if(!(cin>>tests))return 0;\n    while(tests--){\n        int n;cin>>n;vector<long long> h(n),a(n);vector<int> order(n);\n        for(auto &v:h)cin>>v;for(auto &v:a)cin>>v;\n        for(int i=0;i<n;++i){int rank;cin>>rank;order[rank]=i;}\n        long long lo=0,hi=numeric_limits<long long>::max();bool possible=true;\n        for(int r=0;r+1<n;++r){\n            int i=order[r],j=order[r+1];\n            long long slope=a[i]-a[j],need=h[j]-h[i]+1;\n            if(slope>0)lo=max(lo,-floor_div(-need,slope));\n            else if(slope<0)hi=min(hi,floor_div(-need,-slope));\n            else if(need>0)possible=false;\n        }\n        cout<<(possible&&lo<=hi?lo:-1)<<'\\n';\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Invert a ranking permutation.",
+      "Strict integer inequalities need a one-unit gap.",
+      "Intersect lower and upper day bounds."
+    ],
+    "commonMistakes": [
+      "Rank 0 means tallest.",
+      "A tie never satisfies two distinct target ranks.",
+      "Negative division in C++ truncates toward zero, which is not always floor.",
+      "A feasible-day predicate need not remain true forever."
+    ],
+    "alternativeMethods": [
+      "Brute-force days and all pairwise ranks on bounded small inputs for a separate oracle. Sorting by target rank also works, but an inverse permutation avoids its extra logarithmic cost."
+    ],
+    "difficultyNotes": "The proof must handle positive, negative and zero slope differences separately. It is not enough to keep only the time when each desired taller plant first catches its neighbor.",
+    "id": "solution-usaco-bronze-2023-december-p3",
+    "problemId": "usaco-bronze-2023-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

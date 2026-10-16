@@ -1,0 +1,784 @@
+[
+  {
+    "id": "solution-amc8-2014-p1",
+    "problemId": "amc8-2014-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(-10)}$",
+    "shortExplanation": "**Idea:** Evaluate Harry's and Terry's expressions separately.",
+    "detailedSteps": [
+      "Harry follows the parentheses:",
+      "[\nH=8-(2+5)=8-7=1.\n]",
+      "Terry ignores the parentheses:",
+      "[\nT=8-2+5=6+5=11.\n]",
+      "Therefore",
+      "[\nH-T=1-11=-10.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(-10)}$)"
+    ],
+    "keyIdeas": [
+      "Order of operations",
+      "Parentheses"
+    ],
+    "commonMistakes": [
+      "Do not evaluate Harry's expression from left to right.",
+      "Keep track of the order $H-T$, not $T-H$."
+    ],
+    "alternativeMethods": [
+      "Notice the only difference is that Terry adds $5$ instead of subtracting it, making Terry's answer $10$ larger."
+    ],
+    "difficultyNotes": "A direct order-of-operations warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p2",
+    "problemId": "amc8-2014-p2",
+    "finalAnswer": "$\\boxed{\\text{E }(5)}$",
+    "shortExplanation": "**Idea:** Compare the most coins and the fewest coins needed to make $35$ cents.",
+    "detailedSteps": [
+      "The largest number of coins uses all nickels:",
+      "[\n35=7\\cdot5,\n]",
+      "so the largest number is $7$ coins.",
+      "The smallest number of coins is",
+      "[\n25+10=35,\n]",
+      "which uses $2$ coins.",
+      "The difference is",
+      "[\n7-2=5.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(5)}$)"
+    ],
+    "keyIdeas": [
+      "Coin combinations",
+      "Optimization"
+    ],
+    "commonMistakes": [
+      "Use exactly $35$ cents.",
+      "The question asks for the difference between counts, not a count by itself."
+    ],
+    "alternativeMethods": [
+      "List possible combinations: $25+10$, $25+5+5$, and nickel/dime combinations."
+    ],
+    "difficultyNotes": "A small optimization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p3",
+    "problemId": "amc8-2014-p3",
+    "finalAnswer": "$\\boxed{\\text{B }(250)}$",
+    "shortExplanation": "**Idea:** Convert each daily average to a total number of pages.",
+    "detailedSteps": [
+      "For the first three days, Isabella reads",
+      "[\n3\\cdot36=108\n]",
+      "pages. For the next three days, she reads",
+      "[\n3\\cdot44=132\n]",
+      "pages.",
+      "Including the last $10$ pages, the book has",
+      "[\n108+132+10=250\n]",
+      "pages.",
+      "Final Answer: ($\\boxed{\\text{B }(250)}$)"
+    ],
+    "keyIdeas": [
+      "Average as total divided by count",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Do not average $36$ and $44$ over all seven days.",
+      "The last day is given as $10$ pages, not an average."
+    ],
+    "alternativeMethods": [
+      "Combine the six-day total first: $3(36+44)=240$, then add $10$."
+    ],
+    "difficultyNotes": "Averages become totals once the number of days is known.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p4",
+    "problemId": "amc8-2014-p4",
+    "finalAnswer": "$\\boxed{\\text{E }(166)}$",
+    "shortExplanation": "**Idea:** An odd sum of two primes must include $2$.",
+    "detailedSteps": [
+      "All primes except $2$ are odd.",
+      "If two odd primes are added, their sum is even. Since $85$ is odd, one prime must be $2$.",
+      "The other prime is",
+      "[\n85-2=83.\n]",
+      "Their product is",
+      "[\n2\\cdot83=166.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(166)}$)"
+    ],
+    "keyIdeas": [
+      "Prime numbers",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "Do not try many prime pairs; parity identifies $2$ immediately.",
+      "$1$ is not prime."
+    ],
+    "alternativeMethods": [
+      "Check the answer choices by factoring; only $166=2\\cdot83$ uses primes summing to $85$."
+    ],
+    "difficultyNotes": "A parity observation makes the problem short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p5",
+    "problemId": "amc8-2014-p5",
+    "finalAnswer": "$\\boxed{\\text{C }(160)}$",
+    "shortExplanation": "**Idea:** Find how many gallons $20$ dollars buys, then convert gallons to miles.",
+    "detailedSteps": [
+      "At $4$ dollars per gallon, $20$ dollars buys",
+      "[\n\\frac{20}{4}=5\n]",
+      "gallons.",
+      "At $32$ miles per gallon, Margie can drive",
+      "[\n5\\cdot32=160\n]",
+      "miles.",
+      "Final Answer: ($\\boxed{\\text{C }(160)}$)"
+    ],
+    "keyIdeas": [
+      "Unit rates",
+      "Gas mileage"
+    ],
+    "commonMistakes": [
+      "Do not multiply $20$ by $32$ before accounting for the gas price.",
+      "Keep dollars, gallons, and miles in order."
+    ],
+    "alternativeMethods": [
+      "One dollar buys $8$ miles of travel, so $20$ dollars buys $160$ miles."
+    ],
+    "difficultyNotes": "A two-step unit-rate calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p6",
+    "problemId": "amc8-2014-p6",
+    "finalAnswer": "$\\boxed{\\text{D }(182)}$",
+    "shortExplanation": "**Idea:** Each rectangle has area $2$ times its length.",
+    "detailedSteps": [
+      "The sum of the six lengths is",
+      "[\n1+4+9+16+25+36=91.\n]",
+      "Since every rectangle has base width $2$, the total area is",
+      "[\n2\\cdot91=182.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(182)}$)"
+    ],
+    "keyIdeas": [
+      "Rectangle area",
+      "Factoring common width"
+    ],
+    "commonMistakes": [
+      "Do not add the lengths without multiplying by the common width.",
+      "The numbers are lengths, not areas."
+    ],
+    "alternativeMethods": [
+      "Compute the six areas separately and add them."
+    ],
+    "difficultyNotes": "Factoring out the common width saves arithmetic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p7",
+    "problemId": "amc8-2014-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(4:3)}$",
+    "shortExplanation": "**Idea:** Solve for boys and girls using the total and difference.",
+    "detailedSteps": [
+      "Let $b$ be the number of boys. Then the number of girls is $b+4$.",
+      "The total is",
+      "[\nb+(b+4)=28.\n]",
+      "So",
+      "[\n2b=24,\\qquad b=12.\n]",
+      "There are $16$ girls, and the ratio of girls to boys is",
+      "[\n16:12=4:3.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(4:3)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "The requested ratio is girls to boys.",
+      "Reduce the ratio after finding the counts."
+    ],
+    "alternativeMethods": [
+      "Split the class evenly first: $14$ and $14$, then move $2$ from boys to girls to make the difference $4$."
+    ],
+    "difficultyNotes": "A standard total-and-difference setup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p8",
+    "problemId": "amc8-2014-p8",
+    "finalAnswer": "$\\boxed{\\text{D }(3)}$",
+    "shortExplanation": "**Idea:** The three-digit number $1A2$ must be divisible by $11$.",
+    "detailedSteps": [
+      "The total paid was a multiple of $11$ because $11$ members paid the same integer amount.",
+      "The number $1A2$ equals",
+      "[\n102+10A.\n]",
+      "Check the nearby multiples of $11$:",
+      "[\n11\\cdot12=132.\n]",
+      "Thus the number is $132$, so",
+      "[\nA=3.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(3)}$)"
+    ],
+    "keyIdeas": [
+      "Divisibility",
+      "Place value"
+    ],
+    "commonMistakes": [
+      "The digit $A$ is the tens digit.",
+      "The amount must be divisible by $11$, not merely close to a multiple of $11$."
+    ],
+    "alternativeMethods": [
+      "Use divisibility by $11$: $(1+2)-A$ must be a multiple of $11$, so $3-A=0$."
+    ],
+    "difficultyNotes": "A neat digit divisibility problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p9",
+    "problemId": "amc8-2014-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(140)}$",
+    "shortExplanation": "**Idea:** Triangle $BCD$ is isosceles, then use a straight angle at $D$.",
+    "detailedSteps": [
+      "Since $BD=DC$, triangle $BCD$ is isosceles with base $BC$.",
+      "So",
+      "[\n\\angle DBC=\\angle BCD=70^\\circ.\n]",
+      "The third angle in triangle $BCD$ is",
+      "[\n180^\\circ-70^\\circ-70^\\circ=40^\\circ.\n]",
+      "Since $A,D,C$ are collinear, $angle ADB$ is supplementary to $angle BDC$:",
+      "[\n\\angle ADB=180^\\circ-40^\\circ=140^\\circ.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(140)}$)"
+    ],
+    "keyIdeas": [
+      "Isosceles triangles",
+      "Supplementary angles"
+    ],
+    "commonMistakes": [
+      "The equal sides are $BD$ and $DC$, so the equal base angles are at $B$ and $C$.",
+      "Use the straight line $A-D-C$ at the end."
+    ],
+    "alternativeMethods": [
+      "Once $angle BDC=40^circ$, the exterior angle at $D$ is immediate."
+    ],
+    "difficultyNotes": "A two-step angle chase.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p10",
+    "problemId": "amc8-2014-p10",
+    "finalAnswer": "$\\boxed{\\text{A }(1979)}$",
+    "shortExplanation": "**Idea:** Count the seventh AMC 8 year starting with $1985$ as the first.",
+    "detailedSteps": [
+      "The first AMC 8 was in $1985$.",
+      "The seventh AMC 8 was",
+      "[\n1985+6=1991.\n]",
+      "Samantha turned $12$ in $1991$, so she was born in",
+      "[\n1991-12=1979.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(1979)}$)"
+    ],
+    "keyIdeas": [
+      "Inclusive counting",
+      "Years"
+    ],
+    "commonMistakes": [
+      "The seventh contest is $6$ years after the first, not $7$ years after.",
+      "Subtract $12$ from the year she turned $12$."
+    ],
+    "alternativeMethods": [
+      "List: first $1985$, second $1986$, ..., seventh $1991$."
+    ],
+    "difficultyNotes": "The main risk is an off-by-one count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p11",
+    "problemId": "amc8-2014-p11",
+    "finalAnswer": "$\\boxed{\\text{A }(4)}$",
+    "shortExplanation": "**Idea:** Count all east/north paths and subtract those through the dangerous intersection.",
+    "detailedSteps": [
+      "Jack must travel $3$ east blocks and $2$ north blocks, so without restrictions the number of paths is",
+      "[\n\\binom{5}{2}=10.\n]",
+      "The dangerous intersection is one east and one north from home.",
+      "Paths from home to that intersection: $2$.",
+      "Paths from that intersection to Jill's house require $2$ east and $1$ north, so there are",
+      "[\n\\binom{3}{1}=3\n]",
+      "ways.",
+      "Forbidden paths: $2\\cdot3=6$. Allowed paths:",
+      "[\n10-6=4.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Grid paths",
+      "Complement counting"
+    ],
+    "commonMistakes": [
+      "Avoid paths through the intersection, not just paths ending there.",
+      "Each route has exactly five blocks."
+    ],
+    "alternativeMethods": [
+      "Draw a small grid and count recursively around the blocked point."
+    ],
+    "difficultyNotes": "A classic blocked-grid path count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p12",
+    "problemId": "amc8-2014-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{1}{6})}$",
+    "shortExplanation": "**Idea:** There are $3!$ possible matchings, and only one is correct.",
+    "detailedSteps": [
+      "The first celebrity's baby picture can be chosen in $3$ ways, the second in $2$ ways, and the last is then determined.",
+      "So there are",
+      "[\n3!=6\n]",
+      "possible matchings.",
+      "Only one matching is completely correct, so the probability is",
+      "[\n\\frac16.\n]",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac16\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The guesses are not independent after each baby picture is used.",
+      "The question asks all three correct."
+    ],
+    "alternativeMethods": [
+      "Probability chain: $\\frac{1}{3}\\cdot\\frac{1}{2}\\cdot1=\\frac{1}{6}$."
+    ],
+    "difficultyNotes": "A direct permutation probability.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p13",
+    "problemId": "amc8-2014-p13",
+    "finalAnswer": "$\\boxed{\\text{D }(n+m\\text{ is odd})}$",
+    "shortExplanation": "**Idea:** A square has the same parity as its base integer.",
+    "detailedSteps": [
+      "For any integer $k$, $k^2$ is even when $k$ is even and odd when $k$ is odd.",
+      "If $n^2+m^2$ is even, then $n^2$ and $m^2$ have the same parity.",
+      "Therefore $n$ and $m$ also have the same parity.",
+      "If $n$ and $m$ have the same parity, then $n+m$ must be even.",
+      "So it is impossible for $n+m$ to be odd.",
+      "Final Answer: ($\\boxed{\\text{D }(n+m\\text{ is odd})}$)"
+    ],
+    "keyIdeas": [
+      "Parity",
+      "Squares modulo 2"
+    ],
+    "commonMistakes": [
+      "Odd plus odd is even, so both odd is allowed.",
+      "The impossible statement is about $n+m$, not about $n$ and $m$ being odd."
+    ],
+    "alternativeMethods": [
+      "Work modulo $2$: $n^2+m^2\\equiv n+m\\pmod 2$."
+    ],
+    "difficultyNotes": "Parity is preserved by squaring.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p14",
+    "problemId": "amc8-2014-p14",
+    "finalAnswer": "$\\boxed{\\text{B }(13)}$",
+    "shortExplanation": "**Idea:** Equal areas determine $CE$, then use the Pythagorean theorem.",
+    "detailedSteps": [
+      "The rectangle has dimensions $6$ by $5$, so its area is",
+      "[\n6\\cdot5=30.\n]",
+      "Triangle $DCE$ is right with height $DC=5$. Let $CE=x$.",
+      "Its area is",
+      "[\n\\frac12\\cdot5\\cdot x=30,\n]",
+      "so",
+      "[\nx=12.\n]",
+      "Then $DE$ is the hypotenuse of a $5$-$12$-$13$ right triangle:",
+      "[\nDE=\\sqrt{5^2+12^2}=13.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(13)}$)"
+    ],
+    "keyIdeas": [
+      "Equal areas",
+      "Right triangles",
+      "Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "The base of the right triangle is $CE$, not the whole bottom segment $BE$.",
+      "Use $DC=5$ as the triangle height."
+    ],
+    "alternativeMethods": [
+      "Recognize the $5$-$12$-$13$ triple once $CE=12$."
+    ],
+    "difficultyNotes": "Area equality comes before length calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p15",
+    "problemId": "amc8-2014-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(90)}$",
+    "shortExplanation": "**Idea:** Each equal arc is $30^circ$, and inscribed angles measure half their intercepted arcs.",
+    "detailedSteps": [
+      "The circle is divided into $12$ equal arcs, so each arc measures",
+      "[\n\\frac{360^\\circ}{12}=30^\\circ.\n]",
+      "Angle $x=angle EAG$ intercepts minor arc $EG$, which has $2$ arcs:",
+      "[\nx=\\frac12(60^\\circ)=30^\\circ.\n]",
+      "Angle $y=angle AGI$ intercepts the arc from $A$ to $I$ that does not contain $G$, which has $4$ arcs:",
+      "[\ny=\\frac12(120^\\circ)=60^\\circ.\n]",
+      "Therefore",
+      "[\nx+y=30^\\circ+60^\\circ=90^\\circ.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(90)}$)"
+    ],
+    "keyIdeas": [
+      "Inscribed angles",
+      "Equal arcs"
+    ],
+    "commonMistakes": [
+      "Use the intercepted arc that does not contain the angle's vertex.",
+      "Do not use the central angle directly; an inscribed angle is half its intercepted arc."
+    ],
+    "alternativeMethods": [
+      "Count arc steps on the diagram: $EG$ is $2$ steps and the relevant $AI$ arc is $4$ steps."
+    ],
+    "difficultyNotes": "An arc-counting problem with a circle split into twelfths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p16",
+    "problemId": "amc8-2014-p16",
+    "finalAnswer": "$\\boxed{\\text{B }(88)}$",
+    "shortExplanation": "**Idea:** Count conference games by pairs of teams, then add non-conference games.",
+    "detailedSteps": [
+      "There are",
+      "[\n\\binom82=28\n]",
+      "pairs of conference teams.",
+      "Each pair plays twice, so conference games total",
+      "[\n28\\cdot2=56.\n]",
+      "Each of the $8$ teams plays $4$ non-conference games, and each such game involves one conference team, so there are",
+      "[\n8\\cdot4=32\n]",
+      "non-conference games involving the conference.",
+      "Total:",
+      "[\n56+32=88.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(88)}$)"
+    ],
+    "keyIdeas": [
+      "Pair counting",
+      "Schedules"
+    ],
+    "commonMistakes": [
+      "Do not double-count a conference game for both teams.",
+      "Non-conference games are counted once per Middle School Eight team."
+    ],
+    "alternativeMethods": [
+      "Each team has $14$ conference games, so $8\\cdot14/2=56$ conference games."
+    ],
+    "difficultyNotes": "The conference games require dividing by two or counting team pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p17",
+    "problemId": "amc8-2014-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(6)}$",
+    "shortExplanation": "**Idea:** Compare today's time with George's usual $20$ minutes.",
+    "detailedSteps": [
+      "At $3$ miles per hour, George usually takes",
+      "[\n\\frac{1}{3}\\text{ hour}=20\\text{ minutes}.\n]",
+      "Today, the first half-mile at $2$ miles per hour takes",
+      "[\n\\frac{1/2}{2}=\\frac14\\text{ hour}=15\\text{ minutes}.\n]",
+      "He has $5$ minutes left for the last half-mile.",
+      "Since $5$ minutes is $\\frac{1}{12}$ hour, his required speed is",
+      "[\n\\frac{1/2}{1/12}=6\n]",
+      "miles per hour.",
+      "Final Answer: ($\\boxed{\\text{B }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Speed",
+      "Time remaining"
+    ],
+    "commonMistakes": [
+      "Use hours when computing miles per hour.",
+      "George only has the remaining time from his normal schedule."
+    ],
+    "alternativeMethods": [
+      "The first half-mile uses $15$ of the usual $20$ minutes, so the second half must be three times faster than $2$ mph."
+    ],
+    "difficultyNotes": "A rate problem with a fixed total time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p18",
+    "problemId": "amc8-2014-p18",
+    "finalAnswer": "$\\boxed{\\text{D }(3\\text{ of one gender and }1\\text{ of the other})}$",
+    "shortExplanation": "**Idea:** Count how many birth sequences produce each type of outcome.",
+    "detailedSteps": [
+      "There are",
+      "[\n2^4=16\n]",
+      "equally likely birth sequences.",
+      "All boys and all girls each occur in $1$ sequence.",
+      "Two boys and two girls occur in",
+      "[\n\\binom42=6\n]",
+      "sequences.",
+      "Three of one gender and one of the other occurs in",
+      "[\n2\\binom41=8\n]",
+      "sequences.",
+      "The largest count is $8$.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Binomial probability",
+      "Counting cases"
+    ],
+    "commonMistakes": [
+      "The listed outcomes are categories, not single sequences.",
+      "All four boys is much less likely than a mixed outcome."
+    ],
+    "alternativeMethods": [
+      "Use binomial coefficients $1,4,6,4,1$ and combine the two $3$-$1$ cases."
+    ],
+    "difficultyNotes": "Categories with more arrangements are more likely.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p19",
+    "problemId": "amc8-2014-p19",
+    "finalAnswer": "$\\boxed{\\text{A }(\\frac{5}{54})}$",
+    "shortExplanation": "**Idea:** Hide white cubes in positions with the fewest exposed faces.",
+    "detailedSteps": [
+      "A $3\\times3\\times3$ cube has one interior small cube with $0$ exposed faces.",
+      "The next best positions are face-center cubes, each with $1$ exposed face.",
+      "To minimize white surface area, place one white cube in the interior and the other $5$ white cubes at face centers.",
+      "So only $5$ unit square faces are white.",
+      "The full cube has surface area",
+      "[\n6\\cdot3^2=54.\n]",
+      "Thus the white fraction is",
+      "[\n\\frac{5}{54}.\n]",
+      "Final Answer: ($\\boxed{\\text{A }\\left(\\frac5{54}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Surface area",
+      "Cube positions"
+    ],
+    "commonMistakes": [
+      "Corners expose $3$ faces, so they are bad positions for minimizing white surface.",
+      "The one interior cube contributes no exposed white area."
+    ],
+    "alternativeMethods": [
+      "Classify small cubes by exposed faces: interior $0$, face centers $1$, edges $2$, corners $3$."
+    ],
+    "difficultyNotes": "A spatial optimization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p20",
+    "problemId": "amc8-2014-p20",
+    "finalAnswer": "$\\boxed{\\text{B }(4.0)}$",
+    "shortExplanation": "**Idea:** Subtract three quarter-circle areas from the rectangle area.",
+    "detailedSteps": [
+      "The rectangle has area",
+      "[\n5\\cdot3=15.\n]",
+      "Inside the rectangle, each circle contributes one quarter of its full area.",
+      "The total covered circle area is",
+      "[\n\\frac14\\pi(1^2+2^2+3^2)=\\frac{14\\pi}{4}=3.5\\pi.\n]",
+      "The uncovered area is approximately",
+      "[\n15-3.5\\pi\\approx15-11.0=4.0.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(4.0)}$)"
+    ],
+    "keyIdeas": [
+      "Quarter circles",
+      "Area subtraction"
+    ],
+    "commonMistakes": [
+      "Only the quarter of each circle inside the rectangle is counted.",
+      "The quarter-circles are tangent, so there is no overlap to subtract."
+    ],
+    "alternativeMethods": [
+      "Estimate $\\pi\\approx3.14$ after setting up the exact expression $15-\\frac{14\\pi}{4}$."
+    ],
+    "difficultyNotes": "The answer is approximate because the choices are decimal estimates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p21",
+    "problemId": "amc8-2014-p21",
+    "finalAnswer": "$\\boxed{\\text{A }(1)}$",
+    "shortExplanation": "**Idea:** Use divisibility by $3$ on both digit sums.",
+    "detailedSteps": [
+      "For the first number, the digit sum is",
+      "[\n7+4+A+5+2+B+1=19+A+B.\n]",
+      "Since it is divisible by $3$,",
+      "[\nA+B\\equiv2\\pmod3.\n]",
+      "For the second number, the digit sum is",
+      "[\n3+2+6+A+B+4+C=15+A+B+C.\n]",
+      "So",
+      "[\nA+B+C\\equiv0\\pmod3.\n]",
+      "Because $A+B\\equiv2\\pmod 3$, we need",
+      "[\nC\\equiv1\\pmod3.\n]",
+      "Among the choices, only $1$ works.",
+      "Final Answer: ($\\boxed{\\text{A }(1)}$)"
+    ],
+    "keyIdeas": [
+      "Divisibility by 3",
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "Use both numbers; one congruence alone is not enough.",
+      "The digits $A$ and $B$ need not be found individually."
+    ],
+    "alternativeMethods": [
+      "Subtract the two divisibility conditions to isolate the possible residue of $C$."
+    ],
+    "difficultyNotes": "A digit-sum congruence problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p22",
+    "problemId": "amc8-2014-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(9)}$",
+    "shortExplanation": "**Idea:** Write the two-digit number in terms of its digits.",
+    "detailedSteps": [
+      "Let the number be $10a+b$, where $a$ is the tens digit and $b$ is the units digit.",
+      "The condition says",
+      "[\nab+a+b=10a+b.\n]",
+      "Cancel $b$ from both sides:",
+      "[\nab+a=10a.\n]",
+      "Since $a$ is nonzero, divide by $a$:",
+      "[\nb+1=10,\n]",
+      "so",
+      "[\nb=9.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(9)}$)"
+    ],
+    "keyIdeas": [
+      "Digit algebra",
+      "Two-digit numbers"
+    ],
+    "commonMistakes": [
+      "The tens digit $a$ cannot be $0$.",
+      "Do not forget the sum of the digits includes both $a$ and $b$."
+    ],
+    "alternativeMethods": [
+      "Rearrange as $a(b-9)=0$, so $b=9$."
+    ],
+    "difficultyNotes": "The units digit is forced for every possible tens digit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p23",
+    "problemId": "amc8-2014-p23",
+    "finalAnswer": "$\\boxed{\\text{A }(11)}$",
+    "shortExplanation": "**Idea:** Translate the conversation into inequalities between sums of prime uniform numbers.",
+    "detailedSteps": [
+      "Let Ashley, Bethany, and Caitlin wear $a,b,c$, respectively.",
+      "Bethany says $a+c$ is earlier this month, Ashley says $b+c$ is today's date, and Caitlin says $a+b$ is later this month.",
+      "Thus",
+      "[\na+c<b+c<a+b.\n]",
+      "This gives",
+      "[\na<b\\quad\\text{and}\\quad c<a.\n]",
+      "So",
+      "[\nc<a<b.\n]",
+      "All three numbers are two-digit primes and the largest date $a+b$ must be at most $31$.",
+      "The only increasing triple of two-digit primes that works is",
+      "[\n11<13<17,\n]",
+      "since $13+17=30$.",
+      "Therefore Caitlin's number is $11$.",
+      "Final Answer: ($\\boxed{\\text{A }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Two-digit primes",
+      "Inequalities"
+    ],
+    "commonMistakes": [
+      "Keep track of whose birthday each sum describes.",
+      "Dates must be no larger than $31$."
+    ],
+    "alternativeMethods": [
+      "Test the smallest two-digit primes $11,13,17,19$; any triple starting at $13$ becomes too large."
+    ],
+    "difficultyNotes": "A logic problem with a small prime search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p24",
+    "problemId": "amc8-2014-p24",
+    "finalAnswer": "$\\boxed{\\text{C }(3.5)}$",
+    "shortExplanation": "**Idea:** Make the first $49$ customers as small as possible, then maximize the middle two values.",
+    "detailedSteps": [
+      "For $100$ customers, the median is the average of the $50$th and $51$st values after sorting.",
+      "To maximize the median, give the first $49$ customers the minimum possible amount, $1$ can each.",
+      "This uses $49$ cans, leaving",
+      "[\n252-49=203\n]",
+      "cans for customers $50$ through $100$.",
+      "If the median were at least $4$, then those $51$ customers would need at least",
+      "[\n51\\cdot4=204\n]",
+      "cans, which is too many.",
+      "But we can make the $50$th value $3$ and the remaining $50$ values $4$, using",
+      "[\n49+3+50\\cdot4=252.\n]",
+      "The maximum median is",
+      "[\n\\frac{3+4}{2}=3.5.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(3.5)}$)"
+    ],
+    "keyIdeas": [
+      "Median",
+      "Optimization",
+      "Sorted data"
+    ],
+    "commonMistakes": [
+      "For $100$ values, the median is the average of the $50$th and $51$st values.",
+      "Every customer must buy at least one can."
+    ],
+    "alternativeMethods": [
+      "Try to force the median to $4$ and observe that it requires $253$ cans including the first $49$ minimum purchases."
+    ],
+    "difficultyNotes": "A careful median maximization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2014-p25",
+    "problemId": "amc8-2014-p25",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac{\\pi}{10})}$",
+    "shortExplanation": "**Idea:** Each semicircle has diameter $40$ feet, so count the semicircles across one mile.",
+    "detailedSteps": [
+      "The highway is $40$ feet wide, so each semicircle has diameter $40$ feet and radius $20$ feet.",
+      "One mile is $5280$ feet, so the number of semicircles is",
+      "[\n\\frac{5280}{40}=132.\n]",
+      "Each semicircle has arc length",
+      "[\n\\pi r=20\\pi\n]",
+      "feet. The total distance is",
+      "[\n132\\cdot20\\pi=2640\\pi\n]",
+      "feet, or",
+      "[\n\\frac{2640\\pi}{5280}=\\frac{\\pi}{2}\n]",
+      "miles.",
+      "At $5$ miles per hour, the time is",
+      "[\n\\frac{\\pi/2}{5}=\\frac{\\pi}{10}\n]",
+      "hours.",
+      "Final Answer: ($\\boxed{\\text{B }\\left(\\frac{\\pi}{10}\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Arc length",
+      "Unit conversion",
+      "Speed"
+    ],
+    "commonMistakes": [
+      "Use the radius $20$ feet, not diameter $40$ feet, in semicircle arc length.",
+      "Convert total feet to miles before dividing by miles per hour."
+    ],
+    "alternativeMethods": [
+      "Each $40$ feet of highway corresponds to $20\\pi$ feet of path, so the path length is $\\frac{\\pi}{2}$ times the highway length."
+    ],
+    "difficultyNotes": "The path length scales by a constant ratio for each semicircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

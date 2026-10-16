@@ -1,0 +1,506 @@
+[
+  {
+    "id": "solution-amc12a-2002-p1",
+    "problemId": "amc12a-2002-p1",
+    "finalAnswer": "$\\boxed{\\frac72}$ (choice A)",
+    "shortExplanation": "The equation factors into two linear factors.",
+    "detailedSteps": [
+      "Factor the left side as $(2x+3)((x-4)+(x-6))=(2x+3)(2x-10)$.",
+      "The roots are $-3/2$ and $5$, whose sum is $7/2$."
+    ],
+    "keyIdeas": [
+      "Factoring a common linear term"
+    ],
+    "commonMistakes": [
+      "Adding the constants from the two original factors as if each factor supplied a root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring the common term avoids extra expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p2",
+    "problemId": "amc12a-2002-p2",
+    "finalAnswer": "$\\boxed{15}$ (choice A)",
+    "shortExplanation": "Recover the starting number from the incorrect result.",
+    "detailedSteps": [
+      "If the starting value is $N$, then $(N-9)/3=43$, giving $N=138$.",
+      "The intended calculation is $(138-3)/9=15$."
+    ],
+    "keyIdeas": [
+      "Undoing the mistaken operations"
+    ],
+    "commonMistakes": [
+      "Applying the intended operations to 43 rather than to the starting value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reverse the actually performed calculation first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p3",
+    "problemId": "amc12a-2002-p3",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The five binary parenthesizations produce just two distinct values.",
+    "detailedSteps": [
+      "For four copies of $2$, the five groupings are $((2^2)^2)^2$, $(2^{(2^2)})^2$, $(2^2)^{(2^2)}$, $2^{((2^2)^2)}$, and $2^{(2^{(2^2)})}$.",
+      "The first three are $256$ and the last two are $65536$. There is therefore exactly one value besides the conventional value."
+    ],
+    "keyIdeas": [
+      "Parenthesizing exponentiation"
+    ],
+    "commonMistakes": [
+      "Counting parenthesizations instead of distinct numerical results."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Different operation orders can coincide numerically.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p4",
+    "problemId": "amc12a-2002-p4",
+    "finalAnswer": "$\\boxed{60}$ (choice B)",
+    "shortExplanation": "The complementary angle is one quarter of the supplementary angle.",
+    "detailedSteps": [
+      "For angle $x$, write $90-x=(180-x)/4$. Then $360-4x=180-x$, so $3x=180$ and $x=60^\\circ$."
+    ],
+    "keyIdeas": [
+      "Complement and supplement equation"
+    ],
+    "commonMistakes": [
+      "Interchanging complement and supplement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the definitions before solving the linear equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p5",
+    "problemId": "amc12a-2002-p5",
+    "finalAnswer": "$\\boxed{2\\pi}$ (choice C)",
+    "shortExplanation": "The large radius is $3$, leaving the area of two unit disks.",
+    "detailedSteps": [
+      "The six surrounding circle centers are $2$ units from the central center. The outer boundary is another unit farther away, so the large radius is $3$.",
+      "The shaded area is the large disk minus seven disjoint unit disks: $9\\pi-7\\pi=2\\pi$."
+    ],
+    "keyIdeas": [
+      "Area left by tangent circle packing"
+    ],
+    "commonMistakes": [
+      "Subtracting only the six surrounding circles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The diagram determines which interiors are unshaded.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p6",
+    "problemId": "amc12a-2002-p6",
+    "finalAnswer": "$\\boxed{\\text{Infinitely many}}$ (choice E)",
+    "shortExplanation": "For every positive $m$, the choice $n=1$ works.",
+    "detailedSteps": [
+      "Setting $n=1$ gives $m\\le m+1$, valid for every positive integer $m$. There is therefore no upper bound on the eligible $m$ values."
+    ],
+    "keyIdeas": [
+      "An existential inequality"
+    ],
+    "commonMistakes": [
+      "Assuming m and n must both exceed 1."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An explicit witness resolves an existence question.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p7",
+    "problemId": "amc12a-2002-p7",
+    "finalAnswer": "$\\boxed{\\frac49}$ (choice A)",
+    "shortExplanation": "The radius ratio is the inverse of the angle ratio.",
+    "detailedSteps": [
+      "Equal arcs give $45r_A=30r_B$, so $r_A/r_B=2/3$. Circle areas are proportional to squared radii, giving an area ratio of $4/9$."
+    ],
+    "keyIdeas": [
+      "Equal arc lengths and area scaling"
+    ],
+    "commonMistakes": [
+      "Using the radius ratio directly as the area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Arc length is linear in radius; area is quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p8",
+    "problemId": "amc12a-2002-p8",
+    "finalAnswer": "$\\boxed{B=W}$ (choice A)",
+    "shortExplanation": "The eight white diamond-shaped regions occupy half the area outside the red square.",
+    "detailedSteps": [
+      "Let the red square side be $s$. The outer square has side $3s$. Grouping adjacent white pieces yields eight diamond-shaped white regions, each with both diagonals equal to $s$, hence each of area $s^2/2$.",
+      "Thus $W=4s^2$, while $R=s^2$ and the flag area is $9s^2$. The remaining blue area is $B=9s^2-s^2-4s^2=4s^2=W$."
+    ],
+    "keyIdeas": [
+      "Grouping colored regions by area"
+    ],
+    "commonMistakes": [
+      "Comparing piece counts instead of total colored areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grouping the small pieces makes their total area easier to read.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p9",
+    "problemId": "amc12a-2002-p9",
+    "finalAnswer": "$\\boxed{13}$ (choice B)",
+    "shortExplanation": "Twelve disks cannot absorb the waste forced by the largest files.",
+    "detailedSteps": [
+      "The total size is $3(0.8)+12(0.7)+15(0.4)=16.8$ MB. Each $0.8$-MB file needs a separate disk and can share it with at most one $0.4$-MB file. Each such disk wastes at least $1.44-1.2=0.24$ MB.",
+      "Twelve disks would have usable capacity at most $12(1.44)-3(0.24)=16.56$ MB, too little.",
+      "Thirteen suffice: three disks hold one $0.8$ and one $0.4$ each; six hold pairs of $0.7$; four hold triples of $0.4$. Every disk respects its capacity."
+    ],
+    "keyIdeas": [
+      "Packing with unavoidable unused capacity"
+    ],
+    "commonMistakes": [
+      "Using only the ceiling of total size divided by capacity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A packing minimum needs an obstruction and a construction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p10",
+    "problemId": "amc12a-2002-p10",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice D)",
+    "shortExplanation": "The first cup ends with $2$ ounces of cream out of $5$ ounces.",
+    "detailedSteps": [
+      "The first transfer moves $2$ ounces of coffee, leaving $2$ in the first cup. The second cup then holds $2$ ounces coffee and $4$ ounces cream.",
+      "Its half-volume transfer back contains $1$ ounce coffee and $2$ ounces cream. The first cup now contains $3$ ounces coffee and $2$ ounces cream, so the cream fraction is $2/5$."
+    ],
+    "keyIdeas": [
+      "Tracking ingredients through two transfers"
+    ],
+    "commonMistakes": [
+      "Taking half of each original ingredient before the mixture is stirred."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Volume and ingredient fractions must both be updated.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p11",
+    "problemId": "amc12a-2002-p11",
+    "finalAnswer": "$\\boxed{48}$ (choice B)",
+    "shortExplanation": "The punctual travel time is the average of the late and early travel times.",
+    "detailedSteps": [
+      "For distance $d$, the punctual time is $\\tfrac12(d/40+d/60)=d/48$ because the two arrival errors are equally far from the target time.",
+      "Therefore the required speed is $48$ mph. The six-minute difference also gives $d=12$ miles, with punctual time $15$ minutes."
+    ],
+    "keyIdeas": [
+      "Travel-time midpoint and harmonic mean"
+    ],
+    "commonMistakes": [
+      "Averaging 40 and 60 arithmetically."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal time errors call for averaging times, not speeds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p12",
+    "problemId": "amc12a-2002-p12",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "One root must be the only even prime.",
+    "detailedSteps": [
+      "By Viète, the prime roots sum to $63$. Two odd primes have even sum, so one root must be $2$. The other is $61$, which is prime.",
+      "This gives the sole constant value $k=2\\cdot61=122$, so there is one possibility."
+    ],
+    "keyIdeas": [
+      "Prime roots with an odd sum"
+    ],
+    "commonMistakes": [
+      "Searching pairs of odd primes despite the odd sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity collapses the prime search to one candidate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p13",
+    "problemId": "amc12a-2002-p13",
+    "finalAnswer": "$\\boxed{\\sqrt5}$ (choice C)",
+    "shortExplanation": "The two positive solutions correspond to the two possible signs of the difference.",
+    "detailedSteps": [
+      "A positive number $t$ satisfies $|t-1/t|=1$. The branch $t-1/t=1$ yields $(1+\\sqrt5)/2$; the branch $t-1/t=-1$ yields $(\\sqrt5-1)/2$.",
+      "There is exactly one positive root on each branch. Their sum is $\\sqrt5$."
+    ],
+    "keyIdeas": [
+      "Positive solutions to reciprocal differences"
+    ],
+    "commonMistakes": [
+      "Using only the branch where the number exceeds its reciprocal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The word differ describes an absolute difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p14",
+    "problemId": "amc12a-2002-p14",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "The three integer arguments multiply to the logarithm base.",
+    "detailedSteps": [
+      "Use the product law to obtain $N=\\log_{2002}((11\\cdot13\\cdot14)^2)$.",
+      "Since $11\\cdot13\\cdot14=2002$, this is $\\log_{2002}(2002^2)=2$."
+    ],
+    "keyIdeas": [
+      "Combining logarithms"
+    ],
+    "commonMistakes": [
+      "Adding the squared arguments inside the logarithm."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization of the base is deliberately built into the arguments.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p15",
+    "problemId": "amc12a-2002-p15",
+    "finalAnswer": "$\\boxed{14}$ (choice D)",
+    "shortExplanation": "A largest entry of $14$ is achievable, while $15$ or more forces too large a sum.",
+    "detailedSteps": [
+      "The mean forces the total to be $64$. If the largest entry were at least $15$, range $8$ would put every entry at least $7$. A median of $8$ then forces the central pair to be either $(7,9)$ or $(8,8)$. The former leaves no $8$ in the list and contradicts mode $8$.",
+      "With central entries $(8,8)$, the least possible sum in this case is $7+7+7+8+8+8+8+15=68>64$. A largest entry at least $16$ is even more immediately impossible because every entry is at least $8$.",
+      "The list $6,6,6,8,8,8,8,14$ has sum $64$, median $8$, unique mode $8$ and range $8$. Thus the maximum is $14$."
+    ],
+    "keyIdeas": [
+      "Bounding a list by mean and unique mode"
+    ],
+    "commonMistakes": [
+      "Satisfying the range and mean but allowing a different or tied mode."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique mode removes the alternate central-pair possibility.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p16",
+    "problemId": "amc12a-2002-p16",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice A)",
+    "shortExplanation": "The expected sum of Tina’s two numbers is $6$.",
+    "detailedSteps": [
+      "For a given two-number sum $s$, exactly $10-s$ Sergio choices exceed it. All possible sums lie between $3$ and $9$, so this expression needs no truncation.",
+      "Each selected number has mean $3$, hence the sum has mean $6$. Averaging the conditional probabilities gives $(10-6)/10=2/5$."
+    ],
+    "keyIdeas": [
+      "A conditional count and linearity of expectation"
+    ],
+    "commonMistakes": [
+      "Counting pair orders twice or overlooking the strict inequality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Linearity avoids making a full distribution table.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p17",
+    "problemId": "amc12a-2002-p17",
+    "finalAnswer": "$\\boxed{207}$ (choice B)",
+    "shortExplanation": "Digits $4,6,8$ must each occupy a place worth at least ten times the digit.",
+    "detailedSteps": [
+      "A prime containing digit $4,6,$ or $8$ cannot end in that digit, and none is a one-digit prime. These three digits contribute at least $10(4+6+8)=180$ to the total sum.",
+      "Each remaining digit contributes at least its units value, totaling $1+2+3+5+7+9=27$. Hence every eligible prime set has sum at least $207$.",
+      "The prime set $\\{2,3,5,41,67,89\\}$ uses each nonzero digit exactly once and sums to $207$, attaining the bound."
+    ],
+    "keyIdeas": [
+      "A place-value lower bound for primes"
+    ],
+    "commonMistakes": [
+      "Using a composite two-digit number to reach the lower bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A sharp place-value bound avoids a huge permutation search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p18",
+    "problemId": "amc12a-2002-p18",
+    "finalAnswer": "$\\boxed{20}$ (choice C)",
+    "shortExplanation": "The internal common tangent gives the shorter segment.",
+    "detailedSteps": [
+      "The center separation is $25$ and the radii are $6,9$. For an internal tangent, the perpendicular radius displacement is $6+9=15$, so its segment length is $\\sqrt{25^2-15^2}=20$.",
+      "For an external tangent the radius displacement is $9-6=3$, giving $\\sqrt{25^2-3^2}=\\sqrt{616}>20$. Thus the shortest is $20$."
+    ],
+    "keyIdeas": [
+      "Internal and external common tangents"
+    ],
+    "commonMistakes": [
+      "Checking only the external common tangents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circles are far enough apart for both kinds of tangent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p19",
+    "problemId": "amc12a-2002-p19",
+    "finalAnswer": "$\\boxed{6}$ (choice D)",
+    "shortExplanation": "First find the two inputs giving output $6$, then count their preimages.",
+    "detailedSteps": [
+      "The graph reaches output $6$ only at inputs $-2$ and $1$. Thus $f(f(x))=6$ exactly when $f(x)=-2$ or $f(x)=1$.",
+      "The line $y=-2$ meets the two outer segments, giving two solutions. The line $y=1$ meets all four segments, giving four more. These sets are disjoint, totaling six."
+    ],
+    "keyIdeas": [
+      "Preimages under a composed graph"
+    ],
+    "commonMistakes": [
+      "Counting only the two intersections with y=6."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Composition requires two stages of inverse-image counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p20",
+    "problemId": "amc12a-2002-p20",
+    "finalAnswer": "$\\boxed{5}$ (choice C)",
+    "shortExplanation": "The denominator is a divisor of $99$, other than $1$.",
+    "detailedSteps": [
+      "Let $N=10a+b$. The decimal is $N/99$, with $1\\le N\\le98$. Its reduced denominator is $99/\\gcd(N,99)$.",
+      "The possible denominators are $3,9,11,33,99$. Each occurs, for example at numerators $33,11,9,3,1$, respectively. Denominator $1$ would require $N=0$ or $99$, both excluded."
+    ],
+    "keyIdeas": [
+      "Reduced denominators of repeating decimals"
+    ],
+    "commonMistakes": [
+      "Treating 99 as a fixed reduced denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Leading zero in the block is allowed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p21",
+    "problemId": "amc12a-2002-p21",
+    "finalAnswer": "$\\boxed{1999}$ (choice B)",
+    "shortExplanation": "Twelve terms repeat and have sum $60$.",
+    "detailedSteps": [
+      "The first twelve terms are $4,7,1,8,9,7,6,3,9,2,1,3$. The next pair is again $4,7$, proving period $12$. Their sum is $60$.",
+      "After $166$ complete periods, $n=1992$ and the sum is $9960$. The next six terms add $36$, reaching $9996$ at $1998$; the next term is $6$, giving $10002$ at $1999$.",
+      "All terms are nonnegative, and the earlier partial sums are smaller, so $1999$ is the first crossing."
+    ],
+    "keyIdeas": [
+      "A short modular recurrence period"
+    ],
+    "commonMistakes": [
+      "Using a general Fibonacci period instead of checking the actual seed pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A repeated state proves periodicity.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p22",
+    "problemId": "amc12a-2002-p22",
+    "finalAnswer": "$\\boxed{\\frac{3-\\sqrt3}{3}}$ (choice C)",
+    "shortExplanation": "The required region is a subtriangle sharing vertex $B$.",
+    "detailedSteps": [
+      "Use coordinates $B=(0,0),C=(5,0),A=(5,5\\sqrt3)$. If $D=(5,d)$, then $BD^2=25+d^2$, so $BD>5\\sqrt2$ is equivalent to $d>5$.",
+      "The ray at the boundary is $y=x$. The favorable triangle is the part above that ray and below $BA$. Its base on $AC$ has length $5\\sqrt3-5$, while the total base length is $5\\sqrt3$.",
+      "Shared altitude makes the area ratio $(5\\sqrt3-5)/(5\\sqrt3)=(3-\\sqrt3)/3$."
+    ],
+    "keyIdeas": [
+      "Area swept out by a ray condition"
+    ],
+    "commonMistakes": [
+      "Treating D as uniformly distributed along AC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniformity is over triangle area, not over the ray endpoint.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p23",
+    "problemId": "amc12a-2002-p23",
+    "finalAnswer": "$\\boxed{14\\sqrt5}$ (choice D)",
+    "shortExplanation": "The perpendicular bisector fixes $BD=DC=7$.",
+    "detailedSteps": [
+      "Place $D=(0,0),C=(7,0),A=(-9,0)$ and $B=(u,v)$. Since $D$ lies on the perpendicular bisector of $BC$, $DB=DC=7$, so $u^2+v^2=49$.",
+      "The angle-bisector theorem gives $AB/BC=9/7$. Squaring and using $DB=7$ gives $49(130+18u)=81(98-14u)$. Thus $u=7/9$, and $|v|=28\\sqrt5/9$.",
+      "The triangle has base $AD=9$ and altitude $|v|$, so $[ABD]=(1/2)(9)(28\\sqrt5/9)=14\\sqrt5$."
+    ],
+    "keyIdeas": [
+      "An angle bisector with an equal-distance point"
+    ],
+    "commonMistakes": [
+      "Mistaking AD=9 for the full length of AC."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal distances and an angle-bisector ratio determine the altitude.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p24",
+    "problemId": "amc12a-2002-p24",
+    "finalAnswer": "$\\boxed{2004}$ (choice E)",
+    "shortExplanation": "There are $2003$ unit-circle solutions and the zero solution.",
+    "detailedSteps": [
+      "The value $z=0$ works. For $z\\ne0$, taking absolute values in $z^{2002}=\\overline z$ gives $|z|^{2002}=|z|$, so $|z|=1$.",
+      "Then $\\overline z=1/z$, and the equation becomes $z^{2003}=1$. These are the $2003$ distinct roots of unity. Including zero gives $2004$ ordered real-coordinate pairs."
+    ],
+    "keyIdeas": [
+      "Magnitude and argument in a complex equation"
+    ],
+    "commonMistakes": [
+      "Forgetting the zero solution before dividing by z."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separating zero from nonzero solutions prevents losing an answer.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2002-p25",
+    "problemId": "amc12a-2002-p25",
+    "finalAnswer": "$\\boxed{\\text{Graph B}}$ (choice B)",
+    "shortExplanation": "The curves must meet at $x=1$, and $Q$ has one sign and one direction on positive inputs.",
+    "detailedSteps": [
+      "Replacing the nonzero coefficients by their mean preserves their sum, so $P(1)=Q(1)$. If that mean is $m\\ne0$, then $Q(x)=m\\sum_{k\\in S}x^k$. For $x>0$, $Q$ has the sign of $m$ and is monotone in that same direction. If $m=0$, Q is the zero polynomial, which none of the options shows.",
+      "In A and E neither candidate curve has the required positive-input sign and monotonicity. In D both curves oscillate on positive inputs. C does not show equal values at $x=1$. B has a negative decreasing curve that meets the other curve at $x=1$.",
+      "Existence can also be demonstrated: $P(x)=x^4-x^3+x^2-3x-6$ has coefficient mean $-8/5$, so $Q(x)=-(8/5)(x^4+x^3+x^2+x+1)$. P has its minimum at $x=1$ and real roots $-1,2$, while Q stays negative and decreases for positive x. These are the features of B."
+    ],
+    "keyIdeas": [
+      "Coefficient-sum invariance and positive-input monotonicity"
+    ],
+    "commonMistakes": [
+      "Using only a resemblance between curves without enforcing P(1)=Q(1)."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The graph choice needs both necessary conditions and a possible example.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,549 @@
+[
+  {
+    "id": "solution-ajhsme-1986-p1",
+    "problemId": "ajhsme-1986-p1",
+    "finalAnswer": "$\\boxed{\\frac{366}{31\\cdot24}}$ (choice A)",
+    "shortExplanation": "Divide the total rainfall by the $31\\cdot24$ hours in July.",
+    "detailedSteps": [
+      "The given month has thirty-one days, each with twenty-four hours.",
+      "Its average hourly rainfall is therefore $366/(31\\cdot24)$ inches per hour."
+    ],
+    "keyIdeas": [
+      "Converting a monthly total to an hourly rate",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "To form a rate per hour, divide the total by the number of hours."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Divide by the complete number of hours in the specified month.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p2",
+    "problemId": "ajhsme-1986-p2",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice A)",
+    "shortExplanation": "The smallest positive listed number, one third, has the largest reciprocal.",
+    "detailedSteps": [
+      "For positive numbers, decreasing the denominator in $1/x$ increases the reciprocal.",
+      "The listed numbers are $1/3,2/5,1,5,1986$. Their reciprocals are $3,5/2,1,1/5,1/1986$.",
+      "The largest reciprocal is three, belonging to the listed number $1/3$."
+    ],
+    "keyIdeas": [
+      "Reciprocals reverse positive order",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The question asks for the original number, not the value of its reciprocal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Return the input with the largest reciprocal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p3",
+    "problemId": "ajhsme-1986-p3",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The smallest three terms are negative three, negative one, and seven, whose sum is three.",
+    "detailedSteps": [
+      "Arrange the values in increasing order: $-3,-1,7,12,25$.",
+      "Any choice omitting one of the first three replaces it with a larger value and cannot decrease the sum.",
+      "The minimum is $-3-1+7=3$."
+    ],
+    "keyIdeas": [
+      "Selecting the three smallest distinct terms",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The terms must be different, so a negative value cannot be reused."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Selecting the three least terms proves the minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p4",
+    "problemId": "ajhsme-1986-p4",
+    "finalAnswer": "$\\boxed{74}$ (choice C)",
+    "shortExplanation": "The product is $72.666$, closest to seventy-four.",
+    "detailedSteps": [
+      "Add first: $40.3+0.07=40.37$.",
+      "Then $1.8(40.37)=72.666$.",
+      "The distance to seventy-four is $1.334$, smaller than the distance to any other listed option."
+    ],
+    "keyIdeas": [
+      "Nearest estimate to a product",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The nearest listed choice need not equal the exact product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare the actual product to the given options.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p5",
+    "problemId": "ajhsme-1986-p5",
+    "finalAnswer": "$\\boxed{\\text{4:40 a.m.}}$ (choice D)",
+    "shortExplanation": "One thousand minutes is sixteen hours forty minutes; that long after noon is 4:40 the next morning.",
+    "detailedSteps": [
+      "Divide $1000=16(60)+40$.",
+      "Twelve hours after noon is midnight; the remaining four hours forty minutes lead to 4:40 a.m."
+    ],
+    "keyIdeas": [
+      "Elapsed time across midnight",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The clock crosses midnight before the interval ends."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate full hours and remaining minutes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p6",
+    "problemId": "ajhsme-1986-p6",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The denominator is one third, so the quotient is six.",
+    "detailedSteps": [
+      "Compute $1-2/3=1/3$.",
+      "Divide by multiplying by the reciprocal: $2/(1/3)=2(3)=6$."
+    ],
+    "keyIdeas": [
+      "A quotient with a fractional denominator",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The entire expression $1-2/3$ forms the denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Simplify the lower fraction before dividing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p7",
+    "problemId": "ajhsme-1986-p7",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "shortExplanation": "The qualifying integers are three through eight, giving six values.",
+    "detailedSteps": [
+      "Since $2^2<8<3^2$, the first integer above $\\sqrt8$ is three.",
+      "Since $8^2<80<9^2$, the last integer below $\\sqrt{80}$ is eight.",
+      "The count is $8-3+1=6$."
+    ],
+    "keyIdeas": [
+      "Integers between two square roots",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The radical signs are part of both bounds in the original paper."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Bound the radicals using neighboring squares.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p8",
+    "problemId": "ajhsme-1986-p8",
+    "finalAnswer": "$\\boxed{8}$ (choice E)",
+    "shortExplanation": "The units digit restricts B to three or eight; only eight gives the full product 6396.",
+    "detailedSteps": [
+      "The two factors are $10B+2$ and $70+B$. Their units digit product is $2B$, which must end in six.",
+      "Thus $B=3$ or $B=8$. At three, the product is $32(73)=2336$; at eight, it is $82(78)=6396$.",
+      "Therefore $B=8$."
+    ],
+    "keyIdeas": [
+      "A repeated digit in multiplication",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "The same unknown digit appears in both factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A units-digit restriction leaves two candidates for a full check.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p9",
+    "problemId": "ajhsme-1986-p9",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "There are two continuations from A and four from B, so M has six routes to N.",
+    "detailedSteps": [
+      "Work backward along the arrows. C has one route to N, and D has one route through C.",
+      "From A, one may go directly to C or via D, giving two routes.",
+      "From B, the next stop may be N, C, or A, giving $1+1+2=4$ routes.",
+      "M first goes to A or B, so its total is $2+4=6$."
+    ],
+    "keyIdeas": [
+      "Backward counting in a directed graph",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The horizontal interior arrow goes from B to A and cannot be traversed in reverse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count directed continuations from the end backward.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p10",
+    "problemId": "ajhsme-1986-p10",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The uncovered width is sixteen feet, split into two equal eight-foot margins.",
+    "detailedSteps": [
+      "The picture uses three feet of the nineteen-foot wall, leaving $19-3=16$ feet.",
+      "Centering makes the two side margins equal, each $16/2=8$ feet."
+    ],
+    "keyIdeas": [
+      "Equal margins around a centered object",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The requested distance ends at the picture's edge, not its center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two equal margins share the width left over.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p11",
+    "problemId": "ajhsme-1986-p11",
+    "finalAnswer": "$\\boxed{6}$ (choice A)",
+    "shortExplanation": "First average three and five to obtain four; then average four and eight to obtain six.",
+    "detailedSteps": [
+      "By definition, $3*5=(3+5)/2=4$.",
+      "Apply the same operation again: $4*8=(4+8)/2=6$."
+    ],
+    "keyIdeas": [
+      "Evaluating a defined averaging operation",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The star means the defined average, not multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Apply the definition separately at each pair of parentheses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p12",
+    "problemId": "ajhsme-1986-p12",
+    "finalAnswer": "$\\boxed{40\\%}$ (choice D)",
+    "shortExplanation": "The five diagonal cells total twelve students, which is forty percent of thirty.",
+    "detailedSteps": [
+      "A student with the same grade on both tests appears where the row grade equals the column grade.",
+      "These main-diagonal counts are $2,4,5,1,0$, totaling twelve.",
+      "The fraction is $12/30=0.4=40\\%$."
+    ],
+    "keyIdeas": [
+      "Matching row and column categories",
+      "Data"
+    ],
+    "commonMistakes": [
+      "Use the main diagonal rather than a whole row, column, or the circled example cell."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal grades correspond to the table diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p13",
+    "problemId": "ajhsme-1986-p13",
+    "finalAnswer": "$\\boxed{28}$ (choice C)",
+    "shortExplanation": "The inward step preserves the outer rectangle's perimeter, so the result is $2(8+6)=28$.",
+    "detailedSteps": [
+      "The polygon fits in an eight-by-six rectangle with a corner removed.",
+      "The two inward edges replace horizontal and vertical lengths of exactly the same sizes that were removed from the outer boundary.",
+      "Its perimeter therefore remains $2(8+6)=28$."
+    ],
+    "keyIdeas": [
+      "Perimeter of a rectilinear corner cut",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The cut reduces area, but this right-angled corner cut does not reduce perimeter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Replacing a corner with an inward step preserves horizontal and vertical totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p14",
+    "problemId": "ajhsme-1986-p14",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "Choose the largest numerator and smallest denominator to obtain $1200/200=6$.",
+    "detailedSteps": [
+      "The numerator is at most twelve hundred and the positive denominator is at least two hundred.",
+      "Therefore $b/a\\le1200/200=6$.",
+      "The choices $b=1200,a=200$ are allowed, so equality is attainable."
+    ],
+    "keyIdeas": [
+      "Maximizing a positive quotient",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "The largest denominator would make the quotient smaller."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Monotonicity and an endpoint choice prove the maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p15",
+    "problemId": "ajhsme-1986-p15",
+    "finalAnswer": "$\\boxed{72}$ (choice B)",
+    "shortExplanation": "The coat retains half its original price, then eighty percent of that, giving seventy-two dollars.",
+    "detailedSteps": [
+      "The first reduction gives $180(0.5)=90$ dollars.",
+      "The additional twenty-percent discount leaves $90(0.8)=72$ dollars."
+    ],
+    "keyIdeas": [
+      "Successive discounts",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The second discount applies to ninety dollars, not to the original 180."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Successive discounts multiply retained fractions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p16",
+    "problemId": "ajhsme-1986-p16",
+    "finalAnswer": "$\\boxed{2.5}$ (choice A)",
+    "shortExplanation": "Fall sales imply a yearly total of sixteen million; subtracting the three visible seasons leaves 2.5 million for winter.",
+    "detailedSteps": [
+      "The fall bar is four million and represents one quarter of the yearly total, so total sales are sixteen million.",
+      "The other visible bars are 4.5 million for spring and five million for summer.",
+      "Winter sales are $16-4.5-5-4=2.5$ million."
+    ],
+    "keyIdeas": [
+      "Recovering a hidden bar from a percentage",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The smudge cannot be measured as the original bar height; use the percentage condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A known share determines the hidden seasonal total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p17",
+    "problemId": "ajhsme-1986-p17",
+    "finalAnswer": "$\\boxed{\\text{odd only if }n\\text{ is even}}$ (choice E)",
+    "shortExplanation": "The expression has the parity of $1+n$, so an odd result requires n to be even.",
+    "detailedSteps": [
+      "Since o is odd, $o^2\\equiv1\\pmod2$ and $no\\equiv n\\pmod2$.",
+      "Thus $o^2+no\\equiv1+n\\pmod2$. It is odd when n is even, and even when n is odd.",
+      "The always-true listed assertion is therefore E."
+    ],
+    "keyIdeas": [
+      "Parity with an odd factor",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "An odd square plus an odd product is even, not odd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reduction modulo two handles every allowed whole number.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p18",
+    "problemId": "ajhsme-1986-p18",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "Use the wall for the sixty-meter side; the remaining 132-meter fence has eleven gaps and twelve posts.",
+    "detailedSteps": [
+      "Using the longer side along the wall minimizes the fenced length to $36+60+36=132$ meters. The hundred-meter wall is long enough for this.",
+      "Each side length is divisible by twelve, so the corner locations coincide with posts.",
+      "An open chain of $132/12=11$ gaps requires twelve posts, including both endpoints at the wall."
+    ],
+    "keyIdeas": [
+      "Counting posts along an open fence",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "An open fence has one more post than gaps, unlike a closed loop."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Choose the shorter fence and include both endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p19",
+    "problemId": "ajhsme-1986-p19",
+    "finalAnswer": "$\\boxed{26.9}$ (choice D)",
+    "shortExplanation": "The trip covers 860 miles and uses thirty-two gallons, giving about 26.9 miles per gallon.",
+    "detailedSteps": [
+      "The distance is $57060-56200=860$ miles.",
+      "The tank is full at the start and after the final fill, so the fuel used during the trip equals the intervening refill amounts: $12+20=32$ gallons. The initial six-gallon fill occurs before this accounting interval.",
+      "The average is $860/32=26.875$, which rounds to $26.9$ miles per gallon."
+    ],
+    "keyIdeas": [
+      "Fuel economy between full-tank endpoints",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Including the initial refill would count fuel used before the measured trip."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Full-tank accounting identifies which refills belong to the interval.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p20",
+    "problemId": "ajhsme-1986-p20",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Round the bases to 300, thirty, and 400; the ratio is approximately $10(3/4)^4$, close to three.",
+    "detailedSteps": [
+      "Approximate the expression by $300^5/[30(400^4)]$.",
+      "Regroup as $(300/30)(300/400)^4=10(3/4)^4=810/256\\approx3.16$.",
+      "The exact expression is about $3.45$, so three is still the closest listed option."
+    ],
+    "keyIdeas": [
+      "Estimating a ratio of powers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Keep the fourth power on the complete denominator factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancel powers after rounding to nearby convenient values.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p21",
+    "problemId": "ajhsme-1986-p21",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "Each added square except C and G gives a valid five-face box, so six positions work.",
+    "detailedSteps": [
+      "Call the central square of the T the center, and its three neighbors the upper, lower, and right squares. Fold those neighbors around the center.",
+      "B, D, or F can supply the fourth side opposite the right square. Alternatively, A, E, or H folds into the face opposite the center; the absent side can then serve as the top after rotating the box.",
+      "C and G each create a two-by-two block in the flat figure. All four squares of such a block meet at one vertex, but only three cube faces can meet at a vertex, so these additions cannot fold as required.",
+      "The six valid choices are A, B, D, E, F, and H."
+    ],
+    "keyIdeas": [
+      "Completing a five-face cube net",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "A valid box may need to be turned over; the central square is not required to remain its bottom."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Consider all possible box orientations and reject the two square blocks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p22",
+    "problemId": "ajhsme-1986-p22",
+    "finalAnswer": "$\\boxed{\\text{Carlos and Diana}}$ (choice C)",
+    "shortExplanation": "An A for Alan would force four As, and one for Beth would force three; only Carlos and Diana can be the two recipients.",
+    "detailedSteps": [
+      "The implications form the chain Alan to Beth to Carlos to Diana.",
+      "If Alan receives an A, every student does; if Beth receives one, at least Beth, Carlos, and Diana do. Both contradict the given total of two.",
+      "Hence Alan and Beth do not receive As. Carlos and Diana do, satisfying all three implications."
+    ],
+    "keyIdeas": [
+      "A chain of implications",
+      "Logic"
+    ],
+    "commonMistakes": [
+      "An implication can be true when its premise is false."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Propagate the implications while respecting the total number of As.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p23",
+    "problemId": "ajhsme-1986-p23",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "The shaded area is $2\\pi-\\pi=\\pi$, equal to one small circle's area.",
+    "detailedSteps": [
+      "The large circle has radius two, because its diameter spans two small diameters, each of length two.",
+      "Its upper semicircle has area $(1/2)\\pi(2^2)=2\\pi$.",
+      "The two unshaded upper small semicircles have combined area $2[(1/2)\\pi(1^2)]=\\pi$.",
+      "The shaded area is $\\pi$, so dividing by a small circle's area $\\pi$ gives one."
+    ],
+    "keyIdeas": [
+      "Area between three semicircles",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Only the upper halves of the two small circles lie inside the large upper semicircle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract semicircles within the shaded half only.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p24",
+    "problemId": "ajhsme-1986-p24",
+    "finalAnswer": "$\\boxed{\\frac19\\text{ approximately}}$ (choice B)",
+    "shortExplanation": "After Al is assigned, the exact probability that both friends join his group is $(199/599)(198/598)$, close to one ninth.",
+    "detailedSteps": [
+      "Each lunch group has two hundred students. After placing Al, his group has 199 of the 599 remaining slots, so Bob joins it with probability $199/599$.",
+      "Conditional on Bob joining, that group has 198 of the 598 slots left for Carol. Multiply to get $(199/599)(198/598)\\approx0.1100$.",
+      "Both factors are close to one third, giving the requested approximation $1/9$."
+    ],
+    "keyIdeas": [
+      "Equal-sized groups without replacement",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "The equal group sizes make the assignments dependent; one ninth is an approximation, not the exact probability."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for fixed group sizes before using the approximation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1986-p25",
+    "problemId": "ajhsme-1986-p25",
+    "finalAnswer": "$\\boxed{\\text{multiples of }5}$ (choice D)",
+    "shortExplanation": "The multiples of five have endpoint average 52.5, larger than the other four sets.",
+    "detailedSteps": [
+      "For equally spaced numbers, the mean is the average of the first and last terms.",
+      "The means for multiples of two, three, four, five, and six are respectively $(2+100)/2=51$, $(3+99)/2=51$, $(4+100)/2=52$, $(5+100)/2=52.5$, and $(6+96)/2=51$.",
+      "The largest belongs to multiples of five, choice D."
+    ],
+    "keyIdeas": [
+      "Means of finite arithmetic progressions",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The last multiple below 101 depends on the divisor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each progression is symmetric around its endpoint mean.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

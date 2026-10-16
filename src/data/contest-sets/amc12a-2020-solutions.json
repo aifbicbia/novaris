@@ -1,0 +1,556 @@
+[
+  {
+    "id": "solution-amc12a-2020-p1",
+    "problemId": "amc12a-2020-p1",
+    "finalAnswer": "$\\boxed{20\\%}$ (choice C)",
+    "shortExplanation": "Two thirds of the portion Carlos leaves is still uneaten.",
+    "detailedSteps": [
+      "The first person leaves a fraction $1-7/10=3/10$ of the pie.",
+      "Maria leaves two thirds of that amount. The final fraction is $(2/3)(3/10)=1/5=20\\%$."
+    ],
+    "keyIdeas": [
+      "Complements",
+      "Multiplication of fractions"
+    ],
+    "commonMistakes": [
+      "Taking Maria’s one third from the whole pie."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p2",
+    "problemId": "amc12a-2020-p2",
+    "finalAnswer": "$\\boxed{13+4\\sqrt{2}}$ (choice C)",
+    "shortExplanation": "Group the strokes by direction before adding their lengths.",
+    "detailedSteps": [
+      "The grid shows that A has an upright of length 2, a crossbar of length 1 and a diagonal spanning a $2\\times2$ square. Its length is $3+2\\sqrt2$.",
+      "M has two length-2 uprights and two unit-square diagonals, totaling $4+2\\sqrt2$. C contributes three length-2 strokes, totaling 6.",
+      "Together the three letters have length $(3+2\\sqrt2)+(4+2\\sqrt2)+6=13+4\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Decomposition"
+    ],
+    "commonMistakes": [
+      "Counting a diagonal as two unit horizontal steps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p3",
+    "problemId": "amc12a-2020-p3",
+    "finalAnswer": "$\\boxed{26}$ (choice E)",
+    "shortExplanation": "Compute revenue and fuel cost for one hour.",
+    "detailedSteps": [
+      "In each hour the car travels 60 miles, so the gross pay is $60(0.50)=30$ dollars.",
+      "The same hour uses $60/30=2$ gallons, which cost 4 dollars. Net hourly pay is $30-4=26$ dollars."
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Reporting total net pay for the two-hour trip instead of pay per hour."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p4",
+    "problemId": "amc12a-2020-p4",
+    "finalAnswer": "$\\boxed{100}$ (choice B)",
+    "shortExplanation": "The units digit must be zero, and the first digit cannot be zero.",
+    "detailedSteps": [
+      "An even final digit compatible with divisibility by 5 must be 0.",
+      "The first position has 4 choices, while each middle position has 5. Thus the count is $4\\cdot5\\cdot5\\cdot1=100$."
+    ],
+    "keyIdeas": [
+      "Product rule",
+      "Divisibility"
+    ],
+    "commonMistakes": [
+      "Allowing a leading zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p5",
+    "problemId": "amc12a-2020-p5",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "Divide the total of all entries by the number of rows.",
+    "detailedSteps": [
+      "The 25 consecutive integers have average $(-10+14)/2=2$, so their total is 50.",
+      "The five row sums are equal and together account for all entries. Each therefore equals $50/5=10$."
+    ],
+    "keyIdeas": [
+      "Arithmetic series",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "Treating 2, the mean entry, as a row sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p6",
+    "problemId": "amc12a-2020-p6",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "The shaded cells force disjoint groups of four, two and four cells under the two reflections.",
+    "detailedSteps": [
+      "The nonsquare outer rectangle has only its central horizontal and vertical symmetry axes. Number rows 1–4 from top to bottom and columns 1–5 from left to right.",
+      "The shaded cells are $(1,2),(3,3),(4,5)$. Reflecting $(r,c)$ sends it to $(5-r,c)$ and $(r,6-c)$.",
+      "The three resulting orbits have respectively 4, 2 and 4 cells, and none overlap. All 10 must be shaded, so $10-3=7$ additional cells are necessary and sufficient."
+    ],
+    "keyIdeas": [
+      "Reflection symmetry",
+      "Orbits"
+    ],
+    "commonMistakes": [
+      "Completing symmetry about only one axis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p7",
+    "problemId": "amc12a-2020-p7",
+    "finalAnswer": "$\\boxed{658}$ (choice B)",
+    "shortExplanation": "Subtract the two hidden faces at each interface from the sum of the separate cube areas.",
+    "detailedSteps": [
+      "The cube side lengths are $1,2,\\ldots,7$. Their separate surface areas total $6\\sum_{k=1}^7 k^2=6(140)=840$.",
+      "For each smaller cube of side $k\\le6$, its bottom and the covered patch below both become hidden. The hidden area is $2\\sum_{k=1}^6 k^2=2(91)=182$.",
+      "The exposed area, including the base, is $840-182=658$."
+    ],
+    "keyIdeas": [
+      "Surface area",
+      "Hidden interfaces"
+    ],
+    "commonMistakes": [
+      "Subtracting only one copy of each interface."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Direct use of the stated quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p8",
+    "problemId": "amc12a-2020-p8",
+    "finalAnswer": "$\\boxed{1976.5}$ (choice C)",
+    "shortExplanation": "Count list entries at or below the two central values, including duplicate squares.",
+    "detailedSteps": [
+      "There are 4040 entries, so the median averages ranks 2020 and 2021.",
+      "Since $44^2=1936$ and $45^2=2025$, exactly 44 square-list entries are at most 1976. Along with the first-list entries this gives $1976+44=2020$.",
+      "There is one next entry, 1977, before the next square. Thus the two middle entries are 1976 and 1977, whose mean is 1976.5."
+    ],
+    "keyIdeas": [
+      "Order statistics",
+      "Multiplicity"
+    ],
+    "commonMistakes": [
+      "Removing duplicates before computing the median."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p9",
+    "problemId": "amc12a-2020-p9",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "shortExplanation": "Each continuous branch of the tangent graph contributes exactly one intersection.",
+    "detailedSteps": [
+      "The tangent poles in the interval are $\\pi/4,3\\pi/4,5\\pi/4,7\\pi/4$, leaving five continuous subintervals.",
+      "On each such interval $\\tan(2x)$ increases strictly, whereas $\\cos(x/2)$ decreases. Thus there is at most one solution per subinterval.",
+      "Each of the three full middle branches goes from negative infinity to positive infinity. On the first branch the difference starts at $-1$ and tends to positive infinity; on the last it starts at negative infinity and ends at $1$. Continuity gives one root on every branch, hence five."
+    ],
+    "keyIdeas": [
+      "Monotonicity",
+      "Intermediate value theorem"
+    ],
+    "commonMistakes": [
+      "Counting poles as solutions or ignoring the two partial end branches."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p10",
+    "problemId": "amc12a-2020-p10",
+    "finalAnswer": "$\\boxed{13}$ (choice E)",
+    "shortExplanation": "Use a single base to reduce the nested logarithms to a linear equation.",
+    "detailedSteps": [
+      "Put $u=\\log_2 n$. The logarithms require $u>0$. Then $\\log_{16}n=u/4$ and $\\log_4n=u/2$.",
+      "The equation becomes $\\log_2u-2=\\tfrac12(\\log_2u-1)$. Hence $\\log_2u=3$, so $u=8$ and $n=2^8=256$.",
+      "The required digit sum is $2+5+6=13$."
+    ],
+    "keyIdeas": [
+      "Change of base",
+      "Domain restrictions"
+    ],
+    "commonMistakes": [
+      "Treating a logarithm of a logarithm as a product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p11",
+    "problemId": "amc12a-2020-p11",
+    "finalAnswer": "$\\boxed{\\frac58}$ (choice B)",
+    "shortExplanation": "Diagonal symmetry makes the probabilities at three of the neighboring states immediately known.",
+    "detailedSteps": [
+      "Let $h(x,y)$ be the probability of first reaching a vertical boundary. Reflection across the main diagonal swaps vertical and horizontal exits, so $h(1,1)=h(2,2)=1/2$. Horizontal reflection also gives $h(1,3)=1/2$.",
+      "From $(1,2)$ the four next states are $(0,2),(2,2),(1,1),(1,3)$. Their probabilities are $1,1/2,1/2,1/2$.",
+      "Conditioning on the first jump gives $h(1,2)=(1+1/2+1/2+1/2)/4=5/8$. The walk is absorbed with probability one: in any four jumps there is a fixed positive chance of reaching a boundary."
+    ],
+    "keyIdeas": [
+      "Symmetry",
+      "First-step analysis"
+    ],
+    "commonMistakes": [
+      "Using left-right symmetry alone to conclude a vertical/horizontal probability of one half."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p12",
+    "problemId": "amc12a-2020-p12",
+    "finalAnswer": "$\\boxed{15}$ (choice B)",
+    "shortExplanation": "Rotate the line’s direction vector while keeping the rotation center fixed.",
+    "detailedSteps": [
+      "The point $(20,20)$ satisfies the original line equation. A direction vector of that line is $(5,3)$.",
+      "A 45-degree counterclockwise rotation sends this vector to $(5-3,5+3)/\\sqrt2$, whose slope is 4.",
+      "The rotated line therefore satisfies $y-20=4(x-20)$. Its intercept at $y=0$ has $x=15$."
+    ],
+    "keyIdeas": [
+      "Direction vectors",
+      "Rotation"
+    ],
+    "commonMistakes": [
+      "Rotating the line about the origin instead of the specified center."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p13",
+    "problemId": "amc12a-2020-p13",
+    "finalAnswer": "$\\boxed{3}$ (choice B)",
+    "shortExplanation": "Bound the outer exponent to determine the outer root, then solve the remaining integer constraint.",
+    "detailedSteps": [
+      "The exponent of $N$ on the left is $\\frac1a(1+\\frac1b+\\frac1{bc})=25/36$. Since $b,c\\ge2$, the parenthesis is at most $7/4$. Thus $a\\le(7/4)/(25/36)<3$, giving $a=2$.",
+      "Now $(1+1/c)/b=7/18$. Since $1<1+1/c\\le3/2$, we get $18/7<b\\le27/7$. The only integer is $b=3$.",
+      "This is attainable: substituting $b=3$ gives $c=6$, so all three indices exceed 1."
+    ],
+    "keyIdeas": [
+      "Rational exponents",
+      "Integer bounds"
+    ],
+    "commonMistakes": [
+      "Adding the root indices rather than multiplying their exponent factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p14",
+    "problemId": "amc12a-2020-p14",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt2}{2}}$ (choice B)",
+    "shortExplanation": "Triangulate both polygons from their shared center.",
+    "detailedSteps": [
+      "Let the circumradius be $R$. The octagon consists of eight central triangles with included angle 45 degrees, so $n=8(R^2\\sin45^\\circ/2)=2\\sqrt2 R^2$.",
+      "The alternating vertices form a square. Its four central triangles have right included angles, so $m=4(R^2/2)=2R^2$.",
+      "The ratio is $m/n=1/\\sqrt2=\\sqrt2/2$."
+    ],
+    "keyIdeas": [
+      "Central triangles",
+      "Area ratios"
+    ],
+    "commonMistakes": [
+      "Assuming the smaller polygon has half the area because it has half as many vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p15",
+    "problemId": "amc12a-2020-p15",
+    "finalAnswer": "$\\boxed{2\\sqrt{21}}$ (choice D)",
+    "shortExplanation": "Factor both cubics and compare the few possible distances.",
+    "detailedSteps": [
+      "The roots in A are $2,-1+i\\sqrt3,-1-i\\sqrt3$, all with modulus 2. The second polynomial factors as $(z-8)(z^2-8)$, so B is $\\{8,2\\sqrt2,-2\\sqrt2\\}$.",
+      "Every distance to either $\\pm2\\sqrt2$ is at most $2+2\\sqrt2<6$. The distance from 8 to the real A-root is 6.",
+      "For either nonreal A-root the squared distance to 8 is $9^2+(\\sqrt3)^2=84$. Thus the maximum distance is $\\sqrt{84}=2\\sqrt{21}$."
+    ],
+    "keyIdeas": [
+      "Polynomial factorization",
+      "Complex modulus"
+    ],
+    "commonMistakes": [
+      "Comparing real parts without including the imaginary displacement."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p16",
+    "problemId": "amc12a-2020-p16",
+    "finalAnswer": "$\\boxed{0.4}$ (choice B)",
+    "shortExplanation": "For the required radius the disks do not overlap, and each unit cell contains one disk’s worth of area.",
+    "detailedSteps": [
+      "In a unit grid cell, the four quarter disks centered at its vertices have combined area $\\pi d^2$, as long as $d\\le1/2$.",
+      "Setting this fraction equal to $1/2$ gives $d=1/\\sqrt{2\\pi}\\approx0.39894$. This indeed is below $1/2$, so the nonoverlap assumption is consistent.",
+      "The large square is a union of complete unit cells, including its boundary cells. The answer rounded to a tenth is 0.4."
+    ],
+    "keyIdeas": [
+      "Area probability",
+      "Tiling"
+    ],
+    "commonMistakes": [
+      "Double-counting boundary disks or assuming the radius is one half."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p17",
+    "problemId": "amc12a-2020-p17",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "The area simplifies to the logarithm of a ratio of two neighboring products.",
+    "detailedSteps": [
+      "Write the consecutive abscissas as $n,n+1,n+2,n+3$. Concavity places the broken line above the chord joining the extreme points.",
+      "Subtracting the chord trapezoid from the three unit-width trapezoids gives area $\\ln(n+1)+\\ln(n+2)-\\ln n-\\ln(n+3)$.",
+      "Thus $\\frac{(n+1)(n+2)}{n(n+3)}=91/90$. Because the numerator exceeds the denominator by 2, $n(n+3)=180$. Solving $n^2+3n-180=0$ gives the positive integer $n=12$."
+    ],
+    "keyIdeas": [
+      "Shoelace/trapezoid area",
+      "Logarithm laws"
+    ],
+    "commonMistakes": [
+      "Using the area under the curve instead of the area of the straight-sided quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p18",
+    "problemId": "amc12a-2020-p18",
+    "finalAnswer": "$\\boxed{360}$ (choice D)",
+    "shortExplanation": "Locate B using its line through the diagonal intersection and its diameter-circle condition.",
+    "detailedSteps": [
+      "Choose $A=(0,0)$, $C=(20,0)$ and $D=(20,30)$. Then $E=(5,0)$ and the line BD is $y=2x-10$.",
+      "The right angle at B gives $(B-A)\\cdot(B-C)=0$, or $x^2-20x+y^2=0$. Substituting the line equation yields $5(x-2)(x-10)=0$.",
+      "The diagonals intersect inside the quadrilateral, so B and D lie on opposite sides of AC. Thus $B=(2,-6)$, rather than $(10,10)$.",
+      "Triangles ABC and ACD have areas $20(6)/2=60$ and $20(30)/2=300$. Their sum is 360."
+    ],
+    "keyIdeas": [
+      "Thales circle",
+      "Coordinate geometry"
+    ],
+    "commonMistakes": [
+      "Choosing the algebraic intersection on the same side of AC as D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p19",
+    "problemId": "amc12a-2020-p19",
+    "finalAnswer": "$\\boxed{137}$ (choice C)",
+    "shortExplanation": "Expand the quotient in base $2^{17}$ and group positive-minus-negative terms.",
+    "detailedSteps": [
+      "Let $q=2^{17}$. Since $289=17\\cdot17$, the quotient is $(q^{17}+1)/(q+1)=q^{16}-q^{15}+\\cdots-q+1$.",
+      "Pair consecutive terms to write this as $1+(q-1)(q+q^3+q^5+\\cdots+q^{15})$.",
+      "The binary form of $q-1$ contains 17 ones. The eight shifts above occupy disjoint blocks, and the final 1 occupies a separate bit. Thus the binary expansion has $8\\cdot17+1=137$ nonzero bits, exactly the required number of powers."
+    ],
+    "keyIdeas": [
+      "Geometric factorization",
+      "Binary representation"
+    ],
+    "commonMistakes": [
+      "Counting the alternating base-q terms as binary digits."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p20",
+    "problemId": "amc12a-2020-p20",
+    "finalAnswer": "$\\boxed{12}$ (choice A)",
+    "shortExplanation": "Separate sequences with zero reflections from those with two reflections.",
+    "detailedSteps": [
+      "The triangle has no nonidentity symmetry, since all three side lengths differ. Hence the composite transformation must be the identity. Its determinant is positive, so a successful triple contains either zero or two reflections.",
+      "With zero reflections, record rotation angles in quarter turns as 1,2,3. A triple sums to 0 modulo 4 exactly when it is a permutation of $(1,1,2)$ or $(2,3,3)$, giving $3+3=6$ triples.",
+      "With two reflections, using the same axis twice cannot cancel a nonzero rotation, regardless of order. The two different coordinate-axis reflections compose to a half-turn; together with the half-turn rotation they cancel. These three distinct commuting transformations have $3!=6$ orders.",
+      "The total is $6+6=12$."
+    ],
+    "keyIdeas": [
+      "Determinants",
+      "Transformation composition"
+    ],
+    "commonMistakes": [
+      "Counting a reflection as capable of fixing this scalene triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p21",
+    "problemId": "amc12a-2020-p21",
+    "finalAnswer": "$\\boxed{48}$ (choice D)",
+    "shortExplanation": "Translate the least-common-multiple and greatest-common-divisor equation prime by prime.",
+    "detailedSteps": [
+      "Use $5!=2^3\\cdot3\\cdot5$ and $10!=2^8\\cdot3^4\\cdot5^2\\cdot7$. No other prime can divide n, since it would occur only on the left.",
+      "For $n=2^a3^b5^c7^d$, comparing exponents gives $\\max(3,a)=\\min(8,a)$, $\\max(1,b)=\\min(4,b)$, and $d=\\min(1,d)$. Therefore $3\\le a\\le8$, $1\\le b\\le4$, and $d\\in\\{0,1\\}$.",
+      "As n is a multiple of 5, $c\\ge1$. Its equation is $\\max(1,c)=1+\\min(2,c)$, forcing $c=3$. The number of choices is $6\\cdot4\\cdot1\\cdot2=48$."
+    ],
+    "keyIdeas": [
+      "Prime valuations",
+      "LCM and GCD"
+    ],
+    "commonMistakes": [
+      "Forgetting the extra factor 5 on the right side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p22",
+    "problemId": "amc12a-2020-p22",
+    "finalAnswer": "$\\boxed{\\frac7{16}}$ (choice B)",
+    "shortExplanation": "The product of the real and imaginary parts is half the imaginary part of the square.",
+    "detailedSteps": [
+      "From $(a_n+ib_n)^2=a_n^2-b_n^2+2ia_nb_n$, we have $2a_nb_n=\\operatorname{Im}(3+4i)^n$.",
+      "The desired sum is half the imaginary part of $\\sum_{n\\ge0}((3+4i)/7)^n$. This converges because the ratio has modulus $5/7<1$.",
+      "The geometric sum is $7/(4-4i)=7(1+i)/8$. Half its imaginary part is $7/16$."
+    ],
+    "keyIdeas": [
+      "Complex multiplication",
+      "Convergent series"
+    ],
+    "commonMistakes": [
+      "Omitting the factor 2 in the imaginary part of a square."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p23",
+    "problemId": "amc12a-2020-p23",
+    "finalAnswer": "$\\boxed{\\frac7{36}}$ (choice A)",
+    "shortExplanation": "An optimal two-dice reroll occurs exactly when the smallest die is at most 3 but every pair sums to at least 7.",
+    "detailedSteps": [
+      "If the current sum is 7, rerolling none wins certainly. Otherwise, keeping a pair with sum at most 6 allows a one-die reroll to win with probability $1/6$. That exceeds every two-dice reroll probability, whose maximum is $5/36$.",
+      "When no pair sums to at most 6, rerolling one cannot win. Rerolling all three succeeds with probability $15/216=5/72$. Retaining one die with value $d=1,2,3,4,5,6$ gives respectively $5,4,3,2,1,0$ winning two-dice outcomes out of 36. This beats $5/72$ exactly for $d\\le3$.",
+      "Sort the initial dice as $a\\le b\\le c$. We therefore need $a+b\\ge7$ and $a\\le3$. For $a=1$, only $(1,6,6)$ works: 3 ordered outcomes. For $a=2$, the other dice are independently 5 or 6, giving $3\\cdot2^2=12$ outcomes. For $a=3$, they are independently 4,5,6, giving $3\\cdot3^2=27$.",
+      "There are $3+12+27=42$ favorable ordered rolls out of 216. The probability is $42/216=7/36$. No optimal strategy ties across the relevant reroll counts."
+    ],
+    "keyIdeas": [
+      "Conditional probability",
+      "Optimal strategy",
+      "Casework"
+    ],
+    "commonMistakes": [
+      "Assuming rerolling two is optimal merely because it can produce the desired sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p24",
+    "problemId": "amc12a-2020-p24",
+    "finalAnswer": "$\\boxed{\\sqrt7}$ (choice B)",
+    "shortExplanation": "The three squared-distance equations reduce to a quadratic in the side length squared.",
+    "detailedSteps": [
+      "Place $A=(0,0)$, $B=(s,0)$, $C=(s/2,\\sqrt3s/2)$ and $P=(x,y)$. Since $AP^2=1$, subtracting that equation from $BP^2=3$ yields $x=(s^2-2)/(2s)$.",
+      "Similarly $CP^2-AP^2=3$ yields $y=(s^2-4)/(2\\sqrt3s)$. Insert both into $x^2+y^2=1$, and set $t=s^2$. We get $3(t-2)^2+(t-4)^2=12t$, or $(t-1)(t-7)=0$.",
+      "For $t=1$ we have $y<0$, outside the triangle. For $t=7$, $x=5/(2\\sqrt7)$ and $y=3/(2\\sqrt{21})$ satisfy $y>0$, $y<\\sqrt3x$, and $y<\\sqrt3(s-x)$, so P is inside.",
+      "The two linear difference equations determine P uniquely for this side length. Hence $s=\\sqrt7$."
+    ],
+    "keyIdeas": [
+      "Squared-distance subtraction",
+      "Interior constraints"
+    ],
+    "commonMistakes": [
+      "Keeping both roots for $s^2$ without checking the interior condition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2020-p25",
+    "problemId": "amc12a-2020-p25",
+    "finalAnswer": "$\\boxed{929}$ (choice C)",
+    "shortExplanation": "Express every nonzero solution as an integer multiple of one fixed ratio, then use the sum and floor bounds.",
+    "detailedSteps": [
+      "Negative x cannot solve the equation: its left side is nonpositive and its right side is positive. Zero does solve it. For a positive solution write $n=\\lfloor x\\rfloor\\ge1$ and $r=x/n$. Then $1<r<2$ and $r-1=ar^2$.",
+      "For fixed positive a there is at most one root r in $(1,2)$, because $(r-1)/r^2$ increases strictly there. The other quadratic root is at least 2 and cannot satisfy the floor constraint. The allowed solutions are therefore $x=rn$ for integers $1\\le n\\le m$, where $m(r-1)<1\\le(m+1)(r-1)$.",
+      "The given sum gives $r\\,m(m+1)/2=420$. Combining this with $1+1/(m+1)\\le r<1+1/m$ yields $m(m+2)\\le840<(m+1)^2$. Since $m(m+2)=(m+1)^2-1$, the integer square $(m+1)^2$ must be 841. Thus $m=28$.",
+      "Consequently $r=840/(28\\cdot29)=30/29$. Then $a=(r-1)/r^2=(1/29)/(900/841)=29/900$. This value satisfies the strict floor bound: exactly $n=1,\\ldots,28$ are allowed.",
+      "The numerator and denominator are coprime, so $p+q=29+900=929$."
+    ],
+    "keyIdeas": [
+      "Floor inequalities",
+      "Quadratic parameterization",
+      "Finite sums"
+    ],
+    "commonMistakes": [
+      "Including n=29 even though it makes the fractional part equal to 1, or admitting the second ratio root."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Requires the reasoning steps given above; answer-key agreement alone is insufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

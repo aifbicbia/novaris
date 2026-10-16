@@ -1,0 +1,98 @@
+[
+  {
+    "finalAnswer": "Simulate the three possible fixed initial pebble positions and output their largest correct-guess count.",
+    "shortExplanation": "Once an initial position is fixed, every swap determines the next position. Score each guess after its swap, repeat for all three initial positions, and take the maximum.",
+    "detailedSteps": [
+      "For each initial position 1, 2, or 3, reset the pebble position and score. Process the entire recorded game under that one hypothesis; the initial choice cannot change during the game.",
+      "On a swap of a and b, a pebble at a moves to b, one at b moves to a, and one at the third position stays there. Only after this update compare the current position with the guess and increment the score if they match.",
+      "Induction on the steps shows that the simulated position and score equal the physical game under the chosen initial state. Every legal game has one of the three initial states, so none can exceed the maximum of the three computed scores. Choosing the maximizing initial state also attains that maximum.",
+      "Print the maximum. The stored-step implementation takes O(N) time, since there are only three simulations, and O(N) auxiliary space for the input steps. An independent check tracks the identities of all three original shells and confirms that each guess credits exactly one original identity.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"shell.in\");\n    ofstream out(\"shell.out\");\n    int n;\n    in >> n;\n    vector<array<int, 3>> steps(n);\n    for (auto &step : steps) in >> step[0] >> step[1] >> step[2];\n    int answer = 0;\n    for (int initial = 1; initial <= 3; ++initial) {\n        int position = initial, score = 0;\n        for (const auto &step : steps) {\n            int a = step[0], b = step[1], guessed = step[2];\n            if (position == a) position = b;\n            else if (position == b) position = a;\n            if (position == guessed) ++score;\n        }\n        answer = max(answer, score);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Enumerate a small unknown initial state.",
+      "Apply the state transition before observing the result.",
+      "Prove both completeness and attainability of the maximum."
+    ],
+    "commonMistakes": [
+      "Scoring the guess before the swap.",
+      "Moving the pebble twice when checking both ends with separate unguarded if statements.",
+      "Choosing a different favorable initial state at each step.",
+      "Returning only the number of correct guesses for one initial position."
+    ],
+    "alternativeMethods": [
+      "Label the shells by their original positions and swap those labels in a three-entry array. After each swap, credit the original identity at the guessed position. The largest of the three identity totals is the answer, and this version can process the input in one pass with O(1) auxiliary space."
+    ],
+    "difficultyNotes": "Introductory state simulation. Respecting the exact order of swap and guess is the main source of errors.",
+    "id": "solution-usaco-bronze-2019-january-p1",
+    "problemId": "usaco-bronze-2019-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Output the number of cows before the longest strictly increasing suffix of the original permutation.",
+    "shortExplanation": "The suffix can remain in its original relative order. Every cow before it must be moved at least once; moving those prefix cows into sorted positions after the remaining prefix attains that count using only positive-length legal moves.",
+    "detailedSteps": [
+      "Scan from the right while adjacent values increase. Let $k$ be the number of entries before that maximal increasing suffix. If the entire order is sorted, $k=0$, including the one-cow case.",
+      "For a lower bound, an original cow cannot be moved from the front before all originally earlier cows have been moved at least once. Cows that have not been moved retain their original order. After $t$ moves, all original cows at zero-based indices $t$ or greater are therefore untouched. If sorting has finished, that original suffix must be increasing, which forces $t\\ge k$. Repeated moves of a previous cow cannot bypass this lower bound.",
+      "For attainment, keep the increasing suffix at the back. Take the next original prefix cow from the front and insert it at its sorted rank within the current suffix, after all remaining unsorted prefix cows. Each move leaves those remaining prefix cows in place relative to each other and enlarges a sorted suffix by one.",
+      "Every constructed move has a permitted positive number of paces. Before the last move, at least one remaining prefix cow is crossed. On the last move, the last original prefix cow is greater than the first original suffix cow because their original boundary was a descent. That smaller cow is still in the enlarged suffix, so the last insertion crosses at least one cow too. No move crosses more than N-1 cows.",
+      "After exactly $k$ legal moves the whole line is increasing. Combined with the lower bound, this proves that $k$ is optimal. Only the count is requested for this Bronze problem; the move positions required by a different division are not part of this output.",
+      "The backward scan takes O(N) time. This reference implementation stores the permutation, using O(N) auxiliary space. The proof covers zero moves when already sorted and avoids assuming that an illegal zero-pace insertion is available.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"sleepy.in\");\n    ofstream out(\"sleepy.out\");\n    int n;\n    in >> n;\n    vector<int> order(n);\n    for (int &cow : order) in >> cow;\n    int prefix = n - 1;\n    while (prefix > 0 && order[prefix - 1] < order[prefix]) --prefix;\n    out << prefix << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Original untouched cows preserve their relative order.",
+      "An increasing suffix can be extended by inserting successive front cows.",
+      "A matching lower bound and legal construction establish the optimum."
+    ],
+    "commonMistakes": [
+      "Counting every out-of-place cow instead of the prefix before the increasing suffix.",
+      "Allowing an arbitrary cow to move rather than only the front cow.",
+      "Using a construction that requires a forbidden zero-pace final move.",
+      "Returning N-1 for an already sorted permutation or overlooking N=1."
+    ],
+    "alternativeMethods": [
+      "For small permutations, compute exact shortest paths from sorted order using reverse moves: choose any nonfront cow and bring it to the front. This reverses one permitted positive front insertion. Reverse breadth-first search checks all possible repeated-move histories rather than relying on the suffix formula."
+    ],
+    "difficultyNotes": "Intermediate greedy proof. The suffix scan is simple, but the lower bound and the positive-pace condition both need justification.",
+    "id": "solution-usaco-bronze-2019-january-p2",
+    "problemId": "usaco-bronze-2019-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Output one plus the largest number of shared characteristics between any two distinct animals.",
+    "shortExplanation": "Before the last yes answer, another animal must still be feasible, so all earlier yes characteristics are shared with that animal. A pair with maximum overlap supplies an attainable transcript: ask its shared traits, then one additional trait that distinguishes a chosen target.",
+    "detailedSteps": [
+      "Treat each animal's characteristics as a set. Let $L$ be the largest intersection size of two distinct animals. The proposed answer is $L+1$; it counts a final yes answer that makes the feasible set a singleton, but never asks another question after the game ends.",
+      "For the upper bound, consider any legal transcript with $q$ yes answers. Just before its last yes, at least two animals remain feasible, including the actual target and some other animal. Both have all $q-1$ distinct earlier yes characteristics, even when earlier negative answers have also occurred. Therefore $q-1\\le L$ and $q\\le L+1$. This argument also applies if a later no answer ends the game.",
+      "For the lower bound, choose a pair attaining $L$. Their complete trait sets differ, so at least one member has a trait absent from the other. Choose that member as the actual target. Ask all $L$ shared traits first. Every response is yes, both selected animals remain feasible, and every question is permitted because it concerns the still-feasible target.",
+      "Next ask a target trait absent from the other selected animal: another yes. If any different animal still survived, it would share all $L+1$ asked traits with the target, contradicting maximality of $L$. Thus this final yes ends the game exactly, proving attainment. Shared questions that initially fail to narrow the feasible set are allowed by the source.",
+      "Compute each pairwise set intersection and keep the largest count, then add one. Do not count repeated occurrences of a characteristic as different questions, and do not optimize the number of no answers: only yes answers contribute to the objective.",
+      "With unordered sets, bounded-length strings, $N$ animals, and at most $K$ traits per animal, the original C++ uses expected $O(N^2K)$ time and $O(NK)$ storage. This is an expected hash-table bound. Since distinct complete sets have size at most $100$, their overlap cannot be $100$, so the answer is at most $100$.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <string>\n#include <unordered_set>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"guess.in\");\n    ofstream out(\"guess.out\");\n    int n;\n    in >> n;\n    vector<unordered_set<string>> traits(n);\n    for (int i = 0; i < n; ++i) {\n        string animal;\n        int count;\n        in >> animal >> count;\n        for (int j = 0; j < count; ++j) {\n            string trait;\n            in >> trait;\n            traits[i].insert(trait);\n        }\n    }\n    int common = 0;\n    for (int i = 0; i < n; ++i) {\n        for (int j = 0; j < i; ++j) {\n            int shared = 0;\n            for (const string &trait : traits[i]) if (traits[j].count(trait)) ++shared;\n            common = max(common, shared);\n        }\n    }\n    out << common + 1 << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A surviving alternative animal bounds the previously asked yes traits.",
+      "Use a maximum-overlap pair as a witness until the terminal distinguishing question.",
+      "Prove that the final yes removes every other candidate, not just one selected witness.",
+      "Respect no repeated questions and immediate singleton termination."
+    ],
+    "commonMistakes": [
+      "Returning only the shared-trait count and forgetting the terminal distinguishing yes.",
+      "Asking further traits after the feasible set already contains one animal.",
+      "Assuming that eliminating one witness necessarily eliminates all other animals without the maximal-overlap argument.",
+      "Ignoring no answers in a brute-force feasibility simulation, even though they also eliminate candidates."
+    ],
+    "alternativeMethods": [
+      "For small feature universes, explore the literal question game for every actual target. Track the feasible animals and asked traits, allow only a new trait of some feasible animal, apply the forced yes or no response, and stop immediately at a singleton. This gives an independent exhaustive check of the intersection formula.",
+      "A reverse index from each characteristic to its possessing animals can count how many times each animal pair co-occurs. After deduplicating traits within an animal, those pair counts are the intersection sizes."
+    ],
+    "difficultyNotes": "Advanced Bronze extremal reasoning. A correct answer needs both a universal transcript bound and an explicit transcript that reaches it without premature termination.",
+    "id": "solution-usaco-bronze-2019-january-p3",
+    "problemId": "usaco-bronze-2019-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,699 @@
+[
+  {
+    "id": "solution-amc8-2013-p1",
+    "problemId": "amc8-2013-p1",
+    "finalAnswer": "$\\boxed{\\text{A }(1)}$",
+    "shortExplanation": "**Idea:** Find the next multiple of $6$ after $23$.",
+    "detailedSteps": [
+      "Danica needs the total number of cars to be divisible by $6$.",
+      "The next multiple of $6$ after $23$ is\n[\n24=6\\cdot4.\n]",
+      "So she needs\n[\n24-23=1\n]",
+      "additional car.",
+      "Final Answer: ($\\boxed{\\text{A }(1)}$)"
+    ],
+    "keyIdeas": [
+      "Multiples",
+      "Remainders"
+    ],
+    "commonMistakes": [
+      "Do not round down to $18$; she cannot throw away cars.",
+      "The rows must all have exactly $6$ cars."
+    ],
+    "alternativeMethods": [
+      "Since $23\\equiv5\\pmod6$, she needs $1$ more car to reach a multiple of $6$."
+    ],
+    "difficultyNotes": "A remainder warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p2",
+    "problemId": "amc8-2013-p2",
+    "finalAnswer": "$\\boxed{\\text{D }(12)}$",
+    "shortExplanation": "**Idea:** Undo the half-off discount, then double from half pound to full pound.",
+    "detailedSteps": [
+      "The sale price of a half-pound package is $3$ dollars, which is half of the regular half-pound price.",
+      "Therefore the regular half-pound price is\n[\n2\\cdot3=6\n]",
+      "dollars.",
+      "A full pound is two half-pound packages, so the regular full-pound price is\n[\n2\\cdot6=12\n]",
+      "dollars.",
+      "Final Answer: ($\\boxed{\\text{D }(12)}$)"
+    ],
+    "keyIdeas": [
+      "Discounts",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "The sale price is for a half pound.",
+      "Undo the 50 percent discount before doubling to a full pound."
+    ],
+    "alternativeMethods": [
+      "At half price, a full pound would cost $6$ dollars, so regular price is $12$ dollars."
+    ],
+    "difficultyNotes": "A two-step rate problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p3",
+    "problemId": "amc8-2013-p3",
+    "finalAnswer": "$\\boxed{\\text{E }(2000)}$",
+    "shortExplanation": "**Idea:** Pair neighboring terms in the alternating sum.",
+    "detailedSteps": [
+      "Group the terms:\n[\n(-1+2)+(-3+4)+\\cdots+(-999+1000).\n]",
+      "Each pair equals $1$, and there are $500$ pairs.",
+      "So the sum in parentheses is $500$, and the whole expression is\n[\n4\\cdot500=2000.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(2000)}$)"
+    ],
+    "keyIdeas": [
+      "Pairing",
+      "Alternating sums"
+    ],
+    "commonMistakes": [
+      "Each pair leaves $1$; the expression does not cancel to $0$.",
+      "There are $500$ pairs, not $1000$."
+    ],
+    "alternativeMethods": [
+      "The positive even terms exceed the negative odd terms by exactly $500$."
+    ],
+    "difficultyNotes": "A long-looking expression becomes short after pairing.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p4",
+    "problemId": "amc8-2013-p4",
+    "finalAnswer": "$\\boxed{\\text{C }(140)}$",
+    "shortExplanation": "**Idea:** The seven paying friends cover Judi's one share.",
+    "detailedSteps": [
+      "Judi's share was split among her $7$ friends.",
+      "Each friend paid an extra $2.50$ dollars, so Judi's share was\n[\n7\\cdot2.50=17.50\n]",
+      "dollars.",
+      "The total bill was $8$ equal shares:\n[\n8\\cdot17.50=140.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(140)}$)"
+    ],
+    "keyIdeas": [
+      "Equal sharing",
+      "Proportional reasoning"
+    ],
+    "commonMistakes": [
+      "Only $7$ friends paid the extra amount.",
+      "The extra $2.50$ is per friend."
+    ],
+    "alternativeMethods": [
+      "Let one person's share be $x$. Then $\\frac{x}{7}=2.50$, so $x=17.50$."
+    ],
+    "difficultyNotes": "The extra payments reveal one person's original share.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p5",
+    "problemId": "amc8-2013-p5",
+    "finalAnswer": "$\\boxed{\\text{E}}$",
+    "shortExplanation": "**Idea:** Compute the mean, then compare it with the middle value.",
+    "detailedSteps": [
+      "The total weight is\n[\n106+5+5+6+8=130.\n]",
+      "The average is\n[\n\\frac{130}{5}=26.\n]",
+      "The weights in order are\n[\n5,\\ 5,\\ 6,\\ 8,\\ 106,\n]",
+      "so the median is $6$.",
+      "The average is greater than the median by\n[\n26-6=20.\n]",
+      "Final Answer: ($\\boxed{\\text{E}}$)"
+    ],
+    "keyIdeas": [
+      "Mean",
+      "Median",
+      "Outliers"
+    ],
+    "commonMistakes": [
+      "The median is the third value after sorting.",
+      "The large value $106$ strongly affects the average."
+    ],
+    "alternativeMethods": [
+      "Find the median first, then only compute enough of the total to compare against it."
+    ],
+    "difficultyNotes": "A clear example of average versus median.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p6",
+    "problemId": "amc8-2013-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(4)}$",
+    "shortExplanation": "**Idea:** Work upward or downward through the product pattern.",
+    "detailedSteps": [
+      "Let the missing top number be $x$.",
+      "The middle right box is $5x$. The bottom box is then\n[\n30\\cdot5x=600.\n]",
+      "So\n[\n150x=600,\\qquad x=4.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Variables",
+      "Multiplication pattern"
+    ],
+    "commonMistakes": [
+      "The bottom box is the product of the two boxes directly above it.",
+      "Do not multiply all three top-row numbers together."
+    ],
+    "alternativeMethods": [
+      "Since $600/30=20$, the middle right box is $20$, so $x=20/5=4$."
+    ],
+    "difficultyNotes": "A small variable makes the diagram mechanical.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p7",
+    "problemId": "amc8-2013-p7",
+    "finalAnswer": "$\\boxed{\\text{C }(100)}$",
+    "shortExplanation": "**Idea:** Use the observed car rate for the full crossing time.",
+    "detailedSteps": [
+      "Trey counted $6$ cars in $10$ seconds, so the train passed at a rate of\n[\n\\frac{6}{10}=0.6\n]",
+      "cars per second.",
+      "The total time was\n[\n2\\text{ minutes }45\\text{ seconds}=165\\text{ seconds}.\n]",
+      "The estimated number of cars is\n[\n0.6\\cdot165=99.\n]",
+      "The closest answer is $100$.",
+      "Final Answer: ($\\boxed{\\text{C }(100)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Estimation"
+    ],
+    "commonMistakes": [
+      "Convert $2$ minutes $45$ seconds to $165$ seconds.",
+      "The answer is most likely, so round to the closest choice."
+    ],
+    "alternativeMethods": [
+      "Scale by intervals: $165/10=16.5$ groups of $10$ seconds, and $16.5\\cdot6=99$."
+    ],
+    "difficultyNotes": "A rate estimate with a final rounding step.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p8",
+    "problemId": "amc8-2013-p8",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac38\\right)}$",
+    "shortExplanation": "**Idea:** List the eight equally likely outcomes and count adjacent heads.",
+    "detailedSteps": [
+      "There are\n[\n2^3=8\n]",
+      "possible outcomes.",
+      "The outcomes with at least two consecutive heads are\n[\nHHT,\\ THH,\\ HHH.\n]",
+      "That gives $3$ favorable outcomes out of $8$.",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac38\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Sample space"
+    ],
+    "commonMistakes": [
+      "Do not count $HTH$; its heads are not consecutive.",
+      "Count $HHH$ only once even though it contains two adjacent pairs."
+    ],
+    "alternativeMethods": [
+      "Use complement counting by excluding outcomes with no adjacent heads."
+    ],
+    "difficultyNotes": "The sample space is small enough to list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p9",
+    "problemId": "amc8-2013-p9",
+    "finalAnswer": "$\\boxed{\\text{C }(11)}$",
+    "shortExplanation": "**Idea:** The leap lengths are powers of $2$.",
+    "detailedSteps": [
+      "The leap lengths are\n[\n1,\\ 2,\\ 4,\\ 8,\\ldots\n]",
+      "The $n$th leap has length $2^{n-1}$.",
+      "We need the first power greater than $1000$. Since\n[\n2^9=512<1000,\\qquad 2^{10}=1024>1000,\n]",
+      "the needed leap is the $11$th leap.",
+      "Final Answer: ($\\boxed{\\text{C }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Powers of 2",
+      "Exponential growth"
+    ],
+    "commonMistakes": [
+      "The first leap is $2^0$, so the exponent is one less than the leap number.",
+      "Do not stop at $512$."
+    ],
+    "alternativeMethods": [
+      "Double repeatedly until passing $1000$; count the leaps as you go."
+    ],
+    "difficultyNotes": "This checks indexing in a powers-of-two sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p10",
+    "problemId": "amc8-2013-p10",
+    "finalAnswer": "$\\boxed{\\text{C }(330)}$",
+    "shortExplanation": "**Idea:** Use prime factors to find the LCM and GCF.",
+    "detailedSteps": [
+      "Factor the two numbers:\n[\n180=2^2\\cdot3^2\\cdot5,\n]",
+      "and\n[\n594=2\\cdot3^3\\cdot11.\n]",
+      "The greatest common factor uses the smaller exponents:\n[\n\\gcd(180,594)=2\\cdot3^2=18.\n]",
+      "The least common multiple uses the larger exponents:\n[\n\\operatorname{lcm}(180,594)=2^2\\cdot3^3\\cdot5\\cdot11=5940.\n]",
+      "The ratio is\n[\n\\frac{5940}{18}=330.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(330)}$)"
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "GCF",
+      "LCM"
+    ],
+    "commonMistakes": [
+      "Use smaller exponents for GCF and larger exponents for LCM.",
+      "The question asks for a ratio, not a product."
+    ],
+    "alternativeMethods": [
+      "After finding $\\gcd=18$, use $ab=\\gcd(a,b)\\operatorname{lcm}(a,b)$ to get the LCM."
+    ],
+    "difficultyNotes": "Prime factorization keeps the LCM/GCF comparison organized.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p11",
+    "problemId": "amc8-2013-p11",
+    "finalAnswer": "$\\boxed{\\text{D }(4)}$",
+    "shortExplanation": "**Idea:** Convert each two-mile workout into minutes.",
+    "detailedSteps": [
+      "At $5$ mph, $2$ miles take\n[\n\\frac25\\cdot60=24\n]",
+      "minutes.",
+      "At $3$ mph, $2$ miles take\n[\n\\frac23\\cdot60=40\n]",
+      "minutes. At $4$ mph, $2$ miles take $30$ minutes.",
+      "The actual total is\n[\n24+40+30=94\n]",
+      "minutes.",
+      "At $4$ mph for all $6$ miles, the time would be\n[\n\\frac64\\cdot60=90\n]",
+      "minutes.",
+      "The difference is\n[\n94-90=4.\n]",
+      "Final Answer: ($\\boxed{\\text{D }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Rate-time-distance",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Do not average the speeds.",
+      "Each day is exactly $2$ miles."
+    ],
+    "alternativeMethods": [
+      "Work in hours first, then convert only the final difference to minutes."
+    ],
+    "difficultyNotes": "Rates must be compared through time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p12",
+    "problemId": "amc8-2013-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(30\\%)}$",
+    "shortExplanation": "**Idea:** Compute the discount on the second and third pairs.",
+    "detailedSteps": [
+      "The regular price for three pairs is\n[\n3\\cdot50=150.\n]",
+      "The first pair costs $50$ dollars.",
+      "The second pair has a $40\\%$ discount, so it costs\n[\n0.60\\cdot50=30.\n]",
+      "The third pair is half price, so it costs\n[\n25.\n]",
+      "The sale total is\n[\n50+30+25=105.\n]",
+      "The savings is\n[\n150-105=45,\n]",
+      "and the percent saved is\n[\n\\frac{45}{150}=30\\%.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(30\\%)}$)"
+    ],
+    "keyIdeas": [
+      "Percent discounts",
+      "Percent savings"
+    ],
+    "commonMistakes": [
+      "The second pair costs 60 percent of regular price, not 40 percent.",
+      "Percent saved is savings divided by the original total."
+    ],
+    "alternativeMethods": [
+      "Compute savings directly: the second pair saves $20$ and the third saves $25$, for total savings $45$."
+    ],
+    "difficultyNotes": "A percent-discount problem with two different reductions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p13",
+    "problemId": "amc8-2013-p13",
+    "finalAnswer": "$\\boxed{\\text{A }(45)}$",
+    "shortExplanation": "**Idea:** Reversing a two-digit number changes it by a multiple of $9$.",
+    "detailedSteps": [
+      "Let the score be $10a+b$. The reversed score is $10b+a$.",
+      "The difference is\n[\n(10a+b)-(10b+a)=9(a-b).\n]",
+      "So the total can differ by a multiple of $9$.",
+      "Among the choices, only\n[\n45\n]",
+      "is divisible by $9$.",
+      "Final Answer: ($\\boxed{\\text{A }(45)}$)"
+    ],
+    "keyIdeas": [
+      "Place value",
+      "Multiples of 9"
+    ],
+    "commonMistakes": [
+      "Only one score is reversed, not the entire total.",
+      "The difference may be positive or negative, but its absolute value is a multiple of $9$."
+    ],
+    "alternativeMethods": [
+      "Example: $72$ and $27$ differ by $45$."
+    ],
+    "difficultyNotes": "Place-value algebra makes the possible difference clear.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p14",
+    "problemId": "amc8-2013-p14",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac38\\right)}$",
+    "shortExplanation": "**Idea:** Add the green-match and red-match probabilities.",
+    "detailedSteps": [
+      "Both choose green with probability\n[\n\\frac12\\cdot\\frac14=\\frac18.\n]",
+      "Both choose red with probability\n[\n\\frac12\\cdot\\frac24=\\frac12\\cdot\\frac12=\\frac14.\n]",
+      "These cases are disjoint, so add:\n[\n\\frac18+\\frac14=\\frac18+\\frac28=\\frac38.\n]",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac38\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Casework",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "Bob's yellow jelly bean cannot match Abe's color.",
+      "Add matching-color cases rather than multiplying them together."
+    ],
+    "alternativeMethods": [
+      "Make $2\\cdot4=8$ equally likely paired outcomes and count $3$ matches."
+    ],
+    "difficultyNotes": "A small probability case split.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p15",
+    "problemId": "amc8-2013-p15",
+    "finalAnswer": "$\\boxed{\\text{B }(40)}$",
+    "shortExplanation": "**Idea:** Solve for each exponent, then multiply.",
+    "detailedSteps": [
+      "From $3^p+81=90$,\n[\n3^p=9=3^2,\n]",
+      "so $p=2$.",
+      "From $2^r+44=76$,\n[\n2^r=32=2^5,\n]",
+      "so $r=5$.",
+      "Also\n[\n6^s=1421-5^3=1421-125=1296=6^4,\n]",
+      "so $s=4$.",
+      "Therefore\n[\nprs=2\\cdot5\\cdot4=40.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(40)}$)"
+    ],
+    "keyIdeas": [
+      "Exponents",
+      "Equation solving"
+    ],
+    "commonMistakes": [
+      "Subtract constants before matching powers.",
+      "The final expression is the product $prs$."
+    ],
+    "alternativeMethods": [
+      "Recognize $1296=36^2=(6^2)^2=6^4$."
+    ],
+    "difficultyNotes": "Direct exponent recognition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p16",
+    "problemId": "amc8-2013-p16",
+    "finalAnswer": "$\\boxed{\\text{E }(89)}$",
+    "shortExplanation": "**Idea:** Make the eighth-grade count the smallest number compatible with both ratios.",
+    "detailedSteps": [
+      "Let the number of eighth-graders be $E$.",
+      "The ratio sixth:eighth is $3:5$, so $E$ must be a multiple of $5$.",
+      "The ratio seventh:eighth is $5:8$, so $E$ must be a multiple of $8$.",
+      "The smallest possible $E$ is therefore\n[\n\\operatorname{lcm}(5,8)=40.\n]",
+      "Then the sixth-grade count is\n[\n\\frac35\\cdot40=24,\n]",
+      "and the seventh-grade count is\n[\n\\frac58\\cdot40=25.\n]",
+      "The total is\n[\n24+25+40=89.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(89)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Least common multiple"
+    ],
+    "commonMistakes": [
+      "Use one common eighth-grade count for both ratios.",
+      "The smallest compatible eighth-grade count must be a multiple of both $5$ and $8$."
+    ],
+    "alternativeMethods": [
+      "Scale the ratio triples to the smallest common eighth-grade value: $24:25:40$."
+    ],
+    "difficultyNotes": "The minimum occurs at the least common compatible scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p17",
+    "problemId": "amc8-2013-p17",
+    "finalAnswer": "$\\boxed{\\text{B }(338)}$",
+    "shortExplanation": "**Idea:** Use the average of the six consecutive integers.",
+    "detailedSteps": [
+      "The average is\n[\n\\frac{2013}{6}=335.5.\n]",
+      "For six consecutive integers, the average is halfway between the third and fourth numbers.",
+      "So the integers are\n[\n333,\\ 334,\\ 335,\\ 336,\\ 337,\\ 338.\n]",
+      "The largest is $338$.",
+      "Final Answer: ($\\boxed{\\text{B }(338)}$)"
+    ],
+    "keyIdeas": [
+      "Consecutive integers",
+      "Average"
+    ],
+    "commonMistakes": [
+      "The average is not one of the terms because there are an even number of terms.",
+      "Check the sum after finding the list."
+    ],
+    "alternativeMethods": [
+      "Let the first integer be $n$. Then $6n+15=2013$, so $n=333$."
+    ],
+    "difficultyNotes": "A standard consecutive-integer structure.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p18",
+    "problemId": "amc8-2013-p18",
+    "finalAnswer": "$\\boxed{\\text{B }(280)}$",
+    "shortExplanation": "**Idea:** Subtract the hollow interior from the outside block.",
+    "detailedSteps": [
+      "The outside dimensions are $12$ by $10$ by $5$, giving volume\n[\n12\\cdot10\\cdot5=600.\n]",
+      "The hollow inside is one foot in from every side and one foot above the floor, so it is\n[\n10\\text{ by }8\\text{ by }4.\n]",
+      "Its volume is\n[\n10\\cdot8\\cdot4=320.\n]",
+      "The material volume is\n[\n600-320=280.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(280)}$)"
+    ],
+    "keyIdeas": [
+      "Volume",
+      "Subtracting a void"
+    ],
+    "commonMistakes": [
+      "The floor has thickness $1$, making the empty height $4$.",
+      "Do not double-count corners by adding walls separately."
+    ],
+    "alternativeMethods": [
+      "Add floor volume and four wall volumes carefully; subtraction is cleaner."
+    ],
+    "difficultyNotes": "A hollow-prism volume problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p19",
+    "problemId": "amc8-2013-p19",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Each statement gives a comparison with Hannah's visible score.",
+    "detailedSteps": [
+      "Cassie sees Hannah's score but does not know Bridget's. For Cassie to know she did not get the lowest score, Cassie's score must be higher than Hannah's.",
+      "So Cassie is above Hannah.",
+      "Bridget also sees Hannah's score but does not know Cassie's. For Bridget to know she did not get the highest score, Bridget's score must be lower than Hannah's.",
+      "So Bridget is below Hannah.",
+      "Therefore the order from highest to lowest is\n[\n\\text{Cassie},\\ \\text{Hannah},\\ \\text{Bridget}.\n]",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Ordering"
+    ],
+    "commonMistakes": [
+      "Use what each girl can know from the visible score.",
+      "The statements are about certainty, not guessing."
+    ],
+    "alternativeMethods": [
+      "Test each answer choice: only Cassie above Hannah above Bridget makes both statements guaranteed."
+    ],
+    "difficultyNotes": "A short logic problem about partial information.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p20",
+    "problemId": "amc8-2013-p20",
+    "finalAnswer": "$\\boxed{\\text{C }(\\pi)}$",
+    "shortExplanation": "**Idea:** Use a radius to the upper corner of the rectangle.",
+    "detailedSteps": [
+      "Place the center of the semicircle at the midpoint of the rectangle's longer side.",
+      "A top corner of the rectangle is $1$ unit horizontally from the center and $1$ unit vertically above the diameter.",
+      "Thus\n[\nr^2=1^2+1^2=2.\n]",
+      "The semicircle area is\n[\n\\frac12\\pi r^2=\\frac12\\pi\\cdot2=\\pi.\n]",
+      "Final Answer: ($\\boxed{\\text{C }(\\pi)}$)"
+    ],
+    "keyIdeas": [
+      "Pythagorean theorem",
+      "Semicircle area"
+    ],
+    "commonMistakes": [
+      "Use half of the circle area.",
+      "The radius goes from the center to a top corner."
+    ],
+    "alternativeMethods": [
+      "Only $r^2$ is needed, so there is no need to compute $r=\\sqrt2$ separately."
+    ],
+    "difficultyNotes": "A compact geometry setup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p21",
+    "problemId": "amc8-2013-p21",
+    "finalAnswer": "$\\boxed{\\text{E }(18)}$",
+    "shortExplanation": "**Idea:** Multiply the number of paths to and from the park.",
+    "detailedSteps": [
+      "From $S$ to $P$, the path uses $2$ east moves and $1$ north move, so there are\n[\n\\binom31=3\n]",
+      "routes.",
+      "From $P$ to $H$, the path uses $2$ east moves and $2$ north moves, so there are\n[\n\\binom42=6\n]",
+      "routes.",
+      "The total is\n[\n3\\cdot6=18.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(18)}$)"
+    ],
+    "keyIdeas": [
+      "Grid paths",
+      "Combinations"
+    ],
+    "commonMistakes": [
+      "The route must pass through $P$.",
+      "Multiply independent route counts before and after $P$."
+    ],
+    "alternativeMethods": [
+      "List the three possible first parts, then attach the six possible second parts."
+    ],
+    "difficultyNotes": "A constrained lattice-path count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p22",
+    "problemId": "amc8-2013-p22",
+    "finalAnswer": "$\\boxed{\\text{E }(3932)}$",
+    "shortExplanation": "**Idea:** Count horizontal and vertical toothpicks separately.",
+    "detailedSteps": [
+      "There are $60$ columns of small squares and $32$ rows.",
+      "Horizontal toothpicks: there are $33$ horizontal grid lines, each with $60$ toothpicks:\n[\n33\\cdot60=1980.\n]",
+      "Vertical toothpicks: there are $61$ vertical grid lines, each with $32$ toothpicks:\n[\n61\\cdot32=1952.\n]",
+      "Total:\n[\n1980+1952=3932.\n]",
+      "Final Answer: ($\\boxed{\\text{E }(3932)}$)"
+    ],
+    "keyIdeas": [
+      "Grid counting",
+      "Shared edges"
+    ],
+    "commonMistakes": [
+      "A grid with $60$ columns has $61$ vertical boundary/grid lines.",
+      "Do not count every small square independently."
+    ],
+    "alternativeMethods": [
+      "Use $m(n+1)+n(m+1)$ for an $m$ by $n$ grid."
+    ],
+    "difficultyNotes": "Shared toothpicks are the key.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p23",
+    "problemId": "amc8-2013-p23",
+    "finalAnswer": "$\\boxed{\\text{B }(7.5)}$",
+    "shortExplanation": "**Idea:** Convert semicircle data into side lengths, then use the right triangle.",
+    "detailedSteps": [
+      "For $\\overline{AB}$,\n[\n\\frac12\\pi r^2=8\\pi,\n]",
+      "so $r=4$ and $AB=8$.",
+      "For $\\overline{AC}$, the semicircle arc length is $\\pi r=8.5\\pi$, so $r=8.5$ and $AC=17$.",
+      "Using the Pythagorean theorem,\n[\nBC^2=17^2-8^2=289-64=225,\n]",
+      "so $BC=15$.",
+      "The requested radius is half of $BC$:\n[\n\\frac{15}{2}=7.5.\n]",
+      "Final Answer: ($\\boxed{\\text{B }(7.5)}$)"
+    ],
+    "keyIdeas": [
+      "Semicircle area",
+      "Arc length",
+      "Pythagorean theorem"
+    ],
+    "commonMistakes": [
+      "The triangle side is the diameter of its semicircle.",
+      "Semicircle arc length is $pi r$, not $2pi r$."
+    ],
+    "alternativeMethods": [
+      "After finding $AB=8$ and $AC=17$, recognize the $8$-$15$-$17$ triangle."
+    ],
+    "difficultyNotes": "Combines circle facts with a right triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p24",
+    "problemId": "amc8-2013-p24",
+    "finalAnswer": "$\\boxed{\\text{C }\\left(\\frac13\\right)}$",
+    "shortExplanation": "**Idea:** Normalize each square to area $1$ and compute the shaded area.",
+    "detailedSteps": [
+      "Let each square have side length $1$. The total area is then $3$.",
+      "From the diagram, the shaded region can be decomposed into simple pieces with total area $1$.",
+      "Therefore the shaded fraction is\n[\n\\frac{1}{3}.\n]",
+      "Final Answer: ($\\boxed{\\text{C }\\left(\\frac13\\right)}$)"
+    ],
+    "keyIdeas": [
+      "Area decomposition",
+      "Unit squares"
+    ],
+    "commonMistakes": [
+      "Use the total area of all three squares.",
+      "Account for the triangular slanted part of the shaded region."
+    ],
+    "alternativeMethods": [
+      "Place coordinates on the diagram and use the shoelace formula to get shaded area $1$."
+    ],
+    "difficultyNotes": "A diagram normalization problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2013-p25",
+    "problemId": "amc8-2013-p25",
+    "finalAnswer": "$\\boxed{\\text{A }(238\\pi)}$",
+    "shortExplanation": "**Idea:** The ball's center travels on offset semicircles.",
+    "detailedSteps": [
+      "The ball radius is $2$ inches.",
+      "For the first and third arcs, the center path has radii\n[\n100-2=98,\\qquad 80-2=78.\n]",
+      "For the middle arc, the center path has radius\n[\n60+2=62.\n]",
+      "A semicircle of radius $r$ has length $\\pi r$, so the center travels\n[\n98\\pi+62\\pi+78\\pi=238\\pi.\n]",
+      "Final Answer: ($\\boxed{\\text{A }(238\\pi)}$)"
+    ],
+    "keyIdeas": [
+      "Offset path",
+      "Semicircle arc length"
+    ],
+    "commonMistakes": [
+      "The center does not travel along the original track.",
+      "Use the ball radius $2$, not its diameter $4$."
+    ],
+    "alternativeMethods": [
+      "Draw the parallel path followed by the center and label each adjusted radius."
+    ],
+    "difficultyNotes": "The geometric offset is the main idea.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

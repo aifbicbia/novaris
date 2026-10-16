@@ -1,0 +1,320 @@
+[
+  {
+    "id": "solution-aime-ii-2005-p1",
+    "problemId": "aime-ii-2005-p1",
+    "finalAnswer": "$\\boxed{013}$",
+    "shortExplanation": "The deck contains thirteen cards.",
+    "detailedSteps": [
+      "The source counts unordered sets, so the equation is $\\binom n6=6\\binom n3$. Since $n\\ge6$, cancellation is valid and yields $(n-3)(n-4)(n-5)=720$.",
+      "At $n=13$ the product is $10\\cdot9\\cdot8=720$. Each of the three positive factors increases strictly with n, so this is the unique admissible value."
+    ],
+    "keyIdeas": [
+      "Cancel the two binomial coefficients"
+    ],
+    "commonMistakes": [
+      "Counting ordered card draws rather than sets."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancellation leaves a strictly increasing product of consecutive integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p2",
+    "problemId": "aime-ii-2005-p2",
+    "finalAnswer": "$\\boxed{079}$",
+    "shortExplanation": "The probability is 9/70.",
+    "detailedSteps": [
+      "Temporarily label the three physical rolls of each type. Every random allocation to the three labeled guests is equally likely; the total number is $\\binom93\\binom63=1680$. The third bag is then determined.",
+      "For success, distribute the three nut rolls bijectively to the guests, then do the same independently for cheese and fruit. This gives $(3!)^3=216$ allocations. Therefore the probability is $216/1680=9/70$.",
+      "The labels are only a counting device and do not change the event. The fraction is reduced, so $m+n=9+70=79$."
+    ],
+    "keyIdeas": [
+      "Temporarily distinguish the physical rolls"
+    ],
+    "commonMistakes": [
+      "Assigning equal probabilities to type-count patterns that have different numbers of physical allocations."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same physical allocation model counts both the sample space and favorable outcomes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p3",
+    "problemId": "aime-ii-2005-p3",
+    "finalAnswer": "$\\boxed{802}$",
+    "shortExplanation": "The common ratio is 399/403.",
+    "detailedSteps": [
+      "Let a be the first term and r the ratio. Convergence requires $|r|<1$, and the two sums give $a/(1-r)=2005$ and $a^2/(1-r^2)=20050$.",
+      "Substituting $a=2005(1-r)$ into the second equation gives $2005(1-r)/(1+r)=10$, or $401(1-r)=2(1+r)$. Thus $r=399/403$.",
+      "This ratio lies between zero and one, and the corresponding positive a verifies both sums. Since $\\gcd(399,403)=1$, the answer is $399+403=802$."
+    ],
+    "keyIdeas": [
+      "Compare the two convergent geometric sums"
+    ],
+    "commonMistakes": [
+      "Keeping the same common ratio after squaring the terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Squaring changes both the first term and the ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p4",
+    "problemId": "aime-ii-2005-p4",
+    "finalAnswer": "$\\boxed{435}$",
+    "shortExplanation": "Inclusion and exclusion give 435 divisors.",
+    "detailedSteps": [
+      "The three prime factorizations are $10^{10}=2^{10}5^{10}$, $15^7=3^7\\cdot5^7$, and $18^{11}=2^{11}3^{22}$. Their divisor counts are respectively 121, 64, 276.",
+      "A number divides both integers exactly when it divides their gcd. The three pairwise gcds are $5^7$, $2^{10}$, and $3^7$, with divisor counts 8, 11, 8. The triple gcd is 1, with one divisor.",
+      "Inclusion and exclusion therefore give $121+64+276-8-11-8+1=435$."
+    ],
+    "keyIdeas": [
+      "Use the gcd to count each divisor-set intersection"
+    ],
+    "commonMistakes": [
+      "Adding divisor counts without removing the shared prime powers and the shared divisor one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Divisor sets turn gcds into exact intersection counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p5",
+    "problemId": "aime-ii-2005-p5",
+    "finalAnswer": "$\\boxed{054}$",
+    "shortExplanation": "There are 43 square pairs and eleven cube pairs.",
+    "detailedSteps": [
+      "Put $t=\\log_a b>0$. Then $\\log_b a=1/t$, so $t+6/t=5$ becomes $(t-2)(t-3)=0$.",
+      "For $t=2$, we have $b=a^2$, and the integer range is $2\\le a\\le44$ because $44^2\\le2005<45^2$. This gives 43 ordered pairs.",
+      "For $t=3$, we have $b=a^3$, and $2\\le a\\le12$ because $12^3\\le2005<13^3$. This gives 11 ordered pairs. The two cases do not overlap for $a\\ge2$, so the answer is 54."
+    ],
+    "keyIdeas": [
+      "The logarithmic ratio has only two possible values"
+    ],
+    "commonMistakes": [
+      "Also counting the reversed pairs without checking the asymmetric coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reciprocal logarithms give a quadratic before any integer counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p6",
+    "problemId": "aime-ii-2005-p6",
+    "finalAnswer": "$\\boxed{392}$",
+    "shortExplanation": "The magical deck contains 392 cards.",
+    "detailedSteps": [
+      "For a pile A card k with $1\\le k\\le n$, its position counted from the bottom is $2k$, so its new top position is $2n-2k+1$. It is fixed exactly when $3k=2n+1$.",
+      "For a pile B card numbered $n+j$, its bottom position is $2j-1$. Its top position is $2n-2j+2$, so fixedness gives $3(n+j)=4n+2$. Thus the two possible fixed card numbers are $(2n+1)/3$ and $2(2n+1)/3$.",
+      "If card 131 were in B, we would have $4n+2=393$, impossible for integer n. In A it gives $2n+1=393$, hence $n=196$. The B fixed card is 262, which lies in B, so this deck really is magical.",
+      "The requested number of cards is $2n=392$."
+    ],
+    "keyIdeas": [
+      "Track positions from the bottom of the restacked deck"
+    ],
+    "commonMistakes": [
+      "Taking the alternating cards as a top-first list when the source explicitly builds from the bottom."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two fixed positions are linked by a factor of two.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p7",
+    "problemId": "aime-ii-2005-p7",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The requested power is 125.",
+    "detailedSteps": [
+      "Let $u=5^{1/16}$. The denominator in x is $(u^8+1)(u^4+1)(u^2+1)(u+1)$. Repeated difference of squares gives $(u-1)(u+1)(u^2+1)(u^4+1)(u^8+1)=u^{16}-1=4$.",
+      "Consequently $x=u-1$, so $(x+1)^{48}=u^{48}=5^3=125$. All denominator factors are positive."
+    ],
+    "keyIdeas": [
+      "Successive difference-of-squares factors telescope"
+    ],
+    "commonMistakes": [
+      "Confusing the successive fourth, eighth and sixteenth roots with integer exponents of five."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The four factors are exactly the factors of a sixteenth power minus one after removing the linear factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p8",
+    "problemId": "aime-ii-2005-p8",
+    "finalAnswer": "$\\boxed{405}$",
+    "shortExplanation": "The chord length is $8\\sqrt{390}/7$.",
+    "detailedSteps": [
+      "Let the outer radius be R. Its center is on the line of the two smaller centers, whose separation is 14. If the smaller centers were on the same side of the outer center, their distances would differ by 6, contradicting 14. On opposite sides, $(R-4)+(R-10)=14$, so $R=14$.",
+      "Place the outer center at the origin and the smaller centers at $(-10,0)$ and $(4,0)$. Write their upper common external tangent as $\\nu_x x+\\nu_y y=d$, where the normal is a unit vector and the signed distances $d-\\nu_x x-\\nu_y y$ of both centers are positive.",
+      "The tangent distances give $d+10\\nu_x=4$ and $d-4\\nu_x=10$. Thus $\\nu_x=-3/7$ and $d=58/7$. The other common external tangent has the same distance from the origin by reflection.",
+      "The chord length is $2\\sqrt{14^2-(58/7)^2}=8\\sqrt{390}/7$. Since 390 is squarefree and 8 and 7 are relatively prime, $m+n+p=8+390+7=405$."
+    ],
+    "keyIdeas": [
+      "Find the outer center and the tangent-line distance"
+    ],
+    "commonMistakes": [
+      "Using a common internal tangent or assuming that the outer center is the tangency point of the small circles."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Collinearity determines the outer radius before the tangent calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p9",
+    "problemId": "aime-ii-2005-p9",
+    "finalAnswer": "$\\boxed{250}$",
+    "shortExplanation": "Exactly 250 exponents work.",
+    "detailedSteps": [
+      "For every real t, $\\sin t+i\\cos t=i e^{-it}$. Hence the proposed identity becomes $i^n e^{-int}=i e^{-int}$. The exponential factor is never zero, so this holds exactly when $i^n=i$.",
+      "The condition is $n\\equiv1\\pmod4$. From 1 through 1000 the allowed integers are 1,5,…,997, numbering 250. This condition is both necessary and sufficient for all real t."
+    ],
+    "keyIdeas": [
+      "Rewrite the reversed sine-cosine expression as an exponential"
+    ],
+    "commonMistakes": [
+      "Applying the usual cosine-plus-i-sine formula without accounting for the swapped functions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed factor i captures the phase difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p10",
+    "problemId": "aime-ii-2005-p10",
+    "finalAnswer": "$\\boxed{011}$",
+    "shortExplanation": "The volume ratio is 9/2.",
+    "detailedSteps": [
+      "By scaling, place the octahedron vertices at $(\\pm1,0,0),(0,\\pm1,0),(0,0,\\pm1)$. The solid is $|x|+|y|+|z|\\le1$, consisting of eight tetrahedra, each with volume 1/6. Its volume is 4/3.",
+      "Each equilateral triangular face has its center at its centroid. The eight face centers are $(\\pm1/3,\\pm1/3,\\pm1/3)$ with independent signs, so they form a cube of side 2/3 and volume 8/27.",
+      "The ratio is $(4/3)/(8/27)=9/2$, giving $m+n=11$."
+    ],
+    "keyIdeas": [
+      "Use axis vertices for the octahedron"
+    ],
+    "commonMistakes": [
+      "Using the octahedron edge length as the cube side or using face vertices instead of face centers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Axis coordinates make the dual cube centers immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p11",
+    "problemId": "aime-ii-2005-p11",
+    "finalAnswer": "$\\boxed{889}$",
+    "shortExplanation": "The first zero occurs at index 889.",
+    "detailedSteps": [
+      "The recurrence is defined for every $1\\le k<m$, so the denominators there are nonzero. Multiplying by $a_k$ gives $a_k a_{k+1}=a_{k-1}a_k-3$. Since $a_0a_1=37\\cdot72=2664$, induction yields $a_{k-1}a_k=2664-3(k-1)$.",
+      "At $k=m$, the product is zero because $a_m=0$. Therefore $2664-3(m-1)=0$, giving $m=889$.",
+      "This index is attainable: start with the given positive first two terms and define each next term by the recurrence. For every pair ending before 889 the displayed product is positive, so both terms remain positive and no denominator vanishes. At 889 the product becomes zero while $a_{888}>0$, giving $a_{889}=0$."
+    ],
+    "keyIdeas": [
+      "Consecutive products decrease by three"
+    ],
+    "commonMistakes": [
+      "Iterating with rounded decimals until an apparent zero, or overlooking a possible earlier undefined denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonlinear recurrence becomes a linear progression of products.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p12",
+    "problemId": "aime-ii-2005-p12",
+    "finalAnswer": "$\\boxed{307}$",
+    "shortExplanation": "The required length is $250+50\\sqrt7$.",
+    "detailedSteps": [
+      "Put $A=(0,0),B=(900,0),O=(450,450)$, and write $E=(e,0),F=(e+400,0)$. Then $AE=e$ and $BF=500-e$.",
+      "The vectors from O to E and F have cross-product magnitude $450\\cdot400=180000$ and dot product $(e-450)(e-50)+450^2$. A 45° angle requires the positive dot product to equal that magnitude.",
+      "Thus $(e-450)(e-50)=-22500$, or $e^2-500e+45000=0$. Its roots are $e=250\\pm50\\sqrt7$. The source inequality $AE<BF$ says $e<250$, selecting the minus root.",
+      "Both E and F then lie strictly on AB in the stated order, and $BF=250+50\\sqrt7$. Since 7 is squarefree, the answer is $250+50+7=307$."
+    ],
+    "keyIdeas": [
+      "Use dot and cross products for the forty-five-degree angle"
+    ],
+    "commonMistakes": [
+      "Selecting either quadratic root without applying the source inequality, or using the tangent formula without checking the angle is acute."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The cross product stays constant because EF is fixed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p13",
+    "problemId": "aime-ii-2005-p13",
+    "finalAnswer": "$\\boxed{418}$",
+    "shortExplanation": "The two integer solutions are 19 and 22.",
+    "detailedSteps": [
+      "Let $Q(x)=P(x)-x-3$, an integer-coefficient polynomial. The supplied values give $Q(17)=Q(24)=-10$. For any integer root n, the elementary polynomial difference factorization implies that $n-17$ and $n-24$ both divide 10.",
+      "The possibilities from 17 are $17\\pm1,17\\pm2,17\\pm5,17\\pm10$; those from 24 are $24\\pm1,24\\pm2,24\\pm5,24\\pm10$. Their intersection is exactly $\\{19,22\\}$. Neither 17 nor 24 is a root.",
+      "The source guarantees two distinct integer roots, so they must be 19 and 22, whose product is 418. Consistency can also be checked with $P(x)=x+3-(x-19)(x-22)$, which has both required supplied values and both roots."
+    ],
+    "keyIdeas": [
+      "An integer root forces two divisibility conditions"
+    ],
+    "commonMistakes": [
+      "Assuming the degree is two when the source allows an arbitrary integer polynomial."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Polynomial differences preserve divisibility even when the degree is unknown.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p14",
+    "problemId": "aime-ii-2005-p14",
+    "finalAnswer": "$\\boxed{463}$",
+    "shortExplanation": "The reduced denominator is 463.",
+    "detailedSteps": [
+      "The triangle inequality and positive side lengths make the source triangle nondegenerate. Since $BC=15$ and $CD=6$, we have $BD=9$, so $BD/DC=3/2$.",
+      "For a point X on BC, triangles ABX and ACX have the same altitude to BC. Their areas also give $BX/XC=AB\\sin\\angle BAX/[AC\\sin\\angle XAC]$.",
+      "The equality $\\angle BAE=\\angle CAD$ makes AD and AE isogonal: their two angles at A are interchanged. Multiplying the preceding formula for D and E therefore gives $(BD/DC)(BE/EC)=(AB/AC)^2=169/196$.",
+      "Hence $BE/EC=169/294$, and $BE=15\\cdot169/(169+294)=2535/463$. Since this fraction is reduced, the requested denominator is 463. The positive ratio determines a point strictly between B and C, so the stated configuration exists."
+    ],
+    "keyIdeas": [
+      "Multiply the ratios for the two isogonal cevians"
+    ],
+    "commonMistakes": [
+      "Equating the two cevian ratios instead of using the squared adjacent-side ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sine factors cancel for isogonal cevians.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2005-p15",
+    "problemId": "aime-ii-2005-p15",
+    "finalAnswer": "$\\boxed{169}$",
+    "shortExplanation": "The minimum slope squared is 69/100.",
+    "detailedSteps": [
+      "Completing squares gives the source circle centers $A=(-5,12)$ and $B=(5,12)$ with radii 16 and 4. If a desired circle has center X and positive radius ρ, internal tangency to the first and external tangency to the second give $|X-A|=16-\\rho$ and $|X-B|=4+\\rho$. The alternative internal-tangency branch in which the desired circle encloses the first would require $|X-A|=\\rho-16$ and $|X-B|=\\rho+4$. Their difference would be 20, exceeding $AB=10$ by the reverse triangle inequality, so that branch is impossible.",
+      "Adding gives $|X-A|+|X-B|=20$. This ellipse has center $(0,12)$, horizontal semimajor axis 10, focal half-distance 5 and vertical semiaxis $\\sqrt{100-25}=5\\sqrt3$. Its equation is $x^2/100+(y-12)^2/75=1$.",
+      "Conversely every point of this ellipse is valid: each focal distance lies between 5 and 15, so $\\rho=16-|X-A|$ lies between 1 and 11 and $|X-B|=4+\\rho$. These equalities ensure actual containment in the first disk and external tangency to the second, with no excluded zero-radius point.",
+      "Substitute $y=ax$ into the ellipse equation. After multiplying by 300, the intersection condition is $(3+4a^2)x^2-96ax+276=0$. Its discriminant is $4800a^2-3312$. Thus a positive slope has an intersection exactly when $a^2\\ge69/100$.",
+      "Equality is attained by the tangent line with $a=\\sqrt{69}/10$, whose contact point is $(5\\sqrt{69}/6,23/4)$. The ellipse-to-circle converse proves this contact point supplies a genuine desired circle. Therefore $m^2=69/100$ in lowest terms, and $p+q=169$."
+    ],
+    "keyIdeas": [
+      "The circle-center locus is an ellipse and the extremal line is tangent"
+    ],
+    "commonMistakes": [
+      "Minimizing over an ellipse without checking which ellipse points yield positive-radius circles and the prescribed tangency directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum of the two center distances is constant; the line-intersection discriminant proves the global minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

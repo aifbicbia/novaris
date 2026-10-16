@@ -1,0 +1,317 @@
+[
+  {
+    "id": "solution-aime-ii-2008-p1",
+    "problemId": "aime-ii-2008-p1",
+    "finalAnswer": "$\\boxed{100}$",
+    "shortExplanation": "The complete sum is $10100$.",
+    "detailedSteps": [
+      "In the block ending at $4k$, the contribution is $(4k)^2+(4k-1)^2-(4k-2)^2-(4k-3)^2=32k-12$. The twenty-five blocks preserve the actual alternating pairs.",
+      "Therefore $N=\\sum_{k=1}^{25}(32k-12)=32\\cdot325-12\\cdot25=10100$. Its remainder modulo $1000$ is $100$."
+    ],
+    "keyIdeas": [
+      "Group four consecutive signed squares"
+    ],
+    "commonMistakes": [
+      "Alternating the sign of each individual term instead of each pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grouping aligns the signs and removes the quadratic terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p2",
+    "problemId": "aime-ii-2008-p2",
+    "finalAnswer": "$\\boxed{620}$",
+    "shortExplanation": "Both riders arrive after 620 minutes.",
+    "detailedSteps": [
+      "Let $t$ be Rudolph's riding time per mile, in minutes. Jennifer needs $4t/3$ minutes per mile. Before reaching the fifty-mile mark, Rudolph has completed $49$ breaks and Jennifer has completed $24$ breaks; neither has yet taken a break at the destination.",
+      "Equality of arrival times gives $50t+49\\cdot5=50(4t/3)+24\\cdot5$. Thus $50t/3=125$, so $t=15/2$. The common elapsed time is $50(15/2)+245=620$."
+    ],
+    "keyIdeas": [
+      "Count only breaks completed before arrival"
+    ],
+    "commonMistakes": [
+      "Including a break after arriving at the fifty-mile mark."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The endpoint is arrival, so the last break does not contribute.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p3",
+    "problemId": "aime-ii-2008-p3",
+    "finalAnswer": "$\\boxed{729}$",
+    "shortExplanation": "The largest remaining block is $9\\times9\\times9$.",
+    "detailedSteps": [
+      "If $x,y,z$ slices are perpendicular to the three coordinate directions, their order does not affect the remaining dimensions: $10-x$, $13-y$ and $14-z$, with $x+y+z=10$. Cutting from either face in the same direction has the same effect on the corresponding length.",
+      "The sum of the three remaining lengths is $27$. If they are positive, AM–GM gives a volume at most $(27/3)^3=729$; a zero length gives zero volume. Equality is attained with $(x,y,z)=(1,4,5)$, leaving all dimensions equal to nine."
+    ],
+    "keyIdeas": [
+      "Maximize the product with a fixed remaining sum"
+    ],
+    "commonMistakes": [
+      "Making all ten cuts in one direction even though different face orientations are allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal remaining dimensions attain the fixed-sum product bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p4",
+    "problemId": "aime-ii-2008-p4",
+    "finalAnswer": "$\\boxed{021}$",
+    "shortExplanation": "The nonzero exponents are $7,5,4,3,2,0$.",
+    "detailedSteps": [
+      "Use digits from $\\{-1,0,1\\}$ in base three. The remainder modulo three uniquely determines the lowest digit: residues $0,1,2$ require digits $0,1,-1$ respectively. Subtract that digit and divide by three, then repeat. This also proves uniqueness of the entire finite representation.",
+      "For $2008$, the digits from exponent zero upward are $1,0,1,-1,1,-1,0,1$. Direct substitution gives $2008=3^7-3^5+3^4-3^3+3^2+1$.",
+      "Thus the sum of the exponents actually present is $7+5+4+3+2+0=21$. Here uniqueness refers to the determined signed coefficients and exponents in the representation; the signs themselves repeat."
+    ],
+    "keyIdeas": [
+      "Use balanced ternary to determine each coefficient"
+    ],
+    "commonMistakes": [
+      "Treating the signed coefficients as ordinary ternary digits zero through two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Balanced digits are forced one at a time, which proves uniqueness as well as the decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p5",
+    "problemId": "aime-ii-2008-p5",
+    "finalAnswer": "$\\boxed{504}$",
+    "shortExplanation": "The midpoint distance is $504$.",
+    "detailedSteps": [
+      "Let the height be $h$, and let the left and right horizontal offsets from the lower base to the upper base be $u$ and $v$. The acute base angles give $u=h\\cot37^\\circ$ and $v=h\\cot53^\\circ=h\\tan37^\\circ$. Hence $uv=h^2$, while $u+v=2008-1000=1008$.",
+      "The horizontal difference between the two base midpoints is $(u-v)/2$. Therefore $MN^2=h^2+(u-v)^2/4=[4uv+(u-v)^2]/4=(u+v)^2/4=504^2$. Taking the positive square root gives $MN=504$."
+    ],
+    "keyIdeas": [
+      "Use the complementary base angles"
+    ],
+    "commonMistakes": [
+      "Replacing the stated angles by a rounded three-four-five triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complementary angles turn the height squared into the product of the two offsets.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p6",
+    "problemId": "aime-ii-2008-p6",
+    "finalAnswer": "$\\boxed{561}$",
+    "shortExplanation": "The quotient is $34\\cdot33/2=561$.",
+    "detailedSteps": [
+      "All terms are positive, so division is valid. From the first recurrence, $a_n/a_{n-1}=1+a_{n-1}/a_{n-2}$. Starting from $a_1/a_0=1$, induction gives $a_n/a_{n-1}=n$ and therefore $a_n=n!$.",
+      "The same ratio argument for the second recurrence begins at $b_1/b_0=3$, so $b_n/b_{n-1}=n+2$ and $b_n=(n+2)!/2$. Consequently $b_{32}/a_{32}=34!/[(2)(32!)]=34\\cdot33/2=561$."
+    ],
+    "keyIdeas": [
+      "Take ratios of consecutive recurrence terms"
+    ],
+    "commonMistakes": [
+      "Adding the sequence terms rather than their consecutive ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nonlinear recurrence becomes an arithmetic progression of ratios.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p7",
+    "problemId": "aime-ii-2008-p7",
+    "finalAnswer": "$\\boxed{753}$",
+    "shortExplanation": "The requested sum is $753$.",
+    "detailedSteps": [
+      "Vieta gives $r+s+t=0$, so the three pair sums are $-t,-r,-s$. The expression is therefore $-(r^3+s^3+t^3)$.",
+      "Each root $u$ satisfies $u^3=-(1001/8)u-251$. Summing over the three roots and using their zero sum yields $r^3+s^3+t^3=-753$. Negating gives $753$."
+    ],
+    "keyIdeas": [
+      "Replace each pair sum by the negative omitted root"
+    ],
+    "commonMistakes": [
+      "Using the sum of root cubes without accounting for the minus signs in the pair sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The missing quadratic coefficient makes the pair sums especially simple.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p8",
+    "problemId": "aime-ii-2008-p8",
+    "finalAnswer": "$\\boxed{251}$",
+    "shortExplanation": "The first integer value occurs at $n=251$.",
+    "detailedSteps": [
+      "For every positive integer $k$, $2\\cos(k^2a)\\sin(ka)=\\sin(k(k+1)a)-\\sin(k(k-1)a)$. The negative term for one index cancels the positive term for the preceding index, so the complete sum is $\\sin(n(n+1)\\pi/2008)$.",
+      "A sine is an integer only when it equals $-1$, zero or one, equivalently when its angle is an integer multiple of $\\pi/2$. Thus $1004=4\\cdot251$ must divide $n(n+1)$.",
+      "For $1\\le n\\le249$, neither consecutive factor is divisible by the prime $251$. At $n=250$, the product $250\\cdot251$ lacks a factor of four. At $n=251$, $251\\cdot252=63\\cdot1004$, giving sine $\\sin(63\\pi/2)=-1$. Hence the least index is $251$."
+    ],
+    "keyIdeas": [
+      "Telescope with the product-to-sum identity"
+    ],
+    "commonMistakes": [
+      "Requiring the sine to be zero and missing integer values minus one and one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Telescoping leaves a single angle, and consecutive factors prove minimality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p9",
+    "problemId": "aime-ii-2008-p9",
+    "finalAnswer": "$\\boxed{019}$",
+    "shortExplanation": "The final coordinate sum is $5+10\\sqrt2$.",
+    "detailedSteps": [
+      "Write the position as a complex number and put $q=e^{i\\pi/4}$. One move is $z\\mapsto qz+10$. Since $q^8=1$ and $1+q+\\cdots+q^7=0$, eight moves return every starting point to itself. Thus $150$ moves have the effect of six moves.",
+      "The final position is $5q^6+10(1+q+\\cdots+q^5)=-5\\sqrt2+i(5+5\\sqrt2)$. Therefore $|p|+|q|=5+10\\sqrt2$.",
+      "The bounds $1.4<\\sqrt2<1.5$ place this sum strictly between $19$ and $20$. Its floor is $19$."
+    ],
+    "keyIdeas": [
+      "Use the eight-move affine cycle"
+    ],
+    "commonMistakes": [
+      "Treating the translation as occurring before the rotation, or applying absolute values before summing the displacements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The full geometric-series translation disappears after eight rotations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p10",
+    "problemId": "aime-ii-2008-p10",
+    "finalAnswer": "$\\boxed{240}$",
+    "shortExplanation": "There are $24$ maximum paths, each with $10$ points.",
+    "detailedSteps": [
+      "Assign the grid points coordinates in $\\{0,1,2,3\\}^2$. The possible nonzero squared distances are $1,2,4,5,8,9,10,13,18$. A strictly growing path has at most nine edges and therefore at most ten points.",
+      "A ten-point path must use those nine squared distances in exactly that order. An exact finite recurrence counts them: let $C(S,v,j)$ be the number of completions from visited point set $S$ and endpoint $v$, when the next edge must have the $j$th distance in the displayed list. Set $C(S,v,10)=1$, and for $1\\le j\\le9$ set $C(S,v,j)=\\sum C(S\\cup\\{w\\},w,j+1)$, summing over unvisited grid points $w$ at the required squared distance from $v$.",
+      "Starting with $S=\\{v\\}$, this recurrence gives the counts by grid position $\\begin{pmatrix}0&1&1&0\\\\1&4&4&1\\\\1&4&4&1\\\\0&1&1&0\\end{pmatrix}$. Each entry counts full ordered paths, with distinctness enforced by $S$. This table can be reproduced by working backward from the final opposite-corner edge of squared length $18$.",
+      "The positive entries demonstrate that ten-point paths exist, so the upper bound is attained. The total is $8\\cdot1+4\\cdot4=24$, and the requested product is $10\\cdot24=240$. Reversals need no extra factor: they have decreasing distances and are not growing paths."
+    ],
+    "keyIdeas": [
+      "Enumerate the increasing distance classes without revisiting points"
+    ],
+    "commonMistakes": [
+      "Counting paths that reuse a point, or multiplying the ordered count by a reversal factor."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The nine distance classes give an absolute bound and make exhaustive counting finite and reproducible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p11",
+    "problemId": "aime-ii-2008-p11",
+    "finalAnswer": "$\\boxed{254}$",
+    "shortExplanation": "The contained radius is $44-6\\sqrt{35}$.",
+    "detailedSteps": [
+      "Use $B=(0,0)$, $C=(56,0)$ and $A=(28,96)$, as the stated equal sides have length $100$. The half-angle cotangent at either base vertex is $(1+28/100)/(96/100)=4/3$. Thus the radius-sixteen circle tangent to the actual segments $AC$ and $BC$ has center $P=(104/3,16)$, while a contained circle at $B$ with radius $r$ has center $Q=(4r/3,r)$.",
+      "For clarity, exterior choices for the first center do not meet both actual segment tangencies: solving $y=\\pm16$ and $24x+7y-1344=\\pm400$ gives four candidates. Only $(104/3,16)$ has both tangency feet on $AC$ and $BC$; the other candidates have a foot beyond $C$.",
+      "External tangency gives $[(4r-104)/3]^2+(r-16)^2=(r+16)^2$. Therefore $(r-26)^2=36r$, whose roots are $44\\pm6\\sqrt{35}$.",
+      "The triangle inradius is $[ABC]/s=2688/128=21$, so a wholly contained circle has radius at most $21$. The larger root exceeds this bound; the smaller root is positive and less than $21$. Its distance to the third side $AC$ is $(1344-24(4r/3)-7r)/25$, which is at least $r$ precisely for $r\\le21$, so it really is contained.",
+      "Thus $m=44$, $n=6$, and the squarefree integer $k=35$. The requested sum is $44+6\\cdot35=254$."
+    ],
+    "keyIdeas": [
+      "Apply the circle tangency equation and containment bound"
+    ],
+    "commonMistakes": [
+      "Keeping the larger quadratic root despite the containment condition, or using tangency to extended lines instead of the stated segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Containment selects the genuine small circle after the tangency equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p12",
+    "problemId": "aime-ii-2008-p12",
+    "finalAnswer": "$\\boxed{310}$",
+    "shortExplanation": "The complete arrangement count is $2310$.",
+    "detailedSteps": [
+      "Fix a split of the ten blue flags: $b$ on the first pole and $10-b$ on the second. There are $b+1$ and $11-b$ gaps around those ordered blue flags, for twelve gaps total. Each gap can hold at most one green flag, so placing all nine greens gives $\\binom{12}{9}$ choices for this fixed split.",
+      "There are eleven blue splits. The preliminary count $11\\binom{12}{9}$ includes arrangements with an empty pole. Each choice of the empty pole leaves all ten blues on the other pole and nine greens in eleven gaps, giving $\\binom{11}{9}=55$ arrangements. These two empty-pole cases are disjoint.",
+      "Hence $N=11\\cdot220-2\\cdot55=2310$, and the remainder modulo $1000$ is $310$."
+    ],
+    "keyIdeas": [
+      "Count the green flags in the blue-flag gaps"
+    ],
+    "commonMistakes": [
+      "Treating identical flags as labeled, or allowing both poles to be empty while using all flags."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total number of green gaps is fixed even when the blue split changes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p13",
+    "problemId": "aime-ii-2008-p13",
+    "finalAnswer": "$\\boxed{029}$",
+    "shortExplanation": "The image area is $2\\pi+\\sqrt{27}$.",
+    "detailedSteps": [
+      "Each side is at distance $1/2$ from the origin. If $\\eta$ is an outward unit normal written as a complex number, the outside halfplane is $\\operatorname{Re}(\\overline\\eta z)>1/2$. Substituting $w=1/z$ turns it into $|w-\\overline\\eta|<1$. Consequently the image of the hexagon exterior is the union of six unit disks whose centers form a regular hexagon on the unit circle.",
+      "In a direction making angle $\\phi$ with the nearest disk-center direction, where $-\\pi/6\\le\\phi\\le\\pi/6$, the union extends radially from zero to $2\\cos\\phi$. The other five centers give no larger radial bound. The missing origin and boundary choices have area zero.",
+      "The six identical sectors therefore have total area $6\\cdot\\frac12\\int_{-\\pi/6}^{\\pi/6}(2\\cos\\phi)^2\\,d\\phi=12(\\pi/6+\\sqrt3/4)=2\\pi+3\\sqrt3=2\\pi+\\sqrt{27}$. Thus $a+b=2+27=29$."
+    ],
+    "keyIdeas": [
+      "Invert the exterior halfplanes into six disks"
+    ],
+    "commonMistakes": [
+      "Taking the intersection of the inverted disks instead of their union, or dropping the square root in the required area form."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exterior is a union of outside halfplanes, so inversion yields a union of disks.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p14",
+    "problemId": "aime-ii-2008-p14",
+    "finalAnswer": "$\\boxed{007}$",
+    "shortExplanation": "The maximum ratio squared is $4/3$.",
+    "detailedSteps": [
+      "Divide every coordinate by $b$ and write $t=a/b\\ge1$. The equations state that the vectors $U=(t,y)$ and $V=(x,1)$ have equal lengths, and that $|U-V|$ has this same length. Here $x,y$ denote the scaled coordinates, with $0\\le x<t$ and $0\\le y<1$.",
+      "The vectors make an angle of $60^\\circ$, because $|U-V|^2=|U|^2=|V|^2$ gives $U\\cdot V=|U|^2/2$. Their orientation is forced: $\\det(U,V)=t-xy>0$. Thus $V$ is the counterclockwise sixty-degree rotation of $U$, yielding $x=t/2-\\sqrt3y/2$ and $1=\\sqrt3t/2+y/2$.",
+      "Solving gives $y=2-\\sqrt3t$ and $x=2t-\\sqrt3$. The constraint $y\\ge0$ implies $t\\le2/\\sqrt3$. At this bound, $y=0$ and $x=1/\\sqrt3$, which meet both strict upper bounds and all original equations.",
+      "The maximum is therefore $\\rho=2/\\sqrt3$, with $\\rho^2=4/3$ in lowest terms. The numerator and denominator sum to $7$."
+    ],
+    "keyIdeas": [
+      "Recognize two equal vectors separated by sixty degrees"
+    ],
+    "commonMistakes": [
+      "Discarding the allowed boundary $y=0$ or using the clockwise rotation despite the coordinate constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The three equal lengths determine the rotation; positivity determines its orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2008-p15",
+    "problemId": "aime-ii-2008-p15",
+    "finalAnswer": "$\\boxed{181}$",
+    "shortExplanation": "The largest integer is $181$.",
+    "detailedSteps": [
+      "A positive solution exists, so any negative integer cannot be the maximum. Write the consecutive cubes as $(k+1)^3-k^3$, and put $u=2k+1$. Then $n^2=3k^2+3k+1$ gives $4n^2-3u^2=1$. Also write $2n+79=m^2$, with $m>0$. For positive $n$, $m$ is odd and $m\\ge9$.",
+      "Substitution yields $(m^2-80)(m^2-78)=3u^2$. The two factors are positive odd integers differing by two, so they are coprime. Reducing the preceding equation modulo three also forces $3\\mid m$; otherwise $m^2-79$ is zero modulo three and its square cannot equal one modulo three.",
+      "Consequently $m^2-80$ is not divisible by three. Coprimality and the square product imply that every prime exponent in this first factor is even, so $m^2-80=s^2$ for a positive odd integer $s$. Hence $(m-s)(m+s)=80$.",
+      "Both factors are positive even integers. Set them equal to $2p$ and $2q$, with $p\\le q$ and $pq=20$. The factor pairs $(1,20),(2,10),(4,5)$ give $m=p+q=21,12,9$. The middle value is even and invalid. The remaining possibilities yield $n=(m^2-79)/2=181$ or one.",
+      "The larger candidate is attained: $181^2=105^3-104^3$, and $2\\cdot181+79=21^2$. The coprime-factor argument exhausted all positive candidates, so the largest integer is $181$."
+    ],
+    "keyIdeas": [
+      "Factor the two coprime odd expressions"
+    ],
+    "commonMistakes": [
+      "Searching only a finite initial segment of a Pell sequence without proving that no larger solution exists."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The extra square condition turns an infinite-looking Pell constraint into a finite factorization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

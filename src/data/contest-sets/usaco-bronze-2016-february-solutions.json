@@ -1,0 +1,100 @@
+[
+  {
+    "finalAnswer": "Maximize $iX+Y\\left\\lfloor(M-iX)/Y\\right\\rfloor$ over integers $0\\le i\\le\\lfloor M/X\\rfloor$. This is the largest attainable amount without overflow.",
+    "shortExplanation": "Fix how many times the smaller pail is added. With that choice fixed, add the larger pail as many times as the remaining capacity permits. Trying every smaller-pail count covers the best attainable combination.",
+    "detailedSteps": [
+      "Any legal sequence adds whole pails, so its final amount has the form $iX+jY$ with nonnegative integers $i,j$ and $iX+jY\\le M$. There are no partial pours or emptying operations in this Bronze task.",
+      "This characterization also proves attainability. For any such pair, add its $i+j$ full pails in any order. All increments are positive, so no intermediate amount exceeds the final amount; every operation is legal.",
+      "Enumerate $i=0,1,\\ldots,\\lfloor M/X\\rfloor$. The remaining space is $M-iX$. Its largest possible number of size-$Y$ fills is $j=\\lfloor(M-iX)/Y\\rfloor$. Evaluate $iX+jY$ and update the maximum.",
+      "For each fixed $i$, increasing $j$ increases the amount, so no smaller permitted $j$ can improve this candidate. Every feasible solution has an enumerated $i$, and our candidate for that $i$ is at least as large. Every candidate is feasible and attainable, so the largest one is exactly optimal.",
+      "The loop includes $i=0$, which allows using only the larger pail. It also allows $j=0$. All amounts are at most $M\\le1000$; ordinary integers suffice. The source\u2019s strict ordering $1\\le X<Y<M$ implies that a valid capacity is at least 3.",
+      "Time is $O(M/X+1)$, at most $O(M)$, with $O(1)$ auxiliary space. The reference preserves the original pails.in and pails.out interface.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nint main() {\n    std::ifstream in(\"pails.in\");\n    std::ofstream out(\"pails.out\");\n    int x, y, capacity;\n    in >> x >> y >> capacity;\n    int best = 0;\n    for (int first = 0; first <= capacity / x; ++first) {\n        const int remaining = capacity - first * x;\n        const int second = remaining / y;\n        best = std::max(best, first * x + second * y);\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Represent an operation sequence by the counts of its two positive increments.",
+      "For a fixed smaller-pail count, the best larger-pail count is the largest permitted integer.",
+      "Prove every evaluated combination can actually be performed without intermediate overflow."
+    ],
+    "commonMistakes": [
+      "Using a greatest-common-divisor multiple as the answer without checking that nonnegative fill counts can attain it.",
+      "Rounding the remaining capacity upward, which would overflow.",
+      "Omitting combinations that use zero pails of one size.",
+      "Importing emptying or transfer operations from the different Silver problem."
+    ],
+    "alternativeMethods": [
+      "Mark reachable amounts from 0 through $M$. Start with zero; from a marked amount, mark the result of adding $X$ or $Y$ whenever it fits. Positive increments permit an increasing-volume scan. The largest marked state is the answer, in $O(M)$ time and $O(M)$ space. This state graph is an independent checker for the arithmetic enumeration."
+    ],
+    "difficultyNotes": "Introductory enumeration. The main modeling point is that all pours are complete and the stored amount only increases.",
+    "id": "solution-usaco-bronze-2016-february-p1",
+    "problemId": "usaco-bronze-2016-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compute every entrance cost using $C(s+1)=C(s)-T+nr_s$, where $T=\\sum_i r_i$, and print the smallest. The reference takes $O(n)$ time and $O(n)$ space.",
+    "shortExplanation": "When the entrance moves one room clockwise, almost every cow walks one fewer interior door. Only cows destined for the previous entrance room must wrap around the circle. This difference updates the entire cost in constant time.",
+    "detailedSteps": [
+      "Number rooms from 0 through $n-1$. If cows enter room $s$, the room at clockwise offset $d$ needs $r_{(s+d)\\bmod n}$ cows, each walking exactly $d$ internal doors. Thus $C(s)=\\sum_{d=0}^{n-1}d\\,r_{(s+d)\\bmod n}$.",
+      "This cost is attainable: route each room\u2019s required cows directly clockwise from the chosen entrance. No cow benefits from taking an extra lap. The exterior entry door itself does not count as an interior door, so cows staying in the entrance room have distance zero.",
+      "Compute the initial cost $C(0)=\\sum_{i=0}^{n-1}i r_i$ and total cow count $T=\\sum_i r_i$. These are two straightforward sums while reading the input.",
+      "Move the entrance from $s$ to $s+1$. All cows except the $r_s$ destined for room $s$ walk one fewer door. Those $r_s$ cows change from distance 0 to distance $n-1$. Subtracting $T$ first subtracts one for every cow; adding $nr_s$ then gives those exceptional cows the correct net increase of $n-1$. Hence $C(s+1)=C(s)-T+nr_s$.",
+      "Visit all entrances in order, record the current cost\u2019s minimum, then apply this update. The initial weighted sum is exact and the difference argument makes each following cost exact by induction. Every exterior entrance is tried, so minimizing the attained costs gives the global optimum.",
+      "Over a full cycle the changes sum to $-nT+n\\sum_s r_s=0$, returning to the first cost. This is a useful invariant for testing the recurrence.",
+      "The source permits $3\\le n\\le1000$ and $1\\le r_i\\le100$. Any entrance cost is at most $100\\sum_{d=0}^{999}d=49{,}950{,}000$. The reference uses 64-bit values for the counts and costs. Reading, initializing and scanning take $O(n)$ time, and the stored demand array uses $O(n)$ space. Input and output use cbarn.in and cbarn.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"cbarn.in\");\n    std::ofstream out(\"cbarn.out\");\n    int n;\n    in >> n;\n    std::vector<long long> rooms(n);\n    long long total = 0, cost = 0;\n    for (int i = 0; i < n; ++i) {\n        in >> rooms[i];\n        total += rooms[i];\n        cost += static_cast<long long>(i) * rooms[i];\n    }\n    long long best = cost;\n    for (int entrance = 0; entrance < n; ++entrance) {\n        best = std::min(best, cost);\n        cost += static_cast<long long>(n) * rooms[entrance] - total;\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Clockwise offsets give an exact, attainable entrance cost.",
+      "Compare neighboring entrances to avoid recomputing a weighted sum.",
+      "The previous entrance room is the single wraparound exception."
+    ],
+    "commonMistakes": [
+      "Counting the exterior entry door as part of the walking distance.",
+      "Allowing counterclockwise routes even though the source requires clockwise movement.",
+      "Using the update in the wrong direction or forgetting the full wraparound correction.",
+      "Treating the demand values as cows already inside, which belongs to a different same-name division task."
+    ],
+    "alternativeMethods": [
+      "For every entrance, directly sum the clockwise offset times each room\u2019s demand. The formula above already proves these costs exact. This simpler $O(n^2)$ method avoids a rolling update and is useful for verification. Another view counts how many cows still need to cross each interior door and adds those crossing counts."
+    ],
+    "difficultyNotes": "Intermediate invariant reasoning. A direct search is easy; understanding the one-room entrance shift produces the linear implementation and a strong consistency check.",
+    "id": "solution-usaco-bronze-2016-february-p2",
+    "problemId": "usaco-bronze-2016-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate vertical fence candidates $0$ and $x_i+1$, and horizontal candidates $0$ and $y_i+1$. Minimize the largest of the four quadrant counts over all candidate pairs.",
+    "shortExplanation": "Moving a fence within a gap between cow coordinates does not change which side contains any cow. Because cow coordinates are odd, an even fence immediately after a coordinate represents that gap. Only linearly many different partitions need checking on each axis.",
+    "detailedSteps": [
+      "The source requires odd, positive cow coordinates and even fence coordinates. Therefore no cow lies on either fence. Several cows may share an axis coordinate; only their full point locations must be distinct.",
+      "Consider any vertical fence $a$. If no cow is left of it, use $a=0$ for the same partition. Otherwise let $x$ be the largest cow coordinate left of it. The fence $x+1$ is even and stays after all cows at $x$ but before every cow originally on the right. It therefore preserves the complete left/right division.",
+      "Thus the vertical candidates are 0 together with every $x_i+1$. By the same argument, horizontal candidates are 0 and every $y_i+1$. Remove duplicates. The value after the largest coordinate also represents a fence beyond all cows; the source does not forbid outside placements.",
+      "For each pair, start four counters at zero and classify every cow by its strict horizontal and vertical side comparisons. The largest counter is that pair\u2019s objective. Record the smallest objective over all pairs.",
+      "Every tested pair is a valid even fence pair. Conversely, every allowed pair has a representative in the two candidate lists with exactly the same four counts. Our enumeration therefore contains a pair attaining the global optimum and cannot return an unattainable lower value.",
+      "There are at most $N+1$ candidates on each axis, and each pair scans $N$ cows. Including sorting and duplicate removal, time is $O(N^3+N\\log N)=O(N^3)$ and space is $O(N)$. For $N=100$, at most $10{,}201$ pairs and $1{,}020{,}100$ classifications are needed.",
+      "Coordinates plus one are at most $1{,}000{,}001$ and counts at most 100, so ordinary integers are safe. Read $B$ from balancing.in, but iterate over distinct partitions rather than a grid proportional to $B^2$. Write the optimum to balancing.out.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"balancing.in\");\n    std::ofstream out(\"balancing.out\");\n    int n, bound;\n    in >> n >> bound;\n    std::vector<std::pair<int, int>> points(n);\n    std::vector<int> xs{0}, ys{0};\n    for (auto &[x, y] : points) {\n        in >> x >> y;\n        xs.push_back(x + 1);\n        ys.push_back(y + 1);\n    }\n    std::sort(xs.begin(), xs.end());\n    xs.erase(std::unique(xs.begin(), xs.end()), xs.end());\n    std::sort(ys.begin(), ys.end());\n    ys.erase(std::unique(ys.begin(), ys.end()), ys.end());\n    int best = n;\n    for (int a : xs) {\n        for (int b : ys) {\n            std::array<int, 4> count{};\n            for (const auto &[x, y] : points) ++count[2 * (x > a) + (y > b)];\n            best = std::min(best, *std::max_element(count.begin(), count.end()));\n        }\n    }\n    out << best << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compress positions by the partitions they induce.",
+      "Odd cow coordinates guarantee that the next integer is a legal even fence.",
+      "Independent axis representatives preserve all four region counts together."
+    ],
+    "commonMistakes": [
+      "Enumerating every coordinate up to a million on both axes.",
+      "Placing a fence through a cow or treating coordinates with equality inconsistently.",
+      "Assuming all x coordinates or all y coordinates are distinct.",
+      "Restricting fences to the cow bounding box without a proof that outside partitions are irrelevant."
+    ],
+    "alternativeMethods": [
+      "For a small coordinate bound, inspect every even fence on each axis, including a position before and after all cows, and directly count the four regions. This exhaustive geometric method is a useful independent oracle for the compressed candidate lists. For a fixed vertical cut, a sorted horizontal sweep can also update counts between coordinate groups."
+    ],
+    "difficultyNotes": "Intermediate geometric enumeration. The critical proof is that a finite set of fence positions represents every possible partition; once that is established, the counting implementation is direct.",
+    "id": "solution-usaco-bronze-2016-february-p3",
+    "problemId": "usaco-bronze-2016-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

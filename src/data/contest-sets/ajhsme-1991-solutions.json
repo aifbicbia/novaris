@@ -1,0 +1,547 @@
+[
+  {
+    "id": "solution-ajhsme-1991-p1",
+    "problemId": "ajhsme-1991-p1",
+    "finalAnswer": "$\\boxed{222222222223}$ (choice B)",
+    "shortExplanation": "Subtracting from $10^{12}-1$ gives twelve twos, then the remaining one raises the final digit to three.",
+    "detailedSteps": [
+      "The difference $999999999999-777777777777$ is $222222222222$.",
+      "The original minuend is one larger, so the answer is $222222222223$."
+    ],
+    "keyIdeas": [
+      "Subtraction from a power of ten",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "A borrow across the zeroes leaves the last digit three, not two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting from one less than the power of ten avoids a long borrow chain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p2",
+    "problemId": "ajhsme-1991-p2",
+    "finalAnswer": "$\\boxed{12}$ (choice C)",
+    "shortExplanation": "The numerator is $24$ and the denominator is $2$, giving $12$.",
+    "detailedSteps": [
+      "Evaluate the expressions above and below the fraction bar separately: $16+8=24$ and $4-2=2$.",
+      "Then divide: $24/2=12$."
+    ],
+    "keyIdeas": [
+      "Grouping in a fraction",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The fraction bar groups the whole numerator and denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The fraction bar provides grouping.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p3",
+    "problemId": "ajhsme-1991-p3",
+    "finalAnswer": "$\\boxed{40000000000}$ (choice E)",
+    "shortExplanation": "The product is $(2\\cdot10^5)^2=4\\cdot10^{10}$, or forty billion.",
+    "detailedSteps": [
+      "Two hundred thousand is $2\\cdot10^5$.",
+      "Squaring gives $4\\cdot10^{10}=40000000000$."
+    ],
+    "keyIdeas": [
+      "Multiplication in scientific notation",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The exponents add when the powers of ten multiply."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Scientific notation keeps the zero count reliable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p4",
+    "problemId": "ajhsme-1991-p4",
+    "finalAnswer": "$\\boxed{25}$ (choice E)",
+    "shortExplanation": "The five terms fall short of $1000$ by $9,7,5,3,1$, totaling $25$.",
+    "detailedSteps": [
+      "Replace each term by $1000$ minus its deficit.",
+      "The total is $5000-(9+7+5+3+1)=5000-25$, so $N=25$."
+    ],
+    "keyIdeas": [
+      "Sum of deficits",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "N measures the deficit from 5000, rather than the sum of the five terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract from a nearby round total.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p5",
+    "problemId": "ajhsme-1991-p5",
+    "finalAnswer": "$\\boxed{\\text{the }3\\times5\\text{ board}}$ (choice B)",
+    "shortExplanation": "The $3\\times5$ board has fifteen cells, an odd number, so two-cell dominoes cannot tile it.",
+    "detailedSteps": [
+      "Each domino covers exactly two cells, so any tiled board must have even area.",
+      "The $3\\times5$ rectangle has area $15$ and fails this requirement.",
+      "Every other rectangle listed has an even side length, so rows or columns can be paired into dominoes."
+    ],
+    "keyIdeas": [
+      "Parity obstruction to domino tiling",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "An area test rules out the odd board; the other boards also need a feasible tiling."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity supplies the obstruction and paired rows supply the remaining constructions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p6",
+    "problemId": "ajhsme-1991-p6",
+    "finalAnswer": "$\\boxed{7}$ (choice C)",
+    "shortExplanation": "The entry $7$ is the minimum of its row and the maximum of its column.",
+    "detailedSteps": [
+      "The row minima, from top to bottom, are $2,7,3,1,2$.",
+      "The second row's minimum $7$ lies in a column with entries $6,7,3,4,2$, all at most seven.",
+      "The other row-minimum positions each have a larger entry elsewhere in their column, so only $7$ works."
+    ],
+    "keyIdeas": [
+      "Row minimum and column maximum",
+      "Data"
+    ],
+    "commonMistakes": [
+      "Both conditions must hold for the same entry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Row and column constraints identify a saddle entry.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p7",
+    "problemId": "ajhsme-1991-p7",
+    "finalAnswer": "$\\boxed{10000000000}$ (choice D)",
+    "shortExplanation": "Factoring the numerator gives a value about $1.09\\cdot10^{10}$, closest to $10^{10}$.",
+    "detailedSteps": [
+      "The numerator is $487000(12027300+9621001)=487000(21648301)$.",
+      "The denominator is $19367(0.05)=968.35$.",
+      "The quotient is approximately $1.0887\\cdot10^{10}$, so the closest listed power of ten is $10000000000$."
+    ],
+    "keyIdeas": [
+      "Estimating a large quotient",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "Factoring the shared multiplier reduces the risk of losing a power of ten."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An order-of-magnitude estimate distinguishes widely separated options.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p8",
+    "problemId": "ajhsme-1991-p8",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "The largest positive quotient from two negatives is $(-24)/(-2)=12$, exceeding the best positive-number quotient $8$.",
+    "detailedSteps": [
+      "A largest quotient must be positive, so use numbers with the same sign.",
+      "Among the positive numbers, the maximum is $8/1=8$. Among the negatives, the largest numerator magnitude divided by the smallest denominator magnitude gives $24/2=12$.",
+      "Hence the maximum is $12$."
+    ],
+    "keyIdeas": [
+      "Largest quotient with signed numbers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The number with the smallest ordinary value can have the largest absolute value."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positive quotient can arise from two negative numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p9",
+    "problemId": "ajhsme-1991-p9",
+    "finalAnswer": "$\\boxed{21}$ (choice B)",
+    "shortExplanation": "There are $15$ multiples of three and $9$ of five, with $3$ counted twice, giving $21$.",
+    "detailedSteps": [
+      "Up to $46$, there are $\\lfloor46/3\\rfloor=15$ multiples of three and $\\lfloor46/5\\rfloor=9$ multiples of five.",
+      "The overlap consists of multiples of fifteen: $15,30,45$.",
+      "The total is $15+9-3=21$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion for divisibility",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Numbers divisible by fifteen belong to both lists but count only once."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract the intersection of the two divisibility classes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p10",
+    "problemId": "ajhsme-1991-p10",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "The horizontal base has length $4$ and the vertical height is $2$, giving area $8$.",
+    "detailedSteps": [
+      "The source shows $B$ on the vertical axis and $C=(4,2)$, so $B=(0,2)$ and $BC=4$.",
+      "The opposite side lies on the horizontal axis, at distance two from $BC$.",
+      "Area equals base times perpendicular height: $4(2)=8$."
+    ],
+    "keyIdeas": [
+      "Coordinate base and altitude",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The coordinate of D does not by itself give the full base length from A to D."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Read the perpendicular height from the coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p11",
+    "problemId": "ajhsme-1991-p11",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "After selecting five, the other two values must sum to ten; four distinct pairs work.",
+    "detailedSteps": [
+      "The pairs are $\\{1,9\\},\\{2,8\\},\\{3,7\\},\\{4,6\\}$.",
+      "The pair $\\{5,5\\}$ is forbidden because the three numbers must be different. Thus there are four sets."
+    ],
+    "keyIdeas": [
+      "Distinct pairs with a fixed sum",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "Swapping the two remaining numbers does not create a new set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Fixing five reduces the problem to unordered pairs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p12",
+    "problemId": "ajhsme-1991-p12",
+    "finalAnswer": "$\\boxed{1991}$ (choice D)",
+    "shortExplanation": "The left fraction equals $3$, while the right numerator is $3(1991)$, forcing $N=1991$.",
+    "detailedSteps": [
+      "The first fraction is $(2+3+4)/3=3$.",
+      "The second numerator is $1990+1991+1992=3(1991)$.",
+      "For its quotient to equal three, its denominator must be $1991$."
+    ],
+    "keyIdeas": [
+      "Average of three consecutive numbers",
+      "Arithmetic"
+    ],
+    "commonMistakes": [
+      "The two fractions are equal; their numerators need not be equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle number is the mean of three consecutive numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p13",
+    "problemId": "ajhsme-1991-p13",
+    "finalAnswer": "$\\boxed{9}$ (choice C)",
+    "shortExplanation": "The product contains fourteen factors of five and nine factors of two, making nine factors of ten.",
+    "detailedSteps": [
+      "The seven factors $25$ contribute $5^{14}$. The three factors $8$ contribute $2^9$.",
+      "Pair each factor of two with one factor of five to form $10^9$. The remaining factor is $5^5$, which is not divisible by ten.",
+      "There are exactly nine trailing zeroes."
+    ],
+    "keyIdeas": [
+      "Trailing zeroes in a product",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Trailing zeroes are limited by the smaller of the counts of factors two and five."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Count prime factors rather than multiplying out the product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p14",
+    "problemId": "ajhsme-1991-p14",
+    "finalAnswer": "$\\boxed{13}$ (choice D)",
+    "shortExplanation": "Thirteen points guarantee a strict lead; scores at most eleven can be matched or exceeded, and twelve is unattainable.",
+    "detailedSteps": [
+      "In one race, any two students together receive at most $5+3=8$ points. Across three races their combined score is at most $24$. A student with $13$ therefore leaves any rival at most $11$.",
+      "A student with at most eleven points and zero or one win can face a rival who wins each other race and places second in the student's wins, scoring at least $13$. With two wins, a rival can take second twice and win the other race, scoring $11$. Thus none of these totals guarantees a strict lead.",
+      "The available scores per race are $0,1,3,5$. With three races, a total of twelve is impossible: the only even totals from three odd-or-zero entries use two nonzero entries and are at most ten.",
+      "Thirteen is achievable with $5+5+3$, so it is the least score that guarantees the lead."
+    ],
+    "keyIdeas": [
+      "A guaranteed strict lead",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "A tie does not satisfy the requirement to earn more than every other student."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A strict lead requires ruling out ties and checking attainable totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p15",
+    "problemId": "ajhsme-1991-p15",
+    "finalAnswer": "$\\boxed{\\text{the same}}$ (choice C)",
+    "shortExplanation": "The cut removes three square feet of exposed surface and exposes three new square feet, leaving the area unchanged.",
+    "detailedSteps": [
+      "The one-unit cut passes through the full one-foot depth. It removes one unit square from the top, one from the front, and one from the back.",
+      "The notch exposes two vertical side walls and its horizontal floor, each of area one square foot.",
+      "The net change is $-3+3=0$."
+    ],
+    "keyIdeas": [
+      "Surface-area balance at a notch",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The removed cube does not contribute six new interior faces: three of its faces were already exterior."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Compare removed exterior faces with newly exposed faces.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p16",
+    "problemId": "ajhsme-1991-p16",
+    "finalAnswer": "$\\boxed{9}$ (choice B)",
+    "shortExplanation": "Square nine stays on the bottom through the first three folds, then the final fold flips it to the top.",
+    "detailedSteps": [
+      "Square nine begins in the third row and first column. The first fold moves the top two rows onto the lower two, leaving square nine on the bottom.",
+      "The second fold moves the bottom row-stack onto the row containing nine; the third moves the right half onto the left. In both steps square nine remains on the table-facing bottom.",
+      "The last fold lifts the left half over the right half. Its bottom surface reverses to become the top, so square nine is on top."
+    ],
+    "keyIdeas": [
+      "Tracking the bottom sheet through folds",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "A folded stack reverses its layer order when it flips over."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Following a single bottom layer avoids tracking every square mentally.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p17",
+    "problemId": "ajhsme-1991-p17",
+    "finalAnswer": "$\\boxed{200}$ (choice C)",
+    "shortExplanation": "A row of $n$ seats holds at most $\\lceil n/2\\rceil$ students; summing from ten through twenty-nine gives $200$.",
+    "detailedSteps": [
+      "Pair adjacent seats within a row. At most one seat per pair can be occupied, with one extra student possible if the row has odd length. Alternating seats attains this bound.",
+      "The capacities are $5,6,6,7,7,\\ldots,14,14,15$.",
+      "The sum is $5+15+2(6+7+\\cdots+14)=20+2(90)=200$."
+    ],
+    "keyIdeas": [
+      "Alternating seats in successive rows",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "An odd-length row can hold one more student than simply taking half its length and rounding down."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Alternate seating is optimal separately in every row.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p18",
+    "problemId": "ajhsme-1991-p18",
+    "finalAnswer": "$\\boxed{30\\%}$ (choice C)",
+    "shortExplanation": "Nine of the thirty equal symbols represent employees with at least five years, giving $30\\%$.",
+    "detailedSteps": [
+      "The frequencies in common symbol units for years one through ten are $5,5,8,3,2,2,2,1,1,1$, totaling thirty.",
+      "The five-or-more category contains $2+2+2+1+1+1=9$ units.",
+      "The omitted scale cancels in the fraction $9/30=30\\%$."
+    ],
+    "keyIdeas": [
+      "Proportion in a pictograph",
+      "Data"
+    ],
+    "commonMistakes": [
+      "The five-year group is included in \u201cfive years or more.\u201d"
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unknown pictograph scale cancels in a ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p19",
+    "problemId": "ajhsme-1991-p19",
+    "finalAnswer": "$\\boxed{55}$ (choice C)",
+    "shortExplanation": "The other nine distinct positive integers sum to at least $1+2+\\cdots+9=45$, leaving at most $55$.",
+    "detailedSteps": [
+      "The total of the ten numbers is $10(10)=100$.",
+      "The smallest possible total of nine distinct positive integers is $45$. Hence the last number is at most $100-45=55$.",
+      "The collection $1,2,\\ldots,9,55$ attains the bound and has the required mean."
+    ],
+    "keyIdeas": [
+      "Largest member with a fixed mean",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Distinctness prevents making all nine smaller values equal to one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A lower bound for the other nine values maximizes the tenth.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p20",
+    "problemId": "ajhsme-1991-p20",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The equation is $111A+11B+C=300$, whose digit solution is $A=2,B=7,C=1$.",
+    "detailedSteps": [
+      "Expand the three numbers by place value: $(100A+10B+C)+(10A+B)+A=300$.",
+      "If $A=1$, even $B=C=9$ makes the sum less than $300$; if $A\\ge3$, the term $111A$ already exceeds $300$. Thus $A=2$.",
+      "Then $11B+C=78$. Since $0\\le C\\le9$, the only possibility is $B=7,C=1$, and these digits are distinct."
+    ],
+    "keyIdeas": [
+      "Place-value equation for a cryptarithm",
+      "Number Theory"
+    ],
+    "commonMistakes": [
+      "Repeated letters must keep the same digit in every position."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Place-value expansion replaces a carry puzzle with a short integer equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p21",
+    "problemId": "ajhsme-1991-p21",
+    "finalAnswer": "$\\boxed{8}$ (choice A)",
+    "shortExplanation": "The twelve-degree temperature difference corresponds to sixteen cubic centimeters, so the earlier volume was eight.",
+    "detailedSteps": [
+      "From $20^\\circ$ to $32^\\circ$ there are $12/3=4$ increments of three degrees.",
+      "The volume therefore increased by $4(4)=16$ cubic centimeters.",
+      "Subtract this from the final $24$ to obtain $8$ cubic centimeters."
+    ],
+    "keyIdeas": [
+      "Linear change in volume",
+      "Algebra"
+    ],
+    "commonMistakes": [
+      "Moving backward to the lower temperature requires subtracting the increase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the stated linear change in the correct direction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p22",
+    "problemId": "ajhsme-1991-p22",
+    "finalAnswer": "$\\boxed{\\frac79}$ (choice D)",
+    "shortExplanation": "Only an odd result on each spinner gives an odd product, with probability $2/9$; the complement is $7/9$.",
+    "detailedSteps": [
+      "The first spinner is odd on two of its three equal sectors, and the second is odd on one of three.",
+      "The independent probability of an odd product is $(2/3)(1/3)=2/9$.",
+      "The probability of an even product is $1-2/9=7/9$."
+    ],
+    "keyIdeas": [
+      "Complement of an even-product event",
+      "Probability"
+    ],
+    "commonMistakes": [
+      "One even factor is enough for an even product; both need not be even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complement has only two favorable ordered outcomes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p23",
+    "problemId": "ajhsme-1991-p23",
+    "finalAnswer": "$\\boxed{10}$ (choice A)",
+    "shortExplanation": "There are $130$ shared members, of whom $70$ are male; subtracting from the $80$ band males leaves $10$.",
+    "detailedSteps": [
+      "Each organization has $180$ members. Their intersection therefore has size $180+180-230=130$.",
+      "Sixty shared members are female, leaving $130-60=70$ shared males.",
+      "The males in the band only number $80-70=10$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion by category",
+      "Combinatorics"
+    ],
+    "commonMistakes": [
+      "The total overlap contains both female and male members."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the shared membership into its two categories.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p24",
+    "problemId": "ajhsme-1991-p24",
+    "finalAnswer": "$\\boxed{20}$ (choice E)",
+    "shortExplanation": "The volume condition forces $N\\equiv6\\pmod7$; only twenty among the choices qualifies, and it is achievable.",
+    "detailedSteps": [
+      "Every smaller integer-edged cube has side one or two. Let their counts be $a$ and $b$, respectively; then $a+8b=27$ and $N=a+b=27-7b$.",
+      "Thus $N$ must be congruent to six modulo seven. Among $4,8,12,16,20$, only $20$ satisfies that condition.",
+      "Place one side-two cube in a corner of the original cube and partition the remaining volume into nineteen unit cubes. This realizes $N=20$ with two different sizes."
+    ],
+    "keyIdeas": [
+      "Volume equation for mixed cube sizes",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "Volume alone gives a necessary condition; a construction confirms that the selected count is possible."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The multiple-choice congruence test and explicit partition avoid an unsupported packing claim.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-ajhsme-1991-p25",
+    "problemId": "ajhsme-1991-p25",
+    "finalAnswer": "$\\boxed{\\frac{243}{1024}}$ (choice C)",
+    "shortExplanation": "Each change retains three quarters of the black area, so five changes leave $(3/4)^5=243/1024$.",
+    "detailedSteps": [
+      "Within every current black triangle, the middle fourth turns white. Therefore the total black area is multiplied by $3/4$ at each step.",
+      "After five changes, the retained fraction is $(3/4)^5=3^5/4^5=243/1024$."
+    ],
+    "keyIdeas": [
+      "Repeated fractional removal",
+      "Geometry"
+    ],
+    "commonMistakes": [
+      "The removed fourth is measured relative to the current black triangles, not the original whole triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed retained fraction produces a geometric sequence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

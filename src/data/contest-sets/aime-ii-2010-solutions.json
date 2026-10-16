@@ -1,0 +1,321 @@
+[
+  {
+    "id": "solution-aime-ii-2010-p1",
+    "problemId": "aime-ii-2010-p1",
+    "finalAnswer": "$\\boxed{640}$",
+    "shortExplanation": "The greatest eligible number is $8640$.",
+    "detailedSteps": [
+      "There are only five even decimal digits, namely $0,2,4,6,8$. A five-digit candidate must use them all, but their sum is $20$, so no such number is divisible by nine. Thus an eligible number has at most four digits.",
+      "For a four-digit candidate, the digit sum is $20$ minus the omitted even digit. Only omitting two gives a multiple of nine, namely eighteen. The available digits must therefore be $0,4,6,8$.",
+      "The greatest ordering of those digits is $8640$. Its last two digits are divisible by four, so the entire number is divisible by both four and nine, hence by thirty-six. Every shorter number is smaller. The requested remainder is $640$."
+    ],
+    "keyIdeas": [
+      "Combine the digit-sum and last-two-digit tests"
+    ],
+    "commonMistakes": [
+      "Using all five distinct even digits without checking divisibility by nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit-sum condition fixes the four-digit set before its maximal ordering is checked.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p2",
+    "problemId": "aime-ii-2010-p2",
+    "finalAnswer": "$\\boxed{281}$",
+    "shortExplanation": "The probability is $56/225$.",
+    "detailedSteps": [
+      "For $0\\le t\\le1/2$, points at distance at least $t$ from every side form a central square of side $1-2t$. Its area is $(1-2t)^2$.",
+      "The desired region is the distance-at-least-one-fifth square with the distance-greater-than-one-third square removed. Boundary choices have probability zero. Its area is $(3/5)^2-(1/3)^2=9/25-1/9=56/225$. The fraction is reduced, so $m+n=56+225=281$."
+    ],
+    "keyIdeas": [
+      "Subtract the inner distance squares"
+    ],
+    "commonMistakes": [
+      "Subtracting side lengths instead of the areas of the two nested squares."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Nearest-side distance turns the probability region into a square annulus.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p3",
+    "problemId": "aime-ii-2010-p3",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The exact exponent of two is $150$.",
+    "detailedSteps": [
+      "A difference $d=b-a$ occurs $20-d$ times, for $1\\le d\\le19$. To count all factors of two, first count differences divisible by two, then by four, eight and sixteen.",
+      "The even differences contribute $\\sum_{j=1}^{9}(20-2j)=90$. The multiples of four contribute $\\sum_{j=1}^{4}(20-4j)=40$. The multiples of eight contribute $(20-8)+(20-16)=16$, and the multiple of sixteen contributes four more.",
+      "Each difference is counted once for every factor of two it contains, so the exact valuation is $90+40+16+4=150$. No difference is divisible by thirty-two."
+    ],
+    "keyIdeas": [
+      "Count the multiplicity of each even difference"
+    ],
+    "commonMistakes": [
+      "Counting each even difference only once and losing higher powers of two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Counting divisibility by successive powers gives the complete valuation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p4",
+    "problemId": "aime-ii-2010-p4",
+    "finalAnswer": "$\\boxed{052}$",
+    "shortExplanation": "The probability is $19/33$.",
+    "detailedSteps": [
+      "The original gate has twelve choices and the new gate has eleven different choices, giving $132$ equally likely ordered pairs. A walk of at most four hundred feet means a separation of one, two, three or four gate intervals.",
+      "For a separation of $k$, there are $12-k$ unordered pairs and twice that many ordered pairs. Thus the favorable count is $2(11+10+9+8)=76$. The probability is $76/132=19/33$, giving $m+n=52$."
+    ],
+    "keyIdeas": [
+      "Count ordered gate changes by their separation"
+    ],
+    "commonMistakes": [
+      "Allowing the new gate to equal the original gate."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Grouping by separation handles the edge gates without separate cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p5",
+    "problemId": "aime-ii-2010-p5",
+    "finalAnswer": "$\\boxed{075}$",
+    "shortExplanation": "The sum of the squared logarithms is $5625$.",
+    "detailedSteps": [
+      "Put $a=\\log_{10}x$, $b=\\log_{10}y$ and $c=\\log_{10}z$. The product condition gives $a+b+c=81$, and the other condition gives $a(b+c)+bc=ab+ac+bc=468$.",
+      "Therefore $a^2+b^2+c^2=(a+b+c)^2-2(ab+ac+bc)=81^2-936=5625$. The source asks for the nonnegative square root of this sum, which is $75$."
+    ],
+    "keyIdeas": [
+      "Convert products to the symmetric logarithm identity"
+    ],
+    "commonMistakes": [
+      "Dropping the outer square root in the requested expression."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The individual logarithms need not be determined.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p6",
+    "problemId": "aime-ii-2010-p6",
+    "finalAnswer": "$\\boxed{008}$",
+    "shortExplanation": "The least value is attained by $(x^2+4x+9)(x^2-4x+7)$.",
+    "detailedSteps": [
+      "The polynomial is monic, so integer factors can be chosen monic. Any nontrivial factorization has either an integer linear factor or two quadratic factors.",
+      "An integer root $r$ must divide $63$ and satisfy $n=(r^4+63)/r$. Since $n>0$, the root is positive. For $r=1$, this gives $n=64$; every other positive divisor is at least three and gives $n\\ge r^3\\ge27$. Thus a linear factor cannot yield a value below eight.",
+      "For two quadratics, the missing cubic coefficient allows the form $(x^2+ax+b)(x^2-ax+d)$. The missing quadratic coefficient and the constant give $b+d=a^2$ and $bd=63$, while the linear coefficient gives $n=a(b-d)$.",
+      "The constants cannot both be negative, since then their sum would be negative. Up to order, the positive factor pairs are $(1,63),(3,21),(7,9)$. Their sums are $64,24,16$; only the first and last are squares. The resulting positive values of $n$ are $8\\cdot62=496$ and $4\\cdot2=8$.",
+      "Finally, $(x^2+4x+9)(x^2-4x+7)=x^4-8x+63$. All factorization types have been exhausted, and eight is the smallest positive value."
+    ],
+    "keyIdeas": [
+      "Classify every integer linear or quadratic factorization"
+    ],
+    "commonMistakes": [
+      "Finding a single factorization without excluding smaller values from the linear-factor case."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The absent middle coefficients make the quadratic classification finite.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p7",
+    "problemId": "aime-ii-2010-p7",
+    "finalAnswer": "$\\boxed{136}$",
+    "shortExplanation": "The cubic is $z^3-12z^2+84z-208$.",
+    "detailedSteps": [
+      "Write $w=x+iy$. Since the sum of the three roots is real, its imaginary part is $(y+3)+(y+9)+2y=4y+12=0$, giving $y=-3$. The roots become $x$, $x+6i$ and $2x-4-6i$.",
+      "The two nonreal roots must be complex conjugates, so their real parts agree: $x=2x-4$. Hence $x=4$, and the roots are $4,4+6i,4-6i$.",
+      "Therefore $P(z)=(z-4)((z-4)^2+36)=z^3-12z^2+84z-208$. The requested absolute value is $|-12+84-208|=136$."
+    ],
+    "keyIdeas": [
+      "Use the real cubic conjugate-root structure"
+    ],
+    "commonMistakes": [
+      "Assuming $w$ itself is real instead of requiring the whole cubic to have real coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A real root sum determines the imaginary part before conjugacy determines the real part.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p8",
+    "problemId": "aime-ii-2010-p8",
+    "finalAnswer": "$\\boxed{772}$",
+    "shortExplanation": "The count is $2^{10}-\\binom{10}{5}=772$.",
+    "detailedSteps": [
+      "Let $|A|=k$, so $|B|=12-k$. Nonemptiness gives $1\\le k\\le11$. The exclusion rules require the element $k$ to lie in $B$ and the element $12-k$ to lie in $A$.",
+      "If $k=6$, these requirements contradict one another. For every other $k$, two distinct elements are fixed, and $k-1$ of the remaining ten elements may be chosen for $A$, giving $\\binom{10}{k-1}$ ordered partitions.",
+      "Summing over $k=1,\\ldots,11$ would give $2^{10}$, but the impossible $k=6$ term must be removed. Thus $N=2^{10}-\\binom{10}{5}=1024-252=772$. Each choice determines the labeled set $B$ as the complement, so no symmetry division is needed."
+    ],
+    "keyIdeas": [
+      "Force the two size labels into opposite parts"
+    ],
+    "commonMistakes": [
+      "Allowing the common size-six label in both disjoint parts or dividing ordered partitions by two."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The size labels are actual elements of the ground set and become forced membership conditions.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p9",
+    "problemId": "aime-ii-2010-p9",
+    "finalAnswer": "$\\boxed{011}$",
+    "shortExplanation": "The area ratio is $4/7$.",
+    "detailedSteps": [
+      "Normalize the outer circumradius to one and take $A=(1,0)$, $B=(1/2,\\sqrt3/2)$ and $C=(-1/2,\\sqrt3/2)$. Then $H=(0,\\sqrt3/2)$, and the line $AH$ has equation $\\sqrt3x+2y=\\sqrt3$.",
+      "The distance from the center to this line is $\\sqrt3/\\sqrt7$. The other five bounding lines are its sixty-degree rotations, so their inner hexagon has this apothem. For an explicit segment check, the intersections with the neighboring rotated lines occur at $(1/7,3\\sqrt3/7)$ and $(5/7,\\sqrt3/7)$, corresponding to parameters $6/7$ and $2/7$ along $AH$; both lie on the actual segment.",
+      "The outer apothem is $\\sqrt3/2$. Areas of similar regular hexagons scale as apothem squared, so the ratio is $(3/7)/(3/4)=4/7$. The reduced numerator and denominator sum to $11$."
+    ],
+    "keyIdeas": [
+      "Compare the apothems of the two regular hexagons"
+    ],
+    "commonMistakes": [
+      "Using the intersection of extended lines without confirming that it lies on the stated segments."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Rotational symmetry makes one bounding-line distance sufficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p10",
+    "problemId": "aime-ii-2010-p10",
+    "finalAnswer": "$\\boxed{163}$",
+    "shortExplanation": "There are $163$ distinct quadratic polynomials.",
+    "detailedSteps": [
+      "Write $f(x)=a(x-r)(x-s)$, where $a,r,s$ are nonzero integers. The constant condition is $ars=2010=2\\cdot3\\cdot5\\cdot67$. Conversely, any such triple produces the required integer-coefficient quadratic.",
+      "The four distinct primes can each be assigned to $|a|$, $|r|$ or $|s|$, giving $3^4=81$ ordered magnitude triples. There are four choices for the signs of $r,s$, with the sign of $a$ then fixed by the positive product. Thus there are $324$ ordered triples.",
+      "Swapping $r$ and $s$ leaves the same polynomial. The fixed triples require $r=s$ and hence $r^2\\mid2010$. Squarefreeness forces $r=s=1$ or $r=s=-1$, with $a=2010$ in either case. These give two fixed triples.",
+      "Every other polynomial is represented twice, so the number is $(324-2)/2+2=(324+2)/2=163$. This includes quadratics with negative leading coefficient and roots of opposite signs."
+    ],
+    "keyIdeas": [
+      "Count factorizations and identify the repeated-root fixed points"
+    ],
+    "commonMistakes": [
+      "Counting ordered root pairs as different polynomials or omitting negative leading coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The squarefree constant limits repeated roots to two fixed cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p11",
+    "problemId": "aime-ii-2010-p11",
+    "finalAnswer": "$\\boxed{068}$",
+    "shortExplanation": "Sixteen grids have no constant line and fifty-two have exactly one.",
+    "detailedSteps": [
+      "Label the nine positions in row order from one through nine. For a five-position set $S$ of ones, a line is constant precisely when it contains zero or three elements of $S$. The eight lines are $123,456,789,147,258,369,159,357$. This includes both all-zero and all-one lines.",
+      "The following finite classification groups all $\\binom95=126$ grids by the center entry and the number $c$ of one-valued corners. Choose those corners from positions $1,3,7,9$, then choose the required remaining one-valued edge positions from $2,4,6,8$. Testing the eight displayed triples gives the table.\n\n| Center | $c$ | No constant line | One constant line | At least two |\n|---|---|---|---|---|\n| 0 | 1 | 0 | 4 | 0 |\n| 0 | 2 | 4 | 16 | 4 |\n| 0 | 3 | 4 | 8 | 12 |\n| 0 | 4 | 0 | 0 | 4 |\n| 1 | 0 | 0 | 0 | 1 |\n| 1 | 1 | 0 | 8 | 8 |\n| 1 | 2 | 8 | 8 | 20 |\n| 1 | 3 | 0 | 8 | 8 |\n| 1 | 4 | 0 | 0 | 1 |",
+      "The first two count columns sum to $16$ and $52$, respectively. These are exactly the permitted cases, so the number of T-grids is $16+52=68$. The full table sums to $126$, ensuring that every five-one grid is accounted for."
+    ],
+    "keyIdeas": [
+      "Classify every grid by center and corner count"
+    ],
+    "commonMistakes": [
+      "Counting only all-one lines and forgetting that three zeros also form a constant line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small transparent exhaustive classification keeps both types of constant line in view.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p12",
+    "problemId": "aime-ii-2010-p12",
+    "finalAnswer": "$\\boxed{676}$",
+    "shortExplanation": "The minimum perimeter is $676$.",
+    "detailedSteps": [
+      "Write the bases as $8k$ and $7k$, where $k$ is a positive integer because the ratio is in lowest terms. Let $P$ be the common perimeter. An isosceles triangle with base $b$ then has equal sides $(P-b)/2$ and squared area $b^2P(P-2b)/16$.",
+      "Equating the areas gives $64(P-16k)=49(P-14k)$, so $15P=338k$. Since $P$ is an integer and $\\gcd(338,15)=1$, the scale $k$ must be a multiple of fifteen.",
+      "The equal side lengths must also be integers. The base $8k$ is even, so $P$ must be even. The base $7k$ then forces even $k$. Thus the least possible scale is $k=30$, yielding $P=676$.",
+      "At this scale the side triples are $(218,218,240)$ and $(233,233,210)$. They satisfy the strict triangle inequalities, are not congruent, and have the same squared area by the derived identity. Therefore the bound is actually attained."
+    ],
+    "keyIdeas": [
+      "Equate the two squared-area formulas at a common perimeter"
+    ],
+    "commonMistakes": [
+      "Making the perimeter integral but neglecting the parity needed for both repeated sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal squared areas reduce to a linear relation; integrality and parity fix the smallest scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p13",
+    "problemId": "aime-ii-2010-p13",
+    "finalAnswer": "$\\boxed{263}$",
+    "shortExplanation": "The least qualifying probability is $88/175$.",
+    "detailedSteps": [
+      "Conditioning fixes Alex and Dylan at ranks $a$ and $a+9$, with $1\\le a\\le43$. They form the low team precisely when both other cards exceed $a+9$, and the high team precisely when both other cards are below $a$. These disjoint possibilities give $p(a)=[\\binom{a-1}{2}+\\binom{43-a}{2}]/\\binom{50}{2}$.",
+      "Put $t=a-22$. Expanding the numerator yields $p(a)=(420+t^2)/1225$, where $t$ is an integer from $-21$ through $21$. The condition $p(a)\\ge1/2$ becomes $t^2\\ge385/2$.",
+      "The smallest eligible square is $14^2=196$, attained at $a=8$ or $a=36$. Thus the minimum probability is $(420+196)/1225=616/1225=88/175$, giving $m+n=263$."
+    ],
+    "keyIdeas": [
+      "Count the two ways the fixed cards occupy one team"
+    ],
+    "commonMistakes": [
+      "Including cases with one remaining card on each side, which place the fixed cards on different teams."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The probability is a symmetric quadratic about the middle conditioned rank.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p14",
+    "problemId": "aime-ii-2010-p14",
+    "finalAnswer": "$\\boxed{007}$",
+    "shortExplanation": "The ratio is $3+2\\sqrt2$.",
+    "detailedSteps": [
+      "Let $\\alpha=\\angle BAC$ and $\\theta=\\angle ACP$. The triangle $APC$ gives $\\alpha+3\\theta=180^\\circ$. Since $0<\\alpha<45^\\circ$, we have $45^\\circ<\\theta<60^\\circ$.",
+      "The sine rule in $APC$, using $CP=1$, gives $AP=\\sin\\theta/\\sin\\alpha$. In $BPC$ it gives $BP=\\cos\\theta/\\cos\\alpha$. Because $\\alpha=180^\\circ-3\\theta$, the triple-angle identities reduce these to $AP=1/(4\\cos^2\\theta-1)$ and $BP=1/(3-4\\cos^2\\theta)$.",
+      "Put $u=4\\cos^2\\theta-1$, so $0<u<1$. The condition $AP+BP=4$ becomes $1/u+1/(2-u)=4$, or $u(2-u)=1/2$. The allowed root is $u=1-1/\\sqrt2$.",
+      "Therefore $AP/BP=(2-u)/u=(1+1/\\sqrt2)/(1-1/\\sqrt2)=3+2\\sqrt2$. This root gives a genuine angle in the required interval and positive segment lengths $AP=2+\\sqrt2$, $BP=2-\\sqrt2$. The requested sum is $3+2+2=7$."
+    ],
+    "keyIdeas": [
+      "Use the doubled-angle condition with the hypotenuse sum"
+    ],
+    "commonMistakes": [
+      "Choosing the root $u>1$ despite the acute-angle restriction, or reversing the requested $AP/BP$ ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The hypotenuse sum turns the trigonometric constraint into a two-root equation with a forced branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2010-p15",
+    "problemId": "aime-ii-2010-p15",
+    "finalAnswer": "$\\boxed{218}$",
+    "shortExplanation": "The side ratio is $725/507$.",
+    "detailedSteps": [
+      "Take $A=(0,0)$, $B=(15,0)$ and $C=(33/5,56/5)$, which realize all three source side lengths. Then $M=(33/10,28/5)$ and $N=(15/2,0)$. The angle-bisector theorem gives $D=(15/29)C=(99/29,168/29)$ and $E=(65/9,0)$.",
+      "A circle through the origin has equation $x^2+y^2+ux+vy=0$. Substituting $M,N$ gives the first circle $x^2+y^2-(15/2)x-(25/8)y=0$. Substituting $D,E$ gives the second circle $x^2+y^2-(65/9)x-(1235/348)y=0$.",
+      "The common chord line $AP$ is their radical axis. Subtracting the equations yields $-(5/18)x+(295/696)y=0$, hence $y=(116/177)x$. The nonzero intersection has positive x-coordinate: substitution into the first circle gives $x=[15/2+(25/8)(116/177)]/[1+(116/177)^2]>0$. Thus the positive ray $AP$ uses this direction.",
+      "The line $BC$ has equation $y=20-(4/3)x$. Intersecting gives $Q=(885/88,145/22)$. Its fractional position along $B$ to $C$ is $t=y_Q/y_C=(145/22)/(56/5)=725/1232$, strictly between zero and one.",
+      "Hence $BQ/CQ=t/(1-t)=725/507$. These integers are relatively prime, so $m-n=725-507=218$. The circle substitutions and the positive ray check exclude an intersection on the wrong extension."
+    ],
+    "keyIdeas": [
+      "Use the radical axis of the two source circles"
+    ],
+    "commonMistakes": [
+      "Using the opposite radical-axis ray or exchanging the two angle-bisector ratios."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the two circle equations finds AP without solving both circle intersections explicitly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

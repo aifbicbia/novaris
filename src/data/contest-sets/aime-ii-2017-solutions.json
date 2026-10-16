@@ -1,0 +1,348 @@
+[
+  {
+    "id": "solution-aime-ii-2017-p1",
+    "problemId": "aime-ii-2017-p1",
+    "finalAnswer": "$\\boxed{196}$",
+    "shortExplanation": "Choose nonempty subsets from the two exclusive parts and any subset from their overlap.",
+    "detailedSteps": [
+      "To avoid being a subset of the first five-element set, a selection must contain an element of $\\{6,7,8\\}$. To avoid being a subset of the other set, it must contain an element of $\\{1,2,3\\}$.",
+      "There are $2^3-1=7$ nonempty choices in each of these two disjoint parts. The common elements $4,5$ are unrestricted, giving $2^2=4$ further choices. The total is $7\\cdot7\\cdot4=196$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Subset restrictions"
+    ],
+    "commonMistakes": [
+      "The empty subset qualifies as a subset of both original sets and must be excluded."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Partitioning the ground set makes the two exclusion requirements independent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p2",
+    "problemId": "aime-ii-2017-p2",
+    "finalAnswer": "$\\boxed{781}$",
+    "shortExplanation": "Condition on the winner of the other semifinal before multiplying by the chance of reaching the final.",
+    "detailedSteps": [
+      "Team $T_4$ reaches the final with probability $4/5$. The opponent is $T_2$ with probability $2/5$ and $T_3$ with probability $3/5$.",
+      "Against those opponents, the winning probabilities are respectively $4/6$ and $4/7$. By conditioning on the opponent, the championship probability is $$\\frac45\\left(\\frac25\\cdot\\frac46+\\frac35\\cdot\\frac47\\right)=\\frac{256}{525}.$$",
+      "This fraction is reduced, so the required sum is $256+525=781$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Tournament probability"
+    ],
+    "commonMistakes": [
+      "The two possible final opponents are not equally likely."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The given independence lets the semifinal and final path probabilities be multiplied.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p3",
+    "problemId": "aime-ii-2017-p3",
+    "finalAnswer": "$\\boxed{409}$",
+    "shortExplanation": "Intersect the triangle with the two half-planes in which B is the nearest vertex.",
+    "detailedSteps": [
+      "For a point $(x,y)$, being closer to $B$ than to $A$ is equivalent to $x>6$. Comparing squared distances to $B$ and $C$ gives $-8x+20y-20<0$, or $y<2x/5+1$. Boundary ties have area zero.",
+      "The required region is the quadrilateral with vertices $F=(6,0)$, $B=(12,0)$, $D=(10,5)$, and $E=(6,17/5)$. Here $D$ is the midpoint of $BC$, and $E$ is the intersection of the two perpendicular bisectors.",
+      "Split along $FD$. Triangle $FBD$ has area $6\\cdot5/2=15$. Triangle $FDE$ has vertical base $FE=17/5$ and horizontal altitude $4$, giving area $34/5$. Thus the region has area $109/5$.",
+      "The whole triangle has area $12\\cdot10/2=60$. The probability is $109/300$, and the answer is $109+300=409$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Nearest-vertex regions"
+    ],
+    "commonMistakes": [
+      "Both distance comparisons must hold simultaneously.",
+      "A shoelace calculation must include the closing edge of the quadrilateral."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perpendicular bisectors turn a distance-probability question into an exact polygon area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p4",
+    "problemId": "aime-ii-2017-p4",
+    "finalAnswer": "$\\boxed{222}$",
+    "shortExplanation": "Count shorter representations freely, then compare seven-digit prefixes with the upper bound.",
+    "detailedSteps": [
+      "In base three, $2017=(2202201)_3$. A zero-free representation of length $k$ has $2^k$ choices, since each digit is $1$ or $2$. The total for lengths one through six is $2+4+8+16+32+64=126$.",
+      "A seven-digit zero-free number below the bound either begins with $1$, giving $2^6=64$ choices, or begins with $21$, giving $2^5=32$ choices. A prefix $22$ cannot work, since its next nonzero digit exceeds the third digit $0$ of the bound.",
+      "The endpoint itself has zeros, so it adds nothing. The total is $126+64+32=222$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Ternary digit counting"
+    ],
+    "commonMistakes": [
+      "There is no leading-zero option; the counting is by the actual representation length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The first zero in the upper bound ends the equal-prefix case immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p5",
+    "problemId": "aime-ii-2017-p5",
+    "finalAnswer": "$\\boxed{791}$",
+    "shortExplanation": "The six sums split into three complementary pairs, each totaling the sum of the four original numbers.",
+    "detailedSteps": [
+      "Let $S$ be the sum of the four elements. The six pairwise sums can be paired as $(a+b,c+d)$, $(a+c,b+d)$, and $(a+d,b+c)$; every pair totals $S$. Among the four known values, at least two belong to the same complementary pair, so $S$ is the sum of two known values.",
+      "The largest such sum is $320+287=607$. Also the sum of all six pairwise sums is $3S$, while the four known values total $1030$. Therefore $x+y=3S-1030\\le3\\cdot607-1030=791$.",
+      "The bound is attainable: the four distinct numbers $68,121,166,252$ have pairwise sums $189,234,320,287,373,418$. The two unspecified sums total $373+418=791$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Complementary pair sums"
+    ],
+    "commonMistakes": [
+      "A numerical upper bound must be realized by an actual four-element set.",
+      "The total of the six pairwise sums is three times the sum of the original elements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The complementary pairing gives a bound without guessing the original numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p6",
+    "problemId": "aime-ii-2017-p6",
+    "finalAnswer": "$\\boxed{195}$",
+    "shortExplanation": "Complete the square after multiplying by four, leaving a small fixed factorization.",
+    "detailedSteps": [
+      "Write the square root as a positive integer $m$. Then $$4m^2-(2n+85)^2=843=3\\cdot281.$$ Put $u=2m-2n-85$ and $v=2m+2n+85$. Both are positive odd integers, because $2m>2n+85$, and $uv=843$.",
+      "Also $v-u=4n+170$, so $n=(v-u-170)/4$. The factor pairs with $u<v$ are $(1,843)$ and $(3,281)$, producing $n=168$ and $n=27$, respectively.",
+      "They give integer roots $m=211$ and $m=71$, so both are valid. Their sum is $168+27=195$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Require positive n and check the divisibility by four when recovering it from a factor pair."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small factorization makes the search exhaustive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p7",
+    "problemId": "aime-ii-2017-p7",
+    "finalAnswer": "$\\boxed{501}$",
+    "shortExplanation": "Preserve the logarithm domains while counting roots of the equivalent quadratic.",
+    "detailedSteps": [
+      "The domain requires $x>-2$ and $kx>0$. On that domain the equation is equivalent to $kx=(x+2)^2$. If $k=0$, the logarithm is undefined everywhere, so there is no solution.",
+      "For $k<0$, the domain is $-2<x<0$. On this interval, $kx$ strictly decreases from a positive value to $0$, while $(x+2)^2$ strictly increases from $0$ to $4$. They cross exactly once. Thus all $500$ negative integers in the stated range qualify.",
+      "For $k>0$, the domain is $x>0$. Dividing by $x$ gives $k=x+4+4/x\\ge8$, with equality only at $x=2$. For $k>8$, the quadratic has two distinct positive roots; for $k<8$, it has none. Hence the only positive value giving exactly one solution is $k=8$.",
+      "The total is $500+1=501$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Logarithmic domains and root counts"
+    ],
+    "commonMistakes": [
+      "Squaring or exponentiating without the original domains may count roots with x at most -2.",
+      "A repeated positive root counts as one real solution."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The negative and positive parameter ranges have different admissible x-intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p8",
+    "problemId": "aime-ii-2017-p8",
+    "finalAnswer": "$\\boxed{134}$",
+    "shortExplanation": "Clear the common denominator and separate the prime-power divisibility conditions.",
+    "detailedSteps": [
+      "Multiply the expression by $720$. The constant and linear terms are already divisible by $720$, so it is enough that $$M=360n^2+120n^3+30n^4+6n^5+n^6$$ be divisible by $720=16\\cdot9\\cdot5$.",
+      "Modulo $2$ and modulo $3$, $M$ reduces to $n^6$. Thus $n$ must be divisible by both $2$ and $3$. Conversely, if $n$ is even, substituting $n=2t$ shows every term of $M$ is divisible by $16$; if $3\\mid n$, every term is divisible by $9$.",
+      "Modulo $5$, the only remaining terms give $M\\equiv n^6+n^5\\equiv n(n+1)$. Hence the full condition is $6\\mid n$ together with $n\\equiv0$ or $4\\pmod5$. Equivalently, $n\\equiv0$ or $24\\pmod{30}$.",
+      "Below $2017$, there are $67$ positive multiples of $30$ and $67$ numbers of the form $24+30t$ with $t\\ge0$. Therefore the count is $134$."
+    ],
+    "keyIdeas": [
+      "Number Theory",
+      "Factorial denominators and congruences"
+    ],
+    "commonMistakes": [
+      "Divisibility by 2 and 3 alone is insufficient; sufficiency for 16 and 9 must also be checked."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A common denominator and coprime prime powers yield a complete congruence characterization.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p9",
+    "problemId": "aime-ii-2017-p9",
+    "finalAnswer": "$\\boxed{13}$",
+    "shortExplanation": "In a qualifying eight-card hand, exactly one number and one color are repeated; the card at their intersection determines removability.",
+    "detailedSteps": [
+      "View cards as edges between seven number vertices and seven color vertices. Eight edges covering all vertices give one number of degree two, one color of degree two, and degree one at every other vertex. Fix the repeated number $R$ and repeated color $C$; the $7^2$ choices will cancel from the probability.",
+      "If the card $(R,C)$ is present, it is the unique removable card. Choose the other color incident to $R$ in six ways and the other number incident to $C$ in six ways. The five remaining numbers match the five remaining colors in $5!$ ways. This gives $6^2\\cdot5!=4320$ hands for fixed $R,C$.",
+      "If $(R,C)$ is absent, choose the two colors used by $R$ in $\\binom62$ ways and the two numbers used by $C$ in $\\binom62$ ways. Match the remaining four numbers and colors in $4!$ ways, giving $\\binom62^2\\cdot4!=5400$ hands. None has a removable card, since every edge meets a degree-one vertex.",
+      "The conditional probability is $4320/(4320+5400)=4/9$, so the required sum is $13$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Bipartite degree patterns"
+    ],
+    "commonMistakes": [
+      "The hand is a set, so do not multiply by an ordering of its eight cards.",
+      "The sample space is already conditioned on covering all seven numbers and colors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Degree counts compress a large card space into two small configurations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p10",
+    "problemId": "aime-ii-2017-p10",
+    "finalAnswer": "$\\boxed{546}$",
+    "shortExplanation": "Find the intersection coordinates, identify the side containing the bisection point, and use an area ratio along that side.",
+    "detailedSteps": [
+      "Use $A=(0,0)$, $B=(84,0)$, $C=(84,42)$, and $D=(0,42)$. Then $M=(0,21)$ and $N=(28,0)$. The lines $CM$ and $DN$ are $y=x/4+21$ and $y=42-3x/2$, giving $O=(12,24)$.",
+      "Triangle $BCO$ has area $42\\cdot72/2=1512$, and triangle $BON$ has area $56\\cdot24/2=672$. Thus the quadrilateral has area $2184$, and a bisecting segment must cut off area $1092$.",
+      "Because $1512>1092$, the point $P$ lies on $CO$, with $[BCP]/[BCO]=CP/CO=1092/1512=13/18$. Hence $P=C+(13/18)(O-C)=(32,29)$.",
+      "Triangle $CDP$ has base $CD=84$ and altitude $42-29=13$, so its area is $84\\cdot13/2=546$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Area bisection in a quadrilateral"
+    ],
+    "commonMistakes": [
+      "Determine which side contains P before using a triangle-area ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinates make both the intersection and the area-bisecting point rational.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p11",
+    "problemId": "aime-ii-2017-p11",
+    "finalAnswer": "$\\boxed{544}$",
+    "shortExplanation": "Count all orientations and subtract those with a proper initial strongly connected component.",
+    "detailedSteps": [
+      "Let $s_n$ be the number of strongly connected orientations of the complete graph on $n$ labeled vertices. We have $s_1=1$, $s_2=0$, and $s_3=2$, the two directed three-cycles.",
+      "In any tournament, collapse each strongly connected component to one vertex. Edges between components all point in one direction, and the collapsed tournament is acyclic, so its components have a unique linear order. In particular there is a unique first component, with all edges directed from it to the remaining vertices.",
+      "If that first component has size $k<n$, choose its vertices in $\\binom nk$ ways and its internal orientation in $s_k$ ways. All cross edges are then fixed, while the remaining $n-k$ vertices have $2^{\\binom{n-k}{2}}$ arbitrary orientations. This counts every non-strong tournament exactly once.",
+      "For four vertices this gives $s_4=2^6-4\\cdot2^3-4\\cdot2=24$. For five vertices, the proper first-component sizes are $1,3,4$, so $$s_5=2^{10}-5\\cdot2^6-\\binom53\\cdot2\\cdot2-5\\cdot24=544.$$"
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Strongly connected tournaments"
+    ],
+    "commonMistakes": [
+      "A source component can contain several towns; merely forbidding an all-outgoing town is not a general connectivity criterion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique component order avoids overlap in subtracting disconnected orientations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p12",
+    "problemId": "aime-ii-2017-p12",
+    "finalAnswer": "$\\boxed{110}$",
+    "shortExplanation": "Sum the shrinking quarter-turn displacements of the circle centers.",
+    "detailedSteps": [
+      "Put the original center at complex coordinate $0$ and the first tangency point at $1$. Successive center displacements have lengths $(1-r),r(1-r),r^2(1-r),\\ldots$ and directions $1,i,-1,-i,\\ldots$. Thus the center of the $n$th circle is $(1-r)\\sum_{j=0}^{n-1}(ir)^j$.",
+      "The center limit is $b=(1-r)/(1-ir)$. Its distance from the $n$th center is $r^n(1-r)/\\sqrt{1+r^2}$, which is strictly less than the radius $r^n$. Therefore this limit lies inside every circle. Since the radii tend to zero, no other common point can exist.",
+      "The required distance is $|b|=(1-r)/\\sqrt{1+r^2}$. With $r=11/60$, the square root in the denominator is $61/60$, so the distance is $49/61$. The answer is $49+61=110$."
+    ],
+    "keyIdeas": [
+      "Algebra",
+      "Nested circles and complex geometric series"
+    ],
+    "commonMistakes": [
+      "The displacements are differences of consecutive radii, not the radii themselves.",
+      "The limiting point must be shown to lie inside every circle, not merely to be a limit of centers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Complex multiplication by i encodes the repeated quarter-turn exactly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p13",
+    "problemId": "aime-ii-2017-p13",
+    "finalAnswer": "$\\boxed{245}$",
+    "shortExplanation": "Count triangles by their apex, then correct the triple counting of equilateral triangles.",
+    "detailedSteps": [
+      "For each chosen apex, the other two vertices must lie the same number of steps clockwise and counterclockwise from it. There are $\\lfloor(n-1)/2\\rfloor$ such pairs. This counts a non-equilateral isosceles triangle once, but an equilateral triangle three times.",
+      "Equilateral triangles exist exactly when $3\\mid n$, and then there are $n/3$ of them. Therefore $$f(n)=n\\left\\lfloor\\frac{n-1}{2}\\right\\rfloor-\\begin{cases}2n/3,&3\\mid n,\\\\0,&3\\nmid n.\\end{cases}$$",
+      "Write $n=6k+r$, with $0\\le r\\le5$. Substitution gives the six successive differences, in residue order: $13k$, $3k$, $5k+1$, $7k+3$, $9k+6$, and $-k-2$.",
+      "Setting these equal to $78$ yields $k=6$ for $r=0$, $k=26$ for $r=1$, and $k=8$ for $r=4$. The other three equations have no nonnegative integer solution. The corresponding values are $n=36,157,52$, whose sum is $245$."
+    ],
+    "keyIdeas": [
+      "Combinatorics",
+      "Isosceles triangles in regular polygons"
+    ],
+    "commonMistakes": [
+      "Equilateral triangles have three possible apex choices and need an overcount correction.",
+      "The difference f(n+1)-f(n) need not be positive in every residue class."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity and divisibility by three combine into six simple linear cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p14",
+    "problemId": "aime-ii-2017-p14",
+    "finalAnswer": "$\\boxed{168}$",
+    "shortExplanation": "Eight grid points force a direction vector with components only minus one, zero, or one.",
+    "detailedSteps": [
+      "Choose a primitive integer direction vector for a line containing grid points. Consecutive lattice points differ by this vector. Eight points span seven steps, and each coordinate can vary by at most $9$, so every direction component has absolute value at most $1$. Reversing all signs describes the same line.",
+      "A direction with one nonzero component gives axis-parallel lines, each containing ten grid points, so none qualifies. For a direction with two nonzero components, there are three choices of coordinate plane and two slope signs, hence six directions. In each fixed plane, exactly two diagonals of a given direction have length eight, and there are ten parallel planes. This contributes $6\\cdot2\\cdot10=120$ lines.",
+      "There are four directions with all three components nonzero. By reflections, count only $(1,1,1)$. A line starts at a unique lattice point whose minimum coordinate is $1$; having exactly eight points means its maximum starting coordinate is $3$. The count of triples from $\\{1,2,3\\}$ containing both $1$ and $3$ is $3^3-2^3-2^3+1=12$.",
+      "The four spatial directions contribute $4\\cdot12=48$ lines. Therefore the total is $120+48=168$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Primitive lattice directions"
+    ],
+    "commonMistakes": [
+      "Use a primitive direction vector; a nonprimitive vector can skip intervening grid points.",
+      "Opposite direction vectors represent the same unoriented line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The small coordinate span rules out every steeper direction before counting begins.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2017-p15",
+    "problemId": "aime-ii-2017-p15",
+    "finalAnswer": "$\\boxed{682}$",
+    "shortExplanation": "Realize the equal-opposite-edge tetrahedron with symmetric coordinates, then apply a supporting linear inequality to each distance.",
+    "detailedSteps": [
+      "Consider vertices $A=(u,v,w)$, $B=(u,-v,-w)$, $C=(-u,v,-w)$, and $D=(-u,-v,w)$. Matching the prescribed opposite edges requires $u^2+v^2=196$, $u^2+w^2=484$, and $v^2+w^2=676$. Thus $u^2=2$, $v^2=194$, and $w^2=482$, all positive. These coordinates realize all six given lengths, so they give a congruent copy of the tetrahedron.",
+      "Each vertex vector has length $R=\\sqrt{2+194+482}=\\sqrt{678}$, and their vector sum is zero. For any point vector $x$ and any vertex vector $a$, Cauchy-Schwarz gives $$\\lVert x-a\\rVert\\ge\\frac{(a-x)\\mathbin{\\cdot}a}{R}=R-\\frac{x\\mathbin{\\cdot}a}{R}.$$",
+      "Summing over the four vertices cancels the dot products and gives $f(x)\\ge4R$. At the origin all four distances equal $R$, so this lower bound is attained and is the global minimum.",
+      "The minimum is $4\\sqrt{678}$. Since $678=2\\cdot3\\cdot113$ is squarefree, the requested sum is $4+678=682$."
+    ],
+    "keyIdeas": [
+      "Geometry",
+      "Symmetric tetrahedra and distance minimization"
+    ],
+    "commonMistakes": [
+      "The minimizing point is not assumed to lie inside the tetrahedron; the inequality handles every point in space.",
+      "Symmetry suggests the center, but a global lower bound is needed to prove minimality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A vector support inequality proves the optimality of the symmetric center directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

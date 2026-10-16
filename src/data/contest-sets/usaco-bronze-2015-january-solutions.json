@@ -1,0 +1,126 @@
+[
+  {
+    "finalAnswer": "Take the least price among routes where A occurs strictly before B. Print -1 if no route qualifies.",
+    "shortExplanation": "A ticket allows boarding and leaving inside its route, but only in the printed direction. A route is usable exactly when its A-city precedes its B-city.",
+    "detailedSteps": [
+      "Scan each route in its listed order. Keep a flag saying whether A has already appeared. Encountering B while that flag is true makes this route a candidate.",
+      "Check for B before setting the A flag at the current position. Disembarking must occur later than boarding; it cannot use the very same route position.",
+      "For every qualifying route, minimize the entire ticket price. The price does not depend on how many intermediate cities Bessie passes.",
+      "The flag identifies exactly an earlier A followed by B. Every legal single-route journey therefore contributes its price, and every recorded candidate is legal. Their minimum is the optimum; no candidate means -1.",
+      "If L is the total number of listed cities, the scan takes $O(L)$ time and $O(1)$ extra storage. The source sample needs the ticket of price 8, even though two tickets could produce a cheaper itinerary.",
+      "**C++11 / C++17 implementation.** This historical task reads `cowroute.in` and writes `cowroute.out`.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <istream>\n#include <ostream>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int a, b, n;\n    in >> a >> b >> n;\n    int answer = 1000000000;\n    for (int route = 0; route < n; ++route) {\n        int cost, length;\n        in >> cost >> length;\n        bool boarded = false, reaches = false;\n        for (int i = 0; i < length; ++i) {\n            int city; in >> city;\n            if (city == b && boarded) reaches = true;\n            if (city == a) boarded = true;\n        }\n        if (reaches) answer = min(answer, cost);\n    }\n    out << (answer == 1000000000 ? -1 : answer) << '\\n';\n}\nint main() {\n    ifstream in(\"cowroute.in\");\n    ofstream out(\"cowroute.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Respect city order along each route.",
+      "Minimize ticket price rather than distance or number of stops."
+    ],
+    "commonMistakes": [
+      "Using a route with B before A.",
+      "Requiring A and B to be the route endpoints.",
+      "Combining two routes in this single-route question."
+    ],
+    "alternativeMethods": [
+      "Store each route and find the positions of A and B. It qualifies precisely when both exist and the A-position is smaller."
+    ],
+    "difficultyNotes": "A single ordered scan is enough; the important detail is which direction the ticket permits.",
+    "id": "solution-usaco-bronze-2015-january-p1",
+    "problemId": "usaco-bronze-2015-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compare all one-route costs with the cheapest first-ticket plus second-ticket cost at every possible transfer city. Print the least feasible total, or -1.",
+    "shortExplanation": "For each city, record the cheapest ticket that reaches it from A and the cheapest ticket that leaves it toward B. Their sum tests a two-route itinerary, while direct journeys are checked separately.",
+    "detailedSteps": [
+      "In each route, locate A and B. If A occurs before B, minimize the direct ticket cost. If A=B, the zero-route itinerary permitted by “at most two” has cost 0.",
+      "For every city strictly after A, minimize `from_a[city]` with this ticket price. For every city strictly before B, similarly minimize `to_b[city]`. City IDs themselves do not tell you route order.",
+      "For every city c with both values available, consider `from_a[c] + to_b[c]`. A legal two-route journey transfers somewhere, and its two ticket prices are at least the corresponding minima.",
+      "The source forbids using one route twice. If the two minima at c use different routes, the candidate is legal. If they use the same route, its order is A before c before B, so its single-ticket cost was already considered. That positive single cost is smaller than paying for the same ticket twice. Such an invalid repeated-route candidate cannot improve the answer.",
+      "Consequently the minimum of the direct and transfer candidates is attained by a legal journey and cannot exceed any legal journey’s cost. This proves that the result is exactly optimal.",
+      "The work is $O(L+10000)$ for L listed cities, with $O(10000)$ storage plus one route. A paid answer is at most 2000. The source sample uses the two different routes of prices 4 and 3, giving 7.",
+      "**C++11 / C++17 implementation.** This historical task reads `cowroute.in` and writes `cowroute.out`.\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int a, b, n;\n    in >> a >> b >> n;\n    const int inf = 1000000000;\n    vector<int> from_a(10001, inf), to_b(10001, inf);\n    int answer = a == b ? 0 : inf;\n    for (int route = 0; route < n; ++route) {\n        int cost, length; in >> cost >> length;\n        vector<int> cities(length);\n        int ia = -1, ib = -1;\n        for (int i = 0; i < length; ++i) {\n            in >> cities[i];\n            if (cities[i] == a) ia = i;\n            if (cities[i] == b) ib = i;\n        }\n        if (ia != -1 && ib > ia) answer = min(answer, cost);\n        if (ia != -1)\n            for (int i = ia + 1; i < length; ++i)\n                from_a[cities[i]] = min(from_a[cities[i]], cost);\n        if (ib != -1)\n            for (int i = 0; i < ib; ++i)\n                to_b[cities[i]] = min(to_b[cities[i]], cost);\n    }\n    for (int city = 1; city <= 10000; ++city)\n        if (from_a[city] != inf && to_b[city] != inf)\n            answer = min(answer, from_a[city] + to_b[city]);\n    out << (answer == inf ? -1 : answer) << '\\n';\n}\nint main() {\n    ifstream in(\"cowroute.in\");\n    ofstream out(\"cowroute.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Separate the cheapest first leg and second leg by transfer city.",
+      "Keep the one-route option.",
+      "Positive ticket prices make duplicate-route minima harmless only because the direct journey is checked."
+    ],
+    "commonMistakes": [
+      "Charging once per hop instead of once per route.",
+      "Ignoring a cheaper direct journey.",
+      "Allowing the same route twice without proving that the direct ticket dominates it."
+    ],
+    "alternativeMethods": [
+      "On small inputs, enumerate ordered pairs of distinct route IDs and all actual boarding, transfer and disembarking positions. This directly checks the itinerary rule."
+    ],
+    "difficultyNotes": "The minimum-price arrays are simple; justifying the route-use restriction is the subtle step.",
+    "id": "solution-usaco-bronze-2015-january-p2",
+    "problemId": "usaco-bronze-2015-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Merge the increasing value sequences for bases 10 through 15000. Advance the base whose current value is smaller; equality gives X and Y.",
+    "shortExplanation": "Each three-digit string represents a strictly increasing quadratic function of its base. Two increasing sequences can be matched without trying every pair of bases.",
+    "detailedSteps": [
+      "For digits a, b, c in a base x, compute $f(x)=ax^2+bx+c$. Evaluate the other string in the same way as $g(y)$. Keep the first string’s base first in the output.",
+      "Start with $x=y=10$. Since all three digits are positive, $f(x+1)-f(x)=a(2x+1)+b>0$; both sequences strictly increase.",
+      "If $f(x)<g(y)$, no remaining base for the second string can match this x: every later $g$-value is at least the current one. Increment x. If $f(x)>g(y)$, apply the symmetric argument and increment y.",
+      "Neither step discards a possible remaining match. The source guarantees a unique pair in the permitted range, so equality must be reached before either base exceeds 15000. Output that pair and start the next case afresh.",
+      "Each base advances at most 14991 times, giving $O(15000)$ time per case and $O(1)$ working storage. For K cases, the total is $O(K\\cdot15000)$; no numerical bound for K is printed in the original. The implementation uses `long long` for the polynomial values.",
+      "For the source sample, $4\\cdot47^2+47+9=8892$ and $7\\cdot35^2+9\\cdot35+2=8892$. The output order is therefore 47 35.",
+      "**C++11 / C++17 implementation.** This historical task reads `whatbase.in` and writes `whatbase.out`.\n\n```cpp\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <string>\nusing namespace std;\nlong long value(const string& digits, int base) {\n    long long result = 0;\n    for (char digit : digits) result = result * base + digit - '0';\n    return result;\n}\nvoid solve(istream& in, ostream& out) {\n    long long cases; in >> cases;\n    while (cases--) {\n        string first, second; in >> first >> second;\n        int x = 10, y = 10;\n        while (x <= 15000 && y <= 15000) {\n            long long a = value(first, x), b = value(second, y);\n            if (a == b) {\n                out << x << ' ' << y << '\\n';\n                break;\n            }\n            if (a < b) ++x;\n            else ++y;\n        }\n    }\n}\nint main() {\n    ifstream in(\"whatbase.in\");\n    ofstream out(\"whatbase.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Interpret three digits as a polynomial in the base.",
+      "Use strict monotonicity to discard only the smaller unmatched value."
+    ],
+    "commonMistakes": [
+      "Trying all roughly $15000^2$ base pairs.",
+      "Treating the digit strings as decimal values.",
+      "Swapping X and Y in the output.",
+      "Failing to reset the two bases for each input case."
+    ],
+    "alternativeMethods": [
+      "Enumerate every permitted base for the first string and store its value and base in a map. Enumerate bases for the second string and look for the common value. This supplies a separate full-range check."
+    ],
+    "difficultyNotes": "The key proof explains why advancing the smaller value cannot skip the promised match.",
+    "id": "solution-usaco-bronze-2015-january-p3",
+    "problemId": "usaco-bronze-2015-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compute each cow’s full set of possible destination arrival times. Output the smallest common time, or IMPOSSIBLE if their sets do not intersect.",
+    "shortExplanation": "The cows cannot wait, so a meeting time must be an exact path sum for both cows. Downhill edges form a DAG, allowing all reachable times to be propagated in field order.",
+    "detailedSteps": [
+      "Every edge goes from a smaller field number to a larger one. Increasing field numbers are therefore already a topological order, and a path uses at most $N-1$ edges.",
+      "Maintain separate reachability tables for Bessie and Elsie. Mark time 0 at field 1. A table entry means that some actual path reaches that field with exactly that cow’s recorded total travel time.",
+      "Process fields in increasing order. For an edge from u to v taking w units for a cow, propagate each reachable time t at u to time $t+w$ at v. Use the appropriate travel cost for each cow.",
+      "Every mark corresponds to a real path, because it appends a real edge to an already realized prefix. Conversely, every path ends at an edge from an earlier field, so its prefix and then its total are marked. This proves that the tables contain exactly all possible arrival times.",
+      "Each edge costs at most 1000 and there are at most $N-1$ edges on a path. It is sufficient to store times through $1000(N-1)\\le15000$. Scan the destination times in increasing order and take the first shared mark.",
+      "A shared mark gives two actual paths arriving simultaneously, and every possible meeting time must be such a mark. Thus the first shared time is optimal. If no mark is shared, output IMPOSSIBLE. For $N=1$, both cows are already at the destination, so their shared empty path has time 0.",
+      "With $T=1000(N-1)+1$ stored times, time is $O((N+M)T)$ and memory is $O(NT+M)$. In the source sample, Bessie’s two-edge path and Elsie’s direct path both take 2.",
+      "**C++11 / C++17 implementation.** This historical task reads `meeting.in` and writes `meeting.out`.\n\n```cpp\n#include <fstream>\n#include <istream>\n#include <ostream>\n#include <vector>\nusing namespace std;\nstruct Edge { int to, bessie, elsie; };\nvoid solve(istream& in, ostream& out) {\n    int n, m; in >> n >> m;\n    vector<vector<Edge>> edges(n);\n    for (int i = 0; i < m; ++i) {\n        int a, b, c, d; in >> a >> b >> c >> d;\n        edges[a - 1].push_back({b - 1, c, d});\n    }\n    int limit = (n - 1) * 1000;\n    vector<vector<char>> first(n, vector<char>(limit + 1, false));\n    vector<vector<char>> second(n, vector<char>(limit + 1, false));\n    first[0][0] = second[0][0] = true;\n    for (int field = 0; field < n; ++field) {\n        for (const Edge& edge : edges[field]) {\n            for (int time = 0; time <= limit; ++time) {\n                if (first[field][time] && time + edge.bessie <= limit)\n                    first[edge.to][time + edge.bessie] = true;\n                if (second[field][time] && time + edge.elsie <= limit)\n                    second[edge.to][time + edge.elsie] = true;\n            }\n        }\n    }\n    for (int time = 0; time <= limit; ++time) {\n        if (first[n - 1][time] && second[n - 1][time]) {\n            out << time << '\\n';\n            return;\n        }\n    }\n    out << \"IMPOSSIBLE\\n\";\n}\nint main() {\n    ifstream in(\"meeting.in\");\n    ofstream out(\"meeting.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Arrival times are exact path sums; waiting is forbidden.",
+      "Field order is a topological order.",
+      "Intersect full time sets rather than only shortest-path distances."
+    ],
+    "commonMistakes": [
+      "Letting a faster cow wait at a field.",
+      "Comparing only the two shortest arrival times.",
+      "Using one cow’s edge costs for both tables.",
+      "Assuming the cows must choose the same path."
+    ],
+    "alternativeMethods": [
+      "For small DAGs, enumerate every complete downhill path separately for each cow, collect its actual travel-time sum, and intersect the resulting sets."
+    ],
+    "difficultyNotes": "The state includes both field and elapsed time; a shortest-distance-only state would discard useful longer paths.",
+    "id": "solution-usaco-bronze-2015-january-p4",
+    "problemId": "usaco-bronze-2015-january-p4",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "finalAnswer": "For sorted positions $a_1<\\cdots<a_N$, let $W$ be the largest number of cows inside $N$ consecutive integer slots. The minimum is $N-W$, except a tight block of $N-1$ cows with the lone outside cow more than two units from the block needs $2$ moves. The maximum is $\\boxed{\\max(a_{N-1}-a_1,\\ a_N-a_2)-(N-2)}$. Print minimum and maximum on separate lines.",
+    "shortExplanation": "A final interval can preserve at most $W$ original cows, giving the minimum lower bound; endpoint legality creates one exceptional tight-block case. For the maximum, remove the endpoint leaving the larger span, create an adjacent pair at one edge, and then legally shrink that span one unit per move.",
+    "detailedSteps": [
+      "**Sort and respect the legal move.** An endpoint cow must be reinserted strictly between the minimum and maximum positions of the other $N-1$ cows. Consequently the occupied span strictly decreases at every move. Integer span descent makes all sequences finite, and a consecutive configuration has no available move.",
+      "**Find the minimum lower bound by a window.** Any final group fits in $N$ integer slots, a width of $N-1$. At most $W$ cows initially occupy such an interval, so at least $N-W$ cows must move. Maintain a sorted sliding window satisfying $a_r-a_\\ell\\leq N-1$ and maximize its cow count. If it contains all cows, they are already consecutive.",
+      "**Show the window bound is attainable in the general case.** Choose a maximum-count target interval. If its two endpoints are already occupied, every outside cow can be moved from a current endpoint to an empty internal target slot. If there are outside cows on both sides and the right target endpoint is empty, first move a left outside endpoint there, using a remaining right outside cow as the guard that makes the destination internal. This creates both target anchors. If all outside cows are on the right, align the target’s left edge with its first preserved cow; with at least two outside cows, move the farthest one to the empty right target endpoint while another right cow remains as guard. Then fill the internal holes. Reflect this construction when all outside cows are on the left. These constructions use exactly one move per outside cow.",
+      "**Resolve the only obstruction.** If just one cow lies outside, the $N-1$ preserved cows have span either $N-1$ or $N-2$. A span of $N-1$ has an internal hole that the outside endpoint can fill legally. A span of $N-2$ is a tight contiguous block. Translate it to $0,1,\\ldots,N-2$, with right outlier $b$. For $b=N$, move the left cow from $0$ to $N-1$ and finish in one move. For $b\\geq N+1$, one move cannot finish: moving the outlier beside the block makes it an endpoint, while keeping that far outlier and all but one block cow cannot fit $N$ slots. Two moves do finish: $0\\to N$, then $b\\to N-1$, with both destinations internal when chosen. The reflected case is identical. Thus override the minimum to $2$ when $a_{N-1}-a_1=N-2$ and $a_N-a_{N-1}>2$, or when $a_N-a_2=N-2$ and $a_2-a_1>2$.",
+      "**Bound the maximum number of moves.** After removing the first endpoint, the remaining span is at most $S=\\max(a_{N-1}-a_1,a_N-a_2)$. Reinserting strictly inside cannot increase it. The final span is $N-1$, and every later move shrinks the integer span by at least $1$. Therefore there can be at most $1+S-(N-1)=S-(N-2)$ moves. For an already-consecutive state, this expression is $0$.",
+      "**Attain the maximum rather than just bounding it.** In a nonconsecutive state choose the first endpoint removal that leaves span $S$. Suppose the left endpoint is removed; reflect if necessary. Place that cow just one unit right of the new leftmost cow if that slot is empty, or in another internal hole if the adjacent slot is already occupied. The left edge now has an adjacent pair. Repeatedly remove the leftmost cow; if the slot immediately after the new minimum is empty, fill it, otherwise fill any internal hole. The adjacent pair remains, the maximum stays fixed, and each move decreases the span by exactly $1$. Stop when the span is $N-1$. This supplies a legal sequence of exactly $S-(N-2)$ moves.",
+      "**Implement the scan and formulas.** Sorting takes $O(N\\log N)$ time; the two pointers each advance at most $N$ times. Store positions in $O(N)$ space and compare gaps exactly. The implementation uses `long long` conservatively even though the printed position differences fit signed 32-bit integers. The output has two decimal lines, not a single count.",
+      "**Original C++17 implementation.** Historical named input/output files and the complete required output shape are retained.\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint main(){\n    ifstream in(\"herding.in\");ofstream out(\"herding.out\");\n    int n;in>>n;vector<long long> x(n);for(auto &v:x)in>>v;\n    sort(x.begin(),x.end());\n    int minimum=n,best=0,left=0;\n    for(int right=0;right<n;right++){\n        while(x[right]-x[left]>=n)++left;\n        best=max(best,right-left+1);\n    }\n    minimum=n-best;\n    if((x[n-2]-x[0]==n-2&&x[n-1]-x[n-2]>2)||\n       (x[n-1]-x[1]==n-2&&x[1]-x[0]>2))minimum=2;\n    long long maximum=max(x[n-2]-x[0],x[n-1]-x[1])-(n-2);\n    out<<minimum<<'\\n'<<maximum<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A maximum-density interval gives a lower bound on the number of cows that must change position.",
+      "Endpoint legality is stronger than simply filling vacant positions, producing a tight-block exception.",
+      "An adjacent pair at one edge provides an explicit construction that attains the longest legal sequence."
+    ],
+    "commonMistakes": [
+      "Using $N-W$ unconditionally and accepting a forbidden endpoint destination in the tight-block case.",
+      "Treating a gap of exactly $2$ as the two-move exception; it admits a one-move construction.",
+      "Counting all initial empty slots for the maximum without subtracting the unavoidable span loss from the first endpoint removal.",
+      "Providing a maximum upper bound without showing that every claimed move can be legally attained."
+    ],
+    "alternativeMethods": [
+      "For tiny states, enumerate every legal endpoint removal and every unoccupied internal destination. Since the span strictly decreases, the resulting state graph is acyclic; shortest and longest terminal path lengths give a direct independent oracle.",
+      "Binary searching an allowed number of moved cows is possible using the same window count, but the one-pass window already gives the lower bound and still requires the endpoint exception proof."
+    ],
+    "difficultyNotes": "The sliding-window scan is straightforward. The difficult part is proving both minimum attainment and maximum attainment under the requirement that the moved cow cease to be an endpoint. The printed lower bound $N\\geq3$ is used by the constructions.",
+    "id": "solution-usaco-silver-2019-february-p1",
+    "problemId": "usaco-silver-2019-february-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Apply four-corner updates to a two-dimensional difference array, reconstruct coat counts by two-dimensional prefixes, and count unit cells with count exactly $K$.",
+    "shortExplanation": "Integer rectangle boundaries divide the painted region into unit cells. A rectangle’s four signed corner updates reconstruct precisely its cell indicator. Adding all indicators gives the number of coats, so each cell whose total equals $K$ contributes one unit of area.",
+    "detailedSteps": [
+      "**Choose the finite cells that can contribute.** All positive-area rectangles lie within coordinate bounds $0$ through $1000$. Since $K\\geq1$, unpainted space outside that square contributes nothing. Each unit cell $[x,x+1)\\times[y,y+1)$ can be counted once; rectangle boundary lines have zero area.",
+      "**Encode a rectangle with four signs.** For corners $(x_1,y_1)$ and $(x_2,y_2)$, add $1$ at $(x_1,y_1)$ and $(x_2,y_2)$, and subtract $1$ at $(x_1,y_2)$ and $(x_2,y_1)$. After taking both prefixes, its contribution is $(\\mathbf1_{x\\geq x_1}-\\mathbf1_{x\\geq x_2})(\\mathbf1_{y\\geq y_1}-\\mathbf1_{y\\geq y_2})$, exactly $1$ on its half-open rectangle cells and $0$ elsewhere.",
+      "**Reconstruct the true coat count.** Scan the array in increasing coordinates. Add the prefix from the preceding $x$ row and preceding $y$ column, subtract their shared diagonal prefix, and keep the local difference update. By inclusion–exclusion this is the two-dimensional cumulative sum. Linearity combines every rectangle, including repeated and heavily overlapping ones.",
+      "**Count equality, not a threshold.** Scan only starting coordinates $0\\leq x,y<1000$. Each reconstructed count equal to $K$ contributes area $1$; a cell with more coats contributes nothing. Index $1000$ is allocated for rectangle-end cancellation updates, but cells starting there are outside the counted region.",
+      "**Check cost and numeric bounds.** With fixed coordinate bound $B=1000$, time is $O(N+B^2)$ and space is $O(B^2)$. At most $N$ coats cover a cell and at most $B^2$ unit cells contribute area. The original implementation uses signed integer counts; these and the prefix intermediates are safe under the printed limits.",
+      "**Original C++17 implementation.** Historical named input/output files and the complete required output shape are retained.\n\n```cpp\n#include <fstream>\nusing namespace std;\nint difference[1001][1001];\nint main(){\n    ifstream in(\"paintbarn.in\");ofstream out(\"paintbarn.out\");\n    int n,k;in>>n>>k;\n    for(int i=0;i<n;i++){\n        int a,b,c,d;in>>a>>b>>c>>d;\n        ++difference[a][b];--difference[a][d];\n        --difference[c][b];++difference[c][d];\n    }\n    int area=0;\n    for(int x=0;x<1000;x++)for(int y=0;y<1000;y++){\n        if(x)difference[x][y]+=difference[x-1][y];\n        if(y)difference[x][y]+=difference[x][y-1];\n        if(x&&y)difference[x][y]-=difference[x-1][y-1];\n        if(difference[x][y]==k)++area;\n    }\n    out<<area<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Two-dimensional difference arrays convert rectangle additions into four constant-time updates.",
+      "Integer coordinates let geometric area equal a count of unit cells.",
+      "Exactly $K$ is an equality objective, and the source’s positive $K$ makes the outside region irrelevant."
+    ],
+    "commonMistakes": [
+      "Counting cells with at least $K$ coats instead of exactly $K$.",
+      "Including the upper endpoint row or column as painted area.",
+      "Using only two corner updates or forgetting the subtraction of the shared prefix.",
+      "Updating every cell of each rectangle separately, which can take $O(NB^2)$ time."
+    ],
+    "alternativeMethods": [
+      "A coordinate-compressed geometric oracle can partition the actual rectangle endpoints into constant-coverage slabs and sum their physical widths times heights when the coat count is $K$. This uses geometric area weights rather than a unit difference grid.",
+      "A sweep line with interval coverage also works, but the small fixed coordinate bound makes a direct two-dimensional array simpler."
+    ],
+    "difficultyNotes": "The main challenge is the four-sign inclusion–exclusion and handling the coordinate boundary. This Silver task counts the already-painted exact-$K$ area; it does not allow painting additional rectangles.",
+    "id": "solution-usaco-silver-2019-february-p2",
+    "problemId": "usaco-silver-2019-february-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Propagate same/different parity in every graph component. Print $0$ if any constraint conflicts. Otherwise, for $C$ connected components, print the full binary representation of $2^C$: a `1` followed by exactly $C$ zeros.",
+    "shortExplanation": "Choosing one pasture’s seed fixes all other choices in a connected component through the parity constraints. A consistent component has exactly two assignments, related by flipping all its seeds. Independent components multiply these choices; a contradictory edge makes the total zero.",
+    "detailedSteps": [
+      "**Represent both requirements exactly.** Encode the distinguishable seed types as $0$ and $1$. An `S` relation requires $c_u\\oplus c_v=0$; a `D` relation requires $c_u\\oplus c_v=1$. Retain every constraint in an undirected graph, including repeated cow constraints; isolated pastures still exist as vertices.",
+      "**Propagate a component and check all its edges.** Start an unassigned pasture with color $0$. Along an edge with parity $p$, its neighbor must have color $c_u\\oplus p$. Assign an unseen neighbor this value. If an already assigned neighbor has another value, there is no solution: the root choice cannot fix that conflict, because flipping the whole component preserves every XOR relation.",
+      "**Prove the exact component count.** If no conflict occurs, every edge is satisfied by the constructed assignment. Flipping all colors gives a second valid assignment. Connectivity forces every vertex once the root color is chosen, so no third assignment exists. An isolated pasture likewise has two choices. With $C$ consistent components, independent choices therefore give $2^C$ assignments.",
+      "**Write the actual binary answer.** A contradiction prints the single character `0`. Otherwise binary $2^C$ is exactly `1` followed by $C$ zeros. Do not compute this count with a machine integer or floating-point power, and do not print $C$ itself. Compare and emit the complete string, including potentially about $10^5$ output bits.",
+      "**Use an iterative traversal over the full source domain.** Every vertex and edge is examined a constant number of times, so time and space are $O(N+M)$, with $O(N)$ output length. The code also correctly interprets an equal-endpoint pair if encountered: `S` is tautological and `D` is contradictory; it does not add an unprinted endpoint-inequality assumption.",
+      "**Original C++17 implementation.** Historical named input/output files and the complete required output shape are retained.\n\n```cpp\n#include <fstream>\n#include <vector>\n#include <utility>\n#include <string>\nusing namespace std;\nint main(){\n    ifstream in(\"revegetate.in\");ofstream out(\"revegetate.out\");\n    int n,m;in>>n>>m;vector<vector<pair<int,int>>> graph(n);\n    for(int i=0;i<m;i++){\n        char kind;int a,b;in>>kind>>a>>b;--a;--b;\n        int parity=(kind=='D');graph[a].push_back({b,parity});graph[b].push_back({a,parity});\n    }\n    vector<int> color(n,-1);int components=0;\n    for(int root=0;root<n;root++)if(color[root]==-1){\n        ++components;color[root]=0;vector<int> stack(1,root);\n        while(!stack.empty()){\n            int u=stack.back();stack.pop_back();\n            for(auto [v,parity]:graph[u]){\n                int required=color[u]^parity;\n                if(color[v]==-1){color[v]=required;stack.push_back(v);}\n                else if(color[v]!=required){out<<\"0\\n\";return 0;}\n            }\n        }\n    }\n    out<<'1'<<string(components,'0')<<'\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Same/different relations are XOR equations over two distinguishable choices.",
+      "A consistent connected component has one free binary choice.",
+      "A power of two has a simple exact binary string even when its decimal value cannot fit a machine integer."
+    ],
+    "commonMistakes": [
+      "Assuming all input constraints are consistent when the source makes no such guarantee.",
+      "Counting only components containing an edge and forgetting isolated pastures.",
+      "Treating `S` as a different-seed edge or failing to check a visited neighbor.",
+      "Overflowing an integer, using a floating-point power, printing the component count, or truncating the binary output."
+    ],
+    "alternativeMethods": [
+      "A disjoint-set structure storing parity to each representative can enforce the same XOR equations and detect inconsistent merges. The number of independent components determines the binary count.",
+      "For small graphs, enumerate every labelled binary seed assignment and count only those satisfying all constraints. This checks the full answer directly without using the component formula."
+    ],
+    "difficultyNotes": "Consistency and counting must both be justified; a traversal alone is not the answer. The unrestricted output length is part of the task, so the binary representation should be constructed directly.",
+    "id": "solution-usaco-silver-2019-february-p3",
+    "problemId": "usaco-silver-2019-february-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "solution-usaco-bronze-2012-february-p1",
+    "problemId": "usaco-bronze-2012-february-p1",
+    "finalAnswer": "Write the number of valid single folds to folding.out.",
+    "shortExplanation": "Use twice the fold position as an integer. Every knot in the overlapping strands must have its reflected partner.",
+    "detailedSteps": [
+      "Let the fold position be $f$. A knot at $x$ reflects to $2f-x$. It needs a matching knot only when the reflected position lies in $[0,L]$; otherwise it belongs to the unmatched longer tail.",
+      "The shorter strand has an endpoint knot. If the left side is shorter, its endpoint at 0 reflects to $2f$; if the right side is shorter, its endpoint at $L$ reflects to $2f-L$. The matching knot is at an integer position, so $q=2f$ must be an integer.",
+      "Try every integer $q$ from 1 through $2L-1$. These are all possible valid folds, including half-integer folds, and exclude both rope endpoints.",
+      "Sort the knots. For each candidate and each knot $x$, compute $q-x$. When that value is within the rope, require it to occur in the sorted list. Use binary search and exact integers.",
+      "If all required partners exist, every knot in either overlapping strand has its counterpart. This proves the candidate is valid. A knot at the fold matches itself; knots beyond the overlap impose no requirement.",
+      "Sorting takes $O(N\\log N)$ time. At most $2L-1$ candidates each make at most $N$ binary searches, so total time is $O(N\\log N+LN\\log N)$ and memory is $O(N)$. With the actual bounds there are at most 1,999,900 membership checks.",
+      "Use folding.in and folding.out. The input includes distinct knots at both endpoints, and their order may be arbitrary. Doubled coordinates avoid rounding and fit int under the original bounds.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n, length; in >> n >> length;\n    vector<int> knots(n);\n    for (int& x : knots) in >> x;\n    sort(knots.begin(), knots.end());\n    int answer = 0;\n    // q is twice the fold position; endpoints are excluded.\n    for (int q = 1; q < 2 * length; ++q) {\n        bool valid = true;\n        for (int x : knots) {\n            int reflected = q - x;\n            if (0 <= reflected && reflected <= length &&\n                !binary_search(knots.begin(), knots.end(), reflected)) {\n                valid = false; break;\n            }\n        }\n        if (valid) ++answer;\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ifstream in(\"folding.in\"); ofstream out(\"folding.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Endpoint alignment makes doubled fold positions integral.",
+      "Test only the overlapping strands, preserving the longer tail.",
+      "Exact reflection and binary search prove each candidate."
+    ],
+    "commonMistakes": [
+      "Counting folds at the rope endpoints.",
+      "Requiring every knot in the longer tail to match.",
+      "Testing only integer fold positions and missing half-integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The main argument is why every valid real fold lies on a half-integer grid and how overlap changes the matching condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2012-february-p2",
+    "problemId": "usaco-bronze-2012-february-p2",
+    "finalAnswer": "Write the union area of the rectangles to planting.out.",
+    "shortExplanation": "Split the plane at all rectangle boundaries. Add each resulting cell once if any rectangle covers it.",
+    "detailedSteps": [
+      "Collect both x boundaries and both y boundaries from every rectangle. Sort each list and remove duplicates. The implementation expresses each rectangle using its left, right, bottom and top bounds.",
+      "Consecutive x boundaries and consecutive y boundaries define elementary cells. No original rectangle boundary passes through a cell interior, so a rectangle covers the whole cell or none of its interior.",
+      "For each cell, check all rectangles. It is covered when its two x boundaries and two y boundaries lie inside one rectangle. Stop at the first covering rectangle.",
+      "Add width times height for a covered cell. Cells have disjoint interiors, so overlap is counted once. Shared edges have zero area and do not affect the answer.",
+      "There are at most $(2N-1)^2$ cells, and each checks at most $N$ rectangles. The running time is $O(N^3)$ and storage is $O(N)$; no large coordinate-range grid is built.",
+      "All grass lies within a 20,000 by 20,000 box under the actual coordinate limits. The answer is at most 400,000,000. Use a long long multiplication and sum for clear, safe arithmetic; the real bound itself also fits signed int.",
+      "Use planting.in and planting.out. This is the Bronze problem with at most ten rectangles. Containment, crossing overlap and touching edges all follow the same cell argument.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nusing namespace std;\nstruct Rectangle { int left, right, bottom, top; };\nvoid solve(istream& in, ostream& out) {\n    int n; in >> n;\n    vector<Rectangle> rectangles;\n    vector<int> xs, ys;\n    for (int i = 0; i < n; ++i) {\n        int x1, y1, x2, y2; in >> x1 >> y1 >> x2 >> y2;\n        Rectangle r = {min(x1, x2), max(x1, x2), min(y1, y2), max(y1, y2)};\n        rectangles.push_back(r);\n        xs.push_back(r.left); xs.push_back(r.right);\n        ys.push_back(r.bottom); ys.push_back(r.top);\n    }\n    sort(xs.begin(), xs.end()); xs.erase(unique(xs.begin(), xs.end()), xs.end());\n    sort(ys.begin(), ys.end()); ys.erase(unique(ys.begin(), ys.end()), ys.end());\n    long long area = 0;\n    for (size_t i = 0; i + 1 < xs.size(); ++i) {\n        for (size_t j = 0; j + 1 < ys.size(); ++j) {\n            bool covered = false;\n            for (const Rectangle& r : rectangles) {\n                if (r.left <= xs[i] && xs[i + 1] <= r.right &&\n                    r.bottom <= ys[j] && ys[j + 1] <= r.top) {\n                    covered = true; break;\n                }\n            }\n            if (covered) area += (long long)(xs[i + 1] - xs[i]) * (ys[j + 1] - ys[j]);\n        }\n    }\n    out << area << '\\n';\n}\nint main() {\n    ifstream in(\"planting.in\"); ofstream out(\"planting.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Coordinate boundaries partition constant-coverage cells.",
+      "A covered cell contributes once regardless of overlap count.",
+      "Boundary lines have zero area."
+    ],
+    "commonMistakes": [
+      "Adding individual rectangle areas without removing overlap.",
+      "Allocating a board for every possible coordinate.",
+      "Using the Silver constraints for this Bronze task."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A correct partition argument turns the geometric union into a small exact enumeration under the Bronze bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2012-february-p3",
+    "problemId": "usaco-bronze-2012-february-p3",
+    "finalAnswer": "Write the requested character, m or o, to moo.out.",
+    "shortExplanation": "Store sequence lengths, then locate the requested position in the left copy, middle block or right copy.",
+    "detailedSteps": [
+      "Let $\\ell_k$ be the length of $S(k)$. The base is $\\ell_0=3$, and the middle block at level $k$ has length $k+3$. Therefore $\\ell_k=2\\ell_{k-1}+k+3$. Grow the length table until it reaches the requested one-based position.",
+      "Every sequence starts with the previous one, so this finite sequence contains the same requested character as the infinite sequence.",
+      "At level $k>0$, let $p=\\ell_{k-1}$. Positions 1 through $p$ belong to the left copy; descend one level without changing the position.",
+      "Positions $p+1$ through $p+k+3$ belong to the middle block. Its first character is m and every other character is o, so answer directly there.",
+      "For a position farther right, subtract $p+k+3$ and descend into the right copy. Each branch preserves the requested character as a local one-based position in the smaller sequence.",
+      "Eventually reach the base sequence moo: position 1 is m, and positions 2 and 3 are o. Do not confuse a zero-based string index with the one-based input.",
+      "Lengths at least double, so building the table and descending take $O(\\log N)$ time and $O(\\log N)$ memory. At the actual maximum, level 27 suffices with length 1,073,741,792. Use long long lengths and positions, and historical files moo.in and moo.out.",
+      "C++11/C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    long long position; in >> position;\n    vector<long long> length(1, 3);\n    while (length.back() < position) {\n        long long level = (long long)length.size();\n        length.push_back(2 * length.back() + level + 3);\n    }\n    int level = (int)length.size() - 1;\n    while (level > 0) {\n        long long previous = length[level - 1];\n        long long middle = level + 3;\n        if (position <= previous) {\n            --level;\n        } else if (position <= previous + middle) {\n            out << (position == previous + 1 ? 'm' : 'o') << '\\n';\n            return;\n        } else {\n            position -= previous + middle;\n            --level;\n        }\n    }\n    out << (position == 1 ? 'm' : 'o') << '\\n';\n}\nint main() {\n    ifstream in(\"moo.in\"); ofstream out(\"moo.out\");\n    solve(in, out);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Length growth avoids building the enormous sequence.",
+      "Three block intervals cover each level without gaps.",
+      "Adjust the position only when entering the right copy."
+    ],
+    "commonMistakes": [
+      "Using the wrong middle-block length.",
+      "Subtracting an offset while descending into the left copy.",
+      "Mixing one-based input with zero-based indexing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Careful interval boundaries and a position-preserving descent are the essential parts of the recursive lookup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

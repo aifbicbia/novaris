@@ -1,0 +1,598 @@
+[
+  {
+    "shortExplanation": "Start at the deepest fraction and replace one complete denominator at a time.",
+    "detailedSteps": [
+      "The innermost denominator is $3+1/3=10/3$. Its reciprocal is therefore $3/10$.",
+      "The next denominator is $3+3/10=33/10$, so the outer expression is $3+10/33=109/33$."
+    ],
+    "keyIdeas": [
+      "Reciprocals",
+      "Order of operations"
+    ],
+    "commonMistakes": [
+      "Taking the reciprocal of only one term changes a whole denominator."
+    ],
+    "difficultyNotes": "The arithmetic is short; keeping the nested denominator intact is the main task.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p1",
+    "problemId": "amc12a-2022-p1",
+    "finalAnswer": "$\\boxed{\\frac{109}{33}}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Represent all three quantities using the third one.",
+    "detailedSteps": [
+      "Let the third number be $t$. The first two are $6t$ and $t+40$, so their total gives $8t+40=96$.",
+      "Thus $t=7$. The first and second numbers are $42$ and $47$, whose absolute difference is $5$."
+    ],
+    "keyIdeas": [
+      "Substitution",
+      "Linear equations"
+    ],
+    "commonMistakes": [
+      "The third number being 40 less than the second means the second is $t+40$, not $t-40$."
+    ],
+    "difficultyNotes": "One variable is enough to encode all the stated relations.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p2",
+    "problemId": "amc12a-2022-p2",
+    "finalAnswer": "$\\boxed{5}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use the total area to find the large square, then compare the perimeters of the corner pieces.",
+    "detailedSteps": [
+      "The five areas add to $6+8+30+14+6=64$, so the outer square has side $8$ and perimeter $32$.",
+      "In the source diagram, each of the four outer rectangles occupies a corner. Its two sides on the outer boundary have a combined length equal to half its own perimeter. Those boundary segments together cover the square boundary once.",
+      "Therefore the four outer rectangles have total perimeter $2(32)=64$. All five rectangle perimeters sum to $14+12+22+18+10=76$. The middle rectangle consequently has perimeter $76-64=12$.",
+      "Only the $2$-by-$4$ rectangle has perimeter $12$, so the shaded rectangle is B."
+    ],
+    "keyIdeas": [
+      "Area and perimeter",
+      "Double counting"
+    ],
+    "commonMistakes": [
+      "Adding all piece perimeters directly counts internal boundaries twice.",
+      "The conclusion uses the four-corner arrangement shown in the source figure."
+    ],
+    "difficultyNotes": "A perimeter count avoids reconstructing a drawing that is explicitly not to scale.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p3",
+    "problemId": "amc12a-2022-p3",
+    "finalAnswer": "$\\boxed{\\text{rectangle B}}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Determine the exponent of each possible prime factor.",
+    "detailedSteps": [
+      "Since $\\operatorname{lcm}(n,18)=180=2^2\\cdot3^2\\cdot5$, the number $n$ has exactly two factors of $2$, exactly one factor of $5$, and no other primes except possibly $3$.",
+      "The condition $\\gcd(n,45)=15=3\\cdot5$ makes the exponent of $3$ in $n$ exactly one. Hence $n=2^2\\cdot3\\cdot5=60$, and its digit sum is $6$."
+    ],
+    "keyIdeas": [
+      "Prime factorization",
+      "Greatest common divisor",
+      "Least common multiple"
+    ],
+    "commonMistakes": [
+      "The lcm condition alone permits several exponents of 3; the gcd condition chooses one."
+    ],
+    "difficultyNotes": "The largest and smallest prime exponents in lcm and gcd give complementary information.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p4",
+    "problemId": "amc12a-2022-p4",
+    "finalAnswer": "$\\boxed{6}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Count the origin once and add the lattice points at each positive taxicab distance.",
+    "detailedSteps": [
+      "For distance $k>0$, the equation $|x|+|y|=k$ describes a diamond. Its four sides each contribute $k$ lattice points if exactly one endpoint is included on each side, giving $4k$ points without duplication.",
+      "The required total is $1+\\sum_{k=1}^{20}4k=1+4\\cdot20\\cdot21/2=841$."
+    ],
+    "keyIdeas": [
+      "Lattice points",
+      "Symmetry",
+      "Arithmetic series"
+    ],
+    "commonMistakes": [
+      "The origin is not part of a positive-distance shell.",
+      "Counting both endpoints on each side counts the four axis points twice."
+    ],
+    "difficultyNotes": "The taxicab metric produces diamond-shaped shells rather than Euclidean circles.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p5",
+    "problemId": "amc12a-2022-p5",
+    "finalAnswer": "$\\boxed{841}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Test which entry can equal the mean, including the unknown entry itself.",
+    "detailedSteps": [
+      "The five fixed entries sum to $20$, so the mean is $(20+X)/6$. It must equal one of $1,2,5,7,X$.",
+      "Equating it to $1$ or $2$ gives a negative $X$, which is excluded. Equating it to $5$ or $7$ gives $X=10$ or $X=22$.",
+      "The remaining possibility is $(20+X)/6=X$, giving $X=4$. The three positive values sum to $10+22+4=36$."
+    ],
+    "keyIdeas": [
+      "Arithmetic mean",
+      "Case analysis"
+    ],
+    "commonMistakes": [
+      "The mean may equal the unknown value, so checking only the fixed entries misses $X=4$."
+    ],
+    "difficultyNotes": "The possible means form a small finite set, with one additional equation for the unknown itself.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p6",
+    "problemId": "amc12a-2022-p6",
+    "finalAnswer": "$\\boxed{36}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Color the bottom-middle region first, then follow the surrounding path.",
+    "detailedSteps": [
+      "In the source figure, the bottom-middle region touches all four other regions. The remaining adjacencies form the path bottom-left, top-left, top-right, bottom-right.",
+      "There are $5$ choices for the bottom-middle region. Color top-left next in $4$ ways. Top-right must differ from those two colors, leaving $3$ choices.",
+      "Bottom-left must differ from top-left and bottom-middle, and bottom-right must differ from top-right and bottom-middle. Each has $3$ choices; these two bottom corner regions do not touch each other.",
+      "The product is $5\\cdot4\\cdot3\\cdot3\\cdot3=540$."
+    ],
+    "keyIdeas": [
+      "Graph coloring",
+      "Multiplication principle"
+    ],
+    "commonMistakes": [
+      "The middle bottom region touches both upper regions.",
+      "Nonadjacent regions may reuse a color."
+    ],
+    "difficultyNotes": "An effective coloring order makes each later choice depend on two already different colors.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p7",
+    "problemId": "amc12a-2022-p7",
+    "finalAnswer": "$\\boxed{540}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Convert repeated cube roots into powers of ten and add their exponents.",
+    "detailedSteps": [
+      "The $k$th factor is $10^{1/3^k}$. The product of the first $N$ factors is $10^{s_N}$, where $s_N=\\sum_{k=1}^{N}3^{-k}=\\tfrac12(1-3^{-N})$.",
+      "As $N$ tends to infinity, $s_N$ tends to $1/2$. By continuity, the product tends to $10^{1/2}=\\sqrt{10}$."
+    ],
+    "keyIdeas": [
+      "Geometric series",
+      "Laws of exponents",
+      "Limits"
+    ],
+    "commonMistakes": [
+      "The product converges because its exponent sum converges; the factors do not each contribute a fixed exponent of $1/3$."
+    ],
+    "difficultyNotes": "Writing a finite partial product first makes the passage to the infinite product precise.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p8",
+    "problemId": "amc12a-2022-p8",
+    "finalAnswer": "$\\boxed{\\sqrt{10}}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "List the answer pattern for each type before solving for the numbers of children.",
+    "detailedSteps": [
+      "A truth-teller answers yes, no, no. An always-liar answers yes, yes, no. For an alternater, the truthful answers to the three questions would be no, yes, no.",
+      "An alternater who starts by lying therefore answers yes to all three questions. One who starts truthfully answers no to all three.",
+      "Only the first kind of alternater answers yes to the third question, so there are $9$ of them. The second question then gives $15-9=6$ always-liars. The first gives $22-9-6=7$ truth-tellers.",
+      "Each truth-teller receives candy only for the first answer. Their combined total is therefore 7 pieces."
+    ],
+    "keyIdeas": [
+      "Truth tables",
+      "Systems of equations"
+    ],
+    "commonMistakes": [
+      "A liar denies being a liar.",
+      "Alternating truth values need not produce alternating yes/no answers."
+    ],
+    "difficultyNotes": "Distinguishing the truth of a statement from the word used in the reply resolves the apparent ambiguity.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p9",
+    "problemId": "amc12a-2022-p9",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Pair the largest possible smaller member first, so the constraints become progressively weaker.",
+    "detailedSteps": [
+      "The smaller member of a pair is at most $7$, since a smaller member of $8$ would need a partner at least $16$. Seven pairs therefore use exactly $1,\\ldots,7$ as their smaller members and $8,\\ldots,14$ as their larger members.",
+      "Assign partners to $7,6,5,4$ in that order. Their eligible sets have sizes $1,3,5,7$, respectively, and all partners already used belong to each later set. The available counts are consequently $1,2,3,4$.",
+      "For $3,2,1$, every remaining upper-half number qualifies, so the counts are $3,2,1$. The number of pairings is $1\\cdot2\\cdot3\\cdot4\\cdot3\\cdot2\\cdot1=144$."
+    ],
+    "keyIdeas": [
+      "Constrained permutations",
+      "Multiplication principle"
+    ],
+    "commonMistakes": [
+      "The pairs are unordered, but assigning each smaller member its partner already counts every pairing once."
+    ],
+    "difficultyNotes": "The crucial observation is that the lower and upper halves must occupy different roles in every pair.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p10",
+    "problemId": "amc12a-2022-p10",
+    "finalAnswer": "$\\boxed{144}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "The two possible logarithms are symmetric around the logarithm of nine.",
+    "detailedSteps": [
+      "Put $u=\\log_6x$ and $v=\\log_69$. The right-hand distance is the positive number $\\log_6(5/3)$, so the condition is $|u-v|=2\\log_6(5/3)$.",
+      "There are two distinct possible values $u=v\\pm2\\log_6(5/3)$. Their sum is $2v$, so the product of the corresponding values of $x$ is $6^{2v}=9^2=81$.",
+      "Explicitly, the two values are $25$ and $81/25$, which also verify the product."
+    ],
+    "keyIdeas": [
+      "Logarithms",
+      "Absolute value",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "Distance on the number line requires both signs, not just a positive logarithmic difference."
+    ],
+    "difficultyNotes": "Symmetry in logarithmic coordinates turns a product question into an immediate sum.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p11",
+    "problemId": "amc12a-2022-p11",
+    "finalAnswer": "$\\boxed{81}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Work in the triangle formed by the two remaining vertices and the edge midpoint.",
+    "detailedSteps": [
+      "Scale the common tetrahedron edge to $1$. The segments $MC$ and $MD$ are altitudes of equilateral faces, so each has length $\\sqrt3/2$, while $CD=1$.",
+      "The cosine law in triangle $CMD$ gives $\\cos\\angle CMD=(3/4+3/4-1)/(2\\cdot3/4)=1/3$."
+    ],
+    "keyIdeas": [
+      "Law of cosines",
+      "Equilateral triangles",
+      "Solid geometry"
+    ],
+    "commonMistakes": [
+      "The angle is at the midpoint of an edge, not at a tetrahedron vertex."
+    ],
+    "difficultyNotes": "A three-dimensional configuration reduces to one explicitly determined plane triangle.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p12",
+    "problemId": "amc12a-2022-p12",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Adding a complex number of magnitude at most one thickens the segment by a unit disk.",
+    "detailedSteps": [
+      "The segment from $3$ to $4i$ has length $\\sqrt{3^2+4^2}=5$. For each point on it, adding all complex numbers of modulus at most $1$ gives the unit disk centered there.",
+      "The union is a stadium: a rectangle of width 2 and length 5, together with two semicircular caps of radius 1.",
+      "Its area is $10+\\pi\\approx13.14$, whose closest integer is $13$."
+    ],
+    "keyIdeas": [
+      "Complex plane",
+      "Distance neighborhoods",
+      "Area decomposition"
+    ],
+    "commonMistakes": [
+      "The caps contribute one full disk, not two.",
+      "The segment is diagonal, but rotation does not change its length or the area."
+    ],
+    "difficultyNotes": "Interpretation of complex addition as translation is more useful than coordinate inequalities here.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p13",
+    "problemId": "amc12a-2022-p13",
+    "finalAnswer": "$\\boxed{13}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Use one basic logarithm to reveal cancellation in the cubic terms.",
+    "detailedSteps": [
+      "Let $t=\\log 2$. Then $\\log5=1-t$, $\\log20=1+t$, $\\log8=3t$, and $\\log0.25=-2t$.",
+      "The expression becomes $(1-t)^3+(1+t)^3+(3t)(-2t)$. The first two terms add to $2+6t^2$, and the last is $-6t^2$, so the result is $2$."
+    ],
+    "keyIdeas": [
+      "Logarithm laws",
+      "Symmetric expansions"
+    ],
+    "commonMistakes": [
+      "The logarithm of $0.25$ is negative.",
+      "The final product is added to the two cubes; it is not a denominator."
+    ],
+    "difficultyNotes": "A symmetric expansion avoids approximating any logarithms.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p14",
+    "problemId": "amc12a-2022-p14",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Evaluate the polynomial at negative two to obtain the product of the increased dimensions.",
+    "detailedSteps": [
+      "If the original dimensions are $a,b,c$, then $P(x)=10(x-a)(x-b)(x-c)$.",
+      "The new volume is $(a+2)(b+2)(c+2)=-P(-2)/10$. Substitution gives $P(-2)=-80-156-58-6=-300$.",
+      "The new volume is therefore $30$."
+    ],
+    "keyIdeas": [
+      "Polynomial roots",
+      "Vieta’s formulas",
+      "Polynomial evaluation"
+    ],
+    "commonMistakes": [
+      "The polynomial is not monic, so its leading coefficient 10 must be divided out.",
+      "Three negative factors create the minus sign in $-P(-2)$."
+    ],
+    "difficultyNotes": "The individual dimensions need not be solved for to find their shifted product.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p15",
+    "problemId": "amc12a-2022-p15",
+    "finalAnswer": "$\\boxed{30}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Transform the condition into a Pell equation and justify the sequence by descent.",
+    "detailedSteps": [
+      "If $n(n+1)/2=m^2$, then $(2n+1)^2-8m^2=1$. Write $x=2n+1$, so $x^2-8m^2=1$.",
+      "The transformation $(x,m)\\mapsto(3x+8m,x+3m)$ preserves this equation. Starting at $(1,0)$ gives $(3,1),(17,6),(99,35),(577,204)$.",
+      "To see that no positive solutions are skipped, suppose $m>1$. Then $2m<x<3m$, and $x>8m/3$. The inverse transformation $(x,m)\\mapsto(3x-8m,3m-x)$ has positive integer coordinates, still satisfies the same equation, and strictly decreases $m$. At $m=1$, the only positive solution is $x=3$, whose inverse is $(1,0)$. Thus every positive solution descends through this sequence.",
+      "The fourth square is $204^2=41616$, corresponding to $n=(577-1)/2=288$. Its digit sum is $4+1+6+1+6=18$."
+    ],
+    "keyIdeas": [
+      "Pell equations",
+      "Infinite descent",
+      "Triangular numbers"
+    ],
+    "commonMistakes": [
+      "Finding a larger square triangular number is insufficient without showing that no smaller one was omitted.",
+      "The requested digit sum is for the triangular number, not its square root or index."
+    ],
+    "difficultyNotes": "The descent argument supplies the minimality that an unproved recurrence would lack.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p16",
+    "problemId": "amc12a-2022-p16",
+    "finalAnswer": "$\\boxed{18}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Factor after dividing by the sine, which is nonzero on the stated interval.",
+    "detailedSteps": [
+      "For $0<x<\\pi$, divide by $\\sin x>0$. Using $\\sin2x=2\\sin x\\cos x$ and $\\sin3x=\\sin x(4\\cos^2x-1)$ gives $(2\\cos x+1)(a-2\\cos x+1)=0$.",
+      "The first factor always gives the single solution $x=2\\pi/3$. The other gives $\\cos x=(a+1)/2$, which has exactly one solution in the interval precisely when $-3<a<1$.",
+      "That second solution coincides with the first when $a=-2$. Thus more than one solution occurs for $a\\in(-3,-2)\\cup(-2,1)$.",
+      "The requested sum is $p+q+r=-3-2+1=-4$."
+    ],
+    "keyIdeas": [
+      "Trigonometric identities",
+      "Factoring",
+      "Parameter ranges"
+    ],
+    "commonMistakes": [
+      "Dividing by $2\\cos x+1$ would lose the solution that exists for every parameter.",
+      "The two algebraic factors give the same root at $a=-2$."
+    ],
+    "difficultyNotes": "Keep both the open-interval restrictions and the repeated-root parameter.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p17",
+    "problemId": "amc12a-2022-p17",
+    "finalAnswer": "$\\boxed{-4}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Track the point’s angle and combine two successive transformations.",
+    "detailedSteps": [
+      "Let $\\theta_k$ be the angle after transformation $T_k$, measured modulo $360^\\circ$. Rotating adds $k$ degrees, and reflecting in the $y$-axis replaces an angle by $180^\\circ$ minus that angle. Hence $\\theta_k=180^\\circ-\\theta_{k-1}-k^\\circ$.",
+      "Two successive transformations give $\\theta_{2m}=\\theta_{2m-2}-1^\\circ=-m^\\circ$. Then $\\theta_{2m+1}=(179-m)^\\circ$.",
+      "An even index first returns to angle zero when $m=360$, giving $n=720$. An odd index first does so when $m=179$, giving $n=359$. The smaller positive index is $359$."
+    ],
+    "keyIdeas": [
+      "Transformation composition",
+      "Modular arithmetic",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "The reflection changes the sign of the accumulated rotation, so simply adding the rotation angles is incorrect."
+    ],
+    "difficultyNotes": "Separating even and odd stages makes the changing transformation index manageable.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p18",
+    "problemId": "amc12a-2022-p18",
+    "finalAnswer": "$\\boxed{359}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Record where each numbered card sits, then count sequences with one descent.",
+    "detailedSteps": [
+      "Let $p_i$ be the position of card $i$ in the original row. A new left-to-right pass is needed exactly when $p_{i+1}<p_i$. Therefore exactly two passes means the permutation $p_1,\\ldots,p_{13}$ has exactly one descent.",
+      "Choose a subset of the 13 positions, list its members in increasing order, and then list the complement in increasing order. Every resulting sequence has at most one descent, located at the join.",
+      "There are $2^{13}$ subset choices. A choice gives no descent exactly when the subset is an initial segment $\\{1,\\ldots,k\\}$ for $0\\le k\\le13$, including the empty and full subsets. These are $14$ choices.",
+      "Every sequence with one descent has a unique split at that descent, so all remaining choices count it once. The result is $2^{13}-14=8178$."
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Descents",
+      "Complementary counting"
+    ],
+    "commonMistakes": [
+      "The relevant descents are in the positions of consecutive values, not necessarily between adjacent cards in the displayed row.",
+      "The empty and full subsets both produce a one-pass sequence and must be removed."
+    ],
+    "difficultyNotes": "Using the inverse permutation translates a repeated scan into a standard two-run count.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p19",
+    "problemId": "amc12a-2022-p19",
+    "finalAnswer": "$\\boxed{8178}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Center both parallel bases on the symmetry axis and subtract squared distances.",
+    "detailedSteps": [
+      "Choose coordinates $A=(-a,0)$, $D=(a,0)$, $B=(-b,h)$, and $C=(b,h)$ with $a>b>0$. This uses the symmetry of an isosceles trapezoid. Write $P=(x,y)$.",
+      "The distance differences are $PD^2-PA^2=-4ax=16-1=15$ and $PC^2-PB^2=-4bx=9-4=5$. In particular, $x\\ne0$.",
+      "Dividing the two identities gives $BC/AD=b/a=5/15=1/3$."
+    ],
+    "keyIdeas": [
+      "Coordinate geometry",
+      "Squared distances",
+      "Symmetry"
+    ],
+    "commonMistakes": [
+      "The point $P$ is not required to lie inside the trapezoid.",
+      "Use differences of squares, not differences of the distances themselves."
+    ],
+    "difficultyNotes": "Subtraction removes the height and most coordinate terms, leaving only the base ratio.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p20",
+    "problemId": "amc12a-2022-p20",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice B)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Reduce powers of the cube of the variable modulo the candidate divisor.",
+    "detailedSteps": [
+      "Let $t=x^3$ and work modulo $x^6+x^3+1$, so $t^2+t+1=0$ and hence $t^3=1$.",
+      "Because $1011=3\\cdot337$ and $337\\equiv1\\pmod3$, we have $x^{1011}=t^{337}\\equiv t$. Likewise $x^{2022}\\equiv t^2$.",
+      "Therefore $P(x)\\equiv t^2+t+1\\equiv0$. The divisor is $x^6+x^3+1$, choice E."
+    ],
+    "keyIdeas": [
+      "Polynomial remainders",
+      "Roots of unity",
+      "Exponent reduction"
+    ],
+    "commonMistakes": [
+      "Reducing an exponent modulo 3 applies to $t=x^3$, not directly to $x$."
+    ],
+    "difficultyNotes": "The exponents are chosen so that the cubic substitution leaves a short periodic remainder cycle.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p21",
+    "problemId": "amc12a-2022-p21",
+    "finalAnswer": "$\\boxed{x^6+x^3+1}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "The roots and reciprocals form a trapezoid whose area is proportional to a product.",
+    "detailedSteps": [
+      "A nondegenerate quadrilateral requires nonreal roots. Since $c$ is real, write them as $x+iy$ and $x-iy$ with $y>0$. Vieta gives $x=c/2$ and $x^2+y^2=10$. Their reciprocals are $(x-iy)/10$ and $(x+iy)/10$.",
+      "The parallel vertical sides have lengths $2y$ and $y/5$, and their horizontal separation is $9|x|/10$. The area is therefore $(2y+y/5)(9|x|/10)/2=99|x|y/100$.",
+      "From $x^2+y^2=10$ and $(|x|-y)^2\\ge0$, the product $|x|y$ is at most $5$. Equality requires $|x|=y=\\sqrt5$, so the maximizing parameters are $c=\\pm2\\sqrt5$.",
+      "The positive one is approximately $4.472$, closest to the offered value $4.5$. The negative maximizing value also has $4.5$ as the nearest among the five listed, all-positive choices. Thus the selected answer is A; the maximum does not force $c$ to be positive."
+    ],
+    "keyIdeas": [
+      "Complex conjugates",
+      "Vieta’s formulas",
+      "Area optimization",
+      "AM-GM inequality"
+    ],
+    "commonMistakes": [
+      "Both signs of $c$ can maximize the area.",
+      "The reciprocal divides the coordinates by 10 and reverses the imaginary sign."
+    ],
+    "difficultyNotes": "The sign ambiguity in the parameter must be retained even though it does not change the nearest listed answer.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p22",
+    "problemId": "amc12a-2022-p22",
+    "finalAnswer": "$\\boxed{4.5}$ (choice A)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Determine when the numerator over the least common multiple is divisible by one of its primes.",
+    "detailedSteps": [
+      "Write $H_n=N/L_n$, where $N=\\sum_{j=1}^n L_n/j$. Its reduced denominator is smaller than $L_n$ exactly when some prime dividing $L_n$ also divides $N$.",
+      "Fix such a prime $p$, and let $p^e$ be its highest power at most $n$. Modulo $p$, only terms with $j=t p^e$ can contribute to $N$: every other $L_n/j$ is divisible by $p$. Thus cancellation occurs for $p$ exactly when $1+1/2+\\cdots+1/m\\equiv0\\pmod p$, where $m=\\lfloor n/p^e\\rfloor<p$ and these reciprocals are computed modulo $p$.",
+      "For $p=2$, always $m=1$, so no cancellation occurs. For $p=3$, it occurs exactly when $m=2$, since $1+1/2=3/2$; within the range this means $n=6,7,8$ or $18,19,20,21,22$.",
+      "For $p=5$, the possible partial sums are $1,3/2,11/6,25/12$; only the last is zero modulo 5. It occurs for $n=20,21,22$, already counted. For $p=7$, at most three multiples contribute, and none of $1,3/2,11/6$ is zero modulo 7. Primes at least 11 have at most two multiples, so likewise cannot cancel.",
+      "The union is $\\{6,7,8,18,19,20,21,22\\}$, containing $8$ indices."
+    ],
+    "keyIdeas": [
+      "Harmonic sums",
+      "Least common multiple",
+      "Modular inverses",
+      "Prime valuations"
+    ],
+    "commonMistakes": [
+      "Several primes may cancel for the same index; count each index only once.",
+      "Only denominators containing the full highest prime power contribute modulo that prime."
+    ],
+    "difficultyNotes": "Grouping by the highest prime power avoids expanding twenty-two large rational sums.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p23",
+    "problemId": "amc12a-2022-p23",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Interpret the digits as parking preferences, then add one extra circular parking place.",
+    "detailedSteps": [
+      "Sort the five digits as $d_1\\le\\cdots\\le d_5$. The given conditions are equivalent to $d_i<i$ for all $1\\le i\\le5$; the last inequality follows automatically from the allowed digits. Set the preferences $p_i=d_i+1$.",
+      "For five places numbered $1$ through $5$, let each arriving car take the first free place at or above its preference. All cars can park exactly when the sorted preferences satisfy $p_i\\le i$. Necessity follows because the first $i$ places need $i$ cars with suitable preferences; sufficiency follows by assigning the sorted cars to those places.",
+      "This feasible assignment also ensures greedy parking succeeds in any arrival order. If a car takes the earliest available place before the place assigned to it, swap its assignment with the car assigned to that earlier place. The displaced car can use the later place, preserving feasibility for the remaining arrivals.",
+      "Now put six places on a circle, allow each of the five labeled cars any of the six preferences, and let them move clockwise to the first free place. Every one of the $6^5$ preference lists parks all cars and leaves exactly one place empty. Rotating every preference by one place cyclically rotates that empty place. Thus exactly $6^5/6=6^4$ lists leave place 6 empty.",
+      "In those lists, no car can prefer place 6 or pass through it, since it stays empty throughout. Hence these are exactly the successful ordinary parking lists using preferences 1 through 5, in bijection with the original ordered digit strings.",
+      "The required count is $6^4=1296$."
+    ],
+    "keyIdeas": [
+      "Parking functions",
+      "Bijections",
+      "Circular symmetry"
+    ],
+    "commonMistakes": [
+      "The digits are ordered; counting only sorted digit multisets loses their different arrangements.",
+      "The extra circular place is essential to obtain equal-sized rotation classes."
+    ],
+    "difficultyNotes": "A circular extension turns several simultaneous prefix constraints into one empty-place condition.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p24",
+    "problemId": "amc12a-2022-p24",
+    "finalAnswer": "$\\boxed{1296}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "shortExplanation": "Classify the associated right triangles by whether the given circle is an incircle or an excircle.",
+    "detailedSteps": [
+      "Let a segment have intercepts $(0,a)$ and $(b,0)$, with length $c$. Then $a^2+b^2=c^2$, and its line is $ax+by=ab$. The distance from $(r,r)$ to this line is $|r(a+b)-ab|/c$. Tangency therefore gives $ab=r(a+b+c)$ or $ab=r(a+b-c)$.",
+      "Using $ab=(a+b-c)(a+b+c)/2$, the two cases become $r=(a+b-c)/2$ and $r=(a+b+c)/2$. These are the right triangle’s inradius and its exradius opposite the right angle, respectively. In both cases the touch point lies on the hypotenuse segment; its distances from the endpoints are respectively $a-r,b-r$ or $r-a,r-b$, which are positive.",
+      "In the incircle case, put $u=a-2r$ and $v=b-2r$. Since $c>a,b$, both $u$ and $v$ are positive. The Pythagorean equation becomes $uv=2r^2$, and conversely every ordered positive factor pair gives $a=u+2r$, $b=v+2r$, and $c=u+v+2r$.",
+      "In the excircle case, put $u=2r-a$ and $v=2r-b$. Again $uv=2r^2$, but positivity of the legs requires $u,v<2r$, equivalently $r<u,v<2r$. Conversely, these pairs give $a=2r-u$, $b=2r-v$, and $c=u+v-2r$.",
+      "For $r=1,2,3,4,5$, the integers $2r^2$ are $2,8,18,32,50$, with respectively $2,4,6,6,6$ positive divisors. None has a divisor strictly between $r$ and $2r$, so there are no extra excircle segments and none reaches 14.",
+      "At $r=6$, the number $2r^2=72$ has 12 positive divisors. There are also the two ordered excircle pairs $(8,9)$ and $(9,8)$, bringing the total to exactly 14. Swapping the unequal factors interchanges the two intercepts and gives a distinct segment.",
+      "The incircle lengths are $u+72/u+12$; their largest is $1+72+12=85$. Their smallest is $29$, from $(8,9)$ or $(9,8)$. The two excircle segments have length $8+9-12=5$, so the full collection has $c_1=5$ and $c_{14}=85$.",
+      "The least possible radius is thus $6$, and the requested ratio is $85/5=17$."
+    ],
+    "keyIdeas": [
+      "Circle tangency",
+      "Pythagorean triples",
+      "Divisor counting",
+      "Incircle and excircle"
+    ],
+    "commonMistakes": [
+      "A segment can touch the opposite excircle as well as the incircle; omitting that case misses the two shortest segments.",
+      "Interchanging unequal intercepts gives a second segment even when its length is unchanged.",
+      "Tangency to a line alone should not be confused with tangency on the specified segment."
+    ],
+    "difficultyNotes": "The geometric classification makes the search finite and turns minimal radius into an exact divisor-count problem.",
+    "alternativeMethods": [],
+    "id": "solution-amc12a-2022-p25",
+    "problemId": "amc12a-2022-p25",
+    "finalAnswer": "$\\boxed{17}$ (choice E)",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

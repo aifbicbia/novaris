@@ -1,0 +1,518 @@
+[
+  {
+    "id": "solution-amc12a-2010-p1",
+    "problemId": "amc12a-2010-p1",
+    "finalAnswer": "$\\boxed{40}$ (choice C)",
+    "shortExplanation": "The year-sized terms cancel.",
+    "detailedSteps": [
+      "Expand the expression as $20-2010+201+2010-201+20$. Only $20+20=40$ remains."
+    ],
+    "keyIdeas": [
+      "Cancelling two nested subtractions"
+    ],
+    "commonMistakes": [
+      "Failing to reverse both signs after the second subtraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use subtraction signs carefully.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p2",
+    "problemId": "amc12a-2010-p2",
+    "finalAnswer": "$\\boxed{585}$ (choice A)",
+    "shortExplanation": "There are six departures, carrying one hundred through ninety-five tourists.",
+    "detailedSteps": [
+      "The departures are at 10,11,12,1,2,3, giving six trips. Their counts form the arithmetic sequence $100,99,98,97,96,95$.",
+      "The sum is $6(100+95)/2=585$."
+    ],
+    "keyIdeas": [
+      "An inclusive hourly trip count"
+    ],
+    "commonMistakes": [
+      "Counting five trips because the endpoint difference is five hours."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both the first and last departures count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p3",
+    "problemId": "amc12a-2010-p3",
+    "finalAnswer": "$\\boxed{10}$ (choice E)",
+    "shortExplanation": "The rectangle length is twice the square side, and its height is one fifth of that side.",
+    "detailedSteps": [
+      "Let the square side be $s$, the rectangle length $L=AB$, and height $h=AD$. The source figure makes the overlap a rectangle of dimensions $s$ and $h$.",
+      "Half the rectangle area is shared, so $sh=Lh/2$, giving $L=2s$. One fifth of the square area is shared, so $sh=s^2/5$, giving $h=s/5$.",
+      "Therefore $AB/AD=L/h=10$."
+    ],
+    "keyIdeas": [
+      "Two percentages of a shared rectangle"
+    ],
+    "commonMistakes": [
+      "Treating the two area percentages as percentages of the same whole."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The figure specifies the full-square-width overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p4",
+    "problemId": "amc12a-2010-p4",
+    "finalAnswer": "$\\boxed{-x^{-1}}$ (choice D)",
+    "shortExplanation": "The negative reciprocal of a negative number is positive.",
+    "detailedSteps": [
+      "For $x<0$, its reciprocal $x^{-1}=1/x$ is negative, so $-x^{-1}>0$.",
+      "The other choices are negative: $x/|x|=-1$, $-x^2<0$, $-2^x<0$, and the real cube root of $x$ is negative. Thus choice D is the unique positive expression."
+    ],
+    "keyIdeas": [
+      "Signs of reciprocals and powers"
+    ],
+    "commonMistakes": [
+      "Reading the source exponential expression as minus twice x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An exponential with positive base is positive before its leading minus sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p5",
+    "problemId": "amc12a-2010-p5",
+    "finalAnswer": "$\\boxed{42}$ (choice C)",
+    "shortExplanation": "The final lead is at least $6n-250$.",
+    "detailedSteps": [
+      "Fifty shots remain. In the worst case, Chelsea scores $10n+4(50-n)=200+6n$, while her opponent scores $500$. Including the existing lead, the final advantage is at least $50+200+6n-500=6n-250$.",
+      "Guaranteed victory requires $6n-250>0$, giving $n\\ge42$. At forty-one, the opponent can score all bullseyes and defeat her if her other shots score four, so the bound is necessary."
+    ],
+    "keyIdeas": [
+      "A worst-case guarantee in an archery match"
+    ],
+    "commonMistakes": [
+      "Allowing a tie to satisfy guaranteed victory."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the least allowed score for every unspecified Chelsea shot.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p6",
+    "problemId": "amc12a-2010-p6",
+    "finalAnswer": "$\\boxed{24}$ (choice E)",
+    "shortExplanation": "The only pair is $969$ and $1001$.",
+    "detailedSteps": [
+      "The three-digit number lies in $[968,999]$ because adding thirty-two must reach four digits. The four-digit sum is in $[1000,1031]$.",
+      "Among four-digit palindromes in that interval, only $1001$ occurs. Subtracting thirty-two gives the palindrome $969$, with digit sum $9+6+9=24$."
+    ],
+    "keyIdeas": [
+      "A palindrome across the thousand boundary"
+    ],
+    "commonMistakes": [
+      "Checking three-digit palindromes without imposing the four-digit boundary."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The narrow interval determines the second palindrome first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p7",
+    "problemId": "amc12a-2010-p7",
+    "finalAnswer": "$\\boxed{0.4}$ (choice C)",
+    "shortExplanation": "The length scale is one hundredth.",
+    "detailedSteps": [
+      "The water-volume ratio is $0.1/100000=10^{-6}$. Similarity makes the linear scale its cube root, $10^{-2}$.",
+      "The model tower height is $40\\cdot10^{-2}=0.4$ meters."
+    ],
+    "keyIdeas": [
+      "A volume scale converted to a length scale"
+    ],
+    "commonMistakes": [
+      "Using the volume ratio directly as the height ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The whole model uses the sphere’s linear scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p8",
+    "problemId": "amc12a-2010-p8",
+    "finalAnswer": "$\\boxed{90^\\circ}$ (choice C)",
+    "shortExplanation": "The angle at A is sixty degrees.",
+    "detailedSteps": [
+      "Put $\\alpha=\\angle BAE=\\angle ACD$. Equilateral $CFE$ gives $\\angle FCE=60^\\circ$. Since $F$ lies between $A,E$, the angle $AFC$ is $120^\\circ$.",
+      "In triangle $ACF$, the angle $CAF$ is $60^\\circ-\\alpha$. Adding $\\angle FAB=\\alpha$ gives $\\angle CAB=60^\\circ$.",
+      "By the sine rule, $AB/AC=\\sin C/\\sin B=2$. Since $B=120^\\circ-C$, this gives $\\sin C=2\\sin(120^\\circ-C)=\\sqrt3\\cos C+\\sin C$. Thus $\\cos C=0$ and $C=90^\\circ$."
+    ],
+    "keyIdeas": [
+      "An equilateral subtriangle determines an angle"
+    ],
+    "commonMistakes": [
+      "Using the sixty-degree equilateral angle as the entire angle ACB."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The interior segment positions determine the supplementary angle at F.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p9",
+    "problemId": "amc12a-2010-p9",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "The removed volume is twenty cubic inches.",
+    "detailedSteps": [
+      "The holes from opposite faces form three distinct perpendicular tunnels. Each has volume $3\\cdot2\\cdot2=12$.",
+      "Every pairwise intersection is the same central $2\\times2\\times2$ cube of volume eight, and so is the triple intersection. Inclusion-exclusion gives removed volume $36-24+8=20$.",
+      "The original cube volume is twenty-seven, leaving $27-20=7$."
+    ],
+    "keyIdeas": [
+      "The union of three perpendicular square tunnels"
+    ],
+    "commonMistakes": [
+      "Subtracting all three tunnel volumes without restoring their overlaps."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite-face holes describe the same tunnel.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p10",
+    "problemId": "amc12a-2010-p10",
+    "finalAnswer": "$\\boxed{8041}$ (choice A)",
+    "shortExplanation": "The first term is five and the difference four.",
+    "detailedSteps": [
+      "Let the common difference be $d=9-p$. The third term condition gives $3p-q=18-p$, hence $q=4p-18$.",
+      "The fourth term condition gives $3p+q=27-2p$. Substituting yields $9p=45$, so $p=5,q=2,d=4$.",
+      "The requested term is $5+2009\\cdot4=8041$."
+    ],
+    "keyIdeas": [
+      "Recovering an arithmetic progression from parameters"
+    ],
+    "commonMistakes": [
+      "Counting two thousand ten differences rather than two thousand nine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Consecutive terms have the same difference.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p11",
+    "problemId": "amc12a-2010-p11",
+    "finalAnswer": "$\\boxed{\\frac87}$ (choice C)",
+    "shortExplanation": "Isolate $(8/7)^x$.",
+    "detailedSteps": [
+      "Dividing $7^{x+7}=8^x$ by $7^x$ gives $(8/7)^x=7^7$. Therefore $x=\\log_{8/7}(7^7)$, so the requested base is $8/7$."
+    ],
+    "keyIdeas": [
+      "Rewriting an exponential equation as a logarithm"
+    ],
+    "commonMistakes": [
+      "Reversing the ratio when moving the exponential factors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The base exceeds one and the argument is positive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p12",
+    "problemId": "amc12a-2010-p12",
+    "finalAnswer": "$\\boxed{3}$ (choice D)",
+    "shortExplanation": "Mike must be a frog, and exactly one of Chris and LeRoy is a toad.",
+    "detailedSteps": [
+      "Let a true species indicator mean toad. Brian’s statement has truth value “Brian and Mike differ.” Equating it with Brian’s own indicator forces Mike’s indicator to be false, regardless of Brian’s species.",
+      "Chris and LeRoy each call the other a frog. Their truth-value equations force exactly one of them to be a toad.",
+      "Mike is a frog, so his claim of at least two toads is false. There can be at most one toad; therefore Brian is also a frog. In total there are three frogs."
+    ],
+    "keyIdeas": [
+      "Truth values must match amphibian species"
+    ],
+    "commonMistakes": [
+      "Accepting a frog’s statement as true when testing an assignment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The speaker’s type constrains the whole truth value of the statement.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p13",
+    "problemId": "amc12a-2010-p13",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "Only $k=\\pm1$ fail.",
+    "detailedSteps": [
+      "For any intersection, $k^2=x^2+y^2\\ge2|xy|=2|k|$, so either $k=0$ or $|k|\\ge2$.",
+      "This condition is also sufficient: $(x+y)^2=k^2+2k$ and $(x-y)^2=k^2-2k$ are then nonnegative, allowing real choices of both square roots and hence real $x,y$. For zero, the origin works.",
+      "The excluded integers are exactly $-1,1$, so there are two."
+    ],
+    "keyIdeas": [
+      "Intersecting a circle and a product curve"
+    ],
+    "commonMistakes": [
+      "Excluding k=0 because the usual hyperbola degenerates there."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Check sufficiency as well as the lower bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p14",
+    "problemId": "amc12a-2010-p14",
+    "finalAnswer": "$\\boxed{33}$ (choice B)",
+    "shortExplanation": "The other two sides are six and sixteen.",
+    "detailedSteps": [
+      "The angle-bisector theorem gives $AB/BC=AD/DC=3/8$. Integer sides therefore have the form $AB=3t,BC=8t$, with positive integer $t$, while $AC=11$.",
+      "The strict triangle inequalities require $11<11t$ and $8t<3t+11$, so $1<t<11/5$. The only integer is $t=2$.",
+      "The perimeter is $6+16+11=33$."
+    ],
+    "keyIdeas": [
+      "Integer sides and the angle-bisector ratio"
+    ],
+    "commonMistakes": [
+      "Allowing the t=1 degenerate triangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The relatively prime ratio forces a common integer scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p15",
+    "problemId": "amc12a-2010-p15",
+    "finalAnswer": "$\\boxed{\\frac{3-\\sqrt3}{6}}$ (choice D)",
+    "shortExplanation": "The product $p(1-p)$ is one sixth.",
+    "detailedSteps": [
+      "Four flips give exactly two heads with probability $\\binom42p^2(1-p)^2=1/6$. Positivity gives $p(1-p)=1/6$.",
+      "Solving $p^2-p+1/6=0$ gives $p=(3\\pm\\sqrt3)/6$. The source restriction $p<1/2$ selects $(3-\\sqrt3)/6$."
+    ],
+    "keyIdeas": [
+      "A biased coin with equal head-tail counts"
+    ],
+    "commonMistakes": [
+      "Keeping the larger complementary probability despite the stated restriction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Take the positive square root of the product equation first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p16",
+    "problemId": "amc12a-2010-p16",
+    "finalAnswer": "$\\boxed{\\frac{37}{56}}$ (choice B)",
+    "shortExplanation": "Containing nine guarantees Bernardo’s win.",
+    "detailedSteps": [
+      "Bernardo’s subset contains nine with probability $\\binom82/\\binom93=1/3$, and then his descending number always wins.",
+      "Conditional on not containing nine, the two subsets are independent uniform three-element subsets of the same eight-number set. Their numbers tie with probability $1/\\binom83=1/56$. Symmetry gives conditional win probability $(1-1/56)/2=55/112$.",
+      "Thus the total is $1/3+(2/3)(55/112)=37/56$."
+    ],
+    "keyIdeas": [
+      "Comparing sorted random subsets"
+    ],
+    "commonMistakes": [
+      "Using one half for the conditional win probability without removing ties."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Descending order is deterministic once the unordered subset is selected.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p17",
+    "problemId": "amc12a-2010-p17",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The two positive side ratios satisfy $r^2-6r+1=0$.",
+    "detailedSteps": [
+      "Each exterior angle is sixty degrees. The three chords $AC,CE,EA$ therefore have equal squared length $1+r+r^2$, so triangle $ACE$ is equilateral with area $\\sqrt3(1+r+r^2)/4$.",
+      "The three removed corner triangles $ABC,CDE,EFA$ each have area $\\sqrt3r/4$. Thus the hexagon area is $\\sqrt3(1+4r+r^2)/4$.",
+      "The seventy-percent condition gives $10(1+r+r^2)=7(1+4r+r^2)$, or $r^2-6r+1=0$. Its positive roots are $3\\pm2\\sqrt2$, whose sum is six."
+    ],
+    "keyIdeas": [
+      "Alternating sides in an equiangular hexagon"
+    ],
+    "commonMistakes": [
+      "Replacing the equiangular hexagon by a regular one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equiangular does not require all sides equal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p18",
+    "problemId": "amc12a-2010-p18",
+    "finalAnswer": "$\\boxed{1698}$ (choice D)",
+    "shortExplanation": "There are eight hundred forty-nine paths around each side of the obstacle.",
+    "detailedSteps": [
+      "An admissible path first reaches $y=2$ either at $x\\le-2$ or at $x\\ge2$: the other integer x values would place its preceding point inside the forbidden square. The first class goes around the upper-left side; by reflection in $y=x$, the other class has the same count.",
+      "For the upper-left class, the first point at height two has $x=-4+j$, where $j=0,1,2$. Its last prefix step is upward. The prefix has six up steps and j right steps, so its count is $\\binom{5+j}{j}$.",
+      "From that point to $(4,4)$, any arrangement of $8-j$ right and two up steps is allowed, giving $\\binom{10-j}{2}$. Summing gives $45+216+588=849$. The two classes are disjoint and exhaustive, so the answer is $2\\cdot849=1698$."
+    ],
+    "keyIdeas": [
+      "Monotone paths around an excluded square"
+    ],
+    "commonMistakes": [
+      "Excluding the square boundary even though the source explicitly permits it."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Classify a path by its first crossing of an obstacle boundary height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p19",
+    "problemId": "amc12a-2010-p19",
+    "finalAnswer": "$\\boxed{45}$ (choice A)",
+    "shortExplanation": "The stopping probability is $1/(n(n+1))$.",
+    "detailedSteps": [
+      "To reach box n, Isabella must first choose a white marble in each earlier box. This probability telescopes: $\\prod_{k=1}^{n-1}k/(k+1)=1/n$.",
+      "Choosing the red marble at box n has probability $1/(n+1)$, giving $P(n)=1/(n(n+1))$.",
+      "The strict inequality requires $n(n+1)>2010$. Since $44\\cdot45=1980$ and $45\\cdot46=2070$, the least index is forty-five."
+    ],
+    "keyIdeas": [
+      "A telescoping survival probability"
+    ],
+    "commonMistakes": [
+      "Using only the red probability at box n and forgetting survival through the earlier boxes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Every earlier draw must have been white.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p20",
+    "problemId": "amc12a-2010-p20",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The factor pair fifteen and one hundred thirty-four attains the maximum.",
+    "detailedSteps": [
+      "Let $q=n-1$, and let the two positive integer differences be $d\\le e$. Then $(1+qd)(1+qe)=2010$, so $q$ divides $2009=7^2\\cdot41$.",
+      "Both factors are at least $q+1$, giving $q\\le43$. The only positive divisors of 2009 in that range are $1,7,41$. If $q=41$, the smaller factor would have to be 42, 43, or 44, none of which divides 2010.",
+      "For $q=7$, take factors $15,134$, so $d=2,e=19$. These produce integer arithmetic sequences meeting every condition and $n=q+1=8$, the maximum."
+    ],
+    "keyIdeas": [
+      "A common arithmetic index in two factor sequences"
+    ],
+    "commonMistakes": [
+      "Choosing a large divisor of 2009 without checking that two suitable factors of 2010 exist."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same index puts both terms in one residue class.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p21",
+    "problemId": "amc12a-2010-p21",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The difference from the line is a squared cubic.",
+    "detailedSteps": [
+      "The polynomial minus the line is monic of degree six and nonnegative everywhere. Each of its three distinct real zeros has even multiplicity, so all have multiplicity two. Thus the difference is $(x^3-s_1x^2+s_2x-s_3)^2$.",
+      "Comparing coefficients of $x^5,x^4,x^3$ gives $s_1=5,s_2=2,s_3=-8$. The cubic is $x^3-5x^2+2x+8=(x-4)(x-2)(x+1)$.",
+      "The intersections are $-1,2,4$, and the largest is four. A valid realization is $a=-76,b=-32,c=-64$, making the difference exactly this square."
+    ],
+    "keyIdeas": [
+      "A nonnegative sixth-degree polynomial with three zeros"
+    ],
+    "commonMistakes": [
+      "Allowing a simple real root of a polynomial that is nonnegative on both sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The global above-line condition forces even multiplicities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p22",
+    "problemId": "amc12a-2010-p22",
+    "finalAnswer": "$\\boxed{49}$ (choice A)",
+    "shortExplanation": "The weights on either side of the minimizing interval are both 3570.",
+    "detailedSteps": [
+      "For every real x, bound the first eighty-four terms by $|kx-1|\\ge1-kx$ and the remaining thirty-five terms by $|kx-1|\\ge kx-1$.",
+      "The coefficient sums are $1+\\cdots+84=3570$ and $85+\\cdots+119=3570$, so their x terms cancel. This gives $f(x)\\ge84-35=49$.",
+      "Every inequality is an equality when $1/85\\le x\\le1/84$. Hence the lower bound is attained, and the minimum is forty-nine."
+    ],
+    "keyIdeas": [
+      "A sharp signed lower bound for absolute values"
+    ],
+    "commonMistakes": [
+      "Assuming the ordinary unweighted median minimizes a sum with different coefficients."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A signed supporting bound avoids differentiating a piecewise linear function.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p23",
+    "problemId": "amc12a-2010-p23",
+    "finalAnswer": "$\\boxed{12}$ (choice A)",
+    "shortExplanation": "The surviving integer is zero modulo four and twelve modulo twenty-five.",
+    "detailedSteps": [
+      "The valuations are $v_5(90!)=18+3=21$ and $v_2(90!)=45+22+11+5+2+1=86$. After removing twenty-one factors of ten, the remaining integer is $2^{65}U$, where U is the product of 1 through 90 with every factor of two and five removed.",
+      "For the nine consecutive ten-number blocks, the U residues modulo twenty-five are $17,13,1,11,14,11,9,1,1$. Their product is sixteen. Since $2^{65}\\equiv2^5\\equiv7\\pmod{25}$, the remaining factorial is $7\\cdot16\\equiv12\\pmod{25}$.",
+      "It is divisible by four. Among the residues $12,37,62,87$ modulo one hundred, only twelve is divisible by four. Thus the last two nonzero digits form 12."
+    ],
+    "keyIdeas": [
+      "Removing factorial zeros before taking two digits"
+    ],
+    "commonMistakes": [
+      "Reducing the original factorial modulo one hundred before removing trailing zeros."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Modulo twenty-five and modulo four combine without dividing a noninvertible residue.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p24",
+    "problemId": "amc12a-2010-p24",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "Twelve of the twenty-two zero-separated intervals have positive product.",
+    "detailedSteps": [
+      "The distinct zeros in $[0,1]$, in order, are $0,1/8,1/7,1/6,1/5,1/4,2/7,1/3,3/8,2/5,3/7,1/2,4/7,3/5,5/8,2/3,5/7,3/4,4/5,5/6,6/7,7/8,1$.",
+      "On each open interval the product sign is constant. At a reduced zero with denominator q, exactly $\\lfloor8/q\\rfloor$ factors vanish, so the sign flips precisely when that number is odd. Starting positive just right of zero, the signs of the first eleven intervals are $+,-,+,-,+,+,-,-,+,-,+$.",
+      "The other eleven signs occur in reverse order because replacing x by 1-x multiplies the eight factors’ signs by $(-1)^{1+2+\\cdots+8}=1$. Thus six positive intervals in each half give twelve. All zero endpoints are excluded even when the sign does not flip."
+    ],
+    "keyIdeas": [
+      "Signs between zeros of a sine product"
+    ],
+    "commonMistakes": [
+      "Joining two positive intervals across a zero where the logarithm is undefined."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm requires a positive product, with all zeros excluded.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2010-p25",
+    "problemId": "amc12a-2010-p25",
+    "finalAnswer": "$\\boxed{568}$ (choice C)",
+    "shortExplanation": "Burnside’s lemma counts the admissible four-side necklaces.",
+    "detailedSteps": [
+      "A positive ordered side list with perimeter thirty-two forms a nondegenerate convex cyclic quadrilateral exactly when every side is less than sixteen. To see sufficiency and uniqueness, with sides $a,b,c,d$ in order set $\\cos B=(a^2+b^2-c^2-d^2)/(2(ab+cd))$. The strict polygon inequalities put this cosine in $(-1,1)$; the two triangles sharing diagonal AC then have supplementary opposite angles, determining the cyclic quadrilateral up to reflection.",
+      "There are $\\binom{31}{3}=4495$ positive ordered compositions. A specified side of at least sixteen occurs in $\\binom{16}{3}=560$ of them. Two such sides cannot coexist, so the admissible ordered count is $4495-4\\cdot560=2255$.",
+      "Rotation by one or three positions fixes only $(8,8,8,8)$. Rotation by two positions fixes $(a,b,a,b)$ with $a+b=16$, giving fifteen choices. Burnside’s lemma therefore gives $(2255+1+15+1)/4=568$.",
+      "Reflections are not identified by the source equivalence. Reversing a cyclic side order is consequently counted separately unless it is already the same order under a rotation. Choosing counterclockwise order for each quadrilateral makes the rotation-orbit count agree with the stated geometric equivalence."
+    ],
+    "keyIdeas": [
+      "Cyclic side sequences counted by rotations"
+    ],
+    "commonMistakes": [
+      "Dividing by eight and incorrectly treating reflection as allowed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The existence criterion and the exact allowed symmetries are both necessary for the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

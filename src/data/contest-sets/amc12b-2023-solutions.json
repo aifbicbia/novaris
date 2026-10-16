@@ -1,0 +1,516 @@
+[
+  {
+    "id": "solution-amc12b-2023-p1",
+    "problemId": "amc12b-2023-p1",
+    "finalAnswer": "$\\boxed{\\frac16}$ (choice C)",
+    "shortExplanation": "A transfer of one sixth from each full glass balances every glass.",
+    "detailedSteps": [
+      "Let each transfer have size t. Each original full glass then holds $1-t$, while the last holds $1/3+3t$. Equating them gives $4t=2/3$, so t=1/6. All four resulting amounts equal 5/6 of a glass."
+    ],
+    "keyIdeas": [
+      "Equalize the giver and receiver amounts"
+    ],
+    "commonMistakes": [
+      "Dividing the shortage by three without accounting for the decrease in the other glasses."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The receiver gains three transfers while each giver loses one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p2",
+    "problemId": "amc12b-2023-p2",
+    "finalAnswer": "$\\boxed{50}$ (choice B)",
+    "shortExplanation": "The discounted, taxed price is eighty-six percent of the original.",
+    "detailedSteps": [
+      "A dollar of original price becomes $\\tfrac45\\cdot\\tfrac{43}{40}=43/50$ dollars after the stated discount and tax. The affordability condition is $(43/50)p\\le43$, giving $p\\le50$. Equality costs exactly 43 dollars, so the maximum original price is 50 dollars."
+    ],
+    "keyIdeas": [
+      "Undo successive price multipliers"
+    ],
+    "commonMistakes": [
+      "Adding the discount and tax percentages when they apply successively to different amounts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Successive percentage changes multiply.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p3",
+    "problemId": "amc12b-2023-p3",
+    "finalAnswer": "$\\boxed{\\frac{25}{169}}$ (choice D)",
+    "shortExplanation": "The ratio is the square of the two hypotenuse lengths.",
+    "detailedSteps": [
+      "A right angle inscribed in a circle subtends a diameter. Thus the two radii are 5/2 and 13/2. Their area ratio is $(5/2)^2/(13/2)^2=25/169$."
+    ],
+    "keyIdeas": [
+      "The hypotenuse is the circle diameter"
+    ],
+    "commonMistakes": [
+      "Using a leg rather than the hypotenuse as the diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The right-angle condition identifies the diameter immediately.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p4",
+    "problemId": "amc12b-2023-p4",
+    "finalAnswer": "$\\boxed{1625}$ (choice C)",
+    "shortExplanation": "The strip is sixty-five hundredths of a centimeter wide.",
+    "detailedSteps": [
+      "The width is $6.5/10=0.65$ centimeters and the length is $25\\cdot100=2500$ centimeters. Multiplying gives $0.65\\cdot2500=1625$ square centimeters."
+    ],
+    "keyIdeas": [
+      "Use one consistent length unit"
+    ],
+    "commonMistakes": [
+      "Converting only one of the two perpendicular lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Area conversions square the length conversion factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p5",
+    "problemId": "amc12b-2023-p5",
+    "finalAnswer": "$\\boxed{4}$ (choice C)",
+    "shortExplanation": "Four guesses suffice, and three cannot guarantee success.",
+    "detailedSteps": [
+      "Guess the four squares of the smaller color class in a checkerboard coloring of the nine cells. Every horizontal or vertical domino covers one square of each color, so at least one of these four guesses succeeds.",
+      "For the lower bound, label rows and columns 1 through 3. The four placements {(1,1),(1,2)}, {(1,3),(2,3)}, {(2,1),(2,2)}, {(3,1),(3,2)} are pairwise disjoint legal domino placements. A guessed square can rule out at most one of these placements. Even an adaptive strategy can receive three negative answers while at least one placement remains possible.",
+      "Thus a guarantee requires at least four turns, and the checkerboard strategy attains four."
+    ],
+    "keyIdeas": [
+      "A matching lower bound and a checkerboard strategy"
+    ],
+    "commonMistakes": [
+      "Ignoring that a guarantee must handle the all-negative-answer branch of an adaptive strategy."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A disjoint family of hidden possibilities provides a lower bound on information from misses.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p6",
+    "problemId": "amc12b-2023-p6",
+    "finalAnswer": "$\\boxed{6}$ (choice C)",
+    "shortExplanation": "The positive intervals have left-root indices one, two, five, six, nine and ten.",
+    "detailedSteps": [
+      "On the interval between k and k+1, for k=0 through 10 with exterior intervals understood, the factors with indices greater than k are negative. The sign is $(-1)^{55-k(k+1)/2}$, since $1+\\cdots+10=55$.",
+      "This exponent is even for k=1,2,5,6,9,10 and odd for the other five indices. Thus exactly six of the eleven intervals have positive P. The sign stays constant within each interval because there is no root inside it."
+    ],
+    "keyIdeas": [
+      "Parity of the negative-factor exponents"
+    ],
+    "commonMistakes": [
+      "Counting all ten roots as sign changes despite the even multiplicities."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Only odd multiplicity changes a polynomial's sign.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p7",
+    "problemId": "amc12b-2023-p7",
+    "finalAnswer": "$\\boxed{901}$ (choice E)",
+    "shortExplanation": "The allowed integers are one and those from one hundred through nine hundred ninety-nine.",
+    "detailedSteps": [
+      "The logarithms require n>0. Put $t=\\log_{10}n$. The radicand is $t(2-t)/(t-3)$, with t=3 excluded. For positive integers n, $t\\ge0$.",
+      "It is nonnegative at t=0 and throughout $2\\le t<3$, and negative for $0<t<2$ and t>3. Therefore n=1 or $100\\le n<1000$.",
+      "There are $999-100+1=900$ integers in the latter interval, plus 1, for a total of 901."
+    ],
+    "keyIdeas": [
+      "A logarithm sign chart with an excluded denominator"
+    ],
+    "commonMistakes": [
+      "Including n=1000, where the denominator is zero, or accepting negative n from the squared logarithm argument."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm itself, not just log of n squared, determines the domain.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p8",
+    "problemId": "amc12b-2023-p8",
+    "finalAnswer": "$\\boxed{144}$ (choice D)",
+    "shortExplanation": "The six possible minimum values give six binomial counts.",
+    "detailedSteps": [
+      "If the minimum is k, the subset has k elements and contains k. Its other k-1 elements are chosen from k+1 through 12, giving $\\binom{12-k}{k-1}$. The minimum cannot be 0 because the subset is nonempty, and k>=7 leaves too few larger elements.",
+      "For k=1 through 6, the counts are 1,10,36,56,35,6. Their sum is 144."
+    ],
+    "keyIdeas": [
+      "Condition on the least selected element"
+    ],
+    "commonMistakes": [
+      "Allowing zero as the minimum of a nonempty subset whose cardinality would then be zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The minimum determines both the subset size and the available larger elements.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p9",
+    "problemId": "amc12b-2023-p9",
+    "finalAnswer": "$\\boxed{8}$ (choice B)",
+    "shortExplanation": "Each quadrant contributes a diamond of area two.",
+    "detailedSteps": [
+      "In the first quadrant, the condition is $|x-1|+|y-1|\\le1$. This is the diamond with vertices (0,1),(1,0),(2,1),(1,2), of area 2.",
+      "Reflection in each coordinate axis produces the other three congruent diamonds. They meet only at axis boundary points, so their areas add without overlap. The total area is $4\\cdot2=8$."
+    ],
+    "keyIdeas": [
+      "Four diamonds with disjoint interiors"
+    ],
+    "commonMistakes": [
+      "Filling the gaps between the four diamonds as though the region were one large diamond."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer absolute values permit an exact quadrant decomposition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p10",
+    "problemId": "amc12b-2023-p10",
+    "finalAnswer": "$\\boxed{\\frac25}$ (choice E)",
+    "shortExplanation": "The common chord lies on the radical axis.",
+    "detailedSteps": [
+      "The centers are (4,0) and (0,10). Their equations simplify to $x^2+y^2=8x$ and $x^2+y^2=20y$. Subtracting gives $8x=20y$, so both intersection points lie on $y=(2/5)x$.",
+      "One point is the origin; substitution gives the other as $(200/29,80/29)$. The two points are distinct and their connecting line has slope 2/5."
+    ],
+    "keyIdeas": [
+      "Subtract the two circle equations"
+    ],
+    "commonMistakes": [
+      "Using the slope between the centers instead of the perpendicular common-chord line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting circle equations removes the shared quadratic terms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p11",
+    "problemId": "amc12b-2023-p11",
+    "finalAnswer": "$\\boxed{\\frac32}$ (choice D)",
+    "shortExplanation": "The short base is root two at the maximum.",
+    "detailedSteps": [
+      "Let the short base be b and the long base 2b. An isosceles leg projects horizontally by b/2, so the height is $\\sqrt{1-b^2/4}$. Put t=b/2, with 0<t<1.",
+      "The area is $3t\\sqrt{1-t^2}$. The inequality $t^2(1-t^2)\\le1/4$ follows from $(t^2-1/2)^2\\ge0$, so the area is at most 3/2.",
+      "Equality occurs at $t=1/\\sqrt2$, giving $b=\\sqrt2$ and height $1/\\sqrt2$. This is an actual trapezoid with both legs 1, so the maximum is attained."
+    ],
+    "keyIdeas": [
+      "Balance the base and height contributions"
+    ],
+    "commonMistakes": [
+      "Increasing the bases while holding the height fixed despite the fixed leg length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An elementary square inequality proves the global maximum without calculus.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p12",
+    "problemId": "amc12b-2023-p12",
+    "finalAnswer": "$\\boxed{5\\sqrt2}$ (choice E)",
+    "shortExplanation": "The new operation forces the imaginary component square to be forty.",
+    "detailedSteps": [
+      "Write $z=a+bi$. The definition gives $z\\otimes z=a^2+b^2i$, whereas $z^2+40=(a^2-b^2+40)+2abi$.",
+      "The real parts imply b²=40, so b≠0. The imaginary parts imply b²=2 ab, hence a=b/2. Thus $|z|^2=a^2+b^2=10+40=50$, giving $|z|=5\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Compare real and imaginary parts of the defined operation"
+    ],
+    "commonMistakes": [
+      "Treating the newly defined operation as ordinary complex multiplication."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two component equations determine the modulus even though z has two possibilities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p13",
+    "problemId": "amc12b-2023-p13",
+    "finalAnswer": "$\\boxed{\\frac94}$ (choice D)",
+    "shortExplanation": "The edge sum and face-area sum already determine the diagonal.",
+    "detailedSteps": [
+      "The edge total gives $a+b+c=13/4$, and the face-area total gives $ab+bc+ca=11/4$. Therefore $a^2+b^2+c^2=(13/4)^2-2(11/4)=81/16$.",
+      "Every opposite-vertex interior diagonal has this squared length, so the answer is 9/4. The data are consistent: edge lengths 1/4,1,2 are distinct and satisfy the specified volume 1/2 as well."
+    ],
+    "keyIdeas": [
+      "The squared diagonal is a symmetric expression"
+    ],
+    "commonMistakes": [
+      "Using the longest edge instead of the space diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetric sums often supply a diagonal length without solving for individual edges.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p14",
+    "problemId": "amc12b-2023-p14",
+    "finalAnswer": "$\\boxed{5}$ (choice A)",
+    "shortExplanation": "Distinctness leaves five unordered root triples.",
+    "detailedSteps": [
+      "For three integer roots r,s,t, their product must be -6. The possible unordered absolute-value patterns are (1,1,6) and (1,2,3).",
+      "The first allows only roots (-1,1,6): equal signs on the repeated absolute value would repeat a root. The second allows four sign patterns with an odd number of negatives: (-1,2,3),(1,-2,3),(1,2,-3),(-1,-2,-3).",
+      "Each root triple determines one coefficient pair $a=-(r+s+t)$ and $b=rs+rt+st$. These pairs are (-6,-1),(-4,1),(-2,-5),(0,-7),(6,11), all distinct. Hence there are five ordered coefficient pairs."
+    ],
+    "keyIdeas": [
+      "Enumerate signed integer root triples"
+    ],
+    "commonMistakes": [
+      "Counting permutations of the roots as different coefficient pairs, or allowing repeated roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The constant coefficient bounds the possible integer roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p15",
+    "problemId": "amc12b-2023-p15",
+    "finalAnswer": "$\\boxed{\\text{II and III only}}$ (choice E)",
+    "shortExplanation": "Coprimality of c requires both of the other coprimality conditions.",
+    "detailedSteps": [
+      "The equation gives c=15a+14b. Since 14 and 15 are coprime, $\\gcd(c,14)=\\gcd(a,14)$ and $\\gcd(c,15)=\\gcd(b,15)$.",
+      "Thus $\\gcd(c,210)=1$ holds exactly when both right-hand gcds are 1. Statement III is true, and it also implies II.",
+      "Statement I is false: a=1,b=3 gives c=57. Here gcd(a,14)=1 but gcd(c,210)=3. Therefore only II and III are necessarily true."
+    ],
+    "keyIdeas": [
+      "Separate the two coprime denominator factors"
+    ],
+    "commonMistakes": [
+      "Replacing the needed conjunction of two coprimality conditions by an inclusive or."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coprimality with a product of coprime integers requires coprimality with each factor.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p16",
+    "problemId": "amc12b-2023-p16",
+    "finalAnswer": "$\\boxed{11}$ (choice D)",
+    "shortExplanation": "Twenty-nine is the largest unattainable amount.",
+    "detailedSteps": [
+      "The numbers 30,31,32,33,34,35 can respectively be formed as $5\\cdot6$, $15+10+6$, $2\\cdot10+2\\cdot6$, $15+3\\cdot6$, $10+4\\cdot6$, and $15+2\\cdot10$. Adding six repeatedly proves that every amount at least 30 is attainable.",
+      "To make 29, there can be zero or one 15-coin. With zero, the sum of 6- and 10-coins is even and cannot be 29. With one, the remaining 14 is not 6a+10b for nonnegative integers: b=0 or 1 leaves 14 or 4, neither divisible by 6.",
+      "Thus 29 is impossible and is the largest impossible amount. Its digit sum is 2+9=11."
+    ],
+    "keyIdeas": [
+      "Exhaust the six residue classes"
+    ],
+    "commonMistakes": [
+      "Stopping after checking a finite upper interval without explaining why all larger amounts are representable."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Six consecutive successes extend indefinitely by the smallest coin.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p17",
+    "problemId": "amc12b-2023-p17",
+    "finalAnswer": "$\\boxed{15\\sqrt3}$ (choice E)",
+    "shortExplanation": "The side lengths are six, ten and fourteen.",
+    "detailedSteps": [
+      "Write the sides as 6,6+d,6+2d with d>0. The 120-degree angle is opposite the largest side. The law of cosines gives $(6+2d)^2=6^2+(6+d)^2+6(6+d)$.",
+      "This simplifies to $d^2+2d-24=(d-4)(d+6)=0$. Only d=4 is positive, giving sides 6,10,14.",
+      "The area is $\\tfrac12\\cdot6\\cdot10\\sin120^\\circ=15\\sqrt3$. The side lengths satisfy the strict triangle inequality."
+    ],
+    "keyIdeas": [
+      "The obtuse angle is opposite the largest progression term"
+    ],
+    "commonMistakes": [
+      "Placing the 120-degree angle opposite one of the smaller sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A triangle's largest angle is opposite its largest side.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p18",
+    "problemId": "amc12b-2023-p18",
+    "finalAnswer": "$\\boxed{\\text{Yolanda exceeds Zelda by 22 points}}$ (choice A)",
+    "shortExplanation": "The year-average difference is strictly between minus fifteen and twenty-one.",
+    "detailedSteps": [
+      "Let Zelda's first-semester average be s. The four semester averages are Zelda s and s+18, Yolanda s+3 and s+21. Let $\\alpha$ and $\\beta$ be the fractions of each student's quizzes taken in the second semester, with $0<\\alpha,\\beta<1$.",
+      "The year averages differ by $(s+3+18\\alpha)-(s+18\\beta)=3+18(\\alpha-\\beta)$, which lies strictly between -15 and 21. A difference of 22 is impossible.",
+      "The other statements have witnesses. Taking $\\alpha=1/4$, $\\beta=3/4$ makes Zelda higher. Taking $\\alpha=\\beta$ gives a three-point Yolanda advantage and also makes adding 3 to every Zelda score equalize the year averages. Taking $\\alpha=1/3$, $\\beta=1/2$ makes the year averages equal. Rational weights can be realized by positive integral quiz counts."
+    ],
+    "keyIdeas": [
+      "Semester quiz counts supply different weights"
+    ],
+    "commonMistakes": [
+      "Averaging the two semester means equally despite unequal numbers of quizzes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same per-semester advantage can reverse after different weighting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p19",
+    "problemId": "amc12b-2023-p19",
+    "finalAnswer": "$\\boxed{\\frac14}$ (choice E)",
+    "shortExplanation": "The exact probability differs from one quarter by an exponentially tiny amount.",
+    "detailedSteps": [
+      "Use the standard contest model in which each ball independently chooses one of the three bins uniformly. Let N_j be the count in bin j. The all-odd indicator is $\\prod_{j=1}^3(1-(-1)^{N_j})/8$.",
+      "For any k specified bins, the expectation of $(-1)^{\\text{their total count}}$ is $(1-2k/3)^{2023}$. Expanding the indicator gives $\\tfrac18[1-3(1/3)^{2023}+3(-1/3)^{2023}-(-1)^{2023}]$.",
+      "Since 2023 is odd, this equals $1/4-3/(4\\cdot3^{2023})$. The correction is smaller than 1/100, so among the listed values the nearest is 1/4. The printed wording leaves uniform independent assignment implicit; this conventional probability model is stated here explicitly."
+    ],
+    "keyIdeas": [
+      "Parity indicators isolate the all-odd assignment event"
+    ],
+    "commonMistakes": [
+      "Treating the three parity events as independent, which would give one eighth."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "With an odd total, only parity patterns containing one or three odd bins are possible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p20",
+    "problemId": "amc12b-2023-p20",
+    "finalAnswer": "$\\boxed{\\frac{2\\arcsin(1/4)}{\\pi}}$ (choice E)",
+    "shortExplanation": "The successful second directions form an arc centered opposite the first jump.",
+    "detailedSteps": [
+      "Use independent uniformly random directions, the standard continuous-angle interpretation of this probability question. By rotational symmetry fix the first jump along the positive x-axis, and let $\\theta$ be the second jump's relative angle.",
+      "The final distance is $\\sqrt{8+8\\cos\\theta}=4|\\cos(\\theta/2)|$. It is below 1 exactly when $|\\theta-\\pi|<2\\arcsin(1/4)$ modulo a full turn.",
+      "The favorable angle length is $4\\arcsin(1/4)$ out of 2π, giving $2\\arcsin(1/4)/\\pi$. Boundary directions have probability zero. The source leaves the uniform independent directions implicit; they are the model used here."
+    ],
+    "keyIdeas": [
+      "The relative jump angle is uniform"
+    ],
+    "commonMistakes": [
+      "Using a uniform final distance instead of a uniform direction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relative angle, rather than either absolute direction, determines the return distance.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p21",
+    "problemId": "amc12b-2023-p21",
+    "finalAnswer": "$\\boxed{6\\sqrt3+\\pi}$ (choice E)",
+    "shortExplanation": "The direct chord would leave the lampshade surface.",
+    "detailedSteps": [
+      "The frustum's radii are 3 and 6, and its height is 3√3, giving slant height 6. Extending to the cone apex shows that the upper and lower rims have slant radii 6 and 12. The developed surface is an annular sector with radii 6,12 and angular width $\\pi$, because its outer arc length is 12π.",
+      "The honey is opposite the bug around the original cone, so its closest developed lifts have angular separation $\\pi/2$. A direct chord between radii 12 and 6 at that separation has length 6√5, but its line comes within $12/\\sqrt5<6$ of the apex. It crosses the missing inner disk and is inadmissible.",
+      "The shortest allowed curve outside a circular obstacle consists of a straight tangent to the obstacle followed by its boundary arc to the target on that circle. Here the tangent length is $\\sqrt{12^2-6^2}=6\\sqrt3$, and its angular advance is $\\arccos(6/12)=\\pi/3$. The remaining advance $\\pi/6$ contributes an arc of length $\\pi$.",
+      "For completeness, straight portions of any shortest curve must be line segments; any bend away from the obstacle can be shortened. First contact must be tangent, or a small displacement shortens the incoming segment plus arc. Between contacts the circle's shorter boundary arc is shortest outside the disk. A path with additional winding has greater absolute angular advance than $\\pi/2$, and thus adds boundary-arc length after the same tangent. Both nearest lifts give the same admissible path.",
+      "The total is $6\\sqrt3+\\pi$ inches. The tangent and arc stay between developed radii 6 and 12, so the path lies entirely on the allowed frustum."
+    ],
+    "keyIdeas": [
+      "A tangent segment followed by an inner-boundary arc"
+    ],
+    "commonMistakes": [
+      "Using the chord 6√5 without checking that it crosses the excluded inner disk."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Geodesics on a cone become planar paths, but the truncated apex remains a genuine obstacle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p22",
+    "problemId": "amc12b-2023-p22",
+    "finalAnswer": "$\\boxed{-2}$ (choice E)",
+    "shortExplanation": "The identity forces f at one to be at least minus one.",
+    "detailedSteps": [
+      "If f is identically zero, then f(1)=0. Otherwise set b=0: $2f(a)=2f(a)f(0)$ forces f(0)=1 because at least one f(a) is nonzero.",
+      "Then take a=b=1/2. The identity gives $f(1)+1=2f(1/2)^2\\ge0$, so $f(1)\\ge-1$. Therefore -2 cannot occur.",
+      "The other listed values are achievable. For f(1)=0 or -1, use $f(x)=\\cos(\\pi x/2)$ or $\\cos(\\pi x)$. For 1 use the constant function 1. For 2 use $f(x)=\\cosh(tx)$ with $t=\\ln(2+\\sqrt3)$. The cosine and hyperbolic-cosine addition identities verify the required relation for all real a,b."
+    ],
+    "keyIdeas": [
+      "A half-argument identity bounds every function value"
+    ],
+    "commonMistakes": [
+      "Assuming continuity or classifying every possible function when one half-argument identity suffices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A real square supplies a bound without any regularity assumption on f.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p23",
+    "problemId": "amc12b-2023-p23",
+    "finalAnswer": "$\\boxed{11}$ (choice A)",
+    "shortExplanation": "The number of products is one half of n plus one squared times n plus two.",
+    "detailedSteps": [
+      "Each product has unique form $2^a3^b5^c$. Exactly c dice must show 5. Put m=n-c. Among the remaining m dice, b can be any integer from 0 to m. For fixed b, those b dice show 3 or 6; the others show 1,2 or 4.",
+      "The exponent a can attain every integer from 0 to $b+2(m-b)=2m-b$. This follows because the first group contributes every integer 0 through b, and the other group every integer 0 through 2(m-b). Thus the number for fixed m is $\\sum_{b=0}^m(2m-b+1)=(m+1)(3m+2)/2$.",
+      "Summing over m=0 through n gives $(n+1)^2(n+2)/2$. This is strictly increasing for nonnegative n. At n=11 it is $12^2\\cdot13/2=936$, so the unique answer is 11."
+    ],
+    "keyIdeas": [
+      "Count feasible prime-exponent triples"
+    ],
+    "commonMistakes": [
+      "Counting ordered dice outcomes rather than distinct products, or assuming prime exponents vary independently without the dice-count constraint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Unique prime factorization converts distinct products into a constrained lattice count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p24",
+    "problemId": "amc12b-2023-p24",
+    "finalAnswer": "$\\boxed{3}$ (choice C)",
+    "shortExplanation": "The common minimum exponents are zero, one and zero.",
+    "detailedSteps": [
+      "Treat each prime separately. For 2, the exponent of a must be 3 because every pair involving a has maximum 3, while b,c,d are bounded by 2. The pair bc has maximum 1, so $b,c\\le1$; the pairs bd,cd have maximum 2, so d=2. The total 6 forces b+c=1, giving minimum exponent 0.",
+      "For 3, $a,b\\le2$ and their maximum is 2. Both c and d must be 3 because their pairs with a and b have maximum 3. The total 9 gives a+b=3, so those two exponents are 1 and 2. The minimum is 1.",
+      "For 5, a must be 3 while $b,c,d\\le2$. Every pair among b,c,d has maximum 2, so at least two of them are 2. Their total is 7-3=4, forcing exactly two 2s and one 0. The minimum is 0.",
+      "Therefore the common gcd is $2^0\\cdot3^1\\cdot5^0=3$. The product constraint excludes any other prime. Each exponent pattern is attainable; choosing one pattern for each prime constructs actual positive integers satisfying all relations."
+    ],
+    "keyIdeas": [
+      "Pairwise least-common multiples reveal exponent maxima"
+    ],
+    "commonMistakes": [
+      "Using minima for lcm or maxima for gcd."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prime exponents separate the conditions into three small exact systems.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12b-2023-p25",
+    "problemId": "amc12b-2023-p25",
+    "finalAnswer": "$\\boxed{\\sqrt5-1}$ (choice B)",
+    "shortExplanation": "The area is reduced by the reciprocal golden ratio squared.",
+    "detailedSteps": [
+      "Let R be the original circumradius and O its center. Folding a vertex V to O uses the perpendicular bisector of OV, at distance R/2 from O. These five equally spaced fold lines bound the stated smaller regular pentagon, whose apothem is R/2.",
+      "The original apothem is $R\\cos36^\\circ$, so the ratio of corresponding lengths is $1/(2\\cos36^\\circ)$. The exact value $\\cos36^\\circ=(1+\\sqrt5)/4$ gives the squared ratio $(3-\\sqrt5)/2$.",
+      "Multiplying the original area yields $(\\sqrt5+1)(3-\\sqrt5)/2=\\sqrt5-1$. The folding produces a pentagon rotated relative to the original, but rotation does not change the similarity area ratio."
+    ],
+    "keyIdeas": [
+      "The fold lines give the new pentagon apothem"
+    ],
+    "commonMistakes": [
+      "Squaring the apothem ratio incorrectly or using the side midpoint crease for a different fold."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fold mapping a point to another point is perpendicular to the segment joining them.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

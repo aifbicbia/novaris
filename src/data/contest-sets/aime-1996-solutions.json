@@ -1,0 +1,324 @@
+[
+  {
+    "id": "solution-aime-1996-p1",
+    "problemId": "aime-1996-p1",
+    "finalAnswer": "$\\boxed{200}$",
+    "shortExplanation": "The center is 105 and the common sum 315, giving $x=200$.",
+    "detailedSteps": [
+      "Let the common sum be $M$ and the center be $e$. Adding the central row, central column and both diagonals counts every entry once and the center three extra times. The sum of all entries is $3M$, so $4M=3M+3e$, giving $M=3e$.",
+      "The first column has bottom entry $M-x-1$. Since the top row is $M=x+19+96=x+115$, that bottom entry is 114.",
+      "The opposite diagonal gives $96+e+114=M=3e$, hence $e=105,M=315$. The top row then gives $x=315-115=200$."
+    ],
+    "keyIdeas": [
+      "The center of a three-by-three magic square"
+    ],
+    "commonMistakes": [
+      "Misreading the source positions of 1,19,and 96."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The center is one third of the magic sum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p2",
+    "problemId": "aime-1996-p2",
+    "finalAnswer": "$\\boxed{340}$",
+    "shortExplanation": "The four allowed blocks have sizes 4,16,64,and 256.",
+    "detailedSteps": [
+      "The positive even values of the logarithm floor below 1000 are $2,4,6,8$. Value j occurs precisely for $2^j\\le n<2^{j+1}$, a block of $2^j$ integers.",
+      "All four complete blocks lie below 1000, and no larger even floor is possible. Their total is $4+16+64+256=340$."
+    ],
+    "keyIdeas": [
+      "Even binary-logarithm blocks"
+    ],
+    "commonMistakes": [
+      "Including floor zero even though it must be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each logarithm-floor block doubles at the next exponent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p3",
+    "problemId": "aime-1996-p3",
+    "finalAnswer": "$\\boxed{044}$",
+    "shortExplanation": "There are exactly $(n+1)^2$ terms, first reaching 1996 at $n=44$.",
+    "detailedSteps": [
+      "The source expression factors as $(x+7)(y-3)$. Its nth power is $(x+7)^n(y-3)^n$.",
+      "Each factor has n+1 nonzero coefficients. Each choice of powers $x^iy^j$, with $0\\le i,j\\le n$, arises from one product of coefficients, so none cancel; there are $(n+1)^2$ distinct terms.",
+      "Since $44^2=1936<1996\\le2025=45^2$, the least n is 44."
+    ],
+    "keyIdeas": [
+      "Factoring before expanding a bivariate power"
+    ],
+    "commonMistakes": [
+      "Counting the four-term multinomial contributions before like terms are collected."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The factorization separates the two exponents.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p4",
+    "problemId": "aime-1996-p4",
+    "finalAnswer": "$\\boxed{166}$",
+    "shortExplanation": "The light is $1/6$ centimeter above the upper vertex.",
+    "detailedSteps": [
+      "Put the cube at $[0,1]^3$ and the light at $(0,0,1+x)$. Projection from the light to the plane $z=0$ enlarges the top face by the factor $(1+x)/x$.",
+      "The full footprint is the square with that side length. Projections of lower points lie inside this footprint, and the top face alone shadows every point of it. Remove the unit area directly under the cube.",
+      "Thus $((1+x)/x)^2-1=48$, so $(1+x)/x=7$ and $x=1/6$. Therefore $\\lfloor1000x\\rfloor=166$."
+    ],
+    "keyIdeas": [
+      "Projecting the top face from a vertex-aligned light"
+    ],
+    "commonMistakes": [
+      "Using the light height above the floor as x or forgetting to exclude the cube footprint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The directly-under-vertex position prevents an additional offset in the projection.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p5",
+    "problemId": "aime-1996-p5",
+    "finalAnswer": "$\\boxed{023}$",
+    "shortExplanation": "The product of the new roots is $-23$, so the constant term is 23.",
+    "detailedSteps": [
+      "Vieta\u2019s formulas give $a+b+c=-3$, $ab+bc+ca=4$, and $abc=11$.",
+      "The identity $(a+b)(b+c)(c+a)=(a+b+c)(ab+bc+ca)-abc$ yields $(-3)(4)-11=-23$.",
+      "A monic cubic\u2019s constant term is the negative of the root product. Hence $t=23$."
+    ],
+    "keyIdeas": [
+      "The product of pairwise root sums"
+    ],
+    "commonMistakes": [
+      "Giving the product itself rather than its negative as the new constant coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A symmetric identity avoids finding any individual root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p6",
+    "problemId": "aime-1996-p6",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "The desired probability is $17/32$, giving 49.",
+    "detailedSteps": [
+      "Let U be the event that some team is undefeated, and L the event that some team is winless. Two teams cannot both be undefeated, because they play each other; likewise two cannot both be winless. Each specified team has chance $1/16$ for either record, so $P(U)=P(L)=5/16$.",
+      "For U and L together, choose their two distinct teams in twenty ordered ways. Their prescribed records fix seven different games: four involving each team, with their mutual game counted once. The other three games are unrestricted. Thus $P(U\\cap L)=20/2^7=5/32$.",
+      "The probability of neither record is $1-5/16-5/16+5/32=17/32$. The fraction is reduced, so $m+n=49$."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion for extreme tournament records"
+    ],
+    "commonMistakes": [
+      "Counting the undefeated-winless mutual game twice in the joint event."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Extreme records are individually disjoint but the two types can occur together.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p7",
+    "problemId": "aime-1996-p7",
+    "finalAnswer": "$\\boxed{300}$",
+    "shortExplanation": "Burnside\u2019s lemma gives $(1176+24)/4=300$.",
+    "detailedSteps": [
+      "The rotation group has four elements. The identity fixes all $\\binom{49}{2}=1176$ choices of the two yellow cells.",
+      "A half turn pairs the 48 noncentral cells into twenty-four pairs; each such pair is a fixed coloring. The center cannot be paired with another fixed cell, so this gives exactly 24.",
+      "Under a quarter turn, every noncentral cell has a four-element orbit and the center has a one-element orbit. No invariant subset has exactly two cells, so the two quarter turns fix zero colorings.",
+      "The orbit count is $(1176+24+0+0)/4=300$. Reflections are not included in the source equivalence."
+    ],
+    "keyIdeas": [
+      "Two-cell coloring orbits under quarter turns"
+    ],
+    "commonMistakes": [
+      "Dividing all 1176 choices by four without accounting for half-turn symmetry."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd board size contributes one center cell but no two-cell quarter-turn invariant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p8",
+    "problemId": "aime-1996-p8",
+    "finalAnswer": "$\\boxed{799}$",
+    "shortExplanation": "The shifted product has 1599 divisors, giving 799 unequal factor pairs.",
+    "detailedSteps": [
+      "Write $H=6^{20}$ and $K=H/2=2^{19}3^{20}$. The harmonic-mean equation is $2xy/(x+y)=2K$, or $(x-K)(y-K)=K^2$.",
+      "Since the harmonic mean is less than twice either positive input, both x and y exceed K. Thus the shifted factors are positive integers, and $x<y$ is exactly the ordering of an unequal divisor pair.",
+      "The square $K^2=2^{38}3^{40}$ has $39\\cdot41=1599$ divisors. Its only equal pair is $(K,K)$, corresponding to x=y. The remaining divisors pair into $(1599-1)/2=799$ choices."
+    ],
+    "keyIdeas": [
+      "A harmonic-mean equation becomes a divisor pair"
+    ],
+    "commonMistakes": [
+      "Reading the source exponent as the integer 620 or counting both orders despite x<y."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An even prescribed harmonic mean permits integral shifts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p9",
+    "problemId": "aime-1996-p9",
+    "finalAnswer": "$\\boxed{342}$",
+    "shortExplanation": "The first surviving locker advances on the five forward sweeps, ending at 342.",
+    "detailedSteps": [
+      "Before a sweep, the still-closed lockers form an increasing arithmetic progression of even length. A forward sweep opens entries with indices 0,2,4,... and leaves indices 1,3,5,..., so its first surviving label increases by the old spacing and the spacing doubles.",
+      "A backward sweep begins at the last entry and opens the odd indices in increasing order, leaving the even indices. Thus it leaves the first surviving label unchanged and doubles the spacing.",
+      "Ten sweeps reduce 1024 closed lockers to one. The first label begins at 1 and increases on sweeps 1,3,5,7,9 by $1,4,16,64,256$. It is therefore $1+1+4+16+64+256=342$.",
+      "The next sweep opens that sole remaining locker, making 342 the last opened. Already-open lockers are ignored throughout, as required by the source."
+    ],
+    "keyIdeas": [
+      "Alternating sweeps of the surviving locker progression"
+    ],
+    "commonMistakes": [
+      "Alternating over all locker positions instead of only the still-closed lockers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The survivor list remains an arithmetic progression after every sweep.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p10",
+    "problemId": "aime-1996-p10",
+    "finalAnswer": "$\\boxed{159}$",
+    "shortExplanation": "The equation reduces to $19x\\equiv141\\pmod{180}$, whose least positive solution is 159.",
+    "detailedSteps": [
+      "The right side is $\\tan(96^\\circ+45^\\circ)=\\tan141^\\circ$, by the tangent-addition formula. Its denominator is nonzero.",
+      "Equality of tangents holds exactly when the angles differ by an integer multiple of 180 degrees. Thus $19x\\equiv141\\pmod{180}$.",
+      "Since $19^2=361\\equiv1\\pmod{180}$, multiply by 19 to obtain $x\\equiv2679\\equiv159\\pmod{180}$. The least positive integer is 159, and its tangent is defined."
+    ],
+    "keyIdeas": [
+      "A tangent identity gives a modular angle equation"
+    ],
+    "commonMistakes": [
+      "Using a 360-degree period for tangent or assuming the two angles themselves are equal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coefficient 19 is its own modular inverse here.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p11",
+    "problemId": "aime-1996-p11",
+    "finalAnswer": "$\\boxed{276}$",
+    "shortExplanation": "The three upper-half-plane arguments are 60,72,and 144 degrees.",
+    "detailedSteps": [
+      "The polynomial factors as $(z^2-z+1)(z^4+z^3+z^2+z+1)$. The first factor has unit roots of arguments 60 and 300 degrees.",
+      "The second factor is $(z^5-1)/(z-1)$, so its roots are the nontrivial fifth roots of unity, of arguments 72,144,216,and 288 degrees.",
+      "The roots with positive imaginary part are therefore those at 60,72,and 144 degrees. Their product has modulus one and argument $60+72+144=276$ degrees, already in the required range."
+    ],
+    "keyIdeas": [
+      "Cyclotomic factorization and upper-half-plane roots"
+    ],
+    "commonMistakes": [
+      "Selecting the roots of all sixth roots of unity or including the lower-half-plane fifth roots."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring exposes the root arguments directly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p12",
+    "problemId": "aime-1996-p12",
+    "finalAnswer": "$\\boxed{058}$",
+    "shortExplanation": "The expected total is $55/3$, giving 58.",
+    "detailedSteps": [
+      "At any fixed pair of positions, the ordered values are uniformly distributed among ninety distinct ordered pairs. For a positive difference d from 1 through 9, there are $2(10-d)$ ordered pairs with absolute difference d.",
+      "Thus one pair contributes on average $\\frac2{90}\\sum_{d=1}^9d(10-d)=\\frac{330}{90}=11/3$.",
+      "There are five such terms. Linearity of expectation requires no independence between them, so their sum averages $5(11/3)=55/3$. Hence $p+q=58$."
+    ],
+    "keyIdeas": [
+      "Linearity of expectation for paired differences"
+    ],
+    "commonMistakes": [
+      "Assuming the five differences are independent instead of using linearity of expectation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Each fixed positional pair has the same marginal distribution.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p13",
+    "problemId": "aime-1996-p13",
+    "finalAnswer": "$\\boxed{065}$",
+    "shortExplanation": "The projection lies 27/19 times the median distance from A, giving area ratio 27/38.",
+    "detailedSteps": [
+      "Let M be the midpoint of BC. The median formula gives $AM^2=(2(30)+2(6)-15)/4=57/4$, while $BM^2=15/4$.",
+      "Put A at the origin and write $D=tM$, since AD is the line through the midpoint. The right angle ADB says BD is perpendicular to that line, so $t=(B\\cdot M)/|M|^2$.",
+      "The squared-distance identity gives $B\\cdot M=(AB^2+AM^2-BM^2)/2=81/4$. Therefore $t=(81/4)/(57/4)=27/19$. This is beyond M, and the segment AD still contains M, so it bisects BC as stipulated.",
+      "Triangles ADB and AMB share the altitude from B to the median line; their areas are in ratio AD/AM=t. Since AMB has half the area of ABC, the requested ratio is $27/38$, giving $m+n=65$."
+    ],
+    "keyIdeas": [
+      "Projecting a vertex onto a median extension"
+    ],
+    "commonMistakes": [
+      "Assuming D must lie inside the original triangle and discarding the actual perpendicular projection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source side lengths are square roots, so their squares enter the median calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p14",
+    "problemId": "aime-1996-p14",
+    "finalAnswer": "$\\boxed{768}$",
+    "shortExplanation": "The diagonal has 767 distinct internal grid crossings and visits 768 cube interiors.",
+    "detailedSteps": [
+      "Parameterize the diagonal by $(150t,324t,375t)$ for $0\\le t\\le1$. Interior crossings of the three families of integer-coordinate planes occur at 149,323,and 374 parameter values, respectively.",
+      "The first two families coincide at $\\gcd(150,324)-1=5$ internal parameters. The other pair counts are $\\gcd(150,375)-1=74$ and $\\gcd(324,375)-1=2$. All three coincide at $\\gcd(150,324,375)-1=2$.",
+      "Inclusion-exclusion gives $149+323+374-5-74-2+2=767$ distinct crossing times. Between each successive crossing the line lies in exactly one cube interior, and it never runs along a grid plane.",
+      "Add the first interval to obtain $767+1=768$ cube interiors. A simultaneous crossing changes cubes once, regardless of how many planes meet there."
+    ],
+    "keyIdeas": [
+      "Distinct grid-plane crossings along a space diagonal"
+    ],
+    "commonMistakes": [
+      "Counting multiple simultaneous grid-plane crossings as several extra cubes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Greatest common divisors identify coincident plane crossings.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1996-p15",
+    "problemId": "aime-1996-p15",
+    "finalAnswer": "$\\boxed{777}$",
+    "shortExplanation": "The base angle parameter is 15 degrees and the requested ratio is 7/9.",
+    "detailedSteps": [
+      "Let $\\alpha=\\angle DBA$. Then $\\angle DBC=2\\alpha$, so $\\angle ABC=3\\alpha$. Also $\\angle CAB=2\\alpha$, giving $\\angle ACB=180^\\circ-5\\alpha$. Nondegeneracy implies $0<\\alpha<36^\\circ$.",
+      "In triangle AOB, the sine rule gives $AO/BO=\\sin\\alpha/\\sin2\\alpha$. In triangle BOC it gives $CO/BO=\\sin2\\alpha/\\sin5\\alpha$. The parallelogram diagonals bisect each other, so AO=CO and these ratios are equal.",
+      "Therefore $\\sin5\\alpha=\\sin^22\\alpha/\\sin\\alpha=2\\cos\\alpha\\sin2\\alpha=\\sin3\\alpha+\\sin\\alpha$. Subtracting and using the sine-difference identity gives $2\\cos4\\alpha\\sin\\alpha=\\sin\\alpha$, or $\\cos4\\alpha=1/2$.",
+      "Since $0<4\\alpha<144^\\circ$, this forces $4\\alpha=60^\\circ$, hence $\\alpha=15^\\circ$. Triangle AOB has angle AOB $180^\\circ-3\\alpha=135^\\circ$, whereas ACB is 105 degrees.",
+      "The ratio is $r=105/135=7/9$, so $\\lfloor1000r\\rfloor=777$. The sine-rule equality supplies positive compatible diagonal halves, so the angle solution is realizable."
+    ],
+    "keyIdeas": [
+      "Parallelogram diagonal bisection forces an angle"
+    ],
+    "commonMistakes": [
+      "Using the acute angle between the diagonal lines instead of the specified angle AOB."
+    ],
+    "alternativeMethods": [
+      "To verify an attaining configuration directly, put $u=(\\sqrt3-1)/2$ and choose $A=(1,0), B=(0,0), C=(u,u), D=(1+u,u)$. Opposite sides are parallel and $O=((1+u)/2,u/2)$. Since $u/(1+u)=\\tan15^\\circ$ and $u/(1-u)=\\tan30^\\circ$, the angles $DBA,CAB,DBC$ are $15^\\circ,30^\\circ,30^\\circ$. The specified remaining angles are $ACB=105^\\circ$ and $AOB=135^\\circ$, confirming the positive configuration and ratio $7/9$."
+    ],
+    "difficultyNotes": "Diagonal bisection links the sine rules in the two adjacent triangles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

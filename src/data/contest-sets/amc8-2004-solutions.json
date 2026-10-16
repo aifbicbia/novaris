@@ -1,0 +1,640 @@
+[
+  {
+    "id": "solution-amc8-2004-p1",
+    "problemId": "amc8-2004-p1",
+    "finalAnswer": "$\\boxed{\\text{B }(102)}$",
+    "shortExplanation": "**Idea:** Use the map scale as a constant ratio.",
+    "detailedSteps": [
+      "A $12$-cm length represents $72$ km, so $1$ cm represents $72/12=6$ km.",
+      "A $17$-cm length represents $17\\cdot6=102$ km.",
+      "Final Answer: ($\\boxed{\\text{B }(102)}$)"
+    ],
+    "keyIdeas": [
+      "Scale factor",
+      "Proportions"
+    ],
+    "commonMistakes": [
+      "Do not multiply $72$ by $17$ without first accounting for the $12$ cm scale."
+    ],
+    "alternativeMethods": [
+      "Set up $12/72=17/x$ and solve."
+    ],
+    "difficultyNotes": "A direct scale problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p2",
+    "problemId": "amc8-2004-p2",
+    "finalAnswer": "$\\boxed{\\text{B }(6)}$",
+    "shortExplanation": "**Idea:** Count arrangements of the digits, excluding those with leading zero.",
+    "detailedSteps": [
+      "The multiset of digits is $2,0,0,4$.",
+      "All arrangements are $4!/2!=12$ because the two zeros repeat.",
+      "If the first digit is $0$, then the remaining digits $2,0,4$ can be arranged in $3!=6$ ways, but these are not four-digit numbers.",
+      "Thus $12-6=6$ valid numbers.",
+      "Final Answer: ($\\boxed{\\text{B }(6)}$)"
+    ],
+    "keyIdeas": [
+      "Permutations",
+      "Leading zero"
+    ],
+    "commonMistakes": [
+      "A number cannot begin with $0$ and still be four digits."
+    ],
+    "alternativeMethods": [
+      "Count all arrangements, then subtract invalid leading-zero arrangements."
+    ],
+    "difficultyNotes": "A small repeated-digit permutation count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p3",
+    "problemId": "amc8-2004-p3",
+    "finalAnswer": "$\\boxed{\\text{A }(8)}$",
+    "shortExplanation": "**Idea:** Scale the number of meals by the amount of food needed.",
+    "detailedSteps": [
+      "Twelve ordered meals feed $18$ people, so each meal feeds $18/12=1.5$ people.",
+      "To feed $12$ people, they need $12/1.5=8$ meals.",
+      "Final Answer: ($\\boxed{\\text{A }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Scaling"
+    ],
+    "commonMistakes": [
+      "Do not assume one ordered meal feeds one person; the portions are larger than that."
+    ],
+    "alternativeMethods": [
+      "Use the ratio $12$ meals for $18$ people and scale down to $12$ people."
+    ],
+    "difficultyNotes": "A proportional reasoning warmup.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p4",
+    "problemId": "amc8-2004-p4",
+    "finalAnswer": "$\\boxed{\\text{B }(4)}$",
+    "shortExplanation": "**Idea:** Choosing three starters from four players is equivalent to choosing the one player who does not start.",
+    "detailedSteps": [
+      "There are $4$ chosen players.",
+      "A starting team has $3$ of them, so exactly one chosen player is left out.",
+      "There are $4$ possible players to leave out, giving $4$ starting teams.",
+      "Final Answer: ($\\boxed{\\text{B }(4)}$)"
+    ],
+    "keyIdeas": [
+      "Combinations",
+      "Complement counting"
+    ],
+    "commonMistakes": [
+      "Order does not matter for choosing starters."
+    ],
+    "alternativeMethods": [
+      "Compute $\\binom43=4$ directly."
+    ],
+    "difficultyNotes": "A basic combination count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p5",
+    "problemId": "amc8-2004-p5",
+    "finalAnswer": "$\\boxed{\\text{D }(15)}$",
+    "shortExplanation": "**Idea:** In a single-elimination tournament, each game eliminates exactly one team.",
+    "detailedSteps": [
+      "Starting with $16$ teams, the tournament needs to eliminate $15$ teams to leave one winner.",
+      "Since each game eliminates one team, $15$ games are played.",
+      "Final Answer: ($\\boxed{\\text{D }(15)}$)"
+    ],
+    "keyIdeas": [
+      "Elimination tournaments",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "Do not count rounds; count eliminated teams."
+    ],
+    "alternativeMethods": [
+      "A bracket with $n$ teams always has $n-1$ games."
+    ],
+    "difficultyNotes": "A classic tournament-counting fact.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p6",
+    "problemId": "amc8-2004-p6",
+    "finalAnswer": "$\\boxed{\\text{C }(3)}$",
+    "shortExplanation": "**Idea:** Convert the percentages to made shots before and after the last five shots.",
+    "detailedSteps": [
+      "After $20$ shots, Sally has made $55\\%$ of them, or $0.55\\cdot20=11$ shots.",
+      "After $25$ shots, she has made $56\\%$ of them, or $0.56\\cdot25=14$ shots.",
+      "Therefore she made $14-11=3$ of the last $5$ shots.",
+      "Final Answer: ($\\boxed{\\text{C }(3)}$)"
+    ],
+    "keyIdeas": [
+      "Percents",
+      "Changing totals"
+    ],
+    "commonMistakes": [
+      "Use the new total of $25$ shots for the final percentage."
+    ],
+    "alternativeMethods": [
+      "Compute made shots before and after, then subtract."
+    ],
+    "difficultyNotes": "A percent update problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p7",
+    "problemId": "amc8-2004-p7",
+    "finalAnswer": "$\\boxed{\\text{B }(155)}$",
+    "shortExplanation": "**Idea:** Evaluate the formula and round to the nearest whole number.",
+    "detailedSteps": [
+      "The theoretical maximum heart rate is $220-26=194$.",
+      "The target is $80\\%$ of this: $0.8\\cdot194=155.2$.",
+      "Rounded to the nearest whole number, this is $155$.",
+      "Final Answer: ($\\boxed{\\text{B }(155)}$)"
+    ],
+    "keyIdeas": [
+      "Formula evaluation",
+      "Percent"
+    ],
+    "commonMistakes": [
+      "Round only at the end, not after intermediate steps."
+    ],
+    "alternativeMethods": [
+      "Compute $4/5$ of $194$."
+    ],
+    "difficultyNotes": "A straightforward formula problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p8",
+    "problemId": "amc8-2004-p8",
+    "finalAnswer": "$\\boxed{\\text{B }(7)}$",
+    "shortExplanation": "**Idea:** List the possible tens digits and determine the units digit.",
+    "detailedSteps": [
+      "Let the tens digit be $a$ and the units digit be $b$, with $a+b=7$ and $a\\ge1$.",
+      "The possible numbers are $16,25,34,43,52,61,70$.",
+      "There are $7$ such numbers.",
+      "Final Answer: ($\\boxed{\\text{B }(7)}$)"
+    ],
+    "keyIdeas": [
+      "Digit sums",
+      "Counting"
+    ],
+    "commonMistakes": [
+      "The units digit may be $0$, so $70$ counts."
+    ],
+    "alternativeMethods": [
+      "Let the tens digit range from $1$ to $7$."
+    ],
+    "difficultyNotes": "A small digit-counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p9",
+    "problemId": "amc8-2004-p9",
+    "finalAnswer": "$\\boxed{\\text{D }(58)}$",
+    "shortExplanation": "**Idea:** Convert averages to totals.",
+    "detailedSteps": [
+      "The total of all five numbers is $5\\cdot54=270$.",
+      "The total of the first two numbers is $2\\cdot48=96$.",
+      "The last three numbers total $270-96=174$.",
+      "Their average is $174/3=58$.",
+      "Final Answer: ($\\boxed{\\text{D }(58)}$)"
+    ],
+    "keyIdeas": [
+      "Averages",
+      "Totals"
+    ],
+    "commonMistakes": [
+      "Do not subtract the averages directly."
+    ],
+    "alternativeMethods": [
+      "Average times count gives total."
+    ],
+    "difficultyNotes": "A standard partial-average problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p10",
+    "problemId": "amc8-2004-p10",
+    "finalAnswer": "$\\boxed{\\text{E }(15\\text{ dollars})}$",
+    "shortExplanation": "**Idea:** Add all the time worked, then multiply by the hourly rate.",
+    "detailedSteps": [
+      "Monday is $1\\frac14$ hours, Tuesday is $50$ minutes or $\\frac56$ hour, Wednesday from $8{:}20$ to $10{:}45$ is $2$ hours $25$ minutes, or $2\\frac{5}{12}$ hours, and Friday is $\\frac12$ hour.",
+      "The total time is $1\\frac14+\\frac56+2\\frac{5}{12}+\\frac12=5$ hours.",
+      "At 3 dollars per hour, he earns $5\\cdot3=15$ dollars.",
+      "Final Answer: ($\\boxed{\\text{E }(15\\text{ dollars})}$)"
+    ],
+    "keyIdeas": [
+      "Elapsed time",
+      "Unit conversion"
+    ],
+    "commonMistakes": [
+      "Convert minutes to fractions of an hour before adding."
+    ],
+    "alternativeMethods": [
+      "Add minutes separately, then convert to hours."
+    ],
+    "difficultyNotes": "A time arithmetic problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p11",
+    "problemId": "amc8-2004-p11",
+    "finalAnswer": "$\\boxed{\\text{C }(6.5)}$",
+    "shortExplanation": "**Idea:** Use the three position rules to force the endpoints.",
+    "detailedSteps": [
+      "The largest number $12$ must be in one of the first three places but not first, so it is in position $2$ or $3$.",
+      "The smallest number $-2$ must be in one of the last three places but not last, so it is in position $3$ or $4$.",
+      "The median $6$ is not first or last.",
+      "The rules force the first and last numbers to be $4$ and $9$ in some order.",
+      "Their average is $(4+9)/2=6.5$.",
+      "Final Answer: ($\\boxed{\\text{C }(6.5)}$)"
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Ordering"
+    ],
+    "commonMistakes": [
+      "The question asks only for the average of the first and last numbers, not the full ordering."
+    ],
+    "alternativeMethods": [
+      "Focus on which numbers can occupy the endpoints."
+    ],
+    "difficultyNotes": "A constraint-ordering puzzle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p12",
+    "problemId": "amc8-2004-p12",
+    "finalAnswer": "$\\boxed{\\text{B }(8)}$",
+    "shortExplanation": "**Idea:** Track battery used while talking and while only on.",
+    "detailedSteps": [
+      "One hour of constant use consumes $1/3$ of the battery.",
+      "The other $8$ hours were on but not used, consuming $8/24=1/3$ of the battery.",
+      "Thus $2/3$ of the battery is gone and $1/3$ remains.",
+      "If left on but unused, $1/3$ of a $24$-hour battery lasts $8$ more hours.",
+      "Final Answer: ($\\boxed{\\text{B }(8)}$)"
+    ],
+    "keyIdeas": [
+      "Rates",
+      "Battery consumption"
+    ],
+    "commonMistakes": [
+      "The phone was on for $9$ hours total, but only $1$ of those hours was active use."
+    ],
+    "alternativeMethods": [
+      "Compute fractions of the battery consumed instead of remaining time directly."
+    ],
+    "difficultyNotes": "A two-rate consumption problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p13",
+    "problemId": "amc8-2004-p13",
+    "finalAnswer": "$\\boxed{\\text{E }(Amy, Celine, Bill)}$",
+    "shortExplanation": "**Idea:** Test each proposed ordering against the condition that exactly one statement is true.",
+    "detailedSteps": [
+      "For the order Amy, Celine, Bill, statement I is false because Bill is not oldest.",
+      "Statement II is false because Amy is oldest.",
+      "Statement III is true because Celine is not youngest.",
+      "Exactly one statement is true, so this ordering works.",
+      "Final Answer: ($\\boxed{\\text{E }(Amy, Celine, Bill)}$)"
+    ],
+    "keyIdeas": [
+      "Logic",
+      "Truth values"
+    ],
+    "commonMistakes": [
+      "Check all three statements for an ordering; do not stop after finding one true statement."
+    ],
+    "alternativeMethods": [
+      "Evaluate the answer choices rather than trying to build the order from scratch."
+    ],
+    "difficultyNotes": "A truth-statement logic problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p14",
+    "problemId": "amc8-2004-p14",
+    "finalAnswer": "$\\boxed{\\text{C }(22\\frac12)}$",
+    "shortExplanation": "**Idea:** Use the shoelace formula on the geoboard coordinates.",
+    "detailedSteps": [
+      "Using the plotted vertices $(4,0),(0,5),(3,4),(10,10)$, apply the shoelace formula.",
+      "The two diagonal sums are $50$ and $95$.",
+      "The area is $\\frac12|95-50|=22.5=22\\frac12$.",
+      "Final Answer: ($\\boxed{\\text{C }(22\\frac12)}$)"
+    ],
+    "keyIdeas": [
+      "Shoelace formula",
+      "Coordinate area"
+    ],
+    "commonMistakes": [
+      "Keep the vertices in cyclic order when applying shoelace."
+    ],
+    "alternativeMethods": [
+      "Alternatively, enclose the polygon in a rectangle and subtract surrounding triangles."
+    ],
+    "difficultyNotes": "A geoboard area problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p15",
+    "problemId": "amc8-2004-p15",
+    "finalAnswer": "$\\boxed{\\text{C }(11)}$",
+    "shortExplanation": "**Idea:** Count the new white border tiles and compare with the fixed black count.",
+    "detailedSteps": [
+      "The original figure has $13$ black tiles and $6$ white tiles.",
+      "The border adds $18$ white tiles around the figure.",
+      "So the new white total is $6+18=24$.",
+      "The difference between white and black tiles is $24-13=11$.",
+      "Final Answer: ($\\boxed{\\text{C }(11)}$)"
+    ],
+    "keyIdeas": [
+      "Counting",
+      "Hex tile border"
+    ],
+    "commonMistakes": [
+      "The border tiles are added to the existing six white tiles; they do not replace them."
+    ],
+    "alternativeMethods": [
+      "Trace the outside edge and count one new white hexagon per exposed border position."
+    ],
+    "difficultyNotes": "A visual border-counting problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p16",
+    "problemId": "amc8-2004-p16",
+    "finalAnswer": "$\\boxed{\\text{C }(\\frac{11}{30})}$",
+    "shortExplanation": "**Idea:** Compute the orange juice volume and divide by the final total volume.",
+    "detailedSteps": [
+      "The first pitcher contains $600\\cdot\\frac13=200$ mL of orange juice.",
+      "The second contains $600\\cdot\\frac25=240$ mL of orange juice.",
+      "Total orange juice is $440$ mL, and after filling both pitchers the total mixture is $1200$ mL.",
+      "Thus the orange juice fraction is $440/1200=11/30$.",
+      "Final Answer: ($\\boxed{\\text{C }(\\frac{11}{30})}$)"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Mixtures"
+    ],
+    "commonMistakes": [
+      "After water is added, both pitchers are full, so the final total is $1200$ mL."
+    ],
+    "alternativeMethods": [
+      "Find the amount of orange juice first; water added does not change that amount."
+    ],
+    "difficultyNotes": "A straightforward mixture fraction problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p17",
+    "problemId": "amc8-2004-p17",
+    "finalAnswer": "$\\boxed{\\text{D }(10)}$",
+    "shortExplanation": "**Idea:** Distribute $6$ identical pencils to $3$ people with each getting at least one.",
+    "detailedSteps": [
+      "Give each friend one pencil first, using $3$ pencils.",
+      "There are $3$ pencils left to distribute freely among $3$ friends.",
+      "The number of nonnegative solutions to $a+b+c=3$ is $\\binom{3+3-1}{3-1}=\\binom52=10$.",
+      "Final Answer: ($\\boxed{\\text{D }(10)}$)"
+    ],
+    "keyIdeas": [
+      "Stars and bars",
+      "Positive integer solutions"
+    ],
+    "commonMistakes": [
+      "The pencils are identical, so only the counts each friend gets matter."
+    ],
+    "alternativeMethods": [
+      "List possibilities by the largest pile as a check."
+    ],
+    "difficultyNotes": "A classic stars-and-bars count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p18",
+    "problemId": "amc8-2004-p18",
+    "finalAnswer": "$\\boxed{\\text{A }(Alice)}$",
+    "shortExplanation": "**Idea:** Pair the numbers $1$ through $10$ to match the five scores.",
+    "detailedSteps": [
+      "Ben's score $4$ must be $1+3$.",
+      "If Alice scores $16$ using $6+10$, then the remaining scores can be $2+5=7$, $4+7=11$, and $8+9=17$.",
+      "This uses each number from $1$ to $10$ exactly once, so the region worth $6$ points was hit by Alice.",
+      "Final Answer: ($\\boxed{\\text{A }(Alice)}$)"
+    ],
+    "keyIdeas": [
+      "Pair sums",
+      "Logic"
+    ],
+    "commonMistakes": [
+      "Each target value is hit only once, so all ten numbers must be used exactly once across the five players."
+    ],
+    "alternativeMethods": [
+      "Start with the smallest score because it has few possible pairs."
+    ],
+    "difficultyNotes": "A finite pairing puzzle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p19",
+    "problemId": "amc8-2004-p19",
+    "finalAnswer": "$\\boxed{\\text{B }(60\\text{ and }79)}$",
+    "shortExplanation": "**Idea:** The number is $2$ more than a common multiple of $3,4,5,$ and $6$.",
+    "detailedSteps": [
+      "The least common multiple of $3,4,5,$ and $6$ is $60$.",
+      "Numbers leaving remainder $2$ when divided by each are of the form $60k+2$.",
+      "The smallest one larger than $2$ is $60+2=62$.",
+      "This lies between $60$ and $79$.",
+      "Final Answer: ($\\boxed{\\text{B }(60\\text{ and }79)}$)"
+    ],
+    "keyIdeas": [
+      "Least common multiple",
+      "Remainders"
+    ],
+    "commonMistakes": [
+      "The number $2$ itself is excluded by the phrase larger than $2$."
+    ],
+    "alternativeMethods": [
+      "Find the LCM, then add the common remainder."
+    ],
+    "difficultyNotes": "A short modular arithmetic problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p20",
+    "problemId": "amc8-2004-p20",
+    "finalAnswer": "$\\boxed{\\text{D }(27)}$",
+    "shortExplanation": "**Idea:** Use the number of empty chairs to find the total number of chairs.",
+    "detailedSteps": [
+      "If $3/4$ of the chairs are occupied, then $1/4$ of the chairs are empty.",
+      "Since $6$ chairs are empty, the room has $24$ chairs.",
+      "Occupied chairs number $3/4\\cdot24=18$.",
+      "These seated people are $2/3$ of all people, so the total number of people is $18\\div(2/3)=27$.",
+      "Final Answer: ($\\boxed{\\text{D }(27)}$)"
+    ],
+    "keyIdeas": [
+      "Fractions",
+      "Equations"
+    ],
+    "commonMistakes": [
+      "The fraction $2/3$ refers to people, while $3/4$ refers to chairs."
+    ],
+    "alternativeMethods": [
+      "Find chairs first from the empty-chair information."
+    ],
+    "difficultyNotes": "A two-fraction setup problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p21",
+    "problemId": "amc8-2004-p21",
+    "finalAnswer": "$\\boxed{\\text{D }(\\frac23)}$",
+    "shortExplanation": "**Idea:** The product is odd only if both spinners land on odd numbers.",
+    "detailedSteps": [
+      "Spinner $A$ has two odd numbers out of four, so $P(A\\text{ odd})=1/2$.",
+      "Spinner $B$ has two odd numbers out of three, so $P(B\\text{ odd})=2/3$.",
+      "Thus $P(\\text{odd product})=(1/2)(2/3)=1/3$.",
+      "Therefore $P(\\text{even product})=1-1/3=2/3$.",
+      "Final Answer: ($\\boxed{\\text{D }(\\frac23)}$)"
+    ],
+    "keyIdeas": [
+      "Probability",
+      "Parity"
+    ],
+    "commonMistakes": [
+      "Even product is easier to find by subtracting the odd-product case from $1$."
+    ],
+    "alternativeMethods": [
+      "Use complements: product even unless both factors are odd."
+    ],
+    "difficultyNotes": "A parity probability problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p22",
+    "problemId": "amc8-2004-p22",
+    "finalAnswer": "$\\boxed{\\text{B }(\\frac38)}$",
+    "shortExplanation": "**Idea:** Convert the probability among women into a ratio of single to married women.",
+    "detailedSteps": [
+      "If $2/5$ of the women are single, then $3/5$ of the women are married.",
+      "Each married woman is with one married man, so married men are $3/5$ as many as all women.",
+      "Total people are women plus married men, or $1+3/5=8/5$ times the number of women.",
+      "The fraction who are married men is $(3/5)/(8/5)=3/8$.",
+      "Final Answer: ($\\boxed{\\text{B }(\\frac38)}$)"
+    ],
+    "keyIdeas": [
+      "Ratios",
+      "Probability as fraction"
+    ],
+    "commonMistakes": [
+      "The denominator in the given probability is women only, not all people at the party."
+    ],
+    "alternativeMethods": [
+      "Let the number of women be $5k$ to avoid fractions."
+    ],
+    "difficultyNotes": "A ratio-modeling problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p23",
+    "problemId": "amc8-2004-p23",
+    "finalAnswer": "$\\boxed{\\text{D}}$",
+    "shortExplanation": "**Idea:** Track how distance from corner $J$ changes along each side of the rectangle.",
+    "detailedSteps": [
+      "Starting at $J$, Tess's distance from home is $0$.",
+      "Along the first side, the distance increases linearly.",
+      "Along the next two sides, the straight-line distance changes along curved square-root arcs, first increasing to the far corner and then decreasing.",
+      "Along the final side back to $J$, the distance decreases linearly to $0$.",
+      "The graph matching this behavior is choice D.",
+      "Final Answer: ($\\boxed{\\text{D}}$)"
+    ],
+    "keyIdeas": [
+      "Distance graph",
+      "Rectangular path"
+    ],
+    "commonMistakes": [
+      "The graph is straight only while Tess is moving directly away from or toward $J$ along a side through $J$."
+    ],
+    "alternativeMethods": [
+      "Think of the distance as the hypotenuse of a right triangle that changes as Tess moves."
+    ],
+    "difficultyNotes": "A qualitative graph-matching problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p24",
+    "problemId": "amc8-2004-p24",
+    "finalAnswer": "$\\boxed{\\text{C }(7.6)}$",
+    "shortExplanation": "**Idea:** Use the area of the parallelogram in two ways.",
+    "detailedSteps": [
+      "From the figure, one side of the parallelogram, $HE$, has horizontal and vertical components $4$ and $3$, so $HE=5$.",
+      "Using coordinates from the rectangle, the parallelogram area is $38$ square units.",
+      "Since area equals base times height, $5d=38$.",
+      "Thus $d=38/5=7.6$.",
+      "Final Answer: ($\\boxed{\\text{C }(7.6)}$)"
+    ],
+    "keyIdeas": [
+      "Parallelogram area",
+      "Coordinate geometry"
+    ],
+    "commonMistakes": [
+      "The requested distance is perpendicular to $HE$ and $FG$, not vertical or horizontal."
+    ],
+    "alternativeMethods": [
+      "Use shoelace or subtract triangles from the rectangle to get the parallelogram area."
+    ],
+    "difficultyNotes": "A compact area-height problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2004-p25",
+    "problemId": "amc8-2004-p25",
+    "finalAnswer": "$\\boxed{\\text{D }(28-2\\pi)}$",
+    "shortExplanation": "**Idea:** Find the area of the two-square union and subtract the circle.",
+    "detailedSteps": [
+      "Each $4\\times4$ square has area $16$, so together they have $32$ before subtracting overlap.",
+      "The overlap of the two squares has area $4$, so the union area is $32-4=28$.",
+      "The circle's diameter is the segment between the intersection points; its radius is $\\sqrt2$, so its area is $2\\pi$.",
+      "The shaded area is $28-2\\pi$.",
+      "Final Answer: ($\\boxed{\\text{D }(28-2\\pi)}$)"
+    ],
+    "keyIdeas": [
+      "Composite area",
+      "Circle area"
+    ],
+    "commonMistakes": [
+      "Do not subtract the overlap twice; the union of the squares has area $28$."
+    ],
+    "alternativeMethods": [
+      "Break the picture into the union of two squares, then remove the circle."
+    ],
+    "difficultyNotes": "A final composite-area problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

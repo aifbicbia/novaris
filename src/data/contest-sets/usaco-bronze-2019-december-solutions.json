@@ -1,0 +1,83 @@
+[
+  {
+    "finalAnswer": "Count the pairs whose relative order stays the same in every session.",
+    "shortExplanation": "Use the first ranking to choose one direction for each pair, then reject a pair as soon as any later ranking reverses it.",
+    "detailedSteps": [
+      "Store the position of each cow in every ranking. Enumerate ranks $i<j$ in the first row, so each unordered pair is considered exactly once.",
+      "Let those two cows be a and b. They already appear in that order in the first session. Check the remaining sessions: the pair contributes one if a precedes b every time, and zero otherwise.",
+      "A rejected pair cannot be consistent in the opposite direction, because its first-session order excludes that direction. Thus the passing tests count exactly the required pairs. With one cow there are no pairs; with one session every pair passes.",
+      "The position table uses $O(KN)$ space. Reading it and checking all pairs takes $O(KN^2)$ time. The answer is at most $\\binom{20}{2}=190$.",
+      "Original C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"gymnastics.in\"); ofstream out(\"gymnastics.out\");\n    int k, n; if (!(in >> k >> n)) return 0;\n    vector<vector<int>> position(k, vector<int>(n + 1));\n    vector<int> first(n);\n    for (int session = 0; session < k; ++session)\n        for (int rank = 0; rank < n; ++rank) {\n            int cow; in >> cow; position[session][cow] = rank;\n            if (session == 0) first[rank] = cow;\n        }\n    int answer = 0;\n    for (int i = 0; i < n; ++i) for (int j = i + 1; j < n; ++j) {\n        bool consistent = true;\n        for (int session = 1; session < k; ++session)\n            if (position[session][first[i]] > position[session][first[j]]) consistent = false;\n        answer += consistent;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Fix a unique orientation before counting an unordered pair.",
+      "Compare positions, not cow identifiers or neighboring ranks."
+    ],
+    "commonMistakes": [
+      "Do not count both orientations of the same pair.",
+      "A pair must keep its order in every session, not just most sessions."
+    ],
+    "alternativeMethods": [
+      "For each ordered pair, count how many rows place the first cow earlier. Exactly K occurrences describe one consistent pair; the reverse direction cannot also qualify."
+    ],
+    "difficultyNotes": "A small table makes the repeated comparisons direct. The first ranking prevents double counting.",
+    "id": "solution-usaco-bronze-2019-december-p1",
+    "problemId": "usaco-bronze-2019-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "The first window length for which all consecutive windows are different.",
+    "shortExplanation": "For each candidate length, insert all exact substrings into a fresh set. A duplicate means the observed colors could come from two different positions.",
+    "detailedSteps": [
+      "Try lengths $L=1,2,\\ldots,N$. For a fixed length, examine every start from $0$ through $N-L$, including the last window.",
+      "Insert each length-L substring into a set. If an insertion fails, the same observed sequence has two possible starts, so this length does not identify every location. Overlapping windows must also be compared.",
+      "If every insertion succeeds, each possible sequence identifies exactly one start. Print this length and stop. All smaller lengths have already failed, proving minimality. Length N always works because it has just one window.",
+      "Copying and comparing strings gives a conservative $O(N^3\\log N)$ time bound and $O(N^2)$ stored characters. The source limit $N\\le100$ makes this direct method sufficient. A one-character road returns 1; an all-equal road returns N.",
+      "Original C++17 implementation:\n\n```cpp\n#include <fstream>\n#include <set>\n#include <string>\nusing namespace std;\nint main() {\n    ifstream in(\"whereami.in\"); ofstream out(\"whereami.out\");\n    int n; string s; if (!(in >> n >> s)) return 0;\n    for (int length = 1; length <= n; ++length) {\n        set<string> windows;\n        bool unique = true;\n        for (int start = 0; start + length <= n; ++start)\n            if (!windows.insert(s.substr(start, length)).second) { unique = false; break; }\n        if (unique) { out << length << '\\n'; return 0; }\n    }\n}\n```"
+    ],
+    "keyIdeas": [
+      "Uniqueness refers to starting positions, even when the windows overlap.",
+      "Trying lengths in order directly proves the first success is minimal."
+    ],
+    "commonMistakes": [
+      "Reusing the set between different lengths creates unrelated collisions.",
+      "Do not omit the final start or wrap the string into a circle."
+    ],
+    "alternativeMethods": [
+      "Compare each pair of suffixes character by character. If the longest shared prefix has length M, the answer is M+1: exactly those lengths at most M have a repeated window."
+    ],
+    "difficultyNotes": "Exact substring comparison is enough; randomized hashing adds unnecessary collision concerns at this input size.",
+    "id": "solution-usaco-bronze-2019-december-p2",
+    "problemId": "usaco-bronze-2019-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "The lexicographically first permutation satisfying every required adjacency.",
+    "shortExplanation": "There are only eight cows. Enumerate their orders alphabetically and return the first one that passes every adjacency test.",
+    "detailedSteps": [
+      "Sort the eight names alphabetically and start with the corresponding increasing index permutation. Read each complete constraint sentence, keeping the two endpoint names.",
+      "For each permutation, compute all eight positions. A constraint is satisfied precisely when $|\\operatorname{pos}(X)-\\operatorname{pos}(Y)|=1$, because either endpoint may come first.",
+      "Test every constraint. The first permutation that passes is feasible; all earlier permutations were rejected, so it is also the alphabetically earliest feasible order. The original guarantee that a solution exists ensures the enumeration succeeds.",
+      "Print all eight names on separate lines. The work is $O(8!(8+N))$ and the auxiliary storage is $O(8+N)$, where N is the number of constraints. This checks at most 40,320 orders and handles repeated constraints without changing their meaning.",
+      "Original C++17 implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <cstdlib>\n#include <fstream>\n#include <numeric>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\nint main() {\n    ifstream in(\"lineup.in\"); ofstream out(\"lineup.out\");\n    vector<string> names = {\"Bessie\", \"Buttercup\", \"Belinda\", \"Beatrice\", \"Bella\", \"Blue\", \"Betsy\", \"Sue\"};\n    sort(names.begin(), names.end());\n    int n; if (!(in >> n)) return 0;\n    vector<pair<int, int>> constraints;\n    for (int i = 0; i < n; ++i) {\n        string a, b, word; in >> a;\n        for (int j = 0; j < 4; ++j) in >> word;\n        in >> b;\n        constraints.emplace_back(int(find(names.begin(), names.end(), a) - names.begin()),\n                                 int(find(names.begin(), names.end(), b) - names.begin()));\n    }\n    array<int, 8> order; iota(order.begin(), order.end(), 0);\n    do {\n        array<int, 8> position;\n        for (int i = 0; i < 8; ++i) position[order[i]] = i;\n        bool valid = true;\n        for (auto [a, b] : constraints) if (abs(position[a] - position[b]) != 1) valid = false;\n        if (valid) { for (int cow : order) out << names[cow] << '\\n'; return 0; }\n    } while (next_permutation(order.begin(), order.end()));\n}\n```"
+    ],
+    "keyIdeas": [
+      "Enumerate a small complete search space in the required answer order.",
+      "Beside is a symmetric adjacency relation."
+    ],
+    "commonMistakes": [
+      "Choosing the alphabetically first remaining cow greedily can strand a required neighbor.",
+      "A valid order is not sufficient unless every earlier alphabetical order has been excluded."
+    ],
+    "alternativeMethods": [
+      "The required-adjacency graph consists of isolated vertices and path components. Orient each path in its earlier alphabetical direction, then concatenate the blocks in order of their first names. A separate proof of this block structure is needed."
+    ],
+    "difficultyNotes": "Exhaustive enumeration is appropriate because eight names is a fixed, tiny domain. It makes both feasibility and alphabetical minimality explicit.",
+    "id": "solution-usaco-bronze-2019-december-p3",
+    "problemId": "usaco-bronze-2019-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

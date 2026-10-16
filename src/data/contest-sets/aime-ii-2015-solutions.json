@@ -1,0 +1,328 @@
+[
+  {
+    "id": "solution-aime-ii-2015-p1",
+    "problemId": "aime-ii-2015-p1",
+    "finalAnswer": "$\\boxed{131}$",
+    "shortExplanation": "The least integer is $1131$.",
+    "detailedSteps": [
+      "Write $N=(39/50)u=(29/25)v$ for the two integers. Since each fraction is reduced and $N$ is an integer, the first equality requires $39\\mid N$, while the second requires $29\\mid N$.",
+      "Conversely any positive multiple of both thirty-nine and twenty-nine satisfies the requirements: $u=50N/39$ and $v=25N/29$ are integers. Thus the least possible value is $\\operatorname{lcm}(39,29)=1131$.",
+      "The remainder modulo one thousand is $131$."
+    ],
+    "keyIdeas": [
+      "Convert both percentage requirements into divisibility"
+    ],
+    "commonMistakes": [
+      "Requiring divisibility by the percentage denominators instead of the reduced numerators."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The reduced percentage fractions turn minimality into a least-common-multiple calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p2",
+    "problemId": "aime-ii-2015-p2",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The conditional probability is $6/19$.",
+    "detailedSteps": [
+      "The fractions of the whole school who take Latin in the four grades are $0.40$, $0.30(0.80)=0.24$, $0.20(0.50)=0.10$, and $0.10(0.20)=0.02$.",
+      "The total Latin enrollment is therefore $0.76$ of the school, and its sophomore portion is $0.24$. The required probability is $0.24/0.76=6/19$, in lowest terms.",
+      "Hence $m+n=6+19=25$."
+    ],
+    "keyIdeas": [
+      "Condition on the total Latin enrollment"
+    ],
+    "commonMistakes": [
+      "Using the sophomore enrollment fraction among all students rather than among Latin students."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator must reflect the population from which the student is selected.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p3",
+    "problemId": "aime-ii-2015-p3",
+    "finalAnswer": "$\\boxed{476}$",
+    "shortExplanation": "The first feasible three-digit number is $476$.",
+    "detailedSteps": [
+      "A one-digit number cannot have digit sum seventeen. The only two-digit numbers with that sum are eighty-nine and ninety-eight, and neither is divisible by seventeen.",
+      "For a three-digit number $100a+10b+c$ with $a+b+c=17$, substitute $c=17-a-b$. Divisibility by seventeen becomes $99a+9b\\equiv0\\pmod{17}$, or $b\\equiv6a\\pmod{17}$.",
+      "For leading digit $a=1$, the only digit possibility is $b=6$, but it gives $c=10$. For $a=2$, the required residue is twelve, which is not a digit. For $a=3$, it is $b=1$, giving $c=13$. Thus no smaller leading digit works.",
+      "For $a=4$, the residue is $b=7$ and then $c=6$. The number is $476=17\\cdot28$ and its digit sum is seventeen. Every smaller positive number has already been excluded, so $m=476$."
+    ],
+    "keyIdeas": [
+      "Use the digit sum to simplify the divisibility condition"
+    ],
+    "commonMistakes": [
+      "Stopping at a number with the correct digit sum without proving divisibility or minimality."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The digit-sum condition removes one digit and makes the minimality argument very short.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p4",
+    "problemId": "aime-ii-2015-p4",
+    "finalAnswer": "$\\boxed{018}$",
+    "shortExplanation": "The perimeter is $\\log(2^{16}3^2)$.",
+    "detailedSteps": [
+      "Put $t=\\log2>0$. The difference of the base lengths is $\\log192-\\log3=\\log64=6t$, so the horizontal offset of either leg is $3t$. The altitude is $\\log16=4t$.",
+      "Each leg therefore has length $\\sqrt{(3t)^2+(4t)^2}=5t$. The perimeter is $\\log3+\\log192+10t$.",
+      "Since $\\log192=6t+\\log3$, this sum is $16\\log2+2\\log3=\\log(2^{16}3^2)$. Thus $p+q=16+2=18$."
+    ],
+    "keyIdeas": [
+      "Recognize a scaled three-four-five triangle in each leg"
+    ],
+    "commonMistakes": [
+      "Taking a logarithm of a Euclidean leg length before applying the Pythagorean theorem."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring the base ratio exposes a familiar right triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p5",
+    "problemId": "aime-ii-2015-p5",
+    "finalAnswer": "$\\boxed{090}$",
+    "shortExplanation": "The adjacent-pair probability is $4/[n(n+1)]$.",
+    "detailedSteps": [
+      "There are $n(n-1)$ horizontal neighboring pairs and the same number of vertical neighboring pairs, for a total of $2n(n-1)$. No pair belongs to both categories.",
+      "The number of unordered selections without replacement is $\\binom{n^2}{2}$. For $n\\ge2$, the adjacency probability simplifies to $2n(n-1)/\\binom{n^2}{2}=4/[n(n+1)]$. The case $n=1$ does not permit the specified two-square selection.",
+      "The strict source inequality is equivalent to $n(n+1)>8060$. The product increases for positive integers. At $n=89$ it is $8010$, which fails; at $n=90$ it is $8190$, which succeeds. Hence the least value is $90$."
+    ],
+    "keyIdeas": [
+      "Count neighboring unordered pairs and keep the inequality strict"
+    ],
+    "commonMistakes": [
+      "Including diagonal neighbors or replacing the strict probability inequality with a non-strict one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cancellation leaves an increasing quadratic threshold, making minimality explicit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p6",
+    "problemId": "aime-ii-2015-p6",
+    "finalAnswer": "$\\boxed{440}$",
+    "shortExplanation": "The revealed value is $a=15$, and the constants are $216$ and $224$.",
+    "detailedSteps": [
+      "Let the positive integer roots be $u,v,w$, allowing repetition. Vieta gives $u+v+w=a$, $uv+uw+vw=(a^2-81)/2$, and $c=2uvw$. Therefore $u^2+v^2+w^2=a^2-2(uv+uw+vw)=81$.",
+      "Order the roots $u\\le v\\le w$. They lie between one and eight, and $u\\le5$. For each such $u$, test squares $v^2$ from $u^2$ through $(81-u^2)/2$ and require $81-u^2-v^2$ to be a square at least $v^2$. This exhaustive test yields exactly three multisets.",
+      "They are $(1,4,8)$, giving $(a,c)=(13,64)$; $(3,6,6)$, giving $(15,216)$; and $(4,4,7)$, giving $(15,224)$. Substitution verifies each original cubic.",
+      "The only value of $a$ admitting two constants is fifteen. Their sum is $216+224=440$. Repeated roots are included, as the statement requires only that all roots be positive integers."
+    ],
+    "keyIdeas": [
+      "Enumerate positive integer roots using their fixed sum of squares"
+    ],
+    "commonMistakes": [
+      "Assuming the roots are distinct and thereby losing both polynomials with the revealed value of $a$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A fixed sum of squares makes the entire information puzzle finite.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p7",
+    "problemId": "aime-ii-2015-p7",
+    "finalAnswer": "$\\boxed{161}$",
+    "shortExplanation": "The quadratic coefficient is $36/125$.",
+    "detailedSteps": [
+      "The triangle semiperimeter is $27$. Heron's formula gives area $\\sqrt{27\\cdot15\\cdot2\\cdot10}=90$, so its altitude to the side of length twenty-five is $h=2(90)/25=36/5$.",
+      "At height $y$ above that side, the cross-section parallel to it has length $25(1-y/h)$ by similarity. This is the rectangle width $w$, so its height is $y=h(1-w/25)$.",
+      "The rectangle area is $wy=hw-(h/25)w^2$. Therefore $\\beta=h/25=36/125$, a reduced fraction, and $m+n=36+125=161$."
+    ],
+    "keyIdeas": [
+      "Express the rectangle height by triangle similarity"
+    ],
+    "commonMistakes": [
+      "Using the triangle area itself as its altitude or confusing the top width with the remaining similarity ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Similarity determines the shape of the quadratic; Heron determines its scale.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p8",
+    "problemId": "aime-ii-2015-p8",
+    "finalAnswer": "$\\boxed{036}$",
+    "shortExplanation": "The maximum is $217/35=31/5$ in lowest terms.",
+    "detailedSteps": [
+      "By symmetry assume $a\\le b$. The source inequality is equivalent to $(2a-3)(2b-3)<5$.",
+      "If $a=1$, every positive $b$ is allowed and the target ratio is identically one. If $a=2$, the inequality becomes $2b-3<5$, so only $b=2$ or $b=3$ are possible. If $a\\ge3$, both factors are at least three, so no pair is allowed.",
+      "The two remaining ratios are $(2^6+1)/(2^3+2^3)=65/16$ and $(2^3\\cdot3^3+1)/(2^3+3^3)=217/35=31/5$. The latter exceeds both the former and one.",
+      "The reduced fraction is $31/5$, so $p+q=31+5=36$. This classification includes the unbounded family with one variable equal to one; no finite search cutoff is used to discard it."
+    ],
+    "keyIdeas": [
+      "Classify the integer pairs before maximizing the rational expression"
+    ],
+    "commonMistakes": [
+      "Reporting the sum of the unreduced numerator and denominator, or overlooking the unbounded family with one variable equal to one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The integer inequality restricts every nontrivial pair, so the maximum is attained in a tiny complete list.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p9",
+    "problemId": "aime-ii-2015-p9",
+    "finalAnswer": "$\\boxed{384}$",
+    "shortExplanation": "The submerged tip has volume $8\\sqrt6$ cubic feet.",
+    "detailedSteps": [
+      "Use the seated placement shown in the source figure, with the cube resting at the barrel opening and its lowest diagonal vertex below the rim. Place that vertex at the origin of cube coordinates $x,y,z\\ge0$. The upward diagonal unit direction is $(1,1,1)/\\sqrt3$.",
+      "A horizontal section a vertical distance $h$ above the vertex lies in $x+y+z=\\sqrt3h$. Write $L=\\sqrt3h$. Before any coordinate reaches the cube edge length eight, the section has vertices $(L,0,0)$, $(0,L,0)$, and $(0,0,L)$, forming an equilateral triangle.",
+      "Its circumradius is $L\\sqrt{2/3}=h\\sqrt2$. A triangle of this shape fits inside the radius-four opening exactly up to $h=2\\sqrt2$. Translating its center cannot increase that depth: the average squared distance of the three vertices from any proposed disk center is the squared circumradius plus the squared center shift.",
+      "At this depth $L=2\\sqrt6<8$, so the cube tip is indeed the tetrahedron bounded by the three incident faces and the rim plane. Also $h<10$, so the barrel bottom does not truncate it. Every lower horizontal section fits inside the barrel.",
+      "The displaced water volume is the submerged solid volume $v=L^3/6=(2\\sqrt6)^3/6=8\\sqrt6$. Thus $v^2=384$. This uses the pictured seated insertion, rather than a freely suspended cube at an arbitrary depth."
+    ],
+    "keyIdeas": [
+      "Determine the seated cube tip from its horizontal equilateral section"
+    ],
+    "commonMistakes": [
+      "Using the cube edge as a horizontal section radius, or assuming the entire cube fits through the opening."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The opening fixes the tip depth; the rest is a tetrahedron volume calculation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p10",
+    "problemId": "aime-ii-2015-p10",
+    "finalAnswer": "$\\boxed{486}$",
+    "shortExplanation": "Each permutation of size at least three has exactly three insertion choices for its largest entry.",
+    "detailedSteps": [
+      "Let $q_n$ count the permitted permutations. In a permutation on $1,\\ldots,n$, if the entry $n$ has a successor, that successor must be $n-1$ or $n-2$, since the allowed drop is at most two.",
+      "Deleting $n$ preserves the condition. The only new adjacent pair has successor at least $n-2$ and predecessor at most $n-1$, so its drop is at most one. All other adjacent pairs are unchanged.",
+      "Conversely, for $n\\ge3$, insert $n$ at the end, immediately before $n-1$, or immediately before $n-2$ in any valid permutation of size $n-1$. The predecessor-to-$n$ step cannot violate the inequality, and the new successor step drops by at most two.",
+      "These three distinct positions exhaust all possibilities, so $q_n=3q_{n-1}$. With $q_1=1$ and $q_2=2$, the count is $q_7=2\\cdot3^5=486$."
+    ],
+    "keyIdeas": [
+      "Delete and reinsert the largest entry"
+    ],
+    "commonMistakes": [
+      "Allowing the largest entry before any smaller entry or assuming deletion could create an unchecked large drop."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The insertion recurrence is bijective, so it proves the count as well as providing a fast computation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p11",
+    "problemId": "aime-ii-2015-p11",
+    "finalAnswer": "$\\boxed{023}$",
+    "shortExplanation": "The squared circumradius is nine, and $BP=18/5$.",
+    "detailedSteps": [
+      "Place $B$ at the origin and write $O=o$, with $R^2=o\\mathbin\\cdot o$. Since $A$ and $C$ lie on the same circle as $B$, expanding their distances from $O$ gives $o\\mathbin\\cdot A=AB^2/2=25/2$ and $o\\mathbin\\cdot C=BC^2/2=8$.",
+      "The line through $O$ perpendicular to $OB$ has equation $o\\mathbin\\cdot X=R^2$. Write $P=tA$ on line $AB$ and $Q=uC$ on line $BC$. Then $t=2R^2/25$ and $u=R^2/8$. Both are positive, so their distances from $B$ are $BP=5t=2R^2/5$ and $BQ=4u=R^2/2$.",
+      "The given $BQ=9/2$ yields $R^2=9$. Hence $BP=18/5$, with reduced numerator and denominator sum $23$. Points on the extensions are allowed because the statement specifies lines, not just segments."
+    ],
+    "keyIdeas": [
+      "Use the dot-product equation of the line through the circumcenter"
+    ],
+    "commonMistakes": [
+      "Forcing $Q$ onto segment $BC$ even though its given distance from $B$ exceeds $BC$."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circle equation determines the needed projections without solving for the triangle angles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p12",
+    "problemId": "aime-ii-2015-p12",
+    "finalAnswer": "$\\boxed{548}$",
+    "shortExplanation": "There are $274$ permitted run-length compositions and two choices of the first letter.",
+    "detailedSteps": [
+      "Every valid string is determined by its first letter and the ordered lengths of its maximal constant-letter runs. Each run length is one, two, or three; subsequent run letters alternate automatically.",
+      "Let $T_n$ count compositions of $n$ into parts from $\\{1,2,3\\}$. Removing the first part gives $T_n=T_{n-1}+T_{n-2}+T_{n-3}$, with $T_0=1$, $T_1=1$, and $T_2=2$.",
+      "The values from $T_3$ through $T_{10}$ are $4,7,13,24,44,81,149,274$. Either initial letter is allowed, so the number of strings is $2T_{10}=548$."
+    ],
+    "keyIdeas": [
+      "Encode the string by its successive run lengths"
+    ],
+    "commonMistakes": [
+      "Treating the string as cyclic or counting a length-four run as several acceptable shorter runs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Maximal runs give a unique representation, avoiding overlapping forbidden-pattern counts.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p13",
+    "problemId": "aime-ii-2015-p13",
+    "finalAnswer": "$\\boxed{628}$",
+    "shortExplanation": "The negative terms occur at indices $\\lfloor2j\\pi\\rfloor$, for positive integers $j$.",
+    "detailedSteps": [
+      "The finite sine sum telescopes to $a_n=\\sin(n/2)\\sin((n+1)/2)/\\sin(1/2)$. The denominator is positive.",
+      "The two numerator sines have opposite signs exactly when the interval $(n/2,(n+1)/2)$ crosses a multiple $j\\pi$. Its length is one half, smaller than $\\pi$, so it crosses at most one. Irrationality of $\\pi$ excludes either endpoint from being a multiple.",
+      "Thus $a_n<0$ exactly when $n<2j\\pi<n+1$, or $n=\\lfloor2j\\pi\\rfloor$. For every positive integer $j$, this index exists, and the indices increase strictly since successive values differ before rounding by $2\\pi>1$.",
+      "The hundredth such index is $\\lfloor200\\pi\\rfloor$. The elementary bounds $3.14<\\pi<22/7$ imply $628<200\\pi<629$, so the required index is $628$."
+    ],
+    "keyIdeas": [
+      "Locate each sign change across a multiple of pi"
+    ],
+    "commonMistakes": [
+      "Counting negative values of the individual summands instead of the accumulated sine sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A closed form converts the sequence question into ordered crossings of sine zeros.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p14",
+    "problemId": "aime-ii-2015-p14",
+    "finalAnswer": "$\\boxed{089}$",
+    "shortExplanation": "The equations force $(xy)^3=54$ and $x^3+y^3=35/2$.",
+    "detailedSteps": [
+      "Put $t=xy$ and $s=x+y$. The first equation is $t^4s=810$, so $t\\ne0$ and $s=810/t^4$. The second is $t^3(x^3+y^3)=t^3(s^3-3ts)=945$.",
+      "Substituting $s$ gives $810^3/t^9-2430=945$. Therefore $t^9=810^3/3375=54^3$. Since $t$ is real, taking the real cube root yields $t^3=54$.",
+      "The second source equation now gives $x^3+y^3=945/54=35/2$. The requested expression is $2(x^3+y^3)+t^3=35+54=89$.",
+      "There are actual real solutions: with $t=\\sqrt[3]{54}$, take $x=9/t$ and $y=6/t$, or reverse them. Their product is $t$, and direct substitution verifies both source equations. Thus the forced expression is attained."
+    ],
+    "keyIdeas": [
+      "Eliminate the symmetric variables without selecting a guessed real pair"
+    ],
+    "commonMistakes": [
+      "Assuming $x$ and $y$ are integers or losing the nonzero-product condition when dividing."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The required expression is fixed by two symmetric cubic quantities, even though the individual variables contain cube roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-ii-2015-p15",
+    "problemId": "aime-ii-2015-p15",
+    "finalAnswer": "$\\boxed{129}$",
+    "shortExplanation": "The common area is $64/65$.",
+    "detailedSteps": [
+      "Place the common external tangent on the horizontal axis, with the small center at $(0,1)$ and the large center at $(4,4)$. Their center distance is five. The tangency point is $A=(4/5,8/5)$, and the tangent contact points are $B=(0,0)$ and $C=(4,0)$.",
+      "Use vectors relative to $A$: $u=(-4/5,-3/5)$ points to the small center, $b=(-4/5,-8/5)$ to $B$, and $c=(16/5,-8/5)$ to $C$. The large-center vector is $-4u$. For a unit vector $v$ along the line through $A$, the second circle intersections satisfy $D-A=2(u\\mathbin\\cdot v)v$ and $E-A=-8(u\\mathbin\\cdot v)v=-4(D-A)$.",
+      "The positive-area condition excludes $u\\mathbin\\cdot v=0$. Equality of the two triangle areas becomes $|v\\times b|=4|v\\times c|$. Since $B$ and $C$ are on the same side of the line, these cross products have the same sign; hence $v\\times(b-4c)=0$.",
+      "Thus the line direction is parallel to $(17,-6)$. Choose $v=(17,-6)/(5\\sqrt{13})$. Substitution gives $D-A=(-68,24)/65$ and $E-A=(272,-96)/65$. The two cross products with $b$ and $c$ have the same sign, so this branch satisfies the actual side condition.",
+      "The common area is $\\tfrac12|(D-A)\\times b|=64/65$. The alternative unsigned-area branch would make the line parallel to $(3,-2)$, putting $B$ and $C$ on opposite sides, and is excluded. All second intersections lie on the required circles and differ from $A$.",
+      "The fraction is reduced, so $m+n=64+65=129$."
+    ],
+    "keyIdeas": [
+      "Use the same-side condition to choose the signed area branch"
+    ],
+    "commonMistakes": [
+      "Choosing the other equal-area line while ignoring that the tangent contact points must be on the same side."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The signed area relation carries the essential geometric branch condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "id": "solution-usaco-bronze-2022-us-open-p1",
+    "problemId": "usaco-bronze-2022-us-open-p1",
+    "finalAnswer": "The minimum is the number of transitions in the mixed-pair bit sequence after appending a final $0$. Use $1$ for `GH` and $0$ for `HG`; omit `GG` and `HH` pairs. An empty mixed sequence needs no reversal.",
+    "shortExplanation": "An even prefix reversal keeps the adjacent position pairs intact, while reversing their order and swapping each pair internally. Homogeneous pairs already contribute a fixed amount. Every mixed pair should become `HG`. A transition count supplies both a lower bound and a matching construction.",
+    "detailedSteps": [
+      "Group positions as $(1,2),(3,4),\\ldots$. Reversing a prefix of even length reverses a whole prefix of these pairs and swaps the two cows inside each affected pair. Thus the counts of `GG`, `HH`, and mixed pairs are invariant. A `GG` pair always contributes one Guernsey in an even position; an `HH` pair contributes none. Each mixed pair can contribute one, so the maximum possible even-position count is the number of `GG` pairs plus the number of mixed pairs.",
+      "Ignore homogeneous pairs and encode `GH` as $1$ and `HG` as $0$. The desired mixed sequence is all zeros. A legal cow-prefix reversal reverses a prefix of this bit sequence and complements its bits. Conversely, any mixed prefix can be affected by ending the even cow prefix at its final mixed pair, regardless of homogeneous pairs between the mixed ones.",
+      "Append a sentinel $0$ after the mixed sequence, and let $F$ count transitions between neighboring bits, including the final real bit and the sentinel. Reversal and complementation preserve the number of transitions inside the operated prefix. The untouched suffix also keeps its transitions. Only the boundary at the end of the prefix can change, by at most one. Since the goal has $F=0$, at least $F$ reversals are necessary.",
+      "This bound is attainable. Reverse the cow prefix ending at the last pair of the first constant run of mixed bits. Reversal leaves a constant run constant, and complementation changes its bit to that of the following run, merging the two and removing exactly one transition. If the whole mixed sequence is one run of ones, reverse it once to obtain all zeros. A single run of zeros is already finished. Repeating this construction removes exactly one transition per reversal, so precisely $F$ reversals suffice.",
+      "Count the mixed-bit transitions in one pass and add one when the last mixed bit is $1$. Return zero when there are no mixed pairs. The source has even $N\\le200000$. Time is $O(N)$, storage for the input string is $O(N)$, and the scan uses only $O(1)$ additional state.",
+      "Original C++11 implementation (also tested unchanged as C++17):\n\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    string cows;\n    in >> n >> cows;\n    int previous = -1, reversals = 0;\n    for (int i = 0; i < n; i += 2) {\n        if (cows[i] == cows[i + 1]) continue;\n        int current = cows[i] == 'G' ? 1 : 0;\n        if (previous != -1 && previous != current) ++reversals;\n        previous = current;\n    }\n    if (previous == 1) ++reversals;\n    out << reversals << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Even-length reversals preserve the adjacent pair types.",
+      "The all-zero mixed sequence attains the actual maximum even-position Guernsey count.",
+      "A transition potential changes by at most one and has a construction achieving that bound."
+    ],
+    "commonMistakes": [
+      "Assuming every Guernsey can be placed in an even position: two Guernseys in a fixed pair can contribute only one.",
+      "Including homogeneous pairs as if they were bad mixed pairs.",
+      "Forgetting the final transition from a last `GH` pair to the zero sentinel.",
+      "Physically simulating every prefix reversal, which can take quadratic time."
+    ],
+    "alternativeMethods": [
+      "The first-run reversal construction gives an explicit optimal schedule. It is useful for understanding the proof or checking small inputs, but the large-input implementation should count its reversals without repeatedly rearranging the string."
+    ],
+    "difficultyNotes": "Intermediate. The linear scan is short; the main work is identifying the pair invariant and proving the transition count is both necessary and attainable.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-us-open-p2",
+    "problemId": "usaco-bronze-2022-us-open-p2",
+    "finalAnswer": "Evaluate Bessie at each stated threshold and return the smallest number of false statements. An `L` statement is false when $x>p_i$; a `G` statement is false when $x<p_i$.",
+    "shortExplanation": "Truth values can change only at the stated thresholds. Moving a location between two thresholds to the lower endpoint preserves its true statements and may make more true. The outer regions can also be moved to an extreme threshold without losing true statements.",
+    "detailedSteps": [
+      "For a candidate location $x$, count a lie for each `L` statement with $p_i<x$ and each `G` statement with $p_i>x$. Both inequalities in the original claims include equality, so neither direction is false when $p_i=x$. Several cows may give the same threshold.",
+      "It is enough to test the stated thresholds. Below the smallest one, move to that smallest threshold: every previously true `L` statement remains true, while additional `G` statements may become true. Above the largest threshold, move down to it: every previously true `G` remains true and additional `L` statements may become true.",
+      "Between consecutive distinct thresholds, move to the lower endpoint. Every previously true `G` threshold is at or below that endpoint, and every previously true `L` threshold is above the interval. Those statements remain true, while `L` statements exactly at the lower endpoint become true as well. Thus some threshold is at least as good as any location on the number line; no extra bound on Bessie\\'s location is required.",
+      "Try each supplied $p_i$, scan all cows, and keep the minimum lie count. Repeated thresholds may be tested repeatedly without changing the result. The printed $N\\le1000$ permits $O(N^2)$ comparisons, and storing the statements takes $O(N)$ space. The threshold bound $10^9$ fits the code\\'s integer representation.",
+      "Original C++11 implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<char> direction(n);\n    vector<long long> threshold(n);\n    for (int i = 0; i < n; ++i) in >> direction[i] >> threshold[i];\n    int answer = n;\n    for (long long location : threshold) {\n        int lies = 0;\n        for (int i = 0; i < n; ++i) {\n            if (direction[i] == 'L' && location > threshold[i]) ++lies;\n            if (direction[i] == 'G' && location < threshold[i]) ++lies;\n        }\n        answer = min(answer, lies);\n    }\n    out << answer << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "One common hiding location must make the selected honest statements consistent.",
+      "Inclusive endpoints matter, particularly when `L` and `G` share a threshold.",
+      "A threshold candidate is never worse than a point in the neighboring open interval."
+    ],
+    "commonMistakes": [
+      "Reversing the meanings of `L` and `G`.",
+      "Treating equality as a lie.",
+      "Choosing a separate hiding location for each cow.",
+      "Testing only locations strictly between thresholds and missing an endpoint where both directions are true."
+    ],
+    "alternativeMethods": [
+      "For a faster sweep, sort and group equal thresholds. Before evaluating a group, include its `G` claims among the true lower-bound claims; keep its `L` claims true until after evaluating that location. This respects both inclusive comparisons and gives $O(N\\log N)$ time. The direct quadratic method is sufficient here."
+    ],
+    "difficultyNotes": "Introductory. Once the endpoint argument is established, the implementation is a direct count. Be especially careful with equality and repeated thresholds.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usaco-bronze-2022-us-open-p3",
+    "problemId": "usaco-bronze-2022-us-open-p3",
+    "finalAnswer": "Binary search the largest feasible target inventory of metal $N$. Test a target by accumulating forced ingredient demands from higher metal indices to lower ones, using existing stock before requesting new production.",
+    "shortExplanation": "Every recipe uses lower-index metals, and each metal has at most one producing recipe. This makes the production demands forced rather than a choice among competing recipes. Combining all requests for a shared ingredient prevents the same stock from being used twice.",
+    "detailedSteps": [
+      "Let $A=\\sum_{i=1}^{N}a_i$. Every transformation consumes at least one unit and creates one unit, so total units cannot increase. Therefore the answer lies in $[0,A]$. The printed $N\\le100$ and $a_i\\le10000$ give the derived bound $A\\le1000000$. Store each recipe by its output metal; the input recipe lines need not be in index order.",
+      "To test target $q$, initialize a demand of $q$ for metal $N$ and zero for other metals. Process $i=N,N-1,\\ldots,1$. All higher-metal requests have now reached metal $i$. If its existing stock covers its demand, nothing needs to be made. Otherwise the deficit $d=\\text{demand}_i-a_i$ must be produced using its sole recipe. If there is no such recipe, the target is impossible. Add $d$ to the demand for every listed ingredient.",
+      "These demands are necessary. Work downward from the requested final metal: the higher productions force their ingredient requirements, existing stock can cover only its available amount, and a positive deficit has only one recipe. Any feasible plan must make at least that deficit. Extra production would only consume more lower-index ingredients, so it cannot improve on the minimal forced requirements.",
+      "The same accounting is sufficient. Execute the planned deficit productions in increasing index order. Every recipe uses smaller-index metals whose planned supply has already been produced. Their initial stock plus planned production covers the aggregate demand from all higher recipes, so the assigned quantities can be consumed without double use. The resulting supply covers the target $q$. This proves that the feasibility test is exact.",
+      "An infeasible expansion can create enormous intermediate demands. Cap each demand at $A+1$. For any metal $i$, higher types cannot be turned into lower ones. Transformations below $i$ cannot increase their total units, and creating an $i$ consumes at least one unit below it. Consequently the total units of type $i$ that can be supplied are at most the initial stock of types $1,\\ldots,i$, which is at most $A$. A larger demand is impossible. Saturation preserves all feasible quantities, and the code rejects a saturated demand when that index is reached.",
+      "Feasibility is monotone: if $q$ units can be obtained, a smaller target can be obtained using the same plan. Use an upper-midpoint binary search over $[0,A]$ to find the greatest feasible target. Zero initial total returns zero immediately. Existing units of metal $N$ are included in the answer even when no recipe produces it.",
+      "Let $E$ be the actual number of ingredient entries across the recipe lines. Reading and storing the input takes $O(N+E)$ work. Each feasibility test costs $O(N+E)$, and binary search uses $O(\\log(A+1))$ tests, for total $O((N+E)(1+\\log(A+1)))$ time and $O(N+E)$ space. The source does not supply a separate numeric upper bound on $M$; the analysis uses the entries actually read. Capped additions are at most $2(A+1)$, so `long long` arithmetic is safe under the inventory bound.",
+      "Original C++11 implementation (also tested unchanged as C++17):\n\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\nvoid solve(istream& in, ostream& out) {\n    int n;\n    in >> n;\n    vector<long long> stock(n + 1);\n    long long total = 0;\n    for (int i = 1; i <= n; ++i) { in >> stock[i]; total += stock[i]; }\n    int k;\n    in >> k;\n    vector<vector<int> > recipe(n + 1);\n    for (int r = 0; r < k; ++r) {\n        int output, ingredients;\n        in >> output >> ingredients;\n        recipe[output].resize(ingredients);\n        for (int& ingredient : recipe[output]) in >> ingredient;\n    }\n    auto feasible = [&](long long target) {\n        vector<long long> demand(n + 1, 0);\n        demand[n] = target;\n        for (int i = n; i >= 1; --i) {\n            if (demand[i] > total) return false;\n            if (demand[i] <= stock[i]) continue;\n            if (recipe[i].empty()) return false;\n            long long missing = demand[i] - stock[i];\n            for (int ingredient : recipe[i])\n                demand[ingredient] = min(total + 1, demand[ingredient] + missing);\n        }\n        return true;\n    };\n    long long low = 0, high = total;\n    while (low < high) {\n        long long middle = low + (high - low + 1) / 2;\n        if (feasible(middle)) low = middle;\n        else high = middle - 1;\n    }\n    out << low << '\\n';\n}\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    solve(cin, cout);\n    return 0;\n}\n```"
+    ],
+    "keyIdeas": [
+      "Strictly increasing recipe output indices give an acyclic dependency order.",
+      "Unique recipes force the minimum production deficits.",
+      "Aggregate shared-ingredient demands before using their stock.",
+      "Conservation bounds the answer and supplies a safe saturation threshold."
+    ],
+    "commonMistakes": [
+      "Processing recipes once in their input order, even though a needed intermediate may appear later.",
+      "Letting two higher recipes independently reuse the same ingredient inventory.",
+      "Returning only newly made final metal and forgetting its initial stock.",
+      "Allowing an infeasible dependency expansion to overflow before recognizing it is impossible."
+    ],
+    "alternativeMethods": [
+      "For tiny inventories, explore every reachable inventory vector by applying each currently legal transformation, and take the largest final-metal stock seen. This is a useful independent verifier, but its state count grows rapidly and it is not the full-constraint solution."
+    ],
+    "difficultyNotes": "Intermediate. The essential proof is that unique acyclic recipes make the descending demands necessary and sufficient. Saturation is needed for infeasible dependency chains even though the final answer itself is at most one million.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

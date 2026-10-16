@@ -1,0 +1,328 @@
+[
+  {
+    "id": "solution-aime-i-2021-p1",
+    "problemId": "aime-i-2021-p1",
+    "finalAnswer": "$\\boxed{097}$",
+    "shortExplanation": "The probability is $16/81$.",
+    "detailedSteps": [
+      "Zou wins the first race, so exactly five wins means one loss among races two through six. If the loss is the last race, there are four repeated winners and one change, with probability $(2/3)^4(1/3)=16/243$.",
+      "If the loss is in any of races two through five, there are two changes of winner and three repeats. Each of these four histories has probability $(1/3)^2(2/3)^3=8/243$.",
+      "The histories are disjoint, so the total is $(16+4\\cdot8)/243=16/81$. The reduced numerator and denominator sum to 97."
+    ],
+    "keyIdeas": [
+      "Distinguish an interior loss from a final loss"
+    ],
+    "commonMistakes": [
+      "Assigning equal probabilities to the five possible loss positions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A final loss requires only one change of winner.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p2",
+    "problemId": "aime-i-2021-p2",
+    "finalAnswer": "$\\boxed{109}$",
+    "shortExplanation": "The common parallelogram has area $105/4$.",
+    "detailedSteps": [
+      "Use the actual diagram orientation with $A=(0,0)$, $B=(0,-3)$, $C=(11,-3)$ and $D=(11,0)$. For $F=(u,v)$, the two source distances give $u^2+v^2=49$ and $(u-11)^2+(v+3)^2=81$, hence $11u-3v=49$.",
+      "The intersection above AD shown in the source is $F=(28/5,21/5)$. The opposite fourth vertex is $E=A+C-F=(27/5,-36/5)$. The vectors AF and FC are perpendicular and have lengths seven and nine, so these coordinates reconstruct the second rectangle.",
+      "AE and FC have slope $-4/3$. Their intersections with the lower and upper horizontal sides respectively are $(9/4,-3)$ and $(35/4,0)$. The other two sides of the tilted rectangle do not cut the interior strip between these lines, as their endpoint half-plane inequalities show.",
+      "The common region is the parallelogram with vertices $A,(35/4,0),C,(9/4,-3)$. It has horizontal base $35/4$ and height three, so its area is $105/4$ and $m+n=109$."
+    ],
+    "keyIdeas": [
+      "Locate the rotated rectangle from its shared diagonal"
+    ],
+    "commonMistakes": [
+      "Using the reflected solution for F despite the orientation in the source figure."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The shared diagonal fixes the possible placements; the diagram selects their orientation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p3",
+    "problemId": "aime-i-2021-p3",
+    "finalAnswer": "$\\boxed{050}$",
+    "shortExplanation": "There are fifty distinct values.",
+    "detailedSteps": [
+      "A positive difference is $2^a-2^b=2^b(2^{a-b}-1)$ with $a>b$. If $b$ were negative, the odd numerator would have a power-of-two denominator and could not be an integer. Therefore put $b\\ge0$ and $d=a-b\\ge1$.",
+      "The representation $2^b(2^d-1)$ is unique: $b$ is its exact exponent of two, and the remaining odd factor determines d. Since $2^{10}-1=1023$, only $1\\le d\\le9$ can give a value below 1000.",
+      "For these nine $d$ values, the numbers of possible nonnegative $b$ are $10,9,8,7,6,4,3,2,1$. These follow directly from $2^b(2^d-1)<1000$. Their sum is 50."
+    ],
+    "keyIdeas": [
+      "Factor out the lower power of two"
+    ],
+    "commonMistakes": [
+      "Counting two exponent pairs for the same value or allowing a negative lower exponent to yield an integer."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The odd factor makes the representation unique.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p4",
+    "problemId": "aime-i-2021-p4",
+    "finalAnswer": "$\\boxed{331}$",
+    "shortExplanation": "There are 331 ways.",
+    "detailedSteps": [
+      "Write the pile sizes as $a,a+u,a+u+v$, where $a,u,v\\ge1$. Their total gives $3a+2u+v=66$. Put $a=1+A$, $u=1+U$, $v=1+V$ to obtain $3A+2U+V=60$ with nonnegative integers.",
+      "For fixed $A$ from zero through twenty, U can range from zero through $\\lfloor(60-3A)/2\\rfloor$, and V is then forced. Thus the count is $\\sum_{A=0}^{20}(\\lfloor(60-3A)/2\\rfloor+1)$.",
+      "For even $A=2r$, the terms are $31-3r$ with $0\\le r\\le10$, totaling 176. For odd $A=2r+1$, the terms are $29-3r$ with $0\\le r\\le9$, totaling 155. The answer is $176+155=331$."
+    ],
+    "keyIdeas": [
+      "Remove the minimum gaps between the three piles"
+    ],
+    "commonMistakes": [
+      "Allowing an empty pile or dividing by six after the required order has already been imposed."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting the minimum pile and minimum gaps builds strict inequalities into the variables.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p5",
+    "problemId": "aime-i-2021-p5",
+    "finalAnswer": "$\\boxed{031}$",
+    "shortExplanation": "The third terms are ten and twenty-one.",
+    "detailedSteps": [
+      "Write the increasing sequence as $b-d,b,b+d$ with positive integer $d$. The source equality becomes $3b^2+2d^2=bd^2$, or $(b-2)d^2=3b^2$. It implies $b>2$.",
+      "Since $b-2$ divides $3b^2$, reduction modulo $b-2$ shows that it divides 12. The possible middle terms are therefore $b=3,4,5,6,8,14$. The corresponding squared differences are $27,24,25,27,32,49$.",
+      "Only 25 and 49 are squares, giving sequences $(0,5,10)$ and $(7,14,21)$. The source requires integer terms, not positive terms, so the first is allowed. The requested sum of third terms is $10+21=31$."
+    ],
+    "keyIdeas": [
+      "Use divisibility before checking the square condition"
+    ],
+    "commonMistakes": [
+      "Imposing positivity on every term, which incorrectly excludes the sequence starting at zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle term is positive even though the first term may be zero.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p6",
+    "problemId": "aime-i-2021-p6",
+    "finalAnswer": "$\\boxed{192}$",
+    "shortExplanation": "The distance from A to P is 192.",
+    "detailedSteps": [
+      "Take $A=(0,0,0)$, $B=(s,0,0)$, $C=(0,s,0)$, $D=(0,0,s)$ and $G=(s,s,s)$, and let $P=(x,y,z)$. Put $L=x^2+y^2+z^2=AP^2$.",
+      "The sum of the three edge-vertex distance squares is $BP^2+CP^2+DP^2=3L+3s^2-2s(x+y+z)$. Meanwhile $GP^2=L+3s^2-2s(x+y+z)$. Subtracting gives $2AP^2$.",
+      "Thus $AP^2=(36000+18000+28800-9072)/2=36864=192^2$. Distances are nonnegative, so $AP=192$. No assumption that P lies inside the cube is needed."
+    ],
+    "keyIdeas": [
+      "Cancel the cube coordinates in a distance identity"
+    ],
+    "commonMistakes": [
+      "Assuming P is an interior point or trying to determine the cube edge when the invariant already gives AP."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common linear coordinate terms cancel.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p7",
+    "problemId": "aime-i-2021-p7",
+    "finalAnswer": "$\\boxed{063}$",
+    "shortExplanation": "There are sixty-three admissible pairs.",
+    "detailedSteps": [
+      "The sum is two exactly when both sines are one. Hence $mx=(4a+1)\\pi/2$ and $nx=(4b+1)\\pi/2$ for integers $a,b$. After removing $g=\\gcd(m,n)$, let $M=m/g$ and $N=n/g$ be coprime. These equations require $M$ and $N$ both odd and congruent modulo four.",
+      "Conversely, if those conditions hold, choose an odd integer $k$ with $kM\\equiv kN\\equiv1\\pmod4$ and set $x=k\\pi/(2g)$. Both sines are one, proving sufficiency.",
+      "Equivalently, m and n have the same exponent of two, and their odd parts have the same residue modulo four. With exponent zero the two groups have sizes eight and seven, giving $\\binom82+\\binom72=49$. With exponent one, the groups have sizes four and four, giving 12. With exponent two, they have sizes two and two, giving 2. Larger exponents give no pair.",
+      "The total is $49+12+2=63$."
+    ],
+    "keyIdeas": [
+      "Make both sine terms attain their maximum"
+    ],
+    "commonMistakes": [
+      "Requiring only that m and n both be odd, without checking the modulo-four phase."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The congruence must place both angles at the same sine maximum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p8",
+    "problemId": "aime-i-2021-p8",
+    "finalAnswer": "$\\boxed{057}$",
+    "shortExplanation": "The possible constants are 22 through 78.",
+    "detailedSteps": [
+      "Put $t=|x|\\ge0$ and $g(t)=|20t-t^2|=|100-(t-10)^2|$. The source equation says $g(t)=c-21$ or $g(t)=c+21$. The two levels are distinct.",
+      "For a level $0<y<100$, the equation has three positive t roots: two from $(t-10)^2=100-y$, and one from $(t-10)^2=100+y$. They give six distinct x roots. At y=0 there are only three x roots, at y=100 there are four, and above 100 there are two. A negative level gives none.",
+      "Each level contributes at most six, so twelve roots occur exactly when both $c-21$ and $c+21$ lie strictly between zero and 100. This gives $21<c<79$, or the 57 integers 22 through 78."
+    ],
+    "keyIdeas": [
+      "Count the roots at each absolute-value level"
+    ],
+    "commonMistakes": [
+      "Treating a zero root as two roots or including a double root at level 100 twice."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The outer absolute value creates two disjoint inner levels.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p9",
+    "problemId": "aime-i-2021-p9",
+    "finalAnswer": "$\\boxed{567}$",
+    "shortExplanation": "The area is $567/\\sqrt2$.",
+    "detailedSteps": [
+      "The distance to CD is the height eighteen. Let the short base be $a$ and let each horizontal leg offset be $d>0$; then the long base is $a+2d$. Place $A=(-a/2,18)$, $B=(a/2,18)$, $C=((a+2d)/2,0)$ and $D=(-(a+2d)/2,0)$.",
+      "Triangle areas give the distances from A to BC and BD as $18a/\\sqrt{d^2+324}=15$ and $18a/\\sqrt{(a+d)^2+324}=10$. Squaring yields $36a^2=25(d^2+324)$ and $81a^2=25((a+d)^2+324)$.",
+      "Subtraction gives $45a^2=25(a^2+2ad)$, hence $d=2a/5$. Substitution gives $32a^2=8100$, so $a^2=2025/8$.",
+      "The area is height times the mean base: $K=18(a+d)=18\\cdot7a/5=567/\\sqrt2$. Thus $\\sqrt2K=567$. The positive $a,d$ reconstruct a valid isosceles trapezoid and all three original line distances."
+    ],
+    "keyIdeas": [
+      "Express both oblique distances using the two bases"
+    ],
+    "commonMistakes": [
+      "Using the longer base instead of AB as the numerator in the A-to-line triangle areas."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Two distance equations eliminate the height term and determine the leg offset.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p10",
+    "problemId": "aime-i-2021-p10",
+    "finalAnswer": "$\\boxed{059}$",
+    "shortExplanation": "The qualifying indices are $1,2,8,18$ and $30$.",
+    "detailedSteps": [
+      "In lowest terms, the desired form $t/(t+1)$ is equivalent to denominator minus numerator equal to one. Suppose such a term has numerator $t$. If no reduction occurs in the next $r$ steps, the numerator and denominator are $t+18r$ and $t+1+19r$, with difference $r+1$.",
+      "The gcd at that step is $\\gcd(t+18r,r+1)=\\gcd(t-18,r+1)$. For $t-18>1$, the first nontrivial reduction occurs when $r+1$ is its smallest prime factor $p$. The gcd is then $p$, restoring denominator difference one. The new numerator is $18+(t-18)/p$. No intervening term qualifies.",
+      "Initially $t-18=2002=2\\cdot7\\cdot11\\cdot13$. These successive smallest prime factors add $p-1=1,6,10,12$ to the initial index one. The qualifying indices are therefore $1,2,8,18,30$, with respective numerators $2020,1019,161,31,19$.",
+      "At $t=19$, $t-18=1$, so every later gcd is one and the denominator difference increases forever. There are no further qualifying indices. Their sum is 59."
+    ],
+    "keyIdeas": [
+      "Track when a reduction restores denominator difference one"
+    ],
+    "commonMistakes": [
+      "Applying the update to unreduced numerators and denominators after a common factor appears."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The smallest prime factor determines the next return to denominator difference one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p11",
+    "problemId": "aime-i-2021-p11",
+    "finalAnswer": "$\\boxed{301}$",
+    "shortExplanation": "The projected quadrilateral perimeter is $242/59$.",
+    "detailedSteps": [
+      "Let the diagonals intersect at O with angle $\\theta$. Using signed coordinates along their two unit directions, if A and B have coordinates $u$ and $v$, their feet onto the opposite diagonal have coordinates $u\\cos\\theta$ and $v\\cos\\theta$. The squared distance between the two feet is $\\cos^2\\theta$ times $u^2+v^2-2uv\\cos\\theta=AB^2$.",
+      "The same calculation applies successively to all four projected edges, even if a foot lies beyond a diagonal segment. Thus the projected perimeter is $(4+5+6+7)|\\cos\\theta|=22|\\cos\\theta|$.",
+      "For the cyclic quadrilateral, Ptolemy gives $AC\\cdot BD=4\\cdot6+5\\cdot7=59$. The dot product of diagonal vectors is $(AD^2+BC^2-AB^2-CD^2)/2=(49+25-16-36)/2=11$. Consequently $|\\cos\\theta|=11/59$.",
+      "The perimeter is $242/59$, a reduced fraction, so $m+n=301$."
+    ],
+    "keyIdeas": [
+      "Scale each projected side by the diagonal-angle cosine"
+    ],
+    "commonMistakes": [
+      "Assuming all feet lie on bounded diagonal segments or omitting the absolute value of the cosine."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Orthogonal projections onto two intersecting lines scale the cross-line side lengths uniformly.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p12",
+    "problemId": "aime-i-2021-p12",
+    "finalAnswer": "$\\boxed{019}$",
+    "shortExplanation": "The expected stopping time is $16/3$ minutes.",
+    "detailedSteps": [
+      "All frogs have the same vertex parity at every time, so their cyclic gaps are positive even numbers before a collision. Divide the gaps by two. They are positive integers summing to six, with unordered types $A=(1,1,4)$, $B=(1,2,3)$ and $C=(2,2,2)$. Rotation, reversal and relabeling give the same transition probabilities for each type.",
+      "There are eight equally likely simultaneous direction choices. Two choices move all frogs in the same direction and leave the gaps unchanged. Each of the other six adds a permutation of $(-1,0,1)$ to the divided gaps. A zero gap is a collision, and the process stops immediately.",
+      "Let the expected remaining times be $a,b,c$ for these types. From A there are two additional transitions to B and four collisions. From B there are two additional transitions to B, one to A, one to C and two collisions. From C all six other transitions go to B.",
+      "Therefore $a=1+(2a+2b)/8$, $b=1+(4b+a+c)/8$ and $c=1+(2c+6b)/8$. Equivalently $3a-b=4$, $4b-a-c=8$ and $c-b=4/3$. Solving gives $a=8/3$, $b=4$ and $c=16/3$.",
+      "The initial gaps are four vertices each, hence type C. The expectation is finite: from any type there is at least probability $3/16$ of absorption within two steps, so survival decays geometrically. The reduced fraction $16/3$ gives $m+n=19$."
+    ],
+    "keyIdeas": [
+      "Reduce the simultaneous walk to three cyclic-gap states"
+    ],
+    "commonMistakes": [
+      "Moving one frog at a time or declaring a collision when frogs merely exchange directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The preserved parity prevents frogs from passing one another before a collision.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p13",
+    "problemId": "aime-i-2021-p13",
+    "finalAnswer": "$\\boxed{672}$",
+    "shortExplanation": "The two large-circle centers are 672 apart.",
+    "detailedSteps": [
+      "Place the common chord line AB at $x=0$ and the two large centers at $(u,0)$ and $(v,0)$, using signed coordinates. With radii $R=961$ and $S=625$, equality of their chord half-lengths gives $u^2-v^2=R^2-S^2$.",
+      "Let the externally tangent circle have center $(x,y)$ and radius $r$. Its 120-degree minor chord arc means its center is at distance $r\\cos60^\\circ=r/2$ from the chord line, so $x=\\varepsilon r/2$ for a sign $\\varepsilon$.",
+      "External tangency gives $(x-u)^2+y^2=(R+r)^2$ and $(x-v)^2+y^2=(S+r)^2$. Subtract and cancel the common-chord identity to obtain $-2x(u-v)=2r(R-S)$. Since r is positive, $-\\varepsilon(u-v)=2(R-S)$. Thus the center distance is $|u-v|=672$.",
+      "The geometry is attainable. Set $u=1465/2$, $v=121/2$, $r=1$, $x=-1/2$ and $y^2=(R+1)^2-(x-u)^2>0$. These satisfy both external tangencies. Also $R-S<672<R+S$, so the two large circles intersect distinctly, and the small circle has the stated chord arc."
+    ],
+    "keyIdeas": [
+      "Subtract the two tangency equations along the radical axis"
+    ],
+    "commonMistakes": [
+      "Assuming the two large centers must lie on opposite sides of their common chord."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The radical-axis identity cancels the unknown small-circle radius.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p14",
+    "problemId": "aime-i-2021-p14",
+    "finalAnswer": "$\\boxed{125}$",
+    "shortExplanation": "The least exponent has prime factors 2,3,7,23,43 and 47.",
+    "detailedSteps": [
+      "Factor $2021=43\\cdot47$. For one of these primes $q$, it is enough that $\\sigma(p^{en})\\equiv1\\pmod q$ for every prime $p$ and positive exponent $e$, because the divisor-sum function is multiplicative.",
+      "If $p$ is zero modulo $q$, the geometric sum is already one. If $p$ is one modulo $q$, it equals $en+1$, so it is one whenever $q\\mid n$. Otherwise $\\sigma(p^{en})-1=p(p^{en}-1)/(p-1)$ modulo q; it is zero whenever $(q-1)\\mid n$. Thus divisibility of $n$ by both $q$ and $q-1$ is sufficient.",
+      "These conditions are also necessary with explicit prime witnesses. The primes 173 and 283 are respectively one modulo 43 and 47, forcing $43\\mid n$ and $47\\mid n$. The prime 3 has multiplicative order 42 modulo 43, and the prime 5 has order 46 modulo 47; their geometric sums force $42\\mid n$ and $46\\mid n$. These orders can be checked by repeated squaring and testing the proper prime-factor divisors of 42 and 46.",
+      "The least possible exponent is $\\operatorname{lcm}(43,42,47,46)=2\\cdot3\\cdot7\\cdot23\\cdot43\\cdot47$. All its prime factors occur once, so their requested sum is 125."
+    ],
+    "keyIdeas": [
+      "Force both the residue period and the exponent count"
+    ],
+    "commonMistakes": [
+      "Using only Fermat periods and missing the additional condition from a prime equal to one modulo q."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A geometric sum behaves differently when its ratio is one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2021-p15",
+    "problemId": "aime-i-2021-p15",
+    "finalAnswer": "$\\boxed{285}$",
+    "shortExplanation": "The admissible integer range is 5 through 280.",
+    "detailedSteps": [
+      "At an intersection the first parabola gives $x^2=y+k$, and the second gives $y^2=x/2+40y-400+k/2$. Adding yields $x^2+y^2=x/2+41y+3k/2-400$. Thus every intersection lies on the circle centered at $(1/4,41/2)$ with squared radius $R^2=(325+24k)/16$.",
+      "To count distinct real intersections, substitute $y=x^2-k$ into the second equation. With $a=k+20$, the resulting quartic is $g(x)=2(x^2-a)^2-x-k$. At zero it is positive, at $\\sqrt a$ negative, and at positive infinity positive. It has exactly two positive roots: it decreases on $(0,\\sqrt a)$, and beyond $\\sqrt a$ its derivative increases strictly from minus one, giving one minimum and one later crossing.",
+      "For negative x put $u=-x\\ge0$, so $g(-u)=2(u^2-a)^2+u-k$. If $1\\le k\\le4$ and $u\\ge k$, this is strictly positive; equality would require both $u=k$ and $k^2=k+20$, impossible. If $u<k$, it is at least $2(a-k^2)^2-k>0$. These k therefore have no negative intersections.",
+      "If $k\\ge6$, then $g(-\\sqrt a)=\\sqrt a-k<0$, giving two additional negative roots by the signs at minus infinity and zero. For $k=5$, the negative-variable expression is zero at $u=5$ with derivative one, so it is negative just to the left of five; it again has two distinct negative roots. Together with the two positive roots, degree four guarantees exactly four distinct intersections for every integer $k\\ge5$.",
+      "Four distinct parabola intersections cannot all be collinear, since a line meets the first parabola at at most two points. Hence the derived circle is their unique circle. The bound $R\\le21$ is $325+24k\\le7056$, giving integer $k\\le280$. Therefore $S$ consists precisely of the integers 5 through 280 and the requested endpoint sum is 285."
+    ],
+    "keyIdeas": [
+      "Separate the circle bound from the four-intersection condition"
+    ],
+    "commonMistakes": [
+      "Using the radius inequality without proving that the quartic has four distinct real roots at its lower endpoint."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two original quadratic equations yield a circle, but real-root distinctness is a separate condition.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

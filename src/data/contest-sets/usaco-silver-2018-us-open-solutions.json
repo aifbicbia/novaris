@@ -1,0 +1,109 @@
+[
+  {
+    "finalAnswer": "Let r_i be the position of element i in a stable sorted order. The number of printed passes is 1 + max(i - r_i), using zero-based indices.",
+    "shortExplanation": "A forward bubble-sort pass moves any element left at most once. Stable sorting reveals the greatest required leftward displacement; that many swapping passes suffice, and one additional pass confirms that no swaps remain.",
+    "detailedSteps": [
+      "Attach the original zero-based index $i$ to each value, and sort the pairs $(A_i,i)$. If the pair originally at $i$ is now at rank $r_i$, define $$D=\\max_i(i-r_i).$$ Equal values must retain their original order: the source swaps only a strictly inverted adjacent pair, so equal elements never cross. Sorting by the pair gives exactly this stable target.",
+      "A forward scan can move a particular element left by at most one place in a pass. After a swap moves that element left, the loop continues to the next edge on its right instead of revisiting its new left edge. Thus any element that needs D places of leftward movement requires at least D passes that contain swaps.",
+      "To prove that $D$ passes also suffice, consider a threshold $r$ in the stable sorted ranks. Replace ranks at most $r$ by zero and all larger ranks by one. Each adjacent comparison of the real keys projects to the usual binary bubble operation: a $10$ pair becomes $01$, and comparisons within the same class do not change the binary array.",
+      "If the $j$th zero starts at position $p_j$, a complete left-to-right binary pass moves it left once whenever a one precedes it; otherwise it is already in the leading zero block. After $t$ passes its position is $\\max(j,p_j-t)$. Hence the threshold projection is sorted after $\\max_j(p_j-j)=p_r-r$ passes: the quantities $p_j-j$ are nondecreasing with $j$.",
+      "The last zero for this threshold starts at $p_r$ and has some true rank $q\\le r$. Therefore $D\\ge p_r-q\\ge p_r-r$. Every threshold projection is sorted after $D$ passes. An inversion of real keys would create an inverted binary projection at a threshold between those keys, so no real inversion remains. This supplies the upper bound rather than assuming that rightward movements cause no extra delay.",
+      "If $D>0$, the lower bound means the $D$th pass cannot already be a no-swap confirmation; the following pass prints once and discovers that sorting is complete. If $D=0$, the originally sorted array still executes its first confirmation pass. In both cases the output is $D+1$.",
+      "The implementation sorts the value-index pairs and scans them once, computing original index minus sorted rank plus one. Time is $O(N\\log N)$ and space is $O(N)$. The result lies in $[1,N]$. This is the Silver version\u2019s forward bubble loop; other divisions with the same title can use a different loop and require a different analysis.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"sort.in\");std::ofstream out(\"sort.out\");int n;in >> n;\n    std::vector<std::pair<long long,int>> ranked(n);\n    for(int i=0;i<n;++i){in >> ranked[i].first;ranked[i].second=i;}\n    std::sort(ranked.begin(),ranked.end());int passes=1;\n    for(int rank=0;rank<n;++rank) passes=std::max(passes,ranked[rank].second-rank+1);\n    out << passes << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Strict comparisons preserve the original order of equal values.",
+      "Measure leftward displacement rather than absolute movement or inversion count.",
+      "Binary threshold projections prove sufficiency for the claimed number of passes.",
+      "The final no-swap pass still prints once."
+    ],
+    "commonMistakes": [
+      "Dropping the extra confirming pass, especially on an already sorted array.",
+      "Giving equal values arbitrary final ranks.",
+      "Using the greatest rightward displacement or the total number of inversions.",
+      "Importing a formula for a different division\u2019s similarly named sorting problem."
+    ],
+    "alternativeMethods": [
+      "For small inputs, execute the given forward bubble loop literally, counting every pass until an entire pass makes no swap. This directly checks the answer without using the displacement formula.",
+      "A stable-sort library can replace sorting value-index pairs, provided the original indices are retained and equal values remain in their original order."
+    ],
+    "difficultyNotes": "Recognizing the displacement formula is useful, but a complete proof also needs its upper bound. Thresholding the stable ranks explains why no additional swapping pass is hidden by elements that move many positions to the right.",
+    "id": "solution-usaco-silver-2018-us-open-p1",
+    "problemId": "usaco-silver-2018-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Sort the patience values in nonincreasing order. Scan that arrival order, accepting a cow whenever her patience is at least the current line length; the resulting count is the minimum.",
+    "shortExplanation": "Let the most patient cows arrive first. They build the line before less patient cows can join. An adjacent exchange argument proves that placing a larger patience value before a smaller one cannot increase the final line length.",
+    "detailedSteps": [
+      "The line length changes only when a cow joins. The source states that every cow arrives before serving begins, so a cow never leaves the line between arrivals. Let m be the current count. A cow with patience w joins exactly when m is at most w, including equality.",
+      "Consider two consecutive arrivals with patience values $a<b$ in that ascending order. If the current count is $m>a$, the first cow rejects in the ascending order. In either ordering, the larger-patience cow either rejects too, or is the only cow to join; the smaller-patience cow still rejects after her.",
+      "If $m\\le a$, the ascending order admits both cows, because $b\\ge a+1\\ge m+1$. In the descending order the larger-patience cow joins first, and the smaller one joins only if $m+1\\le a$. Thus exchanging the pair into descending order leaves a line of equal or smaller length.",
+      "This pair comparison remains valid for the whole suffix. For a fixed later cow, the transition is $T_w(m)=m+1$ when $m\\le w$ and $T_w(m)=m$ otherwise. On integer counts this function is nondecreasing; at its boundary $T_w(w)=T_w(w+1)=w+1$. A smaller count after the exchanged pair therefore cannot become a larger count after identical later arrivals.",
+      "Repeatedly exchange ascending adjacent pairs. This produces a nonincreasing patience order without increasing the final count, proving that the proposed order attains the minimum over every possible original arrival permutation.",
+      "Now scan the sorted values. Admit a cow when her patience is at least the current count. At the first rejection, every remaining value is no greater, and no rejected cow changes the count; all remaining cows will also reject. Print the count once. The first cow always joins because patience is nonnegative.",
+      "Sorting takes $O(N\\log N)$ time; the scan takes $O(N)$, and the retained input uses $O(N)$ space. The final count is between $1$ and $N$. Equal patience values and the equality acceptance boundary do not need special tie handling.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <functional>\n#include <vector>\nint main() {\n    std::ifstream in(\"lemonade.in\");std::ofstream out(\"lemonade.out\");int n;in >> n;\n    std::vector<long long> patience(n);for(auto& value:patience) in >> value;\n    std::sort(patience.begin(),patience.end(),std::greater<long long>());int waiting=0;\n    for(long long value:patience){if(value<waiting) break;++waiting;}\n    out << waiting << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Choose an arrival order; do not merely simulate the input order.",
+      "Exchange neighboring patience values and carry the comparison through the remaining suffix.",
+      "No service occurs during the arrival sequence.",
+      "Joining is inclusive at the patience boundary."
+    ],
+    "commonMistakes": [
+      "Sorting ascending and answering the largest line instead of the smallest.",
+      "Rejecting a cow whose patience equals the current line length.",
+      "Assuming earlier cows have already received lemonade and left.",
+      "Claiming an exchange is globally safe without checking how a changed count affects later arrivals."
+    ],
+    "alternativeMethods": [
+      "Enumerate all permutations of physical cow identities on a tiny input and simulate the exact joining rule for each. Equal patience values may repeat, but the minimum remains unchanged; this is a literal independent oracle.",
+      "With bounded integer patience, a descending histogram can replace comparison sorting. The general printed range is large, so allocating a histogram through the maximum patience is unnecessary here."
+    ],
+    "difficultyNotes": "The implementation is short; the main proof obligation is that an exchange which leaves fewer cows after two arrivals cannot harm the remaining sequence. The monotone integer joining transition supplies that missing step.",
+    "id": "solution-usaco-silver-2018-us-open-p2",
+    "problemId": "usaco-silver-2018-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compress each monochromatic four-neighbor region into a weighted vertex. The first output is the largest vertex weight; the second is the largest connected weight formed by one unordered pair of distinct IDs, with both IDs present.",
+    "shortExplanation": "Flood-fill single-ID regions first. Every two-ID region is a union of whole single-ID regions. Group cross-region boundary edges by their two endpoint IDs, then use a separately initialized weighted DSU for each group.",
+    "detailedSteps": [
+      "Flood-fill the original grid using only up, down, left and right neighbors of the same ID. Give every resulting connected component an identifier, its cow ID and its cell count. A singleton is a connected component too; diagonal contacts do not merge regions. The largest component count is the first output.",
+      "For the team answer, any connected region using two IDs can be enlarged to include every complete monochromatic component it touches. Such an enlargement preserves connectivity and introduces no third ID. Hence a largest team region is represented exactly by a connected union of these weighted components.",
+      "Inspect each horizontal or vertical cell boundary once. If the neighboring cells lie in different compressed components, record an edge between those components, together with the unordered pair of their cow IDs. The two IDs must be different: adjacent cells of the same ID would already have been flood-filled into one component.",
+      "Fix one unordered pair of distinct IDs and consider all edges with that pair. Their graph contains precisely the adjacencies allowed to that team. A connected component of this graph corresponds to a connected physical region, and the sum of its vertex weights counts its cells once. Conversely, a connected two-ID physical region yields such a component-graph path.",
+      "The requirement that both IDs occur is essential. Only graph components that contain at least one cross-ID edge are team candidates. Each such edge already touches both cows. An isolated single-ID component is not accepted merely because it uses at most two IDs, so initialize the team answer to zero and update it through actual edge unions.",
+      "Sort the boundary edges by their unordered ID pair. For one group, initialize a weighted disjoint-set state only for the compressed vertices touched by that group, then unite every edge. Sum vertex weights when roots merge and retain the largest merged weight. Repeated physical boundaries between the same components do not add their weights twice. Use a group stamp to reset touched vertices without clearing all component arrays for every possible ID pair.",
+      "Each group is independent: its parent links and weights must never carry connectivity from a different pair. A union-by-weight and path-compressed find maintains exactly that group\u2019s connected components. Updating the team answer after each edge eventually records every final connected component and always includes both IDs.",
+      "For $V=N^2$ cells there are at most $2N(N-1)$ inspected boundaries. Flood fills and edge construction take $O(V)$, sorting costs $O(V\\log V)$, and weighted union operations fit within this bound. Thus time is $O(N^2\\log N)$ and space is $O(N^2)$. Both answers are at most $N^2$ and fit ordinary integer counts. The original guarantee of at least two distinct IDs jointly excludes a one-cell board and ensures that some cross-ID edge exists.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <numeric>\n#include <utility>\n#include <vector>\nstruct Edge {int low,high,u,v;};\nint main() {\n    std::ifstream in(\"multimoo.in\");std::ofstream out(\"multimoo.out\");int n;in >> n;int cells=n*n;\n    std::vector<int> color(cells),component(cells,-1),weight,componentColor;\n    for(int& value:color) in >> value;\n    int largestOne=0;constexpr int dr[4]={-1,1,0,0},dc[4]={0,0,-1,1};\n    for(int start=0;start<cells;++start) if(component[start]==-1) {\n        int id=static_cast<int>(weight.size()),size=0;std::vector<int> stack{start};component[start]=id;\n        while(!stack.empty()) {\n            int cell=stack.back();stack.pop_back();++size;int row=cell/n,col=cell%n;\n            for(int d=0;d<4;++d){int rr=row+dr[d],cc=col+dc[d];if(rr<0 || rr>=n || cc<0 || cc>=n) continue;int next=rr*n+cc;\n                if(component[next]==-1 && color[next]==color[start]){component[next]=id;stack.push_back(next);}}\n        }\n        weight.push_back(size);componentColor.push_back(color[start]);largestOne=std::max(largestOne,size);\n    }\n    std::vector<Edge> edges;\n    auto add=[&](int u,int v){int a=component[u],b=component[v];if(a==b) return;int x=componentColor[a],y=componentColor[b];edges.push_back({std::min(x,y),std::max(x,y),a,b});};\n    for(int row=0;row<n;++row) for(int col=0;col<n;++col){int cell=row*n+col;if(row+1<n) add(cell,cell+n);if(col+1<n) add(cell,cell+1);}\n    std::sort(edges.begin(),edges.end(),[](const Edge& a,const Edge& b){return std::pair<int,int>{a.low,a.high}<std::pair<int,int>{b.low,b.high};});\n    std::vector<int> parent(weight.size()),size(weight.size()),stamp(weight.size(),0);int epoch=0,largestTwo=0;\n    auto find=[&](int u){while(parent[u]!=u){parent[u]=parent[parent[u]];u=parent[u];}return u;};\n    for(std::size_t begin=0;begin<edges.size();) {\n        std::size_t end=begin+1;while(end<edges.size() && edges[end].low==edges[begin].low && edges[end].high==edges[begin].high) ++end;++epoch;\n        for(std::size_t i=begin;i<end;++i) for(int u:{edges[i].u,edges[i].v}) if(stamp[u]!=epoch){stamp[u]=epoch;parent[u]=u;size[u]=weight[u];}\n        for(std::size_t i=begin;i<end;++i){int u=find(edges[i].u),v=find(edges[i].v);if(u!=v){if(size[u]<size[v]) std::swap(u,v);parent[v]=u;size[u]+=size[v];}largestTwo=std::max(largestTwo,size[u]);}\n        begin=end;\n    }\n    out << largestOne << '\\n' << largestTwo << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compress whole monochromatic connected components and retain their sizes as weights.",
+      "A team region must contain both distinct IDs, not merely use at most two.",
+      "Group physical boundary edges by the unordered pair of their IDs.",
+      "Reset only touched DSU vertices to avoid scanning the entire graph for every pair."
+    ],
+    "commonMistakes": [
+      "Counting diagonal neighbors or merging separated regions just because their ID matches.",
+      "Returning a large single-ID region as a team without proving that both IDs occur.",
+      "Summing a component twice when it has several boundaries with the same neighbor.",
+      "Keeping DSU connections from another ID pair, or clearing all vertices for every pair and causing a quadratic slowdown.",
+      "Treating a one-cell board as satisfying the stated two-distinct-ID guarantee."
+    ],
+    "alternativeMethods": [
+      "For each boundary-pair group, build a sparse adjacency list of its touched compressed vertices and traverse weighted graph components instead of using a DSU. Keep graph construction proportional to the actual boundaries.",
+      "For tiny boards, run fresh cell-level flood fills for every single ID and every pair of distinct IDs. Count a pair component only if its cells actually contain both IDs. This supplies a separate literal oracle without component compression."
+    ],
+    "difficultyNotes": "The difficult part is controlling repeated work across many different ID pairs while preserving the exactly-two-ID condition. Component weights, real boundary edges and per-pair state reset make both the proof and the total work explicit.",
+    "id": "solution-usaco-silver-2018-us-open-p3",
+    "problemId": "usaco-silver-2018-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

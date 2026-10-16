@@ -1,0 +1,100 @@
+[
+  {
+    "finalAnswer": "Sort the milk-output groups and repeatedly pair the lowest remaining output with the highest, consuming as many equal pairs as their counts allow. Track the largest pair sum. Time is $O(N\\log N)$ and space is $O(N)$; never expand the potentially billion-cow population.",
+    "shortExplanation": "All stalls operate simultaneously, so the objective is the largest pair time. An exchange argument permits the smallest and largest remaining cows to be paired without increasing that maximum. Group counts let us perform many identical extreme pairs at once.",
+    "detailedSteps": [
+      "**Identify the bottleneck objective.** Each pair contributes its two output values added together. Because the pairs are milked simultaneously, the total completion time is the maximum of these sums, rather than their sum.",
+      "**Prove an extreme pair is safe.** Let $a$ and $d$ be a smallest and a largest remaining value. If a matching pairs them with $x$ and $y$ instead, replace $(a,x)$ and $(y,d)$ with $(a,d)$ and $(x,y)$. Since $a\\le y$ and $x\\le d$, both new sums satisfy $a+d\\le y+d$ and $x+y\\le y+d$. Thus neither exceeds a pair sum already present, and the overall maximum cannot increase. If $a$ and $d$ were already paired, no exchange is needed.",
+      "**Apply the exchange inductively.** Start with an optimal matching, fix one safe extreme pair, and repeat on the remaining even-sized population. This constructs the greedy pairing with a maximum no larger than the optimum, so it must attain that optimum. Equal output values do not affect the inequalities.",
+      "**Keep the population compressed.** Sort the records by output value and point to the first and last groups with positive remaining counts. If their counts are $c_\\ell$ and $c_r$, form $\\min(c_\\ell,c_r)$ pairs at once. Each has the same sum, so update the running maximum once, decrease both counts, and skip exhausted groups. This is exactly a batch of the proved individual greedy steps.",
+      "**Finish a single remaining group.** If both pointers meet, every remaining cow has the same output $v$. The remaining count is even: the original count was even, and each earlier batch removed twice its size. Any remaining pairs therefore take $2v$. The program also skips zero-count rows without imposing an unprinted positive count for every group.",
+      "**Bounds, complexity and files.** Sorting at most $100000$ groups costs $O(N\\log N)$; each batch exhausts at least one end group, so the later work is $O(N)$. Store the groups in $O(N)$ space. With outputs at most $10^9$, any pair time is at most $2\\cdot10^9$; the reference uses `long long` for both values and counts. Read `pairup.in` and write one minimum completion time to `pairup.out`. The source specifies an even total at most $10^9$, without a separate lower inequality for each count; an empty population is handled as supplementary zero-work behavior, not asserted to be an observed official case.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"pairup.in\");\n    std::ofstream out(\"pairup.out\");\n    int n;\n    in >> n;\n    std::vector<std::pair<long long, long long>> groups(n);\n    for (auto &group : groups) in >> group.second >> group.first;\n    std::sort(groups.begin(), groups.end());\n    int left = 0, right = n - 1;\n    long long answer = 0;\n    while (left <= right) {\n        while (left <= right && groups[left].second == 0) ++left;\n        while (left <= right && groups[right].second == 0) --right;\n        if (left > right) break;\n        if (left == right) {\n            if (groups[left].second >= 2)\n                answer = std::max(answer, 2 * groups[left].first);\n            break;\n        }\n        const long long take = std::min(groups[left].second, groups[right].second);\n        answer = std::max(answer, groups[left].first + groups[right].first);\n        groups[left].second -= take;\n        groups[right].second -= take;\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Minimize the largest pair sum because all pairs run concurrently.",
+      "An exchange proof pairs opposite extremes without worsening the bottleneck.",
+      "Consume equal-value counts in batches instead of allocating one entry per cow."
+    ],
+    "commonMistakes": [
+      "Adding all pair times instead of taking their maximum.",
+      "Expanding up to a billion cows into an array.",
+      "Pairing adjacent values without a bottleneck argument.",
+      "Forgetting same-group final pairs or assuming all row values must be distinct."
+    ],
+    "alternativeMethods": [
+      "For a small population, recursively choose every possible partner of one cow, solve the remaining matching, and minimize the largest pair sum. This full perfect-matching search is useful as an independent correctness oracle, but is unsuitable for the full source limits."
+    ],
+    "difficultyNotes": "Intermediate greedy optimization. The key step is the exchange proof; compressed counts and the even remaining population are essential implementation details.",
+    "id": "solution-usaco-silver-2017-us-open-p1",
+    "problemId": "usaco-silver-2017-us-open-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate each column triple $i<j<k$. Record the spotty cows\u2019 three-letter patterns, then accept the triple only if no plain cow has a recorded pattern. Count accepted triples. Time is $O(NM^3)$ and space is $O(NM)$ for the genomes plus a fixed 64-pattern table.",
+    "shortExplanation": "A perfect classifier exists for a triple exactly when its observed patterns never occur in both classes. Repeated patterns within one class are harmless; a shared pattern across classes would require contradictory predictions.",
+    "detailedSteps": [
+      "**Use the joint three-letter observation.** For a selected triple, a cow contributes its letters in those three positions as one ordered pattern. The output concerns sets of three distinct columns; ordering the indices $i<j<k$ visits each set exactly once.",
+      "**Show why shared patterns are impossible.** If a spotty cow and a plain cow have the same selected pattern, a prediction based only on that pattern cannot distinguish them. It would need to assign both labels to one input. Such a triple fails.",
+      "**Show disjointness is sufficient.** If the two classes have disjoint observed pattern sets, assign the spotty label to all observed spotty patterns and the plain label to all observed plain patterns. These assignments are consistent and classify the population perfectly; unobserved patterns can receive either label. Duplicate genomes or patterns within a class cause no difficulty.",
+      "**Encode exactly 64 patterns.** Map the four DNA symbols to $0,1,2,3$. A pattern with digits $u,v,w$ has code $16u+4v+w$, an injective base-four encoding in $0,\\ldots,63$. Clear a 64-entry table for the current triple, mark every spotty pattern, and reject the triple when any plain pattern has its mark set.",
+      "**Count every successful column set.** Run the test over all $\\binom{M}{3}$ triples and add one for every success. This uses the joint observation, so it can recognize correlations even when individual columns alone do not separate the classes. It does not require three separate one-column tests.",
+      "**Bounds, complexity and files.** With $N\\le500$ and $3\\le M\\le50$, each triple examines at most $2N$ genomes and a constant-sized table. Time is $O(NM^3)$; stored input uses $O(NM)$ space and the pattern table uses $O(1)$. The answer lies between zero and $\\binom{50}{3}=19600$. Read `cownomics.in` and print the one triple count to `cownomics.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <string>\n#include <vector>\nint nucleotide(char c) {\n    if (c == 'A') return 0;\n    if (c == 'C') return 1;\n    if (c == 'G') return 2;\n    return 3;\n}\nint main() {\n    std::ifstream in(\"cownomics.in\");\n    std::ofstream out(\"cownomics.out\");\n    int n, m;\n    in >> n >> m;\n    std::vector<std::string> spotted(n), plain(n);\n    for (auto &genome : spotted) in >> genome;\n    for (auto &genome : plain) in >> genome;\n    int answer = 0;\n    for (int i = 0; i < m; ++i)\n        for (int j = i + 1; j < m; ++j)\n            for (int k = j + 1; k < m; ++k) {\n                std::array<bool, 64> present{};\n                for (const auto &genome : spotted) {\n                    const int code = 16 * nucleotide(genome[i])\n                        + 4 * nucleotide(genome[j]) + nucleotide(genome[k]);\n                    present[code] = true;\n                }\n                bool valid = true;\n                for (const auto &genome : plain) {\n                    const int code = 16 * nucleotide(genome[i])\n                        + 4 * nucleotide(genome[j]) + nucleotide(genome[k]);\n                    if (present[code]) { valid = false; break; }\n                }\n                if (valid) ++answer;\n            }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A classifier is possible exactly when no observation has conflicting labels.",
+      "Treat selected letters as a joint pattern to retain correlations.",
+      "Enumerate unordered column triples once and use the fixed four-symbol alphabet."
+    ],
+    "commonMistakes": [
+      "Testing columns individually and missing joint-pattern discrimination.",
+      "Counting six permutations of every column set.",
+      "Rejecting duplicate patterns inside a single class.",
+      "Failing to clear the pattern table between triples."
+    ],
+    "alternativeMethods": [
+      "For each triple, inspect every spotty\u2013plain cow pair and reject if all three selected letters match. This literal comparison avoids encoding and pattern-set construction, but takes $O(N^2M^3)$ time. On tiny binary-alphabet cases, enumerating every possible labeling of the eight patterns provides a separate test of classifier existence."
+    ],
+    "difficultyNotes": "Intermediate combinatorics and classification. The necessary-and-sufficient disjointness proof matters more than the small pattern encoding.",
+    "id": "solution-usaco-silver-2017-us-open-p2",
+    "problemId": "usaco-silver-2017-us-open-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Test every rectangle\u2019s two-color component condition, then count only qualifying rectangles with no strictly larger qualifying superrectangle. Flood fill checks connectivity; a containment table processes larger rectangles first. Time is $O(N^6)$ and space is $O(N^4)$ for $N\\le20$.",
+    "shortExplanation": "Connectivity must be restricted to each rectangle. A qualifying rectangle has exactly two colors, with component counts one and at least two. Only inclusion-maximal qualifying rectangles are PCLs; incomparable or overlapping maximal rectangles can both be counted.",
+    "detailedSteps": [
+      "**Separate qualification from maximality.** Call a rectangle a candidate if it satisfies the color and component rule alone. A counted PCL is an inclusion-maximal candidate. If a candidate is contained in a larger candidate, the finite set of containing candidates has a maximal member that excludes the smaller one from being a PCL. Conversely, a candidate with no larger candidate already satisfies maximality.",
+      "**Count components inside the current rectangle.** Start a flood at each unvisited cell and move only to same-color neighbors up, down, left or right that remain inside the bounds. Each flood discovers exactly one connected component. Count floods by color; reject a third color. Accept exactly two present colors with one component count equal to one and the other at least two. Diagonal contact and paths through cells outside the rectangle do not join components.",
+      "**Define the containment flag.** For bounds $R$, let $H(R)$ indicate whether some qualifying candidate contains $R$, including $R$ itself. Every strictly containing rectangle can be reached by adding boundary rows or columns one at a time. Consequently,\n\n$$H(R)=\\operatorname{good}(R)\\lor\\bigvee_{E\\in\\mathcal E(R)}H(E),$$\n\nwhere $\\mathcal E(R)$ consists of valid one-edge enlargements. The disjunction over these enlargements is exactly the flag for a strictly larger qualifying superrectangle.",
+      "**Process larger bounds first.** Iterate rectangle heights from largest to smallest and, within each height, widths from largest to smallest. An enlargement has either larger height or the same height with larger width, so all required flags have already been computed. This proves the recurrence by induction over the processing order.",
+      "**Count only maximal candidates.** If the current rectangle qualifies and every enlargement flag is false, add one. Store its qualification OR the enlargement flags as its own containment flag. An intermediate enlargement need not qualify: its flag still carries information about a qualifying rectangle farther outside. Checking only immediately qualifying enlargements would miss this distinction.",
+      "**Justify the connectivity test.** Every cell reached by a flood has a same-color path from its start. Conversely, every cell with such a path is eventually reached by following that path\u2019s edges. New unvisited starts therefore count all components exactly once. Combining this exact qualification test with the exact superrectangle flags counts every maximal candidate and no smaller contained candidate.",
+      "**Bounds, complexity and files.** There are $O(N^4)$ rectangles; each flood examination uses $O(N^2)$ work, while containment updates use only four flags. Total time is $O(N^6)$. The four-bound flag table occupies $O(N^4)$ space, with $O(N^2)$ grid, visited cells and queue; at $N=20$ it holds $160000$ one-byte flags. Colors range through `A`\u2013`Z`. The total rectangle count bounds the answer by $[N(N+1)/2]^2\\le44100$. Read `where.in` and write one PCL count to `where.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <array>\n#include <fstream>\n#include <string>\n#include <vector>\nclass RectangleCounter {\n    int n;\n    const std::vector<std::string> &grid;\n    std::vector<unsigned char> containsCandidate;\n    int index(int top, int bottom, int left, int right) const {\n        return ((top * n + bottom) * n + left) * n + right;\n    }\n    bool qualifies(int top, int bottom, int left, int right) const {\n        std::vector<unsigned char> visited(n * n, 0);\n        std::array<int, 26> components{};\n        int colors = 0;\n        const std::array<int, 4> dr{-1, 1, 0, 0}, dc{0, 0, -1, 1};\n        std::vector<int> queue;\n        for (int r = top; r <= bottom; ++r)\n            for (int c = left; c <= right; ++c) {\n                if (visited[r * n + c]) continue;\n                const int color = grid[r][c] - 'A';\n                if (components[color] == 0 && ++colors > 2) return false;\n                ++components[color];\n                queue.clear(); queue.push_back(r * n + c);\n                visited[r * n + c] = 1;\n                for (std::size_t head = 0; head < queue.size(); ++head) {\n                    const int row = queue[head] / n, col = queue[head] % n;\n                    for (int d = 0; d < 4; ++d) {\n                        const int rr = row + dr[d], cc = col + dc[d];\n                        if (rr < top || rr > bottom || cc < left || cc > right) continue;\n                        const int cell = rr * n + cc;\n                        if (!visited[cell] && grid[rr][cc] == grid[row][col]) {\n                            visited[cell] = 1; queue.push_back(cell);\n                        }\n                    }\n                }\n            }\n        if (colors != 2) return false;\n        int single = 0, multiple = 0;\n        for (int count : components) {\n            if (count == 1) ++single;\n            else if (count >= 2) ++multiple;\n        }\n        return single == 1 && multiple == 1;\n    }\npublic:\n    explicit RectangleCounter(const std::vector<std::string> &image)\n        : n(static_cast<int>(image.size())), grid(image), containsCandidate(n * n * n * n, 0) {}\n    int count() {\n        int answer = 0;\n        for (int height = n; height >= 1; --height)\n            for (int width = n; width >= 1; --width)\n                for (int top = 0; top + height <= n; ++top)\n                    for (int left = 0; left + width <= n; ++left) {\n                        const int bottom = top + height - 1, right = left + width - 1;\n                        bool larger = false;\n                        if (top > 0) larger |= containsCandidate[index(top - 1, bottom, left, right)] != 0;\n                        if (bottom + 1 < n) larger |= containsCandidate[index(top, bottom + 1, left, right)] != 0;\n                        if (left > 0) larger |= containsCandidate[index(top, bottom, left - 1, right)] != 0;\n                        if (right + 1 < n) larger |= containsCandidate[index(top, bottom, left, right + 1)] != 0;\n                        const bool good = qualifies(top, bottom, left, right);\n                        if (good && !larger) ++answer;\n                        containsCandidate[index(top, bottom, left, right)] = good || larger;\n                    }\n        return answer;\n    }\n};\nint main() {\n    std::ifstream in(\"where.in\");\n    std::ofstream out(\"where.out\");\n    int n;\n    in >> n;\n    std::vector<std::string> image(n);\n    for (auto &row : image) in >> row;\n    out << RectangleCounter(image).count() << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compute four-neighbor components in the induced rectangle, excluding outside paths.",
+      "Maximal means no qualifying containing rectangle, not largest area globally.",
+      "Propagate containment through all intermediate bounds, even when they do not qualify."
+    ],
+    "commonMistakes": [
+      "Joining diagonal neighbors or using a same-color path outside the tested rectangle.",
+      "Accepting two connected colors or two fragmented colors.",
+      "Counting every qualifying subrectangle without removing contained candidates.",
+      "Keeping only one globally largest rectangle and losing incomparable PCLs.",
+      "Assuming a nonqualifying whole image has no qualifying subrectangles."
+    ],
+    "alternativeMethods": [
+      "Collect every qualifying rectangle, then compare each with every other candidate and reject any strictly contained one. A literal union-find graph test for each rectangle plus this complete containment comparison gives an independent oracle on small images; the pairwise containment phase can cost $O(P^2)$ for $P$ candidates."
+    ],
+    "difficultyNotes": "Advanced enumeration and graph reasoning. Rectangle-restricted connectivity and inclusion maximality are separate requirements; the containment recurrence removes a potentially expensive pairwise candidate comparison.",
+    "id": "solution-usaco-silver-2017-us-open-p3",
+    "problemId": "usaco-silver-2017-us-open-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

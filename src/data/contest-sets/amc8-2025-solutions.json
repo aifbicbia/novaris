@@ -1,0 +1,559 @@
+[
+  {
+    "id": "solution-amc8-2025-p1",
+    "problemId": "amc8-2025-p1",
+    "finalAnswer": "$\\boxed{50\\%}$ (choice B)",
+    "shortExplanation": "The picture is symmetric across both central axes, so it is enough to examine one quarter of the 4 by 4 square.",
+    "detailedSteps": [
+      "The picture is symmetric across both central axes, so it is enough to examine one quarter of the 4 by 4 square.",
+      "Inside that quarter, the shaded triangles and the unshaded triangles have equal total area: the boundary diagonals pair each shaded piece with an unshaded piece. Thus the star covers one half of the whole grid."
+    ],
+    "keyIdeas": [
+      "Area and symmetry"
+    ],
+    "commonMistakes": [
+      "Ignoring the symmetry and comparing individual triangles."
+    ],
+    "alternativeMethods": [
+      "Compute the shaded triangles directly: the symmetric star has half the 16 unit-square area."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 1; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p2",
+    "problemId": "amc8-2025-p2",
+    "finalAnswer": "$\\boxed{10423}$ (choice B)",
+    "shortExplanation": "The hieroglyph counts are one 10,000 symbol, four 100 symbols, two 10 symbols, and three 1 symbols.",
+    "detailedSteps": [
+      "The hieroglyph counts are one 10,000 symbol, four 100 symbols, two 10 symbols, and three 1 symbols.",
+      "Their value is 10,000+4(100)+2(10)+3=10,423, which is the second option."
+    ],
+    "keyIdeas": [
+      "Place value"
+    ],
+    "commonMistakes": [
+      "Reading the symbols as positional digits instead of additive values."
+    ],
+    "alternativeMethods": [
+      "Use a place-value table for the six symbol types."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 2; source difficulty is represented qualitatively as introductory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p3",
+    "problemId": "amc8-2025-p3",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "The first game has 4 players and 15 cards each, so the deck has 4(15)=60 cards.",
+    "detailedSteps": [
+      "The first game has 4 players and 15 cards each, so the deck has 4(15)=60 cards.",
+      "With two additional friends there are 6 players, so each receives 60/6=10 cards."
+    ],
+    "keyIdeas": [
+      "Ratios"
+    ],
+    "commonMistakes": [
+      "Using 6 rather than 4 players in the first game."
+    ],
+    "alternativeMethods": [
+      "Use proportionality: deck size remains 60 while players increase to 6."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 3; source difficulty is represented qualitatively as introductory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p4",
+    "problemId": "amc8-2025-p4",
+    "finalAnswer": "$\\boxed{37}$ (choice B)",
+    "shortExplanation": "The tenth term is nine steps after the first term.",
+    "detailedSteps": [
+      "The tenth term is nine steps after the first term.",
+      "Subtracting 9(7)=63 from 100 gives 37."
+    ],
+    "keyIdeas": [
+      "Arithmetic sequences"
+    ],
+    "commonMistakes": [
+      "Using eight rather than nine gaps."
+    ],
+    "alternativeMethods": [
+      "Use the arithmetic-term formula a_n=100-7(n-1)."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 4; source difficulty is represented qualitatively as introductory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p5",
+    "problemId": "amc8-2025-p5",
+    "finalAnswer": "$\\boxed{24}$ (choice C)",
+    "shortExplanation": "Sum the Manhattan distances of the four required route segments to obtain $24$ blocks.",
+    "detailedSteps": [
+      "Take the lower-left corner of the street grid as the origin. The labeled points are $B=(0,0)$, $C=(2,4)$, $F=(6,5)$, and $A=(7,3)$.",
+      "A shortest grid route between two points has length $|\\Delta x|+|\\Delta y|$, and each such length is attainable by moving only toward the destination. Thus $FA=1+2=3$, $AB=7+3=10$, $BC=2+4=6$, and $CF=4+1=5$.",
+      "The four required legs have total length $3+10+6+5=24$ blocks."
+    ],
+    "keyIdeas": [
+      "Manhattan distance"
+    ],
+    "commonMistakes": [
+      "Using Euclidean distance instead of grid distance."
+    ],
+    "alternativeMethods": [
+      "Assign coordinates to F,A,B,C and sum absolute coordinate differences."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 5; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p6",
+    "problemId": "amc8-2025-p6",
+    "finalAnswer": "$\\boxed{17}$ (choice C)",
+    "shortExplanation": "Modulo 4, the five numbers have residues 3,0,1,2,3, whose sum is 9, congruent to 1.",
+    "detailedSteps": [
+      "Modulo 4, the five numbers have residues 3,0,1,2,3, whose sum is 9, congruent to 1.",
+      "To leave a multiple of 4, erase the number with residue 1. That number is 17, so the answer is choice C."
+    ],
+    "keyIdeas": [
+      "Modular arithmetic"
+    ],
+    "commonMistakes": [
+      "Checking only the erased number instead of the total modulo 4."
+    ],
+    "alternativeMethods": [
+      "Compute the full sum 85 and subtract each possible erased number modulo 4."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 6; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p7",
+    "problemId": "amc8-2025-p7",
+    "finalAnswer": "$\\boxed{37}$ (choice D)",
+    "shortExplanation": "The requested group is the set counted at least 80 percent minus the set counted at least 90 percent.",
+    "detailedSteps": [
+      "The requested group is the set counted at least 80 percent minus the set counted at least 90 percent.",
+      "There are 50-13=37 students in that interval."
+    ],
+    "keyIdeas": [
+      "Nested counts"
+    ],
+    "commonMistakes": [
+      "Subtracting the at-least-85 percent group as well."
+    ],
+    "alternativeMethods": [
+      "Use a two-way table of score bands: 50-13=37."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 7; source difficulty is represented qualitatively as introductory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p8",
+    "problemId": "amc8-2025-p8",
+    "finalAnswer": "$\\boxed{3\\sqrt{3}}$ (choice A)",
+    "shortExplanation": "The six faces each have area $3$, so the cube has edge $\\sqrt3$ and volume $3\\sqrt3$.",
+    "detailedSteps": [
+      "The net has six congruent square faces, so each face has area $18/6=3$ square centimeters.",
+      "The edge length is therefore $\\sqrt3$ centimeters and the volume is $(\\sqrt3)^3=3\\sqrt3$ cubic centimeters."
+    ],
+    "keyIdeas": [
+      "Cube nets"
+    ],
+    "commonMistakes": [
+      "Taking the cube edge to be 3 rather than sqrt(3)."
+    ],
+    "alternativeMethods": [
+      "Use surface area s^2=3 and multiply by s."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 8; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p9",
+    "problemId": "amc8-2025-p9",
+    "finalAnswer": "$\\boxed{6.5}$ (choice B)",
+    "shortExplanation": "Averaging the six opposite pairs and then averaging those six results gives the average of all twelve clock numbers, since every number is used exactly once with equal weight.",
+    "detailedSteps": [
+      "Averaging the six opposite pairs and then averaging those six results gives the average of all twelve clock numbers, since every number is used exactly once with equal weight.",
+      "The average of 1 through 12 is (1+12)/2=13/2=6.5."
+    ],
+    "keyIdeas": [
+      "Averages"
+    ],
+    "commonMistakes": [
+      "Averaging only the six pair sums without dividing consistently."
+    ],
+    "alternativeMethods": [
+      "Pair opposite entries as (1,7),(2,8),...,(6,12)."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 9; source difficulty is represented qualitatively as introductory.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p10",
+    "problemId": "amc8-2025-p10",
+    "finalAnswer": "$\\boxed{23.75}$ (choice D)",
+    "shortExplanation": "Each rectangle has area 5(3)=15. From the shown rotation, the overlap is a square of side 5/2, so its area is 25/4.",
+    "detailedSteps": [
+      "Each rectangle has area 5(3)=15. From the shown rotation, the overlap is a square of side 5/2, so its area is 25/4.",
+      "Inclusion-exclusion gives 15+15-25/4=95/4=23.75."
+    ],
+    "keyIdeas": [
+      "Inclusion-exclusion"
+    ],
+    "commonMistakes": [
+      "Adding overlap instead of subtracting it."
+    ],
+    "alternativeMethods": [
+      "Compute union area 2(15)-6.25."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 10; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p11",
+    "problemId": "amc8-2025-p11",
+    "finalAnswer": "$\\boxed{\\text{L and L}}$ (choice C)",
+    "shortExplanation": "Two L tiles can occupy opposite sides of the rectangle, leaving exactly a rotated S tile in the middle.",
+    "detailedSteps": [
+      "It is enough to exhibit the pair in the correct option. Number the rows $1,2,3$ from top to bottom and the columns $1,2,3,4$ from left to right.",
+      "Place one L tile in cells $(1,1),(2,1),(3,1),(3,2)$ and the other in $(1,3),(1,4),(2,4),(3,4)$. Each is an L tetromino, after rotation or reflection.",
+      "The four uncovered cells are $(1,2),(2,2),(2,3),(3,3)$, which form a rotated S tile. Every cell is covered exactly once, so the other two pieces can be L and L, choice C."
+    ],
+    "keyIdeas": [
+      "Tetromino tilings"
+    ],
+    "commonMistakes": [
+      "Relying on area alone without checking that the tiles actually fit."
+    ],
+    "alternativeMethods": [
+      "Enumerate all rotations, reflections, and translations without overlap. The independent review script finds only the multiset S, L, L."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 11; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p12",
+    "problemId": "amc8-2025-p12",
+    "finalAnswer": "$\\boxed{5\\pi}$ (choice C)",
+    "shortExplanation": "A centered radius-$\\sqrt5$ circle fits; the inward boundary corners prevent any larger circle, even with a shifted center.",
+    "detailedSteps": [
+      "Put the center of the region at $(0,0)$, with grid lines parallel to the axes. The closest inward corners are $(\\pm1,\\pm2)$ and $(\\pm2,\\pm1)$; each is $\\sqrt5$ from the origin. Every boundary segment is at least this far from the origin, so the centered circle of radius $\\sqrt5$ fits.",
+      "To prove it is largest, suppose a circle of radius $r>\\sqrt5$ had center $(a,b)$. The region lies in the square $[-3,3]\\times[-3,3]$, so $|a|,|b|<3-\\sqrt5<1$.",
+      "Choose an inward corner in the same horizontal and vertical directions as $(a,b)$, with absolute coordinates $(1,2)$. Its squared distance from the center is $(1-|a|)^2+(2-|b|)^2\\le5$. A disk of radius greater than $\\sqrt5$ would cross this boundary corner, a contradiction. Thus the maximum area is $\\pi(\\sqrt5)^2=5\\pi$."
+    ],
+    "keyIdeas": [
+      "Inscribed circles"
+    ],
+    "commonMistakes": [
+      "Using the total 24 as a radius or diameter."
+    ],
+    "alternativeMethods": [
+      "Use the distance to the nearest boundary corner as the limiting radius."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 12; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p13",
+    "problemId": "amc8-2025-p13",
+    "finalAnswer": "$\\boxed{(3,4,4,3,4,3,4)}$ (choice A)",
+    "shortExplanation": "The even numbers produce residues 2,4,6,1,3,5,0 modulo 7, then repeat.",
+    "detailedSteps": [
+      "The even numbers produce residues 2,4,6,1,3,5,0 modulo 7, then repeat.",
+      "There are 25 terms: three complete cycles plus four extra residues 2,4,6,1. Hence the counts for residues 0 through 6 are (3,4,4,3,4,3,4), matching histogram A."
+    ],
+    "keyIdeas": [
+      "Remainder histograms"
+    ],
+    "commonMistakes": [
+      "Forgetting that the cycle has length 7."
+    ],
+    "alternativeMethods": [
+      "Count residues by direct modular enumeration."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 13; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p14",
+    "problemId": "amc8-2025-p14",
+    "finalAnswer": "$\\boxed{34}$ (choice E)",
+    "shortExplanation": "After insertion there are six numbers. Every answer choice is at least 7, so the middle two values remain 7 and 7; the median is 7.",
+    "detailedSteps": [
+      "After insertion there are six numbers. Every answer choice is at least 7, so the middle two values remain 7 and 7; the median is 7.",
+      "Twice the median is 14, so the new total must be 6(14)=84. The old total is 50, hence N=84-50=34."
+    ],
+    "keyIdeas": [
+      "Mean and median"
+    ],
+    "commonMistakes": [
+      "Assuming the median changes when inserting a value above 7."
+    ],
+    "alternativeMethods": [
+      "Set the sum equation 50+N=6(14)."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 14; source difficulty is represented qualitatively as intermediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p15",
+    "problemId": "amc8-2025-p15",
+    "finalAnswer": "$\\boxed{16}$ (choice C)",
+    "shortExplanation": "There are 36 squares and 13 silver squares, hence 23 gold squares arranged into 18 folded pairs.",
+    "detailedSteps": [
+      "There are 36 squares and 13 silver squares, hence 23 gold squares arranged into 18 folded pairs.",
+      "To minimize double-gold pairs, fill each pair once before adding five extra gold squares: m=5. To maximize them, pair the 23 gold squares as much as possible: M=11. Thus m+M=16."
+    ],
+    "keyIdeas": [
+      "Extremal pairing"
+    ],
+    "commonMistakes": [
+      "Treating the 23 gold squares as if they formed 23 pairs."
+    ],
+    "alternativeMethods": [
+      "Use the bounds max(0,23-18) and floor(23/2)."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 15; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p16",
+    "problemId": "amc8-2025-p16",
+    "finalAnswer": "$\\boxed{105}$ (choice C)",
+    "shortExplanation": "Pair each lower number k from 1 to 10 with the upper number k+10. Choosing five lower numbers blocks their five partners.",
+    "detailedSteps": [
+      "Pair each lower number k from 1 to 10 with the upper number k+10. Choosing five lower numbers blocks their five partners.",
+      "The five chosen upper numbers are exactly 10 more than the five unchosen lower numbers, so the total is (1+...+10)+5(10)=55+50=105."
+    ],
+    "keyIdeas": [
+      "Bijections"
+    ],
+    "commonMistakes": [
+      "Assuming the upper five can be chosen independently."
+    ],
+    "alternativeMethods": [
+      "Use a complement bijection between chosen upper and unchosen lower numbers."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 16; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p17",
+    "problemId": "amc8-2025-p17",
+    "finalAnswer": "$\\boxed{115}$ (choice D)",
+    "shortExplanation": "Residents of A who work in A number 100-100/4-100/5=55.",
+    "detailedSteps": [
+      "Residents of A who work in A number 100-100/4-100/5=55.",
+      "Residents of B contributing to A number 120/3=40, and residents of C contributing to A number 160/8=20. The total is 55+40+20=115."
+    ],
+    "keyIdeas": [
+      "Weighted flows"
+    ],
+    "commonMistakes": [
+      "Reversing the arrow fractions in the city diagram."
+    ],
+    "alternativeMethods": [
+      "Build a 3-by-3 flow table and sum the A column."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 17; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p18",
+    "problemId": "amc8-2025-p18",
+    "finalAnswer": "$\\boxed{2}$ (choice B)",
+    "shortExplanation": "For a circle of radius r, the gap between the circle and its inscribed square scales as r^2.",
+    "detailedSteps": [
+      "For a circle of radius r, the gap between the circle and its inscribed square scales as r^2.",
+      "The right shaded part is one quarter of its gap, so the right whole gap must be four times the left gap. Thus R^2=4(1^2), giving R=2."
+    ],
+    "keyIdeas": [
+      "Similarity and scaling"
+    ],
+    "commonMistakes": [
+      "Scaling radius linearly when areas scale quadratically."
+    ],
+    "alternativeMethods": [
+      "Write both gap areas as a constant times r^2."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 18; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p19",
+    "problemId": "amc8-2025-p19",
+    "finalAnswer": "$\\boxed{8.5}$ (choice D)",
+    "shortExplanation": "The car from A needs 5/25=1/5 hour to reach the middle section; the car from B needs 5/20=1/4 hour.",
+    "detailedSteps": [
+      "The car from A needs 5/25=1/5 hour to reach the middle section; the car from B needs 5/20=1/4 hour.",
+      "By then A has traveled 40(1/20)=2 miles into the middle section, leaving 3 miles between cars. They share speed 40 there, so each travels 1.5 more miles and the meeting point is 5+2+1.5=8.5 miles from A."
+    ],
+    "keyIdeas": [
+      "Relative motion"
+    ],
+    "commonMistakes": [
+      "Using the average of the three speed limits."
+    ],
+    "alternativeMethods": [
+      "Solve with times: the middle section is the meeting region."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 19; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p20",
+    "problemId": "amc8-2025-p20",
+    "finalAnswer": "$\\boxed{\\frac{4}{7}}$ (choice A)",
+    "shortExplanation": "Sarika receives the first half, then every third halving term: 1/2, 1/2^4, 1/2^7, and so on.",
+    "detailedSteps": [
+      "Sarika receives the first half, then every third halving term: 1/2, 1/2^4, 1/2^7, and so on.",
+      "This is a geometric series with ratio 1/8, so its sum is (1/2)/(1-1/8)=4/7."
+    ],
+    "keyIdeas": [
+      "Geometric series"
+    ],
+    "commonMistakes": [
+      "Summing every other halving term rather than every third term."
+    ],
+    "alternativeMethods": [
+      "Sum 1/2 times the geometric factor 1/8 repeatedly."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 20; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p21",
+    "problemId": "amc8-2025-p21",
+    "finalAnswer": "$\\boxed{12}$ (choice A)",
+    "shortExplanation": "The four mutually adjacent pods force odd grades; the remaining edge constraints force $(C,E,F)$ to be $(1,4,7)$ or $(7,4,1)$.",
+    "detailedSteps": [
+      "The figure contains all six edges joining $A,B,C,F$. Their four distinct grades must be pairwise nonconsecutive. The only four such grades from $1$ through $7$ are $1,3,5,7$; the other pods $D,E,G$ receive $2,4,6$.",
+      "Pod $G$ is adjacent to $A$ and $F$. If $G=4$, then $\\{A,F\\}=\\{1,7\\}$ and $\\{B,C\\}=\\{3,5\\}$. Pod $E$, which is adjacent to $C$, is then forced to be $6$ when $C=3$ or $2$ when $C=5$. In either case the remaining grade for $D$ differs from $C$ by $1$, contradicting edge $CD$.",
+      "If $G=2$, then $\\{A,F\\}=\\{5,7\\}$ and $\\{B,C\\}=\\{1,3\\}$. If $C=3$, edge $CD$ forces $D=6$ and $E=4$, but edge $CE$ then fails. Hence $C=1$. Edge $EF$ rules out $F=5$: it would leave neither $4$ nor $6$ for $E$. Thus $F=7$, $E=4$, and $C+E+F=12$.",
+      "Replacing every grade $g$ by $8-g$ preserves all edge conditions and takes $G=2$ to $G=6$. The corresponding triple is $(C,E,F)=(7,4,1)$, again with sum $12$."
+    ],
+    "keyIdeas": [
+      "Graph labeling"
+    ],
+    "commonMistakes": [
+      "Checking only one of the symmetric cases."
+    ],
+    "alternativeMethods": [
+      "Use a small exhaustive assignment search on the graph."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 21; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p22",
+    "problemId": "amc8-2025-p22",
+    "finalAnswer": "$\\boxed{7}$ (choice D)",
+    "shortExplanation": "Add an extra coat at the end. The 36 hooks then split into equal blocks, each ending with a coat.",
+    "detailedSteps": [
+      "Add an extra coat at the end. The 36 hooks then split into equal blocks, each ending with a coat.",
+      "If there are d blocks and each has b at least 2 hooks, then bd=36 and d is one more than the number of coats. The divisor count of 36 is 9; excluding 1x36 and 36x1 leaves 7 valid choices."
+    ],
+    "keyIdeas": [
+      "Divisors"
+    ],
+    "commonMistakes": [
+      "Forgetting the extra coat changes the block count."
+    ],
+    "alternativeMethods": [
+      "Enumerate divisors b of 36 with b,d at least 2."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 22; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p23",
+    "problemId": "amc8-2025-p23",
+    "finalAnswer": "$\\boxed{1}$ (choice B)",
+    "shortExplanation": "Write the number as a^2-1, where a^2 ends in 00 because the original ends in 99. For a four-digit result, a is one of 40,50,60,70,80,90,100.",
+    "detailedSteps": [
+      "Write the number as a^2-1, where a^2 ends in 00 because the original ends in 99. For a four-digit result, a is one of 40,50,60,70,80,90,100.",
+      "The factorization (a-1)(a+1) must be a product of exactly two primes. Only a=60 gives 59 and 61, so exactly one number works."
+    ],
+    "keyIdeas": [
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Testing all four-digit numbers without using the square condition."
+    ],
+    "alternativeMethods": [
+      "Test neighboring primes for each possible a."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 23; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p24",
+    "problemId": "amc8-2025-p24",
+    "finalAnswer": "$\\boxed{4}$ (choice E)",
+    "shortExplanation": "For leg length $x$ and short base $y$, horizontal projections give perimeter $3x+2y=30$. Its four positive integer solutions give four trapezoids.",
+    "detailedSteps": [
+      "Let the equal leg lengths be $x$ and the shorter base $AD$ have length $y$. Both $x$ and $y$ are positive integers. Each leg makes a $60^\\circ$ angle with the longer base, so its horizontal projection has length $x\\cos60^\\circ=x/2$.",
+      "The longer base therefore has length $y+x$, and the perimeter condition is $x+x+y+(y+x)=3x+2y=30$. This forces $x$ to be even and $0<x<10$.",
+      "The possibilities are $(x,y)=(2,12),(4,9),(6,6),(8,3)$. Each gives positive height $x\\sqrt3/2$ and an integer longer base $y+x$, so all four exist. Their different leg lengths give noncongruent trapezoids."
+    ],
+    "keyIdeas": [
+      "Integer geometry"
+    ],
+    "commonMistakes": [
+      "Allowing x or y to be zero."
+    ],
+    "alternativeMethods": [
+      "Parameterize all shapes by positive integer x,y."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 24; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc8-2025-p25",
+    "problemId": "amc8-2025-p25",
+    "finalAnswer": "$\\boxed{3150}$ (choice B)",
+    "shortExplanation": "Reflection pairs each right-side area with its complement in a $25$-unit diamond. The $252$ paths therefore have total area $252\\cdot25/2=3150$.",
+    "detailedSteps": [
+      "Every path has ten steps: five northeast and five northwest. Choosing which five steps go northeast gives $\\binom{10}{5}=252$ paths.",
+      "Reflection across the vertical diagonal is a bijection of these paths. If a path has area $a$ between itself and the right boundary, its reflected path has corresponding right-side area $25-a$, since the full diamond consists of $25$ unit squares.",
+      "Let $S$ be the sum of all right-side areas. Sum $a+(25-a)=25$ over every path, remembering that reflection merely permutes the list of paths. Then $2S=25\\binom{10}{5}=6300$, and $S=3150$."
+    ],
+    "keyIdeas": [
+      "Lattice paths"
+    ],
+    "commonMistakes": [
+      "Counting only one path from each reflected pair."
+    ],
+    "alternativeMethods": [
+      "Use the average right-area over all paths: half the diamond area."
+    ],
+    "difficultyNotes": "2025 AMC 8 problem 25; source difficulty is represented qualitatively as advanced.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

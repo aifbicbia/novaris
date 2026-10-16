@@ -1,0 +1,96 @@
+[
+  {
+    "finalAnswer": "Simulate exactly 100 maximal pours and print the final amounts in buckets 1, 2, and 3 on three separate lines.",
+    "shortExplanation": "A pour transfers the smaller of the source amount and the free space in the destination. Apply this update in the prescribed cyclic order; each update is determined completely by the current state.",
+    "detailedSteps": [
+      "Keep the three capacities $c_i$ and current milk amounts $m_i$. For a pour from $a$ into $b$, the only possible transferred amount is $d=\\min(m_a,c_b-m_b)$. The first bound prevents removing more milk than the source contains; the second prevents overflowing the destination.",
+      "Update $m_a\\leftarrow m_a-d$ and $m_b\\leftarrow m_b+d$. The bounds $0\\le m_i\\le c_i$ remain true, total milk is conserved, and either the source becomes empty or the destination becomes full. These are exactly the required stopping conditions, including a zero transfer when a previous operation has left no source milk or no destination space.",
+      "Number operations from $0$ through $99$. Use source index $a=i\\bmod 3$ and destination $b=(a+1)\\bmod 3$. Thus the last operation has source index $0$, as required. A zero transfer still counts as one of the 100 operations.",
+      "Inductively, the initial array is the physical initial state, and the uniquely determined update gives the physical next state. After 100 iterations the entire array is therefore correct. Print one amount per line. The program uses 64-bit integers; although each amount stays at most one billion, a conservation check can involve a total of three billion. Time is O(100) and auxiliary space is O(1).",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nusing namespace std;\nint main() {\n    ifstream in(\"mixmilk.in\");\n    ofstream out(\"mixmilk.out\");\n    long long capacity[3], milk[3];\n    for (int i = 0; i < 3; ++i) in >> capacity[i] >> milk[i];\n    for (int operation = 0; operation < 100; ++operation) {\n        int source = operation % 3, destination = (source + 1) % 3;\n        long long moved = min(milk[source], capacity[destination] - milk[destination]);\n        milk[source] -= moved;\n        milk[destination] += moved;\n    }\n    for (long long amount : milk) out << amount << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Represent all information needed for the next operation as a small mutable state.",
+      "Derive the transfer from both physical stopping constraints.",
+      "Use capacity bounds and conservation to check every update."
+    ],
+    "commonMistakes": [
+      "Running 100 cycles of three pours instead of 100 individual pours.",
+      "Using the capacity of the source where the remaining destination space is needed.",
+      "Skipping a no-op operation and thereby changing the cyclic schedule.",
+      "Printing the three values on one line instead of the requested three lines."
+    ],
+    "alternativeMethods": [
+      "An equivalent update uses $s=m_a+m_b$: if $s\\le c_b$, set the source to zero and the destination to $s$; otherwise set the destination to $c_b$ and the source to $s-c_b$. This piecewise form gives an independent way to verify the minimum formula."
+    ],
+    "difficultyNotes": "Introductory simulation. Deriving the update and counting individual operations carefully matters more than optimizing a fixed sequence of 100 pours.",
+    "id": "solution-usaco-bronze-2018-december-p1",
+    "problemId": "usaco-bronze-2018-december-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Print the maximum simultaneous sum of bucket requirements; the specified smallest-free-label strategy achieves this bound.",
+    "shortExplanation": "Add each requirement at its start time and remove it at its end time. The largest running sum is necessary because active cows cannot share buckets. It is also sufficient for the actual labeling strategy: whenever a cow starts, enough labels below that maximum are free.",
+    "detailedSteps": [
+      "Let $D(t)$ be the total bucket requirement of cows currently being milked, and let $B=\\max_t D(t)$. At a time attaining $B$, those cows need $B$ distinct buckets. Any successful storage room therefore needs at least $B$ buckets.",
+      "It remains to prove sufficiency for the required rule, rather than for an arbitrary allocation. Assume all labels used before an event lie in $\\{1,\\ldots,B\\}$. If $a$ buckets are in use when a new cow requiring $b$ buckets starts, then $a+b\\le B$. At least $b$ labels in that set are free. Choosing the smallest free labels cannot use any label greater than $B$. Ending events only free labels, so induction over events proves that the stated strategy succeeds with $B$ buckets.",
+      "Use a difference array: for an interval with requirement $b_i$, add $b_i$ at $s_i$ and subtract $b_i$ at $t_i$. Prefix sums recover the active demand after each event. Keep their maximum.",
+      "The source makes all $2N$ endpoints globally distinct. Consequently no start and end occur simultaneously, and the half-open implementation $[s_i,t_i)$ has the same maximum as the original chronological milking windows. No additional tie convention is needed.",
+      "Scan through time 1000 and output the largest prefix sum. Time is O(N+T) and space O(T), with T=1000. At most 100 cows each need at most 10 buckets, so every demand is at most 1000.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\nusing namespace std;\nint main() {\n    ifstream in(\"blist.in\");\n    ofstream out(\"blist.out\");\n    int n, changes[1002] = {};\n    in >> n;\n    for (int i = 0; i < n; ++i) {\n        int start, finish, buckets;\n        in >> start >> finish >> buckets;\n        changes[start] += buckets;\n        changes[finish] -= buckets;\n    }\n    int current = 0, answer = 0;\n    for (int time = 1; time <= 1000; ++time) {\n        current += changes[time];\n        answer = max(answer, current);\n    }\n    out << answer << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "A peak simultaneous requirement supplies a lower bound.",
+      "An event induction proves that the actual smallest-label rule attains that bound.",
+      "Difference arrays encode interval contributions without simulating individual buckets."
+    ],
+    "commonMistakes": [
+      "Summing all bucket requirements even when their intervals do not overlap.",
+      "Assuming that active labels always form a contiguous prefix; released labels may leave gaps.",
+      "Claiming that some allocation is optimal without checking the particular labeling rule in the source.",
+      "Ignoring that the source explicitly gives globally distinct event times."
+    ],
+    "alternativeMethods": [
+      "Simulate the actual numbered buckets: sort all start/end events, return each finished cow's labels, and at a start choose the smallest unused labels. Track the greatest label used. This is slower but directly checks the resource-allocation interpretation.",
+      "For much larger time coordinates, sort signed start/end events and sweep them instead of allocating an array for every time unit."
+    ],
+    "difficultyNotes": "Intermediate interval accounting. The prefix sum is straightforward; the main proof is that peak demand equals the storage required by the specific greedy label policy.",
+    "id": "solution-usaco-bronze-2018-december-p2",
+    "problemId": "usaco-bronze-2018-december-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Enumerate all four legal transfers, collect the resulting first-barn milk readings in a set, and print the number of distinct readings.",
+    "shortExplanation": "A bucket moves to the other barn after each trip, so subsequent choices depend on the current inventories. A four-level search explores every legal choice and inserts only the final milk amount into a set, avoiding duplicate outcomes.",
+    "detailedSteps": [
+      "Start with both current bucket lists and 1000 gallons in the first tank. On an outward day, choose an entry from the first list, remove it, append it to the second list, and subtract its capacity from the first tank. On a return day, make the symmetric inventory change and add its capacity.",
+      "Keep each branch's inventories separate. In particular, a bucket delivered on an earlier day is available at its new location and may be chosen again. Equal capacities are allowed; separate entries represent separate physical buckets.",
+      "The search starts at the actual initial state. If a partial history is legal, each possible next physical bucket occurs in its current source list and is one of the branches. Conversely each branch selects a present bucket and performs exactly the required relocation. Induction through four trips proves that all and only legal histories are explored.",
+      "Full buckets are always available: either tank can lose milk on at most two trips, each carrying at most $100$ gallons. Its amount is therefore at least $1000-2\\cdot100=800$, more than any bucket capacity. No extra bound on tank capacity is assumed.",
+      "At depth four, insert the first-tank amount into a set. Different histories, repeated capacities, or carrying the same bucket back can produce the same reading; a set counts that reading once. Completeness of the search and uniqueness in the set establish the requested result.",
+      "With $B$ buckets initially per barn, the labeled branching counts are $B,B+1,B,B+1$. For $B=10$ this gives $10\\cdot11\\cdot10\\cdot11=12100$ leaf histories. Copying lists costs $O(B)$ per branch, so this implementation takes $O(B^5+B^4\\log R)$ time and $O(B+R)$ auxiliary space, where $R$ is the number of stored readings. Conservatively all readings lie in $[800,1200]$, hence $R\\le401$. Here $B$ is fixed at ten and recursion depth at four.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <fstream>\n#include <set>\n#include <vector>\nusing namespace std;\nset<int> readings;\nvoid search(int day, vector<int> left, vector<int> right, int milk) {\n    if (day == 4) {\n        readings.insert(milk);\n        return;\n    }\n    if (day % 2 == 0) {\n        for (int i = 0; i < static_cast<int>(left.size()); ++i) {\n            vector<int> next_left = left, next_right = right;\n            int bucket = next_left[i];\n            next_left.erase(next_left.begin() + i);\n            next_right.push_back(bucket);\n            search(day + 1, next_left, next_right, milk - bucket);\n        }\n    } else {\n        for (int i = 0; i < static_cast<int>(right.size()); ++i) {\n            vector<int> next_left = left, next_right = right;\n            int bucket = next_right[i];\n            next_right.erase(next_right.begin() + i);\n            next_left.push_back(bucket);\n            search(day + 1, next_left, next_right, milk + bucket);\n        }\n    }\n}\nint main() {\n    ifstream in(\"backforth.in\");\n    ofstream out(\"backforth.out\");\n    vector<int> first(10), second(10);\n    for (int &bucket : first) in >> bucket;\n    for (int &bucket : second) in >> bucket;\n    search(0, first, second, 1000);\n    out << readings.size() << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "The current inventories, not just the milk amount, determine legal future moves.",
+      "Use exhaustive search when the true branching depth is tiny.",
+      "Separate complete history enumeration from deduplication of terminal outcomes."
+    ],
+    "commonMistakes": [
+      "Leaving a moved bucket in its original barn or forgetting to add it to the other barn.",
+      "Treating the four bucket capacities as independent choices from the two original lists.",
+      "Counting transfer histories instead of distinct milk readings.",
+      "Rejecting duplicate bucket capacities even though distinct buckets may have equal sizes."
+    ],
+    "alternativeMethods": [
+      "Give every physical bucket an ID and propagate the set of reachable first-closet ID subsets over the four days. The invariant $\\text{milk}-\\text{sum of current first-closet capacities}=1000-\\text{sum of initial first-closet capacities}$ recovers each terminal milk amount without updating milk along the path. This provides an independent state model for checking the recursive program."
+    ],
+    "difficultyNotes": "Advanced Bronze state enumeration. The number of trips is small; the challenge is preserving physical bucket relocation and counting outcomes rather than paths.",
+    "id": "solution-usaco-bronze-2018-december-p3",
+    "problemId": "usaco-bronze-2018-december-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

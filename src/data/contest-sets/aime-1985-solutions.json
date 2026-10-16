@@ -1,0 +1,319 @@
+[
+  {
+    "id": "solution-aime-1985-p1",
+    "problemId": "aime-1985-p1",
+    "finalAnswer": "$\\boxed{384}$",
+    "shortExplanation": "Each adjacent pair has product equal to its even index.",
+    "detailedSteps": [
+      "The defining recurrence gives $x_{n-1}x_n=n$. Pair the eight factors as $(x_1x_2)(x_3x_4)(x_5x_6)(x_7x_8)$.",
+      "The product is $2\\cdot4\\cdot6\\cdot8=384$. The initial value cancels from each pair."
+    ],
+    "keyIdeas": [
+      "Pairing reciprocal recurrence terms"
+    ],
+    "commonMistakes": [
+      "Computing all eight fractions separately."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Look for products that cancel the recurrence denominators.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p2",
+    "problemId": "aime-1985-p2",
+    "finalAnswer": "$\\boxed{026}$",
+    "shortExplanation": "The legs are 24 and 10, so the hypotenuse is 26.",
+    "detailedSteps": [
+      "Let $a,b$ be the legs, with rotation about $a$ producing the smaller volume. Then $ab^2=2400$ and $a^2b=5760$ by $V=\\pi r^2h/3$.",
+      "Dividing gives $a/b=12/5$. Write $a=12t,b=5t$; the first equation gives $300t^3=2400$, so $t=2$.",
+      "Thus the legs are 24 and 10, and the hypotenuse is $\\sqrt{24^2+10^2}=26$."
+    ],
+    "keyIdeas": [
+      "Two cone volumes determine the legs"
+    ],
+    "commonMistakes": [
+      "Interchanging cone radius and height in only one equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The ratio of volumes reveals the ratio of legs.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p3",
+    "problemId": "aime-1985-p3",
+    "finalAnswer": "$\\boxed{198}$",
+    "shortExplanation": "The imaginary-part equation forces $b=1,a=6$, giving $c=198$.",
+    "detailedSteps": [
+      "Expand $(a+bi)^3=(a^3-3ab^2)+i(3a^2b-b^3)$. Since $c$ is real, $b(3a^2-b^2)=107$.",
+      "The positive integer $b$ divides the prime 107. If $b=107$, then $3a^2=107^2+1=11450$, which is not divisible by 3. Therefore $b=1$, giving $3a^2-1=107$ and $a=6$.",
+      "The real part is $c=6^3-3\\cdot6=198$, a positive integer as required."
+    ],
+    "keyIdeas": [
+      "Equating real and imaginary parts"
+    ],
+    "commonMistakes": [
+      "Discarding the divisor 107 without explaining why it fails."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the parts before using primality.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p4",
+    "problemId": "aime-1985-p4",
+    "finalAnswer": "$\\boxed{032}$",
+    "shortExplanation": "The small square has area $1/(n^2+(n-1)^2)$, which forces $n=32$.",
+    "detailedSteps": [
+      "Place the unit square at $(0,0),(1,0),(1,1),(0,1)$. A pair of opposite sides of the inner square lies on parallel lines of slope $(n-1)/n$, with vertical intercepts differing by $1/n$. The figure uses the division points nearest the opposite vertices.",
+      "The perpendicular distance between these lines, equal to the inner side length, is $1/\\sqrt{n^2+(n-1)^2}$. Rotational symmetry makes the four sides a square.",
+      "Therefore $n^2+(n-1)^2=1985$. Equivalently $n^2-n-992=0=(n-32)(n+31)$; the positive subdivision count is 32."
+    ],
+    "keyIdeas": [
+      "Distance between parallel sides of a small square"
+    ],
+    "commonMistakes": [
+      "Using the vertical intercept gap as the perpendicular side length."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Perpendicular line distance avoids unwieldy intersection coordinates.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p5",
+    "problemId": "aime-1985-p5",
+    "finalAnswer": "$\\boxed{986}$",
+    "shortExplanation": "The recurrence repeats every six terms with zero period sum; the requested partial sum is $2b=986$.",
+    "detailedSteps": [
+      "Write the first two terms as $a,b$. The next four are $b-a,-a,-b,a-b$, after which $a,b$ repeat. Each period has sum zero.",
+      "Since $1492\\equiv4\\pmod6$, its partial sum is $2b-a=1985$. Since $1985\\equiv5\\pmod6$, its partial sum is $b-a=1492$. Subtraction gives $b=493$, and then $a=-999$.",
+      "Finally $2001\\equiv3\\pmod6$, so its partial sum is $a+b+(b-a)=2b=986$."
+    ],
+    "keyIdeas": [
+      "A six-term recurrence period"
+    ],
+    "commonMistakes": [
+      "Confusing a term with a partial sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Short periods reduce large indices to small residues.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p6",
+    "problemId": "aime-1985-p6",
+    "finalAnswer": "$\\boxed{315}$",
+    "shortExplanation": "The two unknown areas are 56 and 70, so the whole area is 315.",
+    "detailedSteps": [
+      "Use the diagram labels $F\\in AB,D\\in AC,E\\in BC$ and concurrent point $P$. Put $x=[APD]$ and $y=[CPE]$. The four stated areas are $[APF]=40,[BPF]=30,[CPD]=84,[BPE]=35$.",
+      "Triangles $APF,BPF$ have the same altitude to $AB$, so $AF/FB=4/3$. The triangles $ACP,BCP$ share base $CP$. Their altitudes from $A,B$ to the line $CF$ have ratio $AF/FB$, since $A,F,B$ are collinear. Hence $(x+84)/(y+35)=4/3$.",
+      "Similarly, $BE/EC=35/y$. The triangles $ABP,ACP$ share base $AP$. Their altitudes from $B,C$ to the line $AE$ have ratio $BE/EC$, since $B,E,C$ are collinear, so $[ABP]/[ACP]=BE/EC$. Thus $70/(x+84)=35/y$, or $x+84=2y$.",
+      "Substitute into $2y/(y+35)=4/3$ to get $y=70$, then $x=56$. The total area is $40+30+84+35+56+70=315$."
+    ],
+    "keyIdeas": [
+      "Area ratios along three concurrent cevians"
+    ],
+    "commonMistakes": [
+      "Assigning a given area to the wrong region or taking a ratio across unrelated heights."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Concurrency creates two independent shared-altitude comparisons.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p7",
+    "problemId": "aime-1985-p7",
+    "finalAnswer": "$\\boxed{757}$",
+    "shortExplanation": "Write $a=t^4,c=u^2$; the difference 19 forces $t=3,u=10$.",
+    "detailedSteps": [
+      "Prime-exponent comparison in $a^5=b^4$ gives $a=t^4,b=t^5$ for a positive integer $t$. Similarly $c=u^2,d=u^3$.",
+      "Then $u^2-t^4=19$, so $(u-t^2)(u+t^2)=19$. Both factors are positive integers, and primality forces them to be 1 and 19.",
+      "Adding and subtracting gives $u=10,t^2=9$, hence $t=3$. The requested value is $d-b=10^3-3^5=757$."
+    ],
+    "keyIdeas": [
+      "Perfect powers and a difference of squares"
+    ],
+    "commonMistakes": [
+      "Treating positive rational roots as automatically integral without prime-exponent justification."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coprime exponents convert equal powers into a single integer parameter.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p8",
+    "problemId": "aime-1985-p8",
+    "finalAnswer": "$\\boxed{061}$",
+    "shortExplanation": "Choose $2,2,3,3,3,3,3$; the smallest possible maximum error is $0.61$.",
+    "detailedSteps": [
+      "The proposed integers sum to 19. Their absolute errors are $0.56,0.61,0.35,0.29,0.21,0.18,0.14$, whose maximum is 0.61.",
+      "If every error were strictly below 0.61, all approximations would be at least 2, and only the first entry 2.56 could be rounded down to 2. Every other entry would have to be at least 3, because its distance from 2 is at least 0.61.",
+      "The total would then be at least $2+6\\cdot3=20$, contradicting 19. Thus the minimum is 0.61 and $100M=61$."
+    ],
+    "keyIdeas": [
+      "An integer approximation with a fixed total"
+    ],
+    "commonMistakes": [
+      "Rounding every entry to the nearest integer without checking the prescribed total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Prove the lower bound by showing a smaller error makes the total impossible.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p9",
+    "problemId": "aime-1985-p9",
+    "finalAnswer": "$\\boxed{049}$",
+    "shortExplanation": "The chord triangle has sides 2,3,4; its angle opposite 2 has cosine 7/8, so $\\cos\\alpha=17/32$.",
+    "detailedSteps": [
+      "Let the circle radius be $R$, and put $u=\\alpha/2,v=\\beta/2$. The chord relations give $2=2R\\sin u$, $3=2R\\sin v$, and $4=2R\\sin(u+v)$. Since $u+v<\\pi/2$, these are the side ratios of a triangle with angles $u,v,\\pi-u-v$.",
+      "The angle opposite side 2 is $u$, so the cosine rule gives $\\cos u=(3^2+4^2-2^2)/(2\\cdot3\\cdot4)=7/8$.",
+      "Hence $\\cos\\alpha=\\cos2u=2(7/8)^2-1=17/32$. This is reduced, and the numerator-denominator sum is 49."
+    ],
+    "keyIdeas": [
+      "Chord lengths and a doubled inscribed angle"
+    ],
+    "commonMistakes": [
+      "Using alpha itself as the triangle angle opposite the chord."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The condition on the angle sum selects the correct inscribed-angle branch.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p10",
+    "problemId": "aime-1985-p10",
+    "finalAnswer": "$\\boxed{600}$",
+    "shortExplanation": "The attainable residues modulo 10 are $0,1,2,4,5,6$, giving 600 of the first 1000 positive integers.",
+    "detailedSteps": [
+      "Put $y=2x$ and $F(y)=\\lfloor y\\rfloor+\\lfloor2y\\rfloor+\\lfloor3y\\rfloor+\\lfloor4y\\rfloor$. Then $F(y+1)=F(y)+10$.",
+      "For $0\\le y<1$, the breakpoints are $0,1/4,1/3,1/2,2/3,3/4,1$. On the six successive half-open intervals, $F$ equals $0,1,2,4,5,6$. The jumps omit 3,7,8,9.",
+      "Every attainable integer has one of these six residues, and every such residue occurs at all integer translates. Each residue occurs 100 times in 1 through 1000, for a total 600."
+    ],
+    "keyIdeas": [
+      "Residues of a sum of floor functions"
+    ],
+    "commonMistakes": [
+      "Assuming every integer between successive floor-sum values is attained at a jump."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A shift identity turns a continuous parameter into a finite residue problem.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p11",
+    "problemId": "aime-1985-p11",
+    "finalAnswer": "$\\boxed{085}$",
+    "shortExplanation": "The major axis equals the shortest broken path through the x-axis, which is 85.",
+    "detailedSteps": [
+      "The major-axis length is the constant sum of distances to the two foci. At tangency to the x-axis, this constant equals the minimum such sum among points on that axis; a larger constant would produce two intersections.",
+      "Reflect the first focus to $(9,-20)$. A point on the x-axis has the same distance to this reflected focus as to $(9,20)$. The triangle inequality makes the minimum broken-path length the distance from $(9,-20)$ to $(49,55)$.",
+      "The connecting segment crosses the x-axis, so the bound is attained. Its length is $\\sqrt{40^2+75^2}=85$."
+    ],
+    "keyIdeas": [
+      "Reflection gives the ellipse tangent minimum"
+    ],
+    "commonMistakes": [
+      "Computing the distance between the original foci, which is not the major axis."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Tangency identifies the least focal-distance sum on a line.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p12",
+    "problemId": "aime-1985-p12",
+    "finalAnswer": "$\\boxed{182}$",
+    "shortExplanation": "The return probability obeys $p_{k+1}=(1-p_k)/3$, giving $p_7=182/729$.",
+    "detailedSteps": [
+      "Let $p_k$ be the probability of being at $A$ after $k$ edges, with $p_0=1$. From $A$ the next step cannot return to $A$; from any other vertex, exactly one of three edges leads to $A$. Thus $p_{k+1}=(1-p_k)/3$.",
+      "Subtract the fixed point 1/4: $p_{k+1}-1/4=-(p_k-1/4)/3$. Hence $p_k=1/4+(3/4)(-1/3)^k$.",
+      "At $k=7$, this is $1/4-1/2916=728/2916=182/729$, so the requested numerator is 182."
+    ],
+    "keyIdeas": [
+      "A return probability on a tetrahedron"
+    ],
+    "commonMistakes": [
+      "Treating the successive vertex visits as independent uniform samples."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry reduces a four-state walk to one recurrence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p13",
+    "problemId": "aime-1985-p13",
+    "finalAnswer": "$\\boxed{401}$",
+    "shortExplanation": "Every gcd divides 401, and $n=200$ attains 401.",
+    "detailedSteps": [
+      "Let $g=\\gcd(100+n^2,100+(n+1)^2)$. It divides their difference $2n+1$, so it is odd.",
+      "The identity $4(100+n^2)=(2n+1)(2n-1)+401$ shows that $g$ divides 401. Thus $g\\le401$ for every positive integer $n$.",
+      "For $n=200$, the two values are 40100 and 40501, equal to $401\\cdot100$ and $401\\cdot101$. Their gcd is 401, so the upper bound is attained."
+    ],
+    "keyIdeas": [
+      "Bounding adjacent quadratic greatest common divisors"
+    ],
+    "commonMistakes": [
+      "Searching a finite range without proving a bound for all positive n."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A linear combination removes the variable from the gcd bound.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p14",
+    "problemId": "aime-1985-p14",
+    "finalAnswer": "$\\boxed{025}$",
+    "shortExplanation": "The upper group has 15 players; the other algebraic root contradicts the score ordering.",
+    "detailedSteps": [
+      "Let $L$ be the ten lowest-scoring players and $H$ the remaining $m$. The 45 games internal to $L$ award 45 points. Because the points of each player against $L$ are half their total, the total score of $L$ is 90.",
+      "The games between $L$ and $H$ award $10m$ points. Players in $L$ receive another 45 points there, so players in $H$ receive $10m-45$ points against $L$. Their internal score equals the same amount by the half-score condition.",
+      "The internal games of $H$ award $m(m-1)/2$ points. Therefore $m(m-1)/2=10m-45$, or $(m-6)(m-15)=0$.",
+      "If $m=6$, the total score of $H$ is 30 and its mean is 5, below the mean 9 of the ten lowest scorers. This contradicts their ordering. Thus $m=15$, and the total number is 25."
+    ],
+    "keyIdeas": [
+      "Total scores in two tournament groups"
+    ],
+    "commonMistakes": [
+      "Accepting both quadratic roots without using which group has the lowest scores."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Group totals are independent of the distribution of wins and ties.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1985-p15",
+    "problemId": "aime-1985-p15",
+    "finalAnswer": "$\\boxed{864}$",
+    "shortExplanation": "The net forms one half of a 12-by 12-by 12 cube, so the volume is 864.",
+    "detailedSteps": [
+      "Consider the cube $0\\le x,y,z\\le12$, cut by the plane $x+y+z=18$. On each face adjacent to the origin, the retained region is a square with one corner triangle removed; this is the pentagonal piece $A$. On each opposite face, the retained region is a triangle with legs 6; this is piece $B$.",
+      "The section has the six vertices given by permutations of $(0,6,12)$. Adjacent vertices are $6\\sqrt2$ apart, and their rotational symmetry makes the section a regular hexagon. Its sides match the hypotenuse edges of the six cut pieces in the source net.",
+      "Thus the face shapes and their attachments give exactly this cut cube. The central inversion $(x,y,z)\\mapsto(12-x,12-y,12-z)$ interchanges the two sides of the cutting plane, so their volumes are equal.",
+      "The requested volume is $12^3/2=864$ cubic centimeters."
+    ],
+    "keyIdeas": [
+      "Recognizing a cube cut through its center"
+    ],
+    "commonMistakes": [
+      "Treating the regular hexagon as the base of a prism or pyramid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The net becomes simpler after identifying its enclosing cube.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

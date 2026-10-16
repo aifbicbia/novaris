@@ -1,0 +1,100 @@
+[
+  {
+    "finalAnswer": "Find the bounding rectangle of the exposed lawnmower billboard, and return its area; return zero if nothing is exposed. Partitioning by the two billboards’ edge coordinates computes this exactly in $O(1)$ time and space.",
+    "shortExplanation": "The tarp must be one axis-aligned rectangle. Its width and height must span all exposed points, so subtracting the covered area is generally insufficient. The exposed region’s bounding rectangle gives both a necessary size and a cover that attains it.",
+    "detailedSteps": [
+      "**Keep the objective rectangular.** The front feed billboard already hides part of the lawnmower billboard. The tarp only needs to hide what remains, but may also cover already hidden areas. Because it cannot tilt, its minimum dimensions are determined by horizontal and vertical extremes of the exposed region.",
+      "**Partition at every edge.** Collect and sort the distinct left and right coordinates of both billboards, and do the same for their bottom and top coordinates. Consecutive coordinates form rectangular cells. Inside one cell, membership in each billboard is constant because no billboard edge crosses its interior.",
+      "**Identify exposed cells exactly.** For a cell with edges $x_L,x_R,y_B,y_T$, test its midpoint. It is exposed if it is inside the lawnmower billboard and outside the feed billboard. Use $x_L+x_R$ and $y_B+y_T$ as doubled midpoint coordinates, comparing them with doubled rectangle edges; this avoids floating-point calculations.",
+      "**Build the necessary cover.** Among exposed cells, take the minimum left edge, maximum right edge, minimum bottom edge and maximum top edge. Their product of span lengths is the area of the bounding rectangle. If there are no exposed cells, the feed billboard covers the lawnmower billboard and the required area is zero.",
+      "**Prove the minimum.** Any axis-aligned tarp covering the entire exposed region must reach its extreme horizontal and vertical coordinates. Hence its width and height cannot be smaller than these two spans. The bounding rectangle itself covers every exposed cell and its boundary, so those spans are attainable. This proves minimum area, including disconnected or L-shaped exposure.",
+      "**Bounds and interface.** At most four distinct coordinates occur on each axis, hence at most nine cells are tested: time and space are $O(1)$. Coordinates range from $-1000$ to $1000$, and the tarp is never larger than the entire lawnmower billboard, so its area is at most $4000000$. Use signed `long long` arithmetic, read `billboard.in`, and write one area to `billboard.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <limits>\n#include <vector>\nusing Rectangle = std::array<long long, 4>;\nbool inside(const Rectangle &r, long long doubledX, long long doubledY) {\n    return 2 * r[0] < doubledX && doubledX < 2 * r[2]\n        && 2 * r[1] < doubledY && doubledY < 2 * r[3];\n}\nint main() {\n    std::ifstream in(\"billboard.in\");\n    std::ofstream out(\"billboard.out\");\n    std::array<Rectangle, 2> rectangles;\n    std::vector<long long> xs, ys;\n    for (auto &r : rectangles) {\n        for (auto &coordinate : r) in >> coordinate;\n        xs.push_back(r[0]); xs.push_back(r[2]);\n        ys.push_back(r[1]); ys.push_back(r[3]);\n    }\n    std::sort(xs.begin(), xs.end());\n    xs.erase(std::unique(xs.begin(), xs.end()), xs.end());\n    std::sort(ys.begin(), ys.end());\n    ys.erase(std::unique(ys.begin(), ys.end()), ys.end());\n    long long left = std::numeric_limits<long long>::max();\n    long long bottom = left, right = -left, top = -left;\n    bool any = false;\n    for (std::size_t i = 0; i + 1 < xs.size(); ++i) {\n        for (std::size_t j = 0; j + 1 < ys.size(); ++j) {\n            const long long doubledX = xs[i] + xs[i + 1];\n            const long long doubledY = ys[j] + ys[j + 1];\n            if (inside(rectangles[0], doubledX, doubledY)\n                && !inside(rectangles[1], doubledX, doubledY)) {\n                any = true;\n                left = std::min(left, xs[i]); right = std::max(right, xs[i + 1]);\n                bottom = std::min(bottom, ys[j]); top = std::max(top, ys[j + 1]);\n            }\n        }\n    }\n    out << (any ? (right - left) * (top - bottom) : 0) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Minimum rectangular cover is a bounding-box problem, rather than an exposed-area sum.",
+      "Rectangle edges partition membership into a constant number of exact cells.",
+      "The extreme spans give a lower bound and the bounding rectangle attains it."
+    ],
+    "commonMistakes": [
+      "Returning billboard area minus overlap area even when the exposed shape is not a rectangle.",
+      "Allowing a rotated tarp, contrary to the printed axis-aligned requirement.",
+      "Ignoring a completely hidden billboard or treating boundary contact as positive coverage.",
+      "Testing only one corner and missing exposed points elsewhere."
+    ],
+    "alternativeMethods": [
+      "Classify whether the feed billboard hides the full lawnmower billboard or an entire boundary strip. Full-height coverage touching the left or right edge may narrow the tarp; full-width coverage touching the bottom or top edge may shorten it. Interior cuts or corner coverage leave the full bounding dimensions. This gives a constant-time case-based check."
+    ],
+    "difficultyNotes": "Intermediate geometric modeling. The important distinction is between the area of a visible shape and the area of its smallest permitted rectangular cover.",
+    "id": "solution-usaco-bronze-2018-january-p1",
+    "problemId": "usaco-bronze-2018-january-p1",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "Compute the total covered time and each guard’s uniquely covered time. Fire a guard with the smallest unique contribution, giving `total - leastLoss`. Time is $O(1000N)$ and storage is $O(1000+N)$.",
+    "shortExplanation": "Firing one guard loses only the time covered by that guard and nobody else. Maximizing what remains is therefore equivalent to minimizing that unique contribution. Exactly one guard is fired even when the best loss is zero.",
+    "detailedSteps": [
+      "**Count unit-interval coverage.** All shift endpoints are integers between zero and $1000$. Each interval $[t,t+1)$ has constant coverage. For a shift starting at $s$ and ending at $e$, increment the counts for $s\\le t<e$; this represents $e-s$ units of time, not a count of endpoint points.",
+      "**Measure the original union.** Let $U$ be the number of unit intervals whose count is positive. This is the total time covered by at least one guard before any firing.",
+      "**Compute each possible loss.** For guard $j$, count the unit intervals in her shift with coverage exactly one, and call this $L_j$. Those intervals lose their sole guard if she is fired. Every other interval either does not belong to her or still has another guard, so firing her leaves precisely $U-L_j$ covered time.",
+      "**Choose the smallest loss.** Since $U$ is independent of the choice, the best answer is $U-\\min_j L_j$. If a guard is completely redundant, the minimum loss is zero. If there is only one guard, all coverage is uniquely hers and the answer after the required firing is zero.",
+      "**Retain the source domain.** The Bronze task has $1\\le N\\le100$ and all $2N$ endpoints are distinct, even across different guards. Shifts may overlap despite that condition. Counting at most $1000$ unit intervals for each guard takes $O(1000N)$ time and $O(1000+N)$ space. Read `lifeguards.in` and print a covered-time length from zero to $1000$ in `lifeguards.out`.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <array>\n#include <fstream>\n#include <utility>\n#include <vector>\nint main() {\n    std::ifstream in(\"lifeguards.in\");\n    std::ofstream out(\"lifeguards.out\");\n    int n;\n    in >> n;\n    std::vector<std::pair<int, int>> shifts(n);\n    std::array<int, 1000> count{};\n    for (auto &shift : shifts) {\n        in >> shift.first >> shift.second;\n        for (int t = shift.first; t < shift.second; ++t) ++count[t];\n    }\n    int total = 0;\n    for (int value : count) if (value > 0) ++total;\n    int leastLoss = 1000;\n    for (const auto &shift : shifts) {\n        int loss = 0;\n        for (int t = shift.first; t < shift.second; ++t)\n            if (count[t] == 1) ++loss;\n        leastLoss = std::min(leastLoss, loss);\n    }\n    out << total - leastLoss << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Integer endpoints allow exact continuous time to be represented by unit intervals.",
+      "Only coverage with multiplicity one can disappear after one firing.",
+      "A fixed total turns the maximization into a minimum-loss choice."
+    ],
+    "commonMistakes": [
+      "Counting both endpoints as extra units of covered time.",
+      "Subtracting a guard’s whole shift even where another guard overlaps it.",
+      "Keeping every guard when a redundant guard exists, although exactly one must be fired.",
+      "Using constraints or a firing count from another Lifeguards division."
+    ],
+    "alternativeMethods": [
+      "Remove each candidate guard in turn, sort the remaining shifts, merge their intervals and measure the resulting union. Taking the largest such union directly checks the optimum and supplies a different oracle without unique-coverage counts."
+    ],
+    "difficultyNotes": "Intermediate coverage reasoning. The small time range makes the implementation straightforward, but the precise lost-time argument and the one-guard case are necessary for correctness.",
+    "id": "solution-usaco-bronze-2018-january-p2",
+    "problemId": "usaco-bronze-2018-january-p2",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "finalAnswer": "For the printed single-cow reinsertion model, compare the lineup with its sorted height array. If $k$ positions have different heights, the minimum is $\\max(0,k-1)$ arbitrary pair swaps. Time is $O(N\\log N)$ and space is $O(N)$.",
+    "shortExplanation": "Repeated equal heights leave most positions of a shifted height block correct. The remaining wrong positions contain one distinct height from each crossed block, together with the moved cow’s height, in a single cycle. A cycle of $k$ entries takes exactly $k-1$ pair swaps to fix.",
+    "detailedSteps": [
+      "**Compare height values with the target.** Copy and sort the given heights into nondecreasing order, then count positions where the two arrays differ. If there are none, the lineup already has the required height order and no swap is needed. Equal-height cows are interchangeable for this goal.",
+      "**Use the source’s one-cow history.** Before the move the heights were sorted. Moving Bessie right shifts the crossed cows left; moving her left shifts them right. Inside a block of repeated equal heights, such a shift leaves the height value correct. A wrong position appears only at one boundary of each distinct crossed height block, together with Bessie’s eventual wrong slot.",
+      "**Identify the remaining cycle.** Ignore positions whose heights still match the sorted target. For a nontrivial move, the remaining $k$ values are distinct: Bessie’s height and one height from each crossed block of a different value. Their current order is a cyclic rotation of the desired order. Thus the remaining misplacement is one cycle, rather than several independent cycles. Crossing only equal heights leaves $k=0$.",
+      "**Construct $k-1$ swaps.** A cycle of $k$ entries can be resolved by fixing one position after another, using one cycle position as a pivot. Each of the other $k-1$ positions is repaired with one arbitrary pair swap. The source allows nonadjacent swaps, so repeated equal-height positions inside a block do not require extra adjacent moves.",
+      "**Set up a lower bound that allows duplicates.** Temporarily label every physical cow. A final height-sorted arrangement assigns each labeled cow to some position with its height. For a fixed such assignment, its permutation needs $N-c$ swaps, where $c$ is its number of cycles: a swap changes the cycle count by at most one, and a cycle of length $\\ell$ is attainable with $\\ell-1$ swaps. Choosing different final assignments lets equal-height cows exchange identities freely.",
+      "**Keep initially correct height positions fixed without a disadvantage.** Suppose a cow in an already correct position $i$ is assigned to another target position $j$, and a cow from position $p$ is assigned to target $i$. Both cows have the same height as targets $i$ and $j$. Reassign $i$ to itself and $p$ to $j$. This is still height-compatible, and the edge $p\\to i$ shows that the reassignment splits a singleton $i$ from its cycle, increasing the cycle count. It cannot increase the required swaps or disturb an earlier fixed position. Repeat this for all correct positions.",
+      "**Finish the lower bound.** After fixing those positions, the remaining distinct heights have a unique compatible target assignment, namely the single $k$-cycle already identified. Its cost is $k-1$. Therefore using equal-height identities differently, or detouring through correct positions, cannot improve on our construction. This proves the global minimum under arbitrary pair swaps, rather than only exhibiting a possible fix.",
+      "**Implement and check bounds.** Sort the copied array, count mismatches, and print `max(0, mismatches - 1)`. The source has $2\\le N\\le100$, heights from one to $10^6$, and duplicate heights are allowed. Sorting costs $O(N\\log N)$, with $O(N)$ stored arrays. Read `outofplace.in` and write one swap count, at most $N-1$, to `outofplace.out`. The proof uses the stated single reinsertion history; it is not a formula for an arbitrary unrelated permutation.",
+      "Original C++17 reference implementation:\n\n```cpp\n#include <algorithm>\n#include <fstream>\n#include <vector>\nint main() {\n    std::ifstream in(\"outofplace.in\");\n    std::ofstream out(\"outofplace.out\");\n    int n;\n    in >> n;\n    std::vector<int> heights(n);\n    for (int &height : heights) in >> height;\n    std::vector<int> ordered = heights;\n    std::sort(ordered.begin(), ordered.end());\n    int mismatches = 0;\n    for (int i = 0; i < n; ++i) if (heights[i] != ordered[i]) ++mismatches;\n    out << std::max(0, mismatches - 1) << '\\n';\n}\n```"
+    ],
+    "keyIdeas": [
+      "Compare height values, allowing ties rather than imposing cow identity order.",
+      "A single removal/reinsertion creates one cycle among distinct mismatched height blocks.",
+      "Permutation cycle counts supply an arbitrary-swap lower bound.",
+      "Fixing already correct height positions can only improve a compatible labeled target assignment."
+    ],
+    "commonMistakes": [
+      "Counting every crossed cow as an adjacent swap even when many have equal heights.",
+      "Dividing the mismatch count by two without proving a matching lower bound.",
+      "Subtracting one when the array is already sorted, producing a negative answer.",
+      "Applying the formula to an arbitrary unsorted input that lacks the source’s one-cow move structure."
+    ],
+    "alternativeMethods": [
+      "When the original reinsertion history is known, count the distinct different-height blocks crossed by the moved cow. For tiny arrays, breadth-first search over every allowed pair swap gives the exact global minimum even with duplicate heights and independently verifies the mismatch-cycle formula on source-valid histories."
+    ],
+    "difficultyNotes": "Advanced proof with a short Bronze implementation. Handling equal heights and allowing arbitrary pair swaps requires more reasoning than the mismatch count alone; the single-cycle structure and compatible-assignment argument establish minimality.",
+    "id": "solution-usaco-bronze-2018-january-p3",
+    "problemId": "usaco-bronze-2018-january-p3",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

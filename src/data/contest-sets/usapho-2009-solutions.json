@@ -1,0 +1,183 @@
+[
+  {
+    "id": "solution-usapho-2009-p1",
+    "problemId": "usapho-2009-p1",
+    "finalAnswer": "$$\\boxed{B=\\frac{\\mu_0I}{l},\\quad\\mathcal E=-\\frac{\\mu_0\\pi r^2}{l}\\frac{dI}{dt}=\\frac{2\\pi\\rho r}{ld}I,\\quad I(t)=I_0e^{-2\\rho t/(\\mu_0rd)}}$$",
+    "shortExplanation": "The cylindrical surface current behaves like a long solenoid. Its changing magnetic flux drives current through the resistance of the thin shell, giving an exponential decay.",
+    "detailedSteps": [
+      "**(a) Internal field.** The total circumferential current is distributed over length $l$, so the surface current is $K=I/l$. Ampere's law in the long-cylinder approximation gives $B=\\mu_0K=\\mu_0I/l$, directed along the cylinder axis by the right-hand rule.",
+      "**(b) Induced emf.** The flux through a circumferential loop is $\\Phi=\\pi r^2B$. Choose positive circulation to match positive current. Faraday's law then gives $$\\mathcal E=-\\frac{d\\Phi}{dt}=-\\frac{\\mu_0\\pi r^2}{l}\\frac{dI}{dt}.$$",
+      "**(c) Shell resistance.** The conducting path has length $2\\pi r$ and cross-section $ld$, so its resistance is $\\mathcal R=2\\pi\\rho r/(ld)$. The induced emf drives the current, giving $\\mathcal E=\\mathcal RI$.",
+      "**(d) Decay law.** Equating the two emf expressions yields $$\\frac{dI}{dt}=-\\frac{2\\rho}{\\mu_0rd}I.$$ With $I(0)=I_0$, the solution is the displayed exponential. Its time constant is $\\tau=\\mu_0rd/(2\\rho)$; the cylinder length cancels."
+    ],
+    "keyIdeas": [
+      "Long-solenoid surface current",
+      "Faraday's law and sign",
+      "Thin-shell electrical resistance",
+      "First-order decay"
+    ],
+    "commonMistakes": [
+      "Using the circumference as the surface-current distribution length.",
+      "Using the hollow interior as the conducting cross-section.",
+      "Dropping the minus sign in Faraday's law and predicting growing current.",
+      "Counting an external driving field when the source excludes it."
+    ],
+    "alternativeMethods": [
+      "The stored magnetic energy is $U=\\mu_0\\pi r^2I^2/(2l)$. Equating $dU/dt$ to the Joule loss $-\\mathcal RI^2$ gives the same decay equation."
+    ],
+    "difficultyNotes": "These are leading results for the prescribed long, thin shell. The lumped model neglects end effects and transverse skin-current diffusion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usapho-2009-p2",
+    "problemId": "usapho-2009-p2",
+    "finalAnswer": "Direct graphical estimates are **$T_{1/2}(^{32}\\mathrm P)\\approx16\\,\\mathrm{days}$**, **$T_{1/2}(^{35}\\mathrm S)\\approx78\\,\\mathrm{days}$**, and **$N_{\\mathrm P}(0)/N_{\\mathrm S}(0)\\approx2.0$**. These use early- and late-time dominance approximations.",
+    "shortExplanation": "Estimate the two decay slopes from early and late parts of a semilog plot. Convert decay rates into atom counts, keeping the component-dominance approximation explicit.",
+    "detailedSteps": [
+      "**Write the two-component model.** Equal detector sensitivity gives $$A(t)=A_{\\mathrm P}e^{-\\lambda_{\\mathrm P}t}+A_{\\mathrm S}e^{-\\lambda_{\\mathrm S}t},\\qquad\\lambda_{\\mathrm P}>\\lambda_{\\mathrm S}>0.$$ Each isolated component is a straight line on a plot of $\\ln A$ against time, with slope $-\\lambda$.",
+      "**(a) Use the early and late lines.** At early times the faster phosphorus contribution dominates activity; late in the record most phosphorus has disappeared, so sulfur dominates. Plot $\\ln A$ against time and draw a line through the first five observations for the early slope, then a line through the last five for the late slope. The middle transition remains curved because both components contribute.",
+      "**Read approximate half-lives.** Direct line fits to those two groups give slopes about $-0.04259\\,\\mathrm{day}^{-1}$ and $-0.008833\\,\\mathrm{day}^{-1}$. Using $T_{1/2}=\\ln2/\\lambda$ yields approximately $16.3$ days and $78.5$ days. Rounding for a graphical estimate gives about $16$ and $78$ days. Dominance is approximate: each group still contains some contribution from the other isotope.",
+      "**(b) Compare original atom counts.** Write $A(0)\\approx\\lambda_{\\mathrm P}N_{\\mathrm P}(0)$ and $A(t_L)\\approx\\lambda_{\\mathrm S}N_{\\mathrm S}(0)2^{-t_L/T_{\\mathrm S}}$, where the last observation has $t_L=300\\,\\mathrm{days}$. Therefore $$\\frac{N_{\\mathrm P}(0)}{N_{\\mathrm S}(0)}\\approx\\frac{A(0)}{A(t_L)}\\frac{T_{\\mathrm P}}{T_{\\mathrm S}}2^{-t_L/T_{\\mathrm S}}\\approx2.03.$$ Thus the approximate original atom ratio is $2.0$, rather than the much larger activity ratio.",
+      "**Distinguish a graphical answer from a refined fit.** Correcting for overlapping components gives somewhat different parameter estimates. An iterative two-line subtraction gives about $14.2$ and $86.0$ days with atom ratio $1.87$; a simultaneous fit using all thirteen points and inverse-activity weighting gives about $14.4$ and $89.4$ days with ratio $1.95$. These remain measured-data model estimates, not exact nuclear constants. The main answer above uses a simple graphical dominance approximation; the source asks for graphical analysis and does not require this particular approximation."
+    ],
+    "keyIdeas": [
+      "Semilog straight lines",
+      "Separating overlapping exponentials",
+      "Half-life versus decay constant",
+      "Activity versus atom count"
+    ],
+    "commonMistakes": [
+      "Reading the initial activity ratio as the atom ratio.",
+      "Using the total mixture's curved semilog plot as one decay line.",
+      "Treating early- and late-component dominance as exact when the other isotope still contributes.",
+      "Claiming exact half-lives from finite measured observations."
+    ],
+    "alternativeMethods": [
+      "To refine the graphical construction, extrapolate a sulfur line from late times, subtract it from early counts, and fit the positive phosphorus remainder. Subtract the new phosphorus curve from the late counts and repeat. A simultaneous positive two-exponential fit is another option, with its weighting choice stated."
+    ],
+    "difficultyNotes": "The source requests graphical analysis and does not require error estimates. The explanation preserves that approximate character and uses no unmentioned background component.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usapho-2009-p3",
+    "problemId": "usapho-2009-p3",
+    "finalAnswer": "$$\\boxed{\\frac{T_p}{T_s}=\\frac{1}{\\sqrt8}=\\frac{1}{2\\sqrt2}}$$",
+    "shortExplanation": "Near the center, the two stars create a linear restoring acceleration along their common axis. Compare that small-oscillation frequency with the stars' circular orbital frequency.",
+    "detailedSteps": [
+      "**Axial force.** Each star lies a distance $a=d/2$ from the center. At axial displacement $z$, horizontal force components cancel, while the vertical components add: $$\\ddot z=-\\frac{2GMz}{(a^2+z^2)^{3/2}}.$$",
+      "**Linearize about the center.** For $|z|\\ll a$, $$\\ddot z\\approx-\\frac{2GM}{a^3}z=-\\frac{16GM}{d^3}z.$$ Hence the planetoid's small-oscillation frequency satisfies $\\omega_p^2=16GM/d^3$.",
+      "**Find the binary frequency.** Each star moves on a circle of radius $d/2$, and the other star supplies inward acceleration $GM/d^2$. Thus $$\\omega_s^2\\frac d2=\\frac{GM}{d^2},\\qquad\\omega_s^2=\\frac{2GM}{d^3}.$$ Period is inverse to frequency, so $T_p/T_s=\\omega_s/\\omega_p=1/\\sqrt8$."
+    ],
+    "keyIdeas": [
+      "Force-component cancellation",
+      "Small-displacement linearization",
+      "Equal-mass binary orbit",
+      "Inverse period-frequency relation"
+    ],
+    "commonMistakes": [
+      "Using the full separation as each star's orbital radius.",
+      "Treating the axial distance to a star as $z$ alone.",
+      "Inverting the requested period ratio.",
+      "Claiming the result for an arbitrary oscillation amplitude."
+    ],
+    "alternativeMethods": [
+      "Expand the axial potential $\\Phi(z)=-2GM/\\sqrt{a^2+z^2}$ to quadratic order. The coefficient of $z^2$ gives the same restoring frequency."
+    ],
+    "difficultyNotes": "The result follows the fixed-separation circular binary and negligible-planetoid-mass model shown in the source. It is a small-amplitude period.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usapho-2009-p4",
+    "problemId": "usapho-2009-p4",
+    "finalAnswer": "Put $a=P_0/P_{\\rm atm}>1$. Then $$\\boxed{E_{\\max}=V_0\\left[\\frac52P_0+P_{\\rm atm}-\\frac72P_0^{5/7}P_{\\rm atm}^{2/7}\\right]}$$ and $$\\boxed{L=\\frac{V_0}{A}a^{5/7}}.$$",
+    "shortExplanation": "The potato gains energy while internal pressure exceeds atmospheric pressure. Its best exit occurs when those pressures become equal, before further expansion would reduce its kinetic energy.",
+    "detailedSteps": [
+      "**Model the gas expansion.** The given heat capacities give $\\gamma=C_P/C_V=7/5$. In the ideal adiabatic gas-piston model, $$P(V)=P_0(V_0/V)^{7/5}.$$ Atmospheric pressure acts against the potato, so the net kinetic-energy gain is $$K(V)=\\int_{V_0}^{V}[P(v)-P_{\\rm atm}]\\,dv.$$",
+      "**Locate the optimum.** Differentiating gives $K'(V)=P(V)-P_{\\rm atm}$. Since internal pressure decreases monotonically, the unique maximum occurs at $$V_*=V_0(P_0/P_{\\rm atm})^{5/7}.$$ The work grows before that point and falls afterwards.",
+      "**(a) Evaluate the work.** Integration gives $$E_{\\max}=\\frac52P_0V_0[1-a^{-2/7}]-P_{\\rm atm}V_0[a^{5/7}-1].$$ Combining terms yields the boxed expression. It is positive for $a>1$ and approaches zero as the initial pressure approaches atmospheric pressure.",
+      "**(b) Convert volume into full barrel length.** The source labels $L$ from the closed end to the muzzle. In the ideal volume-displacement slug model, $AL=V_*$, so $L=(V_0/A)a^{5/7}$. The travel after firing is $(V_*-V_0)/A$, but that is shorter than the complete barrel length requested."
+    ],
+    "keyIdeas": [
+      "Diatomic adiabatic law",
+      "Work against atmospheric pressure",
+      "Monotonic pressure and energy maximum",
+      "Total length versus travel distance"
+    ],
+    "commonMistakes": [
+      "Ignoring atmospheric pressure in the work integral.",
+      "Maximizing internal-gas work rather than net work on the potato.",
+      "Using an isothermal pressure law.",
+      "Reporting the potato's travel distance as the whole barrel length."
+    ],
+    "alternativeMethods": [
+      "The gas loses internal energy $\\frac52(P_0V_0-P_{\\rm atm}V_*)$, while the atmosphere receives work $P_{\\rm atm}(V_*-V_0)$. Subtracting gives the same maximum potato energy."
+    ],
+    "difficultyNotes": "The calculation uses the source's ideal adiabatic gas-piston approximation, with no friction or leakage and negligible slug-volume corrections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usapho-2009-p5",
+    "problemId": "usapho-2009-p5",
+    "finalAnswer": "$$\\boxed{\\alpha_*=\\frac12\\arccos\\left(\\frac{\\sqrt{33}-1}{8}\\right)\\approx26.8^\\circ}$$ and $$\\boxed{l_{\\max}=8h\\sqrt{1-x_*^2}(1+2x_*)\\approx14.08h,\\qquad x_*=\\frac{\\sqrt{33}-1}{8}}.$$",
+    "shortExplanation": "Reflect the golf ball's relative velocity across the collision normal in the bowling ball's rest frame. Transform back, calculate the projectile range, and maximize it.",
+    "detailedSteps": [
+      "**Work in the large ball's frame.** Just after the floor bounce, the bowling ball moves upward at $v=\\sqrt{2gh}$ and the golf ball moves downward at $v$. In the bowling-ball frame, the golf ball's velocity is $\\mathbf u=(0,-2v)$. The outward contact normal is $\\mathbf n=(\\sin\\alpha,\\cos\\alpha)$, as in the source figure.",
+      "**Reflect only the normal component.** A perfectly elastic frictionless collision gives $\\mathbf u'=\\mathbf u-2(\\mathbf u\\cdot\\mathbf n)\\mathbf n$. Adding the bowling ball's upward velocity returns to the ground frame: $$v_x=2v\\sin2\\alpha,\\qquad v_y=v(1+2\\cos2\\alpha).$$",
+      "**Calculate range.** In the source limit where both radii are negligible compared with $h$, neglect the launch height. For an upward launch, the flight time is $2v_y/g$, giving $$\\frac lh=8\\sin2\\alpha(1+2\\cos2\\alpha).$$ Here $\\cos2\\alpha>-1/2$; nonascending launches do not give a comparable leading-order range.",
+      "**Maximize the expression.** Put $x=\\cos2\\alpha$. Maximize $F(x)=\\sqrt{1-x^2}(1+2x)$ on $-1/2<x<1$. Its derivative has the sign of $2-x-4x^2$, so the interior maximum satisfies $$4x^2+x-2=0,\\qquad x_*=\\frac{\\sqrt{33}-1}{8}.$$ The other root lies outside the upward-launch interval, and both interval endpoints have zero range. Substitution gives $\\alpha_*\\approx26.812^\\circ$ and $l_{\\max}/h\\approx14.0814$."
+    ],
+    "keyIdeas": [
+      "Relative-frame elastic reflection",
+      "Frictionless collision normal",
+      "Projectile range",
+      "Algebraic global maximum"
+    ],
+    "commonMistakes": [
+      "Reflecting the whole incoming velocity without first subtracting the bowling ball's velocity.",
+      "Assuming the golf ball always rebounds vertically.",
+      "Using the contact angle as the projectile launch angle.",
+      "Treating the large-mass and negligible-radius approximations as exact for any two finite balls."
+    ],
+    "alternativeMethods": [
+      "Resolve the relative velocity into normal and tangent components; reverse the normal component and leave the tangent component unchanged. Recombining and returning to the ground frame yields the same launch velocity."
+    ],
+    "difficultyNotes": "The maximum is the leading result in the source's very-large-bowling-mass and small-radius limits. Finite mass and finite launch height introduce corrections.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-usapho-2009-p6",
+    "problemId": "usapho-2009-p6",
+    "finalAnswer": "With $k=1/(4\\pi\\varepsilon_0)$, $$\\boxed{U=2kq^2\\left(\\frac1{\\sqrt{r^2+d^2}}-\\frac1r\\right)\\approx-\\frac{kp^2}{r^3}}.$$ The leading force is **attractive**, of magnitude $\\boxed{3kp^2/r^4}$. Near B, A's leading field has magnitude $\\boxed{kp/r^3}$ and points downward, opposite to A's dipole moment.",
+    "shortExplanation": "The actual figure shows side-by-side antiparallel dipoles. Sum all four inter-dipole charge interactions, then expand for small dipole length relative to their separation.",
+    "detailedSteps": [
+      "**(a) Exact interaction energy.** A's upper charge is positive and B's upper charge is negative; the lower pair has the opposite signs. The two same-height interactions have distance $r$ and energy $-kq^2/r$ each. The two diagonal interactions have like signs and distance $\\sqrt{r^2+d^2}$. Therefore $$U=2kq^2\\left[\\frac1{\\sqrt{r^2+d^2}}-\\frac1r\\right].$$ Fixed internal dipole self-energies are excluded by the specified zero at infinite separation.",
+      "**(b) Leading small-dipole term.** Expand $$\\frac1{\\sqrt{r^2+d^2}}=\\frac1r\\left[1-\\frac{d^2}{2r^2}+O(d^4/r^4)\\right].$$ The constant terms cancel, leaving $U\\approx-kq^2d^2/r^3=-kp^2/r^3$.",
+      "**(c) Force and direction.** Differentiating with moment and orientation fixed gives $$F_r=-\\frac{dU}{dr}\\approx-\\frac{3kp^2}{r^4}.$$ The negative radial sign means attraction: each dipole is pulled toward the other.",
+      "**(d) Field produced by A near B.** At B's center, A's two horizontal field components cancel and their vertical components both point downward. Exactly at that center, $$\\mathbf E_A=-\\frac{kqd}{[r^2+(d/2)^2]^{3/2}}\\,\\hat{\\mathbf y}.$$ For $d\\ll r$, this becomes $-(kp/r^3)\\hat{\\mathbf y}$. It points opposite to A's upward moment and along B's downward moment. The force comes from the field gradient, rather than a uniform-field translation force."
+    ],
+    "keyIdeas": [
+      "Four Coulomb interactions",
+      "Constant self-energy subtraction",
+      "Far-field expansion",
+      "Energy gradient and force",
+      "Equatorial dipole field direction"
+    ],
+    "commonMistakes": [
+      "Using an axial dipole formula for this side-by-side arrangement.",
+      "Including fixed self-energy while also demanding zero energy at infinite separation.",
+      "Assigning attraction or repulsion from the energy's sign without differentiating.",
+      "Reversing the actual charge orientation in the source diagram."
+    ],
+    "alternativeMethods": [
+      "The far-field interaction is $U=-\\mathbf p_B\\cdot\\mathbf E_A$. Since $\\mathbf p_B$ and the equatorial field of A are both downward, this gives $-kp^2/r^3$, agreeing with the explicit charge expansion."
+    ],
+    "difficultyNotes": "Part (a) is exact for the rigid point-charge pairs. Parts (b)–(d) use the stated small-dipole approximation; the center field is not exactly uniform throughout B's finite extent.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "solution-aime-1986-p1",
+    "problemId": "aime-1986-p1",
+    "finalAnswer": "$\\boxed{337}$",
+    "shortExplanation": "The fourth root is 3 or 4, giving solutions 81 and 256.",
+    "detailedSteps": [
+      "Let $t=\\sqrt[4]x\\ge0$, with $t\\ne7$ because the denominator must be nonzero. The equation becomes $t(7-t)=12$, or $(t-3)(t-4)=0$.",
+      "Both roots are valid. Thus $x=3^4=81$ or $x=4^4=256$, and their sum is 337."
+    ],
+    "keyIdeas": [
+      "A fourth-root substitution"
+    ],
+    "commonMistakes": [
+      "Adding the fourth roots rather than the values of x."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A root substitution makes the equation quadratic.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p2",
+    "problemId": "aime-1986-p2",
+    "finalAnswer": "$\\boxed{104}$",
+    "shortExplanation": "Two conjugate products give $8+2\\sqrt{42}$ and $2\\sqrt{42}-8$, whose product is 104.",
+    "detailedSteps": [
+      "Pair the first two factors, obtaining $(\\sqrt6+\\sqrt7)^2-5=8+2\\sqrt{42}$.",
+      "The remaining two factors give $5-(\\sqrt6-\\sqrt7)^2=2\\sqrt{42}-8$.",
+      "The total is $(2\\sqrt{42})^2-8^2=168-64=104$."
+    ],
+    "keyIdeas": [
+      "Pairing radical conjugates"
+    ],
+    "commonMistakes": [
+      "Changing the sign of the second conjugate product."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Pairing cancels radicals before expansion.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p3",
+    "problemId": "aime-1986-p3",
+    "finalAnswer": "$\\boxed{150}$",
+    "shortExplanation": "The tangent product is 5/6, so the tangent addition formula gives 150.",
+    "detailedSteps": [
+      "Write $a=\\tan x,b=\\tan y$. The cotangents in the source imply $a,b\\ne0$, and $1/a+1/b=(a+b)/(ab)=30$. Since $a+b=25$, this gives $ab=5/6$.",
+      "Then $\\tan(x+y)=(a+b)/(1-ab)=25/(1/6)=150$. The denominator is nonzero, so the requested tangent is defined."
+    ],
+    "keyIdeas": [
+      "Recovering the tangent product"
+    ],
+    "commonMistakes": [
+      "Using a plus sign in the tangent-addition denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reciprocal sums determine the missing product.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p4",
+    "problemId": "aime-1986-p4",
+    "finalAnswer": "$\\boxed{181}$",
+    "shortExplanation": "The sum of the five variables is 31; hence $x_4=17,x_5=65$.",
+    "detailedSteps": [
+      "Let $S=x_1+\\cdots+x_5$. The five equations are $S+x_i=6,12,24,48,96$ in order. Adding gives $6S=186$, so $S=31$.",
+      "Therefore $x_4=48-31=17$ and $x_5=96-31=65$. The required expression is $3\\cdot17+2\\cdot65=181$."
+    ],
+    "keyIdeas": [
+      "Summing a linear system before solving"
+    ],
+    "commonMistakes": [
+      "Assuming the sum appears five times instead of six in the summed system."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetry suggests summing first.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p5",
+    "problemId": "aime-1986-p5",
+    "finalAnswer": "$\\boxed{890}$",
+    "shortExplanation": "The divisibility condition is equivalent to $n+10\\mid900$, so the largest n is 890.",
+    "detailedSteps": [
+      "Modulo $n+10$, we have $n\\equiv-10$, so $n^3+100\\equiv-1000+100=-900$. Thus the condition is exactly $n+10\\mid900$.",
+      "The positive divisor $n+10$ cannot exceed 900, giving $n\\le890$. Taking $n=890$ makes $n+10=900$ and satisfies the congruence, so the maximum is 890."
+    ],
+    "keyIdeas": [
+      "Remainders and the largest divisor"
+    ],
+    "commonMistakes": [
+      "Searching n without establishing the finite divisor bound."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Substitute the divisor relation into the polynomial remainder.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p6",
+    "problemId": "aime-1986-p6",
+    "finalAnswer": "$\\boxed{033}$",
+    "shortExplanation": "The page count is 62, whose proper sum 1953 leaves the duplicated page 33.",
+    "detailedSteps": [
+      "If page $k$ was added twice, $n(n+1)/2+k=1986$ with $1\\le k\\le n$. Hence $n(n+1)/2+1\\le1986\\le n(n+3)/2$.",
+      "For $n\\le61$, the right-hand bound is at most 1952, too small. For $n\\ge63$, the left-hand bound is at least 2017, too large. Therefore $n=62$.",
+      "The duplicated page is $1986-62\\cdot63/2=33$, within 1 through 62."
+    ],
+    "keyIdeas": [
+      "A triangular sum with one duplicated term"
+    ],
+    "commonMistakes": [
+      "Picking a triangular number merely below 1986 without checking the duplicated page range."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Both bounds are needed to identify the page count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p7",
+    "problemId": "aime-1986-p7",
+    "finalAnswer": "$\\boxed{981}$",
+    "shortExplanation": "The 100 th binary pattern is 1100100, which represents 981 in base 3.",
+    "detailedSteps": [
+      "The permitted numbers are exactly those with ternary digits only 0 and 1. Their order is the same as the corresponding binary numbers: at the first differing digit, the larger digit dominates all subsequent digits in either base.",
+      "Therefore the 100 th positive member is obtained by writing 100 in binary, $1100100_2$, and reading those digits in base 3.",
+      "Its value is $3^6+3^5+3^2=729+243+9=981$."
+    ],
+    "keyIdeas": [
+      "Reading binary ranks as ternary digits"
+    ],
+    "commonMistakes": [
+      "Using binary value 99 and forgetting that the sequence excludes zero."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A positional-digit restriction creates an order-preserving rank map.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p8",
+    "problemId": "aime-1986-p8",
+    "finalAnswer": "$\\boxed{141}$",
+    "shortExplanation": "There are 49 divisors; removing the largest from their product gives logarithm 141.",
+    "detailedSteps": [
+      "Factor $1000000=2^65^6$. It has $(6+1)^2=49$ positive divisors.",
+      "Pair each divisor $d$ with $1000000/d$. Consequently the product of all divisors is $1000000^{49/2}$. The original booklet defines proper divisors to exclude both $1$ and $1000000$. Removing the factor $1000000$ reduces the logarithm sum by $6$; removing $1$ contributes no change because $\\log_{10}1=0$.",
+      "The sum of base 10 logarithms is therefore $(49/2-1)\\log_{10}1000000=(47/2)\\cdot6=141$, already an integer."
+    ],
+    "keyIdeas": [
+      "Pairing divisors to sum their logarithms"
+    ],
+    "commonMistakes": [
+      "Omitting the square-root divisor or including the number itself among proper divisors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Products turn a logarithm sum into a divisor-pairing argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p9",
+    "problemId": "aime-1986-p9",
+    "finalAnswer": "$\\boxed{306}$",
+    "shortExplanation": "The section ratios sum to 2, so $d=2/(1/425+1/450+1/510)=306$.",
+    "detailedSteps": [
+      "Let the normalized distances from $P$ to the three sides be $u_A,u_B,u_C$, each measured relative to the altitude from the opposite vertex. The three subtriangle areas show $u_A+u_B+u_C=1$.",
+      "A parallel section through $P$ corresponding to a side of length $s$ has length $s(1-u)$, by similarity. Since all three lengths are $d$, their normalized ratios give $d/425+d/450+d/510=(1-u_A)+(1-u_B)+(1-u_C)=2$.",
+      "Thus $d=306$. Each value $1-d/s$ is positive and their sum is 1, so the required interior point is feasible."
+    ],
+    "keyIdeas": [
+      "Barycentric heights and equal parallel sections"
+    ],
+    "commonMistakes": [
+      "Making the three section ratios sum to 1 rather than 2."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Normalized heights convert three similar cuts into one linear equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p10",
+    "problemId": "aime-1986-p10",
+    "finalAnswer": "$\\boxed{358}$",
+    "shortExplanation": "All six arrangements sum to 222 times the digit sum, which determines the original number 358.",
+    "detailedSteps": [
+      "Let $T=a+b+c$ and let the original number be $v=100a+10b+c$. In all six listed arrangements, each digit occupies each place twice, so their total is $222T$. Thus $v=222T-3194$.",
+      "Since $100\\le v\\le999$, $3294\\le222T\\le4193$, giving $15\\le T\\le18$. Also $v\\equiv T\\pmod9$, so $222T-3194\\equiv T\\pmod9$. As $3194\\equiv8$, this reduces to $5T\\equiv8\\pmod9$, or $T\\equiv7\\pmod9$.",
+      "The only such T in 15 through 18 is 16. Therefore $v=222\\cdot16-3194=358$, whose digits indeed sum to 16."
+    ],
+    "keyIdeas": [
+      "Summing all permutations of three digits"
+    ],
+    "commonMistakes": [
+      "Counting the original number among the five revealed arrangements."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use both place-value sums and the digit-sum congruence.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p11",
+    "problemId": "aime-1986-p11",
+    "finalAnswer": "$\\boxed{816}$",
+    "shortExplanation": "The coefficient is $\\sum_{k=2}^{17}\\binom{k}{2}=\\binom{18}{3}=816$.",
+    "detailedSteps": [
+      "Because $y=x+1$, substitute $x=y-1$ into $\\sum_{k=0}^{17}(-1)^kx^k$. In the kth term, the coefficient of $y^2$ is $(-1)^k\\binom{k}{2}(-1)^{k-2}=\\binom{k}{2}$ for $k\\ge2$.",
+      "Adding the coefficients gives $\\sum_{k=2}^{17}\\binom{k}{2}=\\binom{18}{3}=816$ by the hockey-stick identity."
+    ],
+    "keyIdeas": [
+      "A shifted polynomial coefficient"
+    ],
+    "commonMistakes": [
+      "Keeping an alternating sign after the substitution when the two signs cancel."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A coefficient can be computed without expanding the entire polynomial.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p12",
+    "problemId": "aime-1986-p12",
+    "finalAnswer": "$\\boxed{061}$",
+    "shortExplanation": "No six-element set is possible; every five-element set with sum above 61 has a repeated subset sum. The set $\\{8,11,13,14,15\\}$ attains 61.",
+    "detailedSteps": [
+      "The condition is equivalent to all subset sums being distinct: if equal sums overlap, cancel their common elements to obtain equal disjoint subsets. Conversely equal disjoint sums are a collision. The two subsets in a forbidden equality are understood to be distinct; the empty subset contributes only the unique sum 0.",
+      "First rule out six elements. For $N$ distinct integer values $u_1<\\cdots<u_N$, their variance is $N^{-2}\\sum_{i<j}(u_j-u_i)^2\\ge N^{-2}\\sum_{i<j}(j-i)^2=(N^2-1)/12$. The inequality uses the integer spacing $u_j-u_i\\ge j-i$.",
+      "For the 64 subset sums of six elements $s_1,\\ldots,s_6$, choosing a subset uniformly makes the variance $(s_1^2+\\cdots+s_6^2)/4$. Since the largest six allowed integers are 10 through 15, this is at most $955/4$. But 64 distinct integer sums would require variance at least $4095/12=1365/4$, a contradiction. Larger sets contain six-element subsets and are also impossible.",
+      "Four or fewer elements sum to at most $12+13+14+15=54$. For five elements totaling more than 61, the exhaustive possibilities are $\\{11,12,13,14,15\\}$, $\\{10,12,13,14,15\\}$, $\\{9,12,13,14,15\\}$, $\\{10,11,13,14,15\\}$, $\\{8,12,13,14,15\\}$, $\\{9,11,13,14,15\\}$, and $\\{10,11,12,14,15\\}$. This list follows by distributing a deficit at most 3 from the maximum sum 65.",
+      "The sets containing 12,13,14,15 have $12+15=13+14$. The other three have respectively $10+14=11+13$, $9+15=11+13$, and $10+15=11+14$. All are forbidden.",
+      "Finally take $S=\\{8,11,13,14,15\\}$, total 61. Its ten pair sums are $19,21,22,23,24,25,26,27,28,29$, all distinct. Triple sums are their complements to 61 and are therefore distinct in 32 through 42. Single sums lie in 8 through 15, four-element sums in 46 through 53, and the remaining sums are 0 and 61. These ranges are disjoint, proving all 32 subset sums distinct."
+    ],
+    "keyIdeas": [
+      "Bounding and constructing distinct subset sums"
+    ],
+    "commonMistakes": [
+      "Checking only equal-size subsets or presenting a finite search without an upper-bound proof."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The variance bound eliminates six elements; a short complete extremal list handles five.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p13",
+    "problemId": "aime-1986-p13",
+    "finalAnswer": "$\\boxed{560}$",
+    "shortExplanation": "The string has four head runs totaling 6 heads and four tail runs totaling 9 tails, giving $\\binom53\\binom83=560$.",
+    "detailedSteps": [
+      "The excess of TH transitions over HT transitions is 1, so the string starts with T and ends with H. The four TH transitions and three HT transitions give four runs of each symbol.",
+      "Each head run contributes one fewer HH pair than its length. Thus two HH pairs mean 6 heads total. Similarly five TT pairs mean 9 tails.",
+      "Choose positive lengths for the four head runs and four tail runs. The counts are $\\binom{6-1}{4-1}=10$ and $\\binom{9-1}{4-1}=56$, respectively. The alternating order is fixed, so the answer is $10\\cdot56=560$."
+    ],
+    "keyIdeas": [
+      "Counting alternating head and tail runs"
+    ],
+    "commonMistakes": [
+      "Treating adjacent pairs as independent instead of overlapping consecutive positions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Transition counts determine run order and lengths.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p14",
+    "problemId": "aime-1986-p14",
+    "finalAnswer": "$\\boxed{750}$",
+    "shortExplanation": "The edge lengths recovered from the reciprocal squared distances are 15,5,10; their product is 750.",
+    "detailedSteps": [
+      "Let the box edge lengths be $a,b,c$. For an edge parallel to the a-direction and disjoint from the diagonal, minimizing distance gives $d_a=bc/\\sqrt{b^2+c^2}$. This follows from the distance between the two lines, or by projecting in the perpendicular bc-plane. The closest points have parameter $b^2/(b^2+c^2)$, within both actual segments.",
+      "Therefore $d_a^{-2}=b^{-2}+c^{-2}$, and similarly for the other two directions. Relabel the directions so that $d_a^2=20,d_b^2=900/13,d_c^2=225/10$, exactly as in the source fractions.",
+      "Put $A=a^{-2},B=b^{-2},C=c^{-2}$. Then $B+C=1/20$, $A+C=13/900$, $A+B=2/45$. Addition and subtraction give $A=1/225,B=1/25,C=1/100$.",
+      "Thus $a=15,b=5,c=10$, and the volume is 750."
+    ],
+    "keyIdeas": [
+      "Distances between a space diagonal and skew edges"
+    ],
+    "commonMistakes": [
+      "Reading the source denominators as multiplication by square roots or using a point-to-line distance for the wrong edge."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Reciprocal squares linearize the skew-edge distance formulas.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-1986-p15",
+    "problemId": "aime-1986-p15",
+    "finalAnswer": "$\\boxed{400}$",
+    "shortExplanation": "The two median directions give a determinant area proportional to $|uv|$; the hypotenuse condition forces $uv=-800/3$.",
+    "detailedSteps": [
+      "The median lines intersect at the centroid $G=(-1,2)$. Write $A=G+u(1,1)$ and $B=G+v(1,2)$. Since $A+B+C=3G$, we have $C=G-u(1,1)-v(1,2)$.",
+      "The right angle at $C$ gives $(A-C)\\cdot(B-C)=0$, or $4u^2+15uv+10v^2=0$. The squared hypotenuse is $|A-B|^2=2u^2-6uv+5v^2=3600$.",
+      "Subtract twice the hypotenuse equation from the right-angle equation to obtain $27uv=-7200$, hence $uv=-800/3$.",
+      "The vectors $A-C=2u(1,1)+v(1,2)$ and $B-C=u(1,1)+2v(1,2)$ have determinant $3uv$, because the two direction vectors have determinant 1. Thus the area is $|3uv|/2=400$."
+    ],
+    "keyIdeas": [
+      "Centroid vectors and a right-angle constraint"
+    ],
+    "commonMistakes": [
+      "Using the median-line intersection as the right-angle vertex instead of the centroid."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Centroid coordinates automatically enforce both median lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

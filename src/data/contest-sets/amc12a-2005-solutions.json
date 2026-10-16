@@ -1,0 +1,511 @@
+[
+  {
+    "id": "solution-amc12a-2005-p1",
+    "problemId": "amc12a-2005-p1",
+    "finalAnswer": "$\\boxed{10}$ (choice D)",
+    "shortExplanation": "The two bases are $20$ and $10$.",
+    "detailedSteps": [
+      "From $0.1x=2$ and $0.2y=2$, obtain $x=20$ and $y=10$. Thus $x-y=10$."
+    ],
+    "keyIdeas": [
+      "Recovering two percentage bases"
+    ],
+    "commonMistakes": [
+      "Subtracting the percentages instead of finding their bases."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The same amount represents different percentages of different bases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p2",
+    "problemId": "amc12a-2005-p2",
+    "finalAnswer": "$\\boxed{-4}$ (choice B)",
+    "shortExplanation": "The first equation fixes $x=-2$.",
+    "detailedSteps": [
+      "From $2x+7=3$, one gets $x=-2$. Substituting this into $bx-10=-2$ gives $-2b=8$, so $b=-4$."
+    ],
+    "keyIdeas": [
+      "A shared equation root"
+    ],
+    "commonMistakes": [
+      "Solving the equations with different x values."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the shared root before finding the coefficient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p3",
+    "problemId": "amc12a-2005-p3",
+    "finalAnswer": "$\\boxed{\\frac25x^2}$ (choice B)",
+    "shortExplanation": "The diagonal squared is five times the width squared.",
+    "detailedSteps": [
+      "If the width is w, the length is $2w$. Pythagoras gives $x^2=w^2+(2w)^2=5w^2$.",
+      "The area is $2w^2=(2/5)x^2$."
+    ],
+    "keyIdeas": [
+      "Diagonal and aspect ratio"
+    ],
+    "commonMistakes": [
+      "Using the diagonal as one of the side lengths."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Square the diagonal relation before computing area.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p4",
+    "problemId": "amc12a-2005-p4",
+    "finalAnswer": "$\\boxed{100}$ (choice A)",
+    "shortExplanation": "Buying together needs one fewer paid window.",
+    "detailedSteps": [
+      "Separately, seven windows require six paid windows and one free, while eight require seven paid and one free. The separate total is thirteen paid windows.",
+      "Together, twelve paid windows earn three free windows, supplying all fifteen needed. Eleven paid would earn only two free and be insufficient.",
+      "The difference is one paid window, worth $100$."
+    ],
+    "keyIdeas": [
+      "Combining purchases with free items"
+    ],
+    "commonMistakes": [
+      "Treating every fifth needed window as free without counting paid groups."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A construction and a lower bound establish each purchase minimum.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p5",
+    "problemId": "amc12a-2005-p5",
+    "finalAnswer": "$\\boxed{24}$ (choice B)",
+    "shortExplanation": "Each group has total $600$.",
+    "detailedSteps": [
+      "The combined total is $20(30)+30(20)=1200$. Dividing by the $50$ entries gives average $24$."
+    ],
+    "keyIdeas": [
+      "Combining two means"
+    ],
+    "commonMistakes": [
+      "Averaging the two means without weighting the group sizes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The groups have unequal sizes.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p6",
+    "problemId": "amc12a-2005-p6",
+    "finalAnswer": "$\\boxed{5}$ (choice B)",
+    "shortExplanation": "Josh’s distance is $8/5$ of Mike’s.",
+    "detailedSteps": [
+      "Let Mike ride for time t at speed v. Josh rides for $2t$ at speed $4v/5$, so his distance is $(8/5)vt$.",
+      "The total distance is $(13/5)vt=13$, giving Mike’s distance $vt=5$ miles."
+    ],
+    "keyIdeas": [
+      "Distance ratio from time and speed"
+    ],
+    "commonMistakes": [
+      "Using only the speed ratio and ignoring the time ratio."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distance scales by both speed and time.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p7",
+    "problemId": "amc12a-2005-p7",
+    "finalAnswer": "$\\boxed{36}$ (choice C)",
+    "shortExplanation": "The inner side is $6$.",
+    "detailedSteps": [
+      "Use inner-square coordinates $E=(0,0),F=(0,t),G=(-t,t),H=(-t,0)$. Since $BE=1$, put $B=(1,0)$, and write $C=(0,h)$ on the extension of EF.",
+      "The outer side vector BC is $(-1,h)$. A quarter-turn gives the next side vector CD as $(-h,-1)$, so $D=(-h,h-1)$. Since D lies on the extension of FG, its second coordinate is t; hence $h=t+1$.",
+      "The outer side is $\\sqrt{50}$, so $1+h^2=50$. With positive h, $h=7$ and $t=6$, giving inner area $36$."
+    ],
+    "keyIdeas": [
+      "Supporting lines of nested squares"
+    ],
+    "commonMistakes": [
+      "Reading the source’s square-root side length as 50."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The source diagram fixes which side extensions contain the outer vertices.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p8",
+    "problemId": "amc12a-2005-p8",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "The only eligible three-digit number is $401$.",
+    "detailedSteps": [
+      "Factor $2005=5\\cdot401$. The digit sum is a positive integer at most 27. As a divisor of 2005, it can therefore only be 1 or 5.",
+      "Digit sum 1 would force the number to be 2005, which is not three digits. Digit sum 5 forces the number 401, whose digit sum is indeed 5. Thus A is 4."
+    ],
+    "keyIdeas": [
+      "A number times its digit sum"
+    ],
+    "commonMistakes": [
+      "Trying arbitrary digit triples without using the product divisibility."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A small digit-sum bound narrows the divisors.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p9",
+    "problemId": "amc12a-2005-p9",
+    "finalAnswer": "$\\boxed{-16}$ (choice A)",
+    "shortExplanation": "The two coefficient values are $4$ and $-20$.",
+    "detailedSteps": [
+      "The quadratic has linear coefficient $a+8$. Exactly one real solution requires $(a+8)^2-4(4)(9)=0$.",
+      "Thus $a+8=\\pm12$, giving $a=4$ or $-20$. Their sum is $-16$."
+    ],
+    "keyIdeas": [
+      "The discriminant for a repeated root"
+    ],
+    "commonMistakes": [
+      "Using a alone as the entire linear coefficient."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Combine like terms before applying the discriminant.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p10",
+    "problemId": "amc12a-2005-p10",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "The red-face fraction is $1/n$.",
+    "detailedSteps": [
+      "The outer surface contributes $6n^2$ red unit faces. The $n^3$ small cubes have $6n^3$ faces in total, including internal ones.",
+      "The ratio is $6n^2/(6n^3)=1/n$. Setting this to $1/4$ gives $n=4$."
+    ],
+    "keyIdeas": [
+      "Painted faces versus all small-cube faces"
+    ],
+    "commonMistakes": [
+      "Counting only the visible exterior faces in the denominator."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The denominator includes every face of every unit cube.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p11",
+    "problemId": "amc12a-2005-p11",
+    "finalAnswer": "$\\boxed{45}$ (choice E)",
+    "shortExplanation": "The first and last digits must have the same parity.",
+    "detailedSteps": [
+      "For first digit a and last digit c, the middle digit is $(a+c)/2$. This is a digit exactly when a and c have the same parity.",
+      "There are five odd nonzero first digits with five odd last digits, and four even nonzero first digits with five even last digits. Thus the count is $5\\cdot5+4\\cdot5=45$."
+    ],
+    "keyIdeas": [
+      "Parity of endpoint digits"
+    ],
+    "commonMistakes": [
+      "Allowing a zero leading digit."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The middle digit is uniquely determined by the endpoints.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p12",
+    "problemId": "amc12a-2005-p12",
+    "finalAnswer": "$\\boxed{8}$ (choice D)",
+    "shortExplanation": "The endpoint displacement has gcd $9$.",
+    "detailedSteps": [
+      "The displacement is $(99,999)=9(11,111)$, and $\\gcd(11,111)=1$. Therefore the integer points on the segment occur at the nine equal steps of the primitive vector $(11,111)$.",
+      "Including both endpoints there are ten lattice points; excluding the two endpoints leaves eight."
+    ],
+    "keyIdeas": [
+      "Primitive direction on a lattice segment"
+    ],
+    "commonMistakes": [
+      "Giving the gcd as the interior count without subtracting one."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A primitive direction identifies every lattice point.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p13",
+    "problemId": "amc12a-2005-p13",
+    "finalAnswer": "$\\boxed{12}$ (choice D)",
+    "shortExplanation": "Every star value contributes to two segment sums.",
+    "detailedSteps": [
+      "The five segment sums total $2(3+5+6+7+9)=60$. In a five-term arithmetic progression, the middle term equals the mean, even when the terms were presented in another order.",
+      "The middle term is therefore $60/5=12$. An eligible placement exists, so the stated arithmetic condition is consistent."
+    ],
+    "keyIdeas": [
+      "Mean of pair sums around a cycle"
+    ],
+    "commonMistakes": [
+      "Counting each vertex value only once in the segment total."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The total bypasses the arrangement search.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p14",
+    "problemId": "amc12a-2005-p14",
+    "finalAnswer": "$\\boxed{\\frac{11}{21}}$ (choice D)",
+    "shortExplanation": "Removal hits an even face with probability $12/21$.",
+    "detailedSteps": [
+      "There are $21$ dots. The odd faces carry $1+3+5=9$ dots; the even faces carry $2+4+6=12$.",
+      "If an odd face loses a dot, only two of the six faces remain odd. If an even face loses a dot, four faces become odd. The subsequent roll is uniform among faces.",
+      "The probability is $(9/21)(2/6)+(12/21)(4/6)=11/21$."
+    ],
+    "keyIdeas": [
+      "A dot-weighted removal experiment"
+    ],
+    "commonMistakes": [
+      "Choosing the removed face uniformly instead of choosing a dot uniformly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two stages have different sampling weights.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p15",
+    "problemId": "amc12a-2005-p15",
+    "finalAnswer": "$\\boxed{\\frac13}$ (choice C)",
+    "shortExplanation": "Normalize the first diameter to length $3$.",
+    "detailedSteps": [
+      "Place $A=(0,0),B=(3,0),C=(1,0)$ and $D=(1,h)$. The opposite diameter endpoint is $E=(2,-h)$ because the circle center is $(3/2,0)$.",
+      "Triangle DCE has vertical base h and horizontal altitude 1, so its area is $h/2$. Triangle ABD has base 3 and altitude h, so its area is $3h/2$.",
+      "The ratio is $1/3$; the value of h cancels."
+    ],
+    "keyIdeas": [
+      "Opposite diameter endpoints and triangle areas"
+    ],
+    "commonMistakes": [
+      "Using CE as if it were horizontal or as a diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A convenient scale preserves the area ratio.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p16",
+    "problemId": "amc12a-2005-p16",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "Normalize $s=1$ and solve the center-distance equation.",
+    "detailedSteps": [
+      "The three small centers are $(1,1),(3,1),(1,3)$. A radius-r circle tangent to both axes has center $(r,r)$.",
+      "Tangency to the second circle gives $(r-3)^2+(r-1)^2=(r+1)^2$, or $r^2-10r+9=0$.",
+      "The roots are 1 and 9. The required condition $r>s=1$ selects 9, so $r/s=9$. Symmetry also gives tangency to the third circle."
+    ],
+    "keyIdeas": [
+      "A larger circle tangent to axes and two circles"
+    ],
+    "commonMistakes": [
+      "Keeping the root that reproduces the first small circle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The radius inequality chooses the appropriate quadratic root.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p17",
+    "problemId": "amc12a-2005-p17",
+    "finalAnswer": "$\\boxed{\\frac1{12}}$ (choice A)",
+    "shortExplanation": "The piece at W is a pyramid with a quarter-square base and height one.",
+    "detailedSteps": [
+      "The first pair of cuts, shown in Figure 1, joins the midpoint of a bottom edge to the two upper corners, extended through the cube depth. The congruent end prisms force that midpoint. The second pair makes the same cuts in the perpendicular direction.",
+      "Use coordinates $0\\le x,y,z\\le1$, with W at $(1,0,0)$. Its first-prism condition is $x\\ge(1+z)/2$; its second is $y\\le(1-z)/2$. At height z, its cross-section is a square of side $(1-z)/2$.",
+      "The bottom cross-section has area 1/4 and shrinks linearly to a single vertex at height 1. Hence the piece is a pyramid of volume $(1/3)(1/4)(1)=1/12$. Equivalently integrate $(1-z)^2/4$ from 0 to 1."
+    ],
+    "keyIdeas": [
+      "Intersecting two triangular prism cuts"
+    ],
+    "commonMistakes": [
+      "Multiplying the two prism volumes as if their intersections were independent."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The second cutting direction changes the section area quadratically with height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p18",
+    "problemId": "amc12a-2005-p18",
+    "finalAnswer": "$\\boxed{100}$ (choice A)",
+    "shortExplanation": "There are $266$ integers below 1000 coprime to 30, including 1 and 165 primes.",
+    "detailedSteps": [
+      "Each block of 30 contains eight residues not divisible by 2,3,5. The first 990 integers contribute $33\\cdot8=264$; from 991 through 999, only 991 and 997 qualify. Thus there are 266 eligible integers.",
+      "Among the 168 given primes, all except 2,3,5 qualify, giving 165 primes. Also 1 is not composite. The desired count is $266-165-1=100$."
+    ],
+    "keyIdeas": [
+      "Removing primes from coprime-to-thirty integers"
+    ],
+    "commonMistakes": [
+      "Counting 1 as composite or subtracting all 168 primes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Separate the exceptional small primes and the unit.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p19",
+    "problemId": "amc12a-2005-p19",
+    "finalAnswer": "$\\boxed{1462}$ (choice B)",
+    "shortExplanation": "The displayed digits encode a base-nine count.",
+    "detailedSteps": [
+      "The available symbols are $0,1,2,3,5,6,7,8,9$, so replace each symbol above 3 by one less to get its base-nine digit.",
+      "The display 2005 thus represents base-nine 2004, whose value is $2\\cdot9^3+4=1462$ miles."
+    ],
+    "keyIdeas": [
+      "An odometer with nine available symbols"
+    ],
+    "commonMistakes": [
+      "Interpreting the display as an ordinary decimal count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Skipping a symbol changes the positional base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p20",
+    "problemId": "amc12a-2005-p20",
+    "finalAnswer": "$\\boxed{2^{2005}}$ (choice E)",
+    "shortExplanation": "Every interior target has exactly two interior preimages.",
+    "detailedSteps": [
+      "For $0<t<1$, solving $f(x)=t$ gives $x=t/2$ and $x=1-t/2$, one on each branch. Both lie strictly between 0 and 1 and are distinct.",
+      "Starting with target 1/2 and taking inverse images 2005 times, every point has two preimages at every stage. Preimage sets of distinct target points cannot overlap because f is a function.",
+      "Therefore the number of solutions is $2^{2005}$."
+    ],
+    "keyIdeas": [
+      "Doubling interior inverse images"
+    ],
+    "commonMistakes": [
+      "Merging inverse branches at the peak even though the target stays interior."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The target avoids the exceptional endpoints and peak.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p21",
+    "problemId": "amc12a-2005-p21",
+    "finalAnswer": "$\\boxed{2}$ (choice C)",
+    "shortExplanation": "The only cases are $c=0$ and $c=1$.",
+    "detailedSteps": [
+      "The logarithm equation gives $b=a^{c^{2005}}$. If $c=0$, then $b=1$ and $a=2004$. If $c=1$, then $b=a$ and $2a+1=2005$, so $a=b=1002$.",
+      "If $c\\ge2$, then $b\\ge2^{2^{2005}}>2005$, contradicting the sum. Thus exactly the two triples $(2004,1,0)$ and $(1002,1002,1)$ work."
+    ],
+    "keyIdeas": [
+      "Separating the exponent cases"
+    ],
+    "commonMistakes": [
+      "Trying to approximate a logarithm instead of using the integer power identity."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A gigantic exponent gives an immediate size obstruction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p22",
+    "problemId": "amc12a-2005-p22",
+    "finalAnswer": "$\\boxed{10}$ (choice B)",
+    "shortExplanation": "The diagonal squared is $400$.",
+    "detailedSteps": [
+      "For box sides u,v,w, the edge sum gives $u+v+w=112/4=28$, and the surface area gives $uv+vw+wu=384/2=192$.",
+      "Thus $u^2+v^2+w^2=28^2-2(192)=400$. Opposite box vertices are 20 units apart, so the circumsphere radius is 10."
+    ],
+    "keyIdeas": [
+      "The sphere’s diameter is the box diagonal"
+    ],
+    "commonMistakes": [
+      "Using the diagonal as the radius rather than the diameter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "No individual side length is needed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p23",
+    "problemId": "amc12a-2005-p23",
+    "finalAnswer": "$\\boxed{\\frac{31}{300}}$ (choice B)",
+    "shortExplanation": "The logarithm is integral exactly when the first exponent divides the second.",
+    "detailedSteps": [
+      "Write $a=2^i,b=2^j$ with $1\\le i,j\\le25$ and $i\\ne j$. Then $\\log_a b=j/i$.",
+      "For each i there are $\\lfloor25/i\\rfloor-1$ eligible multiples j, excluding i itself. Summing gives 62 successful ordered pairs.",
+      "There are $25\\cdot24=600$ pairs in total, so the probability is $62/600=31/300$."
+    ],
+    "keyIdeas": [
+      "Divisibility of exponents"
+    ],
+    "commonMistakes": [
+      "Counting the reversed ordered pair as automatically successful."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The logarithm depends on the order of the two selected numbers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p24",
+    "problemId": "amc12a-2005-p24",
+    "finalAnswer": "$\\boxed{22}$ (choice B)",
+    "shortExplanation": "All $27$ root-value assignments work except the five yielding degree below two.",
+    "detailedSteps": [
+      "Since R has degree 3, the identity has degree 6. If Q has positive degree d, its composition with the monic cubic P has degree 3d; therefore Q must have degree 2. A constant Q cannot satisfy the identity with a degree 3 R.",
+      "Divisibility by P requires $Q(1),Q(2),Q(3)\\in\\{1,2,3\\}$. Each of the $3^3=27$ assignments uniquely determines an interpolating polynomial of degree at most 2, and distinct assignments give distinct polynomials.",
+      "The interpolation has degree at most 1 precisely when the three assigned values form an arithmetic progression. There are three constant triples and the two nonconstant triples $(1,2,3),(3,2,1)$, so exclude five.",
+      "The remaining 22 quadratics give P(Q) divisible by P, and their quotient has degree 3 as required."
+    ],
+    "keyIdeas": [
+      "Quadratic interpolation at three roots"
+    ],
+    "commonMistakes": [
+      "Including constant or linear interpolants even though the quotient degree is specified."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The degree requirement is essential to the count.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc12a-2005-p25",
+    "problemId": "amc12a-2005-p25",
+    "finalAnswer": "$\\boxed{80}$ (choice C)",
+    "shortExplanation": "The squared side lengths $2,6,8$ contribute $64,8,8$ triangles.",
+    "detailedSteps": [
+      "For three integer-coordinate vertices, the sum of the three squared edge lengths is even in each coordinate. An equilateral common squared length d must therefore be even. Among differences with coordinates 0,1,2, the possible even squared lengths are 2,4,6,8,12. Length-squared 4 requires an axis-aligned displacement and cannot make 60-degree edges; length-squared 12 requires opposite cube corners and cannot form a triangle.",
+      "For $d=2$, every triangle lies in a unit cube. Each cube’s eight vertices split into two alternating-vertex regular tetrahedra, giving eight triangles. The eight unit cubes thus give 64, each triangle having a unique smallest containing unit cube. For $d=8$, the same construction in the full side-two cube gives eight.",
+      "For $d=6$, every edge has coordinate differences 2,1,1, so each coordinate uses 0,1,2 once across the vertices. Order vertices by $x=0,1,2$. The y-coordinates must be one of $(0,2,1),(1,0,2),(1,2,0),(2,0,1)$ so that the first-last y-difference is 1. For each choice, exactly two z-permutations give complementary squared y/z differences 5 between neighboring x-values and 2 between $x=0$ and $x=2$. This gives $4\\cdot2=8$ triangles.",
+      "The total is $64+8+8=80$. Complete enumeration of all $\\binom{27}{3}$ triples gives the same side-length counts."
+    ],
+    "keyIdeas": [
+      "Classifying equilateral triangles in a three-dimensional grid"
+    ],
+    "commonMistakes": [
+      "Counting one triangle once for every ordering of its vertices."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Coordinate difference types organize the exhaustive count into a proof.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

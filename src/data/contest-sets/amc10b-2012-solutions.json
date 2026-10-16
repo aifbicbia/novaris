@@ -1,0 +1,503 @@
+[
+  {
+    "id": "solution-amc10b-2012-p1",
+    "problemId": "amc10b-2012-p1",
+    "finalAnswer": "$\\boxed{64}$ (choice C)",
+    "shortExplanation": "Each room has 16 more students than rabbits.",
+    "detailedSteps": [
+      "The difference per classroom is $18-2=16$. Across four classrooms it is $4\\cdot16=64$."
+    ],
+    "keyIdeas": [
+      "Combining equal classroom differences"
+    ],
+    "commonMistakes": [
+      "Counting only the students."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Multiply the difference by the number of rooms.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p2",
+    "problemId": "amc10b-2012-p2",
+    "finalAnswer": "$\\boxed{200}$ (choice E)",
+    "shortExplanation": "The rectangle width is the circle diameter 10.",
+    "detailedSteps": [
+      "The source circle touches the upper and lower sides, so width is $2\\cdot5=10$. The 2:1 length-to-width ratio gives length 20.",
+      "Area is $20\\cdot10=200$."
+    ],
+    "keyIdeas": [
+      "A circle fitting the short dimension"
+    ],
+    "commonMistakes": [
+      "Using the circle radius as rectangle width."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The figure determines which sides are tangent to the circle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p3",
+    "problemId": "amc10b-2012-p3",
+    "finalAnswer": "$\\boxed{(1000,1988)}$ (choice B)",
+    "shortExplanation": "The y-coordinate changes to the equally distant value below 2000.",
+    "detailedSteps": [
+      "Reflection preserves x and sends $y$ to $2\\cdot2000-y$. Thus the reflected point is $(1000,4000-2012)=(1000,1988)$."
+    ],
+    "keyIdeas": [
+      "Reflection in a horizontal line"
+    ],
+    "commonMistakes": [
+      "Reflecting x instead of y."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The original point is 12 units above the mirror.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p4",
+    "problemId": "amc10b-2012-p4",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The two leftover groups combine to seven marbles.",
+    "detailedSteps": [
+      "The total is congruent to $4+3=7\\equiv1\\pmod6$. One more complete bag uses six of these seven, leaving 1."
+    ],
+    "keyIdeas": [
+      "Adding remainders modulo six"
+    ],
+    "commonMistakes": [
+      "Reporting the unreduced remainder 7."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A remainder must be less than the bag size.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p5",
+    "problemId": "amc10b-2012-p5",
+    "finalAnswer": "$\\boxed{22}$ (choice D)",
+    "shortExplanation": "Tax and tip together add 25 percent of the meal price.",
+    "detailedSteps": [
+      "Both charges use the original price P, so total is $P+0.10P+0.15P=1.25P$. Thus $P=27.50/1.25=22$."
+    ],
+    "keyIdeas": [
+      "Two charges on the same price"
+    ],
+    "commonMistakes": [
+      "Applying the tip to the tax-inclusive amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two percentages have the same base.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p6",
+    "problemId": "amc10b-2012-p6",
+    "finalAnswer": "$\\boxed{\\text{larger than }x-y}$ (choice A)",
+    "shortExplanation": "The estimate adds twice the positive rounding amount.",
+    "detailedSteps": [
+      "For rounding amount $\\varepsilon>0$, the estimate is $(x+\\varepsilon)-(y-\\varepsilon)=x-y+2\\varepsilon$. This is strictly larger than $x-y$."
+    ],
+    "keyIdeas": [
+      "Two rounding errors in a difference"
+    ],
+    "commonMistakes": [
+      "Assuming the equal rounding amounts cancel under subtraction."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtracting a decreased number increases the result.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p7",
+    "problemId": "amc10b-2012-p7",
+    "finalAnswer": "$\\boxed{48}$ (choice D)",
+    "shortExplanation": "The squirrel uses 12 holes and the chipmunk 16.",
+    "detailedSteps": [
+      "If the squirrel digs s holes, the chipmunk digs s+4. Equal acorn totals require $4s=3(s+4)$, giving $s=12$.",
+      "The chipmunk hides $3\\cdot16=48$ acorns."
+    ],
+    "keyIdeas": [
+      "Equal acorns with different hole counts"
+    ],
+    "commonMistakes": [
+      "Reporting a hole count instead of an acorn count."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Express the four-hole difference before equating totals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p8",
+    "problemId": "amc10b-2012-p8",
+    "finalAnswer": "$\\boxed{12}$ (choice B)",
+    "shortExplanation": "The six solutions occur in pairs symmetric about 2.",
+    "detailedSteps": [
+      "The strict inequality gives $|x-2|=2,3,4$ for integer x. Thus x is $0,4,-1,5,-2,6$.",
+      "Each symmetric pair sums 4, so the total is $3\\cdot4=12$."
+    ],
+    "keyIdeas": [
+      "Integer points in a strict quadratic interval"
+    ],
+    "commonMistakes": [
+      "Including the boundary distances 1 or 5."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The symmetry center is 2.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p9",
+    "problemId": "amc10b-2012-p9",
+    "finalAnswer": "$\\boxed{1}$ (choice A)",
+    "shortExplanation": "The second added pair has an odd sum and must include one even integer.",
+    "detailedSteps": [
+      "The three separate pairs sum to 26, $41-26=15$, and $57-41=16$. An odd sum 15 requires one odd and one even integer.",
+      "The even pair sums can each use two odds, as in $13+13$, $7+8$, and $7+9$. These six integers realize all cumulative totals with exactly one even, so the minimum is 1."
+    ],
+    "keyIdeas": [
+      "Parity of three successive pair sums"
+    ],
+    "commonMistakes": [
+      "Inferring parity directly from the six-integer total without respecting the pair constraints."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "An even sum allows two odd summands.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p10",
+    "problemId": "amc10b-2012-p10",
+    "finalAnswer": "$\\boxed{9}$ (choice D)",
+    "shortExplanation": "Cross multiplication gives MN=36.",
+    "detailedSteps": [
+      "Every positive divisor M of 36 determines exactly one positive N=36/M. Since $36=2^2\\cdot3^2$, there are $(2+1)(2+1)=9$ divisors and therefore nine ordered pairs."
+    ],
+    "keyIdeas": [
+      "Factor pairs of thirty-six"
+    ],
+    "commonMistakes": [
+      "Counting unordered factor pairs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Swapping the two entries usually produces a different ordered pair.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p11",
+    "problemId": "amc10b-2012-p11",
+    "finalAnswer": "$\\boxed{729}$ (choice A)",
+    "shortExplanation": "Fix Friday first, then extend toward both ends.",
+    "detailedSteps": [
+      "Friday is cake. Thursday has three choices different from Friday, Wednesday three different from Thursday, and similarly back to Sunday: five factors of 3.",
+      "Saturday has three choices different from Friday. All these extensions impose exactly the adjacent-day restriction, giving $3^6=729$."
+    ],
+    "keyIdeas": [
+      "Extending a menu from a fixed middle day"
+    ],
+    "commonMistakes": [
+      "Treating Sunday and Saturday as adjacent when the stated week is a seven-day list."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Starting at the fixed day makes each remaining choice independent of earlier extension steps.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p12",
+    "problemId": "amc10b-2012-p12",
+    "finalAnswer": "$\\boxed{\\text{31 and 32}}$ (choice B)",
+    "shortExplanation": "AD squared is 1000.",
+    "detailedSteps": [
+      "Triangle ABC is a 45-45-90 triangle with hypotenuse $10\\sqrt2$, so its east and north legs are each 10. D is 20 farther north, giving displacement $(10,30)$ from A.",
+      "$AD^2=10^2+30^2=1000$. Since $31^2<1000<32^2$, the distance is between 31 and 32."
+    ],
+    "keyIdeas": [
+      "Combining east and north displacements"
+    ],
+    "commonMistakes": [
+      "Adding 20 to the diagonal distance directly."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distances add along collinear motions, not across perpendicular components.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p13",
+    "problemId": "amc10b-2012-p13",
+    "finalAnswer": "$\\boxed{40}$ (choice B)",
+    "shortExplanation": "The escalator rate is one-fortieth of its length per second.",
+    "detailedSteps": [
+      "Measure the escalator length as one unit. Clea alone walks at $1/60$ unit per second; combined motion is $1/24$.",
+      "The escalator supplies $1/24-1/60=1/40$, so a stationary rider takes 40 seconds."
+    ],
+    "keyIdeas": [
+      "Subtracting walking rate from combined rate"
+    ],
+    "commonMistakes": [
+      "Subtracting the travel times instead of their rates."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The walkway and passenger velocities add.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p14",
+    "problemId": "amc10b-2012-p14",
+    "finalAnswer": "$\\boxed{8\\sqrt3-12}$ (choice D)",
+    "shortExplanation": "The vertical diagonal of the overlap rhombus is $6-2\\sqrt3$.",
+    "detailedSteps": [
+      "Put the square side $L=2\\sqrt3$ vertically. Each inward equilateral triangle has altitude 3, so its apex lies 3 from its base. The two apexes form the overlap rhombus vertical diagonal $d=6-L=6-2\\sqrt3$.",
+      "The triangle side slopes have magnitude $\\sqrt3$, so the rhombus horizontal diagonal is $d/\\sqrt3$. Its area is $d^2/(2\\sqrt3)=8\\sqrt3-12$."
+    ],
+    "keyIdeas": [
+      "Diagonals of intersecting equilateral triangles"
+    ],
+    "commonMistakes": [
+      "Using the whole square side as a rhombus diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The overlap is centered between the two opposite bases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p15",
+    "problemId": "amc10b-2012-p15",
+    "finalAnswer": "$\\boxed{5}$ (choice D)",
+    "shortExplanation": "Five teams can each beat the sixth and win twice among themselves.",
+    "detailedSteps": [
+      "There are $\\binom62=15$ total wins. All six teams cannot tie because each would need 15/6=2.5 wins.",
+      "For five tied leaders, let each beat team six. Arrange their mutual results cyclically: each beats the next two of the other five teams and loses to the other two. Each leader then has 3 wins, while team six has 0. Hence five is attainable and maximal."
+    ],
+    "keyIdeas": [
+      "A sharp tie bound in a round robin"
+    ],
+    "commonMistakes": [
+      "Assuming an equal-score tournament needs an odd total number of teams."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A regular five-team tournament supplies an explicit witness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p16",
+    "problemId": "amc10b-2012-p16",
+    "finalAnswer": "$\\boxed{10\\pi+4\\sqrt3}$ (choice A)",
+    "shortExplanation": "The gap is an equilateral center triangle minus three 60-degree sectors.",
+    "detailedSteps": [
+      "The center triangle has side 4 and area $4\\sqrt3$. Inside it, each radius 2 circle contributes a 60-degree sector of area $2\\pi/3$, so the gap is $4\\sqrt3-2\\pi$.",
+      "The three complete circles have total area 12π. Adding the gap gives $10\\pi+4\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "A curvilinear gap between tangent circles"
+    ],
+    "commonMistakes": [
+      "Adding the whole center triangle without removing its circular sectors."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The circles only touch, so their complete areas add without overlap.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p17",
+    "problemId": "amc10b-2012-p17",
+    "finalAnswer": "$\\boxed{\\frac{\\sqrt{10}}{10}}$ (choice C)",
+    "shortExplanation": "The slant heights are both 12, while base radii are 4 and 8.",
+    "detailedSteps": [
+      "The sector arcs become the base circumferences. One-third and two-thirds of the original circle circumference give cone base radii 4 and 8.",
+      "With common slant height 12, their heights are $\\sqrt{144-16}=8\\sqrt2$ and $\\sqrt{144-64}=4\\sqrt5$.",
+      "The volume ratio is $4^2(8\\sqrt2)/[8^2(4\\sqrt5)]=\\sqrt{10}/10$."
+    ],
+    "keyIdeas": [
+      "Cones formed by two sectors"
+    ],
+    "commonMistakes": [
+      "Cubing the sector-angle ratio despite unequal cone shapes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Equal slant heights do not make the cones similar.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p18",
+    "problemId": "amc10b-2012-p18",
+    "finalAnswer": "$\\boxed{\\frac1{11}}$ (choice C)",
+    "shortExplanation": "Most positive tests arise from the much larger disease-free population.",
+    "detailedSteps": [
+      "Among a hypothetical 25000 people,50 have the disease and test positive. The 24950 without it contribute $0.02\\cdot24950=499$ false positives.",
+      "There are 549 positive tests, so the desired probability is $50/549\\approx0.09107$. Among the listed choices this is closest to $1/11\\approx0.09091$."
+    ],
+    "keyIdeas": [
+      "Conditioning on a positive screening result"
+    ],
+    "commonMistakes": [
+      "Using 98 percent as the probability of disease after a positive result."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sample is conditioned on positive results, not all tested people.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p19",
+    "problemId": "amc10b-2012-p19",
+    "finalAnswer": "$\\boxed{\\frac{135}{2}}$ (choice C)",
+    "shortExplanation": "The crossing point F is 7.5 units above B.",
+    "detailedSteps": [
+      "Use $A=(0,0),B=(6,0),D=(0,30),E=(8,0),G=(0,15)$. Line ED is $y=30-(15/4)x$, so $F=(6,15/2)$.",
+      "The shoelace formula for vertices B,F,D,G gives area $[45+180-90]/2=135/2$."
+    ],
+    "keyIdeas": [
+      "A quadrilateral cut from a rectangle"
+    ],
+    "commonMistakes": [
+      "Putting E on the wrong extension or using the full rectangle area."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The vertex order BF DG follows the boundary.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p20",
+    "problemId": "amc10b-2012-p20",
+    "finalAnswer": "$\\boxed{7}$ (choice A)",
+    "shortExplanation": "The first Bernardo-winning initial value is 16.",
+    "detailedSteps": [
+      "If Bernardo receives $b$, he produces $2b$, and Silvia then produces $2b+50$. Bernardo is the last to remain below $1000$ exactly when $475\\le b\\le499$.",
+      "After k complete rounds, his received value is $b_k=2^k(N+50)-50$. Thus a Bernardo win requires $525\\le2^k(N+50)\\le549$.",
+      "For $k=0,1,2,3$, the smallest integer $N$ is $475,213,82,16$, respectively. For $k\\ge4$, even $N=0$ gives $2^k(N+50)\\ge800$, outside the required interval. The smallest initial value is $16$, whose digit sum is $7$."
+    ],
+    "keyIdeas": [
+      "A repeated affine recurrence and the stopping player"
+    ],
+    "commonMistakes": [
+      "Using a number equal 1000 as still valid, or checking only the first round."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Shifting the received value by 50 converts the recurrence to repeated doubling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p21",
+    "problemId": "amc10b-2012-p21",
+    "finalAnswer": "$\\boxed{\\sqrt3}$ (choice A)",
+    "shortExplanation": "The remaining unknown segment is the third side of a 120-degree triangle.",
+    "detailedSteps": [
+      "Scale a to 1 and place the length 2 segment endpoints at $A=(-1,0),B=(1,0)$. Among the other five segments four have length 1.",
+      "If the exceptional b segment joined the other two points C,D, both C and D would have distance 1 from A and B; both must be their midpoint, contradicting distinctness. Thus after relabeling the exceptional segment is BD.",
+      "Then $AC=BC=1$ forces $C=(0,0)$. The conditions $AD=CD=1$ give $D=(-1/2,\\pm\\sqrt3/2)$. Therefore $BD^2=(3/2)^2+3/4=3$, so $b/a=\\sqrt3$."
+    ],
+    "keyIdeas": [
+      "Four equal distances among four points"
+    ],
+    "commonMistakes": [
+      "Drawing four equal sides as a nondegenerate rhombus while ignoring its length 2 diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The triangle inequality becomes equality along the length 2 segment.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p22",
+    "problemId": "amc10b-2012-p22",
+    "finalAnswer": "$\\boxed{512}$ (choice B)",
+    "shortExplanation": "Read the permutation backward and remove an endpoint each time.",
+    "detailedSteps": [
+      "The set of numbers seen after each prefix is a contiguous integer interval: initially one point, and every allowed new point must extend the interval by its left or right neighbor.",
+      "Conversely, removing either endpoint of the full interval 1 through 10 preserves exactly this rule when the process is reversed. There are two choices for each of the first nine removals; the final singleton is forced.",
+      "The count is $2^9=512$."
+    ],
+    "keyIdeas": [
+      "Growing a contiguous interval of integers"
+    ],
+    "commonMistakes": [
+      "Allowing a number adjacent to an already removed number when building the list."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Connected subsets of an integer path are intervals.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p23",
+    "problemId": "amc10b-2012-p23",
+    "finalAnswer": "$\\boxed{\\frac{2\\sqrt3}{3}}$ (choice D)",
+    "shortExplanation": "The cut plane has a unit normal proportional to(1,-1,-1).",
+    "detailedSteps": [
+      "By cube symmetry choose cut vertices $(0,0,0),(1,1,0),(1,0,1)$. Their plane is $x-y-z=0$, and the discarded tetrahedron contains corner $(1,0,0)$.",
+      "The remaining solid has $x-y-z\\le0$. Its greatest distance from the cut plane occurs at $(0,1,1)$, where the numerator is 2; no cube point can have a larger y+z-x.",
+      "Dividing by the normal length $\\sqrt3$ gives height $2/\\sqrt3=2\\sqrt3/3$."
+    ],
+    "keyIdeas": [
+      "The normal width of a truncated cube"
+    ],
+    "commonMistakes": [
+      "Using a cube edge length as height after the solid is rotated."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Putting the cut surface down makes plane-normal distance the vertical height.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p24",
+    "problemId": "amc10b-2012-p24",
+    "finalAnswer": "$\\boxed{132}$ (choice B)",
+    "shortExplanation": "Use inclusion-exclusion on missing pair-only types.",
+    "detailedSteps": [
+      "Each song has seven allowed liking subsets: empty, one of three singles, or one of three pairs. The all-three subset is forbidden. Each of the three pair subsets must occur at least once.",
+      "For four distinct songs, inclusion-exclusion gives $7^4-3\\cdot6^4+3\\cdot5^4-4^4=132$."
+    ],
+    "keyIdeas": [
+      "Three required pair-only song types"
+    ],
+    "commonMistakes": [
+      "Treating the four songs as interchangeable or allowing the all-three subset."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A pair witness must exclude the third listener.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10b-2012-p25",
+    "problemId": "amc10b-2012-p25",
+    "finalAnswer": "$\\boxed{2400}$ (choice E)",
+    "shortExplanation": "An edge-used state recurrence counts every legal trail exactly once.",
+    "detailedSteps": [
+      "Read the source as 16 hexagons in columns of sizes 1,2,3,4,3,2,1. Horizontal arrows point right except the three middle-row arrows, which point left. All slanted edges have no arrow and allow either direction, subject to no edge repetition.",
+      "A reproducible graph uses centers $(3i,j)$ with $0\\le i\\le6$ and $j=-h,-h+2,\\ldots,h$, where $h=\\min(i,6-i)$. Around each center use vertices $(3i-2,j),(3i-1,j-1),(3i+1,j-1),(3i+2,j),(3i+1,j+1),(3i-1,j+1)$, merging shared edges. This produces 63 edges, with $A=(-2,0)$ and $B=(20,0)$.",
+      "Let $F(v,S)$ count completions from vertex v after using edge set S. Set $F(B,S)=1$, and otherwise sum $F(w,S\\cup\\{e\\})$ over unused edges e legally directed from v to w. Each choice adds one previously unused edge, so the recurrence terminates and is a disjoint partition of all possible first steps.",
+      "Evaluating this recurrence, and classifying trails by the leftward middle arrows used from left to right, gives counts $1024,256,512,128,256,64,128,32$ for bitmasks $0,1,2,3,4,5,6,7$. Their sum is 2400. The no-left-arrow count also independently equals $2\\cdot2\\cdot4\\cdot4\\cdot4\\cdot2\\cdot2=1024$, using the available right arrows in the seven columns."
+    ],
+    "keyIdeas": [
+      "Counting directed trails in a hexagonal graph"
+    ],
+    "commonMistakes": [
+      "Treating slanted edges as directed, or forbidding repeated vertices when only repeated segments are forbidden."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The state must remember used edges because the left arrows create cycles.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

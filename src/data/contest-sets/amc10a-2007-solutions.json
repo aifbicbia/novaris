@@ -1,0 +1,510 @@
+[
+  {
+    "id": "solution-amc10a-2007-p1",
+    "problemId": "amc10a-2007-p1",
+    "finalAnswer": "$\\boxed{10}$ (choice C)",
+    "shortExplanation": "Compare the two discounted purchase totals; the difference is $10$ dollars.",
+    "detailedSteps": [
+      "The retained fractions of full price are $3/4$ for Susan and $7/10$ for Pam. Their effective numbers of full-price tickets are $4(3/4)=3$ and $5(7/10)=7/2$.",
+      "The difference is half of a full-price ticket, worth $20/2=10$ dollars."
+    ],
+    "keyIdeas": [
+      "Successive discounts"
+    ],
+    "commonMistakes": [
+      "Subtracting the discount percentages without accounting for different ticket counts."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Track which base each discount applies to.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p2",
+    "problemId": "amc10a-2007-p2",
+    "finalAnswer": "$\\boxed{-\\frac12}$ (choice A)",
+    "shortExplanation": "The two operations evaluate to $8$ and $-16$, so their quotient is $-1/2$.",
+    "detailedSteps": [
+      "Apply the definitions separately: $6@2=6\\cdot2-2^2=8$ and $6\\#2=6+2-6\\cdot2^2=-16$.",
+      "The requested quotient is $8/(-16)=-1/2$."
+    ],
+    "keyIdeas": [
+      "Defined operations"
+    ],
+    "commonMistakes": [
+      "Treating the custom operation symbols as ordinary multiplication or addition."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Substitute before simplifying the quotient.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p3",
+    "problemId": "amc10a-2007-p3",
+    "finalAnswer": "$\\boxed{2}$ (choice D)",
+    "shortExplanation": "The submerged solid displaces $8000$ cubic centimeters over a $4000$-square-centimeter base, giving a $2$-centimeter rise.",
+    "detailedSteps": [
+      "The brick fits below the initial water level, so its full volume is displaced: $40\\cdot20\\cdot10=8000\\ \\mathrm{cm}^3$.",
+      "The tank has base area $100\\cdot40=4000\\ \\mathrm{cm}^2$. Conservation of water volume gives a level increase $8000/4000=2\\ \\mathrm{cm}$; the resulting height $42$ is below the tank rim."
+    ],
+    "keyIdeas": [
+      "Displacement volume"
+    ],
+    "commonMistakes": [
+      "Using the brick base as the area over which the water rises."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Conservation of volume is the key model.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p4",
+    "problemId": "amc10a-2007-p4",
+    "finalAnswer": "$\\boxed{4}$ (choice A)",
+    "shortExplanation": "The two odd integers are $1$ and $3$.",
+    "detailedSteps": [
+      "Consecutive odd integers differ by $2$. Since the larger is three times the smaller, this difference is twice the smaller integer.",
+      "The smaller is therefore $2/2=1$, and the sum is $1+3=4$."
+    ],
+    "keyIdeas": [
+      "Consecutive integers"
+    ],
+    "commonMistakes": [
+      "Using a gap of 1 between consecutive odd integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the fixed gap between odd integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p5",
+    "problemId": "amc10a-2007-p5",
+    "finalAnswer": "$\\boxed{5.84}$ (choice B)",
+    "shortExplanation": "The item prices are $9$ cents and $44$ cents; the requested purchase costs $584$ cents.",
+    "detailedSteps": [
+      "Use cents, writing $p$ for a pencil and $n$ for a notebook. The two price equations are $7p+8n=415$ and $5p+3n=177$.",
+      "Multiply the first equation by $3$ and the second by $8$: subtraction gives $19p=171$, hence $p=9$. Substitution gives $n=44$.",
+      "The required cost is $16(9)+10(44)=584$ cents, or $5.84$ dollars."
+    ],
+    "keyIdeas": [
+      "Linear combinations"
+    ],
+    "commonMistakes": [
+      "Mixing dollars and cents within one equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Eliminate one price before evaluating the new purchase.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p6",
+    "problemId": "amc10a-2007-p6",
+    "finalAnswer": "$\\boxed{\\text{2002 and 2003}}$ (choice A)",
+    "shortExplanation": "The first increase is $10\\%$, larger than each later relative increase.",
+    "detailedSteps": [
+      "The five fractional increases are $6/60$, $4/66$, $6/70$, $2/76$, and $7/78$.",
+      "The first equals $1/10$. Each other fraction is below $1/10$, as shown by $40<66$, $60<70$, $20<76$, and $70<78$. Thus the earliest consecutive pair gives the largest percentage increase."
+    ],
+    "keyIdeas": [
+      "Relative change"
+    ],
+    "commonMistakes": [
+      "Comparing raw increases rather than dividing by the earlier enrollment."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Keep denominators when comparing growth.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p7",
+    "problemId": "amc10a-2007-p7",
+    "finalAnswer": "$\\boxed{37500}$ (choice D)",
+    "shortExplanation": "After both taxes, $72\\%$ remains, so the tax paid is $28\\%$ of the inheritance.",
+    "detailedSteps": [
+      "Federal tax leaves $4/5$ of the inheritance. State tax leaves $9/10$ of that remainder, for a retained fraction $(4/5)(9/10)=18/25$.",
+      "The tax fraction is $7/25$. Therefore the inheritance is $10500\\cdot25/7=37500$ dollars."
+    ],
+    "keyIdeas": [
+      "Sequential percentages"
+    ],
+    "commonMistakes": [
+      "Adding 20% and 10% as if both taxes used the original amount."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Sequential percentages multiply.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p8",
+    "problemId": "amc10a-2007-p8",
+    "finalAnswer": "$\\boxed{50^\\circ}$ (choice D)",
+    "shortExplanation": "The two angles at $A$ along the common base are $70^\\circ$ and $20^\\circ$, whose difference is $50^\\circ$.",
+    "detailedSteps": [
+      "In triangle $ABC$, the equal base angles each measure $(180^\\circ-40^\\circ)/2=70^\\circ$. In triangle $ADC$, they each measure $(180^\\circ-140^\\circ)/2=20^\\circ$.",
+      "Because $D$ lies inside the larger triangle, ray $AD$ divides angle $BAC$. Hence $\\angle BAD=70^\\circ-20^\\circ=50^\\circ$."
+    ],
+    "keyIdeas": [
+      "Isosceles angle subtraction"
+    ],
+    "commonMistakes": [
+      "Adding the two base angles instead of using the stated interior position."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The interior-point condition determines the subtraction.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p9",
+    "problemId": "amc10a-2007-p9",
+    "finalAnswer": "$\\boxed{60}$ (choice E)",
+    "shortExplanation": "Matching bases yields $a=-12$ and $b=-5$.",
+    "detailedSteps": [
+      "Rewrite $81=3^4$ and $125=5^3$. Equality of exponents gives $a=4b+8$ and $a=3b+3$.",
+      "Subtracting gives $b=-5$, so $a=-12$ and $ab=60$."
+    ],
+    "keyIdeas": [
+      "Matching exponential bases"
+    ],
+    "commonMistakes": [
+      "Assuming the exponents must be positive."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Common prime bases turn exponentials into linear equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p10",
+    "problemId": "amc10a-2007-p10",
+    "finalAnswer": "$\\boxed{6}$ (choice E)",
+    "shortExplanation": "The father is $28$ years above the family average; everyone else averages $4$ years below it, so there are seven other members.",
+    "detailedSteps": [
+      "Relative to age $20$, the father contributes an excess of $48-20=28$ years. The mother-and-children group averages $16$, a deficit of $4$ years per person.",
+      "The deficits must balance the excess, so that group has $28/4=7$ members. One is the mother, leaving $6$ children."
+    ],
+    "keyIdeas": [
+      "Weighted averages"
+    ],
+    "commonMistakes": [
+      "Counting the mother as another child."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Balancing excess and deficit avoids extra variables.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p11",
+    "problemId": "amc10a-2007-p11",
+    "finalAnswer": "$\\boxed{18}$ (choice C)",
+    "shortExplanation": "Two opposite faces partition the eight vertices, so twice the common face sum is $36$.",
+    "detailedSteps": [
+      "Choose any pair of opposite faces. Their vertex sets are disjoint and together contain every vertex once.",
+      "Their combined labels sum to $1+2+\\cdots+8=36$. Equal face sums must therefore both be $36/2=18$."
+    ],
+    "keyIdeas": [
+      "Opposite face partition"
+    ],
+    "commonMistakes": [
+      "Counting a vertex twice when using opposite faces."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Opposite faces make the counting immediate.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p12",
+    "problemId": "amc10a-2007-p12",
+    "finalAnswer": "$\\boxed{62}$ (choice D)",
+    "shortExplanation": "There are $64$ binary assignments and exactly two leave a guide with nobody.",
+    "detailedSteps": [
+      "Label the guides. For each of the six distinct tourists, record which guide is chosen, obtaining $2^6=64$ assignments.",
+      "The two constant assignments put everyone with one guide. Removing them gives $64-2=62$. No division by two is needed because the guides are distinct."
+    ],
+    "keyIdeas": [
+      "Assignments with nonempty groups"
+    ],
+    "commonMistakes": [
+      "Dividing by two and forgetting that guide identities matter."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Subtract empty-group cases.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p13",
+    "problemId": "amc10a-2007-p13",
+    "finalAnswer": "$\\boxed{\\frac34}$ (choice B)",
+    "shortExplanation": "In walking-time units, the bicycle option costs the distance home plus one seventh of the total route.",
+    "detailedSteps": [
+      "Let $x$ be the distance home and $y$ the distance to the stadium. Take walking speed as one distance unit per time unit; bicycle speed is then $7$.",
+      "Equality of times says $y=x+(x+y)/7$. Thus $6y=8x$ and $x/y=3/4$."
+    ],
+    "keyIdeas": [
+      "Equal travel times"
+    ],
+    "commonMistakes": [
+      "Using only the distance from the present position for the bicycle leg."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Account for the return journey before cycling.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p14",
+    "problemId": "amc10a-2007-p14",
+    "finalAnswer": "$\\boxed{8.64}$ (choice A)",
+    "shortExplanation": "The hypotenuse is the circle diameter $6$, so the legs are $18/5$ and $24/5$.",
+    "detailedSteps": [
+      "The side ratio satisfies $3^2+4^2=5^2$, so the triangle is right. Its hypotenuse is a diameter of its circumcircle and has length $2(3)=6$.",
+      "The scale factor is $6/5$. The area is $\\tfrac12(18/5)(24/5)=216/25=8.64$."
+    ],
+    "keyIdeas": [
+      "Right triangle circumradius"
+    ],
+    "commonMistakes": [
+      "Using the radius, rather than the diameter, for the hypotenuse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Recognize the diameter in a right-triangle circumcircle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p15",
+    "problemId": "amc10a-2007-p15",
+    "finalAnswer": "$\\boxed{22+12\\sqrt2}$ (choice B)",
+    "shortExplanation": "The distance between each corner-circle center and the central-circle center is $3$.",
+    "detailedSteps": [
+      "Let $s$ be the side of the square. The small centers sit one unit from their adjacent sides and form a square of side $s-2$. The central center is equidistant from those four centers, so it lies at their square center.",
+      "A center-to-center distance is half the small-center square diagonal: $(s-2)/\\sqrt2$. External tangency sets this equal to $1+2=3$.",
+      "Hence $s=2+3\\sqrt2$, and $s^2=22+12\\sqrt2$."
+    ],
+    "keyIdeas": [
+      "Tangent circle centers"
+    ],
+    "commonMistakes": [
+      "Treating the large circle as tangent to the square sides."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use the square formed by the four small-circle centers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p16",
+    "problemId": "amc10a-2007-p16",
+    "finalAnswer": "$\\boxed{\\frac58}$ (choice E)",
+    "shortExplanation": "The two products have matching parity with probability $(3/4)^2+(1/4)^2=5/8$.",
+    "detailedSteps": [
+      "The range $0$ through $2007$ contains equally many even and odd integers. A product of two independently chosen entries is odd exactly when both entries are odd, with probability $1/4$; it is even with probability $3/4$.",
+      "The products $ad$ and $bc$ use disjoint independent choices. Their difference is even precisely when both parities match, giving $9/16+1/16=5/8$."
+    ],
+    "keyIdeas": [
+      "Parity of products"
+    ],
+    "commonMistakes": [
+      "Assuming an individual product is equally likely to be odd or even."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Product parity is not evenly distributed.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p17",
+    "problemId": "amc10a-2007-p17",
+    "finalAnswer": "$\\boxed{60}$ (choice D)",
+    "shortExplanation": "The cube must contain both primes $3$ and $5$, making the least possible $n$ equal to $15$.",
+    "detailedSteps": [
+      "From $75m=n^3$ and $75=3\\cdot5^2$, primality forces $3\\mid n$ and $5\\mid n$. Therefore $n=15k$ for a positive integer $k$.",
+      "Substitution gives $m=45k^3$, so $m+n=45k^3+15k$ is smallest at $k=1$, where it is $60$."
+    ],
+    "keyIdeas": [
+      "Cube divisibility"
+    ],
+    "commonMistakes": [
+      "Making m a multiple of 75 instead of filling the cube exponents."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Use prime exponents before searching integers.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p18",
+    "problemId": "amc10a-2007-p18",
+    "finalAnswer": "$\\boxed{\\frac{88}{5}}$ (choice C)",
+    "shortExplanation": "Coordinates give the intersection $M=(12/5,24/5)$, from which two triangle areas add to $88/5$.",
+    "detailedSteps": [
+      "Use the inspected cross-shaped figure with $H=(0,0)$, $G=(4,0)$, $A=(0,12)$, $B=(4,12)$, and $C=(4,8)$. The equal side lengths determine these coordinates.",
+      "The lines $AG$ and $CH$ have equations $y=12-3x$ and $y=2x$. Their intersection is $M=(12/5,24/5)$.",
+      "Diagonal $BM$ splits the quadrilateral into triangles $ABM$ and $BCM$. Their areas are $\\tfrac12(4)(12-24/5)=72/5$ and $\\tfrac12(4)(4-12/5)=16/5$. The total is $88/5$."
+    ],
+    "keyIdeas": [
+      "Coordinate intersection and area"
+    ],
+    "commonMistakes": [
+      "Treating the intersection as the visual center of the cross."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The visual midpoint is misleading; solve the line equations.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p19",
+    "problemId": "amc10a-2007-p19",
+    "finalAnswer": "$\\boxed{2\\sqrt2+2}$ (choice C)",
+    "shortExplanation": "The four unpainted right isosceles triangles account for half the square.",
+    "detailedSteps": [
+      "Let the square side be $s$ and the brush width be $w$, measured perpendicular to a diagonal. The strip boundaries cut off $w/\\sqrt2$ at both ends of each square side, so each unpainted triangle has base $b=s-\\sqrt2w$.",
+      "Each such triangle is right isosceles with altitude $b/2$, hence area $b^2/4$. The four together have area $b^2=s^2/2$, implying $b=s/\\sqrt2$.",
+      "Thus $s-\\sqrt2w=s/\\sqrt2$, so $s/w=\\sqrt2/(1-1/\\sqrt2)=2\\sqrt2+2$."
+    ],
+    "keyIdeas": [
+      "Complementary area"
+    ],
+    "commonMistakes": [
+      "Measuring the brush width horizontally rather than perpendicular to its diagonal motion."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Relate perpendicular width to intercepts with a 45-degree triangle.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p20",
+    "problemId": "amc10a-2007-p20",
+    "finalAnswer": "$\\boxed{194}$ (choice D)",
+    "shortExplanation": "Square twice and remove the two mixed terms at each stage.",
+    "detailedSteps": [
+      "From $a+a^{-1}=4$, squaring yields $a^2+a^{-2}=4^2-2=14$.",
+      "Squaring the new sum gives $a^4+a^{-4}=14^2-2=194$."
+    ],
+    "keyIdeas": [
+      "Symmetric reciprocal powers"
+    ],
+    "commonMistakes": [
+      "Forgetting the cross term 2 when squaring reciprocal sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Symmetric expressions avoid solving for the radical roots.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p21",
+    "problemId": "amc10a-2007-p21",
+    "finalAnswer": "$\\boxed{8}$ (choice C)",
+    "shortExplanation": "The inner cube diagonal equals the sphere diameter, which is the outer cube side $2$.",
+    "detailedSteps": [
+      "The outer cube surface area gives side length $s$ with $6s^2=24$, so $s=2$. Its inscribed sphere has diameter $2$.",
+      "If the inner cube has edge $t$, the distance between opposite vertices is $t\\sqrt3=2$. Its surface area is $6t^2=6(4/3)=8$."
+    ],
+    "keyIdeas": [
+      "Cube diagonal and sphere"
+    ],
+    "commonMistakes": [
+      "Using the inner face diagonal in place of the space diagonal."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Distinguish face diagonal from space diagonal.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p22",
+    "problemId": "amc10a-2007-p22",
+    "finalAnswer": "$\\boxed{37}$ (choice D)",
+    "shortExplanation": "Every cyclic digit contributes once to each place, so the total is a multiple of $111=3\\cdot37$.",
+    "detailedSteps": [
+      "Write the cyclic sequence of digits as $d_1,\\ldots,d_k$, with indices read modulo $k$. Each term is $100d_i+10d_{i+1}+d_{i+2}$.",
+      "Summing gives $S=111\\sum_i d_i$, because cyclic shifting does not change the digit sum. Thus both 3 and 37 always divide $S$.",
+      "The cyclic sequence $123,231,312$ satisfies the stated digit-overlap rules and has sum $666=2\\cdot3^2\\cdot37$. Hence no prime greater than 37 can divide every possible total. Since 37 was already proved to divide all totals, it is the largest guaranteed prime."
+    ],
+    "keyIdeas": [
+      "Cyclic digit sums"
+    ],
+    "commonMistakes": [
+      "Concluding divisibility by 3 alone from digit sums."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Cyclic indexing reveals a universal factor, and one example proves sharpness.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p23",
+    "problemId": "amc10a-2007-p23",
+    "finalAnswer": "$\\boxed{4}$ (choice B)",
+    "shortExplanation": "Factor $m^2-n^2$ and enumerate same-parity factor pairs of $96$.",
+    "detailedSteps": [
+      "Set $u=m-n$ and $v=m+n$. Then $uv=96$, $0<u<v$, and $u,v$ have the same parity so that $m=(u+v)/2$ and $n=(v-u)/2$ are integers.",
+      "Both must be even. The valid pairs are $(2,48),(4,24),(6,16),(8,12)$, giving $(m,n)=(25,23),(14,10),(11,5),(10,2)$. Thus there are four."
+    ],
+    "keyIdeas": [
+      "Difference of squares"
+    ],
+    "commonMistakes": [
+      "Including opposite-parity factor pairs or allowing n=0."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Parity restrictions are essential in factor-pair counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p24",
+    "problemId": "amc10a-2007-p24",
+    "finalAnswer": "$\\boxed{8\\sqrt2-4-\\pi}$ (choice B)",
+    "shortExplanation": "Subtract two right triangles and two $45^\\circ$ sectors from the enclosing rectangle.",
+    "detailedSteps": [
+      "The common tangent gives rectangle $AEFB$ of height $2$ and width $AB=4\\sqrt2$, so its area is $8\\sqrt2$. Radius $AC$ is perpendicular to tangent $OC$. Since $OA=2\\sqrt2$ and $AC=2$, the right triangle $ACO$ has $OC=2$ and area $2$. The right-hand triangle is congruent.",
+      "Angle $CAO=45^\\circ$, while $AE$ is perpendicular to $AB$, so sector $EAC$ also has angle $45^\\circ$. Its area is $(45/360)\\pi(2^2)=\\pi/2$, as is the sector at $B$.",
+      "These two triangles and two sectors fill exactly the part of rectangle $AEFB$ outside the shaded region. The required area is $8\\sqrt2-2(2)-2(\\pi/2)=8\\sqrt2-4-\\pi$."
+    ],
+    "keyIdeas": [
+      "Tangent sectors and rectangles"
+    ],
+    "commonMistakes": [
+      "Subtracting semicircles instead of the 45-degree sectors bounded by the shown arcs."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The hard step is identifying the exact sectors and triangles to subtract.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-amc10a-2007-p25",
+    "problemId": "amc10a-2007-p25",
+    "finalAnswer": "$\\boxed{4}$ (choice D)",
+    "shortExplanation": "Digit-sum bounds and congruences reduce the possibilities to twelve candidates; exactly four work.",
+    "detailedSteps": [
+      "Write $T(n)=n+S(n)+S(S(n))$. Positivity gives $n\\le2005$. In this range $S(n)\\le28$ and $S(S(n))\\le10$, so $n\\ge2007-38=1969$.",
+      "Every integer is congruent to its digit sum modulo 9. Therefore $T(n)\\equiv3n\\pmod9$. Since 2007 is divisible by 9, $n$ must be divisible by 3.",
+      "The candidate list is $1971,1974,1977,1980,1983,1986,1989,1992,1995,1998,2001,2004$. Their $T$-values respectively are $1998,1998,2007,2007,2007,2016,2025,2016,2025,2034,2007,2016$.",
+      "Exactly $1977,1980,1983,2001$ satisfy the equation, so the count is 4."
+    ],
+    "keyIdeas": [
+      "Digit sums and finite search"
+    ],
+    "commonMistakes": [
+      "Treating the digit sum as linear across a carry between integers."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A proof of a finite search range makes enumeration conclusive.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]

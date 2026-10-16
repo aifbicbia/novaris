@@ -1,0 +1,333 @@
+[
+  {
+    "id": "solution-aime-i-2011-p1",
+    "problemId": "aime-i-2011-p1",
+    "finalAnswer": "$\\boxed{085}$",
+    "shortExplanation": "The third jar is $80\\%$ acid and $2/3$ goes to $A$.",
+    "detailedSteps": [
+      "The final combined volume is ten liters, with both resulting solutions fifty percent acid, so the final acid volume is five liters. The first two jars initially contain $4(0.45)+5(0.48)=4.2$ liters of acid. Thus the third jar supplies $0.8$ liters, giving $k=80$.",
+      "If $t$ liters from the third jar go to A, the final concentration equation is $1.8+0.8t=0.5(4+t)$. It gives $0.3t=0.2$, so $t=2/3$. The remaining third of a liter gives B the stated fifty-percent concentration as well.",
+      "The split is reduced, and $k+m+n=80+2+3=85$."
+    ],
+    "keyIdeas": [
+      "Conserve total acid before determining the split"
+    ],
+    "commonMistakes": [
+      "Averaging concentrations without weighting them by the different volumes."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The common final concentration first determines the total acid required.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p2",
+    "problemId": "aime-i-2011-p2",
+    "finalAnswer": "$\\boxed{036}$",
+    "shortExplanation": "The distance is $3\\sqrt{21}-12$.",
+    "detailedSteps": [
+      "Put $A=(0,0)$, $B=(12,0)$, $C=(12,10)$ and $D=(0,10)$. Because $E$ and $F$ are interior and their construction lines are parallel, write $E=(12-9u,9v)$ and $F=(8u,10-8v)$ with $u,v>0$ and $u^2+v^2=1$.",
+      "The horizontal $EF$ condition gives $9v=10-8v$, hence $v=10/17$. Then $u=\\sqrt{1-100/289}=3\\sqrt{21}/17$.",
+      "Thus the horizontal separation is $|17u-12|=3\\sqrt{21}-12$, which is positive. The points lie inside the rectangle; moreover line $BE$ meets $AD$ at height $12v/u=40/\\sqrt{21}$, between zero and ten, so the additional line condition is satisfied.",
+      "The squarefree radical is twenty-one, giving $m+n+p=3+21+12=36$."
+    ],
+    "keyIdeas": [
+      "Opposite parallel displacement vectors have a combined vertical component of ten"
+    ],
+    "commonMistakes": [
+      "Orienting the parallel displacement from D outward rather than into the rectangle."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The equal heights make the two displacement lengths add in the vertical equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p3",
+    "problemId": "aime-i-2011-p3",
+    "finalAnswer": "$\\boxed{031}$",
+    "shortExplanation": "The new coordinates sum to thirty-one.",
+    "detailedSteps": [
+      "The unit direction along $L$ is $\\mathbf e=(12,5)/13$, and the perpendicular unit direction is $\\mathbf f=(-5,12)/13$. They have length one and zero dot product.",
+      "These are the required positive directions: $\\overrightarrow{BA}\\cdot\\mathbf e=(19,-7)\\cdot(12,5)/13=193/13>0$, and $\\overrightarrow{AB}\\cdot\\mathbf f=(-19,7)\\cdot(-5,12)/13=179/13>0$. Thus $A$ and $B$ lie on the positive axes as specified.",
+      "$B$ has new x-coordinate zero, so $\\alpha=\\overrightarrow{BP}\\cdot\\mathbf e=(-19,21)\\cdot(12,5)/13=-123/13$. $A$ has new y-coordinate zero, so $\\beta=\\overrightarrow{AP}\\cdot\\mathbf f=(-38,28)\\cdot(-5,12)/13=526/13$.",
+      "Therefore $\\alpha+\\beta=403/13=31$. These projection differences automatically incorporate the translated origin at the intersection of $L$ and $M$."
+    ],
+    "keyIdeas": [
+      "Project onto the two correctly oriented unit axes"
+    ],
+    "commonMistakes": [
+      "Rotating the coordinates about the old origin without translating to the new axes\u2019 intersection."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Using a known zero coordinate on each new axis avoids solving for the new origin in the main argument.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p4",
+    "problemId": "aime-i-2011-p4",
+    "finalAnswer": "$\\boxed{056}$",
+    "shortExplanation": "The distance equals the tangent length from $C$.",
+    "detailedSteps": [
+      "Let $I$ be the incenter and let $\\gamma=\\angle C$. Because $M$ and $N$ are perpendicular feet on the two bisector lines through $I$, the angles $CMI$ and $CNI$ are right angles. Hence $C,M,I,N$ lie on the circle with diameter $CI$.",
+      "The angle between the bisector lines has sine $\\cos(\\gamma/2)$, since $\\angle AIB=90^\\circ+\\gamma/2$ and either choice of directions along those lines has the same sine. The circle\u2019s chord formula therefore gives $MN=CI\\cos(\\gamma/2)$.",
+      "If the inradius is $r$, then $CI=r/\\sin(\\gamma/2)$. Consequently $MN=r\\cot(\\gamma/2)$, which is the tangent length from $C$ to either adjacent incircle contact.",
+      "The semiperimeter is $s=(125+117+120)/2=181$, so this tangent length is $s-AB=181-125=56$."
+    ],
+    "keyIdeas": [
+      "The two perpendicular feet lie on the circle with diameter CI"
+    ],
+    "commonMistakes": [
+      "Using the triangle\u2019s circumcircle in place of the auxiliary circle through the perpendicular feet."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The chord formula reduces the distance to a familiar incircle tangent length.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p5",
+    "problemId": "aime-i-2011-p5",
+    "finalAnswer": "$\\boxed{144}$",
+    "shortExplanation": "There are 144 rotational classes.",
+    "detailedSteps": [
+      "Subtract the divisibility conditions for two overlapping consecutive triples. Their entering and leaving labels are congruent modulo three, so the residue at each vertex equals the residue three vertices later.",
+      "Each residue class has exactly three available digits. The three initial residues must therefore be a permutation of zero, one and two; otherwise a repeated class would require more than three digits. Every such permutation has sum divisible by three.",
+      "There are six residue patterns and $(3!)^3$ assignments of the three digits in each class to its three positions. Thus there are $6(3!)^3=1296$ arrangements on numbered positions.",
+      "All digits are distinct, so no nontrivial rotation fixes an arrangement. Each rotational class has nine members, giving $1296/9=144$. Reflections remain different because only rotations are identified."
+    ],
+    "keyIdeas": [
+      "Consecutive triple sums force a period-three residue pattern"
+    ],
+    "commonMistakes": [
+      "Dividing by eighteen and thereby also identifying mirror images."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The divisibility conditions determine residue positions before individual labels are assigned.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p6",
+    "problemId": "aime-i-2011-p6",
+    "finalAnswer": "$\\boxed{011}$",
+    "shortExplanation": "The minimum leading coefficient is $2/9$.",
+    "detailedSteps": [
+      "The vertex condition gives $P(x)=a(x-1/4)^2-9/8$. Thus $a+b+c=P(1)=9a/16-9/8$ must be an integer $j$.",
+      "Solving gives $a=(16j+18)/9$. Positivity requires $j>-9/8$, so the least possible integer is $j=-1$. It yields $a=2/9$.",
+      "This value produces the required vertex and the integral coefficient sum minus one, so it is attained. Hence $p+q=2+9=11$."
+    ],
+    "keyIdeas": [
+      "Evaluate the vertex-form quadratic at one"
+    ],
+    "commonMistakes": [
+      "Assuming the integer coefficient sum must be nonnegative."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The coefficient sum is simply the polynomial\u2019s value at one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p7",
+    "problemId": "aime-i-2011-p7",
+    "finalAnswer": "$\\boxed{016}$",
+    "shortExplanation": "Exactly sixteen bases are possible.",
+    "detailedSteps": [
+      "The case $m=1$ is impossible because the proposed equality becomes $1=2011$. For $m>1$, every power of $m$ is one modulo $m-1$, so the equality implies $1\\equiv2011\\pmod{m-1}$. Thus $m-1$ divides 2010.",
+      "This restriction is sufficient. If $L=2010/(m-1)$, the geometric identity $m^L=1+(m-1)\\sum_{j=0}^{L-1}m^j$ represents the left power as exactly $1+(m-1)L=2011$ powers with nonnegative exponents.",
+      "The factorization $2010=2\\cdot3\\cdot5\\cdot67$ has sixteen positive divisors. Each determines the different base $m=d+1$, so sixteen positive integers $m$ work."
+    ],
+    "keyIdeas": [
+      "Reduce modulo m minus one and then split powers constructively"
+    ],
+    "commonMistakes": [
+      "Proving only the modular necessity without constructing the required number of power terms."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Splitting one power into m smaller equal powers changes the term count by m minus one.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p8",
+    "problemId": "aime-i-2011-p8",
+    "finalAnswer": "$\\boxed{318}$",
+    "shortExplanation": "The maximum height is $40\\sqrt{221}/57$.",
+    "detailedSteps": [
+      "Let $\\Delta$ be the area of the original triangle and $H_A,H_B,H_C$ its altitudes. A ninety-degree fold sends each corner triangle\u2019s apex vertically downward by its original perpendicular distance from its fold line. For a horizontal tabletop with all three legs on the floor, these distances equal the common height $h$.",
+      "The folded corner triangles are similar to $ABC$ with scales $h/H_A,h/H_B,h/H_C$. Along each original side, the two corner portions must not overlap. Thus $h/H_A+h/H_B\\le1$, $h/H_A+h/H_C\\le1$, and $h/H_B+h/H_C\\le1$.",
+      "Using $H_A=2\\Delta/23$, $H_B=2\\Delta/27$ and $H_C=2\\Delta/30$, these inequalities give $h\\le2\\Delta/50$, $h\\le2\\Delta/53$ and $h\\le2\\Delta/57$. The last bound is the strongest.",
+      "Heron\u2019s formula gives $\\Delta=\\sqrt{40\\cdot17\\cdot13\\cdot10}=20\\sqrt{221}$, so the upper bound is $h=40\\sqrt{221}/57$. At this height the corner scales are $23/57,27/57,30/57$.",
+      "Choose the three parallel folds with exactly these scales. The first two side inequalities are strict, and the third is equality, so $X=Y$ on $BC$. The source\u2019s on-segment ordering permits this limiting boundary contact; the central tabletop is still a nondegenerate pentagon. The three leg apices fold to the same floor plane. All original triangle angles are acute, so each leg\u2019s horizontal projection is just its fold segment; these three segments are separate except for their boundary contact at $X$, hence the leg interiors do not intersect.",
+      "Thus the bound is attained by a table of positive height and positive tabletop area. Since 221 is squarefree and forty is coprime to fifty-seven, $k+m+n=40+221+57=318$."
+    ],
+    "keyIdeas": [
+      "Equal leg depths and disjoint corner triangles bound the height"
+    ],
+    "commonMistakes": [
+      "Treating the leg height as the corner\u2019s distance to the original opposite side instead of to the fold line."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The two largest opposite-side lengths impose the active nonoverlap constraint; the maximum has X equal to Y.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p9",
+    "problemId": "aime-i-2011-p9",
+    "finalAnswer": "$\\boxed{192}$",
+    "shortExplanation": "The sine is $1/3$ and the requested value is 192.",
+    "detailedSteps": [
+      "The logarithm\u2019s domain excludes the interval endpoints and requires $24\\sin x>0$ and different from one. Put $t=24\\sin x>0$. The relation gives $24\\cos x=t^{3/2}$.",
+      "Squaring and using the Pythagorean identity yields $576-t^2=t^3$. The positive root is $t=8$, because $8^3+8^2=576$; uniqueness follows since $t^3+t^2$ is strictly increasing for positive $t$.",
+      "Thus $\\sin x=1/3$, $\\cos^2x=8/9$ and $\\cot^2x=8$. The logarithm base is eight, so the candidate meets its domain restrictions. Therefore $24\\cot^2x=192$."
+    ],
+    "keyIdeas": [
+      "Convert the logarithmic relation to a positive cubic"
+    ],
+    "commonMistakes": [
+      "Accepting a zero or unit logarithm base when manipulating the exponent equation."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The exponent three halves becomes a cubic after squaring positive quantities.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p10",
+    "problemId": "aime-i-2011-p10",
+    "finalAnswer": "$\\boxed{503}$",
+    "shortExplanation": "The two possible polygon sizes are 127 and 376.",
+    "detailedSteps": [
+      "An inscribed triangle is obtuse exactly when one of its three empty circular gaps has length greater than a semicircle. This gap is unique. Anchor the triangle at the vertex immediately after it; the other two vertices lie in the following strict semicircle.",
+      "There are $q=\\lfloor(n-1)/2\\rfloor$ available vertices there, so the obtuse count is $n\\binom q2$. The probability is $3q(q-1)/[(n-1)(n-2)]$. Strictness excludes right triangles.",
+      "For odd $n$ this becomes $3(n-3)/[4(n-2)]$. Equating to $93/125$ gives $375(n-3)=372(n-2)$, hence $n=127$, which has the required odd parity.",
+      "For even $n$ the probability is $3(n-4)/[4(n-1)]$. The equation gives $375(n-4)=372(n-1)$, hence $n=376$, which is even.",
+      "These are the only possibilities in their respective parity classes, and both are valid polygons. Their sum is $127+376=503$."
+    ],
+    "keyIdeas": [
+      "Count triangles contained in a strict forward semicircle"
+    ],
+    "commonMistakes": [
+      "Including the opposite vertex of an even polygon in the strict semicircle and counting right triangles as obtuse."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The unique long gap supplies an anchor that prevents multiple counting.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p11",
+    "problemId": "aime-i-2011-p11",
+    "finalAnswer": "$\\boxed{007}$",
+    "shortExplanation": "The cycle sum is fifty thousand and the transient sum is seven.",
+    "detailedSteps": [
+      "The first three remainders are one, two and four. For $n\\ge3$, write the residue of $2^n$ modulo one thousand as eight times the residue of $2^{n-3}$ modulo 125. The latter residues are units modulo 125.",
+      "The order of two modulo 125 is 100. Indeed its order modulo five is four, and Euler\u2019s theorem makes its order modulo 125 divide 100. The only possible divisors of 100 that are multiples of four are four, twenty and 100; $2^{20}\\equiv76\\pmod{125}$ rules out the first two.",
+      "Thus the cycle comprises all one hundred units modulo 125, multiplied by eight. Their sum is $8(\\sum_{u=1}^{124}u-5\\sum_{u=1}^{24}u)=8(7750-1500)=50000$.",
+      "The three transient remainders are distinct from the cycle because they are not divisible by eight. The full set sum is $50000+1+2+4=50007$, giving remainder seven."
+    ],
+    "keyIdeas": [
+      "The eventual cycle contains all multiples of eight not divisible by forty"
+    ],
+    "commonMistakes": [
+      "Omitting the transient powers before the eventual cycle or summing repeated residues rather than the set."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Factoring out eight reduces the cycle to the unit group modulo 125.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p12",
+    "problemId": "aime-i-2011-p12",
+    "finalAnswer": "$\\boxed{594}$",
+    "shortExplanation": "The least number of women is 594.",
+    "detailedSteps": [
+      "Let $w$ be the number of women and $g=w+1$ the number of gaps where male runs may be placed. Every man has a male neighbor exactly when each occupied gap holds a run of length at least two.",
+      "The possible ordered run lengths for six men are one run of six; two runs with lengths $(2,4),(3,3),(4,2)$; or three runs $(2,2,2)$. Therefore the number of allowed gender patterns is $g+3\\binom g2+\\binom g3$. Every such pattern corresponds to the same number $6!w!$ of distinct-person arrangements.",
+      "A run of at least four occurs in the single-run case or in either ordering of two and four. Its count is $g+2\\binom g2=g^2$. Hence the conditional probability is $p=6g/(g^2+6g-1)$.",
+      "The condition $p\\le1/100$ is equivalent to $g^2-594g-1\\ge0$. For every positive $g\\le594$ it is negative, while at $g=595$ it is 594, positive. Thus the least $g$ is $595$, and the least $w$ is $594$."
+    ],
+    "keyIdeas": [
+      "Count allowed male runs in the gaps between women"
+    ],
+    "commonMistakes": [
+      "Conditioning on all random orders without first excluding isolated men."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Uniformity of distinct-person assignments makes gender patterns the correct conditional counting units.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p13",
+    "problemId": "aime-i-2011-p13",
+    "finalAnswer": "$\\boxed{330}$",
+    "shortExplanation": "The closest vertex height is $(33-\\sqrt{294})/3$.",
+    "detailedSteps": [
+      "Let $h$ be $A$\u2019s height. Its three edge vectors, each of length ten and mutually perpendicular, have vertical components $10-h$, $11-h$ and $12-h$. The squared components of the unit plane normal in an orthonormal edge basis sum to one.",
+      "Therefore $(10-h)^2+(11-h)^2+(12-h)^2=100$, or $3h^2-66h+265=0$. Solving yields $h=(33\\pm7\\sqrt6)/3$.",
+      "Because $A$ is the closest vertex, all three neighboring heights exceed $h$. The plus root exceeds ten and fails this condition. The minus root is positive and below ten; all other cube vertices add nonnegative edge-height increments, so $A$ is indeed closest.",
+      "In the requested form, $h=(33-\\sqrt{294})/3$, hence $r+s+t=33+294+3=330$. The unit-normal equation also shows that an orientation realizing these vertical components exists."
+    ],
+    "keyIdeas": [
+      "Resolve the plane normal along the three orthogonal cube edges"
+    ],
+    "commonMistakes": [
+      "Treating the neighboring heights themselves as perpendicular edge components instead of subtracting A\u2019s height."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "Orthogonal cube edges turn the height information into a quadratic norm equation.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p14",
+    "problemId": "aime-i-2011-p14",
+    "finalAnswer": "$\\boxed{037}$",
+    "shortExplanation": "The double-angle cosine is $5-\\sqrt{32}$.",
+    "detailedSteps": [
+      "Let the octagon apothem be $r$ and orient the alternating side midpoints as $M_1=(0,r)$, $M_3=(r,0)$, $M_5=(0,-r)$ and $M_7=(-r,0)$. The octagon side length is $s=2r\\tan(\\pi/8)=2r(\\sqrt2-1)$.",
+      "Write the inward direction of $R_1$ as $(u,-v)$, with $v>0$ and $u^2+v^2=1$. Perpendicularity and inward orientation make the other three ray directions $(-v,-u)$, $(-u,v)$ and $(v,u)$.",
+      "The supporting lines of $R_1$ and $R_5$ are parallel. Their perpendicular separation, measured along $R_3$, is $2r|u|$, which is $B_1B_3$. The given side equality therefore forces $|u|=\\sqrt2-1$.",
+      "At $M_3$, the vector toward $A_3$ is vertically upward. Since $B_1$ lies along direction $(-v,-u)$, the angle $\\theta=\\angle A_3M_3B_1$ has $\\cos\\theta=-u$. Thus $\\cos2\\theta=2u^2-1=5-4\\sqrt2=5-\\sqrt{32}$.",
+      "Both possible signs of $u$ give $v>|u|$. The intersection parameters for each adjacent ray pair are $r(v+u)$ and $r(v-u)$, both positive, so the supporting-line intersections really lie on the inward rays. The construction is admissible, and $m+n=5+32=37$."
+    ],
+    "keyIdeas": [
+      "The ray intersections form a rectangle whose side is a line separation"
+    ],
+    "commonMistakes": [
+      "Using infinite supporting lines without checking the intersection lies in the specified ray directions."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "A rectangle side equals the separation of its two opposite supporting lines.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "solution-aime-i-2011-p15",
+    "problemId": "aime-i-2011-p15",
+    "finalAnswer": "$\\boxed{098}$",
+    "shortExplanation": "The roots have absolute values ten, thirty-nine and forty-nine.",
+    "detailedSteps": [
+      "Vieta\u2019s formulas give $a+b+c=0$ and $ab+bc+ca=-2011$, hence $a^2+b^2+c^2=4022$. No root is zero, since that would force the other two roots to have squares 2011, which is not a square.",
+      "After simultaneously negating the roots if needed, write the two positive roots as $u\\le v$ and the negative root as $-(u+v)$. The coefficient condition becomes $u^2+uv+v^2=2011$. Put $S=u+v$ and $d=v-u\\ge0$.",
+      "Because $S-1\\le uv\\le S^2/4$, the equation $2011=S^2-uv$ gives $2011\\le S^2-S+1$ and $2011\\ge3S^2/4$. These bounds force $46\\le S\\le51$.",
+      "The identity $3S^2+d^2=8044$ gives candidate $d^2$ values $1696,1417,1132,841,544,241$ as $S$ runs from 46 through 51. Only 841 is a square, so $S=49$ and $d=29$. Thus $u=10$ and $v=39$.",
+      "The roots ten, thirty-nine and minus forty-nine give a polynomial of the required form with integral constant term, and negating them gives the other possibility. In either case $|a|+|b|+|c|=2S=98$."
+    ],
+    "keyIdeas": [
+      "Reduce the zero-sum integer roots to six possible positive sums"
+    ],
+    "commonMistakes": [
+      "Choosing a single integer root without proving that all other possible triples give the same absolute sum."
+    ],
+    "alternativeMethods": [],
+    "difficultyNotes": "The sum and difference of the two positive roots shrink the integer search to six square tests.",
+    "writtenBy": "Novaris",
+    "verificationStatus": "verified"
+  }
+]
