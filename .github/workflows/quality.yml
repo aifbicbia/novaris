@@ -1,0 +1,73 @@
+name: Novaris quality checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Archive, application and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NOVARIS_INDEXING_ENABLED: "false"
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --include=dev --no-audit --no-fund
+
+      - name: Check repository safety and integrity
+        run: |
+          npm run check:repository
+          npm run test:repository
+
+      - name: Check production dependency advisories
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Validate archive, formulas and images
+        run: |
+          npm run validate:archive
+          npm run validate:rendering
+          npm run validate:display
+          npm run validate:markdown
+
+      - name: Validate learning and page behaviour
+        run: |
+          npm run validate:learning
+          npm run validate:v1
+          npm run validate:launch
+          npm run check:launch
+
+      - name: Check lint and types
+        run: |
+          npm run lint
+          npx --no-install next typegen
+          npx --no-install tsc --noEmit
+
+      - name: Build production preview
+        run: npm run build
+
+      - name: Verify source remains unchanged after build
+        run: npm run check:repository

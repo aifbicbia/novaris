@@ -33,6 +33,16 @@ npm run start
 
 The stack uses Next.js, TypeScript, React, Tailwind CSS, Markdown and KaTeX. Detailed solutions render on the server; the archive sends a compact search and navigation index to the browser.
 
+## Checks before merging
+
+Pull requests targeting `main` and pushes to `main` run the repository safety check, archive and rendering validation, learning and page checks, lint, types and a production preview build. The workflow has read-only repository permissions and does not deploy. It uses Node.js 24 and installs dependencies from the lockfile.
+
+Run `npm run check:repository` and `npm run test:repository` locally before the validation commands above. The repository check rejects excluded files, selected credential patterns and differences from the complete source integrity manifest. Pattern checks do not guarantee that every possible secret can be detected. Keep real environment values in ignored local files or the selected hosting service.
+
+After an intentional source change, inspect the diff and run `npm run integrity:update` to refresh the source hashes, then rerun `npm run check:repository` and `npm run validate:archive`. The update command does not approve changes to the frozen archive or replace source, mathematical or copyright review. The workflow checks integrity without rewriting the manifest.
+
+The production dependency audit fails for high or critical advisories. The known development-only lint dependency advisory remains documented below; this gate does not claim that all development dependencies are vulnerability-free. Branch protection is configured separately by the repository owner; the workflow itself does not prevent an administrator from merging a failed check.
+
 ## Public release
 
 This repository contains the prepared V1.0 release at its root. Private source material, unfinished drafts, verification snapshots and historical development evidence remain in the original local workspace and are excluded from this repository.

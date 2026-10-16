@@ -16,7 +16,10 @@
     "validate:launch": "node scripts/validate-launch.mjs",
     "build:public": "npm run check:launch -- --public && next build --webpack",
     "validate:display": "node scripts/validate-display-labels.mjs",
-    "validate:markdown": "node scripts/validate-markdown.mjs"
+    "validate:markdown": "node scripts/validate-markdown.mjs",
+    "check:repository": "node scripts/check-repository.mjs",
+    "test:repository": "node --test scripts/check-repository.test.mjs",
+    "integrity:update": "node scripts/check-repository.mjs --update-integrity"
   },
   "dependencies": {
     "katex": "^0.19.0",
